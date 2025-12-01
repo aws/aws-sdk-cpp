@@ -73,86 +73,6 @@ class InvokeInlineAgentRequest : public BedrockAgentRuntimeRequest {
 
   ///@{
   /**
-   * <p> The Amazon Resource Name (ARN) of the Amazon Web Services KMS key to use to
-   * encrypt your inline agent. </p>
-   */
-  inline const Aws::String& GetCustomerEncryptionKeyArn() const { return m_customerEncryptionKeyArn; }
-  inline bool CustomerEncryptionKeyArnHasBeenSet() const { return m_customerEncryptionKeyArnHasBeenSet; }
-  template <typename CustomerEncryptionKeyArnT = Aws::String>
-  void SetCustomerEncryptionKeyArn(CustomerEncryptionKeyArnT&& value) {
-    m_customerEncryptionKeyArnHasBeenSet = true;
-    m_customerEncryptionKeyArn = std::forward<CustomerEncryptionKeyArnT>(value);
-  }
-  template <typename CustomerEncryptionKeyArnT = Aws::String>
-  InvokeInlineAgentRequest& WithCustomerEncryptionKeyArn(CustomerEncryptionKeyArnT&& value) {
-    SetCustomerEncryptionKeyArn(std::forward<CustomerEncryptionKeyArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p> The <a
-   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html#model-ids-arns">model
-   * identifier (ID)</a> of the model to use for orchestration by the inline agent.
-   * For example, <code>meta.llama3-1-70b-instruct-v1:0</code>. </p>
-   */
-  inline const Aws::String& GetFoundationModel() const { return m_foundationModel; }
-  inline bool FoundationModelHasBeenSet() const { return m_foundationModelHasBeenSet; }
-  template <typename FoundationModelT = Aws::String>
-  void SetFoundationModel(FoundationModelT&& value) {
-    m_foundationModelHasBeenSet = true;
-    m_foundationModel = std::forward<FoundationModelT>(value);
-  }
-  template <typename FoundationModelT = Aws::String>
-  InvokeInlineAgentRequest& WithFoundationModel(FoundationModelT&& value) {
-    SetFoundationModel(std::forward<FoundationModelT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p> The instructions that tell the inline agent what it should do and how it
-   * should interact with users. </p>
-   */
-  inline const Aws::String& GetInstruction() const { return m_instruction; }
-  inline bool InstructionHasBeenSet() const { return m_instructionHasBeenSet; }
-  template <typename InstructionT = Aws::String>
-  void SetInstruction(InstructionT&& value) {
-    m_instructionHasBeenSet = true;
-    m_instruction = std::forward<InstructionT>(value);
-  }
-  template <typename InstructionT = Aws::String>
-  InvokeInlineAgentRequest& WithInstruction(InstructionT&& value) {
-    SetInstruction(std::forward<InstructionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p> The number of seconds for which the inline agent should maintain session
-   * information. After this time expires, the subsequent
-   * <code>InvokeInlineAgent</code> request begins a new session. </p> <p>A user
-   * interaction remains active for the amount of time specified. If no conversation
-   * occurs during this time, the session expires and the data provided before the
-   * timeout is deleted.</p>
-   */
-  inline int GetIdleSessionTTLInSeconds() const { return m_idleSessionTTLInSeconds; }
-  inline bool IdleSessionTTLInSecondsHasBeenSet() const { return m_idleSessionTTLInSecondsHasBeenSet; }
-  inline void SetIdleSessionTTLInSeconds(int value) {
-    m_idleSessionTTLInSecondsHasBeenSet = true;
-    m_idleSessionTTLInSeconds = value;
-  }
-  inline InvokeInlineAgentRequest& WithIdleSessionTTLInSeconds(int value) {
-    SetIdleSessionTTLInSeconds(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p> A list of action groups with each action group defining the action the
    * inline agent needs to carry out. </p>
    */
@@ -178,69 +98,6 @@ class InvokeInlineAgentRequest : public BedrockAgentRuntimeRequest {
 
   ///@{
   /**
-   * <p> Contains information of the knowledge bases to associate with. </p>
-   */
-  inline const Aws::Vector<KnowledgeBase>& GetKnowledgeBases() const { return m_knowledgeBases; }
-  inline bool KnowledgeBasesHasBeenSet() const { return m_knowledgeBasesHasBeenSet; }
-  template <typename KnowledgeBasesT = Aws::Vector<KnowledgeBase>>
-  void SetKnowledgeBases(KnowledgeBasesT&& value) {
-    m_knowledgeBasesHasBeenSet = true;
-    m_knowledgeBases = std::forward<KnowledgeBasesT>(value);
-  }
-  template <typename KnowledgeBasesT = Aws::Vector<KnowledgeBase>>
-  InvokeInlineAgentRequest& WithKnowledgeBases(KnowledgeBasesT&& value) {
-    SetKnowledgeBases(std::forward<KnowledgeBasesT>(value));
-    return *this;
-  }
-  template <typename KnowledgeBasesT = KnowledgeBase>
-  InvokeInlineAgentRequest& AddKnowledgeBases(KnowledgeBasesT&& value) {
-    m_knowledgeBasesHasBeenSet = true;
-    m_knowledgeBases.emplace_back(std::forward<KnowledgeBasesT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p> The <a
-   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html">guardrails</a>
-   * to assign to the inline agent. </p>
-   */
-  inline const GuardrailConfigurationWithArn& GetGuardrailConfiguration() const { return m_guardrailConfiguration; }
-  inline bool GuardrailConfigurationHasBeenSet() const { return m_guardrailConfigurationHasBeenSet; }
-  template <typename GuardrailConfigurationT = GuardrailConfigurationWithArn>
-  void SetGuardrailConfiguration(GuardrailConfigurationT&& value) {
-    m_guardrailConfigurationHasBeenSet = true;
-    m_guardrailConfiguration = std::forward<GuardrailConfigurationT>(value);
-  }
-  template <typename GuardrailConfigurationT = GuardrailConfigurationWithArn>
-  InvokeInlineAgentRequest& WithGuardrailConfiguration(GuardrailConfigurationT&& value) {
-    SetGuardrailConfiguration(std::forward<GuardrailConfigurationT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p> Configurations for advanced prompts used to override the default prompts to
-   * enhance the accuracy of the inline agent. </p>
-   */
-  inline const PromptOverrideConfiguration& GetPromptOverrideConfiguration() const { return m_promptOverrideConfiguration; }
-  inline bool PromptOverrideConfigurationHasBeenSet() const { return m_promptOverrideConfigurationHasBeenSet; }
-  template <typename PromptOverrideConfigurationT = PromptOverrideConfiguration>
-  void SetPromptOverrideConfiguration(PromptOverrideConfigurationT&& value) {
-    m_promptOverrideConfigurationHasBeenSet = true;
-    m_promptOverrideConfiguration = std::forward<PromptOverrideConfigurationT>(value);
-  }
-  template <typename PromptOverrideConfigurationT = PromptOverrideConfiguration>
-  InvokeInlineAgentRequest& WithPromptOverrideConfiguration(PromptOverrideConfigurationT&& value) {
-    SetPromptOverrideConfiguration(std::forward<PromptOverrideConfigurationT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p> Defines how the inline collaborator agent handles information across
    * multiple collaborator agents to coordinate a final response. The inline
    * collaborator agent can also be the supervisor. </p>
@@ -253,6 +110,42 @@ class InvokeInlineAgentRequest : public BedrockAgentRuntimeRequest {
   }
   inline InvokeInlineAgentRequest& WithAgentCollaboration(AgentCollaboration value) {
     SetAgentCollaboration(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name for the agent.</p>
+   */
+  inline const Aws::String& GetAgentName() const { return m_agentName; }
+  inline bool AgentNameHasBeenSet() const { return m_agentNameHasBeenSet; }
+  template <typename AgentNameT = Aws::String>
+  void SetAgentName(AgentNameT&& value) {
+    m_agentNameHasBeenSet = true;
+    m_agentName = std::forward<AgentNameT>(value);
+  }
+  template <typename AgentNameT = Aws::String>
+  InvokeInlineAgentRequest& WithAgentName(AgentNameT&& value) {
+    SetAgentName(std::forward<AgentNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Model settings for the request.</p>
+   */
+  inline const InlineBedrockModelConfigurations& GetBedrockModelConfigurations() const { return m_bedrockModelConfigurations; }
+  inline bool BedrockModelConfigurationsHasBeenSet() const { return m_bedrockModelConfigurationsHasBeenSet; }
+  template <typename BedrockModelConfigurationsT = InlineBedrockModelConfigurations>
+  void SetBedrockModelConfigurations(BedrockModelConfigurationsT&& value) {
+    m_bedrockModelConfigurationsHasBeenSet = true;
+    m_bedrockModelConfigurations = std::forward<BedrockModelConfigurationsT>(value);
+  }
+  template <typename BedrockModelConfigurationsT = InlineBedrockModelConfigurations>
+  InvokeInlineAgentRequest& WithBedrockModelConfigurations(BedrockModelConfigurationsT&& value) {
+    SetBedrockModelConfigurations(std::forward<BedrockModelConfigurationsT>(value));
     return *this;
   }
   ///@}
@@ -285,53 +178,61 @@ class InvokeInlineAgentRequest : public BedrockAgentRuntimeRequest {
 
   ///@{
   /**
-   * <p>The name for the agent.</p>
+   * <p> List of collaborator inline agents. </p>
    */
-  inline const Aws::String& GetAgentName() const { return m_agentName; }
-  inline bool AgentNameHasBeenSet() const { return m_agentNameHasBeenSet; }
-  template <typename AgentNameT = Aws::String>
-  void SetAgentName(AgentNameT&& value) {
-    m_agentNameHasBeenSet = true;
-    m_agentName = std::forward<AgentNameT>(value);
+  inline const Aws::Vector<Collaborator>& GetCollaborators() const { return m_collaborators; }
+  inline bool CollaboratorsHasBeenSet() const { return m_collaboratorsHasBeenSet; }
+  template <typename CollaboratorsT = Aws::Vector<Collaborator>>
+  void SetCollaborators(CollaboratorsT&& value) {
+    m_collaboratorsHasBeenSet = true;
+    m_collaborators = std::forward<CollaboratorsT>(value);
   }
-  template <typename AgentNameT = Aws::String>
-  InvokeInlineAgentRequest& WithAgentName(AgentNameT&& value) {
-    SetAgentName(std::forward<AgentNameT>(value));
+  template <typename CollaboratorsT = Aws::Vector<Collaborator>>
+  InvokeInlineAgentRequest& WithCollaborators(CollaboratorsT&& value) {
+    SetCollaborators(std::forward<CollaboratorsT>(value));
+    return *this;
+  }
+  template <typename CollaboratorsT = Collaborator>
+  InvokeInlineAgentRequest& AddCollaborators(CollaboratorsT&& value) {
+    m_collaboratorsHasBeenSet = true;
+    m_collaborators.emplace_back(std::forward<CollaboratorsT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p> The unique identifier of the session. Use the same value across requests to
-   * continue the same conversation. </p>
+   * <p>Contains details of the custom orchestration configured for the agent. </p>
    */
-  inline const Aws::String& GetSessionId() const { return m_sessionId; }
-  inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-  template <typename SessionIdT = Aws::String>
-  void SetSessionId(SessionIdT&& value) {
-    m_sessionIdHasBeenSet = true;
-    m_sessionId = std::forward<SessionIdT>(value);
+  inline const CustomOrchestration& GetCustomOrchestration() const { return m_customOrchestration; }
+  inline bool CustomOrchestrationHasBeenSet() const { return m_customOrchestrationHasBeenSet; }
+  template <typename CustomOrchestrationT = CustomOrchestration>
+  void SetCustomOrchestration(CustomOrchestrationT&& value) {
+    m_customOrchestrationHasBeenSet = true;
+    m_customOrchestration = std::forward<CustomOrchestrationT>(value);
   }
-  template <typename SessionIdT = Aws::String>
-  InvokeInlineAgentRequest& WithSessionId(SessionIdT&& value) {
-    SetSessionId(std::forward<SessionIdT>(value));
+  template <typename CustomOrchestrationT = CustomOrchestration>
+  InvokeInlineAgentRequest& WithCustomOrchestration(CustomOrchestrationT&& value) {
+    SetCustomOrchestration(std::forward<CustomOrchestrationT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p> Specifies whether to end the session with the inline agent or not. </p>
+   * <p> The Amazon Resource Name (ARN) of the Amazon Web Services KMS key to use to
+   * encrypt your inline agent. </p>
    */
-  inline bool GetEndSession() const { return m_endSession; }
-  inline bool EndSessionHasBeenSet() const { return m_endSessionHasBeenSet; }
-  inline void SetEndSession(bool value) {
-    m_endSessionHasBeenSet = true;
-    m_endSession = value;
+  inline const Aws::String& GetCustomerEncryptionKeyArn() const { return m_customerEncryptionKeyArn; }
+  inline bool CustomerEncryptionKeyArnHasBeenSet() const { return m_customerEncryptionKeyArnHasBeenSet; }
+  template <typename CustomerEncryptionKeyArnT = Aws::String>
+  void SetCustomerEncryptionKeyArn(CustomerEncryptionKeyArnT&& value) {
+    m_customerEncryptionKeyArnHasBeenSet = true;
+    m_customerEncryptionKeyArn = std::forward<CustomerEncryptionKeyArnT>(value);
   }
-  inline InvokeInlineAgentRequest& WithEndSession(bool value) {
-    SetEndSession(value);
+  template <typename CustomerEncryptionKeyArnT = Aws::String>
+  InvokeInlineAgentRequest& WithCustomerEncryptionKeyArn(CustomerEncryptionKeyArnT&& value) {
+    SetCustomerEncryptionKeyArn(std::forward<CustomerEncryptionKeyArnT>(value));
     return *this;
   }
   ///@}
@@ -357,62 +258,78 @@ class InvokeInlineAgentRequest : public BedrockAgentRuntimeRequest {
 
   ///@{
   /**
-   * <p> The prompt text to send to the agent. </p>  <p>If you include
-   * <code>returnControlInvocationResults</code> in the <code>sessionState</code>
-   * field, the <code>inputText</code> field will be ignored.</p>
+   * <p> Specifies whether to end the session with the inline agent or not. </p>
    */
-  inline const Aws::String& GetInputText() const { return m_inputText; }
-  inline bool InputTextHasBeenSet() const { return m_inputTextHasBeenSet; }
-  template <typename InputTextT = Aws::String>
-  void SetInputText(InputTextT&& value) {
-    m_inputTextHasBeenSet = true;
-    m_inputText = std::forward<InputTextT>(value);
+  inline bool GetEndSession() const { return m_endSession; }
+  inline bool EndSessionHasBeenSet() const { return m_endSessionHasBeenSet; }
+  inline void SetEndSession(bool value) {
+    m_endSessionHasBeenSet = true;
+    m_endSession = value;
   }
-  template <typename InputTextT = Aws::String>
-  InvokeInlineAgentRequest& WithInputText(InputTextT&& value) {
-    SetInputText(std::forward<InputTextT>(value));
+  inline InvokeInlineAgentRequest& WithEndSession(bool value) {
+    SetEndSession(value);
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p> Specifies the configurations for streaming. </p>  <p>To use agent
-   * streaming, you need permissions to perform the
-   * <code>bedrock:InvokeModelWithResponseStream</code> action.</p>
+   * <p> The <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html#model-ids-arns">model
+   * identifier (ID)</a> of the model to use for orchestration by the inline agent.
+   * For example, <code>meta.llama3-1-70b-instruct-v1:0</code>. </p>
    */
-  inline const StreamingConfigurations& GetStreamingConfigurations() const { return m_streamingConfigurations; }
-  inline bool StreamingConfigurationsHasBeenSet() const { return m_streamingConfigurationsHasBeenSet; }
-  template <typename StreamingConfigurationsT = StreamingConfigurations>
-  void SetStreamingConfigurations(StreamingConfigurationsT&& value) {
-    m_streamingConfigurationsHasBeenSet = true;
-    m_streamingConfigurations = std::forward<StreamingConfigurationsT>(value);
+  inline const Aws::String& GetFoundationModel() const { return m_foundationModel; }
+  inline bool FoundationModelHasBeenSet() const { return m_foundationModelHasBeenSet; }
+  template <typename FoundationModelT = Aws::String>
+  void SetFoundationModel(FoundationModelT&& value) {
+    m_foundationModelHasBeenSet = true;
+    m_foundationModel = std::forward<FoundationModelT>(value);
   }
-  template <typename StreamingConfigurationsT = StreamingConfigurations>
-  InvokeInlineAgentRequest& WithStreamingConfigurations(StreamingConfigurationsT&& value) {
-    SetStreamingConfigurations(std::forward<StreamingConfigurationsT>(value));
+  template <typename FoundationModelT = Aws::String>
+  InvokeInlineAgentRequest& WithFoundationModel(FoundationModelT&& value) {
+    SetFoundationModel(std::forward<FoundationModelT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>Specifies parameters that control how the service populates the agent prompt
-   * for an <code>InvokeInlineAgent</code> request. You can control which aspects of
-   * previous invocations in the same agent session the service uses to populate the
-   * agent prompt. This gives you more granular control over the contextual history
-   * that is used to process the current request.</p>
+   * <p> The <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html">guardrails</a>
+   * to assign to the inline agent. </p>
    */
-  inline const PromptCreationConfigurations& GetPromptCreationConfigurations() const { return m_promptCreationConfigurations; }
-  inline bool PromptCreationConfigurationsHasBeenSet() const { return m_promptCreationConfigurationsHasBeenSet; }
-  template <typename PromptCreationConfigurationsT = PromptCreationConfigurations>
-  void SetPromptCreationConfigurations(PromptCreationConfigurationsT&& value) {
-    m_promptCreationConfigurationsHasBeenSet = true;
-    m_promptCreationConfigurations = std::forward<PromptCreationConfigurationsT>(value);
+  inline const GuardrailConfigurationWithArn& GetGuardrailConfiguration() const { return m_guardrailConfiguration; }
+  inline bool GuardrailConfigurationHasBeenSet() const { return m_guardrailConfigurationHasBeenSet; }
+  template <typename GuardrailConfigurationT = GuardrailConfigurationWithArn>
+  void SetGuardrailConfiguration(GuardrailConfigurationT&& value) {
+    m_guardrailConfigurationHasBeenSet = true;
+    m_guardrailConfiguration = std::forward<GuardrailConfigurationT>(value);
   }
-  template <typename PromptCreationConfigurationsT = PromptCreationConfigurations>
-  InvokeInlineAgentRequest& WithPromptCreationConfigurations(PromptCreationConfigurationsT&& value) {
-    SetPromptCreationConfigurations(std::forward<PromptCreationConfigurationsT>(value));
+  template <typename GuardrailConfigurationT = GuardrailConfigurationWithArn>
+  InvokeInlineAgentRequest& WithGuardrailConfiguration(GuardrailConfigurationT&& value) {
+    SetGuardrailConfiguration(std::forward<GuardrailConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The number of seconds for which the inline agent should maintain session
+   * information. After this time expires, the subsequent
+   * <code>InvokeInlineAgent</code> request begins a new session. </p> <p>A user
+   * interaction remains active for the amount of time specified. If no conversation
+   * occurs during this time, the session expires and the data provided before the
+   * timeout is deleted.</p>
+   */
+  inline int GetIdleSessionTTLInSeconds() const { return m_idleSessionTTLInSeconds; }
+  inline bool IdleSessionTTLInSecondsHasBeenSet() const { return m_idleSessionTTLInSecondsHasBeenSet; }
+  inline void SetIdleSessionTTLInSeconds(int value) {
+    m_idleSessionTTLInSecondsHasBeenSet = true;
+    m_idleSessionTTLInSeconds = value;
+  }
+  inline InvokeInlineAgentRequest& WithIdleSessionTTLInSeconds(int value) {
+    SetIdleSessionTTLInSeconds(value);
     return *this;
   }
   ///@}
@@ -444,42 +361,63 @@ class InvokeInlineAgentRequest : public BedrockAgentRuntimeRequest {
 
   ///@{
   /**
-   * <p> List of collaborator inline agents. </p>
+   * <p> The prompt text to send to the agent. </p>  <p>If you include
+   * <code>returnControlInvocationResults</code> in the <code>sessionState</code>
+   * field, the <code>inputText</code> field will be ignored.</p>
    */
-  inline const Aws::Vector<Collaborator>& GetCollaborators() const { return m_collaborators; }
-  inline bool CollaboratorsHasBeenSet() const { return m_collaboratorsHasBeenSet; }
-  template <typename CollaboratorsT = Aws::Vector<Collaborator>>
-  void SetCollaborators(CollaboratorsT&& value) {
-    m_collaboratorsHasBeenSet = true;
-    m_collaborators = std::forward<CollaboratorsT>(value);
+  inline const Aws::String& GetInputText() const { return m_inputText; }
+  inline bool InputTextHasBeenSet() const { return m_inputTextHasBeenSet; }
+  template <typename InputTextT = Aws::String>
+  void SetInputText(InputTextT&& value) {
+    m_inputTextHasBeenSet = true;
+    m_inputText = std::forward<InputTextT>(value);
   }
-  template <typename CollaboratorsT = Aws::Vector<Collaborator>>
-  InvokeInlineAgentRequest& WithCollaborators(CollaboratorsT&& value) {
-    SetCollaborators(std::forward<CollaboratorsT>(value));
-    return *this;
-  }
-  template <typename CollaboratorsT = Collaborator>
-  InvokeInlineAgentRequest& AddCollaborators(CollaboratorsT&& value) {
-    m_collaboratorsHasBeenSet = true;
-    m_collaborators.emplace_back(std::forward<CollaboratorsT>(value));
+  template <typename InputTextT = Aws::String>
+  InvokeInlineAgentRequest& WithInputText(InputTextT&& value) {
+    SetInputText(std::forward<InputTextT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>Model settings for the request.</p>
+   * <p> The instructions that tell the inline agent what it should do and how it
+   * should interact with users. </p>
    */
-  inline const InlineBedrockModelConfigurations& GetBedrockModelConfigurations() const { return m_bedrockModelConfigurations; }
-  inline bool BedrockModelConfigurationsHasBeenSet() const { return m_bedrockModelConfigurationsHasBeenSet; }
-  template <typename BedrockModelConfigurationsT = InlineBedrockModelConfigurations>
-  void SetBedrockModelConfigurations(BedrockModelConfigurationsT&& value) {
-    m_bedrockModelConfigurationsHasBeenSet = true;
-    m_bedrockModelConfigurations = std::forward<BedrockModelConfigurationsT>(value);
+  inline const Aws::String& GetInstruction() const { return m_instruction; }
+  inline bool InstructionHasBeenSet() const { return m_instructionHasBeenSet; }
+  template <typename InstructionT = Aws::String>
+  void SetInstruction(InstructionT&& value) {
+    m_instructionHasBeenSet = true;
+    m_instruction = std::forward<InstructionT>(value);
   }
-  template <typename BedrockModelConfigurationsT = InlineBedrockModelConfigurations>
-  InvokeInlineAgentRequest& WithBedrockModelConfigurations(BedrockModelConfigurationsT&& value) {
-    SetBedrockModelConfigurations(std::forward<BedrockModelConfigurationsT>(value));
+  template <typename InstructionT = Aws::String>
+  InvokeInlineAgentRequest& WithInstruction(InstructionT&& value) {
+    SetInstruction(std::forward<InstructionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> Contains information of the knowledge bases to associate with. </p>
+   */
+  inline const Aws::Vector<KnowledgeBase>& GetKnowledgeBases() const { return m_knowledgeBases; }
+  inline bool KnowledgeBasesHasBeenSet() const { return m_knowledgeBasesHasBeenSet; }
+  template <typename KnowledgeBasesT = Aws::Vector<KnowledgeBase>>
+  void SetKnowledgeBases(KnowledgeBasesT&& value) {
+    m_knowledgeBasesHasBeenSet = true;
+    m_knowledgeBases = std::forward<KnowledgeBasesT>(value);
+  }
+  template <typename KnowledgeBasesT = Aws::Vector<KnowledgeBase>>
+  InvokeInlineAgentRequest& WithKnowledgeBases(KnowledgeBasesT&& value) {
+    SetKnowledgeBases(std::forward<KnowledgeBasesT>(value));
+    return *this;
+  }
+  template <typename KnowledgeBasesT = KnowledgeBase>
+  InvokeInlineAgentRequest& AddKnowledgeBases(KnowledgeBasesT&& value) {
+    m_knowledgeBasesHasBeenSet = true;
+    m_knowledgeBases.emplace_back(std::forward<KnowledgeBasesT>(value));
     return *this;
   }
   ///@}
@@ -503,87 +441,149 @@ class InvokeInlineAgentRequest : public BedrockAgentRuntimeRequest {
 
   ///@{
   /**
-   * <p>Contains details of the custom orchestration configured for the agent. </p>
+   * <p>Specifies parameters that control how the service populates the agent prompt
+   * for an <code>InvokeInlineAgent</code> request. You can control which aspects of
+   * previous invocations in the same agent session the service uses to populate the
+   * agent prompt. This gives you more granular control over the contextual history
+   * that is used to process the current request.</p>
    */
-  inline const CustomOrchestration& GetCustomOrchestration() const { return m_customOrchestration; }
-  inline bool CustomOrchestrationHasBeenSet() const { return m_customOrchestrationHasBeenSet; }
-  template <typename CustomOrchestrationT = CustomOrchestration>
-  void SetCustomOrchestration(CustomOrchestrationT&& value) {
-    m_customOrchestrationHasBeenSet = true;
-    m_customOrchestration = std::forward<CustomOrchestrationT>(value);
+  inline const PromptCreationConfigurations& GetPromptCreationConfigurations() const { return m_promptCreationConfigurations; }
+  inline bool PromptCreationConfigurationsHasBeenSet() const { return m_promptCreationConfigurationsHasBeenSet; }
+  template <typename PromptCreationConfigurationsT = PromptCreationConfigurations>
+  void SetPromptCreationConfigurations(PromptCreationConfigurationsT&& value) {
+    m_promptCreationConfigurationsHasBeenSet = true;
+    m_promptCreationConfigurations = std::forward<PromptCreationConfigurationsT>(value);
   }
-  template <typename CustomOrchestrationT = CustomOrchestration>
-  InvokeInlineAgentRequest& WithCustomOrchestration(CustomOrchestrationT&& value) {
-    SetCustomOrchestration(std::forward<CustomOrchestrationT>(value));
+  template <typename PromptCreationConfigurationsT = PromptCreationConfigurations>
+  InvokeInlineAgentRequest& WithPromptCreationConfigurations(PromptCreationConfigurationsT&& value) {
+    SetPromptCreationConfigurations(std::forward<PromptCreationConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> Configurations for advanced prompts used to override the default prompts to
+   * enhance the accuracy of the inline agent. </p>
+   */
+  inline const PromptOverrideConfiguration& GetPromptOverrideConfiguration() const { return m_promptOverrideConfiguration; }
+  inline bool PromptOverrideConfigurationHasBeenSet() const { return m_promptOverrideConfigurationHasBeenSet; }
+  template <typename PromptOverrideConfigurationT = PromptOverrideConfiguration>
+  void SetPromptOverrideConfiguration(PromptOverrideConfigurationT&& value) {
+    m_promptOverrideConfigurationHasBeenSet = true;
+    m_promptOverrideConfiguration = std::forward<PromptOverrideConfigurationT>(value);
+  }
+  template <typename PromptOverrideConfigurationT = PromptOverrideConfiguration>
+  InvokeInlineAgentRequest& WithPromptOverrideConfiguration(PromptOverrideConfigurationT&& value) {
+    SetPromptOverrideConfiguration(std::forward<PromptOverrideConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The unique identifier of the session. Use the same value across requests to
+   * continue the same conversation. </p>
+   */
+  inline const Aws::String& GetSessionId() const { return m_sessionId; }
+  inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
+  template <typename SessionIdT = Aws::String>
+  void SetSessionId(SessionIdT&& value) {
+    m_sessionIdHasBeenSet = true;
+    m_sessionId = std::forward<SessionIdT>(value);
+  }
+  template <typename SessionIdT = Aws::String>
+  InvokeInlineAgentRequest& WithSessionId(SessionIdT&& value) {
+    SetSessionId(std::forward<SessionIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> Specifies the configurations for streaming. </p>  <p>To use agent
+   * streaming, you need permissions to perform the
+   * <code>bedrock:InvokeModelWithResponseStream</code> action.</p>
+   */
+  inline const StreamingConfigurations& GetStreamingConfigurations() const { return m_streamingConfigurations; }
+  inline bool StreamingConfigurationsHasBeenSet() const { return m_streamingConfigurationsHasBeenSet; }
+  template <typename StreamingConfigurationsT = StreamingConfigurations>
+  void SetStreamingConfigurations(StreamingConfigurationsT&& value) {
+    m_streamingConfigurationsHasBeenSet = true;
+    m_streamingConfigurations = std::forward<StreamingConfigurationsT>(value);
+  }
+  template <typename StreamingConfigurationsT = StreamingConfigurations>
+  InvokeInlineAgentRequest& WithStreamingConfigurations(StreamingConfigurationsT&& value) {
+    SetStreamingConfigurations(std::forward<StreamingConfigurationsT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::String m_customerEncryptionKeyArn;
-  bool m_customerEncryptionKeyArnHasBeenSet = false;
-
-  Aws::String m_foundationModel;
-  bool m_foundationModelHasBeenSet = false;
-
-  Aws::String m_instruction;
-  bool m_instructionHasBeenSet = false;
-
-  int m_idleSessionTTLInSeconds{0};
-  bool m_idleSessionTTLInSecondsHasBeenSet = false;
-
   Aws::Vector<AgentActionGroup> m_actionGroups;
   bool m_actionGroupsHasBeenSet = false;
-
-  Aws::Vector<KnowledgeBase> m_knowledgeBases;
-  bool m_knowledgeBasesHasBeenSet = false;
-
-  GuardrailConfigurationWithArn m_guardrailConfiguration;
-  bool m_guardrailConfigurationHasBeenSet = false;
-
-  PromptOverrideConfiguration m_promptOverrideConfiguration;
-  bool m_promptOverrideConfigurationHasBeenSet = false;
 
   AgentCollaboration m_agentCollaboration{AgentCollaboration::NOT_SET};
   bool m_agentCollaborationHasBeenSet = false;
 
-  Aws::Vector<CollaboratorConfiguration> m_collaboratorConfigurations;
-  bool m_collaboratorConfigurationsHasBeenSet = false;
-
   Aws::String m_agentName;
   bool m_agentNameHasBeenSet = false;
-
-  Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
-
-  bool m_endSession{false};
-  bool m_endSessionHasBeenSet = false;
-
-  bool m_enableTrace{false};
-  bool m_enableTraceHasBeenSet = false;
-
-  Aws::String m_inputText;
-  bool m_inputTextHasBeenSet = false;
-
-  StreamingConfigurations m_streamingConfigurations;
-  bool m_streamingConfigurationsHasBeenSet = false;
-
-  PromptCreationConfigurations m_promptCreationConfigurations;
-  bool m_promptCreationConfigurationsHasBeenSet = false;
-
-  InlineSessionState m_inlineSessionState;
-  bool m_inlineSessionStateHasBeenSet = false;
-
-  Aws::Vector<Collaborator> m_collaborators;
-  bool m_collaboratorsHasBeenSet = false;
 
   InlineBedrockModelConfigurations m_bedrockModelConfigurations;
   bool m_bedrockModelConfigurationsHasBeenSet = false;
 
-  OrchestrationType m_orchestrationType{OrchestrationType::NOT_SET};
-  bool m_orchestrationTypeHasBeenSet = false;
+  Aws::Vector<CollaboratorConfiguration> m_collaboratorConfigurations;
+  bool m_collaboratorConfigurationsHasBeenSet = false;
+
+  Aws::Vector<Collaborator> m_collaborators;
+  bool m_collaboratorsHasBeenSet = false;
 
   CustomOrchestration m_customOrchestration;
   bool m_customOrchestrationHasBeenSet = false;
+
+  Aws::String m_customerEncryptionKeyArn;
+  bool m_customerEncryptionKeyArnHasBeenSet = false;
+
+  bool m_enableTrace{false};
+  bool m_enableTraceHasBeenSet = false;
+
+  bool m_endSession{false};
+  bool m_endSessionHasBeenSet = false;
+
+  Aws::String m_foundationModel;
+  bool m_foundationModelHasBeenSet = false;
+
+  GuardrailConfigurationWithArn m_guardrailConfiguration;
+  bool m_guardrailConfigurationHasBeenSet = false;
+
+  int m_idleSessionTTLInSeconds{0};
+  bool m_idleSessionTTLInSecondsHasBeenSet = false;
+
+  InlineSessionState m_inlineSessionState;
+  bool m_inlineSessionStateHasBeenSet = false;
+
+  Aws::String m_inputText;
+  bool m_inputTextHasBeenSet = false;
+
+  Aws::String m_instruction;
+  bool m_instructionHasBeenSet = false;
+
+  Aws::Vector<KnowledgeBase> m_knowledgeBases;
+  bool m_knowledgeBasesHasBeenSet = false;
+
+  OrchestrationType m_orchestrationType{OrchestrationType::NOT_SET};
+  bool m_orchestrationTypeHasBeenSet = false;
+
+  PromptCreationConfigurations m_promptCreationConfigurations;
+  bool m_promptCreationConfigurationsHasBeenSet = false;
+
+  PromptOverrideConfiguration m_promptOverrideConfiguration;
+  bool m_promptOverrideConfigurationHasBeenSet = false;
+
+  Aws::String m_sessionId;
+  bool m_sessionIdHasBeenSet = false;
+
+  StreamingConfigurations m_streamingConfigurations;
+  bool m_streamingConfigurationsHasBeenSet = false;
   InvokeInlineAgentHandler m_handler;
   Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
 };

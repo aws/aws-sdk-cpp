@@ -33,22 +33,6 @@ class AccessDeniedException {
   AWS_AGREEMENTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
-  inline const Aws::String& GetMessage() const { return m_message; }
-  inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-  template <typename MessageT = Aws::String>
-  void SetMessage(MessageT&& value) {
-    m_messageHasBeenSet = true;
-    m_message = std::forward<MessageT>(value);
-  }
-  template <typename MessageT = Aws::String>
-  AccessDeniedException& WithMessage(MessageT&& value) {
-    SetMessage(std::forward<MessageT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
   /**
    * <p>The unique identifier for the error.</p>
    */
@@ -65,12 +49,28 @@ class AccessDeniedException {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
+  ///@{
+
+  inline const Aws::String& GetMessage() const { return m_message; }
+  inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+  template <typename MessageT = Aws::String>
+  void SetMessage(MessageT&& value) {
+    m_messageHasBeenSet = true;
+    m_message = std::forward<MessageT>(value);
+  }
+  template <typename MessageT = Aws::String>
+  AccessDeniedException& WithMessage(MessageT&& value) {
+    SetMessage(std::forward<MessageT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;
+
+  Aws::String m_message;
+  bool m_messageHasBeenSet = false;
 };
 
 }  // namespace Model

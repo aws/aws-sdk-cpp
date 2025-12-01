@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/ContactFlowAttributeFilter.h>
 #include <aws/connect/model/ControlPlaneTagFilter.h>
 
 #include <utility>
@@ -46,9 +47,30 @@ class ContactFlowSearchFilter {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> Flow attribute filter for contact flow search operations. </p>
+   */
+  inline const ContactFlowAttributeFilter& GetFlowAttributeFilter() const { return m_flowAttributeFilter; }
+  inline bool FlowAttributeFilterHasBeenSet() const { return m_flowAttributeFilterHasBeenSet; }
+  template <typename FlowAttributeFilterT = ContactFlowAttributeFilter>
+  void SetFlowAttributeFilter(FlowAttributeFilterT&& value) {
+    m_flowAttributeFilterHasBeenSet = true;
+    m_flowAttributeFilter = std::forward<FlowAttributeFilterT>(value);
+  }
+  template <typename FlowAttributeFilterT = ContactFlowAttributeFilter>
+  ContactFlowSearchFilter& WithFlowAttributeFilter(FlowAttributeFilterT&& value) {
+    SetFlowAttributeFilter(std::forward<FlowAttributeFilterT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ControlPlaneTagFilter m_tagFilter;
   bool m_tagFilterHasBeenSet = false;
+
+  ContactFlowAttributeFilter m_flowAttributeFilter;
+  bool m_flowAttributeFilterHasBeenSet = false;
 };
 
 }  // namespace Model

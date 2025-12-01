@@ -10,11 +10,13 @@
 #include <aws/lambda/LambdaRequest.h>
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/lambda/model/Architecture.h>
+#include <aws/lambda/model/CapacityProviderConfig.h>
 #include <aws/lambda/model/DeadLetterConfig.h>
 #include <aws/lambda/model/Environment.h>
 #include <aws/lambda/model/EphemeralStorage.h>
 #include <aws/lambda/model/FileSystemConfig.h>
 #include <aws/lambda/model/FunctionCode.h>
+#include <aws/lambda/model/FunctionVersionLatestPublished.h>
 #include <aws/lambda/model/ImageConfig.h>
 #include <aws/lambda/model/LoggingConfig.h>
 #include <aws/lambda/model/PackageType.h>
@@ -572,6 +574,41 @@ class CreateFunctionRequest : public LambdaRequest {
 
   ///@{
   /**
+   * <p>Configuration for the capacity provider that manages compute resources for
+   * Lambda functions.</p>
+   */
+  inline const CapacityProviderConfig& GetCapacityProviderConfig() const { return m_capacityProviderConfig; }
+  inline bool CapacityProviderConfigHasBeenSet() const { return m_capacityProviderConfigHasBeenSet; }
+  template <typename CapacityProviderConfigT = CapacityProviderConfig>
+  void SetCapacityProviderConfig(CapacityProviderConfigT&& value) {
+    m_capacityProviderConfigHasBeenSet = true;
+    m_capacityProviderConfig = std::forward<CapacityProviderConfigT>(value);
+  }
+  template <typename CapacityProviderConfigT = CapacityProviderConfig>
+  CreateFunctionRequest& WithCapacityProviderConfig(CapacityProviderConfigT&& value) {
+    SetCapacityProviderConfig(std::forward<CapacityProviderConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies where to publish the function version or configuration.</p>
+   */
+  inline FunctionVersionLatestPublished GetPublishTo() const { return m_publishTo; }
+  inline bool PublishToHasBeenSet() const { return m_publishToHasBeenSet; }
+  inline void SetPublishTo(FunctionVersionLatestPublished value) {
+    m_publishToHasBeenSet = true;
+    m_publishTo = value;
+  }
+  inline CreateFunctionRequest& WithPublishTo(FunctionVersionLatestPublished value) {
+    SetPublishTo(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Configuration for multi-tenant applications that use Lambda functions.
    * Defines tenant isolation settings and resource allocations. Required for
    * functions supporting multiple tenants.</p>
@@ -661,6 +698,12 @@ class CreateFunctionRequest : public LambdaRequest {
 
   LoggingConfig m_loggingConfig;
   bool m_loggingConfigHasBeenSet = false;
+
+  CapacityProviderConfig m_capacityProviderConfig;
+  bool m_capacityProviderConfigHasBeenSet = false;
+
+  FunctionVersionLatestPublished m_publishTo{FunctionVersionLatestPublished::NOT_SET};
+  bool m_publishToHasBeenSet = false;
 
   TenancyConfig m_tenancyConfig;
   bool m_tenancyConfigHasBeenSet = false;

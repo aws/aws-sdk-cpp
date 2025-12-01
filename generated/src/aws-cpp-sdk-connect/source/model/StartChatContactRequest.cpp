@@ -35,6 +35,10 @@ Aws::String StartChatContactRequest::SerializePayload() const {
     payload.WithObject("ParticipantDetails", m_participantDetails.Jsonize());
   }
 
+  if (m_participantConfigurationHasBeenSet) {
+    payload.WithObject("ParticipantConfiguration", m_participantConfiguration.Jsonize());
+  }
+
   if (m_initialMessageHasBeenSet) {
     payload.WithObject("InitialMessage", m_initialMessage.Jsonize());
   }

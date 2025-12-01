@@ -42,6 +42,22 @@ EngagementSummary& EngagementSummary::operator=(JsonView jsonValue) {
     m_memberCount = jsonValue.GetInteger("MemberCount");
     m_memberCountHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ModifiedAt")) {
+    m_modifiedAt = jsonValue.GetString("ModifiedAt");
+    m_modifiedAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ModifiedBy")) {
+    m_modifiedBy = jsonValue.GetString("ModifiedBy");
+    m_modifiedByHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ContextTypes")) {
+    Aws::Utils::Array<JsonView> contextTypesJsonList = jsonValue.GetArray("ContextTypes");
+    for (unsigned contextTypesIndex = 0; contextTypesIndex < contextTypesJsonList.GetLength(); ++contextTypesIndex) {
+      m_contextTypes.push_back(
+          EngagementContextTypeMapper::GetEngagementContextTypeForName(contextTypesJsonList[contextTypesIndex].AsString()));
+    }
+    m_contextTypesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -70,6 +86,23 @@ JsonValue EngagementSummary::Jsonize() const {
 
   if (m_memberCountHasBeenSet) {
     payload.WithInteger("MemberCount", m_memberCount);
+  }
+
+  if (m_modifiedAtHasBeenSet) {
+    payload.WithString("ModifiedAt", m_modifiedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_modifiedByHasBeenSet) {
+    payload.WithString("ModifiedBy", m_modifiedBy);
+  }
+
+  if (m_contextTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> contextTypesJsonList(m_contextTypes.size());
+    for (unsigned contextTypesIndex = 0; contextTypesIndex < contextTypesJsonList.GetLength(); ++contextTypesIndex) {
+      contextTypesJsonList[contextTypesIndex].AsString(
+          EngagementContextTypeMapper::GetNameForEngagementContextType(m_contextTypes[contextTypesIndex]));
+    }
+    payload.WithArray("ContextTypes", std::move(contextTypesJsonList));
   }
 
   return payload;

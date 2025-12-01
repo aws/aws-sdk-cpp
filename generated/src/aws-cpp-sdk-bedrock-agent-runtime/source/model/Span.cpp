@@ -18,13 +18,13 @@ namespace Model {
 Span::Span(JsonView jsonValue) { *this = jsonValue; }
 
 Span& Span::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("start")) {
-    m_start = jsonValue.GetInteger("start");
-    m_startHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("end")) {
     m_end = jsonValue.GetInteger("end");
     m_endHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("start")) {
+    m_start = jsonValue.GetInteger("start");
+    m_startHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ Span& Span::operator=(JsonView jsonValue) {
 JsonValue Span::Jsonize() const {
   JsonValue payload;
 
-  if (m_startHasBeenSet) {
-    payload.WithInteger("start", m_start);
-  }
-
   if (m_endHasBeenSet) {
     payload.WithInteger("end", m_end);
+  }
+
+  if (m_startHasBeenSet) {
+    payload.WithInteger("start", m_start);
   }
 
   return payload;

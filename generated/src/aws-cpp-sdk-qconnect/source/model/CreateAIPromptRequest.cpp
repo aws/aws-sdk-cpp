@@ -59,5 +59,9 @@ Aws::String CreateAIPromptRequest::SerializePayload() const {
     payload.WithString("description", m_description);
   }
 
+  if (m_inferenceConfigurationHasBeenSet) {
+    payload.WithObject("inferenceConfiguration", m_inferenceConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

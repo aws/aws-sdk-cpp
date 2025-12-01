@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/UUID.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qconnect/QConnectRequest.h>
 #include <aws/qconnect/QConnect_EXPORTS.h>
@@ -105,6 +106,24 @@ class SendMessageRequest : public QConnectRequest {
 
   ///@{
   /**
+   * <p>The identifier of the AI Agent to use for processing the message.</p>
+   */
+  inline const Aws::String& GetAiAgentId() const { return m_aiAgentId; }
+  inline bool AiAgentIdHasBeenSet() const { return m_aiAgentIdHasBeenSet; }
+  template <typename AiAgentIdT = Aws::String>
+  void SetAiAgentId(AiAgentIdT&& value) {
+    m_aiAgentIdHasBeenSet = true;
+    m_aiAgentId = std::forward<AiAgentIdT>(value);
+  }
+  template <typename AiAgentIdT = Aws::String>
+  SendMessageRequest& WithAiAgentId(AiAgentIdT&& value) {
+    SetAiAgentId(std::forward<AiAgentIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The conversation context before the Amazon Q in Connect session.</p>
    */
   inline const ConversationContext& GetConversationContext() const { return m_conversationContext; }
@@ -161,6 +180,48 @@ class SendMessageRequest : public QConnectRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The orchestrator use case for message processing.</p>
+   */
+  inline const Aws::String& GetOrchestratorUseCase() const { return m_orchestratorUseCase; }
+  inline bool OrchestratorUseCaseHasBeenSet() const { return m_orchestratorUseCaseHasBeenSet; }
+  template <typename OrchestratorUseCaseT = Aws::String>
+  void SetOrchestratorUseCase(OrchestratorUseCaseT&& value) {
+    m_orchestratorUseCaseHasBeenSet = true;
+    m_orchestratorUseCase = std::forward<OrchestratorUseCaseT>(value);
+  }
+  template <typename OrchestratorUseCaseT = Aws::String>
+  SendMessageRequest& WithOrchestratorUseCase(OrchestratorUseCaseT&& value) {
+    SetOrchestratorUseCase(std::forward<OrchestratorUseCaseT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Additional metadata for the message.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const { return m_metadata; }
+  inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+  template <typename MetadataT = Aws::Map<Aws::String, Aws::String>>
+  void SetMetadata(MetadataT&& value) {
+    m_metadataHasBeenSet = true;
+    m_metadata = std::forward<MetadataT>(value);
+  }
+  template <typename MetadataT = Aws::Map<Aws::String, Aws::String>>
+  SendMessageRequest& WithMetadata(MetadataT&& value) {
+    SetMetadata(std::forward<MetadataT>(value));
+    return *this;
+  }
+  template <typename MetadataKeyT = Aws::String, typename MetadataValueT = Aws::String>
+  SendMessageRequest& AddMetadata(MetadataKeyT&& key, MetadataValueT&& value) {
+    m_metadataHasBeenSet = true;
+    m_metadata.emplace(std::forward<MetadataKeyT>(key), std::forward<MetadataValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_assistantId;
   bool m_assistantIdHasBeenSet = false;
@@ -174,6 +235,9 @@ class SendMessageRequest : public QConnectRequest {
   MessageInput m_message;
   bool m_messageHasBeenSet = false;
 
+  Aws::String m_aiAgentId;
+  bool m_aiAgentIdHasBeenSet = false;
+
   ConversationContext m_conversationContext;
   bool m_conversationContextHasBeenSet = false;
 
@@ -182,6 +246,12 @@ class SendMessageRequest : public QConnectRequest {
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_clientTokenHasBeenSet = true;
+
+  Aws::String m_orchestratorUseCase;
+  bool m_orchestratorUseCaseHasBeenSet = false;
+
+  Aws::Map<Aws::String, Aws::String> m_metadata;
+  bool m_metadataHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -52,6 +52,14 @@ GetSegmentDefinitionResult& GetSegmentDefinitionResult::operator=(const Aws::Ama
     }
     m_tagsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SegmentSqlQuery")) {
+    m_segmentSqlQuery = jsonValue.GetString("SegmentSqlQuery");
+    m_segmentSqlQueryHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SegmentType")) {
+    m_segmentType = SegmentTypeMapper::GetSegmentTypeForName(jsonValue.GetString("SegmentType"));
+    m_segmentTypeHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

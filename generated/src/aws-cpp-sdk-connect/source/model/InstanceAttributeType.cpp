@@ -27,6 +27,7 @@ static const int HIGH_VOLUME_OUTBOUND_HASH = HashingUtils::HashString("HIGH_VOLU
 static const int ENHANCED_CONTACT_MONITORING_HASH = HashingUtils::HashString("ENHANCED_CONTACT_MONITORING");
 static const int ENHANCED_CHAT_MONITORING_HASH = HashingUtils::HashString("ENHANCED_CHAT_MONITORING");
 static const int MULTI_PARTY_CHAT_CONFERENCE_HASH = HashingUtils::HashString("MULTI_PARTY_CHAT_CONFERENCE");
+static const int MESSAGE_STREAMING_HASH = HashingUtils::HashString("MESSAGE_STREAMING");
 
 InstanceAttributeType GetInstanceAttributeTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -54,6 +55,8 @@ InstanceAttributeType GetInstanceAttributeTypeForName(const Aws::String& name) {
     return InstanceAttributeType::ENHANCED_CHAT_MONITORING;
   } else if (hashCode == MULTI_PARTY_CHAT_CONFERENCE_HASH) {
     return InstanceAttributeType::MULTI_PARTY_CHAT_CONFERENCE;
+  } else if (hashCode == MESSAGE_STREAMING_HASH) {
+    return InstanceAttributeType::MESSAGE_STREAMING;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -92,6 +95,8 @@ Aws::String GetNameForInstanceAttributeType(InstanceAttributeType enumValue) {
       return "ENHANCED_CHAT_MONITORING";
     case InstanceAttributeType::MULTI_PARTY_CHAT_CONFERENCE:
       return "MULTI_PARTY_CHAT_CONFERENCE";
+    case InstanceAttributeType::MESSAGE_STREAMING:
+      return "MESSAGE_STREAMING";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

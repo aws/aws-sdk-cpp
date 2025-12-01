@@ -1,0 +1,58 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/customer-profiles/model/SegmentType.h>
+
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace CustomerProfiles {
+namespace Model {
+namespace SegmentTypeMapper {
+
+static const int CLASSIC_HASH = HashingUtils::HashString("CLASSIC");
+static const int ENHANCED_HASH = HashingUtils::HashString("ENHANCED");
+
+SegmentType GetSegmentTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == CLASSIC_HASH) {
+    return SegmentType::CLASSIC;
+  } else if (hashCode == ENHANCED_HASH) {
+    return SegmentType::ENHANCED;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<SegmentType>(hashCode);
+  }
+
+  return SegmentType::NOT_SET;
+}
+
+Aws::String GetNameForSegmentType(SegmentType enumValue) {
+  switch (enumValue) {
+    case SegmentType::NOT_SET:
+      return {};
+    case SegmentType::CLASSIC:
+      return "CLASSIC";
+    case SegmentType::ENHANCED:
+      return "ENHANCED";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
+
+      return {};
+  }
+}
+
+}  // namespace SegmentTypeMapper
+}  // namespace Model
+}  // namespace CustomerProfiles
+}  // namespace Aws

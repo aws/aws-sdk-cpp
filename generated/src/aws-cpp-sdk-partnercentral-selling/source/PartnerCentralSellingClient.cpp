@@ -23,6 +23,7 @@
 #include <aws/partnercentral-selling/model/AcceptEngagementInvitationRequest.h>
 #include <aws/partnercentral-selling/model/AssignOpportunityRequest.h>
 #include <aws/partnercentral-selling/model/AssociateOpportunityRequest.h>
+#include <aws/partnercentral-selling/model/CreateEngagementContextRequest.h>
 #include <aws/partnercentral-selling/model/CreateEngagementInvitationRequest.h>
 #include <aws/partnercentral-selling/model/CreateEngagementRequest.h>
 #include <aws/partnercentral-selling/model/CreateOpportunityRequest.h>
@@ -44,6 +45,7 @@
 #include <aws/partnercentral-selling/model/ListEngagementResourceAssociationsRequest.h>
 #include <aws/partnercentral-selling/model/ListEngagementsRequest.h>
 #include <aws/partnercentral-selling/model/ListOpportunitiesRequest.h>
+#include <aws/partnercentral-selling/model/ListOpportunityFromEngagementTasksRequest.h>
 #include <aws/partnercentral-selling/model/ListResourceSnapshotJobsRequest.h>
 #include <aws/partnercentral-selling/model/ListResourceSnapshotsRequest.h>
 #include <aws/partnercentral-selling/model/ListSolutionsRequest.h>
@@ -52,11 +54,13 @@
 #include <aws/partnercentral-selling/model/RejectEngagementInvitationRequest.h>
 #include <aws/partnercentral-selling/model/StartEngagementByAcceptingInvitationTaskRequest.h>
 #include <aws/partnercentral-selling/model/StartEngagementFromOpportunityTaskRequest.h>
+#include <aws/partnercentral-selling/model/StartOpportunityFromEngagementTaskRequest.h>
 #include <aws/partnercentral-selling/model/StartResourceSnapshotJobRequest.h>
 #include <aws/partnercentral-selling/model/StopResourceSnapshotJobRequest.h>
 #include <aws/partnercentral-selling/model/SubmitOpportunityRequest.h>
 #include <aws/partnercentral-selling/model/TagResourceRequest.h>
 #include <aws/partnercentral-selling/model/UntagResourceRequest.h>
+#include <aws/partnercentral-selling/model/UpdateEngagementContextRequest.h>
 #include <aws/partnercentral-selling/model/UpdateOpportunityRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
@@ -293,6 +297,35 @@ CreateEngagementOutcome PartnerCentralSellingClient::CreateEngagement(const Crea
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateEngagement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         return CreateEngagementOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+CreateEngagementContextOutcome PartnerCentralSellingClient::CreateEngagementContext(const CreateEngagementContextRequest& request) const {
+  AWS_OPERATION_GUARD(CreateEngagementContext);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateEngagementContext, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateEngagementContext, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateEngagementContext, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateEngagementContext",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateEngagementContextOutcome>(
+      [&]() -> CreateEngagementContextOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateEngagementContext, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        return CreateEngagementContextOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -890,6 +923,36 @@ ListOpportunitiesOutcome PartnerCentralSellingClient::ListOpportunities(const Li
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+ListOpportunityFromEngagementTasksOutcome PartnerCentralSellingClient::ListOpportunityFromEngagementTasks(
+    const ListOpportunityFromEngagementTasksRequest& request) const {
+  AWS_OPERATION_GUARD(ListOpportunityFromEngagementTasks);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListOpportunityFromEngagementTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListOpportunityFromEngagementTasks, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListOpportunityFromEngagementTasks, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListOpportunityFromEngagementTasks",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListOpportunityFromEngagementTasksOutcome>(
+      [&]() -> ListOpportunityFromEngagementTasksOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListOpportunityFromEngagementTasks, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        return ListOpportunityFromEngagementTasksOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 ListResourceSnapshotJobsOutcome PartnerCentralSellingClient::ListResourceSnapshotJobs(
     const ListResourceSnapshotJobsRequest& request) const {
   AWS_OPERATION_GUARD(ListResourceSnapshotJobs);
@@ -1128,6 +1191,36 @@ StartEngagementFromOpportunityTaskOutcome PartnerCentralSellingClient::StartEnga
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+StartOpportunityFromEngagementTaskOutcome PartnerCentralSellingClient::StartOpportunityFromEngagementTask(
+    const StartOpportunityFromEngagementTaskRequest& request) const {
+  AWS_OPERATION_GUARD(StartOpportunityFromEngagementTask);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartOpportunityFromEngagementTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StartOpportunityFromEngagementTask, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, StartOpportunityFromEngagementTask, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StartOpportunityFromEngagementTask",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<StartOpportunityFromEngagementTaskOutcome>(
+      [&]() -> StartOpportunityFromEngagementTaskOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartOpportunityFromEngagementTask, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        return StartOpportunityFromEngagementTaskOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 StartResourceSnapshotJobOutcome PartnerCentralSellingClient::StartResourceSnapshotJob(
     const StartResourceSnapshotJobRequest& request) const {
   AWS_OPERATION_GUARD(StartResourceSnapshotJob);
@@ -1267,6 +1360,35 @@ UntagResourceOutcome PartnerCentralSellingClient::UntagResource(const UntagResou
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         return UntagResourceOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateEngagementContextOutcome PartnerCentralSellingClient::UpdateEngagementContext(const UpdateEngagementContextRequest& request) const {
+  AWS_OPERATION_GUARD(UpdateEngagementContext);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateEngagementContext, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateEngagementContext, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateEngagementContext, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateEngagementContext",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateEngagementContextOutcome>(
+      [&]() -> UpdateEngagementContextOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateEngagementContext, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        return UpdateEngagementContextOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

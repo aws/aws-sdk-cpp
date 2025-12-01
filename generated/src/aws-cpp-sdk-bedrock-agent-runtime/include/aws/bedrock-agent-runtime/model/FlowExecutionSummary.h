@@ -38,6 +38,43 @@ class FlowExecutionSummary {
 
   ///@{
   /**
+   * <p>The timestamp when the flow execution was created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
+  }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  FlowExecutionSummary& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp when the flow execution ended. This field is only populated
+   * when the execution has completed, failed, timed out, or been aborted.</p>
+   */
+  inline const Aws::Utils::DateTime& GetEndedAt() const { return m_endedAt; }
+  inline bool EndedAtHasBeenSet() const { return m_endedAtHasBeenSet; }
+  template <typename EndedAtT = Aws::Utils::DateTime>
+  void SetEndedAt(EndedAtT&& value) {
+    m_endedAtHasBeenSet = true;
+    m_endedAt = std::forward<EndedAtT>(value);
+  }
+  template <typename EndedAtT = Aws::Utils::DateTime>
+  FlowExecutionSummary& WithEndedAt(EndedAtT&& value) {
+    SetEndedAt(std::forward<EndedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Amazon Resource Name (ARN) that uniquely identifies the flow
    * execution.</p>
    */
@@ -125,44 +162,13 @@ class FlowExecutionSummary {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The timestamp when the flow execution was created.</p>
-   */
-  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  void SetCreatedAt(CreatedAtT&& value) {
-    m_createdAtHasBeenSet = true;
-    m_createdAt = std::forward<CreatedAtT>(value);
-  }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  FlowExecutionSummary& WithCreatedAt(CreatedAtT&& value) {
-    SetCreatedAt(std::forward<CreatedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The timestamp when the flow execution ended. This field is only populated
-   * when the execution has completed, failed, timed out, or been aborted.</p>
-   */
-  inline const Aws::Utils::DateTime& GetEndedAt() const { return m_endedAt; }
-  inline bool EndedAtHasBeenSet() const { return m_endedAtHasBeenSet; }
-  template <typename EndedAtT = Aws::Utils::DateTime>
-  void SetEndedAt(EndedAtT&& value) {
-    m_endedAtHasBeenSet = true;
-    m_endedAt = std::forward<EndedAtT>(value);
-  }
-  template <typename EndedAtT = Aws::Utils::DateTime>
-  FlowExecutionSummary& WithEndedAt(EndedAtT&& value) {
-    SetEndedAt(std::forward<EndedAtT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::Utils::DateTime m_createdAt{};
+  bool m_createdAtHasBeenSet = false;
+
+  Aws::Utils::DateTime m_endedAt{};
+  bool m_endedAtHasBeenSet = false;
+
   Aws::String m_executionArn;
   bool m_executionArnHasBeenSet = false;
 
@@ -177,12 +183,6 @@ class FlowExecutionSummary {
 
   FlowExecutionStatus m_status{FlowExecutionStatus::NOT_SET};
   bool m_statusHasBeenSet = false;
-
-  Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
-
-  Aws::Utils::DateTime m_endedAt{};
-  bool m_endedAtHasBeenSet = false;
 };
 
 }  // namespace Model

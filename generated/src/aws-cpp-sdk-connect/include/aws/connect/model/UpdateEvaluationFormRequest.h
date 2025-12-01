@@ -8,7 +8,9 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/EvaluationFormAutoEvaluationConfiguration.h>
 #include <aws/connect/model/EvaluationFormItem.h>
+#include <aws/connect/model/EvaluationFormLanguageConfiguration.h>
 #include <aws/connect/model/EvaluationFormScoringStrategy.h>
+#include <aws/connect/model/EvaluationFormTargetConfiguration.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -203,6 +205,23 @@ class UpdateEvaluationFormRequest : public ConnectRequest {
 
   ///@{
   /**
+   * <p>A boolean flag indicating whether to update evaluation form to draft
+   * state.</p>
+   */
+  inline bool GetAsDraft() const { return m_asDraft; }
+  inline bool AsDraftHasBeenSet() const { return m_asDraftHasBeenSet; }
+  inline void SetAsDraft(bool value) {
+    m_asDraftHasBeenSet = true;
+    m_asDraft = value;
+  }
+  inline UpdateEvaluationFormRequest& WithAsDraft(bool value) {
+    SetAsDraft(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A unique, case-sensitive identifier that you provide to ensure the
    * idempotency of the request. If not provided, the Amazon Web Services SDK
    * populates this field. For more information about idempotency, see <a
@@ -219,6 +238,42 @@ class UpdateEvaluationFormRequest : public ConnectRequest {
   template <typename ClientTokenT = Aws::String>
   UpdateEvaluationFormRequest& WithClientToken(ClientTokenT&& value) {
     SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Configuration that specifies the target for the evaluation form.</p>
+   */
+  inline const EvaluationFormTargetConfiguration& GetTargetConfiguration() const { return m_targetConfiguration; }
+  inline bool TargetConfigurationHasBeenSet() const { return m_targetConfigurationHasBeenSet; }
+  template <typename TargetConfigurationT = EvaluationFormTargetConfiguration>
+  void SetTargetConfiguration(TargetConfigurationT&& value) {
+    m_targetConfigurationHasBeenSet = true;
+    m_targetConfiguration = std::forward<TargetConfigurationT>(value);
+  }
+  template <typename TargetConfigurationT = EvaluationFormTargetConfiguration>
+  UpdateEvaluationFormRequest& WithTargetConfiguration(TargetConfigurationT&& value) {
+    SetTargetConfiguration(std::forward<TargetConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Configuration for language settings of the evaluation form.</p>
+   */
+  inline const EvaluationFormLanguageConfiguration& GetLanguageConfiguration() const { return m_languageConfiguration; }
+  inline bool LanguageConfigurationHasBeenSet() const { return m_languageConfigurationHasBeenSet; }
+  template <typename LanguageConfigurationT = EvaluationFormLanguageConfiguration>
+  void SetLanguageConfiguration(LanguageConfigurationT&& value) {
+    m_languageConfigurationHasBeenSet = true;
+    m_languageConfiguration = std::forward<LanguageConfigurationT>(value);
+  }
+  template <typename LanguageConfigurationT = EvaluationFormLanguageConfiguration>
+  UpdateEvaluationFormRequest& WithLanguageConfiguration(LanguageConfigurationT&& value) {
+    SetLanguageConfiguration(std::forward<LanguageConfigurationT>(value));
     return *this;
   }
   ///@}
@@ -250,8 +305,17 @@ class UpdateEvaluationFormRequest : public ConnectRequest {
   EvaluationFormAutoEvaluationConfiguration m_autoEvaluationConfiguration;
   bool m_autoEvaluationConfigurationHasBeenSet = false;
 
+  bool m_asDraft{false};
+  bool m_asDraftHasBeenSet = false;
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_clientTokenHasBeenSet = true;
+
+  EvaluationFormTargetConfiguration m_targetConfiguration;
+  bool m_targetConfigurationHasBeenSet = false;
+
+  EvaluationFormLanguageConfiguration m_languageConfiguration;
+  bool m_languageConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

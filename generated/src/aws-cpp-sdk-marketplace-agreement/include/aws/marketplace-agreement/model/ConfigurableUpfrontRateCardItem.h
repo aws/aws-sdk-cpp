@@ -39,6 +39,25 @@ class ConfigurableUpfrontRateCardItem {
 
   ///@{
   /**
+   * <p>Differentiates between the mutually exclusive rate cards in the same pricing
+   * term to be selected by the buyer.</p>
+   */
+  inline const Selector& GetSelector() const { return m_selector; }
+  inline bool SelectorHasBeenSet() const { return m_selectorHasBeenSet; }
+  template <typename SelectorT = Selector>
+  void SetSelector(SelectorT&& value) {
+    m_selectorHasBeenSet = true;
+    m_selector = std::forward<SelectorT>(value);
+  }
+  template <typename SelectorT = Selector>
+  ConfigurableUpfrontRateCardItem& WithSelector(SelectorT&& value) {
+    SetSelector(std::forward<SelectorT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Defines limits on how the term can be configured by acceptors.</p>
    */
   inline const Constraints& GetConstraints() const { return m_constraints; }
@@ -78,34 +97,15 @@ class ConfigurableUpfrontRateCardItem {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Differentiates between the mutually exclusive rate cards in the same pricing
-   * term to be selected by the buyer.</p>
-   */
-  inline const Selector& GetSelector() const { return m_selector; }
-  inline bool SelectorHasBeenSet() const { return m_selectorHasBeenSet; }
-  template <typename SelectorT = Selector>
-  void SetSelector(SelectorT&& value) {
-    m_selectorHasBeenSet = true;
-    m_selector = std::forward<SelectorT>(value);
-  }
-  template <typename SelectorT = Selector>
-  ConfigurableUpfrontRateCardItem& WithSelector(SelectorT&& value) {
-    SetSelector(std::forward<SelectorT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Selector m_selector;
+  bool m_selectorHasBeenSet = false;
+
   Constraints m_constraints;
   bool m_constraintsHasBeenSet = false;
 
   Aws::Vector<RateCardItem> m_rateCard;
   bool m_rateCardHasBeenSet = false;
-
-  Selector m_selector;
-  bool m_selectorHasBeenSet = false;
 };
 
 }  // namespace Model

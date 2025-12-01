@@ -43,6 +43,25 @@ class KnowledgeBaseRetrieveAndGenerateConfiguration {
 
   ///@{
   /**
+   * <p>Contains configurations for response generation based on the knowledge base
+   * query results.</p>
+   */
+  inline const GenerationConfiguration& GetGenerationConfiguration() const { return m_generationConfiguration; }
+  inline bool GenerationConfigurationHasBeenSet() const { return m_generationConfigurationHasBeenSet; }
+  template <typename GenerationConfigurationT = GenerationConfiguration>
+  void SetGenerationConfiguration(GenerationConfigurationT&& value) {
+    m_generationConfigurationHasBeenSet = true;
+    m_generationConfiguration = std::forward<GenerationConfigurationT>(value);
+  }
+  template <typename GenerationConfigurationT = GenerationConfiguration>
+  KnowledgeBaseRetrieveAndGenerateConfiguration& WithGenerationConfiguration(GenerationConfigurationT&& value) {
+    SetGenerationConfiguration(std::forward<GenerationConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The unique identifier of the knowledge base that is queried.</p>
    */
   inline const Aws::String& GetKnowledgeBaseId() const { return m_knowledgeBaseId; }
@@ -81,44 +100,6 @@ class KnowledgeBaseRetrieveAndGenerateConfiguration {
 
   ///@{
   /**
-   * <p>Contains configurations for how to retrieve and return the knowledge base
-   * query.</p>
-   */
-  inline const KnowledgeBaseRetrievalConfiguration& GetRetrievalConfiguration() const { return m_retrievalConfiguration; }
-  inline bool RetrievalConfigurationHasBeenSet() const { return m_retrievalConfigurationHasBeenSet; }
-  template <typename RetrievalConfigurationT = KnowledgeBaseRetrievalConfiguration>
-  void SetRetrievalConfiguration(RetrievalConfigurationT&& value) {
-    m_retrievalConfigurationHasBeenSet = true;
-    m_retrievalConfiguration = std::forward<RetrievalConfigurationT>(value);
-  }
-  template <typename RetrievalConfigurationT = KnowledgeBaseRetrievalConfiguration>
-  KnowledgeBaseRetrieveAndGenerateConfiguration& WithRetrievalConfiguration(RetrievalConfigurationT&& value) {
-    SetRetrievalConfiguration(std::forward<RetrievalConfigurationT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Contains configurations for response generation based on the knowledge base
-   * query results.</p>
-   */
-  inline const GenerationConfiguration& GetGenerationConfiguration() const { return m_generationConfiguration; }
-  inline bool GenerationConfigurationHasBeenSet() const { return m_generationConfigurationHasBeenSet; }
-  template <typename GenerationConfigurationT = GenerationConfiguration>
-  void SetGenerationConfiguration(GenerationConfigurationT&& value) {
-    m_generationConfigurationHasBeenSet = true;
-    m_generationConfiguration = std::forward<GenerationConfigurationT>(value);
-  }
-  template <typename GenerationConfigurationT = GenerationConfiguration>
-  KnowledgeBaseRetrieveAndGenerateConfiguration& WithGenerationConfiguration(GenerationConfigurationT&& value) {
-    SetGenerationConfiguration(std::forward<GenerationConfigurationT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Settings for how the model processes the prompt prior to retrieval and
    * generation.</p>
    */
@@ -135,21 +116,40 @@ class KnowledgeBaseRetrieveAndGenerateConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Contains configurations for how to retrieve and return the knowledge base
+   * query.</p>
+   */
+  inline const KnowledgeBaseRetrievalConfiguration& GetRetrievalConfiguration() const { return m_retrievalConfiguration; }
+  inline bool RetrievalConfigurationHasBeenSet() const { return m_retrievalConfigurationHasBeenSet; }
+  template <typename RetrievalConfigurationT = KnowledgeBaseRetrievalConfiguration>
+  void SetRetrievalConfiguration(RetrievalConfigurationT&& value) {
+    m_retrievalConfigurationHasBeenSet = true;
+    m_retrievalConfiguration = std::forward<RetrievalConfigurationT>(value);
+  }
+  template <typename RetrievalConfigurationT = KnowledgeBaseRetrievalConfiguration>
+  KnowledgeBaseRetrieveAndGenerateConfiguration& WithRetrievalConfiguration(RetrievalConfigurationT&& value) {
+    SetRetrievalConfiguration(std::forward<RetrievalConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
+  GenerationConfiguration m_generationConfiguration;
+  bool m_generationConfigurationHasBeenSet = false;
+
   Aws::String m_knowledgeBaseId;
   bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::String m_modelArn;
   bool m_modelArnHasBeenSet = false;
 
-  KnowledgeBaseRetrievalConfiguration m_retrievalConfiguration;
-  bool m_retrievalConfigurationHasBeenSet = false;
-
-  GenerationConfiguration m_generationConfiguration;
-  bool m_generationConfigurationHasBeenSet = false;
-
   OrchestrationConfiguration m_orchestrationConfiguration;
   bool m_orchestrationConfigurationHasBeenSet = false;
+
+  KnowledgeBaseRetrievalConfiguration m_retrievalConfiguration;
+  bool m_retrievalConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

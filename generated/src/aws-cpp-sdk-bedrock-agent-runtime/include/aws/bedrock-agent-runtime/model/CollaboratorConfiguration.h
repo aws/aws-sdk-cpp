@@ -34,19 +34,18 @@ class CollaboratorConfiguration {
 
   ///@{
   /**
-   * <p> Name of the inline collaborator agent which must be the same name as
-   * specified for <code>agentName</code>. </p>
+   * <p> The Amazon Resource Name (ARN) of the inline collaborator agent. </p>
    */
-  inline const Aws::String& GetCollaboratorName() const { return m_collaboratorName; }
-  inline bool CollaboratorNameHasBeenSet() const { return m_collaboratorNameHasBeenSet; }
-  template <typename CollaboratorNameT = Aws::String>
-  void SetCollaboratorName(CollaboratorNameT&& value) {
-    m_collaboratorNameHasBeenSet = true;
-    m_collaboratorName = std::forward<CollaboratorNameT>(value);
+  inline const Aws::String& GetAgentAliasArn() const { return m_agentAliasArn; }
+  inline bool AgentAliasArnHasBeenSet() const { return m_agentAliasArnHasBeenSet; }
+  template <typename AgentAliasArnT = Aws::String>
+  void SetAgentAliasArn(AgentAliasArnT&& value) {
+    m_agentAliasArnHasBeenSet = true;
+    m_agentAliasArn = std::forward<AgentAliasArnT>(value);
   }
-  template <typename CollaboratorNameT = Aws::String>
-  CollaboratorConfiguration& WithCollaboratorName(CollaboratorNameT&& value) {
-    SetCollaboratorName(std::forward<CollaboratorNameT>(value));
+  template <typename AgentAliasArnT = Aws::String>
+  CollaboratorConfiguration& WithAgentAliasArn(AgentAliasArnT&& value) {
+    SetAgentAliasArn(std::forward<AgentAliasArnT>(value));
     return *this;
   }
   ///@}
@@ -72,18 +71,19 @@ class CollaboratorConfiguration {
 
   ///@{
   /**
-   * <p> The Amazon Resource Name (ARN) of the inline collaborator agent. </p>
+   * <p> Name of the inline collaborator agent which must be the same name as
+   * specified for <code>agentName</code>. </p>
    */
-  inline const Aws::String& GetAgentAliasArn() const { return m_agentAliasArn; }
-  inline bool AgentAliasArnHasBeenSet() const { return m_agentAliasArnHasBeenSet; }
-  template <typename AgentAliasArnT = Aws::String>
-  void SetAgentAliasArn(AgentAliasArnT&& value) {
-    m_agentAliasArnHasBeenSet = true;
-    m_agentAliasArn = std::forward<AgentAliasArnT>(value);
+  inline const Aws::String& GetCollaboratorName() const { return m_collaboratorName; }
+  inline bool CollaboratorNameHasBeenSet() const { return m_collaboratorNameHasBeenSet; }
+  template <typename CollaboratorNameT = Aws::String>
+  void SetCollaboratorName(CollaboratorNameT&& value) {
+    m_collaboratorNameHasBeenSet = true;
+    m_collaboratorName = std::forward<CollaboratorNameT>(value);
   }
-  template <typename AgentAliasArnT = Aws::String>
-  CollaboratorConfiguration& WithAgentAliasArn(AgentAliasArnT&& value) {
-    SetAgentAliasArn(std::forward<AgentAliasArnT>(value));
+  template <typename CollaboratorNameT = Aws::String>
+  CollaboratorConfiguration& WithCollaboratorName(CollaboratorNameT&& value) {
+    SetCollaboratorName(std::forward<CollaboratorNameT>(value));
     return *this;
   }
   ///@}
@@ -104,14 +104,14 @@ class CollaboratorConfiguration {
   }
   ///@}
  private:
-  Aws::String m_collaboratorName;
-  bool m_collaboratorNameHasBeenSet = false;
+  Aws::String m_agentAliasArn;
+  bool m_agentAliasArnHasBeenSet = false;
 
   Aws::String m_collaboratorInstruction;
   bool m_collaboratorInstructionHasBeenSet = false;
 
-  Aws::String m_agentAliasArn;
-  bool m_agentAliasArnHasBeenSet = false;
+  Aws::String m_collaboratorName;
+  bool m_collaboratorNameHasBeenSet = false;
 
   RelayConversationHistory m_relayConversationHistory{RelayConversationHistory::NOT_SET};
   bool m_relayConversationHistoryHasBeenSet = false;

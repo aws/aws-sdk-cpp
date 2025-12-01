@@ -18,6 +18,10 @@ namespace Model {
 KnowledgeBaseLookupOutput::KnowledgeBaseLookupOutput(JsonView jsonValue) { *this = jsonValue; }
 
 KnowledgeBaseLookupOutput& KnowledgeBaseLookupOutput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("metadata")) {
+    m_metadata = jsonValue.GetObject("metadata");
+    m_metadataHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("retrievedReferences")) {
     Aws::Utils::Array<JsonView> retrievedReferencesJsonList = jsonValue.GetArray("retrievedReferences");
     for (unsigned retrievedReferencesIndex = 0; retrievedReferencesIndex < retrievedReferencesJsonList.GetLength();
@@ -26,15 +30,15 @@ KnowledgeBaseLookupOutput& KnowledgeBaseLookupOutput::operator=(JsonView jsonVal
     }
     m_retrievedReferencesHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("metadata")) {
-    m_metadata = jsonValue.GetObject("metadata");
-    m_metadataHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue KnowledgeBaseLookupOutput::Jsonize() const {
   JsonValue payload;
+
+  if (m_metadataHasBeenSet) {
+    payload.WithObject("metadata", m_metadata.Jsonize());
+  }
 
   if (m_retrievedReferencesHasBeenSet) {
     Aws::Utils::Array<JsonValue> retrievedReferencesJsonList(m_retrievedReferences.size());
@@ -43,10 +47,6 @@ JsonValue KnowledgeBaseLookupOutput::Jsonize() const {
       retrievedReferencesJsonList[retrievedReferencesIndex].AsObject(m_retrievedReferences[retrievedReferencesIndex].Jsonize());
     }
     payload.WithArray("retrievedReferences", std::move(retrievedReferencesJsonList));
-  }
-
-  if (m_metadataHasBeenSet) {
-    payload.WithObject("metadata", m_metadata.Jsonize());
   }
 
   return payload;

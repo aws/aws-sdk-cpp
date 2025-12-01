@@ -7,7 +7,9 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/EvaluationFormAutoEvaluationConfiguration.h>
 #include <aws/connect/model/EvaluationFormItem.h>
+#include <aws/connect/model/EvaluationFormLanguageConfiguration.h>
 #include <aws/connect/model/EvaluationFormScoringStrategy.h>
+#include <aws/connect/model/EvaluationFormTargetConfiguration.h>
 #include <aws/connect/model/EvaluationFormVersionStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -318,6 +320,42 @@ class EvaluationForm {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configuration that specifies the target for this evaluation form.</p>
+   */
+  inline const EvaluationFormTargetConfiguration& GetTargetConfiguration() const { return m_targetConfiguration; }
+  inline bool TargetConfigurationHasBeenSet() const { return m_targetConfigurationHasBeenSet; }
+  template <typename TargetConfigurationT = EvaluationFormTargetConfiguration>
+  void SetTargetConfiguration(TargetConfigurationT&& value) {
+    m_targetConfigurationHasBeenSet = true;
+    m_targetConfiguration = std::forward<TargetConfigurationT>(value);
+  }
+  template <typename TargetConfigurationT = EvaluationFormTargetConfiguration>
+  EvaluationForm& WithTargetConfiguration(TargetConfigurationT&& value) {
+    SetTargetConfiguration(std::forward<TargetConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Configuration for language settings of this evaluation form.</p>
+   */
+  inline const EvaluationFormLanguageConfiguration& GetLanguageConfiguration() const { return m_languageConfiguration; }
+  inline bool LanguageConfigurationHasBeenSet() const { return m_languageConfigurationHasBeenSet; }
+  template <typename LanguageConfigurationT = EvaluationFormLanguageConfiguration>
+  void SetLanguageConfiguration(LanguageConfigurationT&& value) {
+    m_languageConfigurationHasBeenSet = true;
+    m_languageConfiguration = std::forward<LanguageConfigurationT>(value);
+  }
+  template <typename LanguageConfigurationT = EvaluationFormLanguageConfiguration>
+  EvaluationForm& WithLanguageConfiguration(LanguageConfigurationT&& value) {
+    SetLanguageConfiguration(std::forward<LanguageConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_evaluationFormId;
   bool m_evaluationFormIdHasBeenSet = false;
@@ -363,6 +401,12 @@ class EvaluationForm {
 
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_tagsHasBeenSet = false;
+
+  EvaluationFormTargetConfiguration m_targetConfiguration;
+  bool m_targetConfigurationHasBeenSet = false;
+
+  EvaluationFormLanguageConfiguration m_languageConfiguration;
+  bool m_languageConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

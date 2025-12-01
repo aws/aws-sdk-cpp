@@ -69,6 +69,14 @@ AssistantSummary& AssistantSummary::operator=(JsonView jsonValue) {
     }
     m_aiAgentConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("orchestratorConfigurationList")) {
+    Aws::Utils::Array<JsonView> orchestratorConfigurationListJsonList = jsonValue.GetArray("orchestratorConfigurationList");
+    for (unsigned orchestratorConfigurationListIndex = 0;
+         orchestratorConfigurationListIndex < orchestratorConfigurationListJsonList.GetLength(); ++orchestratorConfigurationListIndex) {
+      m_orchestratorConfigurationList.push_back(orchestratorConfigurationListJsonList[orchestratorConfigurationListIndex].AsObject());
+    }
+    m_orchestratorConfigurationListHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -126,6 +134,16 @@ JsonValue AssistantSummary::Jsonize() const {
                                              aiAgentConfigurationItem.second.Jsonize());
     }
     payload.WithObject("aiAgentConfiguration", std::move(aiAgentConfigurationJsonMap));
+  }
+
+  if (m_orchestratorConfigurationListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> orchestratorConfigurationListJsonList(m_orchestratorConfigurationList.size());
+    for (unsigned orchestratorConfigurationListIndex = 0;
+         orchestratorConfigurationListIndex < orchestratorConfigurationListJsonList.GetLength(); ++orchestratorConfigurationListIndex) {
+      orchestratorConfigurationListJsonList[orchestratorConfigurationListIndex].AsObject(
+          m_orchestratorConfigurationList[orchestratorConfigurationListIndex].Jsonize());
+    }
+    payload.WithArray("orchestratorConfigurationList", std::move(orchestratorConfigurationListJsonList));
   }
 
   return payload;

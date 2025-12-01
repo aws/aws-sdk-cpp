@@ -30,4 +30,10 @@ void DescribeUpdateRequest::AddQueryStringParameters(URI& uri) const {
     uri.AddQueryStringParameter("addonName", ss.str());
     ss.str("");
   }
+
+  if (m_capabilityNameHasBeenSet) {
+    ss << m_capabilityName;
+    uri.AddQueryStringParameter("capabilityName", ss.str());
+    ss.str("");
+  }
 }

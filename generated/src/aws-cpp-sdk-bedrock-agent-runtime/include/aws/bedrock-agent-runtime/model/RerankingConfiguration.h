@@ -34,22 +34,6 @@ class RerankingConfiguration {
 
   ///@{
   /**
-   * <p>The type of reranker that the configurations apply to.</p>
-   */
-  inline RerankingConfigurationType GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  inline void SetType(RerankingConfigurationType value) {
-    m_typeHasBeenSet = true;
-    m_type = value;
-  }
-  inline RerankingConfiguration& WithType(RerankingConfigurationType value) {
-    SetType(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Contains configurations for an Amazon Bedrock reranker.</p>
    */
   inline const BedrockRerankingConfiguration& GetBedrockRerankingConfiguration() const { return m_bedrockRerankingConfiguration; }
@@ -65,12 +49,28 @@ class RerankingConfiguration {
     return *this;
   }
   ///@}
- private:
-  RerankingConfigurationType m_type{RerankingConfigurationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>The type of reranker that the configurations apply to.</p>
+   */
+  inline RerankingConfigurationType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(RerankingConfigurationType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline RerankingConfiguration& WithType(RerankingConfigurationType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
+ private:
   BedrockRerankingConfiguration m_bedrockRerankingConfiguration;
   bool m_bedrockRerankingConfigurationHasBeenSet = false;
+
+  RerankingConfigurationType m_type{RerankingConfigurationType::NOT_SET};
+  bool m_typeHasBeenSet = false;
 };
 
 }  // namespace Model

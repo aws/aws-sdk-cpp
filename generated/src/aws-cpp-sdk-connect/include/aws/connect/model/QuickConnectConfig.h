@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/FlowQuickConnectConfig.h>
 #include <aws/connect/model/PhoneNumberQuickConnectConfig.h>
 #include <aws/connect/model/QueueQuickConnectConfig.h>
 #include <aws/connect/model/QuickConnectType.h>
@@ -109,6 +110,24 @@ class QuickConnectConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> Flow configuration for quick connect setup. </p>
+   */
+  inline const FlowQuickConnectConfig& GetFlowConfig() const { return m_flowConfig; }
+  inline bool FlowConfigHasBeenSet() const { return m_flowConfigHasBeenSet; }
+  template <typename FlowConfigT = FlowQuickConnectConfig>
+  void SetFlowConfig(FlowConfigT&& value) {
+    m_flowConfigHasBeenSet = true;
+    m_flowConfig = std::forward<FlowConfigT>(value);
+  }
+  template <typename FlowConfigT = FlowQuickConnectConfig>
+  QuickConnectConfig& WithFlowConfig(FlowConfigT&& value) {
+    SetFlowConfig(std::forward<FlowConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   QuickConnectType m_quickConnectType{QuickConnectType::NOT_SET};
   bool m_quickConnectTypeHasBeenSet = false;
@@ -121,6 +140,9 @@ class QuickConnectConfig {
 
   PhoneNumberQuickConnectConfig m_phoneConfig;
   bool m_phoneConfigHasBeenSet = false;
+
+  FlowQuickConnectConfig m_flowConfig;
+  bool m_flowConfigHasBeenSet = false;
 };
 
 }  // namespace Model

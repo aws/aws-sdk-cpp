@@ -22,6 +22,10 @@ MessageConfiguration& MessageConfiguration::operator=(JsonView jsonValue) {
     m_generateFillerMessage = jsonValue.GetBool("generateFillerMessage");
     m_generateFillerMessageHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("generateChunkedMessage")) {
+    m_generateChunkedMessage = jsonValue.GetBool("generateChunkedMessage");
+    m_generateChunkedMessageHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue MessageConfiguration::Jsonize() const {
 
   if (m_generateFillerMessageHasBeenSet) {
     payload.WithBool("generateFillerMessage", m_generateFillerMessage);
+  }
+
+  if (m_generateChunkedMessageHasBeenSet) {
+    payload.WithBool("generateChunkedMessage", m_generateChunkedMessage);
   }
 
   return payload;

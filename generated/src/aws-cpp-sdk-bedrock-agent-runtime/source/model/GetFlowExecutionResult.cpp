@@ -21,18 +21,6 @@ GetFlowExecutionResult::GetFlowExecutionResult(const Aws::AmazonWebServiceResult
 
 GetFlowExecutionResult& GetFlowExecutionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("executionArn")) {
-    m_executionArn = jsonValue.GetString("executionArn");
-    m_executionArnHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("status")) {
-    m_status = FlowExecutionStatusMapper::GetFlowExecutionStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("startedAt")) {
-    m_startedAt = jsonValue.GetString("startedAt");
-    m_startedAtHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("endedAt")) {
     m_endedAt = jsonValue.GetString("endedAt");
     m_endedAtHasBeenSet = true;
@@ -43,6 +31,10 @@ GetFlowExecutionResult& GetFlowExecutionResult::operator=(const Aws::AmazonWebSe
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
     }
     m_errorsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("executionArn")) {
+    m_executionArn = jsonValue.GetString("executionArn");
+    m_executionArnHasBeenSet = true;
   }
   if (jsonValue.ValueExists("flowAliasIdentifier")) {
     m_flowAliasIdentifier = jsonValue.GetString("flowAliasIdentifier");
@@ -55,6 +47,14 @@ GetFlowExecutionResult& GetFlowExecutionResult::operator=(const Aws::AmazonWebSe
   if (jsonValue.ValueExists("flowVersion")) {
     m_flowVersion = jsonValue.GetString("flowVersion");
     m_flowVersionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("startedAt")) {
+    m_startedAt = jsonValue.GetString("startedAt");
+    m_startedAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("status")) {
+    m_status = FlowExecutionStatusMapper::GetFlowExecutionStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

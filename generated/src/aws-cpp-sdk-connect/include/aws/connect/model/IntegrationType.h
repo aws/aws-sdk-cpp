@@ -25,7 +25,8 @@ enum class IntegrationType {
   SES_IDENTITY,
   ANALYTICS_CONNECTOR,
   CALL_TRANSFER_CONNECTOR,
-  COGNITO_USER_POOL
+  COGNITO_USER_POOL,
+  MESSAGE_PROCESSOR
 };
 
 namespace IntegrationTypeMapper {

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Connect {
 namespace Model {
-enum class QuickConnectType { NOT_SET, USER, QUEUE, PHONE_NUMBER };
+enum class QuickConnectType { NOT_SET, USER, QUEUE, PHONE_NUMBER, FLOW };
 
 namespace QuickConnectTypeMapper {
 AWS_CONNECT_API QuickConnectType GetQuickConnectTypeForName(const Aws::String& name);

@@ -30,55 +30,6 @@ class UpdateSessionResult {
 
   ///@{
   /**
-   * <p>The unique identifier of the session you updated.</p>
-   */
-  inline const Aws::String& GetSessionId() const { return m_sessionId; }
-  template <typename SessionIdT = Aws::String>
-  void SetSessionId(SessionIdT&& value) {
-    m_sessionIdHasBeenSet = true;
-    m_sessionId = std::forward<SessionIdT>(value);
-  }
-  template <typename SessionIdT = Aws::String>
-  UpdateSessionResult& WithSessionId(SessionIdT&& value) {
-    SetSessionId(std::forward<SessionIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The Amazon Resource Name (ARN) of the session that was updated.</p>
-   */
-  inline const Aws::String& GetSessionArn() const { return m_sessionArn; }
-  template <typename SessionArnT = Aws::String>
-  void SetSessionArn(SessionArnT&& value) {
-    m_sessionArnHasBeenSet = true;
-    m_sessionArn = std::forward<SessionArnT>(value);
-  }
-  template <typename SessionArnT = Aws::String>
-  UpdateSessionResult& WithSessionArn(SessionArnT&& value) {
-    SetSessionArn(std::forward<SessionArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The status of the session you updated.</p>
-   */
-  inline SessionStatus GetSessionStatus() const { return m_sessionStatus; }
-  inline void SetSessionStatus(SessionStatus value) {
-    m_sessionStatusHasBeenSet = true;
-    m_sessionStatus = value;
-  }
-  inline UpdateSessionResult& WithSessionStatus(SessionStatus value) {
-    SetSessionStatus(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The timestamp for when the session was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -112,6 +63,55 @@ class UpdateSessionResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the session that was updated.</p>
+   */
+  inline const Aws::String& GetSessionArn() const { return m_sessionArn; }
+  template <typename SessionArnT = Aws::String>
+  void SetSessionArn(SessionArnT&& value) {
+    m_sessionArnHasBeenSet = true;
+    m_sessionArn = std::forward<SessionArnT>(value);
+  }
+  template <typename SessionArnT = Aws::String>
+  UpdateSessionResult& WithSessionArn(SessionArnT&& value) {
+    SetSessionArn(std::forward<SessionArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier of the session you updated.</p>
+   */
+  inline const Aws::String& GetSessionId() const { return m_sessionId; }
+  template <typename SessionIdT = Aws::String>
+  void SetSessionId(SessionIdT&& value) {
+    m_sessionIdHasBeenSet = true;
+    m_sessionId = std::forward<SessionIdT>(value);
+  }
+  template <typename SessionIdT = Aws::String>
+  UpdateSessionResult& WithSessionId(SessionIdT&& value) {
+    SetSessionId(std::forward<SessionIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The status of the session you updated.</p>
+   */
+  inline SessionStatus GetSessionStatus() const { return m_sessionStatus; }
+  inline void SetSessionStatus(SessionStatus value) {
+    m_sessionStatusHasBeenSet = true;
+    m_sessionStatus = value;
+  }
+  inline UpdateSessionResult& WithSessionStatus(SessionStatus value) {
+    SetSessionStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -126,20 +126,20 @@ class UpdateSessionResult {
   }
   ///@}
  private:
-  Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
-
-  Aws::String m_sessionArn;
-  bool m_sessionArnHasBeenSet = false;
-
-  SessionStatus m_sessionStatus{SessionStatus::NOT_SET};
-  bool m_sessionStatusHasBeenSet = false;
-
   Aws::Utils::DateTime m_createdAt{};
   bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
   bool m_lastUpdatedAtHasBeenSet = false;
+
+  Aws::String m_sessionArn;
+  bool m_sessionArnHasBeenSet = false;
+
+  Aws::String m_sessionId;
+  bool m_sessionIdHasBeenSet = false;
+
+  SessionStatus m_sessionStatus{SessionStatus::NOT_SET};
+  bool m_sessionStatusHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

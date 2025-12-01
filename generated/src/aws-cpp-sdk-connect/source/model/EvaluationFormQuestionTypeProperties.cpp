@@ -30,6 +30,10 @@ EvaluationFormQuestionTypeProperties& EvaluationFormQuestionTypeProperties::oper
     m_text = jsonValue.GetObject("Text");
     m_textHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("MultiSelect")) {
+    m_multiSelect = jsonValue.GetObject("MultiSelect");
+    m_multiSelectHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue EvaluationFormQuestionTypeProperties::Jsonize() const {
 
   if (m_textHasBeenSet) {
     payload.WithObject("Text", m_text.Jsonize());
+  }
+
+  if (m_multiSelectHasBeenSet) {
+    payload.WithObject("MultiSelect", m_multiSelect.Jsonize());
   }
 
   return payload;

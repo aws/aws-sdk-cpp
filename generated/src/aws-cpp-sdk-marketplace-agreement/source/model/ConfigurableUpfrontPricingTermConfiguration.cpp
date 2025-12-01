@@ -18,6 +18,10 @@ namespace Model {
 ConfigurableUpfrontPricingTermConfiguration::ConfigurableUpfrontPricingTermConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
 ConfigurableUpfrontPricingTermConfiguration& ConfigurableUpfrontPricingTermConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("selectorValue")) {
+    m_selectorValue = jsonValue.GetString("selectorValue");
+    m_selectorValueHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("dimensions")) {
     Aws::Utils::Array<JsonView> dimensionsJsonList = jsonValue.GetArray("dimensions");
     for (unsigned dimensionsIndex = 0; dimensionsIndex < dimensionsJsonList.GetLength(); ++dimensionsIndex) {
@@ -25,15 +29,15 @@ ConfigurableUpfrontPricingTermConfiguration& ConfigurableUpfrontPricingTermConfi
     }
     m_dimensionsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("selectorValue")) {
-    m_selectorValue = jsonValue.GetString("selectorValue");
-    m_selectorValueHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue ConfigurableUpfrontPricingTermConfiguration::Jsonize() const {
   JsonValue payload;
+
+  if (m_selectorValueHasBeenSet) {
+    payload.WithString("selectorValue", m_selectorValue);
+  }
 
   if (m_dimensionsHasBeenSet) {
     Aws::Utils::Array<JsonValue> dimensionsJsonList(m_dimensions.size());
@@ -41,10 +45,6 @@ JsonValue ConfigurableUpfrontPricingTermConfiguration::Jsonize() const {
       dimensionsJsonList[dimensionsIndex].AsObject(m_dimensions[dimensionsIndex].Jsonize());
     }
     payload.WithArray("dimensions", std::move(dimensionsJsonList));
-  }
-
-  if (m_selectorValueHasBeenSet) {
-    payload.WithString("selectorValue", m_selectorValue);
   }
 
   return payload;

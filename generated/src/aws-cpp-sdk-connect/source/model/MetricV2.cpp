@@ -29,6 +29,10 @@ MetricV2& MetricV2::operator=(JsonView jsonValue) {
     }
     m_thresholdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("MetricId")) {
+    m_metricId = jsonValue.GetString("MetricId");
+    m_metricIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("MetricFilters")) {
     Aws::Utils::Array<JsonView> metricFiltersJsonList = jsonValue.GetArray("MetricFilters");
     for (unsigned metricFiltersIndex = 0; metricFiltersIndex < metricFiltersJsonList.GetLength(); ++metricFiltersIndex) {
@@ -52,6 +56,10 @@ JsonValue MetricV2::Jsonize() const {
       thresholdJsonList[thresholdIndex].AsObject(m_threshold[thresholdIndex].Jsonize());
     }
     payload.WithArray("Threshold", std::move(thresholdJsonList));
+  }
+
+  if (m_metricIdHasBeenSet) {
+    payload.WithString("MetricId", m_metricId);
   }
 
   if (m_metricFiltersHasBeenSet) {

@@ -109,6 +109,24 @@ class EvaluationSearchSummary {
 
   ///@{
   /**
+   * <p>Title of the evaluation form.</p>
+   */
+  inline const Aws::String& GetEvaluationFormTitle() const { return m_evaluationFormTitle; }
+  inline bool EvaluationFormTitleHasBeenSet() const { return m_evaluationFormTitleHasBeenSet; }
+  template <typename EvaluationFormTitleT = Aws::String>
+  void SetEvaluationFormTitle(EvaluationFormTitleT&& value) {
+    m_evaluationFormTitleHasBeenSet = true;
+    m_evaluationFormTitle = std::forward<EvaluationFormTitleT>(value);
+  }
+  template <typename EvaluationFormTitleT = Aws::String>
+  EvaluationSearchSummary& WithEvaluationFormTitle(EvaluationFormTitleT&& value) {
+    SetEvaluationFormTitle(std::forward<EvaluationFormTitleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Summary information about the evaluation search.</p>
    */
   inline const EvaluationSearchMetadata& GetMetadata() const { return m_metadata; }
@@ -230,6 +248,9 @@ class EvaluationSearchSummary {
 
   int m_evaluationFormVersion{0};
   bool m_evaluationFormVersionHasBeenSet = false;
+
+  Aws::String m_evaluationFormTitle;
+  bool m_evaluationFormTitleHasBeenSet = false;
 
   EvaluationSearchMetadata m_metadata;
   bool m_metadataHasBeenSet = false;

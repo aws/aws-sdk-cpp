@@ -70,6 +70,10 @@ EntitySummary& EntitySummary::operator=(JsonView jsonValue) {
     m_machineLearningProductSummary = jsonValue.GetObject("MachineLearningProductSummary");
     m_machineLearningProductSummaryHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("OfferSetSummary")) {
+    m_offerSetSummary = jsonValue.GetObject("OfferSetSummary");
+    m_offerSetSummaryHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -126,6 +130,10 @@ JsonValue EntitySummary::Jsonize() const {
 
   if (m_machineLearningProductSummaryHasBeenSet) {
     payload.WithObject("MachineLearningProductSummary", m_machineLearningProductSummary.Jsonize());
+  }
+
+  if (m_offerSetSummaryHasBeenSet) {
+    payload.WithObject("OfferSetSummary", m_offerSetSummary.Jsonize());
   }
 
   return payload;

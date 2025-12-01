@@ -18,6 +18,13 @@ namespace Model {
 FlowTraceNodeInputEvent::FlowTraceNodeInputEvent(JsonView jsonValue) { *this = jsonValue; }
 
 FlowTraceNodeInputEvent& FlowTraceNodeInputEvent::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("fields")) {
+    Aws::Utils::Array<JsonView> fieldsJsonList = jsonValue.GetArray("fields");
+    for (unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex) {
+      m_fields.push_back(fieldsJsonList[fieldsIndex].AsObject());
+    }
+    m_fieldsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("nodeName")) {
     m_nodeName = jsonValue.GetString("nodeName");
     m_nodeNameHasBeenSet = true;
@@ -26,26 +33,11 @@ FlowTraceNodeInputEvent& FlowTraceNodeInputEvent::operator=(JsonView jsonValue) 
     m_timestamp = jsonValue.GetString("timestamp");
     m_timestampHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("fields")) {
-    Aws::Utils::Array<JsonView> fieldsJsonList = jsonValue.GetArray("fields");
-    for (unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex) {
-      m_fields.push_back(fieldsJsonList[fieldsIndex].AsObject());
-    }
-    m_fieldsHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue FlowTraceNodeInputEvent::Jsonize() const {
   JsonValue payload;
-
-  if (m_nodeNameHasBeenSet) {
-    payload.WithString("nodeName", m_nodeName);
-  }
-
-  if (m_timestampHasBeenSet) {
-    payload.WithString("timestamp", m_timestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
 
   if (m_fieldsHasBeenSet) {
     Aws::Utils::Array<JsonValue> fieldsJsonList(m_fields.size());
@@ -53,6 +45,14 @@ JsonValue FlowTraceNodeInputEvent::Jsonize() const {
       fieldsJsonList[fieldsIndex].AsObject(m_fields[fieldsIndex].Jsonize());
     }
     payload.WithArray("fields", std::move(fieldsJsonList));
+  }
+
+  if (m_nodeNameHasBeenSet) {
+    payload.WithString("nodeName", m_nodeName);
+  }
+
+  if (m_timestampHasBeenSet) {
+    payload.WithString("timestamp", m_timestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

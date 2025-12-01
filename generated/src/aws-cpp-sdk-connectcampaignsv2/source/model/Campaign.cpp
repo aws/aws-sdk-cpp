@@ -38,6 +38,10 @@ Campaign& Campaign::operator=(JsonView jsonValue) {
     m_channelSubtypeConfig = jsonValue.GetObject("channelSubtypeConfig");
     m_channelSubtypeConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("type")) {
+    m_type = ExternalCampaignTypeMapper::GetExternalCampaignTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("source")) {
     m_source = jsonValue.GetObject("source");
     m_sourceHasBeenSet = true;
@@ -89,6 +93,10 @@ JsonValue Campaign::Jsonize() const {
 
   if (m_channelSubtypeConfigHasBeenSet) {
     payload.WithObject("channelSubtypeConfig", m_channelSubtypeConfig.Jsonize());
+  }
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", ExternalCampaignTypeMapper::GetNameForExternalCampaignType(m_type));
   }
 
   if (m_sourceHasBeenSet) {

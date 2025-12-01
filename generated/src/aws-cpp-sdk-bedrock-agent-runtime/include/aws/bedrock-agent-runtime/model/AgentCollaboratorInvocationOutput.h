@@ -35,24 +35,6 @@ class AgentCollaboratorInvocationOutput {
 
   ///@{
   /**
-   * <p>The output's agent collaborator name.</p>
-   */
-  inline const Aws::String& GetAgentCollaboratorName() const { return m_agentCollaboratorName; }
-  inline bool AgentCollaboratorNameHasBeenSet() const { return m_agentCollaboratorNameHasBeenSet; }
-  template <typename AgentCollaboratorNameT = Aws::String>
-  void SetAgentCollaboratorName(AgentCollaboratorNameT&& value) {
-    m_agentCollaboratorNameHasBeenSet = true;
-    m_agentCollaboratorName = std::forward<AgentCollaboratorNameT>(value);
-  }
-  template <typename AgentCollaboratorNameT = Aws::String>
-  AgentCollaboratorInvocationOutput& WithAgentCollaboratorName(AgentCollaboratorNameT&& value) {
-    SetAgentCollaboratorName(std::forward<AgentCollaboratorNameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The output's agent collaborator alias ARN.</p>
    */
   inline const Aws::String& GetAgentCollaboratorAliasArn() const { return m_agentCollaboratorAliasArn; }
@@ -71,18 +53,18 @@ class AgentCollaboratorInvocationOutput {
 
   ///@{
   /**
-   * <p>The output's output.</p>
+   * <p>The output's agent collaborator name.</p>
    */
-  inline const AgentCollaboratorOutputPayload& GetOutput() const { return m_output; }
-  inline bool OutputHasBeenSet() const { return m_outputHasBeenSet; }
-  template <typename OutputT = AgentCollaboratorOutputPayload>
-  void SetOutput(OutputT&& value) {
-    m_outputHasBeenSet = true;
-    m_output = std::forward<OutputT>(value);
+  inline const Aws::String& GetAgentCollaboratorName() const { return m_agentCollaboratorName; }
+  inline bool AgentCollaboratorNameHasBeenSet() const { return m_agentCollaboratorNameHasBeenSet; }
+  template <typename AgentCollaboratorNameT = Aws::String>
+  void SetAgentCollaboratorName(AgentCollaboratorNameT&& value) {
+    m_agentCollaboratorNameHasBeenSet = true;
+    m_agentCollaboratorName = std::forward<AgentCollaboratorNameT>(value);
   }
-  template <typename OutputT = AgentCollaboratorOutputPayload>
-  AgentCollaboratorInvocationOutput& WithOutput(OutputT&& value) {
-    SetOutput(std::forward<OutputT>(value));
+  template <typename AgentCollaboratorNameT = Aws::String>
+  AgentCollaboratorInvocationOutput& WithAgentCollaboratorName(AgentCollaboratorNameT&& value) {
+    SetAgentCollaboratorName(std::forward<AgentCollaboratorNameT>(value));
     return *this;
   }
   ///@}
@@ -104,18 +86,36 @@ class AgentCollaboratorInvocationOutput {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_agentCollaboratorName;
-  bool m_agentCollaboratorNameHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>The output's output.</p>
+   */
+  inline const AgentCollaboratorOutputPayload& GetOutput() const { return m_output; }
+  inline bool OutputHasBeenSet() const { return m_outputHasBeenSet; }
+  template <typename OutputT = AgentCollaboratorOutputPayload>
+  void SetOutput(OutputT&& value) {
+    m_outputHasBeenSet = true;
+    m_output = std::forward<OutputT>(value);
+  }
+  template <typename OutputT = AgentCollaboratorOutputPayload>
+  AgentCollaboratorInvocationOutput& WithOutput(OutputT&& value) {
+    SetOutput(std::forward<OutputT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_agentCollaboratorAliasArn;
   bool m_agentCollaboratorAliasArnHasBeenSet = false;
 
-  AgentCollaboratorOutputPayload m_output;
-  bool m_outputHasBeenSet = false;
+  Aws::String m_agentCollaboratorName;
+  bool m_agentCollaboratorNameHasBeenSet = false;
 
   Metadata m_metadata;
   bool m_metadataHasBeenSet = false;
+
+  AgentCollaboratorOutputPayload m_output;
+  bool m_outputHasBeenSet = false;
 };
 
 }  // namespace Model

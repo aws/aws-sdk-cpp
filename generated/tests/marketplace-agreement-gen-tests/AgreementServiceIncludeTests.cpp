@@ -37,6 +37,7 @@
 #include <aws/marketplace-agreement/model/GrantItem.h>
 #include <aws/marketplace-agreement/model/InternalServerException.h>
 #include <aws/marketplace-agreement/model/LegalTerm.h>
+#include <aws/marketplace-agreement/model/PaymentRequestApprovalStrategy.h>
 #include <aws/marketplace-agreement/model/PaymentScheduleTerm.h>
 #include <aws/marketplace-agreement/model/ProposalSummary.h>
 #include <aws/marketplace-agreement/model/Proposer.h>
@@ -61,6 +62,8 @@
 #include <aws/marketplace-agreement/model/ValidationExceptionField.h>
 #include <aws/marketplace-agreement/model/ValidationExceptionReason.h>
 #include <aws/marketplace-agreement/model/ValidityTerm.h>
+#include <aws/marketplace-agreement/model/VariablePaymentTerm.h>
+#include <aws/marketplace-agreement/model/VariablePaymentTermConfiguration.h>
 
 using AgreementServiceIncludeTest = ::testing::Test;
 

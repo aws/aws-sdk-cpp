@@ -31,6 +31,25 @@ class UpdateSessionRequest : public BedrockAgentRuntimeRequest {
 
   ///@{
   /**
+   * <p>The unique identifier of the session to modify. You can specify either the
+   * session's <code>sessionId</code> or its Amazon Resource Name (ARN).</p>
+   */
+  inline const Aws::String& GetSessionIdentifier() const { return m_sessionIdentifier; }
+  inline bool SessionIdentifierHasBeenSet() const { return m_sessionIdentifierHasBeenSet; }
+  template <typename SessionIdentifierT = Aws::String>
+  void SetSessionIdentifier(SessionIdentifierT&& value) {
+    m_sessionIdentifierHasBeenSet = true;
+    m_sessionIdentifier = std::forward<SessionIdentifierT>(value);
+  }
+  template <typename SessionIdentifierT = Aws::String>
+  UpdateSessionRequest& WithSessionIdentifier(SessionIdentifierT&& value) {
+    SetSessionIdentifier(std::forward<SessionIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A map of key-value pairs containing attributes to be persisted across the
    * session. For example the user's ID, their language preference, and the type of
    * device they are using.</p>
@@ -54,31 +73,12 @@ class UpdateSessionRequest : public BedrockAgentRuntimeRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The unique identifier of the session to modify. You can specify either the
-   * session's <code>sessionId</code> or its Amazon Resource Name (ARN).</p>
-   */
-  inline const Aws::String& GetSessionIdentifier() const { return m_sessionIdentifier; }
-  inline bool SessionIdentifierHasBeenSet() const { return m_sessionIdentifierHasBeenSet; }
-  template <typename SessionIdentifierT = Aws::String>
-  void SetSessionIdentifier(SessionIdentifierT&& value) {
-    m_sessionIdentifierHasBeenSet = true;
-    m_sessionIdentifier = std::forward<SessionIdentifierT>(value);
-  }
-  template <typename SessionIdentifierT = Aws::String>
-  UpdateSessionRequest& WithSessionIdentifier(SessionIdentifierT&& value) {
-    SetSessionIdentifier(std::forward<SessionIdentifierT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::Map<Aws::String, Aws::String> m_sessionMetadata;
-  bool m_sessionMetadataHasBeenSet = false;
-
   Aws::String m_sessionIdentifier;
   bool m_sessionIdentifierHasBeenSet = false;
+
+  Aws::Map<Aws::String, Aws::String> m_sessionMetadata;
+  bool m_sessionMetadataHasBeenSet = false;
 };
 
 }  // namespace Model

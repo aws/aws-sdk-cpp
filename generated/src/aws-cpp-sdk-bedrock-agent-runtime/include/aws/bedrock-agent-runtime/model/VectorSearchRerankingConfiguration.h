@@ -35,22 +35,6 @@ class VectorSearchRerankingConfiguration {
 
   ///@{
   /**
-   * <p>The type of reranker model.</p>
-   */
-  inline VectorSearchRerankingConfigurationType GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  inline void SetType(VectorSearchRerankingConfigurationType value) {
-    m_typeHasBeenSet = true;
-    m_type = value;
-  }
-  inline VectorSearchRerankingConfiguration& WithType(VectorSearchRerankingConfigurationType value) {
-    SetType(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Contains configurations for an Amazon Bedrock reranker model.</p>
    */
   inline const VectorSearchBedrockRerankingConfiguration& GetBedrockRerankingConfiguration() const {
@@ -68,12 +52,28 @@ class VectorSearchRerankingConfiguration {
     return *this;
   }
   ///@}
- private:
-  VectorSearchRerankingConfigurationType m_type{VectorSearchRerankingConfigurationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>The type of reranker model.</p>
+   */
+  inline VectorSearchRerankingConfigurationType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(VectorSearchRerankingConfigurationType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline VectorSearchRerankingConfiguration& WithType(VectorSearchRerankingConfigurationType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
+ private:
   VectorSearchBedrockRerankingConfiguration m_bedrockRerankingConfiguration;
   bool m_bedrockRerankingConfigurationHasBeenSet = false;
+
+  VectorSearchRerankingConfigurationType m_type{VectorSearchRerankingConfigurationType::NOT_SET};
+  bool m_typeHasBeenSet = false;
 };
 
 }  // namespace Model

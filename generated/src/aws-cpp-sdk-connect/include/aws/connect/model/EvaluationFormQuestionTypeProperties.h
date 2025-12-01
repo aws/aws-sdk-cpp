@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/EvaluationFormMultiSelectQuestionProperties.h>
 #include <aws/connect/model/EvaluationFormNumericQuestionProperties.h>
 #include <aws/connect/model/EvaluationFormSingleSelectQuestionProperties.h>
 #include <aws/connect/model/EvaluationFormTextQuestionProperties.h>
@@ -88,6 +89,24 @@ class EvaluationFormQuestionTypeProperties {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Properties for multi-select question types.</p>
+   */
+  inline const EvaluationFormMultiSelectQuestionProperties& GetMultiSelect() const { return m_multiSelect; }
+  inline bool MultiSelectHasBeenSet() const { return m_multiSelectHasBeenSet; }
+  template <typename MultiSelectT = EvaluationFormMultiSelectQuestionProperties>
+  void SetMultiSelect(MultiSelectT&& value) {
+    m_multiSelectHasBeenSet = true;
+    m_multiSelect = std::forward<MultiSelectT>(value);
+  }
+  template <typename MultiSelectT = EvaluationFormMultiSelectQuestionProperties>
+  EvaluationFormQuestionTypeProperties& WithMultiSelect(MultiSelectT&& value) {
+    SetMultiSelect(std::forward<MultiSelectT>(value));
+    return *this;
+  }
+  ///@}
  private:
   EvaluationFormNumericQuestionProperties m_numeric;
   bool m_numericHasBeenSet = false;
@@ -97,6 +116,9 @@ class EvaluationFormQuestionTypeProperties {
 
   EvaluationFormTextQuestionProperties m_text;
   bool m_textHasBeenSet = false;
+
+  EvaluationFormMultiSelectQuestionProperties m_multiSelect;
+  bool m_multiSelectHasBeenSet = false;
 };
 
 }  // namespace Model

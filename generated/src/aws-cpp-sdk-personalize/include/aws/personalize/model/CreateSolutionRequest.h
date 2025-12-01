@@ -130,6 +130,25 @@ class CreateSolutionRequest : public PersonalizeRequest {
 
   ///@{
   /**
+   * <p>Whether to perform incremental training updates on your model. When enabled,
+   * this allows the model to learn from new data more frequently without requiring
+   * full retraining, which enables near real-time personalization. This parameter is
+   * supported only for solutions that use the semantic-similarity recipe.</p>
+   */
+  inline bool GetPerformIncrementalUpdate() const { return m_performIncrementalUpdate; }
+  inline bool PerformIncrementalUpdateHasBeenSet() const { return m_performIncrementalUpdateHasBeenSet; }
+  inline void SetPerformIncrementalUpdate(bool value) {
+    m_performIncrementalUpdateHasBeenSet = true;
+    m_performIncrementalUpdate = value;
+  }
+  inline CreateSolutionRequest& WithPerformIncrementalUpdate(bool value) {
+    SetPerformIncrementalUpdate(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Amazon Resource Name (ARN) of the recipe to use for model training. This
    * is required when <code>performAutoML</code> is false. For information about
    * different Amazon Personalize recipes and their ARNs, see <a
@@ -250,6 +269,9 @@ class CreateSolutionRequest : public PersonalizeRequest {
 
   bool m_performAutoTraining{false};
   bool m_performAutoTrainingHasBeenSet = false;
+
+  bool m_performIncrementalUpdate{false};
+  bool m_performIncrementalUpdateHasBeenSet = false;
 
   Aws::String m_recipeArn;
   bool m_recipeArnHasBeenSet = false;

@@ -43,12 +43,24 @@ Aws::String CreateEvaluationFormRequest::SerializePayload() const {
     payload.WithString("ClientToken", m_clientToken);
   }
 
+  if (m_asDraftHasBeenSet) {
+    payload.WithBool("AsDraft", m_asDraft);
+  }
+
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {
       tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
     }
     payload.WithObject("Tags", std::move(tagsJsonMap));
+  }
+
+  if (m_targetConfigurationHasBeenSet) {
+    payload.WithObject("TargetConfiguration", m_targetConfiguration.Jsonize());
+  }
+
+  if (m_languageConfigurationHasBeenSet) {
+    payload.WithObject("LanguageConfiguration", m_languageConfiguration.Jsonize());
   }
 
   return payload.View().WriteReadable();

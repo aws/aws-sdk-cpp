@@ -36,6 +36,22 @@ class GuardrailManagedWord {
 
   ///@{
   /**
+   * <p>The action details for the managed word filter in the Guardrail.</p>
+   */
+  inline GuardrailWordPolicyAction GetAction() const { return m_action; }
+  inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+  inline void SetAction(GuardrailWordPolicyAction value) {
+    m_actionHasBeenSet = true;
+    m_action = value;
+  }
+  inline GuardrailManagedWord& WithAction(GuardrailWordPolicyAction value) {
+    SetAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The match details for the managed word filter in the Guardrail.</p>
    */
   inline const Aws::String& GetMatch() const { return m_match; }
@@ -67,31 +83,15 @@ class GuardrailManagedWord {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The action details for the managed word filter in the Guardrail.</p>
-   */
-  inline GuardrailWordPolicyAction GetAction() const { return m_action; }
-  inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-  inline void SetAction(GuardrailWordPolicyAction value) {
-    m_actionHasBeenSet = true;
-    m_action = value;
-  }
-  inline GuardrailManagedWord& WithAction(GuardrailWordPolicyAction value) {
-    SetAction(value);
-    return *this;
-  }
-  ///@}
  private:
+  GuardrailWordPolicyAction m_action{GuardrailWordPolicyAction::NOT_SET};
+  bool m_actionHasBeenSet = false;
+
   Aws::String m_match;
   bool m_matchHasBeenSet = false;
 
   GuardrailManagedWordType m_type{GuardrailManagedWordType::NOT_SET};
   bool m_typeHasBeenSet = false;
-
-  GuardrailWordPolicyAction m_action{GuardrailWordPolicyAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 };
 
 }  // namespace Model

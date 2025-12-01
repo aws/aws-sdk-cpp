@@ -9,6 +9,8 @@
 #include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/lexv2-models/model/GenerativeAISettings.h>
 #include <aws/lexv2-models/model/SpeechDetectionSensitivity.h>
+#include <aws/lexv2-models/model/SpeechRecognitionSettings.h>
+#include <aws/lexv2-models/model/UnifiedSpeechSettings.h>
 #include <aws/lexv2-models/model/VoiceSettings.h>
 
 #include <utility>
@@ -155,6 +157,42 @@ class CreateBotLocaleRequest : public LexModelsV2Request {
   ///@}
 
   ///@{
+  /**
+   * <p>Unified speech settings to configure for the new bot locale.</p>
+   */
+  inline const UnifiedSpeechSettings& GetUnifiedSpeechSettings() const { return m_unifiedSpeechSettings; }
+  inline bool UnifiedSpeechSettingsHasBeenSet() const { return m_unifiedSpeechSettingsHasBeenSet; }
+  template <typename UnifiedSpeechSettingsT = UnifiedSpeechSettings>
+  void SetUnifiedSpeechSettings(UnifiedSpeechSettingsT&& value) {
+    m_unifiedSpeechSettingsHasBeenSet = true;
+    m_unifiedSpeechSettings = std::forward<UnifiedSpeechSettingsT>(value);
+  }
+  template <typename UnifiedSpeechSettingsT = UnifiedSpeechSettings>
+  CreateBotLocaleRequest& WithUnifiedSpeechSettings(UnifiedSpeechSettingsT&& value) {
+    SetUnifiedSpeechSettings(std::forward<UnifiedSpeechSettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Speech-to-text settings to configure for the new bot locale.</p>
+   */
+  inline const SpeechRecognitionSettings& GetSpeechRecognitionSettings() const { return m_speechRecognitionSettings; }
+  inline bool SpeechRecognitionSettingsHasBeenSet() const { return m_speechRecognitionSettingsHasBeenSet; }
+  template <typename SpeechRecognitionSettingsT = SpeechRecognitionSettings>
+  void SetSpeechRecognitionSettings(SpeechRecognitionSettingsT&& value) {
+    m_speechRecognitionSettingsHasBeenSet = true;
+    m_speechRecognitionSettings = std::forward<SpeechRecognitionSettingsT>(value);
+  }
+  template <typename SpeechRecognitionSettingsT = SpeechRecognitionSettings>
+  CreateBotLocaleRequest& WithSpeechRecognitionSettings(SpeechRecognitionSettingsT&& value) {
+    SetSpeechRecognitionSettings(std::forward<SpeechRecognitionSettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const GenerativeAISettings& GetGenerativeAISettings() const { return m_generativeAISettings; }
   inline bool GenerativeAISettingsHasBeenSet() const { return m_generativeAISettingsHasBeenSet; }
@@ -205,6 +243,12 @@ class CreateBotLocaleRequest : public LexModelsV2Request {
 
   VoiceSettings m_voiceSettings;
   bool m_voiceSettingsHasBeenSet = false;
+
+  UnifiedSpeechSettings m_unifiedSpeechSettings;
+  bool m_unifiedSpeechSettingsHasBeenSet = false;
+
+  SpeechRecognitionSettings m_speechRecognitionSettings;
+  bool m_speechRecognitionSettingsHasBeenSet = false;
 
   GenerativeAISettings m_generativeAISettings;
   bool m_generativeAISettingsHasBeenSet = false;

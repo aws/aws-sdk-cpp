@@ -33,13 +33,13 @@ InvokeAgentHandler::InvokeAgentHandler() : EventStreamHandler() {
 
   m_onPayloadPart = [&](const PayloadPart&) { AWS_LOGSTREAM_TRACE(INVOKEAGENT_HANDLER_CLASS_TAG, "PayloadPart received."); };
 
-  m_onTracePart = [&](const TracePart&) { AWS_LOGSTREAM_TRACE(INVOKEAGENT_HANDLER_CLASS_TAG, "TracePart received."); };
+  m_onFilePart = [&](const FilePart&) { AWS_LOGSTREAM_TRACE(INVOKEAGENT_HANDLER_CLASS_TAG, "FilePart received."); };
 
   m_onReturnControlPayload = [&](const ReturnControlPayload&) {
     AWS_LOGSTREAM_TRACE(INVOKEAGENT_HANDLER_CLASS_TAG, "ReturnControlPayload received.");
   };
 
-  m_onFilePart = [&](const FilePart&) { AWS_LOGSTREAM_TRACE(INVOKEAGENT_HANDLER_CLASS_TAG, "FilePart received."); };
+  m_onTracePart = [&](const TracePart&) { AWS_LOGSTREAM_TRACE(INVOKEAGENT_HANDLER_CLASS_TAG, "TracePart received."); };
 
   m_onError = [&](const AWSError<BedrockAgentRuntimeErrors>& error) {
     AWS_LOGSTREAM_TRACE(INVOKEAGENT_HANDLER_CLASS_TAG, "BedrockAgentRuntime Errors received, " << error);
@@ -103,14 +103,14 @@ void InvokeAgentHandler::HandleEventInMessage() {
       m_onPayloadPart(PayloadPart{json.View()});
       break;
     }
-    case InvokeAgentEventType::TRACE: {
+    case InvokeAgentEventType::FILES: {
       JsonValue json(GetEventPayloadAsString());
       if (!json.WasParseSuccessful()) {
-        AWS_LOGSTREAM_WARN(INVOKEAGENT_HANDLER_CLASS_TAG, "Unable to generate a proper TracePart object from the response in JSON format.");
+        AWS_LOGSTREAM_WARN(INVOKEAGENT_HANDLER_CLASS_TAG, "Unable to generate a proper FilePart object from the response in JSON format.");
         break;
       }
 
-      m_onTracePart(TracePart{json.View()});
+      m_onFilePart(FilePart{json.View()});
       break;
     }
     case InvokeAgentEventType::RETURNCONTROL: {
@@ -124,14 +124,14 @@ void InvokeAgentHandler::HandleEventInMessage() {
       m_onReturnControlPayload(ReturnControlPayload{json.View()});
       break;
     }
-    case InvokeAgentEventType::FILES: {
+    case InvokeAgentEventType::TRACE: {
       JsonValue json(GetEventPayloadAsString());
       if (!json.WasParseSuccessful()) {
-        AWS_LOGSTREAM_WARN(INVOKEAGENT_HANDLER_CLASS_TAG, "Unable to generate a proper FilePart object from the response in JSON format.");
+        AWS_LOGSTREAM_WARN(INVOKEAGENT_HANDLER_CLASS_TAG, "Unable to generate a proper TracePart object from the response in JSON format.");
         break;
       }
 
-      m_onFilePart(FilePart{json.View()});
+      m_onTracePart(TracePart{json.View()});
       break;
     }
     default:
@@ -165,7 +165,8 @@ void InvokeAgentHandler::HandleErrorInMessage() {
 
     JsonValue exceptionPayload(GetEventPayloadAsString());
     if (!exceptionPayload.WasParseSuccessful()) {
-      AWS_LOGSTREAM_ERROR(INVOKEAGENT_HANDLER_CLASS_TAG, "Unable to generate a proper FilePart object from the response in JSON format.");
+      AWS_LOGSTREAM_ERROR(INVOKEAGENT_HANDLER_CLASS_TAG,
+                          "Unable to generate a proper ValidationException object from the response in JSON format.");
       auto contentTypeIter = headers.find(Aws::Utils::Event::CONTENT_TYPE_HEADER);
       if (contentTypeIter != headers.end()) {
         AWS_LOGSTREAM_DEBUG(INVOKEAGENT_HANDLER_CLASS_TAG, "Error content-type: " << contentTypeIter->second.GetEventHeaderValueAsString());
@@ -210,9 +211,9 @@ void InvokeAgentHandler::MarshallError(const Aws::String& errorCode, const Aws::
 namespace InvokeAgentEventMapper {
 static const int INITIAL_RESPONSE_HASH = Aws::Utils::HashingUtils::HashString("initial-response");
 static const int CHUNK_HASH = Aws::Utils::HashingUtils::HashString("chunk");
-static const int TRACE_HASH = Aws::Utils::HashingUtils::HashString("trace");
-static const int RETURNCONTROL_HASH = Aws::Utils::HashingUtils::HashString("returnControl");
 static const int FILES_HASH = Aws::Utils::HashingUtils::HashString("files");
+static const int RETURNCONTROL_HASH = Aws::Utils::HashingUtils::HashString("returnControl");
+static const int TRACE_HASH = Aws::Utils::HashingUtils::HashString("trace");
 
 InvokeAgentEventType GetInvokeAgentEventTypeForName(const Aws::String& name) {
   int hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
@@ -221,12 +222,12 @@ InvokeAgentEventType GetInvokeAgentEventTypeForName(const Aws::String& name) {
     return InvokeAgentEventType::INITIAL_RESPONSE;
   } else if (hashCode == CHUNK_HASH) {
     return InvokeAgentEventType::CHUNK;
-  } else if (hashCode == TRACE_HASH) {
-    return InvokeAgentEventType::TRACE;
-  } else if (hashCode == RETURNCONTROL_HASH) {
-    return InvokeAgentEventType::RETURNCONTROL;
   } else if (hashCode == FILES_HASH) {
     return InvokeAgentEventType::FILES;
+  } else if (hashCode == RETURNCONTROL_HASH) {
+    return InvokeAgentEventType::RETURNCONTROL;
+  } else if (hashCode == TRACE_HASH) {
+    return InvokeAgentEventType::TRACE;
   }
   return InvokeAgentEventType::UNKNOWN;
 }
@@ -237,12 +238,12 @@ Aws::String GetNameForInvokeAgentEventType(InvokeAgentEventType value) {
       return "initial-response";
     case InvokeAgentEventType::CHUNK:
       return "chunk";
-    case InvokeAgentEventType::TRACE:
-      return "trace";
-    case InvokeAgentEventType::RETURNCONTROL:
-      return "returnControl";
     case InvokeAgentEventType::FILES:
       return "files";
+    case InvokeAgentEventType::RETURNCONTROL:
+      return "returnControl";
+    case InvokeAgentEventType::TRACE:
+      return "trace";
     default:
       return "Unknown";
   }

@@ -30,6 +30,10 @@ EvaluationScore& EvaluationScore::operator=(JsonView jsonValue) {
     m_automaticFail = jsonValue.GetBool("AutomaticFail");
     m_automaticFailHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AppliedWeight")) {
+    m_appliedWeight = jsonValue.GetDouble("AppliedWeight");
+    m_appliedWeightHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue EvaluationScore::Jsonize() const {
 
   if (m_automaticFailHasBeenSet) {
     payload.WithBool("AutomaticFail", m_automaticFail);
+  }
+
+  if (m_appliedWeightHasBeenSet) {
+    payload.WithDouble("AppliedWeight", m_appliedWeight);
   }
 
   return payload;

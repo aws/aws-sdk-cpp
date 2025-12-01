@@ -76,7 +76,7 @@ class KnowledgeBaseDocumentDetail {
   ///@{
   /**
    * <p>The ingestion status of the document. The following statuses are
-   * possible:</p> <ul> <li> <p>STARTED – You submitted the ingestion job containing
+   * possible:</p> <ul> <li> <p>STARTING – You submitted the ingestion job containing
    * the document.</p> </li> <li> <p>PENDING – The document is waiting to be
    * ingested.</p> </li> <li> <p>IN_PROGRESS – The document is being ingested.</p>
    * </li> <li> <p>INDEXED – The document was successfully indexed.</p> </li> <li>

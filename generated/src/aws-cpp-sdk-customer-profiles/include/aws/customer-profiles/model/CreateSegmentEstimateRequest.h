@@ -64,12 +64,33 @@ class CreateSegmentEstimateRequest : public CustomerProfilesRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The segment SQL query.</p>
+   */
+  inline const Aws::String& GetSegmentSqlQuery() const { return m_segmentSqlQuery; }
+  inline bool SegmentSqlQueryHasBeenSet() const { return m_segmentSqlQueryHasBeenSet; }
+  template <typename SegmentSqlQueryT = Aws::String>
+  void SetSegmentSqlQuery(SegmentSqlQueryT&& value) {
+    m_segmentSqlQueryHasBeenSet = true;
+    m_segmentSqlQuery = std::forward<SegmentSqlQueryT>(value);
+  }
+  template <typename SegmentSqlQueryT = Aws::String>
+  CreateSegmentEstimateRequest& WithSegmentSqlQuery(SegmentSqlQueryT&& value) {
+    SetSegmentSqlQuery(std::forward<SegmentSqlQueryT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainName;
   bool m_domainNameHasBeenSet = false;
 
   SegmentGroupStructure m_segmentQuery;
   bool m_segmentQueryHasBeenSet = false;
+
+  Aws::String m_segmentSqlQuery;
+  bool m_segmentSqlQueryHasBeenSet = false;
 };
 
 }  // namespace Model

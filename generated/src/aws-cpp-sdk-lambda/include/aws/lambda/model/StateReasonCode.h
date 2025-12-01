@@ -35,7 +35,19 @@ enum class StateReasonCode {
   EFSMountTimeout,
   InvalidRuntime,
   InvalidZipFileException,
-  FunctionError
+  FunctionError,
+  VcpuLimitExceeded,
+  CapacityProviderScalingLimitExceeded,
+  InsufficientCapacity,
+  EC2RequestLimitExceeded,
+  FunctionError_InitTimeout,
+  FunctionError_RuntimeInitError,
+  FunctionError_ExtensionInitError,
+  FunctionError_InvalidEntryPoint,
+  FunctionError_InvalidWorkingDirectory,
+  FunctionError_PermissionDenied,
+  FunctionError_TooManyExtensions,
+  FunctionError_InitResourceExhausted
 };
 
 namespace StateReasonCodeMapper {

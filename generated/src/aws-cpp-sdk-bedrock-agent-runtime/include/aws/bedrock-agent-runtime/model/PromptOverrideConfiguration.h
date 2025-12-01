@@ -38,6 +38,29 @@ class PromptOverrideConfiguration {
 
   ///@{
   /**
+   * <p>The ARN of the Lambda function to use when parsing the raw foundation model
+   * output in parts of the agent sequence. If you specify this field, at least one
+   * of the <code>promptConfigurations</code> must contain a <code>parserMode</code>
+   * value that is set to <code>OVERRIDDEN</code>. For more information, see <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/lambda-parser.html">Parser
+   * Lambda function in Amazon Bedrock Agents</a>. </p>
+   */
+  inline const Aws::String& GetOverrideLambda() const { return m_overrideLambda; }
+  inline bool OverrideLambdaHasBeenSet() const { return m_overrideLambdaHasBeenSet; }
+  template <typename OverrideLambdaT = Aws::String>
+  void SetOverrideLambda(OverrideLambdaT&& value) {
+    m_overrideLambdaHasBeenSet = true;
+    m_overrideLambda = std::forward<OverrideLambdaT>(value);
+  }
+  template <typename OverrideLambdaT = Aws::String>
+  PromptOverrideConfiguration& WithOverrideLambda(OverrideLambdaT&& value) {
+    SetOverrideLambda(std::forward<OverrideLambdaT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Contains configurations to override a prompt template in one part of an agent
    * sequence. For more information, see <a
    * href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html">Advanced
@@ -62,35 +85,12 @@ class PromptOverrideConfiguration {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The ARN of the Lambda function to use when parsing the raw foundation model
-   * output in parts of the agent sequence. If you specify this field, at least one
-   * of the <code>promptConfigurations</code> must contain a <code>parserMode</code>
-   * value that is set to <code>OVERRIDDEN</code>. For more information, see <a
-   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/lambda-parser.html">Parser
-   * Lambda function in Amazon Bedrock Agents</a>. </p>
-   */
-  inline const Aws::String& GetOverrideLambda() const { return m_overrideLambda; }
-  inline bool OverrideLambdaHasBeenSet() const { return m_overrideLambdaHasBeenSet; }
-  template <typename OverrideLambdaT = Aws::String>
-  void SetOverrideLambda(OverrideLambdaT&& value) {
-    m_overrideLambdaHasBeenSet = true;
-    m_overrideLambda = std::forward<OverrideLambdaT>(value);
-  }
-  template <typename OverrideLambdaT = Aws::String>
-  PromptOverrideConfiguration& WithOverrideLambda(OverrideLambdaT&& value) {
-    SetOverrideLambda(std::forward<OverrideLambdaT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::Vector<PromptConfiguration> m_promptConfigurations;
-  bool m_promptConfigurationsHasBeenSet = false;
-
   Aws::String m_overrideLambda;
   bool m_overrideLambdaHasBeenSet = false;
+
+  Aws::Vector<PromptConfiguration> m_promptConfigurations;
+  bool m_promptConfigurationsHasBeenSet = false;
 };
 
 }  // namespace Model

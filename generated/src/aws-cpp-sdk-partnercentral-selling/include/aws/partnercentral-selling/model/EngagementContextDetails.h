@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 #include <aws/partnercentral-selling/model/EngagementContextPayload.h>
 #include <aws/partnercentral-selling/model/EngagementContextType.h>
@@ -33,6 +34,25 @@ class EngagementContextDetails {
   AWS_PARTNERCENTRALSELLING_API EngagementContextDetails(Aws::Utils::Json::JsonView jsonValue);
   AWS_PARTNERCENTRALSELLING_API EngagementContextDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
   AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>The unique identifier of the engagement context. This ID is used to reference
+   * and manage the specific context within the engagement.</p>
+   */
+  inline const Aws::String& GetId() const { return m_id; }
+  inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
+  }
+  template <typename IdT = Aws::String>
+  EngagementContextDetails& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -71,6 +91,9 @@ class EngagementContextDetails {
   }
   ///@}
  private:
+  Aws::String m_id;
+  bool m_idHasBeenSet = false;
+
   EngagementContextType m_type{EngagementContextType::NOT_SET};
   bool m_typeHasBeenSet = false;
 

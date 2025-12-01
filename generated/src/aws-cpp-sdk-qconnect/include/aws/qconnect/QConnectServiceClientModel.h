@@ -84,12 +84,14 @@
 #include <aws/qconnect/model/ListMessageTemplatesResult.h>
 #include <aws/qconnect/model/ListMessagesResult.h>
 #include <aws/qconnect/model/ListQuickResponsesResult.h>
+#include <aws/qconnect/model/ListSpansResult.h>
 #include <aws/qconnect/model/ListTagsForResourceResult.h>
 #include <aws/qconnect/model/NotifyRecommendationsReceivedResult.h>
 #include <aws/qconnect/model/PutFeedbackResult.h>
 #include <aws/qconnect/model/RemoveAssistantAIAgentResult.h>
 #include <aws/qconnect/model/RemoveKnowledgeBaseTemplateUriResult.h>
 #include <aws/qconnect/model/RenderMessageTemplateResult.h>
+#include <aws/qconnect/model/RetrieveSdkResult.h>
 #include <aws/qconnect/model/SearchContentResult.h>
 #include <aws/qconnect/model/SearchMessageTemplatesResult.h>
 #include <aws/qconnect/model/SearchQuickResponsesResult.h>
@@ -206,12 +208,14 @@ class ListMessageTemplateVersionsRequest;
 class ListMessageTemplatesRequest;
 class ListMessagesRequest;
 class ListQuickResponsesRequest;
+class ListSpansRequest;
 class ListTagsForResourceRequest;
 class NotifyRecommendationsReceivedRequest;
 class PutFeedbackRequest;
 class RemoveAssistantAIAgentRequest;
 class RemoveKnowledgeBaseTemplateUriRequest;
 class RenderMessageTemplateRequest;
+class RetrieveRequest;
 class SearchContentRequest;
 class SearchMessageTemplatesRequest;
 class SearchQuickResponsesRequest;
@@ -298,12 +302,14 @@ typedef Aws::Utils::Outcome<ListMessageTemplateVersionsResult, QConnectError> Li
 typedef Aws::Utils::Outcome<ListMessageTemplatesResult, QConnectError> ListMessageTemplatesOutcome;
 typedef Aws::Utils::Outcome<ListMessagesResult, QConnectError> ListMessagesOutcome;
 typedef Aws::Utils::Outcome<ListQuickResponsesResult, QConnectError> ListQuickResponsesOutcome;
+typedef Aws::Utils::Outcome<ListSpansResult, QConnectError> ListSpansOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, QConnectError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<NotifyRecommendationsReceivedResult, QConnectError> NotifyRecommendationsReceivedOutcome;
 typedef Aws::Utils::Outcome<PutFeedbackResult, QConnectError> PutFeedbackOutcome;
 typedef Aws::Utils::Outcome<RemoveAssistantAIAgentResult, QConnectError> RemoveAssistantAIAgentOutcome;
 typedef Aws::Utils::Outcome<RemoveKnowledgeBaseTemplateUriResult, QConnectError> RemoveKnowledgeBaseTemplateUriOutcome;
 typedef Aws::Utils::Outcome<RenderMessageTemplateResult, QConnectError> RenderMessageTemplateOutcome;
+typedef Aws::Utils::Outcome<RetrieveSdkResult, QConnectError> RetrieveOutcome;
 typedef Aws::Utils::Outcome<SearchContentResult, QConnectError> SearchContentOutcome;
 typedef Aws::Utils::Outcome<SearchMessageTemplatesResult, QConnectError> SearchMessageTemplatesOutcome;
 typedef Aws::Utils::Outcome<SearchQuickResponsesResult, QConnectError> SearchQuickResponsesOutcome;
@@ -390,12 +396,14 @@ typedef std::future<ListMessageTemplateVersionsOutcome> ListMessageTemplateVersi
 typedef std::future<ListMessageTemplatesOutcome> ListMessageTemplatesOutcomeCallable;
 typedef std::future<ListMessagesOutcome> ListMessagesOutcomeCallable;
 typedef std::future<ListQuickResponsesOutcome> ListQuickResponsesOutcomeCallable;
+typedef std::future<ListSpansOutcome> ListSpansOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<NotifyRecommendationsReceivedOutcome> NotifyRecommendationsReceivedOutcomeCallable;
 typedef std::future<PutFeedbackOutcome> PutFeedbackOutcomeCallable;
 typedef std::future<RemoveAssistantAIAgentOutcome> RemoveAssistantAIAgentOutcomeCallable;
 typedef std::future<RemoveKnowledgeBaseTemplateUriOutcome> RemoveKnowledgeBaseTemplateUriOutcomeCallable;
 typedef std::future<RenderMessageTemplateOutcome> RenderMessageTemplateOutcomeCallable;
+typedef std::future<RetrieveOutcome> RetrieveOutcomeCallable;
 typedef std::future<SearchContentOutcome> SearchContentOutcomeCallable;
 typedef std::future<SearchMessageTemplatesOutcome> SearchMessageTemplatesOutcomeCallable;
 typedef std::future<SearchQuickResponsesOutcome> SearchQuickResponsesOutcomeCallable;
@@ -614,6 +622,9 @@ typedef std::function<void(const QConnectClient*, const Model::ListMessagesReque
 typedef std::function<void(const QConnectClient*, const Model::ListQuickResponsesRequest&, const Model::ListQuickResponsesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListQuickResponsesResponseReceivedHandler;
+typedef std::function<void(const QConnectClient*, const Model::ListSpansRequest&, const Model::ListSpansOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListSpansResponseReceivedHandler;
 typedef std::function<void(const QConnectClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;
@@ -634,6 +645,9 @@ typedef std::function<void(const QConnectClient*, const Model::RemoveKnowledgeBa
 typedef std::function<void(const QConnectClient*, const Model::RenderMessageTemplateRequest&, const Model::RenderMessageTemplateOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     RenderMessageTemplateResponseReceivedHandler;
+typedef std::function<void(const QConnectClient*, const Model::RetrieveRequest&, const Model::RetrieveOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    RetrieveResponseReceivedHandler;
 typedef std::function<void(const QConnectClient*, const Model::SearchContentRequest&, const Model::SearchContentOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SearchContentResponseReceivedHandler;

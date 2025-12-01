@@ -49,6 +49,14 @@ GetEngagementResult& GetEngagementResult::operator=(const Aws::AmazonWebServiceR
     m_memberCount = jsonValue.GetInteger("MemberCount");
     m_memberCountHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ModifiedAt")) {
+    m_modifiedAt = jsonValue.GetString("ModifiedAt");
+    m_modifiedAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ModifiedBy")) {
+    m_modifiedBy = jsonValue.GetString("ModifiedBy");
+    m_modifiedByHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Contexts")) {
     Aws::Utils::Array<JsonView> contextsJsonList = jsonValue.GetArray("Contexts");
     for (unsigned contextsIndex = 0; contextsIndex < contextsJsonList.GetLength(); ++contextsIndex) {

@@ -39,18 +39,54 @@ class InvocationInput {
 
   ///@{
   /**
-   * <p>The unique identifier of the trace.</p>
+   * <p>Contains information about the action group to be invoked.</p>
    */
-  inline const Aws::String& GetTraceId() const { return m_traceId; }
-  inline bool TraceIdHasBeenSet() const { return m_traceIdHasBeenSet; }
-  template <typename TraceIdT = Aws::String>
-  void SetTraceId(TraceIdT&& value) {
-    m_traceIdHasBeenSet = true;
-    m_traceId = std::forward<TraceIdT>(value);
+  inline const ActionGroupInvocationInput& GetActionGroupInvocationInput() const { return m_actionGroupInvocationInput; }
+  inline bool ActionGroupInvocationInputHasBeenSet() const { return m_actionGroupInvocationInputHasBeenSet; }
+  template <typename ActionGroupInvocationInputT = ActionGroupInvocationInput>
+  void SetActionGroupInvocationInput(ActionGroupInvocationInputT&& value) {
+    m_actionGroupInvocationInputHasBeenSet = true;
+    m_actionGroupInvocationInput = std::forward<ActionGroupInvocationInputT>(value);
   }
-  template <typename TraceIdT = Aws::String>
-  InvocationInput& WithTraceId(TraceIdT&& value) {
-    SetTraceId(std::forward<TraceIdT>(value));
+  template <typename ActionGroupInvocationInputT = ActionGroupInvocationInput>
+  InvocationInput& WithActionGroupInvocationInput(ActionGroupInvocationInputT&& value) {
+    SetActionGroupInvocationInput(std::forward<ActionGroupInvocationInputT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The collaborator's invocation input.</p>
+   */
+  inline const AgentCollaboratorInvocationInput& GetAgentCollaboratorInvocationInput() const { return m_agentCollaboratorInvocationInput; }
+  inline bool AgentCollaboratorInvocationInputHasBeenSet() const { return m_agentCollaboratorInvocationInputHasBeenSet; }
+  template <typename AgentCollaboratorInvocationInputT = AgentCollaboratorInvocationInput>
+  void SetAgentCollaboratorInvocationInput(AgentCollaboratorInvocationInputT&& value) {
+    m_agentCollaboratorInvocationInputHasBeenSet = true;
+    m_agentCollaboratorInvocationInput = std::forward<AgentCollaboratorInvocationInputT>(value);
+  }
+  template <typename AgentCollaboratorInvocationInputT = AgentCollaboratorInvocationInput>
+  InvocationInput& WithAgentCollaboratorInvocationInput(AgentCollaboratorInvocationInputT&& value) {
+    SetAgentCollaboratorInvocationInput(std::forward<AgentCollaboratorInvocationInputT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Contains information about the code interpreter to be invoked.</p>
+   */
+  inline const CodeInterpreterInvocationInput& GetCodeInterpreterInvocationInput() const { return m_codeInterpreterInvocationInput; }
+  inline bool CodeInterpreterInvocationInputHasBeenSet() const { return m_codeInterpreterInvocationInputHasBeenSet; }
+  template <typename CodeInterpreterInvocationInputT = CodeInterpreterInvocationInput>
+  void SetCodeInterpreterInvocationInput(CodeInterpreterInvocationInputT&& value) {
+    m_codeInterpreterInvocationInputHasBeenSet = true;
+    m_codeInterpreterInvocationInput = std::forward<CodeInterpreterInvocationInputT>(value);
+  }
+  template <typename CodeInterpreterInvocationInputT = CodeInterpreterInvocationInput>
+  InvocationInput& WithCodeInterpreterInvocationInput(CodeInterpreterInvocationInputT&& value) {
+    SetCodeInterpreterInvocationInput(std::forward<CodeInterpreterInvocationInputT>(value));
     return *this;
   }
   ///@}
@@ -68,24 +104,6 @@ class InvocationInput {
   }
   inline InvocationInput& WithInvocationType(InvocationType value) {
     SetInvocationType(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Contains information about the action group to be invoked.</p>
-   */
-  inline const ActionGroupInvocationInput& GetActionGroupInvocationInput() const { return m_actionGroupInvocationInput; }
-  inline bool ActionGroupInvocationInputHasBeenSet() const { return m_actionGroupInvocationInputHasBeenSet; }
-  template <typename ActionGroupInvocationInputT = ActionGroupInvocationInput>
-  void SetActionGroupInvocationInput(ActionGroupInvocationInputT&& value) {
-    m_actionGroupInvocationInputHasBeenSet = true;
-    m_actionGroupInvocationInput = std::forward<ActionGroupInvocationInputT>(value);
-  }
-  template <typename ActionGroupInvocationInputT = ActionGroupInvocationInput>
-  InvocationInput& WithActionGroupInvocationInput(ActionGroupInvocationInputT&& value) {
-    SetActionGroupInvocationInput(std::forward<ActionGroupInvocationInputT>(value));
     return *this;
   }
   ///@}
@@ -111,57 +129,39 @@ class InvocationInput {
 
   ///@{
   /**
-   * <p>Contains information about the code interpreter to be invoked.</p>
+   * <p>The unique identifier of the trace.</p>
    */
-  inline const CodeInterpreterInvocationInput& GetCodeInterpreterInvocationInput() const { return m_codeInterpreterInvocationInput; }
-  inline bool CodeInterpreterInvocationInputHasBeenSet() const { return m_codeInterpreterInvocationInputHasBeenSet; }
-  template <typename CodeInterpreterInvocationInputT = CodeInterpreterInvocationInput>
-  void SetCodeInterpreterInvocationInput(CodeInterpreterInvocationInputT&& value) {
-    m_codeInterpreterInvocationInputHasBeenSet = true;
-    m_codeInterpreterInvocationInput = std::forward<CodeInterpreterInvocationInputT>(value);
+  inline const Aws::String& GetTraceId() const { return m_traceId; }
+  inline bool TraceIdHasBeenSet() const { return m_traceIdHasBeenSet; }
+  template <typename TraceIdT = Aws::String>
+  void SetTraceId(TraceIdT&& value) {
+    m_traceIdHasBeenSet = true;
+    m_traceId = std::forward<TraceIdT>(value);
   }
-  template <typename CodeInterpreterInvocationInputT = CodeInterpreterInvocationInput>
-  InvocationInput& WithCodeInterpreterInvocationInput(CodeInterpreterInvocationInputT&& value) {
-    SetCodeInterpreterInvocationInput(std::forward<CodeInterpreterInvocationInputT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The collaborator's invocation input.</p>
-   */
-  inline const AgentCollaboratorInvocationInput& GetAgentCollaboratorInvocationInput() const { return m_agentCollaboratorInvocationInput; }
-  inline bool AgentCollaboratorInvocationInputHasBeenSet() const { return m_agentCollaboratorInvocationInputHasBeenSet; }
-  template <typename AgentCollaboratorInvocationInputT = AgentCollaboratorInvocationInput>
-  void SetAgentCollaboratorInvocationInput(AgentCollaboratorInvocationInputT&& value) {
-    m_agentCollaboratorInvocationInputHasBeenSet = true;
-    m_agentCollaboratorInvocationInput = std::forward<AgentCollaboratorInvocationInputT>(value);
-  }
-  template <typename AgentCollaboratorInvocationInputT = AgentCollaboratorInvocationInput>
-  InvocationInput& WithAgentCollaboratorInvocationInput(AgentCollaboratorInvocationInputT&& value) {
-    SetAgentCollaboratorInvocationInput(std::forward<AgentCollaboratorInvocationInputT>(value));
+  template <typename TraceIdT = Aws::String>
+  InvocationInput& WithTraceId(TraceIdT&& value) {
+    SetTraceId(std::forward<TraceIdT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::String m_traceId;
-  bool m_traceIdHasBeenSet = false;
-
-  InvocationType m_invocationType{InvocationType::NOT_SET};
-  bool m_invocationTypeHasBeenSet = false;
-
   ActionGroupInvocationInput m_actionGroupInvocationInput;
   bool m_actionGroupInvocationInputHasBeenSet = false;
 
-  KnowledgeBaseLookupInput m_knowledgeBaseLookupInput;
-  bool m_knowledgeBaseLookupInputHasBeenSet = false;
+  AgentCollaboratorInvocationInput m_agentCollaboratorInvocationInput;
+  bool m_agentCollaboratorInvocationInputHasBeenSet = false;
 
   CodeInterpreterInvocationInput m_codeInterpreterInvocationInput;
   bool m_codeInterpreterInvocationInputHasBeenSet = false;
 
-  AgentCollaboratorInvocationInput m_agentCollaboratorInvocationInput;
-  bool m_agentCollaboratorInvocationInputHasBeenSet = false;
+  InvocationType m_invocationType{InvocationType::NOT_SET};
+  bool m_invocationTypeHasBeenSet = false;
+
+  KnowledgeBaseLookupInput m_knowledgeBaseLookupInput;
+  bool m_knowledgeBaseLookupInputHasBeenSet = false;
+
+  Aws::String m_traceId;
+  bool m_traceIdHasBeenSet = false;
 };
 
 }  // namespace Model

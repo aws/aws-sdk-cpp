@@ -36,6 +36,24 @@ class FlowOutputEvent {
 
   ///@{
   /**
+   * <p>The content in the output.</p>
+   */
+  inline const FlowOutputContent& GetContent() const { return m_content; }
+  inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
+  template <typename ContentT = FlowOutputContent>
+  void SetContent(ContentT&& value) {
+    m_contentHasBeenSet = true;
+    m_content = std::forward<ContentT>(value);
+  }
+  template <typename ContentT = FlowOutputContent>
+  FlowOutputEvent& WithContent(ContentT&& value) {
+    SetContent(std::forward<ContentT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The name of the flow output node that the output is from.</p>
    */
   inline const Aws::String& GetNodeName() const { return m_nodeName; }
@@ -67,33 +85,15 @@ class FlowOutputEvent {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The content in the output.</p>
-   */
-  inline const FlowOutputContent& GetContent() const { return m_content; }
-  inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-  template <typename ContentT = FlowOutputContent>
-  void SetContent(ContentT&& value) {
-    m_contentHasBeenSet = true;
-    m_content = std::forward<ContentT>(value);
-  }
-  template <typename ContentT = FlowOutputContent>
-  FlowOutputEvent& WithContent(ContentT&& value) {
-    SetContent(std::forward<ContentT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  FlowOutputContent m_content;
+  bool m_contentHasBeenSet = false;
+
   Aws::String m_nodeName;
   bool m_nodeNameHasBeenSet = false;
 
   NodeType m_nodeType{NodeType::NOT_SET};
   bool m_nodeTypeHasBeenSet = false;
-
-  FlowOutputContent m_content;
-  bool m_contentHasBeenSet = false;
 };
 
 }  // namespace Model

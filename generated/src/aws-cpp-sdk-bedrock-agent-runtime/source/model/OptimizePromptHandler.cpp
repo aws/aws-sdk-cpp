@@ -31,12 +31,12 @@ OptimizePromptHandler::OptimizePromptHandler() : EventStreamHandler() {
                             << (eventType == Utils::Event::InitialResponseType::ON_EVENT ? "event" : "http headers"));
   };
 
-  m_onOptimizedPromptEvent = [&](const OptimizedPromptEvent&) {
-    AWS_LOGSTREAM_TRACE(OPTIMIZEPROMPT_HANDLER_CLASS_TAG, "OptimizedPromptEvent received.");
-  };
-
   m_onAnalyzePromptEvent = [&](const AnalyzePromptEvent&) {
     AWS_LOGSTREAM_TRACE(OPTIMIZEPROMPT_HANDLER_CLASS_TAG, "AnalyzePromptEvent received.");
+  };
+
+  m_onOptimizedPromptEvent = [&](const OptimizedPromptEvent&) {
+    AWS_LOGSTREAM_TRACE(OPTIMIZEPROMPT_HANDLER_CLASS_TAG, "OptimizedPromptEvent received.");
   };
 
   m_onError = [&](const AWSError<BedrockAgentRuntimeErrors>& error) {
@@ -90,17 +90,6 @@ void OptimizePromptHandler::HandleEventInMessage() {
       break;
     }
 
-    case OptimizePromptEventType::OPTIMIZEDPROMPTEVENT: {
-      JsonValue json(GetEventPayloadAsString());
-      if (!json.WasParseSuccessful()) {
-        AWS_LOGSTREAM_WARN(OPTIMIZEPROMPT_HANDLER_CLASS_TAG,
-                           "Unable to generate a proper OptimizedPromptEvent object from the response in JSON format.");
-        break;
-      }
-
-      m_onOptimizedPromptEvent(OptimizedPromptEvent{json.View()});
-      break;
-    }
     case OptimizePromptEventType::ANALYZEPROMPTEVENT: {
       JsonValue json(GetEventPayloadAsString());
       if (!json.WasParseSuccessful()) {
@@ -110,6 +99,17 @@ void OptimizePromptHandler::HandleEventInMessage() {
       }
 
       m_onAnalyzePromptEvent(AnalyzePromptEvent{json.View()});
+      break;
+    }
+    case OptimizePromptEventType::OPTIMIZEDPROMPTEVENT: {
+      JsonValue json(GetEventPayloadAsString());
+      if (!json.WasParseSuccessful()) {
+        AWS_LOGSTREAM_WARN(OPTIMIZEPROMPT_HANDLER_CLASS_TAG,
+                           "Unable to generate a proper OptimizedPromptEvent object from the response in JSON format.");
+        break;
+      }
+
+      m_onOptimizedPromptEvent(OptimizedPromptEvent{json.View()});
       break;
     }
     default:
@@ -144,7 +144,7 @@ void OptimizePromptHandler::HandleErrorInMessage() {
     JsonValue exceptionPayload(GetEventPayloadAsString());
     if (!exceptionPayload.WasParseSuccessful()) {
       AWS_LOGSTREAM_ERROR(OPTIMIZEPROMPT_HANDLER_CLASS_TAG,
-                          "Unable to generate a proper BadGatewayException object from the response in JSON format.");
+                          "Unable to generate a proper ValidationException object from the response in JSON format.");
       auto contentTypeIter = headers.find(Aws::Utils::Event::CONTENT_TYPE_HEADER);
       if (contentTypeIter != headers.end()) {
         AWS_LOGSTREAM_DEBUG(OPTIMIZEPROMPT_HANDLER_CLASS_TAG,
@@ -189,18 +189,18 @@ void OptimizePromptHandler::MarshallError(const Aws::String& errorCode, const Aw
 
 namespace OptimizePromptEventMapper {
 static const int INITIAL_RESPONSE_HASH = Aws::Utils::HashingUtils::HashString("initial-response");
-static const int OPTIMIZEDPROMPTEVENT_HASH = Aws::Utils::HashingUtils::HashString("optimizedPromptEvent");
 static const int ANALYZEPROMPTEVENT_HASH = Aws::Utils::HashingUtils::HashString("analyzePromptEvent");
+static const int OPTIMIZEDPROMPTEVENT_HASH = Aws::Utils::HashingUtils::HashString("optimizedPromptEvent");
 
 OptimizePromptEventType GetOptimizePromptEventTypeForName(const Aws::String& name) {
   int hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
 
   if (hashCode == INITIAL_RESPONSE_HASH) {
     return OptimizePromptEventType::INITIAL_RESPONSE;
-  } else if (hashCode == OPTIMIZEDPROMPTEVENT_HASH) {
-    return OptimizePromptEventType::OPTIMIZEDPROMPTEVENT;
   } else if (hashCode == ANALYZEPROMPTEVENT_HASH) {
     return OptimizePromptEventType::ANALYZEPROMPTEVENT;
+  } else if (hashCode == OPTIMIZEDPROMPTEVENT_HASH) {
+    return OptimizePromptEventType::OPTIMIZEDPROMPTEVENT;
   }
   return OptimizePromptEventType::UNKNOWN;
 }
@@ -209,10 +209,10 @@ Aws::String GetNameForOptimizePromptEventType(OptimizePromptEventType value) {
   switch (value) {
     case OptimizePromptEventType::INITIAL_RESPONSE:
       return "initial-response";
-    case OptimizePromptEventType::OPTIMIZEDPROMPTEVENT:
-      return "optimizedPromptEvent";
     case OptimizePromptEventType::ANALYZEPROMPTEVENT:
       return "analyzePromptEvent";
+    case OptimizePromptEventType::OPTIMIZEDPROMPTEVENT:
+      return "optimizedPromptEvent";
     default:
       return "Unknown";
   }

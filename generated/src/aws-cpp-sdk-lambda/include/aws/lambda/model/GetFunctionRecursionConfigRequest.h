@@ -30,7 +30,7 @@ class GetFunctionRecursionConfigRequest : public LambdaRequest {
 
   ///@{
   /**
-   * <p/>
+   * <p>The name of the function.</p>
    */
   inline const Aws::String& GetFunctionName() const { return m_functionName; }
   inline bool FunctionNameHasBeenSet() const { return m_functionNameHasBeenSet; }

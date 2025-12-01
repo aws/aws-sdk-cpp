@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 
@@ -61,6 +62,25 @@ class CreateEngagementResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The timestamp indicating when the engagement was last modified, in ISO 8601
+   * format (UTC). For newly created engagements, this value matches the creation
+   * timestamp. Example: "2023-05-01T20:37:46Z".</p>
+   */
+  inline const Aws::Utils::DateTime& GetModifiedAt() const { return m_modifiedAt; }
+  template <typename ModifiedAtT = Aws::Utils::DateTime>
+  void SetModifiedAt(ModifiedAtT&& value) {
+    m_modifiedAtHasBeenSet = true;
+    m_modifiedAt = std::forward<ModifiedAtT>(value);
+  }
+  template <typename ModifiedAtT = Aws::Utils::DateTime>
+  CreateEngagementResult& WithModifiedAt(ModifiedAtT&& value) {
+    SetModifiedAt(std::forward<ModifiedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -80,6 +100,9 @@ class CreateEngagementResult {
 
   Aws::String m_arn;
   bool m_arnHasBeenSet = false;
+
+  Aws::Utils::DateTime m_modifiedAt{};
+  bool m_modifiedAtHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

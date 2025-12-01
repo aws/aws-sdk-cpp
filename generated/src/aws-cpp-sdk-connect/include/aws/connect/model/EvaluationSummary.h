@@ -7,6 +7,7 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/AutoEvaluationStatus.h>
 #include <aws/connect/model/EvaluationAcknowledgementSummary.h>
+#include <aws/connect/model/EvaluationContactParticipant.h>
 #include <aws/connect/model/EvaluationScore.h>
 #include <aws/connect/model/EvaluationStatus.h>
 #include <aws/connect/model/EvaluationType.h>
@@ -281,6 +282,24 @@ class EvaluationSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Information about a contact participant in the evaluation.</p>
+   */
+  inline const EvaluationContactParticipant& GetContactParticipant() const { return m_contactParticipant; }
+  inline bool ContactParticipantHasBeenSet() const { return m_contactParticipantHasBeenSet; }
+  template <typename ContactParticipantT = EvaluationContactParticipant>
+  void SetContactParticipant(ContactParticipantT&& value) {
+    m_contactParticipantHasBeenSet = true;
+    m_contactParticipant = std::forward<ContactParticipantT>(value);
+  }
+  template <typename ContactParticipantT = EvaluationContactParticipant>
+  EvaluationSummary& WithContactParticipant(ContactParticipantT&& value) {
+    SetContactParticipant(std::forward<ContactParticipantT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_evaluationId;
   bool m_evaluationIdHasBeenSet = false;
@@ -323,6 +342,9 @@ class EvaluationSummary {
 
   Aws::Utils::DateTime m_lastModifiedTime{};
   bool m_lastModifiedTimeHasBeenSet = false;
+
+  EvaluationContactParticipant m_contactParticipant;
+  bool m_contactParticipantHasBeenSet = false;
 };
 
 }  // namespace Model

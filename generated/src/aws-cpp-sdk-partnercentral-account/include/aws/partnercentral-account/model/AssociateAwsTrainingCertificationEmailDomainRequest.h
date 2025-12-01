@@ -1,0 +1,145 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/UUID.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/partnercentral-account/PartnerCentralAccountRequest.h>
+#include <aws/partnercentral-account/PartnerCentralAccount_EXPORTS.h>
+
+#include <utility>
+
+namespace Aws {
+namespace PartnerCentralAccount {
+namespace Model {
+
+/**
+ */
+class AssociateAwsTrainingCertificationEmailDomainRequest : public PartnerCentralAccountRequest {
+ public:
+  AWS_PARTNERCENTRALACCOUNT_API AssociateAwsTrainingCertificationEmailDomainRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "AssociateAwsTrainingCertificationEmailDomain"; }
+
+  AWS_PARTNERCENTRALACCOUNT_API Aws::String SerializePayload() const override;
+
+  AWS_PARTNERCENTRALACCOUNT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
+  /**
+   * <p>The catalog identifier for the partner account.</p>
+   */
+  inline const Aws::String& GetCatalog() const { return m_catalog; }
+  inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
+  template <typename CatalogT = Aws::String>
+  void SetCatalog(CatalogT&& value) {
+    m_catalogHasBeenSet = true;
+    m_catalog = std::forward<CatalogT>(value);
+  }
+  template <typename CatalogT = Aws::String>
+  AssociateAwsTrainingCertificationEmailDomainRequest& WithCatalog(CatalogT&& value) {
+    SetCatalog(std::forward<CatalogT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier of the partner account.</p>
+   */
+  inline const Aws::String& GetIdentifier() const { return m_identifier; }
+  inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
+  template <typename IdentifierT = Aws::String>
+  void SetIdentifier(IdentifierT&& value) {
+    m_identifierHasBeenSet = true;
+    m_identifier = std::forward<IdentifierT>(value);
+  }
+  template <typename IdentifierT = Aws::String>
+  AssociateAwsTrainingCertificationEmailDomainRequest& WithIdentifier(IdentifierT&& value) {
+    SetIdentifier(std::forward<IdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A unique, case-sensitive identifier that you provide to ensure the
+   * idempotency of the request.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  AssociateAwsTrainingCertificationEmailDomainRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The email address used to verify domain ownership for AWS training and
+   * certification association.</p>
+   */
+  inline const Aws::String& GetEmail() const { return m_email; }
+  inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
+  template <typename EmailT = Aws::String>
+  void SetEmail(EmailT&& value) {
+    m_emailHasBeenSet = true;
+    m_email = std::forward<EmailT>(value);
+  }
+  template <typename EmailT = Aws::String>
+  AssociateAwsTrainingCertificationEmailDomainRequest& WithEmail(EmailT&& value) {
+    SetEmail(std::forward<EmailT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The verification code sent to the email address to confirm domain
+   * ownership.</p>
+   */
+  inline const Aws::String& GetEmailVerificationCode() const { return m_emailVerificationCode; }
+  inline bool EmailVerificationCodeHasBeenSet() const { return m_emailVerificationCodeHasBeenSet; }
+  template <typename EmailVerificationCodeT = Aws::String>
+  void SetEmailVerificationCode(EmailVerificationCodeT&& value) {
+    m_emailVerificationCodeHasBeenSet = true;
+    m_emailVerificationCode = std::forward<EmailVerificationCodeT>(value);
+  }
+  template <typename EmailVerificationCodeT = Aws::String>
+  AssociateAwsTrainingCertificationEmailDomainRequest& WithEmailVerificationCode(EmailVerificationCodeT&& value) {
+    SetEmailVerificationCode(std::forward<EmailVerificationCodeT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_catalog;
+  bool m_catalogHasBeenSet = false;
+
+  Aws::String m_identifier;
+  bool m_identifierHasBeenSet = false;
+
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_clientTokenHasBeenSet = true;
+
+  Aws::String m_email;
+  bool m_emailHasBeenSet = false;
+
+  Aws::String m_emailVerificationCode;
+  bool m_emailVerificationCodeHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace PartnerCentralAccount
+}  // namespace Aws

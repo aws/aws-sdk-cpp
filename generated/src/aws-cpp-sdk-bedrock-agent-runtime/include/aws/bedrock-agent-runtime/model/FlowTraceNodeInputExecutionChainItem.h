@@ -35,6 +35,22 @@ class FlowTraceNodeInputExecutionChainItem {
 
   ///@{
   /**
+   * <p>The index position of this item in the execution chain.</p>
+   */
+  inline int GetIndex() const { return m_index; }
+  inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
+  inline void SetIndex(int value) {
+    m_indexHasBeenSet = true;
+    m_index = value;
+  }
+  inline FlowTraceNodeInputExecutionChainItem& WithIndex(int value) {
+    SetIndex(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The name of the node in the execution chain.</p>
    */
   inline const Aws::String& GetNodeName() const { return m_nodeName; }
@@ -47,22 +63,6 @@ class FlowTraceNodeInputExecutionChainItem {
   template <typename NodeNameT = Aws::String>
   FlowTraceNodeInputExecutionChainItem& WithNodeName(NodeNameT&& value) {
     SetNodeName(std::forward<NodeNameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The index position of this item in the execution chain.</p>
-   */
-  inline int GetIndex() const { return m_index; }
-  inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
-  inline void SetIndex(int value) {
-    m_indexHasBeenSet = true;
-    m_index = value;
-  }
-  inline FlowTraceNodeInputExecutionChainItem& WithIndex(int value) {
-    SetIndex(value);
     return *this;
   }
   ///@}
@@ -83,11 +83,11 @@ class FlowTraceNodeInputExecutionChainItem {
   }
   ///@}
  private:
-  Aws::String m_nodeName;
-  bool m_nodeNameHasBeenSet = false;
-
   int m_index{0};
   bool m_indexHasBeenSet = false;
+
+  Aws::String m_nodeName;
+  bool m_nodeNameHasBeenSet = false;
 
   FlowControlNodeType m_type{FlowControlNodeType::NOT_SET};
   bool m_typeHasBeenSet = false;

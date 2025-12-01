@@ -26,6 +26,10 @@ DataReference& DataReference::operator=(JsonView jsonValue) {
     m_generativeReference = jsonValue.GetObject("generativeReference");
     m_generativeReferenceHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("suggestedMessageReference")) {
+    m_suggestedMessageReference = jsonValue.GetObject("suggestedMessageReference");
+    m_suggestedMessageReferenceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue DataReference::Jsonize() const {
 
   if (m_generativeReferenceHasBeenSet) {
     payload.WithObject("generativeReference", m_generativeReference.Jsonize());
+  }
+
+  if (m_suggestedMessageReferenceHasBeenSet) {
+    payload.WithObject("suggestedMessageReference", m_suggestedMessageReference.Jsonize());
   }
 
   return payload;

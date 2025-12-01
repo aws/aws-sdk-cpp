@@ -56,6 +56,10 @@ OfferSummary& OfferSummary::operator=(JsonView jsonValue) {
     }
     m_targetingHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("OfferSetId")) {
+    m_offerSetId = jsonValue.GetString("OfferSetId");
+    m_offerSetIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -100,6 +104,10 @@ JsonValue OfferSummary::Jsonize() const {
       targetingJsonList[targetingIndex].AsString(OfferTargetingStringMapper::GetNameForOfferTargetingString(m_targeting[targetingIndex]));
     }
     payload.WithArray("Targeting", std::move(targetingJsonList));
+  }
+
+  if (m_offerSetIdHasBeenSet) {
+    payload.WithString("OfferSetId", m_offerSetId);
   }
 
   return payload;

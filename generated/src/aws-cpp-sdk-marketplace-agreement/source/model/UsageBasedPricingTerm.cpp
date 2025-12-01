@@ -18,6 +18,10 @@ namespace Model {
 UsageBasedPricingTerm::UsageBasedPricingTerm(JsonView jsonValue) { *this = jsonValue; }
 
 UsageBasedPricingTerm& UsageBasedPricingTerm::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
+    m_type = jsonValue.GetString("type");
+    m_typeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("currencyCode")) {
     m_currencyCode = jsonValue.GetString("currencyCode");
     m_currencyCodeHasBeenSet = true;
@@ -29,15 +33,15 @@ UsageBasedPricingTerm& UsageBasedPricingTerm::operator=(JsonView jsonValue) {
     }
     m_rateCardsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("type")) {
-    m_type = jsonValue.GetString("type");
-    m_typeHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue UsageBasedPricingTerm::Jsonize() const {
   JsonValue payload;
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", m_type);
+  }
 
   if (m_currencyCodeHasBeenSet) {
     payload.WithString("currencyCode", m_currencyCode);
@@ -49,10 +53,6 @@ JsonValue UsageBasedPricingTerm::Jsonize() const {
       rateCardsJsonList[rateCardsIndex].AsObject(m_rateCards[rateCardsIndex].Jsonize());
     }
     payload.WithArray("rateCards", std::move(rateCardsJsonList));
-  }
-
-  if (m_typeHasBeenSet) {
-    payload.WithString("type", m_type);
   }
 
   return payload;

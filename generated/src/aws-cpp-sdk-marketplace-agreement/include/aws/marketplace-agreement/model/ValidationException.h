@@ -37,24 +37,18 @@ class ValidationException {
 
   ///@{
   /**
-   * <p>The fields associated with the error.</p>
+   * <p>The unique identifier associated with the error.</p>
    */
-  inline const Aws::Vector<ValidationExceptionField>& GetFields() const { return m_fields; }
-  inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }
-  template <typename FieldsT = Aws::Vector<ValidationExceptionField>>
-  void SetFields(FieldsT&& value) {
-    m_fieldsHasBeenSet = true;
-    m_fields = std::forward<FieldsT>(value);
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
   }
-  template <typename FieldsT = Aws::Vector<ValidationExceptionField>>
-  ValidationException& WithFields(FieldsT&& value) {
-    SetFields(std::forward<FieldsT>(value));
-    return *this;
-  }
-  template <typename FieldsT = ValidationExceptionField>
-  ValidationException& AddFields(FieldsT&& value) {
-    m_fieldsHasBeenSet = true;
-    m_fields.emplace_back(std::forward<FieldsT>(value));
+  template <typename RequestIdT = Aws::String>
+  ValidationException& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
     return *this;
   }
   ///@}
@@ -93,24 +87,30 @@ class ValidationException {
 
   ///@{
   /**
-   * <p>The unique identifier associated with the error.</p>
+   * <p>The fields associated with the error.</p>
    */
-  inline const Aws::String& GetRequestId() const { return m_requestId; }
-  inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-  template <typename RequestIdT = Aws::String>
-  void SetRequestId(RequestIdT&& value) {
-    m_requestIdHasBeenSet = true;
-    m_requestId = std::forward<RequestIdT>(value);
+  inline const Aws::Vector<ValidationExceptionField>& GetFields() const { return m_fields; }
+  inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }
+  template <typename FieldsT = Aws::Vector<ValidationExceptionField>>
+  void SetFields(FieldsT&& value) {
+    m_fieldsHasBeenSet = true;
+    m_fields = std::forward<FieldsT>(value);
   }
-  template <typename RequestIdT = Aws::String>
-  ValidationException& WithRequestId(RequestIdT&& value) {
-    SetRequestId(std::forward<RequestIdT>(value));
+  template <typename FieldsT = Aws::Vector<ValidationExceptionField>>
+  ValidationException& WithFields(FieldsT&& value) {
+    SetFields(std::forward<FieldsT>(value));
+    return *this;
+  }
+  template <typename FieldsT = ValidationExceptionField>
+  ValidationException& AddFields(FieldsT&& value) {
+    m_fieldsHasBeenSet = true;
+    m_fields.emplace_back(std::forward<FieldsT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::Vector<ValidationExceptionField> m_fields;
-  bool m_fieldsHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_message;
   bool m_messageHasBeenSet = false;
@@ -118,8 +118,8 @@ class ValidationException {
   ValidationExceptionReason m_reason{ValidationExceptionReason::NOT_SET};
   bool m_reasonHasBeenSet = false;
 
-  Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
+  Aws::Vector<ValidationExceptionField> m_fields;
+  bool m_fieldsHasBeenSet = false;
 };
 
 }  // namespace Model

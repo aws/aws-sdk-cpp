@@ -10,6 +10,7 @@
 #include <aws/marketplace-catalog/model/ContainerProductSummary.h>
 #include <aws/marketplace-catalog/model/DataProductSummary.h>
 #include <aws/marketplace-catalog/model/MachineLearningProductSummary.h>
+#include <aws/marketplace-catalog/model/OfferSetSummary.h>
 #include <aws/marketplace-catalog/model/OfferSummary.h>
 #include <aws/marketplace-catalog/model/ResaleAuthorizationSummary.h>
 #include <aws/marketplace-catalog/model/SaaSProductSummary.h>
@@ -278,6 +279,24 @@ class EntitySummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An object that contains summary information about the offer set.</p>
+   */
+  inline const OfferSetSummary& GetOfferSetSummary() const { return m_offerSetSummary; }
+  inline bool OfferSetSummaryHasBeenSet() const { return m_offerSetSummaryHasBeenSet; }
+  template <typename OfferSetSummaryT = OfferSetSummary>
+  void SetOfferSetSummary(OfferSetSummaryT&& value) {
+    m_offerSetSummaryHasBeenSet = true;
+    m_offerSetSummary = std::forward<OfferSetSummaryT>(value);
+  }
+  template <typename OfferSetSummaryT = OfferSetSummary>
+  EntitySummary& WithOfferSetSummary(OfferSetSummaryT&& value) {
+    SetOfferSetSummary(std::forward<OfferSetSummaryT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
   bool m_nameHasBeenSet = false;
@@ -317,6 +336,9 @@ class EntitySummary {
 
   MachineLearningProductSummary m_machineLearningProductSummary;
   bool m_machineLearningProductSummaryHasBeenSet = false;
+
+  OfferSetSummary m_offerSetSummary;
+  bool m_offerSetSummaryHasBeenSet = false;
 };
 
 }  // namespace Model

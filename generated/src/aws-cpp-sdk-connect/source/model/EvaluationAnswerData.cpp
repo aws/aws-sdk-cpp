@@ -26,6 +26,17 @@ EvaluationAnswerData& EvaluationAnswerData::operator=(JsonView jsonValue) {
     m_numericValue = jsonValue.GetDouble("NumericValue");
     m_numericValueHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("StringValues")) {
+    Aws::Utils::Array<JsonView> stringValuesJsonList = jsonValue.GetArray("StringValues");
+    for (unsigned stringValuesIndex = 0; stringValuesIndex < stringValuesJsonList.GetLength(); ++stringValuesIndex) {
+      m_stringValues.push_back(stringValuesJsonList[stringValuesIndex].AsString());
+    }
+    m_stringValuesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("DateTimeValue")) {
+    m_dateTimeValue = jsonValue.GetString("DateTimeValue");
+    m_dateTimeValueHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("NotApplicable")) {
     m_notApplicable = jsonValue.GetBool("NotApplicable");
     m_notApplicableHasBeenSet = true;
@@ -42,6 +53,18 @@ JsonValue EvaluationAnswerData::Jsonize() const {
 
   if (m_numericValueHasBeenSet) {
     payload.WithDouble("NumericValue", m_numericValue);
+  }
+
+  if (m_stringValuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> stringValuesJsonList(m_stringValues.size());
+    for (unsigned stringValuesIndex = 0; stringValuesIndex < stringValuesJsonList.GetLength(); ++stringValuesIndex) {
+      stringValuesJsonList[stringValuesIndex].AsString(m_stringValues[stringValuesIndex]);
+    }
+    payload.WithArray("StringValues", std::move(stringValuesJsonList));
+  }
+
+  if (m_dateTimeValueHasBeenSet) {
+    payload.WithString("DateTimeValue", m_dateTimeValue);
   }
 
   if (m_notApplicableHasBeenSet) {

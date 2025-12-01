@@ -34,13 +34,15 @@ namespace Model {
  * allowable range or set.</p> </li> <li> <p> <i>TOO_MANY_VALUES:</i> There are too
  * many values in a field that expects fewer entries.</p> <p>Fix: Reduce the number
  * of values to match the expected limit.</p> </li> <li> <p>
- * <i>ACTION_NOT_PERMITTED:</i> The action isn't permitted due to current state or
- * permissions.</p> <p>Fix: Verify that the action is appropriate for the current
- * state, and that you have the necessary permissions to perform it.</p> </li> <li>
- * <p> <i>DUPLICATE_KEY_VALUE:</i> The value in a field duplicates a value that
- * must be unique.</p> <p>Fix: Verify that the value is unique and doesn't
- * duplicate an existing value in the system.</p> </li> </ul><p><h3>See Also:</h3>
- * <a
+ * <i>NOT_ENOUGH_VALUES:</i> There are not enough values in a field that expects
+ * more entries.</p> <p>Fix: Increase the number of values to match the expected
+ * threshold.</p> </li> <li> <p> <i>ACTION_NOT_PERMITTED:</i> The action isn't
+ * permitted due to current state or permissions.</p> <p>Fix: Verify that the
+ * action is appropriate for the current state, and that you have the necessary
+ * permissions to perform it.</p> </li> <li> <p> <i>DUPLICATE_KEY_VALUE:</i> The
+ * value in a field duplicates a value that must be unique.</p> <p>Fix: Verify that
+ * the value is unique and doesn't duplicate an existing value in the system.</p>
+ * </li> </ul><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ValidationExceptionError">AWS
  * API Reference</a></p>
  */

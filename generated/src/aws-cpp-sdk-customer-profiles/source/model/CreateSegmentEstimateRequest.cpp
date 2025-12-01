@@ -19,5 +19,9 @@ Aws::String CreateSegmentEstimateRequest::SerializePayload() const {
     payload.WithObject("SegmentQuery", m_segmentQuery.Jsonize());
   }
 
+  if (m_segmentSqlQueryHasBeenSet) {
+    payload.WithString("SegmentSqlQuery", m_segmentSqlQuery);
+  }
+
   return payload.View().WriteReadable();
 }

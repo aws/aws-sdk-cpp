@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/connectparticipant/ConnectParticipant_EXPORTS.h>
+#include <aws/connectparticipant/model/MessageProcessingMetadata.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -62,6 +63,23 @@ class SendMessageResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Contains metadata for the message.</p>
+   */
+  inline const MessageProcessingMetadata& GetMessageMetadata() const { return m_messageMetadata; }
+  template <typename MessageMetadataT = MessageProcessingMetadata>
+  void SetMessageMetadata(MessageMetadataT&& value) {
+    m_messageMetadataHasBeenSet = true;
+    m_messageMetadata = std::forward<MessageMetadataT>(value);
+  }
+  template <typename MessageMetadataT = MessageProcessingMetadata>
+  SendMessageResult& WithMessageMetadata(MessageMetadataT&& value) {
+    SetMessageMetadata(std::forward<MessageMetadataT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -81,6 +99,9 @@ class SendMessageResult {
 
   Aws::String m_absoluteTime;
   bool m_absoluteTimeHasBeenSet = false;
+
+  MessageProcessingMetadata m_messageMetadata;
+  bool m_messageMetadataHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

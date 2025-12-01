@@ -38,18 +38,39 @@ class RetrieveAndGenerateStreamResponseOutput {
 
   ///@{
   /**
-   * <p>An output event.</p>
+   * <p>The request is denied because you do not have sufficient permissions to
+   * perform the requested action. For troubleshooting this error, see <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-access-denied">AccessDeniedException</a>
+   * in the Amazon Bedrock User Guide.</p>
    */
-  inline const RetrieveAndGenerateOutputEvent& GetOutput() const { return m_output; }
-  inline bool OutputHasBeenSet() const { return m_outputHasBeenSet; }
-  template <typename OutputT = RetrieveAndGenerateOutputEvent>
-  void SetOutput(OutputT&& value) {
-    m_outputHasBeenSet = true;
-    m_output = std::forward<OutputT>(value);
+  inline const BedrockAgentRuntimeError& GetAccessDeniedException() const { return m_accessDeniedException; }
+  inline bool AccessDeniedExceptionHasBeenSet() const { return m_accessDeniedExceptionHasBeenSet; }
+  template <typename AccessDeniedExceptionT = BedrockAgentRuntimeError>
+  void SetAccessDeniedException(AccessDeniedExceptionT&& value) {
+    m_accessDeniedExceptionHasBeenSet = true;
+    m_accessDeniedException = std::forward<AccessDeniedExceptionT>(value);
   }
-  template <typename OutputT = RetrieveAndGenerateOutputEvent>
-  RetrieveAndGenerateStreamResponseOutput& WithOutput(OutputT&& value) {
-    SetOutput(std::forward<OutputT>(value));
+  template <typename AccessDeniedExceptionT = BedrockAgentRuntimeError>
+  RetrieveAndGenerateStreamResponseOutput& WithAccessDeniedException(AccessDeniedExceptionT&& value) {
+    SetAccessDeniedException(std::forward<AccessDeniedExceptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The request failed due to a bad gateway error.</p>
+   */
+  inline const BadGatewayException& GetBadGatewayException() const { return m_badGatewayException; }
+  inline bool BadGatewayExceptionHasBeenSet() const { return m_badGatewayExceptionHasBeenSet; }
+  template <typename BadGatewayExceptionT = BadGatewayException>
+  void SetBadGatewayException(BadGatewayExceptionT&& value) {
+    m_badGatewayExceptionHasBeenSet = true;
+    m_badGatewayException = std::forward<BadGatewayExceptionT>(value);
+  }
+  template <typename BadGatewayExceptionT = BadGatewayException>
+  RetrieveAndGenerateStreamResponseOutput& WithBadGatewayException(BadGatewayExceptionT&& value) {
+    SetBadGatewayException(std::forward<BadGatewayExceptionT>(value));
     return *this;
   }
   ///@}
@@ -68,6 +89,42 @@ class RetrieveAndGenerateStreamResponseOutput {
   template <typename CitationT = CitationEvent>
   RetrieveAndGenerateStreamResponseOutput& WithCitation(CitationT&& value) {
     SetCitation(std::forward<CitationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Error occurred because of a conflict while performing an operation.</p>
+   */
+  inline const BedrockAgentRuntimeError& GetConflictException() const { return m_conflictException; }
+  inline bool ConflictExceptionHasBeenSet() const { return m_conflictExceptionHasBeenSet; }
+  template <typename ConflictExceptionT = BedrockAgentRuntimeError>
+  void SetConflictException(ConflictExceptionT&& value) {
+    m_conflictExceptionHasBeenSet = true;
+    m_conflictException = std::forward<ConflictExceptionT>(value);
+  }
+  template <typename ConflictExceptionT = BedrockAgentRuntimeError>
+  RetrieveAndGenerateStreamResponseOutput& WithConflictException(ConflictExceptionT&& value) {
+    SetConflictException(std::forward<ConflictExceptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The request failed due to a dependency error.</p>
+   */
+  inline const DependencyFailedException& GetDependencyFailedException() const { return m_dependencyFailedException; }
+  inline bool DependencyFailedExceptionHasBeenSet() const { return m_dependencyFailedExceptionHasBeenSet; }
+  template <typename DependencyFailedExceptionT = DependencyFailedException>
+  void SetDependencyFailedException(DependencyFailedExceptionT&& value) {
+    m_dependencyFailedExceptionHasBeenSet = true;
+    m_dependencyFailedException = std::forward<DependencyFailedExceptionT>(value);
+  }
+  template <typename DependencyFailedExceptionT = DependencyFailedException>
+  RetrieveAndGenerateStreamResponseOutput& WithDependencyFailedException(DependencyFailedExceptionT&& value) {
+    SetDependencyFailedException(std::forward<DependencyFailedExceptionT>(value));
     return *this;
   }
   ///@}
@@ -110,21 +167,18 @@ class RetrieveAndGenerateStreamResponseOutput {
 
   ///@{
   /**
-   * <p>The input fails to satisfy the constraints specified by <i>Amazon
-   * Bedrock</i>. For troubleshooting this error, see <a
-   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-validation-error">ValidationError</a>
-   * in the Amazon Bedrock User Guide.</p>
+   * <p>An output event.</p>
    */
-  inline const BedrockAgentRuntimeError& GetValidationException() const { return m_validationException; }
-  inline bool ValidationExceptionHasBeenSet() const { return m_validationExceptionHasBeenSet; }
-  template <typename ValidationExceptionT = BedrockAgentRuntimeError>
-  void SetValidationException(ValidationExceptionT&& value) {
-    m_validationExceptionHasBeenSet = true;
-    m_validationException = std::forward<ValidationExceptionT>(value);
+  inline const RetrieveAndGenerateOutputEvent& GetOutput() const { return m_output; }
+  inline bool OutputHasBeenSet() const { return m_outputHasBeenSet; }
+  template <typename OutputT = RetrieveAndGenerateOutputEvent>
+  void SetOutput(OutputT&& value) {
+    m_outputHasBeenSet = true;
+    m_output = std::forward<OutputT>(value);
   }
-  template <typename ValidationExceptionT = BedrockAgentRuntimeError>
-  RetrieveAndGenerateStreamResponseOutput& WithValidationException(ValidationExceptionT&& value) {
-    SetValidationException(std::forward<ValidationExceptionT>(value));
+  template <typename OutputT = RetrieveAndGenerateOutputEvent>
+  RetrieveAndGenerateStreamResponseOutput& WithOutput(OutputT&& value) {
+    SetOutput(std::forward<OutputT>(value));
     return *this;
   }
   ///@}
@@ -194,84 +248,39 @@ class RetrieveAndGenerateStreamResponseOutput {
 
   ///@{
   /**
-   * <p>The request is denied because you do not have sufficient permissions to
-   * perform the requested action. For troubleshooting this error, see <a
-   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-access-denied">AccessDeniedException</a>
+   * <p>The input fails to satisfy the constraints specified by <i>Amazon
+   * Bedrock</i>. For troubleshooting this error, see <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-validation-error">ValidationError</a>
    * in the Amazon Bedrock User Guide.</p>
    */
-  inline const BedrockAgentRuntimeError& GetAccessDeniedException() const { return m_accessDeniedException; }
-  inline bool AccessDeniedExceptionHasBeenSet() const { return m_accessDeniedExceptionHasBeenSet; }
-  template <typename AccessDeniedExceptionT = BedrockAgentRuntimeError>
-  void SetAccessDeniedException(AccessDeniedExceptionT&& value) {
-    m_accessDeniedExceptionHasBeenSet = true;
-    m_accessDeniedException = std::forward<AccessDeniedExceptionT>(value);
+  inline const BedrockAgentRuntimeError& GetValidationException() const { return m_validationException; }
+  inline bool ValidationExceptionHasBeenSet() const { return m_validationExceptionHasBeenSet; }
+  template <typename ValidationExceptionT = BedrockAgentRuntimeError>
+  void SetValidationException(ValidationExceptionT&& value) {
+    m_validationExceptionHasBeenSet = true;
+    m_validationException = std::forward<ValidationExceptionT>(value);
   }
-  template <typename AccessDeniedExceptionT = BedrockAgentRuntimeError>
-  RetrieveAndGenerateStreamResponseOutput& WithAccessDeniedException(AccessDeniedExceptionT&& value) {
-    SetAccessDeniedException(std::forward<AccessDeniedExceptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Error occurred because of a conflict while performing an operation.</p>
-   */
-  inline const BedrockAgentRuntimeError& GetConflictException() const { return m_conflictException; }
-  inline bool ConflictExceptionHasBeenSet() const { return m_conflictExceptionHasBeenSet; }
-  template <typename ConflictExceptionT = BedrockAgentRuntimeError>
-  void SetConflictException(ConflictExceptionT&& value) {
-    m_conflictExceptionHasBeenSet = true;
-    m_conflictException = std::forward<ConflictExceptionT>(value);
-  }
-  template <typename ConflictExceptionT = BedrockAgentRuntimeError>
-  RetrieveAndGenerateStreamResponseOutput& WithConflictException(ConflictExceptionT&& value) {
-    SetConflictException(std::forward<ConflictExceptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The request failed due to a dependency error.</p>
-   */
-  inline const DependencyFailedException& GetDependencyFailedException() const { return m_dependencyFailedException; }
-  inline bool DependencyFailedExceptionHasBeenSet() const { return m_dependencyFailedExceptionHasBeenSet; }
-  template <typename DependencyFailedExceptionT = DependencyFailedException>
-  void SetDependencyFailedException(DependencyFailedExceptionT&& value) {
-    m_dependencyFailedExceptionHasBeenSet = true;
-    m_dependencyFailedException = std::forward<DependencyFailedExceptionT>(value);
-  }
-  template <typename DependencyFailedExceptionT = DependencyFailedException>
-  RetrieveAndGenerateStreamResponseOutput& WithDependencyFailedException(DependencyFailedExceptionT&& value) {
-    SetDependencyFailedException(std::forward<DependencyFailedExceptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The request failed due to a bad gateway error.</p>
-   */
-  inline const BadGatewayException& GetBadGatewayException() const { return m_badGatewayException; }
-  inline bool BadGatewayExceptionHasBeenSet() const { return m_badGatewayExceptionHasBeenSet; }
-  template <typename BadGatewayExceptionT = BadGatewayException>
-  void SetBadGatewayException(BadGatewayExceptionT&& value) {
-    m_badGatewayExceptionHasBeenSet = true;
-    m_badGatewayException = std::forward<BadGatewayExceptionT>(value);
-  }
-  template <typename BadGatewayExceptionT = BadGatewayException>
-  RetrieveAndGenerateStreamResponseOutput& WithBadGatewayException(BadGatewayExceptionT&& value) {
-    SetBadGatewayException(std::forward<BadGatewayExceptionT>(value));
+  template <typename ValidationExceptionT = BedrockAgentRuntimeError>
+  RetrieveAndGenerateStreamResponseOutput& WithValidationException(ValidationExceptionT&& value) {
+    SetValidationException(std::forward<ValidationExceptionT>(value));
     return *this;
   }
   ///@}
  private:
-  RetrieveAndGenerateOutputEvent m_output;
-  bool m_outputHasBeenSet = false;
+  BedrockAgentRuntimeError m_accessDeniedException;
+  bool m_accessDeniedExceptionHasBeenSet = false;
+
+  BadGatewayException m_badGatewayException;
+  bool m_badGatewayExceptionHasBeenSet = false;
 
   CitationEvent m_citation;
   bool m_citationHasBeenSet = false;
+
+  BedrockAgentRuntimeError m_conflictException;
+  bool m_conflictExceptionHasBeenSet = false;
+
+  DependencyFailedException m_dependencyFailedException;
+  bool m_dependencyFailedExceptionHasBeenSet = false;
 
   GuardrailEvent m_guardrail;
   bool m_guardrailHasBeenSet = false;
@@ -279,8 +288,8 @@ class RetrieveAndGenerateStreamResponseOutput {
   InternalServerException m_internalServerException;
   bool m_internalServerExceptionHasBeenSet = false;
 
-  BedrockAgentRuntimeError m_validationException;
-  bool m_validationExceptionHasBeenSet = false;
+  RetrieveAndGenerateOutputEvent m_output;
+  bool m_outputHasBeenSet = false;
 
   BedrockAgentRuntimeError m_resourceNotFoundException;
   bool m_resourceNotFoundExceptionHasBeenSet = false;
@@ -291,17 +300,8 @@ class RetrieveAndGenerateStreamResponseOutput {
   BedrockAgentRuntimeError m_throttlingException;
   bool m_throttlingExceptionHasBeenSet = false;
 
-  BedrockAgentRuntimeError m_accessDeniedException;
-  bool m_accessDeniedExceptionHasBeenSet = false;
-
-  BedrockAgentRuntimeError m_conflictException;
-  bool m_conflictExceptionHasBeenSet = false;
-
-  DependencyFailedException m_dependencyFailedException;
-  bool m_dependencyFailedExceptionHasBeenSet = false;
-
-  BadGatewayException m_badGatewayException;
-  bool m_badGatewayExceptionHasBeenSet = false;
+  BedrockAgentRuntimeError m_validationException;
+  bool m_validationExceptionHasBeenSet = false;
 };
 
 }  // namespace Model

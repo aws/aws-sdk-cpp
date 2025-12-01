@@ -38,18 +38,18 @@ class ConfigurableUpfrontPricingTerm {
 
   ///@{
   /**
-   * <p>Additional parameters specified by the acceptor while accepting the term.</p>
+   * <p>Category of selector.</p>
    */
-  inline const ConfigurableUpfrontPricingTermConfiguration& GetConfiguration() const { return m_configuration; }
-  inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-  template <typename ConfigurationT = ConfigurableUpfrontPricingTermConfiguration>
-  void SetConfiguration(ConfigurationT&& value) {
-    m_configurationHasBeenSet = true;
-    m_configuration = std::forward<ConfigurationT>(value);
+  inline const Aws::String& GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  template <typename TypeT = Aws::String>
+  void SetType(TypeT&& value) {
+    m_typeHasBeenSet = true;
+    m_type = std::forward<TypeT>(value);
   }
-  template <typename ConfigurationT = ConfigurableUpfrontPricingTermConfiguration>
-  ConfigurableUpfrontPricingTerm& WithConfiguration(ConfigurationT&& value) {
-    SetConfiguration(std::forward<ConfigurationT>(value));
+  template <typename TypeT = Aws::String>
+  ConfigurableUpfrontPricingTerm& WithType(TypeT&& value) {
+    SetType(std::forward<TypeT>(value));
     return *this;
   }
   ///@}
@@ -98,24 +98,24 @@ class ConfigurableUpfrontPricingTerm {
 
   ///@{
   /**
-   * <p>Category of selector.</p>
+   * <p>Additional parameters specified by the acceptor while accepting the term.</p>
    */
-  inline const Aws::String& GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  template <typename TypeT = Aws::String>
-  void SetType(TypeT&& value) {
-    m_typeHasBeenSet = true;
-    m_type = std::forward<TypeT>(value);
+  inline const ConfigurableUpfrontPricingTermConfiguration& GetConfiguration() const { return m_configuration; }
+  inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
+  template <typename ConfigurationT = ConfigurableUpfrontPricingTermConfiguration>
+  void SetConfiguration(ConfigurationT&& value) {
+    m_configurationHasBeenSet = true;
+    m_configuration = std::forward<ConfigurationT>(value);
   }
-  template <typename TypeT = Aws::String>
-  ConfigurableUpfrontPricingTerm& WithType(TypeT&& value) {
-    SetType(std::forward<TypeT>(value));
+  template <typename ConfigurationT = ConfigurableUpfrontPricingTermConfiguration>
+  ConfigurableUpfrontPricingTerm& WithConfiguration(ConfigurationT&& value) {
+    SetConfiguration(std::forward<ConfigurationT>(value));
     return *this;
   }
   ///@}
  private:
-  ConfigurableUpfrontPricingTermConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
+  Aws::String m_type;
+  bool m_typeHasBeenSet = false;
 
   Aws::String m_currencyCode;
   bool m_currencyCodeHasBeenSet = false;
@@ -123,8 +123,8 @@ class ConfigurableUpfrontPricingTerm {
   Aws::Vector<ConfigurableUpfrontRateCardItem> m_rateCards;
   bool m_rateCardsHasBeenSet = false;
 
-  Aws::String m_type;
-  bool m_typeHasBeenSet = false;
+  ConfigurableUpfrontPricingTermConfiguration m_configuration;
+  bool m_configurationHasBeenSet = false;
 };
 
 }  // namespace Model

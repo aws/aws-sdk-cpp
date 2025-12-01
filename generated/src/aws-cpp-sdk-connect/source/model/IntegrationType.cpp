@@ -29,6 +29,7 @@ static const int SES_IDENTITY_HASH = HashingUtils::HashString("SES_IDENTITY");
 static const int ANALYTICS_CONNECTOR_HASH = HashingUtils::HashString("ANALYTICS_CONNECTOR");
 static const int CALL_TRANSFER_CONNECTOR_HASH = HashingUtils::HashString("CALL_TRANSFER_CONNECTOR");
 static const int COGNITO_USER_POOL_HASH = HashingUtils::HashString("COGNITO_USER_POOL");
+static const int MESSAGE_PROCESSOR_HASH = HashingUtils::HashString("MESSAGE_PROCESSOR");
 
 IntegrationType GetIntegrationTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -60,6 +61,8 @@ IntegrationType GetIntegrationTypeForName(const Aws::String& name) {
     return IntegrationType::CALL_TRANSFER_CONNECTOR;
   } else if (hashCode == COGNITO_USER_POOL_HASH) {
     return IntegrationType::COGNITO_USER_POOL;
+  } else if (hashCode == MESSAGE_PROCESSOR_HASH) {
+    return IntegrationType::MESSAGE_PROCESSOR;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -102,6 +105,8 @@ Aws::String GetNameForIntegrationType(IntegrationType enumValue) {
       return "CALL_TRANSFER_CONNECTOR";
     case IntegrationType::COGNITO_USER_POOL:
       return "COGNITO_USER_POOL";
+    case IntegrationType::MESSAGE_PROCESSOR:
+      return "MESSAGE_PROCESSOR";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

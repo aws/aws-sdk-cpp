@@ -1,0 +1,96 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/route53globalresolver/model/FirewallDomainListsItem.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace Route53GlobalResolver {
+namespace Model {
+
+FirewallDomainListsItem::FirewallDomainListsItem(JsonView jsonValue) { *this = jsonValue; }
+
+FirewallDomainListsItem& FirewallDomainListsItem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("arn")) {
+    m_arn = jsonValue.GetString("arn");
+    m_arnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("globalResolverId")) {
+    m_globalResolverId = jsonValue.GetString("globalResolverId");
+    m_globalResolverIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("createdAt")) {
+    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("description")) {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("id")) {
+    m_id = jsonValue.GetString("id");
+    m_idHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("name")) {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("status")) {
+    m_status = CRResourceStatusMapper::GetCRResourceStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("updatedAt")) {
+    m_updatedAt = jsonValue.GetString("updatedAt");
+    m_updatedAtHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue FirewallDomainListsItem::Jsonize() const {
+  JsonValue payload;
+
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
+  }
+
+  if (m_globalResolverIdHasBeenSet) {
+    payload.WithString("globalResolverId", m_globalResolverId);
+  }
+
+  if (m_createdAtHasBeenSet) {
+    payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
+  }
+
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
+  }
+
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
+  }
+
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", CRResourceStatusMapper::GetNameForCRResourceStatus(m_status));
+  }
+
+  if (m_updatedAtHasBeenSet) {
+    payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace Route53GlobalResolver
+}  // namespace Aws

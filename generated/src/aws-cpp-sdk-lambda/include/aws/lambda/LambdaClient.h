@@ -232,6 +232,34 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient, public Aw
   }
 
   /**
+   * <p>Creates a capacity provider that manages compute resources for Lambda
+   * functions</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateCapacityProvider">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateCapacityProviderOutcome CreateCapacityProvider(const Model::CreateCapacityProviderRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateCapacityProvider that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateCapacityProviderRequestT = Model::CreateCapacityProviderRequest>
+  Model::CreateCapacityProviderOutcomeCallable CreateCapacityProviderCallable(const CreateCapacityProviderRequestT& request) const {
+    return SubmitCallable(&LambdaClient::CreateCapacityProvider, request);
+  }
+
+  /**
+   * An Async wrapper for CreateCapacityProvider that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateCapacityProviderRequestT = Model::CreateCapacityProviderRequest>
+  void CreateCapacityProviderAsync(const CreateCapacityProviderRequestT& request,
+                                   const CreateCapacityProviderResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LambdaClient::CreateCapacityProvider, request, handler, context);
+  }
+
+  /**
    * <p>Creates a code signing configuration. A <a
    * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html">code
    * signing configuration</a> defines a list of allowed signing profiles and defines
@@ -471,6 +499,34 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient, public Aw
   void DeleteAliasAsync(const DeleteAliasRequestT& request, const DeleteAliasResponseReceivedHandler& handler,
                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&LambdaClient::DeleteAlias, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a capacity provider. You cannot delete a capacity provider that is
+   * currently being used by Lambda functions.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteCapacityProvider">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteCapacityProviderOutcome DeleteCapacityProvider(const Model::DeleteCapacityProviderRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteCapacityProvider that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteCapacityProviderRequestT = Model::DeleteCapacityProviderRequest>
+  Model::DeleteCapacityProviderOutcomeCallable DeleteCapacityProviderCallable(const DeleteCapacityProviderRequestT& request) const {
+    return SubmitCallable(&LambdaClient::DeleteCapacityProvider, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteCapacityProvider that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteCapacityProviderRequestT = Model::DeleteCapacityProviderRequest>
+  void DeleteCapacityProviderAsync(const DeleteCapacityProviderRequestT& request,
+                                   const DeleteCapacityProviderResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LambdaClient::DeleteCapacityProvider, request, handler, context);
   }
 
   /**
@@ -802,6 +858,33 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient, public Aw
   }
 
   /**
+   * <p>Retrieves information about a specific capacity provider, including its
+   * configuration, state, and associated resources.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetCapacityProvider">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetCapacityProviderOutcome GetCapacityProvider(const Model::GetCapacityProviderRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetCapacityProvider that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetCapacityProviderRequestT = Model::GetCapacityProviderRequest>
+  Model::GetCapacityProviderOutcomeCallable GetCapacityProviderCallable(const GetCapacityProviderRequestT& request) const {
+    return SubmitCallable(&LambdaClient::GetCapacityProvider, request);
+  }
+
+  /**
+   * An Async wrapper for GetCapacityProvider that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetCapacityProviderRequestT = Model::GetCapacityProviderRequest>
+  void GetCapacityProviderAsync(const GetCapacityProviderRequestT& request, const GetCapacityProviderResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LambdaClient::GetCapacityProvider, request, handler, context);
+  }
+
+  /**
    * <p>Returns information about the specified code signing
    * configuration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetCodeSigningConfig">AWS
@@ -1034,6 +1117,34 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient, public Aw
                                        const GetFunctionRecursionConfigResponseReceivedHandler& handler,
                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&LambdaClient::GetFunctionRecursionConfig, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the scaling configuration for a Lambda Managed Instances
+   * function.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionScalingConfig">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetFunctionScalingConfigOutcome GetFunctionScalingConfig(const Model::GetFunctionScalingConfigRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetFunctionScalingConfig that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetFunctionScalingConfigRequestT = Model::GetFunctionScalingConfigRequest>
+  Model::GetFunctionScalingConfigOutcomeCallable GetFunctionScalingConfigCallable(const GetFunctionScalingConfigRequestT& request) const {
+    return SubmitCallable(&LambdaClient::GetFunctionScalingConfig, request);
+  }
+
+  /**
+   * An Async wrapper for GetFunctionScalingConfig that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetFunctionScalingConfigRequestT = Model::GetFunctionScalingConfigRequest>
+  void GetFunctionScalingConfigAsync(const GetFunctionScalingConfigRequestT& request,
+                                     const GetFunctionScalingConfigResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LambdaClient::GetFunctionScalingConfig, request, handler, context);
   }
 
   /**
@@ -1374,6 +1485,34 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient, public Aw
   }
 
   /**
+   * <p>Returns a list of capacity providers in your account.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListCapacityProviders">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListCapacityProvidersOutcome ListCapacityProviders(const Model::ListCapacityProvidersRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListCapacityProviders that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListCapacityProvidersRequestT = Model::ListCapacityProvidersRequest>
+  Model::ListCapacityProvidersOutcomeCallable ListCapacityProvidersCallable(const ListCapacityProvidersRequestT& request = {}) const {
+    return SubmitCallable(&LambdaClient::ListCapacityProviders, request);
+  }
+
+  /**
+   * An Async wrapper for ListCapacityProviders that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListCapacityProvidersRequestT = Model::ListCapacityProvidersRequest>
+  void ListCapacityProvidersAsync(const ListCapacityProvidersResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                  const ListCapacityProvidersRequestT& request = {}) const {
+    return SubmitAsync(&LambdaClient::ListCapacityProviders, request, handler, context);
+  }
+
+  /**
    * <p>Returns a list of <a
    * href="https://docs.aws.amazon.com/lambda/latest/dg/configuring-codesigning.html">code
    * signing configurations</a>. A request returns up to 10,000 configurations per
@@ -1490,6 +1629,36 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient, public Aw
                                    const ListFunctionUrlConfigsResponseReceivedHandler& handler,
                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&LambdaClient::ListFunctionUrlConfigs, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a list of function versions that are configured to use a specific
+   * capacity provider.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionVersionsByCapacityProvider">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListFunctionVersionsByCapacityProviderOutcome ListFunctionVersionsByCapacityProvider(
+      const Model::ListFunctionVersionsByCapacityProviderRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListFunctionVersionsByCapacityProvider that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename ListFunctionVersionsByCapacityProviderRequestT = Model::ListFunctionVersionsByCapacityProviderRequest>
+  Model::ListFunctionVersionsByCapacityProviderOutcomeCallable ListFunctionVersionsByCapacityProviderCallable(
+      const ListFunctionVersionsByCapacityProviderRequestT& request) const {
+    return SubmitCallable(&LambdaClient::ListFunctionVersionsByCapacityProvider, request);
+  }
+
+  /**
+   * An Async wrapper for ListFunctionVersionsByCapacityProvider that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename ListFunctionVersionsByCapacityProviderRequestT = Model::ListFunctionVersionsByCapacityProviderRequest>
+  void ListFunctionVersionsByCapacityProviderAsync(const ListFunctionVersionsByCapacityProviderRequestT& request,
+                                                   const ListFunctionVersionsByCapacityProviderResponseReceivedHandler& handler,
+                                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LambdaClient::ListFunctionVersionsByCapacityProvider, request, handler, context);
   }
 
   /**
@@ -1933,6 +2102,36 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient, public Aw
   }
 
   /**
+   * <p>Sets the scaling configuration for a Lambda Managed Instances function. The
+   * scaling configuration defines the minimum and maximum number of execution
+   * environments that can be provisioned for the function, allowing you to control
+   * scaling behavior and resource allocation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionScalingConfig">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutFunctionScalingConfigOutcome PutFunctionScalingConfig(const Model::PutFunctionScalingConfigRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutFunctionScalingConfig that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename PutFunctionScalingConfigRequestT = Model::PutFunctionScalingConfigRequest>
+  Model::PutFunctionScalingConfigOutcomeCallable PutFunctionScalingConfigCallable(const PutFunctionScalingConfigRequestT& request) const {
+    return SubmitCallable(&LambdaClient::PutFunctionScalingConfig, request);
+  }
+
+  /**
+   * An Async wrapper for PutFunctionScalingConfig that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename PutFunctionScalingConfigRequestT = Model::PutFunctionScalingConfigRequest>
+  void PutFunctionScalingConfigAsync(const PutFunctionScalingConfigRequestT& request,
+                                     const PutFunctionScalingConfigResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LambdaClient::PutFunctionScalingConfig, request, handler, context);
+  }
+
+  /**
    * <p>Adds a provisioned concurrency configuration to a function's alias or
    * version.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutProvisionedConcurrencyConfig">AWS
@@ -2135,6 +2334,34 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient, public Aw
   void UpdateAliasAsync(const UpdateAliasRequestT& request, const UpdateAliasResponseReceivedHandler& handler,
                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&LambdaClient::UpdateAlias, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the configuration of an existing capacity provider.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateCapacityProvider">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateCapacityProviderOutcome UpdateCapacityProvider(const Model::UpdateCapacityProviderRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateCapacityProvider that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateCapacityProviderRequestT = Model::UpdateCapacityProviderRequest>
+  Model::UpdateCapacityProviderOutcomeCallable UpdateCapacityProviderCallable(const UpdateCapacityProviderRequestT& request) const {
+    return SubmitCallable(&LambdaClient::UpdateCapacityProvider, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateCapacityProvider that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateCapacityProviderRequestT = Model::UpdateCapacityProviderRequest>
+  void UpdateCapacityProviderAsync(const UpdateCapacityProviderRequestT& request,
+                                   const UpdateCapacityProviderResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LambdaClient::UpdateCapacityProvider, request, handler, context);
   }
 
   /**

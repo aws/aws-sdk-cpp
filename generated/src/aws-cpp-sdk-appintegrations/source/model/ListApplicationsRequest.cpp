@@ -30,4 +30,10 @@ void ListApplicationsRequest::AddQueryStringParameters(URI& uri) const {
     uri.AddQueryStringParameter("maxResults", ss.str());
     ss.str("");
   }
+
+  if (m_applicationTypeHasBeenSet) {
+    ss << ApplicationTypeMapper::GetNameForApplicationType(m_applicationType);
+    uri.AddQueryStringParameter("applicationType", ss.str());
+    ss.str("");
+  }
 }

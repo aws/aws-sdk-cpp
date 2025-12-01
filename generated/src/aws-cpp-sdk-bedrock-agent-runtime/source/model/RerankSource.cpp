@@ -18,13 +18,13 @@ namespace Model {
 RerankSource::RerankSource(JsonView jsonValue) { *this = jsonValue; }
 
 RerankSource& RerankSource::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("type")) {
-    m_type = RerankSourceTypeMapper::GetRerankSourceTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("inlineDocumentSource")) {
     m_inlineDocumentSource = jsonValue.GetObject("inlineDocumentSource");
     m_inlineDocumentSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("type")) {
+    m_type = RerankSourceTypeMapper::GetRerankSourceTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ RerankSource& RerankSource::operator=(JsonView jsonValue) {
 JsonValue RerankSource::Jsonize() const {
   JsonValue payload;
 
-  if (m_typeHasBeenSet) {
-    payload.WithString("type", RerankSourceTypeMapper::GetNameForRerankSourceType(m_type));
-  }
-
   if (m_inlineDocumentSourceHasBeenSet) {
     payload.WithObject("inlineDocumentSource", m_inlineDocumentSource.Jsonize());
+  }
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", RerankSourceTypeMapper::GetNameForRerankSourceType(m_type));
   }
 
   return payload;

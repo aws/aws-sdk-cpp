@@ -31,6 +31,12 @@ void ListUpdatesRequest::AddQueryStringParameters(URI& uri) const {
     ss.str("");
   }
 
+  if (m_capabilityNameHasBeenSet) {
+    ss << m_capabilityName;
+    uri.AddQueryStringParameter("capabilityName", ss.str());
+    ss.str("");
+  }
+
   if (m_nextTokenHasBeenSet) {
     ss << m_nextToken;
     uri.AddQueryStringParameter("nextToken", ss.str());

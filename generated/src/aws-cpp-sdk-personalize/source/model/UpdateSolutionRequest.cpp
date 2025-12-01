@@ -23,6 +23,10 @@ Aws::String UpdateSolutionRequest::SerializePayload() const {
     payload.WithBool("performAutoTraining", m_performAutoTraining);
   }
 
+  if (m_performIncrementalUpdateHasBeenSet) {
+    payload.WithBool("performIncrementalUpdate", m_performIncrementalUpdate);
+  }
+
   if (m_solutionUpdateConfigHasBeenSet) {
     payload.WithObject("solutionUpdateConfig", m_solutionUpdateConfig.Jsonize());
   }

@@ -34,6 +34,24 @@ class SupportTerm {
 
   ///@{
   /**
+   * <p>Category of the term being updated.</p>
+   */
+  inline const Aws::String& GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  template <typename TypeT = Aws::String>
+  void SetType(TypeT&& value) {
+    m_typeHasBeenSet = true;
+    m_type = std::forward<TypeT>(value);
+  }
+  template <typename TypeT = Aws::String>
+  SupportTerm& WithType(TypeT&& value) {
+    SetType(std::forward<TypeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Free-text field about the refund policy description that will be shown to
    * customers as is on the website and console.</p>
    */
@@ -50,30 +68,12 @@ class SupportTerm {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Category of the term being updated.</p>
-   */
-  inline const Aws::String& GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  template <typename TypeT = Aws::String>
-  void SetType(TypeT&& value) {
-    m_typeHasBeenSet = true;
-    m_type = std::forward<TypeT>(value);
-  }
-  template <typename TypeT = Aws::String>
-  SupportTerm& WithType(TypeT&& value) {
-    SetType(std::forward<TypeT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_refundPolicy;
-  bool m_refundPolicyHasBeenSet = false;
-
   Aws::String m_type;
   bool m_typeHasBeenSet = false;
+
+  Aws::String m_refundPolicy;
+  bool m_refundPolicyHasBeenSet = false;
 };
 
 }  // namespace Model

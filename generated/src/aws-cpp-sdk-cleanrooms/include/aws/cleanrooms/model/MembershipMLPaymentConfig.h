@@ -7,6 +7,7 @@
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
 #include <aws/cleanrooms/model/MembershipModelInferencePaymentConfig.h>
 #include <aws/cleanrooms/model/MembershipModelTrainingPaymentConfig.h>
+#include <aws/cleanrooms/model/MembershipSyntheticDataGenerationPaymentConfig.h>
 
 #include <utility>
 
@@ -68,12 +69,34 @@ class MembershipMLPaymentConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The payment configuration for synthetic data generation for this machine
+   * learning membership.</p>
+   */
+  inline const MembershipSyntheticDataGenerationPaymentConfig& GetSyntheticDataGeneration() const { return m_syntheticDataGeneration; }
+  inline bool SyntheticDataGenerationHasBeenSet() const { return m_syntheticDataGenerationHasBeenSet; }
+  template <typename SyntheticDataGenerationT = MembershipSyntheticDataGenerationPaymentConfig>
+  void SetSyntheticDataGeneration(SyntheticDataGenerationT&& value) {
+    m_syntheticDataGenerationHasBeenSet = true;
+    m_syntheticDataGeneration = std::forward<SyntheticDataGenerationT>(value);
+  }
+  template <typename SyntheticDataGenerationT = MembershipSyntheticDataGenerationPaymentConfig>
+  MembershipMLPaymentConfig& WithSyntheticDataGeneration(SyntheticDataGenerationT&& value) {
+    SetSyntheticDataGeneration(std::forward<SyntheticDataGenerationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   MembershipModelTrainingPaymentConfig m_modelTraining;
   bool m_modelTrainingHasBeenSet = false;
 
   MembershipModelInferencePaymentConfig m_modelInference;
   bool m_modelInferenceHasBeenSet = false;
+
+  MembershipSyntheticDataGenerationPaymentConfig m_syntheticDataGeneration;
+  bool m_syntheticDataGenerationHasBeenSet = false;
 };
 
 }  // namespace Model

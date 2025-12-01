@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
+#include <aws/partnercentral-selling/model/LeadInvitationPayload.h>
 #include <aws/partnercentral-selling/model/OpportunityInvitationPayload.h>
 
 #include <utility>
@@ -53,9 +54,32 @@ class Payload {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the details of the lead invitation within the Engagement Invitation
+   * payload. This data helps partners understand the lead context, customer
+   * information, and interaction history for the lead opportunity from AWS.</p>
+   */
+  inline const LeadInvitationPayload& GetLeadInvitation() const { return m_leadInvitation; }
+  inline bool LeadInvitationHasBeenSet() const { return m_leadInvitationHasBeenSet; }
+  template <typename LeadInvitationT = LeadInvitationPayload>
+  void SetLeadInvitation(LeadInvitationT&& value) {
+    m_leadInvitationHasBeenSet = true;
+    m_leadInvitation = std::forward<LeadInvitationT>(value);
+  }
+  template <typename LeadInvitationT = LeadInvitationPayload>
+  Payload& WithLeadInvitation(LeadInvitationT&& value) {
+    SetLeadInvitation(std::forward<LeadInvitationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   OpportunityInvitationPayload m_opportunityInvitation;
   bool m_opportunityInvitationHasBeenSet = false;
+
+  LeadInvitationPayload m_leadInvitation;
+  bool m_leadInvitationHasBeenSet = false;
 };
 
 }  // namespace Model

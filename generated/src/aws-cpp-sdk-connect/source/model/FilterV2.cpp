@@ -29,6 +29,10 @@ FilterV2& FilterV2::operator=(JsonView jsonValue) {
     }
     m_filterValuesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("StringCondition")) {
+    m_stringCondition = jsonValue.GetObject("StringCondition");
+    m_stringConditionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -45,6 +49,10 @@ JsonValue FilterV2::Jsonize() const {
       filterValuesJsonList[filterValuesIndex].AsString(m_filterValues[filterValuesIndex]);
     }
     payload.WithArray("FilterValues", std::move(filterValuesJsonList));
+  }
+
+  if (m_stringConditionHasBeenSet) {
+    payload.WithObject("StringCondition", m_stringCondition.Jsonize());
   }
 
   return payload;

@@ -18,16 +18,16 @@
 namespace Aws {
 namespace BedrockAgentRuntime {
 namespace Model {
-enum class InvokeInlineAgentEventType { INITIAL_RESPONSE, CHUNK, TRACE, RETURNCONTROL, FILES, UNKNOWN };
+enum class InvokeInlineAgentEventType { INITIAL_RESPONSE, CHUNK, FILES, RETURNCONTROL, TRACE, UNKNOWN };
 
 class InvokeInlineAgentHandler : public Aws::Utils::Event::EventStreamHandler {
   typedef std::function<void(const InvokeInlineAgentInitialResponse&)> InvokeInlineAgentInitialResponseCallback;
   typedef std::function<void(const InvokeInlineAgentInitialResponse&, const Utils::Event::InitialResponseType)>
       InvokeInlineAgentInitialResponseCallbackEx;
   typedef std::function<void(const InlineAgentPayloadPart&)> InlineAgentPayloadPartCallback;
-  typedef std::function<void(const InlineAgentTracePart&)> InlineAgentTracePartCallback;
-  typedef std::function<void(const InlineAgentReturnControlPayload&)> InlineAgentReturnControlPayloadCallback;
   typedef std::function<void(const InlineAgentFilePart&)> InlineAgentFilePartCallback;
+  typedef std::function<void(const InlineAgentReturnControlPayload&)> InlineAgentReturnControlPayloadCallback;
+  typedef std::function<void(const InlineAgentTracePart&)> InlineAgentTracePartCallback;
   typedef std::function<void(const Aws::Client::AWSError<BedrockAgentRuntimeErrors>& error)> ErrorCallback;
 
  public:
@@ -55,11 +55,11 @@ class InvokeInlineAgentHandler : public Aws::Utils::Event::EventStreamHandler {
   }
   ///@}
   inline void SetInlineAgentPayloadPartCallback(const InlineAgentPayloadPartCallback& callback) { m_onInlineAgentPayloadPart = callback; }
-  inline void SetInlineAgentTracePartCallback(const InlineAgentTracePartCallback& callback) { m_onInlineAgentTracePart = callback; }
+  inline void SetInlineAgentFilePartCallback(const InlineAgentFilePartCallback& callback) { m_onInlineAgentFilePart = callback; }
   inline void SetInlineAgentReturnControlPayloadCallback(const InlineAgentReturnControlPayloadCallback& callback) {
     m_onInlineAgentReturnControlPayload = callback;
   }
-  inline void SetInlineAgentFilePartCallback(const InlineAgentFilePartCallback& callback) { m_onInlineAgentFilePart = callback; }
+  inline void SetInlineAgentTracePartCallback(const InlineAgentTracePartCallback& callback) { m_onInlineAgentTracePart = callback; }
   inline void SetOnErrorCallback(const ErrorCallback& callback) { m_onError = callback; }
 
   inline InvokeInlineAgentInitialResponseCallbackEx& GetInitialResponseCallbackEx() { return m_onInitialResponse; }
@@ -71,9 +71,9 @@ class InvokeInlineAgentHandler : public Aws::Utils::Event::EventStreamHandler {
 
   InvokeInlineAgentInitialResponseCallbackEx m_onInitialResponse;
   InlineAgentPayloadPartCallback m_onInlineAgentPayloadPart;
-  InlineAgentTracePartCallback m_onInlineAgentTracePart;
-  InlineAgentReturnControlPayloadCallback m_onInlineAgentReturnControlPayload;
   InlineAgentFilePartCallback m_onInlineAgentFilePart;
+  InlineAgentReturnControlPayloadCallback m_onInlineAgentReturnControlPayload;
+  InlineAgentTracePartCallback m_onInlineAgentTracePart;
   ErrorCallback m_onError;
 };
 

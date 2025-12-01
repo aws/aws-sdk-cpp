@@ -21,7 +21,8 @@ enum class OfferSortBy {
   BuyerAccounts,
   State,
   Targeting,
-  LastModifiedDate
+  LastModifiedDate,
+  OfferSetId
 };
 
 namespace OfferSortByMapper {

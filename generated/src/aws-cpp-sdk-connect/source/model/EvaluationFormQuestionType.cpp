@@ -18,6 +18,8 @@ namespace EvaluationFormQuestionTypeMapper {
 static const int TEXT_HASH = HashingUtils::HashString("TEXT");
 static const int SINGLESELECT_HASH = HashingUtils::HashString("SINGLESELECT");
 static const int NUMERIC_HASH = HashingUtils::HashString("NUMERIC");
+static const int MULTISELECT_HASH = HashingUtils::HashString("MULTISELECT");
+static const int DATETIME_HASH = HashingUtils::HashString("DATETIME");
 
 EvaluationFormQuestionType GetEvaluationFormQuestionTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +29,10 @@ EvaluationFormQuestionType GetEvaluationFormQuestionTypeForName(const Aws::Strin
     return EvaluationFormQuestionType::SINGLESELECT;
   } else if (hashCode == NUMERIC_HASH) {
     return EvaluationFormQuestionType::NUMERIC;
+  } else if (hashCode == MULTISELECT_HASH) {
+    return EvaluationFormQuestionType::MULTISELECT;
+  } else if (hashCode == DATETIME_HASH) {
+    return EvaluationFormQuestionType::DATETIME;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +53,10 @@ Aws::String GetNameForEvaluationFormQuestionType(EvaluationFormQuestionType enum
       return "SINGLESELECT";
     case EvaluationFormQuestionType::NUMERIC:
       return "NUMERIC";
+    case EvaluationFormQuestionType::MULTISELECT:
+      return "MULTISELECT";
+    case EvaluationFormQuestionType::DATETIME:
+      return "DATETIME";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

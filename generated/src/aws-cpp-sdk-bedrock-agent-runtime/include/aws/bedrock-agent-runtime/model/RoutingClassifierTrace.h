@@ -54,24 +54,6 @@ class RoutingClassifierTrace {
 
   ///@{
   /**
-   * <p>The classifier's observation.</p>
-   */
-  inline const Observation& GetObservation() const { return m_observation; }
-  inline bool ObservationHasBeenSet() const { return m_observationHasBeenSet; }
-  template <typename ObservationT = Observation>
-  void SetObservation(ObservationT&& value) {
-    m_observationHasBeenSet = true;
-    m_observation = std::forward<ObservationT>(value);
-  }
-  template <typename ObservationT = Observation>
-  RoutingClassifierTrace& WithObservation(ObservationT&& value) {
-    SetObservation(std::forward<ObservationT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The classifier's model invocation input.</p>
    */
   inline const ModelInvocationInput& GetModelInvocationInput() const { return m_modelInvocationInput; }
@@ -105,18 +87,36 @@ class RoutingClassifierTrace {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The classifier's observation.</p>
+   */
+  inline const Observation& GetObservation() const { return m_observation; }
+  inline bool ObservationHasBeenSet() const { return m_observationHasBeenSet; }
+  template <typename ObservationT = Observation>
+  void SetObservation(ObservationT&& value) {
+    m_observationHasBeenSet = true;
+    m_observation = std::forward<ObservationT>(value);
+  }
+  template <typename ObservationT = Observation>
+  RoutingClassifierTrace& WithObservation(ObservationT&& value) {
+    SetObservation(std::forward<ObservationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   InvocationInput m_invocationInput;
   bool m_invocationInputHasBeenSet = false;
-
-  Observation m_observation;
-  bool m_observationHasBeenSet = false;
 
   ModelInvocationInput m_modelInvocationInput;
   bool m_modelInvocationInputHasBeenSet = false;
 
   RoutingClassifierModelInvocationOutput m_modelInvocationOutput;
   bool m_modelInvocationOutputHasBeenSet = false;
+
+  Observation m_observation;
+  bool m_observationHasBeenSet = false;
 };
 
 }  // namespace Model

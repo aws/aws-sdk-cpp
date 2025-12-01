@@ -18,6 +18,10 @@ namespace Model {
 EngagementContextDetails::EngagementContextDetails(JsonView jsonValue) { *this = jsonValue; }
 
 EngagementContextDetails& EngagementContextDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Id")) {
+    m_id = jsonValue.GetString("Id");
+    m_idHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Type")) {
     m_type = EngagementContextTypeMapper::GetEngagementContextTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
@@ -31,6 +35,10 @@ EngagementContextDetails& EngagementContextDetails::operator=(JsonView jsonValue
 
 JsonValue EngagementContextDetails::Jsonize() const {
   JsonValue payload;
+
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
+  }
 
   if (m_typeHasBeenSet) {
     payload.WithString("Type", EngagementContextTypeMapper::GetNameForEngagementContextType(m_type));

@@ -156,6 +156,31 @@ class AnswerRecommendationAIAgentConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The suggested messages configuration for the Answer Recommendation AI
+   * Agent.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetSuggestedMessages() const { return m_suggestedMessages; }
+  inline bool SuggestedMessagesHasBeenSet() const { return m_suggestedMessagesHasBeenSet; }
+  template <typename SuggestedMessagesT = Aws::Vector<Aws::String>>
+  void SetSuggestedMessages(SuggestedMessagesT&& value) {
+    m_suggestedMessagesHasBeenSet = true;
+    m_suggestedMessages = std::forward<SuggestedMessagesT>(value);
+  }
+  template <typename SuggestedMessagesT = Aws::Vector<Aws::String>>
+  AnswerRecommendationAIAgentConfiguration& WithSuggestedMessages(SuggestedMessagesT&& value) {
+    SetSuggestedMessages(std::forward<SuggestedMessagesT>(value));
+    return *this;
+  }
+  template <typename SuggestedMessagesT = Aws::String>
+  AnswerRecommendationAIAgentConfiguration& AddSuggestedMessages(SuggestedMessagesT&& value) {
+    m_suggestedMessagesHasBeenSet = true;
+    m_suggestedMessages.emplace_back(std::forward<SuggestedMessagesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_intentLabelingGenerationAIPromptId;
   bool m_intentLabelingGenerationAIPromptIdHasBeenSet = false;
@@ -174,6 +199,9 @@ class AnswerRecommendationAIAgentConfiguration {
 
   Aws::String m_locale;
   bool m_localeHasBeenSet = false;
+
+  Aws::Vector<Aws::String> m_suggestedMessages;
+  bool m_suggestedMessagesHasBeenSet = false;
 };
 
 }  // namespace Model

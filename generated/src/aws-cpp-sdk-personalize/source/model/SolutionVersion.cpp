@@ -38,6 +38,10 @@ SolutionVersion& SolutionVersion::operator=(JsonView jsonValue) {
     m_performAutoML = jsonValue.GetBool("performAutoML");
     m_performAutoMLHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("performIncrementalUpdate")) {
+    m_performIncrementalUpdate = jsonValue.GetBool("performIncrementalUpdate");
+    m_performIncrementalUpdateHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("recipeArn")) {
     m_recipeArn = jsonValue.GetString("recipeArn");
     m_recipeArnHasBeenSet = true;
@@ -110,6 +114,10 @@ JsonValue SolutionVersion::Jsonize() const {
 
   if (m_performAutoMLHasBeenSet) {
     payload.WithBool("performAutoML", m_performAutoML);
+  }
+
+  if (m_performIncrementalUpdateHasBeenSet) {
+    payload.WithBool("performIncrementalUpdate", m_performIncrementalUpdate);
   }
 
   if (m_recipeArnHasBeenSet) {

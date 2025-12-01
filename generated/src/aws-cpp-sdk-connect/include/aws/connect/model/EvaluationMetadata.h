@@ -7,6 +7,7 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/AutoEvaluationDetails.h>
 #include <aws/connect/model/EvaluationAcknowledgement.h>
+#include <aws/connect/model/EvaluationContactParticipant.h>
 #include <aws/connect/model/EvaluationScore.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -161,6 +162,42 @@ class EvaluationMetadata {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Information about a contact participant in this evaluation.</p>
+   */
+  inline const EvaluationContactParticipant& GetContactParticipant() const { return m_contactParticipant; }
+  inline bool ContactParticipantHasBeenSet() const { return m_contactParticipantHasBeenSet; }
+  template <typename ContactParticipantT = EvaluationContactParticipant>
+  void SetContactParticipant(ContactParticipantT&& value) {
+    m_contactParticipantHasBeenSet = true;
+    m_contactParticipant = std::forward<ContactParticipantT>(value);
+  }
+  template <typename ContactParticipantT = EvaluationContactParticipant>
+  EvaluationMetadata& WithContactParticipant(ContactParticipantT&& value) {
+    SetContactParticipant(std::forward<ContactParticipantT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Identifier of the sampling job.</p>
+   */
+  inline const Aws::String& GetSamplingJobId() const { return m_samplingJobId; }
+  inline bool SamplingJobIdHasBeenSet() const { return m_samplingJobIdHasBeenSet; }
+  template <typename SamplingJobIdT = Aws::String>
+  void SetSamplingJobId(SamplingJobIdT&& value) {
+    m_samplingJobIdHasBeenSet = true;
+    m_samplingJobId = std::forward<SamplingJobIdT>(value);
+  }
+  template <typename SamplingJobIdT = Aws::String>
+  EvaluationMetadata& WithSamplingJobId(SamplingJobIdT&& value) {
+    SetSamplingJobId(std::forward<SamplingJobIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_contactId;
   bool m_contactIdHasBeenSet = false;
@@ -182,6 +219,12 @@ class EvaluationMetadata {
 
   EvaluationAcknowledgement m_acknowledgement;
   bool m_acknowledgementHasBeenSet = false;
+
+  EvaluationContactParticipant m_contactParticipant;
+  bool m_contactParticipantHasBeenSet = false;
+
+  Aws::String m_samplingJobId;
+  bool m_samplingJobIdHasBeenSet = false;
 };
 
 }  // namespace Model

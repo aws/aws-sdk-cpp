@@ -36,6 +36,24 @@ class KnowledgeBaseLookupOutput {
 
   ///@{
   /**
+   * <p>Contains information about the knowledge base output.</p>
+   */
+  inline const Metadata& GetMetadata() const { return m_metadata; }
+  inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+  template <typename MetadataT = Metadata>
+  void SetMetadata(MetadataT&& value) {
+    m_metadataHasBeenSet = true;
+    m_metadata = std::forward<MetadataT>(value);
+  }
+  template <typename MetadataT = Metadata>
+  KnowledgeBaseLookupOutput& WithMetadata(MetadataT&& value) {
+    SetMetadata(std::forward<MetadataT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Contains metadata about the sources cited for the generated response.</p>
    */
   inline const Aws::Vector<RetrievedReference>& GetRetrievedReferences() const { return m_retrievedReferences; }
@@ -57,30 +75,12 @@ class KnowledgeBaseLookupOutput {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Contains information about the knowledge base output.</p>
-   */
-  inline const Metadata& GetMetadata() const { return m_metadata; }
-  inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-  template <typename MetadataT = Metadata>
-  void SetMetadata(MetadataT&& value) {
-    m_metadataHasBeenSet = true;
-    m_metadata = std::forward<MetadataT>(value);
-  }
-  template <typename MetadataT = Metadata>
-  KnowledgeBaseLookupOutput& WithMetadata(MetadataT&& value) {
-    SetMetadata(std::forward<MetadataT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::Vector<RetrievedReference> m_retrievedReferences;
-  bool m_retrievedReferencesHasBeenSet = false;
-
   Metadata m_metadata;
   bool m_metadataHasBeenSet = false;
+
+  Aws::Vector<RetrievedReference> m_retrievedReferences;
+  bool m_retrievedReferencesHasBeenSet = false;
 };
 
 }  // namespace Model

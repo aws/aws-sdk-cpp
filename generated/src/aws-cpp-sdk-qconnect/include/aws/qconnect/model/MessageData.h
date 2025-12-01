@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/qconnect/model/TextMessage.h>
+#include <aws/qconnect/model/ToolUseResultData.h>
 
 #include <utility>
 
@@ -48,9 +49,30 @@ class MessageData {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The result of tool usage in the message.</p>
+   */
+  inline const ToolUseResultData& GetToolUseResult() const { return m_toolUseResult; }
+  inline bool ToolUseResultHasBeenSet() const { return m_toolUseResultHasBeenSet; }
+  template <typename ToolUseResultT = ToolUseResultData>
+  void SetToolUseResult(ToolUseResultT&& value) {
+    m_toolUseResultHasBeenSet = true;
+    m_toolUseResult = std::forward<ToolUseResultT>(value);
+  }
+  template <typename ToolUseResultT = ToolUseResultData>
+  MessageData& WithToolUseResult(ToolUseResultT&& value) {
+    SetToolUseResult(std::forward<ToolUseResultT>(value));
+    return *this;
+  }
+  ///@}
  private:
   TextMessage m_text;
   bool m_textHasBeenSet = false;
+
+  ToolUseResultData m_toolUseResult;
+  bool m_toolUseResultHasBeenSet = false;
 };
 
 }  // namespace Model

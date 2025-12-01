@@ -89,7 +89,7 @@ class ListProfileObjectTypeItem {
 
   ///@{
   /**
-   * <p>The timestamp of when the domain was most recently edited.</p>
+   * <p>The timestamp of when the profile object type was most recently edited.</p>
    */
   inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
   inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }

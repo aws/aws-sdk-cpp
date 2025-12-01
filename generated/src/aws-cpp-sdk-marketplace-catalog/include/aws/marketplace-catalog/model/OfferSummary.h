@@ -186,6 +186,24 @@ class OfferSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The offer set ID of the offer.</p>
+   */
+  inline const Aws::String& GetOfferSetId() const { return m_offerSetId; }
+  inline bool OfferSetIdHasBeenSet() const { return m_offerSetIdHasBeenSet; }
+  template <typename OfferSetIdT = Aws::String>
+  void SetOfferSetId(OfferSetIdT&& value) {
+    m_offerSetIdHasBeenSet = true;
+    m_offerSetId = std::forward<OfferSetIdT>(value);
+  }
+  template <typename OfferSetIdT = Aws::String>
+  OfferSummary& WithOfferSetId(OfferSetIdT&& value) {
+    SetOfferSetId(std::forward<OfferSetIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
   bool m_nameHasBeenSet = false;
@@ -210,6 +228,9 @@ class OfferSummary {
 
   Aws::Vector<OfferTargetingString> m_targeting;
   bool m_targetingHasBeenSet = false;
+
+  Aws::String m_offerSetId;
+  bool m_offerSetIdHasBeenSet = false;
 };
 
 }  // namespace Model

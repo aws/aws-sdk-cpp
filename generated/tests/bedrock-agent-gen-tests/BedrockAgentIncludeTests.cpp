@@ -43,6 +43,8 @@
 #include <aws/bedrock-agent/model/AssociateAgentCollaboratorResult.h>
 #include <aws/bedrock-agent/model/AssociateAgentKnowledgeBaseRequest.h>
 #include <aws/bedrock-agent/model/AssociateAgentKnowledgeBaseResult.h>
+#include <aws/bedrock-agent/model/AudioConfiguration.h>
+#include <aws/bedrock-agent/model/AudioSegmentationConfiguration.h>
 #include <aws/bedrock-agent/model/AutoToolChoice.h>
 #include <aws/bedrock-agent/model/BedrockDataAutomationConfiguration.h>
 #include <aws/bedrock-agent/model/BedrockEmbeddingModelConfiguration.h>
@@ -460,6 +462,8 @@
 #include <aws/bedrock-agent/model/VectorSearchBedrockRerankingModelConfiguration.h>
 #include <aws/bedrock-agent/model/VectorSearchRerankingConfiguration.h>
 #include <aws/bedrock-agent/model/VectorSearchRerankingConfigurationType.h>
+#include <aws/bedrock-agent/model/VideoConfiguration.h>
+#include <aws/bedrock-agent/model/VideoSegmentationConfiguration.h>
 #include <aws/bedrock-agent/model/WebCrawlerConfiguration.h>
 #include <aws/bedrock-agent/model/WebCrawlerLimits.h>
 #include <aws/bedrock-agent/model/WebDataSourceConfiguration.h>

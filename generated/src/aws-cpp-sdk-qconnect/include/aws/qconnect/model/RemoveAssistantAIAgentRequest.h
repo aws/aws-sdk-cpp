@@ -69,12 +69,33 @@ class RemoveAssistantAIAgentRequest : public QConnectRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The orchestrator use case for the AI Agent being removed.</p>
+   */
+  inline const Aws::String& GetOrchestratorUseCase() const { return m_orchestratorUseCase; }
+  inline bool OrchestratorUseCaseHasBeenSet() const { return m_orchestratorUseCaseHasBeenSet; }
+  template <typename OrchestratorUseCaseT = Aws::String>
+  void SetOrchestratorUseCase(OrchestratorUseCaseT&& value) {
+    m_orchestratorUseCaseHasBeenSet = true;
+    m_orchestratorUseCase = std::forward<OrchestratorUseCaseT>(value);
+  }
+  template <typename OrchestratorUseCaseT = Aws::String>
+  RemoveAssistantAIAgentRequest& WithOrchestratorUseCase(OrchestratorUseCaseT&& value) {
+    SetOrchestratorUseCase(std::forward<OrchestratorUseCaseT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_assistantId;
   bool m_assistantIdHasBeenSet = false;
 
   AIAgentType m_aiAgentType{AIAgentType::NOT_SET};
   bool m_aiAgentTypeHasBeenSet = false;
+
+  Aws::String m_orchestratorUseCase;
+  bool m_orchestratorUseCaseHasBeenSet = false;
 };
 
 }  // namespace Model

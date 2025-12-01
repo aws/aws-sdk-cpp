@@ -18,13 +18,13 @@ namespace Model {
 RenewalTerm::RenewalTerm(JsonView jsonValue) { *this = jsonValue; }
 
 RenewalTerm& RenewalTerm::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("configuration")) {
-    m_configuration = jsonValue.GetObject("configuration");
-    m_configurationHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("type")) {
     m_type = jsonValue.GetString("type");
     m_typeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("configuration")) {
+    m_configuration = jsonValue.GetObject("configuration");
+    m_configurationHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ RenewalTerm& RenewalTerm::operator=(JsonView jsonValue) {
 JsonValue RenewalTerm::Jsonize() const {
   JsonValue payload;
 
-  if (m_configurationHasBeenSet) {
-    payload.WithObject("configuration", m_configuration.Jsonize());
-  }
-
   if (m_typeHasBeenSet) {
     payload.WithString("type", m_type);
+  }
+
+  if (m_configurationHasBeenSet) {
+    payload.WithObject("configuration", m_configuration.Jsonize());
   }
 
   return payload;

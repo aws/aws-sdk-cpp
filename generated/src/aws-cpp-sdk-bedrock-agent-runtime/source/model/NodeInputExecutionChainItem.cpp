@@ -18,13 +18,13 @@ namespace Model {
 NodeInputExecutionChainItem::NodeInputExecutionChainItem(JsonView jsonValue) { *this = jsonValue; }
 
 NodeInputExecutionChainItem& NodeInputExecutionChainItem::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("nodeName")) {
-    m_nodeName = jsonValue.GetString("nodeName");
-    m_nodeNameHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("index")) {
     m_index = jsonValue.GetInteger("index");
     m_indexHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("nodeName")) {
+    m_nodeName = jsonValue.GetString("nodeName");
+    m_nodeNameHasBeenSet = true;
   }
   if (jsonValue.ValueExists("type")) {
     m_type = FlowControlNodeTypeMapper::GetFlowControlNodeTypeForName(jsonValue.GetString("type"));
@@ -36,12 +36,12 @@ NodeInputExecutionChainItem& NodeInputExecutionChainItem::operator=(JsonView jso
 JsonValue NodeInputExecutionChainItem::Jsonize() const {
   JsonValue payload;
 
-  if (m_nodeNameHasBeenSet) {
-    payload.WithString("nodeName", m_nodeName);
-  }
-
   if (m_indexHasBeenSet) {
     payload.WithInteger("index", m_index);
+  }
+
+  if (m_nodeNameHasBeenSet) {
+    payload.WithString("nodeName", m_nodeName);
   }
 
   if (m_typeHasBeenSet) {

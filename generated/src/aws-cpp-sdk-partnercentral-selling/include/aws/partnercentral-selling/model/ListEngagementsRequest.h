@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/partnercentral-selling/PartnerCentralSellingRequest.h>
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
+#include <aws/partnercentral-selling/model/EngagementContextType.h>
 #include <aws/partnercentral-selling/model/EngagementSort.h>
 
 #include <utility>
@@ -102,6 +103,56 @@ class ListEngagementsRequest : public PartnerCentralSellingRequest {
   ///@}
 
   ///@{
+  /**
+   * <p>Filters engagements to include only those containing the specified context
+   * types, such as "CustomerProject" or "Lead". Use this to find engagements that
+   * have specific types of contextual information associated with them.</p>
+   */
+  inline const Aws::Vector<EngagementContextType>& GetContextTypes() const { return m_contextTypes; }
+  inline bool ContextTypesHasBeenSet() const { return m_contextTypesHasBeenSet; }
+  template <typename ContextTypesT = Aws::Vector<EngagementContextType>>
+  void SetContextTypes(ContextTypesT&& value) {
+    m_contextTypesHasBeenSet = true;
+    m_contextTypes = std::forward<ContextTypesT>(value);
+  }
+  template <typename ContextTypesT = Aws::Vector<EngagementContextType>>
+  ListEngagementsRequest& WithContextTypes(ContextTypesT&& value) {
+    SetContextTypes(std::forward<ContextTypesT>(value));
+    return *this;
+  }
+  inline ListEngagementsRequest& AddContextTypes(EngagementContextType value) {
+    m_contextTypesHasBeenSet = true;
+    m_contextTypes.push_back(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Filters engagements to exclude those containing the specified context types.
+   * Use this to find engagements that do not have certain types of contextual
+   * information, helping to narrow results based on context exclusion criteria.</p>
+   */
+  inline const Aws::Vector<EngagementContextType>& GetExcludeContextTypes() const { return m_excludeContextTypes; }
+  inline bool ExcludeContextTypesHasBeenSet() const { return m_excludeContextTypesHasBeenSet; }
+  template <typename ExcludeContextTypesT = Aws::Vector<EngagementContextType>>
+  void SetExcludeContextTypes(ExcludeContextTypesT&& value) {
+    m_excludeContextTypesHasBeenSet = true;
+    m_excludeContextTypes = std::forward<ExcludeContextTypesT>(value);
+  }
+  template <typename ExcludeContextTypesT = Aws::Vector<EngagementContextType>>
+  ListEngagementsRequest& WithExcludeContextTypes(ExcludeContextTypesT&& value) {
+    SetExcludeContextTypes(std::forward<ExcludeContextTypesT>(value));
+    return *this;
+  }
+  inline ListEngagementsRequest& AddExcludeContextTypes(EngagementContextType value) {
+    m_excludeContextTypesHasBeenSet = true;
+    m_excludeContextTypes.push_back(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const EngagementSort& GetSort() const { return m_sort; }
   inline bool SortHasBeenSet() const { return m_sortHasBeenSet; }
@@ -184,6 +235,12 @@ class ListEngagementsRequest : public PartnerCentralSellingRequest {
 
   Aws::Vector<Aws::String> m_excludeCreatedBy;
   bool m_excludeCreatedByHasBeenSet = false;
+
+  Aws::Vector<EngagementContextType> m_contextTypes;
+  bool m_contextTypesHasBeenSet = false;
+
+  Aws::Vector<EngagementContextType> m_excludeContextTypes;
+  bool m_excludeContextTypesHasBeenSet = false;
 
   EngagementSort m_sort;
   bool m_sortHasBeenSet = false;

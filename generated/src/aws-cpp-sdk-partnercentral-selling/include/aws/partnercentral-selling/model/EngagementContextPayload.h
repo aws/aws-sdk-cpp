@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 #include <aws/partnercentral-selling/model/CustomerProjectsContext.h>
+#include <aws/partnercentral-selling/model/LeadContext.h>
 
 #include <utility>
 
@@ -52,9 +53,32 @@ class EngagementContextPayload {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Contains detailed information about a lead when the context type is "Lead".
+   * This field is present only when the Type in EngagementContextDetails is set to
+   * "Lead".</p>
+   */
+  inline const LeadContext& GetLead() const { return m_lead; }
+  inline bool LeadHasBeenSet() const { return m_leadHasBeenSet; }
+  template <typename LeadT = LeadContext>
+  void SetLead(LeadT&& value) {
+    m_leadHasBeenSet = true;
+    m_lead = std::forward<LeadT>(value);
+  }
+  template <typename LeadT = LeadContext>
+  EngagementContextPayload& WithLead(LeadT&& value) {
+    SetLead(std::forward<LeadT>(value));
+    return *this;
+  }
+  ///@}
  private:
   CustomerProjectsContext m_customerProject;
   bool m_customerProjectHasBeenSet = false;
+
+  LeadContext m_lead;
+  bool m_leadHasBeenSet = false;
 };
 
 }  // namespace Model

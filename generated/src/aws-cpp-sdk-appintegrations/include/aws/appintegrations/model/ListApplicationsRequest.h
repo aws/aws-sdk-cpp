@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/appintegrations/AppIntegrationsServiceRequest.h>
 #include <aws/appintegrations/AppIntegrationsService_EXPORTS.h>
+#include <aws/appintegrations/model/ApplicationType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -67,12 +68,31 @@ class ListApplicationsRequest : public AppIntegrationsServiceRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of application.</p>
+   */
+  inline ApplicationType GetApplicationType() const { return m_applicationType; }
+  inline bool ApplicationTypeHasBeenSet() const { return m_applicationTypeHasBeenSet; }
+  inline void SetApplicationType(ApplicationType value) {
+    m_applicationTypeHasBeenSet = true;
+    m_applicationType = value;
+  }
+  inline ListApplicationsRequest& WithApplicationType(ApplicationType value) {
+    SetApplicationType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_nextToken;
   bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
   bool m_maxResultsHasBeenSet = false;
+
+  ApplicationType m_applicationType{ApplicationType::NOT_SET};
+  bool m_applicationTypeHasBeenSet = false;
 };
 
 }  // namespace Model

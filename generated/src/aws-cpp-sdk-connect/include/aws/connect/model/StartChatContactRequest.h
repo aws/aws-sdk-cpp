@@ -7,6 +7,7 @@
 #include <aws/connect/ConnectRequest.h>
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/ChatMessage.h>
+#include <aws/connect/model/ParticipantConfiguration.h>
 #include <aws/connect/model/ParticipantDetails.h>
 #include <aws/connect/model/PersistentChat.h>
 #include <aws/connect/model/SegmentAttributeValue.h>
@@ -121,6 +122,24 @@ class StartChatContactRequest : public ConnectRequest {
   template <typename ParticipantDetailsT = ParticipantDetails>
   StartChatContactRequest& WithParticipantDetails(ParticipantDetailsT&& value) {
     SetParticipantDetails(std::forward<ParticipantDetailsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The configuration of the participant. </p>
+   */
+  inline const ParticipantConfiguration& GetParticipantConfiguration() const { return m_participantConfiguration; }
+  inline bool ParticipantConfigurationHasBeenSet() const { return m_participantConfigurationHasBeenSet; }
+  template <typename ParticipantConfigurationT = ParticipantConfiguration>
+  void SetParticipantConfiguration(ParticipantConfigurationT&& value) {
+    m_participantConfigurationHasBeenSet = true;
+    m_participantConfiguration = std::forward<ParticipantConfigurationT>(value);
+  }
+  template <typename ParticipantConfigurationT = ParticipantConfiguration>
+  StartChatContactRequest& WithParticipantConfiguration(ParticipantConfigurationT&& value) {
+    SetParticipantConfiguration(std::forward<ParticipantConfigurationT>(value));
     return *this;
   }
   ///@}
@@ -326,6 +345,9 @@ class StartChatContactRequest : public ConnectRequest {
 
   ParticipantDetails m_participantDetails;
   bool m_participantDetailsHasBeenSet = false;
+
+  ParticipantConfiguration m_participantConfiguration;
+  bool m_participantConfigurationHasBeenSet = false;
 
   ChatMessage m_initialMessage;
   bool m_initialMessageHasBeenSet = false;

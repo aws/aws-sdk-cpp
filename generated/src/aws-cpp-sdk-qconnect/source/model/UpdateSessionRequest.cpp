@@ -32,5 +32,19 @@ Aws::String UpdateSessionRequest::SerializePayload() const {
     payload.WithObject("aiAgentConfiguration", std::move(aiAgentConfigurationJsonMap));
   }
 
+  if (m_orchestratorConfigurationListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> orchestratorConfigurationListJsonList(m_orchestratorConfigurationList.size());
+    for (unsigned orchestratorConfigurationListIndex = 0;
+         orchestratorConfigurationListIndex < orchestratorConfigurationListJsonList.GetLength(); ++orchestratorConfigurationListIndex) {
+      orchestratorConfigurationListJsonList[orchestratorConfigurationListIndex].AsObject(
+          m_orchestratorConfigurationList[orchestratorConfigurationListIndex].Jsonize());
+    }
+    payload.WithArray("orchestratorConfigurationList", std::move(orchestratorConfigurationListJsonList));
+  }
+
+  if (m_removeOrchestratorConfigurationListHasBeenSet) {
+    payload.WithBool("removeOrchestratorConfigurationList", m_removeOrchestratorConfigurationList);
+  }
+
   return payload.View().WriteReadable();
 }

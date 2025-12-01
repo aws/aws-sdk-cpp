@@ -36,18 +36,35 @@ class ListFlowExecutionEventsRequest : public BedrockAgentRuntimeRequest {
 
   ///@{
   /**
-   * <p>The unique identifier of the flow.</p>
+   * <p>The type of events to retrieve. Specify <code>Node</code> for node-level
+   * events or <code>Flow</code> for flow-level events.</p>
    */
-  inline const Aws::String& GetFlowIdentifier() const { return m_flowIdentifier; }
-  inline bool FlowIdentifierHasBeenSet() const { return m_flowIdentifierHasBeenSet; }
-  template <typename FlowIdentifierT = Aws::String>
-  void SetFlowIdentifier(FlowIdentifierT&& value) {
-    m_flowIdentifierHasBeenSet = true;
-    m_flowIdentifier = std::forward<FlowIdentifierT>(value);
+  inline FlowExecutionEventType GetEventType() const { return m_eventType; }
+  inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
+  inline void SetEventType(FlowExecutionEventType value) {
+    m_eventTypeHasBeenSet = true;
+    m_eventType = value;
   }
-  template <typename FlowIdentifierT = Aws::String>
-  ListFlowExecutionEventsRequest& WithFlowIdentifier(FlowIdentifierT&& value) {
-    SetFlowIdentifier(std::forward<FlowIdentifierT>(value));
+  inline ListFlowExecutionEventsRequest& WithEventType(FlowExecutionEventType value) {
+    SetEventType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier of the flow execution.</p>
+   */
+  inline const Aws::String& GetExecutionIdentifier() const { return m_executionIdentifier; }
+  inline bool ExecutionIdentifierHasBeenSet() const { return m_executionIdentifierHasBeenSet; }
+  template <typename ExecutionIdentifierT = Aws::String>
+  void SetExecutionIdentifier(ExecutionIdentifierT&& value) {
+    m_executionIdentifierHasBeenSet = true;
+    m_executionIdentifier = std::forward<ExecutionIdentifierT>(value);
+  }
+  template <typename ExecutionIdentifierT = Aws::String>
+  ListFlowExecutionEventsRequest& WithExecutionIdentifier(ExecutionIdentifierT&& value) {
+    SetExecutionIdentifier(std::forward<ExecutionIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -72,18 +89,18 @@ class ListFlowExecutionEventsRequest : public BedrockAgentRuntimeRequest {
 
   ///@{
   /**
-   * <p>The unique identifier of the flow execution.</p>
+   * <p>The unique identifier of the flow.</p>
    */
-  inline const Aws::String& GetExecutionIdentifier() const { return m_executionIdentifier; }
-  inline bool ExecutionIdentifierHasBeenSet() const { return m_executionIdentifierHasBeenSet; }
-  template <typename ExecutionIdentifierT = Aws::String>
-  void SetExecutionIdentifier(ExecutionIdentifierT&& value) {
-    m_executionIdentifierHasBeenSet = true;
-    m_executionIdentifier = std::forward<ExecutionIdentifierT>(value);
+  inline const Aws::String& GetFlowIdentifier() const { return m_flowIdentifier; }
+  inline bool FlowIdentifierHasBeenSet() const { return m_flowIdentifierHasBeenSet; }
+  template <typename FlowIdentifierT = Aws::String>
+  void SetFlowIdentifier(FlowIdentifierT&& value) {
+    m_flowIdentifierHasBeenSet = true;
+    m_flowIdentifier = std::forward<FlowIdentifierT>(value);
   }
-  template <typename ExecutionIdentifierT = Aws::String>
-  ListFlowExecutionEventsRequest& WithExecutionIdentifier(ExecutionIdentifierT&& value) {
-    SetExecutionIdentifier(std::forward<ExecutionIdentifierT>(value));
+  template <typename FlowIdentifierT = Aws::String>
+  ListFlowExecutionEventsRequest& WithFlowIdentifier(FlowIdentifierT&& value) {
+    SetFlowIdentifier(std::forward<FlowIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -124,41 +141,24 @@ class ListFlowExecutionEventsRequest : public BedrockAgentRuntimeRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The type of events to retrieve. Specify <code>Node</code> for node-level
-   * events or <code>Flow</code> for flow-level events.</p>
-   */
-  inline FlowExecutionEventType GetEventType() const { return m_eventType; }
-  inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
-  inline void SetEventType(FlowExecutionEventType value) {
-    m_eventTypeHasBeenSet = true;
-    m_eventType = value;
-  }
-  inline ListFlowExecutionEventsRequest& WithEventType(FlowExecutionEventType value) {
-    SetEventType(value);
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_flowIdentifier;
-  bool m_flowIdentifierHasBeenSet = false;
+  FlowExecutionEventType m_eventType{FlowExecutionEventType::NOT_SET};
+  bool m_eventTypeHasBeenSet = false;
+
+  Aws::String m_executionIdentifier;
+  bool m_executionIdentifierHasBeenSet = false;
 
   Aws::String m_flowAliasIdentifier;
   bool m_flowAliasIdentifierHasBeenSet = false;
 
-  Aws::String m_executionIdentifier;
-  bool m_executionIdentifierHasBeenSet = false;
+  Aws::String m_flowIdentifier;
+  bool m_flowIdentifierHasBeenSet = false;
 
   int m_maxResults{0};
   bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
   bool m_nextTokenHasBeenSet = false;
-
-  FlowExecutionEventType m_eventType{FlowExecutionEventType::NOT_SET};
-  bool m_eventTypeHasBeenSet = false;
 };
 
 }  // namespace Model

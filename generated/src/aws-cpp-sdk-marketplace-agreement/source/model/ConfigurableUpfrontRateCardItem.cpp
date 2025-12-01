@@ -18,6 +18,10 @@ namespace Model {
 ConfigurableUpfrontRateCardItem::ConfigurableUpfrontRateCardItem(JsonView jsonValue) { *this = jsonValue; }
 
 ConfigurableUpfrontRateCardItem& ConfigurableUpfrontRateCardItem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("selector")) {
+    m_selector = jsonValue.GetObject("selector");
+    m_selectorHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("constraints")) {
     m_constraints = jsonValue.GetObject("constraints");
     m_constraintsHasBeenSet = true;
@@ -29,15 +33,15 @@ ConfigurableUpfrontRateCardItem& ConfigurableUpfrontRateCardItem::operator=(Json
     }
     m_rateCardHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("selector")) {
-    m_selector = jsonValue.GetObject("selector");
-    m_selectorHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue ConfigurableUpfrontRateCardItem::Jsonize() const {
   JsonValue payload;
+
+  if (m_selectorHasBeenSet) {
+    payload.WithObject("selector", m_selector.Jsonize());
+  }
 
   if (m_constraintsHasBeenSet) {
     payload.WithObject("constraints", m_constraints.Jsonize());
@@ -49,10 +53,6 @@ JsonValue ConfigurableUpfrontRateCardItem::Jsonize() const {
       rateCardJsonList[rateCardIndex].AsObject(m_rateCard[rateCardIndex].Jsonize());
     }
     payload.WithArray("rateCard", std::move(rateCardJsonList));
-  }
-
-  if (m_selectorHasBeenSet) {
-    payload.WithObject("selector", m_selector.Jsonize());
   }
 
   return payload;

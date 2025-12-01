@@ -18,6 +18,7 @@
 #include <aws/appintegrations/model/ApplicationConfig.h>
 #include <aws/appintegrations/model/ApplicationSourceConfig.h>
 #include <aws/appintegrations/model/ApplicationSummary.h>
+#include <aws/appintegrations/model/ApplicationType.h>
 #include <aws/appintegrations/model/ContactHandling.h>
 #include <aws/appintegrations/model/ContactHandlingScope.h>
 #include <aws/appintegrations/model/CreateApplicationRequest.h>

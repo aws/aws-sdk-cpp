@@ -37,6 +37,7 @@
 #include <aws/cleanroomsml/model/CollaborationTrainedModelExportJobSummary.h>
 #include <aws/cleanroomsml/model/CollaborationTrainedModelInferenceJobSummary.h>
 #include <aws/cleanroomsml/model/CollaborationTrainedModelSummary.h>
+#include <aws/cleanroomsml/model/ColumnClassificationDetails.h>
 #include <aws/cleanroomsml/model/ColumnSchema.h>
 #include <aws/cleanroomsml/model/ColumnType.h>
 #include <aws/cleanroomsml/model/ComputeConfiguration.h>
@@ -61,6 +62,7 @@
 #include <aws/cleanroomsml/model/CreateTrainingDatasetRequest.h>
 #include <aws/cleanroomsml/model/CreateTrainingDatasetResult.h>
 #include <aws/cleanroomsml/model/CustomEntityConfig.h>
+#include <aws/cleanroomsml/model/DataPrivacyScores.h>
 #include <aws/cleanroomsml/model/DataSource.h>
 #include <aws/cleanroomsml/model/Dataset.h>
 #include <aws/cleanroomsml/model/DatasetInputConfig.h>
@@ -158,6 +160,9 @@
 #include <aws/cleanroomsml/model/MLInputChannelStatus.h>
 #include <aws/cleanroomsml/model/MLInputChannelSummary.h>
 #include <aws/cleanroomsml/model/MLOutputConfiguration.h>
+#include <aws/cleanroomsml/model/MLSyntheticDataParameters.h>
+#include <aws/cleanroomsml/model/MembershipInferenceAttackScore.h>
+#include <aws/cleanroomsml/model/MembershipInferenceAttackVersion.h>
 #include <aws/cleanroomsml/model/MetricDefinition.h>
 #include <aws/cleanroomsml/model/MetricsConfigurationPolicy.h>
 #include <aws/cleanroomsml/model/MetricsStatus.h>
@@ -188,6 +193,10 @@
 #include <aws/cleanroomsml/model/StartTrainedModelInferenceJobResult.h>
 #include <aws/cleanroomsml/model/StatusDetails.h>
 #include <aws/cleanroomsml/model/StoppingCondition.h>
+#include <aws/cleanroomsml/model/SyntheticDataColumnProperties.h>
+#include <aws/cleanroomsml/model/SyntheticDataColumnType.h>
+#include <aws/cleanroomsml/model/SyntheticDataConfiguration.h>
+#include <aws/cleanroomsml/model/SyntheticDataEvaluationScores.h>
 #include <aws/cleanroomsml/model/TagOnCreatePolicy.h>
 #include <aws/cleanroomsml/model/TagResourceRequest.h>
 #include <aws/cleanroomsml/model/TagResourceResult.h>

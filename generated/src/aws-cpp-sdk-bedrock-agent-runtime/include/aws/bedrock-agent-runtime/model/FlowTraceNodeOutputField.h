@@ -41,24 +41,6 @@ class FlowTraceNodeOutputField {
 
   ///@{
   /**
-   * <p>The name of the node output.</p>
-   */
-  inline const Aws::String& GetNodeOutputName() const { return m_nodeOutputName; }
-  inline bool NodeOutputNameHasBeenSet() const { return m_nodeOutputNameHasBeenSet; }
-  template <typename NodeOutputNameT = Aws::String>
-  void SetNodeOutputName(NodeOutputNameT&& value) {
-    m_nodeOutputNameHasBeenSet = true;
-    m_nodeOutputName = std::forward<NodeOutputNameT>(value);
-  }
-  template <typename NodeOutputNameT = Aws::String>
-  FlowTraceNodeOutputField& WithNodeOutputName(NodeOutputNameT&& value) {
-    SetNodeOutputName(std::forward<NodeOutputNameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The content of the node output.</p>
    */
   inline const FlowTraceNodeOutputContent& GetContent() const { return m_content; }
@@ -101,6 +83,24 @@ class FlowTraceNodeOutputField {
 
   ///@{
   /**
+   * <p>The name of the node output.</p>
+   */
+  inline const Aws::String& GetNodeOutputName() const { return m_nodeOutputName; }
+  inline bool NodeOutputNameHasBeenSet() const { return m_nodeOutputNameHasBeenSet; }
+  template <typename NodeOutputNameT = Aws::String>
+  void SetNodeOutputName(NodeOutputNameT&& value) {
+    m_nodeOutputNameHasBeenSet = true;
+    m_nodeOutputName = std::forward<NodeOutputNameT>(value);
+  }
+  template <typename NodeOutputNameT = Aws::String>
+  FlowTraceNodeOutputField& WithNodeOutputName(NodeOutputNameT&& value) {
+    SetNodeOutputName(std::forward<NodeOutputNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The data type of the output field for compatibility validation.</p>
    */
   inline FlowNodeIODataType GetType() const { return m_type; }
@@ -115,14 +115,14 @@ class FlowTraceNodeOutputField {
   }
   ///@}
  private:
-  Aws::String m_nodeOutputName;
-  bool m_nodeOutputNameHasBeenSet = false;
-
   FlowTraceNodeOutputContent m_content;
   bool m_contentHasBeenSet = false;
 
   Aws::Vector<FlowTraceNodeOutputNext> m_next;
   bool m_nextHasBeenSet = false;
+
+  Aws::String m_nodeOutputName;
+  bool m_nodeOutputNameHasBeenSet = false;
 
   FlowNodeIODataType m_type{FlowNodeIODataType::NOT_SET};
   bool m_typeHasBeenSet = false;

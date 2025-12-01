@@ -84,6 +84,14 @@ EvaluationForm& EvaluationForm::operator=(JsonView jsonValue) {
     }
     m_tagsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("TargetConfiguration")) {
+    m_targetConfiguration = jsonValue.GetObject("TargetConfiguration");
+    m_targetConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("LanguageConfiguration")) {
+    m_languageConfiguration = jsonValue.GetObject("LanguageConfiguration");
+    m_languageConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -156,6 +164,14 @@ JsonValue EvaluationForm::Jsonize() const {
       tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
     }
     payload.WithObject("Tags", std::move(tagsJsonMap));
+  }
+
+  if (m_targetConfigurationHasBeenSet) {
+    payload.WithObject("TargetConfiguration", m_targetConfiguration.Jsonize());
+  }
+
+  if (m_languageConfigurationHasBeenSet) {
+    payload.WithObject("LanguageConfiguration", m_languageConfiguration.Jsonize());
   }
 
   return payload;

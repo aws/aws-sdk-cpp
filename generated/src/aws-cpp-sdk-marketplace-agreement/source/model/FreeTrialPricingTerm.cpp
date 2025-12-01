@@ -18,6 +18,10 @@ namespace Model {
 FreeTrialPricingTerm::FreeTrialPricingTerm(JsonView jsonValue) { *this = jsonValue; }
 
 FreeTrialPricingTerm& FreeTrialPricingTerm::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
+    m_type = jsonValue.GetString("type");
+    m_typeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("duration")) {
     m_duration = jsonValue.GetString("duration");
     m_durationHasBeenSet = true;
@@ -29,15 +33,15 @@ FreeTrialPricingTerm& FreeTrialPricingTerm::operator=(JsonView jsonValue) {
     }
     m_grantsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("type")) {
-    m_type = jsonValue.GetString("type");
-    m_typeHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue FreeTrialPricingTerm::Jsonize() const {
   JsonValue payload;
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", m_type);
+  }
 
   if (m_durationHasBeenSet) {
     payload.WithString("duration", m_duration);
@@ -49,10 +53,6 @@ JsonValue FreeTrialPricingTerm::Jsonize() const {
       grantsJsonList[grantsIndex].AsObject(m_grants[grantsIndex].Jsonize());
     }
     payload.WithArray("grants", std::move(grantsJsonList));
-  }
-
-  if (m_typeHasBeenSet) {
-    payload.WithString("type", m_type);
   }
 
   return payload;

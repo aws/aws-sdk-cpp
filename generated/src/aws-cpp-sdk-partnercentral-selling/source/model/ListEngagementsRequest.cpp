@@ -35,6 +35,25 @@ Aws::String ListEngagementsRequest::SerializePayload() const {
     payload.WithArray("ExcludeCreatedBy", std::move(excludeCreatedByJsonList));
   }
 
+  if (m_contextTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> contextTypesJsonList(m_contextTypes.size());
+    for (unsigned contextTypesIndex = 0; contextTypesIndex < contextTypesJsonList.GetLength(); ++contextTypesIndex) {
+      contextTypesJsonList[contextTypesIndex].AsString(
+          EngagementContextTypeMapper::GetNameForEngagementContextType(m_contextTypes[contextTypesIndex]));
+    }
+    payload.WithArray("ContextTypes", std::move(contextTypesJsonList));
+  }
+
+  if (m_excludeContextTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> excludeContextTypesJsonList(m_excludeContextTypes.size());
+    for (unsigned excludeContextTypesIndex = 0; excludeContextTypesIndex < excludeContextTypesJsonList.GetLength();
+         ++excludeContextTypesIndex) {
+      excludeContextTypesJsonList[excludeContextTypesIndex].AsString(
+          EngagementContextTypeMapper::GetNameForEngagementContextType(m_excludeContextTypes[excludeContextTypesIndex]));
+    }
+    payload.WithArray("ExcludeContextTypes", std::move(excludeContextTypesJsonList));
+  }
+
   if (m_sortHasBeenSet) {
     payload.WithObject("Sort", m_sort.Jsonize());
   }

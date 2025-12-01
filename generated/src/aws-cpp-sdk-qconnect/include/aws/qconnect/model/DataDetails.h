@@ -6,11 +6,15 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSAllocator.h>
 #include <aws/qconnect/QConnect_EXPORTS.h>
+#include <aws/qconnect/model/CaseSummarizationChunkDataDetails.h>
 #include <aws/qconnect/model/ContentDataDetails.h>
 #include <aws/qconnect/model/EmailOverviewChunkDataDetails.h>
 #include <aws/qconnect/model/EmailResponseChunkDataDetails.h>
 #include <aws/qconnect/model/IntentDetectedDataDetails.h>
+#include <aws/qconnect/model/NotesChunkDataDetails.h>
+#include <aws/qconnect/model/NotesDataDetails.h>
 #include <aws/qconnect/model/SourceContentDataDetails.h>
+#include <aws/qconnect/model/SuggestedMessageDataDetails.h>
 
 #include <utility>
 
@@ -188,6 +192,78 @@ class DataDetails {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Details about case summarization chunk data.</p>
+   */
+  inline const CaseSummarizationChunkDataDetails& GetCaseSummarizationChunkData() const { return m_caseSummarizationChunkData; }
+  inline bool CaseSummarizationChunkDataHasBeenSet() const { return m_caseSummarizationChunkDataHasBeenSet; }
+  template <typename CaseSummarizationChunkDataT = CaseSummarizationChunkDataDetails>
+  void SetCaseSummarizationChunkData(CaseSummarizationChunkDataT&& value) {
+    m_caseSummarizationChunkDataHasBeenSet = true;
+    m_caseSummarizationChunkData = std::forward<CaseSummarizationChunkDataT>(value);
+  }
+  template <typename CaseSummarizationChunkDataT = CaseSummarizationChunkDataDetails>
+  DataDetails& WithCaseSummarizationChunkData(CaseSummarizationChunkDataT&& value) {
+    SetCaseSummarizationChunkData(std::forward<CaseSummarizationChunkDataT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Details about suggested message data.</p>
+   */
+  inline const SuggestedMessageDataDetails& GetSuggestedMessageData() const { return m_suggestedMessageData; }
+  inline bool SuggestedMessageDataHasBeenSet() const { return m_suggestedMessageDataHasBeenSet; }
+  template <typename SuggestedMessageDataT = SuggestedMessageDataDetails>
+  void SetSuggestedMessageData(SuggestedMessageDataT&& value) {
+    m_suggestedMessageDataHasBeenSet = true;
+    m_suggestedMessageData = std::forward<SuggestedMessageDataT>(value);
+  }
+  template <typename SuggestedMessageDataT = SuggestedMessageDataDetails>
+  DataDetails& WithSuggestedMessageData(SuggestedMessageDataT&& value) {
+    SetSuggestedMessageData(std::forward<SuggestedMessageDataT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Details about notes data.</p>
+   */
+  inline const NotesDataDetails& GetNotesData() const { return m_notesData; }
+  inline bool NotesDataHasBeenSet() const { return m_notesDataHasBeenSet; }
+  template <typename NotesDataT = NotesDataDetails>
+  void SetNotesData(NotesDataT&& value) {
+    m_notesDataHasBeenSet = true;
+    m_notesData = std::forward<NotesDataT>(value);
+  }
+  template <typename NotesDataT = NotesDataDetails>
+  DataDetails& WithNotesData(NotesDataT&& value) {
+    SetNotesData(std::forward<NotesDataT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Details about notes chunk data.</p>
+   */
+  inline const NotesChunkDataDetails& GetNotesChunkData() const { return m_notesChunkData; }
+  inline bool NotesChunkDataHasBeenSet() const { return m_notesChunkDataHasBeenSet; }
+  template <typename NotesChunkDataT = NotesChunkDataDetails>
+  void SetNotesChunkData(NotesChunkDataT&& value) {
+    m_notesChunkDataHasBeenSet = true;
+    m_notesChunkData = std::forward<NotesChunkDataT>(value);
+  }
+  template <typename NotesChunkDataT = NotesChunkDataDetails>
+  DataDetails& WithNotesChunkData(NotesChunkDataT&& value) {
+    SetNotesChunkData(std::forward<NotesChunkDataT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ContentDataDetails m_contentData;
   bool m_contentDataHasBeenSet = false;
@@ -212,6 +288,18 @@ class DataDetails {
 
   std::shared_ptr<EmailGenerativeAnswerChunkDataDetails> m_emailGenerativeAnswerChunkData;
   bool m_emailGenerativeAnswerChunkDataHasBeenSet = false;
+
+  CaseSummarizationChunkDataDetails m_caseSummarizationChunkData;
+  bool m_caseSummarizationChunkDataHasBeenSet = false;
+
+  SuggestedMessageDataDetails m_suggestedMessageData;
+  bool m_suggestedMessageDataHasBeenSet = false;
+
+  NotesDataDetails m_notesData;
+  bool m_notesDataHasBeenSet = false;
+
+  NotesChunkDataDetails m_notesChunkData;
+  bool m_notesChunkDataHasBeenSet = false;
 };
 
 }  // namespace Model

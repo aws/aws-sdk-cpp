@@ -42,9 +42,9 @@ ApplicationSummary& ApplicationSummary::operator=(JsonView jsonValue) {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("IsService")) {
-    m_isService = jsonValue.GetBool("IsService");
-    m_isServiceHasBeenSet = true;
+  if (jsonValue.ValueExists("ApplicationType")) {
+    m_applicationType = ApplicationTypeMapper::GetApplicationTypeForName(jsonValue.GetString("ApplicationType"));
+    m_applicationTypeHasBeenSet = true;
   }
   return *this;
 }
@@ -76,8 +76,8 @@ JsonValue ApplicationSummary::Jsonize() const {
     payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
   }
 
-  if (m_isServiceHasBeenSet) {
-    payload.WithBool("IsService", m_isService);
+  if (m_applicationTypeHasBeenSet) {
+    payload.WithString("ApplicationType", ApplicationTypeMapper::GetNameForApplicationType(m_applicationType));
   }
 
   return payload;

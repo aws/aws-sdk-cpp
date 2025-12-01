@@ -10,7 +10,7 @@
 namespace Aws {
 namespace PartnerCentralSelling {
 namespace Model {
-enum class RelatedEntityType { NOT_SET, Solutions, AwsProducts, AwsMarketplaceOffers };
+enum class RelatedEntityType { NOT_SET, Solutions, AwsProducts, AwsMarketplaceOffers, AwsMarketplaceOfferSets };
 
 namespace RelatedEntityTypeMapper {
 AWS_PARTNERCENTRALSELLING_API RelatedEntityType GetRelatedEntityTypeForName(const Aws::String& name);

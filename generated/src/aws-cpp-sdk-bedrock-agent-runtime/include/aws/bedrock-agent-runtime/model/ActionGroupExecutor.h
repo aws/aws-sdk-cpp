@@ -36,6 +36,24 @@ class ActionGroupExecutor {
 
   ///@{
   /**
+   * <p> To return the action group invocation results directly in the
+   * <code>InvokeInlineAgent</code> response, specify <code>RETURN_CONTROL</code>.
+   * </p>
+   */
+  inline CustomControlMethod GetCustomControl() const { return m_customControl; }
+  inline bool CustomControlHasBeenSet() const { return m_customControlHasBeenSet; }
+  inline void SetCustomControl(CustomControlMethod value) {
+    m_customControlHasBeenSet = true;
+    m_customControl = value;
+  }
+  inline ActionGroupExecutor& WithCustomControl(CustomControlMethod value) {
+    SetCustomControl(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p> The Amazon Resource Name (ARN) of the Lambda function containing the
    * business logic that is carried out upon invoking the action. </p>
    */
@@ -52,30 +70,12 @@ class ActionGroupExecutor {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p> To return the action group invocation results directly in the
-   * <code>InvokeInlineAgent</code> response, specify <code>RETURN_CONTROL</code>.
-   * </p>
-   */
-  inline CustomControlMethod GetCustomControl() const { return m_customControl; }
-  inline bool CustomControlHasBeenSet() const { return m_customControlHasBeenSet; }
-  inline void SetCustomControl(CustomControlMethod value) {
-    m_customControlHasBeenSet = true;
-    m_customControl = value;
-  }
-  inline ActionGroupExecutor& WithCustomControl(CustomControlMethod value) {
-    SetCustomControl(value);
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_lambda;
-  bool m_lambdaHasBeenSet = false;
-
   CustomControlMethod m_customControl{CustomControlMethod::NOT_SET};
   bool m_customControlHasBeenSet = false;
+
+  Aws::String m_lambda;
+  bool m_lambdaHasBeenSet = false;
 };
 
 }  // namespace Model

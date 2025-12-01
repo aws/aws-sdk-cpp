@@ -18,17 +18,17 @@ namespace Model {
 RoutingClassifierModelInvocationOutput::RoutingClassifierModelInvocationOutput(JsonView jsonValue) { *this = jsonValue; }
 
 RoutingClassifierModelInvocationOutput& RoutingClassifierModelInvocationOutput::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("traceId")) {
-    m_traceId = jsonValue.GetString("traceId");
-    m_traceIdHasBeenSet = true;
+  if (jsonValue.ValueExists("metadata")) {
+    m_metadata = jsonValue.GetObject("metadata");
+    m_metadataHasBeenSet = true;
   }
   if (jsonValue.ValueExists("rawResponse")) {
     m_rawResponse = jsonValue.GetObject("rawResponse");
     m_rawResponseHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("metadata")) {
-    m_metadata = jsonValue.GetObject("metadata");
-    m_metadataHasBeenSet = true;
+  if (jsonValue.ValueExists("traceId")) {
+    m_traceId = jsonValue.GetString("traceId");
+    m_traceIdHasBeenSet = true;
   }
   return *this;
 }
@@ -36,16 +36,16 @@ RoutingClassifierModelInvocationOutput& RoutingClassifierModelInvocationOutput::
 JsonValue RoutingClassifierModelInvocationOutput::Jsonize() const {
   JsonValue payload;
 
-  if (m_traceIdHasBeenSet) {
-    payload.WithString("traceId", m_traceId);
+  if (m_metadataHasBeenSet) {
+    payload.WithObject("metadata", m_metadata.Jsonize());
   }
 
   if (m_rawResponseHasBeenSet) {
     payload.WithObject("rawResponse", m_rawResponse.Jsonize());
   }
 
-  if (m_metadataHasBeenSet) {
-    payload.WithObject("metadata", m_metadata.Jsonize());
+  if (m_traceIdHasBeenSet) {
+    payload.WithString("traceId", m_traceId);
   }
 
   return payload;

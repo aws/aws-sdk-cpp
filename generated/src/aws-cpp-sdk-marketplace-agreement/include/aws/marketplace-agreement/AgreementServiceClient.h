@@ -155,41 +155,64 @@ class AWS_AGREEMENTSERVICE_API AgreementServiceClient : public Aws::Client::AWSJ
   }
 
   /**
-   * <p>Searches across all agreements that a proposer or an acceptor has in AWS
-   * Marketplace. The search returns a list of agreements with basic agreement
-   * information.</p> <p>The following filter combinations are supported:</p> <ul>
-   * <li> <p> <code>PartyType</code> as <code>Proposer</code> +
-   * <code>AgreementType</code> + <code>ResourceIdentifier</code> </p> </li> <li> <p>
-   * <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> +
-   * <code>OfferId</code> </p> </li> <li> <p> <code>PartyType</code> as
-   * <code>Proposer</code> + <code>AgreementType</code> +
-   * <code>AcceptorAccountId</code> </p> </li> <li> <p> <code>PartyType</code> as
-   * <code>Proposer</code> + <code>AgreementType</code> + <code>Status</code> </p>
-   * </li> <li> <p> <code>PartyType</code> as <code>Proposer</code> +
-   * <code>AgreementType</code> + <code>ResourceIdentifier</code> +
-   * <code>Status</code> </p> </li> <li> <p> <code>PartyType</code> as
-   * <code>Proposer</code> + <code>AgreementType</code> + <code>OfferId</code> +
-   * <code>Status</code> </p> </li> <li> <p> <code>PartyType</code> as
-   * <code>Proposer</code> + <code>AgreementType</code> +
-   * <code>AcceptorAccountId</code> + <code>Status</code> </p> </li> <li> <p>
-   * <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> +
-   * <code>ResourceType</code> + <code>Status</code> </p> </li> <li> <p>
-   * <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> +
-   * <code>AcceptorAccountId</code> + <code>ResourceType</code> + <code>Status</code>
-   * </p> </li> <li> <p> <code>PartyType</code> as <code>Proposer</code> +
+   * <p>Searches across all agreements that a proposer has in AWS Marketplace. The
+   * search returns a list of agreements with basic agreement information.</p> <p>The
+   * following filter combinations are supported when the <code>PartyType</code> is
+   * <code>Proposer</code>:</p> <ul> <li> <p> <code>AgreementType</code> </p> </li>
+   * <li> <p> <code>AgreementType</code> + <code>EndTime</code> </p> </li> <li> <p>
+   * <code>AgreementType</code> + <code>ResourceType</code> </p> </li> <li> <p>
+   * <code>AgreementType</code> + <code>ResourceType</code> + <code>EndTime</code>
+   * </p> </li> <li> <p> <code>AgreementType</code> + <code>ResourceType</code> +
+   * <code>Status</code> </p> </li> <li> <p> <code>AgreementType</code> +
+   * <code>ResourceType</code> + <code>Status</code> + <code>EndTime</code> </p>
+   * </li> <li> <p> <code>AgreementType</code> + <code>ResourceId</code> </p> </li>
+   * <li> <p> <code>AgreementType</code> + <code>ResourceId</code> +
+   * <code>EndTime</code> </p> </li> <li> <p> <code>AgreementType</code> +
+   * <code>ResourceId</code> + <code>Status</code> </p> </li> <li> <p>
+   * <code>AgreementType</code> + <code>ResourceId</code> + <code>Status</code> +
+   * <code>EndTime</code> </p> </li> <li> <p> <code>AgreementType</code> +
+   * <code>AcceptorAccountId</code> </p> </li> <li> <p> <code>AgreementType</code> +
+   * <code>AcceptorAccountId</code> + <code>EndTime</code> </p> </li> <li> <p>
    * <code>AgreementType</code> + <code>AcceptorAccountId</code> +
-   * <code>OfferId</code> </p> </li> <li> <p> <code>PartyType</code> as
-   * <code>Proposer</code> + <code>AgreementType</code> +
+   * <code>Status</code> </p> </li> <li> <p> <code>AgreementType</code> +
+   * <code>AcceptorAccountId</code> + <code>Status</code> + <code>EndTime</code> </p>
+   * </li> <li> <p> <code>AgreementType</code> + <code>AcceptorAccountId</code> +
+   * <code>OfferId</code> </p> </li> <li> <p> <code>AgreementType</code> +
    * <code>AcceptorAccountId</code> + <code>OfferId</code> + <code>Status</code> </p>
-   * </li> <li> <p> <code>PartyType</code> as <code>Proposer</code> +
+   * </li> <li> <p> <code>AgreementType</code> + <code>AcceptorAccountId</code> +
+   * <code>OfferId</code> + <code>EndTime</code> </p> </li> <li> <p>
    * <code>AgreementType</code> + <code>AcceptorAccountId</code> +
-   * <code>ResourceIdentifier</code> </p> </li> <li> <p> <code>PartyType</code> as
-   * <code>Proposer</code> + <code>AgreementType</code> +
-   * <code>AcceptorAccountId</code> + <code>ResourceIdentifier</code> +
-   * <code>Status</code> </p> </li> <li> <p> <code>PartyType</code> as
-   * <code>Proposer</code> + <code>AgreementType</code> +
-   * <code>AcceptorAccountId</code> + <code>ResourceType</code> </p> </li>
-   * </ul><p><h3>See Also:</h3>   <a
+   * <code>OfferId</code> + <code>Status</code> + <code>EndTime</code> </p> </li>
+   * <li> <p> <code>AgreementType</code> + <code>AcceptorAccountId</code> +
+   * <code>ResourceId</code> </p> </li> <li> <p> <code>AgreementType</code> +
+   * <code>AcceptorAccountId</code> + <code>ResourceId</code> + <code>Status</code>
+   * </p> </li> <li> <p> <code>AgreementType</code> + <code>AcceptorAccountId</code>
+   * + <code>ResourceId</code> + <code>EndTime</code> </p> </li> <li> <p>
+   * <code>AgreementType</code> + <code>AcceptorAccountId</code> +
+   * <code>ResourceId</code> + <code>Status</code> + <code>EndTime</code> </p> </li>
+   * <li> <p> <code>AgreementType</code> + <code>AcceptorAccountId</code> +
+   * <code>ResourceType</code> </p> </li> <li> <p> <code>AgreementType</code> +
+   * <code>AcceptorAccountId</code> + <code>ResourceType</code> +
+   * <code>EndTime</code> </p> </li> <li> <p> <code>AgreementType</code> +
+   * <code>AcceptorAccountId</code> + <code>ResourceType</code> + <code>Status</code>
+   * </p> </li> <li> <p> <code>AgreementType</code> + <code>AcceptorAccountId</code>
+   * + <code>ResourceType</code> + <code>Status</code> + <code>EndTime</code> </p>
+   * </li> <li> <p> <code>AgreementType</code> + <code>Status</code> </p> </li> <li>
+   * <p> <code>AgreementType</code> + <code>Status</code> + <code>EndTime</code> </p>
+   * </li> <li> <p> <code>AgreementType</code> + <code>OfferId</code> </p> </li> <li>
+   * <p> <code>AgreementType</code> + <code>OfferId</code> + <code>EndTime</code>
+   * </p> </li> <li> <p> <code>AgreementType</code> + <code>OfferId</code> +
+   * <code>Status</code> </p> </li> <li> <p> <code>AgreementType</code> +
+   * <code>OfferId</code> + <code>Status</code> + <code>EndTime</code> </p> </li>
+   * <li> <p> <code>AgreementType</code> + <code>OfferSetId</code> </p> </li> <li>
+   * <p> <code>AgreementType</code> + <code>OfferSetId</code> + <code>EndTime</code>
+   * </p> </li> <li> <p> <code>AgreementType</code> + <code>OfferSetId</code> +
+   * <code>Status</code> </p> </li> <li> <p> <code>AgreementType</code> +
+   * <code>OfferSetId</code> + <code>Status</code> + <code>EndTime</code> </p> </li>
+   * </ul>  <p> To filter by <code>EndTime</code>, you can use either
+   * <code>BeforeEndTime</code> or <code>AfterEndTime</code>. Only
+   * <code>EndTime</code> is supported for sorting.</p> <p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/SearchAgreements">AWS
    * API Reference</a></p>
    */

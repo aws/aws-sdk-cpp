@@ -31,7 +31,7 @@ class SearchAgreementsResult {
   ///@{
   /**
    * <p>A summary of the agreement, including top-level attributes (for example, the
-   * agreement ID, version, proposer, and acceptor).</p>
+   * agreement ID, proposer, and acceptor).</p>
    */
   inline const Aws::Vector<AgreementViewSummary>& GetAgreementViewSummaries() const { return m_agreementViewSummaries; }
   template <typename AgreementViewSummariesT = Aws::Vector<AgreementViewSummary>>

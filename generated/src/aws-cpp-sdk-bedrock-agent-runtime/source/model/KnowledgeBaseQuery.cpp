@@ -18,9 +18,17 @@ namespace Model {
 KnowledgeBaseQuery::KnowledgeBaseQuery(JsonView jsonValue) { *this = jsonValue; }
 
 KnowledgeBaseQuery& KnowledgeBaseQuery::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("image")) {
+    m_image = jsonValue.GetObject("image");
+    m_imageHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("text")) {
     m_text = jsonValue.GetString("text");
     m_textHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("type")) {
+    m_type = KnowledgeBaseQueryTypeMapper::GetKnowledgeBaseQueryTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
   }
   return *this;
 }
@@ -28,8 +36,16 @@ KnowledgeBaseQuery& KnowledgeBaseQuery::operator=(JsonView jsonValue) {
 JsonValue KnowledgeBaseQuery::Jsonize() const {
   JsonValue payload;
 
+  if (m_imageHasBeenSet) {
+    payload.WithObject("image", m_image.Jsonize());
+  }
+
   if (m_textHasBeenSet) {
     payload.WithString("text", m_text);
+  }
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", KnowledgeBaseQueryTypeMapper::GetNameForKnowledgeBaseQueryType(m_type));
   }
 
   return payload;

@@ -58,6 +58,10 @@ OfferFilters& OfferFilters::operator=(JsonView jsonValue) {
     m_lastModifiedDate = jsonValue.GetObject("LastModifiedDate");
     m_lastModifiedDateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("OfferSetId")) {
+    m_offerSetId = jsonValue.GetObject("OfferSetId");
+    m_offerSetIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -102,6 +106,10 @@ JsonValue OfferFilters::Jsonize() const {
 
   if (m_lastModifiedDateHasBeenSet) {
     payload.WithObject("LastModifiedDate", m_lastModifiedDate.Jsonize());
+  }
+
+  if (m_offerSetIdHasBeenSet) {
+    payload.WithObject("OfferSetId", m_offerSetId.Jsonize());
   }
 
   return payload;

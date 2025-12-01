@@ -30,23 +30,6 @@ class StreamingConfigurations {
 
   ///@{
   /**
-   * <p> Specifies whether to enable streaming for the final response. This is set to
-   * <code>false</code> by default. </p>
-   */
-  inline bool GetStreamFinalResponse() const { return m_streamFinalResponse; }
-  inline bool StreamFinalResponseHasBeenSet() const { return m_streamFinalResponseHasBeenSet; }
-  inline void SetStreamFinalResponse(bool value) {
-    m_streamFinalResponseHasBeenSet = true;
-    m_streamFinalResponse = value;
-  }
-  inline StreamingConfigurations& WithStreamFinalResponse(bool value) {
-    SetStreamFinalResponse(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p> The guardrail interval to apply as response is generated. By default, the
    * guardrail interval is set to 50 characters. If a larger interval is specified,
    * the response will be generated in larger chunks with fewer
@@ -69,12 +52,29 @@ class StreamingConfigurations {
     return *this;
   }
   ///@}
- private:
-  bool m_streamFinalResponse{false};
-  bool m_streamFinalResponseHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p> Specifies whether to enable streaming for the final response. This is set to
+   * <code>false</code> by default. </p>
+   */
+  inline bool GetStreamFinalResponse() const { return m_streamFinalResponse; }
+  inline bool StreamFinalResponseHasBeenSet() const { return m_streamFinalResponseHasBeenSet; }
+  inline void SetStreamFinalResponse(bool value) {
+    m_streamFinalResponseHasBeenSet = true;
+    m_streamFinalResponse = value;
+  }
+  inline StreamingConfigurations& WithStreamFinalResponse(bool value) {
+    SetStreamFinalResponse(value);
+    return *this;
+  }
+  ///@}
+ private:
   int m_applyGuardrailInterval{0};
   bool m_applyGuardrailIntervalHasBeenSet = false;
+
+  bool m_streamFinalResponse{false};
+  bool m_streamFinalResponseHasBeenSet = false;
 };
 
 }  // namespace Model

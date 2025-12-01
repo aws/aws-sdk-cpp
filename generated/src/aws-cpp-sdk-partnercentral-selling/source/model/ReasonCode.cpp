@@ -34,6 +34,9 @@ static const int ResourceSnapshotValidationFailed_HASH = HashingUtils::HashStrin
 static const int ResourceSnapshotConflict_HASH = HashingUtils::HashString("ResourceSnapshotConflict");
 static const int ServiceQuotaExceeded_HASH = HashingUtils::HashString("ServiceQuotaExceeded");
 static const int RequestThrottled_HASH = HashingUtils::HashString("RequestThrottled");
+static const int ContextNotFound_HASH = HashingUtils::HashString("ContextNotFound");
+static const int CustomerProjectContextNotPermitted_HASH = HashingUtils::HashString("CustomerProjectContextNotPermitted");
+static const int DisqualifiedLeadNotPermitted_HASH = HashingUtils::HashString("DisqualifiedLeadNotPermitted");
 
 ReasonCode GetReasonCodeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -75,6 +78,12 @@ ReasonCode GetReasonCodeForName(const Aws::String& name) {
     return ReasonCode::ServiceQuotaExceeded;
   } else if (hashCode == RequestThrottled_HASH) {
     return ReasonCode::RequestThrottled;
+  } else if (hashCode == ContextNotFound_HASH) {
+    return ReasonCode::ContextNotFound;
+  } else if (hashCode == CustomerProjectContextNotPermitted_HASH) {
+    return ReasonCode::CustomerProjectContextNotPermitted;
+  } else if (hashCode == DisqualifiedLeadNotPermitted_HASH) {
+    return ReasonCode::DisqualifiedLeadNotPermitted;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -127,6 +136,12 @@ Aws::String GetNameForReasonCode(ReasonCode enumValue) {
       return "ServiceQuotaExceeded";
     case ReasonCode::RequestThrottled:
       return "RequestThrottled";
+    case ReasonCode::ContextNotFound:
+      return "ContextNotFound";
+    case ReasonCode::CustomerProjectContextNotPermitted:
+      return "CustomerProjectContextNotPermitted";
+    case ReasonCode::DisqualifiedLeadNotPermitted:
+      return "DisqualifiedLeadNotPermitted";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -148,6 +148,26 @@ class Solution {
 
   ///@{
   /**
+   * <p>A Boolean value that indicates whether incremental training updates are
+   * performed on the model. When enabled, this allows the model to learn from new
+   * data more frequently without requiring full retraining, which enables near
+   * real-time personalization. This parameter is supported only for solutions that
+   * use the semantic-similarity recipe</p>
+   */
+  inline bool GetPerformIncrementalUpdate() const { return m_performIncrementalUpdate; }
+  inline bool PerformIncrementalUpdateHasBeenSet() const { return m_performIncrementalUpdateHasBeenSet; }
+  inline void SetPerformIncrementalUpdate(bool value) {
+    m_performIncrementalUpdateHasBeenSet = true;
+    m_performIncrementalUpdate = value;
+  }
+  inline Solution& WithPerformIncrementalUpdate(bool value) {
+    SetPerformIncrementalUpdate(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ARN of the recipe used to create the solution. This is required when
    * <code>performAutoML</code> is false.</p>
    */
@@ -348,6 +368,9 @@ class Solution {
 
   bool m_performAutoTraining{false};
   bool m_performAutoTrainingHasBeenSet = false;
+
+  bool m_performIncrementalUpdate{false};
+  bool m_performIncrementalUpdateHasBeenSet = false;
 
   Aws::String m_recipeArn;
   bool m_recipeArnHasBeenSet = false;
