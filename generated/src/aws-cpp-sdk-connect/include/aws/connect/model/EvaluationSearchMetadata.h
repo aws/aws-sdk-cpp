@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/AutoEvaluationStatus.h>
+#include <aws/connect/model/ContactParticipantRole.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -240,6 +241,76 @@ class EvaluationSearchMetadata {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Identifier of the sampling job.</p>
+   */
+  inline const Aws::String& GetSamplingJobId() const { return m_samplingJobId; }
+  inline bool SamplingJobIdHasBeenSet() const { return m_samplingJobIdHasBeenSet; }
+  template <typename SamplingJobIdT = Aws::String>
+  void SetSamplingJobId(SamplingJobIdT&& value) {
+    m_samplingJobIdHasBeenSet = true;
+    m_samplingJobId = std::forward<SamplingJobIdT>(value);
+  }
+  template <typename SamplingJobIdT = Aws::String>
+  EvaluationSearchMetadata& WithSamplingJobId(SamplingJobIdT&& value) {
+    SetSamplingJobId(std::forward<SamplingJobIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Identifier for the review.</p>
+   */
+  inline const Aws::String& GetReviewId() const { return m_reviewId; }
+  inline bool ReviewIdHasBeenSet() const { return m_reviewIdHasBeenSet; }
+  template <typename ReviewIdT = Aws::String>
+  void SetReviewId(ReviewIdT&& value) {
+    m_reviewIdHasBeenSet = true;
+    m_reviewId = std::forward<ReviewIdT>(value);
+  }
+  template <typename ReviewIdT = Aws::String>
+  EvaluationSearchMetadata& WithReviewId(ReviewIdT&& value) {
+    SetReviewId(std::forward<ReviewIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Role of a contact participant in the evaluation.</p>
+   */
+  inline ContactParticipantRole GetContactParticipantRole() const { return m_contactParticipantRole; }
+  inline bool ContactParticipantRoleHasBeenSet() const { return m_contactParticipantRoleHasBeenSet; }
+  inline void SetContactParticipantRole(ContactParticipantRole value) {
+    m_contactParticipantRoleHasBeenSet = true;
+    m_contactParticipantRole = value;
+  }
+  inline EvaluationSearchMetadata& WithContactParticipantRole(ContactParticipantRole value) {
+    SetContactParticipantRole(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Identifier for a contact participant in the evaluation.</p>
+   */
+  inline const Aws::String& GetContactParticipantId() const { return m_contactParticipantId; }
+  inline bool ContactParticipantIdHasBeenSet() const { return m_contactParticipantIdHasBeenSet; }
+  template <typename ContactParticipantIdT = Aws::String>
+  void SetContactParticipantId(ContactParticipantIdT&& value) {
+    m_contactParticipantIdHasBeenSet = true;
+    m_contactParticipantId = std::forward<ContactParticipantIdT>(value);
+  }
+  template <typename ContactParticipantIdT = Aws::String>
+  EvaluationSearchMetadata& WithContactParticipantId(ContactParticipantIdT&& value) {
+    SetContactParticipantId(std::forward<ContactParticipantIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_contactId;
   bool m_contactIdHasBeenSet = false;
@@ -276,6 +347,18 @@ class EvaluationSearchMetadata {
 
   Aws::String m_acknowledgerComment;
   bool m_acknowledgerCommentHasBeenSet = false;
+
+  Aws::String m_samplingJobId;
+  bool m_samplingJobIdHasBeenSet = false;
+
+  Aws::String m_reviewId;
+  bool m_reviewIdHasBeenSet = false;
+
+  ContactParticipantRole m_contactParticipantRole{ContactParticipantRole::NOT_SET};
+  bool m_contactParticipantRoleHasBeenSet = false;
+
+  Aws::String m_contactParticipantId;
+  bool m_contactParticipantIdHasBeenSet = false;
 };
 
 }  // namespace Model

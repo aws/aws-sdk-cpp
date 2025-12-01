@@ -20,10 +20,8 @@ namespace Lambda {
 namespace Model {
 
 /**
- * <p>The processed request payload exceeded the <code>Invoke</code> request body
- * size limit for asynchronous invocations. While the event payload may be under 1
- * MB, the size after internal serialization exceeds the maximum allowed size for
- * asynchronous invocations.</p><p><h3>See Also:</h3>   <a
+ * <p>The request payload exceeded the maximum allowed size for serialized request
+ * entities.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/SerializedRequestEntityTooLargeException">AWS
  * API Reference</a></p>
  */

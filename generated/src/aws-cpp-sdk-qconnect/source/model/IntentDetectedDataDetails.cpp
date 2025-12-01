@@ -26,6 +26,10 @@ IntentDetectedDataDetails& IntentDetectedDataDetails::operator=(JsonView jsonVal
     m_intentId = jsonValue.GetString("intentId");
     m_intentIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("relevanceLevel")) {
+    m_relevanceLevel = RelevanceLevelMapper::GetRelevanceLevelForName(jsonValue.GetString("relevanceLevel"));
+    m_relevanceLevelHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue IntentDetectedDataDetails::Jsonize() const {
 
   if (m_intentIdHasBeenSet) {
     payload.WithString("intentId", m_intentId);
+  }
+
+  if (m_relevanceLevelHasBeenSet) {
+    payload.WithString("relevanceLevel", RelevanceLevelMapper::GetNameForRelevanceLevel(m_relevanceLevel));
   }
 
   return payload;

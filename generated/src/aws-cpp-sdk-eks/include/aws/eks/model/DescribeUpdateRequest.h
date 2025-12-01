@@ -111,6 +111,24 @@ class DescribeUpdateRequest : public EKSRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The name of the capability for which you want to describe updates.</p>
+   */
+  inline const Aws::String& GetCapabilityName() const { return m_capabilityName; }
+  inline bool CapabilityNameHasBeenSet() const { return m_capabilityNameHasBeenSet; }
+  template <typename CapabilityNameT = Aws::String>
+  void SetCapabilityName(CapabilityNameT&& value) {
+    m_capabilityNameHasBeenSet = true;
+    m_capabilityName = std::forward<CapabilityNameT>(value);
+  }
+  template <typename CapabilityNameT = Aws::String>
+  DescribeUpdateRequest& WithCapabilityName(CapabilityNameT&& value) {
+    SetCapabilityName(std::forward<CapabilityNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
   bool m_nameHasBeenSet = false;
@@ -123,6 +141,9 @@ class DescribeUpdateRequest : public EKSRequest {
 
   Aws::String m_addonName;
   bool m_addonNameHasBeenSet = false;
+
+  Aws::String m_capabilityName;
+  bool m_capabilityNameHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -31,6 +31,19 @@ TrainingDataConfig& TrainingDataConfig::operator=(JsonView jsonValue) {
     }
     m_excludedDatasetColumnsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("includedDatasetColumns")) {
+    Aws::Map<Aws::String, JsonView> includedDatasetColumnsJsonMap = jsonValue.GetObject("includedDatasetColumns").GetAllObjects();
+    for (auto& includedDatasetColumnsItem : includedDatasetColumnsJsonMap) {
+      Aws::Utils::Array<JsonView> columnNamesListJsonList = includedDatasetColumnsItem.second.AsArray();
+      Aws::Vector<Aws::String> columnNamesListList;
+      columnNamesListList.reserve((size_t)columnNamesListJsonList.GetLength());
+      for (unsigned columnNamesListIndex = 0; columnNamesListIndex < columnNamesListJsonList.GetLength(); ++columnNamesListIndex) {
+        columnNamesListList.push_back(columnNamesListJsonList[columnNamesListIndex].AsString());
+      }
+      m_includedDatasetColumns[includedDatasetColumnsItem.first] = std::move(columnNamesListList);
+    }
+    m_includedDatasetColumnsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -47,6 +60,18 @@ JsonValue TrainingDataConfig::Jsonize() const {
       excludedDatasetColumnsJsonMap.WithArray(excludedDatasetColumnsItem.first, std::move(columnNamesListJsonList));
     }
     payload.WithObject("excludedDatasetColumns", std::move(excludedDatasetColumnsJsonMap));
+  }
+
+  if (m_includedDatasetColumnsHasBeenSet) {
+    JsonValue includedDatasetColumnsJsonMap;
+    for (auto& includedDatasetColumnsItem : m_includedDatasetColumns) {
+      Aws::Utils::Array<JsonValue> columnNamesListJsonList(includedDatasetColumnsItem.second.size());
+      for (unsigned columnNamesListIndex = 0; columnNamesListIndex < columnNamesListJsonList.GetLength(); ++columnNamesListIndex) {
+        columnNamesListJsonList[columnNamesListIndex].AsString(includedDatasetColumnsItem.second[columnNamesListIndex]);
+      }
+      includedDatasetColumnsJsonMap.WithArray(includedDatasetColumnsItem.first, std::move(columnNamesListJsonList));
+    }
+    payload.WithObject("includedDatasetColumns", std::move(includedDatasetColumnsJsonMap));
   }
 
   return payload;

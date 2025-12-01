@@ -152,51 +152,56 @@ class GetMetricDataV2Request : public ConnectRequest {
    * a historical metrics report</a> in the <i>Amazon Connect Administrator
    * Guide</i>.</p> <p>Note the following limits:</p> <ul> <li> <p> <b>Filter
    * keys</b>: A maximum of 5 filter keys are supported in a single request. Valid
-   * filter keys: <code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> |
-   * <code>AGENT_HIERARCHY_LEVEL_TWO</code> |
-   * <code>AGENT_HIERARCHY_LEVEL_THREE</code> |
-   * <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
-   * <code>AGENT_HIERARCHY_LEVEL_FIVE</code> |
-   * <code>ANSWERING_MACHINE_DETECTION_STATUS</code> | <code> BOT_ID</code> |
-   * <code>BOT_ALIAS</code> | <code>BOT_VERSION</code> | <code>BOT_LOCALE</code> |
-   * <code>BOT_INTENT_NAME</code> | <code>CAMPAIGN</code> |
-   * <code>CAMPAIGN_DELIVERY_EVENT_TYPE</code> | <code>CAMPAIGN_EXCLUDED_EVENT_TYPE
-   * </code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> |
-   * <code>CHANNEL</code> | <code>contact/segmentAttributes/connect:Subtype</code> |
-   * <code>DISCONNECT_REASON</code> | <code>EVALUATION_FORM</code> |
-   * <code>EVALUATION_SECTION</code> | <code>EVALUATION_QUESTION</code> |
+   * filter keys: <code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> |
+   * <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_
+   * HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> |
+   * <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>
+   * ANSWERING_MACHINE_DETECTION_STATUS</code> | <code>BOT_ALIAS</code> |
+   * <code>BOT_ID</code> | <code>BOT_INTENT_NAME</code> | <code>BOT_LOCALE</code> |
+   * <code>BOT_VERSION</code> | <code>CAMPAIGN</code> |
+   * <code>CAMPAIGN_DELIVERY_EVENT_TYPE</code> | <code>
+   * CAMPAIGN_EXCLUDED_EVENT_TYPE</code> | <code>CASE_STATUS</code> |
+   * <code>CASE_TEMPLATE_ARN</code> | <code>CHANNEL</code> | <code>
+   * contact/segmentAttributes/connect:Subtype</code> |
+   * <code>contact/segmentAttributes/connect:ValidationTestType</code> | <code>
+   * DISCONNECT_REASON</code> | <code>EVALUATION_FORM</code> |
+   * <code>EVALUATION_QUESTION</code> | <code>EVALUATION_SECTION</code> |
    * <code>EVALUATION_SOURCE</code> | <code>EVALUATOR_ID</code> |
    * <code>FEATURE</code> | <code>FLOW_ACTION_ID</code> | <code>FLOW_TYPE</code> |
    * <code>FLOWS_MODULE_RESOURCE_ID</code> | <code>FLOWS_NEXT_RESOURCE_ID</code> |
    * <code>FLOWS_NEXT_RESOURCE_QUEUE_ID</code> | <code>FLOWS_OUTCOME_TYPE</code> |
    * <code>FLOWS_RESOURCE_ID</code> | <code>FORM_VERSION</code> |
-   * <code>INITIATION_METHOD</code> |
+   * <code>INITIATING_FLOW</code> | <code>INITIATION_METHOD</code> |
    * <code>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</code> |
    * <code>INVOKING_RESOURCE_TYPE</code> | <code>PARENT_FLOWS_RESOURCE_ID</code> |
-   * <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> |
-   * <code>ROUTING_STEP_EXPRESSION</code> | <code>QUEUE</code> |
-   * <code>Q_CONNECT_ENABLED</code> | </p> </li> <li> <p> <b>Filter values</b>: A
-   * maximum of 100 filter values are supported in a single request. VOICE, CHAT, and
-   * TASK are valid <code>filterValue</code> for the CHANNEL filter key. They do not
-   * count towards limitation of 100 filter values. For example, a GetMetricDataV2
-   * request can filter by 50 queues, 35 agents, and 15 routing profiles for a total
-   * of 100 filter values, along with 3 channel filters. </p> <p>
-   * <code>contact_lens_conversational_analytics</code> is a valid filterValue for
-   * the <code>FEATURE</code> filter key. It is available only to contacts analyzed
-   * by Contact Lens conversational analytics.</p> <p> <code>connect:Chat</code>,
-   * <code>connect:SMS</code>, <code>connect:Telephony</code>, and
-   * <code>connect:WebRTC</code> are valid <code>filterValue</code> examples (not
-   * exhaustive) for the <code>contact/segmentAttributes/connect:Subtype
-   * filter</code> key.</p> <p> <code>ROUTING_STEP_EXPRESSION</code> is a valid
-   * filter key with a filter value up to 3000 length. This filter is case and order
-   * sensitive. JSON string fields must be sorted in ascending order and JSON array
-   * order should be kept as is.</p> <p> <code>Q_CONNECT_ENABLED</code>. TRUE and
-   * FALSE are the only valid filterValues for the <code>Q_CONNECT_ENABLED</code>
-   * filter key. </p> <ul> <li> <p>TRUE includes all contacts that had Amazon Q in
-   * Connect enabled as part of the flow.</p> </li> <li> <p>FALSE includes all
-   * contacts that did not have Amazon Q in Connect enabled as part of the flow</p>
-   * </li> </ul> <p>This filter is available only for contact record-driven metrics.
-   * </p> <p> <a
+   * <code>Q_CONNECT_ENABLED</code> | <code>QUEUE</code> | <code>RESOURCE_PUBLISHED_
+   * TIMESTAMP</code> | <code>ROUTING_PROFILE</code> |
+   * <code>ROUTING_STEP_EXPRESSION</code> | <code>TEST_CASE</code> | <code>TEST_
+   * CASE_EXECUTION_FAILURE_REASON</code> | <code>TEST_CASE_EXECUTION_RESULT</code> |
+   * <code>TEST_CASE_EXECUTION_STATE</code> </p> </li> <li> <p> <b>Filter values</b>:
+   * A maximum of 100 filter values are supported in a single request. VOICE, CHAT,
+   * and TASK are valid <code>filterValue</code> for the CHANNEL filter key. They do
+   * not count towards limitation of 100 filter values. For example, a
+   * GetMetricDataV2 request can filter by 50 queues, 35 agents, and 15 routing
+   * profiles for a total of 100 filter values, along with 3 channel filters. </p>
+   * <p> <code>contact_lens_conversational_analytics</code> is a valid filterValue
+   * for the <code>FEATURE</code> filter key. It is available only to contacts
+   * analyzed by Contact Lens conversational analytics.</p> <p>
+   * <code>connect:Chat</code>, <code>connect:SMS</code>,
+   * <code>connect:Telephony</code>, and <code>connect:WebRTC</code> are valid
+   * <code>filterValue</code> examples (not exhaustive) for the
+   * <code>contact/segmentAttributes/connect:Subtype filter</code> key.</p> <p>
+   * <code>ROUTING_STEP_EXPRESSION</code> is a valid filter key with a filter value
+   * up to 3000 length. This filter is case and order sensitive. JSON string fields
+   * must be sorted in ascending order and JSON array order should be kept as is.</p>
+   * <p> <code>Q_CONNECT_ENABLED</code>. TRUE and FALSE are the only valid
+   * filterValues for the <code>Q_CONNECT_ENABLED</code> filter key. </p> <ul> <li>
+   * <p>TRUE includes all contacts that had Connect AI Agents enabled as part of the
+   * flow.</p> </li> <li> <p>FALSE includes all contacts that did not have Connect AI
+   * Agents enabled as part of the flow</p> </li> <li> <p>EXPERIENCE_VALIDATION and
+   * FLOW_VALIDATION are the only valid filterValues for the
+   * contact/segmentAttributes/connect:ValidationTestType filter key</p> </li> </ul>
+   * <p>This filter is available only for contact record-driven metrics. </p> <p> <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-outbound-campaigns_Campaign.html">Campaign</a>
    * ARNs are valid <code>filterValues</code> for the <code>CAMPAIGN</code> filter
    * key.</p> </li> </ul>
@@ -251,8 +256,14 @@ class GetMetricDataV2Request : public ConnectRequest {
    * <code>INVOKING_RESOURCE_TYPE</code> | <code>PARENT_FLOWS_RESOURCE_ID</code> |
    * <code>Q_CONNECT_ENABLED</code> | <code>QUEUE</code> |
    * <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> |
-   * <code>ROUTING_STEP_EXPRESSION</code> </p> <p>Type: Array of strings</p> <p>Array
-   * Members: Maximum number of 4 items</p> <p>Required: No</p>
+   * <code>ROUTING_STEP_EXPRESSION</code> | <code>TEST_CASE</code> |
+   * <code>TEST_CASE_EXECUTION_FAILURE_REASON</code> |
+   * <code>TEST_CASE_INVOCATION_METHOD</code> </p> <p>API, SCHEDULE, and EVENT are
+   * the only valid filterValues for TEST_CASE_INVOCATION_METHOD.</p>
+   * <p>OBSERVE_EVENT, SEND_INSTRUCTION, ASSERT_DATA, and OVERRIDE_SYSTEM_BEHAVIOR
+   * are the only valid filterValues for TEST_CASE_EXECUTION_FAILURE_REASON</p>
+   * <p>Type: Array of strings</p> <p>Array Members: Maximum number of 4 items</p>
+   * <p>Required: No</p>
    */
   inline const Aws::Vector<Aws::String>& GetGroupings() const { return m_groupings; }
   inline bool GroupingsHasBeenSet() const { return m_groupingsHasBeenSet; }
@@ -276,12 +287,14 @@ class GetMetricDataV2Request : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The metrics to retrieve. Specify the name, groupings, and filters for each
-   * metric. The following historical metrics are available. For a description of
-   * each metric, see <a
+   * <p>The metrics to retrieve. Specify the name or metricId, groupings, and filters
+   * for each metric. The following historical metrics are available. For a
+   * description of each metric, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
-   * definition</a> in the <i>Amazon Connect Administrator Guide</i>.</p> <dl>
-   * <dt>ABANDONMENT_RATE</dt> <dd> <p>Unit: Percent</p> <p>Valid groupings and
+   * definition</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+   * <p>MetricId should be used to reference custom metrics or out of the box metrics
+   * as Arn. If using MetricId, the limit is 20 MetricId per request.</p>
+   * <dl> <dt>ABANDONMENT_RATE</dt> <dd> <p>Unit: Percent</p> <p>Valid groupings and
    * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
    * contact/segmentAttributes/connect:Subtype, Q in Connect</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#abandonment-rate">Abandonment
@@ -442,7 +455,85 @@ class GetMetricDataV2Request : public ConnectRequest {
    * RoutingStepExpression</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-handle-time">Average
    * handle time</a> </p>  <p>Feature is a valid filter but not a valid
-   * grouping.</p>  </dd> <dt>AVG_HOLD_TIME</dt> <dd> <p>Unit: Seconds</p>
+   * grouping.</p>  </dd> <dt>ACTIVE_AI_AGENTS</dt> <dd> <p>Unit: Count</p>
+   * <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Type, AI Use
+   * Case, Channel, Queue, Routing Profile</p> <p>UI name: Active AI Agents</p> </dd>
+   * <dt>AI_HANDOFF_RATE</dt> <dd> <p>Unit: Percent</p> <p>Valid groupings and
+   * filters: AI Use Case, Channel, Queue, Routing Profile</p> <p>UI name: Handoff
+   * Rate</p> </dd> <dt>AI_HANDOFFS</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
+   * and filters: AI Use Case, Channel, Queue, Routing Profile</p> <p>UI name: AI
+   * Handoff Count</p> </dd> <dt>AI_AGENT_INVOCATION_SUCCESS</dt> <dd> <p>Unit:
+   * Count</p> <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name
+   * Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile</p> <p>UI
+   * name: AI Agent Invocation Success Count</p>  <p>AI Agent Name Version is
+   * not a valid filter but a valid grouping.</p>  </dd>
+   * <dt>AI_AGENT_INVOCATION_SUCCESS_RATE</dt> <dd> <p>Unit: Percent</p> <p>Valid
+   * groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent
+   * Type, AI Use Case, Channel, Queue, Routing Profile</p> <p>UI name: AI Agent
+   * Invocation Success Rate</p>  <p>AI Agent Name Version is not a valid
+   * filter but a valid grouping.</p>  </dd> <dt>AI_AGENT_INVOCATIONS</dt>
+   * <dd> <p>Unit: Count</p> <p>Valid groupings and filters: AI Agent, AI Agent Name,
+   * AI Agent Type, AI Agent Name Version, AI Use Case, Channel, Queue, Routing
+   * Profile</p> <p>UI name: AI Agent Invocation Count</p>  <p>AI Agent Name
+   * Version is not a valid filter but a valid grouping.</p>  </dd>
+   * <dt>AI_RESPONSE_COMPLETION_RATE</dt> <dd> <p>Unit: Percent</p> <p>Valid
+   * groupings and filters: AI Use Case, Channel, Queue, Routing Profile</p> <p>UI
+   * name: AI Response Completion Rate</p> </dd> <dt>AI_INVOLVED_CONTACTS</dt> <dd>
+   * <p>Unit: Count</p> <p>Valid groupings and filters: AI Use Case, Channel, Queue,
+   * Routing Profile</p> <p>UI name: AI Contacts</p> </dd>
+   * <dt>AI_PROMPT_INVOCATION_SUCCESS</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
+   * and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI
+   * Prompt, AI Prompt ID, AI Prompt Name, AI Prompt Type, AI Use Case, Channel,
+   * Queue, Routing Profile</p> <p>UI name: AI Prompt Invocation Success Count</p>
+   *  <p>AI Agent Name Version is not a valid filter but a valid grouping.</p>
+   *  </dd> <dt>AI_PROMPT_INVOCATION_SUCCESS_RATE</dt> <dd> <p>Unit:
+   * Percent</p> <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent
+   * Name Version, AI Agent Type, AI Prompt, AI Prompt ID, AI Prompt Name, AI Prompt
+   * Type, AI Use Case, Channel, Queue, Routing Profile</p> <p>UI name: AI Prompt
+   * Invocation Success Rate</p>  <p>AI Agent Name Version is not a valid
+   * filter but a valid grouping.</p>  </dd> <dt>AI_TOOL_INVOCATIONS</dt> <dd>
+   * <p>Unit: Count</p> <p>Valid groupings and filters: AI Agent, AI Agent Name, AI
+   * Agent Name Version, AI Agent Type, AI Tool ID, AI Tool Name, AI Tool Type, AI
+   * Use Case, Channel, Queue, Routing Profile</p> <p>UI name: AI Tool Invocation
+   * Count</p>  <p>AI Agent Name Version is not a valid filter but a valid
+   * grouping.</p>  </dd> <dt>AVG_AI_AGENT_CONVERSATION_TURNS</dt> <dd>
+   * <p>Unit: Count</p> <p>Valid groupings and filters: AI Agent, AI Agent Name, AI
+   * Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile
+   * </p> <p>UI name: Average AI Agent Conversation Turns</p>  <p>AI Agent Name
+   * Version is not a valid filter but a valid grouping.</p>  </dd>
+   * <dt>AVG_AI_CONVERSATION_TURNS</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
+   * and filters: AI Use Case, Channel, Queue, Routing Profile</p> <p>UI name: AI
+   * Conversation Turns</p> </dd> <dt>AVG_AI_PROMPT_INVOCATION_LATENCY</dt> <dd>
+   * <p>Unit: Milliseconds</p> <p>Valid groupings and filters: AI Agent, AI Agent
+   * Name, AI Agent Name Version, AI Agent Type, AI Prompt, AI Prompt ID, AI Prompt
+   * Name, AI Prompt Type, AI Use Case, Channel, Queue, Routing Profile</p> <p>UI
+   * name: Average AI Prompt Invocation Latency</p>  <p>AI Agent Name Version
+   * is not a valid filter but a valid grouping.</p>  </dd>
+   * <dt>AVG_AI_TOOL_INVOCATION_LATENCY</dt> <dd> <p>Unit: Milliseconds</p> <p>Valid
+   * groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent
+   * Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use Case, Channel, Queue,
+   * Routing Profile</p> <p>UI name: Average AI Tool Invocation Latency</p>
+   * <p>AI Agent Name Version is not a valid filter but a valid grouping.</p>
+   * </dd> <dt>KNOWLEDGE_CONTENT_REFERENCES</dt> <dd> <p>Unit: Count</p> <p>Valid
+   * groupings and filters: AI Agent, AI Agent Name, AI Agent Type, AI Use Case,
+   * Channel, Knowledge Base Name, Queue, Routing Profile</p> <p>UI name:
+   * KnowledgeBase Reference Count</p> </dd>
+   * <dt>PROACTIVE_INTENT_ENGAGEMENT_RATE</dt> <dd> <p>Unit: Percent</p> <p>Valid
+   * groupings and filters: AI Use Case, Channel, Queue, Routing Profile</p> <p>UI
+   * name: Proactive Intent Engagement Rate</p> </dd>
+   * <dt>PROACTIVE_INTENT_RESPONSE_RATE</dt> <dd> <p>Unit: Percent</p> <p>Valid
+   * groupings and filters: AI Use Case, Channel, Queue, Routing Profile </p> <p>UI
+   * name: Proactive Intent Response Rate</p> </dd>
+   * <dt>PROACTIVE_INTENTS_ANSWERED</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
+   * and filters: AI Use Case, Channel, Queue, Routing Profile</p> <p>UI name:
+   * Proactive Intents Answered</p> </dd> <dt>PROACTIVE_INTENTS_DETECTED</dt> <dd>
+   * <p>Unit: Count</p> <p>Valid groupings and filters: AI Use Case, Channel, Queue,
+   * Routing Profile</p> <p>UI name: Proactive Intents Detected</p> </dd> <dt> </dt>
+   * <dd> <p>Unit: </p> <p>Valid groupings and filters: </p> <p>UI name: </p> </dd>
+   * <dt> </dt> <dd> <p>Unit: </p> <p>Valid groupings and filters: </p> <p>UI name:
+   * </p> </dd> <dt>PROACTIVE_INTENTS_ENGAGED</dt> <dd> <p>Unit: Count</p> <p>Valid
+   * groupings and filters: AI Use Case, Channel, Queue, Routing Profile</p> <p>UI
+   * name: UI name:</p> </dd> <dt>AVG_HOLD_TIME</dt> <dd> <p>Unit: Seconds</p>
    * <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
    * Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, Q in Connect</p>
    * <p>UI name: <a

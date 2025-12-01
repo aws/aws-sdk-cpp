@@ -51,10 +51,6 @@ Aws::String CreateApplicationRequest::SerializePayload() const {
     payload.WithArray("Permissions", std::move(permissionsJsonList));
   }
 
-  if (m_isServiceHasBeenSet) {
-    payload.WithBool("IsService", m_isService);
-  }
-
   if (m_initializationTimeoutHasBeenSet) {
     payload.WithInteger("InitializationTimeout", m_initializationTimeout);
   }
@@ -65,6 +61,10 @@ Aws::String CreateApplicationRequest::SerializePayload() const {
 
   if (m_iframeConfigHasBeenSet) {
     payload.WithObject("IframeConfig", m_iframeConfig.Jsonize());
+  }
+
+  if (m_applicationTypeHasBeenSet) {
+    payload.WithString("ApplicationType", ApplicationTypeMapper::GetNameForApplicationType(m_applicationType));
   }
 
   return payload.View().WriteReadable();

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
+#include <aws/customer-profiles/model/SegmentType.h>
 
 #include <utility>
 
@@ -146,6 +147,24 @@ class SegmentDefinitionItem {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The segment type.</p> <p> Classic : Segments created using traditional
+   * SegmentGroup structure</p> <p> Enhanced : Segments created using SQL queries
+   * </p>
+   */
+  inline SegmentType GetSegmentType() const { return m_segmentType; }
+  inline bool SegmentTypeHasBeenSet() const { return m_segmentTypeHasBeenSet; }
+  inline void SetSegmentType(SegmentType value) {
+    m_segmentTypeHasBeenSet = true;
+    m_segmentType = value;
+  }
+  inline SegmentDefinitionItem& WithSegmentType(SegmentType value) {
+    SetSegmentType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_segmentDefinitionName;
   bool m_segmentDefinitionNameHasBeenSet = false;
@@ -164,6 +183,9 @@ class SegmentDefinitionItem {
 
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_tagsHasBeenSet = false;
+
+  SegmentType m_segmentType{SegmentType::NOT_SET};
+  bool m_segmentTypeHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -13,6 +13,7 @@
 #include <aws/marketplace-catalog/model/OfferProductIdFilter.h>
 #include <aws/marketplace-catalog/model/OfferReleaseDateFilter.h>
 #include <aws/marketplace-catalog/model/OfferResaleAuthorizationIdFilter.h>
+#include <aws/marketplace-catalog/model/OfferSetIdFilter.h>
 #include <aws/marketplace-catalog/model/OfferStateFilter.h>
 #include <aws/marketplace-catalog/model/OfferTargetingFilter.h>
 
@@ -223,6 +224,24 @@ class OfferFilters {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Allows filtering on the <code>OfferSetId</code> of an offer.</p>
+   */
+  inline const OfferSetIdFilter& GetOfferSetId() const { return m_offerSetId; }
+  inline bool OfferSetIdHasBeenSet() const { return m_offerSetIdHasBeenSet; }
+  template <typename OfferSetIdT = OfferSetIdFilter>
+  void SetOfferSetId(OfferSetIdT&& value) {
+    m_offerSetIdHasBeenSet = true;
+    m_offerSetId = std::forward<OfferSetIdT>(value);
+  }
+  template <typename OfferSetIdT = OfferSetIdFilter>
+  OfferFilters& WithOfferSetId(OfferSetIdT&& value) {
+    SetOfferSetId(std::forward<OfferSetIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   OfferEntityIdFilter m_entityId;
   bool m_entityIdHasBeenSet = false;
@@ -253,6 +272,9 @@ class OfferFilters {
 
   OfferLastModifiedDateFilter m_lastModifiedDate;
   bool m_lastModifiedDateHasBeenSet = false;
+
+  OfferSetIdFilter m_offerSetId;
+  bool m_offerSetIdHasBeenSet = false;
 };
 
 }  // namespace Model

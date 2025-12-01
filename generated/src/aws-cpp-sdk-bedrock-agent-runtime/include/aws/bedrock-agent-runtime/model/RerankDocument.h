@@ -37,16 +37,18 @@ class RerankDocument {
 
   ///@{
   /**
-   * <p>The type of document to rerank.</p>
+   * <p>Contains a JSON document to rerank.</p>
    */
-  inline RerankDocumentType GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  inline void SetType(RerankDocumentType value) {
-    m_typeHasBeenSet = true;
-    m_type = value;
+  inline Aws::Utils::DocumentView GetJsonDocument() const { return m_jsonDocument; }
+  inline bool JsonDocumentHasBeenSet() const { return m_jsonDocumentHasBeenSet; }
+  template <typename JsonDocumentT = Aws::Utils::Document>
+  void SetJsonDocument(JsonDocumentT&& value) {
+    m_jsonDocumentHasBeenSet = true;
+    m_jsonDocument = std::forward<JsonDocumentT>(value);
   }
-  inline RerankDocument& WithType(RerankDocumentType value) {
-    SetType(value);
+  template <typename JsonDocumentT = Aws::Utils::Document>
+  RerankDocument& WithJsonDocument(JsonDocumentT&& value) {
+    SetJsonDocument(std::forward<JsonDocumentT>(value));
     return *this;
   }
   ///@}
@@ -71,30 +73,28 @@ class RerankDocument {
 
   ///@{
   /**
-   * <p>Contains a JSON document to rerank.</p>
+   * <p>The type of document to rerank.</p>
    */
-  inline Aws::Utils::DocumentView GetJsonDocument() const { return m_jsonDocument; }
-  inline bool JsonDocumentHasBeenSet() const { return m_jsonDocumentHasBeenSet; }
-  template <typename JsonDocumentT = Aws::Utils::Document>
-  void SetJsonDocument(JsonDocumentT&& value) {
-    m_jsonDocumentHasBeenSet = true;
-    m_jsonDocument = std::forward<JsonDocumentT>(value);
+  inline RerankDocumentType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(RerankDocumentType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
   }
-  template <typename JsonDocumentT = Aws::Utils::Document>
-  RerankDocument& WithJsonDocument(JsonDocumentT&& value) {
-    SetJsonDocument(std::forward<JsonDocumentT>(value));
+  inline RerankDocument& WithType(RerankDocumentType value) {
+    SetType(value);
     return *this;
   }
   ///@}
  private:
-  RerankDocumentType m_type{RerankDocumentType::NOT_SET};
-  bool m_typeHasBeenSet = false;
+  Aws::Utils::Document m_jsonDocument;
+  bool m_jsonDocumentHasBeenSet = false;
 
   RerankTextDocument m_textDocument;
   bool m_textDocumentHasBeenSet = false;
 
-  Aws::Utils::Document m_jsonDocument;
-  bool m_jsonDocumentHasBeenSet = false;
+  RerankDocumentType m_type{RerankDocumentType::NOT_SET};
+  bool m_typeHasBeenSet = false;
 };
 
 }  // namespace Model

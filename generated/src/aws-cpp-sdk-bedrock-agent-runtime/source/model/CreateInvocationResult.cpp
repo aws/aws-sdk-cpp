@@ -21,17 +21,17 @@ CreateInvocationResult::CreateInvocationResult(const Aws::AmazonWebServiceResult
 
 CreateInvocationResult& CreateInvocationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("sessionId")) {
-    m_sessionId = jsonValue.GetString("sessionId");
-    m_sessionIdHasBeenSet = true;
+  if (jsonValue.ValueExists("createdAt")) {
+    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAtHasBeenSet = true;
   }
   if (jsonValue.ValueExists("invocationId")) {
     m_invocationId = jsonValue.GetString("invocationId");
     m_invocationIdHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("createdAt")) {
-    m_createdAt = jsonValue.GetString("createdAt");
-    m_createdAtHasBeenSet = true;
+  if (jsonValue.ValueExists("sessionId")) {
+    m_sessionId = jsonValue.GetString("sessionId");
+    m_sessionIdHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -39,6 +39,18 @@ static const int EFSMountTimeout_HASH = HashingUtils::HashString("EFSMountTimeou
 static const int InvalidRuntime_HASH = HashingUtils::HashString("InvalidRuntime");
 static const int InvalidZipFileException_HASH = HashingUtils::HashString("InvalidZipFileException");
 static const int FunctionError_HASH = HashingUtils::HashString("FunctionError");
+static const int VcpuLimitExceeded_HASH = HashingUtils::HashString("VcpuLimitExceeded");
+static const int CapacityProviderScalingLimitExceeded_HASH = HashingUtils::HashString("CapacityProviderScalingLimitExceeded");
+static const int InsufficientCapacity_HASH = HashingUtils::HashString("InsufficientCapacity");
+static const int EC2RequestLimitExceeded_HASH = HashingUtils::HashString("EC2RequestLimitExceeded");
+static const int FunctionError_InitTimeout_HASH = HashingUtils::HashString("FunctionError.InitTimeout");
+static const int FunctionError_RuntimeInitError_HASH = HashingUtils::HashString("FunctionError.RuntimeInitError");
+static const int FunctionError_ExtensionInitError_HASH = HashingUtils::HashString("FunctionError.ExtensionInitError");
+static const int FunctionError_InvalidEntryPoint_HASH = HashingUtils::HashString("FunctionError.InvalidEntryPoint");
+static const int FunctionError_InvalidWorkingDirectory_HASH = HashingUtils::HashString("FunctionError.InvalidWorkingDirectory");
+static const int FunctionError_PermissionDenied_HASH = HashingUtils::HashString("FunctionError.PermissionDenied");
+static const int FunctionError_TooManyExtensions_HASH = HashingUtils::HashString("FunctionError.TooManyExtensions");
+static const int FunctionError_InitResourceExhausted_HASH = HashingUtils::HashString("FunctionError.InitResourceExhausted");
 
 StateReasonCode GetStateReasonCodeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -90,6 +102,30 @@ StateReasonCode GetStateReasonCodeForName(const Aws::String& name) {
     return StateReasonCode::InvalidZipFileException;
   } else if (hashCode == FunctionError_HASH) {
     return StateReasonCode::FunctionError;
+  } else if (hashCode == VcpuLimitExceeded_HASH) {
+    return StateReasonCode::VcpuLimitExceeded;
+  } else if (hashCode == CapacityProviderScalingLimitExceeded_HASH) {
+    return StateReasonCode::CapacityProviderScalingLimitExceeded;
+  } else if (hashCode == InsufficientCapacity_HASH) {
+    return StateReasonCode::InsufficientCapacity;
+  } else if (hashCode == EC2RequestLimitExceeded_HASH) {
+    return StateReasonCode::EC2RequestLimitExceeded;
+  } else if (hashCode == FunctionError_InitTimeout_HASH) {
+    return StateReasonCode::FunctionError_InitTimeout;
+  } else if (hashCode == FunctionError_RuntimeInitError_HASH) {
+    return StateReasonCode::FunctionError_RuntimeInitError;
+  } else if (hashCode == FunctionError_ExtensionInitError_HASH) {
+    return StateReasonCode::FunctionError_ExtensionInitError;
+  } else if (hashCode == FunctionError_InvalidEntryPoint_HASH) {
+    return StateReasonCode::FunctionError_InvalidEntryPoint;
+  } else if (hashCode == FunctionError_InvalidWorkingDirectory_HASH) {
+    return StateReasonCode::FunctionError_InvalidWorkingDirectory;
+  } else if (hashCode == FunctionError_PermissionDenied_HASH) {
+    return StateReasonCode::FunctionError_PermissionDenied;
+  } else if (hashCode == FunctionError_TooManyExtensions_HASH) {
+    return StateReasonCode::FunctionError_TooManyExtensions;
+  } else if (hashCode == FunctionError_InitResourceExhausted_HASH) {
+    return StateReasonCode::FunctionError_InitResourceExhausted;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -152,6 +188,30 @@ Aws::String GetNameForStateReasonCode(StateReasonCode enumValue) {
       return "InvalidZipFileException";
     case StateReasonCode::FunctionError:
       return "FunctionError";
+    case StateReasonCode::VcpuLimitExceeded:
+      return "VcpuLimitExceeded";
+    case StateReasonCode::CapacityProviderScalingLimitExceeded:
+      return "CapacityProviderScalingLimitExceeded";
+    case StateReasonCode::InsufficientCapacity:
+      return "InsufficientCapacity";
+    case StateReasonCode::EC2RequestLimitExceeded:
+      return "EC2RequestLimitExceeded";
+    case StateReasonCode::FunctionError_InitTimeout:
+      return "FunctionError.InitTimeout";
+    case StateReasonCode::FunctionError_RuntimeInitError:
+      return "FunctionError.RuntimeInitError";
+    case StateReasonCode::FunctionError_ExtensionInitError:
+      return "FunctionError.ExtensionInitError";
+    case StateReasonCode::FunctionError_InvalidEntryPoint:
+      return "FunctionError.InvalidEntryPoint";
+    case StateReasonCode::FunctionError_InvalidWorkingDirectory:
+      return "FunctionError.InvalidWorkingDirectory";
+    case StateReasonCode::FunctionError_PermissionDenied:
+      return "FunctionError.PermissionDenied";
+    case StateReasonCode::FunctionError_TooManyExtensions:
+      return "FunctionError.TooManyExtensions";
+    case StateReasonCode::FunctionError_InitResourceExhausted:
+      return "FunctionError.InitResourceExhausted";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

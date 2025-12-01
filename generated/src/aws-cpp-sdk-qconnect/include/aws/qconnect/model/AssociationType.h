@@ -10,7 +10,7 @@
 namespace Aws {
 namespace QConnect {
 namespace Model {
-enum class AssociationType { NOT_SET, KNOWLEDGE_BASE };
+enum class AssociationType { NOT_SET, KNOWLEDGE_BASE, EXTERNAL_BEDROCK_KNOWLEDGE_BASE };
 
 namespace AssociationTypeMapper {
 AWS_QCONNECT_API AssociationType GetAssociationTypeForName(const Aws::String& name);

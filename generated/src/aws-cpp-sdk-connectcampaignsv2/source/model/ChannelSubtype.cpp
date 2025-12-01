@@ -18,6 +18,7 @@ namespace ChannelSubtypeMapper {
 static const int TELEPHONY_HASH = HashingUtils::HashString("TELEPHONY");
 static const int SMS_HASH = HashingUtils::HashString("SMS");
 static const int EMAIL_HASH = HashingUtils::HashString("EMAIL");
+static const int WHATSAPP_HASH = HashingUtils::HashString("WHATSAPP");
 
 ChannelSubtype GetChannelSubtypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ ChannelSubtype GetChannelSubtypeForName(const Aws::String& name) {
     return ChannelSubtype::SMS;
   } else if (hashCode == EMAIL_HASH) {
     return ChannelSubtype::EMAIL;
+  } else if (hashCode == WHATSAPP_HASH) {
+    return ChannelSubtype::WHATSAPP;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForChannelSubtype(ChannelSubtype enumValue) {
       return "SMS";
     case ChannelSubtype::EMAIL:
       return "EMAIL";
+    case ChannelSubtype::WHATSAPP:
+      return "WHATSAPP";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

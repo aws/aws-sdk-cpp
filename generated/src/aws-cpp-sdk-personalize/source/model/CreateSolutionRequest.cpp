@@ -31,6 +31,10 @@ Aws::String CreateSolutionRequest::SerializePayload() const {
     payload.WithBool("performAutoTraining", m_performAutoTraining);
   }
 
+  if (m_performIncrementalUpdateHasBeenSet) {
+    payload.WithBool("performIncrementalUpdate", m_performIncrementalUpdate);
+  }
+
   if (m_recipeArnHasBeenSet) {
     payload.WithString("recipeArn", m_recipeArn);
   }

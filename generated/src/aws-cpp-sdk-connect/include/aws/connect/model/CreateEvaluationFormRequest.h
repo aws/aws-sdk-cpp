@@ -8,7 +8,9 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/EvaluationFormAutoEvaluationConfiguration.h>
 #include <aws/connect/model/EvaluationFormItem.h>
+#include <aws/connect/model/EvaluationFormLanguageConfiguration.h>
 #include <aws/connect/model/EvaluationFormScoringStrategy.h>
+#include <aws/connect/model/EvaluationFormTargetConfiguration.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -176,6 +178,23 @@ class CreateEvaluationFormRequest : public ConnectRequest {
 
   ///@{
   /**
+   * <p>A boolean flag indicating whether to create evaluation form in draft
+   * state.</p>
+   */
+  inline bool GetAsDraft() const { return m_asDraft; }
+  inline bool AsDraftHasBeenSet() const { return m_asDraftHasBeenSet; }
+  inline void SetAsDraft(bool value) {
+    m_asDraftHasBeenSet = true;
+    m_asDraft = value;
+  }
+  inline CreateEvaluationFormRequest& WithAsDraft(bool value) {
+    SetAsDraft(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The tags used to organize, track, or control access for this resource. For
    * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
    */
@@ -195,6 +214,42 @@ class CreateEvaluationFormRequest : public ConnectRequest {
   CreateEvaluationFormRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
     m_tagsHasBeenSet = true;
     m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Configuration that specifies the target for the evaluation form.</p>
+   */
+  inline const EvaluationFormTargetConfiguration& GetTargetConfiguration() const { return m_targetConfiguration; }
+  inline bool TargetConfigurationHasBeenSet() const { return m_targetConfigurationHasBeenSet; }
+  template <typename TargetConfigurationT = EvaluationFormTargetConfiguration>
+  void SetTargetConfiguration(TargetConfigurationT&& value) {
+    m_targetConfigurationHasBeenSet = true;
+    m_targetConfiguration = std::forward<TargetConfigurationT>(value);
+  }
+  template <typename TargetConfigurationT = EvaluationFormTargetConfiguration>
+  CreateEvaluationFormRequest& WithTargetConfiguration(TargetConfigurationT&& value) {
+    SetTargetConfiguration(std::forward<TargetConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Configuration for language settings of the evaluation form.</p>
+   */
+  inline const EvaluationFormLanguageConfiguration& GetLanguageConfiguration() const { return m_languageConfiguration; }
+  inline bool LanguageConfigurationHasBeenSet() const { return m_languageConfigurationHasBeenSet; }
+  template <typename LanguageConfigurationT = EvaluationFormLanguageConfiguration>
+  void SetLanguageConfiguration(LanguageConfigurationT&& value) {
+    m_languageConfigurationHasBeenSet = true;
+    m_languageConfiguration = std::forward<LanguageConfigurationT>(value);
+  }
+  template <typename LanguageConfigurationT = EvaluationFormLanguageConfiguration>
+  CreateEvaluationFormRequest& WithLanguageConfiguration(LanguageConfigurationT&& value) {
+    SetLanguageConfiguration(std::forward<LanguageConfigurationT>(value));
     return *this;
   }
   ///@}
@@ -220,8 +275,17 @@ class CreateEvaluationFormRequest : public ConnectRequest {
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_clientTokenHasBeenSet = true;
 
+  bool m_asDraft{false};
+  bool m_asDraftHasBeenSet = false;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_tagsHasBeenSet = false;
+
+  EvaluationFormTargetConfiguration m_targetConfiguration;
+  bool m_targetConfigurationHasBeenSet = false;
+
+  EvaluationFormLanguageConfiguration m_languageConfiguration;
+  bool m_languageConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

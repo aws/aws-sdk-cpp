@@ -30,7 +30,10 @@ enum class ReasonCode {
   ResourceSnapshotValidationFailed,
   ResourceSnapshotConflict,
   ServiceQuotaExceeded,
-  RequestThrottled
+  RequestThrottled,
+  ContextNotFound,
+  CustomerProjectContextNotPermitted,
+  DisqualifiedLeadNotPermitted
 };
 
 namespace ReasonCodeMapper {

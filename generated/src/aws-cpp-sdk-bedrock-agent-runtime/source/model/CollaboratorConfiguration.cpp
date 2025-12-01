@@ -18,17 +18,17 @@ namespace Model {
 CollaboratorConfiguration::CollaboratorConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
 CollaboratorConfiguration& CollaboratorConfiguration::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("collaboratorName")) {
-    m_collaboratorName = jsonValue.GetString("collaboratorName");
-    m_collaboratorNameHasBeenSet = true;
+  if (jsonValue.ValueExists("agentAliasArn")) {
+    m_agentAliasArn = jsonValue.GetString("agentAliasArn");
+    m_agentAliasArnHasBeenSet = true;
   }
   if (jsonValue.ValueExists("collaboratorInstruction")) {
     m_collaboratorInstruction = jsonValue.GetString("collaboratorInstruction");
     m_collaboratorInstructionHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("agentAliasArn")) {
-    m_agentAliasArn = jsonValue.GetString("agentAliasArn");
-    m_agentAliasArnHasBeenSet = true;
+  if (jsonValue.ValueExists("collaboratorName")) {
+    m_collaboratorName = jsonValue.GetString("collaboratorName");
+    m_collaboratorNameHasBeenSet = true;
   }
   if (jsonValue.ValueExists("relayConversationHistory")) {
     m_relayConversationHistory =
@@ -41,16 +41,16 @@ CollaboratorConfiguration& CollaboratorConfiguration::operator=(JsonView jsonVal
 JsonValue CollaboratorConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if (m_collaboratorNameHasBeenSet) {
-    payload.WithString("collaboratorName", m_collaboratorName);
+  if (m_agentAliasArnHasBeenSet) {
+    payload.WithString("agentAliasArn", m_agentAliasArn);
   }
 
   if (m_collaboratorInstructionHasBeenSet) {
     payload.WithString("collaboratorInstruction", m_collaboratorInstruction);
   }
 
-  if (m_agentAliasArnHasBeenSet) {
-    payload.WithString("agentAliasArn", m_agentAliasArn);
+  if (m_collaboratorNameHasBeenSet) {
+    payload.WithString("collaboratorName", m_collaboratorName);
   }
 
   if (m_relayConversationHistoryHasBeenSet) {

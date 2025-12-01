@@ -58,6 +58,10 @@ AnalysisTemplateSummary& AnalysisTemplateSummary::operator=(JsonView jsonValue) 
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("isSyntheticData")) {
+    m_isSyntheticData = jsonValue.GetBool("isSyntheticData");
+    m_isSyntheticDataHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -102,6 +106,10 @@ JsonValue AnalysisTemplateSummary::Jsonize() const {
 
   if (m_descriptionHasBeenSet) {
     payload.WithString("description", m_description);
+  }
+
+  if (m_isSyntheticDataHasBeenSet) {
+    payload.WithBool("isSyntheticData", m_isSyntheticData);
   }
 
   return payload;

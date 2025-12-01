@@ -28,11 +28,16 @@
 #include <aws/connect/model/AssociateInstanceStorageConfigResult.h>
 #include <aws/connect/model/AssociateSecurityKeyResult.h>
 #include <aws/connect/model/AssociateTrafficDistributionGroupUserResult.h>
+#include <aws/connect/model/AssociateWorkspaceResult.h>
 #include <aws/connect/model/BatchAssociateAnalyticsDataSetResult.h>
+#include <aws/connect/model/BatchCreateDataTableValueResult.h>
+#include <aws/connect/model/BatchDeleteDataTableValueResult.h>
+#include <aws/connect/model/BatchDescribeDataTableValueResult.h>
 #include <aws/connect/model/BatchDisassociateAnalyticsDataSetResult.h>
 #include <aws/connect/model/BatchGetAttachedFileMetadataResult.h>
 #include <aws/connect/model/BatchGetFlowAssociationResult.h>
 #include <aws/connect/model/BatchPutContactResult.h>
+#include <aws/connect/model/BatchUpdateDataTableValueResult.h>
 #include <aws/connect/model/ClaimPhoneNumberResult.h>
 #include <aws/connect/model/CompleteAttachedFileUploadResult.h>
 #include <aws/connect/model/CreateAgentStatusResult.h>
@@ -42,6 +47,8 @@
 #include <aws/connect/model/CreateContactFlowResult.h>
 #include <aws/connect/model/CreateContactFlowVersionResult.h>
 #include <aws/connect/model/CreateContactResult.h>
+#include <aws/connect/model/CreateDataTableAttributeResult.h>
+#include <aws/connect/model/CreateDataTableResult.h>
 #include <aws/connect/model/CreateEmailAddressResult.h>
 #include <aws/connect/model/CreateEvaluationFormResult.h>
 #include <aws/connect/model/CreateHoursOfOperationOverrideResult.h>
@@ -65,6 +72,8 @@
 #include <aws/connect/model/CreateViewResult.h>
 #include <aws/connect/model/CreateViewVersionResult.h>
 #include <aws/connect/model/CreateVocabularyResult.h>
+#include <aws/connect/model/CreateWorkspacePageResult.h>
+#include <aws/connect/model/CreateWorkspaceResult.h>
 #include <aws/connect/model/DeactivateEvaluationFormResult.h>
 #include <aws/connect/model/DeleteAttachedFileResult.h>
 #include <aws/connect/model/DeleteContactFlowModuleAliasResult.h>
@@ -72,6 +81,8 @@
 #include <aws/connect/model/DeleteContactFlowModuleVersionResult.h>
 #include <aws/connect/model/DeleteContactFlowResult.h>
 #include <aws/connect/model/DeleteContactFlowVersionResult.h>
+#include <aws/connect/model/DeleteDataTableAttributeResult.h>
+#include <aws/connect/model/DeleteDataTableResult.h>
 #include <aws/connect/model/DeleteEmailAddressResult.h>
 #include <aws/connect/model/DeletePushNotificationRegistrationResult.h>
 #include <aws/connect/model/DeleteTaskTemplateResult.h>
@@ -79,6 +90,9 @@
 #include <aws/connect/model/DeleteViewResult.h>
 #include <aws/connect/model/DeleteViewVersionResult.h>
 #include <aws/connect/model/DeleteVocabularyResult.h>
+#include <aws/connect/model/DeleteWorkspaceMediaResult.h>
+#include <aws/connect/model/DeleteWorkspacePageResult.h>
+#include <aws/connect/model/DeleteWorkspaceResult.h>
 #include <aws/connect/model/DescribeAgentStatusResult.h>
 #include <aws/connect/model/DescribeAuthenticationProfileResult.h>
 #include <aws/connect/model/DescribeContactEvaluationResult.h>
@@ -86,6 +100,8 @@
 #include <aws/connect/model/DescribeContactFlowModuleResult.h>
 #include <aws/connect/model/DescribeContactFlowResult.h>
 #include <aws/connect/model/DescribeContactResult.h>
+#include <aws/connect/model/DescribeDataTableAttributeResult.h>
+#include <aws/connect/model/DescribeDataTableResult.h>
 #include <aws/connect/model/DescribeEmailAddressResult.h>
 #include <aws/connect/model/DescribeEvaluationFormResult.h>
 #include <aws/connect/model/DescribeHoursOfOperationOverrideResult.h>
@@ -107,10 +123,13 @@
 #include <aws/connect/model/DescribeUserResult.h>
 #include <aws/connect/model/DescribeViewResult.h>
 #include <aws/connect/model/DescribeVocabularyResult.h>
+#include <aws/connect/model/DescribeWorkspaceResult.h>
 #include <aws/connect/model/DisassociateEmailAddressAliasResult.h>
 #include <aws/connect/model/DisassociateFlowResult.h>
 #include <aws/connect/model/DisassociateTrafficDistributionGroupUserResult.h>
+#include <aws/connect/model/DisassociateWorkspaceResult.h>
 #include <aws/connect/model/DismissUserContactResult.h>
+#include <aws/connect/model/EvaluateDataTableValuesResult.h>
 #include <aws/connect/model/GetAttachedFileResult.h>
 #include <aws/connect/model/GetContactAttributesResult.h>
 #include <aws/connect/model/GetContactMetricsResult.h>
@@ -125,6 +144,7 @@
 #include <aws/connect/model/GetTaskTemplateResult.h>
 #include <aws/connect/model/GetTrafficDistributionResult.h>
 #include <aws/connect/model/ImportPhoneNumberResult.h>
+#include <aws/connect/model/ImportWorkspaceMediaResult.h>
 #include <aws/connect/model/ListAgentStatusesResult.h>
 #include <aws/connect/model/ListAnalyticsDataAssociationsResult.h>
 #include <aws/connect/model/ListAnalyticsDataLakeDataSetsResult.h>
@@ -139,7 +159,12 @@
 #include <aws/connect/model/ListContactFlowVersionsResult.h>
 #include <aws/connect/model/ListContactFlowsResult.h>
 #include <aws/connect/model/ListContactReferencesResult.h>
+#include <aws/connect/model/ListDataTableAttributesResult.h>
+#include <aws/connect/model/ListDataTablePrimaryValuesResult.h>
+#include <aws/connect/model/ListDataTableValuesResult.h>
+#include <aws/connect/model/ListDataTablesResult.h>
 #include <aws/connect/model/ListDefaultVocabulariesResult.h>
+#include <aws/connect/model/ListEntitySecurityProfilesResult.h>
 #include <aws/connect/model/ListEvaluationFormVersionsResult.h>
 #include <aws/connect/model/ListEvaluationFormsResult.h>
 #include <aws/connect/model/ListFlowAssociationsResult.h>
@@ -167,6 +192,7 @@
 #include <aws/connect/model/ListRulesResult.h>
 #include <aws/connect/model/ListSecurityKeysResult.h>
 #include <aws/connect/model/ListSecurityProfileApplicationsResult.h>
+#include <aws/connect/model/ListSecurityProfileFlowModulesResult.h>
 #include <aws/connect/model/ListSecurityProfilePermissionsResult.h>
 #include <aws/connect/model/ListSecurityProfilesResult.h>
 #include <aws/connect/model/ListTagsForResourceResult.h>
@@ -180,6 +206,9 @@
 #include <aws/connect/model/ListUsersResult.h>
 #include <aws/connect/model/ListViewVersionsResult.h>
 #include <aws/connect/model/ListViewsResult.h>
+#include <aws/connect/model/ListWorkspaceMediaResult.h>
+#include <aws/connect/model/ListWorkspacePagesResult.h>
+#include <aws/connect/model/ListWorkspacesResult.h>
 #include <aws/connect/model/MonitorContactResult.h>
 #include <aws/connect/model/PauseContactResult.h>
 #include <aws/connect/model/PutUserStatusResult.h>
@@ -192,6 +221,7 @@
 #include <aws/connect/model/SearchContactFlowModulesResult.h>
 #include <aws/connect/model/SearchContactFlowsResult.h>
 #include <aws/connect/model/SearchContactsResult.h>
+#include <aws/connect/model/SearchDataTablesResult.h>
 #include <aws/connect/model/SearchEmailAddressesResult.h>
 #include <aws/connect/model/SearchEvaluationFormsResult.h>
 #include <aws/connect/model/SearchHoursOfOperationOverridesResult.h>
@@ -205,12 +235,17 @@
 #include <aws/connect/model/SearchSecurityProfilesResult.h>
 #include <aws/connect/model/SearchUserHierarchyGroupsResult.h>
 #include <aws/connect/model/SearchUsersResult.h>
+#include <aws/connect/model/SearchViewsResult.h>
 #include <aws/connect/model/SearchVocabulariesResult.h>
+#include <aws/connect/model/SearchWorkspaceAssociationsResult.h>
+#include <aws/connect/model/SearchWorkspacesResult.h>
 #include <aws/connect/model/SendChatIntegrationEventResult.h>
 #include <aws/connect/model/SendOutboundEmailResult.h>
 #include <aws/connect/model/StartAttachedFileUploadResult.h>
 #include <aws/connect/model/StartChatContactResult.h>
 #include <aws/connect/model/StartContactEvaluationResult.h>
+#include <aws/connect/model/StartContactMediaProcessingRequest.h>
+#include <aws/connect/model/StartContactMediaProcessingResult.h>
 #include <aws/connect/model/StartContactRecordingResult.h>
 #include <aws/connect/model/StartContactStreamingResult.h>
 #include <aws/connect/model/StartEmailContactResult.h>
@@ -220,6 +255,8 @@
 #include <aws/connect/model/StartScreenSharingResult.h>
 #include <aws/connect/model/StartTaskContactResult.h>
 #include <aws/connect/model/StartWebRTCContactResult.h>
+#include <aws/connect/model/StopContactMediaProcessingRequest.h>
+#include <aws/connect/model/StopContactMediaProcessingResult.h>
 #include <aws/connect/model/StopContactRecordingResult.h>
 #include <aws/connect/model/StopContactResult.h>
 #include <aws/connect/model/StopContactStreamingResult.h>
@@ -239,6 +276,9 @@
 #include <aws/connect/model/UpdateContactResult.h>
 #include <aws/connect/model/UpdateContactRoutingDataResult.h>
 #include <aws/connect/model/UpdateContactScheduleResult.h>
+#include <aws/connect/model/UpdateDataTableAttributeResult.h>
+#include <aws/connect/model/UpdateDataTableMetadataResult.h>
+#include <aws/connect/model/UpdateDataTablePrimaryValuesResult.h>
 #include <aws/connect/model/UpdateEmailAddressMetadataResult.h>
 #include <aws/connect/model/UpdateEvaluationFormResult.h>
 #include <aws/connect/model/UpdateParticipantAuthenticationResult.h>
@@ -249,6 +289,10 @@
 #include <aws/connect/model/UpdateTrafficDistributionResult.h>
 #include <aws/connect/model/UpdateViewContentResult.h>
 #include <aws/connect/model/UpdateViewMetadataResult.h>
+#include <aws/connect/model/UpdateWorkspaceMetadataResult.h>
+#include <aws/connect/model/UpdateWorkspacePageResult.h>
+#include <aws/connect/model/UpdateWorkspaceThemeResult.h>
+#include <aws/connect/model/UpdateWorkspaceVisibilityResult.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in ConnectClient header */
 
@@ -298,13 +342,19 @@ class AssociatePhoneNumberContactFlowRequest;
 class AssociateQueueQuickConnectsRequest;
 class AssociateRoutingProfileQueuesRequest;
 class AssociateSecurityKeyRequest;
+class AssociateSecurityProfilesRequest;
 class AssociateTrafficDistributionGroupUserRequest;
 class AssociateUserProficienciesRequest;
+class AssociateWorkspaceRequest;
 class BatchAssociateAnalyticsDataSetRequest;
+class BatchCreateDataTableValueRequest;
+class BatchDeleteDataTableValueRequest;
+class BatchDescribeDataTableValueRequest;
 class BatchDisassociateAnalyticsDataSetRequest;
 class BatchGetAttachedFileMetadataRequest;
 class BatchGetFlowAssociationRequest;
 class BatchPutContactRequest;
+class BatchUpdateDataTableValueRequest;
 class ClaimPhoneNumberRequest;
 class CompleteAttachedFileUploadRequest;
 class CreateAgentStatusRequest;
@@ -314,6 +364,8 @@ class CreateContactFlowModuleRequest;
 class CreateContactFlowModuleAliasRequest;
 class CreateContactFlowModuleVersionRequest;
 class CreateContactFlowVersionRequest;
+class CreateDataTableRequest;
+class CreateDataTableAttributeRequest;
 class CreateEmailAddressRequest;
 class CreateEvaluationFormRequest;
 class CreateHoursOfOperationRequest;
@@ -338,6 +390,8 @@ class CreateUserHierarchyGroupRequest;
 class CreateViewRequest;
 class CreateViewVersionRequest;
 class CreateVocabularyRequest;
+class CreateWorkspaceRequest;
+class CreateWorkspacePageRequest;
 class DeactivateEvaluationFormRequest;
 class DeleteAttachedFileRequest;
 class DeleteContactEvaluationRequest;
@@ -346,6 +400,8 @@ class DeleteContactFlowModuleRequest;
 class DeleteContactFlowModuleAliasRequest;
 class DeleteContactFlowModuleVersionRequest;
 class DeleteContactFlowVersionRequest;
+class DeleteDataTableRequest;
+class DeleteDataTableAttributeRequest;
 class DeleteEmailAddressRequest;
 class DeleteEvaluationFormRequest;
 class DeleteHoursOfOperationRequest;
@@ -368,6 +424,9 @@ class DeleteUserHierarchyGroupRequest;
 class DeleteViewRequest;
 class DeleteViewVersionRequest;
 class DeleteVocabularyRequest;
+class DeleteWorkspaceRequest;
+class DeleteWorkspaceMediaRequest;
+class DeleteWorkspacePageRequest;
 class DescribeAgentStatusRequest;
 class DescribeAuthenticationProfileRequest;
 class DescribeContactRequest;
@@ -375,6 +434,8 @@ class DescribeContactEvaluationRequest;
 class DescribeContactFlowRequest;
 class DescribeContactFlowModuleRequest;
 class DescribeContactFlowModuleAliasRequest;
+class DescribeDataTableRequest;
+class DescribeDataTableAttributeRequest;
 class DescribeEmailAddressRequest;
 class DescribeEvaluationFormRequest;
 class DescribeHoursOfOperationRequest;
@@ -396,6 +457,7 @@ class DescribeUserHierarchyGroupRequest;
 class DescribeUserHierarchyStructureRequest;
 class DescribeViewRequest;
 class DescribeVocabularyRequest;
+class DescribeWorkspaceRequest;
 class DisassociateAnalyticsDataSetRequest;
 class DisassociateApprovedOriginRequest;
 class DisassociateBotRequest;
@@ -408,9 +470,12 @@ class DisassociatePhoneNumberContactFlowRequest;
 class DisassociateQueueQuickConnectsRequest;
 class DisassociateRoutingProfileQueuesRequest;
 class DisassociateSecurityKeyRequest;
+class DisassociateSecurityProfilesRequest;
 class DisassociateTrafficDistributionGroupUserRequest;
 class DisassociateUserProficienciesRequest;
+class DisassociateWorkspaceRequest;
 class DismissUserContactRequest;
+class EvaluateDataTableValuesRequest;
 class GetAttachedFileRequest;
 class GetContactAttributesRequest;
 class GetContactMetricsRequest;
@@ -425,6 +490,7 @@ class GetPromptFileRequest;
 class GetTaskTemplateRequest;
 class GetTrafficDistributionRequest;
 class ImportPhoneNumberRequest;
+class ImportWorkspaceMediaRequest;
 class ListAgentStatusesRequest;
 class ListAnalyticsDataAssociationsRequest;
 class ListAnalyticsDataLakeDataSetsRequest;
@@ -439,7 +505,12 @@ class ListContactFlowModulesRequest;
 class ListContactFlowVersionsRequest;
 class ListContactFlowsRequest;
 class ListContactReferencesRequest;
+class ListDataTableAttributesRequest;
+class ListDataTablePrimaryValuesRequest;
+class ListDataTableValuesRequest;
+class ListDataTablesRequest;
 class ListDefaultVocabulariesRequest;
+class ListEntitySecurityProfilesRequest;
 class ListEvaluationFormVersionsRequest;
 class ListEvaluationFormsRequest;
 class ListFlowAssociationsRequest;
@@ -465,6 +536,7 @@ class ListRoutingProfilesRequest;
 class ListRulesRequest;
 class ListSecurityKeysRequest;
 class ListSecurityProfileApplicationsRequest;
+class ListSecurityProfileFlowModulesRequest;
 class ListSecurityProfilePermissionsRequest;
 class ListSecurityProfilesRequest;
 class ListTagsForResourceRequest;
@@ -477,6 +549,9 @@ class ListUserProficienciesRequest;
 class ListUsersRequest;
 class ListViewVersionsRequest;
 class ListViewsRequest;
+class ListWorkspaceMediaRequest;
+class ListWorkspacePagesRequest;
+class ListWorkspacesRequest;
 class MonitorContactRequest;
 class PauseContactRequest;
 class PutUserStatusRequest;
@@ -490,6 +565,7 @@ class SearchContactEvaluationsRequest;
 class SearchContactFlowModulesRequest;
 class SearchContactFlowsRequest;
 class SearchContactsRequest;
+class SearchDataTablesRequest;
 class SearchEmailAddressesRequest;
 class SearchEvaluationFormsRequest;
 class SearchHoursOfOperationOverridesRequest;
@@ -503,12 +579,16 @@ class SearchRoutingProfilesRequest;
 class SearchSecurityProfilesRequest;
 class SearchUserHierarchyGroupsRequest;
 class SearchUsersRequest;
+class SearchViewsRequest;
 class SearchVocabulariesRequest;
+class SearchWorkspaceAssociationsRequest;
+class SearchWorkspacesRequest;
 class SendChatIntegrationEventRequest;
 class SendOutboundEmailRequest;
 class StartAttachedFileUploadRequest;
 class StartChatContactRequest;
 class StartContactEvaluationRequest;
+class StartContactMediaProcessingRequest;
 class StartContactRecordingRequest;
 class StartContactStreamingRequest;
 class StartEmailContactRequest;
@@ -519,6 +599,7 @@ class StartScreenSharingRequest;
 class StartTaskContactRequest;
 class StartWebRTCContactRequest;
 class StopContactRequest;
+class StopContactMediaProcessingRequest;
 class StopContactRecordingRequest;
 class StopContactStreamingRequest;
 class SubmitContactEvaluationRequest;
@@ -541,6 +622,9 @@ class UpdateContactFlowModuleMetadataRequest;
 class UpdateContactFlowNameRequest;
 class UpdateContactRoutingDataRequest;
 class UpdateContactScheduleRequest;
+class UpdateDataTableAttributeRequest;
+class UpdateDataTableMetadataRequest;
+class UpdateDataTablePrimaryValuesRequest;
 class UpdateEmailAddressMetadataRequest;
 class UpdateEvaluationFormRequest;
 class UpdateHoursOfOperationRequest;
@@ -580,6 +664,10 @@ class UpdateUserRoutingProfileRequest;
 class UpdateUserSecurityProfilesRequest;
 class UpdateViewContentRequest;
 class UpdateViewMetadataRequest;
+class UpdateWorkspaceMetadataRequest;
+class UpdateWorkspacePageRequest;
+class UpdateWorkspaceThemeRequest;
+class UpdateWorkspaceVisibilityRequest;
 /* End of service model forward declarations required in ConnectClient header */
 
 /* Service model Outcome class definitions */
@@ -598,13 +686,19 @@ typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> AssociatePhoneNumberCon
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> AssociateQueueQuickConnectsOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> AssociateRoutingProfileQueuesOutcome;
 typedef Aws::Utils::Outcome<AssociateSecurityKeyResult, ConnectError> AssociateSecurityKeyOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> AssociateSecurityProfilesOutcome;
 typedef Aws::Utils::Outcome<AssociateTrafficDistributionGroupUserResult, ConnectError> AssociateTrafficDistributionGroupUserOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> AssociateUserProficienciesOutcome;
+typedef Aws::Utils::Outcome<AssociateWorkspaceResult, ConnectError> AssociateWorkspaceOutcome;
 typedef Aws::Utils::Outcome<BatchAssociateAnalyticsDataSetResult, ConnectError> BatchAssociateAnalyticsDataSetOutcome;
+typedef Aws::Utils::Outcome<BatchCreateDataTableValueResult, ConnectError> BatchCreateDataTableValueOutcome;
+typedef Aws::Utils::Outcome<BatchDeleteDataTableValueResult, ConnectError> BatchDeleteDataTableValueOutcome;
+typedef Aws::Utils::Outcome<BatchDescribeDataTableValueResult, ConnectError> BatchDescribeDataTableValueOutcome;
 typedef Aws::Utils::Outcome<BatchDisassociateAnalyticsDataSetResult, ConnectError> BatchDisassociateAnalyticsDataSetOutcome;
 typedef Aws::Utils::Outcome<BatchGetAttachedFileMetadataResult, ConnectError> BatchGetAttachedFileMetadataOutcome;
 typedef Aws::Utils::Outcome<BatchGetFlowAssociationResult, ConnectError> BatchGetFlowAssociationOutcome;
 typedef Aws::Utils::Outcome<BatchPutContactResult, ConnectError> BatchPutContactOutcome;
+typedef Aws::Utils::Outcome<BatchUpdateDataTableValueResult, ConnectError> BatchUpdateDataTableValueOutcome;
 typedef Aws::Utils::Outcome<ClaimPhoneNumberResult, ConnectError> ClaimPhoneNumberOutcome;
 typedef Aws::Utils::Outcome<CompleteAttachedFileUploadResult, ConnectError> CompleteAttachedFileUploadOutcome;
 typedef Aws::Utils::Outcome<CreateAgentStatusResult, ConnectError> CreateAgentStatusOutcome;
@@ -614,6 +708,8 @@ typedef Aws::Utils::Outcome<CreateContactFlowModuleResult, ConnectError> CreateC
 typedef Aws::Utils::Outcome<CreateContactFlowModuleAliasResult, ConnectError> CreateContactFlowModuleAliasOutcome;
 typedef Aws::Utils::Outcome<CreateContactFlowModuleVersionResult, ConnectError> CreateContactFlowModuleVersionOutcome;
 typedef Aws::Utils::Outcome<CreateContactFlowVersionResult, ConnectError> CreateContactFlowVersionOutcome;
+typedef Aws::Utils::Outcome<CreateDataTableResult, ConnectError> CreateDataTableOutcome;
+typedef Aws::Utils::Outcome<CreateDataTableAttributeResult, ConnectError> CreateDataTableAttributeOutcome;
 typedef Aws::Utils::Outcome<CreateEmailAddressResult, ConnectError> CreateEmailAddressOutcome;
 typedef Aws::Utils::Outcome<CreateEvaluationFormResult, ConnectError> CreateEvaluationFormOutcome;
 typedef Aws::Utils::Outcome<CreateHoursOfOperationResult, ConnectError> CreateHoursOfOperationOutcome;
@@ -638,6 +734,8 @@ typedef Aws::Utils::Outcome<CreateUserHierarchyGroupResult, ConnectError> Create
 typedef Aws::Utils::Outcome<CreateViewResult, ConnectError> CreateViewOutcome;
 typedef Aws::Utils::Outcome<CreateViewVersionResult, ConnectError> CreateViewVersionOutcome;
 typedef Aws::Utils::Outcome<CreateVocabularyResult, ConnectError> CreateVocabularyOutcome;
+typedef Aws::Utils::Outcome<CreateWorkspaceResult, ConnectError> CreateWorkspaceOutcome;
+typedef Aws::Utils::Outcome<CreateWorkspacePageResult, ConnectError> CreateWorkspacePageOutcome;
 typedef Aws::Utils::Outcome<DeactivateEvaluationFormResult, ConnectError> DeactivateEvaluationFormOutcome;
 typedef Aws::Utils::Outcome<DeleteAttachedFileResult, ConnectError> DeleteAttachedFileOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteContactEvaluationOutcome;
@@ -646,6 +744,8 @@ typedef Aws::Utils::Outcome<DeleteContactFlowModuleResult, ConnectError> DeleteC
 typedef Aws::Utils::Outcome<DeleteContactFlowModuleAliasResult, ConnectError> DeleteContactFlowModuleAliasOutcome;
 typedef Aws::Utils::Outcome<DeleteContactFlowModuleVersionResult, ConnectError> DeleteContactFlowModuleVersionOutcome;
 typedef Aws::Utils::Outcome<DeleteContactFlowVersionResult, ConnectError> DeleteContactFlowVersionOutcome;
+typedef Aws::Utils::Outcome<DeleteDataTableResult, ConnectError> DeleteDataTableOutcome;
+typedef Aws::Utils::Outcome<DeleteDataTableAttributeResult, ConnectError> DeleteDataTableAttributeOutcome;
 typedef Aws::Utils::Outcome<DeleteEmailAddressResult, ConnectError> DeleteEmailAddressOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteEvaluationFormOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteHoursOfOperationOutcome;
@@ -668,6 +768,9 @@ typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteUserHierarchyGrou
 typedef Aws::Utils::Outcome<DeleteViewResult, ConnectError> DeleteViewOutcome;
 typedef Aws::Utils::Outcome<DeleteViewVersionResult, ConnectError> DeleteViewVersionOutcome;
 typedef Aws::Utils::Outcome<DeleteVocabularyResult, ConnectError> DeleteVocabularyOutcome;
+typedef Aws::Utils::Outcome<DeleteWorkspaceResult, ConnectError> DeleteWorkspaceOutcome;
+typedef Aws::Utils::Outcome<DeleteWorkspaceMediaResult, ConnectError> DeleteWorkspaceMediaOutcome;
+typedef Aws::Utils::Outcome<DeleteWorkspacePageResult, ConnectError> DeleteWorkspacePageOutcome;
 typedef Aws::Utils::Outcome<DescribeAgentStatusResult, ConnectError> DescribeAgentStatusOutcome;
 typedef Aws::Utils::Outcome<DescribeAuthenticationProfileResult, ConnectError> DescribeAuthenticationProfileOutcome;
 typedef Aws::Utils::Outcome<DescribeContactResult, ConnectError> DescribeContactOutcome;
@@ -675,6 +778,8 @@ typedef Aws::Utils::Outcome<DescribeContactEvaluationResult, ConnectError> Descr
 typedef Aws::Utils::Outcome<DescribeContactFlowResult, ConnectError> DescribeContactFlowOutcome;
 typedef Aws::Utils::Outcome<DescribeContactFlowModuleResult, ConnectError> DescribeContactFlowModuleOutcome;
 typedef Aws::Utils::Outcome<DescribeContactFlowModuleAliasResult, ConnectError> DescribeContactFlowModuleAliasOutcome;
+typedef Aws::Utils::Outcome<DescribeDataTableResult, ConnectError> DescribeDataTableOutcome;
+typedef Aws::Utils::Outcome<DescribeDataTableAttributeResult, ConnectError> DescribeDataTableAttributeOutcome;
 typedef Aws::Utils::Outcome<DescribeEmailAddressResult, ConnectError> DescribeEmailAddressOutcome;
 typedef Aws::Utils::Outcome<DescribeEvaluationFormResult, ConnectError> DescribeEvaluationFormOutcome;
 typedef Aws::Utils::Outcome<DescribeHoursOfOperationResult, ConnectError> DescribeHoursOfOperationOutcome;
@@ -696,6 +801,7 @@ typedef Aws::Utils::Outcome<DescribeUserHierarchyGroupResult, ConnectError> Desc
 typedef Aws::Utils::Outcome<DescribeUserHierarchyStructureResult, ConnectError> DescribeUserHierarchyStructureOutcome;
 typedef Aws::Utils::Outcome<DescribeViewResult, ConnectError> DescribeViewOutcome;
 typedef Aws::Utils::Outcome<DescribeVocabularyResult, ConnectError> DescribeVocabularyOutcome;
+typedef Aws::Utils::Outcome<DescribeWorkspaceResult, ConnectError> DescribeWorkspaceOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateAnalyticsDataSetOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateApprovedOriginOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateBotOutcome;
@@ -708,9 +814,12 @@ typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociatePhoneNumber
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateQueueQuickConnectsOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateRoutingProfileQueuesOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateSecurityKeyOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateSecurityProfilesOutcome;
 typedef Aws::Utils::Outcome<DisassociateTrafficDistributionGroupUserResult, ConnectError> DisassociateTrafficDistributionGroupUserOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateUserProficienciesOutcome;
+typedef Aws::Utils::Outcome<DisassociateWorkspaceResult, ConnectError> DisassociateWorkspaceOutcome;
 typedef Aws::Utils::Outcome<DismissUserContactResult, ConnectError> DismissUserContactOutcome;
+typedef Aws::Utils::Outcome<EvaluateDataTableValuesResult, ConnectError> EvaluateDataTableValuesOutcome;
 typedef Aws::Utils::Outcome<GetAttachedFileResult, ConnectError> GetAttachedFileOutcome;
 typedef Aws::Utils::Outcome<GetContactAttributesResult, ConnectError> GetContactAttributesOutcome;
 typedef Aws::Utils::Outcome<GetContactMetricsResult, ConnectError> GetContactMetricsOutcome;
@@ -725,6 +834,7 @@ typedef Aws::Utils::Outcome<GetPromptFileResult, ConnectError> GetPromptFileOutc
 typedef Aws::Utils::Outcome<GetTaskTemplateResult, ConnectError> GetTaskTemplateOutcome;
 typedef Aws::Utils::Outcome<GetTrafficDistributionResult, ConnectError> GetTrafficDistributionOutcome;
 typedef Aws::Utils::Outcome<ImportPhoneNumberResult, ConnectError> ImportPhoneNumberOutcome;
+typedef Aws::Utils::Outcome<ImportWorkspaceMediaResult, ConnectError> ImportWorkspaceMediaOutcome;
 typedef Aws::Utils::Outcome<ListAgentStatusesResult, ConnectError> ListAgentStatusesOutcome;
 typedef Aws::Utils::Outcome<ListAnalyticsDataAssociationsResult, ConnectError> ListAnalyticsDataAssociationsOutcome;
 typedef Aws::Utils::Outcome<ListAnalyticsDataLakeDataSetsResult, ConnectError> ListAnalyticsDataLakeDataSetsOutcome;
@@ -739,7 +849,12 @@ typedef Aws::Utils::Outcome<ListContactFlowModulesResult, ConnectError> ListCont
 typedef Aws::Utils::Outcome<ListContactFlowVersionsResult, ConnectError> ListContactFlowVersionsOutcome;
 typedef Aws::Utils::Outcome<ListContactFlowsResult, ConnectError> ListContactFlowsOutcome;
 typedef Aws::Utils::Outcome<ListContactReferencesResult, ConnectError> ListContactReferencesOutcome;
+typedef Aws::Utils::Outcome<ListDataTableAttributesResult, ConnectError> ListDataTableAttributesOutcome;
+typedef Aws::Utils::Outcome<ListDataTablePrimaryValuesResult, ConnectError> ListDataTablePrimaryValuesOutcome;
+typedef Aws::Utils::Outcome<ListDataTableValuesResult, ConnectError> ListDataTableValuesOutcome;
+typedef Aws::Utils::Outcome<ListDataTablesResult, ConnectError> ListDataTablesOutcome;
 typedef Aws::Utils::Outcome<ListDefaultVocabulariesResult, ConnectError> ListDefaultVocabulariesOutcome;
+typedef Aws::Utils::Outcome<ListEntitySecurityProfilesResult, ConnectError> ListEntitySecurityProfilesOutcome;
 typedef Aws::Utils::Outcome<ListEvaluationFormVersionsResult, ConnectError> ListEvaluationFormVersionsOutcome;
 typedef Aws::Utils::Outcome<ListEvaluationFormsResult, ConnectError> ListEvaluationFormsOutcome;
 typedef Aws::Utils::Outcome<ListFlowAssociationsResult, ConnectError> ListFlowAssociationsOutcome;
@@ -765,6 +880,7 @@ typedef Aws::Utils::Outcome<ListRoutingProfilesResult, ConnectError> ListRouting
 typedef Aws::Utils::Outcome<ListRulesResult, ConnectError> ListRulesOutcome;
 typedef Aws::Utils::Outcome<ListSecurityKeysResult, ConnectError> ListSecurityKeysOutcome;
 typedef Aws::Utils::Outcome<ListSecurityProfileApplicationsResult, ConnectError> ListSecurityProfileApplicationsOutcome;
+typedef Aws::Utils::Outcome<ListSecurityProfileFlowModulesResult, ConnectError> ListSecurityProfileFlowModulesOutcome;
 typedef Aws::Utils::Outcome<ListSecurityProfilePermissionsResult, ConnectError> ListSecurityProfilePermissionsOutcome;
 typedef Aws::Utils::Outcome<ListSecurityProfilesResult, ConnectError> ListSecurityProfilesOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, ConnectError> ListTagsForResourceOutcome;
@@ -777,6 +893,9 @@ typedef Aws::Utils::Outcome<ListUserProficienciesResult, ConnectError> ListUserP
 typedef Aws::Utils::Outcome<ListUsersResult, ConnectError> ListUsersOutcome;
 typedef Aws::Utils::Outcome<ListViewVersionsResult, ConnectError> ListViewVersionsOutcome;
 typedef Aws::Utils::Outcome<ListViewsResult, ConnectError> ListViewsOutcome;
+typedef Aws::Utils::Outcome<ListWorkspaceMediaResult, ConnectError> ListWorkspaceMediaOutcome;
+typedef Aws::Utils::Outcome<ListWorkspacePagesResult, ConnectError> ListWorkspacePagesOutcome;
+typedef Aws::Utils::Outcome<ListWorkspacesResult, ConnectError> ListWorkspacesOutcome;
 typedef Aws::Utils::Outcome<MonitorContactResult, ConnectError> MonitorContactOutcome;
 typedef Aws::Utils::Outcome<PauseContactResult, ConnectError> PauseContactOutcome;
 typedef Aws::Utils::Outcome<PutUserStatusResult, ConnectError> PutUserStatusOutcome;
@@ -790,6 +909,7 @@ typedef Aws::Utils::Outcome<SearchContactEvaluationsResult, ConnectError> Search
 typedef Aws::Utils::Outcome<SearchContactFlowModulesResult, ConnectError> SearchContactFlowModulesOutcome;
 typedef Aws::Utils::Outcome<SearchContactFlowsResult, ConnectError> SearchContactFlowsOutcome;
 typedef Aws::Utils::Outcome<SearchContactsResult, ConnectError> SearchContactsOutcome;
+typedef Aws::Utils::Outcome<SearchDataTablesResult, ConnectError> SearchDataTablesOutcome;
 typedef Aws::Utils::Outcome<SearchEmailAddressesResult, ConnectError> SearchEmailAddressesOutcome;
 typedef Aws::Utils::Outcome<SearchEvaluationFormsResult, ConnectError> SearchEvaluationFormsOutcome;
 typedef Aws::Utils::Outcome<SearchHoursOfOperationOverridesResult, ConnectError> SearchHoursOfOperationOverridesOutcome;
@@ -803,12 +923,16 @@ typedef Aws::Utils::Outcome<SearchRoutingProfilesResult, ConnectError> SearchRou
 typedef Aws::Utils::Outcome<SearchSecurityProfilesResult, ConnectError> SearchSecurityProfilesOutcome;
 typedef Aws::Utils::Outcome<SearchUserHierarchyGroupsResult, ConnectError> SearchUserHierarchyGroupsOutcome;
 typedef Aws::Utils::Outcome<SearchUsersResult, ConnectError> SearchUsersOutcome;
+typedef Aws::Utils::Outcome<SearchViewsResult, ConnectError> SearchViewsOutcome;
 typedef Aws::Utils::Outcome<SearchVocabulariesResult, ConnectError> SearchVocabulariesOutcome;
+typedef Aws::Utils::Outcome<SearchWorkspaceAssociationsResult, ConnectError> SearchWorkspaceAssociationsOutcome;
+typedef Aws::Utils::Outcome<SearchWorkspacesResult, ConnectError> SearchWorkspacesOutcome;
 typedef Aws::Utils::Outcome<SendChatIntegrationEventResult, ConnectError> SendChatIntegrationEventOutcome;
 typedef Aws::Utils::Outcome<SendOutboundEmailResult, ConnectError> SendOutboundEmailOutcome;
 typedef Aws::Utils::Outcome<StartAttachedFileUploadResult, ConnectError> StartAttachedFileUploadOutcome;
 typedef Aws::Utils::Outcome<StartChatContactResult, ConnectError> StartChatContactOutcome;
 typedef Aws::Utils::Outcome<StartContactEvaluationResult, ConnectError> StartContactEvaluationOutcome;
+typedef Aws::Utils::Outcome<StartContactMediaProcessingResult, ConnectError> StartContactMediaProcessingOutcome;
 typedef Aws::Utils::Outcome<StartContactRecordingResult, ConnectError> StartContactRecordingOutcome;
 typedef Aws::Utils::Outcome<StartContactStreamingResult, ConnectError> StartContactStreamingOutcome;
 typedef Aws::Utils::Outcome<StartEmailContactResult, ConnectError> StartEmailContactOutcome;
@@ -819,6 +943,7 @@ typedef Aws::Utils::Outcome<StartScreenSharingResult, ConnectError> StartScreenS
 typedef Aws::Utils::Outcome<StartTaskContactResult, ConnectError> StartTaskContactOutcome;
 typedef Aws::Utils::Outcome<StartWebRTCContactResult, ConnectError> StartWebRTCContactOutcome;
 typedef Aws::Utils::Outcome<StopContactResult, ConnectError> StopContactOutcome;
+typedef Aws::Utils::Outcome<StopContactMediaProcessingResult, ConnectError> StopContactMediaProcessingOutcome;
 typedef Aws::Utils::Outcome<StopContactRecordingResult, ConnectError> StopContactRecordingOutcome;
 typedef Aws::Utils::Outcome<StopContactStreamingResult, ConnectError> StopContactStreamingOutcome;
 typedef Aws::Utils::Outcome<SubmitContactEvaluationResult, ConnectError> SubmitContactEvaluationOutcome;
@@ -841,6 +966,9 @@ typedef Aws::Utils::Outcome<UpdateContactFlowModuleMetadataResult, ConnectError>
 typedef Aws::Utils::Outcome<UpdateContactFlowNameResult, ConnectError> UpdateContactFlowNameOutcome;
 typedef Aws::Utils::Outcome<UpdateContactRoutingDataResult, ConnectError> UpdateContactRoutingDataOutcome;
 typedef Aws::Utils::Outcome<UpdateContactScheduleResult, ConnectError> UpdateContactScheduleOutcome;
+typedef Aws::Utils::Outcome<UpdateDataTableAttributeResult, ConnectError> UpdateDataTableAttributeOutcome;
+typedef Aws::Utils::Outcome<UpdateDataTableMetadataResult, ConnectError> UpdateDataTableMetadataOutcome;
+typedef Aws::Utils::Outcome<UpdateDataTablePrimaryValuesResult, ConnectError> UpdateDataTablePrimaryValuesOutcome;
 typedef Aws::Utils::Outcome<UpdateEmailAddressMetadataResult, ConnectError> UpdateEmailAddressMetadataOutcome;
 typedef Aws::Utils::Outcome<UpdateEvaluationFormResult, ConnectError> UpdateEvaluationFormOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateHoursOfOperationOutcome;
@@ -880,6 +1008,10 @@ typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateUserRoutingProfil
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateUserSecurityProfilesOutcome;
 typedef Aws::Utils::Outcome<UpdateViewContentResult, ConnectError> UpdateViewContentOutcome;
 typedef Aws::Utils::Outcome<UpdateViewMetadataResult, ConnectError> UpdateViewMetadataOutcome;
+typedef Aws::Utils::Outcome<UpdateWorkspaceMetadataResult, ConnectError> UpdateWorkspaceMetadataOutcome;
+typedef Aws::Utils::Outcome<UpdateWorkspacePageResult, ConnectError> UpdateWorkspacePageOutcome;
+typedef Aws::Utils::Outcome<UpdateWorkspaceThemeResult, ConnectError> UpdateWorkspaceThemeOutcome;
+typedef Aws::Utils::Outcome<UpdateWorkspaceVisibilityResult, ConnectError> UpdateWorkspaceVisibilityOutcome;
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
@@ -898,13 +1030,19 @@ typedef std::future<AssociatePhoneNumberContactFlowOutcome> AssociatePhoneNumber
 typedef std::future<AssociateQueueQuickConnectsOutcome> AssociateQueueQuickConnectsOutcomeCallable;
 typedef std::future<AssociateRoutingProfileQueuesOutcome> AssociateRoutingProfileQueuesOutcomeCallable;
 typedef std::future<AssociateSecurityKeyOutcome> AssociateSecurityKeyOutcomeCallable;
+typedef std::future<AssociateSecurityProfilesOutcome> AssociateSecurityProfilesOutcomeCallable;
 typedef std::future<AssociateTrafficDistributionGroupUserOutcome> AssociateTrafficDistributionGroupUserOutcomeCallable;
 typedef std::future<AssociateUserProficienciesOutcome> AssociateUserProficienciesOutcomeCallable;
+typedef std::future<AssociateWorkspaceOutcome> AssociateWorkspaceOutcomeCallable;
 typedef std::future<BatchAssociateAnalyticsDataSetOutcome> BatchAssociateAnalyticsDataSetOutcomeCallable;
+typedef std::future<BatchCreateDataTableValueOutcome> BatchCreateDataTableValueOutcomeCallable;
+typedef std::future<BatchDeleteDataTableValueOutcome> BatchDeleteDataTableValueOutcomeCallable;
+typedef std::future<BatchDescribeDataTableValueOutcome> BatchDescribeDataTableValueOutcomeCallable;
 typedef std::future<BatchDisassociateAnalyticsDataSetOutcome> BatchDisassociateAnalyticsDataSetOutcomeCallable;
 typedef std::future<BatchGetAttachedFileMetadataOutcome> BatchGetAttachedFileMetadataOutcomeCallable;
 typedef std::future<BatchGetFlowAssociationOutcome> BatchGetFlowAssociationOutcomeCallable;
 typedef std::future<BatchPutContactOutcome> BatchPutContactOutcomeCallable;
+typedef std::future<BatchUpdateDataTableValueOutcome> BatchUpdateDataTableValueOutcomeCallable;
 typedef std::future<ClaimPhoneNumberOutcome> ClaimPhoneNumberOutcomeCallable;
 typedef std::future<CompleteAttachedFileUploadOutcome> CompleteAttachedFileUploadOutcomeCallable;
 typedef std::future<CreateAgentStatusOutcome> CreateAgentStatusOutcomeCallable;
@@ -914,6 +1052,8 @@ typedef std::future<CreateContactFlowModuleOutcome> CreateContactFlowModuleOutco
 typedef std::future<CreateContactFlowModuleAliasOutcome> CreateContactFlowModuleAliasOutcomeCallable;
 typedef std::future<CreateContactFlowModuleVersionOutcome> CreateContactFlowModuleVersionOutcomeCallable;
 typedef std::future<CreateContactFlowVersionOutcome> CreateContactFlowVersionOutcomeCallable;
+typedef std::future<CreateDataTableOutcome> CreateDataTableOutcomeCallable;
+typedef std::future<CreateDataTableAttributeOutcome> CreateDataTableAttributeOutcomeCallable;
 typedef std::future<CreateEmailAddressOutcome> CreateEmailAddressOutcomeCallable;
 typedef std::future<CreateEvaluationFormOutcome> CreateEvaluationFormOutcomeCallable;
 typedef std::future<CreateHoursOfOperationOutcome> CreateHoursOfOperationOutcomeCallable;
@@ -938,6 +1078,8 @@ typedef std::future<CreateUserHierarchyGroupOutcome> CreateUserHierarchyGroupOut
 typedef std::future<CreateViewOutcome> CreateViewOutcomeCallable;
 typedef std::future<CreateViewVersionOutcome> CreateViewVersionOutcomeCallable;
 typedef std::future<CreateVocabularyOutcome> CreateVocabularyOutcomeCallable;
+typedef std::future<CreateWorkspaceOutcome> CreateWorkspaceOutcomeCallable;
+typedef std::future<CreateWorkspacePageOutcome> CreateWorkspacePageOutcomeCallable;
 typedef std::future<DeactivateEvaluationFormOutcome> DeactivateEvaluationFormOutcomeCallable;
 typedef std::future<DeleteAttachedFileOutcome> DeleteAttachedFileOutcomeCallable;
 typedef std::future<DeleteContactEvaluationOutcome> DeleteContactEvaluationOutcomeCallable;
@@ -946,6 +1088,8 @@ typedef std::future<DeleteContactFlowModuleOutcome> DeleteContactFlowModuleOutco
 typedef std::future<DeleteContactFlowModuleAliasOutcome> DeleteContactFlowModuleAliasOutcomeCallable;
 typedef std::future<DeleteContactFlowModuleVersionOutcome> DeleteContactFlowModuleVersionOutcomeCallable;
 typedef std::future<DeleteContactFlowVersionOutcome> DeleteContactFlowVersionOutcomeCallable;
+typedef std::future<DeleteDataTableOutcome> DeleteDataTableOutcomeCallable;
+typedef std::future<DeleteDataTableAttributeOutcome> DeleteDataTableAttributeOutcomeCallable;
 typedef std::future<DeleteEmailAddressOutcome> DeleteEmailAddressOutcomeCallable;
 typedef std::future<DeleteEvaluationFormOutcome> DeleteEvaluationFormOutcomeCallable;
 typedef std::future<DeleteHoursOfOperationOutcome> DeleteHoursOfOperationOutcomeCallable;
@@ -968,6 +1112,9 @@ typedef std::future<DeleteUserHierarchyGroupOutcome> DeleteUserHierarchyGroupOut
 typedef std::future<DeleteViewOutcome> DeleteViewOutcomeCallable;
 typedef std::future<DeleteViewVersionOutcome> DeleteViewVersionOutcomeCallable;
 typedef std::future<DeleteVocabularyOutcome> DeleteVocabularyOutcomeCallable;
+typedef std::future<DeleteWorkspaceOutcome> DeleteWorkspaceOutcomeCallable;
+typedef std::future<DeleteWorkspaceMediaOutcome> DeleteWorkspaceMediaOutcomeCallable;
+typedef std::future<DeleteWorkspacePageOutcome> DeleteWorkspacePageOutcomeCallable;
 typedef std::future<DescribeAgentStatusOutcome> DescribeAgentStatusOutcomeCallable;
 typedef std::future<DescribeAuthenticationProfileOutcome> DescribeAuthenticationProfileOutcomeCallable;
 typedef std::future<DescribeContactOutcome> DescribeContactOutcomeCallable;
@@ -975,6 +1122,8 @@ typedef std::future<DescribeContactEvaluationOutcome> DescribeContactEvaluationO
 typedef std::future<DescribeContactFlowOutcome> DescribeContactFlowOutcomeCallable;
 typedef std::future<DescribeContactFlowModuleOutcome> DescribeContactFlowModuleOutcomeCallable;
 typedef std::future<DescribeContactFlowModuleAliasOutcome> DescribeContactFlowModuleAliasOutcomeCallable;
+typedef std::future<DescribeDataTableOutcome> DescribeDataTableOutcomeCallable;
+typedef std::future<DescribeDataTableAttributeOutcome> DescribeDataTableAttributeOutcomeCallable;
 typedef std::future<DescribeEmailAddressOutcome> DescribeEmailAddressOutcomeCallable;
 typedef std::future<DescribeEvaluationFormOutcome> DescribeEvaluationFormOutcomeCallable;
 typedef std::future<DescribeHoursOfOperationOutcome> DescribeHoursOfOperationOutcomeCallable;
@@ -996,6 +1145,7 @@ typedef std::future<DescribeUserHierarchyGroupOutcome> DescribeUserHierarchyGrou
 typedef std::future<DescribeUserHierarchyStructureOutcome> DescribeUserHierarchyStructureOutcomeCallable;
 typedef std::future<DescribeViewOutcome> DescribeViewOutcomeCallable;
 typedef std::future<DescribeVocabularyOutcome> DescribeVocabularyOutcomeCallable;
+typedef std::future<DescribeWorkspaceOutcome> DescribeWorkspaceOutcomeCallable;
 typedef std::future<DisassociateAnalyticsDataSetOutcome> DisassociateAnalyticsDataSetOutcomeCallable;
 typedef std::future<DisassociateApprovedOriginOutcome> DisassociateApprovedOriginOutcomeCallable;
 typedef std::future<DisassociateBotOutcome> DisassociateBotOutcomeCallable;
@@ -1008,9 +1158,12 @@ typedef std::future<DisassociatePhoneNumberContactFlowOutcome> DisassociatePhone
 typedef std::future<DisassociateQueueQuickConnectsOutcome> DisassociateQueueQuickConnectsOutcomeCallable;
 typedef std::future<DisassociateRoutingProfileQueuesOutcome> DisassociateRoutingProfileQueuesOutcomeCallable;
 typedef std::future<DisassociateSecurityKeyOutcome> DisassociateSecurityKeyOutcomeCallable;
+typedef std::future<DisassociateSecurityProfilesOutcome> DisassociateSecurityProfilesOutcomeCallable;
 typedef std::future<DisassociateTrafficDistributionGroupUserOutcome> DisassociateTrafficDistributionGroupUserOutcomeCallable;
 typedef std::future<DisassociateUserProficienciesOutcome> DisassociateUserProficienciesOutcomeCallable;
+typedef std::future<DisassociateWorkspaceOutcome> DisassociateWorkspaceOutcomeCallable;
 typedef std::future<DismissUserContactOutcome> DismissUserContactOutcomeCallable;
+typedef std::future<EvaluateDataTableValuesOutcome> EvaluateDataTableValuesOutcomeCallable;
 typedef std::future<GetAttachedFileOutcome> GetAttachedFileOutcomeCallable;
 typedef std::future<GetContactAttributesOutcome> GetContactAttributesOutcomeCallable;
 typedef std::future<GetContactMetricsOutcome> GetContactMetricsOutcomeCallable;
@@ -1025,6 +1178,7 @@ typedef std::future<GetPromptFileOutcome> GetPromptFileOutcomeCallable;
 typedef std::future<GetTaskTemplateOutcome> GetTaskTemplateOutcomeCallable;
 typedef std::future<GetTrafficDistributionOutcome> GetTrafficDistributionOutcomeCallable;
 typedef std::future<ImportPhoneNumberOutcome> ImportPhoneNumberOutcomeCallable;
+typedef std::future<ImportWorkspaceMediaOutcome> ImportWorkspaceMediaOutcomeCallable;
 typedef std::future<ListAgentStatusesOutcome> ListAgentStatusesOutcomeCallable;
 typedef std::future<ListAnalyticsDataAssociationsOutcome> ListAnalyticsDataAssociationsOutcomeCallable;
 typedef std::future<ListAnalyticsDataLakeDataSetsOutcome> ListAnalyticsDataLakeDataSetsOutcomeCallable;
@@ -1039,7 +1193,12 @@ typedef std::future<ListContactFlowModulesOutcome> ListContactFlowModulesOutcome
 typedef std::future<ListContactFlowVersionsOutcome> ListContactFlowVersionsOutcomeCallable;
 typedef std::future<ListContactFlowsOutcome> ListContactFlowsOutcomeCallable;
 typedef std::future<ListContactReferencesOutcome> ListContactReferencesOutcomeCallable;
+typedef std::future<ListDataTableAttributesOutcome> ListDataTableAttributesOutcomeCallable;
+typedef std::future<ListDataTablePrimaryValuesOutcome> ListDataTablePrimaryValuesOutcomeCallable;
+typedef std::future<ListDataTableValuesOutcome> ListDataTableValuesOutcomeCallable;
+typedef std::future<ListDataTablesOutcome> ListDataTablesOutcomeCallable;
 typedef std::future<ListDefaultVocabulariesOutcome> ListDefaultVocabulariesOutcomeCallable;
+typedef std::future<ListEntitySecurityProfilesOutcome> ListEntitySecurityProfilesOutcomeCallable;
 typedef std::future<ListEvaluationFormVersionsOutcome> ListEvaluationFormVersionsOutcomeCallable;
 typedef std::future<ListEvaluationFormsOutcome> ListEvaluationFormsOutcomeCallable;
 typedef std::future<ListFlowAssociationsOutcome> ListFlowAssociationsOutcomeCallable;
@@ -1065,6 +1224,7 @@ typedef std::future<ListRoutingProfilesOutcome> ListRoutingProfilesOutcomeCallab
 typedef std::future<ListRulesOutcome> ListRulesOutcomeCallable;
 typedef std::future<ListSecurityKeysOutcome> ListSecurityKeysOutcomeCallable;
 typedef std::future<ListSecurityProfileApplicationsOutcome> ListSecurityProfileApplicationsOutcomeCallable;
+typedef std::future<ListSecurityProfileFlowModulesOutcome> ListSecurityProfileFlowModulesOutcomeCallable;
 typedef std::future<ListSecurityProfilePermissionsOutcome> ListSecurityProfilePermissionsOutcomeCallable;
 typedef std::future<ListSecurityProfilesOutcome> ListSecurityProfilesOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -1077,6 +1237,9 @@ typedef std::future<ListUserProficienciesOutcome> ListUserProficienciesOutcomeCa
 typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
 typedef std::future<ListViewVersionsOutcome> ListViewVersionsOutcomeCallable;
 typedef std::future<ListViewsOutcome> ListViewsOutcomeCallable;
+typedef std::future<ListWorkspaceMediaOutcome> ListWorkspaceMediaOutcomeCallable;
+typedef std::future<ListWorkspacePagesOutcome> ListWorkspacePagesOutcomeCallable;
+typedef std::future<ListWorkspacesOutcome> ListWorkspacesOutcomeCallable;
 typedef std::future<MonitorContactOutcome> MonitorContactOutcomeCallable;
 typedef std::future<PauseContactOutcome> PauseContactOutcomeCallable;
 typedef std::future<PutUserStatusOutcome> PutUserStatusOutcomeCallable;
@@ -1090,6 +1253,7 @@ typedef std::future<SearchContactEvaluationsOutcome> SearchContactEvaluationsOut
 typedef std::future<SearchContactFlowModulesOutcome> SearchContactFlowModulesOutcomeCallable;
 typedef std::future<SearchContactFlowsOutcome> SearchContactFlowsOutcomeCallable;
 typedef std::future<SearchContactsOutcome> SearchContactsOutcomeCallable;
+typedef std::future<SearchDataTablesOutcome> SearchDataTablesOutcomeCallable;
 typedef std::future<SearchEmailAddressesOutcome> SearchEmailAddressesOutcomeCallable;
 typedef std::future<SearchEvaluationFormsOutcome> SearchEvaluationFormsOutcomeCallable;
 typedef std::future<SearchHoursOfOperationOverridesOutcome> SearchHoursOfOperationOverridesOutcomeCallable;
@@ -1103,12 +1267,16 @@ typedef std::future<SearchRoutingProfilesOutcome> SearchRoutingProfilesOutcomeCa
 typedef std::future<SearchSecurityProfilesOutcome> SearchSecurityProfilesOutcomeCallable;
 typedef std::future<SearchUserHierarchyGroupsOutcome> SearchUserHierarchyGroupsOutcomeCallable;
 typedef std::future<SearchUsersOutcome> SearchUsersOutcomeCallable;
+typedef std::future<SearchViewsOutcome> SearchViewsOutcomeCallable;
 typedef std::future<SearchVocabulariesOutcome> SearchVocabulariesOutcomeCallable;
+typedef std::future<SearchWorkspaceAssociationsOutcome> SearchWorkspaceAssociationsOutcomeCallable;
+typedef std::future<SearchWorkspacesOutcome> SearchWorkspacesOutcomeCallable;
 typedef std::future<SendChatIntegrationEventOutcome> SendChatIntegrationEventOutcomeCallable;
 typedef std::future<SendOutboundEmailOutcome> SendOutboundEmailOutcomeCallable;
 typedef std::future<StartAttachedFileUploadOutcome> StartAttachedFileUploadOutcomeCallable;
 typedef std::future<StartChatContactOutcome> StartChatContactOutcomeCallable;
 typedef std::future<StartContactEvaluationOutcome> StartContactEvaluationOutcomeCallable;
+typedef std::future<StartContactMediaProcessingOutcome> StartContactMediaProcessingOutcomeCallable;
 typedef std::future<StartContactRecordingOutcome> StartContactRecordingOutcomeCallable;
 typedef std::future<StartContactStreamingOutcome> StartContactStreamingOutcomeCallable;
 typedef std::future<StartEmailContactOutcome> StartEmailContactOutcomeCallable;
@@ -1119,6 +1287,7 @@ typedef std::future<StartScreenSharingOutcome> StartScreenSharingOutcomeCallable
 typedef std::future<StartTaskContactOutcome> StartTaskContactOutcomeCallable;
 typedef std::future<StartWebRTCContactOutcome> StartWebRTCContactOutcomeCallable;
 typedef std::future<StopContactOutcome> StopContactOutcomeCallable;
+typedef std::future<StopContactMediaProcessingOutcome> StopContactMediaProcessingOutcomeCallable;
 typedef std::future<StopContactRecordingOutcome> StopContactRecordingOutcomeCallable;
 typedef std::future<StopContactStreamingOutcome> StopContactStreamingOutcomeCallable;
 typedef std::future<SubmitContactEvaluationOutcome> SubmitContactEvaluationOutcomeCallable;
@@ -1141,6 +1310,9 @@ typedef std::future<UpdateContactFlowModuleMetadataOutcome> UpdateContactFlowMod
 typedef std::future<UpdateContactFlowNameOutcome> UpdateContactFlowNameOutcomeCallable;
 typedef std::future<UpdateContactRoutingDataOutcome> UpdateContactRoutingDataOutcomeCallable;
 typedef std::future<UpdateContactScheduleOutcome> UpdateContactScheduleOutcomeCallable;
+typedef std::future<UpdateDataTableAttributeOutcome> UpdateDataTableAttributeOutcomeCallable;
+typedef std::future<UpdateDataTableMetadataOutcome> UpdateDataTableMetadataOutcomeCallable;
+typedef std::future<UpdateDataTablePrimaryValuesOutcome> UpdateDataTablePrimaryValuesOutcomeCallable;
 typedef std::future<UpdateEmailAddressMetadataOutcome> UpdateEmailAddressMetadataOutcomeCallable;
 typedef std::future<UpdateEvaluationFormOutcome> UpdateEvaluationFormOutcomeCallable;
 typedef std::future<UpdateHoursOfOperationOutcome> UpdateHoursOfOperationOutcomeCallable;
@@ -1180,6 +1352,10 @@ typedef std::future<UpdateUserRoutingProfileOutcome> UpdateUserRoutingProfileOut
 typedef std::future<UpdateUserSecurityProfilesOutcome> UpdateUserSecurityProfilesOutcomeCallable;
 typedef std::future<UpdateViewContentOutcome> UpdateViewContentOutcomeCallable;
 typedef std::future<UpdateViewMetadataOutcome> UpdateViewMetadataOutcomeCallable;
+typedef std::future<UpdateWorkspaceMetadataOutcome> UpdateWorkspaceMetadataOutcomeCallable;
+typedef std::future<UpdateWorkspacePageOutcome> UpdateWorkspacePageOutcomeCallable;
+typedef std::future<UpdateWorkspaceThemeOutcome> UpdateWorkspaceThemeOutcomeCallable;
+typedef std::future<UpdateWorkspaceVisibilityOutcome> UpdateWorkspaceVisibilityOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
 
@@ -1234,6 +1410,9 @@ typedef std::function<void(const ConnectClient*, const Model::AssociateRoutingPr
 typedef std::function<void(const ConnectClient*, const Model::AssociateSecurityKeyRequest&, const Model::AssociateSecurityKeyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AssociateSecurityKeyResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::AssociateSecurityProfilesRequest&,
+                           const Model::AssociateSecurityProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    AssociateSecurityProfilesResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::AssociateTrafficDistributionGroupUserRequest&,
                            const Model::AssociateTrafficDistributionGroupUserOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -1241,10 +1420,22 @@ typedef std::function<void(const ConnectClient*, const Model::AssociateTrafficDi
 typedef std::function<void(const ConnectClient*, const Model::AssociateUserProficienciesRequest&,
                            const Model::AssociateUserProficienciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AssociateUserProficienciesResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::AssociateWorkspaceRequest&, const Model::AssociateWorkspaceOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    AssociateWorkspaceResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::BatchAssociateAnalyticsDataSetRequest&,
                            const Model::BatchAssociateAnalyticsDataSetOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     BatchAssociateAnalyticsDataSetResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::BatchCreateDataTableValueRequest&,
+                           const Model::BatchCreateDataTableValueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    BatchCreateDataTableValueResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::BatchDeleteDataTableValueRequest&,
+                           const Model::BatchDeleteDataTableValueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    BatchDeleteDataTableValueResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::BatchDescribeDataTableValueRequest&,
+                           const Model::BatchDescribeDataTableValueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    BatchDescribeDataTableValueResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::BatchDisassociateAnalyticsDataSetRequest&,
                            const Model::BatchDisassociateAnalyticsDataSetOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -1259,6 +1450,9 @@ typedef std::function<void(const ConnectClient*, const Model::BatchGetFlowAssoci
 typedef std::function<void(const ConnectClient*, const Model::BatchPutContactRequest&, const Model::BatchPutContactOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     BatchPutContactResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::BatchUpdateDataTableValueRequest&,
+                           const Model::BatchUpdateDataTableValueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    BatchUpdateDataTableValueResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::ClaimPhoneNumberRequest&, const Model::ClaimPhoneNumberOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ClaimPhoneNumberResponseReceivedHandler;
@@ -1288,6 +1482,12 @@ typedef std::function<void(const ConnectClient*, const Model::CreateContactFlowM
 typedef std::function<void(const ConnectClient*, const Model::CreateContactFlowVersionRequest&,
                            const Model::CreateContactFlowVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateContactFlowVersionResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::CreateDataTableRequest&, const Model::CreateDataTableOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateDataTableResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::CreateDataTableAttributeRequest&,
+                           const Model::CreateDataTableAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateDataTableAttributeResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::CreateEmailAddressRequest&, const Model::CreateEmailAddressOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateEmailAddressResponseReceivedHandler;
@@ -1365,6 +1565,12 @@ typedef std::function<void(const ConnectClient*, const Model::CreateViewVersionR
 typedef std::function<void(const ConnectClient*, const Model::CreateVocabularyRequest&, const Model::CreateVocabularyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateVocabularyResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::CreateWorkspaceRequest&, const Model::CreateWorkspaceOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateWorkspaceResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::CreateWorkspacePageRequest&, const Model::CreateWorkspacePageOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateWorkspacePageResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::DeactivateEvaluationFormRequest&,
                            const Model::DeactivateEvaluationFormOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeactivateEvaluationFormResponseReceivedHandler;
@@ -1391,6 +1597,12 @@ typedef std::function<void(const ConnectClient*, const Model::DeleteContactFlowM
 typedef std::function<void(const ConnectClient*, const Model::DeleteContactFlowVersionRequest&,
                            const Model::DeleteContactFlowVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteContactFlowVersionResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::DeleteDataTableRequest&, const Model::DeleteDataTableOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteDataTableResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::DeleteDataTableAttributeRequest&,
+                           const Model::DeleteDataTableAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteDataTableAttributeResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::DeleteEmailAddressRequest&, const Model::DeleteEmailAddressOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteEmailAddressResponseReceivedHandler;
@@ -1461,6 +1673,15 @@ typedef std::function<void(const ConnectClient*, const Model::DeleteViewVersionR
 typedef std::function<void(const ConnectClient*, const Model::DeleteVocabularyRequest&, const Model::DeleteVocabularyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteVocabularyResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::DeleteWorkspaceRequest&, const Model::DeleteWorkspaceOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteWorkspaceResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::DeleteWorkspaceMediaRequest&, const Model::DeleteWorkspaceMediaOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteWorkspaceMediaResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::DeleteWorkspacePageRequest&, const Model::DeleteWorkspacePageOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteWorkspacePageResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::DescribeAgentStatusRequest&, const Model::DescribeAgentStatusOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeAgentStatusResponseReceivedHandler;
@@ -1484,6 +1705,12 @@ typedef std::function<void(const ConnectClient*, const Model::DescribeContactFlo
                            const Model::DescribeContactFlowModuleAliasOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeContactFlowModuleAliasResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::DescribeDataTableRequest&, const Model::DescribeDataTableOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeDataTableResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::DescribeDataTableAttributeRequest&,
+                           const Model::DescribeDataTableAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeDataTableAttributeResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::DescribeEmailAddressRequest&, const Model::DescribeEmailAddressOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeEmailAddressResponseReceivedHandler;
@@ -1551,6 +1778,9 @@ typedef std::function<void(const ConnectClient*, const Model::DescribeViewReques
 typedef std::function<void(const ConnectClient*, const Model::DescribeVocabularyRequest&, const Model::DescribeVocabularyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeVocabularyResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::DescribeWorkspaceRequest&, const Model::DescribeWorkspaceOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeWorkspaceResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::DisassociateAnalyticsDataSetRequest&,
                            const Model::DisassociateAnalyticsDataSetOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -1593,6 +1823,10 @@ typedef std::function<void(const ConnectClient*, const Model::DisassociateRoutin
 typedef std::function<void(const ConnectClient*, const Model::DisassociateSecurityKeyRequest&, const Model::DisassociateSecurityKeyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DisassociateSecurityKeyResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::DisassociateSecurityProfilesRequest&,
+                           const Model::DisassociateSecurityProfilesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DisassociateSecurityProfilesResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::DisassociateTrafficDistributionGroupUserRequest&,
                            const Model::DisassociateTrafficDistributionGroupUserOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -1601,9 +1835,15 @@ typedef std::function<void(const ConnectClient*, const Model::DisassociateUserPr
                            const Model::DisassociateUserProficienciesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DisassociateUserProficienciesResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::DisassociateWorkspaceRequest&, const Model::DisassociateWorkspaceOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DisassociateWorkspaceResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::DismissUserContactRequest&, const Model::DismissUserContactOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DismissUserContactResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::EvaluateDataTableValuesRequest&, const Model::EvaluateDataTableValuesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    EvaluateDataTableValuesResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::GetAttachedFileRequest&, const Model::GetAttachedFileOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetAttachedFileResponseReceivedHandler;
@@ -1647,6 +1887,9 @@ typedef std::function<void(const ConnectClient*, const Model::GetTrafficDistribu
 typedef std::function<void(const ConnectClient*, const Model::ImportPhoneNumberRequest&, const Model::ImportPhoneNumberOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ImportPhoneNumberResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::ImportWorkspaceMediaRequest&, const Model::ImportWorkspaceMediaOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ImportWorkspaceMediaResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::ListAgentStatusesRequest&, const Model::ListAgentStatusesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListAgentStatusesResponseReceivedHandler;
@@ -1693,9 +1936,24 @@ typedef std::function<void(const ConnectClient*, const Model::ListContactFlowsRe
 typedef std::function<void(const ConnectClient*, const Model::ListContactReferencesRequest&, const Model::ListContactReferencesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListContactReferencesResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::ListDataTableAttributesRequest&, const Model::ListDataTableAttributesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListDataTableAttributesResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::ListDataTablePrimaryValuesRequest&,
+                           const Model::ListDataTablePrimaryValuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListDataTablePrimaryValuesResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::ListDataTableValuesRequest&, const Model::ListDataTableValuesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListDataTableValuesResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::ListDataTablesRequest&, const Model::ListDataTablesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListDataTablesResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::ListDefaultVocabulariesRequest&, const Model::ListDefaultVocabulariesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListDefaultVocabulariesResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::ListEntitySecurityProfilesRequest&,
+                           const Model::ListEntitySecurityProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListEntitySecurityProfilesResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::ListEvaluationFormVersionsRequest&,
                            const Model::ListEvaluationFormVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListEvaluationFormVersionsResponseReceivedHandler;
@@ -1775,6 +2033,10 @@ typedef std::function<void(const ConnectClient*, const Model::ListSecurityProfil
                            const Model::ListSecurityProfileApplicationsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListSecurityProfileApplicationsResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::ListSecurityProfileFlowModulesRequest&,
+                           const Model::ListSecurityProfileFlowModulesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListSecurityProfileFlowModulesResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::ListSecurityProfilePermissionsRequest&,
                            const Model::ListSecurityProfilePermissionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -1814,6 +2076,15 @@ typedef std::function<void(const ConnectClient*, const Model::ListViewVersionsRe
 typedef std::function<void(const ConnectClient*, const Model::ListViewsRequest&, const Model::ListViewsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListViewsResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::ListWorkspaceMediaRequest&, const Model::ListWorkspaceMediaOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListWorkspaceMediaResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::ListWorkspacePagesRequest&, const Model::ListWorkspacePagesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListWorkspacePagesResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::ListWorkspacesRequest&, const Model::ListWorkspacesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListWorkspacesResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::MonitorContactRequest&, const Model::MonitorContactOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     MonitorContactResponseReceivedHandler;
@@ -1853,6 +2124,9 @@ typedef std::function<void(const ConnectClient*, const Model::SearchContactFlows
 typedef std::function<void(const ConnectClient*, const Model::SearchContactsRequest&, const Model::SearchContactsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SearchContactsResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::SearchDataTablesRequest&, const Model::SearchDataTablesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    SearchDataTablesResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::SearchEmailAddressesRequest&, const Model::SearchEmailAddressesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SearchEmailAddressesResponseReceivedHandler;
@@ -1893,9 +2167,18 @@ typedef std::function<void(const ConnectClient*, const Model::SearchUserHierarch
 typedef std::function<void(const ConnectClient*, const Model::SearchUsersRequest&, const Model::SearchUsersOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SearchUsersResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::SearchViewsRequest&, const Model::SearchViewsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    SearchViewsResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::SearchVocabulariesRequest&, const Model::SearchVocabulariesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SearchVocabulariesResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::SearchWorkspaceAssociationsRequest&,
+                           const Model::SearchWorkspaceAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    SearchWorkspaceAssociationsResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::SearchWorkspacesRequest&, const Model::SearchWorkspacesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    SearchWorkspacesResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::SendChatIntegrationEventRequest&,
                            const Model::SendChatIntegrationEventOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SendChatIntegrationEventResponseReceivedHandler;
@@ -1911,6 +2194,9 @@ typedef std::function<void(const ConnectClient*, const Model::StartChatContactRe
 typedef std::function<void(const ConnectClient*, const Model::StartContactEvaluationRequest&, const Model::StartContactEvaluationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartContactEvaluationResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::StartContactMediaProcessingRequest&,
+                           const Model::StartContactMediaProcessingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartContactMediaProcessingResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::StartContactRecordingRequest&, const Model::StartContactRecordingOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartContactRecordingResponseReceivedHandler;
@@ -1941,6 +2227,9 @@ typedef std::function<void(const ConnectClient*, const Model::StartWebRTCContact
 typedef std::function<void(const ConnectClient*, const Model::StopContactRequest&, const Model::StopContactOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StopContactResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::StopContactMediaProcessingRequest&,
+                           const Model::StopContactMediaProcessingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StopContactMediaProcessingResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::StopContactRecordingRequest&, const Model::StopContactRecordingOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StopContactRecordingResponseReceivedHandler;
@@ -2010,6 +2299,16 @@ typedef std::function<void(const ConnectClient*, const Model::UpdateContactRouti
 typedef std::function<void(const ConnectClient*, const Model::UpdateContactScheduleRequest&, const Model::UpdateContactScheduleOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateContactScheduleResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::UpdateDataTableAttributeRequest&,
+                           const Model::UpdateDataTableAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateDataTableAttributeResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::UpdateDataTableMetadataRequest&, const Model::UpdateDataTableMetadataOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateDataTableMetadataResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::UpdateDataTablePrimaryValuesRequest&,
+                           const Model::UpdateDataTablePrimaryValuesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateDataTablePrimaryValuesResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::UpdateEmailAddressMetadataRequest&,
                            const Model::UpdateEmailAddressMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateEmailAddressMetadataResponseReceivedHandler;
@@ -2136,6 +2435,18 @@ typedef std::function<void(const ConnectClient*, const Model::UpdateViewContentR
 typedef std::function<void(const ConnectClient*, const Model::UpdateViewMetadataRequest&, const Model::UpdateViewMetadataOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateViewMetadataResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::UpdateWorkspaceMetadataRequest&, const Model::UpdateWorkspaceMetadataOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateWorkspaceMetadataResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::UpdateWorkspacePageRequest&, const Model::UpdateWorkspacePageOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateWorkspacePageResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::UpdateWorkspaceThemeRequest&, const Model::UpdateWorkspaceThemeOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateWorkspaceThemeResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::UpdateWorkspaceVisibilityRequest&,
+                           const Model::UpdateWorkspaceVisibilityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateWorkspaceVisibilityResponseReceivedHandler;
 /* End of service model async handlers definitions */
 }  // namespace Connect
 }  // namespace Aws

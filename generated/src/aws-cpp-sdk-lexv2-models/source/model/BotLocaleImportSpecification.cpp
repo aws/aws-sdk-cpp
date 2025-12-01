@@ -38,10 +38,18 @@ BotLocaleImportSpecification& BotLocaleImportSpecification::operator=(JsonView j
     m_voiceSettings = jsonValue.GetObject("voiceSettings");
     m_voiceSettingsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("speechRecognitionSettings")) {
+    m_speechRecognitionSettings = jsonValue.GetObject("speechRecognitionSettings");
+    m_speechRecognitionSettingsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("speechDetectionSensitivity")) {
     m_speechDetectionSensitivity =
         SpeechDetectionSensitivityMapper::GetSpeechDetectionSensitivityForName(jsonValue.GetString("speechDetectionSensitivity"));
     m_speechDetectionSensitivityHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("unifiedSpeechSettings")) {
+    m_unifiedSpeechSettings = jsonValue.GetObject("unifiedSpeechSettings");
+    m_unifiedSpeechSettingsHasBeenSet = true;
   }
   return *this;
 }
@@ -69,9 +77,17 @@ JsonValue BotLocaleImportSpecification::Jsonize() const {
     payload.WithObject("voiceSettings", m_voiceSettings.Jsonize());
   }
 
+  if (m_speechRecognitionSettingsHasBeenSet) {
+    payload.WithObject("speechRecognitionSettings", m_speechRecognitionSettings.Jsonize());
+  }
+
   if (m_speechDetectionSensitivityHasBeenSet) {
     payload.WithString("speechDetectionSensitivity",
                        SpeechDetectionSensitivityMapper::GetNameForSpeechDetectionSensitivity(m_speechDetectionSensitivity));
+  }
+
+  if (m_unifiedSpeechSettingsHasBeenSet) {
+    payload.WithObject("unifiedSpeechSettings", m_unifiedSpeechSettings.Jsonize());
   }
 
   return payload;

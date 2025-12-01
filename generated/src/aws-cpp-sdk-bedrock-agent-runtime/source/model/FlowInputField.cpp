@@ -18,13 +18,13 @@ namespace Model {
 FlowInputField::FlowInputField(JsonView jsonValue) { *this = jsonValue; }
 
 FlowInputField& FlowInputField::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("name")) {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("content")) {
     m_content = jsonValue.GetObject("content");
     m_contentHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("name")) {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ FlowInputField& FlowInputField::operator=(JsonView jsonValue) {
 JsonValue FlowInputField::Jsonize() const {
   JsonValue payload;
 
-  if (m_nameHasBeenSet) {
-    payload.WithString("name", m_name);
-  }
-
   if (m_contentHasBeenSet) {
     payload.WithObject("content", m_content.Jsonize());
+  }
+
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
   return payload;

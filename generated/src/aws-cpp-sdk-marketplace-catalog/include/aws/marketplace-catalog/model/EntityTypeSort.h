@@ -9,6 +9,7 @@
 #include <aws/marketplace-catalog/model/ContainerProductSort.h>
 #include <aws/marketplace-catalog/model/DataProductSort.h>
 #include <aws/marketplace-catalog/model/MachineLearningProductSort.h>
+#include <aws/marketplace-catalog/model/OfferSetSort.h>
 #include <aws/marketplace-catalog/model/OfferSort.h>
 #include <aws/marketplace-catalog/model/ResaleAuthorizationSort.h>
 #include <aws/marketplace-catalog/model/SaaSProductSort.h>
@@ -161,6 +162,24 @@ class EntityTypeSort {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A sort for offer sets.</p>
+   */
+  inline const OfferSetSort& GetOfferSetSort() const { return m_offerSetSort; }
+  inline bool OfferSetSortHasBeenSet() const { return m_offerSetSortHasBeenSet; }
+  template <typename OfferSetSortT = OfferSetSort>
+  void SetOfferSetSort(OfferSetSortT&& value) {
+    m_offerSetSortHasBeenSet = true;
+    m_offerSetSort = std::forward<OfferSetSortT>(value);
+  }
+  template <typename OfferSetSortT = OfferSetSort>
+  EntityTypeSort& WithOfferSetSort(OfferSetSortT&& value) {
+    SetOfferSetSort(std::forward<OfferSetSortT>(value));
+    return *this;
+  }
+  ///@}
  private:
   DataProductSort m_dataProductSort;
   bool m_dataProductSortHasBeenSet = false;
@@ -182,6 +201,9 @@ class EntityTypeSort {
 
   MachineLearningProductSort m_machineLearningProductSort;
   bool m_machineLearningProductSortHasBeenSet = false;
+
+  OfferSetSort m_offerSetSort;
+  bool m_offerSetSortHasBeenSet = false;
 };
 
 }  // namespace Model

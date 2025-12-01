@@ -36,20 +36,36 @@ class GetAgentMemoryRequest : public BedrockAgentRuntimeRequest {
 
   ///@{
   /**
-   * <p>If the total number of results is greater than the maxItems value provided in
-   * the request, enter the token returned in the <code>nextToken</code> field in the
-   * response in this field to return the next batch of results.</p>
+   * <p>The unique identifier of an alias of an agent.</p>
    */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
+  inline const Aws::String& GetAgentAliasId() const { return m_agentAliasId; }
+  inline bool AgentAliasIdHasBeenSet() const { return m_agentAliasIdHasBeenSet; }
+  template <typename AgentAliasIdT = Aws::String>
+  void SetAgentAliasId(AgentAliasIdT&& value) {
+    m_agentAliasIdHasBeenSet = true;
+    m_agentAliasId = std::forward<AgentAliasIdT>(value);
   }
-  template <typename NextTokenT = Aws::String>
-  GetAgentMemoryRequest& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
+  template <typename AgentAliasIdT = Aws::String>
+  GetAgentMemoryRequest& WithAgentAliasId(AgentAliasIdT&& value) {
+    SetAgentAliasId(std::forward<AgentAliasIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier of the agent to which the alias belongs.</p>
+   */
+  inline const Aws::String& GetAgentId() const { return m_agentId; }
+  inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
+  template <typename AgentIdT = Aws::String>
+  void SetAgentId(AgentIdT&& value) {
+    m_agentIdHasBeenSet = true;
+    m_agentId = std::forward<AgentIdT>(value);
+  }
+  template <typename AgentIdT = Aws::String>
+  GetAgentMemoryRequest& WithAgentId(AgentIdT&& value) {
+    SetAgentId(std::forward<AgentIdT>(value));
     return *this;
   }
   ///@}
@@ -75,36 +91,18 @@ class GetAgentMemoryRequest : public BedrockAgentRuntimeRequest {
 
   ///@{
   /**
-   * <p>The unique identifier of the agent to which the alias belongs.</p>
+   * <p>The unique identifier of the memory. </p>
    */
-  inline const Aws::String& GetAgentId() const { return m_agentId; }
-  inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
-  template <typename AgentIdT = Aws::String>
-  void SetAgentId(AgentIdT&& value) {
-    m_agentIdHasBeenSet = true;
-    m_agentId = std::forward<AgentIdT>(value);
+  inline const Aws::String& GetMemoryId() const { return m_memoryId; }
+  inline bool MemoryIdHasBeenSet() const { return m_memoryIdHasBeenSet; }
+  template <typename MemoryIdT = Aws::String>
+  void SetMemoryId(MemoryIdT&& value) {
+    m_memoryIdHasBeenSet = true;
+    m_memoryId = std::forward<MemoryIdT>(value);
   }
-  template <typename AgentIdT = Aws::String>
-  GetAgentMemoryRequest& WithAgentId(AgentIdT&& value) {
-    SetAgentId(std::forward<AgentIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The unique identifier of an alias of an agent.</p>
-   */
-  inline const Aws::String& GetAgentAliasId() const { return m_agentAliasId; }
-  inline bool AgentAliasIdHasBeenSet() const { return m_agentAliasIdHasBeenSet; }
-  template <typename AgentAliasIdT = Aws::String>
-  void SetAgentAliasId(AgentAliasIdT&& value) {
-    m_agentAliasIdHasBeenSet = true;
-    m_agentAliasId = std::forward<AgentAliasIdT>(value);
-  }
-  template <typename AgentAliasIdT = Aws::String>
-  GetAgentMemoryRequest& WithAgentAliasId(AgentAliasIdT&& value) {
-    SetAgentAliasId(std::forward<AgentAliasIdT>(value));
+  template <typename MemoryIdT = Aws::String>
+  GetAgentMemoryRequest& WithMemoryId(MemoryIdT&& value) {
+    SetMemoryId(std::forward<MemoryIdT>(value));
     return *this;
   }
   ///@}
@@ -127,39 +125,41 @@ class GetAgentMemoryRequest : public BedrockAgentRuntimeRequest {
 
   ///@{
   /**
-   * <p>The unique identifier of the memory. </p>
+   * <p>If the total number of results is greater than the maxItems value provided in
+   * the request, enter the token returned in the <code>nextToken</code> field in the
+   * response in this field to return the next batch of results.</p>
    */
-  inline const Aws::String& GetMemoryId() const { return m_memoryId; }
-  inline bool MemoryIdHasBeenSet() const { return m_memoryIdHasBeenSet; }
-  template <typename MemoryIdT = Aws::String>
-  void SetMemoryId(MemoryIdT&& value) {
-    m_memoryIdHasBeenSet = true;
-    m_memoryId = std::forward<MemoryIdT>(value);
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
   }
-  template <typename MemoryIdT = Aws::String>
-  GetAgentMemoryRequest& WithMemoryId(MemoryIdT&& value) {
-    SetMemoryId(std::forward<MemoryIdT>(value));
+  template <typename NextTokenT = Aws::String>
+  GetAgentMemoryRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
-
-  int m_maxItems{0};
-  bool m_maxItemsHasBeenSet = false;
+  Aws::String m_agentAliasId;
+  bool m_agentAliasIdHasBeenSet = false;
 
   Aws::String m_agentId;
   bool m_agentIdHasBeenSet = false;
 
-  Aws::String m_agentAliasId;
-  bool m_agentAliasIdHasBeenSet = false;
+  int m_maxItems{0};
+  bool m_maxItemsHasBeenSet = false;
+
+  Aws::String m_memoryId;
+  bool m_memoryIdHasBeenSet = false;
 
   MemoryType m_memoryType{MemoryType::NOT_SET};
   bool m_memoryTypeHasBeenSet = false;
 
-  Aws::String m_memoryId;
-  bool m_memoryIdHasBeenSet = false;
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -22,6 +22,10 @@ ContactFlowSearchFilter& ContactFlowSearchFilter::operator=(JsonView jsonValue) 
     m_tagFilter = jsonValue.GetObject("TagFilter");
     m_tagFilterHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("FlowAttributeFilter")) {
+    m_flowAttributeFilter = jsonValue.GetObject("FlowAttributeFilter");
+    m_flowAttributeFilterHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue ContactFlowSearchFilter::Jsonize() const {
 
   if (m_tagFilterHasBeenSet) {
     payload.WithObject("TagFilter", m_tagFilter.Jsonize());
+  }
+
+  if (m_flowAttributeFilterHasBeenSet) {
+    payload.WithObject("FlowAttributeFilter", m_flowAttributeFilter.Jsonize());
   }
 
   return payload;

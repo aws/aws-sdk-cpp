@@ -5,7 +5,10 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qconnect/QConnect_EXPORTS.h>
+#include <aws/qconnect/model/AIGuardrailAssessment.h>
+#include <aws/qconnect/model/Citation.h>
 
 #include <utility>
 
@@ -48,9 +51,57 @@ class TextMessage {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The citations associated with the text message.</p>
+   */
+  inline const Aws::Vector<Citation>& GetCitations() const { return m_citations; }
+  inline bool CitationsHasBeenSet() const { return m_citationsHasBeenSet; }
+  template <typename CitationsT = Aws::Vector<Citation>>
+  void SetCitations(CitationsT&& value) {
+    m_citationsHasBeenSet = true;
+    m_citations = std::forward<CitationsT>(value);
+  }
+  template <typename CitationsT = Aws::Vector<Citation>>
+  TextMessage& WithCitations(CitationsT&& value) {
+    SetCitations(std::forward<CitationsT>(value));
+    return *this;
+  }
+  template <typename CitationsT = Citation>
+  TextMessage& AddCitations(CitationsT&& value) {
+    m_citationsHasBeenSet = true;
+    m_citations.emplace_back(std::forward<CitationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The AI Guardrail assessment for the text message.</p>
+   */
+  inline const AIGuardrailAssessment& GetAiGuardrailAssessment() const { return m_aiGuardrailAssessment; }
+  inline bool AiGuardrailAssessmentHasBeenSet() const { return m_aiGuardrailAssessmentHasBeenSet; }
+  template <typename AiGuardrailAssessmentT = AIGuardrailAssessment>
+  void SetAiGuardrailAssessment(AiGuardrailAssessmentT&& value) {
+    m_aiGuardrailAssessmentHasBeenSet = true;
+    m_aiGuardrailAssessment = std::forward<AiGuardrailAssessmentT>(value);
+  }
+  template <typename AiGuardrailAssessmentT = AIGuardrailAssessment>
+  TextMessage& WithAiGuardrailAssessment(AiGuardrailAssessmentT&& value) {
+    SetAiGuardrailAssessment(std::forward<AiGuardrailAssessmentT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_value;
   bool m_valueHasBeenSet = false;
+
+  Aws::Vector<Citation> m_citations;
+  bool m_citationsHasBeenSet = false;
+
+  AIGuardrailAssessment m_aiGuardrailAssessment;
+  bool m_aiGuardrailAssessmentHasBeenSet = false;
 };
 
 }  // namespace Model

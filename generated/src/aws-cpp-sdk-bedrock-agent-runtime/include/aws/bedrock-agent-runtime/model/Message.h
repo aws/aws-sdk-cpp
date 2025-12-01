@@ -35,22 +35,6 @@ class Message {
 
   ///@{
   /**
-   * <p>The message's role.</p>
-   */
-  inline ConversationRole GetRole() const { return m_role; }
-  inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
-  inline void SetRole(ConversationRole value) {
-    m_roleHasBeenSet = true;
-    m_role = value;
-  }
-  inline Message& WithRole(ConversationRole value) {
-    SetRole(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The message's content.</p>
    */
   inline const Aws::Vector<ContentBlock>& GetContent() const { return m_content; }
@@ -72,12 +56,28 @@ class Message {
     return *this;
   }
   ///@}
- private:
-  ConversationRole m_role{ConversationRole::NOT_SET};
-  bool m_roleHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>The message's role.</p>
+   */
+  inline ConversationRole GetRole() const { return m_role; }
+  inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
+  inline void SetRole(ConversationRole value) {
+    m_roleHasBeenSet = true;
+    m_role = value;
+  }
+  inline Message& WithRole(ConversationRole value) {
+    SetRole(value);
+    return *this;
+  }
+  ///@}
+ private:
   Aws::Vector<ContentBlock> m_content;
   bool m_contentHasBeenSet = false;
+
+  ConversationRole m_role{ConversationRole::NOT_SET};
+  bool m_roleHasBeenSet = false;
 };
 
 }  // namespace Model

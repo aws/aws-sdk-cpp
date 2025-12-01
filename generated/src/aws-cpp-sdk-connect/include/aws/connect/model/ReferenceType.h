@@ -10,7 +10,18 @@
 namespace Aws {
 namespace Connect {
 namespace Model {
-enum class ReferenceType { NOT_SET, URL, ATTACHMENT, CONTACT_ANALYSIS, NUMBER, STRING, DATE, EMAIL, EMAIL_MESSAGE };
+enum class ReferenceType {
+  NOT_SET,
+  URL,
+  ATTACHMENT,
+  CONTACT_ANALYSIS,
+  NUMBER,
+  STRING,
+  DATE,
+  EMAIL,
+  EMAIL_MESSAGE,
+  EMAIL_MESSAGE_PLAIN_TEXT
+};
 
 namespace ReferenceTypeMapper {
 AWS_CONNECT_API ReferenceType GetReferenceTypeForName(const Aws::String& name);

@@ -22,18 +22,6 @@ FlowTraceNodeActionEvent& FlowTraceNodeActionEvent::operator=(JsonView jsonValue
     m_nodeName = jsonValue.GetString("nodeName");
     m_nodeNameHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("timestamp")) {
-    m_timestamp = jsonValue.GetString("timestamp");
-    m_timestampHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("requestId")) {
-    m_requestId = jsonValue.GetString("requestId");
-    m_requestIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("serviceName")) {
-    m_serviceName = jsonValue.GetString("serviceName");
-    m_serviceNameHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("operationName")) {
     m_operationName = jsonValue.GetString("operationName");
     m_operationNameHasBeenSet = true;
@@ -46,6 +34,18 @@ FlowTraceNodeActionEvent& FlowTraceNodeActionEvent::operator=(JsonView jsonValue
     m_operationResponse = jsonValue.GetObject("operationResponse");
     m_operationResponseHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("requestId")) {
+    m_requestId = jsonValue.GetString("requestId");
+    m_requestIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("serviceName")) {
+    m_serviceName = jsonValue.GetString("serviceName");
+    m_serviceNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("timestamp")) {
+    m_timestamp = jsonValue.GetString("timestamp");
+    m_timestampHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,18 +54,6 @@ JsonValue FlowTraceNodeActionEvent::Jsonize() const {
 
   if (m_nodeNameHasBeenSet) {
     payload.WithString("nodeName", m_nodeName);
-  }
-
-  if (m_timestampHasBeenSet) {
-    payload.WithString("timestamp", m_timestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if (m_requestIdHasBeenSet) {
-    payload.WithString("requestId", m_requestId);
-  }
-
-  if (m_serviceNameHasBeenSet) {
-    payload.WithString("serviceName", m_serviceName);
   }
 
   if (m_operationNameHasBeenSet) {
@@ -82,6 +70,18 @@ JsonValue FlowTraceNodeActionEvent::Jsonize() const {
     if (!m_operationResponse.View().IsNull()) {
       payload.WithObject("operationResponse", JsonValue(m_operationResponse.View()));
     }
+  }
+
+  if (m_requestIdHasBeenSet) {
+    payload.WithString("requestId", m_requestId);
+  }
+
+  if (m_serviceNameHasBeenSet) {
+    payload.WithString("serviceName", m_serviceName);
+  }
+
+  if (m_timestampHasBeenSet) {
+    payload.WithString("timestamp", m_timestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

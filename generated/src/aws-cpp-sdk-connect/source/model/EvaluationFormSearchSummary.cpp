@@ -74,6 +74,16 @@ EvaluationFormSearchSummary& EvaluationFormSearchSummary::operator=(JsonView jso
     m_autoEvaluationEnabled = jsonValue.GetBool("AutoEvaluationEnabled");
     m_autoEvaluationEnabledHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("EvaluationFormLanguage")) {
+    m_evaluationFormLanguage =
+        EvaluationFormLanguageCodeMapper::GetEvaluationFormLanguageCodeForName(jsonValue.GetString("EvaluationFormLanguage"));
+    m_evaluationFormLanguageHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ContactInteractionType")) {
+    m_contactInteractionType =
+        ContactInteractionTypeMapper::GetContactInteractionTypeForName(jsonValue.GetString("ContactInteractionType"));
+    m_contactInteractionTypeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
     for (auto& tagsItem : tagsJsonMap) {
@@ -141,6 +151,15 @@ JsonValue EvaluationFormSearchSummary::Jsonize() const {
 
   if (m_autoEvaluationEnabledHasBeenSet) {
     payload.WithBool("AutoEvaluationEnabled", m_autoEvaluationEnabled);
+  }
+
+  if (m_evaluationFormLanguageHasBeenSet) {
+    payload.WithString("EvaluationFormLanguage",
+                       EvaluationFormLanguageCodeMapper::GetNameForEvaluationFormLanguageCode(m_evaluationFormLanguage));
+  }
+
+  if (m_contactInteractionTypeHasBeenSet) {
+    payload.WithString("ContactInteractionType", ContactInteractionTypeMapper::GetNameForContactInteractionType(m_contactInteractionType));
   }
 
   if (m_tagsHasBeenSet) {

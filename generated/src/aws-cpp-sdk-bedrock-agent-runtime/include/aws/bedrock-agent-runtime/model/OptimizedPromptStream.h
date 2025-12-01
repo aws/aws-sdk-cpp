@@ -38,18 +38,19 @@ class OptimizedPromptStream {
 
   ///@{
   /**
-   * <p>An event in which the prompt was optimized.</p>
+   * <p>The request is denied because of missing access permissions. Check your
+   * permissions and retry your request.</p>
    */
-  inline const OptimizedPromptEvent& GetOptimizedPromptEvent() const { return m_optimizedPromptEvent; }
-  inline bool OptimizedPromptEventHasBeenSet() const { return m_optimizedPromptEventHasBeenSet; }
-  template <typename OptimizedPromptEventT = OptimizedPromptEvent>
-  void SetOptimizedPromptEvent(OptimizedPromptEventT&& value) {
-    m_optimizedPromptEventHasBeenSet = true;
-    m_optimizedPromptEvent = std::forward<OptimizedPromptEventT>(value);
+  inline const BedrockAgentRuntimeError& GetAccessDeniedException() const { return m_accessDeniedException; }
+  inline bool AccessDeniedExceptionHasBeenSet() const { return m_accessDeniedExceptionHasBeenSet; }
+  template <typename AccessDeniedExceptionT = BedrockAgentRuntimeError>
+  void SetAccessDeniedException(AccessDeniedExceptionT&& value) {
+    m_accessDeniedExceptionHasBeenSet = true;
+    m_accessDeniedException = std::forward<AccessDeniedExceptionT>(value);
   }
-  template <typename OptimizedPromptEventT = OptimizedPromptEvent>
-  OptimizedPromptStream& WithOptimizedPromptEvent(OptimizedPromptEventT&& value) {
-    SetOptimizedPromptEvent(std::forward<OptimizedPromptEventT>(value));
+  template <typename AccessDeniedExceptionT = BedrockAgentRuntimeError>
+  OptimizedPromptStream& WithAccessDeniedException(AccessDeniedExceptionT&& value) {
+    SetAccessDeniedException(std::forward<AccessDeniedExceptionT>(value));
     return *this;
   }
   ///@}
@@ -75,6 +76,44 @@ class OptimizedPromptStream {
 
   ///@{
   /**
+   * <p>There was an issue with a dependency due to a server issue. Retry your
+   * request.</p>
+   */
+  inline const BadGatewayException& GetBadGatewayException() const { return m_badGatewayException; }
+  inline bool BadGatewayExceptionHasBeenSet() const { return m_badGatewayExceptionHasBeenSet; }
+  template <typename BadGatewayExceptionT = BadGatewayException>
+  void SetBadGatewayException(BadGatewayExceptionT&& value) {
+    m_badGatewayExceptionHasBeenSet = true;
+    m_badGatewayException = std::forward<BadGatewayExceptionT>(value);
+  }
+  template <typename BadGatewayExceptionT = BadGatewayException>
+  OptimizedPromptStream& WithBadGatewayException(BadGatewayExceptionT&& value) {
+    SetBadGatewayException(std::forward<BadGatewayExceptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>There was an issue with a dependency. Check the resource configurations and
+   * retry the request.</p>
+   */
+  inline const DependencyFailedException& GetDependencyFailedException() const { return m_dependencyFailedException; }
+  inline bool DependencyFailedExceptionHasBeenSet() const { return m_dependencyFailedExceptionHasBeenSet; }
+  template <typename DependencyFailedExceptionT = DependencyFailedException>
+  void SetDependencyFailedException(DependencyFailedExceptionT&& value) {
+    m_dependencyFailedExceptionHasBeenSet = true;
+    m_dependencyFailedException = std::forward<DependencyFailedExceptionT>(value);
+  }
+  template <typename DependencyFailedExceptionT = DependencyFailedException>
+  OptimizedPromptStream& WithDependencyFailedException(DependencyFailedExceptionT&& value) {
+    SetDependencyFailedException(std::forward<DependencyFailedExceptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>An internal server error occurred. Retry your request.</p>
    */
   inline const InternalServerException& GetInternalServerException() const { return m_internalServerException; }
@@ -87,6 +126,24 @@ class OptimizedPromptStream {
   template <typename InternalServerExceptionT = InternalServerException>
   OptimizedPromptStream& WithInternalServerException(InternalServerExceptionT&& value) {
     SetInternalServerException(std::forward<InternalServerExceptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An event in which the prompt was optimized.</p>
+   */
+  inline const OptimizedPromptEvent& GetOptimizedPromptEvent() const { return m_optimizedPromptEvent; }
+  inline bool OptimizedPromptEventHasBeenSet() const { return m_optimizedPromptEventHasBeenSet; }
+  template <typename OptimizedPromptEventT = OptimizedPromptEvent>
+  void SetOptimizedPromptEvent(OptimizedPromptEventT&& value) {
+    m_optimizedPromptEventHasBeenSet = true;
+    m_optimizedPromptEvent = std::forward<OptimizedPromptEventT>(value);
+  }
+  template <typename OptimizedPromptEventT = OptimizedPromptEvent>
+  OptimizedPromptStream& WithOptimizedPromptEvent(OptimizedPromptEventT&& value) {
+    SetOptimizedPromptEvent(std::forward<OptimizedPromptEventT>(value));
     return *this;
   }
   ///@}
@@ -130,87 +187,30 @@ class OptimizedPromptStream {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>There was an issue with a dependency. Check the resource configurations and
-   * retry the request.</p>
-   */
-  inline const DependencyFailedException& GetDependencyFailedException() const { return m_dependencyFailedException; }
-  inline bool DependencyFailedExceptionHasBeenSet() const { return m_dependencyFailedExceptionHasBeenSet; }
-  template <typename DependencyFailedExceptionT = DependencyFailedException>
-  void SetDependencyFailedException(DependencyFailedExceptionT&& value) {
-    m_dependencyFailedExceptionHasBeenSet = true;
-    m_dependencyFailedException = std::forward<DependencyFailedExceptionT>(value);
-  }
-  template <typename DependencyFailedExceptionT = DependencyFailedException>
-  OptimizedPromptStream& WithDependencyFailedException(DependencyFailedExceptionT&& value) {
-    SetDependencyFailedException(std::forward<DependencyFailedExceptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The request is denied because of missing access permissions. Check your
-   * permissions and retry your request.</p>
-   */
-  inline const BedrockAgentRuntimeError& GetAccessDeniedException() const { return m_accessDeniedException; }
-  inline bool AccessDeniedExceptionHasBeenSet() const { return m_accessDeniedExceptionHasBeenSet; }
-  template <typename AccessDeniedExceptionT = BedrockAgentRuntimeError>
-  void SetAccessDeniedException(AccessDeniedExceptionT&& value) {
-    m_accessDeniedExceptionHasBeenSet = true;
-    m_accessDeniedException = std::forward<AccessDeniedExceptionT>(value);
-  }
-  template <typename AccessDeniedExceptionT = BedrockAgentRuntimeError>
-  OptimizedPromptStream& WithAccessDeniedException(AccessDeniedExceptionT&& value) {
-    SetAccessDeniedException(std::forward<AccessDeniedExceptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>There was an issue with a dependency due to a server issue. Retry your
-   * request.</p>
-   */
-  inline const BadGatewayException& GetBadGatewayException() const { return m_badGatewayException; }
-  inline bool BadGatewayExceptionHasBeenSet() const { return m_badGatewayExceptionHasBeenSet; }
-  template <typename BadGatewayExceptionT = BadGatewayException>
-  void SetBadGatewayException(BadGatewayExceptionT&& value) {
-    m_badGatewayExceptionHasBeenSet = true;
-    m_badGatewayException = std::forward<BadGatewayExceptionT>(value);
-  }
-  template <typename BadGatewayExceptionT = BadGatewayException>
-  OptimizedPromptStream& WithBadGatewayException(BadGatewayExceptionT&& value) {
-    SetBadGatewayException(std::forward<BadGatewayExceptionT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  OptimizedPromptEvent m_optimizedPromptEvent;
-  bool m_optimizedPromptEventHasBeenSet = false;
+  BedrockAgentRuntimeError m_accessDeniedException;
+  bool m_accessDeniedExceptionHasBeenSet = false;
 
   AnalyzePromptEvent m_analyzePromptEvent;
   bool m_analyzePromptEventHasBeenSet = false;
 
+  BadGatewayException m_badGatewayException;
+  bool m_badGatewayExceptionHasBeenSet = false;
+
+  DependencyFailedException m_dependencyFailedException;
+  bool m_dependencyFailedExceptionHasBeenSet = false;
+
   InternalServerException m_internalServerException;
   bool m_internalServerExceptionHasBeenSet = false;
+
+  OptimizedPromptEvent m_optimizedPromptEvent;
+  bool m_optimizedPromptEventHasBeenSet = false;
 
   BedrockAgentRuntimeError m_throttlingException;
   bool m_throttlingExceptionHasBeenSet = false;
 
   BedrockAgentRuntimeError m_validationException;
   bool m_validationExceptionHasBeenSet = false;
-
-  DependencyFailedException m_dependencyFailedException;
-  bool m_dependencyFailedExceptionHasBeenSet = false;
-
-  BedrockAgentRuntimeError m_accessDeniedException;
-  bool m_accessDeniedExceptionHasBeenSet = false;
-
-  BadGatewayException m_badGatewayException;
-  bool m_badGatewayExceptionHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -18,10 +18,6 @@ namespace Model {
 InvocationStep::InvocationStep(JsonView jsonValue) { *this = jsonValue; }
 
 InvocationStep& InvocationStep::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("sessionId")) {
-    m_sessionId = jsonValue.GetString("sessionId");
-    m_sessionIdHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("invocationId")) {
     m_invocationId = jsonValue.GetString("invocationId");
     m_invocationIdHasBeenSet = true;
@@ -38,15 +34,15 @@ InvocationStep& InvocationStep::operator=(JsonView jsonValue) {
     m_payload = jsonValue.GetObject("payload");
     m_payloadHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("sessionId")) {
+    m_sessionId = jsonValue.GetString("sessionId");
+    m_sessionIdHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue InvocationStep::Jsonize() const {
   JsonValue payload;
-
-  if (m_sessionIdHasBeenSet) {
-    payload.WithString("sessionId", m_sessionId);
-  }
 
   if (m_invocationIdHasBeenSet) {
     payload.WithString("invocationId", m_invocationId);
@@ -62,6 +58,10 @@ JsonValue InvocationStep::Jsonize() const {
 
   if (m_payloadHasBeenSet) {
     payload.WithObject("payload", m_payload.Jsonize());
+  }
+
+  if (m_sessionIdHasBeenSet) {
+    payload.WithString("sessionId", m_sessionId);
   }
 
   return payload;

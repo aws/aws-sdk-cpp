@@ -36,24 +36,6 @@ class ProposalSummary {
 
   ///@{
   /**
-   * <p>The unique identifier of the offer in AWS Marketplace.</p>
-   */
-  inline const Aws::String& GetOfferId() const { return m_offerId; }
-  inline bool OfferIdHasBeenSet() const { return m_offerIdHasBeenSet; }
-  template <typename OfferIdT = Aws::String>
-  void SetOfferId(OfferIdT&& value) {
-    m_offerIdHasBeenSet = true;
-    m_offerId = std::forward<OfferIdT>(value);
-  }
-  template <typename OfferIdT = Aws::String>
-  ProposalSummary& WithOfferId(OfferIdT&& value) {
-    SetOfferId(std::forward<OfferIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The list of resources involved in the agreement.</p>
    */
   inline const Aws::Vector<Resource>& GetResources() const { return m_resources; }
@@ -75,12 +57,52 @@ class ProposalSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier of the offer in AWS Marketplace.</p>
+   */
+  inline const Aws::String& GetOfferId() const { return m_offerId; }
+  inline bool OfferIdHasBeenSet() const { return m_offerIdHasBeenSet; }
+  template <typename OfferIdT = Aws::String>
+  void SetOfferId(OfferIdT&& value) {
+    m_offerIdHasBeenSet = true;
+    m_offerId = std::forward<OfferIdT>(value);
+  }
+  template <typename OfferIdT = Aws::String>
+  ProposalSummary& WithOfferId(OfferIdT&& value) {
+    SetOfferId(std::forward<OfferIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A unique identifier for the offer set containing this offer. All agreements
+   * created from offers in this set include this identifier as context.</p>
+   */
+  inline const Aws::String& GetOfferSetId() const { return m_offerSetId; }
+  inline bool OfferSetIdHasBeenSet() const { return m_offerSetIdHasBeenSet; }
+  template <typename OfferSetIdT = Aws::String>
+  void SetOfferSetId(OfferSetIdT&& value) {
+    m_offerSetIdHasBeenSet = true;
+    m_offerSetId = std::forward<OfferSetIdT>(value);
+  }
+  template <typename OfferSetIdT = Aws::String>
+  ProposalSummary& WithOfferSetId(OfferSetIdT&& value) {
+    SetOfferSetId(std::forward<OfferSetIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
+  Aws::Vector<Resource> m_resources;
+  bool m_resourcesHasBeenSet = false;
+
   Aws::String m_offerId;
   bool m_offerIdHasBeenSet = false;
 
-  Aws::Vector<Resource> m_resources;
-  bool m_resourcesHasBeenSet = false;
+  Aws::String m_offerSetId;
+  bool m_offerSetIdHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -36,16 +36,18 @@ class AgentCollaboratorOutputPayload {
 
   ///@{
   /**
-   * <p>The type of output.</p>
+   * <p>An action invocation result.</p>
    */
-  inline PayloadType GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  inline void SetType(PayloadType value) {
-    m_typeHasBeenSet = true;
-    m_type = value;
+  inline const ReturnControlPayload& GetReturnControlPayload() const { return m_returnControlPayload; }
+  inline bool ReturnControlPayloadHasBeenSet() const { return m_returnControlPayloadHasBeenSet; }
+  template <typename ReturnControlPayloadT = ReturnControlPayload>
+  void SetReturnControlPayload(ReturnControlPayloadT&& value) {
+    m_returnControlPayloadHasBeenSet = true;
+    m_returnControlPayload = std::forward<ReturnControlPayloadT>(value);
   }
-  inline AgentCollaboratorOutputPayload& WithType(PayloadType value) {
-    SetType(value);
+  template <typename ReturnControlPayloadT = ReturnControlPayload>
+  AgentCollaboratorOutputPayload& WithReturnControlPayload(ReturnControlPayloadT&& value) {
+    SetReturnControlPayload(std::forward<ReturnControlPayloadT>(value));
     return *this;
   }
   ///@}
@@ -70,30 +72,28 @@ class AgentCollaboratorOutputPayload {
 
   ///@{
   /**
-   * <p>An action invocation result.</p>
+   * <p>The type of output.</p>
    */
-  inline const ReturnControlPayload& GetReturnControlPayload() const { return m_returnControlPayload; }
-  inline bool ReturnControlPayloadHasBeenSet() const { return m_returnControlPayloadHasBeenSet; }
-  template <typename ReturnControlPayloadT = ReturnControlPayload>
-  void SetReturnControlPayload(ReturnControlPayloadT&& value) {
-    m_returnControlPayloadHasBeenSet = true;
-    m_returnControlPayload = std::forward<ReturnControlPayloadT>(value);
+  inline PayloadType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(PayloadType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
   }
-  template <typename ReturnControlPayloadT = ReturnControlPayload>
-  AgentCollaboratorOutputPayload& WithReturnControlPayload(ReturnControlPayloadT&& value) {
-    SetReturnControlPayload(std::forward<ReturnControlPayloadT>(value));
+  inline AgentCollaboratorOutputPayload& WithType(PayloadType value) {
+    SetType(value);
     return *this;
   }
   ///@}
  private:
-  PayloadType m_type{PayloadType::NOT_SET};
-  bool m_typeHasBeenSet = false;
+  ReturnControlPayload m_returnControlPayload;
+  bool m_returnControlPayloadHasBeenSet = false;
 
   Aws::String m_text;
   bool m_textHasBeenSet = false;
 
-  ReturnControlPayload m_returnControlPayload;
-  bool m_returnControlPayloadHasBeenSet = false;
+  PayloadType m_type{PayloadType::NOT_SET};
+  bool m_typeHasBeenSet = false;
 };
 
 }  // namespace Model

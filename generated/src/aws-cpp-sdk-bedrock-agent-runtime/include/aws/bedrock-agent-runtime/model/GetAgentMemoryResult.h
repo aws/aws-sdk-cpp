@@ -30,25 +30,6 @@ class GetAgentMemoryResult {
 
   ///@{
   /**
-   * <p>If the total number of results is greater than the maxItems value provided in
-   * the request, use this token when making another request in the
-   * <code>nextToken</code> field to return the next batch of results.</p>
-   */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
-  }
-  template <typename NextTokenT = Aws::String>
-  GetAgentMemoryResult& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Contains details of the sessions stored in the memory</p>
    */
   inline const Aws::Vector<Memory>& GetMemoryContents() const { return m_memoryContents; }
@@ -71,6 +52,25 @@ class GetAgentMemoryResult {
   ///@}
 
   ///@{
+  /**
+   * <p>If the total number of results is greater than the maxItems value provided in
+   * the request, use this token when making another request in the
+   * <code>nextToken</code> field to return the next batch of results.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  GetAgentMemoryResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -85,11 +85,11 @@ class GetAgentMemoryResult {
   }
   ///@}
  private:
-  Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
-
   Aws::Vector<Memory> m_memoryContents;
   bool m_memoryContentsHasBeenSet = false;
+
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

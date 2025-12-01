@@ -58,48 +58,6 @@ class FunctionInvocationInput {
 
   ///@{
   /**
-   * <p>A list of parameters of the function.</p>
-   */
-  inline const Aws::Vector<FunctionParameter>& GetParameters() const { return m_parameters; }
-  inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-  template <typename ParametersT = Aws::Vector<FunctionParameter>>
-  void SetParameters(ParametersT&& value) {
-    m_parametersHasBeenSet = true;
-    m_parameters = std::forward<ParametersT>(value);
-  }
-  template <typename ParametersT = Aws::Vector<FunctionParameter>>
-  FunctionInvocationInput& WithParameters(ParametersT&& value) {
-    SetParameters(std::forward<ParametersT>(value));
-    return *this;
-  }
-  template <typename ParametersT = FunctionParameter>
-  FunctionInvocationInput& AddParameters(ParametersT&& value) {
-    m_parametersHasBeenSet = true;
-    m_parameters.emplace_back(std::forward<ParametersT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The name of the function.</p>
-   */
-  inline const Aws::String& GetFunction() const { return m_function; }
-  inline bool FunctionHasBeenSet() const { return m_functionHasBeenSet; }
-  template <typename FunctionT = Aws::String>
-  void SetFunction(FunctionT&& value) {
-    m_functionHasBeenSet = true;
-    m_function = std::forward<FunctionT>(value);
-  }
-  template <typename FunctionT = Aws::String>
-  FunctionInvocationInput& WithFunction(FunctionT&& value) {
-    SetFunction(std::forward<FunctionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Contains information about the function to invoke,</p>
    */
   inline ActionInvocationType GetActionInvocationType() const { return m_actionInvocationType; }
@@ -149,15 +107,51 @@ class FunctionInvocationInput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The name of the function.</p>
+   */
+  inline const Aws::String& GetFunction() const { return m_function; }
+  inline bool FunctionHasBeenSet() const { return m_functionHasBeenSet; }
+  template <typename FunctionT = Aws::String>
+  void SetFunction(FunctionT&& value) {
+    m_functionHasBeenSet = true;
+    m_function = std::forward<FunctionT>(value);
+  }
+  template <typename FunctionT = Aws::String>
+  FunctionInvocationInput& WithFunction(FunctionT&& value) {
+    SetFunction(std::forward<FunctionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A list of parameters of the function.</p>
+   */
+  inline const Aws::Vector<FunctionParameter>& GetParameters() const { return m_parameters; }
+  inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
+  template <typename ParametersT = Aws::Vector<FunctionParameter>>
+  void SetParameters(ParametersT&& value) {
+    m_parametersHasBeenSet = true;
+    m_parameters = std::forward<ParametersT>(value);
+  }
+  template <typename ParametersT = Aws::Vector<FunctionParameter>>
+  FunctionInvocationInput& WithParameters(ParametersT&& value) {
+    SetParameters(std::forward<ParametersT>(value));
+    return *this;
+  }
+  template <typename ParametersT = FunctionParameter>
+  FunctionInvocationInput& AddParameters(ParametersT&& value) {
+    m_parametersHasBeenSet = true;
+    m_parameters.emplace_back(std::forward<ParametersT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_actionGroup;
   bool m_actionGroupHasBeenSet = false;
-
-  Aws::Vector<FunctionParameter> m_parameters;
-  bool m_parametersHasBeenSet = false;
-
-  Aws::String m_function;
-  bool m_functionHasBeenSet = false;
 
   ActionInvocationType m_actionInvocationType{ActionInvocationType::NOT_SET};
   bool m_actionInvocationTypeHasBeenSet = false;
@@ -167,6 +161,12 @@ class FunctionInvocationInput {
 
   Aws::String m_collaboratorName;
   bool m_collaboratorNameHasBeenSet = false;
+
+  Aws::String m_function;
+  bool m_functionHasBeenSet = false;
+
+  Aws::Vector<FunctionParameter> m_parameters;
+  bool m_parametersHasBeenSet = false;
 };
 
 }  // namespace Model

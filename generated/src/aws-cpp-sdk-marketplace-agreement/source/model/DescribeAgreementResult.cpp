@@ -21,33 +21,13 @@ DescribeAgreementResult::DescribeAgreementResult(const Aws::AmazonWebServiceResu
 
 DescribeAgreementResult& DescribeAgreementResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("acceptanceTime")) {
-    m_acceptanceTime = jsonValue.GetDouble("acceptanceTime");
-    m_acceptanceTimeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("acceptor")) {
-    m_acceptor = jsonValue.GetObject("acceptor");
-    m_acceptorHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("agreementId")) {
     m_agreementId = jsonValue.GetString("agreementId");
     m_agreementIdHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("agreementType")) {
-    m_agreementType = jsonValue.GetString("agreementType");
-    m_agreementTypeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("endTime")) {
-    m_endTime = jsonValue.GetDouble("endTime");
-    m_endTimeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("estimatedCharges")) {
-    m_estimatedCharges = jsonValue.GetObject("estimatedCharges");
-    m_estimatedChargesHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("proposalSummary")) {
-    m_proposalSummary = jsonValue.GetObject("proposalSummary");
-    m_proposalSummaryHasBeenSet = true;
+  if (jsonValue.ValueExists("acceptor")) {
+    m_acceptor = jsonValue.GetObject("acceptor");
+    m_acceptorHasBeenSet = true;
   }
   if (jsonValue.ValueExists("proposer")) {
     m_proposer = jsonValue.GetObject("proposer");
@@ -56,6 +36,26 @@ DescribeAgreementResult& DescribeAgreementResult::operator=(const Aws::AmazonWeb
   if (jsonValue.ValueExists("startTime")) {
     m_startTime = jsonValue.GetDouble("startTime");
     m_startTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("endTime")) {
+    m_endTime = jsonValue.GetDouble("endTime");
+    m_endTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("acceptanceTime")) {
+    m_acceptanceTime = jsonValue.GetDouble("acceptanceTime");
+    m_acceptanceTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("agreementType")) {
+    m_agreementType = jsonValue.GetString("agreementType");
+    m_agreementTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("estimatedCharges")) {
+    m_estimatedCharges = jsonValue.GetObject("estimatedCharges");
+    m_estimatedChargesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("proposalSummary")) {
+    m_proposalSummary = jsonValue.GetObject("proposalSummary");
+    m_proposalSummaryHasBeenSet = true;
   }
   if (jsonValue.ValueExists("status")) {
     m_status = AgreementStatusMapper::GetAgreementStatusForName(jsonValue.GetString("status"));

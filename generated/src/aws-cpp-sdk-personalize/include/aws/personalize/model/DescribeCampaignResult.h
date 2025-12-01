@@ -29,7 +29,11 @@ class DescribeCampaignResult {
 
   ///@{
   /**
-   * <p>The properties of the campaign.</p>
+   *  <p>The <code>latestCampaignUpdate</code> field is only returned when the
+   * campaign has had at least one <code>UpdateCampaign</code> call. </p>
+   * <p>The properties of the campaign.</p>  <p>The
+   * <code>latestCampaignUpdate</code> field is only returned when the campaign has
+   * had at least one <code>UpdateCampaign</code> call.</p>
    */
   inline const Campaign& GetCampaign() const { return m_campaign; }
   template <typename CampaignT = Campaign>

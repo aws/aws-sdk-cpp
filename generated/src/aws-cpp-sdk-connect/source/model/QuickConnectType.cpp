@@ -18,6 +18,7 @@ namespace QuickConnectTypeMapper {
 static const int USER_HASH = HashingUtils::HashString("USER");
 static const int QUEUE_HASH = HashingUtils::HashString("QUEUE");
 static const int PHONE_NUMBER_HASH = HashingUtils::HashString("PHONE_NUMBER");
+static const int FLOW_HASH = HashingUtils::HashString("FLOW");
 
 QuickConnectType GetQuickConnectTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ QuickConnectType GetQuickConnectTypeForName(const Aws::String& name) {
     return QuickConnectType::QUEUE;
   } else if (hashCode == PHONE_NUMBER_HASH) {
     return QuickConnectType::PHONE_NUMBER;
+  } else if (hashCode == FLOW_HASH) {
+    return QuickConnectType::FLOW;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForQuickConnectType(QuickConnectType enumValue) {
       return "QUEUE";
     case QuickConnectType::PHONE_NUMBER:
       return "PHONE_NUMBER";
+    case QuickConnectType::FLOW:
+      return "FLOW";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -18,13 +18,17 @@ namespace Model {
 CodeInterpreterInvocationOutput::CodeInterpreterInvocationOutput(JsonView jsonValue) { *this = jsonValue; }
 
 CodeInterpreterInvocationOutput& CodeInterpreterInvocationOutput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("executionError")) {
+    m_executionError = jsonValue.GetString("executionError");
+    m_executionErrorHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("executionOutput")) {
     m_executionOutput = jsonValue.GetString("executionOutput");
     m_executionOutputHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("executionError")) {
-    m_executionError = jsonValue.GetString("executionError");
-    m_executionErrorHasBeenSet = true;
+  if (jsonValue.ValueExists("executionTimeout")) {
+    m_executionTimeout = jsonValue.GetBool("executionTimeout");
+    m_executionTimeoutHasBeenSet = true;
   }
   if (jsonValue.ValueExists("files")) {
     Aws::Utils::Array<JsonView> filesJsonList = jsonValue.GetArray("files");
@@ -32,10 +36,6 @@ CodeInterpreterInvocationOutput& CodeInterpreterInvocationOutput::operator=(Json
       m_files.push_back(filesJsonList[filesIndex].AsString());
     }
     m_filesHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("executionTimeout")) {
-    m_executionTimeout = jsonValue.GetBool("executionTimeout");
-    m_executionTimeoutHasBeenSet = true;
   }
   if (jsonValue.ValueExists("metadata")) {
     m_metadata = jsonValue.GetObject("metadata");
@@ -47,12 +47,16 @@ CodeInterpreterInvocationOutput& CodeInterpreterInvocationOutput::operator=(Json
 JsonValue CodeInterpreterInvocationOutput::Jsonize() const {
   JsonValue payload;
 
+  if (m_executionErrorHasBeenSet) {
+    payload.WithString("executionError", m_executionError);
+  }
+
   if (m_executionOutputHasBeenSet) {
     payload.WithString("executionOutput", m_executionOutput);
   }
 
-  if (m_executionErrorHasBeenSet) {
-    payload.WithString("executionError", m_executionError);
+  if (m_executionTimeoutHasBeenSet) {
+    payload.WithBool("executionTimeout", m_executionTimeout);
   }
 
   if (m_filesHasBeenSet) {
@@ -61,10 +65,6 @@ JsonValue CodeInterpreterInvocationOutput::Jsonize() const {
       filesJsonList[filesIndex].AsString(m_files[filesIndex]);
     }
     payload.WithArray("files", std::move(filesJsonList));
-  }
-
-  if (m_executionTimeoutHasBeenSet) {
-    payload.WithBool("executionTimeout", m_executionTimeout);
   }
 
   if (m_metadataHasBeenSet) {

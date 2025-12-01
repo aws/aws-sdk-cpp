@@ -29,69 +29,18 @@ class GetExecutionFlowSnapshotResult {
 
   ///@{
   /**
-   * <p>The unique identifier of the flow.</p>
+   * <p>The Amazon Resource Name (ARN) of the customer managed KMS key that's used to
+   * encrypt the flow snapshot.</p>
    */
-  inline const Aws::String& GetFlowIdentifier() const { return m_flowIdentifier; }
-  template <typename FlowIdentifierT = Aws::String>
-  void SetFlowIdentifier(FlowIdentifierT&& value) {
-    m_flowIdentifierHasBeenSet = true;
-    m_flowIdentifier = std::forward<FlowIdentifierT>(value);
+  inline const Aws::String& GetCustomerEncryptionKeyArn() const { return m_customerEncryptionKeyArn; }
+  template <typename CustomerEncryptionKeyArnT = Aws::String>
+  void SetCustomerEncryptionKeyArn(CustomerEncryptionKeyArnT&& value) {
+    m_customerEncryptionKeyArnHasBeenSet = true;
+    m_customerEncryptionKeyArn = std::forward<CustomerEncryptionKeyArnT>(value);
   }
-  template <typename FlowIdentifierT = Aws::String>
-  GetExecutionFlowSnapshotResult& WithFlowIdentifier(FlowIdentifierT&& value) {
-    SetFlowIdentifier(std::forward<FlowIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The unique identifier of the flow alias used for the flow execution.</p>
-   */
-  inline const Aws::String& GetFlowAliasIdentifier() const { return m_flowAliasIdentifier; }
-  template <typename FlowAliasIdentifierT = Aws::String>
-  void SetFlowAliasIdentifier(FlowAliasIdentifierT&& value) {
-    m_flowAliasIdentifierHasBeenSet = true;
-    m_flowAliasIdentifier = std::forward<FlowAliasIdentifierT>(value);
-  }
-  template <typename FlowAliasIdentifierT = Aws::String>
-  GetExecutionFlowSnapshotResult& WithFlowAliasIdentifier(FlowAliasIdentifierT&& value) {
-    SetFlowAliasIdentifier(std::forward<FlowAliasIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The version of the flow used for the flow execution.</p>
-   */
-  inline const Aws::String& GetFlowVersion() const { return m_flowVersion; }
-  template <typename FlowVersionT = Aws::String>
-  void SetFlowVersion(FlowVersionT&& value) {
-    m_flowVersionHasBeenSet = true;
-    m_flowVersion = std::forward<FlowVersionT>(value);
-  }
-  template <typename FlowVersionT = Aws::String>
-  GetExecutionFlowSnapshotResult& WithFlowVersion(FlowVersionT&& value) {
-    SetFlowVersion(std::forward<FlowVersionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The Amazon Resource Name (ARN) of the IAM service role that's used by the
-   * flow execution.</p>
-   */
-  inline const Aws::String& GetExecutionRoleArn() const { return m_executionRoleArn; }
-  template <typename ExecutionRoleArnT = Aws::String>
-  void SetExecutionRoleArn(ExecutionRoleArnT&& value) {
-    m_executionRoleArnHasBeenSet = true;
-    m_executionRoleArn = std::forward<ExecutionRoleArnT>(value);
-  }
-  template <typename ExecutionRoleArnT = Aws::String>
-  GetExecutionFlowSnapshotResult& WithExecutionRoleArn(ExecutionRoleArnT&& value) {
-    SetExecutionRoleArn(std::forward<ExecutionRoleArnT>(value));
+  template <typename CustomerEncryptionKeyArnT = Aws::String>
+  GetExecutionFlowSnapshotResult& WithCustomerEncryptionKeyArn(CustomerEncryptionKeyArnT&& value) {
+    SetCustomerEncryptionKeyArn(std::forward<CustomerEncryptionKeyArnT>(value));
     return *this;
   }
   ///@}
@@ -119,18 +68,69 @@ class GetExecutionFlowSnapshotResult {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the customer managed KMS key that's used to
-   * encrypt the flow snapshot.</p>
+   * <p>The Amazon Resource Name (ARN) of the IAM service role that's used by the
+   * flow execution.</p>
    */
-  inline const Aws::String& GetCustomerEncryptionKeyArn() const { return m_customerEncryptionKeyArn; }
-  template <typename CustomerEncryptionKeyArnT = Aws::String>
-  void SetCustomerEncryptionKeyArn(CustomerEncryptionKeyArnT&& value) {
-    m_customerEncryptionKeyArnHasBeenSet = true;
-    m_customerEncryptionKeyArn = std::forward<CustomerEncryptionKeyArnT>(value);
+  inline const Aws::String& GetExecutionRoleArn() const { return m_executionRoleArn; }
+  template <typename ExecutionRoleArnT = Aws::String>
+  void SetExecutionRoleArn(ExecutionRoleArnT&& value) {
+    m_executionRoleArnHasBeenSet = true;
+    m_executionRoleArn = std::forward<ExecutionRoleArnT>(value);
   }
-  template <typename CustomerEncryptionKeyArnT = Aws::String>
-  GetExecutionFlowSnapshotResult& WithCustomerEncryptionKeyArn(CustomerEncryptionKeyArnT&& value) {
-    SetCustomerEncryptionKeyArn(std::forward<CustomerEncryptionKeyArnT>(value));
+  template <typename ExecutionRoleArnT = Aws::String>
+  GetExecutionFlowSnapshotResult& WithExecutionRoleArn(ExecutionRoleArnT&& value) {
+    SetExecutionRoleArn(std::forward<ExecutionRoleArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier of the flow alias used for the flow execution.</p>
+   */
+  inline const Aws::String& GetFlowAliasIdentifier() const { return m_flowAliasIdentifier; }
+  template <typename FlowAliasIdentifierT = Aws::String>
+  void SetFlowAliasIdentifier(FlowAliasIdentifierT&& value) {
+    m_flowAliasIdentifierHasBeenSet = true;
+    m_flowAliasIdentifier = std::forward<FlowAliasIdentifierT>(value);
+  }
+  template <typename FlowAliasIdentifierT = Aws::String>
+  GetExecutionFlowSnapshotResult& WithFlowAliasIdentifier(FlowAliasIdentifierT&& value) {
+    SetFlowAliasIdentifier(std::forward<FlowAliasIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier of the flow.</p>
+   */
+  inline const Aws::String& GetFlowIdentifier() const { return m_flowIdentifier; }
+  template <typename FlowIdentifierT = Aws::String>
+  void SetFlowIdentifier(FlowIdentifierT&& value) {
+    m_flowIdentifierHasBeenSet = true;
+    m_flowIdentifier = std::forward<FlowIdentifierT>(value);
+  }
+  template <typename FlowIdentifierT = Aws::String>
+  GetExecutionFlowSnapshotResult& WithFlowIdentifier(FlowIdentifierT&& value) {
+    SetFlowIdentifier(std::forward<FlowIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The version of the flow used for the flow execution.</p>
+   */
+  inline const Aws::String& GetFlowVersion() const { return m_flowVersion; }
+  template <typename FlowVersionT = Aws::String>
+  void SetFlowVersion(FlowVersionT&& value) {
+    m_flowVersionHasBeenSet = true;
+    m_flowVersion = std::forward<FlowVersionT>(value);
+  }
+  template <typename FlowVersionT = Aws::String>
+  GetExecutionFlowSnapshotResult& WithFlowVersion(FlowVersionT&& value) {
+    SetFlowVersion(std::forward<FlowVersionT>(value));
     return *this;
   }
   ///@}
@@ -150,23 +150,23 @@ class GetExecutionFlowSnapshotResult {
   }
   ///@}
  private:
-  Aws::String m_flowIdentifier;
-  bool m_flowIdentifierHasBeenSet = false;
-
-  Aws::String m_flowAliasIdentifier;
-  bool m_flowAliasIdentifierHasBeenSet = false;
-
-  Aws::String m_flowVersion;
-  bool m_flowVersionHasBeenSet = false;
-
-  Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
+  Aws::String m_customerEncryptionKeyArn;
+  bool m_customerEncryptionKeyArnHasBeenSet = false;
 
   Aws::String m_definition;
   bool m_definitionHasBeenSet = false;
 
-  Aws::String m_customerEncryptionKeyArn;
-  bool m_customerEncryptionKeyArnHasBeenSet = false;
+  Aws::String m_executionRoleArn;
+  bool m_executionRoleArnHasBeenSet = false;
+
+  Aws::String m_flowAliasIdentifier;
+  bool m_flowAliasIdentifierHasBeenSet = false;
+
+  Aws::String m_flowIdentifier;
+  bool m_flowIdentifierHasBeenSet = false;
+
+  Aws::String m_flowVersion;
+  bool m_flowVersionHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

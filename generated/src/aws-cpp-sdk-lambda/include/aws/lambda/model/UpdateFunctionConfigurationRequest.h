@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lambda/LambdaRequest.h>
 #include <aws/lambda/Lambda_EXPORTS.h>
+#include <aws/lambda/model/CapacityProviderConfig.h>
 #include <aws/lambda/model/DeadLetterConfig.h>
 #include <aws/lambda/model/Environment.h>
 #include <aws/lambda/model/EphemeralStorage.h>
@@ -463,6 +464,25 @@ class UpdateFunctionConfigurationRequest : public LambdaRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configuration for the capacity provider that manages compute resources for
+   * Lambda functions.</p>
+   */
+  inline const CapacityProviderConfig& GetCapacityProviderConfig() const { return m_capacityProviderConfig; }
+  inline bool CapacityProviderConfigHasBeenSet() const { return m_capacityProviderConfigHasBeenSet; }
+  template <typename CapacityProviderConfigT = CapacityProviderConfig>
+  void SetCapacityProviderConfig(CapacityProviderConfigT&& value) {
+    m_capacityProviderConfigHasBeenSet = true;
+    m_capacityProviderConfig = std::forward<CapacityProviderConfigT>(value);
+  }
+  template <typename CapacityProviderConfigT = CapacityProviderConfig>
+  UpdateFunctionConfigurationRequest& WithCapacityProviderConfig(CapacityProviderConfigT&& value) {
+    SetCapacityProviderConfig(std::forward<CapacityProviderConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_functionName;
   bool m_functionNameHasBeenSet = false;
@@ -520,6 +540,9 @@ class UpdateFunctionConfigurationRequest : public LambdaRequest {
 
   LoggingConfig m_loggingConfig;
   bool m_loggingConfigHasBeenSet = false;
+
+  CapacityProviderConfig m_capacityProviderConfig;
+  bool m_capacityProviderConfigHasBeenSet = false;
 };
 
 }  // namespace Model

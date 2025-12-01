@@ -38,6 +38,10 @@ Solution& Solution::operator=(JsonView jsonValue) {
     m_performAutoTraining = jsonValue.GetBool("performAutoTraining");
     m_performAutoTrainingHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("performIncrementalUpdate")) {
+    m_performIncrementalUpdate = jsonValue.GetBool("performIncrementalUpdate");
+    m_performIncrementalUpdateHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("recipeArn")) {
     m_recipeArn = jsonValue.GetString("recipeArn");
     m_recipeArnHasBeenSet = true;
@@ -102,6 +106,10 @@ JsonValue Solution::Jsonize() const {
 
   if (m_performAutoTrainingHasBeenSet) {
     payload.WithBool("performAutoTraining", m_performAutoTraining);
+  }
+
+  if (m_performIncrementalUpdateHasBeenSet) {
+    payload.WithBool("performIncrementalUpdate", m_performIncrementalUpdate);
   }
 
   if (m_recipeArnHasBeenSet) {

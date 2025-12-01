@@ -22,6 +22,10 @@ MessageData& MessageData::operator=(JsonView jsonValue) {
     m_text = jsonValue.GetObject("text");
     m_textHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("toolUseResult")) {
+    m_toolUseResult = jsonValue.GetObject("toolUseResult");
+    m_toolUseResultHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue MessageData::Jsonize() const {
 
   if (m_textHasBeenSet) {
     payload.WithObject("text", m_text.Jsonize());
+  }
+
+  if (m_toolUseResultHasBeenSet) {
+    payload.WithObject("toolUseResult", m_toolUseResult.Jsonize());
   }
 
   return payload;

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/GranularAccessControlConfiguration.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -280,6 +281,27 @@ class SecurityProfile {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The granular access control configuration for the security profile, including
+   * data table permissions.</p>
+   */
+  inline const GranularAccessControlConfiguration& GetGranularAccessControlConfiguration() const {
+    return m_granularAccessControlConfiguration;
+  }
+  inline bool GranularAccessControlConfigurationHasBeenSet() const { return m_granularAccessControlConfigurationHasBeenSet; }
+  template <typename GranularAccessControlConfigurationT = GranularAccessControlConfiguration>
+  void SetGranularAccessControlConfiguration(GranularAccessControlConfigurationT&& value) {
+    m_granularAccessControlConfigurationHasBeenSet = true;
+    m_granularAccessControlConfiguration = std::forward<GranularAccessControlConfigurationT>(value);
+  }
+  template <typename GranularAccessControlConfigurationT = GranularAccessControlConfiguration>
+  SecurityProfile& WithGranularAccessControlConfiguration(GranularAccessControlConfigurationT&& value) {
+    SetGranularAccessControlConfiguration(std::forward<GranularAccessControlConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
   bool m_idHasBeenSet = false;
@@ -316,6 +338,9 @@ class SecurityProfile {
 
   Aws::String m_allowedAccessControlHierarchyGroupId;
   bool m_allowedAccessControlHierarchyGroupIdHasBeenSet = false;
+
+  GranularAccessControlConfiguration m_granularAccessControlConfiguration;
+  bool m_granularAccessControlConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

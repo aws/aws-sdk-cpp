@@ -18,8 +18,7 @@ namespace Model {
 
 /**
  * <p>Specify whether this routing criteria step should apply for only a limited
- * amount of time,&#x2028; or if it should never expire.</p><p><h3>See Also:</h3>
- * <a
+ * amount of time, or if it should never expire.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/RoutingCriteriaInputStepExpiry">AWS
  * API Reference</a></p>
  */
@@ -33,7 +32,7 @@ class RoutingCriteriaInputStepExpiry {
   ///@{
   /**
    * <p>The number of seconds that the contact will be routed only to agents matching
-   * this routing&#x2028; step, if expiry was configured for this routing step.</p>
+   * this routing step, if expiry was configured for this routing step.</p>
    */
   inline int GetDurationInSeconds() const { return m_durationInSeconds; }
   inline bool DurationInSecondsHasBeenSet() const { return m_durationInSecondsHasBeenSet; }

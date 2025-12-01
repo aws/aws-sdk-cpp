@@ -29,6 +29,10 @@ SendMessageResult& SendMessageResult::operator=(const Aws::AmazonWebServiceResul
     m_absoluteTime = jsonValue.GetString("AbsoluteTime");
     m_absoluteTimeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("MessageMetadata")) {
+    m_messageMetadata = jsonValue.GetObject("MessageMetadata");
+    m_messageMetadataHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

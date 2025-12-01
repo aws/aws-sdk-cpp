@@ -20,6 +20,7 @@
 
 /* Service model headers required in PartnerCentralSellingClient header */
 #include <aws/core/NoResult.h>
+#include <aws/partnercentral-selling/model/CreateEngagementContextResult.h>
 #include <aws/partnercentral-selling/model/CreateEngagementInvitationResult.h>
 #include <aws/partnercentral-selling/model/CreateEngagementResult.h>
 #include <aws/partnercentral-selling/model/CreateOpportunityResult.h>
@@ -39,6 +40,7 @@
 #include <aws/partnercentral-selling/model/ListEngagementResourceAssociationsResult.h>
 #include <aws/partnercentral-selling/model/ListEngagementsResult.h>
 #include <aws/partnercentral-selling/model/ListOpportunitiesResult.h>
+#include <aws/partnercentral-selling/model/ListOpportunityFromEngagementTasksResult.h>
 #include <aws/partnercentral-selling/model/ListResourceSnapshotJobsResult.h>
 #include <aws/partnercentral-selling/model/ListResourceSnapshotsResult.h>
 #include <aws/partnercentral-selling/model/ListSolutionsResult.h>
@@ -46,8 +48,10 @@
 #include <aws/partnercentral-selling/model/PutSellingSystemSettingsResult.h>
 #include <aws/partnercentral-selling/model/StartEngagementByAcceptingInvitationTaskResult.h>
 #include <aws/partnercentral-selling/model/StartEngagementFromOpportunityTaskResult.h>
+#include <aws/partnercentral-selling/model/StartOpportunityFromEngagementTaskResult.h>
 #include <aws/partnercentral-selling/model/TagResourceResult.h>
 #include <aws/partnercentral-selling/model/UntagResourceResult.h>
+#include <aws/partnercentral-selling/model/UpdateEngagementContextResult.h>
 #include <aws/partnercentral-selling/model/UpdateOpportunityResult.h>
 /* End of service model headers required in PartnerCentralSellingClient header */
 
@@ -86,6 +90,7 @@ class AcceptEngagementInvitationRequest;
 class AssignOpportunityRequest;
 class AssociateOpportunityRequest;
 class CreateEngagementRequest;
+class CreateEngagementContextRequest;
 class CreateEngagementInvitationRequest;
 class CreateOpportunityRequest;
 class CreateResourceSnapshotRequest;
@@ -106,6 +111,7 @@ class ListEngagementMembersRequest;
 class ListEngagementResourceAssociationsRequest;
 class ListEngagementsRequest;
 class ListOpportunitiesRequest;
+class ListOpportunityFromEngagementTasksRequest;
 class ListResourceSnapshotJobsRequest;
 class ListResourceSnapshotsRequest;
 class ListSolutionsRequest;
@@ -114,11 +120,13 @@ class PutSellingSystemSettingsRequest;
 class RejectEngagementInvitationRequest;
 class StartEngagementByAcceptingInvitationTaskRequest;
 class StartEngagementFromOpportunityTaskRequest;
+class StartOpportunityFromEngagementTaskRequest;
 class StartResourceSnapshotJobRequest;
 class StopResourceSnapshotJobRequest;
 class SubmitOpportunityRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
+class UpdateEngagementContextRequest;
 class UpdateOpportunityRequest;
 /* End of service model forward declarations required in PartnerCentralSellingClient header */
 
@@ -127,6 +135,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, PartnerCentralSellingError> AcceptEng
 typedef Aws::Utils::Outcome<Aws::NoResult, PartnerCentralSellingError> AssignOpportunityOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, PartnerCentralSellingError> AssociateOpportunityOutcome;
 typedef Aws::Utils::Outcome<CreateEngagementResult, PartnerCentralSellingError> CreateEngagementOutcome;
+typedef Aws::Utils::Outcome<CreateEngagementContextResult, PartnerCentralSellingError> CreateEngagementContextOutcome;
 typedef Aws::Utils::Outcome<CreateEngagementInvitationResult, PartnerCentralSellingError> CreateEngagementInvitationOutcome;
 typedef Aws::Utils::Outcome<CreateOpportunityResult, PartnerCentralSellingError> CreateOpportunityOutcome;
 typedef Aws::Utils::Outcome<CreateResourceSnapshotResult, PartnerCentralSellingError> CreateResourceSnapshotOutcome;
@@ -148,6 +157,7 @@ typedef Aws::Utils::Outcome<ListEngagementMembersResult, PartnerCentralSellingEr
 typedef Aws::Utils::Outcome<ListEngagementResourceAssociationsResult, PartnerCentralSellingError> ListEngagementResourceAssociationsOutcome;
 typedef Aws::Utils::Outcome<ListEngagementsResult, PartnerCentralSellingError> ListEngagementsOutcome;
 typedef Aws::Utils::Outcome<ListOpportunitiesResult, PartnerCentralSellingError> ListOpportunitiesOutcome;
+typedef Aws::Utils::Outcome<ListOpportunityFromEngagementTasksResult, PartnerCentralSellingError> ListOpportunityFromEngagementTasksOutcome;
 typedef Aws::Utils::Outcome<ListResourceSnapshotJobsResult, PartnerCentralSellingError> ListResourceSnapshotJobsOutcome;
 typedef Aws::Utils::Outcome<ListResourceSnapshotsResult, PartnerCentralSellingError> ListResourceSnapshotsOutcome;
 typedef Aws::Utils::Outcome<ListSolutionsResult, PartnerCentralSellingError> ListSolutionsOutcome;
@@ -157,11 +167,13 @@ typedef Aws::Utils::Outcome<Aws::NoResult, PartnerCentralSellingError> RejectEng
 typedef Aws::Utils::Outcome<StartEngagementByAcceptingInvitationTaskResult, PartnerCentralSellingError>
     StartEngagementByAcceptingInvitationTaskOutcome;
 typedef Aws::Utils::Outcome<StartEngagementFromOpportunityTaskResult, PartnerCentralSellingError> StartEngagementFromOpportunityTaskOutcome;
+typedef Aws::Utils::Outcome<StartOpportunityFromEngagementTaskResult, PartnerCentralSellingError> StartOpportunityFromEngagementTaskOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, PartnerCentralSellingError> StartResourceSnapshotJobOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, PartnerCentralSellingError> StopResourceSnapshotJobOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, PartnerCentralSellingError> SubmitOpportunityOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, PartnerCentralSellingError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, PartnerCentralSellingError> UntagResourceOutcome;
+typedef Aws::Utils::Outcome<UpdateEngagementContextResult, PartnerCentralSellingError> UpdateEngagementContextOutcome;
 typedef Aws::Utils::Outcome<UpdateOpportunityResult, PartnerCentralSellingError> UpdateOpportunityOutcome;
 /* End of service model Outcome class definitions */
 
@@ -170,6 +182,7 @@ typedef std::future<AcceptEngagementInvitationOutcome> AcceptEngagementInvitatio
 typedef std::future<AssignOpportunityOutcome> AssignOpportunityOutcomeCallable;
 typedef std::future<AssociateOpportunityOutcome> AssociateOpportunityOutcomeCallable;
 typedef std::future<CreateEngagementOutcome> CreateEngagementOutcomeCallable;
+typedef std::future<CreateEngagementContextOutcome> CreateEngagementContextOutcomeCallable;
 typedef std::future<CreateEngagementInvitationOutcome> CreateEngagementInvitationOutcomeCallable;
 typedef std::future<CreateOpportunityOutcome> CreateOpportunityOutcomeCallable;
 typedef std::future<CreateResourceSnapshotOutcome> CreateResourceSnapshotOutcomeCallable;
@@ -190,6 +203,7 @@ typedef std::future<ListEngagementMembersOutcome> ListEngagementMembersOutcomeCa
 typedef std::future<ListEngagementResourceAssociationsOutcome> ListEngagementResourceAssociationsOutcomeCallable;
 typedef std::future<ListEngagementsOutcome> ListEngagementsOutcomeCallable;
 typedef std::future<ListOpportunitiesOutcome> ListOpportunitiesOutcomeCallable;
+typedef std::future<ListOpportunityFromEngagementTasksOutcome> ListOpportunityFromEngagementTasksOutcomeCallable;
 typedef std::future<ListResourceSnapshotJobsOutcome> ListResourceSnapshotJobsOutcomeCallable;
 typedef std::future<ListResourceSnapshotsOutcome> ListResourceSnapshotsOutcomeCallable;
 typedef std::future<ListSolutionsOutcome> ListSolutionsOutcomeCallable;
@@ -198,11 +212,13 @@ typedef std::future<PutSellingSystemSettingsOutcome> PutSellingSystemSettingsOut
 typedef std::future<RejectEngagementInvitationOutcome> RejectEngagementInvitationOutcomeCallable;
 typedef std::future<StartEngagementByAcceptingInvitationTaskOutcome> StartEngagementByAcceptingInvitationTaskOutcomeCallable;
 typedef std::future<StartEngagementFromOpportunityTaskOutcome> StartEngagementFromOpportunityTaskOutcomeCallable;
+typedef std::future<StartOpportunityFromEngagementTaskOutcome> StartOpportunityFromEngagementTaskOutcomeCallable;
 typedef std::future<StartResourceSnapshotJobOutcome> StartResourceSnapshotJobOutcomeCallable;
 typedef std::future<StopResourceSnapshotJobOutcome> StopResourceSnapshotJobOutcomeCallable;
 typedef std::future<SubmitOpportunityOutcome> SubmitOpportunityOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+typedef std::future<UpdateEngagementContextOutcome> UpdateEngagementContextOutcomeCallable;
 typedef std::future<UpdateOpportunityOutcome> UpdateOpportunityOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
@@ -222,6 +238,9 @@ typedef std::function<void(const PartnerCentralSellingClient*, const Model::Asso
 typedef std::function<void(const PartnerCentralSellingClient*, const Model::CreateEngagementRequest&, const Model::CreateEngagementOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateEngagementResponseReceivedHandler;
+typedef std::function<void(const PartnerCentralSellingClient*, const Model::CreateEngagementContextRequest&,
+                           const Model::CreateEngagementContextOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateEngagementContextResponseReceivedHandler;
 typedef std::function<void(const PartnerCentralSellingClient*, const Model::CreateEngagementInvitationRequest&,
                            const Model::CreateEngagementInvitationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateEngagementInvitationResponseReceivedHandler;
@@ -285,6 +304,10 @@ typedef std::function<void(const PartnerCentralSellingClient*, const Model::List
 typedef std::function<void(const PartnerCentralSellingClient*, const Model::ListOpportunitiesRequest&,
                            const Model::ListOpportunitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListOpportunitiesResponseReceivedHandler;
+typedef std::function<void(const PartnerCentralSellingClient*, const Model::ListOpportunityFromEngagementTasksRequest&,
+                           const Model::ListOpportunityFromEngagementTasksOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListOpportunityFromEngagementTasksResponseReceivedHandler;
 typedef std::function<void(const PartnerCentralSellingClient*, const Model::ListResourceSnapshotJobsRequest&,
                            const Model::ListResourceSnapshotJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListResourceSnapshotJobsResponseReceivedHandler;
@@ -311,6 +334,10 @@ typedef std::function<void(const PartnerCentralSellingClient*, const Model::Star
                            const Model::StartEngagementFromOpportunityTaskOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartEngagementFromOpportunityTaskResponseReceivedHandler;
+typedef std::function<void(const PartnerCentralSellingClient*, const Model::StartOpportunityFromEngagementTaskRequest&,
+                           const Model::StartOpportunityFromEngagementTaskOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartOpportunityFromEngagementTaskResponseReceivedHandler;
 typedef std::function<void(const PartnerCentralSellingClient*, const Model::StartResourceSnapshotJobRequest&,
                            const Model::StartResourceSnapshotJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartResourceSnapshotJobResponseReceivedHandler;
@@ -326,6 +353,9 @@ typedef std::function<void(const PartnerCentralSellingClient*, const Model::TagR
 typedef std::function<void(const PartnerCentralSellingClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UntagResourceResponseReceivedHandler;
+typedef std::function<void(const PartnerCentralSellingClient*, const Model::UpdateEngagementContextRequest&,
+                           const Model::UpdateEngagementContextOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateEngagementContextResponseReceivedHandler;
 typedef std::function<void(const PartnerCentralSellingClient*, const Model::UpdateOpportunityRequest&,
                            const Model::UpdateOpportunityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateOpportunityResponseReceivedHandler;

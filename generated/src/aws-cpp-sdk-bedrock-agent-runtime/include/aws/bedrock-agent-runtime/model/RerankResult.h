@@ -34,8 +34,25 @@ class RerankResult {
 
   ///@{
   /**
-   * <p>The ranking of the document. The lower a number, the higher the document is
-   * ranked.</p>
+   * <p>Contains information about the document.</p>
+   */
+  inline const RerankDocument& GetDocument() const { return m_document; }
+  inline bool DocumentHasBeenSet() const { return m_documentHasBeenSet; }
+  template <typename DocumentT = RerankDocument>
+  void SetDocument(DocumentT&& value) {
+    m_documentHasBeenSet = true;
+    m_document = std::forward<DocumentT>(value);
+  }
+  template <typename DocumentT = RerankDocument>
+  RerankResult& WithDocument(DocumentT&& value) {
+    SetDocument(std::forward<DocumentT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The original index of the document from the input sources array.</p>
    */
   inline int GetIndex() const { return m_index; }
   inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
@@ -64,33 +81,15 @@ class RerankResult {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Contains information about the document.</p>
-   */
-  inline const RerankDocument& GetDocument() const { return m_document; }
-  inline bool DocumentHasBeenSet() const { return m_documentHasBeenSet; }
-  template <typename DocumentT = RerankDocument>
-  void SetDocument(DocumentT&& value) {
-    m_documentHasBeenSet = true;
-    m_document = std::forward<DocumentT>(value);
-  }
-  template <typename DocumentT = RerankDocument>
-  RerankResult& WithDocument(DocumentT&& value) {
-    SetDocument(std::forward<DocumentT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  RerankDocument m_document;
+  bool m_documentHasBeenSet = false;
+
   int m_index{0};
   bool m_indexHasBeenSet = false;
 
   double m_relevanceScore{0.0};
   bool m_relevanceScoreHasBeenSet = false;
-
-  RerankDocument m_document;
-  bool m_documentHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -18,6 +18,10 @@ namespace Model {
 ExternalSourcesRetrieveAndGenerateConfiguration::ExternalSourcesRetrieveAndGenerateConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
 ExternalSourcesRetrieveAndGenerateConfiguration& ExternalSourcesRetrieveAndGenerateConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("generationConfiguration")) {
+    m_generationConfiguration = jsonValue.GetObject("generationConfiguration");
+    m_generationConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("modelArn")) {
     m_modelArn = jsonValue.GetString("modelArn");
     m_modelArnHasBeenSet = true;
@@ -29,15 +33,15 @@ ExternalSourcesRetrieveAndGenerateConfiguration& ExternalSourcesRetrieveAndGener
     }
     m_sourcesHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("generationConfiguration")) {
-    m_generationConfiguration = jsonValue.GetObject("generationConfiguration");
-    m_generationConfigurationHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue ExternalSourcesRetrieveAndGenerateConfiguration::Jsonize() const {
   JsonValue payload;
+
+  if (m_generationConfigurationHasBeenSet) {
+    payload.WithObject("generationConfiguration", m_generationConfiguration.Jsonize());
+  }
 
   if (m_modelArnHasBeenSet) {
     payload.WithString("modelArn", m_modelArn);
@@ -49,10 +53,6 @@ JsonValue ExternalSourcesRetrieveAndGenerateConfiguration::Jsonize() const {
       sourcesJsonList[sourcesIndex].AsObject(m_sources[sourcesIndex].Jsonize());
     }
     payload.WithArray("sources", std::move(sourcesJsonList));
-  }
-
-  if (m_generationConfigurationHasBeenSet) {
-    payload.WithObject("generationConfiguration", m_generationConfiguration.Jsonize());
   }
 
   return payload;

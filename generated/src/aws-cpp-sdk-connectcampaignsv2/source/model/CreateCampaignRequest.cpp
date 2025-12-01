@@ -27,6 +27,10 @@ Aws::String CreateCampaignRequest::SerializePayload() const {
     payload.WithObject("channelSubtypeConfig", m_channelSubtypeConfig.Jsonize());
   }
 
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", ExternalCampaignTypeMapper::GetNameForExternalCampaignType(m_type));
+  }
+
   if (m_sourceHasBeenSet) {
     payload.WithObject("source", m_source.Jsonize());
   }

@@ -32,16 +32,16 @@ InvokeAgentInitialResponse::InvokeAgentInitialResponse(const Http::HeaderValueCo
     m_contentTypeHasBeenSet = true;
   }
 
-  const auto& sessionIdIter = headers.find("x-amz-bedrock-agent-session-id");
-  if (sessionIdIter != headers.end()) {
-    m_sessionId = sessionIdIter->second;
-    m_sessionIdHasBeenSet = true;
-  }
-
   const auto& memoryIdIter = headers.find("x-amz-bedrock-agent-memory-id");
   if (memoryIdIter != headers.end()) {
     m_memoryId = memoryIdIter->second;
     m_memoryIdHasBeenSet = true;
+  }
+
+  const auto& sessionIdIter = headers.find("x-amz-bedrock-agent-session-id");
+  if (sessionIdIter != headers.end()) {
+    m_sessionId = sessionIdIter->second;
+    m_sessionIdHasBeenSet = true;
   }
 }
 

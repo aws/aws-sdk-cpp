@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
+#include <aws/customer-profiles/model/Scope.h>
 
 #include <utility>
 
@@ -108,7 +109,7 @@ class ListIntegrationItem {
 
   ///@{
   /**
-   * <p>The timestamp of when the domain was most recently edited.</p>
+   * <p>The timestamp of when the integration was most recently edited.</p>
    */
   inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
   inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
@@ -257,6 +258,22 @@ class ListIntegrationItem {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The scope or boundary of the integration item's applicability.</p>
+   */
+  inline Scope GetScope() const { return m_scope; }
+  inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
+  inline void SetScope(Scope value) {
+    m_scopeHasBeenSet = true;
+    m_scope = value;
+  }
+  inline ListIntegrationItem& WithScope(Scope value) {
+    SetScope(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainName;
   bool m_domainNameHasBeenSet = false;
@@ -290,6 +307,9 @@ class ListIntegrationItem {
 
   Aws::Vector<Aws::String> m_eventTriggerNames;
   bool m_eventTriggerNamesHasBeenSet = false;
+
+  Scope m_scope{Scope::NOT_SET};
+  bool m_scopeHasBeenSet = false;
 };
 
 }  // namespace Model

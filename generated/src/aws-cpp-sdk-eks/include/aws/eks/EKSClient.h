@@ -250,6 +250,44 @@ class AWS_EKS_API EKSClient : public Aws::Client::AWSJsonClient, public Aws::Cli
   }
 
   /**
+   * <p>Creates a managed capability resource for an Amazon EKS cluster.</p>
+   * <p>Capabilities provide fully managed capabilities to build and scale with
+   * Kubernetes. When you create a capability, Amazon EKSprovisions and manages the
+   * infrastructure required to run the capability outside of your cluster. This
+   * approach reduces operational overhead and preserves cluster resources.</p>
+   * <p>You can only create one Capability of each type on a given Amazon EKS
+   * cluster. Valid types are Argo CD for declarative GitOps deployment, Amazon Web
+   * Services Controllers for Kubernetes (ACK) for resource management, and Kube
+   * Resource Orchestrator (KRO) for Kubernetes custom resource orchestration.</p>
+   * <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/eks/latest/userguide/capabilities.html">EKS
+   * Capabilities</a> in the <i>Amazon EKS User Guide</i>.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateCapability">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateCapabilityOutcome CreateCapability(const Model::CreateCapabilityRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateCapability that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateCapabilityRequestT = Model::CreateCapabilityRequest>
+  Model::CreateCapabilityOutcomeCallable CreateCapabilityCallable(const CreateCapabilityRequestT& request) const {
+    return SubmitCallable(&EKSClient::CreateCapability, request);
+  }
+
+  /**
+   * An Async wrapper for CreateCapability that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateCapabilityRequestT = Model::CreateCapabilityRequest>
+  void CreateCapabilityAsync(const CreateCapabilityRequestT& request, const CreateCapabilityResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EKSClient::CreateCapability, request, handler, context);
+  }
+
+  /**
    * <p>Creates an Amazon EKS control plane.</p> <p>The Amazon EKS control plane
    * consists of control plane instances that run the Kubernetes software, such as
    * <code>etcd</code> and the API server. The control plane runs in an account
@@ -554,6 +592,39 @@ class AWS_EKS_API EKSClient : public Aws::Client::AWSJsonClient, public Aws::Cli
   }
 
   /**
+   * <p>Deletes a managed capability from your Amazon EKS cluster. When you delete a
+   * capability, Amazon EKS removes the capability infrastructure but retains all
+   * resources that were managed by the capability.</p> <p>Before deleting a
+   * capability, you should delete all Kubernetes resources that were created by the
+   * capability. After the capability is deleted, these resources become difficult to
+   * manage because the controller that managed them is no longer available. To
+   * delete resources before removing the capability, use <code>kubectl delete</code>
+   * or remove them through your GitOps workflow.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteCapability">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteCapabilityOutcome DeleteCapability(const Model::DeleteCapabilityRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteCapability that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteCapabilityRequestT = Model::DeleteCapabilityRequest>
+  Model::DeleteCapabilityOutcomeCallable DeleteCapabilityCallable(const DeleteCapabilityRequestT& request) const {
+    return SubmitCallable(&EKSClient::DeleteCapability, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteCapability that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DeleteCapabilityRequestT = Model::DeleteCapabilityRequest>
+  void DeleteCapabilityAsync(const DeleteCapabilityRequestT& request, const DeleteCapabilityResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EKSClient::DeleteCapability, request, handler, context);
+  }
+
+  /**
    * <p>Deletes an Amazon EKS cluster control plane.</p> <p>If you have active
    * services in your cluster that are associated with a load balancer, you must
    * delete those services before deleting the cluster so that the load balancers are
@@ -850,6 +921,35 @@ class AWS_EKS_API EKSClient : public Aws::Client::AWSJsonClient, public Aws::Cli
                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                   const DescribeAddonVersionsRequestT& request = {}) const {
     return SubmitAsync(&EKSClient::DescribeAddonVersions, request, handler, context);
+  }
+
+  /**
+   * <p>Returns detailed information about a specific managed capability in your
+   * Amazon EKS cluster, including its current status, configuration, health
+   * information, and any issues that may be affecting its operation.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeCapability">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeCapabilityOutcome DescribeCapability(const Model::DescribeCapabilityRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeCapability that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeCapabilityRequestT = Model::DescribeCapabilityRequest>
+  Model::DescribeCapabilityOutcomeCallable DescribeCapabilityCallable(const DescribeCapabilityRequestT& request) const {
+    return SubmitCallable(&EKSClient::DescribeCapability, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeCapability that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DescribeCapabilityRequestT = Model::DescribeCapabilityRequest>
+  void DescribeCapabilityAsync(const DescribeCapabilityRequestT& request, const DescribeCapabilityResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EKSClient::DescribeCapability, request, handler, context);
   }
 
   /**
@@ -1310,6 +1410,34 @@ class AWS_EKS_API EKSClient : public Aws::Client::AWSJsonClient, public Aws::Cli
   }
 
   /**
+   * <p>Lists all managed capabilities in your Amazon EKS cluster. You can use this
+   * operation to get an overview of all capabilities and their current
+   * status.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListCapabilities">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListCapabilitiesOutcome ListCapabilities(const Model::ListCapabilitiesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListCapabilities that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListCapabilitiesRequestT = Model::ListCapabilitiesRequest>
+  Model::ListCapabilitiesOutcomeCallable ListCapabilitiesCallable(const ListCapabilitiesRequestT& request) const {
+    return SubmitCallable(&EKSClient::ListCapabilities, request);
+  }
+
+  /**
+   * An Async wrapper for ListCapabilities that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListCapabilitiesRequestT = Model::ListCapabilitiesRequest>
+  void ListCapabilitiesAsync(const ListCapabilitiesRequestT& request, const ListCapabilitiesResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EKSClient::ListCapabilities, request, handler, context);
+  }
+
+  /**
    * <p>Lists the Amazon EKS clusters in your Amazon Web Services account in the
    * specified Amazon Web Services Region.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListClusters">AWS
@@ -1743,6 +1871,37 @@ class AWS_EKS_API EKSClient : public Aws::Client::AWSJsonClient, public Aws::Cli
   void UpdateAddonAsync(const UpdateAddonRequestT& request, const UpdateAddonResponseReceivedHandler& handler,
                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EKSClient::UpdateAddon, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the configuration of a managed capability in your Amazon EKS cluster.
+   * You can update the IAM role, configuration settings, and delete propagation
+   * policy for a capability.</p> <p>When you update a capability, Amazon EKS applies
+   * the changes and may restart capability components as needed. The capability
+   * remains available during the update process, but some operations may be
+   * temporarily unavailable.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateCapability">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateCapabilityOutcome UpdateCapability(const Model::UpdateCapabilityRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateCapability that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateCapabilityRequestT = Model::UpdateCapabilityRequest>
+  Model::UpdateCapabilityOutcomeCallable UpdateCapabilityCallable(const UpdateCapabilityRequestT& request) const {
+    return SubmitCallable(&EKSClient::UpdateCapability, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateCapability that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateCapabilityRequestT = Model::UpdateCapabilityRequest>
+  void UpdateCapabilityAsync(const UpdateCapabilityRequestT& request, const UpdateCapabilityResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EKSClient::UpdateCapability, request, handler, context);
   }
 
   /**

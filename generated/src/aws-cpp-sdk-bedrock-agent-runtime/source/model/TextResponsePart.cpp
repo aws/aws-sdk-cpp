@@ -18,13 +18,13 @@ namespace Model {
 TextResponsePart::TextResponsePart(JsonView jsonValue) { *this = jsonValue; }
 
 TextResponsePart& TextResponsePart::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("text")) {
-    m_text = jsonValue.GetString("text");
-    m_textHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("span")) {
     m_span = jsonValue.GetObject("span");
     m_spanHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("text")) {
+    m_text = jsonValue.GetString("text");
+    m_textHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ TextResponsePart& TextResponsePart::operator=(JsonView jsonValue) {
 JsonValue TextResponsePart::Jsonize() const {
   JsonValue payload;
 
-  if (m_textHasBeenSet) {
-    payload.WithString("text", m_text);
-  }
-
   if (m_spanHasBeenSet) {
     payload.WithObject("span", m_span.Jsonize());
+  }
+
+  if (m_textHasBeenSet) {
+    payload.WithString("text", m_text);
   }
 
   return payload;

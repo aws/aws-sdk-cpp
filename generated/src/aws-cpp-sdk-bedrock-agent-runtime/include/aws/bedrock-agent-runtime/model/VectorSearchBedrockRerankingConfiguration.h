@@ -35,6 +35,24 @@ class VectorSearchBedrockRerankingConfiguration {
 
   ///@{
   /**
+   * <p>Contains configurations for the metadata to use in reranking.</p>
+   */
+  inline const MetadataConfigurationForReranking& GetMetadataConfiguration() const { return m_metadataConfiguration; }
+  inline bool MetadataConfigurationHasBeenSet() const { return m_metadataConfigurationHasBeenSet; }
+  template <typename MetadataConfigurationT = MetadataConfigurationForReranking>
+  void SetMetadataConfiguration(MetadataConfigurationT&& value) {
+    m_metadataConfigurationHasBeenSet = true;
+    m_metadataConfiguration = std::forward<MetadataConfigurationT>(value);
+  }
+  template <typename MetadataConfigurationT = MetadataConfigurationForReranking>
+  VectorSearchBedrockRerankingConfiguration& WithMetadataConfiguration(MetadataConfigurationT&& value) {
+    SetMetadataConfiguration(std::forward<MetadataConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Contains configurations for the reranker model.</p>
    */
   inline const VectorSearchBedrockRerankingModelConfiguration& GetModelConfiguration() const { return m_modelConfiguration; }
@@ -66,33 +84,15 @@ class VectorSearchBedrockRerankingConfiguration {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Contains configurations for the metadata to use in reranking.</p>
-   */
-  inline const MetadataConfigurationForReranking& GetMetadataConfiguration() const { return m_metadataConfiguration; }
-  inline bool MetadataConfigurationHasBeenSet() const { return m_metadataConfigurationHasBeenSet; }
-  template <typename MetadataConfigurationT = MetadataConfigurationForReranking>
-  void SetMetadataConfiguration(MetadataConfigurationT&& value) {
-    m_metadataConfigurationHasBeenSet = true;
-    m_metadataConfiguration = std::forward<MetadataConfigurationT>(value);
-  }
-  template <typename MetadataConfigurationT = MetadataConfigurationForReranking>
-  VectorSearchBedrockRerankingConfiguration& WithMetadataConfiguration(MetadataConfigurationT&& value) {
-    SetMetadataConfiguration(std::forward<MetadataConfigurationT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  MetadataConfigurationForReranking m_metadataConfiguration;
+  bool m_metadataConfigurationHasBeenSet = false;
+
   VectorSearchBedrockRerankingModelConfiguration m_modelConfiguration;
   bool m_modelConfigurationHasBeenSet = false;
 
   int m_numberOfRerankedResults{0};
   bool m_numberOfRerankedResultsHasBeenSet = false;
-
-  MetadataConfigurationForReranking m_metadataConfiguration;
-  bool m_metadataConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

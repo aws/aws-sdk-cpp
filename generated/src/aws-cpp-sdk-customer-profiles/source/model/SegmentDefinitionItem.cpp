@@ -45,6 +45,10 @@ SegmentDefinitionItem& SegmentDefinitionItem::operator=(JsonView jsonValue) {
     }
     m_tagsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SegmentType")) {
+    m_segmentType = SegmentTypeMapper::GetSegmentTypeForName(jsonValue.GetString("SegmentType"));
+    m_segmentTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -77,6 +81,10 @@ JsonValue SegmentDefinitionItem::Jsonize() const {
       tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
     }
     payload.WithObject("Tags", std::move(tagsJsonMap));
+  }
+
+  if (m_segmentTypeHasBeenSet) {
+    payload.WithString("SegmentType", SegmentTypeMapper::GetNameForSegmentType(m_segmentType));
   }
 
   return payload;

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qconnect/QConnect_EXPORTS.h>
+#include <aws/qconnect/model/RelevanceLevel.h>
 
 #include <utility>
 
@@ -66,12 +67,31 @@ class IntentDetectedDataDetails {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The relevance level of the detected intent.</p>
+   */
+  inline RelevanceLevel GetRelevanceLevel() const { return m_relevanceLevel; }
+  inline bool RelevanceLevelHasBeenSet() const { return m_relevanceLevelHasBeenSet; }
+  inline void SetRelevanceLevel(RelevanceLevel value) {
+    m_relevanceLevelHasBeenSet = true;
+    m_relevanceLevel = value;
+  }
+  inline IntentDetectedDataDetails& WithRelevanceLevel(RelevanceLevel value) {
+    SetRelevanceLevel(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_intent;
   bool m_intentHasBeenSet = false;
 
   Aws::String m_intentId;
   bool m_intentIdHasBeenSet = false;
+
+  RelevanceLevel m_relevanceLevel{RelevanceLevel::NOT_SET};
+  bool m_relevanceLevelHasBeenSet = false;
 };
 
 }  // namespace Model

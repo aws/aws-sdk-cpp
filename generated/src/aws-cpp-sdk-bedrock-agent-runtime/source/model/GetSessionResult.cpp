@@ -21,25 +21,25 @@ GetSessionResult::GetSessionResult(const Aws::AmazonWebServiceResult<JsonValue>&
 
 GetSessionResult& GetSessionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("sessionId")) {
-    m_sessionId = jsonValue.GetString("sessionId");
-    m_sessionIdHasBeenSet = true;
+  if (jsonValue.ValueExists("createdAt")) {
+    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("encryptionKeyArn")) {
+    m_encryptionKeyArn = jsonValue.GetString("encryptionKeyArn");
+    m_encryptionKeyArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("lastUpdatedAt")) {
+    m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
+    m_lastUpdatedAtHasBeenSet = true;
   }
   if (jsonValue.ValueExists("sessionArn")) {
     m_sessionArn = jsonValue.GetString("sessionArn");
     m_sessionArnHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("sessionStatus")) {
-    m_sessionStatus = SessionStatusMapper::GetSessionStatusForName(jsonValue.GetString("sessionStatus"));
-    m_sessionStatusHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("createdAt")) {
-    m_createdAt = jsonValue.GetString("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("lastUpdatedAt")) {
-    m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
-    m_lastUpdatedAtHasBeenSet = true;
+  if (jsonValue.ValueExists("sessionId")) {
+    m_sessionId = jsonValue.GetString("sessionId");
+    m_sessionIdHasBeenSet = true;
   }
   if (jsonValue.ValueExists("sessionMetadata")) {
     Aws::Map<Aws::String, JsonView> sessionMetadataJsonMap = jsonValue.GetObject("sessionMetadata").GetAllObjects();
@@ -48,9 +48,9 @@ GetSessionResult& GetSessionResult::operator=(const Aws::AmazonWebServiceResult<
     }
     m_sessionMetadataHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("encryptionKeyArn")) {
-    m_encryptionKeyArn = jsonValue.GetString("encryptionKeyArn");
-    m_encryptionKeyArnHasBeenSet = true;
+  if (jsonValue.ValueExists("sessionStatus")) {
+    m_sessionStatus = SessionStatusMapper::GetSessionStatusForName(jsonValue.GetString("sessionStatus"));
+    m_sessionStatusHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

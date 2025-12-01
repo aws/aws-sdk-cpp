@@ -198,6 +198,23 @@ class CollaborationAnalysisTemplateSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates if this collaboration analysis template uses synthetic data
+   * generation.</p>
+   */
+  inline bool GetIsSyntheticData() const { return m_isSyntheticData; }
+  inline bool IsSyntheticDataHasBeenSet() const { return m_isSyntheticDataHasBeenSet; }
+  inline void SetIsSyntheticData(bool value) {
+    m_isSyntheticDataHasBeenSet = true;
+    m_isSyntheticData = value;
+  }
+  inline CollaborationAnalysisTemplateSummary& WithIsSyntheticData(bool value) {
+    SetIsSyntheticData(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
   bool m_arnHasBeenSet = false;
@@ -225,6 +242,9 @@ class CollaborationAnalysisTemplateSummary {
 
   Aws::String m_description;
   bool m_descriptionHasBeenSet = false;
+
+  bool m_isSyntheticData{false};
+  bool m_isSyntheticDataHasBeenSet = false;
 };
 
 }  // namespace Model

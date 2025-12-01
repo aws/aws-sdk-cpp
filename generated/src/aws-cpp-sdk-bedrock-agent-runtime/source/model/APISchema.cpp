@@ -18,13 +18,13 @@ namespace Model {
 APISchema::APISchema(JsonView jsonValue) { *this = jsonValue; }
 
 APISchema& APISchema::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("s3")) {
-    m_s3 = jsonValue.GetObject("s3");
-    m_s3HasBeenSet = true;
-  }
   if (jsonValue.ValueExists("payload")) {
     m_payload = jsonValue.GetString("payload");
     m_payloadHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("s3")) {
+    m_s3 = jsonValue.GetObject("s3");
+    m_s3HasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ APISchema& APISchema::operator=(JsonView jsonValue) {
 JsonValue APISchema::Jsonize() const {
   JsonValue payload;
 
-  if (m_s3HasBeenSet) {
-    payload.WithObject("s3", m_s3.Jsonize());
-  }
-
   if (m_payloadHasBeenSet) {
     payload.WithString("payload", m_payload);
+  }
+
+  if (m_s3HasBeenSet) {
+    payload.WithObject("s3", m_s3.Jsonize());
   }
 
   return payload;

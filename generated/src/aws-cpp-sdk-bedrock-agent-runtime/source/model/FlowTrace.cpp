@@ -18,14 +18,6 @@ namespace Model {
 FlowTrace::FlowTrace(JsonView jsonValue) { *this = jsonValue; }
 
 FlowTrace& FlowTrace::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("nodeInputTrace")) {
-    m_nodeInputTrace = jsonValue.GetObject("nodeInputTrace");
-    m_nodeInputTraceHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("nodeOutputTrace")) {
-    m_nodeOutputTrace = jsonValue.GetObject("nodeOutputTrace");
-    m_nodeOutputTraceHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("conditionNodeResultTrace")) {
     m_conditionNodeResultTrace = jsonValue.GetObject("conditionNodeResultTrace");
     m_conditionNodeResultTraceHasBeenSet = true;
@@ -38,19 +30,19 @@ FlowTrace& FlowTrace::operator=(JsonView jsonValue) {
     m_nodeDependencyTrace = jsonValue.GetObject("nodeDependencyTrace");
     m_nodeDependencyTraceHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("nodeInputTrace")) {
+    m_nodeInputTrace = jsonValue.GetObject("nodeInputTrace");
+    m_nodeInputTraceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("nodeOutputTrace")) {
+    m_nodeOutputTrace = jsonValue.GetObject("nodeOutputTrace");
+    m_nodeOutputTraceHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue FlowTrace::Jsonize() const {
   JsonValue payload;
-
-  if (m_nodeInputTraceHasBeenSet) {
-    payload.WithObject("nodeInputTrace", m_nodeInputTrace.Jsonize());
-  }
-
-  if (m_nodeOutputTraceHasBeenSet) {
-    payload.WithObject("nodeOutputTrace", m_nodeOutputTrace.Jsonize());
-  }
 
   if (m_conditionNodeResultTraceHasBeenSet) {
     payload.WithObject("conditionNodeResultTrace", m_conditionNodeResultTrace.Jsonize());
@@ -62,6 +54,14 @@ JsonValue FlowTrace::Jsonize() const {
 
   if (m_nodeDependencyTraceHasBeenSet) {
     payload.WithObject("nodeDependencyTrace", m_nodeDependencyTrace.Jsonize());
+  }
+
+  if (m_nodeInputTraceHasBeenSet) {
+    payload.WithObject("nodeInputTrace", m_nodeInputTrace.Jsonize());
+  }
+
+  if (m_nodeOutputTraceHasBeenSet) {
+    payload.WithObject("nodeOutputTrace", m_nodeOutputTrace.Jsonize());
   }
 
   return payload;

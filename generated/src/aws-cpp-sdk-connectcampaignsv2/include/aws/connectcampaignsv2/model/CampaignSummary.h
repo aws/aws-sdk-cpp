@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connectcampaignsv2/ConnectCampaignsV2_EXPORTS.h>
 #include <aws/connectcampaignsv2/model/ChannelSubtype.h>
+#include <aws/connectcampaignsv2/model/ExternalCampaignType.h>
 #include <aws/connectcampaignsv2/model/Schedule.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -121,6 +122,20 @@ class CampaignSummary {
 
   ///@{
 
+  inline ExternalCampaignType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(ExternalCampaignType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline CampaignSummary& WithType(ExternalCampaignType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
   inline const Schedule& GetSchedule() const { return m_schedule; }
   inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
   template <typename ScheduleT = Schedule>
@@ -165,6 +180,9 @@ class CampaignSummary {
 
   Aws::Vector<ChannelSubtype> m_channelSubtypes;
   bool m_channelSubtypesHasBeenSet = false;
+
+  ExternalCampaignType m_type{ExternalCampaignType::NOT_SET};
+  bool m_typeHasBeenSet = false;
 
   Schedule m_schedule;
   bool m_scheduleHasBeenSet = false;

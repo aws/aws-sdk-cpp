@@ -138,6 +138,21 @@ class GetNextMessageResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Indicates whether the chunked response has been terminated.</p>
+   */
+  inline bool GetChunkedResponseTerminated() const { return m_chunkedResponseTerminated; }
+  inline void SetChunkedResponseTerminated(bool value) {
+    m_chunkedResponseTerminatedHasBeenSet = true;
+    m_chunkedResponseTerminated = value;
+  }
+  inline GetNextMessageResult& WithChunkedResponseTerminated(bool value) {
+    SetChunkedResponseTerminated(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -169,6 +184,9 @@ class GetNextMessageResult {
 
   Aws::Vector<RuntimeSessionData> m_conversationSessionData;
   bool m_conversationSessionDataHasBeenSet = false;
+
+  bool m_chunkedResponseTerminated{false};
+  bool m_chunkedResponseTerminatedHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

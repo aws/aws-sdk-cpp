@@ -24,4 +24,10 @@ void RemoveAssistantAIAgentRequest::AddQueryStringParameters(URI& uri) const {
     uri.AddQueryStringParameter("aiAgentType", ss.str());
     ss.str("");
   }
+
+  if (m_orchestratorUseCaseHasBeenSet) {
+    ss << m_orchestratorUseCase;
+    uri.AddQueryStringParameter("orchestratorUseCase", ss.str());
+    ss.str("");
+  }
 }

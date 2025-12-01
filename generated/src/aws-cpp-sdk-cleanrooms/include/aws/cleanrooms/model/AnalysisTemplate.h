@@ -12,6 +12,7 @@
 #include <aws/cleanrooms/model/AnalysisSourceMetadata.h>
 #include <aws/cleanrooms/model/AnalysisTemplateValidationStatusDetail.h>
 #include <aws/cleanrooms/model/ErrorMessageConfiguration.h>
+#include <aws/cleanrooms/model/SyntheticDataParameters.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -361,6 +362,25 @@ class AnalysisTemplate {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The parameters used to generate synthetic data for this analysis
+   * template.</p>
+   */
+  inline const SyntheticDataParameters& GetSyntheticDataParameters() const { return m_syntheticDataParameters; }
+  inline bool SyntheticDataParametersHasBeenSet() const { return m_syntheticDataParametersHasBeenSet; }
+  template <typename SyntheticDataParametersT = SyntheticDataParameters>
+  void SetSyntheticDataParameters(SyntheticDataParametersT&& value) {
+    m_syntheticDataParametersHasBeenSet = true;
+    m_syntheticDataParameters = std::forward<SyntheticDataParametersT>(value);
+  }
+  template <typename SyntheticDataParametersT = SyntheticDataParameters>
+  AnalysisTemplate& WithSyntheticDataParameters(SyntheticDataParametersT&& value) {
+    SetSyntheticDataParameters(std::forward<SyntheticDataParametersT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
   bool m_idHasBeenSet = false;
@@ -412,6 +432,9 @@ class AnalysisTemplate {
 
   ErrorMessageConfiguration m_errorMessageConfiguration;
   bool m_errorMessageConfigurationHasBeenSet = false;
+
+  SyntheticDataParameters m_syntheticDataParameters;
+  bool m_syntheticDataParametersHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -39,24 +39,6 @@ class NodeOutputField {
 
   ///@{
   /**
-   * <p>The name of the output field as defined in the node's output schema.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  NodeOutputField& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The content of the output field, which can contain text or structured
    * data.</p>
    */
@@ -70,6 +52,24 @@ class NodeOutputField {
   template <typename ContentT = NodeExecutionContent>
   NodeOutputField& WithContent(ContentT&& value) {
     SetContent(std::forward<ContentT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the output field as defined in the node's output schema.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  NodeOutputField& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -114,11 +114,11 @@ class NodeOutputField {
   }
   ///@}
  private:
-  Aws::String m_name;
-  bool m_nameHasBeenSet = false;
-
   NodeExecutionContent m_content;
   bool m_contentHasBeenSet = false;
+
+  Aws::String m_name;
+  bool m_nameHasBeenSet = false;
 
   Aws::Vector<NodeOutputNext> m_next;
   bool m_nextHasBeenSet = false;

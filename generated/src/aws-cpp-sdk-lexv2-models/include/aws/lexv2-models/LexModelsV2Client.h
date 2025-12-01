@@ -14,7 +14,8 @@
 namespace Aws {
 namespace LexModelsV2 {
 /**
- * <p/>
+ * <p>Amazon Lex Model Building Service provides APIs for creating, managing, and
+ * deploying conversational bots and their components.</p>
  */
 class AWS_LEXMODELSV2_API LexModelsV2Client : public Aws::Client::AWSJsonClient,
                                               public Aws::Client::ClientWithAsyncTemplateMethods<LexModelsV2Client> {

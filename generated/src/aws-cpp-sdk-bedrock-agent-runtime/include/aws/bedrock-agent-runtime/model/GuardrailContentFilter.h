@@ -36,16 +36,16 @@ class GuardrailContentFilter {
 
   ///@{
   /**
-   * <p>The type of content detected in the filter by the Guardrail.</p>
+   * <p>The action placed on the content by the Guardrail filter.</p>
    */
-  inline GuardrailContentFilterType GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  inline void SetType(GuardrailContentFilterType value) {
-    m_typeHasBeenSet = true;
-    m_type = value;
+  inline GuardrailContentPolicyAction GetAction() const { return m_action; }
+  inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+  inline void SetAction(GuardrailContentPolicyAction value) {
+    m_actionHasBeenSet = true;
+    m_action = value;
   }
-  inline GuardrailContentFilter& WithType(GuardrailContentFilterType value) {
-    SetType(value);
+  inline GuardrailContentFilter& WithAction(GuardrailContentPolicyAction value) {
+    SetAction(value);
     return *this;
   }
   ///@}
@@ -69,28 +69,28 @@ class GuardrailContentFilter {
 
   ///@{
   /**
-   * <p>The action placed on the content by the Guardrail filter.</p>
+   * <p>The type of content detected in the filter by the Guardrail.</p>
    */
-  inline GuardrailContentPolicyAction GetAction() const { return m_action; }
-  inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-  inline void SetAction(GuardrailContentPolicyAction value) {
-    m_actionHasBeenSet = true;
-    m_action = value;
+  inline GuardrailContentFilterType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(GuardrailContentFilterType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
   }
-  inline GuardrailContentFilter& WithAction(GuardrailContentPolicyAction value) {
-    SetAction(value);
+  inline GuardrailContentFilter& WithType(GuardrailContentFilterType value) {
+    SetType(value);
     return *this;
   }
   ///@}
  private:
-  GuardrailContentFilterType m_type{GuardrailContentFilterType::NOT_SET};
-  bool m_typeHasBeenSet = false;
+  GuardrailContentPolicyAction m_action{GuardrailContentPolicyAction::NOT_SET};
+  bool m_actionHasBeenSet = false;
 
   GuardrailContentFilterConfidence m_confidence{GuardrailContentFilterConfidence::NOT_SET};
   bool m_confidenceHasBeenSet = false;
 
-  GuardrailContentPolicyAction m_action{GuardrailContentPolicyAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
+  GuardrailContentFilterType m_type{GuardrailContentFilterType::NOT_SET};
+  bool m_typeHasBeenSet = false;
 };
 
 }  // namespace Model

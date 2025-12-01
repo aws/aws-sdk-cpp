@@ -7,9 +7,11 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/Glue_EXPORTS.h>
+#include <aws/glue/model/IcebergEncryptedKey.h>
 #include <aws/glue/model/IcebergPartitionSpec.h>
 #include <aws/glue/model/IcebergSchema.h>
 #include <aws/glue/model/IcebergSortOrder.h>
+#include <aws/glue/model/IcebergUpdateAction.h>
 
 #include <utility>
 
@@ -136,6 +138,64 @@ class IcebergTableUpdate {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of update action to be performed on the Iceberg table. Defines the
+   * specific operation such as adding schema, setting current schema, adding
+   * partition spec, or managing encryption keys.</p>
+   */
+  inline IcebergUpdateAction GetAction() const { return m_action; }
+  inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+  inline void SetAction(IcebergUpdateAction value) {
+    m_actionHasBeenSet = true;
+    m_action = value;
+  }
+  inline IcebergTableUpdate& WithAction(IcebergUpdateAction value) {
+    SetAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Encryption key information associated with an Iceberg table update operation.
+   * Used when adding or removing encryption keys from the table metadata during
+   * table evolution.</p>
+   */
+  inline const IcebergEncryptedKey& GetEncryptionKey() const { return m_encryptionKey; }
+  inline bool EncryptionKeyHasBeenSet() const { return m_encryptionKeyHasBeenSet; }
+  template <typename EncryptionKeyT = IcebergEncryptedKey>
+  void SetEncryptionKey(EncryptionKeyT&& value) {
+    m_encryptionKeyHasBeenSet = true;
+    m_encryptionKey = std::forward<EncryptionKeyT>(value);
+  }
+  template <typename EncryptionKeyT = IcebergEncryptedKey>
+  IcebergTableUpdate& WithEncryptionKey(EncryptionKeyT&& value) {
+    SetEncryptionKey(std::forward<EncryptionKeyT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Identifier of the encryption key involved in an Iceberg table update
+   * operation. References the specific key being added to or removed from the
+   * table's encryption configuration.</p>
+   */
+  inline const Aws::String& GetKeyId() const { return m_keyId; }
+  inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
+  template <typename KeyIdT = Aws::String>
+  void SetKeyId(KeyIdT&& value) {
+    m_keyIdHasBeenSet = true;
+    m_keyId = std::forward<KeyIdT>(value);
+  }
+  template <typename KeyIdT = Aws::String>
+  IcebergTableUpdate& WithKeyId(KeyIdT&& value) {
+    SetKeyId(std::forward<KeyIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   IcebergSchema m_schema;
   bool m_schemaHasBeenSet = false;
@@ -151,6 +211,15 @@ class IcebergTableUpdate {
 
   Aws::Map<Aws::String, Aws::String> m_properties;
   bool m_propertiesHasBeenSet = false;
+
+  IcebergUpdateAction m_action{IcebergUpdateAction::NOT_SET};
+  bool m_actionHasBeenSet = false;
+
+  IcebergEncryptedKey m_encryptionKey;
+  bool m_encryptionKeyHasBeenSet = false;
+
+  Aws::String m_keyId;
+  bool m_keyIdHasBeenSet = false;
 };
 
 }  // namespace Model

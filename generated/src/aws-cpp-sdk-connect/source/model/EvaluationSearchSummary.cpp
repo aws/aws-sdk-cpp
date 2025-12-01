@@ -34,6 +34,10 @@ EvaluationSearchSummary& EvaluationSearchSummary::operator=(JsonView jsonValue) 
     m_evaluationFormVersion = jsonValue.GetInteger("EvaluationFormVersion");
     m_evaluationFormVersionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("EvaluationFormTitle")) {
+    m_evaluationFormTitle = jsonValue.GetString("EvaluationFormTitle");
+    m_evaluationFormTitleHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Metadata")) {
     m_metadata = jsonValue.GetObject("Metadata");
     m_metadataHasBeenSet = true;
@@ -81,6 +85,10 @@ JsonValue EvaluationSearchSummary::Jsonize() const {
 
   if (m_evaluationFormVersionHasBeenSet) {
     payload.WithInteger("EvaluationFormVersion", m_evaluationFormVersion);
+  }
+
+  if (m_evaluationFormTitleHasBeenSet) {
+    payload.WithString("EvaluationFormTitle", m_evaluationFormTitle);
   }
 
   if (m_metadataHasBeenSet) {

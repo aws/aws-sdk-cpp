@@ -18,6 +18,14 @@ namespace Model {
 FlowExecutionSummary::FlowExecutionSummary(JsonView jsonValue) { *this = jsonValue; }
 
 FlowExecutionSummary& FlowExecutionSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("createdAt")) {
+    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("endedAt")) {
+    m_endedAt = jsonValue.GetString("endedAt");
+    m_endedAtHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("executionArn")) {
     m_executionArn = jsonValue.GetString("executionArn");
     m_executionArnHasBeenSet = true;
@@ -38,19 +46,19 @@ FlowExecutionSummary& FlowExecutionSummary::operator=(JsonView jsonValue) {
     m_status = FlowExecutionStatusMapper::GetFlowExecutionStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("createdAt")) {
-    m_createdAt = jsonValue.GetString("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("endedAt")) {
-    m_endedAt = jsonValue.GetString("endedAt");
-    m_endedAtHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue FlowExecutionSummary::Jsonize() const {
   JsonValue payload;
+
+  if (m_createdAtHasBeenSet) {
+    payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_endedAtHasBeenSet) {
+    payload.WithString("endedAt", m_endedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
 
   if (m_executionArnHasBeenSet) {
     payload.WithString("executionArn", m_executionArn);
@@ -70,14 +78,6 @@ JsonValue FlowExecutionSummary::Jsonize() const {
 
   if (m_statusHasBeenSet) {
     payload.WithString("status", FlowExecutionStatusMapper::GetNameForFlowExecutionStatus(m_status));
-  }
-
-  if (m_createdAtHasBeenSet) {
-    payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if (m_endedAtHasBeenSet) {
-    payload.WithString("endedAt", m_endedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

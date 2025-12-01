@@ -9,6 +9,7 @@
 #include <aws/cleanroomsml/model/MLInputChannelStatus.h>
 #include <aws/cleanroomsml/model/PrivacyBudgets.h>
 #include <aws/cleanroomsml/model/StatusDetails.h>
+#include <aws/cleanroomsml/model/SyntheticDataConfiguration.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -224,6 +225,25 @@ class GetMLInputChannelResult {
 
   ///@{
   /**
+   * <p>The synthetic data configuration for this ML input channel, including
+   * parameters for generating privacy-preserving synthetic data and evaluation
+   * scores for measuring the privacy of the generated data.</p>
+   */
+  inline const SyntheticDataConfiguration& GetSyntheticDataConfiguration() const { return m_syntheticDataConfiguration; }
+  template <typename SyntheticDataConfigurationT = SyntheticDataConfiguration>
+  void SetSyntheticDataConfiguration(SyntheticDataConfigurationT&& value) {
+    m_syntheticDataConfigurationHasBeenSet = true;
+    m_syntheticDataConfiguration = std::forward<SyntheticDataConfigurationT>(value);
+  }
+  template <typename SyntheticDataConfigurationT = SyntheticDataConfiguration>
+  GetMLInputChannelResult& WithSyntheticDataConfiguration(SyntheticDataConfigurationT&& value) {
+    SetSyntheticDataConfiguration(std::forward<SyntheticDataConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The time at which the ML input channel was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreateTime() const { return m_createTime; }
@@ -426,6 +446,9 @@ class GetMLInputChannelResult {
 
   Aws::String m_description;
   bool m_descriptionHasBeenSet = false;
+
+  SyntheticDataConfiguration m_syntheticDataConfiguration;
+  bool m_syntheticDataConfigurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
   bool m_createTimeHasBeenSet = false;

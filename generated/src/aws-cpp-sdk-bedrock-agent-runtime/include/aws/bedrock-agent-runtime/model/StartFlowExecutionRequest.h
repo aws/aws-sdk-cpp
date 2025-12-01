@@ -33,24 +33,6 @@ class StartFlowExecutionRequest : public BedrockAgentRuntimeRequest {
 
   ///@{
   /**
-   * <p>The unique identifier of the flow to execute.</p>
-   */
-  inline const Aws::String& GetFlowIdentifier() const { return m_flowIdentifier; }
-  inline bool FlowIdentifierHasBeenSet() const { return m_flowIdentifierHasBeenSet; }
-  template <typename FlowIdentifierT = Aws::String>
-  void SetFlowIdentifier(FlowIdentifierT&& value) {
-    m_flowIdentifierHasBeenSet = true;
-    m_flowIdentifier = std::forward<FlowIdentifierT>(value);
-  }
-  template <typename FlowIdentifierT = Aws::String>
-  StartFlowExecutionRequest& WithFlowIdentifier(FlowIdentifierT&& value) {
-    SetFlowIdentifier(std::forward<FlowIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The unique identifier of the flow alias to use for the flow execution.</p>
    */
   inline const Aws::String& GetFlowAliasIdentifier() const { return m_flowAliasIdentifier; }
@@ -82,6 +64,24 @@ class StartFlowExecutionRequest : public BedrockAgentRuntimeRequest {
   template <typename FlowExecutionNameT = Aws::String>
   StartFlowExecutionRequest& WithFlowExecutionName(FlowExecutionNameT&& value) {
     SetFlowExecutionName(std::forward<FlowExecutionNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier of the flow to execute.</p>
+   */
+  inline const Aws::String& GetFlowIdentifier() const { return m_flowIdentifier; }
+  inline bool FlowIdentifierHasBeenSet() const { return m_flowIdentifierHasBeenSet; }
+  template <typename FlowIdentifierT = Aws::String>
+  void SetFlowIdentifier(FlowIdentifierT&& value) {
+    m_flowIdentifierHasBeenSet = true;
+    m_flowIdentifier = std::forward<FlowIdentifierT>(value);
+  }
+  template <typename FlowIdentifierT = Aws::String>
+  StartFlowExecutionRequest& WithFlowIdentifier(FlowIdentifierT&& value) {
+    SetFlowIdentifier(std::forward<FlowIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -130,14 +130,14 @@ class StartFlowExecutionRequest : public BedrockAgentRuntimeRequest {
   }
   ///@}
  private:
-  Aws::String m_flowIdentifier;
-  bool m_flowIdentifierHasBeenSet = false;
-
   Aws::String m_flowAliasIdentifier;
   bool m_flowAliasIdentifierHasBeenSet = false;
 
   Aws::String m_flowExecutionName;
   bool m_flowExecutionNameHasBeenSet = false;
+
+  Aws::String m_flowIdentifier;
+  bool m_flowIdentifierHasBeenSet = false;
 
   Aws::Vector<FlowInput> m_inputs;
   bool m_inputsHasBeenSet = false;

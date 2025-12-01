@@ -36,6 +36,24 @@ class FixedUpfrontPricingTerm {
 
   ///@{
   /**
+   * <p>Category of the term being updated.</p>
+   */
+  inline const Aws::String& GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  template <typename TypeT = Aws::String>
+  void SetType(TypeT&& value) {
+    m_typeHasBeenSet = true;
+    m_type = std::forward<TypeT>(value);
+  }
+  template <typename TypeT = Aws::String>
+  FixedUpfrontPricingTerm& WithType(TypeT&& value) {
+    SetType(std::forward<TypeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Defines the currency for the prices mentioned in this term. </p>
    */
   inline const Aws::String& GetCurrencyCode() const { return m_currencyCode; }
@@ -72,6 +90,24 @@ class FixedUpfrontPricingTerm {
 
   ///@{
   /**
+   * <p>Fixed amount to be charged to the customer when this term is accepted.</p>
+   */
+  inline const Aws::String& GetPrice() const { return m_price; }
+  inline bool PriceHasBeenSet() const { return m_priceHasBeenSet; }
+  template <typename PriceT = Aws::String>
+  void SetPrice(PriceT&& value) {
+    m_priceHasBeenSet = true;
+    m_price = std::forward<PriceT>(value);
+  }
+  template <typename PriceT = Aws::String>
+  FixedUpfrontPricingTerm& WithPrice(PriceT&& value) {
+    SetPrice(std::forward<PriceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Entitlements granted to the acceptor of fixed upfront as part of agreement
    * execution.</p>
    */
@@ -94,57 +130,21 @@ class FixedUpfrontPricingTerm {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Fixed amount to be charged to the customer when this term is accepted.</p>
-   */
-  inline const Aws::String& GetPrice() const { return m_price; }
-  inline bool PriceHasBeenSet() const { return m_priceHasBeenSet; }
-  template <typename PriceT = Aws::String>
-  void SetPrice(PriceT&& value) {
-    m_priceHasBeenSet = true;
-    m_price = std::forward<PriceT>(value);
-  }
-  template <typename PriceT = Aws::String>
-  FixedUpfrontPricingTerm& WithPrice(PriceT&& value) {
-    SetPrice(std::forward<PriceT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Category of the term being updated.</p>
-   */
-  inline const Aws::String& GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  template <typename TypeT = Aws::String>
-  void SetType(TypeT&& value) {
-    m_typeHasBeenSet = true;
-    m_type = std::forward<TypeT>(value);
-  }
-  template <typename TypeT = Aws::String>
-  FixedUpfrontPricingTerm& WithType(TypeT&& value) {
-    SetType(std::forward<TypeT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_type;
+  bool m_typeHasBeenSet = false;
+
   Aws::String m_currencyCode;
   bool m_currencyCodeHasBeenSet = false;
 
   Aws::String m_duration;
   bool m_durationHasBeenSet = false;
 
-  Aws::Vector<GrantItem> m_grants;
-  bool m_grantsHasBeenSet = false;
-
   Aws::String m_price;
   bool m_priceHasBeenSet = false;
 
-  Aws::String m_type;
-  bool m_typeHasBeenSet = false;
+  Aws::Vector<GrantItem> m_grants;
+  bool m_grantsHasBeenSet = false;
 };
 
 }  // namespace Model

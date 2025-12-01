@@ -34,6 +34,10 @@ QuickConnectConfig& QuickConnectConfig::operator=(JsonView jsonValue) {
     m_phoneConfig = jsonValue.GetObject("PhoneConfig");
     m_phoneConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("FlowConfig")) {
+    m_flowConfig = jsonValue.GetObject("FlowConfig");
+    m_flowConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue QuickConnectConfig::Jsonize() const {
 
   if (m_phoneConfigHasBeenSet) {
     payload.WithObject("PhoneConfig", m_phoneConfig.Jsonize());
+  }
+
+  if (m_flowConfigHasBeenSet) {
+    payload.WithObject("FlowConfig", m_flowConfig.Jsonize());
   }
 
   return payload;

@@ -29,6 +29,11 @@ MessageMetadata& MessageMetadata::operator=(JsonView jsonValue) {
     }
     m_receiptsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("MessageProcessingStatus")) {
+    m_messageProcessingStatus =
+        MessageProcessingStatusMapper::GetMessageProcessingStatusForName(jsonValue.GetString("MessageProcessingStatus"));
+    m_messageProcessingStatusHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -45,6 +50,11 @@ JsonValue MessageMetadata::Jsonize() const {
       receiptsJsonList[receiptsIndex].AsObject(m_receipts[receiptsIndex].Jsonize());
     }
     payload.WithArray("Receipts", std::move(receiptsJsonList));
+  }
+
+  if (m_messageProcessingStatusHasBeenSet) {
+    payload.WithString("MessageProcessingStatus",
+                       MessageProcessingStatusMapper::GetNameForMessageProcessingStatus(m_messageProcessingStatus));
   }
 
   return payload;

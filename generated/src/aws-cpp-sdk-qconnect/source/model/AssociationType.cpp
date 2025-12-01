@@ -16,11 +16,14 @@ namespace Model {
 namespace AssociationTypeMapper {
 
 static const int KNOWLEDGE_BASE_HASH = HashingUtils::HashString("KNOWLEDGE_BASE");
+static const int EXTERNAL_BEDROCK_KNOWLEDGE_BASE_HASH = HashingUtils::HashString("EXTERNAL_BEDROCK_KNOWLEDGE_BASE");
 
 AssociationType GetAssociationTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == KNOWLEDGE_BASE_HASH) {
     return AssociationType::KNOWLEDGE_BASE;
+  } else if (hashCode == EXTERNAL_BEDROCK_KNOWLEDGE_BASE_HASH) {
+    return AssociationType::EXTERNAL_BEDROCK_KNOWLEDGE_BASE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForAssociationType(AssociationType enumValue) {
       return {};
     case AssociationType::KNOWLEDGE_BASE:
       return "KNOWLEDGE_BASE";
+    case AssociationType::EXTERNAL_BEDROCK_KNOWLEDGE_BASE:
+      return "EXTERNAL_BEDROCK_KNOWLEDGE_BASE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

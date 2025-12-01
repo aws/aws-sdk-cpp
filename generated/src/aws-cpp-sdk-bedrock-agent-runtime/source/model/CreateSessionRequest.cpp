@@ -15,16 +15,16 @@ using namespace Aws::Utils;
 Aws::String CreateSessionRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_encryptionKeyArnHasBeenSet) {
+    payload.WithString("encryptionKeyArn", m_encryptionKeyArn);
+  }
+
   if (m_sessionMetadataHasBeenSet) {
     JsonValue sessionMetadataJsonMap;
     for (auto& sessionMetadataItem : m_sessionMetadata) {
       sessionMetadataJsonMap.WithString(sessionMetadataItem.first, sessionMetadataItem.second);
     }
     payload.WithObject("sessionMetadata", std::move(sessionMetadataJsonMap));
-  }
-
-  if (m_encryptionKeyArnHasBeenSet) {
-    payload.WithString("encryptionKeyArn", m_encryptionKeyArn);
   }
 
   if (m_tagsHasBeenSet) {

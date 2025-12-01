@@ -46,6 +46,14 @@ EvaluationMetadata& EvaluationMetadata::operator=(JsonView jsonValue) {
     m_acknowledgement = jsonValue.GetObject("Acknowledgement");
     m_acknowledgementHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ContactParticipant")) {
+    m_contactParticipant = jsonValue.GetObject("ContactParticipant");
+    m_contactParticipantHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SamplingJobId")) {
+    m_samplingJobId = jsonValue.GetString("SamplingJobId");
+    m_samplingJobIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -78,6 +86,14 @@ JsonValue EvaluationMetadata::Jsonize() const {
 
   if (m_acknowledgementHasBeenSet) {
     payload.WithObject("Acknowledgement", m_acknowledgement.Jsonize());
+  }
+
+  if (m_contactParticipantHasBeenSet) {
+    payload.WithObject("ContactParticipant", m_contactParticipant.Jsonize());
+  }
+
+  if (m_samplingJobIdHasBeenSet) {
+    payload.WithString("SamplingJobId", m_samplingJobId);
   }
 
   return payload;

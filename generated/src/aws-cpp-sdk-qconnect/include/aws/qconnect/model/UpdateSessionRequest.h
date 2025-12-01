@@ -6,10 +6,12 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qconnect/QConnectRequest.h>
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/qconnect/model/AIAgentConfigurationData.h>
 #include <aws/qconnect/model/AIAgentType.h>
+#include <aws/qconnect/model/OrchestratorConfigurationEntry.h>
 #include <aws/qconnect/model/TagFilter.h>
 
 #include <utility>
@@ -129,6 +131,48 @@ class UpdateSessionRequest : public QConnectRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The updated list of orchestrator configurations for the session.</p>
+   */
+  inline const Aws::Vector<OrchestratorConfigurationEntry>& GetOrchestratorConfigurationList() const {
+    return m_orchestratorConfigurationList;
+  }
+  inline bool OrchestratorConfigurationListHasBeenSet() const { return m_orchestratorConfigurationListHasBeenSet; }
+  template <typename OrchestratorConfigurationListT = Aws::Vector<OrchestratorConfigurationEntry>>
+  void SetOrchestratorConfigurationList(OrchestratorConfigurationListT&& value) {
+    m_orchestratorConfigurationListHasBeenSet = true;
+    m_orchestratorConfigurationList = std::forward<OrchestratorConfigurationListT>(value);
+  }
+  template <typename OrchestratorConfigurationListT = Aws::Vector<OrchestratorConfigurationEntry>>
+  UpdateSessionRequest& WithOrchestratorConfigurationList(OrchestratorConfigurationListT&& value) {
+    SetOrchestratorConfigurationList(std::forward<OrchestratorConfigurationListT>(value));
+    return *this;
+  }
+  template <typename OrchestratorConfigurationListT = OrchestratorConfigurationEntry>
+  UpdateSessionRequest& AddOrchestratorConfigurationList(OrchestratorConfigurationListT&& value) {
+    m_orchestratorConfigurationListHasBeenSet = true;
+    m_orchestratorConfigurationList.emplace_back(std::forward<OrchestratorConfigurationListT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The list of orchestrator configurations to remove from the session.</p>
+   */
+  inline bool GetRemoveOrchestratorConfigurationList() const { return m_removeOrchestratorConfigurationList; }
+  inline bool RemoveOrchestratorConfigurationListHasBeenSet() const { return m_removeOrchestratorConfigurationListHasBeenSet; }
+  inline void SetRemoveOrchestratorConfigurationList(bool value) {
+    m_removeOrchestratorConfigurationListHasBeenSet = true;
+    m_removeOrchestratorConfigurationList = value;
+  }
+  inline UpdateSessionRequest& WithRemoveOrchestratorConfigurationList(bool value) {
+    SetRemoveOrchestratorConfigurationList(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_assistantId;
   bool m_assistantIdHasBeenSet = false;
@@ -144,6 +188,12 @@ class UpdateSessionRequest : public QConnectRequest {
 
   Aws::Map<AIAgentType, AIAgentConfigurationData> m_aiAgentConfiguration;
   bool m_aiAgentConfigurationHasBeenSet = false;
+
+  Aws::Vector<OrchestratorConfigurationEntry> m_orchestratorConfigurationList;
+  bool m_orchestratorConfigurationListHasBeenSet = false;
+
+  bool m_removeOrchestratorConfigurationList{false};
+  bool m_removeOrchestratorConfigurationListHasBeenSet = false;
 };
 
 }  // namespace Model

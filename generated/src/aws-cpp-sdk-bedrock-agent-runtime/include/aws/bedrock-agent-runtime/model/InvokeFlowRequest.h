@@ -62,18 +62,38 @@ class InvokeFlowRequest : public BedrockAgentRuntimeRequest {
 
   ///@{
   /**
-   * <p>The unique identifier of the flow.</p>
+   * <p>Specifies whether to return the trace for the flow or not. Traces track
+   * inputs and outputs for nodes in the flow. For more information, see <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-trace.html">Track
+   * each step in your prompt flow by viewing its trace in Amazon Bedrock</a>.</p>
    */
-  inline const Aws::String& GetFlowIdentifier() const { return m_flowIdentifier; }
-  inline bool FlowIdentifierHasBeenSet() const { return m_flowIdentifierHasBeenSet; }
-  template <typename FlowIdentifierT = Aws::String>
-  void SetFlowIdentifier(FlowIdentifierT&& value) {
-    m_flowIdentifierHasBeenSet = true;
-    m_flowIdentifier = std::forward<FlowIdentifierT>(value);
+  inline bool GetEnableTrace() const { return m_enableTrace; }
+  inline bool EnableTraceHasBeenSet() const { return m_enableTraceHasBeenSet; }
+  inline void SetEnableTrace(bool value) {
+    m_enableTraceHasBeenSet = true;
+    m_enableTrace = value;
   }
-  template <typename FlowIdentifierT = Aws::String>
-  InvokeFlowRequest& WithFlowIdentifier(FlowIdentifierT&& value) {
-    SetFlowIdentifier(std::forward<FlowIdentifierT>(value));
+  inline InvokeFlowRequest& WithEnableTrace(bool value) {
+    SetEnableTrace(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier for the current flow execution. If you don't provide a
+   * value, Amazon Bedrock creates the identifier for you. </p>
+   */
+  inline const Aws::String& GetExecutionId() const { return m_executionId; }
+  inline bool ExecutionIdHasBeenSet() const { return m_executionIdHasBeenSet; }
+  template <typename ExecutionIdT = Aws::String>
+  void SetExecutionId(ExecutionIdT&& value) {
+    m_executionIdHasBeenSet = true;
+    m_executionId = std::forward<ExecutionIdT>(value);
+  }
+  template <typename ExecutionIdT = Aws::String>
+  InvokeFlowRequest& WithExecutionId(ExecutionIdT&& value) {
+    SetExecutionId(std::forward<ExecutionIdT>(value));
     return *this;
   }
   ///@}
@@ -92,6 +112,24 @@ class InvokeFlowRequest : public BedrockAgentRuntimeRequest {
   template <typename FlowAliasIdentifierT = Aws::String>
   InvokeFlowRequest& WithFlowAliasIdentifier(FlowAliasIdentifierT&& value) {
     SetFlowAliasIdentifier(std::forward<FlowAliasIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier of the flow.</p>
+   */
+  inline const Aws::String& GetFlowIdentifier() const { return m_flowIdentifier; }
+  inline bool FlowIdentifierHasBeenSet() const { return m_flowIdentifierHasBeenSet; }
+  template <typename FlowIdentifierT = Aws::String>
+  void SetFlowIdentifier(FlowIdentifierT&& value) {
+    m_flowIdentifierHasBeenSet = true;
+    m_flowIdentifier = std::forward<FlowIdentifierT>(value);
+  }
+  template <typename FlowIdentifierT = Aws::String>
+  InvokeFlowRequest& WithFlowIdentifier(FlowIdentifierT&& value) {
+    SetFlowIdentifier(std::forward<FlowIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -123,25 +161,6 @@ class InvokeFlowRequest : public BedrockAgentRuntimeRequest {
 
   ///@{
   /**
-   * <p>Specifies whether to return the trace for the flow or not. Traces track
-   * inputs and outputs for nodes in the flow. For more information, see <a
-   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-trace.html">Track
-   * each step in your prompt flow by viewing its trace in Amazon Bedrock</a>.</p>
-   */
-  inline bool GetEnableTrace() const { return m_enableTrace; }
-  inline bool EnableTraceHasBeenSet() const { return m_enableTraceHasBeenSet; }
-  inline void SetEnableTrace(bool value) {
-    m_enableTraceHasBeenSet = true;
-    m_enableTrace = value;
-  }
-  inline InvokeFlowRequest& WithEnableTrace(bool value) {
-    SetEnableTrace(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Model performance settings for the request.</p>
    */
   inline const ModelPerformanceConfiguration& GetModelPerformanceConfiguration() const { return m_modelPerformanceConfiguration; }
@@ -157,43 +176,24 @@ class InvokeFlowRequest : public BedrockAgentRuntimeRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The unique identifier for the current flow execution. If you don't provide a
-   * value, Amazon Bedrock creates the identifier for you. </p>
-   */
-  inline const Aws::String& GetExecutionId() const { return m_executionId; }
-  inline bool ExecutionIdHasBeenSet() const { return m_executionIdHasBeenSet; }
-  template <typename ExecutionIdT = Aws::String>
-  void SetExecutionId(ExecutionIdT&& value) {
-    m_executionIdHasBeenSet = true;
-    m_executionId = std::forward<ExecutionIdT>(value);
-  }
-  template <typename ExecutionIdT = Aws::String>
-  InvokeFlowRequest& WithExecutionId(ExecutionIdT&& value) {
-    SetExecutionId(std::forward<ExecutionIdT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_flowIdentifier;
-  bool m_flowIdentifierHasBeenSet = false;
+  bool m_enableTrace{false};
+  bool m_enableTraceHasBeenSet = false;
+
+  Aws::String m_executionId;
+  bool m_executionIdHasBeenSet = false;
 
   Aws::String m_flowAliasIdentifier;
   bool m_flowAliasIdentifierHasBeenSet = false;
 
+  Aws::String m_flowIdentifier;
+  bool m_flowIdentifierHasBeenSet = false;
+
   Aws::Vector<FlowInput> m_inputs;
   bool m_inputsHasBeenSet = false;
 
-  bool m_enableTrace{false};
-  bool m_enableTraceHasBeenSet = false;
-
   ModelPerformanceConfiguration m_modelPerformanceConfiguration;
   bool m_modelPerformanceConfigurationHasBeenSet = false;
-
-  Aws::String m_executionId;
-  bool m_executionIdHasBeenSet = false;
   InvokeFlowHandler m_handler;
   Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
 };

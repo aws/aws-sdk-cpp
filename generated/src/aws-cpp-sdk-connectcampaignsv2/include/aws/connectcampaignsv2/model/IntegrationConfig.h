@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connectcampaignsv2/ConnectCampaignsV2_EXPORTS.h>
 #include <aws/connectcampaignsv2/model/CustomerProfilesIntegrationConfig.h>
+#include <aws/connectcampaignsv2/model/LambdaIntegrationConfig.h>
 #include <aws/connectcampaignsv2/model/QConnectIntegrationConfig.h>
 
 #include <utility>
@@ -63,12 +64,31 @@ class IntegrationConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const LambdaIntegrationConfig& GetLambda() const { return m_lambda; }
+  inline bool LambdaHasBeenSet() const { return m_lambdaHasBeenSet; }
+  template <typename LambdaT = LambdaIntegrationConfig>
+  void SetLambda(LambdaT&& value) {
+    m_lambdaHasBeenSet = true;
+    m_lambda = std::forward<LambdaT>(value);
+  }
+  template <typename LambdaT = LambdaIntegrationConfig>
+  IntegrationConfig& WithLambda(LambdaT&& value) {
+    SetLambda(std::forward<LambdaT>(value));
+    return *this;
+  }
+  ///@}
  private:
   CustomerProfilesIntegrationConfig m_customerProfiles;
   bool m_customerProfilesHasBeenSet = false;
 
   QConnectIntegrationConfig m_qConnect;
   bool m_qConnectHasBeenSet = false;
+
+  LambdaIntegrationConfig m_lambda;
+  bool m_lambdaHasBeenSet = false;
 };
 
 }  // namespace Model

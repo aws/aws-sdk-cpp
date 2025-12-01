@@ -39,6 +39,24 @@ class ReturnControlPayload {
 
   ///@{
   /**
+   * <p>The identifier of the action group invocation.</p>
+   */
+  inline const Aws::String& GetInvocationId() const { return m_invocationId; }
+  inline bool InvocationIdHasBeenSet() const { return m_invocationIdHasBeenSet; }
+  template <typename InvocationIdT = Aws::String>
+  void SetInvocationId(InvocationIdT&& value) {
+    m_invocationIdHasBeenSet = true;
+    m_invocationId = std::forward<InvocationIdT>(value);
+  }
+  template <typename InvocationIdT = Aws::String>
+  ReturnControlPayload& WithInvocationId(InvocationIdT&& value) {
+    SetInvocationId(std::forward<InvocationIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A list of objects that contain information about the parameters and inputs
    * that need to be sent into the API operation or function, based on what the agent
    * determines from its session with the user.</p>
@@ -62,30 +80,12 @@ class ReturnControlPayload {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The identifier of the action group invocation.</p>
-   */
-  inline const Aws::String& GetInvocationId() const { return m_invocationId; }
-  inline bool InvocationIdHasBeenSet() const { return m_invocationIdHasBeenSet; }
-  template <typename InvocationIdT = Aws::String>
-  void SetInvocationId(InvocationIdT&& value) {
-    m_invocationIdHasBeenSet = true;
-    m_invocationId = std::forward<InvocationIdT>(value);
-  }
-  template <typename InvocationIdT = Aws::String>
-  ReturnControlPayload& WithInvocationId(InvocationIdT&& value) {
-    SetInvocationId(std::forward<InvocationIdT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::Vector<InvocationInputMember> m_invocationInputs;
-  bool m_invocationInputsHasBeenSet = false;
-
   Aws::String m_invocationId;
   bool m_invocationIdHasBeenSet = false;
+
+  Aws::Vector<InvocationInputMember> m_invocationInputs;
+  bool m_invocationInputsHasBeenSet = false;
 };
 
 }  // namespace Model

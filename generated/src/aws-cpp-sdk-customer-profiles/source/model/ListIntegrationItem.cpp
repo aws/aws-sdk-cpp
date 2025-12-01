@@ -71,6 +71,10 @@ ListIntegrationItem& ListIntegrationItem::operator=(JsonView jsonValue) {
     }
     m_eventTriggerNamesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Scope")) {
+    m_scope = ScopeMapper::GetScopeForName(jsonValue.GetString("Scope"));
+    m_scopeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -131,6 +135,10 @@ JsonValue ListIntegrationItem::Jsonize() const {
       eventTriggerNamesJsonList[eventTriggerNamesIndex].AsString(m_eventTriggerNames[eventTriggerNamesIndex]);
     }
     payload.WithArray("EventTriggerNames", std::move(eventTriggerNamesJsonList));
+  }
+
+  if (m_scopeHasBeenSet) {
+    payload.WithString("Scope", ScopeMapper::GetNameForScope(m_scope));
   }
 
   return payload;

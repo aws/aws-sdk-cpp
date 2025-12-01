@@ -36,6 +36,25 @@ class FlowMultiTurnInputRequestEvent {
 
   ///@{
   /**
+   * <p>The content payload containing the input request details for the multi-turn
+   * interaction.</p>
+   */
+  inline const FlowMultiTurnInputContent& GetContent() const { return m_content; }
+  inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
+  template <typename ContentT = FlowMultiTurnInputContent>
+  void SetContent(ContentT&& value) {
+    m_contentHasBeenSet = true;
+    m_content = std::forward<ContentT>(value);
+  }
+  template <typename ContentT = FlowMultiTurnInputContent>
+  FlowMultiTurnInputRequestEvent& WithContent(ContentT&& value) {
+    SetContent(std::forward<ContentT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The name of the node in the flow that is requesting the input.</p>
    */
   inline const Aws::String& GetNodeName() const { return m_nodeName; }
@@ -67,34 +86,15 @@ class FlowMultiTurnInputRequestEvent {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The content payload containing the input request details for the multi-turn
-   * interaction.</p>
-   */
-  inline const FlowMultiTurnInputContent& GetContent() const { return m_content; }
-  inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-  template <typename ContentT = FlowMultiTurnInputContent>
-  void SetContent(ContentT&& value) {
-    m_contentHasBeenSet = true;
-    m_content = std::forward<ContentT>(value);
-  }
-  template <typename ContentT = FlowMultiTurnInputContent>
-  FlowMultiTurnInputRequestEvent& WithContent(ContentT&& value) {
-    SetContent(std::forward<ContentT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  FlowMultiTurnInputContent m_content;
+  bool m_contentHasBeenSet = false;
+
   Aws::String m_nodeName;
   bool m_nodeNameHasBeenSet = false;
 
   NodeType m_nodeType{NodeType::NOT_SET};
   bool m_nodeTypeHasBeenSet = false;
-
-  FlowMultiTurnInputContent m_content;
-  bool m_contentHasBeenSet = false;
 };
 
 }  // namespace Model

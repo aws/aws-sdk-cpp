@@ -39,26 +39,6 @@ class OrchestrationTrace {
 
   ///@{
   /**
-   * <p>Details about the reasoning, based on the input, that the agent uses to
-   * justify carrying out an action group or getting information from a knowledge
-   * base.</p>
-   */
-  inline const Rationale& GetRationale() const { return m_rationale; }
-  inline bool RationaleHasBeenSet() const { return m_rationaleHasBeenSet; }
-  template <typename RationaleT = Rationale>
-  void SetRationale(RationaleT&& value) {
-    m_rationaleHasBeenSet = true;
-    m_rationale = std::forward<RationaleT>(value);
-  }
-  template <typename RationaleT = Rationale>
-  OrchestrationTrace& WithRationale(RationaleT&& value) {
-    SetRationale(std::forward<RationaleT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Contains information pertaining to the action group or knowledge base that is
    * being invoked.</p>
    */
@@ -72,25 +52,6 @@ class OrchestrationTrace {
   template <typename InvocationInputT = InvocationInput>
   OrchestrationTrace& WithInvocationInput(InvocationInputT&& value) {
     SetInvocationInput(std::forward<InvocationInputT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Details about the observation (the output of the action group Lambda or
-   * knowledge base) made by the agent.</p>
-   */
-  inline const Observation& GetObservation() const { return m_observation; }
-  inline bool ObservationHasBeenSet() const { return m_observationHasBeenSet; }
-  template <typename ObservationT = Observation>
-  void SetObservation(ObservationT&& value) {
-    m_observationHasBeenSet = true;
-    m_observation = std::forward<ObservationT>(value);
-  }
-  template <typename ObservationT = Observation>
-  OrchestrationTrace& WithObservation(ObservationT&& value) {
-    SetObservation(std::forward<ObservationT>(value));
     return *this;
   }
   ///@}
@@ -137,21 +98,60 @@ class OrchestrationTrace {
     return *this;
   }
   ///@}
- private:
-  Rationale m_rationale;
-  bool m_rationaleHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>Details about the observation (the output of the action group Lambda or
+   * knowledge base) made by the agent.</p>
+   */
+  inline const Observation& GetObservation() const { return m_observation; }
+  inline bool ObservationHasBeenSet() const { return m_observationHasBeenSet; }
+  template <typename ObservationT = Observation>
+  void SetObservation(ObservationT&& value) {
+    m_observationHasBeenSet = true;
+    m_observation = std::forward<ObservationT>(value);
+  }
+  template <typename ObservationT = Observation>
+  OrchestrationTrace& WithObservation(ObservationT&& value) {
+    SetObservation(std::forward<ObservationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Details about the reasoning, based on the input, that the agent uses to
+   * justify carrying out an action group or getting information from a knowledge
+   * base.</p>
+   */
+  inline const Rationale& GetRationale() const { return m_rationale; }
+  inline bool RationaleHasBeenSet() const { return m_rationaleHasBeenSet; }
+  template <typename RationaleT = Rationale>
+  void SetRationale(RationaleT&& value) {
+    m_rationaleHasBeenSet = true;
+    m_rationale = std::forward<RationaleT>(value);
+  }
+  template <typename RationaleT = Rationale>
+  OrchestrationTrace& WithRationale(RationaleT&& value) {
+    SetRationale(std::forward<RationaleT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   InvocationInput m_invocationInput;
   bool m_invocationInputHasBeenSet = false;
-
-  Observation m_observation;
-  bool m_observationHasBeenSet = false;
 
   ModelInvocationInput m_modelInvocationInput;
   bool m_modelInvocationInputHasBeenSet = false;
 
   OrchestrationModelInvocationOutput m_modelInvocationOutput;
   bool m_modelInvocationOutputHasBeenSet = false;
+
+  Observation m_observation;
+  bool m_observationHasBeenSet = false;
+
+  Rationale m_rationale;
+  bool m_rationaleHasBeenSet = false;
 };
 
 }  // namespace Model

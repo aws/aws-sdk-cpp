@@ -26,6 +26,15 @@
 #include <aws/lambda/model/AmazonManagedKafkaEventSourceConfig.h>
 #include <aws/lambda/model/ApplicationLogLevel.h>
 #include <aws/lambda/model/Architecture.h>
+#include <aws/lambda/model/CapacityProvider.h>
+#include <aws/lambda/model/CapacityProviderConfig.h>
+#include <aws/lambda/model/CapacityProviderLimitExceededException.h>
+#include <aws/lambda/model/CapacityProviderPermissionsConfig.h>
+#include <aws/lambda/model/CapacityProviderPredefinedMetricType.h>
+#include <aws/lambda/model/CapacityProviderScalingConfig.h>
+#include <aws/lambda/model/CapacityProviderScalingMode.h>
+#include <aws/lambda/model/CapacityProviderState.h>
+#include <aws/lambda/model/CapacityProviderVpcConfig.h>
 #include <aws/lambda/model/CodeSigningConfig.h>
 #include <aws/lambda/model/CodeSigningConfigNotFoundException.h>
 #include <aws/lambda/model/CodeSigningPolicies.h>
@@ -36,6 +45,8 @@
 #include <aws/lambda/model/Cors.h>
 #include <aws/lambda/model/CreateAliasRequest.h>
 #include <aws/lambda/model/CreateAliasResult.h>
+#include <aws/lambda/model/CreateCapacityProviderRequest.h>
+#include <aws/lambda/model/CreateCapacityProviderResult.h>
 #include <aws/lambda/model/CreateCodeSigningConfigRequest.h>
 #include <aws/lambda/model/CreateCodeSigningConfigResult.h>
 #include <aws/lambda/model/CreateEventSourceMappingRequest.h>
@@ -46,6 +57,8 @@
 #include <aws/lambda/model/CreateFunctionUrlConfigResult.h>
 #include <aws/lambda/model/DeadLetterConfig.h>
 #include <aws/lambda/model/DeleteAliasRequest.h>
+#include <aws/lambda/model/DeleteCapacityProviderRequest.h>
+#include <aws/lambda/model/DeleteCapacityProviderResult.h>
 #include <aws/lambda/model/DeleteCodeSigningConfigRequest.h>
 #include <aws/lambda/model/DeleteCodeSigningConfigResult.h>
 #include <aws/lambda/model/DeleteEventSourceMappingRequest.h>
@@ -54,6 +67,7 @@
 #include <aws/lambda/model/DeleteFunctionConcurrencyRequest.h>
 #include <aws/lambda/model/DeleteFunctionEventInvokeConfigRequest.h>
 #include <aws/lambda/model/DeleteFunctionRequest.h>
+#include <aws/lambda/model/DeleteFunctionResult.h>
 #include <aws/lambda/model/DeleteFunctionUrlConfigRequest.h>
 #include <aws/lambda/model/DeleteLayerVersionRequest.h>
 #include <aws/lambda/model/DeleteProvisionedConcurrencyConfigRequest.h>
@@ -86,13 +100,19 @@
 #include <aws/lambda/model/FunctionConfiguration.h>
 #include <aws/lambda/model/FunctionEventInvokeConfig.h>
 #include <aws/lambda/model/FunctionResponseType.h>
+#include <aws/lambda/model/FunctionScalingConfig.h>
 #include <aws/lambda/model/FunctionUrlAuthType.h>
 #include <aws/lambda/model/FunctionUrlConfig.h>
 #include <aws/lambda/model/FunctionVersion.h>
+#include <aws/lambda/model/FunctionVersionLatestPublished.h>
+#include <aws/lambda/model/FunctionVersionsByCapacityProviderListItem.h>
+#include <aws/lambda/model/FunctionVersionsPerCapacityProviderLimitExceededException.h>
 #include <aws/lambda/model/GetAccountSettingsRequest.h>
 #include <aws/lambda/model/GetAccountSettingsResult.h>
 #include <aws/lambda/model/GetAliasRequest.h>
 #include <aws/lambda/model/GetAliasResult.h>
+#include <aws/lambda/model/GetCapacityProviderRequest.h>
+#include <aws/lambda/model/GetCapacityProviderResult.h>
 #include <aws/lambda/model/GetCodeSigningConfigRequest.h>
 #include <aws/lambda/model/GetCodeSigningConfigResult.h>
 #include <aws/lambda/model/GetEventSourceMappingRequest.h>
@@ -109,6 +129,8 @@
 #include <aws/lambda/model/GetFunctionRecursionConfigResult.h>
 #include <aws/lambda/model/GetFunctionRequest.h>
 #include <aws/lambda/model/GetFunctionResult.h>
+#include <aws/lambda/model/GetFunctionScalingConfigRequest.h>
+#include <aws/lambda/model/GetFunctionScalingConfigResult.h>
 #include <aws/lambda/model/GetFunctionUrlConfigRequest.h>
 #include <aws/lambda/model/GetFunctionUrlConfigResult.h>
 #include <aws/lambda/model/GetLayerVersionByArnRequest.h>
@@ -126,6 +148,7 @@
 #include <aws/lambda/model/ImageConfig.h>
 #include <aws/lambda/model/ImageConfigError.h>
 #include <aws/lambda/model/ImageConfigResponse.h>
+#include <aws/lambda/model/InstanceRequirements.h>
 #include <aws/lambda/model/InvalidCodeSignatureException.h>
 #include <aws/lambda/model/InvalidParameterValueException.h>
 #include <aws/lambda/model/InvalidRequestContentException.h>
@@ -152,6 +175,7 @@
 #include <aws/lambda/model/KafkaSchemaRegistryConfig.h>
 #include <aws/lambda/model/KafkaSchemaValidationAttribute.h>
 #include <aws/lambda/model/KafkaSchemaValidationConfig.h>
+#include <aws/lambda/model/LambdaManagedInstancesCapacityProviderConfig.h>
 #include <aws/lambda/model/LastUpdateStatus.h>
 #include <aws/lambda/model/LastUpdateStatusReasonCode.h>
 #include <aws/lambda/model/Layer.h>
@@ -161,6 +185,8 @@
 #include <aws/lambda/model/LayersListItem.h>
 #include <aws/lambda/model/ListAliasesRequest.h>
 #include <aws/lambda/model/ListAliasesResult.h>
+#include <aws/lambda/model/ListCapacityProvidersRequest.h>
+#include <aws/lambda/model/ListCapacityProvidersResult.h>
 #include <aws/lambda/model/ListCodeSigningConfigsRequest.h>
 #include <aws/lambda/model/ListCodeSigningConfigsResult.h>
 #include <aws/lambda/model/ListEventSourceMappingsRequest.h>
@@ -169,6 +195,8 @@
 #include <aws/lambda/model/ListFunctionEventInvokeConfigsResult.h>
 #include <aws/lambda/model/ListFunctionUrlConfigsRequest.h>
 #include <aws/lambda/model/ListFunctionUrlConfigsResult.h>
+#include <aws/lambda/model/ListFunctionVersionsByCapacityProviderRequest.h>
+#include <aws/lambda/model/ListFunctionVersionsByCapacityProviderResult.h>
 #include <aws/lambda/model/ListFunctionsByCodeSigningConfigRequest.h>
 #include <aws/lambda/model/ListFunctionsByCodeSigningConfigResult.h>
 #include <aws/lambda/model/ListFunctionsRequest.h>
@@ -186,6 +214,7 @@
 #include <aws/lambda/model/LogFormat.h>
 #include <aws/lambda/model/LogType.h>
 #include <aws/lambda/model/LoggingConfig.h>
+#include <aws/lambda/model/NoPublishedVersionException.h>
 #include <aws/lambda/model/OnFailure.h>
 #include <aws/lambda/model/OnSuccess.h>
 #include <aws/lambda/model/PackageType.h>
@@ -207,6 +236,8 @@
 #include <aws/lambda/model/PutFunctionEventInvokeConfigResult.h>
 #include <aws/lambda/model/PutFunctionRecursionConfigRequest.h>
 #include <aws/lambda/model/PutFunctionRecursionConfigResult.h>
+#include <aws/lambda/model/PutFunctionScalingConfigRequest.h>
+#include <aws/lambda/model/PutFunctionScalingConfigResult.h>
 #include <aws/lambda/model/PutProvisionedConcurrencyConfigRequest.h>
 #include <aws/lambda/model/PutProvisionedConcurrencyConfigResult.h>
 #include <aws/lambda/model/PutRuntimeManagementConfigRequest.h>
@@ -245,6 +276,7 @@
 #include <aws/lambda/model/SystemLogLevel.h>
 #include <aws/lambda/model/TagResourceRequest.h>
 #include <aws/lambda/model/TagsError.h>
+#include <aws/lambda/model/TargetTrackingScalingPolicy.h>
 #include <aws/lambda/model/TenancyConfig.h>
 #include <aws/lambda/model/TenantIsolationMode.h>
 #include <aws/lambda/model/ThrottleReason.h>
@@ -256,6 +288,8 @@
 #include <aws/lambda/model/UntagResourceRequest.h>
 #include <aws/lambda/model/UpdateAliasRequest.h>
 #include <aws/lambda/model/UpdateAliasResult.h>
+#include <aws/lambda/model/UpdateCapacityProviderRequest.h>
+#include <aws/lambda/model/UpdateCapacityProviderResult.h>
 #include <aws/lambda/model/UpdateCodeSigningConfigRequest.h>
 #include <aws/lambda/model/UpdateCodeSigningConfigResult.h>
 #include <aws/lambda/model/UpdateEventSourceMappingRequest.h>

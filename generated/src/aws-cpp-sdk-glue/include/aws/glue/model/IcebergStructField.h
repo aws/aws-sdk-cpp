@@ -124,6 +124,46 @@ class IcebergStructField {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Default value used to populate the field's value for all records that were
+   * written before the field was added to the schema. This enables backward
+   * compatibility when adding new fields to existing Iceberg tables.</p>
+   */
+  inline Aws::Utils::DocumentView GetInitialDefault() const { return m_initialDefault; }
+  inline bool InitialDefaultHasBeenSet() const { return m_initialDefaultHasBeenSet; }
+  template <typename InitialDefaultT = Aws::Utils::Document>
+  void SetInitialDefault(InitialDefaultT&& value) {
+    m_initialDefaultHasBeenSet = true;
+    m_initialDefault = std::forward<InitialDefaultT>(value);
+  }
+  template <typename InitialDefaultT = Aws::Utils::Document>
+  IcebergStructField& WithInitialDefault(InitialDefaultT&& value) {
+    SetInitialDefault(std::forward<InitialDefaultT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Default value used to populate the field's value for any records written
+   * after the field was added to the schema, if the writer does not supply the
+   * field's value. This can be changed through schema evolution.</p>
+   */
+  inline Aws::Utils::DocumentView GetWriteDefault() const { return m_writeDefault; }
+  inline bool WriteDefaultHasBeenSet() const { return m_writeDefaultHasBeenSet; }
+  template <typename WriteDefaultT = Aws::Utils::Document>
+  void SetWriteDefault(WriteDefaultT&& value) {
+    m_writeDefaultHasBeenSet = true;
+    m_writeDefault = std::forward<WriteDefaultT>(value);
+  }
+  template <typename WriteDefaultT = Aws::Utils::Document>
+  IcebergStructField& WithWriteDefault(WriteDefaultT&& value) {
+    SetWriteDefault(std::forward<WriteDefaultT>(value));
+    return *this;
+  }
+  ///@}
  private:
   int m_id{0};
   bool m_idHasBeenSet = false;
@@ -139,6 +179,12 @@ class IcebergStructField {
 
   Aws::String m_doc;
   bool m_docHasBeenSet = false;
+
+  Aws::Utils::Document m_initialDefault;
+  bool m_initialDefaultHasBeenSet = false;
+
+  Aws::Utils::Document m_writeDefault;
+  bool m_writeDefaultHasBeenSet = false;
 };
 
 }  // namespace Model

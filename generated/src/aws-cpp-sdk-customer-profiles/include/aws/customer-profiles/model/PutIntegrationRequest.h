@@ -10,6 +10,7 @@
 #include <aws/customer-profiles/CustomerProfilesRequest.h>
 #include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
 #include <aws/customer-profiles/model/FlowDefinition.h>
+#include <aws/customer-profiles/model/Scope.h>
 
 #include <utility>
 
@@ -87,6 +88,36 @@ class PutIntegrationRequest : public CustomerProfilesRequest {
 
   ///@{
   /**
+   * <p>A map in which each key is an event type from an external application such as
+   * Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template)
+   * used to ingest the event. It supports the following event types:
+   * <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>,
+   * <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>,
+   * <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and
+   * <code>ShopifyUpdatedOrders</code>.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetObjectTypeNames() const { return m_objectTypeNames; }
+  inline bool ObjectTypeNamesHasBeenSet() const { return m_objectTypeNamesHasBeenSet; }
+  template <typename ObjectTypeNamesT = Aws::Map<Aws::String, Aws::String>>
+  void SetObjectTypeNames(ObjectTypeNamesT&& value) {
+    m_objectTypeNamesHasBeenSet = true;
+    m_objectTypeNames = std::forward<ObjectTypeNamesT>(value);
+  }
+  template <typename ObjectTypeNamesT = Aws::Map<Aws::String, Aws::String>>
+  PutIntegrationRequest& WithObjectTypeNames(ObjectTypeNamesT&& value) {
+    SetObjectTypeNames(std::forward<ObjectTypeNamesT>(value));
+    return *this;
+  }
+  template <typename ObjectTypeNamesKeyT = Aws::String, typename ObjectTypeNamesValueT = Aws::String>
+  PutIntegrationRequest& AddObjectTypeNames(ObjectTypeNamesKeyT&& key, ObjectTypeNamesValueT&& value) {
+    m_objectTypeNamesHasBeenSet = true;
+    m_objectTypeNames.emplace(std::forward<ObjectTypeNamesKeyT>(key), std::forward<ObjectTypeNamesValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The tags used to organize, track, or control access for this resource.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
@@ -124,36 +155,6 @@ class PutIntegrationRequest : public CustomerProfilesRequest {
   template <typename FlowDefinitionT = FlowDefinition>
   PutIntegrationRequest& WithFlowDefinition(FlowDefinitionT&& value) {
     SetFlowDefinition(std::forward<FlowDefinitionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>A map in which each key is an event type from an external application such as
-   * Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template)
-   * used to ingest the event. It supports the following event types:
-   * <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>,
-   * <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>,
-   * <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and
-   * <code>ShopifyUpdatedOrders</code>.</p>
-   */
-  inline const Aws::Map<Aws::String, Aws::String>& GetObjectTypeNames() const { return m_objectTypeNames; }
-  inline bool ObjectTypeNamesHasBeenSet() const { return m_objectTypeNamesHasBeenSet; }
-  template <typename ObjectTypeNamesT = Aws::Map<Aws::String, Aws::String>>
-  void SetObjectTypeNames(ObjectTypeNamesT&& value) {
-    m_objectTypeNamesHasBeenSet = true;
-    m_objectTypeNames = std::forward<ObjectTypeNamesT>(value);
-  }
-  template <typename ObjectTypeNamesT = Aws::Map<Aws::String, Aws::String>>
-  PutIntegrationRequest& WithObjectTypeNames(ObjectTypeNamesT&& value) {
-    SetObjectTypeNames(std::forward<ObjectTypeNamesT>(value));
-    return *this;
-  }
-  template <typename ObjectTypeNamesKeyT = Aws::String, typename ObjectTypeNamesValueT = Aws::String>
-  PutIntegrationRequest& AddObjectTypeNames(ObjectTypeNamesKeyT&& key, ObjectTypeNamesValueT&& value) {
-    m_objectTypeNamesHasBeenSet = true;
-    m_objectTypeNames.emplace(std::forward<ObjectTypeNamesKeyT>(key), std::forward<ObjectTypeNamesValueT>(value));
     return *this;
   }
   ///@}
@@ -201,6 +202,24 @@ class PutIntegrationRequest : public CustomerProfilesRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether the integration applies to profile level data (associated
+   * with profiles) or domain level data (not associated with any specific profile).
+   * The default value is PROFILE.</p>
+   */
+  inline Scope GetScope() const { return m_scope; }
+  inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
+  inline void SetScope(Scope value) {
+    m_scopeHasBeenSet = true;
+    m_scope = value;
+  }
+  inline PutIntegrationRequest& WithScope(Scope value) {
+    SetScope(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainName;
   bool m_domainNameHasBeenSet = false;
@@ -211,20 +230,23 @@ class PutIntegrationRequest : public CustomerProfilesRequest {
   Aws::String m_objectTypeName;
   bool m_objectTypeNameHasBeenSet = false;
 
+  Aws::Map<Aws::String, Aws::String> m_objectTypeNames;
+  bool m_objectTypeNamesHasBeenSet = false;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_tagsHasBeenSet = false;
 
   FlowDefinition m_flowDefinition;
   bool m_flowDefinitionHasBeenSet = false;
 
-  Aws::Map<Aws::String, Aws::String> m_objectTypeNames;
-  bool m_objectTypeNamesHasBeenSet = false;
-
   Aws::String m_roleArn;
   bool m_roleArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_eventTriggerNames;
   bool m_eventTriggerNamesHasBeenSet = false;
+
+  Scope m_scope{Scope::NOT_SET};
+  bool m_scopeHasBeenSet = false;
 };
 
 }  // namespace Model

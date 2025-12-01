@@ -35,24 +35,6 @@ class FinalResponse {
 
   ///@{
   /**
-   * <p>The text in the response to the user.</p>
-   */
-  inline const Aws::String& GetText() const { return m_text; }
-  inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-  template <typename TextT = Aws::String>
-  void SetText(TextT&& value) {
-    m_textHasBeenSet = true;
-    m_text = std::forward<TextT>(value);
-  }
-  template <typename TextT = Aws::String>
-  FinalResponse& WithText(TextT&& value) {
-    SetText(std::forward<TextT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Contains information about the invoke agent operation.</p>
    */
   inline const Metadata& GetMetadata() const { return m_metadata; }
@@ -68,12 +50,30 @@ class FinalResponse {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>The text in the response to the user.</p>
+   */
+  inline const Aws::String& GetText() const { return m_text; }
+  inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
+  template <typename TextT = Aws::String>
+  void SetText(TextT&& value) {
+    m_textHasBeenSet = true;
+    m_text = std::forward<TextT>(value);
+  }
+  template <typename TextT = Aws::String>
+  FinalResponse& WithText(TextT&& value) {
+    SetText(std::forward<TextT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Metadata m_metadata;
   bool m_metadataHasBeenSet = false;
+
+  Aws::String m_text;
+  bool m_textHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -57,24 +57,6 @@ class ConditionResultEvent {
 
   ///@{
   /**
-   * <p>The timestamp when the condition evaluation occurred.</p>
-   */
-  inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
-  inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-  template <typename TimestampT = Aws::Utils::DateTime>
-  void SetTimestamp(TimestampT&& value) {
-    m_timestampHasBeenSet = true;
-    m_timestamp = std::forward<TimestampT>(value);
-  }
-  template <typename TimestampT = Aws::Utils::DateTime>
-  ConditionResultEvent& WithTimestamp(TimestampT&& value) {
-    SetTimestamp(std::forward<TimestampT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>A list of conditions that were satisfied during the evaluation.</p>
    */
   inline const Aws::Vector<SatisfiedCondition>& GetSatisfiedConditions() const { return m_satisfiedConditions; }
@@ -96,15 +78,33 @@ class ConditionResultEvent {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp when the condition evaluation occurred.</p>
+   */
+  inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
+  inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
+  template <typename TimestampT = Aws::Utils::DateTime>
+  void SetTimestamp(TimestampT&& value) {
+    m_timestampHasBeenSet = true;
+    m_timestamp = std::forward<TimestampT>(value);
+  }
+  template <typename TimestampT = Aws::Utils::DateTime>
+  ConditionResultEvent& WithTimestamp(TimestampT&& value) {
+    SetTimestamp(std::forward<TimestampT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_nodeName;
   bool m_nodeNameHasBeenSet = false;
 
-  Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
-
   Aws::Vector<SatisfiedCondition> m_satisfiedConditions;
   bool m_satisfiedConditionsHasBeenSet = false;
+
+  Aws::Utils::DateTime m_timestamp{};
+  bool m_timestampHasBeenSet = false;
 };
 
 }  // namespace Model

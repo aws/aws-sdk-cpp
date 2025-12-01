@@ -8,6 +8,7 @@
 #include <aws/connectcampaignsv2/model/EmailChannelSubtypeConfig.h>
 #include <aws/connectcampaignsv2/model/SmsChannelSubtypeConfig.h>
 #include <aws/connectcampaignsv2/model/TelephonyChannelSubtypeConfig.h>
+#include <aws/connectcampaignsv2/model/WhatsAppChannelSubtypeConfig.h>
 
 #include <utility>
 
@@ -80,6 +81,22 @@ class ChannelSubtypeConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const WhatsAppChannelSubtypeConfig& GetWhatsApp() const { return m_whatsApp; }
+  inline bool WhatsAppHasBeenSet() const { return m_whatsAppHasBeenSet; }
+  template <typename WhatsAppT = WhatsAppChannelSubtypeConfig>
+  void SetWhatsApp(WhatsAppT&& value) {
+    m_whatsAppHasBeenSet = true;
+    m_whatsApp = std::forward<WhatsAppT>(value);
+  }
+  template <typename WhatsAppT = WhatsAppChannelSubtypeConfig>
+  ChannelSubtypeConfig& WithWhatsApp(WhatsAppT&& value) {
+    SetWhatsApp(std::forward<WhatsAppT>(value));
+    return *this;
+  }
+  ///@}
  private:
   TelephonyChannelSubtypeConfig m_telephony;
   bool m_telephonyHasBeenSet = false;
@@ -89,6 +106,9 @@ class ChannelSubtypeConfig {
 
   EmailChannelSubtypeConfig m_email;
   bool m_emailHasBeenSet = false;
+
+  WhatsAppChannelSubtypeConfig m_whatsApp;
+  bool m_whatsAppHasBeenSet = false;
 };
 
 }  // namespace Model

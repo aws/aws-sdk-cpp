@@ -7,6 +7,8 @@
 #include <aws/connect/ConnectRequest.h>
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/Application.h>
+#include <aws/connect/model/FlowModule.h>
+#include <aws/connect/model/GranularAccessControlConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -233,6 +235,51 @@ class UpdateSecurityProfileRequest : public ConnectRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> A list of Flow Modules an AI Agent can invoke as a tool </p>
+   */
+  inline const Aws::Vector<FlowModule>& GetAllowedFlowModules() const { return m_allowedFlowModules; }
+  inline bool AllowedFlowModulesHasBeenSet() const { return m_allowedFlowModulesHasBeenSet; }
+  template <typename AllowedFlowModulesT = Aws::Vector<FlowModule>>
+  void SetAllowedFlowModules(AllowedFlowModulesT&& value) {
+    m_allowedFlowModulesHasBeenSet = true;
+    m_allowedFlowModules = std::forward<AllowedFlowModulesT>(value);
+  }
+  template <typename AllowedFlowModulesT = Aws::Vector<FlowModule>>
+  UpdateSecurityProfileRequest& WithAllowedFlowModules(AllowedFlowModulesT&& value) {
+    SetAllowedFlowModules(std::forward<AllowedFlowModulesT>(value));
+    return *this;
+  }
+  template <typename AllowedFlowModulesT = FlowModule>
+  UpdateSecurityProfileRequest& AddAllowedFlowModules(AllowedFlowModulesT&& value) {
+    m_allowedFlowModulesHasBeenSet = true;
+    m_allowedFlowModules.emplace_back(std::forward<AllowedFlowModulesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The granular access control configuration for the security profile, including
+   * data table permissions.</p>
+   */
+  inline const GranularAccessControlConfiguration& GetGranularAccessControlConfiguration() const {
+    return m_granularAccessControlConfiguration;
+  }
+  inline bool GranularAccessControlConfigurationHasBeenSet() const { return m_granularAccessControlConfigurationHasBeenSet; }
+  template <typename GranularAccessControlConfigurationT = GranularAccessControlConfiguration>
+  void SetGranularAccessControlConfiguration(GranularAccessControlConfigurationT&& value) {
+    m_granularAccessControlConfigurationHasBeenSet = true;
+    m_granularAccessControlConfiguration = std::forward<GranularAccessControlConfigurationT>(value);
+  }
+  template <typename GranularAccessControlConfigurationT = GranularAccessControlConfiguration>
+  UpdateSecurityProfileRequest& WithGranularAccessControlConfiguration(GranularAccessControlConfigurationT&& value) {
+    SetGranularAccessControlConfiguration(std::forward<GranularAccessControlConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_description;
   bool m_descriptionHasBeenSet = false;
@@ -260,6 +307,12 @@ class UpdateSecurityProfileRequest : public ConnectRequest {
 
   Aws::String m_allowedAccessControlHierarchyGroupId;
   bool m_allowedAccessControlHierarchyGroupIdHasBeenSet = false;
+
+  Aws::Vector<FlowModule> m_allowedFlowModules;
+  bool m_allowedFlowModulesHasBeenSet = false;
+
+  GranularAccessControlConfiguration m_granularAccessControlConfiguration;
+  bool m_granularAccessControlConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

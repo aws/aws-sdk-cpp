@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
+#include <aws/customer-profiles/model/Scope.h>
 
 #include <utility>
 
@@ -244,6 +245,23 @@ class PutIntegrationResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Specifies whether the integration applies to profile level data (associated
+   * with profiles) or domain level data (not associated with any specific profile).
+   * The default value is PROFILE.</p>
+   */
+  inline Scope GetScope() const { return m_scope; }
+  inline void SetScope(Scope value) {
+    m_scopeHasBeenSet = true;
+    m_scope = value;
+  }
+  inline PutIntegrationResult& WithScope(Scope value) {
+    SetScope(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -290,6 +308,9 @@ class PutIntegrationResult {
 
   Aws::Vector<Aws::String> m_eventTriggerNames;
   bool m_eventTriggerNamesHasBeenSet = false;
+
+  Scope m_scope{Scope::NOT_SET};
+  bool m_scopeHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

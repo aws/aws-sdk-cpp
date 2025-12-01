@@ -25,6 +25,11 @@ static const int BLOCKED_INTENT_ANSWER_CHUNK_HASH = HashingUtils::HashString("BL
 static const int EMAIL_RESPONSE_CHUNK_HASH = HashingUtils::HashString("EMAIL_RESPONSE_CHUNK");
 static const int EMAIL_OVERVIEW_CHUNK_HASH = HashingUtils::HashString("EMAIL_OVERVIEW_CHUNK");
 static const int EMAIL_GENERATIVE_ANSWER_CHUNK_HASH = HashingUtils::HashString("EMAIL_GENERATIVE_ANSWER_CHUNK");
+static const int CASE_SUMMARIZATION_CHUNK_HASH = HashingUtils::HashString("CASE_SUMMARIZATION_CHUNK");
+static const int BLOCKED_CASE_SUMMARIZATION_CHUNK_HASH = HashingUtils::HashString("BLOCKED_CASE_SUMMARIZATION_CHUNK");
+static const int NOTES_HASH = HashingUtils::HashString("NOTES");
+static const int NOTES_CHUNK_HASH = HashingUtils::HashString("NOTES_CHUNK");
+static const int BLOCKED_NOTES_CHUNK_HASH = HashingUtils::HashString("BLOCKED_NOTES_CHUNK");
 
 QueryResultType GetQueryResultTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -48,6 +53,16 @@ QueryResultType GetQueryResultTypeForName(const Aws::String& name) {
     return QueryResultType::EMAIL_OVERVIEW_CHUNK;
   } else if (hashCode == EMAIL_GENERATIVE_ANSWER_CHUNK_HASH) {
     return QueryResultType::EMAIL_GENERATIVE_ANSWER_CHUNK;
+  } else if (hashCode == CASE_SUMMARIZATION_CHUNK_HASH) {
+    return QueryResultType::CASE_SUMMARIZATION_CHUNK;
+  } else if (hashCode == BLOCKED_CASE_SUMMARIZATION_CHUNK_HASH) {
+    return QueryResultType::BLOCKED_CASE_SUMMARIZATION_CHUNK;
+  } else if (hashCode == NOTES_HASH) {
+    return QueryResultType::NOTES;
+  } else if (hashCode == NOTES_CHUNK_HASH) {
+    return QueryResultType::NOTES_CHUNK;
+  } else if (hashCode == BLOCKED_NOTES_CHUNK_HASH) {
+    return QueryResultType::BLOCKED_NOTES_CHUNK;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -82,6 +97,16 @@ Aws::String GetNameForQueryResultType(QueryResultType enumValue) {
       return "EMAIL_OVERVIEW_CHUNK";
     case QueryResultType::EMAIL_GENERATIVE_ANSWER_CHUNK:
       return "EMAIL_GENERATIVE_ANSWER_CHUNK";
+    case QueryResultType::CASE_SUMMARIZATION_CHUNK:
+      return "CASE_SUMMARIZATION_CHUNK";
+    case QueryResultType::BLOCKED_CASE_SUMMARIZATION_CHUNK:
+      return "BLOCKED_CASE_SUMMARIZATION_CHUNK";
+    case QueryResultType::NOTES:
+      return "NOTES";
+    case QueryResultType::NOTES_CHUNK:
+      return "NOTES_CHUNK";
+    case QueryResultType::BLOCKED_NOTES_CHUNK:
+      return "BLOCKED_NOTES_CHUNK";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

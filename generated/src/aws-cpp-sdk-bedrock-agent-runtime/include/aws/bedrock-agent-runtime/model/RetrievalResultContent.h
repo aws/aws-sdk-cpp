@@ -5,8 +5,10 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
+#include <aws/bedrock-agent-runtime/model/AudioSegment.h>
 #include <aws/bedrock-agent-runtime/model/RetrievalResultContentColumn.h>
 #include <aws/bedrock-agent-runtime/model/RetrievalResultContentType.h>
+#include <aws/bedrock-agent-runtime/model/VideoSegment.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -46,34 +48,19 @@ class RetrievalResultContent {
 
   ///@{
   /**
-   * <p>The type of content in the retrieval result.</p>
+   * <p>Audio segment information when the retrieval result contains audio
+   * content.</p>
    */
-  inline RetrievalResultContentType GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  inline void SetType(RetrievalResultContentType value) {
-    m_typeHasBeenSet = true;
-    m_type = value;
+  inline const AudioSegment& GetAudio() const { return m_audio; }
+  inline bool AudioHasBeenSet() const { return m_audioHasBeenSet; }
+  template <typename AudioT = AudioSegment>
+  void SetAudio(AudioT&& value) {
+    m_audioHasBeenSet = true;
+    m_audio = std::forward<AudioT>(value);
   }
-  inline RetrievalResultContent& WithType(RetrievalResultContentType value) {
-    SetType(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The cited text from the data source.</p>
-   */
-  inline const Aws::String& GetText() const { return m_text; }
-  inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-  template <typename TextT = Aws::String>
-  void SetText(TextT&& value) {
-    m_textHasBeenSet = true;
-    m_text = std::forward<TextT>(value);
-  }
-  template <typename TextT = Aws::String>
-  RetrievalResultContent& WithText(TextT&& value) {
-    SetText(std::forward<TextT>(value));
+  template <typename AudioT = AudioSegment>
+  RetrievalResultContent& WithAudio(AudioT&& value) {
+    SetAudio(std::forward<AudioT>(value));
     return *this;
   }
   ///@}
@@ -122,18 +109,77 @@ class RetrievalResultContent {
     return *this;
   }
   ///@}
- private:
-  RetrievalResultContentType m_type{RetrievalResultContentType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
-  Aws::String m_text;
-  bool m_textHasBeenSet = false;
+  ///@{
+  /**
+   * <p>The cited text from the data source.</p>
+   */
+  inline const Aws::String& GetText() const { return m_text; }
+  inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
+  template <typename TextT = Aws::String>
+  void SetText(TextT&& value) {
+    m_textHasBeenSet = true;
+    m_text = std::forward<TextT>(value);
+  }
+  template <typename TextT = Aws::String>
+  RetrievalResultContent& WithText(TextT&& value) {
+    SetText(std::forward<TextT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The type of content in the retrieval result.</p>
+   */
+  inline RetrievalResultContentType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(RetrievalResultContentType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline RetrievalResultContent& WithType(RetrievalResultContentType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Video segment information when the retrieval result contains video
+   * content.</p>
+   */
+  inline const VideoSegment& GetVideo() const { return m_video; }
+  inline bool VideoHasBeenSet() const { return m_videoHasBeenSet; }
+  template <typename VideoT = VideoSegment>
+  void SetVideo(VideoT&& value) {
+    m_videoHasBeenSet = true;
+    m_video = std::forward<VideoT>(value);
+  }
+  template <typename VideoT = VideoSegment>
+  RetrievalResultContent& WithVideo(VideoT&& value) {
+    SetVideo(std::forward<VideoT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  AudioSegment m_audio;
+  bool m_audioHasBeenSet = false;
 
   Aws::String m_byteContent;
   bool m_byteContentHasBeenSet = false;
 
   Aws::Vector<RetrievalResultContentColumn> m_row;
   bool m_rowHasBeenSet = false;
+
+  Aws::String m_text;
+  bool m_textHasBeenSet = false;
+
+  RetrievalResultContentType m_type{RetrievalResultContentType::NOT_SET};
+  bool m_typeHasBeenSet = false;
+
+  VideoSegment m_video;
+  bool m_videoHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -37,7 +37,7 @@ class Condition {
   /**
    * <p>A leaf node condition which can be used to specify a string condition.</p>
    *  <p>The currently supported values for <code>FieldName</code> are
-   * <code>name</code> and&#x2028; <code>value</code>.</p>
+   * <code>name</code> and <code>value</code>.</p>
    */
   inline const StringCondition& GetStringCondition() const { return m_stringCondition; }
   inline bool StringConditionHasBeenSet() const { return m_stringConditionHasBeenSet; }

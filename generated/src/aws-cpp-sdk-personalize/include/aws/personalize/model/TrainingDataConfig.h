@@ -62,9 +62,41 @@ class TrainingDataConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A map that specifies which columns to include from each dataset during
+   * training. The map can contain up to 3 entries, where each key is a dataset name
+   * (maximum length of 256 characters, must contain only letters and underscores)
+   * and each value is an array of up to 50 column names. Column names can be up to
+   * 150 characters long, must start with a letter or underscore, and can contain
+   * only letters, numbers, and underscores.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetIncludedDatasetColumns() const { return m_includedDatasetColumns; }
+  inline bool IncludedDatasetColumnsHasBeenSet() const { return m_includedDatasetColumnsHasBeenSet; }
+  template <typename IncludedDatasetColumnsT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+  void SetIncludedDatasetColumns(IncludedDatasetColumnsT&& value) {
+    m_includedDatasetColumnsHasBeenSet = true;
+    m_includedDatasetColumns = std::forward<IncludedDatasetColumnsT>(value);
+  }
+  template <typename IncludedDatasetColumnsT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+  TrainingDataConfig& WithIncludedDatasetColumns(IncludedDatasetColumnsT&& value) {
+    SetIncludedDatasetColumns(std::forward<IncludedDatasetColumnsT>(value));
+    return *this;
+  }
+  template <typename IncludedDatasetColumnsKeyT = Aws::String, typename IncludedDatasetColumnsValueT = Aws::Vector<Aws::String>>
+  TrainingDataConfig& AddIncludedDatasetColumns(IncludedDatasetColumnsKeyT&& key, IncludedDatasetColumnsValueT&& value) {
+    m_includedDatasetColumnsHasBeenSet = true;
+    m_includedDatasetColumns.emplace(std::forward<IncludedDatasetColumnsKeyT>(key), std::forward<IncludedDatasetColumnsValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_excludedDatasetColumns;
   bool m_excludedDatasetColumnsHasBeenSet = false;
+
+  Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_includedDatasetColumns;
+  bool m_includedDatasetColumnsHasBeenSet = false;
 };
 
 }  // namespace Model

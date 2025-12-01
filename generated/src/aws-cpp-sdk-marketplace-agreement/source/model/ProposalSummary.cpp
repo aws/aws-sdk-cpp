@@ -18,10 +18,6 @@ namespace Model {
 ProposalSummary::ProposalSummary(JsonView jsonValue) { *this = jsonValue; }
 
 ProposalSummary& ProposalSummary::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("offerId")) {
-    m_offerId = jsonValue.GetString("offerId");
-    m_offerIdHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("resources")) {
     Aws::Utils::Array<JsonView> resourcesJsonList = jsonValue.GetArray("resources");
     for (unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex) {
@@ -29,15 +25,19 @@ ProposalSummary& ProposalSummary::operator=(JsonView jsonValue) {
     }
     m_resourcesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("offerId")) {
+    m_offerId = jsonValue.GetString("offerId");
+    m_offerIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("offerSetId")) {
+    m_offerSetId = jsonValue.GetString("offerSetId");
+    m_offerSetIdHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue ProposalSummary::Jsonize() const {
   JsonValue payload;
-
-  if (m_offerIdHasBeenSet) {
-    payload.WithString("offerId", m_offerId);
-  }
 
   if (m_resourcesHasBeenSet) {
     Aws::Utils::Array<JsonValue> resourcesJsonList(m_resources.size());
@@ -45,6 +45,14 @@ JsonValue ProposalSummary::Jsonize() const {
       resourcesJsonList[resourcesIndex].AsObject(m_resources[resourcesIndex].Jsonize());
     }
     payload.WithArray("resources", std::move(resourcesJsonList));
+  }
+
+  if (m_offerIdHasBeenSet) {
+    payload.WithString("offerId", m_offerId);
+  }
+
+  if (m_offerSetIdHasBeenSet) {
+    payload.WithString("offerSetId", m_offerSetId);
   }
 
   return payload;

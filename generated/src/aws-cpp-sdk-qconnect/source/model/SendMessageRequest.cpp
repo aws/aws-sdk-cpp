@@ -23,6 +23,10 @@ Aws::String SendMessageRequest::SerializePayload() const {
     payload.WithObject("message", m_message.Jsonize());
   }
 
+  if (m_aiAgentIdHasBeenSet) {
+    payload.WithString("aiAgentId", m_aiAgentId);
+  }
+
   if (m_conversationContextHasBeenSet) {
     payload.WithObject("conversationContext", m_conversationContext.Jsonize());
   }
@@ -33,6 +37,18 @@ Aws::String SendMessageRequest::SerializePayload() const {
 
   if (m_clientTokenHasBeenSet) {
     payload.WithString("clientToken", m_clientToken);
+  }
+
+  if (m_orchestratorUseCaseHasBeenSet) {
+    payload.WithString("orchestratorUseCase", m_orchestratorUseCase);
+  }
+
+  if (m_metadataHasBeenSet) {
+    JsonValue metadataJsonMap;
+    for (auto& metadataItem : m_metadata) {
+      metadataJsonMap.WithString(metadataItem.first, metadataItem.second);
+    }
+    payload.WithObject("metadata", std::move(metadataJsonMap));
   }
 
   return payload.View().WriteReadable();

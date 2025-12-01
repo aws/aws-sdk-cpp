@@ -18,10 +18,6 @@ namespace Model {
 VectorSearchBedrockRerankingModelConfiguration::VectorSearchBedrockRerankingModelConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
 VectorSearchBedrockRerankingModelConfiguration& VectorSearchBedrockRerankingModelConfiguration::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("modelArn")) {
-    m_modelArn = jsonValue.GetString("modelArn");
-    m_modelArnHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("additionalModelRequestFields")) {
     Aws::Map<Aws::String, JsonView> additionalModelRequestFieldsJsonMap =
         jsonValue.GetObject("additionalModelRequestFields").GetAllObjects();
@@ -30,15 +26,15 @@ VectorSearchBedrockRerankingModelConfiguration& VectorSearchBedrockRerankingMode
     }
     m_additionalModelRequestFieldsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("modelArn")) {
+    m_modelArn = jsonValue.GetString("modelArn");
+    m_modelArnHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue VectorSearchBedrockRerankingModelConfiguration::Jsonize() const {
   JsonValue payload;
-
-  if (m_modelArnHasBeenSet) {
-    payload.WithString("modelArn", m_modelArn);
-  }
 
   if (m_additionalModelRequestFieldsHasBeenSet) {
     JsonValue additionalModelRequestFieldsJsonMap;
@@ -47,6 +43,10 @@ JsonValue VectorSearchBedrockRerankingModelConfiguration::Jsonize() const {
                                                      additionalModelRequestFieldsItem.second.View());
     }
     payload.WithObject("additionalModelRequestFields", std::move(additionalModelRequestFieldsJsonMap));
+  }
+
+  if (m_modelArnHasBeenSet) {
+    payload.WithString("modelArn", m_modelArn);
   }
 
   return payload;

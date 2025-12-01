@@ -49,7 +49,8 @@ enum class QConnectErrors {
   PRECONDITION_FAILED,
   SERVICE_QUOTA_EXCEEDED,
   TOO_MANY_TAGS,
-  UNAUTHORIZED
+  UNAUTHORIZED,
+  UNPROCESSABLE_CONTENT
 };
 
 class AWS_QCONNECT_API QConnectError : public Aws::Client::AWSError<QConnectErrors> {

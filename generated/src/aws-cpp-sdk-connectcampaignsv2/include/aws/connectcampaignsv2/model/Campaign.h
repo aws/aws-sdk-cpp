@@ -8,6 +8,7 @@
 #include <aws/connectcampaignsv2/model/ChannelSubtypeConfig.h>
 #include <aws/connectcampaignsv2/model/CommunicationLimitsConfig.h>
 #include <aws/connectcampaignsv2/model/CommunicationTimeConfig.h>
+#include <aws/connectcampaignsv2/model/ExternalCampaignType.h>
 #include <aws/connectcampaignsv2/model/Schedule.h>
 #include <aws/connectcampaignsv2/model/Source.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -113,6 +114,20 @@ class Campaign {
   template <typename ChannelSubtypeConfigT = ChannelSubtypeConfig>
   Campaign& WithChannelSubtypeConfig(ChannelSubtypeConfigT&& value) {
     SetChannelSubtypeConfig(std::forward<ChannelSubtypeConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline ExternalCampaignType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(ExternalCampaignType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline Campaign& WithType(ExternalCampaignType value) {
+    SetType(value);
     return *this;
   }
   ///@}
@@ -233,6 +248,9 @@ class Campaign {
 
   ChannelSubtypeConfig m_channelSubtypeConfig;
   bool m_channelSubtypeConfigHasBeenSet = false;
+
+  ExternalCampaignType m_type{ExternalCampaignType::NOT_SET};
+  bool m_typeHasBeenSet = false;
 
   Source m_source;
   bool m_sourceHasBeenSet = false;

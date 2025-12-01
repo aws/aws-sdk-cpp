@@ -35,24 +35,6 @@ class CustomOrchestrationTrace {
 
   ///@{
   /**
-   * <p> The unique identifier of the trace. </p>
-   */
-  inline const Aws::String& GetTraceId() const { return m_traceId; }
-  inline bool TraceIdHasBeenSet() const { return m_traceIdHasBeenSet; }
-  template <typename TraceIdT = Aws::String>
-  void SetTraceId(TraceIdT&& value) {
-    m_traceIdHasBeenSet = true;
-    m_traceId = std::forward<TraceIdT>(value);
-  }
-  template <typename TraceIdT = Aws::String>
-  CustomOrchestrationTrace& WithTraceId(TraceIdT&& value) {
-    SetTraceId(std::forward<TraceIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p> The event details used with the custom orchestration. </p>
    */
   inline const CustomOrchestrationTraceEvent& GetEvent() const { return m_event; }
@@ -68,12 +50,30 @@ class CustomOrchestrationTrace {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_traceId;
-  bool m_traceIdHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p> The unique identifier of the trace. </p>
+   */
+  inline const Aws::String& GetTraceId() const { return m_traceId; }
+  inline bool TraceIdHasBeenSet() const { return m_traceIdHasBeenSet; }
+  template <typename TraceIdT = Aws::String>
+  void SetTraceId(TraceIdT&& value) {
+    m_traceIdHasBeenSet = true;
+    m_traceId = std::forward<TraceIdT>(value);
+  }
+  template <typename TraceIdT = Aws::String>
+  CustomOrchestrationTrace& WithTraceId(TraceIdT&& value) {
+    SetTraceId(std::forward<TraceIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   CustomOrchestrationTraceEvent m_event;
   bool m_eventHasBeenSet = false;
+
+  Aws::String m_traceId;
+  bool m_traceIdHasBeenSet = false;
 };
 
 }  // namespace Model

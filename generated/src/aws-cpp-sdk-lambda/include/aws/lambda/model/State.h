@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Lambda {
 namespace Model {
-enum class State { NOT_SET, Pending, Active, Inactive, Failed };
+enum class State { NOT_SET, Pending, Active, Inactive, Failed, Deactivating, Deactivated, ActiveNonInvocable, Deleting };
 
 namespace StateMapper {
 AWS_LAMBDA_API State GetStateForName(const Aws::String& name);

@@ -18,13 +18,13 @@ namespace Model {
 EstimatedCharges::EstimatedCharges(JsonView jsonValue) { *this = jsonValue; }
 
 EstimatedCharges& EstimatedCharges::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("agreementValue")) {
-    m_agreementValue = jsonValue.GetString("agreementValue");
-    m_agreementValueHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("currencyCode")) {
     m_currencyCode = jsonValue.GetString("currencyCode");
     m_currencyCodeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("agreementValue")) {
+    m_agreementValue = jsonValue.GetString("agreementValue");
+    m_agreementValueHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ EstimatedCharges& EstimatedCharges::operator=(JsonView jsonValue) {
 JsonValue EstimatedCharges::Jsonize() const {
   JsonValue payload;
 
-  if (m_agreementValueHasBeenSet) {
-    payload.WithString("agreementValue", m_agreementValue);
-  }
-
   if (m_currencyCodeHasBeenSet) {
     payload.WithString("currencyCode", m_currencyCode);
+  }
+
+  if (m_agreementValueHasBeenSet) {
+    payload.WithString("agreementValue", m_agreementValue);
   }
 
   return payload;

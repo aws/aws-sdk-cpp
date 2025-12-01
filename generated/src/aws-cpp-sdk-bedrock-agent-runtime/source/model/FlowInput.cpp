@@ -18,14 +18,6 @@ namespace Model {
 FlowInput::FlowInput(JsonView jsonValue) { *this = jsonValue; }
 
 FlowInput& FlowInput::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("nodeName")) {
-    m_nodeName = jsonValue.GetString("nodeName");
-    m_nodeNameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("nodeOutputName")) {
-    m_nodeOutputName = jsonValue.GetString("nodeOutputName");
-    m_nodeOutputNameHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("content")) {
     m_content = jsonValue.GetObject("content");
     m_contentHasBeenSet = true;
@@ -34,19 +26,19 @@ FlowInput& FlowInput::operator=(JsonView jsonValue) {
     m_nodeInputName = jsonValue.GetString("nodeInputName");
     m_nodeInputNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("nodeName")) {
+    m_nodeName = jsonValue.GetString("nodeName");
+    m_nodeNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("nodeOutputName")) {
+    m_nodeOutputName = jsonValue.GetString("nodeOutputName");
+    m_nodeOutputNameHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue FlowInput::Jsonize() const {
   JsonValue payload;
-
-  if (m_nodeNameHasBeenSet) {
-    payload.WithString("nodeName", m_nodeName);
-  }
-
-  if (m_nodeOutputNameHasBeenSet) {
-    payload.WithString("nodeOutputName", m_nodeOutputName);
-  }
 
   if (m_contentHasBeenSet) {
     payload.WithObject("content", m_content.Jsonize());
@@ -54,6 +46,14 @@ JsonValue FlowInput::Jsonize() const {
 
   if (m_nodeInputNameHasBeenSet) {
     payload.WithString("nodeInputName", m_nodeInputName);
+  }
+
+  if (m_nodeNameHasBeenSet) {
+    payload.WithString("nodeName", m_nodeName);
+  }
+
+  if (m_nodeOutputNameHasBeenSet) {
+    payload.WithString("nodeOutputName", m_nodeOutputName);
   }
 
   return payload;

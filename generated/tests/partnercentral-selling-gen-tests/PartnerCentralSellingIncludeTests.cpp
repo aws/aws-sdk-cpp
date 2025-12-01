@@ -15,6 +15,8 @@
 #include <aws/partnercentral-selling/PartnerCentralSellingServiceClientModel.h>
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 #include <aws/partnercentral-selling/model/AcceptEngagementInvitationRequest.h>
+#include <aws/partnercentral-selling/model/AccessDeniedException.h>
+#include <aws/partnercentral-selling/model/AccessDeniedExceptionErrorCode.h>
 #include <aws/partnercentral-selling/model/Account.h>
 #include <aws/partnercentral-selling/model/AccountReceiver.h>
 #include <aws/partnercentral-selling/model/AccountSummary.h>
@@ -39,6 +41,8 @@
 #include <aws/partnercentral-selling/model/CompetitorName.h>
 #include <aws/partnercentral-selling/model/Contact.h>
 #include <aws/partnercentral-selling/model/CountryCode.h>
+#include <aws/partnercentral-selling/model/CreateEngagementContextRequest.h>
+#include <aws/partnercentral-selling/model/CreateEngagementContextResult.h>
 #include <aws/partnercentral-selling/model/CreateEngagementInvitationRequest.h>
 #include <aws/partnercentral-selling/model/CreateEngagementInvitationResult.h>
 #include <aws/partnercentral-selling/model/CreateEngagementRequest.h>
@@ -91,6 +95,13 @@
 #include <aws/partnercentral-selling/model/InvitationStatus.h>
 #include <aws/partnercentral-selling/model/InvolvementTypeChangeReason.h>
 #include <aws/partnercentral-selling/model/LastModifiedDate.h>
+#include <aws/partnercentral-selling/model/LeadContact.h>
+#include <aws/partnercentral-selling/model/LeadContext.h>
+#include <aws/partnercentral-selling/model/LeadCustomer.h>
+#include <aws/partnercentral-selling/model/LeadInteraction.h>
+#include <aws/partnercentral-selling/model/LeadInvitationCustomer.h>
+#include <aws/partnercentral-selling/model/LeadInvitationInteraction.h>
+#include <aws/partnercentral-selling/model/LeadInvitationPayload.h>
 #include <aws/partnercentral-selling/model/LifeCycle.h>
 #include <aws/partnercentral-selling/model/LifeCycleForView.h>
 #include <aws/partnercentral-selling/model/LifeCycleSummary.h>
@@ -110,6 +121,9 @@
 #include <aws/partnercentral-selling/model/ListEngagementsResult.h>
 #include <aws/partnercentral-selling/model/ListOpportunitiesRequest.h>
 #include <aws/partnercentral-selling/model/ListOpportunitiesResult.h>
+#include <aws/partnercentral-selling/model/ListOpportunityFromEngagementTaskSummary.h>
+#include <aws/partnercentral-selling/model/ListOpportunityFromEngagementTasksRequest.h>
+#include <aws/partnercentral-selling/model/ListOpportunityFromEngagementTasksResult.h>
 #include <aws/partnercentral-selling/model/ListResourceSnapshotJobsRequest.h>
 #include <aws/partnercentral-selling/model/ListResourceSnapshotJobsResult.h>
 #include <aws/partnercentral-selling/model/ListResourceSnapshotsRequest.h>
@@ -120,6 +134,7 @@
 #include <aws/partnercentral-selling/model/ListTagsForResourceResult.h>
 #include <aws/partnercentral-selling/model/ListTasksSortBase.h>
 #include <aws/partnercentral-selling/model/ListTasksSortName.h>
+#include <aws/partnercentral-selling/model/MarketSegment.h>
 #include <aws/partnercentral-selling/model/Marketing.h>
 #include <aws/partnercentral-selling/model/MarketingSource.h>
 #include <aws/partnercentral-selling/model/MonetaryValue.h>
@@ -174,6 +189,8 @@
 #include <aws/partnercentral-selling/model/StartEngagementByAcceptingInvitationTaskResult.h>
 #include <aws/partnercentral-selling/model/StartEngagementFromOpportunityTaskRequest.h>
 #include <aws/partnercentral-selling/model/StartEngagementFromOpportunityTaskResult.h>
+#include <aws/partnercentral-selling/model/StartOpportunityFromEngagementTaskRequest.h>
+#include <aws/partnercentral-selling/model/StartOpportunityFromEngagementTaskResult.h>
 #include <aws/partnercentral-selling/model/StartResourceSnapshotJobRequest.h>
 #include <aws/partnercentral-selling/model/StopResourceSnapshotJobRequest.h>
 #include <aws/partnercentral-selling/model/SubmitOpportunityRequest.h>
@@ -183,6 +200,10 @@
 #include <aws/partnercentral-selling/model/TaskStatus.h>
 #include <aws/partnercentral-selling/model/UntagResourceRequest.h>
 #include <aws/partnercentral-selling/model/UntagResourceResult.h>
+#include <aws/partnercentral-selling/model/UpdateEngagementContextPayload.h>
+#include <aws/partnercentral-selling/model/UpdateEngagementContextRequest.h>
+#include <aws/partnercentral-selling/model/UpdateEngagementContextResult.h>
+#include <aws/partnercentral-selling/model/UpdateLeadContext.h>
 #include <aws/partnercentral-selling/model/UpdateOpportunityRequest.h>
 #include <aws/partnercentral-selling/model/UpdateOpportunityResult.h>
 #include <aws/partnercentral-selling/model/ValidationException.h>

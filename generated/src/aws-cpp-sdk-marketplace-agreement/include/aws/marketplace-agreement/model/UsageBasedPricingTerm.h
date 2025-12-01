@@ -36,6 +36,24 @@ class UsageBasedPricingTerm {
 
   ///@{
   /**
+   * <p>Category of the term.</p>
+   */
+  inline const Aws::String& GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  template <typename TypeT = Aws::String>
+  void SetType(TypeT&& value) {
+    m_typeHasBeenSet = true;
+    m_type = std::forward<TypeT>(value);
+  }
+  template <typename TypeT = Aws::String>
+  UsageBasedPricingTerm& WithType(TypeT&& value) {
+    SetType(std::forward<TypeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Defines the currency for the prices mentioned in the term. </p>
    */
   inline const Aws::String& GetCurrencyCode() const { return m_currencyCode; }
@@ -75,33 +93,15 @@ class UsageBasedPricingTerm {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Category of the term.</p>
-   */
-  inline const Aws::String& GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  template <typename TypeT = Aws::String>
-  void SetType(TypeT&& value) {
-    m_typeHasBeenSet = true;
-    m_type = std::forward<TypeT>(value);
-  }
-  template <typename TypeT = Aws::String>
-  UsageBasedPricingTerm& WithType(TypeT&& value) {
-    SetType(std::forward<TypeT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_type;
+  bool m_typeHasBeenSet = false;
+
   Aws::String m_currencyCode;
   bool m_currencyCodeHasBeenSet = false;
 
   Aws::Vector<UsageBasedRateCardItem> m_rateCards;
   bool m_rateCardsHasBeenSet = false;
-
-  Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -39,25 +39,6 @@ class APISchema {
 
   ///@{
   /**
-   * <p> Contains details about the S3 object containing the OpenAPI schema for the
-   * action group. </p>
-   */
-  inline const S3Identifier& GetS3() const { return m_s3; }
-  inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
-  template <typename S3T = S3Identifier>
-  void SetS3(S3T&& value) {
-    m_s3HasBeenSet = true;
-    m_s3 = std::forward<S3T>(value);
-  }
-  template <typename S3T = S3Identifier>
-  APISchema& WithS3(S3T&& value) {
-    SetS3(std::forward<S3T>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p> The JSON or YAML-formatted payload defining the OpenAPI schema for the
    * action group. </p>
    */
@@ -74,12 +55,31 @@ class APISchema {
     return *this;
   }
   ///@}
- private:
-  S3Identifier m_s3;
-  bool m_s3HasBeenSet = false;
 
+  ///@{
+  /**
+   * <p> Contains details about the S3 object containing the OpenAPI schema for the
+   * action group. </p>
+   */
+  inline const S3Identifier& GetS3() const { return m_s3; }
+  inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
+  template <typename S3T = S3Identifier>
+  void SetS3(S3T&& value) {
+    m_s3HasBeenSet = true;
+    m_s3 = std::forward<S3T>(value);
+  }
+  template <typename S3T = S3Identifier>
+  APISchema& WithS3(S3T&& value) {
+    SetS3(std::forward<S3T>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_payload;
   bool m_payloadHasBeenSet = false;
+
+  S3Identifier m_s3;
+  bool m_s3HasBeenSet = false;
 };
 
 }  // namespace Model

@@ -48,8 +48,8 @@ class PromptTemplate {
    * <li> <p> <a
    * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html#kb-test-config-sysprompt">Knowledge
    * base prompt templates</a> </p> </li> <li> <p> <a
-   * href="https://docs.anthropic.com/claude/docs/use-xml-tags">Use XML tags with
-   * Anthropic Claude models</a> </p> </li> </ul>
+   * href="https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/use-xml-tags">Use
+   * XML tags with Anthropic Claude models</a> </p> </li> </ul>
    */
   inline const Aws::String& GetTextPromptTemplate() const { return m_textPromptTemplate; }
   inline bool TextPromptTemplateHasBeenSet() const { return m_textPromptTemplateHasBeenSet; }

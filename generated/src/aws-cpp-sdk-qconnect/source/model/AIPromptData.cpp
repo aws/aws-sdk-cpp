@@ -58,6 +58,10 @@ AIPromptData& AIPromptData::operator=(JsonView jsonValue) {
     m_templateConfiguration = jsonValue.GetObject("templateConfiguration");
     m_templateConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("inferenceConfiguration")) {
+    m_inferenceConfiguration = jsonValue.GetObject("inferenceConfiguration");
+    m_inferenceConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("modifiedTime")) {
     m_modifiedTime = jsonValue.GetDouble("modifiedTime");
     m_modifiedTimeHasBeenSet = true;
@@ -129,6 +133,10 @@ JsonValue AIPromptData::Jsonize() const {
 
   if (m_templateConfigurationHasBeenSet) {
     payload.WithObject("templateConfiguration", m_templateConfiguration.Jsonize());
+  }
+
+  if (m_inferenceConfigurationHasBeenSet) {
+    payload.WithObject("inferenceConfiguration", m_inferenceConfiguration.Jsonize());
   }
 
   if (m_modifiedTimeHasBeenSet) {

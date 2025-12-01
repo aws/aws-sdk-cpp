@@ -43,18 +43,16 @@ class FlowTraceNodeInputField {
 
   ///@{
   /**
-   * <p>The name of the node input.</p>
+   * <p>The category of the input field.</p>
    */
-  inline const Aws::String& GetNodeInputName() const { return m_nodeInputName; }
-  inline bool NodeInputNameHasBeenSet() const { return m_nodeInputNameHasBeenSet; }
-  template <typename NodeInputNameT = Aws::String>
-  void SetNodeInputName(NodeInputNameT&& value) {
-    m_nodeInputNameHasBeenSet = true;
-    m_nodeInputName = std::forward<NodeInputNameT>(value);
+  inline FlowNodeInputCategory GetCategory() const { return m_category; }
+  inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
+  inline void SetCategory(FlowNodeInputCategory value) {
+    m_categoryHasBeenSet = true;
+    m_category = value;
   }
-  template <typename NodeInputNameT = Aws::String>
-  FlowTraceNodeInputField& WithNodeInputName(NodeInputNameT&& value) {
-    SetNodeInputName(std::forward<NodeInputNameT>(value));
+  inline FlowTraceNodeInputField& WithCategory(FlowNodeInputCategory value) {
+    SetCategory(value);
     return *this;
   }
   ///@}
@@ -73,6 +71,48 @@ class FlowTraceNodeInputField {
   template <typename ContentT = FlowTraceNodeInputContent>
   FlowTraceNodeInputField& WithContent(ContentT&& value) {
     SetContent(std::forward<ContentT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The execution path through nested nodes like iterators and loops.</p>
+   */
+  inline const Aws::Vector<FlowTraceNodeInputExecutionChainItem>& GetExecutionChain() const { return m_executionChain; }
+  inline bool ExecutionChainHasBeenSet() const { return m_executionChainHasBeenSet; }
+  template <typename ExecutionChainT = Aws::Vector<FlowTraceNodeInputExecutionChainItem>>
+  void SetExecutionChain(ExecutionChainT&& value) {
+    m_executionChainHasBeenSet = true;
+    m_executionChain = std::forward<ExecutionChainT>(value);
+  }
+  template <typename ExecutionChainT = Aws::Vector<FlowTraceNodeInputExecutionChainItem>>
+  FlowTraceNodeInputField& WithExecutionChain(ExecutionChainT&& value) {
+    SetExecutionChain(std::forward<ExecutionChainT>(value));
+    return *this;
+  }
+  template <typename ExecutionChainT = FlowTraceNodeInputExecutionChainItem>
+  FlowTraceNodeInputField& AddExecutionChain(ExecutionChainT&& value) {
+    m_executionChainHasBeenSet = true;
+    m_executionChain.emplace_back(std::forward<ExecutionChainT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the node input.</p>
+   */
+  inline const Aws::String& GetNodeInputName() const { return m_nodeInputName; }
+  inline bool NodeInputNameHasBeenSet() const { return m_nodeInputNameHasBeenSet; }
+  template <typename NodeInputNameT = Aws::String>
+  void SetNodeInputName(NodeInputNameT&& value) {
+    m_nodeInputNameHasBeenSet = true;
+    m_nodeInputName = std::forward<NodeInputNameT>(value);
+  }
+  template <typename NodeInputNameT = Aws::String>
+  FlowTraceNodeInputField& WithNodeInputName(NodeInputNameT&& value) {
+    SetNodeInputName(std::forward<NodeInputNameT>(value));
     return *this;
   }
   ///@}
@@ -110,64 +150,24 @@ class FlowTraceNodeInputField {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The category of the input field.</p>
-   */
-  inline FlowNodeInputCategory GetCategory() const { return m_category; }
-  inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
-  inline void SetCategory(FlowNodeInputCategory value) {
-    m_categoryHasBeenSet = true;
-    m_category = value;
-  }
-  inline FlowTraceNodeInputField& WithCategory(FlowNodeInputCategory value) {
-    SetCategory(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The execution path through nested nodes like iterators and loops.</p>
-   */
-  inline const Aws::Vector<FlowTraceNodeInputExecutionChainItem>& GetExecutionChain() const { return m_executionChain; }
-  inline bool ExecutionChainHasBeenSet() const { return m_executionChainHasBeenSet; }
-  template <typename ExecutionChainT = Aws::Vector<FlowTraceNodeInputExecutionChainItem>>
-  void SetExecutionChain(ExecutionChainT&& value) {
-    m_executionChainHasBeenSet = true;
-    m_executionChain = std::forward<ExecutionChainT>(value);
-  }
-  template <typename ExecutionChainT = Aws::Vector<FlowTraceNodeInputExecutionChainItem>>
-  FlowTraceNodeInputField& WithExecutionChain(ExecutionChainT&& value) {
-    SetExecutionChain(std::forward<ExecutionChainT>(value));
-    return *this;
-  }
-  template <typename ExecutionChainT = FlowTraceNodeInputExecutionChainItem>
-  FlowTraceNodeInputField& AddExecutionChain(ExecutionChainT&& value) {
-    m_executionChainHasBeenSet = true;
-    m_executionChain.emplace_back(std::forward<ExecutionChainT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_nodeInputName;
-  bool m_nodeInputNameHasBeenSet = false;
+  FlowNodeInputCategory m_category{FlowNodeInputCategory::NOT_SET};
+  bool m_categoryHasBeenSet = false;
 
   FlowTraceNodeInputContent m_content;
   bool m_contentHasBeenSet = false;
+
+  Aws::Vector<FlowTraceNodeInputExecutionChainItem> m_executionChain;
+  bool m_executionChainHasBeenSet = false;
+
+  Aws::String m_nodeInputName;
+  bool m_nodeInputNameHasBeenSet = false;
 
   FlowTraceNodeInputSource m_source;
   bool m_sourceHasBeenSet = false;
 
   FlowNodeIODataType m_type{FlowNodeIODataType::NOT_SET};
   bool m_typeHasBeenSet = false;
-
-  FlowNodeInputCategory m_category{FlowNodeInputCategory::NOT_SET};
-  bool m_categoryHasBeenSet = false;
-
-  Aws::Vector<FlowTraceNodeInputExecutionChainItem> m_executionChain;
-  bool m_executionChainHasBeenSet = false;
 };
 
 }  // namespace Model

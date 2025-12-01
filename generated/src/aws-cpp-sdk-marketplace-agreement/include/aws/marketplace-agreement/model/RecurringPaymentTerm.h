@@ -34,18 +34,18 @@ class RecurringPaymentTerm {
 
   ///@{
   /**
-   * <p>Defines the recurrence at which buyers are charged.</p>
+   * <p>Type of the term being updated.</p>
    */
-  inline const Aws::String& GetBillingPeriod() const { return m_billingPeriod; }
-  inline bool BillingPeriodHasBeenSet() const { return m_billingPeriodHasBeenSet; }
-  template <typename BillingPeriodT = Aws::String>
-  void SetBillingPeriod(BillingPeriodT&& value) {
-    m_billingPeriodHasBeenSet = true;
-    m_billingPeriod = std::forward<BillingPeriodT>(value);
+  inline const Aws::String& GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  template <typename TypeT = Aws::String>
+  void SetType(TypeT&& value) {
+    m_typeHasBeenSet = true;
+    m_type = std::forward<TypeT>(value);
   }
-  template <typename BillingPeriodT = Aws::String>
-  RecurringPaymentTerm& WithBillingPeriod(BillingPeriodT&& value) {
-    SetBillingPeriod(std::forward<BillingPeriodT>(value));
+  template <typename TypeT = Aws::String>
+  RecurringPaymentTerm& WithType(TypeT&& value) {
+    SetType(std::forward<TypeT>(value));
     return *this;
   }
   ///@}
@@ -70,6 +70,24 @@ class RecurringPaymentTerm {
 
   ///@{
   /**
+   * <p>Defines the recurrence at which buyers are charged.</p>
+   */
+  inline const Aws::String& GetBillingPeriod() const { return m_billingPeriod; }
+  inline bool BillingPeriodHasBeenSet() const { return m_billingPeriodHasBeenSet; }
+  template <typename BillingPeriodT = Aws::String>
+  void SetBillingPeriod(BillingPeriodT&& value) {
+    m_billingPeriodHasBeenSet = true;
+    m_billingPeriod = std::forward<BillingPeriodT>(value);
+  }
+  template <typename BillingPeriodT = Aws::String>
+  RecurringPaymentTerm& WithBillingPeriod(BillingPeriodT&& value) {
+    SetBillingPeriod(std::forward<BillingPeriodT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Amount charged to the buyer every billing period.</p>
    */
   inline const Aws::String& GetPrice() const { return m_price; }
@@ -85,36 +103,18 @@ class RecurringPaymentTerm {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Type of the term being updated.</p>
-   */
-  inline const Aws::String& GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  template <typename TypeT = Aws::String>
-  void SetType(TypeT&& value) {
-    m_typeHasBeenSet = true;
-    m_type = std::forward<TypeT>(value);
-  }
-  template <typename TypeT = Aws::String>
-  RecurringPaymentTerm& WithType(TypeT&& value) {
-    SetType(std::forward<TypeT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_billingPeriod;
-  bool m_billingPeriodHasBeenSet = false;
+  Aws::String m_type;
+  bool m_typeHasBeenSet = false;
 
   Aws::String m_currencyCode;
   bool m_currencyCodeHasBeenSet = false;
 
+  Aws::String m_billingPeriod;
+  bool m_billingPeriodHasBeenSet = false;
+
   Aws::String m_price;
   bool m_priceHasBeenSet = false;
-
-  Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 };
 
 }  // namespace Model

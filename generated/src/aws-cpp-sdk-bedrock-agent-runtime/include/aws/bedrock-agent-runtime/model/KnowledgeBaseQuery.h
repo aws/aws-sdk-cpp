@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
+#include <aws/bedrock-agent-runtime/model/InputImage.h>
+#include <aws/bedrock-agent-runtime/model/KnowledgeBaseQueryType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -37,6 +39,24 @@ class KnowledgeBaseQuery {
 
   ///@{
   /**
+   * <p>An image to include in the knowledge base query for multimodal retrieval.</p>
+   */
+  inline const InputImage& GetImage() const { return m_image; }
+  inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
+  template <typename ImageT = InputImage>
+  void SetImage(ImageT&& value) {
+    m_imageHasBeenSet = true;
+    m_image = std::forward<ImageT>(value);
+  }
+  template <typename ImageT = InputImage>
+  KnowledgeBaseQuery& WithImage(ImageT&& value) {
+    SetImage(std::forward<ImageT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The text of the query made to the knowledge base.</p>
    */
   inline const Aws::String& GetText() const { return m_text; }
@@ -52,9 +72,31 @@ class KnowledgeBaseQuery {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of query being performed.</p>
+   */
+  inline KnowledgeBaseQueryType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(KnowledgeBaseQueryType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline KnowledgeBaseQuery& WithType(KnowledgeBaseQueryType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
  private:
+  InputImage m_image;
+  bool m_imageHasBeenSet = false;
+
   Aws::String m_text;
   bool m_textHasBeenSet = false;
+
+  KnowledgeBaseQueryType m_type{KnowledgeBaseQueryType::NOT_SET};
+  bool m_typeHasBeenSet = false;
 };
 
 }  // namespace Model

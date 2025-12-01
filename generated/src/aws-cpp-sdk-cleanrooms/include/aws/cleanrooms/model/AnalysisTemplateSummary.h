@@ -214,6 +214,22 @@ class AnalysisTemplateSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates if this analysis template summary generated synthetic data.</p>
+   */
+  inline bool GetIsSyntheticData() const { return m_isSyntheticData; }
+  inline bool IsSyntheticDataHasBeenSet() const { return m_isSyntheticDataHasBeenSet; }
+  inline void SetIsSyntheticData(bool value) {
+    m_isSyntheticDataHasBeenSet = true;
+    m_isSyntheticData = value;
+  }
+  inline AnalysisTemplateSummary& WithIsSyntheticData(bool value) {
+    SetIsSyntheticData(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
   bool m_arnHasBeenSet = false;
@@ -244,6 +260,9 @@ class AnalysisTemplateSummary {
 
   Aws::String m_description;
   bool m_descriptionHasBeenSet = false;
+
+  bool m_isSyntheticData{false};
+  bool m_isSyntheticDataHasBeenSet = false;
 };
 
 }  // namespace Model

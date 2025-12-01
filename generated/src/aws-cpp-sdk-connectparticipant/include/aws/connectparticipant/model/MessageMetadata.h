@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/connectparticipant/ConnectParticipant_EXPORTS.h>
+#include <aws/connectparticipant/model/MessageProcessingStatus.h>
 #include <aws/connectparticipant/model/Receipt.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -74,12 +75,31 @@ class MessageMetadata {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The status of Message Processing for the message.</p>
+   */
+  inline MessageProcessingStatus GetMessageProcessingStatus() const { return m_messageProcessingStatus; }
+  inline bool MessageProcessingStatusHasBeenSet() const { return m_messageProcessingStatusHasBeenSet; }
+  inline void SetMessageProcessingStatus(MessageProcessingStatus value) {
+    m_messageProcessingStatusHasBeenSet = true;
+    m_messageProcessingStatus = value;
+  }
+  inline MessageMetadata& WithMessageProcessingStatus(MessageProcessingStatus value) {
+    SetMessageProcessingStatus(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_messageId;
   bool m_messageIdHasBeenSet = false;
 
   Aws::Vector<Receipt> m_receipts;
   bool m_receiptsHasBeenSet = false;
+
+  MessageProcessingStatus m_messageProcessingStatus{MessageProcessingStatus::NOT_SET};
+  bool m_messageProcessingStatusHasBeenSet = false;
 };
 
 }  // namespace Model

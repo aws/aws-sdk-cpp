@@ -49,58 +49,6 @@ class RetrievalResultLocation {
 
   ///@{
   /**
-   * <p>The type of data source location.</p>
-   */
-  inline RetrievalResultLocationType GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  inline void SetType(RetrievalResultLocationType value) {
-    m_typeHasBeenSet = true;
-    m_type = value;
-  }
-  inline RetrievalResultLocation& WithType(RetrievalResultLocationType value) {
-    SetType(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The S3 data source location.</p>
-   */
-  inline const RetrievalResultS3Location& GetS3Location() const { return m_s3Location; }
-  inline bool S3LocationHasBeenSet() const { return m_s3LocationHasBeenSet; }
-  template <typename S3LocationT = RetrievalResultS3Location>
-  void SetS3Location(S3LocationT&& value) {
-    m_s3LocationHasBeenSet = true;
-    m_s3Location = std::forward<S3LocationT>(value);
-  }
-  template <typename S3LocationT = RetrievalResultS3Location>
-  RetrievalResultLocation& WithS3Location(S3LocationT&& value) {
-    SetS3Location(std::forward<S3LocationT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The web URL/URLs data source location.</p>
-   */
-  inline const RetrievalResultWebLocation& GetWebLocation() const { return m_webLocation; }
-  inline bool WebLocationHasBeenSet() const { return m_webLocationHasBeenSet; }
-  template <typename WebLocationT = RetrievalResultWebLocation>
-  void SetWebLocation(WebLocationT&& value) {
-    m_webLocationHasBeenSet = true;
-    m_webLocation = std::forward<WebLocationT>(value);
-  }
-  template <typename WebLocationT = RetrievalResultWebLocation>
-  RetrievalResultLocation& WithWebLocation(WebLocationT&& value) {
-    SetWebLocation(std::forward<WebLocationT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The Confluence data source location.</p>
    */
   inline const RetrievalResultConfluenceLocation& GetConfluenceLocation() const { return m_confluenceLocation; }
@@ -113,42 +61,6 @@ class RetrievalResultLocation {
   template <typename ConfluenceLocationT = RetrievalResultConfluenceLocation>
   RetrievalResultLocation& WithConfluenceLocation(ConfluenceLocationT&& value) {
     SetConfluenceLocation(std::forward<ConfluenceLocationT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The Salesforce data source location.</p>
-   */
-  inline const RetrievalResultSalesforceLocation& GetSalesforceLocation() const { return m_salesforceLocation; }
-  inline bool SalesforceLocationHasBeenSet() const { return m_salesforceLocationHasBeenSet; }
-  template <typename SalesforceLocationT = RetrievalResultSalesforceLocation>
-  void SetSalesforceLocation(SalesforceLocationT&& value) {
-    m_salesforceLocationHasBeenSet = true;
-    m_salesforceLocation = std::forward<SalesforceLocationT>(value);
-  }
-  template <typename SalesforceLocationT = RetrievalResultSalesforceLocation>
-  RetrievalResultLocation& WithSalesforceLocation(SalesforceLocationT&& value) {
-    SetSalesforceLocation(std::forward<SalesforceLocationT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The SharePoint data source location.</p>
-   */
-  inline const RetrievalResultSharePointLocation& GetSharePointLocation() const { return m_sharePointLocation; }
-  inline bool SharePointLocationHasBeenSet() const { return m_sharePointLocationHasBeenSet; }
-  template <typename SharePointLocationT = RetrievalResultSharePointLocation>
-  void SetSharePointLocation(SharePointLocationT&& value) {
-    m_sharePointLocationHasBeenSet = true;
-    m_sharePointLocation = std::forward<SharePointLocationT>(value);
-  }
-  template <typename SharePointLocationT = RetrievalResultSharePointLocation>
-  RetrievalResultLocation& WithSharePointLocation(SharePointLocationT&& value) {
-    SetSharePointLocation(std::forward<SharePointLocationT>(value));
     return *this;
   }
   ///@}
@@ -191,6 +103,60 @@ class RetrievalResultLocation {
 
   ///@{
   /**
+   * <p>The S3 data source location.</p>
+   */
+  inline const RetrievalResultS3Location& GetS3Location() const { return m_s3Location; }
+  inline bool S3LocationHasBeenSet() const { return m_s3LocationHasBeenSet; }
+  template <typename S3LocationT = RetrievalResultS3Location>
+  void SetS3Location(S3LocationT&& value) {
+    m_s3LocationHasBeenSet = true;
+    m_s3Location = std::forward<S3LocationT>(value);
+  }
+  template <typename S3LocationT = RetrievalResultS3Location>
+  RetrievalResultLocation& WithS3Location(S3LocationT&& value) {
+    SetS3Location(std::forward<S3LocationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Salesforce data source location.</p>
+   */
+  inline const RetrievalResultSalesforceLocation& GetSalesforceLocation() const { return m_salesforceLocation; }
+  inline bool SalesforceLocationHasBeenSet() const { return m_salesforceLocationHasBeenSet; }
+  template <typename SalesforceLocationT = RetrievalResultSalesforceLocation>
+  void SetSalesforceLocation(SalesforceLocationT&& value) {
+    m_salesforceLocationHasBeenSet = true;
+    m_salesforceLocation = std::forward<SalesforceLocationT>(value);
+  }
+  template <typename SalesforceLocationT = RetrievalResultSalesforceLocation>
+  RetrievalResultLocation& WithSalesforceLocation(SalesforceLocationT&& value) {
+    SetSalesforceLocation(std::forward<SalesforceLocationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The SharePoint data source location.</p>
+   */
+  inline const RetrievalResultSharePointLocation& GetSharePointLocation() const { return m_sharePointLocation; }
+  inline bool SharePointLocationHasBeenSet() const { return m_sharePointLocationHasBeenSet; }
+  template <typename SharePointLocationT = RetrievalResultSharePointLocation>
+  void SetSharePointLocation(SharePointLocationT&& value) {
+    m_sharePointLocationHasBeenSet = true;
+    m_sharePointLocation = std::forward<SharePointLocationT>(value);
+  }
+  template <typename SharePointLocationT = RetrievalResultSharePointLocation>
+  RetrievalResultLocation& WithSharePointLocation(SharePointLocationT&& value) {
+    SetSharePointLocation(std::forward<SharePointLocationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies information about the SQL query used to retrieve the result.</p>
    */
   inline const RetrievalResultSqlLocation& GetSqlLocation() const { return m_sqlLocation; }
@@ -206,24 +172,43 @@ class RetrievalResultLocation {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of data source location.</p>
+   */
+  inline RetrievalResultLocationType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(RetrievalResultLocationType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline RetrievalResultLocation& WithType(RetrievalResultLocationType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The web URL/URLs data source location.</p>
+   */
+  inline const RetrievalResultWebLocation& GetWebLocation() const { return m_webLocation; }
+  inline bool WebLocationHasBeenSet() const { return m_webLocationHasBeenSet; }
+  template <typename WebLocationT = RetrievalResultWebLocation>
+  void SetWebLocation(WebLocationT&& value) {
+    m_webLocationHasBeenSet = true;
+    m_webLocation = std::forward<WebLocationT>(value);
+  }
+  template <typename WebLocationT = RetrievalResultWebLocation>
+  RetrievalResultLocation& WithWebLocation(WebLocationT&& value) {
+    SetWebLocation(std::forward<WebLocationT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  RetrievalResultLocationType m_type{RetrievalResultLocationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
-
-  RetrievalResultS3Location m_s3Location;
-  bool m_s3LocationHasBeenSet = false;
-
-  RetrievalResultWebLocation m_webLocation;
-  bool m_webLocationHasBeenSet = false;
-
   RetrievalResultConfluenceLocation m_confluenceLocation;
   bool m_confluenceLocationHasBeenSet = false;
-
-  RetrievalResultSalesforceLocation m_salesforceLocation;
-  bool m_salesforceLocationHasBeenSet = false;
-
-  RetrievalResultSharePointLocation m_sharePointLocation;
-  bool m_sharePointLocationHasBeenSet = false;
 
   RetrievalResultCustomDocumentLocation m_customDocumentLocation;
   bool m_customDocumentLocationHasBeenSet = false;
@@ -231,8 +216,23 @@ class RetrievalResultLocation {
   RetrievalResultKendraDocumentLocation m_kendraDocumentLocation;
   bool m_kendraDocumentLocationHasBeenSet = false;
 
+  RetrievalResultS3Location m_s3Location;
+  bool m_s3LocationHasBeenSet = false;
+
+  RetrievalResultSalesforceLocation m_salesforceLocation;
+  bool m_salesforceLocationHasBeenSet = false;
+
+  RetrievalResultSharePointLocation m_sharePointLocation;
+  bool m_sharePointLocationHasBeenSet = false;
+
   RetrievalResultSqlLocation m_sqlLocation;
   bool m_sqlLocationHasBeenSet = false;
+
+  RetrievalResultLocationType m_type{RetrievalResultLocationType::NOT_SET};
+  bool m_typeHasBeenSet = false;
+
+  RetrievalResultWebLocation m_webLocation;
+  bool m_webLocationHasBeenSet = false;
 };
 
 }  // namespace Model

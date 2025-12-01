@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qconnect/QConnect_EXPORTS.h>
 
@@ -83,6 +84,24 @@ class SelfServiceConversationHistory {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp of the conversation history entry.</p>
+   */
+  inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
+  inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
+  template <typename TimestampT = Aws::Utils::DateTime>
+  void SetTimestamp(TimestampT&& value) {
+    m_timestampHasBeenSet = true;
+    m_timestamp = std::forward<TimestampT>(value);
+  }
+  template <typename TimestampT = Aws::Utils::DateTime>
+  SelfServiceConversationHistory& WithTimestamp(TimestampT&& value) {
+    SetTimestamp(std::forward<TimestampT>(value));
+    return *this;
+  }
+  ///@}
  private:
   int m_turnNumber{0};
   bool m_turnNumberHasBeenSet = false;
@@ -92,6 +111,9 @@ class SelfServiceConversationHistory {
 
   Aws::String m_botResponse;
   bool m_botResponseHasBeenSet = false;
+
+  Aws::Utils::DateTime m_timestamp{};
+  bool m_timestampHasBeenSet = false;
 };
 
 }  // namespace Model

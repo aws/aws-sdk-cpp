@@ -18,13 +18,13 @@ namespace Model {
 VoiceSettings::VoiceSettings(JsonView jsonValue) { *this = jsonValue; }
 
 VoiceSettings& VoiceSettings::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("voiceId")) {
-    m_voiceId = jsonValue.GetString("voiceId");
-    m_voiceIdHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("engine")) {
     m_engine = VoiceEngineMapper::GetVoiceEngineForName(jsonValue.GetString("engine"));
     m_engineHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("voiceId")) {
+    m_voiceId = jsonValue.GetString("voiceId");
+    m_voiceIdHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ VoiceSettings& VoiceSettings::operator=(JsonView jsonValue) {
 JsonValue VoiceSettings::Jsonize() const {
   JsonValue payload;
 
-  if (m_voiceIdHasBeenSet) {
-    payload.WithString("voiceId", m_voiceId);
-  }
-
   if (m_engineHasBeenSet) {
     payload.WithString("engine", VoiceEngineMapper::GetNameForVoiceEngine(m_engine));
+  }
+
+  if (m_voiceIdHasBeenSet) {
+    payload.WithString("voiceId", m_voiceId);
   }
 
   return payload;

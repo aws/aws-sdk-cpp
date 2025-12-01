@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/qconnect/model/AIPromptAPIFormat.h>
+#include <aws/qconnect/model/AIPromptInferenceConfiguration.h>
 #include <aws/qconnect/model/AIPromptTemplateConfiguration.h>
 #include <aws/qconnect/model/AIPromptTemplateType.h>
 #include <aws/qconnect/model/AIPromptType.h>
@@ -234,6 +235,24 @@ class AIPromptData {
 
   ///@{
   /**
+   * <p>The configuration for inference parameters when using the AI Prompt.</p>
+   */
+  inline const AIPromptInferenceConfiguration& GetInferenceConfiguration() const { return m_inferenceConfiguration; }
+  inline bool InferenceConfigurationHasBeenSet() const { return m_inferenceConfigurationHasBeenSet; }
+  template <typename InferenceConfigurationT = AIPromptInferenceConfiguration>
+  void SetInferenceConfiguration(InferenceConfigurationT&& value) {
+    m_inferenceConfigurationHasBeenSet = true;
+    m_inferenceConfiguration = std::forward<InferenceConfigurationT>(value);
+  }
+  template <typename InferenceConfigurationT = AIPromptInferenceConfiguration>
+  AIPromptData& WithInferenceConfiguration(InferenceConfigurationT&& value) {
+    SetInferenceConfiguration(std::forward<InferenceConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The time the AI Prompt was last modified.</p>
    */
   inline const Aws::Utils::DateTime& GetModifiedTime() const { return m_modifiedTime; }
@@ -371,6 +390,9 @@ class AIPromptData {
 
   AIPromptTemplateConfiguration m_templateConfiguration;
   bool m_templateConfigurationHasBeenSet = false;
+
+  AIPromptInferenceConfiguration m_inferenceConfiguration;
+  bool m_inferenceConfigurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedTime{};
   bool m_modifiedTimeHasBeenSet = false;

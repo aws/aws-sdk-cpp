@@ -1,0 +1,161 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
+
+#include <aws/route53globalresolver/Route53GlobalResolverClient.h>
+#include <aws/route53globalresolver/Route53GlobalResolverEndpointProvider.h>
+#include <aws/route53globalresolver/Route53GlobalResolverEndpointRules.h>
+#include <aws/route53globalresolver/Route53GlobalResolverErrorMarshaller.h>
+#include <aws/route53globalresolver/Route53GlobalResolverErrors.h>
+#include <aws/route53globalresolver/Route53GlobalResolverRequest.h>
+#include <aws/route53globalresolver/Route53GlobalResolverServiceClientModel.h>
+#include <aws/route53globalresolver/Route53GlobalResolver_EXPORTS.h>
+#include <aws/route53globalresolver/model/AccessSourcesItem.h>
+#include <aws/route53globalresolver/model/AccessTokenItem.h>
+#include <aws/route53globalresolver/model/AssociateHostedZoneRequest.h>
+#include <aws/route53globalresolver/model/AssociateHostedZoneResult.h>
+#include <aws/route53globalresolver/model/BatchCreateFirewallRuleInputItem.h>
+#include <aws/route53globalresolver/model/BatchCreateFirewallRuleOutputItem.h>
+#include <aws/route53globalresolver/model/BatchCreateFirewallRuleRequest.h>
+#include <aws/route53globalresolver/model/BatchCreateFirewallRuleResult.h>
+#include <aws/route53globalresolver/model/BatchCreateFirewallRuleSdkResult.h>
+#include <aws/route53globalresolver/model/BatchDeleteFirewallRuleInputItem.h>
+#include <aws/route53globalresolver/model/BatchDeleteFirewallRuleOutputItem.h>
+#include <aws/route53globalresolver/model/BatchDeleteFirewallRuleRequest.h>
+#include <aws/route53globalresolver/model/BatchDeleteFirewallRuleResult.h>
+#include <aws/route53globalresolver/model/BatchDeleteFirewallRuleSdkResult.h>
+#include <aws/route53globalresolver/model/BatchUpdateFirewallRuleInputItem.h>
+#include <aws/route53globalresolver/model/BatchUpdateFirewallRuleOutputItem.h>
+#include <aws/route53globalresolver/model/BatchUpdateFirewallRuleRequest.h>
+#include <aws/route53globalresolver/model/BatchUpdateFirewallRuleResult.h>
+#include <aws/route53globalresolver/model/BatchUpdateFirewallRuleSdkResult.h>
+#include <aws/route53globalresolver/model/BlockOverrideDnsQueryType.h>
+#include <aws/route53globalresolver/model/CRResourceStatus.h>
+#include <aws/route53globalresolver/model/ConfidenceThreshold.h>
+#include <aws/route53globalresolver/model/ConflictException.h>
+#include <aws/route53globalresolver/model/CreateAccessSourceRequest.h>
+#include <aws/route53globalresolver/model/CreateAccessSourceResult.h>
+#include <aws/route53globalresolver/model/CreateAccessTokenRequest.h>
+#include <aws/route53globalresolver/model/CreateAccessTokenResult.h>
+#include <aws/route53globalresolver/model/CreateDNSViewRequest.h>
+#include <aws/route53globalresolver/model/CreateDNSViewResult.h>
+#include <aws/route53globalresolver/model/CreateFirewallDomainListRequest.h>
+#include <aws/route53globalresolver/model/CreateFirewallDomainListResult.h>
+#include <aws/route53globalresolver/model/CreateFirewallRuleRequest.h>
+#include <aws/route53globalresolver/model/CreateFirewallRuleResult.h>
+#include <aws/route53globalresolver/model/CreateGlobalResolverRequest.h>
+#include <aws/route53globalresolver/model/CreateGlobalResolverResult.h>
+#include <aws/route53globalresolver/model/DNSViewSummary.h>
+#include <aws/route53globalresolver/model/DeleteAccessSourceRequest.h>
+#include <aws/route53globalresolver/model/DeleteAccessSourceResult.h>
+#include <aws/route53globalresolver/model/DeleteAccessTokenRequest.h>
+#include <aws/route53globalresolver/model/DeleteAccessTokenResult.h>
+#include <aws/route53globalresolver/model/DeleteDNSViewRequest.h>
+#include <aws/route53globalresolver/model/DeleteDNSViewResult.h>
+#include <aws/route53globalresolver/model/DeleteFirewallDomainListRequest.h>
+#include <aws/route53globalresolver/model/DeleteFirewallDomainListResult.h>
+#include <aws/route53globalresolver/model/DeleteFirewallRuleRequest.h>
+#include <aws/route53globalresolver/model/DeleteFirewallRuleResult.h>
+#include <aws/route53globalresolver/model/DeleteGlobalResolverRequest.h>
+#include <aws/route53globalresolver/model/DeleteGlobalResolverResult.h>
+#include <aws/route53globalresolver/model/DisableDNSViewRequest.h>
+#include <aws/route53globalresolver/model/DisableDNSViewResult.h>
+#include <aws/route53globalresolver/model/DisassociateHostedZoneRequest.h>
+#include <aws/route53globalresolver/model/DisassociateHostedZoneResult.h>
+#include <aws/route53globalresolver/model/DnsAdvancedProtection.h>
+#include <aws/route53globalresolver/model/DnsProtocol.h>
+#include <aws/route53globalresolver/model/DnsSecValidationType.h>
+#include <aws/route53globalresolver/model/EdnsClientSubnetType.h>
+#include <aws/route53globalresolver/model/EnableDNSViewRequest.h>
+#include <aws/route53globalresolver/model/EnableDNSViewResult.h>
+#include <aws/route53globalresolver/model/FirewallBlockResponse.h>
+#include <aws/route53globalresolver/model/FirewallDomainListsItem.h>
+#include <aws/route53globalresolver/model/FirewallRuleAction.h>
+#include <aws/route53globalresolver/model/FirewallRulesFailOpenType.h>
+#include <aws/route53globalresolver/model/FirewallRulesItem.h>
+#include <aws/route53globalresolver/model/GetAccessSourceRequest.h>
+#include <aws/route53globalresolver/model/GetAccessSourceResult.h>
+#include <aws/route53globalresolver/model/GetAccessTokenRequest.h>
+#include <aws/route53globalresolver/model/GetAccessTokenResult.h>
+#include <aws/route53globalresolver/model/GetDNSViewRequest.h>
+#include <aws/route53globalresolver/model/GetDNSViewResult.h>
+#include <aws/route53globalresolver/model/GetFirewallDomainListRequest.h>
+#include <aws/route53globalresolver/model/GetFirewallDomainListResult.h>
+#include <aws/route53globalresolver/model/GetFirewallRuleRequest.h>
+#include <aws/route53globalresolver/model/GetFirewallRuleResult.h>
+#include <aws/route53globalresolver/model/GetGlobalResolverRequest.h>
+#include <aws/route53globalresolver/model/GetGlobalResolverResult.h>
+#include <aws/route53globalresolver/model/GetHostedZoneAssociationRequest.h>
+#include <aws/route53globalresolver/model/GetHostedZoneAssociationResult.h>
+#include <aws/route53globalresolver/model/GetManagedFirewallDomainListRequest.h>
+#include <aws/route53globalresolver/model/GetManagedFirewallDomainListResult.h>
+#include <aws/route53globalresolver/model/GlobalResolversItem.h>
+#include <aws/route53globalresolver/model/HostedZoneAssociationStatus.h>
+#include <aws/route53globalresolver/model/HostedZoneAssociationSummary.h>
+#include <aws/route53globalresolver/model/ImportFirewallDomainsRequest.h>
+#include <aws/route53globalresolver/model/ImportFirewallDomainsResult.h>
+#include <aws/route53globalresolver/model/InternalServerException.h>
+#include <aws/route53globalresolver/model/IpAddressType.h>
+#include <aws/route53globalresolver/model/ListAccessSourcesRequest.h>
+#include <aws/route53globalresolver/model/ListAccessSourcesResult.h>
+#include <aws/route53globalresolver/model/ListAccessTokensRequest.h>
+#include <aws/route53globalresolver/model/ListAccessTokensResult.h>
+#include <aws/route53globalresolver/model/ListDNSViewsRequest.h>
+#include <aws/route53globalresolver/model/ListDNSViewsResult.h>
+#include <aws/route53globalresolver/model/ListFirewallDomainListsRequest.h>
+#include <aws/route53globalresolver/model/ListFirewallDomainListsResult.h>
+#include <aws/route53globalresolver/model/ListFirewallDomainsRequest.h>
+#include <aws/route53globalresolver/model/ListFirewallDomainsResult.h>
+#include <aws/route53globalresolver/model/ListFirewallRulesRequest.h>
+#include <aws/route53globalresolver/model/ListFirewallRulesResult.h>
+#include <aws/route53globalresolver/model/ListGlobalResolversRequest.h>
+#include <aws/route53globalresolver/model/ListGlobalResolversResult.h>
+#include <aws/route53globalresolver/model/ListHostedZoneAssociationsRequest.h>
+#include <aws/route53globalresolver/model/ListHostedZoneAssociationsResult.h>
+#include <aws/route53globalresolver/model/ListManagedFirewallDomainListsRequest.h>
+#include <aws/route53globalresolver/model/ListManagedFirewallDomainListsResult.h>
+#include <aws/route53globalresolver/model/ListTagsForResourceRequest.h>
+#include <aws/route53globalresolver/model/ListTagsForResourceResult.h>
+#include <aws/route53globalresolver/model/ManagedFirewallDomainListsItem.h>
+#include <aws/route53globalresolver/model/ProfileResourceStatus.h>
+#include <aws/route53globalresolver/model/ResourceNotFoundException.h>
+#include <aws/route53globalresolver/model/ServiceQuotaExceededException.h>
+#include <aws/route53globalresolver/model/TagResourceRequest.h>
+#include <aws/route53globalresolver/model/TagResourceResult.h>
+#include <aws/route53globalresolver/model/ThrottlingException.h>
+#include <aws/route53globalresolver/model/TokenStatus.h>
+#include <aws/route53globalresolver/model/UntagResourceRequest.h>
+#include <aws/route53globalresolver/model/UntagResourceResult.h>
+#include <aws/route53globalresolver/model/UpdateAccessSourceRequest.h>
+#include <aws/route53globalresolver/model/UpdateAccessSourceResult.h>
+#include <aws/route53globalresolver/model/UpdateAccessTokenRequest.h>
+#include <aws/route53globalresolver/model/UpdateAccessTokenResult.h>
+#include <aws/route53globalresolver/model/UpdateDNSViewRequest.h>
+#include <aws/route53globalresolver/model/UpdateDNSViewResult.h>
+#include <aws/route53globalresolver/model/UpdateFirewallDomainsRequest.h>
+#include <aws/route53globalresolver/model/UpdateFirewallDomainsResult.h>
+#include <aws/route53globalresolver/model/UpdateFirewallRuleRequest.h>
+#include <aws/route53globalresolver/model/UpdateFirewallRuleResult.h>
+#include <aws/route53globalresolver/model/UpdateGlobalResolverRequest.h>
+#include <aws/route53globalresolver/model/UpdateGlobalResolverResult.h>
+#include <aws/route53globalresolver/model/UpdateHostedZoneAssociationRequest.h>
+#include <aws/route53globalresolver/model/UpdateHostedZoneAssociationResult.h>
+#include <aws/route53globalresolver/model/ValidationException.h>
+#include <aws/route53globalresolver/model/ValidationExceptionField.h>
+#include <aws/route53globalresolver/model/ValidationExceptionReason.h>
+
+using Route53GlobalResolverIncludeTest = ::testing::Test;
+
+TEST_F(Route53GlobalResolverIncludeTest, TestClientCompiles)
+{
+  Aws::Client::ClientConfigurationInitValues cfgInit;
+  cfgInit.shouldDisableIMDS = true;
+  Aws::Client::ClientConfiguration config(cfgInit);
+  AWS_UNREFERENCED_PARAM(config);
+  // auto pClient = Aws::MakeUnique<Aws::Route53GlobalResolver::Route53GlobalResolverClient>("Route53GlobalResolverIncludeTest", config);
+  // ASSERT_TRUE(pClient.get());
+}

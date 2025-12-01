@@ -83,12 +83,14 @@
 #include <aws/qconnect/model/ListMessageTemplatesRequest.h>
 #include <aws/qconnect/model/ListMessagesRequest.h>
 #include <aws/qconnect/model/ListQuickResponsesRequest.h>
+#include <aws/qconnect/model/ListSpansRequest.h>
 #include <aws/qconnect/model/ListTagsForResourceRequest.h>
 #include <aws/qconnect/model/NotifyRecommendationsReceivedRequest.h>
 #include <aws/qconnect/model/PutFeedbackRequest.h>
 #include <aws/qconnect/model/RemoveAssistantAIAgentRequest.h>
 #include <aws/qconnect/model/RemoveKnowledgeBaseTemplateUriRequest.h>
 #include <aws/qconnect/model/RenderMessageTemplateRequest.h>
+#include <aws/qconnect/model/RetrieveRequest.h>
 #include <aws/qconnect/model/SearchContentRequest.h>
 #include <aws/qconnect/model/SearchMessageTemplatesRequest.h>
 #include <aws/qconnect/model/SearchQuickResponsesRequest.h>
@@ -2823,6 +2825,50 @@ ListQuickResponsesOutcome QConnectClient::ListQuickResponses(const ListQuickResp
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+ListSpansOutcome QConnectClient::ListSpans(const ListSpansRequest& request) const {
+  AWS_OPERATION_GUARD(ListSpans);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSpans, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AssistantIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListSpans", "Required field: AssistantId, is not set");
+    return ListSpansOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                  "Missing required field [AssistantId]", false));
+  }
+  if (!request.SessionIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListSpans", "Required field: SessionId, is not set");
+    return ListSpansOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                  "Missing required field [SessionId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListSpans, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListSpans, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListSpans",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListSpansOutcome>(
+      [&]() -> ListSpansOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSpans, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/assistants/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssistantId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/sessions/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/spans");
+        return ListSpansOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 ListTagsForResourceOutcome QConnectClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
   AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -3058,6 +3104,43 @@ RenderMessageTemplateOutcome QConnectClient::RenderMessageTemplate(const RenderM
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMessageTemplateId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/render");
         return RenderMessageTemplateOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+RetrieveOutcome QConnectClient::Retrieve(const RetrieveRequest& request) const {
+  AWS_OPERATION_GUARD(Retrieve);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, Retrieve, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AssistantIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("Retrieve", "Required field: AssistantId, is not set");
+    return RetrieveOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                 "Missing required field [AssistantId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, Retrieve, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, Retrieve, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".Retrieve",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<RetrieveOutcome>(
+      [&]() -> RetrieveOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, Retrieve, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/assistants/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssistantId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/retrieve");
+        return RetrieveOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

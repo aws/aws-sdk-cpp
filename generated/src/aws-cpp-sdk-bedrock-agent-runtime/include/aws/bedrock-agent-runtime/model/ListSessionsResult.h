@@ -30,6 +30,25 @@ class ListSessionsResult {
 
   ///@{
   /**
+   * <p>If the total number of results is greater than the <code>maxResults</code>
+   * value provided in the request, use this token when making another request in the
+   * <code>nextToken</code> field to return the next batch of results.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListSessionsResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A list of summaries for each session in your Amazon Web Services account.</p>
    */
   inline const Aws::Vector<SessionSummary>& GetSessionSummaries() const { return m_sessionSummaries; }
@@ -52,25 +71,6 @@ class ListSessionsResult {
   ///@}
 
   ///@{
-  /**
-   * <p>If the total number of results is greater than the <code>maxResults</code>
-   * value provided in the request, use this token when making another request in the
-   * <code>nextToken</code> field to return the next batch of results.</p>
-   */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
-  }
-  template <typename NextTokenT = Aws::String>
-  ListSessionsResult& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -85,11 +85,11 @@ class ListSessionsResult {
   }
   ///@}
  private:
-  Aws::Vector<SessionSummary> m_sessionSummaries;
-  bool m_sessionSummariesHasBeenSet = false;
-
   Aws::String m_nextToken;
   bool m_nextTokenHasBeenSet = false;
+
+  Aws::Vector<SessionSummary> m_sessionSummaries;
+  bool m_sessionSummariesHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

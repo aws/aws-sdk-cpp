@@ -34,25 +34,6 @@ class ReasoningTextBlock {
 
   ///@{
   /**
-   * <p>Text describing the reasoning that the model used to return the content in
-   * the content block.</p>
-   */
-  inline const Aws::String& GetText() const { return m_text; }
-  inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-  template <typename TextT = Aws::String>
-  void SetText(TextT&& value) {
-    m_textHasBeenSet = true;
-    m_text = std::forward<TextT>(value);
-  }
-  template <typename TextT = Aws::String>
-  ReasoningTextBlock& WithText(TextT&& value) {
-    SetText(std::forward<TextT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>A hash of all the messages in the conversation to ensure that the content in
    * the reasoning text block isn't tampered with. You must submit the signature in
    * subsequent <code>Converse</code> requests, in addition to the previous messages.
@@ -71,12 +52,31 @@ class ReasoningTextBlock {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>Text describing the reasoning that the model used to return the content in
+   * the content block.</p>
+   */
+  inline const Aws::String& GetText() const { return m_text; }
+  inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
+  template <typename TextT = Aws::String>
+  void SetText(TextT&& value) {
+    m_textHasBeenSet = true;
+    m_text = std::forward<TextT>(value);
+  }
+  template <typename TextT = Aws::String>
+  ReasoningTextBlock& WithText(TextT&& value) {
+    SetText(std::forward<TextT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_signature;
   bool m_signatureHasBeenSet = false;
+
+  Aws::String m_text;
+  bool m_textHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -601,6 +601,35 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   }
 
   /**
+   * <p> Associate security profiles with an Entity in an Amazon Connect instance.
+   * </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateSecurityProfiles">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AssociateSecurityProfilesOutcome AssociateSecurityProfiles(const Model::AssociateSecurityProfilesRequest& request) const;
+
+  /**
+   * A Callable wrapper for AssociateSecurityProfiles that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename AssociateSecurityProfilesRequestT = Model::AssociateSecurityProfilesRequest>
+  Model::AssociateSecurityProfilesOutcomeCallable AssociateSecurityProfilesCallable(
+      const AssociateSecurityProfilesRequestT& request) const {
+    return SubmitCallable(&ConnectClient::AssociateSecurityProfiles, request);
+  }
+
+  /**
+   * An Async wrapper for AssociateSecurityProfiles that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename AssociateSecurityProfilesRequestT = Model::AssociateSecurityProfilesRequest>
+  void AssociateSecurityProfilesAsync(const AssociateSecurityProfilesRequestT& request,
+                                      const AssociateSecurityProfilesResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::AssociateSecurityProfiles, request, handler, context);
+  }
+
+  /**
    * <p>Associates an agent with a traffic distribution group. This API can be called
    * only in the Region where the traffic distribution group is
    * created.</p><p><h3>See Also:</h3>   <a
@@ -661,6 +690,34 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   }
 
   /**
+   * <p>Associates a workspace with one or more users or routing profiles, allowing
+   * them to access the workspace's configured views and pages.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateWorkspace">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AssociateWorkspaceOutcome AssociateWorkspace(const Model::AssociateWorkspaceRequest& request) const;
+
+  /**
+   * A Callable wrapper for AssociateWorkspace that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename AssociateWorkspaceRequestT = Model::AssociateWorkspaceRequest>
+  Model::AssociateWorkspaceOutcomeCallable AssociateWorkspaceCallable(const AssociateWorkspaceRequestT& request) const {
+    return SubmitCallable(&ConnectClient::AssociateWorkspace, request);
+  }
+
+  /**
+   * An Async wrapper for AssociateWorkspace that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename AssociateWorkspaceRequestT = Model::AssociateWorkspaceRequest>
+  void AssociateWorkspaceAsync(const AssociateWorkspaceRequestT& request, const AssociateWorkspaceResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::AssociateWorkspace, request, handler, context);
+  }
+
+  /**
    * <p>Associates a list of analytics datasets for a given Amazon Connect instance
    * to a target account. You can associate multiple datasets in a single
    * call.</p><p><h3>See Also:</h3>   <a
@@ -689,6 +746,105 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
                                            const BatchAssociateAnalyticsDataSetResponseReceivedHandler& handler,
                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::BatchAssociateAnalyticsDataSet, request, handler, context);
+  }
+
+  /**
+   * <p>Creates values for attributes in a data table. The value may be a default or
+   * it may be associated with a primary value. The value must pass all customer
+   * defined validation as well as the default validation for the value type. The
+   * operation must conform to Batch Operation API Standards. Although the standard
+   * specifies that successful and failed entities are listed separately in the
+   * response, authorization fails if any primary values or attributes are
+   * unauthorized. The combination of primary values and the attribute name serve as
+   * the identifier for the individual item request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchCreateDataTableValue">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchCreateDataTableValueOutcome BatchCreateDataTableValue(const Model::BatchCreateDataTableValueRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchCreateDataTableValue that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename BatchCreateDataTableValueRequestT = Model::BatchCreateDataTableValueRequest>
+  Model::BatchCreateDataTableValueOutcomeCallable BatchCreateDataTableValueCallable(
+      const BatchCreateDataTableValueRequestT& request) const {
+    return SubmitCallable(&ConnectClient::BatchCreateDataTableValue, request);
+  }
+
+  /**
+   * An Async wrapper for BatchCreateDataTableValue that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename BatchCreateDataTableValueRequestT = Model::BatchCreateDataTableValueRequest>
+  void BatchCreateDataTableValueAsync(const BatchCreateDataTableValueRequestT& request,
+                                      const BatchCreateDataTableValueResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::BatchCreateDataTableValue, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes multiple values from a data table. API users may delete values at any
+   * time. When deletion is requested from the admin website, a warning is shown
+   * alerting the user of the most recent time the attribute and its values were
+   * accessed. System managed values are not deletable by customers.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchDeleteDataTableValue">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchDeleteDataTableValueOutcome BatchDeleteDataTableValue(const Model::BatchDeleteDataTableValueRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchDeleteDataTableValue that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename BatchDeleteDataTableValueRequestT = Model::BatchDeleteDataTableValueRequest>
+  Model::BatchDeleteDataTableValueOutcomeCallable BatchDeleteDataTableValueCallable(
+      const BatchDeleteDataTableValueRequestT& request) const {
+    return SubmitCallable(&ConnectClient::BatchDeleteDataTableValue, request);
+  }
+
+  /**
+   * An Async wrapper for BatchDeleteDataTableValue that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename BatchDeleteDataTableValueRequestT = Model::BatchDeleteDataTableValueRequest>
+  void BatchDeleteDataTableValueAsync(const BatchDeleteDataTableValueRequestT& request,
+                                      const BatchDeleteDataTableValueResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::BatchDeleteDataTableValue, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves multiple values from a data table without evaluating expressions.
+   * Returns the raw stored values along with metadata such as lock versions and
+   * modification timestamps. "Describe" is a deprecated term but is allowed to
+   * maintain consistency with existing operations.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchDescribeDataTableValue">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchDescribeDataTableValueOutcome BatchDescribeDataTableValue(
+      const Model::BatchDescribeDataTableValueRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchDescribeDataTableValue that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename BatchDescribeDataTableValueRequestT = Model::BatchDescribeDataTableValueRequest>
+  Model::BatchDescribeDataTableValueOutcomeCallable BatchDescribeDataTableValueCallable(
+      const BatchDescribeDataTableValueRequestT& request) const {
+    return SubmitCallable(&ConnectClient::BatchDescribeDataTableValue, request);
+  }
+
+  /**
+   * An Async wrapper for BatchDescribeDataTableValue that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename BatchDescribeDataTableValueRequestT = Model::BatchDescribeDataTableValueRequest>
+  void BatchDescribeDataTableValueAsync(const BatchDescribeDataTableValueRequestT& request,
+                                        const BatchDescribeDataTableValueResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::BatchDescribeDataTableValue, request, handler, context);
   }
 
   /**
@@ -812,6 +968,37 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   void BatchPutContactAsync(const BatchPutContactRequestT& request, const BatchPutContactResponseReceivedHandler& handler,
                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::BatchPutContact, request, handler, context);
+  }
+
+  /**
+   * <p>Updates multiple data table values using all properties from
+   * BatchCreateDataTableValue. System managed values are not modifiable by
+   * customers. The operation requires proper lock versions to prevent concurrent
+   * modification conflicts.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchUpdateDataTableValue">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchUpdateDataTableValueOutcome BatchUpdateDataTableValue(const Model::BatchUpdateDataTableValueRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchUpdateDataTableValue that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename BatchUpdateDataTableValueRequestT = Model::BatchUpdateDataTableValueRequest>
+  Model::BatchUpdateDataTableValueOutcomeCallable BatchUpdateDataTableValueCallable(
+      const BatchUpdateDataTableValueRequestT& request) const {
+    return SubmitCallable(&ConnectClient::BatchUpdateDataTableValue, request);
+  }
+
+  /**
+   * An Async wrapper for BatchUpdateDataTableValue that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename BatchUpdateDataTableValueRequestT = Model::BatchUpdateDataTableValueRequest>
+  void BatchUpdateDataTableValueAsync(const BatchUpdateDataTableValueRequestT& request,
+                                      const BatchUpdateDataTableValueResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::BatchUpdateDataTableValue, request, handler, context);
   }
 
   /**
@@ -1110,6 +1297,67 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
                                      const CreateContactFlowVersionResponseReceivedHandler& handler,
                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::CreateContactFlowVersion, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a new data table with the specified properties. Supports the creation
+   * of all table properties except for attributes and values. A table with no
+   * attributes and values is a valid state for a table. The number of tables per
+   * instance is limited to 100 per instance. Customers can request an increase by
+   * using AWS Service Quotas.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateDataTable">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateDataTableOutcome CreateDataTable(const Model::CreateDataTableRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateDataTable that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateDataTableRequestT = Model::CreateDataTableRequest>
+  Model::CreateDataTableOutcomeCallable CreateDataTableCallable(const CreateDataTableRequestT& request) const {
+    return SubmitCallable(&ConnectClient::CreateDataTable, request);
+  }
+
+  /**
+   * An Async wrapper for CreateDataTable that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateDataTableRequestT = Model::CreateDataTableRequest>
+  void CreateDataTableAsync(const CreateDataTableRequestT& request, const CreateDataTableResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::CreateDataTable, request, handler, context);
+  }
+
+  /**
+   * <p>Adds an attribute to an existing data table. Creating a new primary attribute
+   * uses the empty value for the specified value type for all existing records. This
+   * should not affect uniqueness of published data tables since the existing primary
+   * values will already be unique. Creating attributes does not create any values.
+   * System managed tables may not allow customers to create new
+   * attributes.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateDataTableAttribute">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateDataTableAttributeOutcome CreateDataTableAttribute(const Model::CreateDataTableAttributeRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateDataTableAttribute that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateDataTableAttributeRequestT = Model::CreateDataTableAttributeRequest>
+  Model::CreateDataTableAttributeOutcomeCallable CreateDataTableAttributeCallable(const CreateDataTableAttributeRequestT& request) const {
+    return SubmitCallable(&ConnectClient::CreateDataTableAttribute, request);
+  }
+
+  /**
+   * An Async wrapper for CreateDataTableAttribute that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateDataTableAttributeRequestT = Model::CreateDataTableAttributeRequest>
+  void CreateDataTableAttributeAsync(const CreateDataTableAttributeRequestT& request,
+                                     const CreateDataTableAttributeResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::CreateDataTableAttribute, request, handler, context);
   }
 
   /**
@@ -1875,6 +2123,60 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   }
 
   /**
+   * <p>Creates a workspace that defines the user experience by mapping views to
+   * pages. Workspaces can be assigned to users or routing profiles.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateWorkspace">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateWorkspaceOutcome CreateWorkspace(const Model::CreateWorkspaceRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateWorkspace that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateWorkspaceRequestT = Model::CreateWorkspaceRequest>
+  Model::CreateWorkspaceOutcomeCallable CreateWorkspaceCallable(const CreateWorkspaceRequestT& request) const {
+    return SubmitCallable(&ConnectClient::CreateWorkspace, request);
+  }
+
+  /**
+   * An Async wrapper for CreateWorkspace that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateWorkspaceRequestT = Model::CreateWorkspaceRequest>
+  void CreateWorkspaceAsync(const CreateWorkspaceRequestT& request, const CreateWorkspaceResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::CreateWorkspace, request, handler, context);
+  }
+
+  /**
+   * <p>Associates a view with a page in a workspace, defining what users see when
+   * they navigate to that page.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateWorkspacePage">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateWorkspacePageOutcome CreateWorkspacePage(const Model::CreateWorkspacePageRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateWorkspacePage that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateWorkspacePageRequestT = Model::CreateWorkspacePageRequest>
+  Model::CreateWorkspacePageOutcomeCallable CreateWorkspacePageCallable(const CreateWorkspacePageRequestT& request) const {
+    return SubmitCallable(&ConnectClient::CreateWorkspacePage, request);
+  }
+
+  /**
+   * An Async wrapper for CreateWorkspacePage that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateWorkspacePageRequestT = Model::CreateWorkspacePageRequest>
+  void CreateWorkspacePageAsync(const CreateWorkspacePageRequestT& request, const CreateWorkspacePageResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::CreateWorkspacePage, request, handler, context);
+  }
+
+  /**
    * <p>Deactivates an evaluation form in the specified Amazon Connect instance.
    * After a form is deactivated, it is no longer available for users to start new
    * evaluations based on the form. </p><p><h3>See Also:</h3>   <a
@@ -2100,6 +2402,65 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
                                      const DeleteContactFlowVersionResponseReceivedHandler& handler,
                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::DeleteContactFlowVersion, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a data table and all associated attributes, versions, audits, and
+   * values. Does not update any references to the data table, even from other data
+   * tables. This includes dynamic values and conditional validations. System managed
+   * data tables are not deletable by customers. API users may delete the table at
+   * any time. When deletion is requested from the admin website, a warning is shown
+   * alerting the user of the most recent time the table and its values were
+   * accessed.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteDataTable">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteDataTableOutcome DeleteDataTable(const Model::DeleteDataTableRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteDataTable that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteDataTableRequestT = Model::DeleteDataTableRequest>
+  Model::DeleteDataTableOutcomeCallable DeleteDataTableCallable(const DeleteDataTableRequestT& request) const {
+    return SubmitCallable(&ConnectClient::DeleteDataTable, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteDataTable that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteDataTableRequestT = Model::DeleteDataTableRequest>
+  void DeleteDataTableAsync(const DeleteDataTableRequestT& request, const DeleteDataTableResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::DeleteDataTable, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes an attribute and all its values from a data table.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteDataTableAttribute">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteDataTableAttributeOutcome DeleteDataTableAttribute(const Model::DeleteDataTableAttributeRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteDataTableAttribute that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteDataTableAttributeRequestT = Model::DeleteDataTableAttributeRequest>
+  Model::DeleteDataTableAttributeOutcomeCallable DeleteDataTableAttributeCallable(const DeleteDataTableAttributeRequestT& request) const {
+    return SubmitCallable(&ConnectClient::DeleteDataTableAttribute, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteDataTableAttribute that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteDataTableAttributeRequestT = Model::DeleteDataTableAttributeRequest>
+  void DeleteDataTableAttributeAsync(const DeleteDataTableAttributeRequestT& request,
+                                     const DeleteDataTableAttributeResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::DeleteDataTableAttribute, request, handler, context);
   }
 
   /**
@@ -2738,6 +3099,86 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   }
 
   /**
+   * <p>Deletes a workspace and removes all associated view and resource
+   * assignments.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteWorkspace">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteWorkspaceOutcome DeleteWorkspace(const Model::DeleteWorkspaceRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteWorkspace that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteWorkspaceRequestT = Model::DeleteWorkspaceRequest>
+  Model::DeleteWorkspaceOutcomeCallable DeleteWorkspaceCallable(const DeleteWorkspaceRequestT& request) const {
+    return SubmitCallable(&ConnectClient::DeleteWorkspace, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteWorkspace that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteWorkspaceRequestT = Model::DeleteWorkspaceRequest>
+  void DeleteWorkspaceAsync(const DeleteWorkspaceRequestT& request, const DeleteWorkspaceResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::DeleteWorkspace, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a media asset (such as a logo) from a workspace.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteWorkspaceMedia">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteWorkspaceMediaOutcome DeleteWorkspaceMedia(const Model::DeleteWorkspaceMediaRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteWorkspaceMedia that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteWorkspaceMediaRequestT = Model::DeleteWorkspaceMediaRequest>
+  Model::DeleteWorkspaceMediaOutcomeCallable DeleteWorkspaceMediaCallable(const DeleteWorkspaceMediaRequestT& request) const {
+    return SubmitCallable(&ConnectClient::DeleteWorkspaceMedia, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteWorkspaceMedia that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteWorkspaceMediaRequestT = Model::DeleteWorkspaceMediaRequest>
+  void DeleteWorkspaceMediaAsync(const DeleteWorkspaceMediaRequestT& request, const DeleteWorkspaceMediaResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::DeleteWorkspaceMedia, request, handler, context);
+  }
+
+  /**
+   * <p>Removes the association between a view and a page in a workspace. The page
+   * will display the default view after deletion.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteWorkspacePage">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteWorkspacePageOutcome DeleteWorkspacePage(const Model::DeleteWorkspacePageRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteWorkspacePage that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteWorkspacePageRequestT = Model::DeleteWorkspacePageRequest>
+  Model::DeleteWorkspacePageOutcomeCallable DeleteWorkspacePageCallable(const DeleteWorkspacePageRequestT& request) const {
+    return SubmitCallable(&ConnectClient::DeleteWorkspacePage, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteWorkspacePage that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DeleteWorkspacePageRequestT = Model::DeleteWorkspacePageRequest>
+  void DeleteWorkspacePageAsync(const DeleteWorkspacePageRequestT& request, const DeleteWorkspacePageResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::DeleteWorkspacePage, request, handler, context);
+  }
+
+  /**
    * <p>Describes an agent status.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeAgentStatus">AWS
    * API Reference</a></p>
@@ -2967,6 +3408,68 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
                                            const DescribeContactFlowModuleAliasResponseReceivedHandler& handler,
                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::DescribeContactFlowModuleAlias, request, handler, context);
+  }
+
+  /**
+   * <p>Returns all properties for a data table except for attributes and values. All
+   * properties from CreateDataTable are returned as well as properties for region
+   * replication, versioning, and system tables. "Describe" is a deprecated term but
+   * is allowed to maintain consistency with existing operations.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeDataTable">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeDataTableOutcome DescribeDataTable(const Model::DescribeDataTableRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeDataTable that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeDataTableRequestT = Model::DescribeDataTableRequest>
+  Model::DescribeDataTableOutcomeCallable DescribeDataTableCallable(const DescribeDataTableRequestT& request) const {
+    return SubmitCallable(&ConnectClient::DescribeDataTable, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeDataTable that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DescribeDataTableRequestT = Model::DescribeDataTableRequest>
+  void DescribeDataTableAsync(const DescribeDataTableRequestT& request, const DescribeDataTableResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::DescribeDataTable, request, handler, context);
+  }
+
+  /**
+   * <p>Returns detailed information for a specific data table attribute including
+   * its configuration, validation rules, and metadata. "Describe" is a deprecated
+   * term but is allowed to maintain consistency with existing
+   * operations.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeDataTableAttribute">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeDataTableAttributeOutcome DescribeDataTableAttribute(
+      const Model::DescribeDataTableAttributeRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeDataTableAttribute that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DescribeDataTableAttributeRequestT = Model::DescribeDataTableAttributeRequest>
+  Model::DescribeDataTableAttributeOutcomeCallable DescribeDataTableAttributeCallable(
+      const DescribeDataTableAttributeRequestT& request) const {
+    return SubmitCallable(&ConnectClient::DescribeDataTableAttribute, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeDataTableAttribute that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeDataTableAttributeRequestT = Model::DescribeDataTableAttributeRequest>
+  void DescribeDataTableAttributeAsync(const DescribeDataTableAttributeRequestT& request,
+                                       const DescribeDataTableAttributeResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::DescribeDataTableAttribute, request, handler, context);
   }
 
   /**
@@ -3599,6 +4102,33 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   }
 
   /**
+   * <p>Retrieves details about a workspace, including its configuration and
+   * metadata.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeWorkspace">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeWorkspaceOutcome DescribeWorkspace(const Model::DescribeWorkspaceRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeWorkspace that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeWorkspaceRequestT = Model::DescribeWorkspaceRequest>
+  Model::DescribeWorkspaceOutcomeCallable DescribeWorkspaceCallable(const DescribeWorkspaceRequestT& request) const {
+    return SubmitCallable(&ConnectClient::DescribeWorkspace, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeWorkspace that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DescribeWorkspaceRequestT = Model::DescribeWorkspaceRequest>
+  void DescribeWorkspaceAsync(const DescribeWorkspaceRequestT& request, const DescribeWorkspaceResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::DescribeWorkspace, request, handler, context);
+  }
+
+  /**
    * <p>Removes the dataset ID associated with a given Amazon Connect
    * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateAnalyticsDataSet">AWS
@@ -4006,6 +4536,36 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   }
 
   /**
+   * <p> Disassociates a security profile attached to a Q in Connect AI Agent Entity
+   * in an Amazon Connect instance. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateSecurityProfiles">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DisassociateSecurityProfilesOutcome DisassociateSecurityProfiles(
+      const Model::DisassociateSecurityProfilesRequest& request) const;
+
+  /**
+   * A Callable wrapper for DisassociateSecurityProfiles that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DisassociateSecurityProfilesRequestT = Model::DisassociateSecurityProfilesRequest>
+  Model::DisassociateSecurityProfilesOutcomeCallable DisassociateSecurityProfilesCallable(
+      const DisassociateSecurityProfilesRequestT& request) const {
+    return SubmitCallable(&ConnectClient::DisassociateSecurityProfiles, request);
+  }
+
+  /**
+   * An Async wrapper for DisassociateSecurityProfiles that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DisassociateSecurityProfilesRequestT = Model::DisassociateSecurityProfilesRequest>
+  void DisassociateSecurityProfilesAsync(const DisassociateSecurityProfilesRequestT& request,
+                                         const DisassociateSecurityProfilesResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::DisassociateSecurityProfiles, request, handler, context);
+  }
+
+  /**
    * <p>Disassociates an agent from a traffic distribution group. This API can be
    * called only in the Region where the traffic distribution group is
    * created.</p><p><h3>See Also:</h3>   <a
@@ -4068,6 +4628,33 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   }
 
   /**
+   * <p>Removes the association between a workspace and one or more users or routing
+   * profiles.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateWorkspace">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DisassociateWorkspaceOutcome DisassociateWorkspace(const Model::DisassociateWorkspaceRequest& request) const;
+
+  /**
+   * A Callable wrapper for DisassociateWorkspace that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DisassociateWorkspaceRequestT = Model::DisassociateWorkspaceRequest>
+  Model::DisassociateWorkspaceOutcomeCallable DisassociateWorkspaceCallable(const DisassociateWorkspaceRequestT& request) const {
+    return SubmitCallable(&ConnectClient::DisassociateWorkspace, request);
+  }
+
+  /**
+   * An Async wrapper for DisassociateWorkspace that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DisassociateWorkspaceRequestT = Model::DisassociateWorkspaceRequest>
+  void DisassociateWorkspaceAsync(const DisassociateWorkspaceRequestT& request, const DisassociateWorkspaceResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::DisassociateWorkspace, request, handler, context);
+  }
+
+  /**
    * <p>Dismisses contacts from an agent’s CCP and returns the agent to an available
    * state, which allows the agent to receive a new routed contact. Contacts can only
    * be dismissed if they are in a <code>MISSED</code>, <code>ERROR</code>,
@@ -4096,6 +4683,39 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   void DismissUserContactAsync(const DismissUserContactRequestT& request, const DismissUserContactResponseReceivedHandler& handler,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::DismissUserContact, request, handler, context);
+  }
+
+  /**
+   * <p>Evaluates values at the time of the request and returns them. It considers
+   * the request's timezone or the table's timezone, in that order, when accessing
+   * time based tables. When a value is accessed, the accessor's identity and the
+   * time of access are saved alongside the value to help identify values that are
+   * actively in use. The term "Batch" is not included in the operation name since it
+   * does not meet all the criteria for a batch operation as specified in Batch
+   * Operations: AWS API Standards.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/EvaluateDataTableValues">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::EvaluateDataTableValuesOutcome EvaluateDataTableValues(const Model::EvaluateDataTableValuesRequest& request) const;
+
+  /**
+   * A Callable wrapper for EvaluateDataTableValues that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename EvaluateDataTableValuesRequestT = Model::EvaluateDataTableValuesRequest>
+  Model::EvaluateDataTableValuesOutcomeCallable EvaluateDataTableValuesCallable(const EvaluateDataTableValuesRequestT& request) const {
+    return SubmitCallable(&ConnectClient::EvaluateDataTableValues, request);
+  }
+
+  /**
+   * An Async wrapper for EvaluateDataTableValues that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename EvaluateDataTableValuesRequestT = Model::EvaluateDataTableValuesRequest>
+  void EvaluateDataTableValuesAsync(const EvaluateDataTableValuesRequestT& request,
+                                    const EvaluateDataTableValuesResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::EvaluateDataTableValues, request, handler, context);
   }
 
   /**
@@ -4565,6 +5185,33 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   }
 
   /**
+   * <p>Imports a media asset (such as a logo) for use in a workspace.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ImportWorkspaceMedia">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ImportWorkspaceMediaOutcome ImportWorkspaceMedia(const Model::ImportWorkspaceMediaRequest& request) const;
+
+  /**
+   * A Callable wrapper for ImportWorkspaceMedia that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ImportWorkspaceMediaRequestT = Model::ImportWorkspaceMediaRequest>
+  Model::ImportWorkspaceMediaOutcomeCallable ImportWorkspaceMediaCallable(const ImportWorkspaceMediaRequestT& request) const {
+    return SubmitCallable(&ConnectClient::ImportWorkspaceMedia, request);
+  }
+
+  /**
+   * An Async wrapper for ImportWorkspaceMedia that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ImportWorkspaceMediaRequestT = Model::ImportWorkspaceMediaRequest>
+  void ImportWorkspaceMediaAsync(const ImportWorkspaceMediaRequestT& request, const ImportWorkspaceMediaResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::ImportWorkspaceMedia, request, handler, context);
+  }
+
+  /**
    * <p>Lists agent statuses.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAgentStatuses">AWS
    * API Reference</a></p>
@@ -4972,6 +5619,122 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   }
 
   /**
+   * <p>Returns all attributes for a specified data table. A maximum of 100
+   * attributes per data table is allowed. Customers can request an increase by using
+   * AWS Service Quotas. The response can be filtered by specific attribute IDs for
+   * CloudFormation integration.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListDataTableAttributes">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListDataTableAttributesOutcome ListDataTableAttributes(const Model::ListDataTableAttributesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListDataTableAttributes that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListDataTableAttributesRequestT = Model::ListDataTableAttributesRequest>
+  Model::ListDataTableAttributesOutcomeCallable ListDataTableAttributesCallable(const ListDataTableAttributesRequestT& request) const {
+    return SubmitCallable(&ConnectClient::ListDataTableAttributes, request);
+  }
+
+  /**
+   * An Async wrapper for ListDataTableAttributes that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListDataTableAttributesRequestT = Model::ListDataTableAttributesRequest>
+  void ListDataTableAttributesAsync(const ListDataTableAttributesRequestT& request,
+                                    const ListDataTableAttributesResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::ListDataTableAttributes, request, handler, context);
+  }
+
+  /**
+   * <p>Lists all primary value combinations for a given data table. Returns the
+   * unique combinations of primary attribute values that identify records in the
+   * table. Up to 100 records are returned per request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListDataTablePrimaryValues">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListDataTablePrimaryValuesOutcome ListDataTablePrimaryValues(
+      const Model::ListDataTablePrimaryValuesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListDataTablePrimaryValues that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListDataTablePrimaryValuesRequestT = Model::ListDataTablePrimaryValuesRequest>
+  Model::ListDataTablePrimaryValuesOutcomeCallable ListDataTablePrimaryValuesCallable(
+      const ListDataTablePrimaryValuesRequestT& request) const {
+    return SubmitCallable(&ConnectClient::ListDataTablePrimaryValues, request);
+  }
+
+  /**
+   * An Async wrapper for ListDataTablePrimaryValues that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListDataTablePrimaryValuesRequestT = Model::ListDataTablePrimaryValuesRequest>
+  void ListDataTablePrimaryValuesAsync(const ListDataTablePrimaryValuesRequestT& request,
+                                       const ListDataTablePrimaryValuesResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::ListDataTablePrimaryValues, request, handler, context);
+  }
+
+  /**
+   * <p>Lists values stored in a data table with optional filtering by record IDs or
+   * primary attribute values. Returns the raw stored values along with metadata such
+   * as lock versions and modification timestamps.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListDataTableValues">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListDataTableValuesOutcome ListDataTableValues(const Model::ListDataTableValuesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListDataTableValues that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListDataTableValuesRequestT = Model::ListDataTableValuesRequest>
+  Model::ListDataTableValuesOutcomeCallable ListDataTableValuesCallable(const ListDataTableValuesRequestT& request) const {
+    return SubmitCallable(&ConnectClient::ListDataTableValues, request);
+  }
+
+  /**
+   * An Async wrapper for ListDataTableValues that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListDataTableValuesRequestT = Model::ListDataTableValuesRequest>
+  void ListDataTableValuesAsync(const ListDataTableValuesRequestT& request, const ListDataTableValuesResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::ListDataTableValues, request, handler, context);
+  }
+
+  /**
+   * <p>Lists all data tables for the specified Amazon Connect instance. Returns
+   * summary information for each table including basic metadata and modification
+   * details.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListDataTables">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListDataTablesOutcome ListDataTables(const Model::ListDataTablesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListDataTables that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListDataTablesRequestT = Model::ListDataTablesRequest>
+  Model::ListDataTablesOutcomeCallable ListDataTablesCallable(const ListDataTablesRequestT& request) const {
+    return SubmitCallable(&ConnectClient::ListDataTables, request);
+  }
+
+  /**
+   * An Async wrapper for ListDataTables that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListDataTablesRequestT = Model::ListDataTablesRequest>
+  void ListDataTablesAsync(const ListDataTablesRequestT& request, const ListDataTablesResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::ListDataTables, request, handler, context);
+  }
+
+  /**
    * <p>Lists the default vocabularies for the specified Amazon Connect
    * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListDefaultVocabularies">AWS
@@ -4997,6 +5760,36 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
                                     const ListDefaultVocabulariesResponseReceivedHandler& handler,
                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::ListDefaultVocabularies, request, handler, context);
+  }
+
+  /**
+   * <p> Lists all security profiles attached to a Q in Connect AIAgent Entity in an
+   * Amazon Connect instance. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListEntitySecurityProfiles">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListEntitySecurityProfilesOutcome ListEntitySecurityProfiles(
+      const Model::ListEntitySecurityProfilesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListEntitySecurityProfiles that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListEntitySecurityProfilesRequestT = Model::ListEntitySecurityProfilesRequest>
+  Model::ListEntitySecurityProfilesOutcomeCallable ListEntitySecurityProfilesCallable(
+      const ListEntitySecurityProfilesRequestT& request) const {
+    return SubmitCallable(&ConnectClient::ListEntitySecurityProfiles, request);
+  }
+
+  /**
+   * An Async wrapper for ListEntitySecurityProfiles that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListEntitySecurityProfilesRequestT = Model::ListEntitySecurityProfilesRequest>
+  void ListEntitySecurityProfilesAsync(const ListEntitySecurityProfilesRequestT& request,
+                                       const ListEntitySecurityProfilesResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::ListEntitySecurityProfiles, request, handler, context);
   }
 
   /**
@@ -5751,8 +6544,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   }
 
   /**
-   * <p>Returns a list of third-party applications in a specific security
-   * profile.</p><p><h3>See Also:</h3>   <a
+   * <p>Returns a list of third-party applications or MCP Servers in a specific
+   * security profile.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityProfileApplications">AWS
    * API Reference</a></p>
    */
@@ -5778,6 +6571,36 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
                                             const ListSecurityProfileApplicationsResponseReceivedHandler& handler,
                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::ListSecurityProfileApplications, request, handler, context);
+  }
+
+  /**
+   * <p> A list of Flow Modules an AI Agent can invoke as a tool </p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityProfileFlowModules">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListSecurityProfileFlowModulesOutcome ListSecurityProfileFlowModules(
+      const Model::ListSecurityProfileFlowModulesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListSecurityProfileFlowModules that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListSecurityProfileFlowModulesRequestT = Model::ListSecurityProfileFlowModulesRequest>
+  Model::ListSecurityProfileFlowModulesOutcomeCallable ListSecurityProfileFlowModulesCallable(
+      const ListSecurityProfileFlowModulesRequestT& request) const {
+    return SubmitCallable(&ConnectClient::ListSecurityProfileFlowModules, request);
+  }
+
+  /**
+   * An Async wrapper for ListSecurityProfileFlowModules that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListSecurityProfileFlowModulesRequestT = Model::ListSecurityProfileFlowModulesRequest>
+  void ListSecurityProfileFlowModulesAsync(const ListSecurityProfileFlowModulesRequestT& request,
+                                           const ListSecurityProfileFlowModulesResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::ListSecurityProfileFlowModules, request, handler, context);
   }
 
   /**
@@ -6125,6 +6948,86 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   void ListViewsAsync(const ListViewsRequestT& request, const ListViewsResponseReceivedHandler& handler,
                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::ListViews, request, handler, context);
+  }
+
+  /**
+   * <p>Lists media assets (such as logos) associated with a workspace.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListWorkspaceMedia">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListWorkspaceMediaOutcome ListWorkspaceMedia(const Model::ListWorkspaceMediaRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListWorkspaceMedia that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListWorkspaceMediaRequestT = Model::ListWorkspaceMediaRequest>
+  Model::ListWorkspaceMediaOutcomeCallable ListWorkspaceMediaCallable(const ListWorkspaceMediaRequestT& request) const {
+    return SubmitCallable(&ConnectClient::ListWorkspaceMedia, request);
+  }
+
+  /**
+   * An Async wrapper for ListWorkspaceMedia that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListWorkspaceMediaRequestT = Model::ListWorkspaceMediaRequest>
+  void ListWorkspaceMediaAsync(const ListWorkspaceMediaRequestT& request, const ListWorkspaceMediaResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::ListWorkspaceMedia, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the page configurations in a workspace, including the views assigned to
+   * each page.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListWorkspacePages">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListWorkspacePagesOutcome ListWorkspacePages(const Model::ListWorkspacePagesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListWorkspacePages that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListWorkspacePagesRequestT = Model::ListWorkspacePagesRequest>
+  Model::ListWorkspacePagesOutcomeCallable ListWorkspacePagesCallable(const ListWorkspacePagesRequestT& request) const {
+    return SubmitCallable(&ConnectClient::ListWorkspacePages, request);
+  }
+
+  /**
+   * An Async wrapper for ListWorkspacePages that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListWorkspacePagesRequestT = Model::ListWorkspacePagesRequest>
+  void ListWorkspacePagesAsync(const ListWorkspacePagesRequestT& request, const ListWorkspacePagesResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::ListWorkspacePages, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the workspaces in an Amazon Connect instance.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListWorkspaces">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListWorkspacesOutcome ListWorkspaces(const Model::ListWorkspacesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListWorkspaces that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListWorkspacesRequestT = Model::ListWorkspacesRequest>
+  Model::ListWorkspacesOutcomeCallable ListWorkspacesCallable(const ListWorkspacesRequestT& request) const {
+    return SubmitCallable(&ConnectClient::ListWorkspaces, request);
+  }
+
+  /**
+   * An Async wrapper for ListWorkspaces that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListWorkspacesRequestT = Model::ListWorkspacesRequest>
+  void ListWorkspacesAsync(const ListWorkspacesRequestT& request, const ListWorkspacesResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::ListWorkspaces, request, handler, context);
   }
 
   /**
@@ -6528,6 +7431,35 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   }
 
   /**
+   * <p>Searches for data tables based on the table's ID, name, and description. In
+   * the future, this operation can support searching on attribute names and possibly
+   * primary values. Follows other search operations closely and supports both search
+   * criteria and filters.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchDataTables">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SearchDataTablesOutcome SearchDataTables(const Model::SearchDataTablesRequest& request) const;
+
+  /**
+   * A Callable wrapper for SearchDataTables that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename SearchDataTablesRequestT = Model::SearchDataTablesRequest>
+  Model::SearchDataTablesOutcomeCallable SearchDataTablesCallable(const SearchDataTablesRequestT& request) const {
+    return SubmitCallable(&ConnectClient::SearchDataTables, request);
+  }
+
+  /**
+   * An Async wrapper for SearchDataTables that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename SearchDataTablesRequestT = Model::SearchDataTablesRequest>
+  void SearchDataTablesAsync(const SearchDataTablesRequestT& request, const SearchDataTablesResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::SearchDataTables, request, handler, context);
+  }
+
+  /**
    * <p>Searches email address in an instance, with optional filtering.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchEmailAddresses">AWS
@@ -6922,6 +7854,32 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   }
 
   /**
+   * <p>Searches views based on name, description, or tags.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchViews">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SearchViewsOutcome SearchViews(const Model::SearchViewsRequest& request) const;
+
+  /**
+   * A Callable wrapper for SearchViews that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename SearchViewsRequestT = Model::SearchViewsRequest>
+  Model::SearchViewsOutcomeCallable SearchViewsCallable(const SearchViewsRequestT& request) const {
+    return SubmitCallable(&ConnectClient::SearchViews, request);
+  }
+
+  /**
+   * An Async wrapper for SearchViews that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename SearchViewsRequestT = Model::SearchViewsRequest>
+  void SearchViewsAsync(const SearchViewsRequestT& request, const SearchViewsResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::SearchViews, request, handler, context);
+  }
+
+  /**
    * <p>Searches for vocabularies within a specific Amazon Connect instance using
    * <code>State</code>, <code>NameStartsWith</code>, and
    * <code>LanguageCode</code>.</p><p><h3>See Also:</h3>   <a
@@ -6947,6 +7905,63 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   void SearchVocabulariesAsync(const SearchVocabulariesRequestT& request, const SearchVocabulariesResponseReceivedHandler& handler,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::SearchVocabularies, request, handler, context);
+  }
+
+  /**
+   * <p>Searches for workspace associations with users or routing profiles based on
+   * various criteria.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchWorkspaceAssociations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SearchWorkspaceAssociationsOutcome SearchWorkspaceAssociations(
+      const Model::SearchWorkspaceAssociationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for SearchWorkspaceAssociations that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename SearchWorkspaceAssociationsRequestT = Model::SearchWorkspaceAssociationsRequest>
+  Model::SearchWorkspaceAssociationsOutcomeCallable SearchWorkspaceAssociationsCallable(
+      const SearchWorkspaceAssociationsRequestT& request) const {
+    return SubmitCallable(&ConnectClient::SearchWorkspaceAssociations, request);
+  }
+
+  /**
+   * An Async wrapper for SearchWorkspaceAssociations that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename SearchWorkspaceAssociationsRequestT = Model::SearchWorkspaceAssociationsRequest>
+  void SearchWorkspaceAssociationsAsync(const SearchWorkspaceAssociationsRequestT& request,
+                                        const SearchWorkspaceAssociationsResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::SearchWorkspaceAssociations, request, handler, context);
+  }
+
+  /**
+   * <p>Searches workspaces based on name, description, visibility, or
+   * tags.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchWorkspaces">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SearchWorkspacesOutcome SearchWorkspaces(const Model::SearchWorkspacesRequest& request) const;
+
+  /**
+   * A Callable wrapper for SearchWorkspaces that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename SearchWorkspacesRequestT = Model::SearchWorkspacesRequest>
+  Model::SearchWorkspacesOutcomeCallable SearchWorkspacesCallable(const SearchWorkspacesRequestT& request) const {
+    return SubmitCallable(&ConnectClient::SearchWorkspaces, request);
+  }
+
+  /**
+   * An Async wrapper for SearchWorkspaces that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename SearchWorkspacesRequestT = Model::SearchWorkspacesRequest>
+  void SearchWorkspacesAsync(const SearchWorkspacesRequestT& request, const SearchWorkspacesResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::SearchWorkspaces, request, handler, context);
   }
 
   /**
@@ -7130,6 +8145,37 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
                                    const StartContactEvaluationResponseReceivedHandler& handler,
                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::StartContactEvaluation, request, handler, context);
+  }
+
+  /**
+   * <p> Enables in-flight message processing for an ongoing chat session. Message
+   * processing will stay active for the rest of the chat, even if an individual
+   * contact segment ends. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartContactMediaProcessing">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartContactMediaProcessingOutcome StartContactMediaProcessing(
+      const Model::StartContactMediaProcessingRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for StartContactMediaProcessing that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename StartContactMediaProcessingRequestT = Model::StartContactMediaProcessingRequest>
+  Model::StartContactMediaProcessingOutcomeCallable StartContactMediaProcessingCallable(
+      const StartContactMediaProcessingRequestT& request = {}) const {
+    return SubmitCallable(&ConnectClient::StartContactMediaProcessing, request);
+  }
+
+  /**
+   * An Async wrapper for StartContactMediaProcessing that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StartContactMediaProcessingRequestT = Model::StartContactMediaProcessingRequest>
+  void StartContactMediaProcessingAsync(const StartContactMediaProcessingResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                        const StartContactMediaProcessingRequestT& request = {}) const {
+    return SubmitAsync(&ConnectClient::StartContactMediaProcessing, request, handler, context);
   }
 
   /**
@@ -7501,6 +8547,36 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   void StopContactAsync(const StopContactRequestT& request, const StopContactResponseReceivedHandler& handler,
                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::StopContact, request, handler, context);
+  }
+
+  /**
+   * <p> Stops in-flight message processing for an ongoing chat session.
+   * </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContactMediaProcessing">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StopContactMediaProcessingOutcome StopContactMediaProcessing(
+      const Model::StopContactMediaProcessingRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for StopContactMediaProcessing that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename StopContactMediaProcessingRequestT = Model::StopContactMediaProcessingRequest>
+  Model::StopContactMediaProcessingOutcomeCallable StopContactMediaProcessingCallable(
+      const StopContactMediaProcessingRequestT& request = {}) const {
+    return SubmitCallable(&ConnectClient::StopContactMediaProcessing, request);
+  }
+
+  /**
+   * An Async wrapper for StopContactMediaProcessing that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StopContactMediaProcessingRequestT = Model::StopContactMediaProcessingRequest>
+  void StopContactMediaProcessingAsync(const StopContactMediaProcessingResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                       const StopContactMediaProcessingRequestT& request = {}) const {
+    return SubmitAsync(&ConnectClient::StopContactMediaProcessing, request, handler, context);
   }
 
   /**
@@ -8195,6 +9271,102 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   void UpdateContactScheduleAsync(const UpdateContactScheduleRequestT& request, const UpdateContactScheduleResponseReceivedHandler& handler,
                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::UpdateContactSchedule, request, handler, context);
+  }
+
+  /**
+   * <p>Updates all properties for an attribute using all properties from
+   * CreateDataTableAttribute. There are no other granular update endpoints. It does
+   * not act as a patch operation - all properties must be provided. System managed
+   * attributes are not mutable by customers. Changing an attribute's validation does
+   * not invalidate existing values since validation only runs when values are
+   * created or updated.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateDataTableAttribute">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateDataTableAttributeOutcome UpdateDataTableAttribute(const Model::UpdateDataTableAttributeRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateDataTableAttribute that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateDataTableAttributeRequestT = Model::UpdateDataTableAttributeRequest>
+  Model::UpdateDataTableAttributeOutcomeCallable UpdateDataTableAttributeCallable(const UpdateDataTableAttributeRequestT& request) const {
+    return SubmitCallable(&ConnectClient::UpdateDataTableAttribute, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateDataTableAttribute that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateDataTableAttributeRequestT = Model::UpdateDataTableAttributeRequest>
+  void UpdateDataTableAttributeAsync(const UpdateDataTableAttributeRequestT& request,
+                                     const UpdateDataTableAttributeResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::UpdateDataTableAttribute, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the metadata properties of a data table. Accepts all fields similar
+   * to CreateDataTable, except for fields and tags. There are no other granular
+   * update endpoints. It does not act as a patch operation - all properties must be
+   * provided or defaults will be used. Fields follow the same requirements as
+   * CreateDataTable.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateDataTableMetadata">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateDataTableMetadataOutcome UpdateDataTableMetadata(const Model::UpdateDataTableMetadataRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateDataTableMetadata that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateDataTableMetadataRequestT = Model::UpdateDataTableMetadataRequest>
+  Model::UpdateDataTableMetadataOutcomeCallable UpdateDataTableMetadataCallable(const UpdateDataTableMetadataRequestT& request) const {
+    return SubmitCallable(&ConnectClient::UpdateDataTableMetadata, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateDataTableMetadata that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateDataTableMetadataRequestT = Model::UpdateDataTableMetadataRequest>
+  void UpdateDataTableMetadataAsync(const UpdateDataTableMetadataRequestT& request,
+                                    const UpdateDataTableMetadataResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::UpdateDataTableMetadata, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the primary values for a record. This operation affects all existing
+   * values that are currently associated to the record and its primary values. Users
+   * that have restrictions on attributes and/or primary values are not authorized to
+   * use this endpoint. The combination of new primary values must be unique within
+   * the table.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateDataTablePrimaryValues">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateDataTablePrimaryValuesOutcome UpdateDataTablePrimaryValues(
+      const Model::UpdateDataTablePrimaryValuesRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateDataTablePrimaryValues that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdateDataTablePrimaryValuesRequestT = Model::UpdateDataTablePrimaryValuesRequest>
+  Model::UpdateDataTablePrimaryValuesOutcomeCallable UpdateDataTablePrimaryValuesCallable(
+      const UpdateDataTablePrimaryValuesRequestT& request) const {
+    return SubmitCallable(&ConnectClient::UpdateDataTablePrimaryValues, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateDataTablePrimaryValues that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateDataTablePrimaryValuesRequestT = Model::UpdateDataTablePrimaryValuesRequest>
+  void UpdateDataTablePrimaryValuesAsync(const UpdateDataTablePrimaryValuesRequestT& request,
+                                         const UpdateDataTablePrimaryValuesResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::UpdateDataTablePrimaryValues, request, handler, context);
   }
 
   /**
@@ -9409,6 +10581,118 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   void UpdateViewMetadataAsync(const UpdateViewMetadataRequestT& request, const UpdateViewMetadataResponseReceivedHandler& handler,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::UpdateViewMetadata, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the metadata of a workspace, such as its name and
+   * description.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateWorkspaceMetadata">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateWorkspaceMetadataOutcome UpdateWorkspaceMetadata(const Model::UpdateWorkspaceMetadataRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateWorkspaceMetadata that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateWorkspaceMetadataRequestT = Model::UpdateWorkspaceMetadataRequest>
+  Model::UpdateWorkspaceMetadataOutcomeCallable UpdateWorkspaceMetadataCallable(const UpdateWorkspaceMetadataRequestT& request) const {
+    return SubmitCallable(&ConnectClient::UpdateWorkspaceMetadata, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateWorkspaceMetadata that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateWorkspaceMetadataRequestT = Model::UpdateWorkspaceMetadataRequest>
+  void UpdateWorkspaceMetadataAsync(const UpdateWorkspaceMetadataRequestT& request,
+                                    const UpdateWorkspaceMetadataResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::UpdateWorkspaceMetadata, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the configuration of a page in a workspace, including the associated
+   * view and input data.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateWorkspacePage">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateWorkspacePageOutcome UpdateWorkspacePage(const Model::UpdateWorkspacePageRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateWorkspacePage that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateWorkspacePageRequestT = Model::UpdateWorkspacePageRequest>
+  Model::UpdateWorkspacePageOutcomeCallable UpdateWorkspacePageCallable(const UpdateWorkspacePageRequestT& request) const {
+    return SubmitCallable(&ConnectClient::UpdateWorkspacePage, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateWorkspacePage that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateWorkspacePageRequestT = Model::UpdateWorkspacePageRequest>
+  void UpdateWorkspacePageAsync(const UpdateWorkspacePageRequestT& request, const UpdateWorkspacePageResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::UpdateWorkspacePage, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the theme configuration for a workspace, including colors and
+   * styling.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateWorkspaceTheme">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateWorkspaceThemeOutcome UpdateWorkspaceTheme(const Model::UpdateWorkspaceThemeRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateWorkspaceTheme that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateWorkspaceThemeRequestT = Model::UpdateWorkspaceThemeRequest>
+  Model::UpdateWorkspaceThemeOutcomeCallable UpdateWorkspaceThemeCallable(const UpdateWorkspaceThemeRequestT& request) const {
+    return SubmitCallable(&ConnectClient::UpdateWorkspaceTheme, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateWorkspaceTheme that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateWorkspaceThemeRequestT = Model::UpdateWorkspaceThemeRequest>
+  void UpdateWorkspaceThemeAsync(const UpdateWorkspaceThemeRequestT& request, const UpdateWorkspaceThemeResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::UpdateWorkspaceTheme, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the visibility setting of a workspace, controlling whether it is
+   * available to all users, assigned users only, or none.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateWorkspaceVisibility">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateWorkspaceVisibilityOutcome UpdateWorkspaceVisibility(const Model::UpdateWorkspaceVisibilityRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateWorkspaceVisibility that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateWorkspaceVisibilityRequestT = Model::UpdateWorkspaceVisibilityRequest>
+  Model::UpdateWorkspaceVisibilityOutcomeCallable UpdateWorkspaceVisibilityCallable(
+      const UpdateWorkspaceVisibilityRequestT& request) const {
+    return SubmitCallable(&ConnectClient::UpdateWorkspaceVisibility, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateWorkspaceVisibility that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateWorkspaceVisibilityRequestT = Model::UpdateWorkspaceVisibilityRequest>
+  void UpdateWorkspaceVisibilityAsync(const UpdateWorkspaceVisibilityRequestT& request,
+                                      const UpdateWorkspaceVisibilityResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::UpdateWorkspaceVisibility, request, handler, context);
   }
 
   void OverrideEndpoint(const Aws::String& endpoint);

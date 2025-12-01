@@ -26,6 +26,10 @@ MembershipMLPaymentConfig& MembershipMLPaymentConfig::operator=(JsonView jsonVal
     m_modelInference = jsonValue.GetObject("modelInference");
     m_modelInferenceHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("syntheticDataGeneration")) {
+    m_syntheticDataGeneration = jsonValue.GetObject("syntheticDataGeneration");
+    m_syntheticDataGenerationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue MembershipMLPaymentConfig::Jsonize() const {
 
   if (m_modelInferenceHasBeenSet) {
     payload.WithObject("modelInference", m_modelInference.Jsonize());
+  }
+
+  if (m_syntheticDataGenerationHasBeenSet) {
+    payload.WithObject("syntheticDataGeneration", m_syntheticDataGeneration.Jsonize());
   }
 
   return payload;

@@ -97,6 +97,22 @@ class ReferenceSummary {
   ///@}
 
   ///@{
+
+  inline const EmailMessageReference& GetEmailMessagePlainText() const { return m_emailMessagePlainText; }
+  inline bool EmailMessagePlainTextHasBeenSet() const { return m_emailMessagePlainTextHasBeenSet; }
+  template <typename EmailMessagePlainTextT = EmailMessageReference>
+  void SetEmailMessagePlainText(EmailMessagePlainTextT&& value) {
+    m_emailMessagePlainTextHasBeenSet = true;
+    m_emailMessagePlainText = std::forward<EmailMessagePlainTextT>(value);
+  }
+  template <typename EmailMessagePlainTextT = EmailMessageReference>
+  ReferenceSummary& WithEmailMessagePlainText(EmailMessagePlainTextT&& value) {
+    SetEmailMessagePlainText(std::forward<EmailMessagePlainTextT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
   /**
    * <p>Information about a reference when the <code>referenceType</code> is
    * <code>STRING</code>. Otherwise, null.</p>
@@ -180,6 +196,9 @@ class ReferenceSummary {
 
   EmailMessageReference m_emailMessage;
   bool m_emailMessageHasBeenSet = false;
+
+  EmailMessageReference m_emailMessagePlainText;
+  bool m_emailMessagePlainTextHasBeenSet = false;
 
   StringReference m_string;
   bool m_stringHasBeenSet = false;

@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/personalize/Personalize_EXPORTS.h>
+#include <aws/personalize/model/RankingInfluenceType.h>
 
 #include <utility>
 
@@ -60,9 +61,39 @@ class BatchInferenceJobConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A map of ranking influence values for POPULARITY and FRESHNESS. For each key,
+   * specify a numerical value between 0.0 and 1.0 that determines how much influence
+   * that ranking factor has on the final recommendations. A value closer to 1.0
+   * gives more weight to the factor, while a value closer to 0.0 reduces its
+   * influence.</p>
+   */
+  inline const Aws::Map<RankingInfluenceType, double>& GetRankingInfluence() const { return m_rankingInfluence; }
+  inline bool RankingInfluenceHasBeenSet() const { return m_rankingInfluenceHasBeenSet; }
+  template <typename RankingInfluenceT = Aws::Map<RankingInfluenceType, double>>
+  void SetRankingInfluence(RankingInfluenceT&& value) {
+    m_rankingInfluenceHasBeenSet = true;
+    m_rankingInfluence = std::forward<RankingInfluenceT>(value);
+  }
+  template <typename RankingInfluenceT = Aws::Map<RankingInfluenceType, double>>
+  BatchInferenceJobConfig& WithRankingInfluence(RankingInfluenceT&& value) {
+    SetRankingInfluence(std::forward<RankingInfluenceT>(value));
+    return *this;
+  }
+  inline BatchInferenceJobConfig& AddRankingInfluence(RankingInfluenceType key, double value) {
+    m_rankingInfluenceHasBeenSet = true;
+    m_rankingInfluence.emplace(key, value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_itemExplorationConfig;
   bool m_itemExplorationConfigHasBeenSet = false;
+
+  Aws::Map<RankingInfluenceType, double> m_rankingInfluence;
+  bool m_rankingInfluenceHasBeenSet = false;
 };
 
 }  // namespace Model

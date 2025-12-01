@@ -22,6 +22,10 @@ EngagementContextPayload& EngagementContextPayload::operator=(JsonView jsonValue
     m_customerProject = jsonValue.GetObject("CustomerProject");
     m_customerProjectHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Lead")) {
+    m_lead = jsonValue.GetObject("Lead");
+    m_leadHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue EngagementContextPayload::Jsonize() const {
 
   if (m_customerProjectHasBeenSet) {
     payload.WithObject("CustomerProject", m_customerProject.Jsonize());
+  }
+
+  if (m_leadHasBeenSet) {
+    payload.WithObject("Lead", m_lead.Jsonize());
   }
 
   return payload;

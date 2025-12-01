@@ -38,24 +38,6 @@ class VoiceSettings {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon Polly voice to use.</p>
-   */
-  inline const Aws::String& GetVoiceId() const { return m_voiceId; }
-  inline bool VoiceIdHasBeenSet() const { return m_voiceIdHasBeenSet; }
-  template <typename VoiceIdT = Aws::String>
-  void SetVoiceId(VoiceIdT&& value) {
-    m_voiceIdHasBeenSet = true;
-    m_voiceId = std::forward<VoiceIdT>(value);
-  }
-  template <typename VoiceIdT = Aws::String>
-  VoiceSettings& WithVoiceId(VoiceIdT&& value) {
-    SetVoiceId(std::forward<VoiceIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Indicates the type of Amazon Polly voice that Amazon Lex should use for voice
    * interaction with the user. For more information, see the <a
    * href="https://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html#polly-SynthesizeSpeech-request-Engine">
@@ -74,12 +56,30 @@ class VoiceSettings {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_voiceId;
-  bool m_voiceIdHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>The identifier of the Amazon Polly voice to use.</p>
+   */
+  inline const Aws::String& GetVoiceId() const { return m_voiceId; }
+  inline bool VoiceIdHasBeenSet() const { return m_voiceIdHasBeenSet; }
+  template <typename VoiceIdT = Aws::String>
+  void SetVoiceId(VoiceIdT&& value) {
+    m_voiceIdHasBeenSet = true;
+    m_voiceId = std::forward<VoiceIdT>(value);
+  }
+  template <typename VoiceIdT = Aws::String>
+  VoiceSettings& WithVoiceId(VoiceIdT&& value) {
+    SetVoiceId(std::forward<VoiceIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   VoiceEngine m_engine{VoiceEngine::NOT_SET};
   bool m_engineHasBeenSet = false;
+
+  Aws::String m_voiceId;
+  bool m_voiceIdHasBeenSet = false;
 };
 
 }  // namespace Model

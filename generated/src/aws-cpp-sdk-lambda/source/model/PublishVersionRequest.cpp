@@ -27,5 +27,9 @@ Aws::String PublishVersionRequest::SerializePayload() const {
     payload.WithString("RevisionId", m_revisionId);
   }
 
+  if (m_publishToHasBeenSet) {
+    payload.WithString("PublishTo", FunctionVersionLatestPublishedMapper::GetNameForFunctionVersionLatestPublished(m_publishTo));
+  }
+
   return payload.View().WriteReadable();
 }
