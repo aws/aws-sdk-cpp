@@ -33,6 +33,14 @@ CampaignConfig& CampaignConfig::operator=(JsonView jsonValue) {
     m_syncWithLatestSolutionVersion = jsonValue.GetBool("syncWithLatestSolutionVersion");
     m_syncWithLatestSolutionVersionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("rankingInfluence")) {
+    Aws::Map<Aws::String, JsonView> rankingInfluenceJsonMap = jsonValue.GetObject("rankingInfluence").GetAllObjects();
+    for (auto& rankingInfluenceItem : rankingInfluenceJsonMap) {
+      m_rankingInfluence[RankingInfluenceTypeMapper::GetRankingInfluenceTypeForName(rankingInfluenceItem.first)] =
+          rankingInfluenceItem.second.AsDouble();
+    }
+    m_rankingInfluenceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -53,6 +61,15 @@ JsonValue CampaignConfig::Jsonize() const {
 
   if (m_syncWithLatestSolutionVersionHasBeenSet) {
     payload.WithBool("syncWithLatestSolutionVersion", m_syncWithLatestSolutionVersion);
+  }
+
+  if (m_rankingInfluenceHasBeenSet) {
+    JsonValue rankingInfluenceJsonMap;
+    for (auto& rankingInfluenceItem : m_rankingInfluence) {
+      rankingInfluenceJsonMap.WithDouble(RankingInfluenceTypeMapper::GetNameForRankingInfluenceType(rankingInfluenceItem.first),
+                                         rankingInfluenceItem.second);
+    }
+    payload.WithObject("rankingInfluence", std::move(rankingInfluenceJsonMap));
   }
 
   return payload;

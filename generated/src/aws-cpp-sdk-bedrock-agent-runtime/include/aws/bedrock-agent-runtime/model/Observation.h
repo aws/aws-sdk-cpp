@@ -41,47 +41,6 @@ class Observation {
 
   ///@{
   /**
-   * <p>The unique identifier of the trace.</p>
-   */
-  inline const Aws::String& GetTraceId() const { return m_traceId; }
-  inline bool TraceIdHasBeenSet() const { return m_traceIdHasBeenSet; }
-  template <typename TraceIdT = Aws::String>
-  void SetTraceId(TraceIdT&& value) {
-    m_traceIdHasBeenSet = true;
-    m_traceId = std::forward<TraceIdT>(value);
-  }
-  template <typename TraceIdT = Aws::String>
-  Observation& WithTraceId(TraceIdT&& value) {
-    SetTraceId(std::forward<TraceIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Specifies what kind of information the agent returns in the observation. The
-   * following values are possible.</p> <ul> <li> <p> <code>ACTION_GROUP</code> – The
-   * agent returns the result of an action group.</p> </li> <li> <p>
-   * <code>KNOWLEDGE_BASE</code> – The agent returns information from a knowledge
-   * base.</p> </li> <li> <p> <code>FINISH</code> – The agent returns a final
-   * response to the user with no follow-up.</p> </li> <li> <p> <code>ASK_USER</code>
-   * – The agent asks the user a question.</p> </li> <li> <p> <code>REPROMPT</code> –
-   * The agent prompts the user again for the same information.</p> </li> </ul>
-   */
-  inline Type GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  inline void SetType(Type value) {
-    m_typeHasBeenSet = true;
-    m_type = value;
-  }
-  inline Observation& WithType(Type value) {
-    SetType(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Contains the JSON-formatted string returned by the API invoked by the action
    * group.</p>
    */
@@ -121,18 +80,19 @@ class Observation {
 
   ///@{
   /**
-   * <p>Contains details about the results from looking up the knowledge base.</p>
+   * <p>Contains the JSON-formatted string returned by the API invoked by the code
+   * interpreter.</p>
    */
-  inline const KnowledgeBaseLookupOutput& GetKnowledgeBaseLookupOutput() const { return m_knowledgeBaseLookupOutput; }
-  inline bool KnowledgeBaseLookupOutputHasBeenSet() const { return m_knowledgeBaseLookupOutputHasBeenSet; }
-  template <typename KnowledgeBaseLookupOutputT = KnowledgeBaseLookupOutput>
-  void SetKnowledgeBaseLookupOutput(KnowledgeBaseLookupOutputT&& value) {
-    m_knowledgeBaseLookupOutputHasBeenSet = true;
-    m_knowledgeBaseLookupOutput = std::forward<KnowledgeBaseLookupOutputT>(value);
+  inline const CodeInterpreterInvocationOutput& GetCodeInterpreterInvocationOutput() const { return m_codeInterpreterInvocationOutput; }
+  inline bool CodeInterpreterInvocationOutputHasBeenSet() const { return m_codeInterpreterInvocationOutputHasBeenSet; }
+  template <typename CodeInterpreterInvocationOutputT = CodeInterpreterInvocationOutput>
+  void SetCodeInterpreterInvocationOutput(CodeInterpreterInvocationOutputT&& value) {
+    m_codeInterpreterInvocationOutputHasBeenSet = true;
+    m_codeInterpreterInvocationOutput = std::forward<CodeInterpreterInvocationOutputT>(value);
   }
-  template <typename KnowledgeBaseLookupOutputT = KnowledgeBaseLookupOutput>
-  Observation& WithKnowledgeBaseLookupOutput(KnowledgeBaseLookupOutputT&& value) {
-    SetKnowledgeBaseLookupOutput(std::forward<KnowledgeBaseLookupOutputT>(value));
+  template <typename CodeInterpreterInvocationOutputT = CodeInterpreterInvocationOutput>
+  Observation& WithCodeInterpreterInvocationOutput(CodeInterpreterInvocationOutputT&& value) {
+    SetCodeInterpreterInvocationOutput(std::forward<CodeInterpreterInvocationOutputT>(value));
     return *this;
   }
   ///@}
@@ -157,6 +117,24 @@ class Observation {
 
   ///@{
   /**
+   * <p>Contains details about the results from looking up the knowledge base.</p>
+   */
+  inline const KnowledgeBaseLookupOutput& GetKnowledgeBaseLookupOutput() const { return m_knowledgeBaseLookupOutput; }
+  inline bool KnowledgeBaseLookupOutputHasBeenSet() const { return m_knowledgeBaseLookupOutputHasBeenSet; }
+  template <typename KnowledgeBaseLookupOutputT = KnowledgeBaseLookupOutput>
+  void SetKnowledgeBaseLookupOutput(KnowledgeBaseLookupOutputT&& value) {
+    m_knowledgeBaseLookupOutputHasBeenSet = true;
+    m_knowledgeBaseLookupOutput = std::forward<KnowledgeBaseLookupOutputT>(value);
+  }
+  template <typename KnowledgeBaseLookupOutputT = KnowledgeBaseLookupOutput>
+  Observation& WithKnowledgeBaseLookupOutput(KnowledgeBaseLookupOutputT&& value) {
+    SetKnowledgeBaseLookupOutput(std::forward<KnowledgeBaseLookupOutputT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Contains details about the response to reprompt the input.</p>
    */
   inline const RepromptResponse& GetRepromptResponse() const { return m_repromptResponse; }
@@ -175,46 +153,68 @@ class Observation {
 
   ///@{
   /**
-   * <p>Contains the JSON-formatted string returned by the API invoked by the code
-   * interpreter.</p>
+   * <p>The unique identifier of the trace.</p>
    */
-  inline const CodeInterpreterInvocationOutput& GetCodeInterpreterInvocationOutput() const { return m_codeInterpreterInvocationOutput; }
-  inline bool CodeInterpreterInvocationOutputHasBeenSet() const { return m_codeInterpreterInvocationOutputHasBeenSet; }
-  template <typename CodeInterpreterInvocationOutputT = CodeInterpreterInvocationOutput>
-  void SetCodeInterpreterInvocationOutput(CodeInterpreterInvocationOutputT&& value) {
-    m_codeInterpreterInvocationOutputHasBeenSet = true;
-    m_codeInterpreterInvocationOutput = std::forward<CodeInterpreterInvocationOutputT>(value);
+  inline const Aws::String& GetTraceId() const { return m_traceId; }
+  inline bool TraceIdHasBeenSet() const { return m_traceIdHasBeenSet; }
+  template <typename TraceIdT = Aws::String>
+  void SetTraceId(TraceIdT&& value) {
+    m_traceIdHasBeenSet = true;
+    m_traceId = std::forward<TraceIdT>(value);
   }
-  template <typename CodeInterpreterInvocationOutputT = CodeInterpreterInvocationOutput>
-  Observation& WithCodeInterpreterInvocationOutput(CodeInterpreterInvocationOutputT&& value) {
-    SetCodeInterpreterInvocationOutput(std::forward<CodeInterpreterInvocationOutputT>(value));
+  template <typename TraceIdT = Aws::String>
+  Observation& WithTraceId(TraceIdT&& value) {
+    SetTraceId(std::forward<TraceIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies what kind of information the agent returns in the observation. The
+   * following values are possible.</p> <ul> <li> <p> <code>ACTION_GROUP</code> – The
+   * agent returns the result of an action group.</p> </li> <li> <p>
+   * <code>KNOWLEDGE_BASE</code> – The agent returns information from a knowledge
+   * base.</p> </li> <li> <p> <code>FINISH</code> – The agent returns a final
+   * response to the user with no follow-up.</p> </li> <li> <p> <code>ASK_USER</code>
+   * – The agent asks the user a question.</p> </li> <li> <p> <code>REPROMPT</code> –
+   * The agent prompts the user again for the same information.</p> </li> </ul>
+   */
+  inline Type GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(Type value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline Observation& WithType(Type value) {
+    SetType(value);
     return *this;
   }
   ///@}
  private:
-  Aws::String m_traceId;
-  bool m_traceIdHasBeenSet = false;
-
-  Type m_type{Type::NOT_SET};
-  bool m_typeHasBeenSet = false;
-
   ActionGroupInvocationOutput m_actionGroupInvocationOutput;
   bool m_actionGroupInvocationOutputHasBeenSet = false;
 
   AgentCollaboratorInvocationOutput m_agentCollaboratorInvocationOutput;
   bool m_agentCollaboratorInvocationOutputHasBeenSet = false;
 
-  KnowledgeBaseLookupOutput m_knowledgeBaseLookupOutput;
-  bool m_knowledgeBaseLookupOutputHasBeenSet = false;
+  CodeInterpreterInvocationOutput m_codeInterpreterInvocationOutput;
+  bool m_codeInterpreterInvocationOutputHasBeenSet = false;
 
   FinalResponse m_finalResponse;
   bool m_finalResponseHasBeenSet = false;
 
+  KnowledgeBaseLookupOutput m_knowledgeBaseLookupOutput;
+  bool m_knowledgeBaseLookupOutputHasBeenSet = false;
+
   RepromptResponse m_repromptResponse;
   bool m_repromptResponseHasBeenSet = false;
 
-  CodeInterpreterInvocationOutput m_codeInterpreterInvocationOutput;
-  bool m_codeInterpreterInvocationOutputHasBeenSet = false;
+  Aws::String m_traceId;
+  bool m_traceIdHasBeenSet = false;
+
+  Type m_type{Type::NOT_SET};
+  bool m_typeHasBeenSet = false;
 };
 
 }  // namespace Model

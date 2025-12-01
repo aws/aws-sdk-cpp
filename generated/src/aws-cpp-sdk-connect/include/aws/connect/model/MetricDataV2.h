@@ -34,7 +34,8 @@ class MetricDataV2 {
 
   ///@{
   /**
-   * <p>The metric name, thresholds, and metric filters of the returned metric.</p>
+   * <p>The metric name or metricId, thresholds, and metric filters of the returned
+   * metric.</p>
    */
   inline const MetricV2& GetMetric() const { return m_metric; }
   inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }

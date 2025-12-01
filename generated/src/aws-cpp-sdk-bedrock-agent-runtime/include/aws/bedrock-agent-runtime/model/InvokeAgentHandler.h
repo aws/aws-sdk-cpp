@@ -18,16 +18,16 @@
 namespace Aws {
 namespace BedrockAgentRuntime {
 namespace Model {
-enum class InvokeAgentEventType { INITIAL_RESPONSE, CHUNK, TRACE, RETURNCONTROL, FILES, UNKNOWN };
+enum class InvokeAgentEventType { INITIAL_RESPONSE, CHUNK, FILES, RETURNCONTROL, TRACE, UNKNOWN };
 
 class InvokeAgentHandler : public Aws::Utils::Event::EventStreamHandler {
   typedef std::function<void(const InvokeAgentInitialResponse&)> InvokeAgentInitialResponseCallback;
   typedef std::function<void(const InvokeAgentInitialResponse&, const Utils::Event::InitialResponseType)>
       InvokeAgentInitialResponseCallbackEx;
   typedef std::function<void(const PayloadPart&)> PayloadPartCallback;
-  typedef std::function<void(const TracePart&)> TracePartCallback;
-  typedef std::function<void(const ReturnControlPayload&)> ReturnControlPayloadCallback;
   typedef std::function<void(const FilePart&)> FilePartCallback;
+  typedef std::function<void(const ReturnControlPayload&)> ReturnControlPayloadCallback;
+  typedef std::function<void(const TracePart&)> TracePartCallback;
   typedef std::function<void(const Aws::Client::AWSError<BedrockAgentRuntimeErrors>& error)> ErrorCallback;
 
  public:
@@ -55,9 +55,9 @@ class InvokeAgentHandler : public Aws::Utils::Event::EventStreamHandler {
   }
   ///@}
   inline void SetPayloadPartCallback(const PayloadPartCallback& callback) { m_onPayloadPart = callback; }
-  inline void SetTracePartCallback(const TracePartCallback& callback) { m_onTracePart = callback; }
-  inline void SetReturnControlPayloadCallback(const ReturnControlPayloadCallback& callback) { m_onReturnControlPayload = callback; }
   inline void SetFilePartCallback(const FilePartCallback& callback) { m_onFilePart = callback; }
+  inline void SetReturnControlPayloadCallback(const ReturnControlPayloadCallback& callback) { m_onReturnControlPayload = callback; }
+  inline void SetTracePartCallback(const TracePartCallback& callback) { m_onTracePart = callback; }
   inline void SetOnErrorCallback(const ErrorCallback& callback) { m_onError = callback; }
 
   inline InvokeAgentInitialResponseCallbackEx& GetInitialResponseCallbackEx() { return m_onInitialResponse; }
@@ -69,9 +69,9 @@ class InvokeAgentHandler : public Aws::Utils::Event::EventStreamHandler {
 
   InvokeAgentInitialResponseCallbackEx m_onInitialResponse;
   PayloadPartCallback m_onPayloadPart;
-  TracePartCallback m_onTracePart;
-  ReturnControlPayloadCallback m_onReturnControlPayload;
   FilePartCallback m_onFilePart;
+  ReturnControlPayloadCallback m_onReturnControlPayload;
+  TracePartCallback m_onTracePart;
   ErrorCallback m_onError;
 };
 

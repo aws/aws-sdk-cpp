@@ -26,6 +26,11 @@ static const int BLOCKED_INTENT_ANSWER_CHUNK_HASH = HashingUtils::HashString("BL
 static const int EMAIL_RESPONSE_CHUNK_HASH = HashingUtils::HashString("EMAIL_RESPONSE_CHUNK");
 static const int EMAIL_OVERVIEW_CHUNK_HASH = HashingUtils::HashString("EMAIL_OVERVIEW_CHUNK");
 static const int EMAIL_GENERATIVE_ANSWER_CHUNK_HASH = HashingUtils::HashString("EMAIL_GENERATIVE_ANSWER_CHUNK");
+static const int CASE_SUMMARIZATION_CHUNK_HASH = HashingUtils::HashString("CASE_SUMMARIZATION_CHUNK");
+static const int BLOCKED_CASE_SUMMARIZATION_CHUNK_HASH = HashingUtils::HashString("BLOCKED_CASE_SUMMARIZATION_CHUNK");
+static const int SUGGESTED_MESSAGE_HASH = HashingUtils::HashString("SUGGESTED_MESSAGE");
+static const int NOTES_CHUNK_HASH = HashingUtils::HashString("NOTES_CHUNK");
+static const int BLOCKED_NOTES_CHUNK_HASH = HashingUtils::HashString("BLOCKED_NOTES_CHUNK");
 
 RecommendationType GetRecommendationTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -51,6 +56,16 @@ RecommendationType GetRecommendationTypeForName(const Aws::String& name) {
     return RecommendationType::EMAIL_OVERVIEW_CHUNK;
   } else if (hashCode == EMAIL_GENERATIVE_ANSWER_CHUNK_HASH) {
     return RecommendationType::EMAIL_GENERATIVE_ANSWER_CHUNK;
+  } else if (hashCode == CASE_SUMMARIZATION_CHUNK_HASH) {
+    return RecommendationType::CASE_SUMMARIZATION_CHUNK;
+  } else if (hashCode == BLOCKED_CASE_SUMMARIZATION_CHUNK_HASH) {
+    return RecommendationType::BLOCKED_CASE_SUMMARIZATION_CHUNK;
+  } else if (hashCode == SUGGESTED_MESSAGE_HASH) {
+    return RecommendationType::SUGGESTED_MESSAGE;
+  } else if (hashCode == NOTES_CHUNK_HASH) {
+    return RecommendationType::NOTES_CHUNK;
+  } else if (hashCode == BLOCKED_NOTES_CHUNK_HASH) {
+    return RecommendationType::BLOCKED_NOTES_CHUNK;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -87,6 +102,16 @@ Aws::String GetNameForRecommendationType(RecommendationType enumValue) {
       return "EMAIL_OVERVIEW_CHUNK";
     case RecommendationType::EMAIL_GENERATIVE_ANSWER_CHUNK:
       return "EMAIL_GENERATIVE_ANSWER_CHUNK";
+    case RecommendationType::CASE_SUMMARIZATION_CHUNK:
+      return "CASE_SUMMARIZATION_CHUNK";
+    case RecommendationType::BLOCKED_CASE_SUMMARIZATION_CHUNK:
+      return "BLOCKED_CASE_SUMMARIZATION_CHUNK";
+    case RecommendationType::SUGGESTED_MESSAGE:
+      return "SUGGESTED_MESSAGE";
+    case RecommendationType::NOTES_CHUNK:
+      return "NOTES_CHUNK";
+    case RecommendationType::BLOCKED_NOTES_CHUNK:
+      return "BLOCKED_NOTES_CHUNK";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

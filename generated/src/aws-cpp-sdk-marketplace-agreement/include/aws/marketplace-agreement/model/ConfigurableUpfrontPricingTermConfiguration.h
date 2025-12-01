@@ -37,6 +37,25 @@ class ConfigurableUpfrontPricingTermConfiguration {
 
   ///@{
   /**
+   * <p>Defines the length of time for which the particular pricing/dimension is
+   * being purchased by the acceptor.</p>
+   */
+  inline const Aws::String& GetSelectorValue() const { return m_selectorValue; }
+  inline bool SelectorValueHasBeenSet() const { return m_selectorValueHasBeenSet; }
+  template <typename SelectorValueT = Aws::String>
+  void SetSelectorValue(SelectorValueT&& value) {
+    m_selectorValueHasBeenSet = true;
+    m_selectorValue = std::forward<SelectorValueT>(value);
+  }
+  template <typename SelectorValueT = Aws::String>
+  ConfigurableUpfrontPricingTermConfiguration& WithSelectorValue(SelectorValueT&& value) {
+    SetSelectorValue(std::forward<SelectorValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Defines the dimensions that the acceptor has purchased from the overall set
    * of dimensions presented in the rate card.</p>
    */
@@ -59,31 +78,12 @@ class ConfigurableUpfrontPricingTermConfiguration {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Defines the length of time for which the particular pricing/dimension is
-   * being purchased by the acceptor.</p>
-   */
-  inline const Aws::String& GetSelectorValue() const { return m_selectorValue; }
-  inline bool SelectorValueHasBeenSet() const { return m_selectorValueHasBeenSet; }
-  template <typename SelectorValueT = Aws::String>
-  void SetSelectorValue(SelectorValueT&& value) {
-    m_selectorValueHasBeenSet = true;
-    m_selectorValue = std::forward<SelectorValueT>(value);
-  }
-  template <typename SelectorValueT = Aws::String>
-  ConfigurableUpfrontPricingTermConfiguration& WithSelectorValue(SelectorValueT&& value) {
-    SetSelectorValue(std::forward<SelectorValueT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::Vector<Dimension> m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
-
   Aws::String m_selectorValue;
   bool m_selectorValueHasBeenSet = false;
+
+  Aws::Vector<Dimension> m_dimensions;
+  bool m_dimensionsHasBeenSet = false;
 };
 
 }  // namespace Model

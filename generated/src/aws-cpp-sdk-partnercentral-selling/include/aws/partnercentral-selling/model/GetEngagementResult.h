@@ -155,6 +155,43 @@ class GetEngagementResult {
 
   ///@{
   /**
+   * <p>The timestamp indicating when the engagement was last modified, in ISO 8601
+   * format (UTC). Example: "2023-05-01T20:37:46Z". This helps track the most recent
+   * changes to the engagement.</p>
+   */
+  inline const Aws::Utils::DateTime& GetModifiedAt() const { return m_modifiedAt; }
+  template <typename ModifiedAtT = Aws::Utils::DateTime>
+  void SetModifiedAt(ModifiedAtT&& value) {
+    m_modifiedAtHasBeenSet = true;
+    m_modifiedAt = std::forward<ModifiedAtT>(value);
+  }
+  template <typename ModifiedAtT = Aws::Utils::DateTime>
+  GetEngagementResult& WithModifiedAt(ModifiedAtT&& value) {
+    SetModifiedAt(std::forward<ModifiedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The AWS account ID of the user who last modified the engagement. This field
+   * helps track who made the most recent changes to the engagement.</p>
+   */
+  inline const Aws::String& GetModifiedBy() const { return m_modifiedBy; }
+  template <typename ModifiedByT = Aws::String>
+  void SetModifiedBy(ModifiedByT&& value) {
+    m_modifiedByHasBeenSet = true;
+    m_modifiedBy = std::forward<ModifiedByT>(value);
+  }
+  template <typename ModifiedByT = Aws::String>
+  GetEngagementResult& WithModifiedBy(ModifiedByT&& value) {
+    SetModifiedBy(std::forward<ModifiedByT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A list of context objects associated with the engagement. Each context
    * provides additional information related to the Engagement, such as customer
    * projects or documents.</p>
@@ -213,6 +250,12 @@ class GetEngagementResult {
 
   int m_memberCount{0};
   bool m_memberCountHasBeenSet = false;
+
+  Aws::Utils::DateTime m_modifiedAt{};
+  bool m_modifiedAtHasBeenSet = false;
+
+  Aws::String m_modifiedBy;
+  bool m_modifiedByHasBeenSet = false;
 
   Aws::Vector<EngagementContextDetails> m_contexts;
   bool m_contextsHasBeenSet = false;

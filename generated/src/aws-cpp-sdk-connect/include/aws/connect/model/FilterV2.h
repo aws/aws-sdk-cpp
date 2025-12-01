@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/FilterV2StringCondition.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -83,12 +84,36 @@ class FilterV2 {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> System defined filtering condition. For example, the NOT_EXISTS
+   * StringCondition returns documents where the field specified by FilterKey does
+   * not exist in the document.</p> <p>When the NOT_EXISTS StringCondition is added
+   * to a FilterV2 object, FilterValues must be null or empty. </p>
+   */
+  inline const FilterV2StringCondition& GetStringCondition() const { return m_stringCondition; }
+  inline bool StringConditionHasBeenSet() const { return m_stringConditionHasBeenSet; }
+  template <typename StringConditionT = FilterV2StringCondition>
+  void SetStringCondition(StringConditionT&& value) {
+    m_stringConditionHasBeenSet = true;
+    m_stringCondition = std::forward<StringConditionT>(value);
+  }
+  template <typename StringConditionT = FilterV2StringCondition>
+  FilterV2& WithStringCondition(StringConditionT&& value) {
+    SetStringCondition(std::forward<StringConditionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_filterKey;
   bool m_filterKeyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_filterValues;
   bool m_filterValuesHasBeenSet = false;
+
+  FilterV2StringCondition m_stringCondition;
+  bool m_stringConditionHasBeenSet = false;
 };
 
 }  // namespace Model

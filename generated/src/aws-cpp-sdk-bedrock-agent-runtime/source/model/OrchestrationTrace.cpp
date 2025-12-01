@@ -18,17 +18,9 @@ namespace Model {
 OrchestrationTrace::OrchestrationTrace(JsonView jsonValue) { *this = jsonValue; }
 
 OrchestrationTrace& OrchestrationTrace::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("rationale")) {
-    m_rationale = jsonValue.GetObject("rationale");
-    m_rationaleHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("invocationInput")) {
     m_invocationInput = jsonValue.GetObject("invocationInput");
     m_invocationInputHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("observation")) {
-    m_observation = jsonValue.GetObject("observation");
-    m_observationHasBeenSet = true;
   }
   if (jsonValue.ValueExists("modelInvocationInput")) {
     m_modelInvocationInput = jsonValue.GetObject("modelInvocationInput");
@@ -38,22 +30,22 @@ OrchestrationTrace& OrchestrationTrace::operator=(JsonView jsonValue) {
     m_modelInvocationOutput = jsonValue.GetObject("modelInvocationOutput");
     m_modelInvocationOutputHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("observation")) {
+    m_observation = jsonValue.GetObject("observation");
+    m_observationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("rationale")) {
+    m_rationale = jsonValue.GetObject("rationale");
+    m_rationaleHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue OrchestrationTrace::Jsonize() const {
   JsonValue payload;
 
-  if (m_rationaleHasBeenSet) {
-    payload.WithObject("rationale", m_rationale.Jsonize());
-  }
-
   if (m_invocationInputHasBeenSet) {
     payload.WithObject("invocationInput", m_invocationInput.Jsonize());
-  }
-
-  if (m_observationHasBeenSet) {
-    payload.WithObject("observation", m_observation.Jsonize());
   }
 
   if (m_modelInvocationInputHasBeenSet) {
@@ -62,6 +54,14 @@ JsonValue OrchestrationTrace::Jsonize() const {
 
   if (m_modelInvocationOutputHasBeenSet) {
     payload.WithObject("modelInvocationOutput", m_modelInvocationOutput.Jsonize());
+  }
+
+  if (m_observationHasBeenSet) {
+    payload.WithObject("observation", m_observation.Jsonize());
+  }
+
+  if (m_rationaleHasBeenSet) {
+    payload.WithObject("rationale", m_rationale.Jsonize());
   }
 
   return payload;

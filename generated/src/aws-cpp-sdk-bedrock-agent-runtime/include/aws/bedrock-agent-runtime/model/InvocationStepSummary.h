@@ -38,25 +38,6 @@ class InvocationStepSummary {
 
   ///@{
   /**
-   * <p>The unique identifier for the session associated with the invocation
-   * step.</p>
-   */
-  inline const Aws::String& GetSessionId() const { return m_sessionId; }
-  inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-  template <typename SessionIdT = Aws::String>
-  void SetSessionId(SessionIdT&& value) {
-    m_sessionIdHasBeenSet = true;
-    m_sessionId = std::forward<SessionIdT>(value);
-  }
-  template <typename SessionIdT = Aws::String>
-  InvocationStepSummary& WithSessionId(SessionIdT&& value) {
-    SetSessionId(std::forward<SessionIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>A unique identifier for the invocation in UUID format.</p>
    */
   inline const Aws::String& GetInvocationId() const { return m_invocationId; }
@@ -108,10 +89,26 @@ class InvocationStepSummary {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>The unique identifier for the session associated with the invocation
+   * step.</p>
+   */
+  inline const Aws::String& GetSessionId() const { return m_sessionId; }
+  inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
+  template <typename SessionIdT = Aws::String>
+  void SetSessionId(SessionIdT&& value) {
+    m_sessionIdHasBeenSet = true;
+    m_sessionId = std::forward<SessionIdT>(value);
+  }
+  template <typename SessionIdT = Aws::String>
+  InvocationStepSummary& WithSessionId(SessionIdT&& value) {
+    SetSessionId(std::forward<SessionIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_invocationId;
   bool m_invocationIdHasBeenSet = false;
 
@@ -120,6 +117,9 @@ class InvocationStepSummary {
 
   Aws::Utils::DateTime m_invocationStepTime{};
   bool m_invocationStepTimeHasBeenSet = false;
+
+  Aws::String m_sessionId;
+  bool m_sessionIdHasBeenSet = false;
 };
 
 }  // namespace Model

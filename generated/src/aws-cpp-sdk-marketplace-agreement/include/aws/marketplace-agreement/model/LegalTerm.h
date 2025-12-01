@@ -36,6 +36,24 @@ class LegalTerm {
 
   ///@{
   /**
+   * <p>Category of the term being updated.</p>
+   */
+  inline const Aws::String& GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  template <typename TypeT = Aws::String>
+  void SetType(TypeT&& value) {
+    m_typeHasBeenSet = true;
+    m_type = std::forward<TypeT>(value);
+  }
+  template <typename TypeT = Aws::String>
+  LegalTerm& WithType(TypeT&& value) {
+    SetType(std::forward<TypeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>List of references to legal resources proposed to the buyers. An example is
    * the EULA.</p>
    */
@@ -58,30 +76,12 @@ class LegalTerm {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Category of the term being updated.</p>
-   */
-  inline const Aws::String& GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  template <typename TypeT = Aws::String>
-  void SetType(TypeT&& value) {
-    m_typeHasBeenSet = true;
-    m_type = std::forward<TypeT>(value);
-  }
-  template <typename TypeT = Aws::String>
-  LegalTerm& WithType(TypeT&& value) {
-    SetType(std::forward<TypeT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::Vector<DocumentItem> m_documents;
-  bool m_documentsHasBeenSet = false;
-
   Aws::String m_type;
   bool m_typeHasBeenSet = false;
+
+  Aws::Vector<DocumentItem> m_documents;
+  bool m_documentsHasBeenSet = false;
 };
 
 }  // namespace Model

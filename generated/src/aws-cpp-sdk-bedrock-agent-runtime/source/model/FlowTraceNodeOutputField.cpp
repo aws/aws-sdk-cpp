@@ -18,10 +18,6 @@ namespace Model {
 FlowTraceNodeOutputField::FlowTraceNodeOutputField(JsonView jsonValue) { *this = jsonValue; }
 
 FlowTraceNodeOutputField& FlowTraceNodeOutputField::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("nodeOutputName")) {
-    m_nodeOutputName = jsonValue.GetString("nodeOutputName");
-    m_nodeOutputNameHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("content")) {
     m_content = jsonValue.GetObject("content");
     m_contentHasBeenSet = true;
@@ -33,6 +29,10 @@ FlowTraceNodeOutputField& FlowTraceNodeOutputField::operator=(JsonView jsonValue
     }
     m_nextHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("nodeOutputName")) {
+    m_nodeOutputName = jsonValue.GetString("nodeOutputName");
+    m_nodeOutputNameHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("type")) {
     m_type = FlowNodeIODataTypeMapper::GetFlowNodeIODataTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
@@ -42,10 +42,6 @@ FlowTraceNodeOutputField& FlowTraceNodeOutputField::operator=(JsonView jsonValue
 
 JsonValue FlowTraceNodeOutputField::Jsonize() const {
   JsonValue payload;
-
-  if (m_nodeOutputNameHasBeenSet) {
-    payload.WithString("nodeOutputName", m_nodeOutputName);
-  }
 
   if (m_contentHasBeenSet) {
     payload.WithObject("content", m_content.Jsonize());
@@ -57,6 +53,10 @@ JsonValue FlowTraceNodeOutputField::Jsonize() const {
       nextJsonList[nextIndex].AsObject(m_next[nextIndex].Jsonize());
     }
     payload.WithArray("next", std::move(nextJsonList));
+  }
+
+  if (m_nodeOutputNameHasBeenSet) {
+    payload.WithString("nodeOutputName", m_nodeOutputName);
   }
 
   if (m_typeHasBeenSet) {

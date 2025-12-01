@@ -54,6 +54,22 @@ DataDetails& DataDetails::operator=(JsonView jsonValue) {
         Aws::MakeShared<EmailGenerativeAnswerChunkDataDetails>("DataDetails", jsonValue.GetObject("emailGenerativeAnswerChunkData"));
     m_emailGenerativeAnswerChunkDataHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("caseSummarizationChunkData")) {
+    m_caseSummarizationChunkData = jsonValue.GetObject("caseSummarizationChunkData");
+    m_caseSummarizationChunkDataHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("suggestedMessageData")) {
+    m_suggestedMessageData = jsonValue.GetObject("suggestedMessageData");
+    m_suggestedMessageDataHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("notesData")) {
+    m_notesData = jsonValue.GetObject("notesData");
+    m_notesDataHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("notesChunkData")) {
+    m_notesChunkData = jsonValue.GetObject("notesChunkData");
+    m_notesChunkDataHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -90,6 +106,22 @@ JsonValue DataDetails::Jsonize() const {
 
   if (m_emailGenerativeAnswerChunkDataHasBeenSet) {
     payload.WithObject("emailGenerativeAnswerChunkData", m_emailGenerativeAnswerChunkData->Jsonize());
+  }
+
+  if (m_caseSummarizationChunkDataHasBeenSet) {
+    payload.WithObject("caseSummarizationChunkData", m_caseSummarizationChunkData.Jsonize());
+  }
+
+  if (m_suggestedMessageDataHasBeenSet) {
+    payload.WithObject("suggestedMessageData", m_suggestedMessageData.Jsonize());
+  }
+
+  if (m_notesDataHasBeenSet) {
+    payload.WithObject("notesData", m_notesData.Jsonize());
+  }
+
+  if (m_notesChunkDataHasBeenSet) {
+    payload.WithObject("notesChunkData", m_notesChunkData.Jsonize());
   }
 
   return payload;

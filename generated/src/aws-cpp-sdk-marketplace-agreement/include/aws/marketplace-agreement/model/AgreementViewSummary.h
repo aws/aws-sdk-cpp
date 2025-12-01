@@ -26,7 +26,7 @@ namespace Model {
 
 /**
  * <p>A summary of the agreement, including top-level attributes (for example, the
- * agreement ID, version, proposer, and acceptor).</p><p><h3>See Also:</h3>   <a
+ * agreement ID, proposer, and acceptor).</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/AgreementViewSummary">AWS
  * API Reference</a></p>
  */
@@ -36,43 +36,6 @@ class AgreementViewSummary {
   AWS_AGREEMENTSERVICE_API AgreementViewSummary(Aws::Utils::Json::JsonView jsonValue);
   AWS_AGREEMENTSERVICE_API AgreementViewSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
   AWS_AGREEMENTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-  ///@{
-  /**
-   * <p>The date and time that the agreement was accepted.</p>
-   */
-  inline const Aws::Utils::DateTime& GetAcceptanceTime() const { return m_acceptanceTime; }
-  inline bool AcceptanceTimeHasBeenSet() const { return m_acceptanceTimeHasBeenSet; }
-  template <typename AcceptanceTimeT = Aws::Utils::DateTime>
-  void SetAcceptanceTime(AcceptanceTimeT&& value) {
-    m_acceptanceTimeHasBeenSet = true;
-    m_acceptanceTime = std::forward<AcceptanceTimeT>(value);
-  }
-  template <typename AcceptanceTimeT = Aws::Utils::DateTime>
-  AgreementViewSummary& WithAcceptanceTime(AcceptanceTimeT&& value) {
-    SetAcceptanceTime(std::forward<AcceptanceTimeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Details of the party accepting the agreement terms. This is commonly the
-   * buyer for <code>PurchaseAgreement.</code> </p>
-   */
-  inline const Acceptor& GetAcceptor() const { return m_acceptor; }
-  inline bool AcceptorHasBeenSet() const { return m_acceptorHasBeenSet; }
-  template <typename AcceptorT = Acceptor>
-  void SetAcceptor(AcceptorT&& value) {
-    m_acceptorHasBeenSet = true;
-    m_acceptor = std::forward<AcceptorT>(value);
-  }
-  template <typename AcceptorT = Acceptor>
-  AgreementViewSummary& WithAcceptor(AcceptorT&& value) {
-    SetAcceptor(std::forward<AcceptorT>(value));
-    return *this;
-  }
-  ///@}
 
   ///@{
   /**
@@ -94,19 +57,36 @@ class AgreementViewSummary {
 
   ///@{
   /**
-   * <p>The type of agreement. Values are <code>PurchaseAgreement</code> or
-   * <code>VendorInsightsAgreement</code>.</p>
+   * <p>The date and time that the agreement was accepted.</p>
    */
-  inline const Aws::String& GetAgreementType() const { return m_agreementType; }
-  inline bool AgreementTypeHasBeenSet() const { return m_agreementTypeHasBeenSet; }
-  template <typename AgreementTypeT = Aws::String>
-  void SetAgreementType(AgreementTypeT&& value) {
-    m_agreementTypeHasBeenSet = true;
-    m_agreementType = std::forward<AgreementTypeT>(value);
+  inline const Aws::Utils::DateTime& GetAcceptanceTime() const { return m_acceptanceTime; }
+  inline bool AcceptanceTimeHasBeenSet() const { return m_acceptanceTimeHasBeenSet; }
+  template <typename AcceptanceTimeT = Aws::Utils::DateTime>
+  void SetAcceptanceTime(AcceptanceTimeT&& value) {
+    m_acceptanceTimeHasBeenSet = true;
+    m_acceptanceTime = std::forward<AcceptanceTimeT>(value);
   }
-  template <typename AgreementTypeT = Aws::String>
-  AgreementViewSummary& WithAgreementType(AgreementTypeT&& value) {
-    SetAgreementType(std::forward<AgreementTypeT>(value));
+  template <typename AcceptanceTimeT = Aws::Utils::DateTime>
+  AgreementViewSummary& WithAcceptanceTime(AcceptanceTimeT&& value) {
+    SetAcceptanceTime(std::forward<AcceptanceTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The date and time when the agreement starts.</p>
+   */
+  inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
+  inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+  template <typename StartTimeT = Aws::Utils::DateTime>
+  void SetStartTime(StartTimeT&& value) {
+    m_startTimeHasBeenSet = true;
+    m_startTime = std::forward<StartTimeT>(value);
+  }
+  template <typename StartTimeT = Aws::Utils::DateTime>
+  AgreementViewSummary& WithStartTime(StartTimeT&& value) {
+    SetStartTime(std::forward<StartTimeT>(value));
     return *this;
   }
   ///@}
@@ -132,18 +112,37 @@ class AgreementViewSummary {
 
   ///@{
   /**
-   * <p>A summary of the proposal</p>
+   * <p>The type of agreement. Value is <code>PurchaseAgreement</code>.</p>
    */
-  inline const ProposalSummary& GetProposalSummary() const { return m_proposalSummary; }
-  inline bool ProposalSummaryHasBeenSet() const { return m_proposalSummaryHasBeenSet; }
-  template <typename ProposalSummaryT = ProposalSummary>
-  void SetProposalSummary(ProposalSummaryT&& value) {
-    m_proposalSummaryHasBeenSet = true;
-    m_proposalSummary = std::forward<ProposalSummaryT>(value);
+  inline const Aws::String& GetAgreementType() const { return m_agreementType; }
+  inline bool AgreementTypeHasBeenSet() const { return m_agreementTypeHasBeenSet; }
+  template <typename AgreementTypeT = Aws::String>
+  void SetAgreementType(AgreementTypeT&& value) {
+    m_agreementTypeHasBeenSet = true;
+    m_agreementType = std::forward<AgreementTypeT>(value);
   }
-  template <typename ProposalSummaryT = ProposalSummary>
-  AgreementViewSummary& WithProposalSummary(ProposalSummaryT&& value) {
-    SetProposalSummary(std::forward<ProposalSummaryT>(value));
+  template <typename AgreementTypeT = Aws::String>
+  AgreementViewSummary& WithAgreementType(AgreementTypeT&& value) {
+    SetAgreementType(std::forward<AgreementTypeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Details of the party accepting the agreement terms. This is commonly the
+   * buyer for <code>PurchaseAgreement.</code> </p>
+   */
+  inline const Acceptor& GetAcceptor() const { return m_acceptor; }
+  inline bool AcceptorHasBeenSet() const { return m_acceptorHasBeenSet; }
+  template <typename AcceptorT = Acceptor>
+  void SetAcceptor(AcceptorT&& value) {
+    m_acceptorHasBeenSet = true;
+    m_acceptor = std::forward<AcceptorT>(value);
+  }
+  template <typename AcceptorT = Acceptor>
+  AgreementViewSummary& WithAcceptor(AcceptorT&& value) {
+    SetAcceptor(std::forward<AcceptorT>(value));
     return *this;
   }
   ///@}
@@ -169,18 +168,18 @@ class AgreementViewSummary {
 
   ///@{
   /**
-   * <p>The date and time when the agreement starts.</p>
+   * <p>A summary of the proposal</p>
    */
-  inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
-  inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-  template <typename StartTimeT = Aws::Utils::DateTime>
-  void SetStartTime(StartTimeT&& value) {
-    m_startTimeHasBeenSet = true;
-    m_startTime = std::forward<StartTimeT>(value);
+  inline const ProposalSummary& GetProposalSummary() const { return m_proposalSummary; }
+  inline bool ProposalSummaryHasBeenSet() const { return m_proposalSummaryHasBeenSet; }
+  template <typename ProposalSummaryT = ProposalSummary>
+  void SetProposalSummary(ProposalSummaryT&& value) {
+    m_proposalSummaryHasBeenSet = true;
+    m_proposalSummary = std::forward<ProposalSummaryT>(value);
   }
-  template <typename StartTimeT = Aws::Utils::DateTime>
-  AgreementViewSummary& WithStartTime(StartTimeT&& value) {
-    SetStartTime(std::forward<StartTimeT>(value));
+  template <typename ProposalSummaryT = ProposalSummary>
+  AgreementViewSummary& WithProposalSummary(ProposalSummaryT&& value) {
+    SetProposalSummary(std::forward<ProposalSummaryT>(value));
     return *this;
   }
   ///@}
@@ -201,29 +200,29 @@ class AgreementViewSummary {
   }
   ///@}
  private:
-  Aws::Utils::DateTime m_acceptanceTime{};
-  bool m_acceptanceTimeHasBeenSet = false;
-
-  Acceptor m_acceptor;
-  bool m_acceptorHasBeenSet = false;
-
   Aws::String m_agreementId;
   bool m_agreementIdHasBeenSet = false;
 
-  Aws::String m_agreementType;
-  bool m_agreementTypeHasBeenSet = false;
+  Aws::Utils::DateTime m_acceptanceTime{};
+  bool m_acceptanceTimeHasBeenSet = false;
+
+  Aws::Utils::DateTime m_startTime{};
+  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
   bool m_endTimeHasBeenSet = false;
 
-  ProposalSummary m_proposalSummary;
-  bool m_proposalSummaryHasBeenSet = false;
+  Aws::String m_agreementType;
+  bool m_agreementTypeHasBeenSet = false;
+
+  Acceptor m_acceptor;
+  bool m_acceptorHasBeenSet = false;
 
   Proposer m_proposer;
   bool m_proposerHasBeenSet = false;
 
-  Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
+  ProposalSummary m_proposalSummary;
+  bool m_proposalSummaryHasBeenSet = false;
 
   AgreementStatus m_status{AgreementStatus::NOT_SET};
   bool m_statusHasBeenSet = false;

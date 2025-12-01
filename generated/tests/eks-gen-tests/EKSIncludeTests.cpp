@@ -32,6 +32,14 @@
 #include <aws/eks/model/AddonPodIdentityConfiguration.h>
 #include <aws/eks/model/AddonStatus.h>
 #include <aws/eks/model/AddonVersionInfo.h>
+#include <aws/eks/model/ArgoCdAwsIdcConfigRequest.h>
+#include <aws/eks/model/ArgoCdAwsIdcConfigResponse.h>
+#include <aws/eks/model/ArgoCdConfigRequest.h>
+#include <aws/eks/model/ArgoCdConfigResponse.h>
+#include <aws/eks/model/ArgoCdNetworkAccessConfigRequest.h>
+#include <aws/eks/model/ArgoCdNetworkAccessConfigResponse.h>
+#include <aws/eks/model/ArgoCdRole.h>
+#include <aws/eks/model/ArgoCdRoleMapping.h>
 #include <aws/eks/model/AssociateAccessPolicyRequest.h>
 #include <aws/eks/model/AssociateAccessPolicyResult.h>
 #include <aws/eks/model/AssociateEncryptionConfigRequest.h>
@@ -42,6 +50,16 @@
 #include <aws/eks/model/AuthenticationMode.h>
 #include <aws/eks/model/AutoScalingGroup.h>
 #include <aws/eks/model/BlockStorage.h>
+#include <aws/eks/model/Capability.h>
+#include <aws/eks/model/CapabilityConfigurationRequest.h>
+#include <aws/eks/model/CapabilityConfigurationResponse.h>
+#include <aws/eks/model/CapabilityDeletePropagationPolicy.h>
+#include <aws/eks/model/CapabilityHealth.h>
+#include <aws/eks/model/CapabilityIssue.h>
+#include <aws/eks/model/CapabilityIssueCode.h>
+#include <aws/eks/model/CapabilityStatus.h>
+#include <aws/eks/model/CapabilitySummary.h>
+#include <aws/eks/model/CapabilityType.h>
 #include <aws/eks/model/CapacityTypes.h>
 #include <aws/eks/model/Category.h>
 #include <aws/eks/model/Certificate.h>
@@ -69,6 +87,8 @@
 #include <aws/eks/model/CreateAccessEntryResult.h>
 #include <aws/eks/model/CreateAddonRequest.h>
 #include <aws/eks/model/CreateAddonResult.h>
+#include <aws/eks/model/CreateCapabilityRequest.h>
+#include <aws/eks/model/CreateCapabilityResult.h>
 #include <aws/eks/model/CreateClusterRequest.h>
 #include <aws/eks/model/CreateClusterResult.h>
 #include <aws/eks/model/CreateEksAnywhereSubscriptionRequest.h>
@@ -83,6 +103,8 @@
 #include <aws/eks/model/DeleteAccessEntryResult.h>
 #include <aws/eks/model/DeleteAddonRequest.h>
 #include <aws/eks/model/DeleteAddonResult.h>
+#include <aws/eks/model/DeleteCapabilityRequest.h>
+#include <aws/eks/model/DeleteCapabilityResult.h>
 #include <aws/eks/model/DeleteClusterRequest.h>
 #include <aws/eks/model/DeleteClusterResult.h>
 #include <aws/eks/model/DeleteEksAnywhereSubscriptionRequest.h>
@@ -104,6 +126,8 @@
 #include <aws/eks/model/DescribeAddonResult.h>
 #include <aws/eks/model/DescribeAddonVersionsRequest.h>
 #include <aws/eks/model/DescribeAddonVersionsResult.h>
+#include <aws/eks/model/DescribeCapabilityRequest.h>
+#include <aws/eks/model/DescribeCapabilityResult.h>
 #include <aws/eks/model/DescribeClusterRequest.h>
 #include <aws/eks/model/DescribeClusterResult.h>
 #include <aws/eks/model/DescribeClusterVersionsRequest.h>
@@ -171,6 +195,8 @@
 #include <aws/eks/model/ListAddonsResult.h>
 #include <aws/eks/model/ListAssociatedAccessPoliciesRequest.h>
 #include <aws/eks/model/ListAssociatedAccessPoliciesResult.h>
+#include <aws/eks/model/ListCapabilitiesRequest.h>
+#include <aws/eks/model/ListCapabilitiesResult.h>
 #include <aws/eks/model/ListClustersRequest.h>
 #include <aws/eks/model/ListClustersResult.h>
 #include <aws/eks/model/ListEksAnywhereSubscriptionsRequest.h>
@@ -225,6 +251,8 @@
 #include <aws/eks/model/ResourceLimitExceededException.h>
 #include <aws/eks/model/ResourceNotFoundException.h>
 #include <aws/eks/model/ServerException.h>
+#include <aws/eks/model/SsoIdentity.h>
+#include <aws/eks/model/SsoIdentityType.h>
 #include <aws/eks/model/StartInsightsRefreshRequest.h>
 #include <aws/eks/model/StartInsightsRefreshResult.h>
 #include <aws/eks/model/StorageConfigRequest.h>
@@ -244,6 +272,10 @@
 #include <aws/eks/model/UpdateAccessEntryResult.h>
 #include <aws/eks/model/UpdateAddonRequest.h>
 #include <aws/eks/model/UpdateAddonResult.h>
+#include <aws/eks/model/UpdateArgoCdConfig.h>
+#include <aws/eks/model/UpdateCapabilityConfiguration.h>
+#include <aws/eks/model/UpdateCapabilityRequest.h>
+#include <aws/eks/model/UpdateCapabilityResult.h>
 #include <aws/eks/model/UpdateClusterConfigRequest.h>
 #include <aws/eks/model/UpdateClusterConfigResult.h>
 #include <aws/eks/model/UpdateClusterVersionRequest.h>
@@ -259,6 +291,7 @@
 #include <aws/eks/model/UpdateParamType.h>
 #include <aws/eks/model/UpdatePodIdentityAssociationRequest.h>
 #include <aws/eks/model/UpdatePodIdentityAssociationResult.h>
+#include <aws/eks/model/UpdateRoleMappings.h>
 #include <aws/eks/model/UpdateStatus.h>
 #include <aws/eks/model/UpdateTaintsPayload.h>
 #include <aws/eks/model/UpdateType.h>

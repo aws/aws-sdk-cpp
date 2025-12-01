@@ -584,6 +584,7 @@
 #include <aws/glue/model/HyperTargetCompressionType.h>
 #include <aws/glue/model/IcebergCompactionConfiguration.h>
 #include <aws/glue/model/IcebergCompactionMetrics.h>
+#include <aws/glue/model/IcebergEncryptedKey.h>
 #include <aws/glue/model/IcebergInput.h>
 #include <aws/glue/model/IcebergNullOrder.h>
 #include <aws/glue/model/IcebergOptimizationProperties.h>
@@ -603,6 +604,7 @@
 #include <aws/glue/model/IcebergTableUpdate.h>
 #include <aws/glue/model/IcebergTarget.h>
 #include <aws/glue/model/IcebergTargetCompressionType.h>
+#include <aws/glue/model/IcebergUpdateAction.h>
 #include <aws/glue/model/ImportCatalogToGlueRequest.h>
 #include <aws/glue/model/ImportCatalogToGlueResult.h>
 #include <aws/glue/model/ImportLabelsTaskRunProperties.h>
@@ -647,6 +649,7 @@
 #include <aws/glue/model/LastActiveDefinition.h>
 #include <aws/glue/model/LastCrawlInfo.h>
 #include <aws/glue/model/LastCrawlStatus.h>
+#include <aws/glue/model/LastRefreshType.h>
 #include <aws/glue/model/LineageConfiguration.h>
 #include <aws/glue/model/ListBlueprintsRequest.h>
 #include <aws/glue/model/ListBlueprintsResult.h>

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/ApplicationType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -54,8 +55,9 @@ class Application {
 
   ///@{
   /**
-   * <p>The permissions that the agent is granted on the application. Only the
-   * <code>ACCESS</code> permission is supported.</p>
+   * <p>The permissions that the agent is granted on the application. For third-party
+   * applications, only the <code>ACCESS</code> permission is supported. For MCP
+   * Servers, the permissions are tool Identifiers accepted by MCP Server. </p>
    */
   inline const Aws::Vector<Aws::String>& GetApplicationPermissions() const { return m_applicationPermissions; }
   inline bool ApplicationPermissionsHasBeenSet() const { return m_applicationPermissionsHasBeenSet; }
@@ -76,12 +78,31 @@ class Application {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> Type of Application. </p>
+   */
+  inline ApplicationType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(ApplicationType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline Application& WithType(ApplicationType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_namespace;
   bool m_namespaceHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_applicationPermissions;
   bool m_applicationPermissionsHasBeenSet = false;
+
+  ApplicationType m_type{ApplicationType::NOT_SET};
+  bool m_typeHasBeenSet = false;
 };
 
 }  // namespace Model

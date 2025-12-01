@@ -35,22 +35,6 @@ class QueryGenerationInput {
 
   ///@{
   /**
-   * <p>The type of the query.</p>
-   */
-  inline InputQueryType GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  inline void SetType(InputQueryType value) {
-    m_typeHasBeenSet = true;
-    m_type = value;
-  }
-  inline QueryGenerationInput& WithType(InputQueryType value) {
-    SetType(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The text of the query.</p>
    */
   inline const Aws::String& GetText() const { return m_text; }
@@ -66,12 +50,28 @@ class QueryGenerationInput {
     return *this;
   }
   ///@}
- private:
-  InputQueryType m_type{InputQueryType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>The type of the query.</p>
+   */
+  inline InputQueryType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(InputQueryType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline QueryGenerationInput& WithType(InputQueryType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_text;
   bool m_textHasBeenSet = false;
+
+  InputQueryType m_type{InputQueryType::NOT_SET};
+  bool m_typeHasBeenSet = false;
 };
 
 }  // namespace Model

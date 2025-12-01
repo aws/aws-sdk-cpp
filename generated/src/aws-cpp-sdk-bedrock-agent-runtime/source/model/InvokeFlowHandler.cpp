@@ -31,17 +31,17 @@ InvokeFlowHandler::InvokeFlowHandler() : EventStreamHandler() {
                             << (eventType == Utils::Event::InitialResponseType::ON_EVENT ? "event" : "http headers"));
   };
 
-  m_onFlowOutputEvent = [&](const FlowOutputEvent&) { AWS_LOGSTREAM_TRACE(INVOKEFLOW_HANDLER_CLASS_TAG, "FlowOutputEvent received."); };
-
   m_onFlowCompletionEvent = [&](const FlowCompletionEvent&) {
     AWS_LOGSTREAM_TRACE(INVOKEFLOW_HANDLER_CLASS_TAG, "FlowCompletionEvent received.");
   };
 
-  m_onFlowTraceEvent = [&](const FlowTraceEvent&) { AWS_LOGSTREAM_TRACE(INVOKEFLOW_HANDLER_CLASS_TAG, "FlowTraceEvent received."); };
-
   m_onFlowMultiTurnInputRequestEvent = [&](const FlowMultiTurnInputRequestEvent&) {
     AWS_LOGSTREAM_TRACE(INVOKEFLOW_HANDLER_CLASS_TAG, "FlowMultiTurnInputRequestEvent received.");
   };
+
+  m_onFlowOutputEvent = [&](const FlowOutputEvent&) { AWS_LOGSTREAM_TRACE(INVOKEFLOW_HANDLER_CLASS_TAG, "FlowOutputEvent received."); };
+
+  m_onFlowTraceEvent = [&](const FlowTraceEvent&) { AWS_LOGSTREAM_TRACE(INVOKEFLOW_HANDLER_CLASS_TAG, "FlowTraceEvent received."); };
 
   m_onError = [&](const AWSError<BedrockAgentRuntimeErrors>& error) {
     AWS_LOGSTREAM_TRACE(INVOKEFLOW_HANDLER_CLASS_TAG, "BedrockAgentRuntime Errors received, " << error);
@@ -94,17 +94,6 @@ void InvokeFlowHandler::HandleEventInMessage() {
       break;
     }
 
-    case InvokeFlowEventType::FLOWOUTPUTEVENT: {
-      JsonValue json(GetEventPayloadAsString());
-      if (!json.WasParseSuccessful()) {
-        AWS_LOGSTREAM_WARN(INVOKEFLOW_HANDLER_CLASS_TAG,
-                           "Unable to generate a proper FlowOutputEvent object from the response in JSON format.");
-        break;
-      }
-
-      m_onFlowOutputEvent(FlowOutputEvent{json.View()});
-      break;
-    }
     case InvokeFlowEventType::FLOWCOMPLETIONEVENT: {
       JsonValue json(GetEventPayloadAsString());
       if (!json.WasParseSuccessful()) {
@@ -116,17 +105,6 @@ void InvokeFlowHandler::HandleEventInMessage() {
       m_onFlowCompletionEvent(FlowCompletionEvent{json.View()});
       break;
     }
-    case InvokeFlowEventType::FLOWTRACEEVENT: {
-      JsonValue json(GetEventPayloadAsString());
-      if (!json.WasParseSuccessful()) {
-        AWS_LOGSTREAM_WARN(INVOKEFLOW_HANDLER_CLASS_TAG,
-                           "Unable to generate a proper FlowTraceEvent object from the response in JSON format.");
-        break;
-      }
-
-      m_onFlowTraceEvent(FlowTraceEvent{json.View()});
-      break;
-    }
     case InvokeFlowEventType::FLOWMULTITURNINPUTREQUESTEVENT: {
       JsonValue json(GetEventPayloadAsString());
       if (!json.WasParseSuccessful()) {
@@ -136,6 +114,28 @@ void InvokeFlowHandler::HandleEventInMessage() {
       }
 
       m_onFlowMultiTurnInputRequestEvent(FlowMultiTurnInputRequestEvent{json.View()});
+      break;
+    }
+    case InvokeFlowEventType::FLOWOUTPUTEVENT: {
+      JsonValue json(GetEventPayloadAsString());
+      if (!json.WasParseSuccessful()) {
+        AWS_LOGSTREAM_WARN(INVOKEFLOW_HANDLER_CLASS_TAG,
+                           "Unable to generate a proper FlowOutputEvent object from the response in JSON format.");
+        break;
+      }
+
+      m_onFlowOutputEvent(FlowOutputEvent{json.View()});
+      break;
+    }
+    case InvokeFlowEventType::FLOWTRACEEVENT: {
+      JsonValue json(GetEventPayloadAsString());
+      if (!json.WasParseSuccessful()) {
+        AWS_LOGSTREAM_WARN(INVOKEFLOW_HANDLER_CLASS_TAG,
+                           "Unable to generate a proper FlowTraceEvent object from the response in JSON format.");
+        break;
+      }
+
+      m_onFlowTraceEvent(FlowTraceEvent{json.View()});
       break;
     }
     default:
@@ -170,7 +170,7 @@ void InvokeFlowHandler::HandleErrorInMessage() {
     JsonValue exceptionPayload(GetEventPayloadAsString());
     if (!exceptionPayload.WasParseSuccessful()) {
       AWS_LOGSTREAM_ERROR(INVOKEFLOW_HANDLER_CLASS_TAG,
-                          "Unable to generate a proper FlowMultiTurnInputRequestEvent object from the response in JSON format.");
+                          "Unable to generate a proper ValidationException object from the response in JSON format.");
       auto contentTypeIter = headers.find(Aws::Utils::Event::CONTENT_TYPE_HEADER);
       if (contentTypeIter != headers.end()) {
         AWS_LOGSTREAM_DEBUG(INVOKEFLOW_HANDLER_CLASS_TAG, "Error content-type: " << contentTypeIter->second.GetEventHeaderValueAsString());
@@ -214,24 +214,24 @@ void InvokeFlowHandler::MarshallError(const Aws::String& errorCode, const Aws::S
 
 namespace InvokeFlowEventMapper {
 static const int INITIAL_RESPONSE_HASH = Aws::Utils::HashingUtils::HashString("initial-response");
-static const int FLOWOUTPUTEVENT_HASH = Aws::Utils::HashingUtils::HashString("flowOutputEvent");
 static const int FLOWCOMPLETIONEVENT_HASH = Aws::Utils::HashingUtils::HashString("flowCompletionEvent");
-static const int FLOWTRACEEVENT_HASH = Aws::Utils::HashingUtils::HashString("flowTraceEvent");
 static const int FLOWMULTITURNINPUTREQUESTEVENT_HASH = Aws::Utils::HashingUtils::HashString("flowMultiTurnInputRequestEvent");
+static const int FLOWOUTPUTEVENT_HASH = Aws::Utils::HashingUtils::HashString("flowOutputEvent");
+static const int FLOWTRACEEVENT_HASH = Aws::Utils::HashingUtils::HashString("flowTraceEvent");
 
 InvokeFlowEventType GetInvokeFlowEventTypeForName(const Aws::String& name) {
   int hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
 
   if (hashCode == INITIAL_RESPONSE_HASH) {
     return InvokeFlowEventType::INITIAL_RESPONSE;
-  } else if (hashCode == FLOWOUTPUTEVENT_HASH) {
-    return InvokeFlowEventType::FLOWOUTPUTEVENT;
   } else if (hashCode == FLOWCOMPLETIONEVENT_HASH) {
     return InvokeFlowEventType::FLOWCOMPLETIONEVENT;
-  } else if (hashCode == FLOWTRACEEVENT_HASH) {
-    return InvokeFlowEventType::FLOWTRACEEVENT;
   } else if (hashCode == FLOWMULTITURNINPUTREQUESTEVENT_HASH) {
     return InvokeFlowEventType::FLOWMULTITURNINPUTREQUESTEVENT;
+  } else if (hashCode == FLOWOUTPUTEVENT_HASH) {
+    return InvokeFlowEventType::FLOWOUTPUTEVENT;
+  } else if (hashCode == FLOWTRACEEVENT_HASH) {
+    return InvokeFlowEventType::FLOWTRACEEVENT;
   }
   return InvokeFlowEventType::UNKNOWN;
 }
@@ -240,14 +240,14 @@ Aws::String GetNameForInvokeFlowEventType(InvokeFlowEventType value) {
   switch (value) {
     case InvokeFlowEventType::INITIAL_RESPONSE:
       return "initial-response";
-    case InvokeFlowEventType::FLOWOUTPUTEVENT:
-      return "flowOutputEvent";
     case InvokeFlowEventType::FLOWCOMPLETIONEVENT:
       return "flowCompletionEvent";
-    case InvokeFlowEventType::FLOWTRACEEVENT:
-      return "flowTraceEvent";
     case InvokeFlowEventType::FLOWMULTITURNINPUTREQUESTEVENT:
       return "flowMultiTurnInputRequestEvent";
+    case InvokeFlowEventType::FLOWOUTPUTEVENT:
+      return "flowOutputEvent";
+    case InvokeFlowEventType::FLOWTRACEEVENT:
+      return "flowTraceEvent";
     default:
       return "Unknown";
   }

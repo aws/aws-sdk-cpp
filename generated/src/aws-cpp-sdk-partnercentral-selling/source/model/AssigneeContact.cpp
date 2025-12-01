@@ -30,6 +30,10 @@ AssigneeContact& AssigneeContact::operator=(JsonView jsonValue) {
     m_lastName = jsonValue.GetString("LastName");
     m_lastNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Phone")) {
+    m_phone = jsonValue.GetString("Phone");
+    m_phoneHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("BusinessTitle")) {
     m_businessTitle = jsonValue.GetString("BusinessTitle");
     m_businessTitleHasBeenSet = true;
@@ -50,6 +54,10 @@ JsonValue AssigneeContact::Jsonize() const {
 
   if (m_lastNameHasBeenSet) {
     payload.WithString("LastName", m_lastName);
+  }
+
+  if (m_phoneHasBeenSet) {
+    payload.WithString("Phone", m_phone);
   }
 
   if (m_businessTitleHasBeenSet) {

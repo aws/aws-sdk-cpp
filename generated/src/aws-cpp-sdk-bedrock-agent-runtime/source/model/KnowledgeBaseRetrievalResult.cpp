@@ -26,16 +26,16 @@ KnowledgeBaseRetrievalResult& KnowledgeBaseRetrievalResult::operator=(JsonView j
     m_location = jsonValue.GetObject("location");
     m_locationHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("score")) {
-    m_score = jsonValue.GetDouble("score");
-    m_scoreHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("metadata")) {
     Aws::Map<Aws::String, JsonView> metadataJsonMap = jsonValue.GetObject("metadata").GetAllObjects();
     for (auto& metadataItem : metadataJsonMap) {
       m_metadata[metadataItem.first] = metadataItem.second.AsObject();
     }
     m_metadataHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("score")) {
+    m_score = jsonValue.GetDouble("score");
+    m_scoreHasBeenSet = true;
   }
   return *this;
 }
@@ -51,16 +51,16 @@ JsonValue KnowledgeBaseRetrievalResult::Jsonize() const {
     payload.WithObject("location", m_location.Jsonize());
   }
 
-  if (m_scoreHasBeenSet) {
-    payload.WithDouble("score", m_score);
-  }
-
   if (m_metadataHasBeenSet) {
     JsonValue metadataJsonMap;
     for (auto& metadataItem : m_metadata) {
       metadataJsonMap.WithObject(metadataItem.first, metadataItem.second.View());
     }
     payload.WithObject("metadata", std::move(metadataJsonMap));
+  }
+
+  if (m_scoreHasBeenSet) {
+    payload.WithDouble("score", m_score);
   }
 
   return payload;

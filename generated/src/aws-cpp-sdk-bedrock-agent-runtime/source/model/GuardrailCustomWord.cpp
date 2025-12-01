@@ -18,13 +18,13 @@ namespace Model {
 GuardrailCustomWord::GuardrailCustomWord(JsonView jsonValue) { *this = jsonValue; }
 
 GuardrailCustomWord& GuardrailCustomWord::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("match")) {
-    m_match = jsonValue.GetString("match");
-    m_matchHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("action")) {
     m_action = GuardrailWordPolicyActionMapper::GetGuardrailWordPolicyActionForName(jsonValue.GetString("action"));
     m_actionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("match")) {
+    m_match = jsonValue.GetString("match");
+    m_matchHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ GuardrailCustomWord& GuardrailCustomWord::operator=(JsonView jsonValue) {
 JsonValue GuardrailCustomWord::Jsonize() const {
   JsonValue payload;
 
-  if (m_matchHasBeenSet) {
-    payload.WithString("match", m_match);
-  }
-
   if (m_actionHasBeenSet) {
     payload.WithString("action", GuardrailWordPolicyActionMapper::GetNameForGuardrailWordPolicyAction(m_action));
+  }
+
+  if (m_matchHasBeenSet) {
+    payload.WithString("match", m_match);
   }
 
   return payload;

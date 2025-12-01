@@ -58,6 +58,10 @@ RecordingInfo& RecordingInfo::operator=(JsonView jsonValue) {
     m_deletionReason = jsonValue.GetString("DeletionReason");
     m_deletionReasonHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("UnprocessedTranscriptLocation")) {
+    m_unprocessedTranscriptLocation = jsonValue.GetString("UnprocessedTranscriptLocation");
+    m_unprocessedTranscriptLocationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -102,6 +106,10 @@ JsonValue RecordingInfo::Jsonize() const {
 
   if (m_deletionReasonHasBeenSet) {
     payload.WithString("DeletionReason", m_deletionReason);
+  }
+
+  if (m_unprocessedTranscriptLocationHasBeenSet) {
+    payload.WithString("UnprocessedTranscriptLocation", m_unprocessedTranscriptLocation);
   }
 
   return payload;

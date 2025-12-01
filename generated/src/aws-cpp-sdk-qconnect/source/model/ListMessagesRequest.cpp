@@ -30,4 +30,10 @@ void ListMessagesRequest::AddQueryStringParameters(URI& uri) const {
     uri.AddQueryStringParameter("maxResults", ss.str());
     ss.str("");
   }
+
+  if (m_filterHasBeenSet) {
+    ss << MessageFilterTypeMapper::GetNameForMessageFilterType(m_filter);
+    uri.AddQueryStringParameter("filter", ss.str());
+    ss.str("");
+  }
 }

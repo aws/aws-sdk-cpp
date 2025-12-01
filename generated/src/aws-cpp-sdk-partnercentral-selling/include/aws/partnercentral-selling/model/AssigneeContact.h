@@ -94,6 +94,27 @@ class AssigneeContact {
 
   ///@{
   /**
+   * <p>Specifies the contact phone number of the assignee responsible for the
+   * opportunity or engagement. This field enables direct communication for
+   * time-sensitive matters and facilitates coordination between AWS and partner
+   * teams.</p>
+   */
+  inline const Aws::String& GetPhone() const { return m_phone; }
+  inline bool PhoneHasBeenSet() const { return m_phoneHasBeenSet; }
+  template <typename PhoneT = Aws::String>
+  void SetPhone(PhoneT&& value) {
+    m_phoneHasBeenSet = true;
+    m_phone = std::forward<PhoneT>(value);
+  }
+  template <typename PhoneT = Aws::String>
+  AssigneeContact& WithPhone(PhoneT&& value) {
+    SetPhone(std::forward<PhoneT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies the business title of the assignee managing the opportunity. This
    * helps clarify the individual's role and responsibilities within the
    * organization. Use the value <code>PartnerAccountManager</code> to update details
@@ -121,6 +142,9 @@ class AssigneeContact {
 
   Aws::String m_lastName;
   bool m_lastNameHasBeenSet = false;
+
+  Aws::String m_phone;
+  bool m_phoneHasBeenSet = false;
 
   Aws::String m_businessTitle;
   bool m_businessTitleHasBeenSet = false;

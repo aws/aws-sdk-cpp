@@ -34,24 +34,6 @@ class KnowledgeBaseLookupInput {
 
   ///@{
   /**
-   * <p>The query made to the knowledge base.</p>
-   */
-  inline const Aws::String& GetText() const { return m_text; }
-  inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-  template <typename TextT = Aws::String>
-  void SetText(TextT&& value) {
-    m_textHasBeenSet = true;
-    m_text = std::forward<TextT>(value);
-  }
-  template <typename TextT = Aws::String>
-  KnowledgeBaseLookupInput& WithText(TextT&& value) {
-    SetText(std::forward<TextT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The unique identifier of the knowledge base to look up.</p>
    */
   inline const Aws::String& GetKnowledgeBaseId() const { return m_knowledgeBaseId; }
@@ -67,12 +49,30 @@ class KnowledgeBaseLookupInput {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>The query made to the knowledge base.</p>
+   */
+  inline const Aws::String& GetText() const { return m_text; }
+  inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
+  template <typename TextT = Aws::String>
+  void SetText(TextT&& value) {
+    m_textHasBeenSet = true;
+    m_text = std::forward<TextT>(value);
+  }
+  template <typename TextT = Aws::String>
+  KnowledgeBaseLookupInput& WithText(TextT&& value) {
+    SetText(std::forward<TextT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_knowledgeBaseId;
   bool m_knowledgeBaseIdHasBeenSet = false;
+
+  Aws::String m_text;
+  bool m_textHasBeenSet = false;
 };
 
 }  // namespace Model

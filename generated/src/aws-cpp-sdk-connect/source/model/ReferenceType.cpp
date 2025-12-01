@@ -23,6 +23,7 @@ static const int STRING_HASH = HashingUtils::HashString("STRING");
 static const int DATE_HASH = HashingUtils::HashString("DATE");
 static const int EMAIL_HASH = HashingUtils::HashString("EMAIL");
 static const int EMAIL_MESSAGE_HASH = HashingUtils::HashString("EMAIL_MESSAGE");
+static const int EMAIL_MESSAGE_PLAIN_TEXT_HASH = HashingUtils::HashString("EMAIL_MESSAGE_PLAIN_TEXT");
 
 ReferenceType GetReferenceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -42,6 +43,8 @@ ReferenceType GetReferenceTypeForName(const Aws::String& name) {
     return ReferenceType::EMAIL;
   } else if (hashCode == EMAIL_MESSAGE_HASH) {
     return ReferenceType::EMAIL_MESSAGE;
+  } else if (hashCode == EMAIL_MESSAGE_PLAIN_TEXT_HASH) {
+    return ReferenceType::EMAIL_MESSAGE_PLAIN_TEXT;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -72,6 +75,8 @@ Aws::String GetNameForReferenceType(ReferenceType enumValue) {
       return "EMAIL";
     case ReferenceType::EMAIL_MESSAGE:
       return "EMAIL_MESSAGE";
+    case ReferenceType::EMAIL_MESSAGE_PLAIN_TEXT:
+      return "EMAIL_MESSAGE_PLAIN_TEXT";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

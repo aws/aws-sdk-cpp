@@ -77,22 +77,6 @@ class KnowledgeBaseRetrievalResult {
 
   ///@{
   /**
-   * <p>The level of relevance of the result to the query.</p>
-   */
-  inline double GetScore() const { return m_score; }
-  inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
-  inline void SetScore(double value) {
-    m_scoreHasBeenSet = true;
-    m_score = value;
-  }
-  inline KnowledgeBaseRetrievalResult& WithScore(double value) {
-    SetScore(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Contains metadata attributes and their values for the file in the data
    * source. For more information, see <a
    * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-ds.html#kb-ds-metadata">Metadata
@@ -117,6 +101,22 @@ class KnowledgeBaseRetrievalResult {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The level of relevance of the result to the query.</p>
+   */
+  inline double GetScore() const { return m_score; }
+  inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
+  inline void SetScore(double value) {
+    m_scoreHasBeenSet = true;
+    m_score = value;
+  }
+  inline KnowledgeBaseRetrievalResult& WithScore(double value) {
+    SetScore(value);
+    return *this;
+  }
+  ///@}
  private:
   RetrievalResultContent m_content;
   bool m_contentHasBeenSet = false;
@@ -124,11 +124,11 @@ class KnowledgeBaseRetrievalResult {
   RetrievalResultLocation m_location;
   bool m_locationHasBeenSet = false;
 
-  double m_score{0.0};
-  bool m_scoreHasBeenSet = false;
-
   Aws::Map<Aws::String, Aws::Utils::Document> m_metadata;
   bool m_metadataHasBeenSet = false;
+
+  double m_score{0.0};
+  bool m_scoreHasBeenSet = false;
 };
 
 }  // namespace Model

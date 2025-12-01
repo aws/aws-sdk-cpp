@@ -35,5 +35,9 @@ Aws::String UpdateAIPromptRequest::SerializePayload() const {
     payload.WithString("modelId", m_modelId);
   }
 
+  if (m_inferenceConfigurationHasBeenSet) {
+    payload.WithObject("inferenceConfiguration", m_inferenceConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

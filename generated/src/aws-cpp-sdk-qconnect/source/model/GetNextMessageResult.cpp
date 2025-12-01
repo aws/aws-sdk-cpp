@@ -49,6 +49,10 @@ GetNextMessageResult& GetNextMessageResult::operator=(const Aws::AmazonWebServic
     }
     m_conversationSessionDataHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("chunkedResponseTerminated")) {
+    m_chunkedResponseTerminated = jsonValue.GetBool("chunkedResponseTerminated");
+    m_chunkedResponseTerminatedHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

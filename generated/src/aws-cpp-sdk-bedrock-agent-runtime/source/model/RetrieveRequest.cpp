@@ -15,20 +15,20 @@ using namespace Aws::Utils;
 Aws::String RetrieveRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_retrievalQueryHasBeenSet) {
-    payload.WithObject("retrievalQuery", m_retrievalQuery.Jsonize());
-  }
-
-  if (m_retrievalConfigurationHasBeenSet) {
-    payload.WithObject("retrievalConfiguration", m_retrievalConfiguration.Jsonize());
-  }
-
   if (m_guardrailConfigurationHasBeenSet) {
     payload.WithObject("guardrailConfiguration", m_guardrailConfiguration.Jsonize());
   }
 
   if (m_nextTokenHasBeenSet) {
     payload.WithString("nextToken", m_nextToken);
+  }
+
+  if (m_retrievalConfigurationHasBeenSet) {
+    payload.WithObject("retrievalConfiguration", m_retrievalConfiguration.Jsonize());
+  }
+
+  if (m_retrievalQueryHasBeenSet) {
+    payload.WithObject("retrievalQuery", m_retrievalQuery.Jsonize());
   }
 
   return payload.View().WriteReadable();

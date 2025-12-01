@@ -80,6 +80,10 @@ SecurityProfile& SecurityProfile::operator=(JsonView jsonValue) {
     m_allowedAccessControlHierarchyGroupId = jsonValue.GetString("AllowedAccessControlHierarchyGroupId");
     m_allowedAccessControlHierarchyGroupIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("GranularAccessControlConfiguration")) {
+    m_granularAccessControlConfiguration = jsonValue.GetObject("GranularAccessControlConfiguration");
+    m_granularAccessControlConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -151,6 +155,10 @@ JsonValue SecurityProfile::Jsonize() const {
 
   if (m_allowedAccessControlHierarchyGroupIdHasBeenSet) {
     payload.WithString("AllowedAccessControlHierarchyGroupId", m_allowedAccessControlHierarchyGroupId);
+  }
+
+  if (m_granularAccessControlConfigurationHasBeenSet) {
+    payload.WithObject("GranularAccessControlConfiguration", m_granularAccessControlConfiguration.Jsonize());
   }
 
   return payload;

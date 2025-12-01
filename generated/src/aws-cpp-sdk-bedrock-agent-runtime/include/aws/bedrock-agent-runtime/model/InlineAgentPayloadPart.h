@@ -35,24 +35,6 @@ class InlineAgentPayloadPart {
 
   ///@{
   /**
-   * <p>A part of the agent response in bytes.</p>
-   */
-  inline const Aws::Utils::CryptoBuffer& GetBytes() const { return m_bytes; }
-  inline bool BytesHasBeenSet() const { return m_bytesHasBeenSet; }
-  template <typename BytesT = Aws::Utils::CryptoBuffer>
-  void SetBytes(BytesT&& value) {
-    m_bytesHasBeenSet = true;
-    m_bytes = std::forward<BytesT>(value);
-  }
-  template <typename BytesT = Aws::Utils::CryptoBuffer>
-  InlineAgentPayloadPart& WithBytes(BytesT&& value) {
-    SetBytes(std::forward<BytesT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Contains citations for a part of an agent response.</p>
    */
   inline const Attribution& GetAttribution() const { return m_attribution; }
@@ -68,12 +50,30 @@ class InlineAgentPayloadPart {
     return *this;
   }
   ///@}
- private:
-  Aws::Utils::CryptoBuffer m_bytes{};
-  bool m_bytesHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>A part of the agent response in bytes.</p>
+   */
+  inline const Aws::Utils::CryptoBuffer& GetBytes() const { return m_bytes; }
+  inline bool BytesHasBeenSet() const { return m_bytesHasBeenSet; }
+  template <typename BytesT = Aws::Utils::CryptoBuffer>
+  void SetBytes(BytesT&& value) {
+    m_bytesHasBeenSet = true;
+    m_bytes = std::forward<BytesT>(value);
+  }
+  template <typename BytesT = Aws::Utils::CryptoBuffer>
+  InlineAgentPayloadPart& WithBytes(BytesT&& value) {
+    SetBytes(std::forward<BytesT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Attribution m_attribution;
   bool m_attributionHasBeenSet = false;
+
+  Aws::Utils::CryptoBuffer m_bytes{};
+  bool m_bytesHasBeenSet = false;
 };
 
 }  // namespace Model

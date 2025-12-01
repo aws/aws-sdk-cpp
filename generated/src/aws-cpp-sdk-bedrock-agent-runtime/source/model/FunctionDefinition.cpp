@@ -18,13 +18,13 @@ namespace Model {
 FunctionDefinition::FunctionDefinition(JsonView jsonValue) { *this = jsonValue; }
 
 FunctionDefinition& FunctionDefinition::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("name")) {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("name")) {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
   }
   if (jsonValue.ValueExists("parameters")) {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
@@ -43,12 +43,12 @@ FunctionDefinition& FunctionDefinition::operator=(JsonView jsonValue) {
 JsonValue FunctionDefinition::Jsonize() const {
   JsonValue payload;
 
-  if (m_nameHasBeenSet) {
-    payload.WithString("name", m_name);
-  }
-
   if (m_descriptionHasBeenSet) {
     payload.WithString("description", m_description);
+  }
+
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
   if (m_parametersHasBeenSet) {

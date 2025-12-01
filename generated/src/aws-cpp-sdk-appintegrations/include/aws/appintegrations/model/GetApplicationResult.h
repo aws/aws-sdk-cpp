@@ -7,6 +7,7 @@
 #include <aws/appintegrations/AppIntegrationsService_EXPORTS.h>
 #include <aws/appintegrations/model/ApplicationConfig.h>
 #include <aws/appintegrations/model/ApplicationSourceConfig.h>
+#include <aws/appintegrations/model/ApplicationType.h>
 #include <aws/appintegrations/model/IframeConfig.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -218,21 +219,6 @@ class GetApplicationResult {
 
   ///@{
   /**
-   * <p>Indicates whether the application is a service.</p>
-   */
-  inline bool GetIsService() const { return m_isService; }
-  inline void SetIsService(bool value) {
-    m_isServiceHasBeenSet = true;
-    m_isService = value;
-  }
-  inline GetApplicationResult& WithIsService(bool value) {
-    SetIsService(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The maximum time in milliseconds allowed to establish a connection with the
    * workspace.</p>
    */
@@ -282,6 +268,21 @@ class GetApplicationResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The type of application.</p>
+   */
+  inline ApplicationType GetApplicationType() const { return m_applicationType; }
+  inline void SetApplicationType(ApplicationType value) {
+    m_applicationTypeHasBeenSet = true;
+    m_applicationType = value;
+  }
+  inline GetApplicationResult& WithApplicationType(ApplicationType value) {
+    SetApplicationType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -326,9 +327,6 @@ class GetApplicationResult {
   Aws::Vector<Aws::String> m_permissions;
   bool m_permissionsHasBeenSet = false;
 
-  bool m_isService{false};
-  bool m_isServiceHasBeenSet = false;
-
   int m_initializationTimeout{0};
   bool m_initializationTimeoutHasBeenSet = false;
 
@@ -337,6 +335,9 @@ class GetApplicationResult {
 
   IframeConfig m_iframeConfig;
   bool m_iframeConfigHasBeenSet = false;
+
+  ApplicationType m_applicationType{ApplicationType::NOT_SET};
+  bool m_applicationTypeHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

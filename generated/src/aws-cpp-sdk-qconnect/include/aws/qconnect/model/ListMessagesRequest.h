@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qconnect/QConnectRequest.h>
 #include <aws/qconnect/QConnect_EXPORTS.h>
+#include <aws/qconnect/model/MessageFilterType.h>
 
 #include <utility>
 
@@ -103,6 +104,22 @@ class ListMessagesRequest : public QConnectRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The filter criteria for listing messages.</p>
+   */
+  inline MessageFilterType GetFilter() const { return m_filter; }
+  inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+  inline void SetFilter(MessageFilterType value) {
+    m_filterHasBeenSet = true;
+    m_filter = value;
+  }
+  inline ListMessagesRequest& WithFilter(MessageFilterType value) {
+    SetFilter(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_assistantId;
   bool m_assistantIdHasBeenSet = false;
@@ -115,6 +132,9 @@ class ListMessagesRequest : public QConnectRequest {
 
   int m_maxResults{0};
   bool m_maxResultsHasBeenSet = false;
+
+  MessageFilterType m_filter{MessageFilterType::NOT_SET};
+  bool m_filterHasBeenSet = false;
 };
 
 }  // namespace Model

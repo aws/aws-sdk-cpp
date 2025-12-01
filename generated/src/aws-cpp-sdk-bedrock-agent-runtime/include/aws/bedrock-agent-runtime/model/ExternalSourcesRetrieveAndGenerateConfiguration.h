@@ -37,6 +37,25 @@ class ExternalSourcesRetrieveAndGenerateConfiguration {
 
   ///@{
   /**
+   * <p>The prompt used with the external source wrapper object with the
+   * <code>retrieveAndGenerate</code> function.</p>
+   */
+  inline const ExternalSourcesGenerationConfiguration& GetGenerationConfiguration() const { return m_generationConfiguration; }
+  inline bool GenerationConfigurationHasBeenSet() const { return m_generationConfigurationHasBeenSet; }
+  template <typename GenerationConfigurationT = ExternalSourcesGenerationConfiguration>
+  void SetGenerationConfiguration(GenerationConfigurationT&& value) {
+    m_generationConfigurationHasBeenSet = true;
+    m_generationConfiguration = std::forward<GenerationConfigurationT>(value);
+  }
+  template <typename GenerationConfigurationT = ExternalSourcesGenerationConfiguration>
+  ExternalSourcesRetrieveAndGenerateConfiguration& WithGenerationConfiguration(GenerationConfigurationT&& value) {
+    SetGenerationConfiguration(std::forward<GenerationConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The model Amazon Resource Name (ARN) for the external source wrapper object
    * in the <code>retrieveAndGenerate</code> function.</p>
    */
@@ -78,34 +97,15 @@ class ExternalSourcesRetrieveAndGenerateConfiguration {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The prompt used with the external source wrapper object with the
-   * <code>retrieveAndGenerate</code> function.</p>
-   */
-  inline const ExternalSourcesGenerationConfiguration& GetGenerationConfiguration() const { return m_generationConfiguration; }
-  inline bool GenerationConfigurationHasBeenSet() const { return m_generationConfigurationHasBeenSet; }
-  template <typename GenerationConfigurationT = ExternalSourcesGenerationConfiguration>
-  void SetGenerationConfiguration(GenerationConfigurationT&& value) {
-    m_generationConfigurationHasBeenSet = true;
-    m_generationConfiguration = std::forward<GenerationConfigurationT>(value);
-  }
-  template <typename GenerationConfigurationT = ExternalSourcesGenerationConfiguration>
-  ExternalSourcesRetrieveAndGenerateConfiguration& WithGenerationConfiguration(GenerationConfigurationT&& value) {
-    SetGenerationConfiguration(std::forward<GenerationConfigurationT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  ExternalSourcesGenerationConfiguration m_generationConfiguration;
+  bool m_generationConfigurationHasBeenSet = false;
+
   Aws::String m_modelArn;
   bool m_modelArnHasBeenSet = false;
 
   Aws::Vector<ExternalSource> m_sources;
   bool m_sourcesHasBeenSet = false;
-
-  ExternalSourcesGenerationConfiguration m_generationConfiguration;
-  bool m_generationConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

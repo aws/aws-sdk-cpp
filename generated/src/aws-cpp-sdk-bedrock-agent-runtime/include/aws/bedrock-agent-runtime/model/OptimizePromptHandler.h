@@ -16,14 +16,14 @@
 namespace Aws {
 namespace BedrockAgentRuntime {
 namespace Model {
-enum class OptimizePromptEventType { INITIAL_RESPONSE, OPTIMIZEDPROMPTEVENT, ANALYZEPROMPTEVENT, UNKNOWN };
+enum class OptimizePromptEventType { INITIAL_RESPONSE, ANALYZEPROMPTEVENT, OPTIMIZEDPROMPTEVENT, UNKNOWN };
 
 class OptimizePromptHandler : public Aws::Utils::Event::EventStreamHandler {
   typedef std::function<void(const OptimizePromptInitialResponse&)> OptimizePromptInitialResponseCallback;
   typedef std::function<void(const OptimizePromptInitialResponse&, const Utils::Event::InitialResponseType)>
       OptimizePromptInitialResponseCallbackEx;
-  typedef std::function<void(const OptimizedPromptEvent&)> OptimizedPromptEventCallback;
   typedef std::function<void(const AnalyzePromptEvent&)> AnalyzePromptEventCallback;
+  typedef std::function<void(const OptimizedPromptEvent&)> OptimizedPromptEventCallback;
   typedef std::function<void(const Aws::Client::AWSError<BedrockAgentRuntimeErrors>& error)> ErrorCallback;
 
  public:
@@ -50,8 +50,8 @@ class OptimizePromptHandler : public Aws::Utils::Event::EventStreamHandler {
     };
   }
   ///@}
-  inline void SetOptimizedPromptEventCallback(const OptimizedPromptEventCallback& callback) { m_onOptimizedPromptEvent = callback; }
   inline void SetAnalyzePromptEventCallback(const AnalyzePromptEventCallback& callback) { m_onAnalyzePromptEvent = callback; }
+  inline void SetOptimizedPromptEventCallback(const OptimizedPromptEventCallback& callback) { m_onOptimizedPromptEvent = callback; }
   inline void SetOnErrorCallback(const ErrorCallback& callback) { m_onError = callback; }
 
   inline OptimizePromptInitialResponseCallbackEx& GetInitialResponseCallbackEx() { return m_onInitialResponse; }
@@ -62,8 +62,8 @@ class OptimizePromptHandler : public Aws::Utils::Event::EventStreamHandler {
   AWS_BEDROCKAGENTRUNTIME_API void MarshallError(const Aws::String& errorCode, const Aws::String& errorMessage);
 
   OptimizePromptInitialResponseCallbackEx m_onInitialResponse;
-  OptimizedPromptEventCallback m_onOptimizedPromptEvent;
   AnalyzePromptEventCallback m_onAnalyzePromptEvent;
+  OptimizedPromptEventCallback m_onOptimizedPromptEvent;
   ErrorCallback m_onError;
 };
 

@@ -40,25 +40,6 @@ class GetAwsOpportunitySummaryResult {
 
   ///@{
   /**
-   * <p>Specifies the catalog in which the AWS Opportunity exists. This is the
-   * environment (e.g., <code>AWS</code> or <code>Sandbox</code>) where the
-   * opportunity is being managed.</p>
-   */
-  inline const Aws::String& GetCatalog() const { return m_catalog; }
-  template <typename CatalogT = Aws::String>
-  void SetCatalog(CatalogT&& value) {
-    m_catalogHasBeenSet = true;
-    m_catalog = std::forward<CatalogT>(value);
-  }
-  template <typename CatalogT = Aws::String>
-  GetAwsOpportunitySummaryResult& WithCatalog(CatalogT&& value) {
-    SetCatalog(std::forward<CatalogT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Provides the unique identifier of the related partner opportunity, allowing
    * partners to link the AWS Opportunity to their corresponding opportunity in their
    * CRM system.</p>
@@ -266,6 +247,25 @@ class GetAwsOpportunitySummaryResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Specifies the catalog in which the AWS Opportunity exists. This is the
+   * environment (e.g., <code>AWS</code> or <code>Sandbox</code>) where the
+   * opportunity is being managed.</p>
+   */
+  inline const Aws::String& GetCatalog() const { return m_catalog; }
+  template <typename CatalogT = Aws::String>
+  void SetCatalog(CatalogT&& value) {
+    m_catalogHasBeenSet = true;
+    m_catalog = std::forward<CatalogT>(value);
+  }
+  template <typename CatalogT = Aws::String>
+  GetAwsOpportunitySummaryResult& WithCatalog(CatalogT&& value) {
+    SetCatalog(std::forward<CatalogT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -280,9 +280,6 @@ class GetAwsOpportunitySummaryResult {
   }
   ///@}
  private:
-  Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
-
   Aws::String m_relatedOpportunityId;
   bool m_relatedOpportunityIdHasBeenSet = false;
 
@@ -315,6 +312,9 @@ class GetAwsOpportunitySummaryResult {
 
   AwsOpportunityProject m_project;
   bool m_projectHasBeenSet = false;
+
+  Aws::String m_catalog;
+  bool m_catalogHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

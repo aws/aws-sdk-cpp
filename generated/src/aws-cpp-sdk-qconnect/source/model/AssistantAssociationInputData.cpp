@@ -22,6 +22,10 @@ AssistantAssociationInputData& AssistantAssociationInputData::operator=(JsonView
     m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
     m_knowledgeBaseIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("externalBedrockKnowledgeBaseConfig")) {
+    m_externalBedrockKnowledgeBaseConfig = jsonValue.GetObject("externalBedrockKnowledgeBaseConfig");
+    m_externalBedrockKnowledgeBaseConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue AssistantAssociationInputData::Jsonize() const {
 
   if (m_knowledgeBaseIdHasBeenSet) {
     payload.WithString("knowledgeBaseId", m_knowledgeBaseId);
+  }
+
+  if (m_externalBedrockKnowledgeBaseConfigHasBeenSet) {
+    payload.WithObject("externalBedrockKnowledgeBaseConfig", m_externalBedrockKnowledgeBaseConfig.Jsonize());
   }
 
   return payload;

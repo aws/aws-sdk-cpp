@@ -34,24 +34,6 @@ class NodeOutputNext {
 
   ///@{
   /**
-   * <p>The name of the next node that receives the output data.</p>
-   */
-  inline const Aws::String& GetNodeName() const { return m_nodeName; }
-  inline bool NodeNameHasBeenSet() const { return m_nodeNameHasBeenSet; }
-  template <typename NodeNameT = Aws::String>
-  void SetNodeName(NodeNameT&& value) {
-    m_nodeNameHasBeenSet = true;
-    m_nodeName = std::forward<NodeNameT>(value);
-  }
-  template <typename NodeNameT = Aws::String>
-  NodeOutputNext& WithNodeName(NodeNameT&& value) {
-    SetNodeName(std::forward<NodeNameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The name of the input field in the next node that receives the data.</p>
    */
   inline const Aws::String& GetInputFieldName() const { return m_inputFieldName; }
@@ -67,12 +49,30 @@ class NodeOutputNext {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_nodeName;
-  bool m_nodeNameHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>The name of the next node that receives the output data.</p>
+   */
+  inline const Aws::String& GetNodeName() const { return m_nodeName; }
+  inline bool NodeNameHasBeenSet() const { return m_nodeNameHasBeenSet; }
+  template <typename NodeNameT = Aws::String>
+  void SetNodeName(NodeNameT&& value) {
+    m_nodeNameHasBeenSet = true;
+    m_nodeName = std::forward<NodeNameT>(value);
+  }
+  template <typename NodeNameT = Aws::String>
+  NodeOutputNext& WithNodeName(NodeNameT&& value) {
+    SetNodeName(std::forward<NodeNameT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_inputFieldName;
   bool m_inputFieldNameHasBeenSet = false;
+
+  Aws::String m_nodeName;
+  bool m_nodeNameHasBeenSet = false;
 };
 
 }  // namespace Model

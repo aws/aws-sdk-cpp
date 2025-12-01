@@ -18,13 +18,13 @@ namespace Model {
 BedrockSessionContentBlock::BedrockSessionContentBlock(JsonView jsonValue) { *this = jsonValue; }
 
 BedrockSessionContentBlock& BedrockSessionContentBlock::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("text")) {
-    m_text = jsonValue.GetString("text");
-    m_textHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("image")) {
     m_image = jsonValue.GetObject("image");
     m_imageHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("text")) {
+    m_text = jsonValue.GetString("text");
+    m_textHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ BedrockSessionContentBlock& BedrockSessionContentBlock::operator=(JsonView jsonV
 JsonValue BedrockSessionContentBlock::Jsonize() const {
   JsonValue payload;
 
-  if (m_textHasBeenSet) {
-    payload.WithString("text", m_text);
-  }
-
   if (m_imageHasBeenSet) {
     payload.WithObject("image", m_image.Jsonize());
+  }
+
+  if (m_textHasBeenSet) {
+    payload.WithString("text", m_text);
   }
 
   return payload;

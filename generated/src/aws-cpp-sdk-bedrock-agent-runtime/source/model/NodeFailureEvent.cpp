@@ -18,14 +18,6 @@ namespace Model {
 NodeFailureEvent::NodeFailureEvent(JsonView jsonValue) { *this = jsonValue; }
 
 NodeFailureEvent& NodeFailureEvent::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("nodeName")) {
-    m_nodeName = jsonValue.GetString("nodeName");
-    m_nodeNameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("timestamp")) {
-    m_timestamp = jsonValue.GetString("timestamp");
-    m_timestampHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("errorCode")) {
     m_errorCode = NodeErrorCodeMapper::GetNodeErrorCodeForName(jsonValue.GetString("errorCode"));
     m_errorCodeHasBeenSet = true;
@@ -34,19 +26,19 @@ NodeFailureEvent& NodeFailureEvent::operator=(JsonView jsonValue) {
     m_errorMessage = jsonValue.GetString("errorMessage");
     m_errorMessageHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("nodeName")) {
+    m_nodeName = jsonValue.GetString("nodeName");
+    m_nodeNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("timestamp")) {
+    m_timestamp = jsonValue.GetString("timestamp");
+    m_timestampHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue NodeFailureEvent::Jsonize() const {
   JsonValue payload;
-
-  if (m_nodeNameHasBeenSet) {
-    payload.WithString("nodeName", m_nodeName);
-  }
-
-  if (m_timestampHasBeenSet) {
-    payload.WithString("timestamp", m_timestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
 
   if (m_errorCodeHasBeenSet) {
     payload.WithString("errorCode", NodeErrorCodeMapper::GetNameForNodeErrorCode(m_errorCode));
@@ -54,6 +46,14 @@ JsonValue NodeFailureEvent::Jsonize() const {
 
   if (m_errorMessageHasBeenSet) {
     payload.WithString("errorMessage", m_errorMessage);
+  }
+
+  if (m_nodeNameHasBeenSet) {
+    payload.WithString("nodeName", m_nodeName);
+  }
+
+  if (m_timestampHasBeenSet) {
+    payload.WithString("timestamp", m_timestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

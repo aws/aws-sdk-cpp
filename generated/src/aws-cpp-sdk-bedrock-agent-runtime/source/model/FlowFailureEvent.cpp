@@ -18,10 +18,6 @@ namespace Model {
 FlowFailureEvent::FlowFailureEvent(JsonView jsonValue) { *this = jsonValue; }
 
 FlowFailureEvent& FlowFailureEvent::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("timestamp")) {
-    m_timestamp = jsonValue.GetString("timestamp");
-    m_timestampHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("errorCode")) {
     m_errorCode = FlowErrorCodeMapper::GetFlowErrorCodeForName(jsonValue.GetString("errorCode"));
     m_errorCodeHasBeenSet = true;
@@ -30,15 +26,15 @@ FlowFailureEvent& FlowFailureEvent::operator=(JsonView jsonValue) {
     m_errorMessage = jsonValue.GetString("errorMessage");
     m_errorMessageHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("timestamp")) {
+    m_timestamp = jsonValue.GetString("timestamp");
+    m_timestampHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue FlowFailureEvent::Jsonize() const {
   JsonValue payload;
-
-  if (m_timestampHasBeenSet) {
-    payload.WithString("timestamp", m_timestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
 
   if (m_errorCodeHasBeenSet) {
     payload.WithString("errorCode", FlowErrorCodeMapper::GetNameForFlowErrorCode(m_errorCode));
@@ -46,6 +42,10 @@ JsonValue FlowFailureEvent::Jsonize() const {
 
   if (m_errorMessageHasBeenSet) {
     payload.WithString("errorMessage", m_errorMessage);
+  }
+
+  if (m_timestampHasBeenSet) {
+    payload.WithString("timestamp", m_timestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

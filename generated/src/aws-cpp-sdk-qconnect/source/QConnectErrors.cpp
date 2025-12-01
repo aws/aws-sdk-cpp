@@ -36,6 +36,7 @@ static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedExcep
 static const int DEPENDENCY_FAILED_HASH = HashingUtils::HashString("DependencyFailedException");
 static const int PRECONDITION_FAILED_HASH = HashingUtils::HashString("PreconditionFailedException");
 static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
+static const int UNPROCESSABLE_CONTENT_HASH = HashingUtils::HashString("UnprocessableContentException");
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
@@ -52,6 +53,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(QConnectErrors::PRECONDITION_FAILED), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == TOO_MANY_TAGS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(QConnectErrors::TOO_MANY_TAGS), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == UNPROCESSABLE_CONTENT_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(QConnectErrors::UNPROCESSABLE_CONTENT), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

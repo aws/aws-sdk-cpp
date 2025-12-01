@@ -123,6 +123,24 @@ class CreateSegmentDefinitionRequest : public CustomerProfilesRequest {
 
   ///@{
   /**
+   * <p>The segment SQL query.</p>
+   */
+  inline const Aws::String& GetSegmentSqlQuery() const { return m_segmentSqlQuery; }
+  inline bool SegmentSqlQueryHasBeenSet() const { return m_segmentSqlQueryHasBeenSet; }
+  template <typename SegmentSqlQueryT = Aws::String>
+  void SetSegmentSqlQuery(SegmentSqlQueryT&& value) {
+    m_segmentSqlQueryHasBeenSet = true;
+    m_segmentSqlQuery = std::forward<SegmentSqlQueryT>(value);
+  }
+  template <typename SegmentSqlQueryT = Aws::String>
+  CreateSegmentDefinitionRequest& WithSegmentSqlQuery(SegmentSqlQueryT&& value) {
+    SetSegmentSqlQuery(std::forward<SegmentSqlQueryT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The tags used to organize, track, or control access for this resource.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
@@ -159,6 +177,9 @@ class CreateSegmentDefinitionRequest : public CustomerProfilesRequest {
 
   SegmentGroup m_segmentGroups;
   bool m_segmentGroupsHasBeenSet = false;
+
+  Aws::String m_segmentSqlQuery;
+  bool m_segmentSqlQueryHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_tagsHasBeenSet = false;

@@ -145,6 +145,21 @@ class GetUnfilteredTableMetadataResult {
 
   ///@{
   /**
+   * <p>Indicates if a table is a materialized view.</p>
+   */
+  inline bool GetIsMaterializedView() const { return m_isMaterializedView; }
+  inline void SetIsMaterializedView(bool value) {
+    m_isMaterializedViewHasBeenSet = true;
+    m_isMaterializedView = value;
+  }
+  inline GetUnfilteredTableMetadataResult& WithIsMaterializedView(bool value) {
+    SetIsMaterializedView(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The resource ARN of the parent resource extracted from the request.</p>
    */
   inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
@@ -253,6 +268,9 @@ class GetUnfilteredTableMetadataResult {
 
   bool m_isMultiDialectView{false};
   bool m_isMultiDialectViewHasBeenSet = false;
+
+  bool m_isMaterializedView{false};
+  bool m_isMaterializedViewHasBeenSet = false;
 
   Aws::String m_resourceArn;
   bool m_resourceArnHasBeenSet = false;

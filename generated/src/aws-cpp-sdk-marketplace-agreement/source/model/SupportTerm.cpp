@@ -18,13 +18,13 @@ namespace Model {
 SupportTerm::SupportTerm(JsonView jsonValue) { *this = jsonValue; }
 
 SupportTerm& SupportTerm::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("refundPolicy")) {
-    m_refundPolicy = jsonValue.GetString("refundPolicy");
-    m_refundPolicyHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("type")) {
     m_type = jsonValue.GetString("type");
     m_typeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("refundPolicy")) {
+    m_refundPolicy = jsonValue.GetString("refundPolicy");
+    m_refundPolicyHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ SupportTerm& SupportTerm::operator=(JsonView jsonValue) {
 JsonValue SupportTerm::Jsonize() const {
   JsonValue payload;
 
-  if (m_refundPolicyHasBeenSet) {
-    payload.WithString("refundPolicy", m_refundPolicy);
-  }
-
   if (m_typeHasBeenSet) {
     payload.WithString("type", m_type);
+  }
+
+  if (m_refundPolicyHasBeenSet) {
+    payload.WithString("refundPolicy", m_refundPolicy);
   }
 
   return payload;

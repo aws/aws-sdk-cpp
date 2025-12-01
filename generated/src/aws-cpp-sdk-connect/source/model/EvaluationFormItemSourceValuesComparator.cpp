@@ -17,6 +17,8 @@ namespace EvaluationFormItemSourceValuesComparatorMapper {
 
 static const int IN_HASH = HashingUtils::HashString("IN");
 static const int NOT_IN_HASH = HashingUtils::HashString("NOT_IN");
+static const int ALL_IN_HASH = HashingUtils::HashString("ALL_IN");
+static const int EXACT_HASH = HashingUtils::HashString("EXACT");
 
 EvaluationFormItemSourceValuesComparator GetEvaluationFormItemSourceValuesComparatorForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +26,10 @@ EvaluationFormItemSourceValuesComparator GetEvaluationFormItemSourceValuesCompar
     return EvaluationFormItemSourceValuesComparator::IN;
   } else if (hashCode == NOT_IN_HASH) {
     return EvaluationFormItemSourceValuesComparator::NOT_IN;
+  } else if (hashCode == ALL_IN_HASH) {
+    return EvaluationFormItemSourceValuesComparator::ALL_IN;
+  } else if (hashCode == EXACT_HASH) {
+    return EvaluationFormItemSourceValuesComparator::EXACT;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +48,10 @@ Aws::String GetNameForEvaluationFormItemSourceValuesComparator(EvaluationFormIte
       return "IN";
     case EvaluationFormItemSourceValuesComparator::NOT_IN:
       return "NOT_IN";
+    case EvaluationFormItemSourceValuesComparator::ALL_IN:
+      return "ALL_IN";
+    case EvaluationFormItemSourceValuesComparator::EXACT:
+      return "EXACT";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -38,6 +38,14 @@ IcebergStructField& IcebergStructField::operator=(JsonView jsonValue) {
     m_doc = jsonValue.GetString("Doc");
     m_docHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("InitialDefault")) {
+    m_initialDefault = jsonValue.GetObject("InitialDefault");
+    m_initialDefaultHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("WriteDefault")) {
+    m_writeDefault = jsonValue.GetObject("WriteDefault");
+    m_writeDefaultHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -64,6 +72,18 @@ JsonValue IcebergStructField::Jsonize() const {
 
   if (m_docHasBeenSet) {
     payload.WithString("Doc", m_doc);
+  }
+
+  if (m_initialDefaultHasBeenSet) {
+    if (!m_initialDefault.View().IsNull()) {
+      payload.WithObject("InitialDefault", JsonValue(m_initialDefault.View()));
+    }
+  }
+
+  if (m_writeDefaultHasBeenSet) {
+    if (!m_writeDefault.View().IsNull()) {
+      payload.WithObject("WriteDefault", JsonValue(m_writeDefault.View()));
+    }
   }
 
   return payload;

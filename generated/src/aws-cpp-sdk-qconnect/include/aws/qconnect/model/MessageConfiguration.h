@@ -45,9 +45,28 @@ class MessageConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configuration for generating chunked messages.</p>
+   */
+  inline bool GetGenerateChunkedMessage() const { return m_generateChunkedMessage; }
+  inline bool GenerateChunkedMessageHasBeenSet() const { return m_generateChunkedMessageHasBeenSet; }
+  inline void SetGenerateChunkedMessage(bool value) {
+    m_generateChunkedMessageHasBeenSet = true;
+    m_generateChunkedMessage = value;
+  }
+  inline MessageConfiguration& WithGenerateChunkedMessage(bool value) {
+    SetGenerateChunkedMessage(value);
+    return *this;
+  }
+  ///@}
  private:
   bool m_generateFillerMessage{false};
   bool m_generateFillerMessageHasBeenSet = false;
+
+  bool m_generateChunkedMessage{false};
+  bool m_generateChunkedMessageHasBeenSet = false;
 };
 
 }  // namespace Model

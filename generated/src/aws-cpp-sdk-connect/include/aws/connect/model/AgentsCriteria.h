@@ -22,9 +22,8 @@ namespace Model {
 
 /**
  * <p>Can be used to define a list of preferred agents to target the contact to
- * within the queue.&#x2028; Note that agents must have the queue in their routing
- * profile in order to be offered the&#x2028; contact.</p><p><h3>See Also:</h3>
- * <a
+ * within the queue. Note that agents must have the queue in their routing profile
+ * in order to be offered the contact.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AgentsCriteria">AWS
  * API Reference</a></p>
  */

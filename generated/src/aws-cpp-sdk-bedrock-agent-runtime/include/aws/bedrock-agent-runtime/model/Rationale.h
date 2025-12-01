@@ -35,24 +35,6 @@ class Rationale {
 
   ///@{
   /**
-   * <p>The unique identifier of the trace step.</p>
-   */
-  inline const Aws::String& GetTraceId() const { return m_traceId; }
-  inline bool TraceIdHasBeenSet() const { return m_traceIdHasBeenSet; }
-  template <typename TraceIdT = Aws::String>
-  void SetTraceId(TraceIdT&& value) {
-    m_traceIdHasBeenSet = true;
-    m_traceId = std::forward<TraceIdT>(value);
-  }
-  template <typename TraceIdT = Aws::String>
-  Rationale& WithTraceId(TraceIdT&& value) {
-    SetTraceId(std::forward<TraceIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The reasoning or thought process of the agent, based on the input.</p>
    */
   inline const Aws::String& GetText() const { return m_text; }
@@ -68,12 +50,30 @@ class Rationale {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_traceId;
-  bool m_traceIdHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>The unique identifier of the trace step.</p>
+   */
+  inline const Aws::String& GetTraceId() const { return m_traceId; }
+  inline bool TraceIdHasBeenSet() const { return m_traceIdHasBeenSet; }
+  template <typename TraceIdT = Aws::String>
+  void SetTraceId(TraceIdT&& value) {
+    m_traceIdHasBeenSet = true;
+    m_traceId = std::forward<TraceIdT>(value);
+  }
+  template <typename TraceIdT = Aws::String>
+  Rationale& WithTraceId(TraceIdT&& value) {
+    SetTraceId(std::forward<TraceIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_text;
   bool m_textHasBeenSet = false;
+
+  Aws::String m_traceId;
+  bool m_traceIdHasBeenSet = false;
 };
 
 }  // namespace Model

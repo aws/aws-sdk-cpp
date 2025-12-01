@@ -30,12 +30,14 @@
 #include <aws/customer-profiles/model/CreateEventTriggerRequest.h>
 #include <aws/customer-profiles/model/CreateIntegrationWorkflowRequest.h>
 #include <aws/customer-profiles/model/CreateProfileRequest.h>
+#include <aws/customer-profiles/model/CreateRecommenderRequest.h>
 #include <aws/customer-profiles/model/CreateSegmentDefinitionRequest.h>
 #include <aws/customer-profiles/model/CreateSegmentEstimateRequest.h>
 #include <aws/customer-profiles/model/CreateSegmentSnapshotRequest.h>
 #include <aws/customer-profiles/model/CreateUploadJobRequest.h>
 #include <aws/customer-profiles/model/DeleteCalculatedAttributeDefinitionRequest.h>
 #include <aws/customer-profiles/model/DeleteDomainLayoutRequest.h>
+#include <aws/customer-profiles/model/DeleteDomainObjectTypeRequest.h>
 #include <aws/customer-profiles/model/DeleteDomainRequest.h>
 #include <aws/customer-profiles/model/DeleteEventStreamRequest.h>
 #include <aws/customer-profiles/model/DeleteEventTriggerRequest.h>
@@ -44,6 +46,7 @@
 #include <aws/customer-profiles/model/DeleteProfileObjectRequest.h>
 #include <aws/customer-profiles/model/DeleteProfileObjectTypeRequest.h>
 #include <aws/customer-profiles/model/DeleteProfileRequest.h>
+#include <aws/customer-profiles/model/DeleteRecommenderRequest.h>
 #include <aws/customer-profiles/model/DeleteSegmentDefinitionRequest.h>
 #include <aws/customer-profiles/model/DeleteWorkflowRequest.h>
 #include <aws/customer-profiles/model/DetectProfileObjectTypeRequest.h>
@@ -51,15 +54,19 @@
 #include <aws/customer-profiles/model/GetCalculatedAttributeDefinitionRequest.h>
 #include <aws/customer-profiles/model/GetCalculatedAttributeForProfileRequest.h>
 #include <aws/customer-profiles/model/GetDomainLayoutRequest.h>
+#include <aws/customer-profiles/model/GetDomainObjectTypeRequest.h>
 #include <aws/customer-profiles/model/GetDomainRequest.h>
 #include <aws/customer-profiles/model/GetEventStreamRequest.h>
 #include <aws/customer-profiles/model/GetEventTriggerRequest.h>
 #include <aws/customer-profiles/model/GetIdentityResolutionJobRequest.h>
 #include <aws/customer-profiles/model/GetIntegrationRequest.h>
 #include <aws/customer-profiles/model/GetMatchesRequest.h>
+#include <aws/customer-profiles/model/GetObjectTypeAttributeStatisticsRequest.h>
 #include <aws/customer-profiles/model/GetProfileHistoryRecordRequest.h>
 #include <aws/customer-profiles/model/GetProfileObjectTypeRequest.h>
 #include <aws/customer-profiles/model/GetProfileObjectTypeTemplateRequest.h>
+#include <aws/customer-profiles/model/GetProfileRecommendationsRequest.h>
+#include <aws/customer-profiles/model/GetRecommenderRequest.h>
 #include <aws/customer-profiles/model/GetSegmentDefinitionRequest.h>
 #include <aws/customer-profiles/model/GetSegmentEstimateRequest.h>
 #include <aws/customer-profiles/model/GetSegmentMembershipRequest.h>
@@ -73,28 +80,35 @@
 #include <aws/customer-profiles/model/ListCalculatedAttributeDefinitionsRequest.h>
 #include <aws/customer-profiles/model/ListCalculatedAttributesForProfileRequest.h>
 #include <aws/customer-profiles/model/ListDomainLayoutsRequest.h>
+#include <aws/customer-profiles/model/ListDomainObjectTypesRequest.h>
 #include <aws/customer-profiles/model/ListDomainsRequest.h>
 #include <aws/customer-profiles/model/ListEventStreamsRequest.h>
 #include <aws/customer-profiles/model/ListEventTriggersRequest.h>
 #include <aws/customer-profiles/model/ListIdentityResolutionJobsRequest.h>
 #include <aws/customer-profiles/model/ListIntegrationsRequest.h>
+#include <aws/customer-profiles/model/ListObjectTypeAttributeValuesRequest.h>
 #include <aws/customer-profiles/model/ListObjectTypeAttributesRequest.h>
 #include <aws/customer-profiles/model/ListProfileAttributeValuesRequest.h>
 #include <aws/customer-profiles/model/ListProfileHistoryRecordsRequest.h>
 #include <aws/customer-profiles/model/ListProfileObjectTypeTemplatesRequest.h>
 #include <aws/customer-profiles/model/ListProfileObjectTypesRequest.h>
 #include <aws/customer-profiles/model/ListProfileObjectsRequest.h>
+#include <aws/customer-profiles/model/ListRecommenderRecipesRequest.h>
+#include <aws/customer-profiles/model/ListRecommendersRequest.h>
 #include <aws/customer-profiles/model/ListRuleBasedMatchesRequest.h>
 #include <aws/customer-profiles/model/ListSegmentDefinitionsRequest.h>
 #include <aws/customer-profiles/model/ListTagsForResourceRequest.h>
 #include <aws/customer-profiles/model/ListUploadJobsRequest.h>
 #include <aws/customer-profiles/model/ListWorkflowsRequest.h>
 #include <aws/customer-profiles/model/MergeProfilesRequest.h>
+#include <aws/customer-profiles/model/PutDomainObjectTypeRequest.h>
 #include <aws/customer-profiles/model/PutIntegrationRequest.h>
 #include <aws/customer-profiles/model/PutProfileObjectRequest.h>
 #include <aws/customer-profiles/model/PutProfileObjectTypeRequest.h>
 #include <aws/customer-profiles/model/SearchProfilesRequest.h>
+#include <aws/customer-profiles/model/StartRecommenderRequest.h>
 #include <aws/customer-profiles/model/StartUploadJobRequest.h>
+#include <aws/customer-profiles/model/StopRecommenderRequest.h>
 #include <aws/customer-profiles/model/StopUploadJobRequest.h>
 #include <aws/customer-profiles/model/TagResourceRequest.h>
 #include <aws/customer-profiles/model/UntagResourceRequest.h>
@@ -103,6 +117,7 @@
 #include <aws/customer-profiles/model/UpdateDomainRequest.h>
 #include <aws/customer-profiles/model/UpdateEventTriggerRequest.h>
 #include <aws/customer-profiles/model/UpdateProfileRequest.h>
+#include <aws/customer-profiles/model/UpdateRecommenderRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -625,6 +640,49 @@ CreateProfileOutcome CustomerProfilesClient::CreateProfile(const CreateProfileRe
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+CreateRecommenderOutcome CustomerProfilesClient::CreateRecommender(const CreateRecommenderRequest& request) const {
+  AWS_OPERATION_GUARD(CreateRecommender);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRecommender, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateRecommender", "Required field: DomainName, is not set");
+    return CreateRecommenderOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  if (!request.RecommenderNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateRecommender", "Required field: RecommenderName, is not set");
+    return CreateRecommenderOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecommenderName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateRecommender, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateRecommender, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateRecommender",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateRecommenderOutcome>(
+      [&]() -> CreateRecommenderOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateRecommender, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/recommenders/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecommenderName());
+        return CreateRecommenderOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 CreateSegmentDefinitionOutcome CustomerProfilesClient::CreateSegmentDefinition(const CreateSegmentDefinitionRequest& request) const {
   AWS_OPERATION_GUARD(CreateSegmentDefinition);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSegmentDefinition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -909,6 +967,49 @@ DeleteDomainLayoutOutcome CustomerProfilesClient::DeleteDomainLayout(const Delet
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DeleteDomainObjectTypeOutcome CustomerProfilesClient::DeleteDomainObjectType(const DeleteDomainObjectTypeRequest& request) const {
+  AWS_OPERATION_GUARD(DeleteDomainObjectType);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDomainObjectType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteDomainObjectType", "Required field: DomainName, is not set");
+    return DeleteDomainObjectTypeOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  if (!request.ObjectTypeNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteDomainObjectType", "Required field: ObjectTypeName, is not set");
+    return DeleteDomainObjectTypeOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ObjectTypeName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteDomainObjectType, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteDomainObjectType, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteDomainObjectType",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteDomainObjectTypeOutcome>(
+      [&]() -> DeleteDomainObjectTypeOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteDomainObjectType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/domain-object-types/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetObjectTypeName());
+        return DeleteDomainObjectTypeOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DeleteEventStreamOutcome CustomerProfilesClient::DeleteEventStream(const DeleteEventStreamRequest& request) const {
   AWS_OPERATION_GUARD(DeleteEventStream);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteEventStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1179,6 +1280,49 @@ DeleteProfileObjectTypeOutcome CustomerProfilesClient::DeleteProfileObjectType(c
         endpointResolutionOutcome.GetResult().AddPathSegments("/object-types/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetObjectTypeName());
         return DeleteProfileObjectTypeOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteRecommenderOutcome CustomerProfilesClient::DeleteRecommender(const DeleteRecommenderRequest& request) const {
+  AWS_OPERATION_GUARD(DeleteRecommender);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRecommender, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteRecommender", "Required field: DomainName, is not set");
+    return DeleteRecommenderOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  if (!request.RecommenderNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteRecommender", "Required field: RecommenderName, is not set");
+    return DeleteRecommenderOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecommenderName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteRecommender, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteRecommender, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteRecommender",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteRecommenderOutcome>(
+      [&]() -> DeleteRecommenderOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteRecommender, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/recommenders/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecommenderName());
+        return DeleteRecommenderOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -1520,6 +1664,49 @@ GetDomainLayoutOutcome CustomerProfilesClient::GetDomainLayout(const GetDomainLa
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetDomainObjectTypeOutcome CustomerProfilesClient::GetDomainObjectType(const GetDomainObjectTypeRequest& request) const {
+  AWS_OPERATION_GUARD(GetDomainObjectType);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDomainObjectType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetDomainObjectType", "Required field: DomainName, is not set");
+    return GetDomainObjectTypeOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  if (!request.ObjectTypeNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetDomainObjectType", "Required field: ObjectTypeName, is not set");
+    return GetDomainObjectTypeOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ObjectTypeName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetDomainObjectType, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetDomainObjectType, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetDomainObjectType",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetDomainObjectTypeOutcome>(
+      [&]() -> GetDomainObjectTypeOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDomainObjectType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/domain-object-types/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetObjectTypeName());
+        return GetDomainObjectTypeOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetEventStreamOutcome CustomerProfilesClient::GetEventStream(const GetEventStreamRequest& request) const {
   AWS_OPERATION_GUARD(GetEventStream);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEventStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1723,6 +1910,58 @@ GetMatchesOutcome CustomerProfilesClient::GetMatches(const GetMatchesRequest& re
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetObjectTypeAttributeStatisticsOutcome CustomerProfilesClient::GetObjectTypeAttributeStatistics(
+    const GetObjectTypeAttributeStatisticsRequest& request) const {
+  AWS_OPERATION_GUARD(GetObjectTypeAttributeStatistics);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetObjectTypeAttributeStatistics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetObjectTypeAttributeStatistics", "Required field: DomainName, is not set");
+    return GetObjectTypeAttributeStatisticsOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  if (!request.ObjectTypeNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetObjectTypeAttributeStatistics", "Required field: ObjectTypeName, is not set");
+    return GetObjectTypeAttributeStatisticsOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ObjectTypeName]", false));
+  }
+  if (!request.AttributeNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetObjectTypeAttributeStatistics", "Required field: AttributeName, is not set");
+    return GetObjectTypeAttributeStatisticsOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AttributeName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetObjectTypeAttributeStatistics, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetObjectTypeAttributeStatistics, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetObjectTypeAttributeStatistics",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetObjectTypeAttributeStatisticsOutcome>(
+      [&]() -> GetObjectTypeAttributeStatisticsOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetObjectTypeAttributeStatistics, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/object-types/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetObjectTypeName());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/attributes/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAttributeName());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/statistics");
+        return GetObjectTypeAttributeStatisticsOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetProfileHistoryRecordOutcome CustomerProfilesClient::GetProfileHistoryRecord(const GetProfileHistoryRecordRequest& request) const {
   AWS_OPERATION_GUARD(GetProfileHistoryRecord);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetProfileHistoryRecord, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1846,6 +2085,93 @@ GetProfileObjectTypeTemplateOutcome CustomerProfilesClient::GetProfileObjectType
         endpointResolutionOutcome.GetResult().AddPathSegments("/templates/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTemplateId());
         return GetProfileObjectTypeTemplateOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetProfileRecommendationsOutcome CustomerProfilesClient::GetProfileRecommendations(const GetProfileRecommendationsRequest& request) const {
+  AWS_OPERATION_GUARD(GetProfileRecommendations);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetProfileRecommendations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetProfileRecommendations", "Required field: DomainName, is not set");
+    return GetProfileRecommendationsOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  if (!request.ProfileIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetProfileRecommendations", "Required field: ProfileId, is not set");
+    return GetProfileRecommendationsOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetProfileRecommendations, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetProfileRecommendations, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetProfileRecommendations",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetProfileRecommendationsOutcome>(
+      [&]() -> GetProfileRecommendationsOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetProfileRecommendations, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/profiles/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/recommendations");
+        return GetProfileRecommendationsOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetRecommenderOutcome CustomerProfilesClient::GetRecommender(const GetRecommenderRequest& request) const {
+  AWS_OPERATION_GUARD(GetRecommender);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRecommender, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetRecommender", "Required field: DomainName, is not set");
+    return GetRecommenderOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  if (!request.RecommenderNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetRecommender", "Required field: RecommenderName, is not set");
+    return GetRecommenderOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecommenderName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetRecommender, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetRecommender, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetRecommender",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetRecommenderOutcome>(
+      [&]() -> GetRecommenderOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetRecommender, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/recommenders/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecommenderName());
+        return GetRecommenderOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -2394,6 +2720,43 @@ ListDomainLayoutsOutcome CustomerProfilesClient::ListDomainLayouts(const ListDom
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+ListDomainObjectTypesOutcome CustomerProfilesClient::ListDomainObjectTypes(const ListDomainObjectTypesRequest& request) const {
+  AWS_OPERATION_GUARD(ListDomainObjectTypes);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDomainObjectTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListDomainObjectTypes", "Required field: DomainName, is not set");
+    return ListDomainObjectTypesOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListDomainObjectTypes, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListDomainObjectTypes, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListDomainObjectTypes",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListDomainObjectTypesOutcome>(
+      [&]() -> ListDomainObjectTypesOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDomainObjectTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/domain-object-types");
+        return ListDomainObjectTypesOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 ListDomainsOutcome CustomerProfilesClient::ListDomains(const ListDomainsRequest& request) const {
   AWS_OPERATION_GUARD(ListDomains);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDomains, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2566,6 +2929,58 @@ ListIntegrationsOutcome CustomerProfilesClient::ListIntegrations(const ListInteg
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/integrations");
         return ListIntegrationsOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListObjectTypeAttributeValuesOutcome CustomerProfilesClient::ListObjectTypeAttributeValues(
+    const ListObjectTypeAttributeValuesRequest& request) const {
+  AWS_OPERATION_GUARD(ListObjectTypeAttributeValues);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListObjectTypeAttributeValues, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListObjectTypeAttributeValues", "Required field: DomainName, is not set");
+    return ListObjectTypeAttributeValuesOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  if (!request.ObjectTypeNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListObjectTypeAttributeValues", "Required field: ObjectTypeName, is not set");
+    return ListObjectTypeAttributeValuesOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ObjectTypeName]", false));
+  }
+  if (!request.AttributeNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListObjectTypeAttributeValues", "Required field: AttributeName, is not set");
+    return ListObjectTypeAttributeValuesOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AttributeName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListObjectTypeAttributeValues, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListObjectTypeAttributeValues, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListObjectTypeAttributeValues",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListObjectTypeAttributeValuesOutcome>(
+      [&]() -> ListObjectTypeAttributeValuesOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListObjectTypeAttributeValues, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/object-types/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetObjectTypeName());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/attributes/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAttributeName());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/values");
+        return ListObjectTypeAttributeValuesOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -2804,6 +3219,73 @@ ListProfileObjectsOutcome CustomerProfilesClient::ListProfileObjects(const ListP
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+ListRecommenderRecipesOutcome CustomerProfilesClient::ListRecommenderRecipes(const ListRecommenderRecipesRequest& request) const {
+  AWS_OPERATION_GUARD(ListRecommenderRecipes);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRecommenderRecipes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListRecommenderRecipes, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListRecommenderRecipes, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListRecommenderRecipes",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListRecommenderRecipesOutcome>(
+      [&]() -> ListRecommenderRecipesOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRecommenderRecipes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/recommender-recipes");
+        return ListRecommenderRecipesOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListRecommendersOutcome CustomerProfilesClient::ListRecommenders(const ListRecommendersRequest& request) const {
+  AWS_OPERATION_GUARD(ListRecommenders);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRecommenders, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListRecommenders", "Required field: DomainName, is not set");
+    return ListRecommendersOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListRecommenders, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListRecommenders, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListRecommenders",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListRecommendersOutcome>(
+      [&]() -> ListRecommendersOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRecommenders, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/recommenders");
+        return ListRecommendersOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 ListRuleBasedMatchesOutcome CustomerProfilesClient::ListRuleBasedMatches(const ListRuleBasedMatchesRequest& request) const {
   AWS_OPERATION_GUARD(ListRuleBasedMatches);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRuleBasedMatches, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -3025,6 +3507,49 @@ MergeProfilesOutcome CustomerProfilesClient::MergeProfiles(const MergeProfilesRe
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+PutDomainObjectTypeOutcome CustomerProfilesClient::PutDomainObjectType(const PutDomainObjectTypeRequest& request) const {
+  AWS_OPERATION_GUARD(PutDomainObjectType);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutDomainObjectType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("PutDomainObjectType", "Required field: DomainName, is not set");
+    return PutDomainObjectTypeOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  if (!request.ObjectTypeNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("PutDomainObjectType", "Required field: ObjectTypeName, is not set");
+    return PutDomainObjectTypeOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ObjectTypeName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, PutDomainObjectType, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, PutDomainObjectType, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".PutDomainObjectType",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<PutDomainObjectTypeOutcome>(
+      [&]() -> PutDomainObjectTypeOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutDomainObjectType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/domain-object-types/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetObjectTypeName());
+        return PutDomainObjectTypeOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 PutIntegrationOutcome CustomerProfilesClient::PutIntegration(const PutIntegrationRequest& request) const {
   AWS_OPERATION_GUARD(PutIntegration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutIntegration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -3179,6 +3704,50 @@ SearchProfilesOutcome CustomerProfilesClient::SearchProfiles(const SearchProfile
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+StartRecommenderOutcome CustomerProfilesClient::StartRecommender(const StartRecommenderRequest& request) const {
+  AWS_OPERATION_GUARD(StartRecommender);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartRecommender, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartRecommender", "Required field: DomainName, is not set");
+    return StartRecommenderOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  if (!request.RecommenderNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartRecommender", "Required field: RecommenderName, is not set");
+    return StartRecommenderOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecommenderName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StartRecommender, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, StartRecommender, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StartRecommender",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<StartRecommenderOutcome>(
+      [&]() -> StartRecommenderOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartRecommender, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/recommenders/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecommenderName());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/start");
+        return StartRecommenderOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 StartUploadJobOutcome CustomerProfilesClient::StartUploadJob(const StartUploadJobRequest& request) const {
   AWS_OPERATION_GUARD(StartUploadJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartUploadJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -3215,6 +3784,50 @@ StartUploadJobOutcome CustomerProfilesClient::StartUploadJob(const StartUploadJo
         endpointResolutionOutcome.GetResult().AddPathSegments("/upload-jobs/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
         return StartUploadJobOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+StopRecommenderOutcome CustomerProfilesClient::StopRecommender(const StopRecommenderRequest& request) const {
+  AWS_OPERATION_GUARD(StopRecommender);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopRecommender, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StopRecommender", "Required field: DomainName, is not set");
+    return StopRecommenderOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  if (!request.RecommenderNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StopRecommender", "Required field: RecommenderName, is not set");
+    return StopRecommenderOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecommenderName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StopRecommender, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, StopRecommender, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StopRecommender",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<StopRecommenderOutcome>(
+      [&]() -> StopRecommenderOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopRecommender, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/recommenders/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecommenderName());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/stop");
+        return StopRecommenderOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -3540,6 +4153,49 @@ UpdateProfileOutcome CustomerProfilesClient::UpdateProfile(const UpdateProfileRe
         endpointResolutionOutcome.GetResult().AddPathSegments("/profiles");
         return UpdateProfileOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateRecommenderOutcome CustomerProfilesClient::UpdateRecommender(const UpdateRecommenderRequest& request) const {
+  AWS_OPERATION_GUARD(UpdateRecommender);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRecommender, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateRecommender", "Required field: DomainName, is not set");
+    return UpdateRecommenderOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  if (!request.RecommenderNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateRecommender", "Required field: RecommenderName, is not set");
+    return UpdateRecommenderOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecommenderName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateRecommender, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateRecommender, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateRecommender",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateRecommenderOutcome>(
+      [&]() -> UpdateRecommenderOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateRecommender, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/recommenders/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecommenderName());
+        return UpdateRecommenderOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

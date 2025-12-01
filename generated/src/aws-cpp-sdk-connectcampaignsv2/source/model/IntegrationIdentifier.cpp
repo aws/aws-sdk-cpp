@@ -26,6 +26,10 @@ IntegrationIdentifier& IntegrationIdentifier::operator=(JsonView jsonValue) {
     m_qConnect = jsonValue.GetObject("qConnect");
     m_qConnectHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("lambda")) {
+    m_lambda = jsonValue.GetObject("lambda");
+    m_lambdaHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue IntegrationIdentifier::Jsonize() const {
 
   if (m_qConnectHasBeenSet) {
     payload.WithObject("qConnect", m_qConnect.Jsonize());
+  }
+
+  if (m_lambdaHasBeenSet) {
+    payload.WithObject("lambda", m_lambda.Jsonize());
   }
 
   return payload;

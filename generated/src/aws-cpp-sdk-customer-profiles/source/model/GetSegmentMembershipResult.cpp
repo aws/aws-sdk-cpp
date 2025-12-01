@@ -39,6 +39,10 @@ GetSegmentMembershipResult& GetSegmentMembershipResult::operator=(const Aws::Ama
     }
     m_failuresHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("LastComputedAt")) {
+    m_lastComputedAt = jsonValue.GetDouble("LastComputedAt");
+    m_lastComputedAtHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

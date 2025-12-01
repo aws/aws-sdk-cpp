@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/ContactInteractionType.h>
+#include <aws/connect/model/EvaluationFormLanguageCode.h>
 #include <aws/connect/model/EvaluationFormVersionStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -281,6 +283,38 @@ class EvaluationFormSearchSummary {
 
   ///@{
   /**
+   * <p>The language of the evaluation form.</p>
+   */
+  inline EvaluationFormLanguageCode GetEvaluationFormLanguage() const { return m_evaluationFormLanguage; }
+  inline bool EvaluationFormLanguageHasBeenSet() const { return m_evaluationFormLanguageHasBeenSet; }
+  inline void SetEvaluationFormLanguage(EvaluationFormLanguageCode value) {
+    m_evaluationFormLanguageHasBeenSet = true;
+    m_evaluationFormLanguage = value;
+  }
+  inline EvaluationFormSearchSummary& WithEvaluationFormLanguage(EvaluationFormLanguageCode value) {
+    SetEvaluationFormLanguage(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The contact interaction type for this evaluation form.</p>
+   */
+  inline ContactInteractionType GetContactInteractionType() const { return m_contactInteractionType; }
+  inline bool ContactInteractionTypeHasBeenSet() const { return m_contactInteractionTypeHasBeenSet; }
+  inline void SetContactInteractionType(ContactInteractionType value) {
+    m_contactInteractionTypeHasBeenSet = true;
+    m_contactInteractionType = value;
+  }
+  inline EvaluationFormSearchSummary& WithContactInteractionType(ContactInteractionType value) {
+    SetContactInteractionType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The tags used to organize, track, or control access for this resource. For
    * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
    */
@@ -345,6 +379,12 @@ class EvaluationFormSearchSummary {
 
   bool m_autoEvaluationEnabled{false};
   bool m_autoEvaluationEnabledHasBeenSet = false;
+
+  EvaluationFormLanguageCode m_evaluationFormLanguage{EvaluationFormLanguageCode::NOT_SET};
+  bool m_evaluationFormLanguageHasBeenSet = false;
+
+  ContactInteractionType m_contactInteractionType{ContactInteractionType::NOT_SET};
+  bool m_contactInteractionTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_tagsHasBeenSet = false;

@@ -189,6 +189,7 @@
 #include <aws/personalize/model/MetricAttributionSummary.h>
 #include <aws/personalize/model/ObjectiveSensitivity.h>
 #include <aws/personalize/model/OptimizationObjective.h>
+#include <aws/personalize/model/RankingInfluenceType.h>
 #include <aws/personalize/model/Recipe.h>
 #include <aws/personalize/model/RecipeProvider.h>
 #include <aws/personalize/model/RecipeSummary.h>

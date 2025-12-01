@@ -6,10 +6,13 @@
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/qconnect/model/AnswerRecommendationAIAgentConfiguration.h>
+#include <aws/qconnect/model/CaseSummarizationAIAgentConfiguration.h>
 #include <aws/qconnect/model/EmailGenerativeAnswerAIAgentConfiguration.h>
 #include <aws/qconnect/model/EmailOverviewAIAgentConfiguration.h>
 #include <aws/qconnect/model/EmailResponseAIAgentConfiguration.h>
 #include <aws/qconnect/model/ManualSearchAIAgentConfiguration.h>
+#include <aws/qconnect/model/NoteTakingAIAgentConfiguration.h>
+#include <aws/qconnect/model/OrchestrationAIAgentConfiguration.h>
 #include <aws/qconnect/model/SelfServiceAIAgentConfiguration.h>
 
 #include <utility>
@@ -156,6 +159,64 @@ class AIAgentConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration for AI Agents of type <code>ORCHESTRATION</code>.</p>
+   */
+  inline const OrchestrationAIAgentConfiguration& GetOrchestrationAIAgentConfiguration() const {
+    return m_orchestrationAIAgentConfiguration;
+  }
+  inline bool OrchestrationAIAgentConfigurationHasBeenSet() const { return m_orchestrationAIAgentConfigurationHasBeenSet; }
+  template <typename OrchestrationAIAgentConfigurationT = OrchestrationAIAgentConfiguration>
+  void SetOrchestrationAIAgentConfiguration(OrchestrationAIAgentConfigurationT&& value) {
+    m_orchestrationAIAgentConfigurationHasBeenSet = true;
+    m_orchestrationAIAgentConfiguration = std::forward<OrchestrationAIAgentConfigurationT>(value);
+  }
+  template <typename OrchestrationAIAgentConfigurationT = OrchestrationAIAgentConfiguration>
+  AIAgentConfiguration& WithOrchestrationAIAgentConfiguration(OrchestrationAIAgentConfigurationT&& value) {
+    SetOrchestrationAIAgentConfiguration(std::forward<OrchestrationAIAgentConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The configuration for AI Agents of type <code>NOTE_TAKING</code>.</p>
+   */
+  inline const NoteTakingAIAgentConfiguration& GetNoteTakingAIAgentConfiguration() const { return m_noteTakingAIAgentConfiguration; }
+  inline bool NoteTakingAIAgentConfigurationHasBeenSet() const { return m_noteTakingAIAgentConfigurationHasBeenSet; }
+  template <typename NoteTakingAIAgentConfigurationT = NoteTakingAIAgentConfiguration>
+  void SetNoteTakingAIAgentConfiguration(NoteTakingAIAgentConfigurationT&& value) {
+    m_noteTakingAIAgentConfigurationHasBeenSet = true;
+    m_noteTakingAIAgentConfiguration = std::forward<NoteTakingAIAgentConfigurationT>(value);
+  }
+  template <typename NoteTakingAIAgentConfigurationT = NoteTakingAIAgentConfiguration>
+  AIAgentConfiguration& WithNoteTakingAIAgentConfiguration(NoteTakingAIAgentConfigurationT&& value) {
+    SetNoteTakingAIAgentConfiguration(std::forward<NoteTakingAIAgentConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The configuration for AI Agents of type <code>CASE_SUMMARIZATION</code>.</p>
+   */
+  inline const CaseSummarizationAIAgentConfiguration& GetCaseSummarizationAIAgentConfiguration() const {
+    return m_caseSummarizationAIAgentConfiguration;
+  }
+  inline bool CaseSummarizationAIAgentConfigurationHasBeenSet() const { return m_caseSummarizationAIAgentConfigurationHasBeenSet; }
+  template <typename CaseSummarizationAIAgentConfigurationT = CaseSummarizationAIAgentConfiguration>
+  void SetCaseSummarizationAIAgentConfiguration(CaseSummarizationAIAgentConfigurationT&& value) {
+    m_caseSummarizationAIAgentConfigurationHasBeenSet = true;
+    m_caseSummarizationAIAgentConfiguration = std::forward<CaseSummarizationAIAgentConfigurationT>(value);
+  }
+  template <typename CaseSummarizationAIAgentConfigurationT = CaseSummarizationAIAgentConfiguration>
+  AIAgentConfiguration& WithCaseSummarizationAIAgentConfiguration(CaseSummarizationAIAgentConfigurationT&& value) {
+    SetCaseSummarizationAIAgentConfiguration(std::forward<CaseSummarizationAIAgentConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ManualSearchAIAgentConfiguration m_manualSearchAIAgentConfiguration;
   bool m_manualSearchAIAgentConfigurationHasBeenSet = false;
@@ -174,6 +235,15 @@ class AIAgentConfiguration {
 
   EmailGenerativeAnswerAIAgentConfiguration m_emailGenerativeAnswerAIAgentConfiguration;
   bool m_emailGenerativeAnswerAIAgentConfigurationHasBeenSet = false;
+
+  OrchestrationAIAgentConfiguration m_orchestrationAIAgentConfiguration;
+  bool m_orchestrationAIAgentConfigurationHasBeenSet = false;
+
+  NoteTakingAIAgentConfiguration m_noteTakingAIAgentConfiguration;
+  bool m_noteTakingAIAgentConfigurationHasBeenSet = false;
+
+  CaseSummarizationAIAgentConfiguration m_caseSummarizationAIAgentConfiguration;
+  bool m_caseSummarizationAIAgentConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

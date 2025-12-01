@@ -30,6 +30,10 @@ Application& Application::operator=(JsonView jsonValue) {
     }
     m_applicationPermissionsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Type")) {
+    m_type = ApplicationTypeMapper::GetApplicationTypeForName(jsonValue.GetString("Type"));
+    m_typeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -47,6 +51,10 @@ JsonValue Application::Jsonize() const {
       applicationPermissionsJsonList[applicationPermissionsIndex].AsString(m_applicationPermissions[applicationPermissionsIndex]);
     }
     payload.WithArray("ApplicationPermissions", std::move(applicationPermissionsJsonList));
+  }
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", ApplicationTypeMapper::GetNameForApplicationType(m_type));
   }
 
   return payload;

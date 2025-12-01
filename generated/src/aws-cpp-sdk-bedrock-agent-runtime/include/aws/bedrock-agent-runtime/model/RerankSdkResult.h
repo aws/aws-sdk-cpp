@@ -30,6 +30,25 @@ class RerankSdkResult {
 
   ///@{
   /**
+   * <p>If the total number of results is greater than can fit in the response, use
+   * this token in the <code>nextToken</code> field when making another request to
+   * return the next batch of results.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  RerankSdkResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>An array of objects, each of which contains information about the results of
    * reranking.</p>
    */
@@ -53,25 +72,6 @@ class RerankSdkResult {
   ///@}
 
   ///@{
-  /**
-   * <p>If the total number of results is greater than can fit in the response, use
-   * this token in the <code>nextToken</code> field when making another request to
-   * return the next batch of results.</p>
-   */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
-  }
-  template <typename NextTokenT = Aws::String>
-  RerankSdkResult& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -86,11 +86,11 @@ class RerankSdkResult {
   }
   ///@}
  private:
-  Aws::Vector<RerankResult> m_results;
-  bool m_resultsHasBeenSet = false;
-
   Aws::String m_nextToken;
   bool m_nextTokenHasBeenSet = false;
+
+  Aws::Vector<RerankResult> m_results;
+  bool m_resultsHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

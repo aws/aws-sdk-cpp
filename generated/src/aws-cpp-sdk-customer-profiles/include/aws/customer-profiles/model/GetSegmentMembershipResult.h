@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
@@ -94,6 +95,24 @@ class GetSegmentMembershipResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The timestamp indicating when the segment membership was last computed or
+   * updated.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastComputedAt() const { return m_lastComputedAt; }
+  template <typename LastComputedAtT = Aws::Utils::DateTime>
+  void SetLastComputedAt(LastComputedAtT&& value) {
+    m_lastComputedAtHasBeenSet = true;
+    m_lastComputedAt = std::forward<LastComputedAtT>(value);
+  }
+  template <typename LastComputedAtT = Aws::Utils::DateTime>
+  GetSegmentMembershipResult& WithLastComputedAt(LastComputedAtT&& value) {
+    SetLastComputedAt(std::forward<LastComputedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -116,6 +135,9 @@ class GetSegmentMembershipResult {
 
   Aws::Vector<ProfileQueryFailures> m_failures;
   bool m_failuresHasBeenSet = false;
+
+  Aws::Utils::DateTime m_lastComputedAt{};
+  bool m_lastComputedAtHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

@@ -35,22 +35,6 @@ class RerankQuery {
 
   ///@{
   /**
-   * <p>The type of the query.</p>
-   */
-  inline RerankQueryContentType GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  inline void SetType(RerankQueryContentType value) {
-    m_typeHasBeenSet = true;
-    m_type = value;
-  }
-  inline RerankQuery& WithType(RerankQueryContentType value) {
-    SetType(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Contains information about a text query.</p>
    */
   inline const RerankTextDocument& GetTextQuery() const { return m_textQuery; }
@@ -66,12 +50,28 @@ class RerankQuery {
     return *this;
   }
   ///@}
- private:
-  RerankQueryContentType m_type{RerankQueryContentType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>The type of the query.</p>
+   */
+  inline RerankQueryContentType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(RerankQueryContentType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline RerankQuery& WithType(RerankQueryContentType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
+ private:
   RerankTextDocument m_textQuery;
   bool m_textQueryHasBeenSet = false;
+
+  RerankQueryContentType m_type{RerankQueryContentType::NOT_SET};
+  bool m_typeHasBeenSet = false;
 };
 
 }  // namespace Model

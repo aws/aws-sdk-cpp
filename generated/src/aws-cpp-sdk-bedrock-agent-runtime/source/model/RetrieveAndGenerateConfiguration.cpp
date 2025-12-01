@@ -18,17 +18,17 @@ namespace Model {
 RetrieveAndGenerateConfiguration::RetrieveAndGenerateConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
 RetrieveAndGenerateConfiguration& RetrieveAndGenerateConfiguration::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("type")) {
-    m_type = RetrieveAndGenerateTypeMapper::GetRetrieveAndGenerateTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
+  if (jsonValue.ValueExists("externalSourcesConfiguration")) {
+    m_externalSourcesConfiguration = jsonValue.GetObject("externalSourcesConfiguration");
+    m_externalSourcesConfigurationHasBeenSet = true;
   }
   if (jsonValue.ValueExists("knowledgeBaseConfiguration")) {
     m_knowledgeBaseConfiguration = jsonValue.GetObject("knowledgeBaseConfiguration");
     m_knowledgeBaseConfigurationHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("externalSourcesConfiguration")) {
-    m_externalSourcesConfiguration = jsonValue.GetObject("externalSourcesConfiguration");
-    m_externalSourcesConfigurationHasBeenSet = true;
+  if (jsonValue.ValueExists("type")) {
+    m_type = RetrieveAndGenerateTypeMapper::GetRetrieveAndGenerateTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
   }
   return *this;
 }
@@ -36,16 +36,16 @@ RetrieveAndGenerateConfiguration& RetrieveAndGenerateConfiguration::operator=(Js
 JsonValue RetrieveAndGenerateConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if (m_typeHasBeenSet) {
-    payload.WithString("type", RetrieveAndGenerateTypeMapper::GetNameForRetrieveAndGenerateType(m_type));
+  if (m_externalSourcesConfigurationHasBeenSet) {
+    payload.WithObject("externalSourcesConfiguration", m_externalSourcesConfiguration.Jsonize());
   }
 
   if (m_knowledgeBaseConfigurationHasBeenSet) {
     payload.WithObject("knowledgeBaseConfiguration", m_knowledgeBaseConfiguration.Jsonize());
   }
 
-  if (m_externalSourcesConfigurationHasBeenSet) {
-    payload.WithObject("externalSourcesConfiguration", m_externalSourcesConfiguration.Jsonize());
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", RetrieveAndGenerateTypeMapper::GetNameForRetrieveAndGenerateType(m_type));
   }
 
   return payload;

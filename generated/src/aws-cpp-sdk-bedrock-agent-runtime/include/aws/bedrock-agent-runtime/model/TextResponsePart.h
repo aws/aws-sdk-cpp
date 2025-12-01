@@ -41,24 +41,6 @@ class TextResponsePart {
 
   ///@{
   /**
-   * <p>The part of the generated text that contains a citation.</p>
-   */
-  inline const Aws::String& GetText() const { return m_text; }
-  inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-  template <typename TextT = Aws::String>
-  void SetText(TextT&& value) {
-    m_textHasBeenSet = true;
-    m_text = std::forward<TextT>(value);
-  }
-  template <typename TextT = Aws::String>
-  TextResponsePart& WithText(TextT&& value) {
-    SetText(std::forward<TextT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Contains information about where the text with a citation begins and ends in
    * the generated output.</p>
    */
@@ -75,12 +57,30 @@ class TextResponsePart {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>The part of the generated text that contains a citation.</p>
+   */
+  inline const Aws::String& GetText() const { return m_text; }
+  inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
+  template <typename TextT = Aws::String>
+  void SetText(TextT&& value) {
+    m_textHasBeenSet = true;
+    m_text = std::forward<TextT>(value);
+  }
+  template <typename TextT = Aws::String>
+  TextResponsePart& WithText(TextT&& value) {
+    SetText(std::forward<TextT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Span m_span;
   bool m_spanHasBeenSet = false;
+
+  Aws::String m_text;
+  bool m_textHasBeenSet = false;
 };
 
 }  // namespace Model

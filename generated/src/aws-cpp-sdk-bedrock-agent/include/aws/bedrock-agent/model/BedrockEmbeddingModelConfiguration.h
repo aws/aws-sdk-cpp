@@ -5,7 +5,10 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
+#include <aws/bedrock-agent/model/AudioConfiguration.h>
 #include <aws/bedrock-agent/model/EmbeddingDataType.h>
+#include <aws/bedrock-agent/model/VideoConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -70,12 +73,68 @@ class BedrockEmbeddingModelConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configuration settings for processing audio content in multimodal knowledge
+   * bases.</p>
+   */
+  inline const Aws::Vector<AudioConfiguration>& GetAudio() const { return m_audio; }
+  inline bool AudioHasBeenSet() const { return m_audioHasBeenSet; }
+  template <typename AudioT = Aws::Vector<AudioConfiguration>>
+  void SetAudio(AudioT&& value) {
+    m_audioHasBeenSet = true;
+    m_audio = std::forward<AudioT>(value);
+  }
+  template <typename AudioT = Aws::Vector<AudioConfiguration>>
+  BedrockEmbeddingModelConfiguration& WithAudio(AudioT&& value) {
+    SetAudio(std::forward<AudioT>(value));
+    return *this;
+  }
+  template <typename AudioT = AudioConfiguration>
+  BedrockEmbeddingModelConfiguration& AddAudio(AudioT&& value) {
+    m_audioHasBeenSet = true;
+    m_audio.emplace_back(std::forward<AudioT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Configuration settings for processing video content in multimodal knowledge
+   * bases.</p>
+   */
+  inline const Aws::Vector<VideoConfiguration>& GetVideo() const { return m_video; }
+  inline bool VideoHasBeenSet() const { return m_videoHasBeenSet; }
+  template <typename VideoT = Aws::Vector<VideoConfiguration>>
+  void SetVideo(VideoT&& value) {
+    m_videoHasBeenSet = true;
+    m_video = std::forward<VideoT>(value);
+  }
+  template <typename VideoT = Aws::Vector<VideoConfiguration>>
+  BedrockEmbeddingModelConfiguration& WithVideo(VideoT&& value) {
+    SetVideo(std::forward<VideoT>(value));
+    return *this;
+  }
+  template <typename VideoT = VideoConfiguration>
+  BedrockEmbeddingModelConfiguration& AddVideo(VideoT&& value) {
+    m_videoHasBeenSet = true;
+    m_video.emplace_back(std::forward<VideoT>(value));
+    return *this;
+  }
+  ///@}
  private:
   int m_dimensions{0};
   bool m_dimensionsHasBeenSet = false;
 
   EmbeddingDataType m_embeddingDataType{EmbeddingDataType::NOT_SET};
   bool m_embeddingDataTypeHasBeenSet = false;
+
+  Aws::Vector<AudioConfiguration> m_audio;
+  bool m_audioHasBeenSet = false;
+
+  Aws::Vector<VideoConfiguration> m_video;
+  bool m_videoHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -54,7 +54,10 @@ class UpdateInstanceAttributeRequest : public ConnectRequest {
   /**
    * <p>The type of attribute.</p>  <p>Only allowlisted customers can consume
    * USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services
-   * Support for allowlisting.</p>
+   * Support for allowlisting.</p>   <p>If you set the attribute type as
+   * <code>MESSAGE_STREAMING</code>, you need to update the Lex bot alias resource
+   * based policy to include the <code>lex:RecognizeMessageAsync</code> action for
+   * the connect instance ARN resource.</p>
    */
   inline InstanceAttributeType GetAttributeType() const { return m_attributeType; }
   inline bool AttributeTypeHasBeenSet() const { return m_attributeTypeHasBeenSet; }

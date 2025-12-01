@@ -6,6 +6,23 @@
 #include <aws/connect/ConnectClient.h>
 #include <aws/connect/ConnectEndpointProvider.h>
 #include <aws/connect/ConnectErrorMarshaller.h>
+#include <aws/connect/model/DescribeAgentStatusRequest.h>
+#include <aws/connect/model/DescribeAuthenticationProfileRequest.h>
+#include <aws/connect/model/DescribeContactEvaluationRequest.h>
+#include <aws/connect/model/DescribeContactFlowModuleAliasRequest.h>
+#include <aws/connect/model/DescribeContactFlowModuleRequest.h>
+#include <aws/connect/model/DescribeContactFlowRequest.h>
+#include <aws/connect/model/DescribeContactRequest.h>
+#include <aws/connect/model/DescribeDataTableAttributeRequest.h>
+#include <aws/connect/model/DescribeDataTableRequest.h>
+#include <aws/connect/model/DescribeEmailAddressRequest.h>
+#include <aws/connect/model/DescribeEvaluationFormRequest.h>
+#include <aws/connect/model/DescribeHoursOfOperationOverrideRequest.h>
+#include <aws/connect/model/DescribeHoursOfOperationRequest.h>
+#include <aws/connect/model/DescribeInstanceAttributeRequest.h>
+#include <aws/connect/model/DescribeInstanceRequest.h>
+#include <aws/connect/model/DescribeInstanceStorageConfigRequest.h>
+#include <aws/connect/model/DescribePhoneNumberRequest.h>
 #include <aws/connect/model/DescribePredefinedAttributeRequest.h>
 #include <aws/connect/model/DescribePromptRequest.h>
 #include <aws/connect/model/DescribeQueueRequest.h>
@@ -19,6 +36,7 @@
 #include <aws/connect/model/DescribeUserRequest.h>
 #include <aws/connect/model/DescribeViewRequest.h>
 #include <aws/connect/model/DescribeVocabularyRequest.h>
+#include <aws/connect/model/DescribeWorkspaceRequest.h>
 #include <aws/connect/model/DisassociateAnalyticsDataSetRequest.h>
 #include <aws/connect/model/DisassociateApprovedOriginRequest.h>
 #include <aws/connect/model/DisassociateBotRequest.h>
@@ -31,9 +49,12 @@
 #include <aws/connect/model/DisassociateQueueQuickConnectsRequest.h>
 #include <aws/connect/model/DisassociateRoutingProfileQueuesRequest.h>
 #include <aws/connect/model/DisassociateSecurityKeyRequest.h>
+#include <aws/connect/model/DisassociateSecurityProfilesRequest.h>
 #include <aws/connect/model/DisassociateTrafficDistributionGroupUserRequest.h>
 #include <aws/connect/model/DisassociateUserProficienciesRequest.h>
+#include <aws/connect/model/DisassociateWorkspaceRequest.h>
 #include <aws/connect/model/DismissUserContactRequest.h>
+#include <aws/connect/model/EvaluateDataTableValuesRequest.h>
 #include <aws/connect/model/GetAttachedFileRequest.h>
 #include <aws/connect/model/GetContactAttributesRequest.h>
 #include <aws/connect/model/GetContactMetricsRequest.h>
@@ -48,6 +69,7 @@
 #include <aws/connect/model/GetTaskTemplateRequest.h>
 #include <aws/connect/model/GetTrafficDistributionRequest.h>
 #include <aws/connect/model/ImportPhoneNumberRequest.h>
+#include <aws/connect/model/ImportWorkspaceMediaRequest.h>
 #include <aws/connect/model/ListAgentStatusesRequest.h>
 #include <aws/connect/model/ListAnalyticsDataAssociationsRequest.h>
 #include <aws/connect/model/ListAnalyticsDataLakeDataSetsRequest.h>
@@ -62,7 +84,12 @@
 #include <aws/connect/model/ListContactFlowVersionsRequest.h>
 #include <aws/connect/model/ListContactFlowsRequest.h>
 #include <aws/connect/model/ListContactReferencesRequest.h>
+#include <aws/connect/model/ListDataTableAttributesRequest.h>
+#include <aws/connect/model/ListDataTablePrimaryValuesRequest.h>
+#include <aws/connect/model/ListDataTableValuesRequest.h>
+#include <aws/connect/model/ListDataTablesRequest.h>
 #include <aws/connect/model/ListDefaultVocabulariesRequest.h>
+#include <aws/connect/model/ListEntitySecurityProfilesRequest.h>
 #include <aws/connect/model/ListEvaluationFormVersionsRequest.h>
 #include <aws/connect/model/ListEvaluationFormsRequest.h>
 #include <aws/connect/model/ListFlowAssociationsRequest.h>
@@ -79,33 +106,6 @@
 #include <aws/connect/model/ListPredefinedAttributesRequest.h>
 #include <aws/connect/model/ListPromptsRequest.h>
 #include <aws/connect/model/ListQueueQuickConnectsRequest.h>
-#include <aws/connect/model/ListQueuesRequest.h>
-#include <aws/connect/model/ListQuickConnectsRequest.h>
-#include <aws/connect/model/ListRealtimeContactAnalysisSegmentsV2Request.h>
-#include <aws/connect/model/ListRoutingProfileManualAssignmentQueuesRequest.h>
-#include <aws/connect/model/ListRoutingProfileQueuesRequest.h>
-#include <aws/connect/model/ListRoutingProfilesRequest.h>
-#include <aws/connect/model/ListRulesRequest.h>
-#include <aws/connect/model/ListSecurityKeysRequest.h>
-#include <aws/connect/model/ListSecurityProfileApplicationsRequest.h>
-#include <aws/connect/model/ListSecurityProfilePermissionsRequest.h>
-#include <aws/connect/model/ListSecurityProfilesRequest.h>
-#include <aws/connect/model/ListTagsForResourceRequest.h>
-#include <aws/connect/model/ListTaskTemplatesRequest.h>
-#include <aws/connect/model/ListTrafficDistributionGroupUsersRequest.h>
-#include <aws/connect/model/ListTrafficDistributionGroupsRequest.h>
-#include <aws/connect/model/ListUseCasesRequest.h>
-#include <aws/connect/model/ListUserHierarchyGroupsRequest.h>
-#include <aws/connect/model/ListUserProficienciesRequest.h>
-#include <aws/connect/model/ListUsersRequest.h>
-#include <aws/connect/model/ListViewVersionsRequest.h>
-#include <aws/connect/model/ListViewsRequest.h>
-#include <aws/connect/model/MonitorContactRequest.h>
-#include <aws/connect/model/PauseContactRequest.h>
-#include <aws/connect/model/PutUserStatusRequest.h>
-#include <aws/connect/model/ReleasePhoneNumberRequest.h>
-#include <aws/connect/model/ReplicateInstanceRequest.h>
-#include <aws/connect/model/ResumeContactRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/CoreErrors.h>
@@ -131,6 +131,741 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DescribeAgentStatusOutcome ConnectClient::DescribeAgentStatus(const DescribeAgentStatusRequest& request) const {
+  AWS_OPERATION_GUARD(DescribeAgentStatus);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAgentStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeAgentStatus", "Required field: InstanceId, is not set");
+    return DescribeAgentStatusOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [InstanceId]", false));
+  }
+  if (!request.AgentStatusIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeAgentStatus", "Required field: AgentStatusId, is not set");
+    return DescribeAgentStatusOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [AgentStatusId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeAgentStatus, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeAgentStatus, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeAgentStatus",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeAgentStatusOutcome>(
+      [&]() -> DescribeAgentStatusOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAgentStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/agent-status/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentStatusId());
+        return DescribeAgentStatusOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DescribeAuthenticationProfileOutcome ConnectClient::DescribeAuthenticationProfile(
+    const DescribeAuthenticationProfileRequest& request) const {
+  AWS_OPERATION_GUARD(DescribeAuthenticationProfile);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAuthenticationProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AuthenticationProfileIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeAuthenticationProfile", "Required field: AuthenticationProfileId, is not set");
+    return DescribeAuthenticationProfileOutcome(Aws::Client::AWSError<ConnectErrors>(
+        ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AuthenticationProfileId]", false));
+  }
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeAuthenticationProfile", "Required field: InstanceId, is not set");
+    return DescribeAuthenticationProfileOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                     "Missing required field [InstanceId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeAuthenticationProfile, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeAuthenticationProfile, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeAuthenticationProfile",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeAuthenticationProfileOutcome>(
+      [&]() -> DescribeAuthenticationProfileOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAuthenticationProfile, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/authentication-profiles/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAuthenticationProfileId());
+        return DescribeAuthenticationProfileOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DescribeContactOutcome ConnectClient::DescribeContact(const DescribeContactRequest& request) const {
+  AWS_OPERATION_GUARD(DescribeContact);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeContact", "Required field: InstanceId, is not set");
+    return DescribeContactOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                       "Missing required field [InstanceId]", false));
+  }
+  if (!request.ContactIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeContact", "Required field: ContactId, is not set");
+    return DescribeContactOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                       "Missing required field [ContactId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeContact, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeContact, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeContact",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeContactOutcome>(
+      [&]() -> DescribeContactOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/contacts/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContactId());
+        return DescribeContactOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DescribeContactEvaluationOutcome ConnectClient::DescribeContactEvaluation(const DescribeContactEvaluationRequest& request) const {
+  AWS_OPERATION_GUARD(DescribeContactEvaluation);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeContactEvaluation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeContactEvaluation", "Required field: InstanceId, is not set");
+    return DescribeContactEvaluationOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                 "Missing required field [InstanceId]", false));
+  }
+  if (!request.EvaluationIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeContactEvaluation", "Required field: EvaluationId, is not set");
+    return DescribeContactEvaluationOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                 "Missing required field [EvaluationId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeContactEvaluation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeContactEvaluation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeContactEvaluation",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeContactEvaluationOutcome>(
+      [&]() -> DescribeContactEvaluationOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeContactEvaluation, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/contact-evaluations/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEvaluationId());
+        return DescribeContactEvaluationOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DescribeContactFlowOutcome ConnectClient::DescribeContactFlow(const DescribeContactFlowRequest& request) const {
+  AWS_OPERATION_GUARD(DescribeContactFlow);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeContactFlow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeContactFlow", "Required field: InstanceId, is not set");
+    return DescribeContactFlowOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [InstanceId]", false));
+  }
+  if (!request.ContactFlowIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeContactFlow", "Required field: ContactFlowId, is not set");
+    return DescribeContactFlowOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [ContactFlowId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeContactFlow, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeContactFlow, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeContactFlow",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeContactFlowOutcome>(
+      [&]() -> DescribeContactFlowOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeContactFlow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/contact-flows/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContactFlowId());
+        return DescribeContactFlowOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DescribeContactFlowModuleOutcome ConnectClient::DescribeContactFlowModule(const DescribeContactFlowModuleRequest& request) const {
+  AWS_OPERATION_GUARD(DescribeContactFlowModule);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeContactFlowModule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeContactFlowModule", "Required field: InstanceId, is not set");
+    return DescribeContactFlowModuleOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                 "Missing required field [InstanceId]", false));
+  }
+  if (!request.ContactFlowModuleIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeContactFlowModule", "Required field: ContactFlowModuleId, is not set");
+    return DescribeContactFlowModuleOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                 "Missing required field [ContactFlowModuleId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeContactFlowModule, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeContactFlowModule, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeContactFlowModule",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeContactFlowModuleOutcome>(
+      [&]() -> DescribeContactFlowModuleOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeContactFlowModule, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/contact-flow-modules/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContactFlowModuleId());
+        return DescribeContactFlowModuleOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DescribeContactFlowModuleAliasOutcome ConnectClient::DescribeContactFlowModuleAlias(
+    const DescribeContactFlowModuleAliasRequest& request) const {
+  AWS_OPERATION_GUARD(DescribeContactFlowModuleAlias);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeContactFlowModuleAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeContactFlowModuleAlias", "Required field: InstanceId, is not set");
+    return DescribeContactFlowModuleAliasOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                      "Missing required field [InstanceId]", false));
+  }
+  if (!request.ContactFlowModuleIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeContactFlowModuleAlias", "Required field: ContactFlowModuleId, is not set");
+    return DescribeContactFlowModuleAliasOutcome(Aws::Client::AWSError<ConnectErrors>(
+        ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContactFlowModuleId]", false));
+  }
+  if (!request.AliasIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeContactFlowModuleAlias", "Required field: AliasId, is not set");
+    return DescribeContactFlowModuleAliasOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                      "Missing required field [AliasId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeContactFlowModuleAlias, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeContactFlowModuleAlias, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeContactFlowModuleAlias",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeContactFlowModuleAliasOutcome>(
+      [&]() -> DescribeContactFlowModuleAliasOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeContactFlowModuleAlias, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/contact-flow-modules/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContactFlowModuleId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/alias/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAliasId());
+        return DescribeContactFlowModuleAliasOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DescribeDataTableOutcome ConnectClient::DescribeDataTable(const DescribeDataTableRequest& request) const {
+  AWS_OPERATION_GUARD(DescribeDataTable);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDataTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeDataTable", "Required field: InstanceId, is not set");
+    return DescribeDataTableOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                         "Missing required field [InstanceId]", false));
+  }
+  if (!request.DataTableIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeDataTable", "Required field: DataTableId, is not set");
+    return DescribeDataTableOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                         "Missing required field [DataTableId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeDataTable, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeDataTable, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeDataTable",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeDataTableOutcome>(
+      [&]() -> DescribeDataTableOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeDataTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/data-tables/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataTableId());
+        return DescribeDataTableOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DescribeDataTableAttributeOutcome ConnectClient::DescribeDataTableAttribute(const DescribeDataTableAttributeRequest& request) const {
+  AWS_OPERATION_GUARD(DescribeDataTableAttribute);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDataTableAttribute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeDataTableAttribute", "Required field: InstanceId, is not set");
+    return DescribeDataTableAttributeOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                  "Missing required field [InstanceId]", false));
+  }
+  if (!request.DataTableIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeDataTableAttribute", "Required field: DataTableId, is not set");
+    return DescribeDataTableAttributeOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                  "Missing required field [DataTableId]", false));
+  }
+  if (!request.AttributeNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeDataTableAttribute", "Required field: AttributeName, is not set");
+    return DescribeDataTableAttributeOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                  "Missing required field [AttributeName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeDataTableAttribute, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeDataTableAttribute, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeDataTableAttribute",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeDataTableAttributeOutcome>(
+      [&]() -> DescribeDataTableAttributeOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeDataTableAttribute, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/data-tables/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataTableId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/attributes/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAttributeName());
+        return DescribeDataTableAttributeOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DescribeEmailAddressOutcome ConnectClient::DescribeEmailAddress(const DescribeEmailAddressRequest& request) const {
+  AWS_OPERATION_GUARD(DescribeEmailAddress);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeEmailAddress, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeEmailAddress", "Required field: InstanceId, is not set");
+    return DescribeEmailAddressOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [InstanceId]", false));
+  }
+  if (!request.EmailAddressIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeEmailAddress", "Required field: EmailAddressId, is not set");
+    return DescribeEmailAddressOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [EmailAddressId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeEmailAddress, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeEmailAddress, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeEmailAddress",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeEmailAddressOutcome>(
+      [&]() -> DescribeEmailAddressOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeEmailAddress, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/email-addresses/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEmailAddressId());
+        return DescribeEmailAddressOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DescribeEvaluationFormOutcome ConnectClient::DescribeEvaluationForm(const DescribeEvaluationFormRequest& request) const {
+  AWS_OPERATION_GUARD(DescribeEvaluationForm);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeEvaluationForm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeEvaluationForm", "Required field: InstanceId, is not set");
+    return DescribeEvaluationFormOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                              "Missing required field [InstanceId]", false));
+  }
+  if (!request.EvaluationFormIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeEvaluationForm", "Required field: EvaluationFormId, is not set");
+    return DescribeEvaluationFormOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                              "Missing required field [EvaluationFormId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeEvaluationForm, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeEvaluationForm, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeEvaluationForm",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeEvaluationFormOutcome>(
+      [&]() -> DescribeEvaluationFormOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeEvaluationForm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/evaluation-forms/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEvaluationFormId());
+        return DescribeEvaluationFormOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DescribeHoursOfOperationOutcome ConnectClient::DescribeHoursOfOperation(const DescribeHoursOfOperationRequest& request) const {
+  AWS_OPERATION_GUARD(DescribeHoursOfOperation);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeHoursOfOperation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeHoursOfOperation", "Required field: InstanceId, is not set");
+    return DescribeHoursOfOperationOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                "Missing required field [InstanceId]", false));
+  }
+  if (!request.HoursOfOperationIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeHoursOfOperation", "Required field: HoursOfOperationId, is not set");
+    return DescribeHoursOfOperationOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                "Missing required field [HoursOfOperationId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeHoursOfOperation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeHoursOfOperation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeHoursOfOperation",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeHoursOfOperationOutcome>(
+      [&]() -> DescribeHoursOfOperationOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeHoursOfOperation, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/hours-of-operations/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHoursOfOperationId());
+        return DescribeHoursOfOperationOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DescribeHoursOfOperationOverrideOutcome ConnectClient::DescribeHoursOfOperationOverride(
+    const DescribeHoursOfOperationOverrideRequest& request) const {
+  AWS_OPERATION_GUARD(DescribeHoursOfOperationOverride);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeHoursOfOperationOverride, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeHoursOfOperationOverride", "Required field: InstanceId, is not set");
+    return DescribeHoursOfOperationOverrideOutcome(Aws::Client::AWSError<ConnectErrors>(
+        ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  if (!request.HoursOfOperationIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeHoursOfOperationOverride", "Required field: HoursOfOperationId, is not set");
+    return DescribeHoursOfOperationOverrideOutcome(Aws::Client::AWSError<ConnectErrors>(
+        ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HoursOfOperationId]", false));
+  }
+  if (!request.HoursOfOperationOverrideIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeHoursOfOperationOverride", "Required field: HoursOfOperationOverrideId, is not set");
+    return DescribeHoursOfOperationOverrideOutcome(Aws::Client::AWSError<ConnectErrors>(
+        ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HoursOfOperationOverrideId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeHoursOfOperationOverride, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeHoursOfOperationOverride, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeHoursOfOperationOverride",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeHoursOfOperationOverrideOutcome>(
+      [&]() -> DescribeHoursOfOperationOverrideOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeHoursOfOperationOverride, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/hours-of-operations/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHoursOfOperationId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/overrides/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHoursOfOperationOverrideId());
+        return DescribeHoursOfOperationOverrideOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DescribeInstanceOutcome ConnectClient::DescribeInstance(const DescribeInstanceRequest& request) const {
+  AWS_OPERATION_GUARD(DescribeInstance);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeInstance", "Required field: InstanceId, is not set");
+    return DescribeInstanceOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                        "Missing required field [InstanceId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeInstance, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeInstance, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeInstance",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeInstanceOutcome>(
+      [&]() -> DescribeInstanceOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/instance/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+        return DescribeInstanceOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DescribeInstanceAttributeOutcome ConnectClient::DescribeInstanceAttribute(const DescribeInstanceAttributeRequest& request) const {
+  AWS_OPERATION_GUARD(DescribeInstanceAttribute);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeInstanceAttribute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeInstanceAttribute", "Required field: InstanceId, is not set");
+    return DescribeInstanceAttributeOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                 "Missing required field [InstanceId]", false));
+  }
+  if (!request.AttributeTypeHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeInstanceAttribute", "Required field: AttributeType, is not set");
+    return DescribeInstanceAttributeOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                 "Missing required field [AttributeType]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeInstanceAttribute, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeInstanceAttribute, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeInstanceAttribute",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeInstanceAttributeOutcome>(
+      [&]() -> DescribeInstanceAttributeOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeInstanceAttribute, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/instance/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/attribute/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(
+            InstanceAttributeTypeMapper::GetNameForInstanceAttributeType(request.GetAttributeType()));
+        return DescribeInstanceAttributeOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DescribeInstanceStorageConfigOutcome ConnectClient::DescribeInstanceStorageConfig(
+    const DescribeInstanceStorageConfigRequest& request) const {
+  AWS_OPERATION_GUARD(DescribeInstanceStorageConfig);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeInstanceStorageConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeInstanceStorageConfig", "Required field: InstanceId, is not set");
+    return DescribeInstanceStorageConfigOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                     "Missing required field [InstanceId]", false));
+  }
+  if (!request.AssociationIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeInstanceStorageConfig", "Required field: AssociationId, is not set");
+    return DescribeInstanceStorageConfigOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                     "Missing required field [AssociationId]", false));
+  }
+  if (!request.ResourceTypeHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeInstanceStorageConfig", "Required field: ResourceType, is not set");
+    return DescribeInstanceStorageConfigOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                     "Missing required field [ResourceType]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeInstanceStorageConfig, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeInstanceStorageConfig, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeInstanceStorageConfig",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeInstanceStorageConfigOutcome>(
+      [&]() -> DescribeInstanceStorageConfigOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeInstanceStorageConfig, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/instance/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/storage-config/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssociationId());
+        return DescribeInstanceStorageConfigOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DescribePhoneNumberOutcome ConnectClient::DescribePhoneNumber(const DescribePhoneNumberRequest& request) const {
+  AWS_OPERATION_GUARD(DescribePhoneNumber);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribePhoneNumber, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.PhoneNumberIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribePhoneNumber", "Required field: PhoneNumberId, is not set");
+    return DescribePhoneNumberOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [PhoneNumberId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribePhoneNumber, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribePhoneNumber, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribePhoneNumber",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribePhoneNumberOutcome>(
+      [&]() -> DescribePhoneNumberOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribePhoneNumber, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/phone-number/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPhoneNumberId());
+        return DescribePhoneNumberOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
 
 DescribePredefinedAttributeOutcome ConnectClient::DescribePredefinedAttribute(const DescribePredefinedAttributeRequest& request) const {
   AWS_OPERATION_GUARD(DescribePredefinedAttribute);
@@ -668,6 +1403,48 @@ DescribeVocabularyOutcome ConnectClient::DescribeVocabulary(const DescribeVocabu
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DescribeWorkspaceOutcome ConnectClient::DescribeWorkspace(const DescribeWorkspaceRequest& request) const {
+  AWS_OPERATION_GUARD(DescribeWorkspace);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeWorkspace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeWorkspace", "Required field: InstanceId, is not set");
+    return DescribeWorkspaceOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                         "Missing required field [InstanceId]", false));
+  }
+  if (!request.WorkspaceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeWorkspace", "Required field: WorkspaceId, is not set");
+    return DescribeWorkspaceOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                         "Missing required field [WorkspaceId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeWorkspace, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeWorkspace, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeWorkspace",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeWorkspaceOutcome>(
+      [&]() -> DescribeWorkspaceOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeWorkspace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
+        return DescribeWorkspaceOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DisassociateAnalyticsDataSetOutcome ConnectClient::DisassociateAnalyticsDataSet(const DisassociateAnalyticsDataSetRequest& request) const {
   AWS_OPERATION_GUARD(DisassociateAnalyticsDataSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateAnalyticsDataSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1189,6 +1966,42 @@ DisassociateSecurityKeyOutcome ConnectClient::DisassociateSecurityKey(const Disa
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DisassociateSecurityProfilesOutcome ConnectClient::DisassociateSecurityProfiles(const DisassociateSecurityProfilesRequest& request) const {
+  AWS_OPERATION_GUARD(DisassociateSecurityProfiles);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateSecurityProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DisassociateSecurityProfiles", "Required field: InstanceId, is not set");
+    return DisassociateSecurityProfilesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                    "Missing required field [InstanceId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DisassociateSecurityProfiles, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DisassociateSecurityProfiles, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DisassociateSecurityProfiles",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DisassociateSecurityProfilesOutcome>(
+      [&]() -> DisassociateSecurityProfilesOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateSecurityProfiles, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/disassociate-security-profiles/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+        return DisassociateSecurityProfilesOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DisassociateTrafficDistributionGroupUserOutcome ConnectClient::DisassociateTrafficDistributionGroupUser(
     const DisassociateTrafficDistributionGroupUserRequest& request) const {
   AWS_OPERATION_GUARD(DisassociateTrafficDistributionGroupUser);
@@ -1282,6 +2095,49 @@ DisassociateUserProficienciesOutcome ConnectClient::DisassociateUserProficiencie
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DisassociateWorkspaceOutcome ConnectClient::DisassociateWorkspace(const DisassociateWorkspaceRequest& request) const {
+  AWS_OPERATION_GUARD(DisassociateWorkspace);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateWorkspace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DisassociateWorkspace", "Required field: InstanceId, is not set");
+    return DisassociateWorkspaceOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                             "Missing required field [InstanceId]", false));
+  }
+  if (!request.WorkspaceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DisassociateWorkspace", "Required field: WorkspaceId, is not set");
+    return DisassociateWorkspaceOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                             "Missing required field [WorkspaceId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DisassociateWorkspace, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DisassociateWorkspace, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DisassociateWorkspace",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DisassociateWorkspaceOutcome>(
+      [&]() -> DisassociateWorkspaceOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateWorkspace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/disassociate");
+        return DisassociateWorkspaceOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DismissUserContactOutcome ConnectClient::DismissUserContact(const DismissUserContactRequest& request) const {
   AWS_OPERATION_GUARD(DismissUserContact);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DismissUserContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1318,6 +2174,49 @@ DismissUserContactOutcome ConnectClient::DismissUserContact(const DismissUserCon
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/contact");
         return DismissUserContactOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+EvaluateDataTableValuesOutcome ConnectClient::EvaluateDataTableValues(const EvaluateDataTableValuesRequest& request) const {
+  AWS_OPERATION_GUARD(EvaluateDataTableValues);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, EvaluateDataTableValues, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("EvaluateDataTableValues", "Required field: InstanceId, is not set");
+    return EvaluateDataTableValuesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                               "Missing required field [InstanceId]", false));
+  }
+  if (!request.DataTableIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("EvaluateDataTableValues", "Required field: DataTableId, is not set");
+    return EvaluateDataTableValuesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                               "Missing required field [DataTableId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, EvaluateDataTableValues, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, EvaluateDataTableValues, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".EvaluateDataTableValues",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<EvaluateDataTableValuesOutcome>(
+      [&]() -> EvaluateDataTableValuesOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, EvaluateDataTableValues, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/data-tables/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataTableId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/values/evaluate");
+        return EvaluateDataTableValuesOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -1865,6 +2764,49 @@ ImportPhoneNumberOutcome ConnectClient::ImportPhoneNumber(const ImportPhoneNumbe
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/phone-number/import");
         return ImportPhoneNumberOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ImportWorkspaceMediaOutcome ConnectClient::ImportWorkspaceMedia(const ImportWorkspaceMediaRequest& request) const {
+  AWS_OPERATION_GUARD(ImportWorkspaceMedia);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ImportWorkspaceMedia, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ImportWorkspaceMedia", "Required field: InstanceId, is not set");
+    return ImportWorkspaceMediaOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [InstanceId]", false));
+  }
+  if (!request.WorkspaceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ImportWorkspaceMedia", "Required field: WorkspaceId, is not set");
+    return ImportWorkspaceMediaOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [WorkspaceId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ImportWorkspaceMedia, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ImportWorkspaceMedia, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ImportWorkspaceMedia",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ImportWorkspaceMediaOutcome>(
+      [&]() -> ImportWorkspaceMediaOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ImportWorkspaceMedia, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/media");
+        return ImportWorkspaceMediaOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -2430,6 +3372,171 @@ ListContactReferencesOutcome ConnectClient::ListContactReferences(const ListCont
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+ListDataTableAttributesOutcome ConnectClient::ListDataTableAttributes(const ListDataTableAttributesRequest& request) const {
+  AWS_OPERATION_GUARD(ListDataTableAttributes);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDataTableAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListDataTableAttributes", "Required field: InstanceId, is not set");
+    return ListDataTableAttributesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                               "Missing required field [InstanceId]", false));
+  }
+  if (!request.DataTableIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListDataTableAttributes", "Required field: DataTableId, is not set");
+    return ListDataTableAttributesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                               "Missing required field [DataTableId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListDataTableAttributes, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListDataTableAttributes, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListDataTableAttributes",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListDataTableAttributesOutcome>(
+      [&]() -> ListDataTableAttributesOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDataTableAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/data-tables/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataTableId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/attributes");
+        return ListDataTableAttributesOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListDataTablePrimaryValuesOutcome ConnectClient::ListDataTablePrimaryValues(const ListDataTablePrimaryValuesRequest& request) const {
+  AWS_OPERATION_GUARD(ListDataTablePrimaryValues);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDataTablePrimaryValues, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListDataTablePrimaryValues", "Required field: InstanceId, is not set");
+    return ListDataTablePrimaryValuesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                  "Missing required field [InstanceId]", false));
+  }
+  if (!request.DataTableIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListDataTablePrimaryValues", "Required field: DataTableId, is not set");
+    return ListDataTablePrimaryValuesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                  "Missing required field [DataTableId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListDataTablePrimaryValues, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListDataTablePrimaryValues, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListDataTablePrimaryValues",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListDataTablePrimaryValuesOutcome>(
+      [&]() -> ListDataTablePrimaryValuesOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDataTablePrimaryValues, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/data-tables/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataTableId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/values/list-primary");
+        return ListDataTablePrimaryValuesOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListDataTableValuesOutcome ConnectClient::ListDataTableValues(const ListDataTableValuesRequest& request) const {
+  AWS_OPERATION_GUARD(ListDataTableValues);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDataTableValues, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListDataTableValues", "Required field: InstanceId, is not set");
+    return ListDataTableValuesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [InstanceId]", false));
+  }
+  if (!request.DataTableIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListDataTableValues", "Required field: DataTableId, is not set");
+    return ListDataTableValuesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [DataTableId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListDataTableValues, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListDataTableValues, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListDataTableValues",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListDataTableValuesOutcome>(
+      [&]() -> ListDataTableValuesOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDataTableValues, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/data-tables/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataTableId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/values/list");
+        return ListDataTableValuesOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListDataTablesOutcome ConnectClient::ListDataTables(const ListDataTablesRequest& request) const {
+  AWS_OPERATION_GUARD(ListDataTables);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDataTables, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListDataTables", "Required field: InstanceId, is not set");
+    return ListDataTablesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                      "Missing required field [InstanceId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListDataTables, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListDataTables, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListDataTables",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListDataTablesOutcome>(
+      [&]() -> ListDataTablesOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDataTables, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/data-tables/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+        return ListDataTablesOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 ListDefaultVocabulariesOutcome ConnectClient::ListDefaultVocabularies(const ListDefaultVocabulariesRequest& request) const {
   AWS_OPERATION_GUARD(ListDefaultVocabularies);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDefaultVocabularies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2459,6 +3566,42 @@ ListDefaultVocabulariesOutcome ConnectClient::ListDefaultVocabularies(const List
         endpointResolutionOutcome.GetResult().AddPathSegments("/default-vocabulary-summary/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
         return ListDefaultVocabulariesOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListEntitySecurityProfilesOutcome ConnectClient::ListEntitySecurityProfiles(const ListEntitySecurityProfilesRequest& request) const {
+  AWS_OPERATION_GUARD(ListEntitySecurityProfiles);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEntitySecurityProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListEntitySecurityProfiles", "Required field: InstanceId, is not set");
+    return ListEntitySecurityProfilesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                  "Missing required field [InstanceId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListEntitySecurityProfiles, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListEntitySecurityProfiles, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListEntitySecurityProfiles",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListEntitySecurityProfilesOutcome>(
+      [&]() -> ListEntitySecurityProfilesOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListEntitySecurityProfiles, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/entity-security-profiles-summary/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+        return ListEntitySecurityProfilesOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -3056,1026 +4199,6 @@ ListQueueQuickConnectsOutcome ConnectClient::ListQueueQuickConnects(const ListQu
         endpointResolutionOutcome.GetResult().AddPathSegments("/quick-connects");
         return ListQueueQuickConnectsOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-ListQueuesOutcome ConnectClient::ListQueues(const ListQueuesRequest& request) const {
-  AWS_OPERATION_GUARD(ListQueues);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListQueues, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListQueues", "Required field: InstanceId, is not set");
-    return ListQueuesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                  "Missing required field [InstanceId]", false));
-  }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListQueues, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListQueues, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListQueues",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListQueuesOutcome>(
-      [&]() -> ListQueuesOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListQueues, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues-summary/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-        return ListQueuesOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-ListQuickConnectsOutcome ConnectClient::ListQuickConnects(const ListQuickConnectsRequest& request) const {
-  AWS_OPERATION_GUARD(ListQuickConnects);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListQuickConnects, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListQuickConnects", "Required field: InstanceId, is not set");
-    return ListQuickConnectsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                         "Missing required field [InstanceId]", false));
-  }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListQuickConnects, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListQuickConnects, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListQuickConnects",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListQuickConnectsOutcome>(
-      [&]() -> ListQuickConnectsOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListQuickConnects, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/quick-connects/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-        return ListQuickConnectsOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-ListRealtimeContactAnalysisSegmentsV2Outcome ConnectClient::ListRealtimeContactAnalysisSegmentsV2(
-    const ListRealtimeContactAnalysisSegmentsV2Request& request) const {
-  AWS_OPERATION_GUARD(ListRealtimeContactAnalysisSegmentsV2);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRealtimeContactAnalysisSegmentsV2, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListRealtimeContactAnalysisSegmentsV2", "Required field: InstanceId, is not set");
-    return ListRealtimeContactAnalysisSegmentsV2Outcome(Aws::Client::AWSError<ConnectErrors>(
-        ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
-  }
-  if (!request.ContactIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListRealtimeContactAnalysisSegmentsV2", "Required field: ContactId, is not set");
-    return ListRealtimeContactAnalysisSegmentsV2Outcome(Aws::Client::AWSError<ConnectErrors>(
-        ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContactId]", false));
-  }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListRealtimeContactAnalysisSegmentsV2, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListRealtimeContactAnalysisSegmentsV2, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListRealtimeContactAnalysisSegmentsV2",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListRealtimeContactAnalysisSegmentsV2Outcome>(
-      [&]() -> ListRealtimeContactAnalysisSegmentsV2Outcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRealtimeContactAnalysisSegmentsV2, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/contact/list-real-time-analysis-segments-v2/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContactId());
-        return ListRealtimeContactAnalysisSegmentsV2Outcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-ListRoutingProfileManualAssignmentQueuesOutcome ConnectClient::ListRoutingProfileManualAssignmentQueues(
-    const ListRoutingProfileManualAssignmentQueuesRequest& request) const {
-  AWS_OPERATION_GUARD(ListRoutingProfileManualAssignmentQueues);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRoutingProfileManualAssignmentQueues, CoreErrors,
-                          CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListRoutingProfileManualAssignmentQueues", "Required field: InstanceId, is not set");
-    return ListRoutingProfileManualAssignmentQueuesOutcome(Aws::Client::AWSError<ConnectErrors>(
-        ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
-  }
-  if (!request.RoutingProfileIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListRoutingProfileManualAssignmentQueues", "Required field: RoutingProfileId, is not set");
-    return ListRoutingProfileManualAssignmentQueuesOutcome(Aws::Client::AWSError<ConnectErrors>(
-        ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RoutingProfileId]", false));
-  }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListRoutingProfileManualAssignmentQueues, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListRoutingProfileManualAssignmentQueues, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListRoutingProfileManualAssignmentQueues",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListRoutingProfileManualAssignmentQueuesOutcome>(
-      [&]() -> ListRoutingProfileManualAssignmentQueuesOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRoutingProfileManualAssignmentQueues, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/routing-profiles/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRoutingProfileId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/manual-assignment-queues");
-        return ListRoutingProfileManualAssignmentQueuesOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-ListRoutingProfileQueuesOutcome ConnectClient::ListRoutingProfileQueues(const ListRoutingProfileQueuesRequest& request) const {
-  AWS_OPERATION_GUARD(ListRoutingProfileQueues);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRoutingProfileQueues, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListRoutingProfileQueues", "Required field: InstanceId, is not set");
-    return ListRoutingProfileQueuesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                                "Missing required field [InstanceId]", false));
-  }
-  if (!request.RoutingProfileIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListRoutingProfileQueues", "Required field: RoutingProfileId, is not set");
-    return ListRoutingProfileQueuesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                                "Missing required field [RoutingProfileId]", false));
-  }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListRoutingProfileQueues, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListRoutingProfileQueues, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListRoutingProfileQueues",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListRoutingProfileQueuesOutcome>(
-      [&]() -> ListRoutingProfileQueuesOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRoutingProfileQueues, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/routing-profiles/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRoutingProfileId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues");
-        return ListRoutingProfileQueuesOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-ListRoutingProfilesOutcome ConnectClient::ListRoutingProfiles(const ListRoutingProfilesRequest& request) const {
-  AWS_OPERATION_GUARD(ListRoutingProfiles);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRoutingProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListRoutingProfiles", "Required field: InstanceId, is not set");
-    return ListRoutingProfilesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                           "Missing required field [InstanceId]", false));
-  }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListRoutingProfiles, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListRoutingProfiles, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListRoutingProfiles",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListRoutingProfilesOutcome>(
-      [&]() -> ListRoutingProfilesOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRoutingProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/routing-profiles-summary/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-        return ListRoutingProfilesOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-ListRulesOutcome ConnectClient::ListRules(const ListRulesRequest& request) const {
-  AWS_OPERATION_GUARD(ListRules);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListRules", "Required field: InstanceId, is not set");
-    return ListRulesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                 "Missing required field [InstanceId]", false));
-  }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListRules, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListRules, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListRules",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListRulesOutcome>(
-      [&]() -> ListRulesOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/rules/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-        return ListRulesOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-ListSecurityKeysOutcome ConnectClient::ListSecurityKeys(const ListSecurityKeysRequest& request) const {
-  AWS_OPERATION_GUARD(ListSecurityKeys);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSecurityKeys, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListSecurityKeys", "Required field: InstanceId, is not set");
-    return ListSecurityKeysOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                        "Missing required field [InstanceId]", false));
-  }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListSecurityKeys, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListSecurityKeys, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListSecurityKeys",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListSecurityKeysOutcome>(
-      [&]() -> ListSecurityKeysOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSecurityKeys, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/instance/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/security-keys");
-        return ListSecurityKeysOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-ListSecurityProfileApplicationsOutcome ConnectClient::ListSecurityProfileApplications(
-    const ListSecurityProfileApplicationsRequest& request) const {
-  AWS_OPERATION_GUARD(ListSecurityProfileApplications);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSecurityProfileApplications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.SecurityProfileIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListSecurityProfileApplications", "Required field: SecurityProfileId, is not set");
-    return ListSecurityProfileApplicationsOutcome(Aws::Client::AWSError<ConnectErrors>(
-        ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SecurityProfileId]", false));
-  }
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListSecurityProfileApplications", "Required field: InstanceId, is not set");
-    return ListSecurityProfileApplicationsOutcome(Aws::Client::AWSError<ConnectErrors>(
-        ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
-  }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListSecurityProfileApplications, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListSecurityProfileApplications, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListSecurityProfileApplications",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListSecurityProfileApplicationsOutcome>(
-      [&]() -> ListSecurityProfileApplicationsOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSecurityProfileApplications, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/security-profiles-applications/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSecurityProfileId());
-        return ListSecurityProfileApplicationsOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-ListSecurityProfilePermissionsOutcome ConnectClient::ListSecurityProfilePermissions(
-    const ListSecurityProfilePermissionsRequest& request) const {
-  AWS_OPERATION_GUARD(ListSecurityProfilePermissions);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSecurityProfilePermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.SecurityProfileIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListSecurityProfilePermissions", "Required field: SecurityProfileId, is not set");
-    return ListSecurityProfilePermissionsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                                      "Missing required field [SecurityProfileId]", false));
-  }
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListSecurityProfilePermissions", "Required field: InstanceId, is not set");
-    return ListSecurityProfilePermissionsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                                      "Missing required field [InstanceId]", false));
-  }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListSecurityProfilePermissions, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListSecurityProfilePermissions, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListSecurityProfilePermissions",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListSecurityProfilePermissionsOutcome>(
-      [&]() -> ListSecurityProfilePermissionsOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSecurityProfilePermissions, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/security-profiles-permissions/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSecurityProfileId());
-        return ListSecurityProfilePermissionsOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-ListSecurityProfilesOutcome ConnectClient::ListSecurityProfiles(const ListSecurityProfilesRequest& request) const {
-  AWS_OPERATION_GUARD(ListSecurityProfiles);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSecurityProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListSecurityProfiles", "Required field: InstanceId, is not set");
-    return ListSecurityProfilesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                            "Missing required field [InstanceId]", false));
-  }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListSecurityProfiles, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListSecurityProfiles, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListSecurityProfiles",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListSecurityProfilesOutcome>(
-      [&]() -> ListSecurityProfilesOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSecurityProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/security-profiles-summary/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-        return ListSecurityProfilesOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-ListTagsForResourceOutcome ConnectClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  AWS_OPERATION_GUARD(ListTagsForResource);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.ResourceArnHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceArn, is not set");
-    return ListTagsForResourceOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                           "Missing required field [ResourceArn]", false));
-  }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListTagsForResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListTagsForResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListTagsForResource",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListTagsForResourceOutcome>(
-      [&]() -> ListTagsForResourceOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/tags/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
-        return ListTagsForResourceOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-ListTaskTemplatesOutcome ConnectClient::ListTaskTemplates(const ListTaskTemplatesRequest& request) const {
-  AWS_OPERATION_GUARD(ListTaskTemplates);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTaskTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListTaskTemplates", "Required field: InstanceId, is not set");
-    return ListTaskTemplatesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                         "Missing required field [InstanceId]", false));
-  }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListTaskTemplates, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListTaskTemplates, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListTaskTemplates",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListTaskTemplatesOutcome>(
-      [&]() -> ListTaskTemplatesOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTaskTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/instance/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/task/template");
-        return ListTaskTemplatesOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-ListTrafficDistributionGroupUsersOutcome ConnectClient::ListTrafficDistributionGroupUsers(
-    const ListTrafficDistributionGroupUsersRequest& request) const {
-  AWS_OPERATION_GUARD(ListTrafficDistributionGroupUsers);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTrafficDistributionGroupUsers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.TrafficDistributionGroupIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListTrafficDistributionGroupUsers", "Required field: TrafficDistributionGroupId, is not set");
-    return ListTrafficDistributionGroupUsersOutcome(Aws::Client::AWSError<ConnectErrors>(
-        ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TrafficDistributionGroupId]", false));
-  }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListTrafficDistributionGroupUsers, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListTrafficDistributionGroupUsers, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListTrafficDistributionGroupUsers",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListTrafficDistributionGroupUsersOutcome>(
-      [&]() -> ListTrafficDistributionGroupUsersOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTrafficDistributionGroupUsers, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/traffic-distribution-group/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTrafficDistributionGroupId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/user");
-        return ListTrafficDistributionGroupUsersOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-ListTrafficDistributionGroupsOutcome ConnectClient::ListTrafficDistributionGroups(
-    const ListTrafficDistributionGroupsRequest& request) const {
-  AWS_OPERATION_GUARD(ListTrafficDistributionGroups);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTrafficDistributionGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListTrafficDistributionGroups, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListTrafficDistributionGroups, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListTrafficDistributionGroups",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListTrafficDistributionGroupsOutcome>(
-      [&]() -> ListTrafficDistributionGroupsOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTrafficDistributionGroups, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/traffic-distribution-groups");
-        return ListTrafficDistributionGroupsOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-ListUseCasesOutcome ConnectClient::ListUseCases(const ListUseCasesRequest& request) const {
-  AWS_OPERATION_GUARD(ListUseCases);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListUseCases, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListUseCases", "Required field: InstanceId, is not set");
-    return ListUseCasesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                    "Missing required field [InstanceId]", false));
-  }
-  if (!request.IntegrationAssociationIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListUseCases", "Required field: IntegrationAssociationId, is not set");
-    return ListUseCasesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                    "Missing required field [IntegrationAssociationId]", false));
-  }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListUseCases, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListUseCases, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListUseCases",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListUseCasesOutcome>(
-      [&]() -> ListUseCasesOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListUseCases, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/instance/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/integration-associations/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIntegrationAssociationId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/use-cases");
-        return ListUseCasesOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-ListUserHierarchyGroupsOutcome ConnectClient::ListUserHierarchyGroups(const ListUserHierarchyGroupsRequest& request) const {
-  AWS_OPERATION_GUARD(ListUserHierarchyGroups);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListUserHierarchyGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListUserHierarchyGroups", "Required field: InstanceId, is not set");
-    return ListUserHierarchyGroupsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                               "Missing required field [InstanceId]", false));
-  }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListUserHierarchyGroups, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListUserHierarchyGroups, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListUserHierarchyGroups",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListUserHierarchyGroupsOutcome>(
-      [&]() -> ListUserHierarchyGroupsOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListUserHierarchyGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/user-hierarchy-groups-summary/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-        return ListUserHierarchyGroupsOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-ListUserProficienciesOutcome ConnectClient::ListUserProficiencies(const ListUserProficienciesRequest& request) const {
-  AWS_OPERATION_GUARD(ListUserProficiencies);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListUserProficiencies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListUserProficiencies", "Required field: InstanceId, is not set");
-    return ListUserProficienciesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                             "Missing required field [InstanceId]", false));
-  }
-  if (!request.UserIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListUserProficiencies", "Required field: UserId, is not set");
-    return ListUserProficienciesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                             "Missing required field [UserId]", false));
-  }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListUserProficiencies, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListUserProficiencies, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListUserProficiencies",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListUserProficienciesOutcome>(
-      [&]() -> ListUserProficienciesOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListUserProficiencies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/users/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/proficiencies");
-        return ListUserProficienciesOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-ListUsersOutcome ConnectClient::ListUsers(const ListUsersRequest& request) const {
-  AWS_OPERATION_GUARD(ListUsers);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListUsers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListUsers", "Required field: InstanceId, is not set");
-    return ListUsersOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                 "Missing required field [InstanceId]", false));
-  }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListUsers, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListUsers, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListUsers",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListUsersOutcome>(
-      [&]() -> ListUsersOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListUsers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/users-summary/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-        return ListUsersOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-ListViewVersionsOutcome ConnectClient::ListViewVersions(const ListViewVersionsRequest& request) const {
-  AWS_OPERATION_GUARD(ListViewVersions);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListViewVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListViewVersions", "Required field: InstanceId, is not set");
-    return ListViewVersionsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                        "Missing required field [InstanceId]", false));
-  }
-  if (!request.ViewIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListViewVersions", "Required field: ViewId, is not set");
-    return ListViewVersionsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                        "Missing required field [ViewId]", false));
-  }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListViewVersions, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListViewVersions, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListViewVersions",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListViewVersionsOutcome>(
-      [&]() -> ListViewVersionsOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListViewVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/views/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetViewId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
-        return ListViewVersionsOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-ListViewsOutcome ConnectClient::ListViews(const ListViewsRequest& request) const {
-  AWS_OPERATION_GUARD(ListViews);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListViews, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListViews", "Required field: InstanceId, is not set");
-    return ListViewsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                 "Missing required field [InstanceId]", false));
-  }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListViews, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListViews, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListViews",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListViewsOutcome>(
-      [&]() -> ListViewsOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListViews, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/views/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-        return ListViewsOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-MonitorContactOutcome ConnectClient::MonitorContact(const MonitorContactRequest& request) const {
-  AWS_OPERATION_GUARD(MonitorContact);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, MonitorContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, MonitorContact, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, MonitorContact, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".MonitorContact",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<MonitorContactOutcome>(
-      [&]() -> MonitorContactOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, MonitorContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/contact/monitor");
-        return MonitorContactOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-PauseContactOutcome ConnectClient::PauseContact(const PauseContactRequest& request) const {
-  AWS_OPERATION_GUARD(PauseContact);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PauseContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, PauseContact, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, PauseContact, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".PauseContact",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<PauseContactOutcome>(
-      [&]() -> PauseContactOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PauseContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/contact/pause");
-        return PauseContactOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-PutUserStatusOutcome ConnectClient::PutUserStatus(const PutUserStatusRequest& request) const {
-  AWS_OPERATION_GUARD(PutUserStatus);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutUserStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.UserIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("PutUserStatus", "Required field: UserId, is not set");
-    return PutUserStatusOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                     "Missing required field [UserId]", false));
-  }
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("PutUserStatus", "Required field: InstanceId, is not set");
-    return PutUserStatusOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                     "Missing required field [InstanceId]", false));
-  }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, PutUserStatus, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, PutUserStatus, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".PutUserStatus",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<PutUserStatusOutcome>(
-      [&]() -> PutUserStatusOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutUserStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/users/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/status");
-        return PutUserStatusOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-ReleasePhoneNumberOutcome ConnectClient::ReleasePhoneNumber(const ReleasePhoneNumberRequest& request) const {
-  AWS_OPERATION_GUARD(ReleasePhoneNumber);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ReleasePhoneNumber, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.PhoneNumberIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ReleasePhoneNumber", "Required field: PhoneNumberId, is not set");
-    return ReleasePhoneNumberOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                          "Missing required field [PhoneNumberId]", false));
-  }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ReleasePhoneNumber, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ReleasePhoneNumber, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ReleasePhoneNumber",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ReleasePhoneNumberOutcome>(
-      [&]() -> ReleasePhoneNumberOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ReleasePhoneNumber, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/phone-number/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPhoneNumberId());
-        return ReleasePhoneNumberOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-ReplicateInstanceOutcome ConnectClient::ReplicateInstance(const ReplicateInstanceRequest& request) const {
-  AWS_OPERATION_GUARD(ReplicateInstance);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ReplicateInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ReplicateInstance", "Required field: InstanceId, is not set");
-    return ReplicateInstanceOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                         "Missing required field [InstanceId]", false));
-  }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ReplicateInstance, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ReplicateInstance, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ReplicateInstance",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ReplicateInstanceOutcome>(
-      [&]() -> ReplicateInstanceOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ReplicateInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/instance/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/replicate");
-        return ReplicateInstanceOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-ResumeContactOutcome ConnectClient::ResumeContact(const ResumeContactRequest& request) const {
-  AWS_OPERATION_GUARD(ResumeContact);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ResumeContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ResumeContact, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ResumeContact, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ResumeContact",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ResumeContactOutcome>(
-      [&]() -> ResumeContactOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ResumeContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/contact/resume");
-        return ResumeContactOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

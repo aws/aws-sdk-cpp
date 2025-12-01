@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/customer-profiles/CustomerProfilesRequest.h>
 #include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
+#include <aws/customer-profiles/model/DataStoreRequest.h>
 #include <aws/customer-profiles/model/MatchingRequest.h>
 #include <aws/customer-profiles/model/RuleBasedMatchingRequest.h>
 
@@ -162,6 +163,24 @@ class UpdateDomainRequest : public CustomerProfilesRequest {
 
   ///@{
   /**
+   * <p>Set to true to enabled data store for this domain.</p>
+   */
+  inline const DataStoreRequest& GetDataStore() const { return m_dataStore; }
+  inline bool DataStoreHasBeenSet() const { return m_dataStoreHasBeenSet; }
+  template <typename DataStoreT = DataStoreRequest>
+  void SetDataStore(DataStoreT&& value) {
+    m_dataStoreHasBeenSet = true;
+    m_dataStore = std::forward<DataStoreT>(value);
+  }
+  template <typename DataStoreT = DataStoreRequest>
+  UpdateDomainRequest& WithDataStore(DataStoreT&& value) {
+    SetDataStore(std::forward<DataStoreT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The tags used to organize, track, or control access for this resource.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
@@ -201,6 +220,9 @@ class UpdateDomainRequest : public CustomerProfilesRequest {
 
   RuleBasedMatchingRequest m_ruleBasedMatching;
   bool m_ruleBasedMatchingHasBeenSet = false;
+
+  DataStoreRequest m_dataStore;
+  bool m_dataStoreHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_tagsHasBeenSet = false;

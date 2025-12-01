@@ -29,6 +29,10 @@ CreateEngagementResult& CreateEngagementResult::operator=(const Aws::AmazonWebSe
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ModifiedAt")) {
+    m_modifiedAt = jsonValue.GetString("ModifiedAt");
+    m_modifiedAtHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

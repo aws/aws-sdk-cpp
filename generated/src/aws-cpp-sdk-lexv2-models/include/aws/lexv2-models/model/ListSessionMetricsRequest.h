@@ -146,7 +146,7 @@ class ListSessionMetricsRequest : public LexModelsV2Request {
   /**
    * <p>A list of objects, each of which specifies how to group the results. You can
    * group by the following criteria:</p> <ul> <li> <p>
-   * <code>ConversationEndState</code> – The final state of the conversation. The
+   * <code>ConversationEndState</code> ��� The final state of the conversation. The
    * possible end states are detailed in <a
    * href="https://docs.aws.amazon.com/analytics-key-definitions-conversations">Key
    * definitions</a> in the user guide.</p> </li> <li> <p> <code>LocaleId</code> –

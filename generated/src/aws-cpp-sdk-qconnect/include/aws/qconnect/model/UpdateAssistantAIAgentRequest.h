@@ -5,10 +5,12 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qconnect/QConnectRequest.h>
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/qconnect/model/AIAgentConfigurationData.h>
 #include <aws/qconnect/model/AIAgentType.h>
+#include <aws/qconnect/model/OrchestratorConfigurationEntry.h>
 
 #include <utility>
 
@@ -84,6 +86,33 @@ class UpdateAssistantAIAgentRequest : public QConnectRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The updated list of orchestrator configurations for the assistant AI
+   * Agent.</p>
+   */
+  inline const Aws::Vector<OrchestratorConfigurationEntry>& GetOrchestratorConfigurationList() const {
+    return m_orchestratorConfigurationList;
+  }
+  inline bool OrchestratorConfigurationListHasBeenSet() const { return m_orchestratorConfigurationListHasBeenSet; }
+  template <typename OrchestratorConfigurationListT = Aws::Vector<OrchestratorConfigurationEntry>>
+  void SetOrchestratorConfigurationList(OrchestratorConfigurationListT&& value) {
+    m_orchestratorConfigurationListHasBeenSet = true;
+    m_orchestratorConfigurationList = std::forward<OrchestratorConfigurationListT>(value);
+  }
+  template <typename OrchestratorConfigurationListT = Aws::Vector<OrchestratorConfigurationEntry>>
+  UpdateAssistantAIAgentRequest& WithOrchestratorConfigurationList(OrchestratorConfigurationListT&& value) {
+    SetOrchestratorConfigurationList(std::forward<OrchestratorConfigurationListT>(value));
+    return *this;
+  }
+  template <typename OrchestratorConfigurationListT = OrchestratorConfigurationEntry>
+  UpdateAssistantAIAgentRequest& AddOrchestratorConfigurationList(OrchestratorConfigurationListT&& value) {
+    m_orchestratorConfigurationListHasBeenSet = true;
+    m_orchestratorConfigurationList.emplace_back(std::forward<OrchestratorConfigurationListT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_assistantId;
   bool m_assistantIdHasBeenSet = false;
@@ -93,6 +122,9 @@ class UpdateAssistantAIAgentRequest : public QConnectRequest {
 
   AIAgentConfigurationData m_configuration;
   bool m_configurationHasBeenSet = false;
+
+  Aws::Vector<OrchestratorConfigurationEntry> m_orchestratorConfigurationList;
+  bool m_orchestratorConfigurationListHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -18,13 +18,13 @@ namespace Model {
 ScheduleItem::ScheduleItem(JsonView jsonValue) { *this = jsonValue; }
 
 ScheduleItem& ScheduleItem::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("chargeAmount")) {
-    m_chargeAmount = jsonValue.GetString("chargeAmount");
-    m_chargeAmountHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("chargeDate")) {
     m_chargeDate = jsonValue.GetDouble("chargeDate");
     m_chargeDateHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("chargeAmount")) {
+    m_chargeAmount = jsonValue.GetString("chargeAmount");
+    m_chargeAmountHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ ScheduleItem& ScheduleItem::operator=(JsonView jsonValue) {
 JsonValue ScheduleItem::Jsonize() const {
   JsonValue payload;
 
-  if (m_chargeAmountHasBeenSet) {
-    payload.WithString("chargeAmount", m_chargeAmount);
-  }
-
   if (m_chargeDateHasBeenSet) {
     payload.WithDouble("chargeDate", m_chargeDate.SecondsWithMSPrecision());
+  }
+
+  if (m_chargeAmountHasBeenSet) {
+    payload.WithString("chargeAmount", m_chargeAmount);
   }
 
   return payload;

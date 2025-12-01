@@ -482,7 +482,25 @@ class Table {
   ///@}
 
   ///@{
+  /**
+   * <p>Indicates a table is a <code>MaterializedView</code>.</p>
+   */
+  inline bool GetIsMaterializedView() const { return m_isMaterializedView; }
+  inline bool IsMaterializedViewHasBeenSet() const { return m_isMaterializedViewHasBeenSet; }
+  inline void SetIsMaterializedView(bool value) {
+    m_isMaterializedViewHasBeenSet = true;
+    m_isMaterializedView = value;
+  }
+  inline Table& WithIsMaterializedView(bool value) {
+    SetIsMaterializedView(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>Indicates the the state of an asynchronous change to a table.</p>
+   */
   inline const TableStatus& GetStatus() const { return *m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
   template <typename StatusT = TableStatus>
@@ -565,6 +583,9 @@ class Table {
 
   bool m_isMultiDialectView{false};
   bool m_isMultiDialectViewHasBeenSet = false;
+
+  bool m_isMaterializedView{false};
+  bool m_isMaterializedViewHasBeenSet = false;
 
   std::shared_ptr<TableStatus> m_status;
   bool m_statusHasBeenSet = false;

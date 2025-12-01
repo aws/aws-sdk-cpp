@@ -18,6 +18,10 @@ namespace Model {
 FlowTraceNodeInputSource::FlowTraceNodeInputSource(JsonView jsonValue) { *this = jsonValue; }
 
 FlowTraceNodeInputSource& FlowTraceNodeInputSource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("expression")) {
+    m_expression = jsonValue.GetString("expression");
+    m_expressionHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("nodeName")) {
     m_nodeName = jsonValue.GetString("nodeName");
     m_nodeNameHasBeenSet = true;
@@ -26,15 +30,15 @@ FlowTraceNodeInputSource& FlowTraceNodeInputSource::operator=(JsonView jsonValue
     m_outputFieldName = jsonValue.GetString("outputFieldName");
     m_outputFieldNameHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("expression")) {
-    m_expression = jsonValue.GetString("expression");
-    m_expressionHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue FlowTraceNodeInputSource::Jsonize() const {
   JsonValue payload;
+
+  if (m_expressionHasBeenSet) {
+    payload.WithString("expression", m_expression);
+  }
 
   if (m_nodeNameHasBeenSet) {
     payload.WithString("nodeName", m_nodeName);
@@ -42,10 +46,6 @@ JsonValue FlowTraceNodeInputSource::Jsonize() const {
 
   if (m_outputFieldNameHasBeenSet) {
     payload.WithString("outputFieldName", m_outputFieldName);
-  }
-
-  if (m_expressionHasBeenSet) {
-    payload.WithString("expression", m_expression);
   }
 
   return payload;

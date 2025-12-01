@@ -18,13 +18,9 @@ namespace Model {
 RetrievalResultContent::RetrievalResultContent(JsonView jsonValue) { *this = jsonValue; }
 
 RetrievalResultContent& RetrievalResultContent::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("type")) {
-    m_type = RetrievalResultContentTypeMapper::GetRetrievalResultContentTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("text")) {
-    m_text = jsonValue.GetString("text");
-    m_textHasBeenSet = true;
+  if (jsonValue.ValueExists("audio")) {
+    m_audio = jsonValue.GetObject("audio");
+    m_audioHasBeenSet = true;
   }
   if (jsonValue.ValueExists("byteContent")) {
     m_byteContent = jsonValue.GetString("byteContent");
@@ -37,18 +33,26 @@ RetrievalResultContent& RetrievalResultContent::operator=(JsonView jsonValue) {
     }
     m_rowHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("text")) {
+    m_text = jsonValue.GetString("text");
+    m_textHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("type")) {
+    m_type = RetrievalResultContentTypeMapper::GetRetrievalResultContentTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("video")) {
+    m_video = jsonValue.GetObject("video");
+    m_videoHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue RetrievalResultContent::Jsonize() const {
   JsonValue payload;
 
-  if (m_typeHasBeenSet) {
-    payload.WithString("type", RetrievalResultContentTypeMapper::GetNameForRetrievalResultContentType(m_type));
-  }
-
-  if (m_textHasBeenSet) {
-    payload.WithString("text", m_text);
+  if (m_audioHasBeenSet) {
+    payload.WithObject("audio", m_audio.Jsonize());
   }
 
   if (m_byteContentHasBeenSet) {
@@ -61,6 +65,18 @@ JsonValue RetrievalResultContent::Jsonize() const {
       rowJsonList[rowIndex].AsObject(m_row[rowIndex].Jsonize());
     }
     payload.WithArray("row", std::move(rowJsonList));
+  }
+
+  if (m_textHasBeenSet) {
+    payload.WithString("text", m_text);
+  }
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", RetrievalResultContentTypeMapper::GetNameForRetrievalResultContentType(m_type));
+  }
+
+  if (m_videoHasBeenSet) {
+    payload.WithObject("video", m_video.Jsonize());
   }
 
   return payload;

@@ -66,6 +66,23 @@ EvaluationSearchMetadata& EvaluationSearchMetadata::operator=(JsonView jsonValue
     m_acknowledgerComment = jsonValue.GetString("AcknowledgerComment");
     m_acknowledgerCommentHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SamplingJobId")) {
+    m_samplingJobId = jsonValue.GetString("SamplingJobId");
+    m_samplingJobIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ReviewId")) {
+    m_reviewId = jsonValue.GetString("ReviewId");
+    m_reviewIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ContactParticipantRole")) {
+    m_contactParticipantRole =
+        ContactParticipantRoleMapper::GetContactParticipantRoleForName(jsonValue.GetString("ContactParticipantRole"));
+    m_contactParticipantRoleHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ContactParticipantId")) {
+    m_contactParticipantId = jsonValue.GetString("ContactParticipantId");
+    m_contactParticipantIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -118,6 +135,22 @@ JsonValue EvaluationSearchMetadata::Jsonize() const {
 
   if (m_acknowledgerCommentHasBeenSet) {
     payload.WithString("AcknowledgerComment", m_acknowledgerComment);
+  }
+
+  if (m_samplingJobIdHasBeenSet) {
+    payload.WithString("SamplingJobId", m_samplingJobId);
+  }
+
+  if (m_reviewIdHasBeenSet) {
+    payload.WithString("ReviewId", m_reviewId);
+  }
+
+  if (m_contactParticipantRoleHasBeenSet) {
+    payload.WithString("ContactParticipantRole", ContactParticipantRoleMapper::GetNameForContactParticipantRole(m_contactParticipantRole));
+  }
+
+  if (m_contactParticipantIdHasBeenSet) {
+    payload.WithString("ContactParticipantId", m_contactParticipantId);
   }
 
   return payload;

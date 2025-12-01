@@ -18,13 +18,13 @@ namespace Model {
 TextToSqlConfiguration::TextToSqlConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
 TextToSqlConfiguration& TextToSqlConfiguration::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("type")) {
-    m_type = TextToSqlConfigurationTypeMapper::GetTextToSqlConfigurationTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("knowledgeBaseConfiguration")) {
     m_knowledgeBaseConfiguration = jsonValue.GetObject("knowledgeBaseConfiguration");
     m_knowledgeBaseConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("type")) {
+    m_type = TextToSqlConfigurationTypeMapper::GetTextToSqlConfigurationTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ TextToSqlConfiguration& TextToSqlConfiguration::operator=(JsonView jsonValue) {
 JsonValue TextToSqlConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if (m_typeHasBeenSet) {
-    payload.WithString("type", TextToSqlConfigurationTypeMapper::GetNameForTextToSqlConfigurationType(m_type));
-  }
-
   if (m_knowledgeBaseConfigurationHasBeenSet) {
     payload.WithObject("knowledgeBaseConfiguration", m_knowledgeBaseConfiguration.Jsonize());
+  }
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", TextToSqlConfigurationTypeMapper::GetNameForTextToSqlConfigurationType(m_type));
   }
 
   return payload;

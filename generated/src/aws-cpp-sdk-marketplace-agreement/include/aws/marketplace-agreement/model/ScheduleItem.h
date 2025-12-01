@@ -35,24 +35,6 @@ class ScheduleItem {
 
   ///@{
   /**
-   * <p>The price that the customer would pay on the scheduled date (chargeDate).</p>
-   */
-  inline const Aws::String& GetChargeAmount() const { return m_chargeAmount; }
-  inline bool ChargeAmountHasBeenSet() const { return m_chargeAmountHasBeenSet; }
-  template <typename ChargeAmountT = Aws::String>
-  void SetChargeAmount(ChargeAmountT&& value) {
-    m_chargeAmountHasBeenSet = true;
-    m_chargeAmount = std::forward<ChargeAmountT>(value);
-  }
-  template <typename ChargeAmountT = Aws::String>
-  ScheduleItem& WithChargeAmount(ChargeAmountT&& value) {
-    SetChargeAmount(std::forward<ChargeAmountT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The date that the customer would pay the price defined in this payment
    * schedule term. Invoices are generated on the date provided.</p>
    */
@@ -69,12 +51,30 @@ class ScheduleItem {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_chargeAmount;
-  bool m_chargeAmountHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>The price that the customer would pay on the scheduled date (chargeDate).</p>
+   */
+  inline const Aws::String& GetChargeAmount() const { return m_chargeAmount; }
+  inline bool ChargeAmountHasBeenSet() const { return m_chargeAmountHasBeenSet; }
+  template <typename ChargeAmountT = Aws::String>
+  void SetChargeAmount(ChargeAmountT&& value) {
+    m_chargeAmountHasBeenSet = true;
+    m_chargeAmount = std::forward<ChargeAmountT>(value);
+  }
+  template <typename ChargeAmountT = Aws::String>
+  ScheduleItem& WithChargeAmount(ChargeAmountT&& value) {
+    SetChargeAmount(std::forward<ChargeAmountT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::Utils::DateTime m_chargeDate{};
   bool m_chargeDateHasBeenSet = false;
+
+  Aws::String m_chargeAmount;
+  bool m_chargeAmountHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/appintegrations/AppIntegrationsService_EXPORTS.h>
+#include <aws/appintegrations/model/ApplicationType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -142,16 +143,16 @@ class ApplicationSummary {
 
   ///@{
   /**
-   * <p>Indicates whether the application is a service.</p>
+   * <p>The type of application.</p>
    */
-  inline bool GetIsService() const { return m_isService; }
-  inline bool IsServiceHasBeenSet() const { return m_isServiceHasBeenSet; }
-  inline void SetIsService(bool value) {
-    m_isServiceHasBeenSet = true;
-    m_isService = value;
+  inline ApplicationType GetApplicationType() const { return m_applicationType; }
+  inline bool ApplicationTypeHasBeenSet() const { return m_applicationTypeHasBeenSet; }
+  inline void SetApplicationType(ApplicationType value) {
+    m_applicationTypeHasBeenSet = true;
+    m_applicationType = value;
   }
-  inline ApplicationSummary& WithIsService(bool value) {
-    SetIsService(value);
+  inline ApplicationSummary& WithApplicationType(ApplicationType value) {
+    SetApplicationType(value);
     return *this;
   }
   ///@}
@@ -174,8 +175,8 @@ class ApplicationSummary {
   Aws::Utils::DateTime m_lastModifiedTime{};
   bool m_lastModifiedTimeHasBeenSet = false;
 
-  bool m_isService{false};
-  bool m_isServiceHasBeenSet = false;
+  ApplicationType m_applicationType{ApplicationType::NOT_SET};
+  bool m_applicationTypeHasBeenSet = false;
 };
 
 }  // namespace Model

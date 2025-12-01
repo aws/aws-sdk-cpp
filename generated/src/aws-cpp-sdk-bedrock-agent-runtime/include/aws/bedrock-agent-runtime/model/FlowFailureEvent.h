@@ -37,24 +37,6 @@ class FlowFailureEvent {
 
   ///@{
   /**
-   * <p>The timestamp when the failure occurred.</p>
-   */
-  inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
-  inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-  template <typename TimestampT = Aws::Utils::DateTime>
-  void SetTimestamp(TimestampT&& value) {
-    m_timestampHasBeenSet = true;
-    m_timestamp = std::forward<TimestampT>(value);
-  }
-  template <typename TimestampT = Aws::Utils::DateTime>
-  FlowFailureEvent& WithTimestamp(TimestampT&& value) {
-    SetTimestamp(std::forward<TimestampT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The error code that identifies the type of failure that occurred.</p>
    */
   inline FlowErrorCode GetErrorCode() const { return m_errorCode; }
@@ -86,15 +68,33 @@ class FlowFailureEvent {
     return *this;
   }
   ///@}
- private:
-  Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>The timestamp when the failure occurred.</p>
+   */
+  inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
+  inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
+  template <typename TimestampT = Aws::Utils::DateTime>
+  void SetTimestamp(TimestampT&& value) {
+    m_timestampHasBeenSet = true;
+    m_timestamp = std::forward<TimestampT>(value);
+  }
+  template <typename TimestampT = Aws::Utils::DateTime>
+  FlowFailureEvent& WithTimestamp(TimestampT&& value) {
+    SetTimestamp(std::forward<TimestampT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   FlowErrorCode m_errorCode{FlowErrorCode::NOT_SET};
   bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
   bool m_errorMessageHasBeenSet = false;
+
+  Aws::Utils::DateTime m_timestamp{};
+  bool m_timestampHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -6,7 +6,9 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
+#include <aws/partnercentral-selling/model/EngagementContextType.h>
 
 #include <utility>
 
@@ -138,6 +140,69 @@ class EngagementSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp indicating when the engagement was last modified, in ISO 8601
+   * format (UTC). Example: "2023-05-01T20:37:46Z".</p>
+   */
+  inline const Aws::Utils::DateTime& GetModifiedAt() const { return m_modifiedAt; }
+  inline bool ModifiedAtHasBeenSet() const { return m_modifiedAtHasBeenSet; }
+  template <typename ModifiedAtT = Aws::Utils::DateTime>
+  void SetModifiedAt(ModifiedAtT&& value) {
+    m_modifiedAtHasBeenSet = true;
+    m_modifiedAt = std::forward<ModifiedAtT>(value);
+  }
+  template <typename ModifiedAtT = Aws::Utils::DateTime>
+  EngagementSummary& WithModifiedAt(ModifiedAtT&& value) {
+    SetModifiedAt(std::forward<ModifiedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The AWS account ID of the user who last modified the engagement. This field
+   * helps track who made the most recent changes to the engagement.</p>
+   */
+  inline const Aws::String& GetModifiedBy() const { return m_modifiedBy; }
+  inline bool ModifiedByHasBeenSet() const { return m_modifiedByHasBeenSet; }
+  template <typename ModifiedByT = Aws::String>
+  void SetModifiedBy(ModifiedByT&& value) {
+    m_modifiedByHasBeenSet = true;
+    m_modifiedBy = std::forward<ModifiedByT>(value);
+  }
+  template <typename ModifiedByT = Aws::String>
+  EngagementSummary& WithModifiedBy(ModifiedByT&& value) {
+    SetModifiedBy(std::forward<ModifiedByT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An array of context types associated with the engagement, such as
+   * "CustomerProject" or "Lead". This provides a quick overview of the types of
+   * contexts included in the engagement.</p>
+   */
+  inline const Aws::Vector<EngagementContextType>& GetContextTypes() const { return m_contextTypes; }
+  inline bool ContextTypesHasBeenSet() const { return m_contextTypesHasBeenSet; }
+  template <typename ContextTypesT = Aws::Vector<EngagementContextType>>
+  void SetContextTypes(ContextTypesT&& value) {
+    m_contextTypesHasBeenSet = true;
+    m_contextTypes = std::forward<ContextTypesT>(value);
+  }
+  template <typename ContextTypesT = Aws::Vector<EngagementContextType>>
+  EngagementSummary& WithContextTypes(ContextTypesT&& value) {
+    SetContextTypes(std::forward<ContextTypesT>(value));
+    return *this;
+  }
+  inline EngagementSummary& AddContextTypes(EngagementContextType value) {
+    m_contextTypesHasBeenSet = true;
+    m_contextTypes.push_back(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
   bool m_arnHasBeenSet = false;
@@ -156,6 +221,15 @@ class EngagementSummary {
 
   int m_memberCount{0};
   bool m_memberCountHasBeenSet = false;
+
+  Aws::Utils::DateTime m_modifiedAt{};
+  bool m_modifiedAtHasBeenSet = false;
+
+  Aws::String m_modifiedBy;
+  bool m_modifiedByHasBeenSet = false;
+
+  Aws::Vector<EngagementContextType> m_contextTypes;
+  bool m_contextTypesHasBeenSet = false;
 };
 
 }  // namespace Model

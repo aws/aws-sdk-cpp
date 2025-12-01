@@ -18,13 +18,13 @@ namespace Model {
 RerankingConfiguration::RerankingConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
 RerankingConfiguration& RerankingConfiguration::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("type")) {
-    m_type = RerankingConfigurationTypeMapper::GetRerankingConfigurationTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("bedrockRerankingConfiguration")) {
     m_bedrockRerankingConfiguration = jsonValue.GetObject("bedrockRerankingConfiguration");
     m_bedrockRerankingConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("type")) {
+    m_type = RerankingConfigurationTypeMapper::GetRerankingConfigurationTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ RerankingConfiguration& RerankingConfiguration::operator=(JsonView jsonValue) {
 JsonValue RerankingConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if (m_typeHasBeenSet) {
-    payload.WithString("type", RerankingConfigurationTypeMapper::GetNameForRerankingConfigurationType(m_type));
-  }
-
   if (m_bedrockRerankingConfigurationHasBeenSet) {
     payload.WithObject("bedrockRerankingConfiguration", m_bedrockRerankingConfiguration.Jsonize());
+  }
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", RerankingConfigurationTypeMapper::GetNameForRerankingConfigurationType(m_type));
   }
 
   return payload;

@@ -10,6 +10,7 @@
 #include <aws/marketplace-catalog/model/DataProductFilters.h>
 #include <aws/marketplace-catalog/model/MachineLearningProductFilters.h>
 #include <aws/marketplace-catalog/model/OfferFilters.h>
+#include <aws/marketplace-catalog/model/OfferSetFilters.h>
 #include <aws/marketplace-catalog/model/ResaleAuthorizationFilters.h>
 #include <aws/marketplace-catalog/model/SaaSProductFilters.h>
 
@@ -161,6 +162,24 @@ class EntityTypeFilters {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A filter for offer sets.</p>
+   */
+  inline const OfferSetFilters& GetOfferSetFilters() const { return m_offerSetFilters; }
+  inline bool OfferSetFiltersHasBeenSet() const { return m_offerSetFiltersHasBeenSet; }
+  template <typename OfferSetFiltersT = OfferSetFilters>
+  void SetOfferSetFilters(OfferSetFiltersT&& value) {
+    m_offerSetFiltersHasBeenSet = true;
+    m_offerSetFilters = std::forward<OfferSetFiltersT>(value);
+  }
+  template <typename OfferSetFiltersT = OfferSetFilters>
+  EntityTypeFilters& WithOfferSetFilters(OfferSetFiltersT&& value) {
+    SetOfferSetFilters(std::forward<OfferSetFiltersT>(value));
+    return *this;
+  }
+  ///@}
  private:
   DataProductFilters m_dataProductFilters;
   bool m_dataProductFiltersHasBeenSet = false;
@@ -182,6 +201,9 @@ class EntityTypeFilters {
 
   MachineLearningProductFilters m_machineLearningProductFilters;
   bool m_machineLearningProductFiltersHasBeenSet = false;
+
+  OfferSetFilters m_offerSetFilters;
+  bool m_offerSetFiltersHasBeenSet = false;
 };
 
 }  // namespace Model

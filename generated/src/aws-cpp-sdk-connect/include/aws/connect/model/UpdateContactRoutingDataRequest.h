@@ -107,7 +107,7 @@ class UpdateContactRoutingDataRequest : public ConnectRequest {
   ///@{
   /**
    * <p>Updates the routing criteria on the contact. These properties can be used to
-   * change how a&#x2028; contact is routed within the queue.</p>
+   * change how a contact is routed within the queue.</p>
    */
   inline const RoutingCriteriaInput& GetRoutingCriteria() const { return m_routingCriteria; }
   inline bool RoutingCriteriaHasBeenSet() const { return m_routingCriteriaHasBeenSet; }

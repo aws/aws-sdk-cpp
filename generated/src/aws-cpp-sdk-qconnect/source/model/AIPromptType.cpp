@@ -24,6 +24,9 @@ static const int EMAIL_RESPONSE_HASH = HashingUtils::HashString("EMAIL_RESPONSE"
 static const int EMAIL_OVERVIEW_HASH = HashingUtils::HashString("EMAIL_OVERVIEW");
 static const int EMAIL_GENERATIVE_ANSWER_HASH = HashingUtils::HashString("EMAIL_GENERATIVE_ANSWER");
 static const int EMAIL_QUERY_REFORMULATION_HASH = HashingUtils::HashString("EMAIL_QUERY_REFORMULATION");
+static const int ORCHESTRATION_HASH = HashingUtils::HashString("ORCHESTRATION");
+static const int NOTE_TAKING_HASH = HashingUtils::HashString("NOTE_TAKING");
+static const int CASE_SUMMARIZATION_HASH = HashingUtils::HashString("CASE_SUMMARIZATION");
 
 AIPromptType GetAIPromptTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -45,6 +48,12 @@ AIPromptType GetAIPromptTypeForName(const Aws::String& name) {
     return AIPromptType::EMAIL_GENERATIVE_ANSWER;
   } else if (hashCode == EMAIL_QUERY_REFORMULATION_HASH) {
     return AIPromptType::EMAIL_QUERY_REFORMULATION;
+  } else if (hashCode == ORCHESTRATION_HASH) {
+    return AIPromptType::ORCHESTRATION;
+  } else if (hashCode == NOTE_TAKING_HASH) {
+    return AIPromptType::NOTE_TAKING;
+  } else if (hashCode == CASE_SUMMARIZATION_HASH) {
+    return AIPromptType::CASE_SUMMARIZATION;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -77,6 +86,12 @@ Aws::String GetNameForAIPromptType(AIPromptType enumValue) {
       return "EMAIL_GENERATIVE_ANSWER";
     case AIPromptType::EMAIL_QUERY_REFORMULATION:
       return "EMAIL_QUERY_REFORMULATION";
+    case AIPromptType::ORCHESTRATION:
+      return "ORCHESTRATION";
+    case AIPromptType::NOTE_TAKING:
+      return "NOTE_TAKING";
+    case AIPromptType::CASE_SUMMARIZATION:
+      return "CASE_SUMMARIZATION";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

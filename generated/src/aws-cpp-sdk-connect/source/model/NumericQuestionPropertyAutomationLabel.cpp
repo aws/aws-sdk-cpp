@@ -17,6 +17,8 @@ namespace NumericQuestionPropertyAutomationLabelMapper {
 
 static const int OVERALL_CUSTOMER_SENTIMENT_SCORE_HASH = HashingUtils::HashString("OVERALL_CUSTOMER_SENTIMENT_SCORE");
 static const int OVERALL_AGENT_SENTIMENT_SCORE_HASH = HashingUtils::HashString("OVERALL_AGENT_SENTIMENT_SCORE");
+static const int CUSTOMER_SENTIMENT_SCORE_WITHOUT_AGENT_HASH = HashingUtils::HashString("CUSTOMER_SENTIMENT_SCORE_WITHOUT_AGENT");
+static const int CUSTOMER_SENTIMENT_SCORE_WITH_AGENT_HASH = HashingUtils::HashString("CUSTOMER_SENTIMENT_SCORE_WITH_AGENT");
 static const int NON_TALK_TIME_HASH = HashingUtils::HashString("NON_TALK_TIME");
 static const int NON_TALK_TIME_PERCENTAGE_HASH = HashingUtils::HashString("NON_TALK_TIME_PERCENTAGE");
 static const int NUMBER_OF_INTERRUPTIONS_HASH = HashingUtils::HashString("NUMBER_OF_INTERRUPTIONS");
@@ -33,6 +35,10 @@ NumericQuestionPropertyAutomationLabel GetNumericQuestionPropertyAutomationLabel
     return NumericQuestionPropertyAutomationLabel::OVERALL_CUSTOMER_SENTIMENT_SCORE;
   } else if (hashCode == OVERALL_AGENT_SENTIMENT_SCORE_HASH) {
     return NumericQuestionPropertyAutomationLabel::OVERALL_AGENT_SENTIMENT_SCORE;
+  } else if (hashCode == CUSTOMER_SENTIMENT_SCORE_WITHOUT_AGENT_HASH) {
+    return NumericQuestionPropertyAutomationLabel::CUSTOMER_SENTIMENT_SCORE_WITHOUT_AGENT;
+  } else if (hashCode == CUSTOMER_SENTIMENT_SCORE_WITH_AGENT_HASH) {
+    return NumericQuestionPropertyAutomationLabel::CUSTOMER_SENTIMENT_SCORE_WITH_AGENT;
   } else if (hashCode == NON_TALK_TIME_HASH) {
     return NumericQuestionPropertyAutomationLabel::NON_TALK_TIME;
   } else if (hashCode == NON_TALK_TIME_PERCENTAGE_HASH) {
@@ -69,6 +75,10 @@ Aws::String GetNameForNumericQuestionPropertyAutomationLabel(NumericQuestionProp
       return "OVERALL_CUSTOMER_SENTIMENT_SCORE";
     case NumericQuestionPropertyAutomationLabel::OVERALL_AGENT_SENTIMENT_SCORE:
       return "OVERALL_AGENT_SENTIMENT_SCORE";
+    case NumericQuestionPropertyAutomationLabel::CUSTOMER_SENTIMENT_SCORE_WITHOUT_AGENT:
+      return "CUSTOMER_SENTIMENT_SCORE_WITHOUT_AGENT";
+    case NumericQuestionPropertyAutomationLabel::CUSTOMER_SENTIMENT_SCORE_WITH_AGENT:
+      return "CUSTOMER_SENTIMENT_SCORE_WITH_AGENT";
     case NumericQuestionPropertyAutomationLabel::NON_TALK_TIME:
       return "NON_TALK_TIME";
     case NumericQuestionPropertyAutomationLabel::NON_TALK_TIME_PERCENTAGE:

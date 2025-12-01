@@ -89,6 +89,10 @@ CollaborationAnalysisTemplate& CollaborationAnalysisTemplate::operator=(JsonView
     m_errorMessageConfiguration = jsonValue.GetObject("errorMessageConfiguration");
     m_errorMessageConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("syntheticDataParameters")) {
+    m_syntheticDataParameters = jsonValue.GetObject("syntheticDataParameters");
+    m_syntheticDataParametersHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -166,6 +170,10 @@ JsonValue CollaborationAnalysisTemplate::Jsonize() const {
 
   if (m_errorMessageConfigurationHasBeenSet) {
     payload.WithObject("errorMessageConfiguration", m_errorMessageConfiguration.Jsonize());
+  }
+
+  if (m_syntheticDataParametersHasBeenSet) {
+    payload.WithObject("syntheticDataParameters", m_syntheticDataParameters.Jsonize());
   }
 
   return payload;

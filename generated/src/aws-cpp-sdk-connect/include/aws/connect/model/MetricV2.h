@@ -23,7 +23,8 @@ namespace Connect {
 namespace Model {
 
 /**
- * <p>Contains information about the metric.</p><p><h3>See Also:</h3>   <a
+ * <p>Contains information about the metric.</p>  <p>Only one of either
+ * the Name or MetricId is required.</p> <p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/MetricV2">AWS
  * API Reference</a></p>
  */
@@ -36,8 +37,7 @@ class MetricV2 {
 
   ///@{
   /**
-   * <p>The name of the metric.</p>  <p>This parameter is required. The
-   * following Required = No is incorrect.</p>
+   * <p>The name of the metric.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -79,6 +79,25 @@ class MetricV2 {
 
   ///@{
   /**
+   * <p>Historical metrics or custom metrics can be referenced via this field. This
+   * field is a valid Amazon Connect Arn or a UUID</p>
+   */
+  inline const Aws::String& GetMetricId() const { return m_metricId; }
+  inline bool MetricIdHasBeenSet() const { return m_metricIdHasBeenSet; }
+  template <typename MetricIdT = Aws::String>
+  void SetMetricId(MetricIdT&& value) {
+    m_metricIdHasBeenSet = true;
+    m_metricId = std::forward<MetricIdT>(value);
+  }
+  template <typename MetricIdT = Aws::String>
+  MetricV2& WithMetricId(MetricIdT&& value) {
+    SetMetricId(std::forward<MetricIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Contains the filters to be used when returning data.</p>
    */
   inline const Aws::Vector<MetricFilterV2>& GetMetricFilters() const { return m_metricFilters; }
@@ -106,6 +125,9 @@ class MetricV2 {
 
   Aws::Vector<ThresholdV2> m_threshold;
   bool m_thresholdHasBeenSet = false;
+
+  Aws::String m_metricId;
+  bool m_metricIdHasBeenSet = false;
 
   Aws::Vector<MetricFilterV2> m_metricFilters;
   bool m_metricFiltersHasBeenSet = false;

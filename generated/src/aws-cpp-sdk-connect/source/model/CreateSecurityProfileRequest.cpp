@@ -78,5 +78,18 @@ Aws::String CreateSecurityProfileRequest::SerializePayload() const {
     payload.WithString("AllowedAccessControlHierarchyGroupId", m_allowedAccessControlHierarchyGroupId);
   }
 
+  if (m_allowedFlowModulesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> allowedFlowModulesJsonList(m_allowedFlowModules.size());
+    for (unsigned allowedFlowModulesIndex = 0; allowedFlowModulesIndex < allowedFlowModulesJsonList.GetLength();
+         ++allowedFlowModulesIndex) {
+      allowedFlowModulesJsonList[allowedFlowModulesIndex].AsObject(m_allowedFlowModules[allowedFlowModulesIndex].Jsonize());
+    }
+    payload.WithArray("AllowedFlowModules", std::move(allowedFlowModulesJsonList));
+  }
+
+  if (m_granularAccessControlConfigurationHasBeenSet) {
+    payload.WithObject("GranularAccessControlConfiguration", m_granularAccessControlConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

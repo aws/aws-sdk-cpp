@@ -27,6 +27,14 @@ Aws::String UpdateBotLocaleRequest::SerializePayload() const {
     payload.WithObject("voiceSettings", m_voiceSettings.Jsonize());
   }
 
+  if (m_unifiedSpeechSettingsHasBeenSet) {
+    payload.WithObject("unifiedSpeechSettings", m_unifiedSpeechSettings.Jsonize());
+  }
+
+  if (m_speechRecognitionSettingsHasBeenSet) {
+    payload.WithObject("speechRecognitionSettings", m_speechRecognitionSettings.Jsonize());
+  }
+
   if (m_generativeAISettingsHasBeenSet) {
     payload.WithObject("generativeAISettings", m_generativeAISettings.Jsonize());
   }

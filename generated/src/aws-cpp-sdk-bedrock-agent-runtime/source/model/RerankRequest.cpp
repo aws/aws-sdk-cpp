@@ -15,6 +15,10 @@ using namespace Aws::Utils;
 Aws::String RerankRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("nextToken", m_nextToken);
+  }
+
   if (m_queriesHasBeenSet) {
     Aws::Utils::Array<JsonValue> queriesJsonList(m_queries.size());
     for (unsigned queriesIndex = 0; queriesIndex < queriesJsonList.GetLength(); ++queriesIndex) {
@@ -23,20 +27,16 @@ Aws::String RerankRequest::SerializePayload() const {
     payload.WithArray("queries", std::move(queriesJsonList));
   }
 
+  if (m_rerankingConfigurationHasBeenSet) {
+    payload.WithObject("rerankingConfiguration", m_rerankingConfiguration.Jsonize());
+  }
+
   if (m_sourcesHasBeenSet) {
     Aws::Utils::Array<JsonValue> sourcesJsonList(m_sources.size());
     for (unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex) {
       sourcesJsonList[sourcesIndex].AsObject(m_sources[sourcesIndex].Jsonize());
     }
     payload.WithArray("sources", std::move(sourcesJsonList));
-  }
-
-  if (m_rerankingConfigurationHasBeenSet) {
-    payload.WithObject("rerankingConfiguration", m_rerankingConfiguration.Jsonize());
-  }
-
-  if (m_nextTokenHasBeenSet) {
-    payload.WithString("nextToken", m_nextToken);
   }
 
   return payload.View().WriteReadable();

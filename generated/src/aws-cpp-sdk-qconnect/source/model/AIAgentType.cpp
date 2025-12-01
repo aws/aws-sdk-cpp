@@ -21,6 +21,9 @@ static const int SELF_SERVICE_HASH = HashingUtils::HashString("SELF_SERVICE");
 static const int EMAIL_RESPONSE_HASH = HashingUtils::HashString("EMAIL_RESPONSE");
 static const int EMAIL_OVERVIEW_HASH = HashingUtils::HashString("EMAIL_OVERVIEW");
 static const int EMAIL_GENERATIVE_ANSWER_HASH = HashingUtils::HashString("EMAIL_GENERATIVE_ANSWER");
+static const int ORCHESTRATION_HASH = HashingUtils::HashString("ORCHESTRATION");
+static const int NOTE_TAKING_HASH = HashingUtils::HashString("NOTE_TAKING");
+static const int CASE_SUMMARIZATION_HASH = HashingUtils::HashString("CASE_SUMMARIZATION");
 
 AIAgentType GetAIAgentTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +39,12 @@ AIAgentType GetAIAgentTypeForName(const Aws::String& name) {
     return AIAgentType::EMAIL_OVERVIEW;
   } else if (hashCode == EMAIL_GENERATIVE_ANSWER_HASH) {
     return AIAgentType::EMAIL_GENERATIVE_ANSWER;
+  } else if (hashCode == ORCHESTRATION_HASH) {
+    return AIAgentType::ORCHESTRATION;
+  } else if (hashCode == NOTE_TAKING_HASH) {
+    return AIAgentType::NOTE_TAKING;
+  } else if (hashCode == CASE_SUMMARIZATION_HASH) {
+    return AIAgentType::CASE_SUMMARIZATION;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +71,12 @@ Aws::String GetNameForAIAgentType(AIAgentType enumValue) {
       return "EMAIL_OVERVIEW";
     case AIAgentType::EMAIL_GENERATIVE_ANSWER:
       return "EMAIL_GENERATIVE_ANSWER";
+    case AIAgentType::ORCHESTRATION:
+      return "ORCHESTRATION";
+    case AIAgentType::NOTE_TAKING:
+      return "NOTE_TAKING";
+    case AIAgentType::CASE_SUMMARIZATION:
+      return "CASE_SUMMARIZATION";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

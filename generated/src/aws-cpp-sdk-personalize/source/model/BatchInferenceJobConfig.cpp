@@ -25,6 +25,14 @@ BatchInferenceJobConfig& BatchInferenceJobConfig::operator=(JsonView jsonValue) 
     }
     m_itemExplorationConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("rankingInfluence")) {
+    Aws::Map<Aws::String, JsonView> rankingInfluenceJsonMap = jsonValue.GetObject("rankingInfluence").GetAllObjects();
+    for (auto& rankingInfluenceItem : rankingInfluenceJsonMap) {
+      m_rankingInfluence[RankingInfluenceTypeMapper::GetRankingInfluenceTypeForName(rankingInfluenceItem.first)] =
+          rankingInfluenceItem.second.AsDouble();
+    }
+    m_rankingInfluenceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -37,6 +45,15 @@ JsonValue BatchInferenceJobConfig::Jsonize() const {
       itemExplorationConfigJsonMap.WithString(itemExplorationConfigItem.first, itemExplorationConfigItem.second);
     }
     payload.WithObject("itemExplorationConfig", std::move(itemExplorationConfigJsonMap));
+  }
+
+  if (m_rankingInfluenceHasBeenSet) {
+    JsonValue rankingInfluenceJsonMap;
+    for (auto& rankingInfluenceItem : m_rankingInfluence) {
+      rankingInfluenceJsonMap.WithDouble(RankingInfluenceTypeMapper::GetNameForRankingInfluenceType(rankingInfluenceItem.first),
+                                         rankingInfluenceItem.second);
+    }
+    payload.WithObject("rankingInfluence", std::move(rankingInfluenceJsonMap));
   }
 
   return payload;

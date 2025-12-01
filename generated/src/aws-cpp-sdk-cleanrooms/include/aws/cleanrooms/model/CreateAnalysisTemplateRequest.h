@@ -11,6 +11,7 @@
 #include <aws/cleanrooms/model/AnalysisSchema.h>
 #include <aws/cleanrooms/model/AnalysisSource.h>
 #include <aws/cleanrooms/model/ErrorMessageConfiguration.h>
+#include <aws/cleanrooms/model/SyntheticDataParameters.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -212,6 +213,25 @@ class CreateAnalysisTemplateRequest : public CleanRoomsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The parameters for generating synthetic data when running the analysis
+   * template.</p>
+   */
+  inline const SyntheticDataParameters& GetSyntheticDataParameters() const { return m_syntheticDataParameters; }
+  inline bool SyntheticDataParametersHasBeenSet() const { return m_syntheticDataParametersHasBeenSet; }
+  template <typename SyntheticDataParametersT = SyntheticDataParameters>
+  void SetSyntheticDataParameters(SyntheticDataParametersT&& value) {
+    m_syntheticDataParametersHasBeenSet = true;
+    m_syntheticDataParameters = std::forward<SyntheticDataParametersT>(value);
+  }
+  template <typename SyntheticDataParametersT = SyntheticDataParameters>
+  CreateAnalysisTemplateRequest& WithSyntheticDataParameters(SyntheticDataParametersT&& value) {
+    SetSyntheticDataParameters(std::forward<SyntheticDataParametersT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_description;
   bool m_descriptionHasBeenSet = false;
@@ -239,6 +259,9 @@ class CreateAnalysisTemplateRequest : public CleanRoomsRequest {
 
   ErrorMessageConfiguration m_errorMessageConfiguration;
   bool m_errorMessageConfigurationHasBeenSet = false;
+
+  SyntheticDataParameters m_syntheticDataParameters;
+  bool m_syntheticDataParametersHasBeenSet = false;
 };
 
 }  // namespace Model

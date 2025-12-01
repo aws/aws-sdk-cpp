@@ -92,6 +92,26 @@ class SolutionUpdateSummary {
 
   ///@{
   /**
+   * <p>A Boolean value that indicates whether incremental training updates are
+   * performed on the model. When enabled, this allows the model to learn from new
+   * data more frequently without requiring full retraining, which enables near
+   * real-time personalization. This parameter is supported only for solutions that
+   * use the semantic-similarity recipe.</p>
+   */
+  inline bool GetPerformIncrementalUpdate() const { return m_performIncrementalUpdate; }
+  inline bool PerformIncrementalUpdateHasBeenSet() const { return m_performIncrementalUpdateHasBeenSet; }
+  inline void SetPerformIncrementalUpdate(bool value) {
+    m_performIncrementalUpdateHasBeenSet = true;
+    m_performIncrementalUpdate = value;
+  }
+  inline SolutionUpdateSummary& WithPerformIncrementalUpdate(bool value) {
+    SetPerformIncrementalUpdate(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The date and time (in Unix format) that the solution update was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreationDateTime() const { return m_creationDateTime; }
@@ -153,6 +173,9 @@ class SolutionUpdateSummary {
 
   bool m_performAutoTraining{false};
   bool m_performAutoTrainingHasBeenSet = false;
+
+  bool m_performIncrementalUpdate{false};
+  bool m_performIncrementalUpdateHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
   bool m_creationDateTimeHasBeenSet = false;

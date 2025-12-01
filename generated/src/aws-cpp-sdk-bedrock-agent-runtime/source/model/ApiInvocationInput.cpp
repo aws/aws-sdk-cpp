@@ -22,13 +22,25 @@ ApiInvocationInput& ApiInvocationInput::operator=(JsonView jsonValue) {
     m_actionGroup = jsonValue.GetString("actionGroup");
     m_actionGroupHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("httpMethod")) {
-    m_httpMethod = jsonValue.GetString("httpMethod");
-    m_httpMethodHasBeenSet = true;
+  if (jsonValue.ValueExists("actionInvocationType")) {
+    m_actionInvocationType = ActionInvocationTypeMapper::GetActionInvocationTypeForName(jsonValue.GetString("actionInvocationType"));
+    m_actionInvocationTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("agentId")) {
+    m_agentId = jsonValue.GetString("agentId");
+    m_agentIdHasBeenSet = true;
   }
   if (jsonValue.ValueExists("apiPath")) {
     m_apiPath = jsonValue.GetString("apiPath");
     m_apiPathHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("collaboratorName")) {
+    m_collaboratorName = jsonValue.GetString("collaboratorName");
+    m_collaboratorNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("httpMethod")) {
+    m_httpMethod = jsonValue.GetString("httpMethod");
+    m_httpMethodHasBeenSet = true;
   }
   if (jsonValue.ValueExists("parameters")) {
     Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("parameters");
@@ -41,18 +53,6 @@ ApiInvocationInput& ApiInvocationInput::operator=(JsonView jsonValue) {
     m_requestBody = jsonValue.GetObject("requestBody");
     m_requestBodyHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("actionInvocationType")) {
-    m_actionInvocationType = ActionInvocationTypeMapper::GetActionInvocationTypeForName(jsonValue.GetString("actionInvocationType"));
-    m_actionInvocationTypeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("agentId")) {
-    m_agentId = jsonValue.GetString("agentId");
-    m_agentIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("collaboratorName")) {
-    m_collaboratorName = jsonValue.GetString("collaboratorName");
-    m_collaboratorNameHasBeenSet = true;
-  }
   return *this;
 }
 
@@ -63,12 +63,24 @@ JsonValue ApiInvocationInput::Jsonize() const {
     payload.WithString("actionGroup", m_actionGroup);
   }
 
-  if (m_httpMethodHasBeenSet) {
-    payload.WithString("httpMethod", m_httpMethod);
+  if (m_actionInvocationTypeHasBeenSet) {
+    payload.WithString("actionInvocationType", ActionInvocationTypeMapper::GetNameForActionInvocationType(m_actionInvocationType));
+  }
+
+  if (m_agentIdHasBeenSet) {
+    payload.WithString("agentId", m_agentId);
   }
 
   if (m_apiPathHasBeenSet) {
     payload.WithString("apiPath", m_apiPath);
+  }
+
+  if (m_collaboratorNameHasBeenSet) {
+    payload.WithString("collaboratorName", m_collaboratorName);
+  }
+
+  if (m_httpMethodHasBeenSet) {
+    payload.WithString("httpMethod", m_httpMethod);
   }
 
   if (m_parametersHasBeenSet) {
@@ -81,18 +93,6 @@ JsonValue ApiInvocationInput::Jsonize() const {
 
   if (m_requestBodyHasBeenSet) {
     payload.WithObject("requestBody", m_requestBody.Jsonize());
-  }
-
-  if (m_actionInvocationTypeHasBeenSet) {
-    payload.WithString("actionInvocationType", ActionInvocationTypeMapper::GetNameForActionInvocationType(m_actionInvocationType));
-  }
-
-  if (m_agentIdHasBeenSet) {
-    payload.WithString("agentId", m_agentId);
-  }
-
-  if (m_collaboratorNameHasBeenSet) {
-    payload.WithString("collaboratorName", m_collaboratorName);
   }
 
   return payload;

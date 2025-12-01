@@ -30,17 +30,17 @@ class CreateSessionResult {
 
   ///@{
   /**
-   * <p>The unique identifier for the session.</p>
+   * <p>The timestamp for when the session was created.</p>
    */
-  inline const Aws::String& GetSessionId() const { return m_sessionId; }
-  template <typename SessionIdT = Aws::String>
-  void SetSessionId(SessionIdT&& value) {
-    m_sessionIdHasBeenSet = true;
-    m_sessionId = std::forward<SessionIdT>(value);
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
   }
-  template <typename SessionIdT = Aws::String>
-  CreateSessionResult& WithSessionId(SessionIdT&& value) {
-    SetSessionId(std::forward<SessionIdT>(value));
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  CreateSessionResult& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
     return *this;
   }
   ///@}
@@ -64,6 +64,23 @@ class CreateSessionResult {
 
   ///@{
   /**
+   * <p>The unique identifier for the session.</p>
+   */
+  inline const Aws::String& GetSessionId() const { return m_sessionId; }
+  template <typename SessionIdT = Aws::String>
+  void SetSessionId(SessionIdT&& value) {
+    m_sessionIdHasBeenSet = true;
+    m_sessionId = std::forward<SessionIdT>(value);
+  }
+  template <typename SessionIdT = Aws::String>
+  CreateSessionResult& WithSessionId(SessionIdT&& value) {
+    SetSessionId(std::forward<SessionIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The current status of the session.</p>
    */
   inline SessionStatus GetSessionStatus() const { return m_sessionStatus; }
@@ -73,23 +90,6 @@ class CreateSessionResult {
   }
   inline CreateSessionResult& WithSessionStatus(SessionStatus value) {
     SetSessionStatus(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The timestamp for when the session was created.</p>
-   */
-  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  void SetCreatedAt(CreatedAtT&& value) {
-    m_createdAtHasBeenSet = true;
-    m_createdAt = std::forward<CreatedAtT>(value);
-  }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  CreateSessionResult& WithCreatedAt(CreatedAtT&& value) {
-    SetCreatedAt(std::forward<CreatedAtT>(value));
     return *this;
   }
   ///@}
@@ -109,17 +109,17 @@ class CreateSessionResult {
   }
   ///@}
  private:
-  Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
+  Aws::Utils::DateTime m_createdAt{};
+  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_sessionArn;
   bool m_sessionArnHasBeenSet = false;
 
+  Aws::String m_sessionId;
+  bool m_sessionIdHasBeenSet = false;
+
   SessionStatus m_sessionStatus{SessionStatus::NOT_SET};
   bool m_sessionStatusHasBeenSet = false;
-
-  Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

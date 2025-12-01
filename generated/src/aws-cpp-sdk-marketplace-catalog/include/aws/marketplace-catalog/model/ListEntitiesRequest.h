@@ -59,7 +59,8 @@ class ListEntitiesRequest : public MarketplaceCatalogRequest {
    * <code>ContainerProduct</code>, <code>DataProduct</code>,
    * <code>SaaSProduct</code>, <code>ProcurementPolicy</code>,
    * <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>,
-   * <code>Offer</code>, <code>Seller</code>, <code>ResaleAuthorization</code>.</p>
+   * <code>Offer</code>, <code>OfferSet</code>, <code>Seller</code>,
+   * <code>ResaleAuthorization</code>, <code>Solution</code>.</p>
    */
   inline const Aws::String& GetEntityType() const { return m_entityType; }
   inline bool EntityTypeHasBeenSet() const { return m_entityTypeHasBeenSet; }

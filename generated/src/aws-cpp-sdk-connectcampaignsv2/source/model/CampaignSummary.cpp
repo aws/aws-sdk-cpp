@@ -41,6 +41,10 @@ CampaignSummary& CampaignSummary::operator=(JsonView jsonValue) {
     }
     m_channelSubtypesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("type")) {
+    m_type = ExternalCampaignTypeMapper::GetExternalCampaignTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("schedule")) {
     m_schedule = jsonValue.GetObject("schedule");
     m_scheduleHasBeenSet = true;
@@ -78,6 +82,10 @@ JsonValue CampaignSummary::Jsonize() const {
           ChannelSubtypeMapper::GetNameForChannelSubtype(m_channelSubtypes[channelSubtypesIndex]));
     }
     payload.WithArray("channelSubtypes", std::move(channelSubtypesJsonList));
+  }
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", ExternalCampaignTypeMapper::GetNameForExternalCampaignType(m_type));
   }
 
   if (m_scheduleHasBeenSet) {

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
+#include <aws/qconnect/model/ExternalBedrockKnowledgeBaseConfig.h>
 #include <aws/qconnect/model/KnowledgeBaseAssociationData.h>
 
 #include <utility>
@@ -49,9 +50,33 @@ class AssistantAssociationOutputData {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration for an external Bedrock knowledge base association in the
+   * output data.</p>
+   */
+  inline const ExternalBedrockKnowledgeBaseConfig& GetExternalBedrockKnowledgeBaseConfig() const {
+    return m_externalBedrockKnowledgeBaseConfig;
+  }
+  inline bool ExternalBedrockKnowledgeBaseConfigHasBeenSet() const { return m_externalBedrockKnowledgeBaseConfigHasBeenSet; }
+  template <typename ExternalBedrockKnowledgeBaseConfigT = ExternalBedrockKnowledgeBaseConfig>
+  void SetExternalBedrockKnowledgeBaseConfig(ExternalBedrockKnowledgeBaseConfigT&& value) {
+    m_externalBedrockKnowledgeBaseConfigHasBeenSet = true;
+    m_externalBedrockKnowledgeBaseConfig = std::forward<ExternalBedrockKnowledgeBaseConfigT>(value);
+  }
+  template <typename ExternalBedrockKnowledgeBaseConfigT = ExternalBedrockKnowledgeBaseConfig>
+  AssistantAssociationOutputData& WithExternalBedrockKnowledgeBaseConfig(ExternalBedrockKnowledgeBaseConfigT&& value) {
+    SetExternalBedrockKnowledgeBaseConfig(std::forward<ExternalBedrockKnowledgeBaseConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   KnowledgeBaseAssociationData m_knowledgeBaseAssociation;
   bool m_knowledgeBaseAssociationHasBeenSet = false;
+
+  ExternalBedrockKnowledgeBaseConfig m_externalBedrockKnowledgeBaseConfig;
+  bool m_externalBedrockKnowledgeBaseConfigHasBeenSet = false;
 };
 
 }  // namespace Model

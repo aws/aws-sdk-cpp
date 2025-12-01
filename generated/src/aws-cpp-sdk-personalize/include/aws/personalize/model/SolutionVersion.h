@@ -129,6 +129,25 @@ class SolutionVersion {
 
   ///@{
   /**
+   * <p>Whether the solution version should perform an incremental update. When set
+   * to true, the training will process only the data that has changed since the
+   * latest training, similar to when trainingMode is set to UPDATE. This can only be
+   * used with solution versions that use the User-Personalization recipe.</p>
+   */
+  inline bool GetPerformIncrementalUpdate() const { return m_performIncrementalUpdate; }
+  inline bool PerformIncrementalUpdateHasBeenSet() const { return m_performIncrementalUpdateHasBeenSet; }
+  inline void SetPerformIncrementalUpdate(bool value) {
+    m_performIncrementalUpdateHasBeenSet = true;
+    m_performIncrementalUpdate = value;
+  }
+  inline SolutionVersion& WithPerformIncrementalUpdate(bool value) {
+    SetPerformIncrementalUpdate(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ARN of the recipe used in the solution.</p>
    */
   inline const Aws::String& GetRecipeArn() const { return m_recipeArn; }
@@ -365,6 +384,9 @@ class SolutionVersion {
 
   bool m_performAutoML{false};
   bool m_performAutoMLHasBeenSet = false;
+
+  bool m_performIncrementalUpdate{false};
+  bool m_performIncrementalUpdateHasBeenSet = false;
 
   Aws::String m_recipeArn;
   bool m_recipeArnHasBeenSet = false;

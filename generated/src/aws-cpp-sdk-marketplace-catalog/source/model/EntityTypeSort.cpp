@@ -46,6 +46,10 @@ EntityTypeSort& EntityTypeSort::operator=(JsonView jsonValue) {
     m_machineLearningProductSort = jsonValue.GetObject("MachineLearningProductSort");
     m_machineLearningProductSortHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("OfferSetSort")) {
+    m_offerSetSort = jsonValue.GetObject("OfferSetSort");
+    m_offerSetSortHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -78,6 +82,10 @@ JsonValue EntityTypeSort::Jsonize() const {
 
   if (m_machineLearningProductSortHasBeenSet) {
     payload.WithObject("MachineLearningProductSort", m_machineLearningProductSort.Jsonize());
+  }
+
+  if (m_offerSetSortHasBeenSet) {
+    payload.WithObject("OfferSetSort", m_offerSetSort.Jsonize());
   }
 
   return payload;

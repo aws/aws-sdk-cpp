@@ -23,6 +23,14 @@ Aws::String PutIntegrationRequest::SerializePayload() const {
     payload.WithString("ObjectTypeName", m_objectTypeName);
   }
 
+  if (m_objectTypeNamesHasBeenSet) {
+    JsonValue objectTypeNamesJsonMap;
+    for (auto& objectTypeNamesItem : m_objectTypeNames) {
+      objectTypeNamesJsonMap.WithString(objectTypeNamesItem.first, objectTypeNamesItem.second);
+    }
+    payload.WithObject("ObjectTypeNames", std::move(objectTypeNamesJsonMap));
+  }
+
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {
@@ -35,14 +43,6 @@ Aws::String PutIntegrationRequest::SerializePayload() const {
     payload.WithObject("FlowDefinition", m_flowDefinition.Jsonize());
   }
 
-  if (m_objectTypeNamesHasBeenSet) {
-    JsonValue objectTypeNamesJsonMap;
-    for (auto& objectTypeNamesItem : m_objectTypeNames) {
-      objectTypeNamesJsonMap.WithString(objectTypeNamesItem.first, objectTypeNamesItem.second);
-    }
-    payload.WithObject("ObjectTypeNames", std::move(objectTypeNamesJsonMap));
-  }
-
   if (m_roleArnHasBeenSet) {
     payload.WithString("RoleArn", m_roleArn);
   }
@@ -53,6 +53,10 @@ Aws::String PutIntegrationRequest::SerializePayload() const {
       eventTriggerNamesJsonList[eventTriggerNamesIndex].AsString(m_eventTriggerNames[eventTriggerNamesIndex]);
     }
     payload.WithArray("EventTriggerNames", std::move(eventTriggerNamesJsonList));
+  }
+
+  if (m_scopeHasBeenSet) {
+    payload.WithString("Scope", ScopeMapper::GetNameForScope(m_scope));
   }
 
   return payload.View().WriteReadable();

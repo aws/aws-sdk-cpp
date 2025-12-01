@@ -46,6 +46,10 @@ EntityTypeFilters& EntityTypeFilters::operator=(JsonView jsonValue) {
     m_machineLearningProductFilters = jsonValue.GetObject("MachineLearningProductFilters");
     m_machineLearningProductFiltersHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("OfferSetFilters")) {
+    m_offerSetFilters = jsonValue.GetObject("OfferSetFilters");
+    m_offerSetFiltersHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -78,6 +82,10 @@ JsonValue EntityTypeFilters::Jsonize() const {
 
   if (m_machineLearningProductFiltersHasBeenSet) {
     payload.WithObject("MachineLearningProductFilters", m_machineLearningProductFilters.Jsonize());
+  }
+
+  if (m_offerSetFiltersHasBeenSet) {
+    payload.WithObject("OfferSetFilters", m_offerSetFilters.Jsonize());
   }
 
   return payload;

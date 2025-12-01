@@ -21,10 +21,6 @@ GetAwsOpportunitySummaryResult::GetAwsOpportunitySummaryResult(const Aws::Amazon
 
 GetAwsOpportunitySummaryResult& GetAwsOpportunitySummaryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("Catalog")) {
-    m_catalog = jsonValue.GetString("Catalog");
-    m_catalogHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("RelatedOpportunityId")) {
     m_relatedOpportunityId = jsonValue.GetString("RelatedOpportunityId");
     m_relatedOpportunityIdHasBeenSet = true;
@@ -72,6 +68,10 @@ GetAwsOpportunitySummaryResult& GetAwsOpportunitySummaryResult::operator=(const 
   if (jsonValue.ValueExists("Project")) {
     m_project = jsonValue.GetObject("Project");
     m_projectHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Catalog")) {
+    m_catalog = jsonValue.GetString("Catalog");
+    m_catalogHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

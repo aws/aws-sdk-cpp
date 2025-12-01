@@ -22,6 +22,17 @@ TextMessage& TextMessage::operator=(JsonView jsonValue) {
     m_value = jsonValue.GetString("value");
     m_valueHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("citations")) {
+    Aws::Utils::Array<JsonView> citationsJsonList = jsonValue.GetArray("citations");
+    for (unsigned citationsIndex = 0; citationsIndex < citationsJsonList.GetLength(); ++citationsIndex) {
+      m_citations.push_back(citationsJsonList[citationsIndex].AsObject());
+    }
+    m_citationsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("aiGuardrailAssessment")) {
+    m_aiGuardrailAssessment = jsonValue.GetObject("aiGuardrailAssessment");
+    m_aiGuardrailAssessmentHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +41,18 @@ JsonValue TextMessage::Jsonize() const {
 
   if (m_valueHasBeenSet) {
     payload.WithString("value", m_value);
+  }
+
+  if (m_citationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> citationsJsonList(m_citations.size());
+    for (unsigned citationsIndex = 0; citationsIndex < citationsJsonList.GetLength(); ++citationsIndex) {
+      citationsJsonList[citationsIndex].AsObject(m_citations[citationsIndex].Jsonize());
+    }
+    payload.WithArray("citations", std::move(citationsJsonList));
+  }
+
+  if (m_aiGuardrailAssessmentHasBeenSet) {
+    payload.WithObject("aiGuardrailAssessment", m_aiGuardrailAssessment.Jsonize());
   }
 
   return payload;

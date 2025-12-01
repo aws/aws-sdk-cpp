@@ -38,19 +38,20 @@ class Metadata {
 
   ///@{
   /**
-   * <p>In the final response, <code>startTime</code> is the start time of the agent
-   * invocation operation.</p>
+   * <p>A unique identifier associated with the downstream invocation. This ID can be
+   * used for tracing, debugging, and identifying specific invocations in customer
+   * logs or systems.</p>
    */
-  inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
-  inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-  template <typename StartTimeT = Aws::Utils::DateTime>
-  void SetStartTime(StartTimeT&& value) {
-    m_startTimeHasBeenSet = true;
-    m_startTime = std::forward<StartTimeT>(value);
+  inline const Aws::String& GetClientRequestId() const { return m_clientRequestId; }
+  inline bool ClientRequestIdHasBeenSet() const { return m_clientRequestIdHasBeenSet; }
+  template <typename ClientRequestIdT = Aws::String>
+  void SetClientRequestId(ClientRequestIdT&& value) {
+    m_clientRequestIdHasBeenSet = true;
+    m_clientRequestId = std::forward<ClientRequestIdT>(value);
   }
-  template <typename StartTimeT = Aws::Utils::DateTime>
-  Metadata& WithStartTime(StartTimeT&& value) {
-    SetStartTime(std::forward<StartTimeT>(value));
+  template <typename ClientRequestIdT = Aws::String>
+  Metadata& WithClientRequestId(ClientRequestIdT&& value) {
+    SetClientRequestId(std::forward<ClientRequestIdT>(value));
     return *this;
   }
   ///@}
@@ -76,24 +77,6 @@ class Metadata {
 
   ///@{
   /**
-   * <p> The total execution time for the specific invocation being processed (model,
-   * knowledge base, guardrail, agent collaborator, or code interpreter). It
-   * represents how long the individual invocation took.</p>
-   */
-  inline long long GetTotalTimeMs() const { return m_totalTimeMs; }
-  inline bool TotalTimeMsHasBeenSet() const { return m_totalTimeMsHasBeenSet; }
-  inline void SetTotalTimeMs(long long value) {
-    m_totalTimeMsHasBeenSet = true;
-    m_totalTimeMs = value;
-  }
-  inline Metadata& WithTotalTimeMs(long long value) {
-    SetTotalTimeMs(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The total time it took for the agent to complete execution. This field is
    * only set for the final response.</p>
    */
@@ -111,20 +94,37 @@ class Metadata {
 
   ///@{
   /**
-   * <p>A unique identifier associated with the downstream invocation. This ID can be
-   * used for tracing, debugging, and identifying specific invocations in customer
-   * logs or systems.</p>
+   * <p>In the final response, <code>startTime</code> is the start time of the agent
+   * invocation operation.</p>
    */
-  inline const Aws::String& GetClientRequestId() const { return m_clientRequestId; }
-  inline bool ClientRequestIdHasBeenSet() const { return m_clientRequestIdHasBeenSet; }
-  template <typename ClientRequestIdT = Aws::String>
-  void SetClientRequestId(ClientRequestIdT&& value) {
-    m_clientRequestIdHasBeenSet = true;
-    m_clientRequestId = std::forward<ClientRequestIdT>(value);
+  inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
+  inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+  template <typename StartTimeT = Aws::Utils::DateTime>
+  void SetStartTime(StartTimeT&& value) {
+    m_startTimeHasBeenSet = true;
+    m_startTime = std::forward<StartTimeT>(value);
   }
-  template <typename ClientRequestIdT = Aws::String>
-  Metadata& WithClientRequestId(ClientRequestIdT&& value) {
-    SetClientRequestId(std::forward<ClientRequestIdT>(value));
+  template <typename StartTimeT = Aws::Utils::DateTime>
+  Metadata& WithStartTime(StartTimeT&& value) {
+    SetStartTime(std::forward<StartTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The total execution time for the specific invocation being processed (model,
+   * knowledge base, guardrail, agent collaborator, or code interpreter). It
+   * represents how long the individual invocation took.</p>
+   */
+  inline long long GetTotalTimeMs() const { return m_totalTimeMs; }
+  inline bool TotalTimeMsHasBeenSet() const { return m_totalTimeMsHasBeenSet; }
+  inline void SetTotalTimeMs(long long value) {
+    m_totalTimeMsHasBeenSet = true;
+    m_totalTimeMs = value;
+  }
+  inline Metadata& WithTotalTimeMs(long long value) {
+    SetTotalTimeMs(value);
     return *this;
   }
   ///@}
@@ -148,20 +148,20 @@ class Metadata {
   }
   ///@}
  private:
-  Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
+  Aws::String m_clientRequestId;
+  bool m_clientRequestIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
   bool m_endTimeHasBeenSet = false;
 
-  long long m_totalTimeMs{0};
-  bool m_totalTimeMsHasBeenSet = false;
-
   long long m_operationTotalTimeMs{0};
   bool m_operationTotalTimeMsHasBeenSet = false;
 
-  Aws::String m_clientRequestId;
-  bool m_clientRequestIdHasBeenSet = false;
+  Aws::Utils::DateTime m_startTime{};
+  bool m_startTimeHasBeenSet = false;
+
+  long long m_totalTimeMs{0};
+  bool m_totalTimeMsHasBeenSet = false;
 
   Usage m_usage;
   bool m_usageHasBeenSet = false;

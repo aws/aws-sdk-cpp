@@ -19,6 +19,7 @@ static const int REQUIRED_FIELD_MISSING_HASH = HashingUtils::HashString("REQUIRE
 static const int INVALID_ENUM_VALUE_HASH = HashingUtils::HashString("INVALID_ENUM_VALUE");
 static const int INVALID_STRING_FORMAT_HASH = HashingUtils::HashString("INVALID_STRING_FORMAT");
 static const int INVALID_VALUE_HASH = HashingUtils::HashString("INVALID_VALUE");
+static const int NOT_ENOUGH_VALUES_HASH = HashingUtils::HashString("NOT_ENOUGH_VALUES");
 static const int TOO_MANY_VALUES_HASH = HashingUtils::HashString("TOO_MANY_VALUES");
 static const int INVALID_RESOURCE_STATE_HASH = HashingUtils::HashString("INVALID_RESOURCE_STATE");
 static const int DUPLICATE_KEY_VALUE_HASH = HashingUtils::HashString("DUPLICATE_KEY_VALUE");
@@ -35,6 +36,8 @@ ValidationExceptionErrorCode GetValidationExceptionErrorCodeForName(const Aws::S
     return ValidationExceptionErrorCode::INVALID_STRING_FORMAT;
   } else if (hashCode == INVALID_VALUE_HASH) {
     return ValidationExceptionErrorCode::INVALID_VALUE;
+  } else if (hashCode == NOT_ENOUGH_VALUES_HASH) {
+    return ValidationExceptionErrorCode::NOT_ENOUGH_VALUES;
   } else if (hashCode == TOO_MANY_VALUES_HASH) {
     return ValidationExceptionErrorCode::TOO_MANY_VALUES;
   } else if (hashCode == INVALID_RESOURCE_STATE_HASH) {
@@ -67,6 +70,8 @@ Aws::String GetNameForValidationExceptionErrorCode(ValidationExceptionErrorCode 
       return "INVALID_STRING_FORMAT";
     case ValidationExceptionErrorCode::INVALID_VALUE:
       return "INVALID_VALUE";
+    case ValidationExceptionErrorCode::NOT_ENOUGH_VALUES:
+      return "NOT_ENOUGH_VALUES";
     case ValidationExceptionErrorCode::TOO_MANY_VALUES:
       return "TOO_MANY_VALUES";
     case ValidationExceptionErrorCode::INVALID_RESOURCE_STATE:

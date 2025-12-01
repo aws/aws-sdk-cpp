@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/lambda/model/Architecture.h>
+#include <aws/lambda/model/CapacityProviderConfig.h>
 #include <aws/lambda/model/DeadLetterConfig.h>
 #include <aws/lambda/model/EnvironmentResponse.h>
 #include <aws/lambda/model/EphemeralStorage.h>
@@ -717,6 +718,41 @@ class CreateFunctionResult {
 
   ///@{
   /**
+   * <p>Configuration for the capacity provider that manages compute resources for
+   * Lambda functions.</p>
+   */
+  inline const CapacityProviderConfig& GetCapacityProviderConfig() const { return m_capacityProviderConfig; }
+  template <typename CapacityProviderConfigT = CapacityProviderConfig>
+  void SetCapacityProviderConfig(CapacityProviderConfigT&& value) {
+    m_capacityProviderConfigHasBeenSet = true;
+    m_capacityProviderConfig = std::forward<CapacityProviderConfigT>(value);
+  }
+  template <typename CapacityProviderConfigT = CapacityProviderConfig>
+  CreateFunctionResult& WithCapacityProviderConfig(CapacityProviderConfigT&& value) {
+    SetCapacityProviderConfig(std::forward<CapacityProviderConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The SHA256 hash of the function configuration.</p>
+   */
+  inline const Aws::String& GetConfigSha256() const { return m_configSha256; }
+  template <typename ConfigSha256T = Aws::String>
+  void SetConfigSha256(ConfigSha256T&& value) {
+    m_configSha256HasBeenSet = true;
+    m_configSha256 = std::forward<ConfigSha256T>(value);
+  }
+  template <typename ConfigSha256T = Aws::String>
+  CreateFunctionResult& WithConfigSha256(ConfigSha256T&& value) {
+    SetConfigSha256(std::forward<ConfigSha256T>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The function's tenant isolation configuration settings. Determines whether
    * the Lambda function runs on a shared or dedicated infrastructure per unique
    * tenant.</p>
@@ -856,6 +892,12 @@ class CreateFunctionResult {
 
   LoggingConfig m_loggingConfig;
   bool m_loggingConfigHasBeenSet = false;
+
+  CapacityProviderConfig m_capacityProviderConfig;
+  bool m_capacityProviderConfigHasBeenSet = false;
+
+  Aws::String m_configSha256;
+  bool m_configSha256HasBeenSet = false;
 
   TenancyConfig m_tenancyConfig;
   bool m_tenancyConfigHasBeenSet = false;

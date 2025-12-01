@@ -74,6 +74,10 @@ PutIntegrationResult& PutIntegrationResult::operator=(const Aws::AmazonWebServic
     }
     m_eventTriggerNamesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Scope")) {
+    m_scope = ScopeMapper::GetScopeForName(jsonValue.GetString("Scope"));
+    m_scopeHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

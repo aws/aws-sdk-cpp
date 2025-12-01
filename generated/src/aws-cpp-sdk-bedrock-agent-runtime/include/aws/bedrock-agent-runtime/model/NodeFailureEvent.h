@@ -37,6 +37,41 @@ class NodeFailureEvent {
 
   ///@{
   /**
+   * <p>The error code that identifies the type of failure that occurred at the
+   * node.</p>
+   */
+  inline NodeErrorCode GetErrorCode() const { return m_errorCode; }
+  inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
+  inline void SetErrorCode(NodeErrorCode value) {
+    m_errorCodeHasBeenSet = true;
+    m_errorCode = value;
+  }
+  inline NodeFailureEvent& WithErrorCode(NodeErrorCode value) {
+    SetErrorCode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A descriptive message that provides details about the node failure.</p>
+   */
+  inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
+  inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
+  template <typename ErrorMessageT = Aws::String>
+  void SetErrorMessage(ErrorMessageT&& value) {
+    m_errorMessageHasBeenSet = true;
+    m_errorMessage = std::forward<ErrorMessageT>(value);
+  }
+  template <typename ErrorMessageT = Aws::String>
+  NodeFailureEvent& WithErrorMessage(ErrorMessageT&& value) {
+    SetErrorMessage(std::forward<ErrorMessageT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The name of the node where the failure occurred.</p>
    */
   inline const Aws::String& GetNodeName() const { return m_nodeName; }
@@ -70,53 +105,18 @@ class NodeFailureEvent {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The error code that identifies the type of failure that occurred at the
-   * node.</p>
-   */
-  inline NodeErrorCode GetErrorCode() const { return m_errorCode; }
-  inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-  inline void SetErrorCode(NodeErrorCode value) {
-    m_errorCodeHasBeenSet = true;
-    m_errorCode = value;
-  }
-  inline NodeFailureEvent& WithErrorCode(NodeErrorCode value) {
-    SetErrorCode(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>A descriptive message that provides details about the node failure.</p>
-   */
-  inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
-  inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-  template <typename ErrorMessageT = Aws::String>
-  void SetErrorMessage(ErrorMessageT&& value) {
-    m_errorMessageHasBeenSet = true;
-    m_errorMessage = std::forward<ErrorMessageT>(value);
-  }
-  template <typename ErrorMessageT = Aws::String>
-  NodeFailureEvent& WithErrorMessage(ErrorMessageT&& value) {
-    SetErrorMessage(std::forward<ErrorMessageT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_nodeName;
-  bool m_nodeNameHasBeenSet = false;
-
-  Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
-
   NodeErrorCode m_errorCode{NodeErrorCode::NOT_SET};
   bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
   bool m_errorMessageHasBeenSet = false;
+
+  Aws::String m_nodeName;
+  bool m_nodeNameHasBeenSet = false;
+
+  Aws::Utils::DateTime m_timestamp{};
+  bool m_timestampHasBeenSet = false;
 };
 
 }  // namespace Model

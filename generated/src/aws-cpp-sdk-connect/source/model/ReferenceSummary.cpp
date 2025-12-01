@@ -30,6 +30,10 @@ ReferenceSummary& ReferenceSummary::operator=(JsonView jsonValue) {
     m_emailMessage = jsonValue.GetObject("EmailMessage");
     m_emailMessageHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("EmailMessagePlainText")) {
+    m_emailMessagePlainText = jsonValue.GetObject("EmailMessagePlainText");
+    m_emailMessagePlainTextHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("String")) {
     m_string = jsonValue.GetObject("String");
     m_stringHasBeenSet = true;
@@ -62,6 +66,10 @@ JsonValue ReferenceSummary::Jsonize() const {
 
   if (m_emailMessageHasBeenSet) {
     payload.WithObject("EmailMessage", m_emailMessage.Jsonize());
+  }
+
+  if (m_emailMessagePlainTextHasBeenSet) {
+    payload.WithObject("EmailMessagePlainText", m_emailMessagePlainText.Jsonize());
   }
 
   if (m_stringHasBeenSet) {

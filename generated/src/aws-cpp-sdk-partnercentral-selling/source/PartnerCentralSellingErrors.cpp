@@ -6,6 +6,7 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/partnercentral-selling/PartnerCentralSellingErrors.h>
+#include <aws/partnercentral-selling/model/AccessDeniedException.h>
 #include <aws/partnercentral-selling/model/ValidationException.h>
 
 using namespace Aws::Client;
@@ -19,6 +20,12 @@ template <>
 AWS_PARTNERCENTRALSELLING_API ValidationException PartnerCentralSellingError::GetModeledError() {
   assert(this->GetErrorType() == PartnerCentralSellingErrors::VALIDATION);
   return ValidationException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_PARTNERCENTRALSELLING_API AccessDeniedException PartnerCentralSellingError::GetModeledError() {
+  assert(this->GetErrorType() == PartnerCentralSellingErrors::ACCESS_DENIED);
+  return AccessDeniedException(this->GetJsonPayload().View());
 }
 
 namespace PartnerCentralSellingErrorMapper {

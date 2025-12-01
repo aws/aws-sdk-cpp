@@ -18,6 +18,7 @@
 #include <aws/connect/model/CustomerVoiceActivity.h>
 #include <aws/connect/model/DisconnectDetails.h>
 #include <aws/connect/model/EndpointInfo.h>
+#include <aws/connect/model/NextContactEntry.h>
 #include <aws/connect/model/OutboundStrategy.h>
 #include <aws/connect/model/QualityMetrics.h>
 #include <aws/connect/model/QueueInfo.h>
@@ -942,6 +943,30 @@ class Contact {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> List of next contact entries for the contact. </p>
+   */
+  inline const Aws::Vector<NextContactEntry>& GetNextContacts() const { return m_nextContacts; }
+  inline bool NextContactsHasBeenSet() const { return m_nextContactsHasBeenSet; }
+  template <typename NextContactsT = Aws::Vector<NextContactEntry>>
+  void SetNextContacts(NextContactsT&& value) {
+    m_nextContactsHasBeenSet = true;
+    m_nextContacts = std::forward<NextContactsT>(value);
+  }
+  template <typename NextContactsT = Aws::Vector<NextContactEntry>>
+  Contact& WithNextContacts(NextContactsT&& value) {
+    SetNextContacts(std::forward<NextContactsT>(value));
+    return *this;
+  }
+  template <typename NextContactsT = NextContactEntry>
+  Contact& AddNextContacts(NextContactsT&& value) {
+    m_nextContactsHasBeenSet = true;
+    m_nextContacts.emplace_back(std::forward<NextContactsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
   bool m_arnHasBeenSet = false;
@@ -1080,6 +1105,9 @@ class Contact {
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
   bool m_attributesHasBeenSet = false;
+
+  Aws::Vector<NextContactEntry> m_nextContacts;
+  bool m_nextContactsHasBeenSet = false;
 };
 
 }  // namespace Model

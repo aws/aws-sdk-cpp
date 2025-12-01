@@ -175,6 +175,14 @@ UpdateFunctionCodeResult& UpdateFunctionCodeResult::operator=(const Aws::AmazonW
     m_loggingConfig = jsonValue.GetObject("LoggingConfig");
     m_loggingConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CapacityProviderConfig")) {
+    m_capacityProviderConfig = jsonValue.GetObject("CapacityProviderConfig");
+    m_capacityProviderConfigHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ConfigSha256")) {
+    m_configSha256 = jsonValue.GetString("ConfigSha256");
+    m_configSha256HasBeenSet = true;
+  }
   if (jsonValue.ValueExists("TenancyConfig")) {
     m_tenancyConfig = jsonValue.GetObject("TenancyConfig");
     m_tenancyConfigHasBeenSet = true;

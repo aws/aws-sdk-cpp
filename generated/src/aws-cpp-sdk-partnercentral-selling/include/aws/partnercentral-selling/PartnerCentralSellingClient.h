@@ -263,6 +263,36 @@ class AWS_PARTNERCENTRALSELLING_API PartnerCentralSellingClient
   }
 
   /**
+   * <p>Creates a new context within an existing engagement. This action allows you
+   * to add contextual information such as customer projects or documents to an
+   * engagement, providing additional details that help facilitate collaboration
+   * between engagement members.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateEngagementContext">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateEngagementContextOutcome CreateEngagementContext(const Model::CreateEngagementContextRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateEngagementContext that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateEngagementContextRequestT = Model::CreateEngagementContextRequest>
+  Model::CreateEngagementContextOutcomeCallable CreateEngagementContextCallable(const CreateEngagementContextRequestT& request) const {
+    return SubmitCallable(&PartnerCentralSellingClient::CreateEngagementContext, request);
+  }
+
+  /**
+   * An Async wrapper for CreateEngagementContext that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateEngagementContextRequestT = Model::CreateEngagementContextRequest>
+  void CreateEngagementContextAsync(const CreateEngagementContextRequestT& request,
+                                    const CreateEngagementContextResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PartnerCentralSellingClient::CreateEngagementContext, request, handler, context);
+  }
+
+  /**
    * <p> This action creates an invitation from a sender to a single receiver to join
    * an engagement. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateEngagementInvitation">AWS
@@ -884,6 +914,37 @@ class AWS_PARTNERCENTRALSELLING_API PartnerCentralSellingClient
   }
 
   /**
+   * <p>Lists all in-progress, completed, or failed opportunity creation tasks from
+   * engagements that were initiated by the caller's account.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListOpportunityFromEngagementTasks">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListOpportunityFromEngagementTasksOutcome ListOpportunityFromEngagementTasks(
+      const Model::ListOpportunityFromEngagementTasksRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListOpportunityFromEngagementTasks that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename ListOpportunityFromEngagementTasksRequestT = Model::ListOpportunityFromEngagementTasksRequest>
+  Model::ListOpportunityFromEngagementTasksOutcomeCallable ListOpportunityFromEngagementTasksCallable(
+      const ListOpportunityFromEngagementTasksRequestT& request) const {
+    return SubmitCallable(&PartnerCentralSellingClient::ListOpportunityFromEngagementTasks, request);
+  }
+
+  /**
+   * An Async wrapper for ListOpportunityFromEngagementTasks that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListOpportunityFromEngagementTasksRequestT = Model::ListOpportunityFromEngagementTasksRequest>
+  void ListOpportunityFromEngagementTasksAsync(const ListOpportunityFromEngagementTasksRequestT& request,
+                                               const ListOpportunityFromEngagementTasksResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PartnerCentralSellingClient::ListOpportunityFromEngagementTasks, request, handler, context);
+  }
+
+  /**
    * <p> Lists resource snapshot jobs owned by the customer. This operation supports
    * various filtering scenarios, including listing all jobs owned by the caller,
    * jobs for a specific engagement, jobs with a specific status, or any combination
@@ -1134,6 +1195,38 @@ class AWS_PARTNERCENTRALSELLING_API PartnerCentralSellingClient
   }
 
   /**
+   * <p>This action creates an opportunity from an existing engagement context. The
+   * task is asynchronous and orchestrates the process of converting engagement
+   * contextual information into a structured opportunity record within the partner's
+   * account.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StartOpportunityFromEngagementTask">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartOpportunityFromEngagementTaskOutcome StartOpportunityFromEngagementTask(
+      const Model::StartOpportunityFromEngagementTaskRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartOpportunityFromEngagementTask that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename StartOpportunityFromEngagementTaskRequestT = Model::StartOpportunityFromEngagementTaskRequest>
+  Model::StartOpportunityFromEngagementTaskOutcomeCallable StartOpportunityFromEngagementTaskCallable(
+      const StartOpportunityFromEngagementTaskRequestT& request) const {
+    return SubmitCallable(&PartnerCentralSellingClient::StartOpportunityFromEngagementTask, request);
+  }
+
+  /**
+   * An Async wrapper for StartOpportunityFromEngagementTask that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename StartOpportunityFromEngagementTaskRequestT = Model::StartOpportunityFromEngagementTaskRequest>
+  void StartOpportunityFromEngagementTaskAsync(const StartOpportunityFromEngagementTaskRequestT& request,
+                                               const StartOpportunityFromEngagementTaskResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PartnerCentralSellingClient::StartOpportunityFromEngagementTask, request, handler, context);
+  }
+
+  /**
    * <p>Starts a resource snapshot job that has been previously
    * created.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StartResourceSnapshotJob">AWS
@@ -1268,6 +1361,34 @@ class AWS_PARTNERCENTRALSELLING_API PartnerCentralSellingClient
   void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&PartnerCentralSellingClient::UntagResource, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the context information for an existing engagement with new or
+   * modified data.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/UpdateEngagementContext">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateEngagementContextOutcome UpdateEngagementContext(const Model::UpdateEngagementContextRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateEngagementContext that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateEngagementContextRequestT = Model::UpdateEngagementContextRequest>
+  Model::UpdateEngagementContextOutcomeCallable UpdateEngagementContextCallable(const UpdateEngagementContextRequestT& request) const {
+    return SubmitCallable(&PartnerCentralSellingClient::UpdateEngagementContext, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateEngagementContext that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateEngagementContextRequestT = Model::UpdateEngagementContextRequest>
+  void UpdateEngagementContextAsync(const UpdateEngagementContextRequestT& request,
+                                    const UpdateEngagementContextResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PartnerCentralSellingClient::UpdateEngagementContext, request, handler, context);
   }
 
   /**

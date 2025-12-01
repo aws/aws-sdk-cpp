@@ -18,6 +18,10 @@ namespace Model {
 LegalTerm::LegalTerm(JsonView jsonValue) { *this = jsonValue; }
 
 LegalTerm& LegalTerm::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
+    m_type = jsonValue.GetString("type");
+    m_typeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("documents")) {
     Aws::Utils::Array<JsonView> documentsJsonList = jsonValue.GetArray("documents");
     for (unsigned documentsIndex = 0; documentsIndex < documentsJsonList.GetLength(); ++documentsIndex) {
@@ -25,15 +29,15 @@ LegalTerm& LegalTerm::operator=(JsonView jsonValue) {
     }
     m_documentsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("type")) {
-    m_type = jsonValue.GetString("type");
-    m_typeHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue LegalTerm::Jsonize() const {
   JsonValue payload;
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", m_type);
+  }
 
   if (m_documentsHasBeenSet) {
     Aws::Utils::Array<JsonValue> documentsJsonList(m_documents.size());
@@ -41,10 +45,6 @@ JsonValue LegalTerm::Jsonize() const {
       documentsJsonList[documentsIndex].AsObject(m_documents[documentsIndex].Jsonize());
     }
     payload.WithArray("documents", std::move(documentsJsonList));
-  }
-
-  if (m_typeHasBeenSet) {
-    payload.WithString("type", m_type);
   }
 
   return payload;

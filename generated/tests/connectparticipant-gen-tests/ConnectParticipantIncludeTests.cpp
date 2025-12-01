@@ -41,6 +41,8 @@
 #include <aws/connectparticipant/model/MeetingFeatureStatus.h>
 #include <aws/connectparticipant/model/MeetingFeaturesConfiguration.h>
 #include <aws/connectparticipant/model/MessageMetadata.h>
+#include <aws/connectparticipant/model/MessageProcessingMetadata.h>
+#include <aws/connectparticipant/model/MessageProcessingStatus.h>
 #include <aws/connectparticipant/model/ParticipantRole.h>
 #include <aws/connectparticipant/model/Receipt.h>
 #include <aws/connectparticipant/model/ResourceNotFoundException.h>

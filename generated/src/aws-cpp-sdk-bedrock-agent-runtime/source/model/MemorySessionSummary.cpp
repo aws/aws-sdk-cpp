@@ -22,6 +22,10 @@ MemorySessionSummary& MemorySessionSummary::operator=(JsonView jsonValue) {
     m_memoryId = jsonValue.GetString("memoryId");
     m_memoryIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("sessionExpiryTime")) {
+    m_sessionExpiryTime = jsonValue.GetString("sessionExpiryTime");
+    m_sessionExpiryTimeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("sessionId")) {
     m_sessionId = jsonValue.GetString("sessionId");
     m_sessionIdHasBeenSet = true;
@@ -29,10 +33,6 @@ MemorySessionSummary& MemorySessionSummary::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("sessionStartTime")) {
     m_sessionStartTime = jsonValue.GetString("sessionStartTime");
     m_sessionStartTimeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("sessionExpiryTime")) {
-    m_sessionExpiryTime = jsonValue.GetString("sessionExpiryTime");
-    m_sessionExpiryTimeHasBeenSet = true;
   }
   if (jsonValue.ValueExists("summaryText")) {
     m_summaryText = jsonValue.GetString("summaryText");
@@ -48,16 +48,16 @@ JsonValue MemorySessionSummary::Jsonize() const {
     payload.WithString("memoryId", m_memoryId);
   }
 
+  if (m_sessionExpiryTimeHasBeenSet) {
+    payload.WithString("sessionExpiryTime", m_sessionExpiryTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
   if (m_sessionIdHasBeenSet) {
     payload.WithString("sessionId", m_sessionId);
   }
 
   if (m_sessionStartTimeHasBeenSet) {
     payload.WithString("sessionStartTime", m_sessionStartTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if (m_sessionExpiryTimeHasBeenSet) {
-    payload.WithString("sessionExpiryTime", m_sessionExpiryTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if (m_summaryTextHasBeenSet) {

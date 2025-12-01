@@ -18,17 +18,17 @@ namespace Model {
 FileSource::FileSource(JsonView jsonValue) { *this = jsonValue; }
 
 FileSource& FileSource::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("sourceType")) {
-    m_sourceType = FileSourceTypeMapper::GetFileSourceTypeForName(jsonValue.GetString("sourceType"));
-    m_sourceTypeHasBeenSet = true;
+  if (jsonValue.ValueExists("byteContent")) {
+    m_byteContent = jsonValue.GetObject("byteContent");
+    m_byteContentHasBeenSet = true;
   }
   if (jsonValue.ValueExists("s3Location")) {
     m_s3Location = jsonValue.GetObject("s3Location");
     m_s3LocationHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("byteContent")) {
-    m_byteContent = jsonValue.GetObject("byteContent");
-    m_byteContentHasBeenSet = true;
+  if (jsonValue.ValueExists("sourceType")) {
+    m_sourceType = FileSourceTypeMapper::GetFileSourceTypeForName(jsonValue.GetString("sourceType"));
+    m_sourceTypeHasBeenSet = true;
   }
   return *this;
 }
@@ -36,16 +36,16 @@ FileSource& FileSource::operator=(JsonView jsonValue) {
 JsonValue FileSource::Jsonize() const {
   JsonValue payload;
 
-  if (m_sourceTypeHasBeenSet) {
-    payload.WithString("sourceType", FileSourceTypeMapper::GetNameForFileSourceType(m_sourceType));
+  if (m_byteContentHasBeenSet) {
+    payload.WithObject("byteContent", m_byteContent.Jsonize());
   }
 
   if (m_s3LocationHasBeenSet) {
     payload.WithObject("s3Location", m_s3Location.Jsonize());
   }
 
-  if (m_byteContentHasBeenSet) {
-    payload.WithObject("byteContent", m_byteContent.Jsonize());
+  if (m_sourceTypeHasBeenSet) {
+    payload.WithString("sourceType", FileSourceTypeMapper::GetNameForFileSourceType(m_sourceType));
   }
 
   return payload;

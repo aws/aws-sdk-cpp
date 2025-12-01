@@ -18,6 +18,10 @@ namespace Model {
 PaymentScheduleTerm::PaymentScheduleTerm(JsonView jsonValue) { *this = jsonValue; }
 
 PaymentScheduleTerm& PaymentScheduleTerm::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
+    m_type = jsonValue.GetString("type");
+    m_typeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("currencyCode")) {
     m_currencyCode = jsonValue.GetString("currencyCode");
     m_currencyCodeHasBeenSet = true;
@@ -29,15 +33,15 @@ PaymentScheduleTerm& PaymentScheduleTerm::operator=(JsonView jsonValue) {
     }
     m_scheduleHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("type")) {
-    m_type = jsonValue.GetString("type");
-    m_typeHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue PaymentScheduleTerm::Jsonize() const {
   JsonValue payload;
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", m_type);
+  }
 
   if (m_currencyCodeHasBeenSet) {
     payload.WithString("currencyCode", m_currencyCode);
@@ -49,10 +53,6 @@ JsonValue PaymentScheduleTerm::Jsonize() const {
       scheduleJsonList[scheduleIndex].AsObject(m_schedule[scheduleIndex].Jsonize());
     }
     payload.WithArray("schedule", std::move(scheduleJsonList));
-  }
-
-  if (m_typeHasBeenSet) {
-    payload.WithString("type", m_type);
   }
 
   return payload;

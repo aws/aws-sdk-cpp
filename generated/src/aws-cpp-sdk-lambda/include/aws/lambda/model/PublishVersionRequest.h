@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lambda/LambdaRequest.h>
 #include <aws/lambda/Lambda_EXPORTS.h>
+#include <aws/lambda/model/FunctionVersionLatestPublished.h>
 
 #include <utility>
 
@@ -112,6 +113,22 @@ class PublishVersionRequest : public LambdaRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies where to publish the function version or configuration.</p>
+   */
+  inline FunctionVersionLatestPublished GetPublishTo() const { return m_publishTo; }
+  inline bool PublishToHasBeenSet() const { return m_publishToHasBeenSet; }
+  inline void SetPublishTo(FunctionVersionLatestPublished value) {
+    m_publishToHasBeenSet = true;
+    m_publishTo = value;
+  }
+  inline PublishVersionRequest& WithPublishTo(FunctionVersionLatestPublished value) {
+    SetPublishTo(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_functionName;
   bool m_functionNameHasBeenSet = false;
@@ -124,6 +141,9 @@ class PublishVersionRequest : public LambdaRequest {
 
   Aws::String m_revisionId;
   bool m_revisionIdHasBeenSet = false;
+
+  FunctionVersionLatestPublished m_publishTo{FunctionVersionLatestPublished::NOT_SET};
+  bool m_publishToHasBeenSet = false;
 };
 
 }  // namespace Model

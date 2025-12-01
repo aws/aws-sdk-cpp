@@ -89,6 +89,7 @@
 #include <aws/cleanrooms/model/CollaborationQueryLogStatus.h>
 #include <aws/cleanrooms/model/CollaborationSummary.h>
 #include <aws/cleanrooms/model/Column.h>
+#include <aws/cleanrooms/model/ColumnClassificationDetails.h>
 #include <aws/cleanrooms/model/CommercialRegion.h>
 #include <aws/cleanrooms/model/ComputeConfiguration.h>
 #include <aws/cleanrooms/model/ConfigurationDetails.h>
@@ -286,6 +287,7 @@
 #include <aws/cleanrooms/model/ListTagsForResourceResult.h>
 #include <aws/cleanrooms/model/MLMemberAbilities.h>
 #include <aws/cleanrooms/model/MLPaymentConfig.h>
+#include <aws/cleanrooms/model/MLSyntheticDataParameters.h>
 #include <aws/cleanrooms/model/MemberAbility.h>
 #include <aws/cleanrooms/model/MemberChangeSpecification.h>
 #include <aws/cleanrooms/model/MemberSpecification.h>
@@ -306,6 +308,7 @@
 #include <aws/cleanrooms/model/MembershipQueryLogStatus.h>
 #include <aws/cleanrooms/model/MembershipStatus.h>
 #include <aws/cleanrooms/model/MembershipSummary.h>
+#include <aws/cleanrooms/model/MembershipSyntheticDataGenerationPaymentConfig.h>
 #include <aws/cleanrooms/model/ModelInferencePaymentConfig.h>
 #include <aws/cleanrooms/model/ModelTrainingPaymentConfig.h>
 #include <aws/cleanrooms/model/ParameterType.h>
@@ -398,6 +401,10 @@
 #include <aws/cleanrooms/model/StartProtectedQueryRequest.h>
 #include <aws/cleanrooms/model/StartProtectedQueryResult.h>
 #include <aws/cleanrooms/model/SupportedS3Region.h>
+#include <aws/cleanrooms/model/SyntheticDataColumnProperties.h>
+#include <aws/cleanrooms/model/SyntheticDataColumnType.h>
+#include <aws/cleanrooms/model/SyntheticDataGenerationPaymentConfig.h>
+#include <aws/cleanrooms/model/SyntheticDataParameters.h>
 #include <aws/cleanrooms/model/TableReference.h>
 #include <aws/cleanrooms/model/TagResourceRequest.h>
 #include <aws/cleanrooms/model/TagResourceResult.h>

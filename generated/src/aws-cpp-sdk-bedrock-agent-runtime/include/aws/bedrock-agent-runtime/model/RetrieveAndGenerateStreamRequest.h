@@ -62,29 +62,6 @@ class RetrieveAndGenerateStreamRequest : public BedrockAgentRuntimeRequest {
 
   ///@{
   /**
-   * <p>The unique identifier of the session. When you first make a
-   * <code>RetrieveAndGenerate</code> request, Amazon Bedrock automatically generates
-   * this value. You must reuse this value for all subsequent requests in the same
-   * conversational session. This value allows Amazon Bedrock to maintain context and
-   * knowledge from previous interactions. You can't explicitly set the
-   * <code>sessionId</code> yourself.</p>
-   */
-  inline const Aws::String& GetSessionId() const { return m_sessionId; }
-  inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-  template <typename SessionIdT = Aws::String>
-  void SetSessionId(SessionIdT&& value) {
-    m_sessionIdHasBeenSet = true;
-    m_sessionId = std::forward<SessionIdT>(value);
-  }
-  template <typename SessionIdT = Aws::String>
-  RetrieveAndGenerateStreamRequest& WithSessionId(SessionIdT&& value) {
-    SetSessionId(std::forward<SessionIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Contains the query to be made to the knowledge base.</p>
    */
   inline const RetrieveAndGenerateInput& GetInput() const { return m_input; }
@@ -139,10 +116,30 @@ class RetrieveAndGenerateStreamRequest : public BedrockAgentRuntimeRequest {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>The unique identifier of the session. When you first make a
+   * <code>RetrieveAndGenerate</code> request, Amazon Bedrock automatically generates
+   * this value. You must reuse this value for all subsequent requests in the same
+   * conversational session. This value allows Amazon Bedrock to maintain context and
+   * knowledge from previous interactions. You can't explicitly set the
+   * <code>sessionId</code> yourself.</p>
+   */
+  inline const Aws::String& GetSessionId() const { return m_sessionId; }
+  inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
+  template <typename SessionIdT = Aws::String>
+  void SetSessionId(SessionIdT&& value) {
+    m_sessionIdHasBeenSet = true;
+    m_sessionId = std::forward<SessionIdT>(value);
+  }
+  template <typename SessionIdT = Aws::String>
+  RetrieveAndGenerateStreamRequest& WithSessionId(SessionIdT&& value) {
+    SetSessionId(std::forward<SessionIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   RetrieveAndGenerateInput m_input;
   bool m_inputHasBeenSet = false;
 
@@ -151,6 +148,9 @@ class RetrieveAndGenerateStreamRequest : public BedrockAgentRuntimeRequest {
 
   RetrieveAndGenerateSessionConfiguration m_sessionConfiguration;
   bool m_sessionConfigurationHasBeenSet = false;
+
+  Aws::String m_sessionId;
+  bool m_sessionIdHasBeenSet = false;
   RetrieveAndGenerateStreamHandler m_handler;
   Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
 };

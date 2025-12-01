@@ -95,6 +95,22 @@ class CommunicationTimeConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const TimeWindow& GetWhatsApp() const { return m_whatsApp; }
+  inline bool WhatsAppHasBeenSet() const { return m_whatsAppHasBeenSet; }
+  template <typename WhatsAppT = TimeWindow>
+  void SetWhatsApp(WhatsAppT&& value) {
+    m_whatsAppHasBeenSet = true;
+    m_whatsApp = std::forward<WhatsAppT>(value);
+  }
+  template <typename WhatsAppT = TimeWindow>
+  CommunicationTimeConfig& WithWhatsApp(WhatsAppT&& value) {
+    SetWhatsApp(std::forward<WhatsAppT>(value));
+    return *this;
+  }
+  ///@}
  private:
   LocalTimeZoneConfig m_localTimeZoneConfig;
   bool m_localTimeZoneConfigHasBeenSet = false;
@@ -107,6 +123,9 @@ class CommunicationTimeConfig {
 
   TimeWindow m_email;
   bool m_emailHasBeenSet = false;
+
+  TimeWindow m_whatsApp;
+  bool m_whatsAppHasBeenSet = false;
 };
 
 }  // namespace Model

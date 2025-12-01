@@ -30,6 +30,10 @@ SelfServiceConversationHistory& SelfServiceConversationHistory::operator=(JsonVi
     m_botResponse = jsonValue.GetString("botResponse");
     m_botResponseHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("timestamp")) {
+    m_timestamp = jsonValue.GetDouble("timestamp");
+    m_timestampHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue SelfServiceConversationHistory::Jsonize() const {
 
   if (m_botResponseHasBeenSet) {
     payload.WithString("botResponse", m_botResponse);
+  }
+
+  if (m_timestampHasBeenSet) {
+    payload.WithDouble("timestamp", m_timestamp.SecondsWithMSPrecision());
   }
 
   return payload;

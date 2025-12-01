@@ -36,24 +36,6 @@ class FlowInputField {
 
   ///@{
   /**
-   * <p>The name of the input field as defined in the flow's input schema.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  FlowInputField& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The content of the input field, which can contain text or structured
    * data.</p>
    */
@@ -70,12 +52,30 @@ class FlowInputField {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>The name of the input field as defined in the flow's input schema.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  FlowInputField& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   FlowExecutionContent m_content;
   bool m_contentHasBeenSet = false;
+
+  Aws::String m_name;
+  bool m_nameHasBeenSet = false;
 };
 
 }  // namespace Model

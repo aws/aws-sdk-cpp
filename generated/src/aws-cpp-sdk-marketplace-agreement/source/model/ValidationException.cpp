@@ -18,12 +18,9 @@ namespace Model {
 ValidationException::ValidationException(JsonView jsonValue) { *this = jsonValue; }
 
 ValidationException& ValidationException::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("fields")) {
-    Aws::Utils::Array<JsonView> fieldsJsonList = jsonValue.GetArray("fields");
-    for (unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex) {
-      m_fields.push_back(fieldsJsonList[fieldsIndex].AsObject());
-    }
-    m_fieldsHasBeenSet = true;
+  if (jsonValue.ValueExists("requestId")) {
+    m_requestId = jsonValue.GetString("requestId");
+    m_requestIdHasBeenSet = true;
   }
   if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
@@ -33,9 +30,12 @@ ValidationException& ValidationException::operator=(JsonView jsonValue) {
     m_reason = ValidationExceptionReasonMapper::GetValidationExceptionReasonForName(jsonValue.GetString("reason"));
     m_reasonHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("requestId")) {
-    m_requestId = jsonValue.GetString("requestId");
-    m_requestIdHasBeenSet = true;
+  if (jsonValue.ValueExists("fields")) {
+    Aws::Utils::Array<JsonView> fieldsJsonList = jsonValue.GetArray("fields");
+    for (unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex) {
+      m_fields.push_back(fieldsJsonList[fieldsIndex].AsObject());
+    }
+    m_fieldsHasBeenSet = true;
   }
   return *this;
 }
@@ -43,12 +43,8 @@ ValidationException& ValidationException::operator=(JsonView jsonValue) {
 JsonValue ValidationException::Jsonize() const {
   JsonValue payload;
 
-  if (m_fieldsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> fieldsJsonList(m_fields.size());
-    for (unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex) {
-      fieldsJsonList[fieldsIndex].AsObject(m_fields[fieldsIndex].Jsonize());
-    }
-    payload.WithArray("fields", std::move(fieldsJsonList));
+  if (m_requestIdHasBeenSet) {
+    payload.WithString("requestId", m_requestId);
   }
 
   if (m_messageHasBeenSet) {
@@ -59,8 +55,12 @@ JsonValue ValidationException::Jsonize() const {
     payload.WithString("reason", ValidationExceptionReasonMapper::GetNameForValidationExceptionReason(m_reason));
   }
 
-  if (m_requestIdHasBeenSet) {
-    payload.WithString("requestId", m_requestId);
+  if (m_fieldsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> fieldsJsonList(m_fields.size());
+    for (unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex) {
+      fieldsJsonList[fieldsIndex].AsObject(m_fields[fieldsIndex].Jsonize());
+    }
+    payload.WithArray("fields", std::move(fieldsJsonList));
   }
 
   return payload;

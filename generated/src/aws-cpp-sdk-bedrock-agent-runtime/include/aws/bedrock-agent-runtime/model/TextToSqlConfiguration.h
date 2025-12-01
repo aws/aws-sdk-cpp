@@ -35,22 +35,6 @@ class TextToSqlConfiguration {
 
   ///@{
   /**
-   * <p>The type of resource to use in transformation.</p>
-   */
-  inline TextToSqlConfigurationType GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  inline void SetType(TextToSqlConfigurationType value) {
-    m_typeHasBeenSet = true;
-    m_type = value;
-  }
-  inline TextToSqlConfiguration& WithType(TextToSqlConfigurationType value) {
-    SetType(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Specifies configurations for a knowledge base to use in transformation.</p>
    */
   inline const TextToSqlKnowledgeBaseConfiguration& GetKnowledgeBaseConfiguration() const { return m_knowledgeBaseConfiguration; }
@@ -66,12 +50,28 @@ class TextToSqlConfiguration {
     return *this;
   }
   ///@}
- private:
-  TextToSqlConfigurationType m_type{TextToSqlConfigurationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>The type of resource to use in transformation.</p>
+   */
+  inline TextToSqlConfigurationType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(TextToSqlConfigurationType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline TextToSqlConfiguration& WithType(TextToSqlConfigurationType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
+ private:
   TextToSqlKnowledgeBaseConfiguration m_knowledgeBaseConfiguration;
   bool m_knowledgeBaseConfigurationHasBeenSet = false;
+
+  TextToSqlConfigurationType m_type{TextToSqlConfigurationType::NOT_SET};
+  bool m_typeHasBeenSet = false;
 };
 
 }  // namespace Model

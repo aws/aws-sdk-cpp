@@ -21,29 +21,29 @@ GetExecutionFlowSnapshotResult::GetExecutionFlowSnapshotResult(const Aws::Amazon
 
 GetExecutionFlowSnapshotResult& GetExecutionFlowSnapshotResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("flowIdentifier")) {
-    m_flowIdentifier = jsonValue.GetString("flowIdentifier");
-    m_flowIdentifierHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("flowAliasIdentifier")) {
-    m_flowAliasIdentifier = jsonValue.GetString("flowAliasIdentifier");
-    m_flowAliasIdentifierHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("flowVersion")) {
-    m_flowVersion = jsonValue.GetString("flowVersion");
-    m_flowVersionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("executionRoleArn")) {
-    m_executionRoleArn = jsonValue.GetString("executionRoleArn");
-    m_executionRoleArnHasBeenSet = true;
+  if (jsonValue.ValueExists("customerEncryptionKeyArn")) {
+    m_customerEncryptionKeyArn = jsonValue.GetString("customerEncryptionKeyArn");
+    m_customerEncryptionKeyArnHasBeenSet = true;
   }
   if (jsonValue.ValueExists("definition")) {
     m_definition = jsonValue.GetString("definition");
     m_definitionHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("customerEncryptionKeyArn")) {
-    m_customerEncryptionKeyArn = jsonValue.GetString("customerEncryptionKeyArn");
-    m_customerEncryptionKeyArnHasBeenSet = true;
+  if (jsonValue.ValueExists("executionRoleArn")) {
+    m_executionRoleArn = jsonValue.GetString("executionRoleArn");
+    m_executionRoleArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("flowAliasIdentifier")) {
+    m_flowAliasIdentifier = jsonValue.GetString("flowAliasIdentifier");
+    m_flowAliasIdentifierHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("flowIdentifier")) {
+    m_flowIdentifier = jsonValue.GetString("flowIdentifier");
+    m_flowIdentifierHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("flowVersion")) {
+    m_flowVersion = jsonValue.GetString("flowVersion");
+    m_flowVersionHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -68,6 +69,48 @@ class EvaluationAnswerData {
 
   ///@{
   /**
+   * <p>String values provided as answers to evaluation questions.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetStringValues() const { return m_stringValues; }
+  inline bool StringValuesHasBeenSet() const { return m_stringValuesHasBeenSet; }
+  template <typename StringValuesT = Aws::Vector<Aws::String>>
+  void SetStringValues(StringValuesT&& value) {
+    m_stringValuesHasBeenSet = true;
+    m_stringValues = std::forward<StringValuesT>(value);
+  }
+  template <typename StringValuesT = Aws::Vector<Aws::String>>
+  EvaluationAnswerData& WithStringValues(StringValuesT&& value) {
+    SetStringValues(std::forward<StringValuesT>(value));
+    return *this;
+  }
+  template <typename StringValuesT = Aws::String>
+  EvaluationAnswerData& AddStringValues(StringValuesT&& value) {
+    m_stringValuesHasBeenSet = true;
+    m_stringValues.emplace_back(std::forward<StringValuesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Date and time value provided as an answer to an evaluation question.</p>
+   */
+  inline const Aws::String& GetDateTimeValue() const { return m_dateTimeValue; }
+  inline bool DateTimeValueHasBeenSet() const { return m_dateTimeValueHasBeenSet; }
+  template <typename DateTimeValueT = Aws::String>
+  void SetDateTimeValue(DateTimeValueT&& value) {
+    m_dateTimeValueHasBeenSet = true;
+    m_dateTimeValue = std::forward<DateTimeValueT>(value);
+  }
+  template <typename DateTimeValueT = Aws::String>
+  EvaluationAnswerData& WithDateTimeValue(DateTimeValueT&& value) {
+    SetDateTimeValue(std::forward<DateTimeValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The flag to mark the question as not applicable.</p>
    */
   inline bool GetNotApplicable() const { return m_notApplicable; }
@@ -87,6 +130,12 @@ class EvaluationAnswerData {
 
   double m_numericValue{0.0};
   bool m_numericValueHasBeenSet = false;
+
+  Aws::Vector<Aws::String> m_stringValues;
+  bool m_stringValuesHasBeenSet = false;
+
+  Aws::String m_dateTimeValue;
+  bool m_dateTimeValueHasBeenSet = false;
 
   bool m_notApplicable{false};
   bool m_notApplicableHasBeenSet = false;

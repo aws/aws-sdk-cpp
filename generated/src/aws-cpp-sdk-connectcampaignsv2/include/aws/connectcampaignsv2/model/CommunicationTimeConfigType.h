@@ -10,7 +10,7 @@
 namespace Aws {
 namespace ConnectCampaignsV2 {
 namespace Model {
-enum class CommunicationTimeConfigType { NOT_SET, TELEPHONY, SMS, EMAIL };
+enum class CommunicationTimeConfigType { NOT_SET, TELEPHONY, SMS, EMAIL, WHATSAPP };
 
 namespace CommunicationTimeConfigTypeMapper {
 AWS_CONNECTCAMPAIGNSV2_API CommunicationTimeConfigType GetCommunicationTimeConfigTypeForName(const Aws::String& name);

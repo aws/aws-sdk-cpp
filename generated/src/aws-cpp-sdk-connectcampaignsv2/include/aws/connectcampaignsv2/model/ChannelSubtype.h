@@ -10,7 +10,7 @@
 namespace Aws {
 namespace ConnectCampaignsV2 {
 namespace Model {
-enum class ChannelSubtype { NOT_SET, TELEPHONY, SMS, EMAIL };
+enum class ChannelSubtype { NOT_SET, TELEPHONY, SMS, EMAIL, WHATSAPP };
 
 namespace ChannelSubtypeMapper {
 AWS_CONNECTCAMPAIGNSV2_API ChannelSubtype GetChannelSubtypeForName(const Aws::String& name);

@@ -46,6 +46,45 @@ class KnowledgeBaseVectorSearchConfiguration {
 
   ///@{
   /**
+   * <p>Specifies the filters to use on the metadata in the knowledge base data
+   * sources before returning results. For more information, see <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+   * configurations</a>.</p>
+   */
+  inline const RetrievalFilter& GetFilter() const { return m_filter; }
+  inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+  template <typename FilterT = RetrievalFilter>
+  void SetFilter(FilterT&& value) {
+    m_filterHasBeenSet = true;
+    m_filter = std::forward<FilterT>(value);
+  }
+  template <typename FilterT = RetrievalFilter>
+  KnowledgeBaseVectorSearchConfiguration& WithFilter(FilterT&& value) {
+    SetFilter(std::forward<FilterT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Settings for implicit filtering.</p>
+   */
+  inline const ImplicitFilterConfiguration& GetImplicitFilterConfiguration() const { return m_implicitFilterConfiguration; }
+  inline bool ImplicitFilterConfigurationHasBeenSet() const { return m_implicitFilterConfigurationHasBeenSet; }
+  template <typename ImplicitFilterConfigurationT = ImplicitFilterConfiguration>
+  void SetImplicitFilterConfiguration(ImplicitFilterConfigurationT&& value) {
+    m_implicitFilterConfigurationHasBeenSet = true;
+    m_implicitFilterConfiguration = std::forward<ImplicitFilterConfigurationT>(value);
+  }
+  template <typename ImplicitFilterConfigurationT = ImplicitFilterConfiguration>
+  KnowledgeBaseVectorSearchConfiguration& WithImplicitFilterConfiguration(ImplicitFilterConfigurationT&& value) {
+    SetImplicitFilterConfiguration(std::forward<ImplicitFilterConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The number of source chunks to retrieve.</p>
    */
   inline int GetNumberOfResults() const { return m_numberOfResults; }
@@ -86,27 +125,6 @@ class KnowledgeBaseVectorSearchConfiguration {
 
   ///@{
   /**
-   * <p>Specifies the filters to use on the metadata in the knowledge base data
-   * sources before returning results. For more information, see <a
-   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
-   * configurations</a>.</p>
-   */
-  inline const RetrievalFilter& GetFilter() const { return m_filter; }
-  inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-  template <typename FilterT = RetrievalFilter>
-  void SetFilter(FilterT&& value) {
-    m_filterHasBeenSet = true;
-    m_filter = std::forward<FilterT>(value);
-  }
-  template <typename FilterT = RetrievalFilter>
-  KnowledgeBaseVectorSearchConfiguration& WithFilter(FilterT&& value) {
-    SetFilter(std::forward<FilterT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Contains configurations for reranking the retrieved results. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/bedrock/latest/userguide/rerank.html">Improve
@@ -125,39 +143,21 @@ class KnowledgeBaseVectorSearchConfiguration {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Settings for implicit filtering.</p>
-   */
-  inline const ImplicitFilterConfiguration& GetImplicitFilterConfiguration() const { return m_implicitFilterConfiguration; }
-  inline bool ImplicitFilterConfigurationHasBeenSet() const { return m_implicitFilterConfigurationHasBeenSet; }
-  template <typename ImplicitFilterConfigurationT = ImplicitFilterConfiguration>
-  void SetImplicitFilterConfiguration(ImplicitFilterConfigurationT&& value) {
-    m_implicitFilterConfigurationHasBeenSet = true;
-    m_implicitFilterConfiguration = std::forward<ImplicitFilterConfigurationT>(value);
-  }
-  template <typename ImplicitFilterConfigurationT = ImplicitFilterConfiguration>
-  KnowledgeBaseVectorSearchConfiguration& WithImplicitFilterConfiguration(ImplicitFilterConfigurationT&& value) {
-    SetImplicitFilterConfiguration(std::forward<ImplicitFilterConfigurationT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  RetrievalFilter m_filter;
+  bool m_filterHasBeenSet = false;
+
+  ImplicitFilterConfiguration m_implicitFilterConfiguration;
+  bool m_implicitFilterConfigurationHasBeenSet = false;
+
   int m_numberOfResults{0};
   bool m_numberOfResultsHasBeenSet = false;
 
   SearchType m_overrideSearchType{SearchType::NOT_SET};
   bool m_overrideSearchTypeHasBeenSet = false;
 
-  RetrievalFilter m_filter;
-  bool m_filterHasBeenSet = false;
-
   VectorSearchRerankingConfiguration m_rerankingConfiguration;
   bool m_rerankingConfigurationHasBeenSet = false;
-
-  ImplicitFilterConfiguration m_implicitFilterConfiguration;
-  bool m_implicitFilterConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -31,16 +31,16 @@ RetrieveAndGenerateStreamHandler::RetrieveAndGenerateStreamHandler() : EventStre
                             << (eventType == Utils::Event::InitialResponseType::ON_EVENT ? "event" : "http headers"));
   };
 
-  m_onRetrieveAndGenerateOutputEvent = [&](const RetrieveAndGenerateOutputEvent&) {
-    AWS_LOGSTREAM_TRACE(RETRIEVEANDGENERATESTREAM_HANDLER_CLASS_TAG, "RetrieveAndGenerateOutputEvent received.");
-  };
-
   m_onCitationEvent = [&](const CitationEvent&) {
     AWS_LOGSTREAM_TRACE(RETRIEVEANDGENERATESTREAM_HANDLER_CLASS_TAG, "CitationEvent received.");
   };
 
   m_onGuardrailEvent = [&](const GuardrailEvent&) {
     AWS_LOGSTREAM_TRACE(RETRIEVEANDGENERATESTREAM_HANDLER_CLASS_TAG, "GuardrailEvent received.");
+  };
+
+  m_onRetrieveAndGenerateOutputEvent = [&](const RetrieveAndGenerateOutputEvent&) {
+    AWS_LOGSTREAM_TRACE(RETRIEVEANDGENERATESTREAM_HANDLER_CLASS_TAG, "RetrieveAndGenerateOutputEvent received.");
   };
 
   m_onError = [&](const AWSError<BedrockAgentRuntimeErrors>& error) {
@@ -95,17 +95,6 @@ void RetrieveAndGenerateStreamHandler::HandleEventInMessage() {
       break;
     }
 
-    case RetrieveAndGenerateStreamEventType::OUTPUT: {
-      JsonValue json(GetEventPayloadAsString());
-      if (!json.WasParseSuccessful()) {
-        AWS_LOGSTREAM_WARN(RETRIEVEANDGENERATESTREAM_HANDLER_CLASS_TAG,
-                           "Unable to generate a proper RetrieveAndGenerateOutputEvent object from the response in JSON format.");
-        break;
-      }
-
-      m_onRetrieveAndGenerateOutputEvent(RetrieveAndGenerateOutputEvent{json.View()});
-      break;
-    }
     case RetrieveAndGenerateStreamEventType::CITATION: {
       JsonValue json(GetEventPayloadAsString());
       if (!json.WasParseSuccessful()) {
@@ -126,6 +115,17 @@ void RetrieveAndGenerateStreamHandler::HandleEventInMessage() {
       }
 
       m_onGuardrailEvent(GuardrailEvent{json.View()});
+      break;
+    }
+    case RetrieveAndGenerateStreamEventType::OUTPUT: {
+      JsonValue json(GetEventPayloadAsString());
+      if (!json.WasParseSuccessful()) {
+        AWS_LOGSTREAM_WARN(RETRIEVEANDGENERATESTREAM_HANDLER_CLASS_TAG,
+                           "Unable to generate a proper RetrieveAndGenerateOutputEvent object from the response in JSON format.");
+        break;
+      }
+
+      m_onRetrieveAndGenerateOutputEvent(RetrieveAndGenerateOutputEvent{json.View()});
       break;
     }
     default:
@@ -160,7 +160,7 @@ void RetrieveAndGenerateStreamHandler::HandleErrorInMessage() {
     JsonValue exceptionPayload(GetEventPayloadAsString());
     if (!exceptionPayload.WasParseSuccessful()) {
       AWS_LOGSTREAM_ERROR(RETRIEVEANDGENERATESTREAM_HANDLER_CLASS_TAG,
-                          "Unable to generate a proper BadGatewayException object from the response in JSON format.");
+                          "Unable to generate a proper ValidationException object from the response in JSON format.");
       auto contentTypeIter = headers.find(Aws::Utils::Event::CONTENT_TYPE_HEADER);
       if (contentTypeIter != headers.end()) {
         AWS_LOGSTREAM_DEBUG(RETRIEVEANDGENERATESTREAM_HANDLER_CLASS_TAG,
@@ -206,21 +206,21 @@ void RetrieveAndGenerateStreamHandler::MarshallError(const Aws::String& errorCod
 
 namespace RetrieveAndGenerateStreamEventMapper {
 static const int INITIAL_RESPONSE_HASH = Aws::Utils::HashingUtils::HashString("initial-response");
-static const int OUTPUT_HASH = Aws::Utils::HashingUtils::HashString("output");
 static const int CITATION_HASH = Aws::Utils::HashingUtils::HashString("citation");
 static const int GUARDRAIL_HASH = Aws::Utils::HashingUtils::HashString("guardrail");
+static const int OUTPUT_HASH = Aws::Utils::HashingUtils::HashString("output");
 
 RetrieveAndGenerateStreamEventType GetRetrieveAndGenerateStreamEventTypeForName(const Aws::String& name) {
   int hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
 
   if (hashCode == INITIAL_RESPONSE_HASH) {
     return RetrieveAndGenerateStreamEventType::INITIAL_RESPONSE;
-  } else if (hashCode == OUTPUT_HASH) {
-    return RetrieveAndGenerateStreamEventType::OUTPUT;
   } else if (hashCode == CITATION_HASH) {
     return RetrieveAndGenerateStreamEventType::CITATION;
   } else if (hashCode == GUARDRAIL_HASH) {
     return RetrieveAndGenerateStreamEventType::GUARDRAIL;
+  } else if (hashCode == OUTPUT_HASH) {
+    return RetrieveAndGenerateStreamEventType::OUTPUT;
   }
   return RetrieveAndGenerateStreamEventType::UNKNOWN;
 }
@@ -229,12 +229,12 @@ Aws::String GetNameForRetrieveAndGenerateStreamEventType(RetrieveAndGenerateStre
   switch (value) {
     case RetrieveAndGenerateStreamEventType::INITIAL_RESPONSE:
       return "initial-response";
-    case RetrieveAndGenerateStreamEventType::OUTPUT:
-      return "output";
     case RetrieveAndGenerateStreamEventType::CITATION:
       return "citation";
     case RetrieveAndGenerateStreamEventType::GUARDRAIL:
       return "guardrail";
+    case RetrieveAndGenerateStreamEventType::OUTPUT:
+      return "output";
     default:
       return "Unknown";
   }

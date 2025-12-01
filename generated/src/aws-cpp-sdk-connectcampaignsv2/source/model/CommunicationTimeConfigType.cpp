@@ -18,6 +18,7 @@ namespace CommunicationTimeConfigTypeMapper {
 static const int TELEPHONY_HASH = HashingUtils::HashString("TELEPHONY");
 static const int SMS_HASH = HashingUtils::HashString("SMS");
 static const int EMAIL_HASH = HashingUtils::HashString("EMAIL");
+static const int WHATSAPP_HASH = HashingUtils::HashString("WHATSAPP");
 
 CommunicationTimeConfigType GetCommunicationTimeConfigTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ CommunicationTimeConfigType GetCommunicationTimeConfigTypeForName(const Aws::Str
     return CommunicationTimeConfigType::SMS;
   } else if (hashCode == EMAIL_HASH) {
     return CommunicationTimeConfigType::EMAIL;
+  } else if (hashCode == WHATSAPP_HASH) {
+    return CommunicationTimeConfigType::WHATSAPP;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForCommunicationTimeConfigType(CommunicationTimeConfigType en
       return "SMS";
     case CommunicationTimeConfigType::EMAIL:
       return "EMAIL";
+    case CommunicationTimeConfigType::WHATSAPP:
+      return "WHATSAPP";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

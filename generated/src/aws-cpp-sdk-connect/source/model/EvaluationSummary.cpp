@@ -74,6 +74,10 @@ EvaluationSummary& EvaluationSummary::operator=(JsonView jsonValue) {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ContactParticipant")) {
+    m_contactParticipant = jsonValue.GetObject("ContactParticipant");
+    m_contactParticipantHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -134,6 +138,10 @@ JsonValue EvaluationSummary::Jsonize() const {
 
   if (m_lastModifiedTimeHasBeenSet) {
     payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  }
+
+  if (m_contactParticipantHasBeenSet) {
+    payload.WithObject("ContactParticipant", m_contactParticipant.Jsonize());
   }
 
   return payload;

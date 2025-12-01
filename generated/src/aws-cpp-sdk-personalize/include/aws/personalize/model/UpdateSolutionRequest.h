@@ -81,6 +81,25 @@ class UpdateSolutionRequest : public PersonalizeRequest {
 
   ///@{
   /**
+   * <p>Whether to perform incremental training updates on your model. When enabled,
+   * this allows the model to learn from new data more frequently without requiring
+   * full retraining, which enables near real-time personalization. This parameter is
+   * supported only for solutions that use the semantic-similarity recipe.</p>
+   */
+  inline bool GetPerformIncrementalUpdate() const { return m_performIncrementalUpdate; }
+  inline bool PerformIncrementalUpdateHasBeenSet() const { return m_performIncrementalUpdateHasBeenSet; }
+  inline void SetPerformIncrementalUpdate(bool value) {
+    m_performIncrementalUpdateHasBeenSet = true;
+    m_performIncrementalUpdate = value;
+  }
+  inline UpdateSolutionRequest& WithPerformIncrementalUpdate(bool value) {
+    SetPerformIncrementalUpdate(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The new configuration details of the solution.</p>
    */
   inline const SolutionUpdateConfig& GetSolutionUpdateConfig() const { return m_solutionUpdateConfig; }
@@ -102,6 +121,9 @@ class UpdateSolutionRequest : public PersonalizeRequest {
 
   bool m_performAutoTraining{false};
   bool m_performAutoTrainingHasBeenSet = false;
+
+  bool m_performIncrementalUpdate{false};
+  bool m_performIncrementalUpdateHasBeenSet = false;
 
   SolutionUpdateConfig m_solutionUpdateConfig;
   bool m_solutionUpdateConfigHasBeenSet = false;

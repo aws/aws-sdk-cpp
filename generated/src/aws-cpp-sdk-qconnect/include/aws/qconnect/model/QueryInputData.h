@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
+#include <aws/qconnect/model/CaseSummarizationInputData.h>
 #include <aws/qconnect/model/IntentInputData.h>
 #include <aws/qconnect/model/QueryTextInputData.h>
 
@@ -67,12 +68,33 @@ class QueryInputData {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Input data for case summarization queries.</p>
+   */
+  inline const CaseSummarizationInputData& GetCaseSummarizationInputData() const { return m_caseSummarizationInputData; }
+  inline bool CaseSummarizationInputDataHasBeenSet() const { return m_caseSummarizationInputDataHasBeenSet; }
+  template <typename CaseSummarizationInputDataT = CaseSummarizationInputData>
+  void SetCaseSummarizationInputData(CaseSummarizationInputDataT&& value) {
+    m_caseSummarizationInputDataHasBeenSet = true;
+    m_caseSummarizationInputData = std::forward<CaseSummarizationInputDataT>(value);
+  }
+  template <typename CaseSummarizationInputDataT = CaseSummarizationInputData>
+  QueryInputData& WithCaseSummarizationInputData(CaseSummarizationInputDataT&& value) {
+    SetCaseSummarizationInputData(std::forward<CaseSummarizationInputDataT>(value));
+    return *this;
+  }
+  ///@}
  private:
   QueryTextInputData m_queryTextInputData;
   bool m_queryTextInputDataHasBeenSet = false;
 
   IntentInputData m_intentInputData;
   bool m_intentInputDataHasBeenSet = false;
+
+  CaseSummarizationInputData m_caseSummarizationInputData;
+  bool m_caseSummarizationInputDataHasBeenSet = false;
 };
 
 }  // namespace Model

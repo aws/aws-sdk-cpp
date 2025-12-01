@@ -18,13 +18,13 @@ namespace Model {
 VectorSearchRerankingConfiguration::VectorSearchRerankingConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
 VectorSearchRerankingConfiguration& VectorSearchRerankingConfiguration::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("type")) {
-    m_type = VectorSearchRerankingConfigurationTypeMapper::GetVectorSearchRerankingConfigurationTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("bedrockRerankingConfiguration")) {
     m_bedrockRerankingConfiguration = jsonValue.GetObject("bedrockRerankingConfiguration");
     m_bedrockRerankingConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("type")) {
+    m_type = VectorSearchRerankingConfigurationTypeMapper::GetVectorSearchRerankingConfigurationTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ VectorSearchRerankingConfiguration& VectorSearchRerankingConfiguration::operator
 JsonValue VectorSearchRerankingConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if (m_typeHasBeenSet) {
-    payload.WithString("type", VectorSearchRerankingConfigurationTypeMapper::GetNameForVectorSearchRerankingConfigurationType(m_type));
-  }
-
   if (m_bedrockRerankingConfigurationHasBeenSet) {
     payload.WithObject("bedrockRerankingConfiguration", m_bedrockRerankingConfiguration.Jsonize());
+  }
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", VectorSearchRerankingConfigurationTypeMapper::GetNameForVectorSearchRerankingConfigurationType(m_type));
   }
 
   return payload;

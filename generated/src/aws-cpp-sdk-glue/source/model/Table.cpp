@@ -117,6 +117,10 @@ Table& Table::operator=(JsonView jsonValue) {
     m_isMultiDialectView = jsonValue.GetBool("IsMultiDialectView");
     m_isMultiDialectViewHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("IsMaterializedView")) {
+    m_isMaterializedView = jsonValue.GetBool("IsMaterializedView");
+    m_isMaterializedViewHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Status")) {
     m_status = Aws::MakeShared<TableStatus>("Table", jsonValue.GetObject("Status"));
     m_statusHasBeenSet = true;
@@ -225,6 +229,10 @@ JsonValue Table::Jsonize() const {
 
   if (m_isMultiDialectViewHasBeenSet) {
     payload.WithBool("IsMultiDialectView", m_isMultiDialectView);
+  }
+
+  if (m_isMaterializedViewHasBeenSet) {
+    payload.WithBool("IsMaterializedView", m_isMaterializedView);
   }
 
   if (m_statusHasBeenSet) {

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
+#include <aws/customer-profiles/model/DataStoreResponse.h>
 #include <aws/customer-profiles/model/DomainStats.h>
 #include <aws/customer-profiles/model/MatchingResponse.h>
 #include <aws/customer-profiles/model/RuleBasedMatchingResponse.h>
@@ -169,6 +170,23 @@ class GetDomainResult {
 
   ///@{
   /**
+   * <p> True if data store is enabled for this domain.</p>
+   */
+  inline const DataStoreResponse& GetDataStore() const { return m_dataStore; }
+  template <typename DataStoreT = DataStoreResponse>
+  void SetDataStore(DataStoreT&& value) {
+    m_dataStoreHasBeenSet = true;
+    m_dataStore = std::forward<DataStoreT>(value);
+  }
+  template <typename DataStoreT = DataStoreResponse>
+  GetDomainResult& WithDataStore(DataStoreT&& value) {
+    SetDataStore(std::forward<DataStoreT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The timestamp of when the domain was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -259,6 +277,9 @@ class GetDomainResult {
 
   RuleBasedMatchingResponse m_ruleBasedMatching;
   bool m_ruleBasedMatchingHasBeenSet = false;
+
+  DataStoreResponse m_dataStore;
+  bool m_dataStoreHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
   bool m_createdAtHasBeenSet = false;

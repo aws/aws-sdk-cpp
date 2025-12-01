@@ -23,15 +23,19 @@
 #include <aws/lambda/model/AddLayerVersionPermissionResult.h>
 #include <aws/lambda/model/AddPermissionResult.h>
 #include <aws/lambda/model/CreateAliasResult.h>
+#include <aws/lambda/model/CreateCapacityProviderResult.h>
 #include <aws/lambda/model/CreateCodeSigningConfigResult.h>
 #include <aws/lambda/model/CreateEventSourceMappingResult.h>
 #include <aws/lambda/model/CreateFunctionResult.h>
 #include <aws/lambda/model/CreateFunctionUrlConfigResult.h>
+#include <aws/lambda/model/DeleteCapacityProviderResult.h>
 #include <aws/lambda/model/DeleteCodeSigningConfigResult.h>
 #include <aws/lambda/model/DeleteEventSourceMappingResult.h>
+#include <aws/lambda/model/DeleteFunctionResult.h>
 #include <aws/lambda/model/GetAccountSettingsRequest.h>
 #include <aws/lambda/model/GetAccountSettingsResult.h>
 #include <aws/lambda/model/GetAliasResult.h>
+#include <aws/lambda/model/GetCapacityProviderResult.h>
 #include <aws/lambda/model/GetCodeSigningConfigResult.h>
 #include <aws/lambda/model/GetEventSourceMappingResult.h>
 #include <aws/lambda/model/GetFunctionCodeSigningConfigResult.h>
@@ -40,6 +44,7 @@
 #include <aws/lambda/model/GetFunctionEventInvokeConfigResult.h>
 #include <aws/lambda/model/GetFunctionRecursionConfigResult.h>
 #include <aws/lambda/model/GetFunctionResult.h>
+#include <aws/lambda/model/GetFunctionScalingConfigResult.h>
 #include <aws/lambda/model/GetFunctionUrlConfigResult.h>
 #include <aws/lambda/model/GetLayerVersionByArnResult.h>
 #include <aws/lambda/model/GetLayerVersionPolicyResult.h>
@@ -49,12 +54,15 @@
 #include <aws/lambda/model/GetRuntimeManagementConfigResult.h>
 #include <aws/lambda/model/InvokeResult.h>
 #include <aws/lambda/model/ListAliasesResult.h>
+#include <aws/lambda/model/ListCapacityProvidersRequest.h>
+#include <aws/lambda/model/ListCapacityProvidersResult.h>
 #include <aws/lambda/model/ListCodeSigningConfigsRequest.h>
 #include <aws/lambda/model/ListCodeSigningConfigsResult.h>
 #include <aws/lambda/model/ListEventSourceMappingsRequest.h>
 #include <aws/lambda/model/ListEventSourceMappingsResult.h>
 #include <aws/lambda/model/ListFunctionEventInvokeConfigsResult.h>
 #include <aws/lambda/model/ListFunctionUrlConfigsResult.h>
+#include <aws/lambda/model/ListFunctionVersionsByCapacityProviderResult.h>
 #include <aws/lambda/model/ListFunctionsByCodeSigningConfigResult.h>
 #include <aws/lambda/model/ListFunctionsRequest.h>
 #include <aws/lambda/model/ListFunctionsResult.h>
@@ -70,9 +78,11 @@
 #include <aws/lambda/model/PutFunctionConcurrencyResult.h>
 #include <aws/lambda/model/PutFunctionEventInvokeConfigResult.h>
 #include <aws/lambda/model/PutFunctionRecursionConfigResult.h>
+#include <aws/lambda/model/PutFunctionScalingConfigResult.h>
 #include <aws/lambda/model/PutProvisionedConcurrencyConfigResult.h>
 #include <aws/lambda/model/PutRuntimeManagementConfigResult.h>
 #include <aws/lambda/model/UpdateAliasResult.h>
+#include <aws/lambda/model/UpdateCapacityProviderResult.h>
 #include <aws/lambda/model/UpdateCodeSigningConfigResult.h>
 #include <aws/lambda/model/UpdateEventSourceMappingResult.h>
 #include <aws/lambda/model/UpdateFunctionCodeResult.h>
@@ -115,11 +125,13 @@ namespace Model {
 class AddLayerVersionPermissionRequest;
 class AddPermissionRequest;
 class CreateAliasRequest;
+class CreateCapacityProviderRequest;
 class CreateCodeSigningConfigRequest;
 class CreateEventSourceMappingRequest;
 class CreateFunctionRequest;
 class CreateFunctionUrlConfigRequest;
 class DeleteAliasRequest;
+class DeleteCapacityProviderRequest;
 class DeleteCodeSigningConfigRequest;
 class DeleteEventSourceMappingRequest;
 class DeleteFunctionRequest;
@@ -131,6 +143,7 @@ class DeleteLayerVersionRequest;
 class DeleteProvisionedConcurrencyConfigRequest;
 class GetAccountSettingsRequest;
 class GetAliasRequest;
+class GetCapacityProviderRequest;
 class GetCodeSigningConfigRequest;
 class GetEventSourceMappingRequest;
 class GetFunctionRequest;
@@ -139,6 +152,7 @@ class GetFunctionConcurrencyRequest;
 class GetFunctionConfigurationRequest;
 class GetFunctionEventInvokeConfigRequest;
 class GetFunctionRecursionConfigRequest;
+class GetFunctionScalingConfigRequest;
 class GetFunctionUrlConfigRequest;
 class GetLayerVersionRequest;
 class GetLayerVersionByArnRequest;
@@ -149,10 +163,12 @@ class GetRuntimeManagementConfigRequest;
 class InvokeRequest;
 class InvokeWithResponseStreamRequest;
 class ListAliasesRequest;
+class ListCapacityProvidersRequest;
 class ListCodeSigningConfigsRequest;
 class ListEventSourceMappingsRequest;
 class ListFunctionEventInvokeConfigsRequest;
 class ListFunctionUrlConfigsRequest;
+class ListFunctionVersionsByCapacityProviderRequest;
 class ListFunctionsRequest;
 class ListFunctionsByCodeSigningConfigRequest;
 class ListLayerVersionsRequest;
@@ -166,6 +182,7 @@ class PutFunctionCodeSigningConfigRequest;
 class PutFunctionConcurrencyRequest;
 class PutFunctionEventInvokeConfigRequest;
 class PutFunctionRecursionConfigRequest;
+class PutFunctionScalingConfigRequest;
 class PutProvisionedConcurrencyConfigRequest;
 class PutRuntimeManagementConfigRequest;
 class RemoveLayerVersionPermissionRequest;
@@ -173,6 +190,7 @@ class RemovePermissionRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
 class UpdateAliasRequest;
+class UpdateCapacityProviderRequest;
 class UpdateCodeSigningConfigRequest;
 class UpdateEventSourceMappingRequest;
 class UpdateFunctionCodeRequest;
@@ -185,14 +203,16 @@ class UpdateFunctionUrlConfigRequest;
 typedef Aws::Utils::Outcome<AddLayerVersionPermissionResult, LambdaError> AddLayerVersionPermissionOutcome;
 typedef Aws::Utils::Outcome<AddPermissionResult, LambdaError> AddPermissionOutcome;
 typedef Aws::Utils::Outcome<CreateAliasResult, LambdaError> CreateAliasOutcome;
+typedef Aws::Utils::Outcome<CreateCapacityProviderResult, LambdaError> CreateCapacityProviderOutcome;
 typedef Aws::Utils::Outcome<CreateCodeSigningConfigResult, LambdaError> CreateCodeSigningConfigOutcome;
 typedef Aws::Utils::Outcome<CreateEventSourceMappingResult, LambdaError> CreateEventSourceMappingOutcome;
 typedef Aws::Utils::Outcome<CreateFunctionResult, LambdaError> CreateFunctionOutcome;
 typedef Aws::Utils::Outcome<CreateFunctionUrlConfigResult, LambdaError> CreateFunctionUrlConfigOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> DeleteAliasOutcome;
+typedef Aws::Utils::Outcome<DeleteCapacityProviderResult, LambdaError> DeleteCapacityProviderOutcome;
 typedef Aws::Utils::Outcome<DeleteCodeSigningConfigResult, LambdaError> DeleteCodeSigningConfigOutcome;
 typedef Aws::Utils::Outcome<DeleteEventSourceMappingResult, LambdaError> DeleteEventSourceMappingOutcome;
-typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> DeleteFunctionOutcome;
+typedef Aws::Utils::Outcome<DeleteFunctionResult, LambdaError> DeleteFunctionOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> DeleteFunctionCodeSigningConfigOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> DeleteFunctionConcurrencyOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> DeleteFunctionEventInvokeConfigOutcome;
@@ -201,6 +221,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> DeleteLayerVersionOutcom
 typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> DeleteProvisionedConcurrencyConfigOutcome;
 typedef Aws::Utils::Outcome<GetAccountSettingsResult, LambdaError> GetAccountSettingsOutcome;
 typedef Aws::Utils::Outcome<GetAliasResult, LambdaError> GetAliasOutcome;
+typedef Aws::Utils::Outcome<GetCapacityProviderResult, LambdaError> GetCapacityProviderOutcome;
 typedef Aws::Utils::Outcome<GetCodeSigningConfigResult, LambdaError> GetCodeSigningConfigOutcome;
 typedef Aws::Utils::Outcome<GetEventSourceMappingResult, LambdaError> GetEventSourceMappingOutcome;
 typedef Aws::Utils::Outcome<GetFunctionResult, LambdaError> GetFunctionOutcome;
@@ -209,6 +230,7 @@ typedef Aws::Utils::Outcome<GetFunctionConcurrencyResult, LambdaError> GetFuncti
 typedef Aws::Utils::Outcome<GetFunctionConfigurationResult, LambdaError> GetFunctionConfigurationOutcome;
 typedef Aws::Utils::Outcome<GetFunctionEventInvokeConfigResult, LambdaError> GetFunctionEventInvokeConfigOutcome;
 typedef Aws::Utils::Outcome<GetFunctionRecursionConfigResult, LambdaError> GetFunctionRecursionConfigOutcome;
+typedef Aws::Utils::Outcome<GetFunctionScalingConfigResult, LambdaError> GetFunctionScalingConfigOutcome;
 typedef Aws::Utils::Outcome<GetFunctionUrlConfigResult, LambdaError> GetFunctionUrlConfigOutcome;
 typedef Aws::Utils::Outcome<GetLayerVersionResult, LambdaError> GetLayerVersionOutcome;
 typedef Aws::Utils::Outcome<GetLayerVersionByArnResult, LambdaError> GetLayerVersionByArnOutcome;
@@ -219,10 +241,12 @@ typedef Aws::Utils::Outcome<GetRuntimeManagementConfigResult, LambdaError> GetRu
 typedef Aws::Utils::Outcome<InvokeResult, LambdaError> InvokeOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> InvokeWithResponseStreamOutcome;
 typedef Aws::Utils::Outcome<ListAliasesResult, LambdaError> ListAliasesOutcome;
+typedef Aws::Utils::Outcome<ListCapacityProvidersResult, LambdaError> ListCapacityProvidersOutcome;
 typedef Aws::Utils::Outcome<ListCodeSigningConfigsResult, LambdaError> ListCodeSigningConfigsOutcome;
 typedef Aws::Utils::Outcome<ListEventSourceMappingsResult, LambdaError> ListEventSourceMappingsOutcome;
 typedef Aws::Utils::Outcome<ListFunctionEventInvokeConfigsResult, LambdaError> ListFunctionEventInvokeConfigsOutcome;
 typedef Aws::Utils::Outcome<ListFunctionUrlConfigsResult, LambdaError> ListFunctionUrlConfigsOutcome;
+typedef Aws::Utils::Outcome<ListFunctionVersionsByCapacityProviderResult, LambdaError> ListFunctionVersionsByCapacityProviderOutcome;
 typedef Aws::Utils::Outcome<ListFunctionsResult, LambdaError> ListFunctionsOutcome;
 typedef Aws::Utils::Outcome<ListFunctionsByCodeSigningConfigResult, LambdaError> ListFunctionsByCodeSigningConfigOutcome;
 typedef Aws::Utils::Outcome<ListLayerVersionsResult, LambdaError> ListLayerVersionsOutcome;
@@ -236,6 +260,7 @@ typedef Aws::Utils::Outcome<PutFunctionCodeSigningConfigResult, LambdaError> Put
 typedef Aws::Utils::Outcome<PutFunctionConcurrencyResult, LambdaError> PutFunctionConcurrencyOutcome;
 typedef Aws::Utils::Outcome<PutFunctionEventInvokeConfigResult, LambdaError> PutFunctionEventInvokeConfigOutcome;
 typedef Aws::Utils::Outcome<PutFunctionRecursionConfigResult, LambdaError> PutFunctionRecursionConfigOutcome;
+typedef Aws::Utils::Outcome<PutFunctionScalingConfigResult, LambdaError> PutFunctionScalingConfigOutcome;
 typedef Aws::Utils::Outcome<PutProvisionedConcurrencyConfigResult, LambdaError> PutProvisionedConcurrencyConfigOutcome;
 typedef Aws::Utils::Outcome<PutRuntimeManagementConfigResult, LambdaError> PutRuntimeManagementConfigOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> RemoveLayerVersionPermissionOutcome;
@@ -243,6 +268,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> RemovePermissionOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateAliasResult, LambdaError> UpdateAliasOutcome;
+typedef Aws::Utils::Outcome<UpdateCapacityProviderResult, LambdaError> UpdateCapacityProviderOutcome;
 typedef Aws::Utils::Outcome<UpdateCodeSigningConfigResult, LambdaError> UpdateCodeSigningConfigOutcome;
 typedef Aws::Utils::Outcome<UpdateEventSourceMappingResult, LambdaError> UpdateEventSourceMappingOutcome;
 typedef Aws::Utils::Outcome<UpdateFunctionCodeResult, LambdaError> UpdateFunctionCodeOutcome;
@@ -255,11 +281,13 @@ typedef Aws::Utils::Outcome<UpdateFunctionUrlConfigResult, LambdaError> UpdateFu
 typedef std::future<AddLayerVersionPermissionOutcome> AddLayerVersionPermissionOutcomeCallable;
 typedef std::future<AddPermissionOutcome> AddPermissionOutcomeCallable;
 typedef std::future<CreateAliasOutcome> CreateAliasOutcomeCallable;
+typedef std::future<CreateCapacityProviderOutcome> CreateCapacityProviderOutcomeCallable;
 typedef std::future<CreateCodeSigningConfigOutcome> CreateCodeSigningConfigOutcomeCallable;
 typedef std::future<CreateEventSourceMappingOutcome> CreateEventSourceMappingOutcomeCallable;
 typedef std::future<CreateFunctionOutcome> CreateFunctionOutcomeCallable;
 typedef std::future<CreateFunctionUrlConfigOutcome> CreateFunctionUrlConfigOutcomeCallable;
 typedef std::future<DeleteAliasOutcome> DeleteAliasOutcomeCallable;
+typedef std::future<DeleteCapacityProviderOutcome> DeleteCapacityProviderOutcomeCallable;
 typedef std::future<DeleteCodeSigningConfigOutcome> DeleteCodeSigningConfigOutcomeCallable;
 typedef std::future<DeleteEventSourceMappingOutcome> DeleteEventSourceMappingOutcomeCallable;
 typedef std::future<DeleteFunctionOutcome> DeleteFunctionOutcomeCallable;
@@ -271,6 +299,7 @@ typedef std::future<DeleteLayerVersionOutcome> DeleteLayerVersionOutcomeCallable
 typedef std::future<DeleteProvisionedConcurrencyConfigOutcome> DeleteProvisionedConcurrencyConfigOutcomeCallable;
 typedef std::future<GetAccountSettingsOutcome> GetAccountSettingsOutcomeCallable;
 typedef std::future<GetAliasOutcome> GetAliasOutcomeCallable;
+typedef std::future<GetCapacityProviderOutcome> GetCapacityProviderOutcomeCallable;
 typedef std::future<GetCodeSigningConfigOutcome> GetCodeSigningConfigOutcomeCallable;
 typedef std::future<GetEventSourceMappingOutcome> GetEventSourceMappingOutcomeCallable;
 typedef std::future<GetFunctionOutcome> GetFunctionOutcomeCallable;
@@ -279,6 +308,7 @@ typedef std::future<GetFunctionConcurrencyOutcome> GetFunctionConcurrencyOutcome
 typedef std::future<GetFunctionConfigurationOutcome> GetFunctionConfigurationOutcomeCallable;
 typedef std::future<GetFunctionEventInvokeConfigOutcome> GetFunctionEventInvokeConfigOutcomeCallable;
 typedef std::future<GetFunctionRecursionConfigOutcome> GetFunctionRecursionConfigOutcomeCallable;
+typedef std::future<GetFunctionScalingConfigOutcome> GetFunctionScalingConfigOutcomeCallable;
 typedef std::future<GetFunctionUrlConfigOutcome> GetFunctionUrlConfigOutcomeCallable;
 typedef std::future<GetLayerVersionOutcome> GetLayerVersionOutcomeCallable;
 typedef std::future<GetLayerVersionByArnOutcome> GetLayerVersionByArnOutcomeCallable;
@@ -289,10 +319,12 @@ typedef std::future<GetRuntimeManagementConfigOutcome> GetRuntimeManagementConfi
 typedef std::future<InvokeOutcome> InvokeOutcomeCallable;
 typedef std::future<InvokeWithResponseStreamOutcome> InvokeWithResponseStreamOutcomeCallable;
 typedef std::future<ListAliasesOutcome> ListAliasesOutcomeCallable;
+typedef std::future<ListCapacityProvidersOutcome> ListCapacityProvidersOutcomeCallable;
 typedef std::future<ListCodeSigningConfigsOutcome> ListCodeSigningConfigsOutcomeCallable;
 typedef std::future<ListEventSourceMappingsOutcome> ListEventSourceMappingsOutcomeCallable;
 typedef std::future<ListFunctionEventInvokeConfigsOutcome> ListFunctionEventInvokeConfigsOutcomeCallable;
 typedef std::future<ListFunctionUrlConfigsOutcome> ListFunctionUrlConfigsOutcomeCallable;
+typedef std::future<ListFunctionVersionsByCapacityProviderOutcome> ListFunctionVersionsByCapacityProviderOutcomeCallable;
 typedef std::future<ListFunctionsOutcome> ListFunctionsOutcomeCallable;
 typedef std::future<ListFunctionsByCodeSigningConfigOutcome> ListFunctionsByCodeSigningConfigOutcomeCallable;
 typedef std::future<ListLayerVersionsOutcome> ListLayerVersionsOutcomeCallable;
@@ -306,6 +338,7 @@ typedef std::future<PutFunctionCodeSigningConfigOutcome> PutFunctionCodeSigningC
 typedef std::future<PutFunctionConcurrencyOutcome> PutFunctionConcurrencyOutcomeCallable;
 typedef std::future<PutFunctionEventInvokeConfigOutcome> PutFunctionEventInvokeConfigOutcomeCallable;
 typedef std::future<PutFunctionRecursionConfigOutcome> PutFunctionRecursionConfigOutcomeCallable;
+typedef std::future<PutFunctionScalingConfigOutcome> PutFunctionScalingConfigOutcomeCallable;
 typedef std::future<PutProvisionedConcurrencyConfigOutcome> PutProvisionedConcurrencyConfigOutcomeCallable;
 typedef std::future<PutRuntimeManagementConfigOutcome> PutRuntimeManagementConfigOutcomeCallable;
 typedef std::future<RemoveLayerVersionPermissionOutcome> RemoveLayerVersionPermissionOutcomeCallable;
@@ -313,6 +346,7 @@ typedef std::future<RemovePermissionOutcome> RemovePermissionOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateAliasOutcome> UpdateAliasOutcomeCallable;
+typedef std::future<UpdateCapacityProviderOutcome> UpdateCapacityProviderOutcomeCallable;
 typedef std::future<UpdateCodeSigningConfigOutcome> UpdateCodeSigningConfigOutcomeCallable;
 typedef std::future<UpdateEventSourceMappingOutcome> UpdateEventSourceMappingOutcomeCallable;
 typedef std::future<UpdateFunctionCodeOutcome> UpdateFunctionCodeOutcomeCallable;
@@ -334,6 +368,9 @@ typedef std::function<void(const LambdaClient*, const Model::AddPermissionReques
 typedef std::function<void(const LambdaClient*, const Model::CreateAliasRequest&, const Model::CreateAliasOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateAliasResponseReceivedHandler;
+typedef std::function<void(const LambdaClient*, const Model::CreateCapacityProviderRequest&, const Model::CreateCapacityProviderOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateCapacityProviderResponseReceivedHandler;
 typedef std::function<void(const LambdaClient*, const Model::CreateCodeSigningConfigRequest&, const Model::CreateCodeSigningConfigOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateCodeSigningConfigResponseReceivedHandler;
@@ -349,6 +386,9 @@ typedef std::function<void(const LambdaClient*, const Model::CreateFunctionUrlCo
 typedef std::function<void(const LambdaClient*, const Model::DeleteAliasRequest&, const Model::DeleteAliasOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteAliasResponseReceivedHandler;
+typedef std::function<void(const LambdaClient*, const Model::DeleteCapacityProviderRequest&, const Model::DeleteCapacityProviderOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteCapacityProviderResponseReceivedHandler;
 typedef std::function<void(const LambdaClient*, const Model::DeleteCodeSigningConfigRequest&, const Model::DeleteCodeSigningConfigOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteCodeSigningConfigResponseReceivedHandler;
@@ -385,6 +425,9 @@ typedef std::function<void(const LambdaClient*, const Model::GetAccountSettingsR
 typedef std::function<void(const LambdaClient*, const Model::GetAliasRequest&, const Model::GetAliasOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetAliasResponseReceivedHandler;
+typedef std::function<void(const LambdaClient*, const Model::GetCapacityProviderRequest&, const Model::GetCapacityProviderOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetCapacityProviderResponseReceivedHandler;
 typedef std::function<void(const LambdaClient*, const Model::GetCodeSigningConfigRequest&, const Model::GetCodeSigningConfigOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetCodeSigningConfigResponseReceivedHandler;
@@ -411,6 +454,9 @@ typedef std::function<void(const LambdaClient*, const Model::GetFunctionEventInv
 typedef std::function<void(const LambdaClient*, const Model::GetFunctionRecursionConfigRequest&,
                            const Model::GetFunctionRecursionConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetFunctionRecursionConfigResponseReceivedHandler;
+typedef std::function<void(const LambdaClient*, const Model::GetFunctionScalingConfigRequest&,
+                           const Model::GetFunctionScalingConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetFunctionScalingConfigResponseReceivedHandler;
 typedef std::function<void(const LambdaClient*, const Model::GetFunctionUrlConfigRequest&, const Model::GetFunctionUrlConfigOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetFunctionUrlConfigResponseReceivedHandler;
@@ -442,6 +488,9 @@ typedef std::function<void(const LambdaClient*, const Model::InvokeWithResponseS
 typedef std::function<void(const LambdaClient*, const Model::ListAliasesRequest&, const Model::ListAliasesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListAliasesResponseReceivedHandler;
+typedef std::function<void(const LambdaClient*, const Model::ListCapacityProvidersRequest&, const Model::ListCapacityProvidersOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListCapacityProvidersResponseReceivedHandler;
 typedef std::function<void(const LambdaClient*, const Model::ListCodeSigningConfigsRequest&, const Model::ListCodeSigningConfigsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListCodeSigningConfigsResponseReceivedHandler;
@@ -455,6 +504,10 @@ typedef std::function<void(const LambdaClient*, const Model::ListFunctionEventIn
 typedef std::function<void(const LambdaClient*, const Model::ListFunctionUrlConfigsRequest&, const Model::ListFunctionUrlConfigsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListFunctionUrlConfigsResponseReceivedHandler;
+typedef std::function<void(const LambdaClient*, const Model::ListFunctionVersionsByCapacityProviderRequest&,
+                           const Model::ListFunctionVersionsByCapacityProviderOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListFunctionVersionsByCapacityProviderResponseReceivedHandler;
 typedef std::function<void(const LambdaClient*, const Model::ListFunctionsRequest&, const Model::ListFunctionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListFunctionsResponseReceivedHandler;
@@ -498,6 +551,9 @@ typedef std::function<void(const LambdaClient*, const Model::PutFunctionEventInv
 typedef std::function<void(const LambdaClient*, const Model::PutFunctionRecursionConfigRequest&,
                            const Model::PutFunctionRecursionConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutFunctionRecursionConfigResponseReceivedHandler;
+typedef std::function<void(const LambdaClient*, const Model::PutFunctionScalingConfigRequest&,
+                           const Model::PutFunctionScalingConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutFunctionScalingConfigResponseReceivedHandler;
 typedef std::function<void(const LambdaClient*, const Model::PutProvisionedConcurrencyConfigRequest&,
                            const Model::PutProvisionedConcurrencyConfigOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -521,6 +577,9 @@ typedef std::function<void(const LambdaClient*, const Model::UntagResourceReques
 typedef std::function<void(const LambdaClient*, const Model::UpdateAliasRequest&, const Model::UpdateAliasOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateAliasResponseReceivedHandler;
+typedef std::function<void(const LambdaClient*, const Model::UpdateCapacityProviderRequest&, const Model::UpdateCapacityProviderOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateCapacityProviderResponseReceivedHandler;
 typedef std::function<void(const LambdaClient*, const Model::UpdateCodeSigningConfigRequest&, const Model::UpdateCodeSigningConfigOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateCodeSigningConfigResponseReceivedHandler;

@@ -35,6 +35,25 @@ class ListInvocationsRequest : public BedrockAgentRuntimeRequest {
 
   ///@{
   /**
+   * <p>The maximum number of results to return in the response. If the total number
+   * of results is greater than this value, use the token returned in the response in
+   * the <code>nextToken</code> field when making another request to return the next
+   * batch of results.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline ListInvocationsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>If the total number of results is greater than the <code>maxResults</code>
    * value provided in the request, enter the token returned in the
    * <code>nextToken</code> field in the response in this field to return the next
@@ -50,25 +69,6 @@ class ListInvocationsRequest : public BedrockAgentRuntimeRequest {
   template <typename NextTokenT = Aws::String>
   ListInvocationsRequest& WithNextToken(NextTokenT&& value) {
     SetNextToken(std::forward<NextTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The maximum number of results to return in the response. If the total number
-   * of results is greater than this value, use the token returned in the response in
-   * the <code>nextToken</code> field when making another request to return the next
-   * batch of results.</p>
-   */
-  inline int GetMaxResults() const { return m_maxResults; }
-  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-  inline void SetMaxResults(int value) {
-    m_maxResultsHasBeenSet = true;
-    m_maxResults = value;
-  }
-  inline ListInvocationsRequest& WithMaxResults(int value) {
-    SetMaxResults(value);
     return *this;
   }
   ///@}
@@ -93,11 +93,11 @@ class ListInvocationsRequest : public BedrockAgentRuntimeRequest {
   }
   ///@}
  private:
-  Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
-
   int m_maxResults{0};
   bool m_maxResultsHasBeenSet = false;
+
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_sessionIdentifier;
   bool m_sessionIdentifierHasBeenSet = false;

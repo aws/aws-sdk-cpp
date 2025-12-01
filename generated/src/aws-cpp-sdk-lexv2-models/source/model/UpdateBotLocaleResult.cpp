@@ -49,6 +49,14 @@ UpdateBotLocaleResult& UpdateBotLocaleResult::operator=(const Aws::AmazonWebServ
     m_voiceSettings = jsonValue.GetObject("voiceSettings");
     m_voiceSettingsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("unifiedSpeechSettings")) {
+    m_unifiedSpeechSettings = jsonValue.GetObject("unifiedSpeechSettings");
+    m_unifiedSpeechSettingsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("speechRecognitionSettings")) {
+    m_speechRecognitionSettings = jsonValue.GetObject("speechRecognitionSettings");
+    m_speechRecognitionSettingsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("botLocaleStatus")) {
     m_botLocaleStatus = BotLocaleStatusMapper::GetBotLocaleStatusForName(jsonValue.GetString("botLocaleStatus"));
     m_botLocaleStatusHasBeenSet = true;

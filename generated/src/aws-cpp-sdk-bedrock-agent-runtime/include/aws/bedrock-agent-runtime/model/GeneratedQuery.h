@@ -35,22 +35,6 @@ class GeneratedQuery {
 
   ///@{
   /**
-   * <p>The type of transformed query.</p>
-   */
-  inline GeneratedQueryType GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  inline void SetType(GeneratedQueryType value) {
-    m_typeHasBeenSet = true;
-    m_type = value;
-  }
-  inline GeneratedQuery& WithType(GeneratedQueryType value) {
-    SetType(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>An SQL query that corresponds to the natural language query.</p>
    */
   inline const Aws::String& GetSql() const { return m_sql; }
@@ -66,12 +50,28 @@ class GeneratedQuery {
     return *this;
   }
   ///@}
- private:
-  GeneratedQueryType m_type{GeneratedQueryType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>The type of transformed query.</p>
+   */
+  inline GeneratedQueryType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(GeneratedQueryType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline GeneratedQuery& WithType(GeneratedQueryType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_sql;
   bool m_sqlHasBeenSet = false;
+
+  GeneratedQueryType m_type{GeneratedQueryType::NOT_SET};
+  bool m_typeHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -215,6 +215,25 @@ class RecordingInfo {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The location, in Amazon S3, for the unprocessed transcript if any media
+   * processing was performed. </p>
+   */
+  inline const Aws::String& GetUnprocessedTranscriptLocation() const { return m_unprocessedTranscriptLocation; }
+  inline bool UnprocessedTranscriptLocationHasBeenSet() const { return m_unprocessedTranscriptLocationHasBeenSet; }
+  template <typename UnprocessedTranscriptLocationT = Aws::String>
+  void SetUnprocessedTranscriptLocation(UnprocessedTranscriptLocationT&& value) {
+    m_unprocessedTranscriptLocationHasBeenSet = true;
+    m_unprocessedTranscriptLocation = std::forward<UnprocessedTranscriptLocationT>(value);
+  }
+  template <typename UnprocessedTranscriptLocationT = Aws::String>
+  RecordingInfo& WithUnprocessedTranscriptLocation(UnprocessedTranscriptLocationT&& value) {
+    SetUnprocessedTranscriptLocation(std::forward<UnprocessedTranscriptLocationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   StorageType m_storageType{StorageType::NOT_SET};
   bool m_storageTypeHasBeenSet = false;
@@ -245,6 +264,9 @@ class RecordingInfo {
 
   Aws::String m_deletionReason;
   bool m_deletionReasonHasBeenSet = false;
+
+  Aws::String m_unprocessedTranscriptLocation;
+  bool m_unprocessedTranscriptLocationHasBeenSet = false;
 };
 
 }  // namespace Model

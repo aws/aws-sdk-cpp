@@ -26,6 +26,14 @@ RelatedEntityIdentifiers& RelatedEntityIdentifiers::operator=(JsonView jsonValue
     }
     m_awsMarketplaceOffersHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AwsMarketplaceOfferSets")) {
+    Aws::Utils::Array<JsonView> awsMarketplaceOfferSetsJsonList = jsonValue.GetArray("AwsMarketplaceOfferSets");
+    for (unsigned awsMarketplaceOfferSetsIndex = 0; awsMarketplaceOfferSetsIndex < awsMarketplaceOfferSetsJsonList.GetLength();
+         ++awsMarketplaceOfferSetsIndex) {
+      m_awsMarketplaceOfferSets.push_back(awsMarketplaceOfferSetsJsonList[awsMarketplaceOfferSetsIndex].AsString());
+    }
+    m_awsMarketplaceOfferSetsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Solutions")) {
     Aws::Utils::Array<JsonView> solutionsJsonList = jsonValue.GetArray("Solutions");
     for (unsigned solutionsIndex = 0; solutionsIndex < solutionsJsonList.GetLength(); ++solutionsIndex) {
@@ -53,6 +61,15 @@ JsonValue RelatedEntityIdentifiers::Jsonize() const {
       awsMarketplaceOffersJsonList[awsMarketplaceOffersIndex].AsString(m_awsMarketplaceOffers[awsMarketplaceOffersIndex]);
     }
     payload.WithArray("AwsMarketplaceOffers", std::move(awsMarketplaceOffersJsonList));
+  }
+
+  if (m_awsMarketplaceOfferSetsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> awsMarketplaceOfferSetsJsonList(m_awsMarketplaceOfferSets.size());
+    for (unsigned awsMarketplaceOfferSetsIndex = 0; awsMarketplaceOfferSetsIndex < awsMarketplaceOfferSetsJsonList.GetLength();
+         ++awsMarketplaceOfferSetsIndex) {
+      awsMarketplaceOfferSetsJsonList[awsMarketplaceOfferSetsIndex].AsString(m_awsMarketplaceOfferSets[awsMarketplaceOfferSetsIndex]);
+    }
+    payload.WithArray("AwsMarketplaceOfferSets", std::move(awsMarketplaceOfferSetsJsonList));
   }
 
   if (m_solutionsHasBeenSet) {

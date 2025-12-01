@@ -35,6 +35,24 @@ class ActionGroupInvocationOutput {
 
   ///@{
   /**
+   * <p>Contains information about the action group output.</p>
+   */
+  inline const Metadata& GetMetadata() const { return m_metadata; }
+  inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+  template <typename MetadataT = Metadata>
+  void SetMetadata(MetadataT&& value) {
+    m_metadataHasBeenSet = true;
+    m_metadata = std::forward<MetadataT>(value);
+  }
+  template <typename MetadataT = Metadata>
+  ActionGroupInvocationOutput& WithMetadata(MetadataT&& value) {
+    SetMetadata(std::forward<MetadataT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The JSON-formatted string returned by the API invoked by the action
    * group.</p>
    */
@@ -51,30 +69,12 @@ class ActionGroupInvocationOutput {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Contains information about the action group output.</p>
-   */
-  inline const Metadata& GetMetadata() const { return m_metadata; }
-  inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-  template <typename MetadataT = Metadata>
-  void SetMetadata(MetadataT&& value) {
-    m_metadataHasBeenSet = true;
-    m_metadata = std::forward<MetadataT>(value);
-  }
-  template <typename MetadataT = Metadata>
-  ActionGroupInvocationOutput& WithMetadata(MetadataT&& value) {
-    SetMetadata(std::forward<MetadataT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_text;
-  bool m_textHasBeenSet = false;
-
   Metadata m_metadata;
   bool m_metadataHasBeenSet = false;
+
+  Aws::String m_text;
+  bool m_textHasBeenSet = false;
 };
 
 }  // namespace Model

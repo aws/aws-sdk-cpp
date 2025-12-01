@@ -52,6 +52,24 @@ class MemorySessionSummary {
 
   ///@{
   /**
+   * <p>The time when the memory duration for the session is set to end.</p>
+   */
+  inline const Aws::Utils::DateTime& GetSessionExpiryTime() const { return m_sessionExpiryTime; }
+  inline bool SessionExpiryTimeHasBeenSet() const { return m_sessionExpiryTimeHasBeenSet; }
+  template <typename SessionExpiryTimeT = Aws::Utils::DateTime>
+  void SetSessionExpiryTime(SessionExpiryTimeT&& value) {
+    m_sessionExpiryTimeHasBeenSet = true;
+    m_sessionExpiryTime = std::forward<SessionExpiryTimeT>(value);
+  }
+  template <typename SessionExpiryTimeT = Aws::Utils::DateTime>
+  MemorySessionSummary& WithSessionExpiryTime(SessionExpiryTimeT&& value) {
+    SetSessionExpiryTime(std::forward<SessionExpiryTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The identifier for this session.</p>
    */
   inline const Aws::String& GetSessionId() const { return m_sessionId; }
@@ -88,24 +106,6 @@ class MemorySessionSummary {
 
   ///@{
   /**
-   * <p>The time when the memory duration for the session is set to end.</p>
-   */
-  inline const Aws::Utils::DateTime& GetSessionExpiryTime() const { return m_sessionExpiryTime; }
-  inline bool SessionExpiryTimeHasBeenSet() const { return m_sessionExpiryTimeHasBeenSet; }
-  template <typename SessionExpiryTimeT = Aws::Utils::DateTime>
-  void SetSessionExpiryTime(SessionExpiryTimeT&& value) {
-    m_sessionExpiryTimeHasBeenSet = true;
-    m_sessionExpiryTime = std::forward<SessionExpiryTimeT>(value);
-  }
-  template <typename SessionExpiryTimeT = Aws::Utils::DateTime>
-  MemorySessionSummary& WithSessionExpiryTime(SessionExpiryTimeT&& value) {
-    SetSessionExpiryTime(std::forward<SessionExpiryTimeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The summarized text for this session.</p>
    */
   inline const Aws::String& GetSummaryText() const { return m_summaryText; }
@@ -125,14 +125,14 @@ class MemorySessionSummary {
   Aws::String m_memoryId;
   bool m_memoryIdHasBeenSet = false;
 
+  Aws::Utils::DateTime m_sessionExpiryTime{};
+  bool m_sessionExpiryTimeHasBeenSet = false;
+
   Aws::String m_sessionId;
   bool m_sessionIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_sessionStartTime{};
   bool m_sessionStartTimeHasBeenSet = false;
-
-  Aws::Utils::DateTime m_sessionExpiryTime{};
-  bool m_sessionExpiryTimeHasBeenSet = false;
 
   Aws::String m_summaryText;
   bool m_summaryTextHasBeenSet = false;

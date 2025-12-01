@@ -62,9 +62,9 @@ class AgentStatusSearchCriteria {
   /**
    * <p>A leaf node condition which can be used to specify a string condition.</p>
    *  <p>The currently supported values for <code>FieldName</code> are
-   * <code>name</code>,&#x2028;&#x2028; <code>description</code>, <code>state</code>,
-   * <code>type</code>, <code>displayOrder</code>,&#x2028; and
-   * <code>resourceID</code>.</p>
+   * <code>name</code>, <code>description</code>, <code>state</code>,
+   * <code>type</code>, <code>displayOrder</code>, and <code>resourceID</code>.</p>
+   *
    */
   inline const Aws::Vector<AgentStatusSearchCriteria>& GetAndConditions() const { return m_andConditions; }
   inline bool AndConditionsHasBeenSet() const { return m_andConditionsHasBeenSet; }
@@ -90,9 +90,9 @@ class AgentStatusSearchCriteria {
   /**
    * <p>A leaf node condition which can be used to specify a string condition.</p>
    *  <p>The currently supported values for <code>FieldName</code> are
-   * <code>name</code>,&#x2028;&#x2028; <code>description</code>, <code>state</code>,
-   * <code>type</code>, <code>displayOrder</code>,&#x2028; and
-   * <code>resourceID</code>.</p>
+   * <code>name</code>, <code>description</code>, <code>state</code>,
+   * <code>type</code>, <code>displayOrder</code>, and <code>resourceID</code>.</p>
+   *
    */
   inline const StringCondition& GetStringCondition() const { return m_stringCondition; }
   inline bool StringConditionHasBeenSet() const { return m_stringConditionHasBeenSet; }

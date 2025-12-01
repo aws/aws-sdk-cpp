@@ -42,6 +42,18 @@ AIAgentConfiguration& AIAgentConfiguration::operator=(JsonView jsonValue) {
     m_emailGenerativeAnswerAIAgentConfiguration = jsonValue.GetObject("emailGenerativeAnswerAIAgentConfiguration");
     m_emailGenerativeAnswerAIAgentConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("orchestrationAIAgentConfiguration")) {
+    m_orchestrationAIAgentConfiguration = jsonValue.GetObject("orchestrationAIAgentConfiguration");
+    m_orchestrationAIAgentConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("noteTakingAIAgentConfiguration")) {
+    m_noteTakingAIAgentConfiguration = jsonValue.GetObject("noteTakingAIAgentConfiguration");
+    m_noteTakingAIAgentConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("caseSummarizationAIAgentConfiguration")) {
+    m_caseSummarizationAIAgentConfiguration = jsonValue.GetObject("caseSummarizationAIAgentConfiguration");
+    m_caseSummarizationAIAgentConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -70,6 +82,18 @@ JsonValue AIAgentConfiguration::Jsonize() const {
 
   if (m_emailGenerativeAnswerAIAgentConfigurationHasBeenSet) {
     payload.WithObject("emailGenerativeAnswerAIAgentConfiguration", m_emailGenerativeAnswerAIAgentConfiguration.Jsonize());
+  }
+
+  if (m_orchestrationAIAgentConfigurationHasBeenSet) {
+    payload.WithObject("orchestrationAIAgentConfiguration", m_orchestrationAIAgentConfiguration.Jsonize());
+  }
+
+  if (m_noteTakingAIAgentConfigurationHasBeenSet) {
+    payload.WithObject("noteTakingAIAgentConfiguration", m_noteTakingAIAgentConfiguration.Jsonize());
+  }
+
+  if (m_caseSummarizationAIAgentConfigurationHasBeenSet) {
+    payload.WithObject("caseSummarizationAIAgentConfiguration", m_caseSummarizationAIAgentConfiguration.Jsonize());
   }
 
   return payload;

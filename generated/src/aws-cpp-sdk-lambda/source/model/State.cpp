@@ -19,6 +19,10 @@ static const int Pending_HASH = HashingUtils::HashString("Pending");
 static const int Active_HASH = HashingUtils::HashString("Active");
 static const int Inactive_HASH = HashingUtils::HashString("Inactive");
 static const int Failed_HASH = HashingUtils::HashString("Failed");
+static const int Deactivating_HASH = HashingUtils::HashString("Deactivating");
+static const int Deactivated_HASH = HashingUtils::HashString("Deactivated");
+static const int ActiveNonInvocable_HASH = HashingUtils::HashString("ActiveNonInvocable");
+static const int Deleting_HASH = HashingUtils::HashString("Deleting");
 
 State GetStateForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +34,14 @@ State GetStateForName(const Aws::String& name) {
     return State::Inactive;
   } else if (hashCode == Failed_HASH) {
     return State::Failed;
+  } else if (hashCode == Deactivating_HASH) {
+    return State::Deactivating;
+  } else if (hashCode == Deactivated_HASH) {
+    return State::Deactivated;
+  } else if (hashCode == ActiveNonInvocable_HASH) {
+    return State::ActiveNonInvocable;
+  } else if (hashCode == Deleting_HASH) {
+    return State::Deleting;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +64,14 @@ Aws::String GetNameForState(State enumValue) {
       return "Inactive";
     case State::Failed:
       return "Failed";
+    case State::Deactivating:
+      return "Deactivating";
+    case State::Deactivated:
+      return "Deactivated";
+    case State::ActiveNonInvocable:
+      return "ActiveNonInvocable";
+    case State::Deleting:
+      return "Deleting";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

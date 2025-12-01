@@ -29,23 +29,6 @@ class EndSessionResult {
 
   ///@{
   /**
-   * <p>The unique identifier of the session you ended.</p>
-   */
-  inline const Aws::String& GetSessionId() const { return m_sessionId; }
-  template <typename SessionIdT = Aws::String>
-  void SetSessionId(SessionIdT&& value) {
-    m_sessionIdHasBeenSet = true;
-    m_sessionId = std::forward<SessionIdT>(value);
-  }
-  template <typename SessionIdT = Aws::String>
-  EndSessionResult& WithSessionId(SessionIdT&& value) {
-    SetSessionId(std::forward<SessionIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The Amazon Resource Name (ARN) of the session you ended.</p>
    */
   inline const Aws::String& GetSessionArn() const { return m_sessionArn; }
@@ -57,6 +40,23 @@ class EndSessionResult {
   template <typename SessionArnT = Aws::String>
   EndSessionResult& WithSessionArn(SessionArnT&& value) {
     SetSessionArn(std::forward<SessionArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier of the session you ended.</p>
+   */
+  inline const Aws::String& GetSessionId() const { return m_sessionId; }
+  template <typename SessionIdT = Aws::String>
+  void SetSessionId(SessionIdT&& value) {
+    m_sessionIdHasBeenSet = true;
+    m_sessionId = std::forward<SessionIdT>(value);
+  }
+  template <typename SessionIdT = Aws::String>
+  EndSessionResult& WithSessionId(SessionIdT&& value) {
+    SetSessionId(std::forward<SessionIdT>(value));
     return *this;
   }
   ///@}
@@ -91,11 +91,11 @@ class EndSessionResult {
   }
   ///@}
  private:
-  Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
-
   Aws::String m_sessionArn;
   bool m_sessionArnHasBeenSet = false;
+
+  Aws::String m_sessionId;
+  bool m_sessionIdHasBeenSet = false;
 
   SessionStatus m_sessionStatus{SessionStatus::NOT_SET};
   bool m_sessionStatusHasBeenSet = false;

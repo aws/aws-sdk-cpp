@@ -10,6 +10,8 @@
 #include <aws/lexv2-models/model/BotLocaleStatus.h>
 #include <aws/lexv2-models/model/GenerativeAISettings.h>
 #include <aws/lexv2-models/model/SpeechDetectionSensitivity.h>
+#include <aws/lexv2-models/model/SpeechRecognitionSettings.h>
+#include <aws/lexv2-models/model/UnifiedSpeechSettings.h>
 #include <aws/lexv2-models/model/VoiceSettings.h>
 
 #include <utility>
@@ -153,6 +155,40 @@ class CreateBotLocaleResult {
 
   ///@{
   /**
+   * <p>The unified speech settings configured for the created bot locale.</p>
+   */
+  inline const UnifiedSpeechSettings& GetUnifiedSpeechSettings() const { return m_unifiedSpeechSettings; }
+  template <typename UnifiedSpeechSettingsT = UnifiedSpeechSettings>
+  void SetUnifiedSpeechSettings(UnifiedSpeechSettingsT&& value) {
+    m_unifiedSpeechSettingsHasBeenSet = true;
+    m_unifiedSpeechSettings = std::forward<UnifiedSpeechSettingsT>(value);
+  }
+  template <typename UnifiedSpeechSettingsT = UnifiedSpeechSettings>
+  CreateBotLocaleResult& WithUnifiedSpeechSettings(UnifiedSpeechSettingsT&& value) {
+    SetUnifiedSpeechSettings(std::forward<UnifiedSpeechSettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The speech-to-text settings configured for the created bot locale.</p>
+   */
+  inline const SpeechRecognitionSettings& GetSpeechRecognitionSettings() const { return m_speechRecognitionSettings; }
+  template <typename SpeechRecognitionSettingsT = SpeechRecognitionSettings>
+  void SetSpeechRecognitionSettings(SpeechRecognitionSettingsT&& value) {
+    m_speechRecognitionSettingsHasBeenSet = true;
+    m_speechRecognitionSettings = std::forward<SpeechRecognitionSettingsT>(value);
+  }
+  template <typename SpeechRecognitionSettingsT = SpeechRecognitionSettings>
+  CreateBotLocaleResult& WithSpeechRecognitionSettings(SpeechRecognitionSettingsT&& value) {
+    SetSpeechRecognitionSettings(std::forward<SpeechRecognitionSettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The status of the bot.</p> <p>When the status is <code>Creating</code> the
    * bot locale is being configured. When the status is <code>Building</code> Amazon
    * Lex is building the bot for testing and use.</p> <p>If the status of the bot is
@@ -256,6 +292,12 @@ class CreateBotLocaleResult {
 
   VoiceSettings m_voiceSettings;
   bool m_voiceSettingsHasBeenSet = false;
+
+  UnifiedSpeechSettings m_unifiedSpeechSettings;
+  bool m_unifiedSpeechSettingsHasBeenSet = false;
+
+  SpeechRecognitionSettings m_speechRecognitionSettings;
+  bool m_speechRecognitionSettingsHasBeenSet = false;
 
   BotLocaleStatus m_botLocaleStatus{BotLocaleStatus::NOT_SET};
   bool m_botLocaleStatusHasBeenSet = false;

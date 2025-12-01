@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/Glue_EXPORTS.h>
+#include <aws/glue/model/LastRefreshType.h>
 #include <aws/glue/model/ViewRepresentationInput.h>
 
 #include <utility>
@@ -99,6 +100,75 @@ class ViewDefinitionInput {
 
   ///@{
   /**
+   * <p>The ID value that identifies this view's version. For materialized views, the
+   * version ID is the Apache Iceberg table's snapshot ID. </p>
+   */
+  inline long long GetViewVersionId() const { return m_viewVersionId; }
+  inline bool ViewVersionIdHasBeenSet() const { return m_viewVersionIdHasBeenSet; }
+  inline void SetViewVersionId(long long value) {
+    m_viewVersionIdHasBeenSet = true;
+    m_viewVersionId = value;
+  }
+  inline ViewDefinitionInput& WithViewVersionId(long long value) {
+    SetViewVersionId(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The version ID of the Apache Iceberg table.</p>
+   */
+  inline const Aws::String& GetViewVersionToken() const { return m_viewVersionToken; }
+  inline bool ViewVersionTokenHasBeenSet() const { return m_viewVersionTokenHasBeenSet; }
+  template <typename ViewVersionTokenT = Aws::String>
+  void SetViewVersionToken(ViewVersionTokenT&& value) {
+    m_viewVersionTokenHasBeenSet = true;
+    m_viewVersionToken = std::forward<ViewVersionTokenT>(value);
+  }
+  template <typename ViewVersionTokenT = Aws::String>
+  ViewDefinitionInput& WithViewVersionToken(ViewVersionTokenT&& value) {
+    SetViewVersionToken(std::forward<ViewVersionTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Auto refresh interval in seconds for the materialized view. If not specified,
+   * the view will not automatically refresh.</p>
+   */
+  inline long long GetRefreshSeconds() const { return m_refreshSeconds; }
+  inline bool RefreshSecondsHasBeenSet() const { return m_refreshSecondsHasBeenSet; }
+  inline void SetRefreshSeconds(long long value) {
+    m_refreshSecondsHasBeenSet = true;
+    m_refreshSeconds = value;
+  }
+  inline ViewDefinitionInput& WithRefreshSeconds(long long value) {
+    SetRefreshSeconds(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The type of the materialized view's last refresh. Valid values:
+   * <code>Full</code>, <code>Incremental</code>.</p>
+   */
+  inline LastRefreshType GetLastRefreshType() const { return m_lastRefreshType; }
+  inline bool LastRefreshTypeHasBeenSet() const { return m_lastRefreshTypeHasBeenSet; }
+  inline void SetLastRefreshType(LastRefreshType value) {
+    m_lastRefreshTypeHasBeenSet = true;
+    m_lastRefreshType = value;
+  }
+  inline ViewDefinitionInput& WithLastRefreshType(LastRefreshType value) {
+    SetLastRefreshType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A list of base table ARNs that make up the view.</p>
    */
   inline const Aws::Vector<Aws::String>& GetSubObjects() const { return m_subObjects; }
@@ -120,6 +190,30 @@ class ViewDefinitionInput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>List of the Apache Iceberg table versions referenced by the materialized
+   * view.</p>
+   */
+  inline const Aws::Vector<long long>& GetSubObjectVersionIds() const { return m_subObjectVersionIds; }
+  inline bool SubObjectVersionIdsHasBeenSet() const { return m_subObjectVersionIdsHasBeenSet; }
+  template <typename SubObjectVersionIdsT = Aws::Vector<long long>>
+  void SetSubObjectVersionIds(SubObjectVersionIdsT&& value) {
+    m_subObjectVersionIdsHasBeenSet = true;
+    m_subObjectVersionIds = std::forward<SubObjectVersionIdsT>(value);
+  }
+  template <typename SubObjectVersionIdsT = Aws::Vector<long long>>
+  ViewDefinitionInput& WithSubObjectVersionIds(SubObjectVersionIdsT&& value) {
+    SetSubObjectVersionIds(std::forward<SubObjectVersionIdsT>(value));
+    return *this;
+  }
+  inline ViewDefinitionInput& AddSubObjectVersionIds(long long value) {
+    m_subObjectVersionIdsHasBeenSet = true;
+    m_subObjectVersionIds.push_back(value);
+    return *this;
+  }
+  ///@}
  private:
   bool m_isProtected{false};
   bool m_isProtectedHasBeenSet = false;
@@ -130,8 +224,23 @@ class ViewDefinitionInput {
   Aws::Vector<ViewRepresentationInput> m_representations;
   bool m_representationsHasBeenSet = false;
 
+  long long m_viewVersionId{0};
+  bool m_viewVersionIdHasBeenSet = false;
+
+  Aws::String m_viewVersionToken;
+  bool m_viewVersionTokenHasBeenSet = false;
+
+  long long m_refreshSeconds{0};
+  bool m_refreshSecondsHasBeenSet = false;
+
+  LastRefreshType m_lastRefreshType{LastRefreshType::NOT_SET};
+  bool m_lastRefreshTypeHasBeenSet = false;
+
   Aws::Vector<Aws::String> m_subObjects;
   bool m_subObjectsHasBeenSet = false;
+
+  Aws::Vector<long long> m_subObjectVersionIds;
+  bool m_subObjectVersionIdsHasBeenSet = false;
 };
 
 }  // namespace Model

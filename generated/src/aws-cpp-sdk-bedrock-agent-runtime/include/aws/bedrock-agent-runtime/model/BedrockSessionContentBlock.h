@@ -43,24 +43,6 @@ class BedrockSessionContentBlock {
 
   ///@{
   /**
-   * <p>The text in the invocation step.</p>
-   */
-  inline const Aws::String& GetText() const { return m_text; }
-  inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-  template <typename TextT = Aws::String>
-  void SetText(TextT&& value) {
-    m_textHasBeenSet = true;
-    m_text = std::forward<TextT>(value);
-  }
-  template <typename TextT = Aws::String>
-  BedrockSessionContentBlock& WithText(TextT&& value) {
-    SetText(std::forward<TextT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The image in the invocation step.</p>
    */
   inline const ImageBlock& GetImage() const { return m_image; }
@@ -76,12 +58,30 @@ class BedrockSessionContentBlock {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>The text in the invocation step.</p>
+   */
+  inline const Aws::String& GetText() const { return m_text; }
+  inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
+  template <typename TextT = Aws::String>
+  void SetText(TextT&& value) {
+    m_textHasBeenSet = true;
+    m_text = std::forward<TextT>(value);
+  }
+  template <typename TextT = Aws::String>
+  BedrockSessionContentBlock& WithText(TextT&& value) {
+    SetText(std::forward<TextT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   ImageBlock m_image;
   bool m_imageHasBeenSet = false;
+
+  Aws::String m_text;
+  bool m_textHasBeenSet = false;
 };
 
 }  // namespace Model

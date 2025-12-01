@@ -34,6 +34,24 @@ class NodeInputSource {
 
   ///@{
   /**
+   * <p>The expression used to extract data from the source.</p>
+   */
+  inline const Aws::String& GetExpression() const { return m_expression; }
+  inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
+  template <typename ExpressionT = Aws::String>
+  void SetExpression(ExpressionT&& value) {
+    m_expressionHasBeenSet = true;
+    m_expression = std::forward<ExpressionT>(value);
+  }
+  template <typename ExpressionT = Aws::String>
+  NodeInputSource& WithExpression(ExpressionT&& value) {
+    SetExpression(std::forward<ExpressionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The name of the source node that provides the input data.</p>
    */
   inline const Aws::String& GetNodeName() const { return m_nodeName; }
@@ -67,33 +85,15 @@ class NodeInputSource {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The expression used to extract data from the source.</p>
-   */
-  inline const Aws::String& GetExpression() const { return m_expression; }
-  inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
-  template <typename ExpressionT = Aws::String>
-  void SetExpression(ExpressionT&& value) {
-    m_expressionHasBeenSet = true;
-    m_expression = std::forward<ExpressionT>(value);
-  }
-  template <typename ExpressionT = Aws::String>
-  NodeInputSource& WithExpression(ExpressionT&& value) {
-    SetExpression(std::forward<ExpressionT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_expression;
+  bool m_expressionHasBeenSet = false;
+
   Aws::String m_nodeName;
   bool m_nodeNameHasBeenSet = false;
 
   Aws::String m_outputFieldName;
   bool m_outputFieldNameHasBeenSet = false;
-
-  Aws::String m_expression;
-  bool m_expressionHasBeenSet = false;
 };
 
 }  // namespace Model

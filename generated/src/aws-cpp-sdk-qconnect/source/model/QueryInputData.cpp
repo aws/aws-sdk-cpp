@@ -26,6 +26,10 @@ QueryInputData& QueryInputData::operator=(JsonView jsonValue) {
     m_intentInputData = jsonValue.GetObject("intentInputData");
     m_intentInputDataHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("caseSummarizationInputData")) {
+    m_caseSummarizationInputData = jsonValue.GetObject("caseSummarizationInputData");
+    m_caseSummarizationInputDataHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue QueryInputData::Jsonize() const {
 
   if (m_intentInputDataHasBeenSet) {
     payload.WithObject("intentInputData", m_intentInputData.Jsonize());
+  }
+
+  if (m_caseSummarizationInputDataHasBeenSet) {
+    payload.WithObject("caseSummarizationInputData", m_caseSummarizationInputData.Jsonize());
   }
 
   return payload;

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
 #include <aws/customer-profiles/model/SegmentGroup.h>
+#include <aws/customer-profiles/model/SegmentType.h>
 
 #include <utility>
 
@@ -155,6 +156,40 @@ class GetSegmentDefinitionResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The segment SQL query.</p>
+   */
+  inline const Aws::String& GetSegmentSqlQuery() const { return m_segmentSqlQuery; }
+  template <typename SegmentSqlQueryT = Aws::String>
+  void SetSegmentSqlQuery(SegmentSqlQueryT&& value) {
+    m_segmentSqlQueryHasBeenSet = true;
+    m_segmentSqlQuery = std::forward<SegmentSqlQueryT>(value);
+  }
+  template <typename SegmentSqlQueryT = Aws::String>
+  GetSegmentDefinitionResult& WithSegmentSqlQuery(SegmentSqlQueryT&& value) {
+    SetSegmentSqlQuery(std::forward<SegmentSqlQueryT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The segment type.</p> <p> Classic : Segments created using traditional
+   * SegmentGroup structure</p> <p> Enhanced : Segments created using SQL queries
+   * </p>
+   */
+  inline SegmentType GetSegmentType() const { return m_segmentType; }
+  inline void SetSegmentType(SegmentType value) {
+    m_segmentTypeHasBeenSet = true;
+    m_segmentType = value;
+  }
+  inline GetSegmentDefinitionResult& WithSegmentType(SegmentType value) {
+    SetSegmentType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -189,6 +224,12 @@ class GetSegmentDefinitionResult {
 
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_tagsHasBeenSet = false;
+
+  Aws::String m_segmentSqlQuery;
+  bool m_segmentSqlQueryHasBeenSet = false;
+
+  SegmentType m_segmentType{SegmentType::NOT_SET};
+  bool m_segmentTypeHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

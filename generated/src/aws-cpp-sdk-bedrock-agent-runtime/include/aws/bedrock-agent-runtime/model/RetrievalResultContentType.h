@@ -10,7 +10,7 @@
 namespace Aws {
 namespace BedrockAgentRuntime {
 namespace Model {
-enum class RetrievalResultContentType { NOT_SET, TEXT, IMAGE, ROW };
+enum class RetrievalResultContentType { NOT_SET, TEXT, IMAGE, ROW, AUDIO, VIDEO };
 
 namespace RetrievalResultContentTypeMapper {
 AWS_BEDROCKAGENTRUNTIME_API RetrievalResultContentType GetRetrievalResultContentTypeForName(const Aws::String& name);

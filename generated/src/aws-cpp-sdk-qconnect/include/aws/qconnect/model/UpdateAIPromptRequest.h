@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qconnect/QConnectRequest.h>
 #include <aws/qconnect/QConnect_EXPORTS.h>
+#include <aws/qconnect/model/AIPromptInferenceConfiguration.h>
 #include <aws/qconnect/model/AIPromptTemplateConfiguration.h>
 #include <aws/qconnect/model/VisibilityStatus.h>
 
@@ -163,6 +164,24 @@ class UpdateAIPromptRequest : public QConnectRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The updated inference configuration for the AI Prompt.</p>
+   */
+  inline const AIPromptInferenceConfiguration& GetInferenceConfiguration() const { return m_inferenceConfiguration; }
+  inline bool InferenceConfigurationHasBeenSet() const { return m_inferenceConfigurationHasBeenSet; }
+  template <typename InferenceConfigurationT = AIPromptInferenceConfiguration>
+  void SetInferenceConfiguration(InferenceConfigurationT&& value) {
+    m_inferenceConfigurationHasBeenSet = true;
+    m_inferenceConfiguration = std::forward<InferenceConfigurationT>(value);
+  }
+  template <typename InferenceConfigurationT = AIPromptInferenceConfiguration>
+  UpdateAIPromptRequest& WithInferenceConfiguration(InferenceConfigurationT&& value) {
+    SetInferenceConfiguration(std::forward<InferenceConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_clientTokenHasBeenSet = true;
@@ -184,6 +203,9 @@ class UpdateAIPromptRequest : public QConnectRequest {
 
   Aws::String m_modelId;
   bool m_modelIdHasBeenSet = false;
+
+  AIPromptInferenceConfiguration m_inferenceConfiguration;
+  bool m_inferenceConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

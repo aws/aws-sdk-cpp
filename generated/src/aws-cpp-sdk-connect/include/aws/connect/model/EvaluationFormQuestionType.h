@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Connect {
 namespace Model {
-enum class EvaluationFormQuestionType { NOT_SET, TEXT, SINGLESELECT, NUMERIC };
+enum class EvaluationFormQuestionType { NOT_SET, TEXT, SINGLESELECT, NUMERIC, MULTISELECT, DATETIME };
 
 namespace EvaluationFormQuestionTypeMapper {
 AWS_CONNECT_API EvaluationFormQuestionType GetEvaluationFormQuestionTypeForName(const Aws::String& name);

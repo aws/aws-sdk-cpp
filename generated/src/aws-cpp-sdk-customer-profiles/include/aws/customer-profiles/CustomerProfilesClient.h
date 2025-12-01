@@ -396,6 +396,32 @@ class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p>Creates a recommender</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateRecommender">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateRecommenderOutcome CreateRecommender(const Model::CreateRecommenderRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateRecommender that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateRecommenderRequestT = Model::CreateRecommenderRequest>
+  Model::CreateRecommenderOutcomeCallable CreateRecommenderCallable(const CreateRecommenderRequestT& request) const {
+    return SubmitCallable(&CustomerProfilesClient::CreateRecommender, request);
+  }
+
+  /**
+   * An Async wrapper for CreateRecommender that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateRecommenderRequestT = Model::CreateRecommenderRequest>
+  void CreateRecommenderAsync(const CreateRecommenderRequestT& request, const CreateRecommenderResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CustomerProfilesClient::CreateRecommender, request, handler, context);
+  }
+
+  /**
    * <p>Creates a segment definition associated to the given domain.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateSegmentDefinition">AWS
@@ -590,6 +616,34 @@ class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p>Delete a DomainObjectType for the given Domain and ObjectType
+   * name.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteDomainObjectType">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteDomainObjectTypeOutcome DeleteDomainObjectType(const Model::DeleteDomainObjectTypeRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteDomainObjectType that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteDomainObjectTypeRequestT = Model::DeleteDomainObjectTypeRequest>
+  Model::DeleteDomainObjectTypeOutcomeCallable DeleteDomainObjectTypeCallable(const DeleteDomainObjectTypeRequestT& request) const {
+    return SubmitCallable(&CustomerProfilesClient::DeleteDomainObjectType, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteDomainObjectType that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteDomainObjectTypeRequestT = Model::DeleteDomainObjectTypeRequest>
+  void DeleteDomainObjectTypeAsync(const DeleteDomainObjectTypeRequestT& request,
+                                   const DeleteDomainObjectTypeResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CustomerProfilesClient::DeleteDomainObjectType, request, handler, context);
+  }
+
+  /**
    * <p>Disables and deletes the specified event stream.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteEventStream">AWS
@@ -779,6 +833,32 @@ class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJ
                                     const DeleteProfileObjectTypeResponseReceivedHandler& handler,
                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CustomerProfilesClient::DeleteProfileObjectType, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a recommender.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteRecommender">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteRecommenderOutcome DeleteRecommender(const Model::DeleteRecommenderRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteRecommender that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteRecommenderRequestT = Model::DeleteRecommenderRequest>
+  Model::DeleteRecommenderOutcomeCallable DeleteRecommenderCallable(const DeleteRecommenderRequestT& request) const {
+    return SubmitCallable(&CustomerProfilesClient::DeleteRecommender, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteRecommender that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DeleteRecommenderRequestT = Model::DeleteRecommenderRequest>
+  void DeleteRecommenderAsync(const DeleteRecommenderRequestT& request, const DeleteRecommenderResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CustomerProfilesClient::DeleteRecommender, request, handler, context);
   }
 
   /**
@@ -1012,6 +1092,33 @@ class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p>Return a DomainObjectType for the input Domain and ObjectType names.
+   * </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetDomainObjectType">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetDomainObjectTypeOutcome GetDomainObjectType(const Model::GetDomainObjectTypeRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetDomainObjectType that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetDomainObjectTypeRequestT = Model::GetDomainObjectTypeRequest>
+  Model::GetDomainObjectTypeOutcomeCallable GetDomainObjectTypeCallable(const GetDomainObjectTypeRequestT& request) const {
+    return SubmitCallable(&CustomerProfilesClient::GetDomainObjectType, request);
+  }
+
+  /**
+   * An Async wrapper for GetDomainObjectType that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetDomainObjectTypeRequestT = Model::GetDomainObjectTypeRequest>
+  void GetDomainObjectTypeAsync(const GetDomainObjectTypeRequestT& request, const GetDomainObjectTypeResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CustomerProfilesClient::GetDomainObjectType, request, handler, context);
+  }
+
+  /**
    * <p>Returns information about the specified event stream in a specific
    * domain.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetEventStream">AWS
@@ -1172,6 +1279,44 @@ class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p>The GetObjectTypeAttributeValues API delivers statistical insights about
+   * attributes within a specific object type, but is exclusively available for
+   * domains with data store enabled. This API performs daily calculations to provide
+   * statistical information about your attribute values, helping you understand
+   * patterns and trends in your data. The statistical calculations are performed
+   * once per day, providing a consistent snapshot of your attribute data
+   * characteristics.</p>  <p>You'll receive null values in two scenarios: </p>
+   * <p>During the first period after enabling data vault (unless a calculation cycle
+   * occurs, which happens once daily).</p> <p>For attributes that don't contain
+   * numeric values. </p> <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetObjectTypeAttributeStatistics">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetObjectTypeAttributeStatisticsOutcome GetObjectTypeAttributeStatistics(
+      const Model::GetObjectTypeAttributeStatisticsRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetObjectTypeAttributeStatistics that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename GetObjectTypeAttributeStatisticsRequestT = Model::GetObjectTypeAttributeStatisticsRequest>
+  Model::GetObjectTypeAttributeStatisticsOutcomeCallable GetObjectTypeAttributeStatisticsCallable(
+      const GetObjectTypeAttributeStatisticsRequestT& request) const {
+    return SubmitCallable(&CustomerProfilesClient::GetObjectTypeAttributeStatistics, request);
+  }
+
+  /**
+   * An Async wrapper for GetObjectTypeAttributeStatistics that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename GetObjectTypeAttributeStatisticsRequestT = Model::GetObjectTypeAttributeStatisticsRequest>
+  void GetObjectTypeAttributeStatisticsAsync(const GetObjectTypeAttributeStatisticsRequestT& request,
+                                             const GetObjectTypeAttributeStatisticsResponseReceivedHandler& handler,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CustomerProfilesClient::GetObjectTypeAttributeStatistics, request, handler, context);
+  }
+
+  /**
    * <p>Returns a history record for a specific profile, for a specific
    * domain.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetProfileHistoryRecord">AWS
@@ -1257,6 +1402,60 @@ class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJ
                                          const GetProfileObjectTypeTemplateResponseReceivedHandler& handler,
                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CustomerProfilesClient::GetProfileObjectTypeTemplate, request, handler, context);
+  }
+
+  /**
+   * <p>Fetches the recommendations for a profile in the input Customer Profiles
+   * domain. Fetches all the profile recommendations </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetProfileRecommendations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetProfileRecommendationsOutcome GetProfileRecommendations(const Model::GetProfileRecommendationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetProfileRecommendations that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetProfileRecommendationsRequestT = Model::GetProfileRecommendationsRequest>
+  Model::GetProfileRecommendationsOutcomeCallable GetProfileRecommendationsCallable(
+      const GetProfileRecommendationsRequestT& request) const {
+    return SubmitCallable(&CustomerProfilesClient::GetProfileRecommendations, request);
+  }
+
+  /**
+   * An Async wrapper for GetProfileRecommendations that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetProfileRecommendationsRequestT = Model::GetProfileRecommendationsRequest>
+  void GetProfileRecommendationsAsync(const GetProfileRecommendationsRequestT& request,
+                                      const GetProfileRecommendationsResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CustomerProfilesClient::GetProfileRecommendations, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves a recommender.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetRecommender">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetRecommenderOutcome GetRecommender(const Model::GetRecommenderRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetRecommender that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetRecommenderRequestT = Model::GetRecommenderRequest>
+  Model::GetRecommenderOutcomeCallable GetRecommenderCallable(const GetRecommenderRequestT& request) const {
+    return SubmitCallable(&CustomerProfilesClient::GetRecommender, request);
+  }
+
+  /**
+   * An Async wrapper for GetRecommender that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetRecommenderRequestT = Model::GetRecommenderRequest>
+  void GetRecommenderAsync(const GetRecommenderRequestT& request, const GetRecommenderResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CustomerProfilesClient::GetRecommender, request, handler, context);
   }
 
   /**
@@ -1616,6 +1815,33 @@ class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p>List all DomainObjectType(s) in a Customer Profiles domain. </p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListDomainObjectTypes">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListDomainObjectTypesOutcome ListDomainObjectTypes(const Model::ListDomainObjectTypesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListDomainObjectTypes that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListDomainObjectTypesRequestT = Model::ListDomainObjectTypesRequest>
+  Model::ListDomainObjectTypesOutcomeCallable ListDomainObjectTypesCallable(const ListDomainObjectTypesRequestT& request) const {
+    return SubmitCallable(&CustomerProfilesClient::ListDomainObjectTypes, request);
+  }
+
+  /**
+   * An Async wrapper for ListDomainObjectTypes that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListDomainObjectTypesRequestT = Model::ListDomainObjectTypesRequest>
+  void ListDomainObjectTypesAsync(const ListDomainObjectTypesRequestT& request, const ListDomainObjectTypesResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CustomerProfilesClient::ListDomainObjectTypes, request, handler, context);
+  }
+
+  /**
    * <p>Returns a list of all the domains for an AWS account that have been
    * created.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListDomains">AWS
@@ -1749,6 +1975,41 @@ class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJ
   void ListIntegrationsAsync(const ListIntegrationsRequestT& request, const ListIntegrationsResponseReceivedHandler& handler,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CustomerProfilesClient::ListIntegrations, request, handler, context);
+  }
+
+  /**
+   * <p>The ListObjectTypeAttributeValues API provides access to the most recent
+   * distinct values for any specified attribute, making it valuable for real-time
+   * data validation and consistency checks within your object types. This API works
+   * across domain, supporting both custom and standard object types. The API accepts
+   * the object type name, attribute name, and domain name as input parameters and
+   * returns values up to the storage limit of approximately 350KB.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListObjectTypeAttributeValues">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListObjectTypeAttributeValuesOutcome ListObjectTypeAttributeValues(
+      const Model::ListObjectTypeAttributeValuesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListObjectTypeAttributeValues that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListObjectTypeAttributeValuesRequestT = Model::ListObjectTypeAttributeValuesRequest>
+  Model::ListObjectTypeAttributeValuesOutcomeCallable ListObjectTypeAttributeValuesCallable(
+      const ListObjectTypeAttributeValuesRequestT& request) const {
+    return SubmitCallable(&CustomerProfilesClient::ListObjectTypeAttributeValues, request);
+  }
+
+  /**
+   * An Async wrapper for ListObjectTypeAttributeValues that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListObjectTypeAttributeValuesRequestT = Model::ListObjectTypeAttributeValuesRequest>
+  void ListObjectTypeAttributeValuesAsync(const ListObjectTypeAttributeValuesRequestT& request,
+                                          const ListObjectTypeAttributeValuesResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CustomerProfilesClient::ListObjectTypeAttributeValues, request, handler, context);
   }
 
   /**
@@ -1921,6 +2182,61 @@ class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJ
   void ListProfileObjectsAsync(const ListProfileObjectsRequestT& request, const ListProfileObjectsResponseReceivedHandler& handler,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CustomerProfilesClient::ListProfileObjects, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a list of available recommender recipes that can be used to create
+   * recommenders.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListRecommenderRecipes">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListRecommenderRecipesOutcome ListRecommenderRecipes(const Model::ListRecommenderRecipesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListRecommenderRecipes that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListRecommenderRecipesRequestT = Model::ListRecommenderRecipesRequest>
+  Model::ListRecommenderRecipesOutcomeCallable ListRecommenderRecipesCallable(const ListRecommenderRecipesRequestT& request = {}) const {
+    return SubmitCallable(&CustomerProfilesClient::ListRecommenderRecipes, request);
+  }
+
+  /**
+   * An Async wrapper for ListRecommenderRecipes that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListRecommenderRecipesRequestT = Model::ListRecommenderRecipesRequest>
+  void ListRecommenderRecipesAsync(const ListRecommenderRecipesResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                   const ListRecommenderRecipesRequestT& request = {}) const {
+    return SubmitAsync(&CustomerProfilesClient::ListRecommenderRecipes, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a list of recommenders in the specified domain.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListRecommenders">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListRecommendersOutcome ListRecommenders(const Model::ListRecommendersRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListRecommenders that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListRecommendersRequestT = Model::ListRecommendersRequest>
+  Model::ListRecommendersOutcomeCallable ListRecommendersCallable(const ListRecommendersRequestT& request) const {
+    return SubmitCallable(&CustomerProfilesClient::ListRecommenders, request);
+  }
+
+  /**
+   * An Async wrapper for ListRecommenders that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListRecommendersRequestT = Model::ListRecommendersRequest>
+  void ListRecommendersAsync(const ListRecommendersRequestT& request, const ListRecommendersResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CustomerProfilesClient::ListRecommenders, request, handler, context);
   }
 
   /**
@@ -2099,6 +2415,34 @@ class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p>Create/Update a DomainObjectType in a Customer Profiles domain. To create a
+   * new DomainObjectType, Data Store needs to be enabled on the
+   * Domain.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/PutDomainObjectType">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutDomainObjectTypeOutcome PutDomainObjectType(const Model::PutDomainObjectTypeRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutDomainObjectType that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename PutDomainObjectTypeRequestT = Model::PutDomainObjectTypeRequest>
+  Model::PutDomainObjectTypeOutcomeCallable PutDomainObjectTypeCallable(const PutDomainObjectTypeRequestT& request) const {
+    return SubmitCallable(&CustomerProfilesClient::PutDomainObjectType, request);
+  }
+
+  /**
+   * An Async wrapper for PutDomainObjectType that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename PutDomainObjectTypeRequestT = Model::PutDomainObjectTypeRequest>
+  void PutDomainObjectTypeAsync(const PutDomainObjectTypeRequestT& request, const PutDomainObjectTypeResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CustomerProfilesClient::PutDomainObjectType, request, handler, context);
+  }
+
+  /**
    * <p>Adds an integration between the service and a third-party service, which
    * includes Amazon AppFlow and Amazon Connect.</p> <p>An integration can belong to
    * only one domain.</p> <p>To add or remove tags on an existing Integration, see <a
@@ -2227,6 +2571,33 @@ class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p>Starts a recommender that was previously stopped. Starting a recommender
+   * resumes its ability to generate recommendations.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/StartRecommender">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartRecommenderOutcome StartRecommender(const Model::StartRecommenderRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartRecommender that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartRecommenderRequestT = Model::StartRecommenderRequest>
+  Model::StartRecommenderOutcomeCallable StartRecommenderCallable(const StartRecommenderRequestT& request) const {
+    return SubmitCallable(&CustomerProfilesClient::StartRecommender, request);
+  }
+
+  /**
+   * An Async wrapper for StartRecommender that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename StartRecommenderRequestT = Model::StartRecommenderRequest>
+  void StartRecommenderAsync(const StartRecommenderRequestT& request, const StartRecommenderResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CustomerProfilesClient::StartRecommender, request, handler, context);
+  }
+
+  /**
    * <p>This API starts the processing of an upload job to ingest profile data.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/StartUploadJob">AWS
@@ -2250,6 +2621,33 @@ class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJ
   void StartUploadJobAsync(const StartUploadJobRequestT& request, const StartUploadJobResponseReceivedHandler& handler,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CustomerProfilesClient::StartUploadJob, request, handler, context);
+  }
+
+  /**
+   * <p>Stops a recommender, suspending its ability to generate recommendations. The
+   * recommender can be restarted later using StartRecommender.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/StopRecommender">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StopRecommenderOutcome StopRecommender(const Model::StopRecommenderRequest& request) const;
+
+  /**
+   * A Callable wrapper for StopRecommender that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename StopRecommenderRequestT = Model::StopRecommenderRequest>
+  Model::StopRecommenderOutcomeCallable StopRecommenderCallable(const StopRecommenderRequestT& request) const {
+    return SubmitCallable(&CustomerProfilesClient::StopRecommender, request);
+  }
+
+  /**
+   * An Async wrapper for StopRecommender that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename StopRecommenderRequestT = Model::StopRecommenderRequest>
+  void StopRecommenderAsync(const StopRecommenderRequestT& request, const StopRecommenderResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CustomerProfilesClient::StopRecommender, request, handler, context);
   }
 
   /**
@@ -2491,6 +2889,33 @@ class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJ
   void UpdateProfileAsync(const UpdateProfileRequestT& request, const UpdateProfileResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CustomerProfilesClient::UpdateProfile, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the properties of an existing recommender, allowing you to modify its
+   * configuration and description.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateRecommender">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateRecommenderOutcome UpdateRecommender(const Model::UpdateRecommenderRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateRecommender that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateRecommenderRequestT = Model::UpdateRecommenderRequest>
+  Model::UpdateRecommenderOutcomeCallable UpdateRecommenderCallable(const UpdateRecommenderRequestT& request) const {
+    return SubmitCallable(&CustomerProfilesClient::UpdateRecommender, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateRecommender that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateRecommenderRequestT = Model::UpdateRecommenderRequest>
+  void UpdateRecommenderAsync(const UpdateRecommenderRequestT& request, const UpdateRecommenderResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CustomerProfilesClient::UpdateRecommender, request, handler, context);
   }
 
   void OverrideEndpoint(const Aws::String& endpoint);

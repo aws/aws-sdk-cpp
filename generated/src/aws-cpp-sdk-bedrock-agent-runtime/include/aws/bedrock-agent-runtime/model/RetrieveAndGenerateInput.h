@@ -37,7 +37,7 @@ class RetrieveAndGenerateInput {
 
   ///@{
   /**
-   * <p>The query made to the knowledge base.</p>
+   * <p>The query made to the knowledge base, in characters.</p>
    */
   inline const Aws::String& GetText() const { return m_text; }
   inline bool TextHasBeenSet() const { return m_textHasBeenSet; }

@@ -43,6 +43,31 @@ class RetrievalFilter {
 
   ///@{
   /**
+   * <p>Knowledge base data sources are returned if their metadata attributes fulfill
+   * all the filter conditions inside this list.</p>
+   */
+  inline const Aws::Vector<RetrievalFilter>& GetAndAll() const { return m_andAll; }
+  inline bool AndAllHasBeenSet() const { return m_andAllHasBeenSet; }
+  template <typename AndAllT = Aws::Vector<RetrievalFilter>>
+  void SetAndAll(AndAllT&& value) {
+    m_andAllHasBeenSet = true;
+    m_andAll = std::forward<AndAllT>(value);
+  }
+  template <typename AndAllT = Aws::Vector<RetrievalFilter>>
+  RetrievalFilter& WithAndAll(AndAllT&& value) {
+    SetAndAll(std::forward<AndAllT>(value));
+    return *this;
+  }
+  template <typename AndAllT = RetrievalFilter>
+  RetrievalFilter& AddAndAll(AndAllT&& value) {
+    m_andAllHasBeenSet = true;
+    m_andAll.emplace_back(std::forward<AndAllT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Knowledge base data sources are returned if they contain a metadata attribute
    * whose name matches the <code>key</code> and whose value matches the
    * <code>value</code> in this object.</p> <p>The following example would return
@@ -60,30 +85,6 @@ class RetrievalFilter {
   template <typename EqualsT = FilterAttribute>
   RetrievalFilter& WithEquals(EqualsT&& value) {
     SetEquals(std::forward<EqualsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Knowledge base data sources are returned when:</p> <ul> <li> <p>It contains a
-   * metadata attribute whose name matches the <code>key</code> and whose value
-   * doesn't match the <code>value</code> in this object.</p> </li> <li> <p>The key
-   * is not present in the document.</p> </li> </ul> <p>The following example would
-   * return data sources that don't contain an <code>animal</code> attribute whose
-   * value is <code>cat</code>.</p> <p> <code>"notEquals": { "key": "animal",
-   * "value": "cat" }</code> </p>
-   */
-  inline const FilterAttribute& GetNotEquals() const { return m_notEquals; }
-  inline bool NotEqualsHasBeenSet() const { return m_notEqualsHasBeenSet; }
-  template <typename NotEqualsT = FilterAttribute>
-  void SetNotEquals(NotEqualsT&& value) {
-    m_notEqualsHasBeenSet = true;
-    m_notEquals = std::forward<NotEqualsT>(value);
-  }
-  template <typename NotEqualsT = FilterAttribute>
-  RetrievalFilter& WithNotEquals(NotEqualsT&& value) {
-    SetNotEquals(std::forward<NotEqualsT>(value));
     return *this;
   }
   ///@}
@@ -137,6 +138,29 @@ class RetrievalFilter {
   ///@{
   /**
    * <p>Knowledge base data sources are returned if they contain a metadata attribute
+   * whose name matches the <code>key</code> and whose value is in the list specified
+   * in the <code>value</code> in this object.</p> <p>The following example would
+   * return data sources with an <code>animal</code> attribute that is either
+   * <code>cat</code> or <code>dog</code>:</p> <p> <code>"in": { "key": "animal",
+   * "value": ["cat", "dog"] }</code> </p>
+   */
+  inline const FilterAttribute& GetIn() const { return m_in; }
+  inline bool InHasBeenSet() const { return m_inHasBeenSet; }
+  template <typename InT = FilterAttribute>
+  void SetIn(InT&& value) {
+    m_inHasBeenSet = true;
+    m_in = std::forward<InT>(value);
+  }
+  template <typename InT = FilterAttribute>
+  RetrievalFilter& WithIn(InT&& value) {
+    SetIn(std::forward<InT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Knowledge base data sources are returned if they contain a metadata attribute
    * whose name matches the <code>key</code> and whose value is less than the
    * <code>value</code> in this object.</p> <p>The following example would return
    * data sources with an <code>year</code> attribute whose value is less than to
@@ -183,22 +207,47 @@ class RetrievalFilter {
   ///@{
   /**
    * <p>Knowledge base data sources are returned if they contain a metadata attribute
-   * whose name matches the <code>key</code> and whose value is in the list specified
-   * in the <code>value</code> in this object.</p> <p>The following example would
-   * return data sources with an <code>animal</code> attribute that is either
-   * <code>cat</code> or <code>dog</code>:</p> <p> <code>"in": { "key": "animal",
-   * "value": ["cat", "dog"] }</code> </p>
+   * whose name matches the <code>key</code> and whose value is a list that contains
+   * the <code>value</code> as one of its members.</p> <p>The following example would
+   * return data sources with an <code>animals</code> attribute that is a list
+   * containing a <code>cat</code> member (for example <code>["dog",
+   * "cat"]</code>).</p> <p> <code>"listContains": { "key": "animals", "value": "cat"
+   * }</code> </p>
    */
-  inline const FilterAttribute& GetIn() const { return m_in; }
-  inline bool InHasBeenSet() const { return m_inHasBeenSet; }
-  template <typename InT = FilterAttribute>
-  void SetIn(InT&& value) {
-    m_inHasBeenSet = true;
-    m_in = std::forward<InT>(value);
+  inline const FilterAttribute& GetListContains() const { return m_listContains; }
+  inline bool ListContainsHasBeenSet() const { return m_listContainsHasBeenSet; }
+  template <typename ListContainsT = FilterAttribute>
+  void SetListContains(ListContainsT&& value) {
+    m_listContainsHasBeenSet = true;
+    m_listContains = std::forward<ListContainsT>(value);
   }
-  template <typename InT = FilterAttribute>
-  RetrievalFilter& WithIn(InT&& value) {
-    SetIn(std::forward<InT>(value));
+  template <typename ListContainsT = FilterAttribute>
+  RetrievalFilter& WithListContains(ListContainsT&& value) {
+    SetListContains(std::forward<ListContainsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Knowledge base data sources are returned when:</p> <ul> <li> <p>It contains a
+   * metadata attribute whose name matches the <code>key</code> and whose value
+   * doesn't match the <code>value</code> in this object.</p> </li> <li> <p>The key
+   * is not present in the document.</p> </li> </ul> <p>The following example would
+   * return data sources that don't contain an <code>animal</code> attribute whose
+   * value is <code>cat</code>.</p> <p> <code>"notEquals": { "key": "animal",
+   * "value": "cat" }</code> </p>
+   */
+  inline const FilterAttribute& GetNotEquals() const { return m_notEquals; }
+  inline bool NotEqualsHasBeenSet() const { return m_notEqualsHasBeenSet; }
+  template <typename NotEqualsT = FilterAttribute>
+  void SetNotEquals(NotEqualsT&& value) {
+    m_notEqualsHasBeenSet = true;
+    m_notEquals = std::forward<NotEqualsT>(value);
+  }
+  template <typename NotEqualsT = FilterAttribute>
+  RetrievalFilter& WithNotEquals(NotEqualsT&& value) {
+    SetNotEquals(std::forward<NotEqualsT>(value));
     return *this;
   }
   ///@}
@@ -228,6 +277,31 @@ class RetrievalFilter {
 
   ///@{
   /**
+   * <p>Knowledge base data sources are returned if their metadata attributes fulfill
+   * at least one of the filter conditions inside this list.</p>
+   */
+  inline const Aws::Vector<RetrievalFilter>& GetOrAll() const { return m_orAll; }
+  inline bool OrAllHasBeenSet() const { return m_orAllHasBeenSet; }
+  template <typename OrAllT = Aws::Vector<RetrievalFilter>>
+  void SetOrAll(OrAllT&& value) {
+    m_orAllHasBeenSet = true;
+    m_orAll = std::forward<OrAllT>(value);
+  }
+  template <typename OrAllT = Aws::Vector<RetrievalFilter>>
+  RetrievalFilter& WithOrAll(OrAllT&& value) {
+    SetOrAll(std::forward<OrAllT>(value));
+    return *this;
+  }
+  template <typename OrAllT = RetrievalFilter>
+  RetrievalFilter& AddOrAll(OrAllT&& value) {
+    m_orAllHasBeenSet = true;
+    m_orAll.emplace_back(std::forward<OrAllT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Knowledge base data sources are returned if they contain a metadata attribute
    * whose name matches the <code>key</code> and whose value starts with the
    * <code>value</code> in this object. This filter is currently only supported for
@@ -246,30 +320,6 @@ class RetrievalFilter {
   template <typename StartsWithT = FilterAttribute>
   RetrievalFilter& WithStartsWith(StartsWithT&& value) {
     SetStartsWith(std::forward<StartsWithT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Knowledge base data sources are returned if they contain a metadata attribute
-   * whose name matches the <code>key</code> and whose value is a list that contains
-   * the <code>value</code> as one of its members.</p> <p>The following example would
-   * return data sources with an <code>animals</code> attribute that is a list
-   * containing a <code>cat</code> member (for example <code>["dog",
-   * "cat"]</code>).</p> <p> <code>"listContains": { "key": "animals", "value": "cat"
-   * }</code> </p>
-   */
-  inline const FilterAttribute& GetListContains() const { return m_listContains; }
-  inline bool ListContainsHasBeenSet() const { return m_listContainsHasBeenSet; }
-  template <typename ListContainsT = FilterAttribute>
-  void SetListContains(ListContainsT&& value) {
-    m_listContainsHasBeenSet = true;
-    m_listContains = std::forward<ListContainsT>(value);
-  }
-  template <typename ListContainsT = FilterAttribute>
-  RetrievalFilter& WithListContains(ListContainsT&& value) {
-    SetListContains(std::forward<ListContainsT>(value));
     return *this;
   }
   ///@}
@@ -302,62 +352,12 @@ class RetrievalFilter {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Knowledge base data sources are returned if their metadata attributes fulfill
-   * all the filter conditions inside this list.</p>
-   */
-  inline const Aws::Vector<RetrievalFilter>& GetAndAll() const { return m_andAll; }
-  inline bool AndAllHasBeenSet() const { return m_andAllHasBeenSet; }
-  template <typename AndAllT = Aws::Vector<RetrievalFilter>>
-  void SetAndAll(AndAllT&& value) {
-    m_andAllHasBeenSet = true;
-    m_andAll = std::forward<AndAllT>(value);
-  }
-  template <typename AndAllT = Aws::Vector<RetrievalFilter>>
-  RetrievalFilter& WithAndAll(AndAllT&& value) {
-    SetAndAll(std::forward<AndAllT>(value));
-    return *this;
-  }
-  template <typename AndAllT = RetrievalFilter>
-  RetrievalFilter& AddAndAll(AndAllT&& value) {
-    m_andAllHasBeenSet = true;
-    m_andAll.emplace_back(std::forward<AndAllT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Knowledge base data sources are returned if their metadata attributes fulfill
-   * at least one of the filter conditions inside this list.</p>
-   */
-  inline const Aws::Vector<RetrievalFilter>& GetOrAll() const { return m_orAll; }
-  inline bool OrAllHasBeenSet() const { return m_orAllHasBeenSet; }
-  template <typename OrAllT = Aws::Vector<RetrievalFilter>>
-  void SetOrAll(OrAllT&& value) {
-    m_orAllHasBeenSet = true;
-    m_orAll = std::forward<OrAllT>(value);
-  }
-  template <typename OrAllT = Aws::Vector<RetrievalFilter>>
-  RetrievalFilter& WithOrAll(OrAllT&& value) {
-    SetOrAll(std::forward<OrAllT>(value));
-    return *this;
-  }
-  template <typename OrAllT = RetrievalFilter>
-  RetrievalFilter& AddOrAll(OrAllT&& value) {
-    m_orAllHasBeenSet = true;
-    m_orAll.emplace_back(std::forward<OrAllT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::Vector<RetrievalFilter> m_andAll;
+  bool m_andAllHasBeenSet = false;
+
   FilterAttribute m_equals;
   bool m_equalsHasBeenSet = false;
-
-  FilterAttribute m_notEquals;
-  bool m_notEqualsHasBeenSet = false;
 
   FilterAttribute m_greaterThan;
   bool m_greaterThanHasBeenSet = false;
@@ -365,32 +365,32 @@ class RetrievalFilter {
   FilterAttribute m_greaterThanOrEquals;
   bool m_greaterThanOrEqualsHasBeenSet = false;
 
+  FilterAttribute m_in;
+  bool m_inHasBeenSet = false;
+
   FilterAttribute m_lessThan;
   bool m_lessThanHasBeenSet = false;
 
   FilterAttribute m_lessThanOrEquals;
   bool m_lessThanOrEqualsHasBeenSet = false;
 
-  FilterAttribute m_in;
-  bool m_inHasBeenSet = false;
+  FilterAttribute m_listContains;
+  bool m_listContainsHasBeenSet = false;
+
+  FilterAttribute m_notEquals;
+  bool m_notEqualsHasBeenSet = false;
 
   FilterAttribute m_notIn;
   bool m_notInHasBeenSet = false;
 
+  Aws::Vector<RetrievalFilter> m_orAll;
+  bool m_orAllHasBeenSet = false;
+
   FilterAttribute m_startsWith;
   bool m_startsWithHasBeenSet = false;
 
-  FilterAttribute m_listContains;
-  bool m_listContainsHasBeenSet = false;
-
   FilterAttribute m_stringContains;
   bool m_stringContainsHasBeenSet = false;
-
-  Aws::Vector<RetrievalFilter> m_andAll;
-  bool m_andAllHasBeenSet = false;
-
-  Aws::Vector<RetrievalFilter> m_orAll;
-  bool m_orAllHasBeenSet = false;
 };
 
 }  // namespace Model

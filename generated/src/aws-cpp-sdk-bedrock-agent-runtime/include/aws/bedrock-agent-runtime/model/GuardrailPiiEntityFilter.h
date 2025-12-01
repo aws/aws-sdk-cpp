@@ -36,16 +36,16 @@ class GuardrailPiiEntityFilter {
 
   ///@{
   /**
-   * <p>The type of PII the Guardrail filter has identified and removed.</p>
+   * <p>The action of the Guardrail filter to identify and remove PII.</p>
    */
-  inline GuardrailPiiEntityType GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  inline void SetType(GuardrailPiiEntityType value) {
-    m_typeHasBeenSet = true;
-    m_type = value;
+  inline GuardrailSensitiveInformationPolicyAction GetAction() const { return m_action; }
+  inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+  inline void SetAction(GuardrailSensitiveInformationPolicyAction value) {
+    m_actionHasBeenSet = true;
+    m_action = value;
   }
-  inline GuardrailPiiEntityFilter& WithType(GuardrailPiiEntityType value) {
-    SetType(value);
+  inline GuardrailPiiEntityFilter& WithAction(GuardrailSensitiveInformationPolicyAction value) {
+    SetAction(value);
     return *this;
   }
   ///@}
@@ -70,28 +70,28 @@ class GuardrailPiiEntityFilter {
 
   ///@{
   /**
-   * <p>The action of the Guardrail filter to identify and remove PII.</p>
+   * <p>The type of PII the Guardrail filter has identified and removed.</p>
    */
-  inline GuardrailSensitiveInformationPolicyAction GetAction() const { return m_action; }
-  inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-  inline void SetAction(GuardrailSensitiveInformationPolicyAction value) {
-    m_actionHasBeenSet = true;
-    m_action = value;
+  inline GuardrailPiiEntityType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(GuardrailPiiEntityType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
   }
-  inline GuardrailPiiEntityFilter& WithAction(GuardrailSensitiveInformationPolicyAction value) {
-    SetAction(value);
+  inline GuardrailPiiEntityFilter& WithType(GuardrailPiiEntityType value) {
+    SetType(value);
     return *this;
   }
   ///@}
  private:
-  GuardrailPiiEntityType m_type{GuardrailPiiEntityType::NOT_SET};
-  bool m_typeHasBeenSet = false;
+  GuardrailSensitiveInformationPolicyAction m_action{GuardrailSensitiveInformationPolicyAction::NOT_SET};
+  bool m_actionHasBeenSet = false;
 
   Aws::String m_match;
   bool m_matchHasBeenSet = false;
 
-  GuardrailSensitiveInformationPolicyAction m_action{GuardrailSensitiveInformationPolicyAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
+  GuardrailPiiEntityType m_type{GuardrailPiiEntityType::NOT_SET};
+  bool m_typeHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -67,10 +67,6 @@ GetApplicationResult& GetApplicationResult::operator=(const Aws::AmazonWebServic
     }
     m_permissionsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("IsService")) {
-    m_isService = jsonValue.GetBool("IsService");
-    m_isServiceHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("InitializationTimeout")) {
     m_initializationTimeout = jsonValue.GetInteger("InitializationTimeout");
     m_initializationTimeoutHasBeenSet = true;
@@ -82,6 +78,10 @@ GetApplicationResult& GetApplicationResult::operator=(const Aws::AmazonWebServic
   if (jsonValue.ValueExists("IframeConfig")) {
     m_iframeConfig = jsonValue.GetObject("IframeConfig");
     m_iframeConfigHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ApplicationType")) {
+    m_applicationType = ApplicationTypeMapper::GetApplicationTypeForName(jsonValue.GetString("ApplicationType"));
+    m_applicationTypeHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

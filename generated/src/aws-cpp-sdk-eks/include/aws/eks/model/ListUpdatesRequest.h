@@ -89,6 +89,24 @@ class ListUpdatesRequest : public EKSRequest {
 
   ///@{
   /**
+   * <p>The name of the capability for which you want to list updates.</p>
+   */
+  inline const Aws::String& GetCapabilityName() const { return m_capabilityName; }
+  inline bool CapabilityNameHasBeenSet() const { return m_capabilityNameHasBeenSet; }
+  template <typename CapabilityNameT = Aws::String>
+  void SetCapabilityName(CapabilityNameT&& value) {
+    m_capabilityNameHasBeenSet = true;
+    m_capabilityName = std::forward<CapabilityNameT>(value);
+  }
+  template <typename CapabilityNameT = Aws::String>
+  ListUpdatesRequest& WithCapabilityName(CapabilityNameT&& value) {
+    SetCapabilityName(std::forward<CapabilityNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The <code>nextToken</code> value returned from a previous paginated request,
    * where <code>maxResults</code> was used and the results exceeded the value of
    * that parameter. Pagination continues from the end of the previous results that
@@ -140,6 +158,9 @@ class ListUpdatesRequest : public EKSRequest {
 
   Aws::String m_addonName;
   bool m_addonNameHasBeenSet = false;
+
+  Aws::String m_capabilityName;
+  bool m_capabilityNameHasBeenSet = false;
 
   Aws::String m_nextToken;
   bool m_nextTokenHasBeenSet = false;

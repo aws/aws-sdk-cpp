@@ -18,6 +18,8 @@ namespace RetrievalResultContentTypeMapper {
 static const int TEXT_HASH = HashingUtils::HashString("TEXT");
 static const int IMAGE_HASH = HashingUtils::HashString("IMAGE");
 static const int ROW_HASH = HashingUtils::HashString("ROW");
+static const int AUDIO_HASH = HashingUtils::HashString("AUDIO");
+static const int VIDEO_HASH = HashingUtils::HashString("VIDEO");
 
 RetrievalResultContentType GetRetrievalResultContentTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +29,10 @@ RetrievalResultContentType GetRetrievalResultContentTypeForName(const Aws::Strin
     return RetrievalResultContentType::IMAGE;
   } else if (hashCode == ROW_HASH) {
     return RetrievalResultContentType::ROW;
+  } else if (hashCode == AUDIO_HASH) {
+    return RetrievalResultContentType::AUDIO;
+  } else if (hashCode == VIDEO_HASH) {
+    return RetrievalResultContentType::VIDEO;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +53,10 @@ Aws::String GetNameForRetrievalResultContentType(RetrievalResultContentType enum
       return "IMAGE";
     case RetrievalResultContentType::ROW:
       return "ROW";
+    case RetrievalResultContentType::AUDIO:
+      return "AUDIO";
+    case RetrievalResultContentType::VIDEO:
+      return "VIDEO";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

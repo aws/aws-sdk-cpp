@@ -77,6 +77,22 @@ class EvaluationScore {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Weight applied to this evaluation score.</p>
+   */
+  inline double GetAppliedWeight() const { return m_appliedWeight; }
+  inline bool AppliedWeightHasBeenSet() const { return m_appliedWeightHasBeenSet; }
+  inline void SetAppliedWeight(double value) {
+    m_appliedWeightHasBeenSet = true;
+    m_appliedWeight = value;
+  }
+  inline EvaluationScore& WithAppliedWeight(double value) {
+    SetAppliedWeight(value);
+    return *this;
+  }
+  ///@}
  private:
   double m_percentage{0.0};
   bool m_percentageHasBeenSet = false;
@@ -86,6 +102,9 @@ class EvaluationScore {
 
   bool m_automaticFail{false};
   bool m_automaticFailHasBeenSet = false;
+
+  double m_appliedWeight{0.0};
+  bool m_appliedWeightHasBeenSet = false;
 };
 
 }  // namespace Model

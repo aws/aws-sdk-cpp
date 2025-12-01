@@ -22,13 +22,21 @@ ActionGroupInvocationInput& ActionGroupInvocationInput::operator=(JsonView jsonV
     m_actionGroupName = jsonValue.GetString("actionGroupName");
     m_actionGroupNameHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("verb")) {
-    m_verb = jsonValue.GetString("verb");
-    m_verbHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("apiPath")) {
     m_apiPath = jsonValue.GetString("apiPath");
     m_apiPathHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("executionType")) {
+    m_executionType = ExecutionTypeMapper::GetExecutionTypeForName(jsonValue.GetString("executionType"));
+    m_executionTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("function")) {
+    m_function = jsonValue.GetString("function");
+    m_functionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("invocationId")) {
+    m_invocationId = jsonValue.GetString("invocationId");
+    m_invocationIdHasBeenSet = true;
   }
   if (jsonValue.ValueExists("parameters")) {
     Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("parameters");
@@ -41,17 +49,9 @@ ActionGroupInvocationInput& ActionGroupInvocationInput::operator=(JsonView jsonV
     m_requestBody = jsonValue.GetObject("requestBody");
     m_requestBodyHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("function")) {
-    m_function = jsonValue.GetString("function");
-    m_functionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("executionType")) {
-    m_executionType = ExecutionTypeMapper::GetExecutionTypeForName(jsonValue.GetString("executionType"));
-    m_executionTypeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("invocationId")) {
-    m_invocationId = jsonValue.GetString("invocationId");
-    m_invocationIdHasBeenSet = true;
+  if (jsonValue.ValueExists("verb")) {
+    m_verb = jsonValue.GetString("verb");
+    m_verbHasBeenSet = true;
   }
   return *this;
 }
@@ -63,12 +63,20 @@ JsonValue ActionGroupInvocationInput::Jsonize() const {
     payload.WithString("actionGroupName", m_actionGroupName);
   }
 
-  if (m_verbHasBeenSet) {
-    payload.WithString("verb", m_verb);
-  }
-
   if (m_apiPathHasBeenSet) {
     payload.WithString("apiPath", m_apiPath);
+  }
+
+  if (m_executionTypeHasBeenSet) {
+    payload.WithString("executionType", ExecutionTypeMapper::GetNameForExecutionType(m_executionType));
+  }
+
+  if (m_functionHasBeenSet) {
+    payload.WithString("function", m_function);
+  }
+
+  if (m_invocationIdHasBeenSet) {
+    payload.WithString("invocationId", m_invocationId);
   }
 
   if (m_parametersHasBeenSet) {
@@ -83,16 +91,8 @@ JsonValue ActionGroupInvocationInput::Jsonize() const {
     payload.WithObject("requestBody", m_requestBody.Jsonize());
   }
 
-  if (m_functionHasBeenSet) {
-    payload.WithString("function", m_function);
-  }
-
-  if (m_executionTypeHasBeenSet) {
-    payload.WithString("executionType", ExecutionTypeMapper::GetNameForExecutionType(m_executionType));
-  }
-
-  if (m_invocationIdHasBeenSet) {
-    payload.WithString("invocationId", m_invocationId);
+  if (m_verbHasBeenSet) {
+    payload.WithString("verb", m_verb);
   }
 
   return payload;

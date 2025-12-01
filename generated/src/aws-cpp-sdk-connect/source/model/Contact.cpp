@@ -218,6 +218,13 @@ Contact& Contact::operator=(JsonView jsonValue) {
     }
     m_attributesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("NextContacts")) {
+    Aws::Utils::Array<JsonView> nextContactsJsonList = jsonValue.GetArray("NextContacts");
+    for (unsigned nextContactsIndex = 0; nextContactsIndex < nextContactsJsonList.GetLength(); ++nextContactsIndex) {
+      m_nextContacts.push_back(nextContactsJsonList[nextContactsIndex].AsObject());
+    }
+    m_nextContactsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -427,6 +434,14 @@ JsonValue Contact::Jsonize() const {
       attributesJsonMap.WithString(attributesItem.first, attributesItem.second);
     }
     payload.WithObject("Attributes", std::move(attributesJsonMap));
+  }
+
+  if (m_nextContactsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> nextContactsJsonList(m_nextContacts.size());
+    for (unsigned nextContactsIndex = 0; nextContactsIndex < nextContactsJsonList.GetLength(); ++nextContactsIndex) {
+      nextContactsJsonList[nextContactsIndex].AsObject(m_nextContacts[nextContactsIndex].Jsonize());
+    }
+    payload.WithArray("NextContacts", std::move(nextContactsJsonList));
   }
 
   return payload;

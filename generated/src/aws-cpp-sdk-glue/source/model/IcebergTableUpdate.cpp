@@ -41,6 +41,18 @@ IcebergTableUpdate& IcebergTableUpdate::operator=(JsonView jsonValue) {
     }
     m_propertiesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Action")) {
+    m_action = IcebergUpdateActionMapper::GetIcebergUpdateActionForName(jsonValue.GetString("Action"));
+    m_actionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("EncryptionKey")) {
+    m_encryptionKey = jsonValue.GetObject("EncryptionKey");
+    m_encryptionKeyHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("KeyId")) {
+    m_keyId = jsonValue.GetString("KeyId");
+    m_keyIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -69,6 +81,18 @@ JsonValue IcebergTableUpdate::Jsonize() const {
       propertiesJsonMap.WithString(propertiesItem.first, propertiesItem.second);
     }
     payload.WithObject("Properties", std::move(propertiesJsonMap));
+  }
+
+  if (m_actionHasBeenSet) {
+    payload.WithString("Action", IcebergUpdateActionMapper::GetNameForIcebergUpdateAction(m_action));
+  }
+
+  if (m_encryptionKeyHasBeenSet) {
+    payload.WithObject("EncryptionKey", m_encryptionKey.Jsonize());
+  }
+
+  if (m_keyIdHasBeenSet) {
+    payload.WithString("KeyId", m_keyId);
   }
 
   return payload;

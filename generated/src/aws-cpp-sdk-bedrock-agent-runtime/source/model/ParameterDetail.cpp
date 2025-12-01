@@ -22,13 +22,13 @@ ParameterDetail& ParameterDetail::operator=(JsonView jsonValue) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("type")) {
-    m_type = ParameterTypeMapper::GetParameterTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("required")) {
     m_required = jsonValue.GetBool("required");
     m_requiredHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("type")) {
+    m_type = ParameterTypeMapper::GetParameterTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
   }
   return *this;
 }
@@ -40,12 +40,12 @@ JsonValue ParameterDetail::Jsonize() const {
     payload.WithString("description", m_description);
   }
 
-  if (m_typeHasBeenSet) {
-    payload.WithString("type", ParameterTypeMapper::GetNameForParameterType(m_type));
-  }
-
   if (m_requiredHasBeenSet) {
     payload.WithBool("required", m_required);
+  }
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", ParameterTypeMapper::GetNameForParameterType(m_type));
   }
 
   return payload;

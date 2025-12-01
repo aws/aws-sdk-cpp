@@ -127,6 +127,14 @@ Aws::String CreateFunctionRequest::SerializePayload() const {
     payload.WithObject("LoggingConfig", m_loggingConfig.Jsonize());
   }
 
+  if (m_capacityProviderConfigHasBeenSet) {
+    payload.WithObject("CapacityProviderConfig", m_capacityProviderConfig.Jsonize());
+  }
+
+  if (m_publishToHasBeenSet) {
+    payload.WithString("PublishTo", FunctionVersionLatestPublishedMapper::GetNameForFunctionVersionLatestPublished(m_publishTo));
+  }
+
   if (m_tenancyConfigHasBeenSet) {
     payload.WithObject("TenancyConfig", m_tenancyConfig.Jsonize());
   }

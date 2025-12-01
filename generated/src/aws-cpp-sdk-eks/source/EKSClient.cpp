@@ -25,6 +25,7 @@
 #include <aws/eks/model/AssociateIdentityProviderConfigRequest.h>
 #include <aws/eks/model/CreateAccessEntryRequest.h>
 #include <aws/eks/model/CreateAddonRequest.h>
+#include <aws/eks/model/CreateCapabilityRequest.h>
 #include <aws/eks/model/CreateClusterRequest.h>
 #include <aws/eks/model/CreateEksAnywhereSubscriptionRequest.h>
 #include <aws/eks/model/CreateFargateProfileRequest.h>
@@ -32,6 +33,7 @@
 #include <aws/eks/model/CreatePodIdentityAssociationRequest.h>
 #include <aws/eks/model/DeleteAccessEntryRequest.h>
 #include <aws/eks/model/DeleteAddonRequest.h>
+#include <aws/eks/model/DeleteCapabilityRequest.h>
 #include <aws/eks/model/DeleteClusterRequest.h>
 #include <aws/eks/model/DeleteEksAnywhereSubscriptionRequest.h>
 #include <aws/eks/model/DeleteFargateProfileRequest.h>
@@ -42,6 +44,7 @@
 #include <aws/eks/model/DescribeAddonConfigurationRequest.h>
 #include <aws/eks/model/DescribeAddonRequest.h>
 #include <aws/eks/model/DescribeAddonVersionsRequest.h>
+#include <aws/eks/model/DescribeCapabilityRequest.h>
 #include <aws/eks/model/DescribeClusterRequest.h>
 #include <aws/eks/model/DescribeClusterVersionsRequest.h>
 #include <aws/eks/model/DescribeEksAnywhereSubscriptionRequest.h>
@@ -58,6 +61,7 @@
 #include <aws/eks/model/ListAccessPoliciesRequest.h>
 #include <aws/eks/model/ListAddonsRequest.h>
 #include <aws/eks/model/ListAssociatedAccessPoliciesRequest.h>
+#include <aws/eks/model/ListCapabilitiesRequest.h>
 #include <aws/eks/model/ListClustersRequest.h>
 #include <aws/eks/model/ListEksAnywhereSubscriptionsRequest.h>
 #include <aws/eks/model/ListFargateProfilesRequest.h>
@@ -73,6 +77,7 @@
 #include <aws/eks/model/UntagResourceRequest.h>
 #include <aws/eks/model/UpdateAccessEntryRequest.h>
 #include <aws/eks/model/UpdateAddonRequest.h>
+#include <aws/eks/model/UpdateCapabilityRequest.h>
 #include <aws/eks/model/UpdateClusterConfigRequest.h>
 #include <aws/eks/model/UpdateClusterVersionRequest.h>
 #include <aws/eks/model/UpdateEksAnywhereSubscriptionRequest.h>
@@ -386,6 +391,43 @@ CreateAddonOutcome EKSClient::CreateAddon(const CreateAddonRequest& request) con
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+CreateCapabilityOutcome EKSClient::CreateCapability(const CreateCapabilityRequest& request) const {
+  AWS_OPERATION_GUARD(CreateCapability);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCapability, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ClusterNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateCapability", "Required field: ClusterName, is not set");
+    return CreateCapabilityOutcome(
+        Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateCapability, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateCapability, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateCapability",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateCapabilityOutcome>(
+      [&]() -> CreateCapabilityOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateCapability, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/clusters/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterName());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/capabilities");
+        return CreateCapabilityOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 CreateClusterOutcome EKSClient::CreateCluster(const CreateClusterRequest& request) const {
   AWS_OPERATION_GUARD(CreateCluster);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -636,6 +678,49 @@ DeleteAddonOutcome EKSClient::DeleteAddon(const DeleteAddonRequest& request) con
         endpointResolutionOutcome.GetResult().AddPathSegments("/addons/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAddonName());
         return DeleteAddonOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteCapabilityOutcome EKSClient::DeleteCapability(const DeleteCapabilityRequest& request) const {
+  AWS_OPERATION_GUARD(DeleteCapability);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCapability, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ClusterNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteCapability", "Required field: ClusterName, is not set");
+    return DeleteCapabilityOutcome(
+        Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterName]", false));
+  }
+  if (!request.CapabilityNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteCapability", "Required field: CapabilityName, is not set");
+    return DeleteCapabilityOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                    "Missing required field [CapabilityName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteCapability, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteCapability, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteCapability",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteCapabilityOutcome>(
+      [&]() -> DeleteCapabilityOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteCapability, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/clusters/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterName());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/capabilities/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCapabilityName());
+        return DeleteCapabilityOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -1029,6 +1114,49 @@ DescribeAddonVersionsOutcome EKSClient::DescribeAddonVersions(const DescribeAddo
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/addons/supported-versions");
         return DescribeAddonVersionsOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DescribeCapabilityOutcome EKSClient::DescribeCapability(const DescribeCapabilityRequest& request) const {
+  AWS_OPERATION_GUARD(DescribeCapability);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeCapability, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ClusterNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeCapability", "Required field: ClusterName, is not set");
+    return DescribeCapabilityOutcome(
+        Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterName]", false));
+  }
+  if (!request.CapabilityNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeCapability", "Required field: CapabilityName, is not set");
+    return DescribeCapabilityOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                      "Missing required field [CapabilityName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeCapability, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeCapability, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeCapability",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeCapabilityOutcome>(
+      [&]() -> DescribeCapabilityOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeCapability, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/clusters/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterName());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/capabilities/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCapabilityName());
+        return DescribeCapabilityOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -1666,6 +1794,43 @@ ListAssociatedAccessPoliciesOutcome EKSClient::ListAssociatedAccessPolicies(cons
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+ListCapabilitiesOutcome EKSClient::ListCapabilities(const ListCapabilitiesRequest& request) const {
+  AWS_OPERATION_GUARD(ListCapabilities);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCapabilities, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ClusterNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListCapabilities", "Required field: ClusterName, is not set");
+    return ListCapabilitiesOutcome(
+        Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListCapabilities, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListCapabilities, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListCapabilities",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListCapabilitiesOutcome>(
+      [&]() -> ListCapabilitiesOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCapabilities, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/clusters/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterName());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/capabilities");
+        return ListCapabilitiesOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 ListClustersOutcome EKSClient::ListClusters(const ListClustersRequest& request) const {
   AWS_OPERATION_GUARD(ListClusters);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListClusters, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2208,6 +2373,49 @@ UpdateAddonOutcome EKSClient::UpdateAddon(const UpdateAddonRequest& request) con
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAddonName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/update");
         return UpdateAddonOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateCapabilityOutcome EKSClient::UpdateCapability(const UpdateCapabilityRequest& request) const {
+  AWS_OPERATION_GUARD(UpdateCapability);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateCapability, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ClusterNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateCapability", "Required field: ClusterName, is not set");
+    return UpdateCapabilityOutcome(
+        Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterName]", false));
+  }
+  if (!request.CapabilityNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateCapability", "Required field: CapabilityName, is not set");
+    return UpdateCapabilityOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                    "Missing required field [CapabilityName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateCapability, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateCapability, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateCapability",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateCapabilityOutcome>(
+      [&]() -> UpdateCapabilityOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateCapability, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/clusters/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterName());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/capabilities/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCapabilityName());
+        return UpdateCapabilityOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

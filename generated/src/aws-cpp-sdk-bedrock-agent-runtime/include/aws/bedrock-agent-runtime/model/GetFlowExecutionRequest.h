@@ -30,18 +30,18 @@ class GetFlowExecutionRequest : public BedrockAgentRuntimeRequest {
 
   ///@{
   /**
-   * <p>The unique identifier of the flow.</p>
+   * <p>The unique identifier of the flow execution to retrieve.</p>
    */
-  inline const Aws::String& GetFlowIdentifier() const { return m_flowIdentifier; }
-  inline bool FlowIdentifierHasBeenSet() const { return m_flowIdentifierHasBeenSet; }
-  template <typename FlowIdentifierT = Aws::String>
-  void SetFlowIdentifier(FlowIdentifierT&& value) {
-    m_flowIdentifierHasBeenSet = true;
-    m_flowIdentifier = std::forward<FlowIdentifierT>(value);
+  inline const Aws::String& GetExecutionIdentifier() const { return m_executionIdentifier; }
+  inline bool ExecutionIdentifierHasBeenSet() const { return m_executionIdentifierHasBeenSet; }
+  template <typename ExecutionIdentifierT = Aws::String>
+  void SetExecutionIdentifier(ExecutionIdentifierT&& value) {
+    m_executionIdentifierHasBeenSet = true;
+    m_executionIdentifier = std::forward<ExecutionIdentifierT>(value);
   }
-  template <typename FlowIdentifierT = Aws::String>
-  GetFlowExecutionRequest& WithFlowIdentifier(FlowIdentifierT&& value) {
-    SetFlowIdentifier(std::forward<FlowIdentifierT>(value));
+  template <typename ExecutionIdentifierT = Aws::String>
+  GetFlowExecutionRequest& WithExecutionIdentifier(ExecutionIdentifierT&& value) {
+    SetExecutionIdentifier(std::forward<ExecutionIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -66,30 +66,30 @@ class GetFlowExecutionRequest : public BedrockAgentRuntimeRequest {
 
   ///@{
   /**
-   * <p>The unique identifier of the flow execution to retrieve.</p>
+   * <p>The unique identifier of the flow.</p>
    */
-  inline const Aws::String& GetExecutionIdentifier() const { return m_executionIdentifier; }
-  inline bool ExecutionIdentifierHasBeenSet() const { return m_executionIdentifierHasBeenSet; }
-  template <typename ExecutionIdentifierT = Aws::String>
-  void SetExecutionIdentifier(ExecutionIdentifierT&& value) {
-    m_executionIdentifierHasBeenSet = true;
-    m_executionIdentifier = std::forward<ExecutionIdentifierT>(value);
+  inline const Aws::String& GetFlowIdentifier() const { return m_flowIdentifier; }
+  inline bool FlowIdentifierHasBeenSet() const { return m_flowIdentifierHasBeenSet; }
+  template <typename FlowIdentifierT = Aws::String>
+  void SetFlowIdentifier(FlowIdentifierT&& value) {
+    m_flowIdentifierHasBeenSet = true;
+    m_flowIdentifier = std::forward<FlowIdentifierT>(value);
   }
-  template <typename ExecutionIdentifierT = Aws::String>
-  GetFlowExecutionRequest& WithExecutionIdentifier(ExecutionIdentifierT&& value) {
-    SetExecutionIdentifier(std::forward<ExecutionIdentifierT>(value));
+  template <typename FlowIdentifierT = Aws::String>
+  GetFlowExecutionRequest& WithFlowIdentifier(FlowIdentifierT&& value) {
+    SetFlowIdentifier(std::forward<FlowIdentifierT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::String m_flowIdentifier;
-  bool m_flowIdentifierHasBeenSet = false;
+  Aws::String m_executionIdentifier;
+  bool m_executionIdentifierHasBeenSet = false;
 
   Aws::String m_flowAliasIdentifier;
   bool m_flowAliasIdentifierHasBeenSet = false;
 
-  Aws::String m_executionIdentifier;
-  bool m_executionIdentifierHasBeenSet = false;
+  Aws::String m_flowIdentifier;
+  bool m_flowIdentifierHasBeenSet = false;
 };
 
 }  // namespace Model

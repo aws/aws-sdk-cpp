@@ -18,6 +18,10 @@ namespace Model {
 FlowMultiTurnInputRequestEvent::FlowMultiTurnInputRequestEvent(JsonView jsonValue) { *this = jsonValue; }
 
 FlowMultiTurnInputRequestEvent& FlowMultiTurnInputRequestEvent::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("content")) {
+    m_content = jsonValue.GetObject("content");
+    m_contentHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("nodeName")) {
     m_nodeName = jsonValue.GetString("nodeName");
     m_nodeNameHasBeenSet = true;
@@ -26,15 +30,15 @@ FlowMultiTurnInputRequestEvent& FlowMultiTurnInputRequestEvent::operator=(JsonVi
     m_nodeType = NodeTypeMapper::GetNodeTypeForName(jsonValue.GetString("nodeType"));
     m_nodeTypeHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("content")) {
-    m_content = jsonValue.GetObject("content");
-    m_contentHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue FlowMultiTurnInputRequestEvent::Jsonize() const {
   JsonValue payload;
+
+  if (m_contentHasBeenSet) {
+    payload.WithObject("content", m_content.Jsonize());
+  }
 
   if (m_nodeNameHasBeenSet) {
     payload.WithString("nodeName", m_nodeName);
@@ -42,10 +46,6 @@ JsonValue FlowMultiTurnInputRequestEvent::Jsonize() const {
 
   if (m_nodeTypeHasBeenSet) {
     payload.WithString("nodeType", NodeTypeMapper::GetNameForNodeType(m_nodeType));
-  }
-
-  if (m_contentHasBeenSet) {
-    payload.WithObject("content", m_content.Jsonize());
   }
 
   return payload;

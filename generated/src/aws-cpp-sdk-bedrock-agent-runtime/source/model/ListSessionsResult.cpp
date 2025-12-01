@@ -21,16 +21,16 @@ ListSessionsResult::ListSessionsResult(const Aws::AmazonWebServiceResult<JsonVal
 
 ListSessionsResult& ListSessionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("nextToken")) {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("sessionSummaries")) {
     Aws::Utils::Array<JsonView> sessionSummariesJsonList = jsonValue.GetArray("sessionSummaries");
     for (unsigned sessionSummariesIndex = 0; sessionSummariesIndex < sessionSummariesJsonList.GetLength(); ++sessionSummariesIndex) {
       m_sessionSummaries.push_back(sessionSummariesJsonList[sessionSummariesIndex].AsObject());
     }
     m_sessionSummariesHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("nextToken")) {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

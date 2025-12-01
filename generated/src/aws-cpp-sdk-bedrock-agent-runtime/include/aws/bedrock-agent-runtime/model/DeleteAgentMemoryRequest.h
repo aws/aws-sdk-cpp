@@ -35,24 +35,6 @@ class DeleteAgentMemoryRequest : public BedrockAgentRuntimeRequest {
 
   ///@{
   /**
-   * <p>The unique identifier of the agent to which the alias belongs.</p>
-   */
-  inline const Aws::String& GetAgentId() const { return m_agentId; }
-  inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
-  template <typename AgentIdT = Aws::String>
-  void SetAgentId(AgentIdT&& value) {
-    m_agentIdHasBeenSet = true;
-    m_agentId = std::forward<AgentIdT>(value);
-  }
-  template <typename AgentIdT = Aws::String>
-  DeleteAgentMemoryRequest& WithAgentId(AgentIdT&& value) {
-    SetAgentId(std::forward<AgentIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The unique identifier of an alias of an agent.</p>
    */
   inline const Aws::String& GetAgentAliasId() const { return m_agentAliasId; }
@@ -65,6 +47,24 @@ class DeleteAgentMemoryRequest : public BedrockAgentRuntimeRequest {
   template <typename AgentAliasIdT = Aws::String>
   DeleteAgentMemoryRequest& WithAgentAliasId(AgentAliasIdT&& value) {
     SetAgentAliasId(std::forward<AgentAliasIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier of the agent to which the alias belongs.</p>
+   */
+  inline const Aws::String& GetAgentId() const { return m_agentId; }
+  inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
+  template <typename AgentIdT = Aws::String>
+  void SetAgentId(AgentIdT&& value) {
+    m_agentIdHasBeenSet = true;
+    m_agentId = std::forward<AgentIdT>(value);
+  }
+  template <typename AgentIdT = Aws::String>
+  DeleteAgentMemoryRequest& WithAgentId(AgentIdT&& value) {
+    SetAgentId(std::forward<AgentIdT>(value));
     return *this;
   }
   ///@}
@@ -105,11 +105,11 @@ class DeleteAgentMemoryRequest : public BedrockAgentRuntimeRequest {
   }
   ///@}
  private:
-  Aws::String m_agentId;
-  bool m_agentIdHasBeenSet = false;
-
   Aws::String m_agentAliasId;
   bool m_agentAliasIdHasBeenSet = false;
+
+  Aws::String m_agentId;
+  bool m_agentIdHasBeenSet = false;
 
   Aws::String m_memoryId;
   bool m_memoryIdHasBeenSet = false;

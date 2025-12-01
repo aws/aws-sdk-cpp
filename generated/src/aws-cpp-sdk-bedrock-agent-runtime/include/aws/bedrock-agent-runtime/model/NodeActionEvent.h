@@ -54,60 +54,6 @@ class NodeActionEvent {
 
   ///@{
   /**
-   * <p>The date and time that the operation was called.</p>
-   */
-  inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
-  inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-  template <typename TimestampT = Aws::Utils::DateTime>
-  void SetTimestamp(TimestampT&& value) {
-    m_timestampHasBeenSet = true;
-    m_timestamp = std::forward<TimestampT>(value);
-  }
-  template <typename TimestampT = Aws::Utils::DateTime>
-  NodeActionEvent& WithTimestamp(TimestampT&& value) {
-    SetTimestamp(std::forward<TimestampT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the request that the node made to the operation.</p>
-   */
-  inline const Aws::String& GetRequestId() const { return m_requestId; }
-  inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-  template <typename RequestIdT = Aws::String>
-  void SetRequestId(RequestIdT&& value) {
-    m_requestIdHasBeenSet = true;
-    m_requestId = std::forward<RequestIdT>(value);
-  }
-  template <typename RequestIdT = Aws::String>
-  NodeActionEvent& WithRequestId(RequestIdT&& value) {
-    SetRequestId(std::forward<RequestIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The name of the service that the node called.</p>
-   */
-  inline const Aws::String& GetServiceName() const { return m_serviceName; }
-  inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
-  template <typename ServiceNameT = Aws::String>
-  void SetServiceName(ServiceNameT&& value) {
-    m_serviceNameHasBeenSet = true;
-    m_serviceName = std::forward<ServiceNameT>(value);
-  }
-  template <typename ServiceNameT = Aws::String>
-  NodeActionEvent& WithServiceName(ServiceNameT&& value) {
-    SetServiceName(std::forward<ServiceNameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The name of the operation that the node called.</p>
    */
   inline const Aws::String& GetOperationName() const { return m_operationName; }
@@ -159,18 +105,63 @@ class NodeActionEvent {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the request that the node made to the operation.</p>
+   */
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  NodeActionEvent& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the service that the node called.</p>
+   */
+  inline const Aws::String& GetServiceName() const { return m_serviceName; }
+  inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
+  template <typename ServiceNameT = Aws::String>
+  void SetServiceName(ServiceNameT&& value) {
+    m_serviceNameHasBeenSet = true;
+    m_serviceName = std::forward<ServiceNameT>(value);
+  }
+  template <typename ServiceNameT = Aws::String>
+  NodeActionEvent& WithServiceName(ServiceNameT&& value) {
+    SetServiceName(std::forward<ServiceNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The date and time that the operation was called.</p>
+   */
+  inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
+  inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
+  template <typename TimestampT = Aws::Utils::DateTime>
+  void SetTimestamp(TimestampT&& value) {
+    m_timestampHasBeenSet = true;
+    m_timestamp = std::forward<TimestampT>(value);
+  }
+  template <typename TimestampT = Aws::Utils::DateTime>
+  NodeActionEvent& WithTimestamp(TimestampT&& value) {
+    SetTimestamp(std::forward<TimestampT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_nodeName;
   bool m_nodeNameHasBeenSet = false;
-
-  Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
-
-  Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
-
-  Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   Aws::String m_operationName;
   bool m_operationNameHasBeenSet = false;
@@ -180,6 +171,15 @@ class NodeActionEvent {
 
   Aws::Utils::Document m_operationResponse;
   bool m_operationResponseHasBeenSet = false;
+
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+
+  Aws::String m_serviceName;
+  bool m_serviceNameHasBeenSet = false;
+
+  Aws::Utils::DateTime m_timestamp{};
+  bool m_timestampHasBeenSet = false;
 };
 
 }  // namespace Model

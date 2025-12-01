@@ -1856,6 +1856,33 @@ class AWS_QCONNECT_API QConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Retrieves AI agent execution traces for a session, providing granular
+   * visibility into agent orchestration flows, LLM interactions, and tool
+   * invocations.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListSpans">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListSpansOutcome ListSpans(const Model::ListSpansRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListSpans that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListSpansRequestT = Model::ListSpansRequest>
+  Model::ListSpansOutcomeCallable ListSpansCallable(const ListSpansRequestT& request) const {
+    return SubmitCallable(&QConnectClient::ListSpans, request);
+  }
+
+  /**
+   * An Async wrapper for ListSpans that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListSpansRequestT = Model::ListSpansRequest>
+  void ListSpansAsync(const ListSpansRequestT& request, const ListSpansResponseReceivedHandler& handler,
+                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QConnectClient::ListSpans, request, handler, context);
+  }
+
+  /**
    * <p>Lists the tags for the specified resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListTagsForResource">AWS
    * API Reference</a></p>
@@ -2026,6 +2053,32 @@ class AWS_QCONNECT_API QConnectClient : public Aws::Client::AWSJsonClient,
   void RenderMessageTemplateAsync(const RenderMessageTemplateRequestT& request, const RenderMessageTemplateResponseReceivedHandler& handler,
                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&QConnectClient::RenderMessageTemplate, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves content from knowledge sources based on a query.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/Retrieve">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RetrieveOutcome Retrieve(const Model::RetrieveRequest& request) const;
+
+  /**
+   * A Callable wrapper for Retrieve that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename RetrieveRequestT = Model::RetrieveRequest>
+  Model::RetrieveOutcomeCallable RetrieveCallable(const RetrieveRequestT& request) const {
+    return SubmitCallable(&QConnectClient::Retrieve, request);
+  }
+
+  /**
+   * An Async wrapper for Retrieve that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename RetrieveRequestT = Model::RetrieveRequest>
+  void RetrieveAsync(const RetrieveRequestT& request, const RetrieveResponseReceivedHandler& handler,
+                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QConnectClient::Retrieve, request, handler, context);
   }
 
   /**

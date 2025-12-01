@@ -35,22 +35,6 @@ class RerankSource {
 
   ///@{
   /**
-   * <p>The type of the source.</p>
-   */
-  inline RerankSourceType GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  inline void SetType(RerankSourceType value) {
-    m_typeHasBeenSet = true;
-    m_type = value;
-  }
-  inline RerankSource& WithType(RerankSourceType value) {
-    SetType(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Contains an inline definition of a source for reranking.</p>
    */
   inline const RerankDocument& GetInlineDocumentSource() const { return m_inlineDocumentSource; }
@@ -66,12 +50,28 @@ class RerankSource {
     return *this;
   }
   ///@}
- private:
-  RerankSourceType m_type{RerankSourceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>The type of the source.</p>
+   */
+  inline RerankSourceType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(RerankSourceType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline RerankSource& WithType(RerankSourceType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
+ private:
   RerankDocument m_inlineDocumentSource;
   bool m_inlineDocumentSourceHasBeenSet = false;
+
+  RerankSourceType m_type{RerankSourceType::NOT_SET};
+  bool m_typeHasBeenSet = false;
 };
 
 }  // namespace Model

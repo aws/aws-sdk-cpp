@@ -51,6 +51,10 @@ GetUnfilteredTableMetadataResult& GetUnfilteredTableMetadataResult::operator=(co
     m_isMultiDialectView = jsonValue.GetBool("IsMultiDialectView");
     m_isMultiDialectViewHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("IsMaterializedView")) {
+    m_isMaterializedView = jsonValue.GetBool("IsMaterializedView");
+    m_isMaterializedViewHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ResourceArn")) {
     m_resourceArn = jsonValue.GetString("ResourceArn");
     m_resourceArnHasBeenSet = true;

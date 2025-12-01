@@ -42,24 +42,6 @@ class RenewalTerm {
 
   ///@{
   /**
-   * <p>Additional parameters specified by the acceptor while accepting the term.</p>
-   */
-  inline const RenewalTermConfiguration& GetConfiguration() const { return m_configuration; }
-  inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-  template <typename ConfigurationT = RenewalTermConfiguration>
-  void SetConfiguration(ConfigurationT&& value) {
-    m_configurationHasBeenSet = true;
-    m_configuration = std::forward<ConfigurationT>(value);
-  }
-  template <typename ConfigurationT = RenewalTermConfiguration>
-  RenewalTerm& WithConfiguration(ConfigurationT&& value) {
-    SetConfiguration(std::forward<ConfigurationT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Category of the term being updated. </p>
    */
   inline const Aws::String& GetType() const { return m_type; }
@@ -75,12 +57,30 @@ class RenewalTerm {
     return *this;
   }
   ///@}
- private:
-  RenewalTermConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>Additional parameters specified by the acceptor while accepting the term.</p>
+   */
+  inline const RenewalTermConfiguration& GetConfiguration() const { return m_configuration; }
+  inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
+  template <typename ConfigurationT = RenewalTermConfiguration>
+  void SetConfiguration(ConfigurationT&& value) {
+    m_configurationHasBeenSet = true;
+    m_configuration = std::forward<ConfigurationT>(value);
+  }
+  template <typename ConfigurationT = RenewalTermConfiguration>
+  RenewalTerm& WithConfiguration(ConfigurationT&& value) {
+    SetConfiguration(std::forward<ConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_type;
   bool m_typeHasBeenSet = false;
+
+  RenewalTermConfiguration m_configuration;
+  bool m_configurationHasBeenSet = false;
 };
 
 }  // namespace Model

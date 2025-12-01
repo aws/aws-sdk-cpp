@@ -47,8 +47,20 @@ Aws::String UpdateEvaluationFormRequest::SerializePayload() const {
     payload.WithObject("AutoEvaluationConfiguration", m_autoEvaluationConfiguration.Jsonize());
   }
 
+  if (m_asDraftHasBeenSet) {
+    payload.WithBool("AsDraft", m_asDraft);
+  }
+
   if (m_clientTokenHasBeenSet) {
     payload.WithString("ClientToken", m_clientToken);
+  }
+
+  if (m_targetConfigurationHasBeenSet) {
+    payload.WithObject("TargetConfiguration", m_targetConfiguration.Jsonize());
+  }
+
+  if (m_languageConfigurationHasBeenSet) {
+    payload.WithObject("LanguageConfiguration", m_languageConfiguration.Jsonize());
   }
 
   return payload.View().WriteReadable();

@@ -34,6 +34,10 @@ CommunicationTimeConfig& CommunicationTimeConfig::operator=(JsonView jsonValue) 
     m_email = jsonValue.GetObject("email");
     m_emailHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("whatsApp")) {
+    m_whatsApp = jsonValue.GetObject("whatsApp");
+    m_whatsAppHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue CommunicationTimeConfig::Jsonize() const {
 
   if (m_emailHasBeenSet) {
     payload.WithObject("email", m_email.Jsonize());
+  }
+
+  if (m_whatsAppHasBeenSet) {
+    payload.WithObject("whatsApp", m_whatsApp.Jsonize());
   }
 
   return payload;

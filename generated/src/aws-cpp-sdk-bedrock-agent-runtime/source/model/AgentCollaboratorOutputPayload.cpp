@@ -18,17 +18,17 @@ namespace Model {
 AgentCollaboratorOutputPayload::AgentCollaboratorOutputPayload(JsonView jsonValue) { *this = jsonValue; }
 
 AgentCollaboratorOutputPayload& AgentCollaboratorOutputPayload::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("type")) {
-    m_type = PayloadTypeMapper::GetPayloadTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
+  if (jsonValue.ValueExists("returnControlPayload")) {
+    m_returnControlPayload = jsonValue.GetObject("returnControlPayload");
+    m_returnControlPayloadHasBeenSet = true;
   }
   if (jsonValue.ValueExists("text")) {
     m_text = jsonValue.GetString("text");
     m_textHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("returnControlPayload")) {
-    m_returnControlPayload = jsonValue.GetObject("returnControlPayload");
-    m_returnControlPayloadHasBeenSet = true;
+  if (jsonValue.ValueExists("type")) {
+    m_type = PayloadTypeMapper::GetPayloadTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
   }
   return *this;
 }
@@ -36,16 +36,16 @@ AgentCollaboratorOutputPayload& AgentCollaboratorOutputPayload::operator=(JsonVi
 JsonValue AgentCollaboratorOutputPayload::Jsonize() const {
   JsonValue payload;
 
-  if (m_typeHasBeenSet) {
-    payload.WithString("type", PayloadTypeMapper::GetNameForPayloadType(m_type));
+  if (m_returnControlPayloadHasBeenSet) {
+    payload.WithObject("returnControlPayload", m_returnControlPayload.Jsonize());
   }
 
   if (m_textHasBeenSet) {
     payload.WithString("text", m_text);
   }
 
-  if (m_returnControlPayloadHasBeenSet) {
-    payload.WithObject("returnControlPayload", m_returnControlPayload.Jsonize());
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", PayloadTypeMapper::GetNameForPayloadType(m_type));
   }
 
   return payload;

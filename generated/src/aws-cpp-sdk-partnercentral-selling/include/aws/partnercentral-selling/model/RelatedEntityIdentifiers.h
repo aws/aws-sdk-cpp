@@ -67,6 +67,34 @@ class RelatedEntityIdentifiers {
 
   ///@{
   /**
+   * <p>Enables the association of AWS Marketplace offer sets with the
+   * <code>Opportunity</code>. Offer sets allow grouping multiple related marketplace
+   * offers together for comprehensive solution packaging. Each value is an Amazon
+   * Resource Name (ARN) in this format:
+   * <code>arn:aws:aws-marketplace:us-east-1:999999999999:AWSMarketplace/OfferSet/offerset-sampleOfferSet32</code>.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetAwsMarketplaceOfferSets() const { return m_awsMarketplaceOfferSets; }
+  inline bool AwsMarketplaceOfferSetsHasBeenSet() const { return m_awsMarketplaceOfferSetsHasBeenSet; }
+  template <typename AwsMarketplaceOfferSetsT = Aws::Vector<Aws::String>>
+  void SetAwsMarketplaceOfferSets(AwsMarketplaceOfferSetsT&& value) {
+    m_awsMarketplaceOfferSetsHasBeenSet = true;
+    m_awsMarketplaceOfferSets = std::forward<AwsMarketplaceOfferSetsT>(value);
+  }
+  template <typename AwsMarketplaceOfferSetsT = Aws::Vector<Aws::String>>
+  RelatedEntityIdentifiers& WithAwsMarketplaceOfferSets(AwsMarketplaceOfferSetsT&& value) {
+    SetAwsMarketplaceOfferSets(std::forward<AwsMarketplaceOfferSetsT>(value));
+    return *this;
+  }
+  template <typename AwsMarketplaceOfferSetsT = Aws::String>
+  RelatedEntityIdentifiers& AddAwsMarketplaceOfferSets(AwsMarketplaceOfferSetsT&& value) {
+    m_awsMarketplaceOfferSetsHasBeenSet = true;
+    m_awsMarketplaceOfferSets.emplace_back(std::forward<AwsMarketplaceOfferSetsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Enables partner solutions or offerings' association with an opportunity. To
    * associate a solution, provide the solution's unique identifier, which you can
    * obtain with the <code>ListSolutions</code> operation.</p> <p>If the specific
@@ -132,6 +160,9 @@ class RelatedEntityIdentifiers {
  private:
   Aws::Vector<Aws::String> m_awsMarketplaceOffers;
   bool m_awsMarketplaceOffersHasBeenSet = false;
+
+  Aws::Vector<Aws::String> m_awsMarketplaceOfferSets;
+  bool m_awsMarketplaceOfferSetsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_solutions;
   bool m_solutionsHasBeenSet = false;

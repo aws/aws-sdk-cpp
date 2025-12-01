@@ -53,6 +53,14 @@ EvaluationFormContent& EvaluationFormContent::operator=(JsonView jsonValue) {
     m_autoEvaluationConfiguration = jsonValue.GetObject("AutoEvaluationConfiguration");
     m_autoEvaluationConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("TargetConfiguration")) {
+    m_targetConfiguration = jsonValue.GetObject("TargetConfiguration");
+    m_targetConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("LanguageConfiguration")) {
+    m_languageConfiguration = jsonValue.GetObject("LanguageConfiguration");
+    m_languageConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -93,6 +101,14 @@ JsonValue EvaluationFormContent::Jsonize() const {
 
   if (m_autoEvaluationConfigurationHasBeenSet) {
     payload.WithObject("AutoEvaluationConfiguration", m_autoEvaluationConfiguration.Jsonize());
+  }
+
+  if (m_targetConfigurationHasBeenSet) {
+    payload.WithObject("TargetConfiguration", m_targetConfiguration.Jsonize());
+  }
+
+  if (m_languageConfigurationHasBeenSet) {
+    payload.WithObject("LanguageConfiguration", m_languageConfiguration.Jsonize());
   }
 
   return payload;

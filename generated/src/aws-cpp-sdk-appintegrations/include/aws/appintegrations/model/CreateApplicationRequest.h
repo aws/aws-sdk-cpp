@@ -8,6 +8,7 @@
 #include <aws/appintegrations/AppIntegrationsService_EXPORTS.h>
 #include <aws/appintegrations/model/ApplicationConfig.h>
 #include <aws/appintegrations/model/ApplicationSourceConfig.h>
+#include <aws/appintegrations/model/ApplicationType.h>
 #include <aws/appintegrations/model/IframeConfig.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -180,22 +181,6 @@ class CreateApplicationRequest : public AppIntegrationsServiceRequest {
 
   ///@{
   /**
-   * <p>Indicates whether the application is a service.</p>
-   */
-  inline bool GetIsService() const { return m_isService; }
-  inline bool IsServiceHasBeenSet() const { return m_isServiceHasBeenSet; }
-  inline void SetIsService(bool value) {
-    m_isServiceHasBeenSet = true;
-    m_isService = value;
-  }
-  inline CreateApplicationRequest& WithIsService(bool value) {
-    SetIsService(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The maximum time in milliseconds allowed to establish a connection with the
    * workspace.</p>
    */
@@ -246,6 +231,22 @@ class CreateApplicationRequest : public AppIntegrationsServiceRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of application.</p>
+   */
+  inline ApplicationType GetApplicationType() const { return m_applicationType; }
+  inline bool ApplicationTypeHasBeenSet() const { return m_applicationTypeHasBeenSet; }
+  inline void SetApplicationType(ApplicationType value) {
+    m_applicationTypeHasBeenSet = true;
+    m_applicationType = value;
+  }
+  inline CreateApplicationRequest& WithApplicationType(ApplicationType value) {
+    SetApplicationType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
   bool m_nameHasBeenSet = false;
@@ -268,9 +269,6 @@ class CreateApplicationRequest : public AppIntegrationsServiceRequest {
   Aws::Vector<Aws::String> m_permissions;
   bool m_permissionsHasBeenSet = false;
 
-  bool m_isService{false};
-  bool m_isServiceHasBeenSet = false;
-
   int m_initializationTimeout{0};
   bool m_initializationTimeoutHasBeenSet = false;
 
@@ -279,6 +277,9 @@ class CreateApplicationRequest : public AppIntegrationsServiceRequest {
 
   IframeConfig m_iframeConfig;
   bool m_iframeConfigHasBeenSet = false;
+
+  ApplicationType m_applicationType{ApplicationType::NOT_SET};
+  bool m_applicationTypeHasBeenSet = false;
 };
 
 }  // namespace Model

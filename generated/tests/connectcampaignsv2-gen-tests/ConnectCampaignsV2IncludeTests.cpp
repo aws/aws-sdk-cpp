@@ -57,6 +57,7 @@
 #include <aws/connectcampaignsv2/model/EncryptionType.h>
 #include <aws/connectcampaignsv2/model/EventTrigger.h>
 #include <aws/connectcampaignsv2/model/EventType.h>
+#include <aws/connectcampaignsv2/model/ExternalCampaignType.h>
 #include <aws/connectcampaignsv2/model/FailedCampaignStateResponse.h>
 #include <aws/connectcampaignsv2/model/FailedProfileOutboundRequest.h>
 #include <aws/connectcampaignsv2/model/FailedRequest.h>
@@ -86,6 +87,9 @@
 #include <aws/connectcampaignsv2/model/InternalServerException.h>
 #include <aws/connectcampaignsv2/model/InvalidCampaignStateException.h>
 #include <aws/connectcampaignsv2/model/InvalidStateException.h>
+#include <aws/connectcampaignsv2/model/LambdaIntegrationConfig.h>
+#include <aws/connectcampaignsv2/model/LambdaIntegrationIdentifier.h>
+#include <aws/connectcampaignsv2/model/LambdaIntegrationSummary.h>
 #include <aws/connectcampaignsv2/model/ListCampaignsRequest.h>
 #include <aws/connectcampaignsv2/model/ListCampaignsResult.h>
 #include <aws/connectcampaignsv2/model/ListConnectInstanceIntegrationsRequest.h>
@@ -147,6 +151,10 @@
 #include <aws/connectcampaignsv2/model/UpdateCampaignScheduleRequest.h>
 #include <aws/connectcampaignsv2/model/UpdateCampaignSourceRequest.h>
 #include <aws/connectcampaignsv2/model/ValidationException.h>
+#include <aws/connectcampaignsv2/model/WhatsAppChannelSubtypeConfig.h>
+#include <aws/connectcampaignsv2/model/WhatsAppChannelSubtypeParameters.h>
+#include <aws/connectcampaignsv2/model/WhatsAppOutboundConfig.h>
+#include <aws/connectcampaignsv2/model/WhatsAppOutboundMode.h>
 
 using ConnectCampaignsV2IncludeTest = ::testing::Test;
 

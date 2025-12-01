@@ -46,6 +46,13 @@ AnswerRecommendationAIAgentConfiguration& AnswerRecommendationAIAgentConfigurati
     m_locale = jsonValue.GetString("locale");
     m_localeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("suggestedMessages")) {
+    Aws::Utils::Array<JsonView> suggestedMessagesJsonList = jsonValue.GetArray("suggestedMessages");
+    for (unsigned suggestedMessagesIndex = 0; suggestedMessagesIndex < suggestedMessagesJsonList.GetLength(); ++suggestedMessagesIndex) {
+      m_suggestedMessages.push_back(suggestedMessagesJsonList[suggestedMessagesIndex].AsString());
+    }
+    m_suggestedMessagesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -80,6 +87,14 @@ JsonValue AnswerRecommendationAIAgentConfiguration::Jsonize() const {
 
   if (m_localeHasBeenSet) {
     payload.WithString("locale", m_locale);
+  }
+
+  if (m_suggestedMessagesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> suggestedMessagesJsonList(m_suggestedMessages.size());
+    for (unsigned suggestedMessagesIndex = 0; suggestedMessagesIndex < suggestedMessagesJsonList.GetLength(); ++suggestedMessagesIndex) {
+      suggestedMessagesJsonList[suggestedMessagesIndex].AsString(m_suggestedMessages[suggestedMessagesIndex]);
+    }
+    payload.WithArray("suggestedMessages", std::move(suggestedMessagesJsonList));
   }
 
   return payload;

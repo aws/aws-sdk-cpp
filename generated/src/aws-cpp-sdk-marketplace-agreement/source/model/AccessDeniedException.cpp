@@ -18,13 +18,13 @@ namespace Model {
 AccessDeniedException::AccessDeniedException(JsonView jsonValue) { *this = jsonValue; }
 
 AccessDeniedException& AccessDeniedException::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("message")) {
-    m_message = jsonValue.GetString("message");
-    m_messageHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("requestId")) {
     m_requestId = jsonValue.GetString("requestId");
     m_requestIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("message")) {
+    m_message = jsonValue.GetString("message");
+    m_messageHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ AccessDeniedException& AccessDeniedException::operator=(JsonView jsonValue) {
 JsonValue AccessDeniedException::Jsonize() const {
   JsonValue payload;
 
-  if (m_messageHasBeenSet) {
-    payload.WithString("message", m_message);
-  }
-
   if (m_requestIdHasBeenSet) {
     payload.WithString("requestId", m_requestId);
+  }
+
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
   return payload;

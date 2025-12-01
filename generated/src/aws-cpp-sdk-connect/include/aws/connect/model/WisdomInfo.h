@@ -5,7 +5,9 @@
 
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/AiAgentInfo.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -48,9 +50,36 @@ class WisdomInfo {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The array of AI agents involved in the contact.</p>
+   */
+  inline const Aws::Vector<AiAgentInfo>& GetAiAgents() const { return m_aiAgents; }
+  inline bool AiAgentsHasBeenSet() const { return m_aiAgentsHasBeenSet; }
+  template <typename AiAgentsT = Aws::Vector<AiAgentInfo>>
+  void SetAiAgents(AiAgentsT&& value) {
+    m_aiAgentsHasBeenSet = true;
+    m_aiAgents = std::forward<AiAgentsT>(value);
+  }
+  template <typename AiAgentsT = Aws::Vector<AiAgentInfo>>
+  WisdomInfo& WithAiAgents(AiAgentsT&& value) {
+    SetAiAgents(std::forward<AiAgentsT>(value));
+    return *this;
+  }
+  template <typename AiAgentsT = AiAgentInfo>
+  WisdomInfo& AddAiAgents(AiAgentsT&& value) {
+    m_aiAgentsHasBeenSet = true;
+    m_aiAgents.emplace_back(std::forward<AiAgentsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_sessionArn;
   bool m_sessionArnHasBeenSet = false;
+
+  Aws::Vector<AiAgentInfo> m_aiAgents;
+  bool m_aiAgentsHasBeenSet = false;
 };
 
 }  // namespace Model

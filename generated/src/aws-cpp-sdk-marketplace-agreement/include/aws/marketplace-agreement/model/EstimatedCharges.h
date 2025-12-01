@@ -33,6 +33,24 @@ class EstimatedCharges {
 
   ///@{
   /**
+   * <p>Defines the currency code for the charge.</p>
+   */
+  inline const Aws::String& GetCurrencyCode() const { return m_currencyCode; }
+  inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
+  template <typename CurrencyCodeT = Aws::String>
+  void SetCurrencyCode(CurrencyCodeT&& value) {
+    m_currencyCodeHasBeenSet = true;
+    m_currencyCode = std::forward<CurrencyCodeT>(value);
+  }
+  template <typename CurrencyCodeT = Aws::String>
+  EstimatedCharges& WithCurrencyCode(CurrencyCodeT&& value) {
+    SetCurrencyCode(std::forward<CurrencyCodeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The total known amount customer has to pay across the lifecycle of the
    * agreement.</p>  <p>This is the total contract value if accepted terms
    * contain <code>ConfigurableUpfrontPricingTerm</code> or
@@ -65,30 +83,12 @@ class EstimatedCharges {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Defines the currency code for the charge.</p>
-   */
-  inline const Aws::String& GetCurrencyCode() const { return m_currencyCode; }
-  inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
-  template <typename CurrencyCodeT = Aws::String>
-  void SetCurrencyCode(CurrencyCodeT&& value) {
-    m_currencyCodeHasBeenSet = true;
-    m_currencyCode = std::forward<CurrencyCodeT>(value);
-  }
-  template <typename CurrencyCodeT = Aws::String>
-  EstimatedCharges& WithCurrencyCode(CurrencyCodeT&& value) {
-    SetCurrencyCode(std::forward<CurrencyCodeT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_agreementValue;
-  bool m_agreementValueHasBeenSet = false;
-
   Aws::String m_currencyCode;
   bool m_currencyCodeHasBeenSet = false;
+
+  Aws::String m_agreementValue;
+  bool m_agreementValueHasBeenSet = false;
 };
 
 }  // namespace Model

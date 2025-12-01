@@ -7,6 +7,7 @@
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/qconnect/model/ContentReference.h>
 #include <aws/qconnect/model/GenerativeReference.h>
+#include <aws/qconnect/model/SuggestedMessageReference.h>
 
 #include <utility>
 
@@ -65,12 +66,33 @@ class DataReference {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Reference information for suggested messages.</p>
+   */
+  inline const SuggestedMessageReference& GetSuggestedMessageReference() const { return m_suggestedMessageReference; }
+  inline bool SuggestedMessageReferenceHasBeenSet() const { return m_suggestedMessageReferenceHasBeenSet; }
+  template <typename SuggestedMessageReferenceT = SuggestedMessageReference>
+  void SetSuggestedMessageReference(SuggestedMessageReferenceT&& value) {
+    m_suggestedMessageReferenceHasBeenSet = true;
+    m_suggestedMessageReference = std::forward<SuggestedMessageReferenceT>(value);
+  }
+  template <typename SuggestedMessageReferenceT = SuggestedMessageReference>
+  DataReference& WithSuggestedMessageReference(SuggestedMessageReferenceT&& value) {
+    SetSuggestedMessageReference(std::forward<SuggestedMessageReferenceT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ContentReference m_contentReference;
   bool m_contentReferenceHasBeenSet = false;
 
   GenerativeReference m_generativeReference;
   bool m_generativeReferenceHasBeenSet = false;
+
+  SuggestedMessageReference m_suggestedMessageReference;
+  bool m_suggestedMessageReferenceHasBeenSet = false;
 };
 
 }  // namespace Model

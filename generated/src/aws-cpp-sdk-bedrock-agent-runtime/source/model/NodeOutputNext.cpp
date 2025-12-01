@@ -18,13 +18,13 @@ namespace Model {
 NodeOutputNext::NodeOutputNext(JsonView jsonValue) { *this = jsonValue; }
 
 NodeOutputNext& NodeOutputNext::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("nodeName")) {
-    m_nodeName = jsonValue.GetString("nodeName");
-    m_nodeNameHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("inputFieldName")) {
     m_inputFieldName = jsonValue.GetString("inputFieldName");
     m_inputFieldNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("nodeName")) {
+    m_nodeName = jsonValue.GetString("nodeName");
+    m_nodeNameHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ NodeOutputNext& NodeOutputNext::operator=(JsonView jsonValue) {
 JsonValue NodeOutputNext::Jsonize() const {
   JsonValue payload;
 
-  if (m_nodeNameHasBeenSet) {
-    payload.WithString("nodeName", m_nodeName);
-  }
-
   if (m_inputFieldNameHasBeenSet) {
     payload.WithString("inputFieldName", m_inputFieldName);
+  }
+
+  if (m_nodeNameHasBeenSet) {
+    payload.WithString("nodeName", m_nodeName);
   }
 
   return payload;

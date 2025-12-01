@@ -33,12 +33,36 @@ ViewDefinitionInput& ViewDefinitionInput::operator=(JsonView jsonValue) {
     }
     m_representationsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ViewVersionId")) {
+    m_viewVersionId = jsonValue.GetInt64("ViewVersionId");
+    m_viewVersionIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ViewVersionToken")) {
+    m_viewVersionToken = jsonValue.GetString("ViewVersionToken");
+    m_viewVersionTokenHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("RefreshSeconds")) {
+    m_refreshSeconds = jsonValue.GetInt64("RefreshSeconds");
+    m_refreshSecondsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("LastRefreshType")) {
+    m_lastRefreshType = LastRefreshTypeMapper::GetLastRefreshTypeForName(jsonValue.GetString("LastRefreshType"));
+    m_lastRefreshTypeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("SubObjects")) {
     Aws::Utils::Array<JsonView> subObjectsJsonList = jsonValue.GetArray("SubObjects");
     for (unsigned subObjectsIndex = 0; subObjectsIndex < subObjectsJsonList.GetLength(); ++subObjectsIndex) {
       m_subObjects.push_back(subObjectsJsonList[subObjectsIndex].AsString());
     }
     m_subObjectsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SubObjectVersionIds")) {
+    Aws::Utils::Array<JsonView> subObjectVersionIdsJsonList = jsonValue.GetArray("SubObjectVersionIds");
+    for (unsigned subObjectVersionIdsIndex = 0; subObjectVersionIdsIndex < subObjectVersionIdsJsonList.GetLength();
+         ++subObjectVersionIdsIndex) {
+      m_subObjectVersionIds.push_back(subObjectVersionIdsJsonList[subObjectVersionIdsIndex].AsInt64());
+    }
+    m_subObjectVersionIdsHasBeenSet = true;
   }
   return *this;
 }
@@ -62,12 +86,37 @@ JsonValue ViewDefinitionInput::Jsonize() const {
     payload.WithArray("Representations", std::move(representationsJsonList));
   }
 
+  if (m_viewVersionIdHasBeenSet) {
+    payload.WithInt64("ViewVersionId", m_viewVersionId);
+  }
+
+  if (m_viewVersionTokenHasBeenSet) {
+    payload.WithString("ViewVersionToken", m_viewVersionToken);
+  }
+
+  if (m_refreshSecondsHasBeenSet) {
+    payload.WithInt64("RefreshSeconds", m_refreshSeconds);
+  }
+
+  if (m_lastRefreshTypeHasBeenSet) {
+    payload.WithString("LastRefreshType", LastRefreshTypeMapper::GetNameForLastRefreshType(m_lastRefreshType));
+  }
+
   if (m_subObjectsHasBeenSet) {
     Aws::Utils::Array<JsonValue> subObjectsJsonList(m_subObjects.size());
     for (unsigned subObjectsIndex = 0; subObjectsIndex < subObjectsJsonList.GetLength(); ++subObjectsIndex) {
       subObjectsJsonList[subObjectsIndex].AsString(m_subObjects[subObjectsIndex]);
     }
     payload.WithArray("SubObjects", std::move(subObjectsJsonList));
+  }
+
+  if (m_subObjectVersionIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> subObjectVersionIdsJsonList(m_subObjectVersionIds.size());
+    for (unsigned subObjectVersionIdsIndex = 0; subObjectVersionIdsIndex < subObjectVersionIdsJsonList.GetLength();
+         ++subObjectVersionIdsIndex) {
+      subObjectVersionIdsJsonList[subObjectVersionIdsIndex].AsInt64(m_subObjectVersionIds[subObjectVersionIdsIndex]);
+    }
+    payload.WithArray("SubObjectVersionIds", std::move(subObjectVersionIdsJsonList));
   }
 
   return payload;

@@ -37,22 +37,6 @@ class Span {
 
   ///@{
   /**
-   * <p>Where the text with a citation starts in the generated output.</p>
-   */
-  inline int GetStart() const { return m_start; }
-  inline bool StartHasBeenSet() const { return m_startHasBeenSet; }
-  inline void SetStart(int value) {
-    m_startHasBeenSet = true;
-    m_start = value;
-  }
-  inline Span& WithStart(int value) {
-    SetStart(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Where the text with a citation ends in the generated output.</p>
    */
   inline int GetEnd() const { return m_end; }
@@ -66,12 +50,28 @@ class Span {
     return *this;
   }
   ///@}
- private:
-  int m_start{0};
-  bool m_startHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>Where the text with a citation starts in the generated output.</p>
+   */
+  inline int GetStart() const { return m_start; }
+  inline bool StartHasBeenSet() const { return m_startHasBeenSet; }
+  inline void SetStart(int value) {
+    m_startHasBeenSet = true;
+    m_start = value;
+  }
+  inline Span& WithStart(int value) {
+    SetStart(value);
+    return *this;
+  }
+  ///@}
+ private:
   int m_end{0};
   bool m_endHasBeenSet = false;
+
+  int m_start{0};
+  bool m_startHasBeenSet = false;
 };
 
 }  // namespace Model

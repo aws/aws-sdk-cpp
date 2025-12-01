@@ -25,6 +25,7 @@ static const int BuyerAccounts_HASH = HashingUtils::HashString("BuyerAccounts");
 static const int State_HASH = HashingUtils::HashString("State");
 static const int Targeting_HASH = HashingUtils::HashString("Targeting");
 static const int LastModifiedDate_HASH = HashingUtils::HashString("LastModifiedDate");
+static const int OfferSetId_HASH = HashingUtils::HashString("OfferSetId");
 
 OfferSortBy GetOfferSortByForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -48,6 +49,8 @@ OfferSortBy GetOfferSortByForName(const Aws::String& name) {
     return OfferSortBy::Targeting;
   } else if (hashCode == LastModifiedDate_HASH) {
     return OfferSortBy::LastModifiedDate;
+  } else if (hashCode == OfferSetId_HASH) {
+    return OfferSortBy::OfferSetId;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -82,6 +85,8 @@ Aws::String GetNameForOfferSortBy(OfferSortBy enumValue) {
       return "Targeting";
     case OfferSortBy::LastModifiedDate:
       return "LastModifiedDate";
+    case OfferSortBy::OfferSetId:
+      return "OfferSetId";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

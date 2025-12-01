@@ -1147,7 +1147,7 @@ class AWS_BEDROCKAGENT_API BedrockAgentClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Gets information about a knoweldge base.</p><p><h3>See Also:</h3>   <a
+   * <p>Gets information about a knowledge base.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetKnowledgeBase">AWS
    * API Reference</a></p>
    */

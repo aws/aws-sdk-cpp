@@ -18,13 +18,24 @@ namespace Model {
 FlowTraceNodeInputField::FlowTraceNodeInputField(JsonView jsonValue) { *this = jsonValue; }
 
 FlowTraceNodeInputField& FlowTraceNodeInputField::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("nodeInputName")) {
-    m_nodeInputName = jsonValue.GetString("nodeInputName");
-    m_nodeInputNameHasBeenSet = true;
+  if (jsonValue.ValueExists("category")) {
+    m_category = FlowNodeInputCategoryMapper::GetFlowNodeInputCategoryForName(jsonValue.GetString("category"));
+    m_categoryHasBeenSet = true;
   }
   if (jsonValue.ValueExists("content")) {
     m_content = jsonValue.GetObject("content");
     m_contentHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("executionChain")) {
+    Aws::Utils::Array<JsonView> executionChainJsonList = jsonValue.GetArray("executionChain");
+    for (unsigned executionChainIndex = 0; executionChainIndex < executionChainJsonList.GetLength(); ++executionChainIndex) {
+      m_executionChain.push_back(executionChainJsonList[executionChainIndex].AsObject());
+    }
+    m_executionChainHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("nodeInputName")) {
+    m_nodeInputName = jsonValue.GetString("nodeInputName");
+    m_nodeInputNameHasBeenSet = true;
   }
   if (jsonValue.ValueExists("source")) {
     m_source = jsonValue.GetObject("source");
@@ -34,41 +45,18 @@ FlowTraceNodeInputField& FlowTraceNodeInputField::operator=(JsonView jsonValue) 
     m_type = FlowNodeIODataTypeMapper::GetFlowNodeIODataTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("category")) {
-    m_category = FlowNodeInputCategoryMapper::GetFlowNodeInputCategoryForName(jsonValue.GetString("category"));
-    m_categoryHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("executionChain")) {
-    Aws::Utils::Array<JsonView> executionChainJsonList = jsonValue.GetArray("executionChain");
-    for (unsigned executionChainIndex = 0; executionChainIndex < executionChainJsonList.GetLength(); ++executionChainIndex) {
-      m_executionChain.push_back(executionChainJsonList[executionChainIndex].AsObject());
-    }
-    m_executionChainHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue FlowTraceNodeInputField::Jsonize() const {
   JsonValue payload;
 
-  if (m_nodeInputNameHasBeenSet) {
-    payload.WithString("nodeInputName", m_nodeInputName);
+  if (m_categoryHasBeenSet) {
+    payload.WithString("category", FlowNodeInputCategoryMapper::GetNameForFlowNodeInputCategory(m_category));
   }
 
   if (m_contentHasBeenSet) {
     payload.WithObject("content", m_content.Jsonize());
-  }
-
-  if (m_sourceHasBeenSet) {
-    payload.WithObject("source", m_source.Jsonize());
-  }
-
-  if (m_typeHasBeenSet) {
-    payload.WithString("type", FlowNodeIODataTypeMapper::GetNameForFlowNodeIODataType(m_type));
-  }
-
-  if (m_categoryHasBeenSet) {
-    payload.WithString("category", FlowNodeInputCategoryMapper::GetNameForFlowNodeInputCategory(m_category));
   }
 
   if (m_executionChainHasBeenSet) {
@@ -77,6 +65,18 @@ JsonValue FlowTraceNodeInputField::Jsonize() const {
       executionChainJsonList[executionChainIndex].AsObject(m_executionChain[executionChainIndex].Jsonize());
     }
     payload.WithArray("executionChain", std::move(executionChainJsonList));
+  }
+
+  if (m_nodeInputNameHasBeenSet) {
+    payload.WithString("nodeInputName", m_nodeInputName);
+  }
+
+  if (m_sourceHasBeenSet) {
+    payload.WithObject("source", m_source.Jsonize());
+  }
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", FlowNodeIODataTypeMapper::GetNameForFlowNodeIODataType(m_type));
   }
 
   return payload;

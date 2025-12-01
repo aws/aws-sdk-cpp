@@ -18,6 +18,10 @@ namespace Model {
 GuardrailTopic::GuardrailTopic(JsonView jsonValue) { *this = jsonValue; }
 
 GuardrailTopic& GuardrailTopic::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("action")) {
+    m_action = GuardrailTopicPolicyActionMapper::GetGuardrailTopicPolicyActionForName(jsonValue.GetString("action"));
+    m_actionHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
@@ -26,15 +30,15 @@ GuardrailTopic& GuardrailTopic::operator=(JsonView jsonValue) {
     m_type = GuardrailTopicTypeMapper::GetGuardrailTopicTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("action")) {
-    m_action = GuardrailTopicPolicyActionMapper::GetGuardrailTopicPolicyActionForName(jsonValue.GetString("action"));
-    m_actionHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue GuardrailTopic::Jsonize() const {
   JsonValue payload;
+
+  if (m_actionHasBeenSet) {
+    payload.WithString("action", GuardrailTopicPolicyActionMapper::GetNameForGuardrailTopicPolicyAction(m_action));
+  }
 
   if (m_nameHasBeenSet) {
     payload.WithString("name", m_name);
@@ -42,10 +46,6 @@ JsonValue GuardrailTopic::Jsonize() const {
 
   if (m_typeHasBeenSet) {
     payload.WithString("type", GuardrailTopicTypeMapper::GetNameForGuardrailTopicType(m_type));
-  }
-
-  if (m_actionHasBeenSet) {
-    payload.WithString("action", GuardrailTopicPolicyActionMapper::GetNameForGuardrailTopicPolicyAction(m_action));
   }
 
   return payload;

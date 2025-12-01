@@ -35,6 +35,10 @@ Aws::String CreateDomainRequest::SerializePayload() const {
     payload.WithObject("RuleBasedMatching", m_ruleBasedMatching.Jsonize());
   }
 
+  if (m_dataStoreHasBeenSet) {
+    payload.WithObject("DataStore", m_dataStore.Jsonize());
+  }
+
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {
