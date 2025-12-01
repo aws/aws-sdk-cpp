@@ -23,7 +23,7 @@ namespace Aws
             /**
              * This is a wrapper to perform a hack to write directly to the put area of the underlying streambuf
              */
-            class AWS_CORE_API StreamBufProtectedWriter : public std::streambuf
+            class StreamBufProtectedWriter : public std::streambuf
             {
             public:
                 StreamBufProtectedWriter() = delete;
