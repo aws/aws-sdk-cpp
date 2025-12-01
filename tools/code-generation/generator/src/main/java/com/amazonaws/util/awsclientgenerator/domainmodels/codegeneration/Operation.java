@@ -102,6 +102,10 @@ public class Operation {
         return auth != null && auth.contains("aws.auth#sigv4a");
     }
 
+    public boolean hasNoAuth() {
+        return auth != null && auth.contains("smithy.api#noAuth");
+    }
+
     public boolean hasBearerAuth() {
         return auth != null && auth.contains("smithy.api#httpBearerAuth");
     }
