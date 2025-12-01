@@ -27,6 +27,9 @@
 #if($serviceModel.hasSigV4aAuth())
 \#include <smithy/identity/auth/built-in/SigV4aAuthScheme.h>
 #end
+#if($serviceModel.hasNoAuth())
+\#include <smithy/identity/auth/built-in/NoAuthScheme.h>
+#end
 \#include <smithy/identity/auth/built-in/GenericAuthSchemeResolver.h>
 \#include <smithy/client/serializer/${serializer}.h>
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ErrorMarshaller.h>

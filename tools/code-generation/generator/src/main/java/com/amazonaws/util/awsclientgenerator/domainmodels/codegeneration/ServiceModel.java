@@ -51,18 +51,22 @@ public class ServiceModel {
         if(metadata.getSignatureVersion().equals("v4") || metadata.getSignatureVersion().equals("s3v4")) {
             return true;
         }
-        return authSchemes.contains("aws.auth#sigv4") || operations.values().parallelStream().anyMatch(operation -> operation.getSignerName().equals("Aws::Auth::SIGV4_SIGNER"));
+        return authSchemes.contains("aws.auth#sigv4") || operations.values().parallelStream().anyMatch(operation -> operation.getSignerName().equals("Aws::Auth::SIGV4_SIGNER") || operation.hasSigV4Auth());
     }
 
     public boolean hasSigV4aAuth() {
-        return authSchemes.contains("aws.auth#sigv4a") || operations.values().parallelStream().anyMatch(operation -> operation.getSignerName().equals("Aws::Auth::SIGV4A_SIGNER"));
+        return authSchemes.contains("aws.auth#sigv4a") || operations.values().parallelStream().anyMatch(operation -> operation.getSignerName().equals("Aws::Auth::SIGV4A_SIGNER") || operation.hasSigV4aAuth());
+    }
+
+    public boolean hasNoAuth() {
+        return authSchemes.contains("smithy.api#noAuth") || operations.values().parallelStream().anyMatch(operation -> operation.getSignerName().equals("Aws::Auth::NULL_SIGNER") || operation.hasNoAuth());
     }
 
     public boolean hasBearerAuth() {
         if(metadata.getSignatureVersion().equals("bearer")) {
             return true;
         }
-        return authSchemes.contains("smithy.api#httpBearerAuth") || operations.values().parallelStream().anyMatch(operation -> operation.getSignerName().equals("Aws::Auth::BEARER_SIGNER"));
+        return authSchemes.contains("smithy.api#httpBearerAuth") || operations.values().parallelStream().anyMatch(operation -> operation.getSignerName().equals("Aws::Auth::BEARER_SIGNER") || operation.hasBearerAuth());
     }
 
     public boolean hasOnlyBearerAuth() {

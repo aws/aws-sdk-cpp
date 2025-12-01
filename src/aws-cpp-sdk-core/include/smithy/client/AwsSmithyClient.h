@@ -352,18 +352,15 @@ namespace client
 
         GetContextEndpointParametersOutcome GetContextEndpointParametersImpl(const AwsSmithyClientAsyncRequestContext& ctx) const {
           Aws::Vector<Aws::Endpoint::EndpointParameter> endpointParameters;
-          //nullptr indicates we're using noAuth and therefore there is no identity
-          if (ctx.m_awsIdentity != nullptr) {
-            const auto resolvedAccountId = ctx.m_awsIdentity->accountId();
-            const auto resolvedNonEmptyAccountId = resolvedAccountId.has_value() && !resolvedAccountId.value().empty();
-            // Set user agent if account ID was resolved in identity provider
-            if (resolvedNonEmptyAccountId) {
-              ctx.m_pRequest->AddUserAgentFeature(Aws::Client::UserAgentFeature::RESOLVED_ACCOUNT_ID);
-            }
-            // Only set EP param if client configuration does not have a configured account ID and we resolved a account id
-            if (resolvedNonEmptyAccountId && m_clientConfiguration.accountId.empty()) {
-              endpointParameters.emplace_back("AccountId", resolvedAccountId.value(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
-            }
+          const auto resolvedAccountId = ctx.m_awsIdentity->accountId();
+          const auto resolvedNonEmptyAccountId = resolvedAccountId.has_value() && !resolvedAccountId.value().empty();
+          // Set user agent if account ID was resolved in identity provider
+          if (resolvedNonEmptyAccountId) {
+            ctx.m_pRequest->AddUserAgentFeature(Aws::Client::UserAgentFeature::RESOLVED_ACCOUNT_ID);
+          }
+          // Only set EP param if client configuration does not have a configured account ID and we resolved a account id
+          if (resolvedNonEmptyAccountId && m_clientConfiguration.accountId.empty()) {
+            endpointParameters.emplace_back("AccountId", resolvedAccountId.value(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
           }
           return endpointParameters;
         }

@@ -195,15 +195,14 @@ bool AwsSmithyClientBase::ResolveIdentityAuth(
     assert(pRequestCtx->m_authSchemeOption.schemeId);
 
     // resolve identity
-    if (strcmp(authSchemeOptionOutcome.GetResult().schemeId, smithy::NOAUTH) != 0) {
-        auto identityOutcome = this->ResolveIdentity(*pRequestCtx);
-        if (!identityOutcome.IsSuccess())
-        {
-          responseHandler(std::move(identityOutcome));
-          return false;
-        }
-        pRequestCtx->m_awsIdentity = std::move(identityOutcome.GetResultWithOwnership());
+    auto identityOutcome = this->ResolveIdentity(*pRequestCtx);
+    if (!identityOutcome.IsSuccess())
+    {
+      responseHandler(std::move(identityOutcome));
+      return false;
     }
+    pRequestCtx->m_awsIdentity = std::move(identityOutcome.GetResultWithOwnership());
+
 
 
     // get endpoint params from operation context

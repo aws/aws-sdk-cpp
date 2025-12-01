@@ -11,8 +11,4 @@
 #include <aws/core/auth/signer/AWSAuthV4Signer.h>
 #include <aws/core/auth/signer/AWSAuthEventStreamV4Signer.h>
 #include <aws/core/auth/signer/AWSNullSigner.h>
-
-#include <smithy/identity/auth/built-in/NoAuthScheme.h>
-#include <smithy/identity/auth/built-in/NoAuthSchemeOption.h>
-
 // This is a header that represents old legacy all-in-one header to maintain backward compatibility

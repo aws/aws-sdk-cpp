@@ -28,6 +28,9 @@
 #if($operation.hasBearerAuth())
 \#include <smithy/identity/auth/built-in/BearerTokenAuthSchemeOption.h>
 #end
+#if($operation.hasNoAuth())
+\#include <smithy/identity/auth/built-in/NoAuthScheme.h>
+#end
 #end ###if($serviceModel.useSmithyClient)
 \#include <utility>
 #if(${CppViewHelper.hasListMemberUsedForHeader($shape)})
