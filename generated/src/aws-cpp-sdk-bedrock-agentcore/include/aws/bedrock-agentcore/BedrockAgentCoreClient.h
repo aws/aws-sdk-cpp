@@ -277,6 +277,34 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p> Performs on-demand evaluation of agent traces using a specified evaluator.
+   * This synchronous API accepts traces in OpenTelemetry format and returns
+   * immediate scoring results with detailed explanations.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/Evaluate">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::EvaluateOutcome Evaluate(const Model::EvaluateRequest& request) const;
+
+  /**
+   * A Callable wrapper for Evaluate that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename EvaluateRequestT = Model::EvaluateRequest>
+  Model::EvaluateOutcomeCallable EvaluateCallable(const EvaluateRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreClient::Evaluate, request);
+  }
+
+  /**
+   * An Async wrapper for Evaluate that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename EvaluateRequestT = Model::EvaluateRequest>
+  void EvaluateAsync(const EvaluateRequestT& request, const EvaluateResponseReceivedHandler& handler,
+                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreClient::Evaluate, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves the A2A agent card associated with an AgentCore Runtime
    * agent.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetAgentCard">AWS
@@ -310,11 +338,11 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
    * information about the session's viewport configuration, timeout settings, and
    * stream endpoints.</p> <p>The following operations are related to
    * <code>GetBrowserSession</code>:</p> <ul> <li> <p> <a
-   * href="https://docs.aws.amazon.com/API_StartBrowserSession.html">StartBrowserSession</a>
+   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartBrowserSession.html">StartBrowserSession</a>
    * </p> </li> <li> <p> <a
-   * href="https://docs.aws.amazon.com/API_ListBrowserSessions.html">ListBrowserSessions</a>
+   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListBrowserSessions.html">ListBrowserSessions</a>
    * </p> </li> <li> <p> <a
-   * href="https://docs.aws.amazon.com/API_StopBrowserSession.html">StopBrowserSession</a>
+   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StopBrowserSession.html">StopBrowserSession</a>
    * </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetBrowserSession">AWS
    * API Reference</a></p>
@@ -348,11 +376,11 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
    * information about the session's timeout settings and current status.</p> <p>The
    * following operations are related to <code>GetCodeInterpreterSession</code>:</p>
    * <ul> <li> <p> <a
-   * href="https://docs.aws.amazon.com/API_StartCodeInterpreterSession.html">StartCodeInterpreterSession</a>
+   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartCodeInterpreterSession.html">StartCodeInterpreterSession</a>
    * </p> </li> <li> <p> <a
-   * href="https://docs.aws.amazon.com/API_ListCodeInterpreterSessions.html">ListCodeInterpreterSessions</a>
+   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListCodeInterpreterSessions.html">ListCodeInterpreterSessions</a>
    * </p> </li> <li> <p> <a
-   * href="https://docs.aws.amazon.com/API_StopCodeInterpreterSession.html">StopCodeInterpreterSession</a>
+   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StopCodeInterpreterSession.html">StopCodeInterpreterSession</a>
    * </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetCodeInterpreterSession">AWS
    * API Reference</a></p>
@@ -637,9 +665,9 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
    * subject to request rate limiting based on your account's service quotas.</p>
    * <p>The following operations are related to
    * <code>InvokeCodeInterpreter</code>:</p> <ul> <li> <p> <a
-   * href="https://docs.aws.amazon.com/API_StartCodeInterpreterSession.html">StartCodeInterpreterSession</a>
+   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartCodeInterpreterSession.html">StartCodeInterpreterSession</a>
    * </p> </li> <li> <p> <a
-   * href="https://docs.aws.amazon.com/API_GetCodeInterpreterSession.html">GetCodeInterpreterSession</a>
+   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetCodeInterpreterSession.html">GetCodeInterpreterSession</a>
    * </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/InvokeCodeInterpreter">AWS
    * API Reference</a></p>
@@ -703,9 +731,9 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
    * pagination to ensure that the operation returns quickly and successfully when
    * retrieving large numbers of sessions.</p> <p>The following operations are
    * related to <code>ListBrowserSessions</code>:</p> <ul> <li> <p> <a
-   * href="https://docs.aws.amazon.com/API_StartBrowserSession.html">StartBrowserSession</a>
+   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartBrowserSession.html">StartBrowserSession</a>
    * </p> </li> <li> <p> <a
-   * href="https://docs.aws.amazon.com/API_GetBrowserSession.html">GetBrowserSession</a>
+   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetBrowserSession.html">GetBrowserSession</a>
    * </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListBrowserSessions">AWS
    * API Reference</a></p>
@@ -740,9 +768,9 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
    * using pagination to ensure that the operation returns quickly and successfully
    * when retrieving large numbers of sessions.</p> <p>The following operations are
    * related to <code>ListCodeInterpreterSessions</code>:</p> <ul> <li> <p> <a
-   * href="https://docs.aws.amazon.com/API_StartCodeInterpreterSession.html">StartCodeInterpreterSession</a>
+   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartCodeInterpreterSession.html">StartCodeInterpreterSession</a>
    * </p> </li> <li> <p> <a
-   * href="https://docs.aws.amazon.com/API_GetCodeInterpreterSession.html">GetCodeInterpreterSession</a>
+   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetCodeInterpreterSession.html">GetCodeInterpreterSession</a>
    * </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListCodeInterpreterSessions">AWS
    * API Reference</a></p>
@@ -929,11 +957,11 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
    * you explicitly stop it using the <code>StopBrowserSession</code> operation.</p>
    * <p>The following operations are related to <code>StartBrowserSession</code>:</p>
    * <ul> <li> <p> <a
-   * href="https://docs.aws.amazon.com/API_GetBrowserSession.html">GetBrowserSession</a>
+   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetBrowserSession.html">GetBrowserSession</a>
    * </p> </li> <li> <p> <a
-   * href="https://docs.aws.amazon.com/API_UpdateBrowserStream.html">UpdateBrowserStream</a>
+   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_UpdateBrowserStream.html">UpdateBrowserStream</a>
    * </p> </li> <li> <p> <a
-   * href="https://docs.aws.amazon.com/API_StopBrowserSession.html">StopBrowserSession</a>
+   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StopBrowserSession.html">StopBrowserSession</a>
    * </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StartBrowserSession">AWS
    * API Reference</a></p>
@@ -969,11 +997,11 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
    * <code>StopCodeInterpreterSession</code> operation.</p> <p>The following
    * operations are related to <code>StartCodeInterpreterSession</code>:</p> <ul>
    * <li> <p> <a
-   * href="https://docs.aws.amazon.com/API_InvokeCodeInterpreter.html">InvokeCodeInterpreter</a>
+   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_InvokeCodeInterpreter.html">InvokeCodeInterpreter</a>
    * </p> </li> <li> <p> <a
-   * href="https://docs.aws.amazon.com/API_GetCodeInterpreterSession.html">GetCodeInterpreterSession</a>
+   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetCodeInterpreterSession.html">GetCodeInterpreterSession</a>
    * </p> </li> <li> <p> <a
-   * href="https://docs.aws.amazon.com/API_StopCodeInterpreterSession.html">StopCodeInterpreterSession</a>
+   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StopCodeInterpreterSession.html">StopCodeInterpreterSession</a>
    * </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StartCodeInterpreterSession">AWS
    * API Reference</a></p>
@@ -1042,9 +1070,9 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
    * restarted; you must create a new session using
    * <code>StartBrowserSession</code>.</p> <p>The following operations are related to
    * <code>StopBrowserSession</code>:</p> <ul> <li> <p> <a
-   * href="https://docs.aws.amazon.com/API_StartBrowserSession.html">StartBrowserSession</a>
+   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartBrowserSession.html">StartBrowserSession</a>
    * </p> </li> <li> <p> <a
-   * href="https://docs.aws.amazon.com/API_GetBrowserSession.html">GetBrowserSession</a>
+   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetBrowserSession.html">GetBrowserSession</a>
    * </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StopBrowserSession">AWS
    * API Reference</a></p>
@@ -1078,9 +1106,9 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
    * stopped, a session cannot be restarted; you must create a new session using
    * <code>StartCodeInterpreterSession</code>.</p> <p>The following operations are
    * related to <code>StopCodeInterpreterSession</code>:</p> <ul> <li> <p> <a
-   * href="https://docs.aws.amazon.com/API_StartCodeInterpreterSession.html">StartCodeInterpreterSession</a>
+   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartCodeInterpreterSession.html">StartCodeInterpreterSession</a>
    * </p> </li> <li> <p> <a
-   * href="https://docs.aws.amazon.com/API_GetCodeInterpreterSession.html">GetCodeInterpreterSession</a>
+   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetCodeInterpreterSession.html">GetCodeInterpreterSession</a>
    * </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StopCodeInterpreterSession">AWS
    * API Reference</a></p>

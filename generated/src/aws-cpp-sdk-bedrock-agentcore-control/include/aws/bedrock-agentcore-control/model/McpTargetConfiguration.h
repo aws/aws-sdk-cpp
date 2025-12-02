@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/ApiGatewayTargetConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ApiSchemaConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/McpLambdaTargetConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/McpServerTargetConfiguration.h>
@@ -110,6 +111,24 @@ class McpTargetConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration for an Amazon API Gateway target.</p>
+   */
+  inline const ApiGatewayTargetConfiguration& GetApiGateway() const { return m_apiGateway; }
+  inline bool ApiGatewayHasBeenSet() const { return m_apiGatewayHasBeenSet; }
+  template <typename ApiGatewayT = ApiGatewayTargetConfiguration>
+  void SetApiGateway(ApiGatewayT&& value) {
+    m_apiGatewayHasBeenSet = true;
+    m_apiGateway = std::forward<ApiGatewayT>(value);
+  }
+  template <typename ApiGatewayT = ApiGatewayTargetConfiguration>
+  McpTargetConfiguration& WithApiGateway(ApiGatewayT&& value) {
+    SetApiGateway(std::forward<ApiGatewayT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ApiSchemaConfiguration m_openApiSchema;
   bool m_openApiSchemaHasBeenSet = false;
@@ -122,6 +141,9 @@ class McpTargetConfiguration {
 
   McpServerTargetConfiguration m_mcpServer;
   bool m_mcpServerHasBeenSet = false;
+
+  ApiGatewayTargetConfiguration m_apiGateway;
+  bool m_apiGatewayHasBeenSet = false;
 };
 
 }  // namespace Model

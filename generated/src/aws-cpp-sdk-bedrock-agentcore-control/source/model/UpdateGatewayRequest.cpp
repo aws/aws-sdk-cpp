@@ -57,6 +57,10 @@ Aws::String UpdateGatewayRequest::SerializePayload() const {
     payload.WithArray("interceptorConfigurations", std::move(interceptorConfigurationsJsonList));
   }
 
+  if (m_policyEngineConfigurationHasBeenSet) {
+    payload.WithObject("policyEngineConfiguration", m_policyEngineConfiguration.Jsonize());
+  }
+
   if (m_exceptionLevelHasBeenSet) {
     payload.WithString("exceptionLevel", ExceptionLevelMapper::GetNameForExceptionLevel(m_exceptionLevel));
   }

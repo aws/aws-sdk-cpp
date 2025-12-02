@@ -23,7 +23,8 @@ enum class ObjectStorageClass {
   GLACIER_IR,
   SNOW,
   EXPRESS_ONEZONE,
-  FSX_OPENZFS
+  FSX_OPENZFS,
+  FSX_ONTAP
 };
 
 namespace ObjectStorageClassMapper {

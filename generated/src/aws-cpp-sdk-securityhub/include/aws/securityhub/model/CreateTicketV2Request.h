@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/SecurityHubRequest.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
+#include <aws/securityhub/model/TicketCreationMode.h>
 
 #include <utility>
 
@@ -82,6 +83,24 @@ class CreateTicketV2Request : public SecurityHubRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The mode for ticket creation. When set to DRYRUN, the ticket is created using
+   * a Security Hub owned template test finding to verify the integration is working
+   * correctly.</p>
+   */
+  inline TicketCreationMode GetMode() const { return m_mode; }
+  inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
+  inline void SetMode(TicketCreationMode value) {
+    m_modeHasBeenSet = true;
+    m_mode = value;
+  }
+  inline CreateTicketV2Request& WithMode(TicketCreationMode value) {
+    SetMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_connectorId;
   bool m_connectorIdHasBeenSet = false;
@@ -91,6 +110,9 @@ class CreateTicketV2Request : public SecurityHubRequest {
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_clientTokenHasBeenSet = true;
+
+  TicketCreationMode m_mode{TicketCreationMode::NOT_SET};
+  bool m_modeHasBeenSet = false;
 };
 
 }  // namespace Model

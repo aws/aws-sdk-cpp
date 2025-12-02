@@ -30,6 +30,13 @@ SearchCriteria& SearchCriteria::operator=(JsonView jsonValue) {
     m_topK = jsonValue.GetInteger("topK");
     m_topKHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("metadataFilters")) {
+    Aws::Utils::Array<JsonView> metadataFiltersJsonList = jsonValue.GetArray("metadataFilters");
+    for (unsigned metadataFiltersIndex = 0; metadataFiltersIndex < metadataFiltersJsonList.GetLength(); ++metadataFiltersIndex) {
+      m_metadataFilters.push_back(metadataFiltersJsonList[metadataFiltersIndex].AsObject());
+    }
+    m_metadataFiltersHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +53,14 @@ JsonValue SearchCriteria::Jsonize() const {
 
   if (m_topKHasBeenSet) {
     payload.WithInteger("topK", m_topK);
+  }
+
+  if (m_metadataFiltersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> metadataFiltersJsonList(m_metadataFilters.size());
+    for (unsigned metadataFiltersIndex = 0; metadataFiltersIndex < metadataFiltersJsonList.GetLength(); ++metadataFiltersIndex) {
+      metadataFiltersJsonList[metadataFiltersIndex].AsObject(m_metadataFilters[metadataFiltersIndex].Jsonize());
+    }
+    payload.WithArray("metadataFilters", std::move(metadataFiltersJsonList));
   }
 
   return payload;

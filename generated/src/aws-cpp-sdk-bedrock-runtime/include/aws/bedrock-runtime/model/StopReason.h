@@ -18,6 +18,8 @@ enum class StopReason {
   stop_sequence,
   guardrail_intervened,
   content_filtered,
+  malformed_model_output,
+  malformed_tool_use,
   model_context_window_exceeded
 };
 

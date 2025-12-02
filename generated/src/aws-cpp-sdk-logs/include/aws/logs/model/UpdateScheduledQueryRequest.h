@@ -36,7 +36,7 @@ class UpdateScheduledQueryRequest : public CloudWatchLogsRequest {
 
   ///@{
   /**
-   * <p>The name or ARN of the scheduled query to update.</p>
+   * <p>The ARN or name of the scheduled query to update.</p>
    */
   inline const Aws::String& GetIdentifier() const { return m_identifier; }
   inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
@@ -54,7 +54,7 @@ class UpdateScheduledQueryRequest : public CloudWatchLogsRequest {
 
   ///@{
   /**
-   * <p>Updated description for the scheduled query.</p>
+   * <p>An updated description for the scheduled query.</p>
    */
   inline const Aws::String& GetDescription() const { return m_description; }
   inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -72,7 +72,7 @@ class UpdateScheduledQueryRequest : public CloudWatchLogsRequest {
 
   ///@{
   /**
-   * <p>Updated query language to use (LogsQL, PPL, or SQL).</p>
+   * <p>The updated query language for the scheduled query.</p>
    */
   inline QueryLanguage GetQueryLanguage() const { return m_queryLanguage; }
   inline bool QueryLanguageHasBeenSet() const { return m_queryLanguageHasBeenSet; }
@@ -88,7 +88,7 @@ class UpdateScheduledQueryRequest : public CloudWatchLogsRequest {
 
   ///@{
   /**
-   * <p>Updated CloudWatch Logs Insights query string to execute.</p>
+   * <p>The updated query string to execute.</p>
    */
   inline const Aws::String& GetQueryString() const { return m_queryString; }
   inline bool QueryStringHasBeenSet() const { return m_queryStringHasBeenSet; }
@@ -106,7 +106,7 @@ class UpdateScheduledQueryRequest : public CloudWatchLogsRequest {
 
   ///@{
   /**
-   * <p>Updated log group identifiers to query.</p>
+   * <p>The updated array of log group names or ARNs to query.</p>
    */
   inline const Aws::Vector<Aws::String>& GetLogGroupIdentifiers() const { return m_logGroupIdentifiers; }
   inline bool LogGroupIdentifiersHasBeenSet() const { return m_logGroupIdentifiersHasBeenSet; }
@@ -130,7 +130,7 @@ class UpdateScheduledQueryRequest : public CloudWatchLogsRequest {
 
   ///@{
   /**
-   * <p>Updated cron expression that defines when the scheduled query runs.</p>
+   * <p>The updated cron expression that defines when the scheduled query runs.</p>
    */
   inline const Aws::String& GetScheduleExpression() const { return m_scheduleExpression; }
   inline bool ScheduleExpressionHasBeenSet() const { return m_scheduleExpressionHasBeenSet; }
@@ -148,7 +148,7 @@ class UpdateScheduledQueryRequest : public CloudWatchLogsRequest {
 
   ///@{
   /**
-   * <p>Updated timezone in which the schedule expression is evaluated.</p>
+   * <p>The updated timezone for evaluating the schedule expression.</p>
    */
   inline const Aws::String& GetTimezone() const { return m_timezone; }
   inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
@@ -166,8 +166,8 @@ class UpdateScheduledQueryRequest : public CloudWatchLogsRequest {
 
   ///@{
   /**
-   * <p>Updated time offset in seconds from the execution time for the start of the
-   * query time range.</p>
+   * <p>The updated time offset in seconds that defines the lookback period for the
+   * query.</p>
    */
   inline long long GetStartTimeOffset() const { return m_startTimeOffset; }
   inline bool StartTimeOffsetHasBeenSet() const { return m_startTimeOffsetHasBeenSet; }
@@ -183,8 +183,7 @@ class UpdateScheduledQueryRequest : public CloudWatchLogsRequest {
 
   ///@{
   /**
-   * <p>Updated configuration for destinations where the query results will be
-   * delivered.</p>
+   * <p>The updated configuration for where to deliver query results.</p>
    */
   inline const DestinationConfiguration& GetDestinationConfiguration() const { return m_destinationConfiguration; }
   inline bool DestinationConfigurationHasBeenSet() const { return m_destinationConfigurationHasBeenSet; }
@@ -202,7 +201,7 @@ class UpdateScheduledQueryRequest : public CloudWatchLogsRequest {
 
   ///@{
   /**
-   * <p>Updated start time for the query schedule in Unix epoch time.</p>
+   * <p>The updated start time for the scheduled query in Unix epoch format.</p>
    */
   inline long long GetScheduleStartTime() const { return m_scheduleStartTime; }
   inline bool ScheduleStartTimeHasBeenSet() const { return m_scheduleStartTimeHasBeenSet; }
@@ -218,7 +217,7 @@ class UpdateScheduledQueryRequest : public CloudWatchLogsRequest {
 
   ///@{
   /**
-   * <p>Updated end time for the query schedule in Unix epoch time.</p>
+   * <p>The updated end time for the scheduled query in Unix epoch format.</p>
    */
   inline long long GetScheduleEndTime() const { return m_scheduleEndTime; }
   inline bool ScheduleEndTimeHasBeenSet() const { return m_scheduleEndTimeHasBeenSet; }
@@ -234,8 +233,8 @@ class UpdateScheduledQueryRequest : public CloudWatchLogsRequest {
 
   ///@{
   /**
-   * <p>Updated ARN of the IAM role that CloudWatch Logs will assume to execute the
-   * scheduled query.</p>
+   * <p>The updated ARN of the IAM role that grants permissions to execute the query
+   * and deliver results.</p>
    */
   inline const Aws::String& GetExecutionRoleArn() const { return m_executionRoleArn; }
   inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
@@ -253,7 +252,7 @@ class UpdateScheduledQueryRequest : public CloudWatchLogsRequest {
 
   ///@{
   /**
-   * <p>Updated state of the scheduled query (ENABLED or DISABLED).</p>
+   * <p>The updated state of the scheduled query.</p>
    */
   inline ScheduledQueryState GetState() const { return m_state; }
   inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }

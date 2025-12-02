@@ -10,6 +10,7 @@
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/lambda/model/CapacityProviderConfig.h>
 #include <aws/lambda/model/DeadLetterConfig.h>
+#include <aws/lambda/model/DurableConfig.h>
 #include <aws/lambda/model/Environment.h>
 #include <aws/lambda/model/EphemeralStorage.h>
 #include <aws/lambda/model/FileSystemConfig.h>
@@ -483,6 +484,25 @@ class UpdateFunctionConfigurationRequest : public LambdaRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configuration settings for durable functions. Allows updating execution
+   * timeout and retention period for functions with durability enabled.</p>
+   */
+  inline const DurableConfig& GetDurableConfig() const { return m_durableConfig; }
+  inline bool DurableConfigHasBeenSet() const { return m_durableConfigHasBeenSet; }
+  template <typename DurableConfigT = DurableConfig>
+  void SetDurableConfig(DurableConfigT&& value) {
+    m_durableConfigHasBeenSet = true;
+    m_durableConfig = std::forward<DurableConfigT>(value);
+  }
+  template <typename DurableConfigT = DurableConfig>
+  UpdateFunctionConfigurationRequest& WithDurableConfig(DurableConfigT&& value) {
+    SetDurableConfig(std::forward<DurableConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_functionName;
   bool m_functionNameHasBeenSet = false;
@@ -543,6 +563,9 @@ class UpdateFunctionConfigurationRequest : public LambdaRequest {
 
   CapacityProviderConfig m_capacityProviderConfig;
   bool m_capacityProviderConfigHasBeenSet = false;
+
+  DurableConfig m_durableConfig;
+  bool m_durableConfigHasBeenSet = false;
 };
 
 }  // namespace Model

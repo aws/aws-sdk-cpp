@@ -580,6 +580,22 @@ DBInstance& DBInstance::operator=(const XmlNode& xmlNode) {
       m_engineLifecycleSupport = Aws::Utils::Xml::DecodeEscapedXmlText(engineLifecycleSupportNode.GetText());
       m_engineLifecycleSupportHasBeenSet = true;
     }
+    XmlNode additionalStorageVolumesNode = resultNode.FirstChild("AdditionalStorageVolumes");
+    if (!additionalStorageVolumesNode.IsNull()) {
+      XmlNode additionalStorageVolumesMember = additionalStorageVolumesNode.FirstChild("member");
+      m_additionalStorageVolumesHasBeenSet = !additionalStorageVolumesMember.IsNull();
+      while (!additionalStorageVolumesMember.IsNull()) {
+        m_additionalStorageVolumes.push_back(additionalStorageVolumesMember);
+        additionalStorageVolumesMember = additionalStorageVolumesMember.NextNode("member");
+      }
+
+      m_additionalStorageVolumesHasBeenSet = true;
+    }
+    XmlNode storageVolumeStatusNode = resultNode.FirstChild("StorageVolumeStatus");
+    if (!storageVolumeStatusNode.IsNull()) {
+      m_storageVolumeStatus = Aws::Utils::Xml::DecodeEscapedXmlText(storageVolumeStatusNode.GetText());
+      m_storageVolumeStatusHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -1048,6 +1064,21 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
     oStream << location << index << locationValue << ".EngineLifecycleSupport=" << StringUtils::URLEncode(m_engineLifecycleSupport.c_str())
             << "&";
   }
+
+  if (m_additionalStorageVolumesHasBeenSet) {
+    unsigned additionalStorageVolumesIdx = 1;
+    for (auto& item : m_additionalStorageVolumes) {
+      Aws::StringStream additionalStorageVolumesSs;
+      additionalStorageVolumesSs << location << index << locationValue << ".AdditionalStorageVolumes.member."
+                                 << additionalStorageVolumesIdx++;
+      item.OutputToStream(oStream, additionalStorageVolumesSs.str().c_str());
+    }
+  }
+
+  if (m_storageVolumeStatusHasBeenSet) {
+    oStream << location << index << locationValue << ".StorageVolumeStatus=" << StringUtils::URLEncode(m_storageVolumeStatus.c_str())
+            << "&";
+  }
 }
 
 void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -1405,6 +1436,17 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if (m_engineLifecycleSupportHasBeenSet) {
     oStream << location << ".EngineLifecycleSupport=" << StringUtils::URLEncode(m_engineLifecycleSupport.c_str()) << "&";
+  }
+  if (m_additionalStorageVolumesHasBeenSet) {
+    unsigned additionalStorageVolumesIdx = 1;
+    for (auto& item : m_additionalStorageVolumes) {
+      Aws::StringStream additionalStorageVolumesSs;
+      additionalStorageVolumesSs << location << ".AdditionalStorageVolumes.member." << additionalStorageVolumesIdx++;
+      item.OutputToStream(oStream, additionalStorageVolumesSs.str().c_str());
+    }
+  }
+  if (m_storageVolumeStatusHasBeenSet) {
+    oStream << location << ".StorageVolumeStatus=" << StringUtils::URLEncode(m_storageVolumeStatus.c_str()) << "&";
   }
 }
 

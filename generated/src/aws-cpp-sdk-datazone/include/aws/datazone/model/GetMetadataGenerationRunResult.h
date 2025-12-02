@@ -6,10 +6,12 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/datazone/model/MetadataGenerationRunStatus.h>
 #include <aws/datazone/model/MetadataGenerationRunTarget.h>
 #include <aws/datazone/model/MetadataGenerationRunType.h>
+#include <aws/datazone/model/MetadataGenerationRunTypeStat.h>
 
 #include <utility>
 
@@ -151,15 +153,45 @@ class GetMetadataGenerationRunResult {
 
   ///@{
   /**
-   * <p>The type of metadata generation run.</p>
+   * <p>The type stats included in the metadata generation run output details.</p>
    */
-  inline MetadataGenerationRunType GetType() const { return m_type; }
-  inline void SetType(MetadataGenerationRunType value) {
-    m_typeHasBeenSet = true;
-    m_type = value;
+  inline const Aws::Vector<MetadataGenerationRunTypeStat>& GetTypeStats() const { return m_typeStats; }
+  template <typename TypeStatsT = Aws::Vector<MetadataGenerationRunTypeStat>>
+  void SetTypeStats(TypeStatsT&& value) {
+    m_typeStatsHasBeenSet = true;
+    m_typeStats = std::forward<TypeStatsT>(value);
   }
-  inline GetMetadataGenerationRunResult& WithType(MetadataGenerationRunType value) {
-    SetType(value);
+  template <typename TypeStatsT = Aws::Vector<MetadataGenerationRunTypeStat>>
+  GetMetadataGenerationRunResult& WithTypeStats(TypeStatsT&& value) {
+    SetTypeStats(std::forward<TypeStatsT>(value));
+    return *this;
+  }
+  template <typename TypeStatsT = MetadataGenerationRunTypeStat>
+  GetMetadataGenerationRunResult& AddTypeStats(TypeStatsT&& value) {
+    m_typeStatsHasBeenSet = true;
+    m_typeStats.emplace_back(std::forward<TypeStatsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The types of the metadata generation run.</p>
+   */
+  inline const Aws::Vector<MetadataGenerationRunType>& GetTypes() const { return m_types; }
+  template <typename TypesT = Aws::Vector<MetadataGenerationRunType>>
+  void SetTypes(TypesT&& value) {
+    m_typesHasBeenSet = true;
+    m_types = std::forward<TypesT>(value);
+  }
+  template <typename TypesT = Aws::Vector<MetadataGenerationRunType>>
+  GetMetadataGenerationRunResult& WithTypes(TypesT&& value) {
+    SetTypes(std::forward<TypesT>(value));
+    return *this;
+  }
+  inline GetMetadataGenerationRunResult& AddTypes(MetadataGenerationRunType value) {
+    m_typesHasBeenSet = true;
+    m_types.push_back(value);
     return *this;
   }
   ///@}
@@ -200,8 +232,11 @@ class GetMetadataGenerationRunResult {
   MetadataGenerationRunTarget m_target;
   bool m_targetHasBeenSet = false;
 
-  MetadataGenerationRunType m_type{MetadataGenerationRunType::NOT_SET};
-  bool m_typeHasBeenSet = false;
+  Aws::Vector<MetadataGenerationRunTypeStat> m_typeStats;
+  bool m_typeStatsHasBeenSet = false;
+
+  Aws::Vector<MetadataGenerationRunType> m_types;
+  bool m_typesHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

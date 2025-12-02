@@ -83,7 +83,8 @@ class TelemetryConfiguration {
   ///@{
   /**
    * <p> The type of resource, for example <code>Amazon Web
-   * Services::EC2::Instance</code>. </p>
+   * Services::EC2::Instance</code>, or <code>Amazon Web
+   * Services::EKS::Cluster</code>, etc. </p>
    */
   inline ResourceType GetResourceType() const { return m_resourceType; }
   inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
@@ -99,8 +100,8 @@ class TelemetryConfiguration {
 
   ///@{
   /**
-   * <p> The identifier of the resource, for example
-   * <code>i-0b22a22eec53b9321</code>. </p>
+   * <p> The identifier of the resource, for example for Amazon VPC, it would be
+   * <code>vpc-1a2b3c4d5e6f1a2b3</code>. </p>
    */
   inline const Aws::String& GetResourceIdentifier() const { return m_resourceIdentifier; }
   inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }

@@ -9,6 +9,7 @@
 #include <aws/bedrock-agentcore-control/model/AuthorizerType.h>
 #include <aws/bedrock-agentcore-control/model/ExceptionLevel.h>
 #include <aws/bedrock-agentcore-control/model/GatewayInterceptorConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/GatewayPolicyEngineConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/GatewayProtocolConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/GatewayProtocolType.h>
 #include <aws/bedrock-agentcore-control/model/GatewayStatus.h>
@@ -314,6 +315,23 @@ class UpdateGatewayResult {
 
   ///@{
   /**
+   * <p>The updated policy engine configuration for the gateway.</p>
+   */
+  inline const GatewayPolicyEngineConfiguration& GetPolicyEngineConfiguration() const { return m_policyEngineConfiguration; }
+  template <typename PolicyEngineConfigurationT = GatewayPolicyEngineConfiguration>
+  void SetPolicyEngineConfiguration(PolicyEngineConfigurationT&& value) {
+    m_policyEngineConfigurationHasBeenSet = true;
+    m_policyEngineConfiguration = std::forward<PolicyEngineConfigurationT>(value);
+  }
+  template <typename PolicyEngineConfigurationT = GatewayPolicyEngineConfiguration>
+  UpdateGatewayResult& WithPolicyEngineConfiguration(PolicyEngineConfigurationT&& value) {
+    SetPolicyEngineConfiguration(std::forward<PolicyEngineConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The workload identity details for the updated gateway.</p>
    */
   inline const WorkloadIdentityDetails& GetWorkloadIdentityDetails() const { return m_workloadIdentityDetails; }
@@ -409,6 +427,9 @@ class UpdateGatewayResult {
 
   Aws::Vector<GatewayInterceptorConfiguration> m_interceptorConfigurations;
   bool m_interceptorConfigurationsHasBeenSet = false;
+
+  GatewayPolicyEngineConfiguration m_policyEngineConfiguration;
+  bool m_policyEngineConfigurationHasBeenSet = false;
 
   WorkloadIdentityDetails m_workloadIdentityDetails;
   bool m_workloadIdentityDetailsHasBeenSet = false;

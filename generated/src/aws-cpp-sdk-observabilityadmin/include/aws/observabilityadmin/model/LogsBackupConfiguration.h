@@ -53,7 +53,7 @@ class LogsBackupConfiguration {
 
   ///@{
   /**
-   * <p>KMS Key arn belonging to the primary destination account and backup region,
+   * <p>KMS Key ARN belonging to the primary destination account and backup region,
    * to encrypt newly created central log groups in the backup destination.</p>
    */
   inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }

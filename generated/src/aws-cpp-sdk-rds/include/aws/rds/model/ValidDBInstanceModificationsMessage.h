@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/model/AvailableProcessorFeature.h>
+#include <aws/rds/model/ValidAdditionalStorageOptions.h>
 #include <aws/rds/model/ValidStorageOptions.h>
 
 #include <utility>
@@ -103,6 +104,24 @@ class ValidDBInstanceModificationsMessage {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The valid additional storage options for the DB instance.</p>
+   */
+  inline const ValidAdditionalStorageOptions& GetAdditionalStorage() const { return m_additionalStorage; }
+  inline bool AdditionalStorageHasBeenSet() const { return m_additionalStorageHasBeenSet; }
+  template <typename AdditionalStorageT = ValidAdditionalStorageOptions>
+  void SetAdditionalStorage(AdditionalStorageT&& value) {
+    m_additionalStorageHasBeenSet = true;
+    m_additionalStorage = std::forward<AdditionalStorageT>(value);
+  }
+  template <typename AdditionalStorageT = ValidAdditionalStorageOptions>
+  ValidDBInstanceModificationsMessage& WithAdditionalStorage(AdditionalStorageT&& value) {
+    SetAdditionalStorage(std::forward<AdditionalStorageT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<ValidStorageOptions> m_storage;
   bool m_storageHasBeenSet = false;
@@ -112,6 +131,9 @@ class ValidDBInstanceModificationsMessage {
 
   bool m_supportsDedicatedLogVolume{false};
   bool m_supportsDedicatedLogVolumeHasBeenSet = false;
+
+  ValidAdditionalStorageOptions m_additionalStorage;
+  bool m_additionalStorageHasBeenSet = false;
 };
 
 }  // namespace Model

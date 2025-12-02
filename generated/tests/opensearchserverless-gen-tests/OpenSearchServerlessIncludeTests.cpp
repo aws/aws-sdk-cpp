@@ -117,6 +117,7 @@
 #include <aws/opensearchserverless/model/SecurityPolicyStats.h>
 #include <aws/opensearchserverless/model/SecurityPolicySummary.h>
 #include <aws/opensearchserverless/model/SecurityPolicyType.h>
+#include <aws/opensearchserverless/model/ServerlessVectorAccelerationStatus.h>
 #include <aws/opensearchserverless/model/ServiceQuotaExceededException.h>
 #include <aws/opensearchserverless/model/StandbyReplicas.h>
 #include <aws/opensearchserverless/model/Tag.h>
@@ -143,6 +144,7 @@
 #include <aws/opensearchserverless/model/UpdateVpcEndpointDetail.h>
 #include <aws/opensearchserverless/model/UpdateVpcEndpointRequest.h>
 #include <aws/opensearchserverless/model/UpdateVpcEndpointResult.h>
+#include <aws/opensearchserverless/model/VectorOptions.h>
 #include <aws/opensearchserverless/model/VpcEndpointDetail.h>
 #include <aws/opensearchserverless/model/VpcEndpointErrorDetail.h>
 #include <aws/opensearchserverless/model/VpcEndpointFilters.h>

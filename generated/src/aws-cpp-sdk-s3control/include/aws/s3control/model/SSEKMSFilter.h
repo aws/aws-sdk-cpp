@@ -36,14 +36,7 @@ class SSEKMSFilter {
   /**
    * <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for the
    * filter to return objects that are encrypted by the specified key. For best
-   * performance, we recommend using the <code>KMSKeyArn</code> filter in conjunction
-   * with other object metadata filters, like <code>MatchAnyPrefix</code>,
-   * <code>CreatedAfter</code>, or <code>MatchAnyStorageClass</code>.</p>
-   * <p>You must provide the full KMS Key ARN. You can't use an alias name or alias
-   * ARN. For more information, see <a
-   * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">
-   * KMS keys</a> in the <i>Amazon Web Services Key Management Service Developer
-   * Guide</i>.</p>
+   * performance, use keys in the same Region as the S3 Batch Operations job.</p>
    */
   inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
   inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
@@ -64,10 +57,7 @@ class SSEKMSFilter {
    * <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption
    * with server-side encryption using Amazon Web Services Key Management Service
    * (Amazon Web Services KMS) keys (SSE-KMS). If specified, will filter SSE-KMS
-   * encrypted objects by S3 Bucket Key status. For more information, see <a
-   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">Reducing
-   * the cost of SSE-KMS with Amazon S3 Bucket Keys</a> in the <i>Amazon S3 User
-   * Guide</i>.</p>
+   * encrypted objects by S3 Bucket Key status.</p>
    */
   inline bool GetBucketKeyEnabled() const { return m_bucketKeyEnabled; }
   inline bool BucketKeyEnabledHasBeenSet() const { return m_bucketKeyEnabledHasBeenSet; }

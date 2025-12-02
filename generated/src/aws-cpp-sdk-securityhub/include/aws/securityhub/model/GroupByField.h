@@ -20,6 +20,7 @@ enum class GroupByField {
   compliance_status,
   compliance_control,
   finding_info_title,
+  finding_info_related_events_traits_category,
   finding_info_types,
   metadata_product_name,
   metadata_product_uid,
@@ -32,7 +33,8 @@ enum class GroupByField {
   vulnerabilities_affected_packages_name,
   finding_info_analytic_name,
   compliance_standards,
-  cloud_account_name
+  cloud_account_name,
+  vendor_attributes_severity
 };
 
 namespace GroupByFieldMapper {

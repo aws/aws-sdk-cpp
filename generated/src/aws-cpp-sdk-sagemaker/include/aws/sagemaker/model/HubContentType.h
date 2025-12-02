@@ -10,7 +10,7 @@
 namespace Aws {
 namespace SageMaker {
 namespace Model {
-enum class HubContentType { NOT_SET, Model, Notebook, ModelReference };
+enum class HubContentType { NOT_SET, Model, Notebook, ModelReference, DataSet, JsonDoc };
 
 namespace HubContentTypeMapper {
 AWS_SAGEMAKER_API HubContentType GetHubContentTypeForName(const Aws::String& name);

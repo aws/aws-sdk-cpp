@@ -23,6 +23,7 @@
 #include <aws/s3control/model/ActivityMetrics.h>
 #include <aws/s3control/model/AdvancedCostOptimizationMetrics.h>
 #include <aws/s3control/model/AdvancedDataProtectionMetrics.h>
+#include <aws/s3control/model/AdvancedPerformanceMetrics.h>
 #include <aws/s3control/model/AssociateAccessGrantsIdentityCenterRequest.h>
 #include <aws/s3control/model/AsyncErrorDetails.h>
 #include <aws/s3control/model/AsyncOperation.h>
@@ -339,12 +340,14 @@
 #include <aws/s3control/model/StorageLensConfiguration.h>
 #include <aws/s3control/model/StorageLensDataExport.h>
 #include <aws/s3control/model/StorageLensDataExportEncryption.h>
+#include <aws/s3control/model/StorageLensExpandedPrefixesDataExport.h>
 #include <aws/s3control/model/StorageLensGroup.h>
 #include <aws/s3control/model/StorageLensGroupAndOperator.h>
 #include <aws/s3control/model/StorageLensGroupFilter.h>
 #include <aws/s3control/model/StorageLensGroupLevel.h>
 #include <aws/s3control/model/StorageLensGroupLevelSelectionCriteria.h>
 #include <aws/s3control/model/StorageLensGroupOrOperator.h>
+#include <aws/s3control/model/StorageLensTableDestination.h>
 #include <aws/s3control/model/StorageLensTag.h>
 #include <aws/s3control/model/SubmitMultiRegionAccessPointRoutesRequest.h>
 #include <aws/s3control/model/SubmitMultiRegionAccessPointRoutesResult.h>

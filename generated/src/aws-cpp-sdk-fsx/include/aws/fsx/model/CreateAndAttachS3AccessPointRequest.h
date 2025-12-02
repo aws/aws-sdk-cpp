@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fsx/FSxRequest.h>
 #include <aws/fsx/FSx_EXPORTS.h>
+#include <aws/fsx/model/CreateAndAttachS3AccessPointOntapConfiguration.h>
 #include <aws/fsx/model/CreateAndAttachS3AccessPointOpenZFSConfiguration.h>
 #include <aws/fsx/model/CreateAndAttachS3AccessPointS3Configuration.h>
 #include <aws/fsx/model/S3AccessPointAttachmentType.h>
@@ -105,6 +106,22 @@ class CreateAndAttachS3AccessPointRequest : public FSxRequest {
   ///@}
 
   ///@{
+
+  inline const CreateAndAttachS3AccessPointOntapConfiguration& GetOntapConfiguration() const { return m_ontapConfiguration; }
+  inline bool OntapConfigurationHasBeenSet() const { return m_ontapConfigurationHasBeenSet; }
+  template <typename OntapConfigurationT = CreateAndAttachS3AccessPointOntapConfiguration>
+  void SetOntapConfiguration(OntapConfigurationT&& value) {
+    m_ontapConfigurationHasBeenSet = true;
+    m_ontapConfiguration = std::forward<OntapConfigurationT>(value);
+  }
+  template <typename OntapConfigurationT = CreateAndAttachS3AccessPointOntapConfiguration>
+  CreateAndAttachS3AccessPointRequest& WithOntapConfiguration(OntapConfigurationT&& value) {
+    SetOntapConfiguration(std::forward<OntapConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
   /**
    * <p>Specifies the virtual private cloud (VPC) configuration if you're creating an
    * access point that is restricted to a VPC. For more information, see <a
@@ -136,6 +153,9 @@ class CreateAndAttachS3AccessPointRequest : public FSxRequest {
 
   CreateAndAttachS3AccessPointOpenZFSConfiguration m_openZFSConfiguration;
   bool m_openZFSConfigurationHasBeenSet = false;
+
+  CreateAndAttachS3AccessPointOntapConfiguration m_ontapConfiguration;
+  bool m_ontapConfigurationHasBeenSet = false;
 
   CreateAndAttachS3AccessPointS3Configuration m_s3AccessPoint;
   bool m_s3AccessPointHasBeenSet = false;

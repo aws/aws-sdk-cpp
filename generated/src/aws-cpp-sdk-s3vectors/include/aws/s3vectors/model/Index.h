@@ -9,6 +9,7 @@
 #include <aws/s3vectors/S3Vectors_EXPORTS.h>
 #include <aws/s3vectors/model/DataType.h>
 #include <aws/s3vectors/model/DistanceMetric.h>
+#include <aws/s3vectors/model/EncryptionConfiguration.h>
 #include <aws/s3vectors/model/MetadataConfiguration.h>
 
 #include <utility>
@@ -24,9 +25,7 @@ namespace S3Vectors {
 namespace Model {
 
 /**
- * <p> <p>Amazon S3 Vectors is in preview release for Amazon S3 and is
- * subject to change.</p>  <p>The attributes of a vector
- * index.</p></p><p><h3>See Also:</h3>   <a
+ * <p>The attributes of a vector index.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/Index">AWS API
  * Reference</a></p>
  */
@@ -175,6 +174,26 @@ class Index {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The encryption configuration for a vector index. By default, if you don't
+   * specify, all new vectors in the vector index will use the encryption
+   * configuration of the vector bucket.</p>
+   */
+  inline const EncryptionConfiguration& GetEncryptionConfiguration() const { return m_encryptionConfiguration; }
+  inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
+  template <typename EncryptionConfigurationT = EncryptionConfiguration>
+  void SetEncryptionConfiguration(EncryptionConfigurationT&& value) {
+    m_encryptionConfigurationHasBeenSet = true;
+    m_encryptionConfiguration = std::forward<EncryptionConfigurationT>(value);
+  }
+  template <typename EncryptionConfigurationT = EncryptionConfiguration>
+  Index& WithEncryptionConfiguration(EncryptionConfigurationT&& value) {
+    SetEncryptionConfiguration(std::forward<EncryptionConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_vectorBucketName;
   bool m_vectorBucketNameHasBeenSet = false;
@@ -199,6 +218,9 @@ class Index {
 
   MetadataConfiguration m_metadataConfiguration;
   bool m_metadataConfigurationHasBeenSet = false;
+
+  EncryptionConfiguration m_encryptionConfiguration;
+  bool m_encryptionConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

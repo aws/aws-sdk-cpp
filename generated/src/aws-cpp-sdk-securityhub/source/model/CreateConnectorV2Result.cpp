@@ -33,6 +33,10 @@ CreateConnectorV2Result& CreateConnectorV2Result::operator=(const Aws::AmazonWeb
     m_authUrl = jsonValue.GetString("AuthUrl");
     m_authUrlHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ConnectorStatus")) {
+    m_connectorStatus = ConnectorStatusMapper::GetConnectorStatusForName(jsonValue.GetString("ConnectorStatus"));
+    m_connectorStatusHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

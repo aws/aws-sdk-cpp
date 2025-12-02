@@ -7,10 +7,14 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datazone/DataZoneRequest.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
+#include <aws/datazone/model/MetadataGenerationRunType.h>
 
 #include <utility>
 
 namespace Aws {
+namespace Http {
+class URI;
+}  // namespace Http
 namespace DataZone {
 namespace Model {
 
@@ -27,6 +31,8 @@ class GetMetadataGenerationRunRequest : public DataZoneRequest {
   inline virtual const char* GetServiceRequestName() const override { return "GetMetadataGenerationRun"; }
 
   AWS_DATAZONE_API Aws::String SerializePayload() const override;
+
+  AWS_DATAZONE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
   ///@{
   /**
@@ -64,12 +70,31 @@ class GetMetadataGenerationRunRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of the metadata generation run.</p>
+   */
+  inline MetadataGenerationRunType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(MetadataGenerationRunType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline GetMetadataGenerationRunRequest& WithType(MetadataGenerationRunType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainIdentifier;
   bool m_domainIdentifierHasBeenSet = false;
 
   Aws::String m_identifier;
   bool m_identifierHasBeenSet = false;
+
+  MetadataGenerationRunType m_type{MetadataGenerationRunType::NOT_SET};
+  bool m_typeHasBeenSet = false;
 };
 
 }  // namespace Model

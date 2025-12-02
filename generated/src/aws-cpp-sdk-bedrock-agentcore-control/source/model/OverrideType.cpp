@@ -19,6 +19,7 @@ static const int SEMANTIC_OVERRIDE_HASH = HashingUtils::HashString("SEMANTIC_OVE
 static const int SUMMARY_OVERRIDE_HASH = HashingUtils::HashString("SUMMARY_OVERRIDE");
 static const int USER_PREFERENCE_OVERRIDE_HASH = HashingUtils::HashString("USER_PREFERENCE_OVERRIDE");
 static const int SELF_MANAGED_HASH = HashingUtils::HashString("SELF_MANAGED");
+static const int EPISODIC_OVERRIDE_HASH = HashingUtils::HashString("EPISODIC_OVERRIDE");
 
 OverrideType GetOverrideTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ OverrideType GetOverrideTypeForName(const Aws::String& name) {
     return OverrideType::USER_PREFERENCE_OVERRIDE;
   } else if (hashCode == SELF_MANAGED_HASH) {
     return OverrideType::SELF_MANAGED;
+  } else if (hashCode == EPISODIC_OVERRIDE_HASH) {
+    return OverrideType::EPISODIC_OVERRIDE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForOverrideType(OverrideType enumValue) {
       return "USER_PREFERENCE_OVERRIDE";
     case OverrideType::SELF_MANAGED:
       return "SELF_MANAGED";
+    case OverrideType::EPISODIC_OVERRIDE:
+      return "EPISODIC_OVERRIDE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

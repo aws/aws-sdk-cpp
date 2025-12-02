@@ -9,6 +9,7 @@
 #include <aws/s3tables/S3TablesRequest.h>
 #include <aws/s3tables/S3Tables_EXPORTS.h>
 #include <aws/s3tables/model/EncryptionConfiguration.h>
+#include <aws/s3tables/model/StorageClassConfiguration.h>
 
 #include <utility>
 
@@ -71,6 +72,27 @@ class CreateTableBucketRequest : public S3TablesRequest {
 
   ///@{
   /**
+   * <p>The default storage class configuration for the table bucket. This
+   * configuration will be applied to all new tables created in this bucket unless
+   * overridden at the table level. If not specified, the service default storage
+   * class will be used.</p>
+   */
+  inline const StorageClassConfiguration& GetStorageClassConfiguration() const { return m_storageClassConfiguration; }
+  inline bool StorageClassConfigurationHasBeenSet() const { return m_storageClassConfigurationHasBeenSet; }
+  template <typename StorageClassConfigurationT = StorageClassConfiguration>
+  void SetStorageClassConfiguration(StorageClassConfigurationT&& value) {
+    m_storageClassConfigurationHasBeenSet = true;
+    m_storageClassConfiguration = std::forward<StorageClassConfigurationT>(value);
+  }
+  template <typename StorageClassConfigurationT = StorageClassConfiguration>
+  CreateTableBucketRequest& WithStorageClassConfiguration(StorageClassConfigurationT&& value) {
+    SetStorageClassConfiguration(std::forward<StorageClassConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A map of user-defined tags that you would like to apply to the table bucket
    * that you are creating. A tag is a key-value pair that you apply to your
    * resources. Tags can help you organize and control access to resources. For more
@@ -106,6 +128,9 @@ class CreateTableBucketRequest : public S3TablesRequest {
 
   EncryptionConfiguration m_encryptionConfiguration;
   bool m_encryptionConfigurationHasBeenSet = false;
+
+  StorageClassConfiguration m_storageClassConfiguration;
+  bool m_storageClassConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_tagsHasBeenSet = false;

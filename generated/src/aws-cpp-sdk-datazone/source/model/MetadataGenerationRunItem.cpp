@@ -46,9 +46,12 @@ MetadataGenerationRunItem& MetadataGenerationRunItem::operator=(JsonView jsonVal
     m_target = jsonValue.GetObject("target");
     m_targetHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("type")) {
-    m_type = MetadataGenerationRunTypeMapper::GetMetadataGenerationRunTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
+  if (jsonValue.ValueExists("types")) {
+    Aws::Utils::Array<JsonView> typesJsonList = jsonValue.GetArray("types");
+    for (unsigned typesIndex = 0; typesIndex < typesJsonList.GetLength(); ++typesIndex) {
+      m_types.push_back(MetadataGenerationRunTypeMapper::GetMetadataGenerationRunTypeForName(typesJsonList[typesIndex].AsString()));
+    }
+    m_typesHasBeenSet = true;
   }
   return *this;
 }
@@ -84,8 +87,12 @@ JsonValue MetadataGenerationRunItem::Jsonize() const {
     payload.WithObject("target", m_target.Jsonize());
   }
 
-  if (m_typeHasBeenSet) {
-    payload.WithString("type", MetadataGenerationRunTypeMapper::GetNameForMetadataGenerationRunType(m_type));
+  if (m_typesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> typesJsonList(m_types.size());
+    for (unsigned typesIndex = 0; typesIndex < typesJsonList.GetLength(); ++typesIndex) {
+      typesJsonList[typesIndex].AsString(MetadataGenerationRunTypeMapper::GetNameForMetadataGenerationRunType(m_types[typesIndex]));
+    }
+    payload.WithArray("types", std::move(typesJsonList));
   }
 
   return payload;

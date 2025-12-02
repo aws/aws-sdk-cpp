@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/model/AvailabilityZone.h>
+#include <aws/rds/model/AvailableAdditionalStorageVolumesOption.h>
 #include <aws/rds/model/AvailableProcessorFeature.h>
 
 #include <utility>
@@ -704,6 +705,50 @@ class OrderableDBInstanceOption {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether the DB instance class supports additional storage
+   * volumes.</p>
+   */
+  inline bool GetSupportsAdditionalStorageVolumes() const { return m_supportsAdditionalStorageVolumes; }
+  inline bool SupportsAdditionalStorageVolumesHasBeenSet() const { return m_supportsAdditionalStorageVolumesHasBeenSet; }
+  inline void SetSupportsAdditionalStorageVolumes(bool value) {
+    m_supportsAdditionalStorageVolumesHasBeenSet = true;
+    m_supportsAdditionalStorageVolumes = value;
+  }
+  inline OrderableDBInstanceOption& WithSupportsAdditionalStorageVolumes(bool value) {
+    SetSupportsAdditionalStorageVolumes(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The available options for additional storage volumes for the DB instance
+   * class.</p>
+   */
+  inline const Aws::Vector<AvailableAdditionalStorageVolumesOption>& GetAvailableAdditionalStorageVolumesOptions() const {
+    return m_availableAdditionalStorageVolumesOptions;
+  }
+  inline bool AvailableAdditionalStorageVolumesOptionsHasBeenSet() const { return m_availableAdditionalStorageVolumesOptionsHasBeenSet; }
+  template <typename AvailableAdditionalStorageVolumesOptionsT = Aws::Vector<AvailableAdditionalStorageVolumesOption>>
+  void SetAvailableAdditionalStorageVolumesOptions(AvailableAdditionalStorageVolumesOptionsT&& value) {
+    m_availableAdditionalStorageVolumesOptionsHasBeenSet = true;
+    m_availableAdditionalStorageVolumesOptions = std::forward<AvailableAdditionalStorageVolumesOptionsT>(value);
+  }
+  template <typename AvailableAdditionalStorageVolumesOptionsT = Aws::Vector<AvailableAdditionalStorageVolumesOption>>
+  OrderableDBInstanceOption& WithAvailableAdditionalStorageVolumesOptions(AvailableAdditionalStorageVolumesOptionsT&& value) {
+    SetAvailableAdditionalStorageVolumesOptions(std::forward<AvailableAdditionalStorageVolumesOptionsT>(value));
+    return *this;
+  }
+  template <typename AvailableAdditionalStorageVolumesOptionsT = AvailableAdditionalStorageVolumesOption>
+  OrderableDBInstanceOption& AddAvailableAdditionalStorageVolumesOptions(AvailableAdditionalStorageVolumesOptionsT&& value) {
+    m_availableAdditionalStorageVolumesOptionsHasBeenSet = true;
+    m_availableAdditionalStorageVolumesOptions.emplace_back(std::forward<AvailableAdditionalStorageVolumesOptionsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_engine;
   bool m_engineHasBeenSet = false;
@@ -815,6 +860,12 @@ class OrderableDBInstanceOption {
 
   bool m_supportsHttpEndpoint{false};
   bool m_supportsHttpEndpointHasBeenSet = false;
+
+  bool m_supportsAdditionalStorageVolumes{false};
+  bool m_supportsAdditionalStorageVolumesHasBeenSet = false;
+
+  Aws::Vector<AvailableAdditionalStorageVolumesOption> m_availableAdditionalStorageVolumesOptions;
+  bool m_availableAdditionalStorageVolumesOptionsHasBeenSet = false;
 };
 
 }  // namespace Model

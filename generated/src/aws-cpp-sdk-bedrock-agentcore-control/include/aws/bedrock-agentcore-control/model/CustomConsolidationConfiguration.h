@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/EpisodicConsolidationOverride.h>
 #include <aws/bedrock-agentcore-control/model/SemanticConsolidationOverride.h>
 #include <aws/bedrock-agentcore-control/model/SummaryConsolidationOverride.h>
 #include <aws/bedrock-agentcore-control/model/UserPreferenceConsolidationOverride.h>
@@ -89,6 +90,25 @@ class CustomConsolidationConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configurations to override the default consolidation step for the
+   * episodic memory strategy.</p>
+   */
+  inline const EpisodicConsolidationOverride& GetEpisodicConsolidationOverride() const { return m_episodicConsolidationOverride; }
+  inline bool EpisodicConsolidationOverrideHasBeenSet() const { return m_episodicConsolidationOverrideHasBeenSet; }
+  template <typename EpisodicConsolidationOverrideT = EpisodicConsolidationOverride>
+  void SetEpisodicConsolidationOverride(EpisodicConsolidationOverrideT&& value) {
+    m_episodicConsolidationOverrideHasBeenSet = true;
+    m_episodicConsolidationOverride = std::forward<EpisodicConsolidationOverrideT>(value);
+  }
+  template <typename EpisodicConsolidationOverrideT = EpisodicConsolidationOverride>
+  CustomConsolidationConfiguration& WithEpisodicConsolidationOverride(EpisodicConsolidationOverrideT&& value) {
+    SetEpisodicConsolidationOverride(std::forward<EpisodicConsolidationOverrideT>(value));
+    return *this;
+  }
+  ///@}
  private:
   SemanticConsolidationOverride m_semanticConsolidationOverride;
   bool m_semanticConsolidationOverrideHasBeenSet = false;
@@ -98,6 +118,9 @@ class CustomConsolidationConfiguration {
 
   UserPreferenceConsolidationOverride m_userPreferenceConsolidationOverride;
   bool m_userPreferenceConsolidationOverrideHasBeenSet = false;
+
+  EpisodicConsolidationOverride m_episodicConsolidationOverride;
+  bool m_episodicConsolidationOverrideHasBeenSet = false;
 };
 
 }  // namespace Model

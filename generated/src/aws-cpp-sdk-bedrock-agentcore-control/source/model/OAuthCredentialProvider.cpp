@@ -36,6 +36,14 @@ OAuthCredentialProvider& OAuthCredentialProvider::operator=(JsonView jsonValue) 
     }
     m_customParametersHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("grantType")) {
+    m_grantType = OAuthGrantTypeMapper::GetOAuthGrantTypeForName(jsonValue.GetString("grantType"));
+    m_grantTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("defaultReturnUrl")) {
+    m_defaultReturnUrl = jsonValue.GetString("defaultReturnUrl");
+    m_defaultReturnUrlHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -60,6 +68,14 @@ JsonValue OAuthCredentialProvider::Jsonize() const {
       customParametersJsonMap.WithString(customParametersItem.first, customParametersItem.second);
     }
     payload.WithObject("customParameters", std::move(customParametersJsonMap));
+  }
+
+  if (m_grantTypeHasBeenSet) {
+    payload.WithString("grantType", OAuthGrantTypeMapper::GetNameForOAuthGrantType(m_grantType));
+  }
+
+  if (m_defaultReturnUrlHasBeenSet) {
+    payload.WithString("defaultReturnUrl", m_defaultReturnUrl);
   }
 
   return payload;

@@ -32,7 +32,7 @@ class GetScheduledQueryRequest : public CloudWatchLogsRequest {
 
   ///@{
   /**
-   * <p>The name or ARN of the scheduled query to retrieve.</p>
+   * <p>The ARN or name of the scheduled query to retrieve.</p>
    */
   inline const Aws::String& GetIdentifier() const { return m_identifier; }
   inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }

@@ -16,11 +16,14 @@ namespace Model {
 namespace S3AccessPointAttachmentTypeMapper {
 
 static const int OPENZFS_HASH = HashingUtils::HashString("OPENZFS");
+static const int ONTAP_HASH = HashingUtils::HashString("ONTAP");
 
 S3AccessPointAttachmentType GetS3AccessPointAttachmentTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == OPENZFS_HASH) {
     return S3AccessPointAttachmentType::OPENZFS;
+  } else if (hashCode == ONTAP_HASH) {
+    return S3AccessPointAttachmentType::ONTAP;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForS3AccessPointAttachmentType(S3AccessPointAttachmentType en
       return {};
     case S3AccessPointAttachmentType::OPENZFS:
       return "OPENZFS";
+    case S3AccessPointAttachmentType::ONTAP:
+      return "ONTAP";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

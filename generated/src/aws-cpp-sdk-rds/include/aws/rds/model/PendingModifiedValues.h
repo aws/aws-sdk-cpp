@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/RDS_EXPORTS.h>
+#include <aws/rds/model/AdditionalStorageVolume.h>
 #include <aws/rds/model/AutomationMode.h>
 #include <aws/rds/model/PendingCloudwatchLogsExports.h>
 #include <aws/rds/model/ProcessorFeature.h>
@@ -440,6 +441,31 @@ class PendingModifiedValues {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The additional storage volume modifications that are pending for the DB
+   * instance.</p>
+   */
+  inline const Aws::Vector<AdditionalStorageVolume>& GetAdditionalStorageVolumes() const { return m_additionalStorageVolumes; }
+  inline bool AdditionalStorageVolumesHasBeenSet() const { return m_additionalStorageVolumesHasBeenSet; }
+  template <typename AdditionalStorageVolumesT = Aws::Vector<AdditionalStorageVolume>>
+  void SetAdditionalStorageVolumes(AdditionalStorageVolumesT&& value) {
+    m_additionalStorageVolumesHasBeenSet = true;
+    m_additionalStorageVolumes = std::forward<AdditionalStorageVolumesT>(value);
+  }
+  template <typename AdditionalStorageVolumesT = Aws::Vector<AdditionalStorageVolume>>
+  PendingModifiedValues& WithAdditionalStorageVolumes(AdditionalStorageVolumesT&& value) {
+    SetAdditionalStorageVolumes(std::forward<AdditionalStorageVolumesT>(value));
+    return *this;
+  }
+  template <typename AdditionalStorageVolumesT = AdditionalStorageVolume>
+  PendingModifiedValues& AddAdditionalStorageVolumes(AdditionalStorageVolumesT&& value) {
+    m_additionalStorageVolumesHasBeenSet = true;
+    m_additionalStorageVolumes.emplace_back(std::forward<AdditionalStorageVolumesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_dBInstanceClass;
   bool m_dBInstanceClassHasBeenSet = false;
@@ -506,6 +532,9 @@ class PendingModifiedValues {
 
   Aws::String m_engine;
   bool m_engineHasBeenSet = false;
+
+  Aws::Vector<AdditionalStorageVolume> m_additionalStorageVolumes;
+  bool m_additionalStorageVolumesHasBeenSet = false;
 };
 
 }  // namespace Model

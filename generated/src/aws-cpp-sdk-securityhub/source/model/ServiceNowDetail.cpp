@@ -22,9 +22,9 @@ ServiceNowDetail& ServiceNowDetail::operator=(JsonView jsonValue) {
     m_instanceName = jsonValue.GetString("InstanceName");
     m_instanceNameHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("ClientId")) {
-    m_clientId = jsonValue.GetString("ClientId");
-    m_clientIdHasBeenSet = true;
+  if (jsonValue.ValueExists("SecretArn")) {
+    m_secretArn = jsonValue.GetString("SecretArn");
+    m_secretArnHasBeenSet = true;
   }
   if (jsonValue.ValueExists("AuthStatus")) {
     m_authStatus = ConnectorAuthStatusMapper::GetConnectorAuthStatusForName(jsonValue.GetString("AuthStatus"));
@@ -40,8 +40,8 @@ JsonValue ServiceNowDetail::Jsonize() const {
     payload.WithString("InstanceName", m_instanceName);
   }
 
-  if (m_clientIdHasBeenSet) {
-    payload.WithString("ClientId", m_clientId);
+  if (m_secretArnHasBeenSet) {
+    payload.WithString("SecretArn", m_secretArn);
   }
 
   if (m_authStatusHasBeenSet) {

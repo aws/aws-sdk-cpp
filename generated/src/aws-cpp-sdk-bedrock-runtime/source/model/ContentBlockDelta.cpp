@@ -41,6 +41,10 @@ ContentBlockDelta& ContentBlockDelta::operator=(JsonView jsonValue) {
     m_citation = jsonValue.GetObject("citation");
     m_citationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("image")) {
+    m_image = jsonValue.GetObject("image");
+    m_imageHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -69,6 +73,10 @@ JsonValue ContentBlockDelta::Jsonize() const {
 
   if (m_citationHasBeenSet) {
     payload.WithObject("citation", m_citation.Jsonize());
+  }
+
+  if (m_imageHasBeenSet) {
+    payload.WithObject("image", m_image.Jsonize());
   }
 
   return payload;

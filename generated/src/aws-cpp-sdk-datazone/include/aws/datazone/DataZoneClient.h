@@ -2168,6 +2168,35 @@ class AWS_DATAZONE_API DataZoneClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Gets data export configuration details.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetDataExportConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetDataExportConfigurationOutcome GetDataExportConfiguration(
+      const Model::GetDataExportConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetDataExportConfiguration that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetDataExportConfigurationRequestT = Model::GetDataExportConfigurationRequest>
+  Model::GetDataExportConfigurationOutcomeCallable GetDataExportConfigurationCallable(
+      const GetDataExportConfigurationRequestT& request) const {
+    return SubmitCallable(&DataZoneClient::GetDataExportConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for GetDataExportConfiguration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetDataExportConfigurationRequestT = Model::GetDataExportConfigurationRequest>
+  void GetDataExportConfigurationAsync(const GetDataExportConfigurationRequestT& request,
+                                       const GetDataExportConfigurationResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DataZoneClient::GetDataExportConfiguration, request, handler, context);
+  }
+
+  /**
    * <p>Gets the data product.</p> <p>Prerequisites:</p> <ul> <li> <p>The data
    * product ID must exist. </p> </li> <li> <p>The domain must be valid and
    * accessible.</p> </li> <li> <p>User must have read or discovery permissions for
@@ -3954,6 +3983,39 @@ class AWS_DATAZONE_API DataZoneClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates data export configuration details.</p> <p>In the current release, you
+   * can enable exporting asset metadata only for one domain per Amazon Web Services
+   * account per region. If you disable exporting asset metadata feature for a domain
+   * where it's already enabled, you cannot enable this feature for another domain in
+   * the same Amazon Web Services account and region.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/PutDataExportConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutDataExportConfigurationOutcome PutDataExportConfiguration(
+      const Model::PutDataExportConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutDataExportConfiguration that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename PutDataExportConfigurationRequestT = Model::PutDataExportConfigurationRequest>
+  Model::PutDataExportConfigurationOutcomeCallable PutDataExportConfigurationCallable(
+      const PutDataExportConfigurationRequestT& request) const {
+    return SubmitCallable(&DataZoneClient::PutDataExportConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for PutDataExportConfiguration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename PutDataExportConfigurationRequestT = Model::PutDataExportConfigurationRequest>
+  void PutDataExportConfigurationAsync(const PutDataExportConfigurationRequestT& request,
+                                       const PutDataExportConfigurationResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DataZoneClient::PutDataExportConfiguration, request, handler, context);
+  }
+
+  /**
    * <p>Writes the configuration for the specified environment blueprint in Amazon
    * DataZone.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/PutEnvironmentBlueprintConfiguration">AWS
@@ -4332,9 +4394,9 @@ class AWS_DATAZONE_API DataZoneClient : public Aws::Client::AWSJsonClient,
    * </li> <li> <p>Asset type must be supported for metadata generation (e.g., Amazon
    * Web Services Glue table).</p> </li> <li> <p>Asset must have a structured schema
    * with valid rows and columns.</p> </li> <li> <p>Valid values for --type:
-   * BUSINESS_DESCRIPTIONS, BUSINESS_NAMES.</p> </li> <li> <p>The user must have
-   * permission to run metadata generation in the domain/project.</p> </li>
-   * </ul><p><h3>See Also:</h3>   <a
+   * BUSINESS_DESCRIPTIONS, BUSINESS_NAMES, BUSINESS_GLOSSARY_ASSOCIATIONS.</p> </li>
+   * <li> <p>The user must have permission to run metadata generation in the
+   * domain/project.</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/StartMetadataGenerationRun">AWS
    * API Reference</a></p>
    */

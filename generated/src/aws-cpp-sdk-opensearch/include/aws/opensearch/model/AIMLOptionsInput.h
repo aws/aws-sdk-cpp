@@ -7,6 +7,7 @@
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/opensearch/model/NaturalLanguageQueryGenerationOptionsInput.h>
 #include <aws/opensearch/model/S3VectorsEngine.h>
+#include <aws/opensearch/model/ServerlessVectorAcceleration.h>
 
 #include <utility>
 
@@ -72,12 +73,36 @@ class AIMLOptionsInput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to enable serverless vector acceleration for the domain.
+   * When enabled, provides <a
+   * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/gpu-acceleration-vector-index.html">GPU-accelerated</a>
+   * vector search capabilities for improved performance on vector workloads.</p>
+   */
+  inline const ServerlessVectorAcceleration& GetServerlessVectorAcceleration() const { return m_serverlessVectorAcceleration; }
+  inline bool ServerlessVectorAccelerationHasBeenSet() const { return m_serverlessVectorAccelerationHasBeenSet; }
+  template <typename ServerlessVectorAccelerationT = ServerlessVectorAcceleration>
+  void SetServerlessVectorAcceleration(ServerlessVectorAccelerationT&& value) {
+    m_serverlessVectorAccelerationHasBeenSet = true;
+    m_serverlessVectorAcceleration = std::forward<ServerlessVectorAccelerationT>(value);
+  }
+  template <typename ServerlessVectorAccelerationT = ServerlessVectorAcceleration>
+  AIMLOptionsInput& WithServerlessVectorAcceleration(ServerlessVectorAccelerationT&& value) {
+    SetServerlessVectorAcceleration(std::forward<ServerlessVectorAccelerationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   NaturalLanguageQueryGenerationOptionsInput m_naturalLanguageQueryGenerationOptions;
   bool m_naturalLanguageQueryGenerationOptionsHasBeenSet = false;
 
   S3VectorsEngine m_s3VectorsEngine;
   bool m_s3VectorsEngineHasBeenSet = false;
+
+  ServerlessVectorAcceleration m_serverlessVectorAcceleration;
+  bool m_serverlessVectorAccelerationHasBeenSet = false;
 };
 
 }  // namespace Model

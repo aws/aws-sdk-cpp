@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
+#include <aws/logs/model/IndexType.h>
 
 #include <utility>
 
@@ -120,6 +121,24 @@ class FieldIndex {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of index. Specify <code>FACET</code> for facet-based indexing or
+   * <code>FIELD_INDEX</code> for field-based indexing. This determines how the field
+   * is indexed and can be queried.</p>
+   */
+  inline IndexType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(IndexType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline FieldIndex& WithType(IndexType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_logGroupIdentifier;
   bool m_logGroupIdentifierHasBeenSet = false;
@@ -135,6 +154,9 @@ class FieldIndex {
 
   long long m_lastEventTime{0};
   bool m_lastEventTimeHasBeenSet = false;
+
+  IndexType m_type{IndexType::NOT_SET};
+  bool m_typeHasBeenSet = false;
 };
 
 }  // namespace Model

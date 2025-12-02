@@ -10,7 +10,7 @@
 namespace Aws {
 namespace BedrockAgentCoreControl {
 namespace Model {
-enum class MemoryStrategyType { NOT_SET, SEMANTIC, SUMMARIZATION, USER_PREFERENCE, CUSTOM };
+enum class MemoryStrategyType { NOT_SET, SEMANTIC, SUMMARIZATION, USER_PREFERENCE, CUSTOM, EPISODIC };
 
 namespace MemoryStrategyTypeMapper {
 AWS_BEDROCKAGENTCORECONTROL_API MemoryStrategyType GetMemoryStrategyTypeForName(const Aws::String& name);

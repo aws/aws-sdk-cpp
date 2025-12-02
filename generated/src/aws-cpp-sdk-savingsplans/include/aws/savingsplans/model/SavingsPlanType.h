@@ -10,7 +10,7 @@
 namespace Aws {
 namespace SavingsPlans {
 namespace Model {
-enum class SavingsPlanType { NOT_SET, Compute, EC2Instance, SageMaker };
+enum class SavingsPlanType { NOT_SET, Compute, EC2Instance, SageMaker, Database };
 
 namespace SavingsPlanTypeMapper {
 AWS_SAVINGSPLANS_API SavingsPlanType GetSavingsPlanTypeForName(const Aws::String& name);

@@ -23,8 +23,8 @@ namespace CloudWatchLogs {
 namespace Model {
 
 /**
- * <p>A record of a scheduled query execution, including its status and destination
- * processing information.</p><p><h3>See Also:</h3>   <a
+ * <p>A record of a scheduled query execution, including execution status,
+ * timestamp, and destination processing results.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TriggerHistoryRecord">AWS
  * API Reference</a></p>
  */
@@ -37,7 +37,7 @@ class TriggerHistoryRecord {
 
   ///@{
   /**
-   * <p>The unique identifier for the query execution.</p>
+   * <p>The unique identifier for this query execution.</p>
    */
   inline const Aws::String& GetQueryId() const { return m_queryId; }
   inline bool QueryIdHasBeenSet() const { return m_queryIdHasBeenSet; }
@@ -55,8 +55,7 @@ class TriggerHistoryRecord {
 
   ///@{
   /**
-   * <p>The status of the query execution (Running, Complete, Failed, Timeout, or
-   * InvalidQuery).</p>
+   * <p>The execution status of the scheduled query run.</p>
    */
   inline ExecutionStatus GetExecutionStatus() const { return m_executionStatus; }
   inline bool ExecutionStatusHasBeenSet() const { return m_executionStatusHasBeenSet; }
@@ -72,7 +71,7 @@ class TriggerHistoryRecord {
 
   ///@{
   /**
-   * <p>The time when the scheduled query was triggered, in Unix epoch time.</p>
+   * <p>The timestamp when the scheduled query execution was triggered.</p>
    */
   inline long long GetTriggeredTimestamp() const { return m_triggeredTimestamp; }
   inline bool TriggeredTimestampHasBeenSet() const { return m_triggeredTimestampHasBeenSet; }
@@ -88,8 +87,7 @@ class TriggerHistoryRecord {
 
   ///@{
   /**
-   * <p>The error message if the scheduled query execution failed. This field is only
-   * populated when the execution status indicates a failure.</p>
+   * <p>Error message if the query execution failed.</p>
    */
   inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
   inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
@@ -107,8 +105,7 @@ class TriggerHistoryRecord {
 
   ///@{
   /**
-   * <p>The list of destinations where the scheduled query results were delivered for
-   * this execution. This includes S3 buckets configured for the scheduled query.</p>
+   * <p>Information about destination processing for this query execution.</p>
    */
   inline const Aws::Vector<ScheduledQueryDestination>& GetDestinations() const { return m_destinations; }
   inline bool DestinationsHasBeenSet() const { return m_destinationsHasBeenSet; }

@@ -42,6 +42,10 @@ LoggingConfig& LoggingConfig::operator=(JsonView jsonValue) {
     m_videoDataDeliveryEnabled = jsonValue.GetBool("videoDataDeliveryEnabled");
     m_videoDataDeliveryEnabledHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("audioDataDeliveryEnabled")) {
+    m_audioDataDeliveryEnabled = jsonValue.GetBool("audioDataDeliveryEnabled");
+    m_audioDataDeliveryEnabledHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -70,6 +74,10 @@ JsonValue LoggingConfig::Jsonize() const {
 
   if (m_videoDataDeliveryEnabledHasBeenSet) {
     payload.WithBool("videoDataDeliveryEnabled", m_videoDataDeliveryEnabled);
+  }
+
+  if (m_audioDataDeliveryEnabledHasBeenSet) {
+    payload.WithBool("audioDataDeliveryEnabled", m_audioDataDeliveryEnabled);
   }
 
   return payload;

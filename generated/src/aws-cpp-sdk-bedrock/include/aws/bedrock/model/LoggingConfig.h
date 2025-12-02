@@ -131,6 +131,22 @@ class LoggingConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Set to include audio data in the log delivery.</p>
+   */
+  inline bool GetAudioDataDeliveryEnabled() const { return m_audioDataDeliveryEnabled; }
+  inline bool AudioDataDeliveryEnabledHasBeenSet() const { return m_audioDataDeliveryEnabledHasBeenSet; }
+  inline void SetAudioDataDeliveryEnabled(bool value) {
+    m_audioDataDeliveryEnabledHasBeenSet = true;
+    m_audioDataDeliveryEnabled = value;
+  }
+  inline LoggingConfig& WithAudioDataDeliveryEnabled(bool value) {
+    SetAudioDataDeliveryEnabled(value);
+    return *this;
+  }
+  ///@}
  private:
   CloudWatchConfig m_cloudWatchConfig;
   bool m_cloudWatchConfigHasBeenSet = false;
@@ -149,6 +165,9 @@ class LoggingConfig {
 
   bool m_videoDataDeliveryEnabled{false};
   bool m_videoDataDeliveryEnabledHasBeenSet = false;
+
+  bool m_audioDataDeliveryEnabled{false};
+  bool m_audioDataDeliveryEnabledHasBeenSet = false;
 };
 
 }  // namespace Model

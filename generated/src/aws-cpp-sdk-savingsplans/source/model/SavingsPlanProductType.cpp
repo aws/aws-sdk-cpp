@@ -19,6 +19,15 @@ static const int EC2_HASH = HashingUtils::HashString("EC2");
 static const int Fargate_HASH = HashingUtils::HashString("Fargate");
 static const int Lambda_HASH = HashingUtils::HashString("Lambda");
 static const int SageMaker_HASH = HashingUtils::HashString("SageMaker");
+static const int RDS_HASH = HashingUtils::HashString("RDS");
+static const int DSQL_HASH = HashingUtils::HashString("DSQL");
+static const int DynamoDB_HASH = HashingUtils::HashString("DynamoDB");
+static const int ElastiCache_HASH = HashingUtils::HashString("ElastiCache");
+static const int DocDB_HASH = HashingUtils::HashString("DocDB");
+static const int Neptune_HASH = HashingUtils::HashString("Neptune");
+static const int Timestream_HASH = HashingUtils::HashString("Timestream");
+static const int Keyspaces_HASH = HashingUtils::HashString("Keyspaces");
+static const int DMS_HASH = HashingUtils::HashString("DMS");
 
 SavingsPlanProductType GetSavingsPlanProductTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +39,24 @@ SavingsPlanProductType GetSavingsPlanProductTypeForName(const Aws::String& name)
     return SavingsPlanProductType::Lambda;
   } else if (hashCode == SageMaker_HASH) {
     return SavingsPlanProductType::SageMaker;
+  } else if (hashCode == RDS_HASH) {
+    return SavingsPlanProductType::RDS;
+  } else if (hashCode == DSQL_HASH) {
+    return SavingsPlanProductType::DSQL;
+  } else if (hashCode == DynamoDB_HASH) {
+    return SavingsPlanProductType::DynamoDB;
+  } else if (hashCode == ElastiCache_HASH) {
+    return SavingsPlanProductType::ElastiCache;
+  } else if (hashCode == DocDB_HASH) {
+    return SavingsPlanProductType::DocDB;
+  } else if (hashCode == Neptune_HASH) {
+    return SavingsPlanProductType::Neptune;
+  } else if (hashCode == Timestream_HASH) {
+    return SavingsPlanProductType::Timestream;
+  } else if (hashCode == Keyspaces_HASH) {
+    return SavingsPlanProductType::Keyspaces;
+  } else if (hashCode == DMS_HASH) {
+    return SavingsPlanProductType::DMS;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +79,24 @@ Aws::String GetNameForSavingsPlanProductType(SavingsPlanProductType enumValue) {
       return "Lambda";
     case SavingsPlanProductType::SageMaker:
       return "SageMaker";
+    case SavingsPlanProductType::RDS:
+      return "RDS";
+    case SavingsPlanProductType::DSQL:
+      return "DSQL";
+    case SavingsPlanProductType::DynamoDB:
+      return "DynamoDB";
+    case SavingsPlanProductType::ElastiCache:
+      return "ElastiCache";
+    case SavingsPlanProductType::DocDB:
+      return "DocDB";
+    case SavingsPlanProductType::Neptune:
+      return "Neptune";
+    case SavingsPlanProductType::Timestream:
+      return "Timestream";
+    case SavingsPlanProductType::Keyspaces:
+      return "Keyspaces";
+    case SavingsPlanProductType::DMS:
+      return "DMS";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

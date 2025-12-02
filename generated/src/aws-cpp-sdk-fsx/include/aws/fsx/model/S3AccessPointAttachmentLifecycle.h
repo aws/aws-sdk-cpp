@@ -10,7 +10,7 @@
 namespace Aws {
 namespace FSx {
 namespace Model {
-enum class S3AccessPointAttachmentLifecycle { NOT_SET, AVAILABLE, CREATING, DELETING, UPDATING, FAILED };
+enum class S3AccessPointAttachmentLifecycle { NOT_SET, AVAILABLE, CREATING, DELETING, UPDATING, FAILED, MISCONFIGURED };
 
 namespace S3AccessPointAttachmentLifecycleMapper {
 AWS_FSX_API S3AccessPointAttachmentLifecycle GetS3AccessPointAttachmentLifecycleForName(const Aws::String& name);

@@ -22,8 +22,9 @@ namespace CloudWatchLogs {
 namespace Model {
 
 /**
- * <p>Information about a destination where scheduled query results are processed
- * and delivered.</p><p><h3>See Also:</h3>   <a
+ * <p>Information about a destination where scheduled query results are processed,
+ * including processing status and any error messages.</p><p><h3>See Also:</h3>
+ * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ScheduledQueryDestination">AWS
  * API Reference</a></p>
  */
@@ -36,7 +37,7 @@ class ScheduledQueryDestination {
 
   ///@{
   /**
-   * <p>The type of destination (S3).</p>
+   * <p>The type of destination for query results.</p>
    */
   inline ScheduledQueryDestinationType GetDestinationType() const { return m_destinationType; }
   inline bool DestinationTypeHasBeenSet() const { return m_destinationTypeHasBeenSet; }
@@ -52,7 +53,7 @@ class ScheduledQueryDestination {
 
   ///@{
   /**
-   * <p>The destination identifier (S3 URI).</p>
+   * <p>The identifier for the destination where results are delivered.</p>
    */
   inline const Aws::String& GetDestinationIdentifier() const { return m_destinationIdentifier; }
   inline bool DestinationIdentifierHasBeenSet() const { return m_destinationIdentifierHasBeenSet; }
@@ -70,8 +71,7 @@ class ScheduledQueryDestination {
 
   ///@{
   /**
-   * <p>The processing status for this destination (IN_PROGRESS, ERROR, FAILED, or
-   * COMPLETE).</p>
+   * <p>The processing status of the destination delivery.</p>
    */
   inline ActionStatus GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -87,7 +87,7 @@ class ScheduledQueryDestination {
 
   ///@{
   /**
-   * <p>The processed identifier returned for the destination (S3 key).</p>
+   * <p>The identifier of the processed result at the destination.</p>
    */
   inline const Aws::String& GetProcessedIdentifier() const { return m_processedIdentifier; }
   inline bool ProcessedIdentifierHasBeenSet() const { return m_processedIdentifierHasBeenSet; }
@@ -105,7 +105,7 @@ class ScheduledQueryDestination {
 
   ///@{
   /**
-   * <p>Error message if the destination processing failed.</p>
+   * <p>Error message if destination processing failed.</p>
    */
   inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
   inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }

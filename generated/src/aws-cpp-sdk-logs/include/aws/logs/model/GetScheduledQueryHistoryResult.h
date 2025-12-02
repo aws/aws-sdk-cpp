@@ -64,7 +64,7 @@ class GetScheduledQueryHistoryResult {
 
   ///@{
   /**
-   * <p>The list of execution history records for the scheduled query.</p>
+   * <p>An array of execution history records for the scheduled query.</p>
    */
   inline const Aws::Vector<TriggerHistoryRecord>& GetTriggerHistory() const { return m_triggerHistory; }
   template <typename TriggerHistoryT = Aws::Vector<TriggerHistoryRecord>>

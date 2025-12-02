@@ -39,6 +39,7 @@ static const int EFSMountTimeout_HASH = HashingUtils::HashString("EFSMountTimeou
 static const int InvalidRuntime_HASH = HashingUtils::HashString("InvalidRuntime");
 static const int InvalidZipFileException_HASH = HashingUtils::HashString("InvalidZipFileException");
 static const int FunctionError_HASH = HashingUtils::HashString("FunctionError");
+static const int DrainingDurableExecutions_HASH = HashingUtils::HashString("DrainingDurableExecutions");
 static const int VcpuLimitExceeded_HASH = HashingUtils::HashString("VcpuLimitExceeded");
 static const int CapacityProviderScalingLimitExceeded_HASH = HashingUtils::HashString("CapacityProviderScalingLimitExceeded");
 static const int InsufficientCapacity_HASH = HashingUtils::HashString("InsufficientCapacity");
@@ -102,6 +103,8 @@ StateReasonCode GetStateReasonCodeForName(const Aws::String& name) {
     return StateReasonCode::InvalidZipFileException;
   } else if (hashCode == FunctionError_HASH) {
     return StateReasonCode::FunctionError;
+  } else if (hashCode == DrainingDurableExecutions_HASH) {
+    return StateReasonCode::DrainingDurableExecutions;
   } else if (hashCode == VcpuLimitExceeded_HASH) {
     return StateReasonCode::VcpuLimitExceeded;
   } else if (hashCode == CapacityProviderScalingLimitExceeded_HASH) {
@@ -188,6 +191,8 @@ Aws::String GetNameForStateReasonCode(StateReasonCode enumValue) {
       return "InvalidZipFileException";
     case StateReasonCode::FunctionError:
       return "FunctionError";
+    case StateReasonCode::DrainingDurableExecutions:
+      return "DrainingDurableExecutions";
     case StateReasonCode::VcpuLimitExceeded:
       return "VcpuLimitExceeded";
     case StateReasonCode::CapacityProviderScalingLimitExceeded:

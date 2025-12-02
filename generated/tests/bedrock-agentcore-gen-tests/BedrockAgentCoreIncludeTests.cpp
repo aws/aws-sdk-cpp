@@ -38,6 +38,7 @@
 #include <aws/bedrock-agentcore/model/Content.h>
 #include <aws/bedrock-agentcore/model/ContentBlock.h>
 #include <aws/bedrock-agentcore/model/ContentBlockType.h>
+#include <aws/bedrock-agentcore/model/Context.h>
 #include <aws/bedrock-agentcore/model/Conversational.h>
 #include <aws/bedrock-agentcore/model/CreateEventRequest.h>
 #include <aws/bedrock-agentcore/model/CreateEventResult.h>
@@ -45,6 +46,11 @@
 #include <aws/bedrock-agentcore/model/DeleteEventResult.h>
 #include <aws/bedrock-agentcore/model/DeleteMemoryRecordRequest.h>
 #include <aws/bedrock-agentcore/model/DeleteMemoryRecordResult.h>
+#include <aws/bedrock-agentcore/model/EvaluateRequest.h>
+#include <aws/bedrock-agentcore/model/EvaluateResult.h>
+#include <aws/bedrock-agentcore/model/EvaluationInput.h>
+#include <aws/bedrock-agentcore/model/EvaluationResultContent.h>
+#include <aws/bedrock-agentcore/model/EvaluationTarget.h>
 #include <aws/bedrock-agentcore/model/Event.h>
 #include <aws/bedrock-agentcore/model/EventMetadataFilterExpression.h>
 #include <aws/bedrock-agentcore/model/ExtractionJob.h>
@@ -96,6 +102,7 @@
 #include <aws/bedrock-agentcore/model/ListSessionsResult.h>
 #include <aws/bedrock-agentcore/model/LiveViewStream.h>
 #include <aws/bedrock-agentcore/model/MemoryContent.h>
+#include <aws/bedrock-agentcore/model/MemoryMetadataFilterExpression.h>
 #include <aws/bedrock-agentcore/model/MemoryRecord.h>
 #include <aws/bedrock-agentcore/model/MemoryRecordCreateInput.h>
 #include <aws/bedrock-agentcore/model/MemoryRecordDeleteInput.h>
@@ -118,6 +125,7 @@
 #include <aws/bedrock-agentcore/model/SearchCriteria.h>
 #include <aws/bedrock-agentcore/model/SessionStatus.h>
 #include <aws/bedrock-agentcore/model/SessionSummary.h>
+#include <aws/bedrock-agentcore/model/SpanContext.h>
 #include <aws/bedrock-agentcore/model/StartBrowserSessionRequest.h>
 #include <aws/bedrock-agentcore/model/StartBrowserSessionResult.h>
 #include <aws/bedrock-agentcore/model/StartCodeInterpreterSessionRequest.h>
@@ -132,6 +140,7 @@
 #include <aws/bedrock-agentcore/model/StopRuntimeSessionResult.h>
 #include <aws/bedrock-agentcore/model/StreamUpdate.h>
 #include <aws/bedrock-agentcore/model/TaskStatus.h>
+#include <aws/bedrock-agentcore/model/TokenUsage.h>
 #include <aws/bedrock-agentcore/model/ToolArguments.h>
 #include <aws/bedrock-agentcore/model/ToolName.h>
 #include <aws/bedrock-agentcore/model/ToolResultStructuredContent.h>

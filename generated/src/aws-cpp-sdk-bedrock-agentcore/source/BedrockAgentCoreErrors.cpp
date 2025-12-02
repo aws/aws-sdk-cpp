@@ -27,6 +27,7 @@ static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedException");
+static const int DUPLICATE_ID_HASH = HashingUtils::HashString("DuplicateIdException");
 static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
 static const int SERVICE_HASH = HashingUtils::HashString("ServiceException");
 static const int RUNTIME_CLIENT_HASH = HashingUtils::HashString("RuntimeClientError");
@@ -42,6 +43,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockAgentCoreErrors::INTERNAL_SERVER), RetryableType::RETRYABLE);
   } else if (hashCode == UNAUTHORIZED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockAgentCoreErrors::UNAUTHORIZED), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == DUPLICATE_ID_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockAgentCoreErrors::DUPLICATE_ID), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_INPUT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockAgentCoreErrors::INVALID_INPUT), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == SERVICE_HASH) {

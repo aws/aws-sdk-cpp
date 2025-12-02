@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3vectors/S3VectorsRequest.h>
 #include <aws/s3vectors/S3Vectors_EXPORTS.h>
@@ -66,12 +67,47 @@ class CreateVectorBucketRequest : public S3VectorsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An array of user-defined tags that you would like to apply to the vector
+   * bucket that you are creating. A tag is a key-value pair that you apply to your
+   * resources. Tags can help you organize and control access to resources. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html">Tagging
+   * for cost allocation or attribute-based access control (ABAC)</a>.</p>
+   * <p>You must have the <code>s3vectors:TagResource</code> permission in addition
+   * to <code>s3vectors:CreateVectorBucket</code> permission to create a vector
+   * bucket with tags.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  CreateVectorBucketRequest& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+  CreateVectorBucketRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_vectorBucketName;
   bool m_vectorBucketNameHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
   bool m_encryptionConfigurationHasBeenSet = false;
+
+  Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_tagsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace DataZone {
 namespace Model {
-enum class MetadataGenerationRunType { NOT_SET, BUSINESS_DESCRIPTIONS };
+enum class MetadataGenerationRunType { NOT_SET, BUSINESS_DESCRIPTIONS, BUSINESS_NAMES, BUSINESS_GLOSSARY_ASSOCIATIONS };
 
 namespace MetadataGenerationRunTypeMapper {
 AWS_DATAZONE_API MetadataGenerationRunType GetMetadataGenerationRunTypeForName(const Aws::String& name);

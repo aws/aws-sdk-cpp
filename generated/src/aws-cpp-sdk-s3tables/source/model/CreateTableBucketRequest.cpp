@@ -23,6 +23,10 @@ Aws::String CreateTableBucketRequest::SerializePayload() const {
     payload.WithObject("encryptionConfiguration", m_encryptionConfiguration.Jsonize());
   }
 
+  if (m_storageClassConfigurationHasBeenSet) {
+    payload.WithObject("storageClassConfiguration", m_storageClassConfiguration.Jsonize());
+  }
+
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {

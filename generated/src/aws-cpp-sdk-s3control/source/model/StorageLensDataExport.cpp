@@ -33,6 +33,11 @@ StorageLensDataExport& StorageLensDataExport::operator=(const XmlNode& xmlNode) 
       m_cloudWatchMetrics = cloudWatchMetricsNode;
       m_cloudWatchMetricsHasBeenSet = true;
     }
+    XmlNode storageLensTableDestinationNode = resultNode.FirstChild("StorageLensTableDestination");
+    if (!storageLensTableDestinationNode.IsNull()) {
+      m_storageLensTableDestination = storageLensTableDestinationNode;
+      m_storageLensTableDestinationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -48,6 +53,11 @@ void StorageLensDataExport::AddToNode(XmlNode& parentNode) const {
   if (m_cloudWatchMetricsHasBeenSet) {
     XmlNode cloudWatchMetricsNode = parentNode.CreateChildElement("CloudWatchMetrics");
     m_cloudWatchMetrics.AddToNode(cloudWatchMetricsNode);
+  }
+
+  if (m_storageLensTableDestinationHasBeenSet) {
+    XmlNode storageLensTableDestinationNode = parentNode.CreateChildElement("StorageLensTableDestination");
+    m_storageLensTableDestination.AddToNode(storageLensTableDestinationNode);
   }
 }
 
