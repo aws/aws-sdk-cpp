@@ -42,7 +42,6 @@ namespace Aws
         static const char SSO_SESSION_SECTION[]              = "sso-session";
         static const char SERVICES_SECTION[]                 = "services";
         static const char ENDPOINT_URL_KEY[]                 = "endpoint_url";
-        static const char IGNORE_CONFIGURED_ENDPOINT_URLS_KEY[] = "ignore_configured_endpoint_urls";
         static const char DEFAULTS_MODE_KEY[]                = "defaults_mode";
         static const char EQ                                 = '=';
         static const char LEFT_BRACKET                       = '[';
