@@ -36,6 +36,21 @@ namespace Aws
             return (path.find_last_of('/') == path.size() - 1 || path.find_last_of('\\') == path.size() - 1);
         }
 
+        static Aws::String GenerateTempFilePath(const Aws::String& targetPath)
+        {
+            static const char* HEX_CHARS = "0123456789abcdef";
+            char uniqueId[9] = {0};
+            for (int i = 0; i < 8; ++i) {
+                uniqueId[i] = HEX_CHARS[rand() % 16];
+            }
+            
+            size_t lastSlash = targetPath.find_last_of("/\\");
+            if (lastSlash != Aws::String::npos) {
+                return targetPath.substr(0, lastSlash + 1) + ".s3tmp." + uniqueId;
+            }
+            return ".s3tmp." + Aws::String(uniqueId);
+        }
+
         template <typename RequestT>
         static void SetChecksumOnRequest(RequestT& request, S3::Model::ChecksumAlgorithm checksumAlgorithm, const Aws::String& checksum) {
           if (checksumAlgorithm == S3::Model::ChecksumAlgorithm::CRC64NVME) {
@@ -231,15 +246,19 @@ namespace Aws
                                                                       const DownloadConfiguration& downloadConfig,
                                                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
         {
+            Aws::String tempFilePath = GenerateTempFilePath(writeToFile);
+            
 #ifdef _MSC_VER
-            auto createFileFn = [=]() { return Aws::New<Aws::FStream>(CLASS_TAG, Aws::Utils::StringUtils::ToWString(writeToFile.c_str()).c_str(),
+            auto createFileFn = [=]() { return Aws::New<Aws::FStream>(CLASS_TAG, Aws::Utils::StringUtils::ToWString(tempFilePath.c_str()).c_str(),
                                                                      std::ios_base::out | std::ios_base::in | std::ios_base::binary | std::ios_base::trunc);};
 #else
-            auto createFileFn = [=]() { return Aws::New<Aws::FStream>(CLASS_TAG, writeToFile.c_str(),
+            auto createFileFn = [=]() { return Aws::New<Aws::FStream>(CLASS_TAG, tempFilePath.c_str(),
                                                                      std::ios_base::out | std::ios_base::in | std::ios_base::binary | std::ios_base::trunc);};
 #endif
 
-            return DownloadFile(bucketName, keyName, createFileFn, downloadConfig, writeToFile, context);
+            auto handle = DownloadFile(bucketName, keyName, createFileFn, downloadConfig, writeToFile, context);
+            handle->SetTempFilePath(tempFilePath);
+            return handle;
         }
 
         std::shared_ptr<TransferHandle> TransferManager::RetryUpload(const Aws::String& fileName, const std::shared_ptr<TransferHandle>& retryHandle)
@@ -939,16 +958,12 @@ namespace Aws
                 handle->ChangePartToCompleted(partState, getObjectOutcome.GetResult().GetETag());
                 getObjectOutcome.GetResult().GetBody().flush();
 
-                if (!ValidateDownloadChecksum(handle)) {
-                    Aws::Client::AWSError<Aws::S3::S3Errors> checksumError(
-                        Aws::S3::S3Errors::INTERNAL_FAILURE,
-                        "ChecksumMismatch",
-                        "Downloaded file checksum does not match expected checksum",
-                        false);
+                auto checksumOutcome = ValidateDownloadChecksum(handle);
+                if (!checksumOutcome.IsSuccess()) {
                     handle->ChangePartToFailed(partState);
                     handle->UpdateStatus(TransferStatus::FAILED);
-                    handle->SetError(checksumError);
-                    TriggerErrorCallback(handle, checksumError);
+                    handle->SetError(checksumOutcome.GetError());
+                    TriggerErrorCallback(handle, checksumOutcome.GetError());
                     TriggerTransferStatusUpdatedCallback(handle);
                     return;
                 }
@@ -961,7 +976,12 @@ namespace Aws
                         << "] Failed to download object to Bucket: [" << handle->GetBucketName() << "] with Key: ["
                         << handle->GetKey() << "] " << getObjectOutcome.GetError());
                 handle->ChangePartToFailed(partState);
-                handle->UpdateStatus(DetermineIfFailedOrCanceled(*handle));
+                auto finalStatus = DetermineIfFailedOrCanceled(*handle);
+                handle->UpdateStatus(finalStatus);
+
+                if (finalStatus == TransferStatus::FAILED && !handle->GetTempFilePath().empty()) {
+                    Aws::FileSystem::RemoveFileIfExists(handle->GetTempFilePath().c_str());
+                }
                 handle->SetError(getObjectOutcome.GetError());
 
                 TriggerErrorCallback(handle, getObjectOutcome.GetError());
@@ -1271,16 +1291,11 @@ namespace Aws
                 {
                     outcome.GetResult().GetBody().flush();
 
-                    // Validate checksum if available
-                    if (!ValidateDownloadChecksum(handle)) {
-                        Aws::Client::AWSError<Aws::S3::S3Errors> checksumError(
-                            Aws::S3::S3Errors::INTERNAL_FAILURE,
-                            "ChecksumMismatch",
-                            "Downloaded file checksum does not match expected checksum",
-                            false);
+                    auto checksumOutcome = ValidateDownloadChecksum(handle);
+                    if (!checksumOutcome.IsSuccess()) {
                         handle->UpdateStatus(TransferStatus::FAILED);
-                        handle->SetError(checksumError);
-                        TriggerErrorCallback(handle, checksumError);
+                        handle->SetError(checksumOutcome.GetError());
+                        TriggerErrorCallback(handle, checksumOutcome.GetError());
                         TriggerTransferStatusUpdatedCallback(handle);
                         partState->SetDownloadPartStream(nullptr);
                         return;
@@ -1290,7 +1305,12 @@ namespace Aws
                 }
                 else
                 {
-                    handle->UpdateStatus(DetermineIfFailedOrCanceled(*handle));
+                    auto finalStatus = DetermineIfFailedOrCanceled(*handle);
+                    handle->UpdateStatus(finalStatus);
+
+                    if (finalStatus == TransferStatus::FAILED && !handle->GetTempFilePath().empty()) {
+                        Aws::FileSystem::RemoveFileIfExists(handle->GetTempFilePath().c_str());
+                    }
                 }
                 TriggerTransferStatusUpdatedCallback(handle);
             }
@@ -1641,9 +1661,21 @@ namespace Aws
           }
         }
 
-        bool TransferManager::ValidateDownloadChecksum(const std::shared_ptr<TransferHandle>& handle) {
-            if (handle->GetChecksum().empty() || handle->GetTargetFilePath().empty()) {
-                return true;
+        Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<Aws::S3::S3Errors>> TransferManager::ValidateDownloadChecksum(const std::shared_ptr<TransferHandle>& handle) {
+            if (handle->GetChecksum().empty()) {
+                if (!handle->GetTempFilePath().empty() && !handle->GetTargetFilePath().empty()) {
+                    if (!Aws::FileSystem::RelocateFileOrDirectory(handle->GetTempFilePath().c_str(), handle->GetTargetFilePath().c_str())) {
+                        AWS_LOGSTREAM_ERROR(CLASS_TAG, "Failed to rename temp file from " << handle->GetTempFilePath() << " to " << handle->GetTargetFilePath());
+                        Aws::FileSystem::RemoveFileIfExists(handle->GetTempFilePath().c_str());
+                        return Aws::Client::AWSError<Aws::S3::S3Errors>(Aws::S3::S3Errors::INTERNAL_FAILURE, "FileRenameError", "Failed to rename temporary file to target", false);
+                    }
+                }
+                return Aws::NoResult();
+            }
+
+            Aws::String fileToValidate = handle->GetTempFilePath().empty() ? handle->GetTargetFilePath() : handle->GetTempFilePath();
+            if (fileToValidate.empty()) {
+                return Aws::NoResult();
             }
 
             std::shared_ptr<Aws::Utils::Crypto::Hash> hashCalculator;
@@ -1660,13 +1692,16 @@ namespace Aws
             }
 
             auto fileStream = Aws::MakeShared<Aws::FStream>("TransferManager", 
-                handle->GetTargetFilePath().c_str(), 
+                fileToValidate.c_str(), 
                 std::ios_base::in | std::ios_base::binary);
 
             if (!fileStream->good()) {
                 AWS_LOGSTREAM_ERROR(CLASS_TAG, "Transfer handle [" << handle->GetId()
-                        << "] Failed to open downloaded file for checksum validation: " << handle->GetTargetFilePath());
-                return false;
+                        << "] Failed to open downloaded file for checksum validation: " << fileToValidate);
+                if (!handle->GetTempFilePath().empty()) {
+                    Aws::FileSystem::RemoveFileIfExists(handle->GetTempFilePath().c_str());
+                }
+                return Aws::Client::AWSError<Aws::S3::S3Errors>(Aws::S3::S3Errors::INTERNAL_FAILURE, "FileOpenError", "Failed to open downloaded file for checksum validation", false);
             }
 
             unsigned char buffer[8192];
@@ -1678,7 +1713,10 @@ namespace Aws
             if (!hashResult.IsSuccess()) {
                 AWS_LOGSTREAM_ERROR(CLASS_TAG, "Transfer handle [" << handle->GetId()
                         << "] Failed to calculate checksum for downloaded file");
-                return false;
+                if (!handle->GetTempFilePath().empty()) {
+                    Aws::FileSystem::RemoveFileIfExists(handle->GetTempFilePath().c_str());
+                }
+                return Aws::Client::AWSError<Aws::S3::S3Errors>(Aws::S3::S3Errors::INTERNAL_FAILURE, "ChecksumCalculationError", "Failed to calculate checksum for downloaded file", false);
             }
 
             Aws::String calculatedChecksum = Aws::Utils::HashingUtils::Base64Encode(hashResult.GetResult());
@@ -1686,10 +1724,22 @@ namespace Aws
                 AWS_LOGSTREAM_ERROR(CLASS_TAG, "Transfer handle [" << handle->GetId()
                         << "] Checksum validation failed. Expected: " << handle->GetChecksum()
                         << ", Calculated: " << calculatedChecksum);
-                return false;
+                if (!handle->GetTempFilePath().empty()) {
+                    Aws::FileSystem::RemoveFileIfExists(handle->GetTempFilePath().c_str());
+                }
+                return Aws::Client::AWSError<Aws::S3::S3Errors>(Aws::S3::S3Errors::INTERNAL_FAILURE, "ChecksumMismatch", "Downloaded file checksum does not match expected checksum", false);
             }
 
-            return true;
+            // Validation succeeded, rename temp to target
+            if (!handle->GetTempFilePath().empty() && !handle->GetTargetFilePath().empty()) {
+                if (!Aws::FileSystem::RelocateFileOrDirectory(handle->GetTempFilePath().c_str(), handle->GetTargetFilePath().c_str())) {
+                    AWS_LOGSTREAM_ERROR(CLASS_TAG, "Failed to rename temp file from " << handle->GetTempFilePath() << " to " << handle->GetTargetFilePath());
+                    Aws::FileSystem::RemoveFileIfExists(handle->GetTempFilePath().c_str());
+                    return Aws::Client::AWSError<Aws::S3::S3Errors>(Aws::S3::S3Errors::INTERNAL_FAILURE, "FileRenameError", "Failed to rename temporary file to target", false);
+                }
+            }
+
+            return Aws::NoResult();
         }
     }
 }
