@@ -59,6 +59,12 @@ namespace smithy {
         {
         }
 
+        explicit SigV4AuthScheme(const Aws::String& serviceName, const Aws::String& region,
+                                 const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& config)
+            : SigV4AuthScheme(
+                  Aws::MakeShared<DefaultAwsCredentialIdentityResolver>("SigV4AuthScheme", config),
+                  serviceName, region) {}
+
         //For legacy constructors, signing requires additional input parameters
         explicit SigV4AuthScheme(const Aws::String& serviceName,
                                  const Aws::String& region,
