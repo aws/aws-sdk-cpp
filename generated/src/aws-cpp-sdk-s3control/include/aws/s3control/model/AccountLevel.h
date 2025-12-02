@@ -8,6 +8,7 @@
 #include <aws/s3control/model/ActivityMetrics.h>
 #include <aws/s3control/model/AdvancedCostOptimizationMetrics.h>
 #include <aws/s3control/model/AdvancedDataProtectionMetrics.h>
+#include <aws/s3control/model/AdvancedPerformanceMetrics.h>
 #include <aws/s3control/model/BucketLevel.h>
 #include <aws/s3control/model/DetailedStatusCodesMetrics.h>
 #include <aws/s3control/model/StorageLensGroupLevel.h>
@@ -25,7 +26,9 @@ namespace Model {
 
 /**
  * <p>A container element for the account-level Amazon S3 Storage Lens
- * configuration.</p> <p>For more information about S3 Storage Lens, see <a
+ * configuration.</p>  <p>You must enable Storage Lens metrics consistently
+ * at both the account level and bucket level, or your request will fail.</p>
+ *  <p>For more information about S3 Storage Lens, see <a
  * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens.html">Assessing
  * your storage activity and usage with S3 Storage Lens</a> in the <i>Amazon S3
  * User Guide</i>. For a complete list of S3 Storage Lens metrics, see <a
@@ -136,6 +139,24 @@ class AccountLevel {
 
   ///@{
   /**
+   * <p>A container element for S3 Storage Lens advanced performance metrics.</p>
+   */
+  inline const AdvancedPerformanceMetrics& GetAdvancedPerformanceMetrics() const { return m_advancedPerformanceMetrics; }
+  inline bool AdvancedPerformanceMetricsHasBeenSet() const { return m_advancedPerformanceMetricsHasBeenSet; }
+  template <typename AdvancedPerformanceMetricsT = AdvancedPerformanceMetrics>
+  void SetAdvancedPerformanceMetrics(AdvancedPerformanceMetricsT&& value) {
+    m_advancedPerformanceMetricsHasBeenSet = true;
+    m_advancedPerformanceMetrics = std::forward<AdvancedPerformanceMetricsT>(value);
+  }
+  template <typename AdvancedPerformanceMetricsT = AdvancedPerformanceMetrics>
+  AccountLevel& WithAdvancedPerformanceMetrics(AdvancedPerformanceMetricsT&& value) {
+    SetAdvancedPerformanceMetrics(std::forward<AdvancedPerformanceMetricsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p> A container element for S3 Storage Lens groups metrics. </p>
    */
   inline const StorageLensGroupLevel& GetStorageLensGroupLevel() const { return m_storageLensGroupLevel; }
@@ -166,6 +187,9 @@ class AccountLevel {
 
   DetailedStatusCodesMetrics m_detailedStatusCodesMetrics;
   bool m_detailedStatusCodesMetricsHasBeenSet = false;
+
+  AdvancedPerformanceMetrics m_advancedPerformanceMetrics;
+  bool m_advancedPerformanceMetricsHasBeenSet = false;
 
   StorageLensGroupLevel m_storageLensGroupLevel;
   bool m_storageLensGroupLevelHasBeenSet = false;

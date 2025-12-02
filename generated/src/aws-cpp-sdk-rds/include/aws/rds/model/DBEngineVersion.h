@@ -759,6 +759,52 @@ class DBEngineVersion {
   ///@}
 
   ///@{
+  /**
+   * <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your
+   * database engine version to import to Amazon RDS. Required for
+   * <code>sqlserver-dev-ee</code>.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetDatabaseInstallationFiles() const { return m_databaseInstallationFiles; }
+  inline bool DatabaseInstallationFilesHasBeenSet() const { return m_databaseInstallationFilesHasBeenSet; }
+  template <typename DatabaseInstallationFilesT = Aws::Vector<Aws::String>>
+  void SetDatabaseInstallationFiles(DatabaseInstallationFilesT&& value) {
+    m_databaseInstallationFilesHasBeenSet = true;
+    m_databaseInstallationFiles = std::forward<DatabaseInstallationFilesT>(value);
+  }
+  template <typename DatabaseInstallationFilesT = Aws::Vector<Aws::String>>
+  DBEngineVersion& WithDatabaseInstallationFiles(DatabaseInstallationFilesT&& value) {
+    SetDatabaseInstallationFiles(std::forward<DatabaseInstallationFilesT>(value));
+    return *this;
+  }
+  template <typename DatabaseInstallationFilesT = Aws::String>
+  DBEngineVersion& AddDatabaseInstallationFiles(DatabaseInstallationFilesT&& value) {
+    m_databaseInstallationFilesHasBeenSet = true;
+    m_databaseInstallationFiles.emplace_back(std::forward<DatabaseInstallationFilesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The reason that the custom engine version creation for
+   * <code>sqlserver-dev-ee</code> failed with an
+   * <code>incompatible-installation-media</code> status.</p>
+   */
+  inline const Aws::String& GetFailureReason() const { return m_failureReason; }
+  inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
+  template <typename FailureReasonT = Aws::String>
+  void SetFailureReason(FailureReasonT&& value) {
+    m_failureReasonHasBeenSet = true;
+    m_failureReason = std::forward<FailureReasonT>(value);
+  }
+  template <typename FailureReasonT = Aws::String>
+  DBEngineVersion& WithFailureReason(FailureReasonT&& value) {
+    SetFailureReason(std::forward<FailureReasonT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
   template <typename ResponseMetadataT = ResponseMetadata>
@@ -877,6 +923,12 @@ class DBEngineVersion {
 
   ServerlessV2FeaturesSupport m_serverlessV2FeaturesSupport;
   bool m_serverlessV2FeaturesSupportHasBeenSet = false;
+
+  Aws::Vector<Aws::String> m_databaseInstallationFiles;
+  bool m_databaseInstallationFilesHasBeenSet = false;
+
+  Aws::String m_failureReason;
+  bool m_failureReasonHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
   bool m_responseMetadataHasBeenSet = true;

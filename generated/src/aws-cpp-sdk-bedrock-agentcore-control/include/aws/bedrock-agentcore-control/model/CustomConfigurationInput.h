@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/EpisodicOverrideConfigurationInput.h>
 #include <aws/bedrock-agentcore-control/model/SelfManagedConfigurationInput.h>
 #include <aws/bedrock-agentcore-control/model/SemanticOverrideConfigurationInput.h>
 #include <aws/bedrock-agentcore-control/model/SummaryOverrideConfigurationInput.h>
@@ -91,6 +92,25 @@ class CustomConfigurationInput {
 
   ///@{
   /**
+   * <p>The episodic memory strategy override configuration for a custom memory
+   * strategy.</p>
+   */
+  inline const EpisodicOverrideConfigurationInput& GetEpisodicOverride() const { return m_episodicOverride; }
+  inline bool EpisodicOverrideHasBeenSet() const { return m_episodicOverrideHasBeenSet; }
+  template <typename EpisodicOverrideT = EpisodicOverrideConfigurationInput>
+  void SetEpisodicOverride(EpisodicOverrideT&& value) {
+    m_episodicOverrideHasBeenSet = true;
+    m_episodicOverride = std::forward<EpisodicOverrideT>(value);
+  }
+  template <typename EpisodicOverrideT = EpisodicOverrideConfigurationInput>
+  CustomConfigurationInput& WithEpisodicOverride(EpisodicOverrideT&& value) {
+    SetEpisodicOverride(std::forward<EpisodicOverrideT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The self managed configuration for a custom memory strategy.</p>
    */
   inline const SelfManagedConfigurationInput& GetSelfManagedConfiguration() const { return m_selfManagedConfiguration; }
@@ -115,6 +135,9 @@ class CustomConfigurationInput {
 
   UserPreferenceOverrideConfigurationInput m_userPreferenceOverride;
   bool m_userPreferenceOverrideHasBeenSet = false;
+
+  EpisodicOverrideConfigurationInput m_episodicOverride;
+  bool m_episodicOverrideHasBeenSet = false;
 
   SelfManagedConfigurationInput m_selfManagedConfiguration;
   bool m_selfManagedConfigurationHasBeenSet = false;

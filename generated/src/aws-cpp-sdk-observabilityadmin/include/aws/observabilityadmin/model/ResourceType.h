@@ -10,7 +10,20 @@
 namespace Aws {
 namespace ObservabilityAdmin {
 namespace Model {
-enum class ResourceType { NOT_SET, AWS_EC2_Instance, AWS_EC2_VPC, AWS_Lambda_Function };
+enum class ResourceType {
+  NOT_SET,
+  AWS_EC2_Instance,
+  AWS_EC2_VPC,
+  AWS_Lambda_Function,
+  AWS_CloudTrail,
+  AWS_EKS_Cluster,
+  AWS_WAFv2_WebACL,
+  AWS_ElasticLoadBalancingV2_LoadBalancer,
+  AWS_Route53Resolver_ResolverEndpoint,
+  AWS_BedrockAgentCore_Runtime,
+  AWS_BedrockAgentCore_Browser,
+  AWS_BedrockAgentCore_CodeInterpreter
+};
 
 namespace ResourceTypeMapper {
 AWS_OBSERVABILITYADMIN_API ResourceType GetResourceTypeForName(const Aws::String& name);

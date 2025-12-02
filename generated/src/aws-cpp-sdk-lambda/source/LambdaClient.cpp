@@ -23,6 +23,7 @@
 #include <aws/lambda/LambdaErrorMarshaller.h>
 #include <aws/lambda/model/AddLayerVersionPermissionRequest.h>
 #include <aws/lambda/model/AddPermissionRequest.h>
+#include <aws/lambda/model/CheckpointDurableExecutionRequest.h>
 #include <aws/lambda/model/CreateAliasRequest.h>
 #include <aws/lambda/model/CreateCapacityProviderRequest.h>
 #include <aws/lambda/model/CreateCodeSigningConfigRequest.h>
@@ -44,6 +45,9 @@
 #include <aws/lambda/model/GetAliasRequest.h>
 #include <aws/lambda/model/GetCapacityProviderRequest.h>
 #include <aws/lambda/model/GetCodeSigningConfigRequest.h>
+#include <aws/lambda/model/GetDurableExecutionHistoryRequest.h>
+#include <aws/lambda/model/GetDurableExecutionRequest.h>
+#include <aws/lambda/model/GetDurableExecutionStateRequest.h>
 #include <aws/lambda/model/GetEventSourceMappingRequest.h>
 #include <aws/lambda/model/GetFunctionCodeSigningConfigRequest.h>
 #include <aws/lambda/model/GetFunctionConcurrencyRequest.h>
@@ -64,6 +68,7 @@
 #include <aws/lambda/model/ListAliasesRequest.h>
 #include <aws/lambda/model/ListCapacityProvidersRequest.h>
 #include <aws/lambda/model/ListCodeSigningConfigsRequest.h>
+#include <aws/lambda/model/ListDurableExecutionsByFunctionRequest.h>
 #include <aws/lambda/model/ListEventSourceMappingsRequest.h>
 #include <aws/lambda/model/ListFunctionEventInvokeConfigsRequest.h>
 #include <aws/lambda/model/ListFunctionUrlConfigsRequest.h>
@@ -86,6 +91,10 @@
 #include <aws/lambda/model/PutRuntimeManagementConfigRequest.h>
 #include <aws/lambda/model/RemoveLayerVersionPermissionRequest.h>
 #include <aws/lambda/model/RemovePermissionRequest.h>
+#include <aws/lambda/model/SendDurableExecutionCallbackFailureRequest.h>
+#include <aws/lambda/model/SendDurableExecutionCallbackHeartbeatRequest.h>
+#include <aws/lambda/model/SendDurableExecutionCallbackSuccessRequest.h>
+#include <aws/lambda/model/StopDurableExecutionRequest.h>
 #include <aws/lambda/model/TagResourceRequest.h>
 #include <aws/lambda/model/UntagResourceRequest.h>
 #include <aws/lambda/model/UpdateAliasRequest.h>
@@ -288,6 +297,43 @@ AddPermissionOutcome LambdaClient::AddPermission(const AddPermissionRequest& req
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFunctionName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
         return AddPermissionOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+CheckpointDurableExecutionOutcome LambdaClient::CheckpointDurableExecution(const CheckpointDurableExecutionRequest& request) const {
+  AWS_OPERATION_GUARD(CheckpointDurableExecution);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CheckpointDurableExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DurableExecutionArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CheckpointDurableExecution", "Required field: DurableExecutionArn, is not set");
+    return CheckpointDurableExecutionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                 "Missing required field [DurableExecutionArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CheckpointDurableExecution, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CheckpointDurableExecution, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CheckpointDurableExecution",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CheckpointDurableExecutionOutcome>(
+      [&]() -> CheckpointDurableExecutionOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CheckpointDurableExecution, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/2025-12-01/durable-executions/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDurableExecutionArn());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/checkpoint");
+        return CheckpointDurableExecutionOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -1057,6 +1103,121 @@ GetCodeSigningConfigOutcome LambdaClient::GetCodeSigningConfig(const GetCodeSign
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetDurableExecutionOutcome LambdaClient::GetDurableExecution(const GetDurableExecutionRequest& request) const {
+  AWS_OPERATION_GUARD(GetDurableExecution);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDurableExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DurableExecutionArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetDurableExecution", "Required field: DurableExecutionArn, is not set");
+    return GetDurableExecutionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [DurableExecutionArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetDurableExecution, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetDurableExecution, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetDurableExecution",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetDurableExecutionOutcome>(
+      [&]() -> GetDurableExecutionOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDurableExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/2025-12-01/durable-executions/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDurableExecutionArn());
+        return GetDurableExecutionOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetDurableExecutionHistoryOutcome LambdaClient::GetDurableExecutionHistory(const GetDurableExecutionHistoryRequest& request) const {
+  AWS_OPERATION_GUARD(GetDurableExecutionHistory);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDurableExecutionHistory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DurableExecutionArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetDurableExecutionHistory", "Required field: DurableExecutionArn, is not set");
+    return GetDurableExecutionHistoryOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                 "Missing required field [DurableExecutionArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetDurableExecutionHistory, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetDurableExecutionHistory, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetDurableExecutionHistory",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetDurableExecutionHistoryOutcome>(
+      [&]() -> GetDurableExecutionHistoryOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDurableExecutionHistory, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/2025-12-01/durable-executions/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDurableExecutionArn());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/history");
+        return GetDurableExecutionHistoryOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetDurableExecutionStateOutcome LambdaClient::GetDurableExecutionState(const GetDurableExecutionStateRequest& request) const {
+  AWS_OPERATION_GUARD(GetDurableExecutionState);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDurableExecutionState, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DurableExecutionArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetDurableExecutionState", "Required field: DurableExecutionArn, is not set");
+    return GetDurableExecutionStateOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                               "Missing required field [DurableExecutionArn]", false));
+  }
+  if (!request.CheckpointTokenHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetDurableExecutionState", "Required field: CheckpointToken, is not set");
+    return GetDurableExecutionStateOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                               "Missing required field [CheckpointToken]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetDurableExecutionState, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetDurableExecutionState, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetDurableExecutionState",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetDurableExecutionStateOutcome>(
+      [&]() -> GetDurableExecutionStateOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDurableExecutionState, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/2025-12-01/durable-executions/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDurableExecutionArn());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/state");
+        return GetDurableExecutionStateOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetEventSourceMappingOutcome LambdaClient::GetEventSourceMapping(const GetEventSourceMappingRequest& request) const {
   AWS_OPERATION_GUARD(GetEventSourceMapping);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEventSourceMapping, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1811,6 +1972,44 @@ ListCodeSigningConfigsOutcome LambdaClient::ListCodeSigningConfigs(const ListCod
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-04-22/code-signing-configs");
         return ListCodeSigningConfigsOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListDurableExecutionsByFunctionOutcome LambdaClient::ListDurableExecutionsByFunction(
+    const ListDurableExecutionsByFunctionRequest& request) const {
+  AWS_OPERATION_GUARD(ListDurableExecutionsByFunction);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDurableExecutionsByFunction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.FunctionNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListDurableExecutionsByFunction", "Required field: FunctionName, is not set");
+    return ListDurableExecutionsByFunctionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                      "Missing required field [FunctionName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListDurableExecutionsByFunction, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListDurableExecutionsByFunction, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListDurableExecutionsByFunction",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListDurableExecutionsByFunctionOutcome>(
+      [&]() -> ListDurableExecutionsByFunctionOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDurableExecutionsByFunction, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/2025-12-01/functions/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFunctionName());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/durable-executions");
+        return ListDurableExecutionsByFunctionOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -2641,6 +2840,157 @@ RemovePermissionOutcome LambdaClient::RemovePermission(const RemovePermissionReq
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStatementId());
         return RemovePermissionOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+SendDurableExecutionCallbackFailureOutcome LambdaClient::SendDurableExecutionCallbackFailure(
+    const SendDurableExecutionCallbackFailureRequest& request) const {
+  AWS_OPERATION_GUARD(SendDurableExecutionCallbackFailure);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendDurableExecutionCallbackFailure, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.CallbackIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("SendDurableExecutionCallbackFailure", "Required field: CallbackId, is not set");
+    return SendDurableExecutionCallbackFailureOutcome(Aws::Client::AWSError<LambdaErrors>(
+        LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CallbackId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, SendDurableExecutionCallbackFailure, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, SendDurableExecutionCallbackFailure, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".SendDurableExecutionCallbackFailure",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<SendDurableExecutionCallbackFailureOutcome>(
+      [&]() -> SendDurableExecutionCallbackFailureOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SendDurableExecutionCallbackFailure, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/2025-12-01/durable-execution-callbacks/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCallbackId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/fail");
+        return SendDurableExecutionCallbackFailureOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+SendDurableExecutionCallbackHeartbeatOutcome LambdaClient::SendDurableExecutionCallbackHeartbeat(
+    const SendDurableExecutionCallbackHeartbeatRequest& request) const {
+  AWS_OPERATION_GUARD(SendDurableExecutionCallbackHeartbeat);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendDurableExecutionCallbackHeartbeat, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.CallbackIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("SendDurableExecutionCallbackHeartbeat", "Required field: CallbackId, is not set");
+    return SendDurableExecutionCallbackHeartbeatOutcome(Aws::Client::AWSError<LambdaErrors>(
+        LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CallbackId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, SendDurableExecutionCallbackHeartbeat, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, SendDurableExecutionCallbackHeartbeat, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".SendDurableExecutionCallbackHeartbeat",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<SendDurableExecutionCallbackHeartbeatOutcome>(
+      [&]() -> SendDurableExecutionCallbackHeartbeatOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SendDurableExecutionCallbackHeartbeat, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/2025-12-01/durable-execution-callbacks/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCallbackId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/heartbeat");
+        return SendDurableExecutionCallbackHeartbeatOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+SendDurableExecutionCallbackSuccessOutcome LambdaClient::SendDurableExecutionCallbackSuccess(
+    const SendDurableExecutionCallbackSuccessRequest& request) const {
+  AWS_OPERATION_GUARD(SendDurableExecutionCallbackSuccess);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendDurableExecutionCallbackSuccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.CallbackIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("SendDurableExecutionCallbackSuccess", "Required field: CallbackId, is not set");
+    return SendDurableExecutionCallbackSuccessOutcome(Aws::Client::AWSError<LambdaErrors>(
+        LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CallbackId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, SendDurableExecutionCallbackSuccess, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, SendDurableExecutionCallbackSuccess, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".SendDurableExecutionCallbackSuccess",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<SendDurableExecutionCallbackSuccessOutcome>(
+      [&]() -> SendDurableExecutionCallbackSuccessOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SendDurableExecutionCallbackSuccess, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/2025-12-01/durable-execution-callbacks/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCallbackId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/succeed");
+        return SendDurableExecutionCallbackSuccessOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+StopDurableExecutionOutcome LambdaClient::StopDurableExecution(const StopDurableExecutionRequest& request) const {
+  AWS_OPERATION_GUARD(StopDurableExecution);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopDurableExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DurableExecutionArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StopDurableExecution", "Required field: DurableExecutionArn, is not set");
+    return StopDurableExecutionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [DurableExecutionArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StopDurableExecution, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, StopDurableExecution, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StopDurableExecution",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<StopDurableExecutionOutcome>(
+      [&]() -> StopDurableExecutionOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopDurableExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/2025-12-01/durable-executions/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDurableExecutionArn());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/stop");
+        return StopDurableExecutionOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

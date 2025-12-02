@@ -149,6 +149,58 @@ class Condition {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Represents the <i>match</i> condition to be applied to a single field when
+   * querying for findings. </p>  <p> The <i>matches</i> condition is available
+   * only for create-filter and update-filter APIs. </p>
+   */
+  inline const Aws::Vector<Aws::String>& GetMatches() const { return m_matches; }
+  inline bool MatchesHasBeenSet() const { return m_matchesHasBeenSet; }
+  template <typename MatchesT = Aws::Vector<Aws::String>>
+  void SetMatches(MatchesT&& value) {
+    m_matchesHasBeenSet = true;
+    m_matches = std::forward<MatchesT>(value);
+  }
+  template <typename MatchesT = Aws::Vector<Aws::String>>
+  Condition& WithMatches(MatchesT&& value) {
+    SetMatches(std::forward<MatchesT>(value));
+    return *this;
+  }
+  template <typename MatchesT = Aws::String>
+  Condition& AddMatches(MatchesT&& value) {
+    m_matchesHasBeenSet = true;
+    m_matches.emplace_back(std::forward<MatchesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Represents the <i>not match</i> condition to be applied to a single field
+   * when querying for findings. </p>  <p> The <i>not-matches</i> condition is
+   * available only for create-filter and update-filter APIs. </p>
+   */
+  inline const Aws::Vector<Aws::String>& GetNotMatches() const { return m_notMatches; }
+  inline bool NotMatchesHasBeenSet() const { return m_notMatchesHasBeenSet; }
+  template <typename NotMatchesT = Aws::Vector<Aws::String>>
+  void SetNotMatches(NotMatchesT&& value) {
+    m_notMatchesHasBeenSet = true;
+    m_notMatches = std::forward<NotMatchesT>(value);
+  }
+  template <typename NotMatchesT = Aws::Vector<Aws::String>>
+  Condition& WithNotMatches(NotMatchesT&& value) {
+    SetNotMatches(std::forward<NotMatchesT>(value));
+    return *this;
+  }
+  template <typename NotMatchesT = Aws::String>
+  Condition& AddNotMatches(NotMatchesT&& value) {
+    m_notMatchesHasBeenSet = true;
+    m_notMatches.emplace_back(std::forward<NotMatchesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_equals;
   bool m_equalsHasBeenSet = false;
@@ -167,6 +219,12 @@ class Condition {
 
   long long m_lessThanOrEqual{0};
   bool m_lessThanOrEqualHasBeenSet = false;
+
+  Aws::Vector<Aws::String> m_matches;
+  bool m_matchesHasBeenSet = false;
+
+  Aws::Vector<Aws::String> m_notMatches;
+  bool m_notMatchesHasBeenSet = false;
 };
 
 }  // namespace Model

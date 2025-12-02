@@ -19,6 +19,7 @@ static const int SEMANTIC_HASH = HashingUtils::HashString("SEMANTIC");
 static const int SUMMARIZATION_HASH = HashingUtils::HashString("SUMMARIZATION");
 static const int USER_PREFERENCE_HASH = HashingUtils::HashString("USER_PREFERENCE");
 static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
+static const int EPISODIC_HASH = HashingUtils::HashString("EPISODIC");
 
 MemoryStrategyType GetMemoryStrategyTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ MemoryStrategyType GetMemoryStrategyTypeForName(const Aws::String& name) {
     return MemoryStrategyType::USER_PREFERENCE;
   } else if (hashCode == CUSTOM_HASH) {
     return MemoryStrategyType::CUSTOM;
+  } else if (hashCode == EPISODIC_HASH) {
+    return MemoryStrategyType::EPISODIC;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForMemoryStrategyType(MemoryStrategyType enumValue) {
       return "USER_PREFERENCE";
     case MemoryStrategyType::CUSTOM:
       return "CUSTOM";
+    case MemoryStrategyType::EPISODIC:
+      return "EPISODIC";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

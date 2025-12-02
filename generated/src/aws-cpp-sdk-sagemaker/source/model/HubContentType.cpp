@@ -18,6 +18,8 @@ namespace HubContentTypeMapper {
 static const int Model_HASH = HashingUtils::HashString("Model");
 static const int Notebook_HASH = HashingUtils::HashString("Notebook");
 static const int ModelReference_HASH = HashingUtils::HashString("ModelReference");
+static const int DataSet_HASH = HashingUtils::HashString("DataSet");
+static const int JsonDoc_HASH = HashingUtils::HashString("JsonDoc");
 
 HubContentType GetHubContentTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +29,10 @@ HubContentType GetHubContentTypeForName(const Aws::String& name) {
     return HubContentType::Notebook;
   } else if (hashCode == ModelReference_HASH) {
     return HubContentType::ModelReference;
+  } else if (hashCode == DataSet_HASH) {
+    return HubContentType::DataSet;
+  } else if (hashCode == JsonDoc_HASH) {
+    return HubContentType::JsonDoc;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +53,10 @@ Aws::String GetNameForHubContentType(HubContentType enumValue) {
       return "Notebook";
     case HubContentType::ModelReference:
       return "ModelReference";
+    case HubContentType::DataSet:
+      return "DataSet";
+    case HubContentType::JsonDoc:
+      return "JsonDoc";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -22,6 +22,7 @@
 #include <aws/core/NoResult.h>
 #include <aws/lambda/model/AddLayerVersionPermissionResult.h>
 #include <aws/lambda/model/AddPermissionResult.h>
+#include <aws/lambda/model/CheckpointDurableExecutionResult.h>
 #include <aws/lambda/model/CreateAliasResult.h>
 #include <aws/lambda/model/CreateCapacityProviderResult.h>
 #include <aws/lambda/model/CreateCodeSigningConfigResult.h>
@@ -37,6 +38,9 @@
 #include <aws/lambda/model/GetAliasResult.h>
 #include <aws/lambda/model/GetCapacityProviderResult.h>
 #include <aws/lambda/model/GetCodeSigningConfigResult.h>
+#include <aws/lambda/model/GetDurableExecutionHistoryResult.h>
+#include <aws/lambda/model/GetDurableExecutionResult.h>
+#include <aws/lambda/model/GetDurableExecutionStateResult.h>
 #include <aws/lambda/model/GetEventSourceMappingResult.h>
 #include <aws/lambda/model/GetFunctionCodeSigningConfigResult.h>
 #include <aws/lambda/model/GetFunctionConcurrencyResult.h>
@@ -58,6 +62,7 @@
 #include <aws/lambda/model/ListCapacityProvidersResult.h>
 #include <aws/lambda/model/ListCodeSigningConfigsRequest.h>
 #include <aws/lambda/model/ListCodeSigningConfigsResult.h>
+#include <aws/lambda/model/ListDurableExecutionsByFunctionResult.h>
 #include <aws/lambda/model/ListEventSourceMappingsRequest.h>
 #include <aws/lambda/model/ListEventSourceMappingsResult.h>
 #include <aws/lambda/model/ListFunctionEventInvokeConfigsResult.h>
@@ -81,6 +86,10 @@
 #include <aws/lambda/model/PutFunctionScalingConfigResult.h>
 #include <aws/lambda/model/PutProvisionedConcurrencyConfigResult.h>
 #include <aws/lambda/model/PutRuntimeManagementConfigResult.h>
+#include <aws/lambda/model/SendDurableExecutionCallbackFailureResult.h>
+#include <aws/lambda/model/SendDurableExecutionCallbackHeartbeatResult.h>
+#include <aws/lambda/model/SendDurableExecutionCallbackSuccessResult.h>
+#include <aws/lambda/model/StopDurableExecutionResult.h>
 #include <aws/lambda/model/UpdateAliasResult.h>
 #include <aws/lambda/model/UpdateCapacityProviderResult.h>
 #include <aws/lambda/model/UpdateCodeSigningConfigResult.h>
@@ -124,6 +133,7 @@ namespace Model {
 /* Service model forward declarations required in LambdaClient header */
 class AddLayerVersionPermissionRequest;
 class AddPermissionRequest;
+class CheckpointDurableExecutionRequest;
 class CreateAliasRequest;
 class CreateCapacityProviderRequest;
 class CreateCodeSigningConfigRequest;
@@ -145,6 +155,9 @@ class GetAccountSettingsRequest;
 class GetAliasRequest;
 class GetCapacityProviderRequest;
 class GetCodeSigningConfigRequest;
+class GetDurableExecutionRequest;
+class GetDurableExecutionHistoryRequest;
+class GetDurableExecutionStateRequest;
 class GetEventSourceMappingRequest;
 class GetFunctionRequest;
 class GetFunctionCodeSigningConfigRequest;
@@ -165,6 +178,7 @@ class InvokeWithResponseStreamRequest;
 class ListAliasesRequest;
 class ListCapacityProvidersRequest;
 class ListCodeSigningConfigsRequest;
+class ListDurableExecutionsByFunctionRequest;
 class ListEventSourceMappingsRequest;
 class ListFunctionEventInvokeConfigsRequest;
 class ListFunctionUrlConfigsRequest;
@@ -187,6 +201,10 @@ class PutProvisionedConcurrencyConfigRequest;
 class PutRuntimeManagementConfigRequest;
 class RemoveLayerVersionPermissionRequest;
 class RemovePermissionRequest;
+class SendDurableExecutionCallbackFailureRequest;
+class SendDurableExecutionCallbackHeartbeatRequest;
+class SendDurableExecutionCallbackSuccessRequest;
+class StopDurableExecutionRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
 class UpdateAliasRequest;
@@ -202,6 +220,7 @@ class UpdateFunctionUrlConfigRequest;
 /* Service model Outcome class definitions */
 typedef Aws::Utils::Outcome<AddLayerVersionPermissionResult, LambdaError> AddLayerVersionPermissionOutcome;
 typedef Aws::Utils::Outcome<AddPermissionResult, LambdaError> AddPermissionOutcome;
+typedef Aws::Utils::Outcome<CheckpointDurableExecutionResult, LambdaError> CheckpointDurableExecutionOutcome;
 typedef Aws::Utils::Outcome<CreateAliasResult, LambdaError> CreateAliasOutcome;
 typedef Aws::Utils::Outcome<CreateCapacityProviderResult, LambdaError> CreateCapacityProviderOutcome;
 typedef Aws::Utils::Outcome<CreateCodeSigningConfigResult, LambdaError> CreateCodeSigningConfigOutcome;
@@ -223,6 +242,9 @@ typedef Aws::Utils::Outcome<GetAccountSettingsResult, LambdaError> GetAccountSet
 typedef Aws::Utils::Outcome<GetAliasResult, LambdaError> GetAliasOutcome;
 typedef Aws::Utils::Outcome<GetCapacityProviderResult, LambdaError> GetCapacityProviderOutcome;
 typedef Aws::Utils::Outcome<GetCodeSigningConfigResult, LambdaError> GetCodeSigningConfigOutcome;
+typedef Aws::Utils::Outcome<GetDurableExecutionResult, LambdaError> GetDurableExecutionOutcome;
+typedef Aws::Utils::Outcome<GetDurableExecutionHistoryResult, LambdaError> GetDurableExecutionHistoryOutcome;
+typedef Aws::Utils::Outcome<GetDurableExecutionStateResult, LambdaError> GetDurableExecutionStateOutcome;
 typedef Aws::Utils::Outcome<GetEventSourceMappingResult, LambdaError> GetEventSourceMappingOutcome;
 typedef Aws::Utils::Outcome<GetFunctionResult, LambdaError> GetFunctionOutcome;
 typedef Aws::Utils::Outcome<GetFunctionCodeSigningConfigResult, LambdaError> GetFunctionCodeSigningConfigOutcome;
@@ -243,6 +265,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> InvokeWithResponseStream
 typedef Aws::Utils::Outcome<ListAliasesResult, LambdaError> ListAliasesOutcome;
 typedef Aws::Utils::Outcome<ListCapacityProvidersResult, LambdaError> ListCapacityProvidersOutcome;
 typedef Aws::Utils::Outcome<ListCodeSigningConfigsResult, LambdaError> ListCodeSigningConfigsOutcome;
+typedef Aws::Utils::Outcome<ListDurableExecutionsByFunctionResult, LambdaError> ListDurableExecutionsByFunctionOutcome;
 typedef Aws::Utils::Outcome<ListEventSourceMappingsResult, LambdaError> ListEventSourceMappingsOutcome;
 typedef Aws::Utils::Outcome<ListFunctionEventInvokeConfigsResult, LambdaError> ListFunctionEventInvokeConfigsOutcome;
 typedef Aws::Utils::Outcome<ListFunctionUrlConfigsResult, LambdaError> ListFunctionUrlConfigsOutcome;
@@ -265,6 +288,10 @@ typedef Aws::Utils::Outcome<PutProvisionedConcurrencyConfigResult, LambdaError> 
 typedef Aws::Utils::Outcome<PutRuntimeManagementConfigResult, LambdaError> PutRuntimeManagementConfigOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> RemoveLayerVersionPermissionOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> RemovePermissionOutcome;
+typedef Aws::Utils::Outcome<SendDurableExecutionCallbackFailureResult, LambdaError> SendDurableExecutionCallbackFailureOutcome;
+typedef Aws::Utils::Outcome<SendDurableExecutionCallbackHeartbeatResult, LambdaError> SendDurableExecutionCallbackHeartbeatOutcome;
+typedef Aws::Utils::Outcome<SendDurableExecutionCallbackSuccessResult, LambdaError> SendDurableExecutionCallbackSuccessOutcome;
+typedef Aws::Utils::Outcome<StopDurableExecutionResult, LambdaError> StopDurableExecutionOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateAliasResult, LambdaError> UpdateAliasOutcome;
@@ -280,6 +307,7 @@ typedef Aws::Utils::Outcome<UpdateFunctionUrlConfigResult, LambdaError> UpdateFu
 /* Service model Outcome callable definitions */
 typedef std::future<AddLayerVersionPermissionOutcome> AddLayerVersionPermissionOutcomeCallable;
 typedef std::future<AddPermissionOutcome> AddPermissionOutcomeCallable;
+typedef std::future<CheckpointDurableExecutionOutcome> CheckpointDurableExecutionOutcomeCallable;
 typedef std::future<CreateAliasOutcome> CreateAliasOutcomeCallable;
 typedef std::future<CreateCapacityProviderOutcome> CreateCapacityProviderOutcomeCallable;
 typedef std::future<CreateCodeSigningConfigOutcome> CreateCodeSigningConfigOutcomeCallable;
@@ -301,6 +329,9 @@ typedef std::future<GetAccountSettingsOutcome> GetAccountSettingsOutcomeCallable
 typedef std::future<GetAliasOutcome> GetAliasOutcomeCallable;
 typedef std::future<GetCapacityProviderOutcome> GetCapacityProviderOutcomeCallable;
 typedef std::future<GetCodeSigningConfigOutcome> GetCodeSigningConfigOutcomeCallable;
+typedef std::future<GetDurableExecutionOutcome> GetDurableExecutionOutcomeCallable;
+typedef std::future<GetDurableExecutionHistoryOutcome> GetDurableExecutionHistoryOutcomeCallable;
+typedef std::future<GetDurableExecutionStateOutcome> GetDurableExecutionStateOutcomeCallable;
 typedef std::future<GetEventSourceMappingOutcome> GetEventSourceMappingOutcomeCallable;
 typedef std::future<GetFunctionOutcome> GetFunctionOutcomeCallable;
 typedef std::future<GetFunctionCodeSigningConfigOutcome> GetFunctionCodeSigningConfigOutcomeCallable;
@@ -321,6 +352,7 @@ typedef std::future<InvokeWithResponseStreamOutcome> InvokeWithResponseStreamOut
 typedef std::future<ListAliasesOutcome> ListAliasesOutcomeCallable;
 typedef std::future<ListCapacityProvidersOutcome> ListCapacityProvidersOutcomeCallable;
 typedef std::future<ListCodeSigningConfigsOutcome> ListCodeSigningConfigsOutcomeCallable;
+typedef std::future<ListDurableExecutionsByFunctionOutcome> ListDurableExecutionsByFunctionOutcomeCallable;
 typedef std::future<ListEventSourceMappingsOutcome> ListEventSourceMappingsOutcomeCallable;
 typedef std::future<ListFunctionEventInvokeConfigsOutcome> ListFunctionEventInvokeConfigsOutcomeCallable;
 typedef std::future<ListFunctionUrlConfigsOutcome> ListFunctionUrlConfigsOutcomeCallable;
@@ -343,6 +375,10 @@ typedef std::future<PutProvisionedConcurrencyConfigOutcome> PutProvisionedConcur
 typedef std::future<PutRuntimeManagementConfigOutcome> PutRuntimeManagementConfigOutcomeCallable;
 typedef std::future<RemoveLayerVersionPermissionOutcome> RemoveLayerVersionPermissionOutcomeCallable;
 typedef std::future<RemovePermissionOutcome> RemovePermissionOutcomeCallable;
+typedef std::future<SendDurableExecutionCallbackFailureOutcome> SendDurableExecutionCallbackFailureOutcomeCallable;
+typedef std::future<SendDurableExecutionCallbackHeartbeatOutcome> SendDurableExecutionCallbackHeartbeatOutcomeCallable;
+typedef std::future<SendDurableExecutionCallbackSuccessOutcome> SendDurableExecutionCallbackSuccessOutcomeCallable;
+typedef std::future<StopDurableExecutionOutcome> StopDurableExecutionOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateAliasOutcome> UpdateAliasOutcomeCallable;
@@ -365,6 +401,9 @@ typedef std::function<void(const LambdaClient*, const Model::AddLayerVersionPerm
 typedef std::function<void(const LambdaClient*, const Model::AddPermissionRequest&, const Model::AddPermissionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AddPermissionResponseReceivedHandler;
+typedef std::function<void(const LambdaClient*, const Model::CheckpointDurableExecutionRequest&,
+                           const Model::CheckpointDurableExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CheckpointDurableExecutionResponseReceivedHandler;
 typedef std::function<void(const LambdaClient*, const Model::CreateAliasRequest&, const Model::CreateAliasOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateAliasResponseReceivedHandler;
@@ -431,6 +470,15 @@ typedef std::function<void(const LambdaClient*, const Model::GetCapacityProvider
 typedef std::function<void(const LambdaClient*, const Model::GetCodeSigningConfigRequest&, const Model::GetCodeSigningConfigOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetCodeSigningConfigResponseReceivedHandler;
+typedef std::function<void(const LambdaClient*, const Model::GetDurableExecutionRequest&, const Model::GetDurableExecutionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetDurableExecutionResponseReceivedHandler;
+typedef std::function<void(const LambdaClient*, const Model::GetDurableExecutionHistoryRequest&,
+                           const Model::GetDurableExecutionHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetDurableExecutionHistoryResponseReceivedHandler;
+typedef std::function<void(const LambdaClient*, const Model::GetDurableExecutionStateRequest&,
+                           const Model::GetDurableExecutionStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetDurableExecutionStateResponseReceivedHandler;
 typedef std::function<void(const LambdaClient*, const Model::GetEventSourceMappingRequest&, const Model::GetEventSourceMappingOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetEventSourceMappingResponseReceivedHandler;
@@ -494,6 +542,10 @@ typedef std::function<void(const LambdaClient*, const Model::ListCapacityProvide
 typedef std::function<void(const LambdaClient*, const Model::ListCodeSigningConfigsRequest&, const Model::ListCodeSigningConfigsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListCodeSigningConfigsResponseReceivedHandler;
+typedef std::function<void(const LambdaClient*, const Model::ListDurableExecutionsByFunctionRequest&,
+                           const Model::ListDurableExecutionsByFunctionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListDurableExecutionsByFunctionResponseReceivedHandler;
 typedef std::function<void(const LambdaClient*, const Model::ListEventSourceMappingsRequest&, const Model::ListEventSourceMappingsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListEventSourceMappingsResponseReceivedHandler;
@@ -568,6 +620,21 @@ typedef std::function<void(const LambdaClient*, const Model::RemoveLayerVersionP
 typedef std::function<void(const LambdaClient*, const Model::RemovePermissionRequest&, const Model::RemovePermissionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     RemovePermissionResponseReceivedHandler;
+typedef std::function<void(const LambdaClient*, const Model::SendDurableExecutionCallbackFailureRequest&,
+                           const Model::SendDurableExecutionCallbackFailureOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    SendDurableExecutionCallbackFailureResponseReceivedHandler;
+typedef std::function<void(const LambdaClient*, const Model::SendDurableExecutionCallbackHeartbeatRequest&,
+                           const Model::SendDurableExecutionCallbackHeartbeatOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    SendDurableExecutionCallbackHeartbeatResponseReceivedHandler;
+typedef std::function<void(const LambdaClient*, const Model::SendDurableExecutionCallbackSuccessRequest&,
+                           const Model::SendDurableExecutionCallbackSuccessOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    SendDurableExecutionCallbackSuccessResponseReceivedHandler;
+typedef std::function<void(const LambdaClient*, const Model::StopDurableExecutionRequest&, const Model::StopDurableExecutionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StopDurableExecutionResponseReceivedHandler;
 typedef std::function<void(const LambdaClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     TagResourceResponseReceivedHandler;

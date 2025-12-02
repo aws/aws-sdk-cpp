@@ -41,6 +41,7 @@
 #include <aws/guardduty/model/ArchiveFindingsResult.h>
 #include <aws/guardduty/model/AutoEnableMembers.h>
 #include <aws/guardduty/model/AutonomousSystem.h>
+#include <aws/guardduty/model/AutoscalingAutoScalingGroup.h>
 #include <aws/guardduty/model/AwsApiCallAction.h>
 #include <aws/guardduty/model/BadRequestException.h>
 #include <aws/guardduty/model/BlockPublicAccess.h>
@@ -48,6 +49,7 @@
 #include <aws/guardduty/model/BucketPolicy.h>
 #include <aws/guardduty/model/City.h>
 #include <aws/guardduty/model/CloudTrailConfigurationResult.h>
+#include <aws/guardduty/model/CloudformationStack.h>
 #include <aws/guardduty/model/ClusterStatus.h>
 #include <aws/guardduty/model/Condition.h>
 #include <aws/guardduty/model/ConflictException.h>
@@ -151,10 +153,17 @@
 #include <aws/guardduty/model/EbsVolumeDetails.h>
 #include <aws/guardduty/model/EbsVolumeScanDetails.h>
 #include <aws/guardduty/model/EbsVolumesResult.h>
+#include <aws/guardduty/model/Ec2Image.h>
 #include <aws/guardduty/model/Ec2ImageDetails.h>
 #include <aws/guardduty/model/Ec2Instance.h>
+#include <aws/guardduty/model/Ec2LaunchTemplate.h>
 #include <aws/guardduty/model/Ec2NetworkInterface.h>
+#include <aws/guardduty/model/Ec2Vpc.h>
+#include <aws/guardduty/model/EcsCluster.h>
 #include <aws/guardduty/model/EcsClusterDetails.h>
+#include <aws/guardduty/model/EcsClusterStatus.h>
+#include <aws/guardduty/model/EcsLaunchType.h>
+#include <aws/guardduty/model/EcsTask.h>
 #include <aws/guardduty/model/EcsTaskDetails.h>
 #include <aws/guardduty/model/EksCluster.h>
 #include <aws/guardduty/model/EksClusterDetails.h>
@@ -223,6 +232,7 @@
 #include <aws/guardduty/model/HighestSeverityThreatDetails.h>
 #include <aws/guardduty/model/HostPath.h>
 #include <aws/guardduty/model/IamInstanceProfile.h>
+#include <aws/guardduty/model/IamInstanceProfileV2.h>
 #include <aws/guardduty/model/ImpersonatedUser.h>
 #include <aws/guardduty/model/IncrementalScanDetails.h>
 #include <aws/guardduty/model/Indicator.h>

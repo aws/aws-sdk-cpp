@@ -10,7 +10,7 @@
 namespace Aws {
 namespace SavingsPlans {
 namespace Model {
-enum class CurrencyCode { NOT_SET, CNY, USD };
+enum class CurrencyCode { NOT_SET, CNY, USD, EUR };
 
 namespace CurrencyCodeMapper {
 AWS_SAVINGSPLANS_API CurrencyCode GetCurrencyCodeForName(const Aws::String& name);

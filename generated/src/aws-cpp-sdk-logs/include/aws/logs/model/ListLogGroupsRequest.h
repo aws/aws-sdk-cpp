@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/logs/CloudWatchLogsRequest.h>
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
+#include <aws/logs/model/DataSourceFilter.h>
 #include <aws/logs/model/LogGroupClass.h>
 
 #include <utility>
@@ -159,6 +160,59 @@ class ListLogGroupsRequest : public CloudWatchLogsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An array of data source filters to filter log groups by their associated data
+   * sources. You can filter by data source name, type, or both. Multiple filters
+   * within the same dimension are combined with OR logic, while filters across
+   * different dimensions are combined with AND logic.</p>
+   */
+  inline const Aws::Vector<DataSourceFilter>& GetDataSources() const { return m_dataSources; }
+  inline bool DataSourcesHasBeenSet() const { return m_dataSourcesHasBeenSet; }
+  template <typename DataSourcesT = Aws::Vector<DataSourceFilter>>
+  void SetDataSources(DataSourcesT&& value) {
+    m_dataSourcesHasBeenSet = true;
+    m_dataSources = std::forward<DataSourcesT>(value);
+  }
+  template <typename DataSourcesT = Aws::Vector<DataSourceFilter>>
+  ListLogGroupsRequest& WithDataSources(DataSourcesT&& value) {
+    SetDataSources(std::forward<DataSourcesT>(value));
+    return *this;
+  }
+  template <typename DataSourcesT = DataSourceFilter>
+  ListLogGroupsRequest& AddDataSources(DataSourcesT&& value) {
+    m_dataSourcesHasBeenSet = true;
+    m_dataSources.emplace_back(std::forward<DataSourcesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An array of field index names to filter log groups that have specific field
+   * indexes. Only log groups containing all specified field indexes are returned.
+   * You can specify 1 to 20 field index names, each with 1 to 512 characters.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetFieldIndexNames() const { return m_fieldIndexNames; }
+  inline bool FieldIndexNamesHasBeenSet() const { return m_fieldIndexNamesHasBeenSet; }
+  template <typename FieldIndexNamesT = Aws::Vector<Aws::String>>
+  void SetFieldIndexNames(FieldIndexNamesT&& value) {
+    m_fieldIndexNamesHasBeenSet = true;
+    m_fieldIndexNames = std::forward<FieldIndexNamesT>(value);
+  }
+  template <typename FieldIndexNamesT = Aws::Vector<Aws::String>>
+  ListLogGroupsRequest& WithFieldIndexNames(FieldIndexNamesT&& value) {
+    SetFieldIndexNames(std::forward<FieldIndexNamesT>(value));
+    return *this;
+  }
+  template <typename FieldIndexNamesT = Aws::String>
+  ListLogGroupsRequest& AddFieldIndexNames(FieldIndexNamesT&& value) {
+    m_fieldIndexNamesHasBeenSet = true;
+    m_fieldIndexNames.emplace_back(std::forward<FieldIndexNamesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_logGroupNamePattern;
   bool m_logGroupNamePatternHasBeenSet = false;
@@ -177,6 +231,12 @@ class ListLogGroupsRequest : public CloudWatchLogsRequest {
 
   int m_limit{0};
   bool m_limitHasBeenSet = false;
+
+  Aws::Vector<DataSourceFilter> m_dataSources;
+  bool m_dataSourcesHasBeenSet = false;
+
+  Aws::Vector<Aws::String> m_fieldIndexNames;
+  bool m_fieldIndexNamesHasBeenSet = false;
 };
 
 }  // namespace Model

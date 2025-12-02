@@ -44,6 +44,22 @@ Aws::String ListLogGroupsRequest::SerializePayload() const {
     payload.WithInteger("limit", m_limit);
   }
 
+  if (m_dataSourcesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> dataSourcesJsonList(m_dataSources.size());
+    for (unsigned dataSourcesIndex = 0; dataSourcesIndex < dataSourcesJsonList.GetLength(); ++dataSourcesIndex) {
+      dataSourcesJsonList[dataSourcesIndex].AsObject(m_dataSources[dataSourcesIndex].Jsonize());
+    }
+    payload.WithArray("dataSources", std::move(dataSourcesJsonList));
+  }
+
+  if (m_fieldIndexNamesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> fieldIndexNamesJsonList(m_fieldIndexNames.size());
+    for (unsigned fieldIndexNamesIndex = 0; fieldIndexNamesIndex < fieldIndexNamesJsonList.GetLength(); ++fieldIndexNamesIndex) {
+      fieldIndexNamesJsonList[fieldIndexNamesIndex].AsString(m_fieldIndexNames[fieldIndexNamesIndex]);
+    }
+    payload.WithArray("fieldIndexNames", std::move(fieldIndexNamesJsonList));
+  }
+
   return payload.View().WriteReadable();
 }
 

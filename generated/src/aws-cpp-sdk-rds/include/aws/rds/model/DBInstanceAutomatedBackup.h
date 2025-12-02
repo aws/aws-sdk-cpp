@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/RDS_EXPORTS.h>
+#include <aws/rds/model/AdditionalStorageVolume.h>
 #include <aws/rds/model/DBInstanceAutomatedBackupsReplication.h>
 #include <aws/rds/model/RestoreWindow.h>
 
@@ -133,8 +134,7 @@ class DBInstanceAutomatedBackup {
 
   ///@{
   /**
-   * <p>The allocated storage size for the the automated backup in gibibytes
-   * (GiB).</p>
+   * <p>The allocated storage size for the automated backup in gibibytes (GiB).</p>
    */
   inline int GetAllocatedStorage() const { return m_allocatedStorage; }
   inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
@@ -612,6 +612,31 @@ class DBInstanceAutomatedBackup {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The additional storage volumes associated with the automated backup.</p>
+   * <p>Valid Values: <code>GP3 | IO2</code> </p>
+   */
+  inline const Aws::Vector<AdditionalStorageVolume>& GetAdditionalStorageVolumes() const { return m_additionalStorageVolumes; }
+  inline bool AdditionalStorageVolumesHasBeenSet() const { return m_additionalStorageVolumesHasBeenSet; }
+  template <typename AdditionalStorageVolumesT = Aws::Vector<AdditionalStorageVolume>>
+  void SetAdditionalStorageVolumes(AdditionalStorageVolumesT&& value) {
+    m_additionalStorageVolumesHasBeenSet = true;
+    m_additionalStorageVolumes = std::forward<AdditionalStorageVolumesT>(value);
+  }
+  template <typename AdditionalStorageVolumesT = Aws::Vector<AdditionalStorageVolume>>
+  DBInstanceAutomatedBackup& WithAdditionalStorageVolumes(AdditionalStorageVolumesT&& value) {
+    SetAdditionalStorageVolumes(std::forward<AdditionalStorageVolumesT>(value));
+    return *this;
+  }
+  template <typename AdditionalStorageVolumesT = AdditionalStorageVolume>
+  DBInstanceAutomatedBackup& AddAdditionalStorageVolumes(AdditionalStorageVolumesT&& value) {
+    m_additionalStorageVolumesHasBeenSet = true;
+    m_additionalStorageVolumes.emplace_back(std::forward<AdditionalStorageVolumesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_dBInstanceArn;
   bool m_dBInstanceArnHasBeenSet = false;
@@ -705,6 +730,9 @@ class DBInstanceAutomatedBackup {
 
   bool m_dedicatedLogVolume{false};
   bool m_dedicatedLogVolumeHasBeenSet = false;
+
+  Aws::Vector<AdditionalStorageVolume> m_additionalStorageVolumes;
+  bool m_additionalStorageVolumesHasBeenSet = false;
 };
 
 }  // namespace Model

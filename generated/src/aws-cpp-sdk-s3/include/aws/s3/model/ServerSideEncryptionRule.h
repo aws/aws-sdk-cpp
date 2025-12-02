@@ -109,10 +109,10 @@ class ServerSideEncryptionRule {
    * specified encryption type. However, you can continue to read and list any
    * pre-existing objects already encrypted with the specified encryption type. For
    * more information, see <a
-   * href="https://docs.aws.amazon.com/AmazonS3/userguide/block-encryption-type.html">Blocking
-   * an encryption type for a general purpose bucket</a>. </p>  <p>Currently,
-   * this parameter only supports blocking or unblocking Server Side Encryption with
-   * Customer Provided Keys (SSE-C). For more information about SSE-C, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/blocking-unblocking-s3-c-encryption-gpb.html">Blocking
+   * or unblocking SSE-C for a general purpose bucket</a>.</p>  <p>Currently,
+   * this parameter only supports blocking or unblocking server-side encryption with
+   * customer-provided keys (SSE-C). For more information about SSE-C, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html">Using
    * server-side encryption with customer-provided keys (SSE-C)</a>.</p>
    */

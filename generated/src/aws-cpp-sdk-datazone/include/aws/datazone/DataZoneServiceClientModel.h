@@ -84,6 +84,7 @@
 #include <aws/datazone/model/GetAssetResult.h>
 #include <aws/datazone/model/GetAssetTypeResult.h>
 #include <aws/datazone/model/GetConnectionResult.h>
+#include <aws/datazone/model/GetDataExportConfigurationResult.h>
 #include <aws/datazone/model/GetDataProductResult.h>
 #include <aws/datazone/model/GetDataSourceResult.h>
 #include <aws/datazone/model/GetDataSourceRunResult.h>
@@ -150,6 +151,7 @@
 #include <aws/datazone/model/ListTimeSeriesDataPointsResult.h>
 #include <aws/datazone/model/PostLineageEventResult.h>
 #include <aws/datazone/model/PostTimeSeriesDataPointsResult.h>
+#include <aws/datazone/model/PutDataExportConfigurationResult.h>
 #include <aws/datazone/model/PutEnvironmentBlueprintConfigurationResult.h>
 #include <aws/datazone/model/RejectPredictionsResult.h>
 #include <aws/datazone/model/RejectSubscriptionRequestResult.h>
@@ -290,6 +292,7 @@ class GetAssetRequest;
 class GetAssetFilterRequest;
 class GetAssetTypeRequest;
 class GetConnectionRequest;
+class GetDataExportConfigurationRequest;
 class GetDataProductRequest;
 class GetDataSourceRequest;
 class GetDataSourceRunRequest;
@@ -355,6 +358,7 @@ class ListTagsForResourceRequest;
 class ListTimeSeriesDataPointsRequest;
 class PostLineageEventRequest;
 class PostTimeSeriesDataPointsRequest;
+class PutDataExportConfigurationRequest;
 class PutEnvironmentBlueprintConfigurationRequest;
 class RejectPredictionsRequest;
 class RejectSubscriptionRequestRequest;
@@ -465,6 +469,7 @@ typedef Aws::Utils::Outcome<GetAssetResult, DataZoneError> GetAssetOutcome;
 typedef Aws::Utils::Outcome<GetAssetFilterResult, DataZoneError> GetAssetFilterOutcome;
 typedef Aws::Utils::Outcome<GetAssetTypeResult, DataZoneError> GetAssetTypeOutcome;
 typedef Aws::Utils::Outcome<GetConnectionResult, DataZoneError> GetConnectionOutcome;
+typedef Aws::Utils::Outcome<GetDataExportConfigurationResult, DataZoneError> GetDataExportConfigurationOutcome;
 typedef Aws::Utils::Outcome<GetDataProductResult, DataZoneError> GetDataProductOutcome;
 typedef Aws::Utils::Outcome<GetDataSourceResult, DataZoneError> GetDataSourceOutcome;
 typedef Aws::Utils::Outcome<GetDataSourceRunResult, DataZoneError> GetDataSourceRunOutcome;
@@ -530,6 +535,7 @@ typedef Aws::Utils::Outcome<ListTagsForResourceResult, DataZoneError> ListTagsFo
 typedef Aws::Utils::Outcome<ListTimeSeriesDataPointsResult, DataZoneError> ListTimeSeriesDataPointsOutcome;
 typedef Aws::Utils::Outcome<PostLineageEventResult, DataZoneError> PostLineageEventOutcome;
 typedef Aws::Utils::Outcome<PostTimeSeriesDataPointsResult, DataZoneError> PostTimeSeriesDataPointsOutcome;
+typedef Aws::Utils::Outcome<PutDataExportConfigurationResult, DataZoneError> PutDataExportConfigurationOutcome;
 typedef Aws::Utils::Outcome<PutEnvironmentBlueprintConfigurationResult, DataZoneError> PutEnvironmentBlueprintConfigurationOutcome;
 typedef Aws::Utils::Outcome<RejectPredictionsResult, DataZoneError> RejectPredictionsOutcome;
 typedef Aws::Utils::Outcome<RejectSubscriptionRequestResult, DataZoneError> RejectSubscriptionRequestOutcome;
@@ -640,6 +646,7 @@ typedef std::future<GetAssetOutcome> GetAssetOutcomeCallable;
 typedef std::future<GetAssetFilterOutcome> GetAssetFilterOutcomeCallable;
 typedef std::future<GetAssetTypeOutcome> GetAssetTypeOutcomeCallable;
 typedef std::future<GetConnectionOutcome> GetConnectionOutcomeCallable;
+typedef std::future<GetDataExportConfigurationOutcome> GetDataExportConfigurationOutcomeCallable;
 typedef std::future<GetDataProductOutcome> GetDataProductOutcomeCallable;
 typedef std::future<GetDataSourceOutcome> GetDataSourceOutcomeCallable;
 typedef std::future<GetDataSourceRunOutcome> GetDataSourceRunOutcomeCallable;
@@ -705,6 +712,7 @@ typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallab
 typedef std::future<ListTimeSeriesDataPointsOutcome> ListTimeSeriesDataPointsOutcomeCallable;
 typedef std::future<PostLineageEventOutcome> PostLineageEventOutcomeCallable;
 typedef std::future<PostTimeSeriesDataPointsOutcome> PostTimeSeriesDataPointsOutcomeCallable;
+typedef std::future<PutDataExportConfigurationOutcome> PutDataExportConfigurationOutcomeCallable;
 typedef std::future<PutEnvironmentBlueprintConfigurationOutcome> PutEnvironmentBlueprintConfigurationOutcomeCallable;
 typedef std::future<RejectPredictionsOutcome> RejectPredictionsOutcomeCallable;
 typedef std::future<RejectSubscriptionRequestOutcome> RejectSubscriptionRequestOutcomeCallable;
@@ -961,6 +969,9 @@ typedef std::function<void(const DataZoneClient*, const Model::GetAssetTypeReque
 typedef std::function<void(const DataZoneClient*, const Model::GetConnectionRequest&, const Model::GetConnectionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetConnectionResponseReceivedHandler;
+typedef std::function<void(const DataZoneClient*, const Model::GetDataExportConfigurationRequest&,
+                           const Model::GetDataExportConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetDataExportConfigurationResponseReceivedHandler;
 typedef std::function<void(const DataZoneClient*, const Model::GetDataProductRequest&, const Model::GetDataProductOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetDataProductResponseReceivedHandler;
@@ -1159,6 +1170,9 @@ typedef std::function<void(const DataZoneClient*, const Model::PostLineageEventR
 typedef std::function<void(const DataZoneClient*, const Model::PostTimeSeriesDataPointsRequest&,
                            const Model::PostTimeSeriesDataPointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PostTimeSeriesDataPointsResponseReceivedHandler;
+typedef std::function<void(const DataZoneClient*, const Model::PutDataExportConfigurationRequest&,
+                           const Model::PutDataExportConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutDataExportConfigurationResponseReceivedHandler;
 typedef std::function<void(const DataZoneClient*, const Model::PutEnvironmentBlueprintConfigurationRequest&,
                            const Model::PutEnvironmentBlueprintConfigurationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

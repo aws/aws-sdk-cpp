@@ -22,6 +22,10 @@ ToolResultBlockDelta& ToolResultBlockDelta::operator=(JsonView jsonValue) {
     m_text = jsonValue.GetString("text");
     m_textHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("json")) {
+    m_json = jsonValue.GetObject("json");
+    m_jsonHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,12 @@ JsonValue ToolResultBlockDelta::Jsonize() const {
 
   if (m_textHasBeenSet) {
     payload.WithString("text", m_text);
+  }
+
+  if (m_jsonHasBeenSet) {
+    if (!m_json.View().IsNull()) {
+      payload.WithObject("json", JsonValue(m_json.View()));
+    }
   }
 
   return payload;

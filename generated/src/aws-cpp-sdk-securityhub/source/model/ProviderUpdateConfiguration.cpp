@@ -22,6 +22,10 @@ ProviderUpdateConfiguration& ProviderUpdateConfiguration::operator=(JsonView jso
     m_jiraCloud = jsonValue.GetObject("JiraCloud");
     m_jiraCloudHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ServiceNow")) {
+    m_serviceNow = jsonValue.GetObject("ServiceNow");
+    m_serviceNowHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue ProviderUpdateConfiguration::Jsonize() const {
 
   if (m_jiraCloudHasBeenSet) {
     payload.WithObject("JiraCloud", m_jiraCloud.Jsonize());
+  }
+
+  if (m_serviceNowHasBeenSet) {
+    payload.WithObject("ServiceNow", m_serviceNow.Jsonize());
   }
 
   return payload;

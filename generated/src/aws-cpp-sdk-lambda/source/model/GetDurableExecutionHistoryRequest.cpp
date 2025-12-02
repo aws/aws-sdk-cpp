@@ -1,0 +1,45 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/lambda/model/GetDurableExecutionHistoryRequest.h>
+
+#include <utility>
+
+using namespace Aws::Lambda::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws::Http;
+
+Aws::String GetDurableExecutionHistoryRequest::SerializePayload() const { return {}; }
+
+void GetDurableExecutionHistoryRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_includeExecutionDataHasBeenSet) {
+    ss << m_includeExecutionData;
+    uri.AddQueryStringParameter("IncludeExecutionData", ss.str());
+    ss.str("");
+  }
+
+  if (m_maxItemsHasBeenSet) {
+    ss << m_maxItems;
+    uri.AddQueryStringParameter("MaxItems", ss.str());
+    ss.str("");
+  }
+
+  if (m_markerHasBeenSet) {
+    ss << m_marker;
+    uri.AddQueryStringParameter("Marker", ss.str());
+    ss.str("");
+  }
+
+  if (m_reverseOrderHasBeenSet) {
+    ss << m_reverseOrder;
+    uri.AddQueryStringParameter("ReverseOrder", ss.str());
+    ss.str("");
+  }
+}

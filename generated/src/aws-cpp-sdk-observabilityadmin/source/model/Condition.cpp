@@ -1,0 +1,48 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/observabilityadmin/model/Condition.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace ObservabilityAdmin {
+namespace Model {
+
+Condition::Condition(JsonView jsonValue) { *this = jsonValue; }
+
+Condition& Condition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ActionCondition")) {
+    m_actionCondition = jsonValue.GetObject("ActionCondition");
+    m_actionConditionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("LabelNameCondition")) {
+    m_labelNameCondition = jsonValue.GetObject("LabelNameCondition");
+    m_labelNameConditionHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue Condition::Jsonize() const {
+  JsonValue payload;
+
+  if (m_actionConditionHasBeenSet) {
+    payload.WithObject("ActionCondition", m_actionCondition.Jsonize());
+  }
+
+  if (m_labelNameConditionHasBeenSet) {
+    payload.WithObject("LabelNameCondition", m_labelNameCondition.Jsonize());
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace ObservabilityAdmin
+}  // namespace Aws

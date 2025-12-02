@@ -10,7 +10,7 @@
 namespace Aws {
 namespace BedrockAgentCoreControl {
 namespace Model {
-enum class OverrideType { NOT_SET, SEMANTIC_OVERRIDE, SUMMARY_OVERRIDE, USER_PREFERENCE_OVERRIDE, SELF_MANAGED };
+enum class OverrideType { NOT_SET, SEMANTIC_OVERRIDE, SUMMARY_OVERRIDE, USER_PREFERENCE_OVERRIDE, SELF_MANAGED, EPISODIC_OVERRIDE };
 
 namespace OverrideTypeMapper {
 AWS_BEDROCKAGENTCORECONTROL_API OverrideType GetOverrideTypeForName(const Aws::String& name);

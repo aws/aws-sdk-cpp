@@ -34,6 +34,22 @@ TelemetryDestinationConfiguration& TelemetryDestinationConfiguration::operator=(
     m_vPCFlowLogParameters = jsonValue.GetObject("VPCFlowLogParameters");
     m_vPCFlowLogParametersHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CloudtrailParameters")) {
+    m_cloudtrailParameters = jsonValue.GetObject("CloudtrailParameters");
+    m_cloudtrailParametersHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ELBLoadBalancerLoggingParameters")) {
+    m_eLBLoadBalancerLoggingParameters = jsonValue.GetObject("ELBLoadBalancerLoggingParameters");
+    m_eLBLoadBalancerLoggingParametersHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("WAFLoggingParameters")) {
+    m_wAFLoggingParameters = jsonValue.GetObject("WAFLoggingParameters");
+    m_wAFLoggingParametersHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("LogDeliveryParameters")) {
+    m_logDeliveryParameters = jsonValue.GetObject("LogDeliveryParameters");
+    m_logDeliveryParametersHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +70,22 @@ JsonValue TelemetryDestinationConfiguration::Jsonize() const {
 
   if (m_vPCFlowLogParametersHasBeenSet) {
     payload.WithObject("VPCFlowLogParameters", m_vPCFlowLogParameters.Jsonize());
+  }
+
+  if (m_cloudtrailParametersHasBeenSet) {
+    payload.WithObject("CloudtrailParameters", m_cloudtrailParameters.Jsonize());
+  }
+
+  if (m_eLBLoadBalancerLoggingParametersHasBeenSet) {
+    payload.WithObject("ELBLoadBalancerLoggingParameters", m_eLBLoadBalancerLoggingParameters.Jsonize());
+  }
+
+  if (m_wAFLoggingParametersHasBeenSet) {
+    payload.WithObject("WAFLoggingParameters", m_wAFLoggingParameters.Jsonize());
+  }
+
+  if (m_logDeliveryParametersHasBeenSet) {
+    payload.WithObject("LogDeliveryParameters", m_logDeliveryParameters.Jsonize());
   }
 
   return payload;

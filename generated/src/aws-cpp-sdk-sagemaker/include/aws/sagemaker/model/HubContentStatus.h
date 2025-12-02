@@ -10,7 +10,7 @@
 namespace Aws {
 namespace SageMaker {
 namespace Model {
-enum class HubContentStatus { NOT_SET, Available, Importing, Deleting, ImportFailed, DeleteFailed };
+enum class HubContentStatus { NOT_SET, Available, Importing, Deleting, ImportFailed, DeleteFailed, PendingImport, PendingDelete };
 
 namespace HubContentStatusMapper {
 AWS_SAGEMAKER_API HubContentStatus GetHubContentStatusForName(const Aws::String& name);

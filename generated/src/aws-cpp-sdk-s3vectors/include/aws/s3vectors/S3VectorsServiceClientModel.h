@@ -37,6 +37,7 @@
 #include <aws/s3vectors/model/GetVectorsResult.h>
 #include <aws/s3vectors/model/ListIndexesRequest.h>
 #include <aws/s3vectors/model/ListIndexesResult.h>
+#include <aws/s3vectors/model/ListTagsForResourceResult.h>
 #include <aws/s3vectors/model/ListVectorBucketsRequest.h>
 #include <aws/s3vectors/model/ListVectorBucketsResult.h>
 #include <aws/s3vectors/model/ListVectorsRequest.h>
@@ -44,6 +45,8 @@
 #include <aws/s3vectors/model/PutVectorBucketPolicyResult.h>
 #include <aws/s3vectors/model/PutVectorsResult.h>
 #include <aws/s3vectors/model/QueryVectorsResult.h>
+#include <aws/s3vectors/model/TagResourceResult.h>
+#include <aws/s3vectors/model/UntagResourceResult.h>
 /* End of service model headers required in S3VectorsClient header */
 
 namespace Aws {
@@ -88,11 +91,14 @@ class GetVectorBucketRequest;
 class GetVectorBucketPolicyRequest;
 class GetVectorsRequest;
 class ListIndexesRequest;
+class ListTagsForResourceRequest;
 class ListVectorBucketsRequest;
 class ListVectorsRequest;
 class PutVectorBucketPolicyRequest;
 class PutVectorsRequest;
 class QueryVectorsRequest;
+class TagResourceRequest;
+class UntagResourceRequest;
 /* End of service model forward declarations required in S3VectorsClient header */
 
 /* Service model Outcome class definitions */
@@ -107,11 +113,14 @@ typedef Aws::Utils::Outcome<GetVectorBucketResult, S3VectorsError> GetVectorBuck
 typedef Aws::Utils::Outcome<GetVectorBucketPolicyResult, S3VectorsError> GetVectorBucketPolicyOutcome;
 typedef Aws::Utils::Outcome<GetVectorsResult, S3VectorsError> GetVectorsOutcome;
 typedef Aws::Utils::Outcome<ListIndexesResult, S3VectorsError> ListIndexesOutcome;
+typedef Aws::Utils::Outcome<ListTagsForResourceResult, S3VectorsError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<ListVectorBucketsResult, S3VectorsError> ListVectorBucketsOutcome;
 typedef Aws::Utils::Outcome<ListVectorsResult, S3VectorsError> ListVectorsOutcome;
 typedef Aws::Utils::Outcome<PutVectorBucketPolicyResult, S3VectorsError> PutVectorBucketPolicyOutcome;
 typedef Aws::Utils::Outcome<PutVectorsResult, S3VectorsError> PutVectorsOutcome;
 typedef Aws::Utils::Outcome<QueryVectorsResult, S3VectorsError> QueryVectorsOutcome;
+typedef Aws::Utils::Outcome<TagResourceResult, S3VectorsError> TagResourceOutcome;
+typedef Aws::Utils::Outcome<UntagResourceResult, S3VectorsError> UntagResourceOutcome;
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
@@ -126,11 +135,14 @@ typedef std::future<GetVectorBucketOutcome> GetVectorBucketOutcomeCallable;
 typedef std::future<GetVectorBucketPolicyOutcome> GetVectorBucketPolicyOutcomeCallable;
 typedef std::future<GetVectorsOutcome> GetVectorsOutcomeCallable;
 typedef std::future<ListIndexesOutcome> ListIndexesOutcomeCallable;
+typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<ListVectorBucketsOutcome> ListVectorBucketsOutcomeCallable;
 typedef std::future<ListVectorsOutcome> ListVectorsOutcomeCallable;
 typedef std::future<PutVectorBucketPolicyOutcome> PutVectorBucketPolicyOutcomeCallable;
 typedef std::future<PutVectorsOutcome> PutVectorsOutcomeCallable;
 typedef std::future<QueryVectorsOutcome> QueryVectorsOutcomeCallable;
+typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
 
@@ -170,6 +182,9 @@ typedef std::function<void(const S3VectorsClient*, const Model::GetVectorsReques
 typedef std::function<void(const S3VectorsClient*, const Model::ListIndexesRequest&, const Model::ListIndexesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListIndexesResponseReceivedHandler;
+typedef std::function<void(const S3VectorsClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListTagsForResourceResponseReceivedHandler;
 typedef std::function<void(const S3VectorsClient*, const Model::ListVectorBucketsRequest&, const Model::ListVectorBucketsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListVectorBucketsResponseReceivedHandler;
@@ -185,6 +200,12 @@ typedef std::function<void(const S3VectorsClient*, const Model::PutVectorsReques
 typedef std::function<void(const S3VectorsClient*, const Model::QueryVectorsRequest&, const Model::QueryVectorsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     QueryVectorsResponseReceivedHandler;
+typedef std::function<void(const S3VectorsClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    TagResourceResponseReceivedHandler;
+typedef std::function<void(const S3VectorsClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UntagResourceResponseReceivedHandler;
 /* End of service model async handlers definitions */
 }  // namespace S3Vectors
 }  // namespace Aws

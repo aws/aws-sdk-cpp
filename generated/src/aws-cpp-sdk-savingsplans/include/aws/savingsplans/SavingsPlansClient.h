@@ -135,8 +135,8 @@ class AWS_SAVINGSPLANS_API SavingsPlansClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Describes the rates for the specified Savings Plan.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Describes the rates for a specific, existing Savings Plan.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/DescribeSavingsPlanRates">AWS
    * API Reference</a></p>
    */
@@ -190,8 +190,8 @@ class AWS_SAVINGSPLANS_API SavingsPlansClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Describes the offering rates for the specified Savings Plans.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Describes the offering rates for Savings Plans you might want to
+   * purchase.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/DescribeSavingsPlansOfferingRates">AWS
    * API Reference</a></p>
    */

@@ -79,12 +79,13 @@ class AWS_S3VECTORS_API S3VectorsClient : public Aws::Client::AWSJsonClient,
   virtual ~S3VectorsClient();
 
   /**
-   * <p> <p>Amazon S3 Vectors is in preview release for Amazon S3 and is
-   * subject to change.</p>  <p>Creates a vector index within a vector bucket.
-   * To specify the vector bucket, you must use either the vector bucket name or the
-   * vector bucket Amazon Resource Name (ARN).</p> <dl> <dt>Permissions</dt> <dd>
-   * <p>You must have the <code>s3vectors:CreateIndex</code> permission to use this
-   * operation. </p> </dd> </dl></p><p><h3>See Also:</h3>   <a
+   * <p>Creates a vector index within a vector bucket. To specify the vector bucket,
+   * you must use either the vector bucket name or the vector bucket Amazon Resource
+   * Name (ARN).</p> <dl> <dt>Permissions</dt> <dd> <p>You must have the
+   * <code>s3vectors:CreateIndex</code> permission to use this operation.</p> <p>You
+   * must have the <code>s3vectors:TagResource</code> permission in addition to
+   * <code>s3vectors:CreateIndex</code> permission to create a vector index with
+   * tags.</p> </dd> </dl><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/CreateIndex">AWS
    * API Reference</a></p>
    */
@@ -109,12 +110,12 @@ class AWS_S3VECTORS_API S3VectorsClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> <p>Amazon S3 Vectors is in preview release for Amazon S3 and is
-   * subject to change.</p>  <p>Creates a vector bucket in the Amazon Web
-   * Services Region that you want your bucket to be in. </p> <dl>
-   * <dt>Permissions</dt> <dd> <p>You must have the
+   * <p>Creates a vector bucket in the Amazon Web Services Region that you want your
+   * bucket to be in. </p> <dl> <dt>Permissions</dt> <dd> <p>You must have the
    * <code>s3vectors:CreateVectorBucket</code> permission to use this operation. </p>
-   * </dd> </dl></p><p><h3>See Also:</h3>   <a
+   * <p>You must have the <code>s3vectors:TagResource</code> permission in addition
+   * to <code>s3vectors:CreateVectorBucket</code> permission to create a vector
+   * bucket with tags.</p> </dd> </dl><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/CreateVectorBucket">AWS
    * API Reference</a></p>
    */
@@ -140,12 +141,11 @@ class AWS_S3VECTORS_API S3VectorsClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> <p>Amazon S3 Vectors is in preview release for Amazon S3 and is
-   * subject to change.</p>  <p>Deletes a vector index. To specify the vector
-   * index, you can either use both the vector bucket name and vector index name, or
-   * use the vector index Amazon Resource Name (ARN). </p> <dl> <dt>Permissions</dt>
-   * <dd> <p>You must have the <code>s3vectors:DeleteIndex</code> permission to use
-   * this operation. </p> </dd> </dl></p><p><h3>See Also:</h3>   <a
+   * <p>Deletes a vector index. To specify the vector index, you can either use both
+   * the vector bucket name and vector index name, or use the vector index Amazon
+   * Resource Name (ARN). </p> <dl> <dt>Permissions</dt> <dd> <p>You must have the
+   * <code>s3vectors:DeleteIndex</code> permission to use this operation. </p> </dd>
+   * </dl><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/DeleteIndex">AWS
    * API Reference</a></p>
    */
@@ -171,13 +171,12 @@ class AWS_S3VECTORS_API S3VectorsClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> <p>Amazon S3 Vectors is in preview release for Amazon S3 and is
-   * subject to change.</p>  <p>Deletes a vector bucket. All vector indexes in
-   * the vector bucket must be deleted before the vector bucket can be deleted. To
-   * perform this operation, you must use either the vector bucket name or the vector
-   * bucket Amazon Resource Name (ARN). </p> <dl> <dt>Permissions</dt> <dd> <p>You
-   * must have the <code>s3vectors:DeleteVectorBucket</code> permission to use this
-   * operation. </p> </dd> </dl></p><p><h3>See Also:</h3>   <a
+   * <p>Deletes a vector bucket. All vector indexes in the vector bucket must be
+   * deleted before the vector bucket can be deleted. To perform this operation, you
+   * must use either the vector bucket name or the vector bucket Amazon Resource Name
+   * (ARN). </p> <dl> <dt>Permissions</dt> <dd> <p>You must have the
+   * <code>s3vectors:DeleteVectorBucket</code> permission to use this operation. </p>
+   * </dd> </dl><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/DeleteVectorBucket">AWS
    * API Reference</a></p>
    */
@@ -204,12 +203,11 @@ class AWS_S3VECTORS_API S3VectorsClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> <p>Amazon S3 Vectors is in preview release for Amazon S3 and is
-   * subject to change.</p>  <p>Deletes a vector bucket policy. To specify the
-   * bucket, you must use either the vector bucket name or the vector bucket Amazon
-   * Resource Name (ARN).</p> <dl> <dt>Permissions</dt> <dd> <p>You must have the
+   * <p>Deletes a vector bucket policy. To specify the bucket, you must use either
+   * the vector bucket name or the vector bucket Amazon Resource Name (ARN).</p> <dl>
+   * <dt>Permissions</dt> <dd> <p>You must have the
    * <code>s3vectors:DeleteVectorBucketPolicy</code> permission to use this
-   * operation. </p> </dd> </dl></p><p><h3>See Also:</h3>   <a
+   * operation. </p> </dd> </dl><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/DeleteVectorBucketPolicy">AWS
    * API Reference</a></p>
    */
@@ -237,13 +235,11 @@ class AWS_S3VECTORS_API S3VectorsClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> <p>Amazon S3 Vectors is in preview release for Amazon S3 and is
-   * subject to change.</p>  <p>Deletes one or more vectors in a vector index.
-   * To specify the vector index, you can either use both the vector bucket name and
-   * vector index name, or use the vector index Amazon Resource Name (ARN). </p> <dl>
-   * <dt>Permissions</dt> <dd> <p>You must have the
-   * <code>s3vectors:DeleteVectors</code> permission to use this operation. </p>
-   * </dd> </dl></p><p><h3>See Also:</h3>   <a
+   * <p>Deletes one or more vectors in a vector index. To specify the vector index,
+   * you can either use both the vector bucket name and vector index name, or use the
+   * vector index Amazon Resource Name (ARN). </p> <dl> <dt>Permissions</dt> <dd>
+   * <p>You must have the <code>s3vectors:DeleteVectors</code> permission to use this
+   * operation. </p> </dd> </dl><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/DeleteVectors">AWS
    * API Reference</a></p>
    */
@@ -268,12 +264,11 @@ class AWS_S3VECTORS_API S3VectorsClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> <p>Amazon S3 Vectors is in preview release for Amazon S3 and is
-   * subject to change.</p>  <p>Returns vector index attributes. To specify
-   * the vector index, you can either use both the vector bucket name and the vector
-   * index name, or use the vector index Amazon Resource Name (ARN). </p> <dl>
-   * <dt>Permissions</dt> <dd> <p>You must have the <code>s3vectors:GetIndex</code>
-   * permission to use this operation. </p> </dd> </dl></p><p><h3>See Also:</h3>   <a
+   * <p>Returns vector index attributes. To specify the vector index, you can either
+   * use both the vector bucket name and the vector index name, or use the vector
+   * index Amazon Resource Name (ARN). </p> <dl> <dt>Permissions</dt> <dd> <p>You
+   * must have the <code>s3vectors:GetIndex</code> permission to use this operation.
+   * </p> </dd> </dl><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/GetIndex">AWS
    * API Reference</a></p>
    */
@@ -299,12 +294,11 @@ class AWS_S3VECTORS_API S3VectorsClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> <p>Amazon S3 Vectors is in preview release for Amazon S3 and is
-   * subject to change.</p>  <p>Returns vector bucket attributes. To specify
-   * the bucket, you must use either the vector bucket name or the vector bucket
-   * Amazon Resource Name (ARN). </p> <dl> <dt>Permissions</dt> <dd> <p>You must have
-   * the <code>s3vectors:GetVectorBucket</code> permission to use this operation.
-   * </p> </dd> </dl></p><p><h3>See Also:</h3>   <a
+   * <p>Returns vector bucket attributes. To specify the bucket, you must use either
+   * the vector bucket name or the vector bucket Amazon Resource Name (ARN). </p>
+   * <dl> <dt>Permissions</dt> <dd> <p>You must have the
+   * <code>s3vectors:GetVectorBucket</code> permission to use this operation. </p>
+   * </dd> </dl><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/GetVectorBucket">AWS
    * API Reference</a></p>
    */
@@ -330,12 +324,11 @@ class AWS_S3VECTORS_API S3VectorsClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> <p>Amazon S3 Vectors is in preview release for Amazon S3 and is
-   * subject to change.</p>  <p>Gets details about a vector bucket policy. To
-   * specify the bucket, you must use either the vector bucket name or the vector
-   * bucket Amazon Resource Name (ARN). </p> <dl> <dt>Permissions</dt> <dd> <p>You
-   * must have the <code>s3vectors:GetVectorBucketPolicy</code> permission to use
-   * this operation. </p> </dd> </dl></p><p><h3>See Also:</h3>   <a
+   * <p>Gets details about a vector bucket policy. To specify the bucket, you must
+   * use either the vector bucket name or the vector bucket Amazon Resource Name
+   * (ARN). </p> <dl> <dt>Permissions</dt> <dd> <p>You must have the
+   * <code>s3vectors:GetVectorBucketPolicy</code> permission to use this operation.
+   * </p> </dd> </dl><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/GetVectorBucketPolicy">AWS
    * API Reference</a></p>
    */
@@ -362,12 +355,11 @@ class AWS_S3VECTORS_API S3VectorsClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> <p>Amazon S3 Vectors is in preview release for Amazon S3 and is
-   * subject to change.</p>  <p>Returns vector attributes. To specify the
-   * vector index, you can either use both the vector bucket name and the vector
-   * index name, or use the vector index Amazon Resource Name (ARN). </p> <dl>
-   * <dt>Permissions</dt> <dd> <p>You must have the <code>s3vectors:GetVectors</code>
-   * permission to use this operation. </p> </dd> </dl></p><p><h3>See Also:</h3>   <a
+   * <p>Returns vector attributes. To specify the vector index, you can either use
+   * both the vector bucket name and the vector index name, or use the vector index
+   * Amazon Resource Name (ARN). </p> <dl> <dt>Permissions</dt> <dd> <p>You must have
+   * the <code>s3vectors:GetVectors</code> permission to use this operation. </p>
+   * </dd> </dl><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/GetVectors">AWS
    * API Reference</a></p>
    */
@@ -392,13 +384,11 @@ class AWS_S3VECTORS_API S3VectorsClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> <p>Amazon S3 Vectors is in preview release for Amazon S3 and is
-   * subject to change.</p>  <p>Returns a list of all the vector indexes
-   * within the specified vector bucket. To specify the bucket, you must use either
-   * the vector bucket name or the vector bucket Amazon Resource Name (ARN). </p>
-   * <dl> <dt>Permissions</dt> <dd> <p>You must have the
-   * <code>s3vectors:ListIndexes</code> permission to use this operation. </p> </dd>
-   * </dl></p><p><h3>See Also:</h3>   <a
+   * <p>Returns a list of all the vector indexes within the specified vector bucket.
+   * To specify the bucket, you must use either the vector bucket name or the vector
+   * bucket Amazon Resource Name (ARN). </p> <dl> <dt>Permissions</dt> <dd> <p>You
+   * must have the <code>s3vectors:ListIndexes</code> permission to use this
+   * operation. </p> </dd> </dl><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/ListIndexes">AWS
    * API Reference</a></p>
    */
@@ -424,12 +414,44 @@ class AWS_S3VECTORS_API S3VectorsClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> <p>Amazon S3 Vectors is in preview release for Amazon S3 and is
-   * subject to change.</p>  <p>Returns a list of all the vector buckets that
-   * are owned by the authenticated sender of the request.</p> <dl>
-   * <dt>Permissions</dt> <dd> <p>You must have the
+   * <p>Lists all of the tags applied to a specified Amazon S3 Vectors resource. Each
+   * tag is a label consisting of a key and value pair. Tags can help you organize,
+   * track costs for, and control access to resources. </p>  <p>For a list of
+   * S3 resources that support tagging, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html#manage-tags">Managing
+   * tags for Amazon S3 resources</a>.</p>  <dl> <dt>Permissions</dt> <dd>
+   * <p>For vector buckets and vector indexes, you must have the
+   * <code>s3vectors:ListTagsForResource</code> permission to use this operation.</p>
+   * </dd> </dl><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/ListTagsForResource">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+  Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const ListTagsForResourceRequestT& request) const {
+    return SubmitCallable(&S3VectorsClient::ListTagsForResource, request);
+  }
+
+  /**
+   * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+  void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&S3VectorsClient::ListTagsForResource, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a list of all the vector buckets that are owned by the authenticated
+   * sender of the request.</p> <dl> <dt>Permissions</dt> <dd> <p>You must have the
    * <code>s3vectors:ListVectorBuckets</code> permission to use this operation. </p>
-   * </dd> </dl></p><p><h3>See Also:</h3>   <a
+   * </dd> </dl><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/ListVectorBuckets">AWS
    * API Reference</a></p>
    */
@@ -456,25 +478,24 @@ class AWS_S3VECTORS_API S3VectorsClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> <p>Amazon S3 Vectors is in preview release for Amazon S3 and is
-   * subject to change.</p>  <p>List vectors in the specified vector index. To
-   * specify the vector index, you can either use both the vector bucket name and the
-   * vector index name, or use the vector index Amazon Resource Name (ARN). </p> <p>
-   * <code>ListVectors</code> operations proceed sequentially; however, for faster
-   * performance on a large number of vectors in a vector index, applications can
-   * request a parallel <code>ListVectors</code> operation by providing the
-   * <code>segmentCount</code> and <code>segmentIndex</code> parameters.</p> <dl>
-   * <dt>Permissions</dt> <dd> <p>You must have the
-   * <code>s3vectors:ListVectors</code> permission to use this operation. Additional
-   * permissions are required based on the request parameters you specify:</p> <ul>
-   * <li> <p>With only <code>s3vectors:ListVectors</code> permission, you can list
-   * vector keys when <code>returnData</code> and <code>returnMetadata</code> are
-   * both set to false or not specified..</p> </li> <li> <p>If you set
-   * <code>returnData</code> or <code>returnMetadata</code> to true, you must have
-   * both <code>s3vectors:ListVectors</code> and <code>s3vectors:GetVectors</code>
-   * permissions. The request fails with a <code>403 Forbidden</code> error if you
-   * request vector data or metadata without the <code>s3vectors:GetVectors</code>
-   * permission.</p> </li> </ul> </dd> </dl></p><p><h3>See Also:</h3>   <a
+   * <p>List vectors in the specified vector index. To specify the vector index, you
+   * can either use both the vector bucket name and the vector index name, or use the
+   * vector index Amazon Resource Name (ARN). </p> <p> <code>ListVectors</code>
+   * operations proceed sequentially; however, for faster performance on a large
+   * number of vectors in a vector index, applications can request a parallel
+   * <code>ListVectors</code> operation by providing the <code>segmentCount</code>
+   * and <code>segmentIndex</code> parameters.</p> <dl> <dt>Permissions</dt> <dd>
+   * <p>You must have the <code>s3vectors:ListVectors</code> permission to use this
+   * operation. Additional permissions are required based on the request parameters
+   * you specify:</p> <ul> <li> <p>With only <code>s3vectors:ListVectors</code>
+   * permission, you can list vector keys when <code>returnData</code> and
+   * <code>returnMetadata</code> are both set to false or not specified..</p> </li>
+   * <li> <p>If you set <code>returnData</code> or <code>returnMetadata</code> to
+   * true, you must have both <code>s3vectors:ListVectors</code> and
+   * <code>s3vectors:GetVectors</code> permissions. The request fails with a
+   * <code>403 Forbidden</code> error if you request vector data or metadata without
+   * the <code>s3vectors:GetVectors</code> permission.</p> </li> </ul> </dd>
+   * </dl><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/ListVectors">AWS
    * API Reference</a></p>
    */
@@ -500,12 +521,11 @@ class AWS_S3VECTORS_API S3VectorsClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> <p>Amazon S3 Vectors is in preview release for Amazon S3 and is
-   * subject to change.</p>  <p>Creates a bucket policy for a vector bucket.
-   * To specify the bucket, you must use either the vector bucket name or the vector
-   * bucket Amazon Resource Name (ARN). </p> <dl> <dt>Permissions</dt> <dd> <p>You
-   * must have the <code>s3vectors:PutVectorBucketPolicy</code> permission to use
-   * this operation. </p> </dd> </dl></p><p><h3>See Also:</h3>   <a
+   * <p>Creates a bucket policy for a vector bucket. To specify the bucket, you must
+   * use either the vector bucket name or the vector bucket Amazon Resource Name
+   * (ARN). </p> <dl> <dt>Permissions</dt> <dd> <p>You must have the
+   * <code>s3vectors:PutVectorBucketPolicy</code> permission to use this operation.
+   * </p> </dd> </dl><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/PutVectorBucketPolicy">AWS
    * API Reference</a></p>
    */
@@ -531,11 +551,10 @@ class AWS_S3VECTORS_API S3VectorsClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> <p>Amazon S3 Vectors is in preview release for Amazon S3 and is
-   * subject to change.</p>  <p>Adds one or more vectors to a vector index. To
-   * specify the vector index, you can either use both the vector bucket name and the
-   * vector index name, or use the vector index Amazon Resource Name (ARN). </p>
-   * <p>For more information about limits, see <a
+   * <p>Adds one or more vectors to a vector index. To specify the vector index, you
+   * can either use both the vector bucket name and the vector index name, or use the
+   * vector index Amazon Resource Name (ARN). </p> <p>For more information about
+   * limits, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-limitations.html">Limitations
    * and restrictions</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>When
    * inserting vector data into your vector index, you must provide the vector data
@@ -549,7 +568,7 @@ class AWS_S3VECTORS_API S3VectorsClient : public Aws::Client::AWSJsonClient,
    * For example, in Python, use <code>numpy.float32</code> or explicitly cast your
    * values.</p>  <dl> <dt>Permissions</dt> <dd> <p>You must have the
    * <code>s3vectors:PutVectors</code> permission to use this operation. </p> </dd>
-   * </dl></p><p><h3>See Also:</h3>   <a
+   * </dl><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/PutVectors">AWS
    * API Reference</a></p>
    */
@@ -574,29 +593,27 @@ class AWS_S3VECTORS_API S3VectorsClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> <p>Amazon S3 Vectors is in preview release for Amazon S3 and is
-   * subject to change.</p>  <p>Performs an approximate nearest neighbor
-   * search query in a vector index using a query vector. By default, it returns the
-   * keys of approximate nearest neighbors. You can optionally include the computed
-   * distance (between the query vector and each vector in the response), the vector
-   * data, and metadata of each vector in the response. </p> <p>To specify the vector
-   * index, you can either use both the vector bucket name and the vector index name,
-   * or use the vector index Amazon Resource Name (ARN). </p> <dl>
-   * <dt>Permissions</dt> <dd> <p>You must have the
-   * <code>s3vectors:QueryVectors</code> permission to use this operation. Additional
-   * permissions are required based on the request parameters you specify:</p> <ul>
-   * <li> <p>With only <code>s3vectors:QueryVectors</code> permission, you can
-   * retrieve vector keys of approximate nearest neighbors and computed distances
-   * between these vectors. This permission is sufficient only when you don't set any
-   * metadata filters and don't request vector data or metadata (by keeping the
-   * <code>returnMetadata</code> parameter set to <code>false</code> or not
-   * specified).</p> </li> <li> <p>If you specify a metadata filter or set
-   * <code>returnMetadata</code> to true, you must have both
+   * <p>Performs an approximate nearest neighbor search query in a vector index using
+   * a query vector. By default, it returns the keys of approximate nearest
+   * neighbors. You can optionally include the computed distance (between the query
+   * vector and each vector in the response), the vector data, and metadata of each
+   * vector in the response. </p> <p>To specify the vector index, you can either use
+   * both the vector bucket name and the vector index name, or use the vector index
+   * Amazon Resource Name (ARN). </p> <dl> <dt>Permissions</dt> <dd> <p>You must have
+   * the <code>s3vectors:QueryVectors</code> permission to use this operation.
+   * Additional permissions are required based on the request parameters you
+   * specify:</p> <ul> <li> <p>With only <code>s3vectors:QueryVectors</code>
+   * permission, you can retrieve vector keys of approximate nearest neighbors and
+   * computed distances between these vectors. This permission is sufficient only
+   * when you don't set any metadata filters and don't request vector data or
+   * metadata (by keeping the <code>returnMetadata</code> parameter set to
+   * <code>false</code> or not specified).</p> </li> <li> <p>If you specify a
+   * metadata filter or set <code>returnMetadata</code> to true, you must have both
    * <code>s3vectors:QueryVectors</code> and <code>s3vectors:GetVectors</code>
    * permissions. The request fails with a <code>403 Forbidden error</code> if you
    * request metadata filtering, vector data, or metadata without the
    * <code>s3vectors:GetVectors</code> permission.</p> </li> </ul> </dd>
-   * </dl></p><p><h3>See Also:</h3>   <a
+   * </dl><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/QueryVectors">AWS
    * API Reference</a></p>
    */
@@ -618,6 +635,72 @@ class AWS_S3VECTORS_API S3VectorsClient : public Aws::Client::AWSJsonClient,
   void QueryVectorsAsync(const QueryVectorsRequestT& request, const QueryVectorsResponseReceivedHandler& handler,
                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&S3VectorsClient::QueryVectors, request, handler, context);
+  }
+
+  /**
+   * <p>Applies one or more user-defined tags to an Amazon S3 Vectors resource or
+   * updates existing tags. Each tag is a label consisting of a key and value pair.
+   * Tags can help you organize, track costs for, and control access to your
+   * resources. You can add up to 50 tags for each resource.</p>  <p>For a list
+   * of S3 resources that support tagging, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html#manage-tags">Managing
+   * tags for Amazon S3 resources</a>.</p>  <dl> <dt>Permissions</dt> <dd>
+   * <p>For vector buckets and vector indexes, you must have the
+   * <code>s3vectors:TagResource</code> permission to use this operation.</p> </dd>
+   * </dl><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/TagResource">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+  /**
+   * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename TagResourceRequestT = Model::TagResourceRequest>
+  Model::TagResourceOutcomeCallable TagResourceCallable(const TagResourceRequestT& request) const {
+    return SubmitCallable(&S3VectorsClient::TagResource, request);
+  }
+
+  /**
+   * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename TagResourceRequestT = Model::TagResourceRequest>
+  void TagResourceAsync(const TagResourceRequestT& request, const TagResourceResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&S3VectorsClient::TagResource, request, handler, context);
+  }
+
+  /**
+   * <p>Removes the specified user-defined tags from an Amazon S3 Vectors resource.
+   * You can pass one or more tag keys. </p>  <p>For a list of S3 resources
+   * that support tagging, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html#manage-tags">Managing
+   * tags for Amazon S3 resources</a>.</p>  <dl> <dt>Permissions</dt> <dd>
+   * <p>For vector buckets and vector indexes, you must have the
+   * <code>s3vectors:UntagResource</code> permission to use this operation.</p> </dd>
+   * </dl><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/UntagResource">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+  /**
+   * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UntagResourceRequestT = Model::UntagResourceRequest>
+  Model::UntagResourceOutcomeCallable UntagResourceCallable(const UntagResourceRequestT& request) const {
+    return SubmitCallable(&S3VectorsClient::UntagResource, request);
+  }
+
+  /**
+   * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UntagResourceRequestT = Model::UntagResourceRequest>
+  void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&S3VectorsClient::UntagResource, request, handler, context);
   }
 
   void OverrideEndpoint(const Aws::String& endpoint);

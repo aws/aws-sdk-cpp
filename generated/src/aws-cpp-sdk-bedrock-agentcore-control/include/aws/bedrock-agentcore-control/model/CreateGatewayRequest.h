@@ -10,6 +10,7 @@
 #include <aws/bedrock-agentcore-control/model/AuthorizerType.h>
 #include <aws/bedrock-agentcore-control/model/ExceptionLevel.h>
 #include <aws/bedrock-agentcore-control/model/GatewayInterceptorConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/GatewayPolicyEngineConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/GatewayProtocolConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/GatewayProtocolType.h>
 #include <aws/core/utils/UUID.h>
@@ -235,6 +236,28 @@ class CreateGatewayRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
+   * <p>The policy engine configuration for the gateway. A policy engine is a
+   * collection of policies that evaluates and authorizes agent tool calls. When
+   * associated with a gateway, the policy engine intercepts all agent requests and
+   * determines whether to allow or deny each action based on the defined
+   * policies.</p>
+   */
+  inline const GatewayPolicyEngineConfiguration& GetPolicyEngineConfiguration() const { return m_policyEngineConfiguration; }
+  inline bool PolicyEngineConfigurationHasBeenSet() const { return m_policyEngineConfigurationHasBeenSet; }
+  template <typename PolicyEngineConfigurationT = GatewayPolicyEngineConfiguration>
+  void SetPolicyEngineConfiguration(PolicyEngineConfigurationT&& value) {
+    m_policyEngineConfigurationHasBeenSet = true;
+    m_policyEngineConfiguration = std::forward<PolicyEngineConfigurationT>(value);
+  }
+  template <typename PolicyEngineConfigurationT = GatewayPolicyEngineConfiguration>
+  CreateGatewayRequest& WithPolicyEngineConfiguration(PolicyEngineConfigurationT&& value) {
+    SetPolicyEngineConfiguration(std::forward<PolicyEngineConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The level of detail in error messages returned when invoking the gateway.</p>
    * <ul> <li> <p>If the value is <code>DEBUG</code>, granular exception messages are
    * returned to help a user debug the gateway.</p> </li> <li> <p>If the value is
@@ -305,6 +328,9 @@ class CreateGatewayRequest : public BedrockAgentCoreControlRequest {
 
   Aws::Vector<GatewayInterceptorConfiguration> m_interceptorConfigurations;
   bool m_interceptorConfigurationsHasBeenSet = false;
+
+  GatewayPolicyEngineConfiguration m_policyEngineConfiguration;
+  bool m_policyEngineConfigurationHasBeenSet = false;
 
   ExceptionLevel m_exceptionLevel{ExceptionLevel::NOT_SET};
   bool m_exceptionLevelHasBeenSet = false;

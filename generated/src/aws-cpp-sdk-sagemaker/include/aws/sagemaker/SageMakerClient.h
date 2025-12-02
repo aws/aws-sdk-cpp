@@ -675,10 +675,10 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates a SageMaker HyperPod cluster. SageMaker HyperPod is a capability of
-   * SageMaker for creating and managing persistent clusters for developing large
-   * machine learning models, such as large language models (LLMs) and diffusion
-   * models. To learn more, see <a
+   * <p>Creates an Amazon SageMaker HyperPod cluster. SageMaker HyperPod is a
+   * capability of SageMaker for creating and managing persistent clusters for
+   * developing large machine learning models, such as large language models (LLMs)
+   * and diffusion models. To learn more, see <a
    * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod.html">Amazon
    * SageMaker HyperPod</a> in the <i>Amazon SageMaker Developer
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1723,6 +1723,32 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Creates an MLflow Tracking Server using a general purpose Amazon S3 bucket as
+   * the artifact store.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateMlflowApp">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateMlflowAppOutcome CreateMlflowApp(const Model::CreateMlflowAppRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateMlflowApp that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateMlflowAppRequestT = Model::CreateMlflowAppRequest>
+  Model::CreateMlflowAppOutcomeCallable CreateMlflowAppCallable(const CreateMlflowAppRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::CreateMlflowApp, request);
+  }
+
+  /**
+   * An Async wrapper for CreateMlflowApp that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateMlflowAppRequestT = Model::CreateMlflowAppRequest>
+  void CreateMlflowAppAsync(const CreateMlflowAppRequestT& request, const CreateMlflowAppResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::CreateMlflowApp, request, handler, context);
+  }
+
+  /**
+   * <p>Creates an MLflow Tracking Server using a general purpose Amazon S3 bucket as
    * the artifact store. For more information, see <a
    * href="https://docs.aws.amazon.com/sagemaker/latest/dg/mlflow-create-tracking-server.html">Create
    * an MLflow Tracking Server</a>.</p><p><h3>See Also:</h3>   <a
@@ -2295,6 +2321,38 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
                                      const CreatePresignedDomainUrlResponseReceivedHandler& handler,
                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SageMakerClient::CreatePresignedDomainUrl, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a presigned URL that you can use to connect to the MLflow UI attached
+   * to your MLflow App. For more information, see <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/dg/mlflow-launch-ui.html">Launch
+   * the MLflow UI using a presigned URL</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedMlflowAppUrl">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreatePresignedMlflowAppUrlOutcome CreatePresignedMlflowAppUrl(
+      const Model::CreatePresignedMlflowAppUrlRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreatePresignedMlflowAppUrl that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CreatePresignedMlflowAppUrlRequestT = Model::CreatePresignedMlflowAppUrlRequest>
+  Model::CreatePresignedMlflowAppUrlOutcomeCallable CreatePresignedMlflowAppUrlCallable(
+      const CreatePresignedMlflowAppUrlRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::CreatePresignedMlflowAppUrl, request);
+  }
+
+  /**
+   * An Async wrapper for CreatePresignedMlflowAppUrl that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreatePresignedMlflowAppUrlRequestT = Model::CreatePresignedMlflowAppUrlRequest>
+  void CreatePresignedMlflowAppUrlAsync(const CreatePresignedMlflowAppUrlRequestT& request,
+                                        const CreatePresignedMlflowAppUrlResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::CreatePresignedMlflowAppUrl, request, handler, context);
   }
 
   /**
@@ -3716,6 +3774,31 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
                                       const DeleteInferenceExperimentResponseReceivedHandler& handler,
                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SageMakerClient::DeleteInferenceExperiment, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes an MLflow App.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteMlflowApp">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteMlflowAppOutcome DeleteMlflowApp(const Model::DeleteMlflowAppRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteMlflowApp that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteMlflowAppRequestT = Model::DeleteMlflowAppRequest>
+  Model::DeleteMlflowAppOutcomeCallable DeleteMlflowAppCallable(const DeleteMlflowAppRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::DeleteMlflowApp, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteMlflowApp that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteMlflowAppRequestT = Model::DeleteMlflowAppRequest>
+  void DeleteMlflowAppAsync(const DeleteMlflowAppRequestT& request, const DeleteMlflowAppResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::DeleteMlflowApp, request, handler, context);
   }
 
   /**
@@ -5549,6 +5632,32 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   void DescribeLineageGroupAsync(const DescribeLineageGroupRequestT& request, const DescribeLineageGroupResponseReceivedHandler& handler,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SageMakerClient::DescribeLineageGroup, request, handler, context);
+  }
+
+  /**
+   * <p>Returns information about an MLflow App.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeMlflowApp">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeMlflowAppOutcome DescribeMlflowApp(const Model::DescribeMlflowAppRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeMlflowApp that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeMlflowAppRequestT = Model::DescribeMlflowAppRequest>
+  Model::DescribeMlflowAppOutcomeCallable DescribeMlflowAppCallable(const DescribeMlflowAppRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::DescribeMlflowApp, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeMlflowApp that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DescribeMlflowAppRequestT = Model::DescribeMlflowAppRequest>
+  void DescribeMlflowAppAsync(const DescribeMlflowAppRequestT& request, const DescribeMlflowAppResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::DescribeMlflowApp, request, handler, context);
   }
 
   /**
@@ -7933,6 +8042,32 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                               const ListLineageGroupsRequestT& request = {}) const {
     return SubmitAsync(&SageMakerClient::ListLineageGroups, request, handler, context);
+  }
+
+  /**
+   * <p>Lists all MLflow Apps</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMlflowApps">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListMlflowAppsOutcome ListMlflowApps(const Model::ListMlflowAppsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListMlflowApps that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListMlflowAppsRequestT = Model::ListMlflowAppsRequest>
+  Model::ListMlflowAppsOutcomeCallable ListMlflowAppsCallable(const ListMlflowAppsRequestT& request = {}) const {
+    return SubmitCallable(&SageMakerClient::ListMlflowApps, request);
+  }
+
+  /**
+   * An Async wrapper for ListMlflowApps that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListMlflowAppsRequestT = Model::ListMlflowAppsRequest>
+  void ListMlflowAppsAsync(const ListMlflowAppsResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                           const ListMlflowAppsRequestT& request = {}) const {
+    return SubmitAsync(&SageMakerClient::ListMlflowApps, request, handler, context);
   }
 
   /**
@@ -10821,6 +10956,31 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
                                       const UpdateInferenceExperimentResponseReceivedHandler& handler,
                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SageMakerClient::UpdateInferenceExperiment, request, handler, context);
+  }
+
+  /**
+   * <p>Updates an MLflow App.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateMlflowApp">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateMlflowAppOutcome UpdateMlflowApp(const Model::UpdateMlflowAppRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateMlflowApp that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UpdateMlflowAppRequestT = Model::UpdateMlflowAppRequest>
+  Model::UpdateMlflowAppOutcomeCallable UpdateMlflowAppCallable(const UpdateMlflowAppRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::UpdateMlflowApp, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateMlflowApp that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UpdateMlflowAppRequestT = Model::UpdateMlflowAppRequest>
+  void UpdateMlflowAppAsync(const UpdateMlflowAppRequestT& request, const UpdateMlflowAppResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::UpdateMlflowApp, request, handler, context);
   }
 
   /**

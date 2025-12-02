@@ -24,6 +24,7 @@ static const int savings_plan_type_HASH = HashingUtils::HashString("savings-plan
 static const int payment_option_HASH = HashingUtils::HashString("payment-option");
 static const int start_HASH = HashingUtils::HashString("start");
 static const int end_HASH = HashingUtils::HashString("end");
+static const int instance_family_HASH = HashingUtils::HashString("instance-family");
 
 SavingsPlansFilterName GetSavingsPlansFilterNameForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -45,6 +46,8 @@ SavingsPlansFilterName GetSavingsPlansFilterNameForName(const Aws::String& name)
     return SavingsPlansFilterName::start;
   } else if (hashCode == end_HASH) {
     return SavingsPlansFilterName::end;
+  } else if (hashCode == instance_family_HASH) {
+    return SavingsPlansFilterName::instance_family;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -77,6 +80,8 @@ Aws::String GetNameForSavingsPlansFilterName(SavingsPlansFilterName enumValue) {
       return "start";
     case SavingsPlansFilterName::end:
       return "end";
+    case SavingsPlansFilterName::instance_family:
+      return "instance-family";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

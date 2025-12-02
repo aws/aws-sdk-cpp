@@ -10,6 +10,7 @@
 #include <aws/s3tables/S3Tables_EXPORTS.h>
 #include <aws/s3tables/model/EncryptionConfiguration.h>
 #include <aws/s3tables/model/OpenTableFormat.h>
+#include <aws/s3tables/model/StorageClassConfiguration.h>
 #include <aws/s3tables/model/TableMetadata.h>
 
 #include <utility>
@@ -147,6 +148,26 @@ class CreateTableRequest : public S3TablesRequest {
 
   ///@{
   /**
+   * <p>The storage class configuration for the table. If not specified, the table
+   * inherits the storage class configuration from its table bucket. Specify this
+   * parameter to override the bucket's default storage class for this table.</p>
+   */
+  inline const StorageClassConfiguration& GetStorageClassConfiguration() const { return m_storageClassConfiguration; }
+  inline bool StorageClassConfigurationHasBeenSet() const { return m_storageClassConfigurationHasBeenSet; }
+  template <typename StorageClassConfigurationT = StorageClassConfiguration>
+  void SetStorageClassConfiguration(StorageClassConfigurationT&& value) {
+    m_storageClassConfigurationHasBeenSet = true;
+    m_storageClassConfiguration = std::forward<StorageClassConfigurationT>(value);
+  }
+  template <typename StorageClassConfigurationT = StorageClassConfiguration>
+  CreateTableRequest& WithStorageClassConfiguration(StorageClassConfigurationT&& value) {
+    SetStorageClassConfiguration(std::forward<StorageClassConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A map of user-defined tags that you would like to apply to the table that you
    * are creating. A tag is a key-value pair that you apply to your resources. Tags
    * can help you organize, track costs for, and control access to resources. For
@@ -194,6 +215,9 @@ class CreateTableRequest : public S3TablesRequest {
 
   EncryptionConfiguration m_encryptionConfiguration;
   bool m_encryptionConfigurationHasBeenSet = false;
+
+  StorageClassConfiguration m_storageClassConfiguration;
+  bool m_storageClassConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_tagsHasBeenSet = false;

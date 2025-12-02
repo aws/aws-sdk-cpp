@@ -26,6 +26,10 @@ CustomExtractionConfiguration& CustomExtractionConfiguration::operator=(JsonView
     m_userPreferenceExtractionOverride = jsonValue.GetObject("userPreferenceExtractionOverride");
     m_userPreferenceExtractionOverrideHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("episodicExtractionOverride")) {
+    m_episodicExtractionOverride = jsonValue.GetObject("episodicExtractionOverride");
+    m_episodicExtractionOverrideHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue CustomExtractionConfiguration::Jsonize() const {
 
   if (m_userPreferenceExtractionOverrideHasBeenSet) {
     payload.WithObject("userPreferenceExtractionOverride", m_userPreferenceExtractionOverride.Jsonize());
+  }
+
+  if (m_episodicExtractionOverrideHasBeenSet) {
+    payload.WithObject("episodicExtractionOverride", m_episodicExtractionOverride.Jsonize());
   }
 
   return payload;

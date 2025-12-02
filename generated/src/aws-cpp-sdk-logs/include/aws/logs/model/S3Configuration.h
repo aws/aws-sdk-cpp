@@ -20,8 +20,8 @@ namespace CloudWatchLogs {
 namespace Model {
 
 /**
- * <p>Configuration details for delivering scheduled query results to an Amazon S3
- * bucket.</p><p><h3>See Also:</h3>   <a
+ * <p>Configuration for Amazon S3 destination where scheduled query results are
+ * delivered.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/S3Configuration">AWS
  * API Reference</a></p>
  */
@@ -34,8 +34,8 @@ class S3Configuration {
 
   ///@{
   /**
-   * <p>The S3 URI where query results will be stored (e.g.,
-   * s3://bucket-name/prefix/).</p>
+   * <p>The Amazon S3 URI where query results are delivered. Must be a valid S3 URI
+   * format.</p>
    */
   inline const Aws::String& GetDestinationIdentifier() const { return m_destinationIdentifier; }
   inline bool DestinationIdentifierHasBeenSet() const { return m_destinationIdentifierHasBeenSet; }
@@ -53,8 +53,8 @@ class S3Configuration {
 
   ///@{
   /**
-   * <p>The ARN of the IAM role that CloudWatch Logs will assume to write results to
-   * the S3 bucket.</p>
+   * <p>The ARN of the IAM role that grants permissions to write query results to the
+   * specified Amazon S3 destination.</p>
    */
   inline const Aws::String& GetRoleArn() const { return m_roleArn; }
   inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }

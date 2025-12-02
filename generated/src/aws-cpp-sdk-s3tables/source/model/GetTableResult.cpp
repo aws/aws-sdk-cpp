@@ -88,6 +88,10 @@ GetTableResult& GetTableResult::operator=(const Aws::AmazonWebServiceResult<Json
     m_tableBucketId = jsonValue.GetString("tableBucketId");
     m_tableBucketIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("managedTableInformation")) {
+    m_managedTableInformation = jsonValue.GetObject("managedTableInformation");
+    m_managedTableInformationHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

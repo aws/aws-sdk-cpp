@@ -21,6 +21,8 @@ static const int max_tokens_HASH = HashingUtils::HashString("max_tokens");
 static const int stop_sequence_HASH = HashingUtils::HashString("stop_sequence");
 static const int guardrail_intervened_HASH = HashingUtils::HashString("guardrail_intervened");
 static const int content_filtered_HASH = HashingUtils::HashString("content_filtered");
+static const int malformed_model_output_HASH = HashingUtils::HashString("malformed_model_output");
+static const int malformed_tool_use_HASH = HashingUtils::HashString("malformed_tool_use");
 static const int model_context_window_exceeded_HASH = HashingUtils::HashString("model_context_window_exceeded");
 
 StopReason GetStopReasonForName(const Aws::String& name) {
@@ -37,6 +39,10 @@ StopReason GetStopReasonForName(const Aws::String& name) {
     return StopReason::guardrail_intervened;
   } else if (hashCode == content_filtered_HASH) {
     return StopReason::content_filtered;
+  } else if (hashCode == malformed_model_output_HASH) {
+    return StopReason::malformed_model_output;
+  } else if (hashCode == malformed_tool_use_HASH) {
+    return StopReason::malformed_tool_use;
   } else if (hashCode == model_context_window_exceeded_HASH) {
     return StopReason::model_context_window_exceeded;
   }
@@ -65,6 +71,10 @@ Aws::String GetNameForStopReason(StopReason enumValue) {
       return "guardrail_intervened";
     case StopReason::content_filtered:
       return "content_filtered";
+    case StopReason::malformed_model_output:
+      return "malformed_model_output";
+    case StopReason::malformed_tool_use:
+      return "malformed_tool_use";
     case StopReason::model_context_window_exceeded:
       return "model_context_window_exceeded";
     default:

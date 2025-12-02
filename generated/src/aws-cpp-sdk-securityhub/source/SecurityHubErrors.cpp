@@ -16,6 +16,7 @@
 #include <aws/securityhub/model/ResourceConflictException.h>
 #include <aws/securityhub/model/ResourceInUseException.h>
 #include <aws/securityhub/model/ResourceNotFoundException.h>
+#include <aws/securityhub/model/ServiceQuotaExceededException.h>
 #include <aws/securityhub/model/ThrottlingException.h>
 #include <aws/securityhub/model/ValidationException.h>
 
@@ -27,12 +28,6 @@ using namespace Aws::SecurityHub::Model;
 namespace Aws {
 namespace SecurityHub {
 template <>
-AWS_SECURITYHUB_API InternalException SecurityHubError::GetModeledError() {
-  assert(this->GetErrorType() == SecurityHubErrors::INTERNAL);
-  return InternalException(this->GetJsonPayload().View());
-}
-
-template <>
 AWS_SECURITYHUB_API ConflictException SecurityHubError::GetModeledError() {
   assert(this->GetErrorType() == SecurityHubErrors::CONFLICT);
   return ConflictException(this->GetJsonPayload().View());
@@ -42,12 +37,6 @@ template <>
 AWS_SECURITYHUB_API InvalidAccessException SecurityHubError::GetModeledError() {
   assert(this->GetErrorType() == SecurityHubErrors::INVALID_ACCESS);
   return InvalidAccessException(this->GetJsonPayload().View());
-}
-
-template <>
-AWS_SECURITYHUB_API ThrottlingException SecurityHubError::GetModeledError() {
-  assert(this->GetErrorType() == SecurityHubErrors::THROTTLING);
-  return ThrottlingException(this->GetJsonPayload().View());
 }
 
 template <>
@@ -75,6 +64,30 @@ AWS_SECURITYHUB_API LimitExceededException SecurityHubError::GetModeledError() {
 }
 
 template <>
+AWS_SECURITYHUB_API InvalidInputException SecurityHubError::GetModeledError() {
+  assert(this->GetErrorType() == SecurityHubErrors::INVALID_INPUT);
+  return InvalidInputException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_SECURITYHUB_API InternalException SecurityHubError::GetModeledError() {
+  assert(this->GetErrorType() == SecurityHubErrors::INTERNAL);
+  return InternalException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_SECURITYHUB_API ThrottlingException SecurityHubError::GetModeledError() {
+  assert(this->GetErrorType() == SecurityHubErrors::THROTTLING);
+  return ThrottlingException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_SECURITYHUB_API ServiceQuotaExceededException SecurityHubError::GetModeledError() {
+  assert(this->GetErrorType() == SecurityHubErrors::SERVICE_QUOTA_EXCEEDED);
+  return ServiceQuotaExceededException(this->GetJsonPayload().View());
+}
+
+template <>
 AWS_SECURITYHUB_API ResourceConflictException SecurityHubError::GetModeledError() {
   assert(this->GetErrorType() == SecurityHubErrors::RESOURCE_CONFLICT);
   return ResourceConflictException(this->GetJsonPayload().View());
@@ -87,12 +100,6 @@ AWS_SECURITYHUB_API AccessDeniedException SecurityHubError::GetModeledError() {
 }
 
 template <>
-AWS_SECURITYHUB_API InvalidInputException SecurityHubError::GetModeledError() {
-  assert(this->GetErrorType() == SecurityHubErrors::INVALID_INPUT);
-  return InvalidInputException(this->GetJsonPayload().View());
-}
-
-template <>
 AWS_SECURITYHUB_API ResourceInUseException SecurityHubError::GetModeledError() {
   assert(this->GetErrorType() == SecurityHubErrors::RESOURCE_IN_USE);
   return ResourceInUseException(this->GetJsonPayload().View());
@@ -100,9 +107,10 @@ AWS_SECURITYHUB_API ResourceInUseException SecurityHubError::GetModeledError() {
 
 namespace SecurityHubErrorMapper {
 
-static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
+static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
 static const int INVALID_ACCESS_HASH = HashingUtils::HashString("InvalidAccessException");
+static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int RESOURCE_CONFLICT_HASH = HashingUtils::HashString("ResourceConflictException");
@@ -112,12 +120,14 @@ static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseE
 AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INTERNAL_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SecurityHubErrors::INTERNAL), RetryableType::RETRYABLE);
-  } else if (hashCode == CONFLICT_HASH) {
+  if (hashCode == CONFLICT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SecurityHubErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INTERNAL_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SecurityHubErrors::INTERNAL), RetryableType::RETRYABLE);
   } else if (hashCode == INVALID_ACCESS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SecurityHubErrors::INVALID_ACCESS), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SecurityHubErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INTERNAL_SERVER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SecurityHubErrors::INTERNAL_SERVER), RetryableType::RETRYABLE);
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {

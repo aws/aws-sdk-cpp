@@ -42,6 +42,15 @@ TelemetryRuleSummary& TelemetryRuleSummary::operator=(JsonView jsonValue) {
     m_telemetryType = TelemetryTypeMapper::GetTelemetryTypeForName(jsonValue.GetString("TelemetryType"));
     m_telemetryTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("TelemetrySourceTypes")) {
+    Aws::Utils::Array<JsonView> telemetrySourceTypesJsonList = jsonValue.GetArray("TelemetrySourceTypes");
+    for (unsigned telemetrySourceTypesIndex = 0; telemetrySourceTypesIndex < telemetrySourceTypesJsonList.GetLength();
+         ++telemetrySourceTypesIndex) {
+      m_telemetrySourceTypes.push_back(
+          TelemetrySourceTypeMapper::GetTelemetrySourceTypeForName(telemetrySourceTypesJsonList[telemetrySourceTypesIndex].AsString()));
+    }
+    m_telemetrySourceTypesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -70,6 +79,16 @@ JsonValue TelemetryRuleSummary::Jsonize() const {
 
   if (m_telemetryTypeHasBeenSet) {
     payload.WithString("TelemetryType", TelemetryTypeMapper::GetNameForTelemetryType(m_telemetryType));
+  }
+
+  if (m_telemetrySourceTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> telemetrySourceTypesJsonList(m_telemetrySourceTypes.size());
+    for (unsigned telemetrySourceTypesIndex = 0; telemetrySourceTypesIndex < telemetrySourceTypesJsonList.GetLength();
+         ++telemetrySourceTypesIndex) {
+      telemetrySourceTypesJsonList[telemetrySourceTypesIndex].AsString(
+          TelemetrySourceTypeMapper::GetNameForTelemetrySourceType(m_telemetrySourceTypes[telemetrySourceTypesIndex]));
+    }
+    payload.WithArray("TelemetrySourceTypes", std::move(telemetrySourceTypesJsonList));
   }
 
   return payload;

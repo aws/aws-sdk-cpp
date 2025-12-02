@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/RDSRequest.h>
 #include <aws/rds/RDS_EXPORTS.h>
+#include <aws/rds/model/AdditionalStorageVolume.h>
 #include <aws/rds/model/ProcessorFeature.h>
 #include <aws/rds/model/Tag.h>
 
@@ -1128,6 +1129,34 @@ class RestoreDBInstanceToPointInTimeRequest : public RDSRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of additional storage volumes to restore to the DB instance. You can
+   * restore up to three additional storage volumes using the names
+   * <code>rdsdbdata2</code>, <code>rdsdbdata3</code>, and <code>rdsdbdata4</code>.
+   * Additional storage volumes are supported for RDS for Oracle and RDS for SQL
+   * Server DB instances only.</p>
+   */
+  inline const Aws::Vector<AdditionalStorageVolume>& GetAdditionalStorageVolumes() const { return m_additionalStorageVolumes; }
+  inline bool AdditionalStorageVolumesHasBeenSet() const { return m_additionalStorageVolumesHasBeenSet; }
+  template <typename AdditionalStorageVolumesT = Aws::Vector<AdditionalStorageVolume>>
+  void SetAdditionalStorageVolumes(AdditionalStorageVolumesT&& value) {
+    m_additionalStorageVolumesHasBeenSet = true;
+    m_additionalStorageVolumes = std::forward<AdditionalStorageVolumesT>(value);
+  }
+  template <typename AdditionalStorageVolumesT = Aws::Vector<AdditionalStorageVolume>>
+  RestoreDBInstanceToPointInTimeRequest& WithAdditionalStorageVolumes(AdditionalStorageVolumesT&& value) {
+    SetAdditionalStorageVolumes(std::forward<AdditionalStorageVolumesT>(value));
+    return *this;
+  }
+  template <typename AdditionalStorageVolumesT = AdditionalStorageVolume>
+  RestoreDBInstanceToPointInTimeRequest& AddAdditionalStorageVolumes(AdditionalStorageVolumesT&& value) {
+    m_additionalStorageVolumesHasBeenSet = true;
+    m_additionalStorageVolumes.emplace_back(std::forward<AdditionalStorageVolumesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_sourceDBInstanceIdentifier;
   bool m_sourceDBInstanceIdentifierHasBeenSet = false;
@@ -1272,6 +1301,9 @@ class RestoreDBInstanceToPointInTimeRequest : public RDSRequest {
 
   Aws::String m_masterUserSecretKmsKeyId;
   bool m_masterUserSecretKmsKeyIdHasBeenSet = false;
+
+  Aws::Vector<AdditionalStorageVolume> m_additionalStorageVolumes;
+  bool m_additionalStorageVolumesHasBeenSet = false;
 };
 
 }  // namespace Model

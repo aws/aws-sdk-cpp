@@ -22,6 +22,9 @@
 #include <aws/bedrock-runtime/model/AsyncInvokeS3OutputDataConfig.h>
 #include <aws/bedrock-runtime/model/AsyncInvokeStatus.h>
 #include <aws/bedrock-runtime/model/AsyncInvokeSummary.h>
+#include <aws/bedrock-runtime/model/AudioBlock.h>
+#include <aws/bedrock-runtime/model/AudioFormat.h>
+#include <aws/bedrock-runtime/model/AudioSource.h>
 #include <aws/bedrock-runtime/model/AutoToolChoice.h>
 #include <aws/bedrock-runtime/model/BidirectionalInputPayloadPart.h>
 #include <aws/bedrock-runtime/model/BidirectionalOutputPayloadPart.h>
@@ -65,6 +68,7 @@
 #include <aws/bedrock-runtime/model/DocumentFormat.h>
 #include <aws/bedrock-runtime/model/DocumentPageLocation.h>
 #include <aws/bedrock-runtime/model/DocumentSource.h>
+#include <aws/bedrock-runtime/model/ErrorBlock.h>
 #include <aws/bedrock-runtime/model/GetAsyncInvokeRequest.h>
 #include <aws/bedrock-runtime/model/GetAsyncInvokeResult.h>
 #include <aws/bedrock-runtime/model/GuardrailAction.h>
@@ -138,6 +142,8 @@
 #include <aws/bedrock-runtime/model/GuardrailWordPolicyAction.h>
 #include <aws/bedrock-runtime/model/GuardrailWordPolicyAssessment.h>
 #include <aws/bedrock-runtime/model/ImageBlock.h>
+#include <aws/bedrock-runtime/model/ImageBlockDelta.h>
+#include <aws/bedrock-runtime/model/ImageBlockStart.h>
 #include <aws/bedrock-runtime/model/ImageFormat.h>
 #include <aws/bedrock-runtime/model/ImageSource.h>
 #include <aws/bedrock-runtime/model/InferenceConfiguration.h>

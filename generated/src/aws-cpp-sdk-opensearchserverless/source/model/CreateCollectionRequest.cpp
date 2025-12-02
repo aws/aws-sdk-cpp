@@ -39,6 +39,10 @@ Aws::String CreateCollectionRequest::SerializePayload() const {
     payload.WithString("standbyReplicas", StandbyReplicasMapper::GetNameForStandbyReplicas(m_standbyReplicas));
   }
 
+  if (m_vectorOptionsHasBeenSet) {
+    payload.WithObject("vectorOptions", m_vectorOptions.Jsonize());
+  }
+
   if (m_clientTokenHasBeenSet) {
     payload.WithString("clientToken", m_clientToken);
   }

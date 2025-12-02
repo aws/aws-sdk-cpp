@@ -10,7 +10,23 @@
 namespace Aws {
 namespace SavingsPlans {
 namespace Model {
-enum class SavingsPlanRateServiceCode { NOT_SET, AmazonEC2, AmazonECS, AmazonEKS, AWSLambda, AmazonSageMaker };
+enum class SavingsPlanRateServiceCode {
+  NOT_SET,
+  AmazonEC2,
+  AmazonECS,
+  AmazonEKS,
+  AWSLambda,
+  AmazonSageMaker,
+  AmazonRDS,
+  AuroraDSQL,
+  AmazonDynamoDB,
+  AmazonElastiCache,
+  AmazonDocDB,
+  AmazonNeptune,
+  AmazonTimestream,
+  AmazonMCS,
+  AWSDatabaseMigrationSvc
+};
 
 namespace SavingsPlanRateServiceCodeMapper {
 AWS_SAVINGSPLANS_API SavingsPlanRateServiceCode GetSavingsPlanRateServiceCodeForName(const Aws::String& name);

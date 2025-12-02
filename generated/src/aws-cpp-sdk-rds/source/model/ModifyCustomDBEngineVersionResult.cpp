@@ -270,6 +270,22 @@ ModifyCustomDBEngineVersionResult& ModifyCustomDBEngineVersionResult::operator=(
       m_serverlessV2FeaturesSupport = serverlessV2FeaturesSupportNode;
       m_serverlessV2FeaturesSupportHasBeenSet = true;
     }
+    XmlNode databaseInstallationFilesNode = resultNode.FirstChild("DatabaseInstallationFiles");
+    if (!databaseInstallationFilesNode.IsNull()) {
+      XmlNode databaseInstallationFilesMember = databaseInstallationFilesNode.FirstChild("member");
+      m_databaseInstallationFilesHasBeenSet = !databaseInstallationFilesMember.IsNull();
+      while (!databaseInstallationFilesMember.IsNull()) {
+        m_databaseInstallationFiles.push_back(databaseInstallationFilesMember.GetText());
+        databaseInstallationFilesMember = databaseInstallationFilesMember.NextNode("member");
+      }
+
+      m_databaseInstallationFilesHasBeenSet = true;
+    }
+    XmlNode failureReasonNode = resultNode.FirstChild("FailureReason");
+    if (!failureReasonNode.IsNull()) {
+      m_failureReason = Aws::Utils::Xml::DecodeEscapedXmlText(failureReasonNode.GetText());
+      m_failureReasonHasBeenSet = true;
+    }
   }
 
   if (!rootNode.IsNull()) {

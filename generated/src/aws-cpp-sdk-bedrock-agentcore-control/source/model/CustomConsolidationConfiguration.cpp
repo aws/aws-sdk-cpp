@@ -30,6 +30,10 @@ CustomConsolidationConfiguration& CustomConsolidationConfiguration::operator=(Js
     m_userPreferenceConsolidationOverride = jsonValue.GetObject("userPreferenceConsolidationOverride");
     m_userPreferenceConsolidationOverrideHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("episodicConsolidationOverride")) {
+    m_episodicConsolidationOverride = jsonValue.GetObject("episodicConsolidationOverride");
+    m_episodicConsolidationOverrideHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue CustomConsolidationConfiguration::Jsonize() const {
 
   if (m_userPreferenceConsolidationOverrideHasBeenSet) {
     payload.WithObject("userPreferenceConsolidationOverride", m_userPreferenceConsolidationOverride.Jsonize());
+  }
+
+  if (m_episodicConsolidationOverrideHasBeenSet) {
+    payload.WithObject("episodicConsolidationOverride", m_episodicConsolidationOverride.Jsonize());
   }
 
   return payload;

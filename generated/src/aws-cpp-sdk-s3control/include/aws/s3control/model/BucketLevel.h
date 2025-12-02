@@ -8,6 +8,7 @@
 #include <aws/s3control/model/ActivityMetrics.h>
 #include <aws/s3control/model/AdvancedCostOptimizationMetrics.h>
 #include <aws/s3control/model/AdvancedDataProtectionMetrics.h>
+#include <aws/s3control/model/AdvancedPerformanceMetrics.h>
 #include <aws/s3control/model/DetailedStatusCodesMetrics.h>
 #include <aws/s3control/model/PrefixLevel.h>
 
@@ -131,6 +132,25 @@ class BucketLevel {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A container for bucket-level advanced performance metrics for S3 Storage
+   * Lens.</p>
+   */
+  inline const AdvancedPerformanceMetrics& GetAdvancedPerformanceMetrics() const { return m_advancedPerformanceMetrics; }
+  inline bool AdvancedPerformanceMetricsHasBeenSet() const { return m_advancedPerformanceMetricsHasBeenSet; }
+  template <typename AdvancedPerformanceMetricsT = AdvancedPerformanceMetrics>
+  void SetAdvancedPerformanceMetrics(AdvancedPerformanceMetricsT&& value) {
+    m_advancedPerformanceMetricsHasBeenSet = true;
+    m_advancedPerformanceMetrics = std::forward<AdvancedPerformanceMetricsT>(value);
+  }
+  template <typename AdvancedPerformanceMetricsT = AdvancedPerformanceMetrics>
+  BucketLevel& WithAdvancedPerformanceMetrics(AdvancedPerformanceMetricsT&& value) {
+    SetAdvancedPerformanceMetrics(std::forward<AdvancedPerformanceMetricsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ActivityMetrics m_activityMetrics;
   bool m_activityMetricsHasBeenSet = false;
@@ -146,6 +166,9 @@ class BucketLevel {
 
   DetailedStatusCodesMetrics m_detailedStatusCodesMetrics;
   bool m_detailedStatusCodesMetricsHasBeenSet = false;
+
+  AdvancedPerformanceMetrics m_advancedPerformanceMetrics;
+  bool m_advancedPerformanceMetricsHasBeenSet = false;
 };
 
 }  // namespace Model

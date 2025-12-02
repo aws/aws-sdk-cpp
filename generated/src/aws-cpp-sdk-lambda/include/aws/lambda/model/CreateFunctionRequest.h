@@ -12,6 +12,7 @@
 #include <aws/lambda/model/Architecture.h>
 #include <aws/lambda/model/CapacityProviderConfig.h>
 #include <aws/lambda/model/DeadLetterConfig.h>
+#include <aws/lambda/model/DurableConfig.h>
 #include <aws/lambda/model/Environment.h>
 #include <aws/lambda/model/EphemeralStorage.h>
 #include <aws/lambda/model/FileSystemConfig.h>
@@ -609,6 +610,26 @@ class CreateFunctionRequest : public LambdaRequest {
 
   ///@{
   /**
+   * <p>Configuration settings for durable functions. Enables creating functions with
+   * durability that can remember their state and continue execution even after
+   * interruptions.</p>
+   */
+  inline const DurableConfig& GetDurableConfig() const { return m_durableConfig; }
+  inline bool DurableConfigHasBeenSet() const { return m_durableConfigHasBeenSet; }
+  template <typename DurableConfigT = DurableConfig>
+  void SetDurableConfig(DurableConfigT&& value) {
+    m_durableConfigHasBeenSet = true;
+    m_durableConfig = std::forward<DurableConfigT>(value);
+  }
+  template <typename DurableConfigT = DurableConfig>
+  CreateFunctionRequest& WithDurableConfig(DurableConfigT&& value) {
+    SetDurableConfig(std::forward<DurableConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Configuration for multi-tenant applications that use Lambda functions.
    * Defines tenant isolation settings and resource allocations. Required for
    * functions supporting multiple tenants.</p>
@@ -704,6 +725,9 @@ class CreateFunctionRequest : public LambdaRequest {
 
   FunctionVersionLatestPublished m_publishTo{FunctionVersionLatestPublished::NOT_SET};
   bool m_publishToHasBeenSet = false;
+
+  DurableConfig m_durableConfig;
+  bool m_durableConfigHasBeenSet = false;
 
   TenancyConfig m_tenancyConfig;
   bool m_tenancyConfigHasBeenSet = false;

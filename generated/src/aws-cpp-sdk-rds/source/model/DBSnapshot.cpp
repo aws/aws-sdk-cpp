@@ -235,6 +235,17 @@ DBSnapshot& DBSnapshot::operator=(const XmlNode& xmlNode) {
       m_snapshotAvailabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotAvailabilityZoneNode.GetText());
       m_snapshotAvailabilityZoneHasBeenSet = true;
     }
+    XmlNode additionalStorageVolumesNode = resultNode.FirstChild("AdditionalStorageVolumes");
+    if (!additionalStorageVolumesNode.IsNull()) {
+      XmlNode additionalStorageVolumesMember = additionalStorageVolumesNode.FirstChild("member");
+      m_additionalStorageVolumesHasBeenSet = !additionalStorageVolumesMember.IsNull();
+      while (!additionalStorageVolumesMember.IsNull()) {
+        m_additionalStorageVolumes.push_back(additionalStorageVolumesMember);
+        additionalStorageVolumesMember = additionalStorageVolumesMember.NextNode("member");
+      }
+
+      m_additionalStorageVolumesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -409,6 +420,16 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location, uns
     oStream << location << index << locationValue
             << ".SnapshotAvailabilityZone=" << StringUtils::URLEncode(m_snapshotAvailabilityZone.c_str()) << "&";
   }
+
+  if (m_additionalStorageVolumesHasBeenSet) {
+    unsigned additionalStorageVolumesIdx = 1;
+    for (auto& item : m_additionalStorageVolumes) {
+      Aws::StringStream additionalStorageVolumesSs;
+      additionalStorageVolumesSs << location << index << locationValue << ".AdditionalStorageVolumes.member."
+                                 << additionalStorageVolumesIdx++;
+      item.OutputToStream(oStream, additionalStorageVolumesSs.str().c_str());
+    }
+  }
 }
 
 void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -538,6 +559,14 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if (m_snapshotAvailabilityZoneHasBeenSet) {
     oStream << location << ".SnapshotAvailabilityZone=" << StringUtils::URLEncode(m_snapshotAvailabilityZone.c_str()) << "&";
+  }
+  if (m_additionalStorageVolumesHasBeenSet) {
+    unsigned additionalStorageVolumesIdx = 1;
+    for (auto& item : m_additionalStorageVolumes) {
+      Aws::StringStream additionalStorageVolumesSs;
+      additionalStorageVolumesSs << location << ".AdditionalStorageVolumes.member." << additionalStorageVolumesIdx++;
+      item.OutputToStream(oStream, additionalStorageVolumesSs.str().c_str());
+    }
   }
 }
 

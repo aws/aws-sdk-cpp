@@ -80,7 +80,7 @@ class GetUsageForecastRequest : public CostExplorerRequest {
   ///@{
   /**
    * <p>How granular you want the forecast to be. You can get 3 months of
-   * <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p>
+   * <code>DAILY</code> forecasts or 18 months of <code>MONTHLY</code> forecasts.</p>
    * <p>The <code>GetUsageForecast</code> operation supports only <code>DAILY</code>
    * and <code>MONTHLY</code> granularities.</p>
    */

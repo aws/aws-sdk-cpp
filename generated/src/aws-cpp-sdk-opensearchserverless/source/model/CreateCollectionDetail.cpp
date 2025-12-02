@@ -50,6 +50,10 @@ CreateCollectionDetail& CreateCollectionDetail::operator=(JsonView jsonValue) {
     m_standbyReplicas = StandbyReplicasMapper::GetStandbyReplicasForName(jsonValue.GetString("standbyReplicas"));
     m_standbyReplicasHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("vectorOptions")) {
+    m_vectorOptions = jsonValue.GetObject("vectorOptions");
+    m_vectorOptionsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdDate")) {
     m_createdDate = jsonValue.GetInt64("createdDate");
     m_createdDateHasBeenSet = true;
@@ -94,6 +98,10 @@ JsonValue CreateCollectionDetail::Jsonize() const {
 
   if (m_standbyReplicasHasBeenSet) {
     payload.WithString("standbyReplicas", StandbyReplicasMapper::GetNameForStandbyReplicas(m_standbyReplicas));
+  }
+
+  if (m_vectorOptionsHasBeenSet) {
+    payload.WithObject("vectorOptions", m_vectorOptions.Jsonize());
   }
 
   if (m_createdDateHasBeenSet) {

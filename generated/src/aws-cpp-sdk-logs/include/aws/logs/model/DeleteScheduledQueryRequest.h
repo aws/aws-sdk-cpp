@@ -32,7 +32,7 @@ class DeleteScheduledQueryRequest : public CloudWatchLogsRequest {
 
   ///@{
   /**
-   * <p>The name or ARN of the scheduled query to delete.</p>
+   * <p>The ARN or name of the scheduled query to delete.</p>
    */
   inline const Aws::String& GetIdentifier() const { return m_identifier; }
   inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }

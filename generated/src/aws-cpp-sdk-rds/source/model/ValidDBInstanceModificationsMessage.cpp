@@ -51,6 +51,11 @@ ValidDBInstanceModificationsMessage& ValidDBInstanceModificationsMessage::operat
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsDedicatedLogVolumeNode.GetText()).c_str()).c_str());
       m_supportsDedicatedLogVolumeHasBeenSet = true;
     }
+    XmlNode additionalStorageNode = resultNode.FirstChild("AdditionalStorage");
+    if (!additionalStorageNode.IsNull()) {
+      m_additionalStorage = additionalStorageNode;
+      m_additionalStorageHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -81,6 +86,12 @@ void ValidDBInstanceModificationsMessage::OutputToStream(Aws::OStream& oStream, 
     oStream << location << index << locationValue << ".SupportsDedicatedLogVolume=" << std::boolalpha << m_supportsDedicatedLogVolume
             << "&";
   }
+
+  if (m_additionalStorageHasBeenSet) {
+    Aws::StringStream additionalStorageLocationAndMemberSs;
+    additionalStorageLocationAndMemberSs << location << index << locationValue << ".AdditionalStorage";
+    m_additionalStorage.OutputToStream(oStream, additionalStorageLocationAndMemberSs.str().c_str());
+  }
 }
 
 void ValidDBInstanceModificationsMessage::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -102,6 +113,11 @@ void ValidDBInstanceModificationsMessage::OutputToStream(Aws::OStream& oStream, 
   }
   if (m_supportsDedicatedLogVolumeHasBeenSet) {
     oStream << location << ".SupportsDedicatedLogVolume=" << std::boolalpha << m_supportsDedicatedLogVolume << "&";
+  }
+  if (m_additionalStorageHasBeenSet) {
+    Aws::String additionalStorageLocationAndMember(location);
+    additionalStorageLocationAndMember += ".AdditionalStorage";
+    m_additionalStorage.OutputToStream(oStream, additionalStorageLocationAndMember.c_str());
   }
 }
 

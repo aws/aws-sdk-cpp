@@ -91,6 +91,7 @@
 #include <aws/datazone/model/GetAssetRequest.h>
 #include <aws/datazone/model/GetAssetTypeRequest.h>
 #include <aws/datazone/model/GetConnectionRequest.h>
+#include <aws/datazone/model/GetDataExportConfigurationRequest.h>
 #include <aws/datazone/model/GetDataProductRequest.h>
 #include <aws/datazone/model/GetDataSourceRequest.h>
 #include <aws/datazone/model/GetDataSourceRunRequest.h>
@@ -156,6 +157,7 @@
 #include <aws/datazone/model/ListTimeSeriesDataPointsRequest.h>
 #include <aws/datazone/model/PostLineageEventRequest.h>
 #include <aws/datazone/model/PostTimeSeriesDataPointsRequest.h>
+#include <aws/datazone/model/PutDataExportConfigurationRequest.h>
 #include <aws/datazone/model/PutEnvironmentBlueprintConfigurationRequest.h>
 #include <aws/datazone/model/RejectPredictionsRequest.h>
 #include <aws/datazone/model/RejectSubscriptionRequestRequest.h>
@@ -3336,6 +3338,43 @@ GetConnectionOutcome DataZoneClient::GetConnection(const GetConnectionRequest& r
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetDataExportConfigurationOutcome DataZoneClient::GetDataExportConfiguration(const GetDataExportConfigurationRequest& request) const {
+  AWS_OPERATION_GUARD(GetDataExportConfiguration);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDataExportConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetDataExportConfiguration", "Required field: DomainIdentifier, is not set");
+    return GetDataExportConfigurationOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                   "Missing required field [DomainIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetDataExportConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetDataExportConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetDataExportConfiguration",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetDataExportConfigurationOutcome>(
+      [&]() -> GetDataExportConfigurationOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDataExportConfiguration, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/v2/domains/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainIdentifier());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/data-export-configuration");
+        return GetDataExportConfigurationOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetDataProductOutcome DataZoneClient::GetDataProduct(const GetDataProductRequest& request) const {
   AWS_OPERATION_GUARD(GetDataProduct);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDataProduct, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -6105,6 +6144,43 @@ PostTimeSeriesDataPointsOutcome DataZoneClient::PostTimeSeriesDataPoints(const P
         endpointResolutionOutcome.GetResult().AddPathSegments("/time-series-data-points");
         return PostTimeSeriesDataPointsOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+PutDataExportConfigurationOutcome DataZoneClient::PutDataExportConfiguration(const PutDataExportConfigurationRequest& request) const {
+  AWS_OPERATION_GUARD(PutDataExportConfiguration);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutDataExportConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("PutDataExportConfiguration", "Required field: DomainIdentifier, is not set");
+    return PutDataExportConfigurationOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                   "Missing required field [DomainIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, PutDataExportConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, PutDataExportConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".PutDataExportConfiguration",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<PutDataExportConfigurationOutcome>(
+      [&]() -> PutDataExportConfigurationOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutDataExportConfiguration, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/v2/domains/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainIdentifier());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/data-export-configuration");
+        return PutDataExportConfigurationOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

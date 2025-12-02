@@ -36,11 +36,17 @@ class CreateCustomDBEngineVersionRequest : public RDSRequest {
  public:
   ///@{
   /**
-   * <p>The database engine. RDS Custom for Oracle supports the following values:</p>
-   * <ul> <li> <p> <code>custom-oracle-ee</code> </p> </li> <li> <p>
+   * <p>The database engine.</p> <p>RDS Custom for Oracle supports the following
+   * values:</p> <ul> <li> <p> <code>custom-oracle-ee</code> </p> </li> <li> <p>
    * <code>custom-oracle-ee-cdb</code> </p> </li> <li> <p>
    * <code>custom-oracle-se2</code> </p> </li> <li> <p>
-   * <code>custom-oracle-se2-cdb</code> </p> </li> </ul>
+   * <code>custom-oracle-se2-cdb</code> </p> </li> </ul> <p>RDS Custom for SQL Server
+   * supports the following values:</p> <ul> <li> <p>
+   * <code>custom-sqlserver-ee</code> </p> </li> <li> <p>
+   * <code>custom-sqlserver-se</code> </p> </li> <li> <p>
+   * <code>ccustom-sqlserver-web</code> </p> </li> <li> <p>
+   * <code>custom-sqlserver-dev</code> </p> </li> </ul> <p>RDS for SQL Server
+   * supports only <code>sqlserver-dev-ee</code>.</p>
    */
   inline const Aws::String& GetEngine() const { return m_engine; }
   inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
@@ -58,11 +64,13 @@ class CreateCustomDBEngineVersionRequest : public RDSRequest {
 
   ///@{
   /**
-   * <p>The name of your CEV. The name format is 19.<i>customized_string</i>. For
-   * example, a valid CEV name is <code>19.my_cev1</code>. This setting is required
-   * for RDS Custom for Oracle, but optional for Amazon RDS. The combination of
-   * <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
-   * Region.</p>
+   * <p>The name of your custom engine version (CEV).</p> <p>For RDS Custom for
+   * Oracle, the name format is <code>19.*customized_string*</code>. For example, a
+   * valid CEV name is <code>19.my_cev1</code>.</p> <p>For RDS for SQL Server and RDS
+   * Custom for SQL Server, the name format is <code>major
+   * engine_version*.*minor_engine_version*.*customized_string*</code>. For example,
+   * a valid CEV name is <code>16.00.4215.2.my_cev1</code>.</p> <p>The CEV name is
+   * unique per customer per Amazon Web Services Regions.</p>
    */
   inline const Aws::String& GetEngineVersion() const { return m_engineVersion; }
   inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
@@ -280,6 +288,31 @@ class CreateCustomDBEngineVersionRequest : public RDSRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your
+   * database engine version to import to Amazon RDS.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetDatabaseInstallationFiles() const { return m_databaseInstallationFiles; }
+  inline bool DatabaseInstallationFilesHasBeenSet() const { return m_databaseInstallationFilesHasBeenSet; }
+  template <typename DatabaseInstallationFilesT = Aws::Vector<Aws::String>>
+  void SetDatabaseInstallationFiles(DatabaseInstallationFilesT&& value) {
+    m_databaseInstallationFilesHasBeenSet = true;
+    m_databaseInstallationFiles = std::forward<DatabaseInstallationFilesT>(value);
+  }
+  template <typename DatabaseInstallationFilesT = Aws::Vector<Aws::String>>
+  CreateCustomDBEngineVersionRequest& WithDatabaseInstallationFiles(DatabaseInstallationFilesT&& value) {
+    SetDatabaseInstallationFiles(std::forward<DatabaseInstallationFilesT>(value));
+    return *this;
+  }
+  template <typename DatabaseInstallationFilesT = Aws::String>
+  CreateCustomDBEngineVersionRequest& AddDatabaseInstallationFiles(DatabaseInstallationFilesT&& value) {
+    m_databaseInstallationFilesHasBeenSet = true;
+    m_databaseInstallationFiles.emplace_back(std::forward<DatabaseInstallationFilesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_engine;
   bool m_engineHasBeenSet = false;
@@ -313,6 +346,9 @@ class CreateCustomDBEngineVersionRequest : public RDSRequest {
 
   Aws::Vector<Tag> m_tags;
   bool m_tagsHasBeenSet = false;
+
+  Aws::Vector<Aws::String> m_databaseInstallationFiles;
+  bool m_databaseInstallationFilesHasBeenSet = false;
 };
 
 }  // namespace Model

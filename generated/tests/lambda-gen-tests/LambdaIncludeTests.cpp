@@ -26,6 +26,13 @@
 #include <aws/lambda/model/AmazonManagedKafkaEventSourceConfig.h>
 #include <aws/lambda/model/ApplicationLogLevel.h>
 #include <aws/lambda/model/Architecture.h>
+#include <aws/lambda/model/CallbackDetails.h>
+#include <aws/lambda/model/CallbackFailedDetails.h>
+#include <aws/lambda/model/CallbackOptions.h>
+#include <aws/lambda/model/CallbackStartedDetails.h>
+#include <aws/lambda/model/CallbackSucceededDetails.h>
+#include <aws/lambda/model/CallbackTimedOutDetails.h>
+#include <aws/lambda/model/CallbackTimeoutException.h>
 #include <aws/lambda/model/CapacityProvider.h>
 #include <aws/lambda/model/CapacityProviderConfig.h>
 #include <aws/lambda/model/CapacityProviderLimitExceededException.h>
@@ -35,6 +42,16 @@
 #include <aws/lambda/model/CapacityProviderScalingMode.h>
 #include <aws/lambda/model/CapacityProviderState.h>
 #include <aws/lambda/model/CapacityProviderVpcConfig.h>
+#include <aws/lambda/model/ChainedInvokeDetails.h>
+#include <aws/lambda/model/ChainedInvokeFailedDetails.h>
+#include <aws/lambda/model/ChainedInvokeOptions.h>
+#include <aws/lambda/model/ChainedInvokeStartedDetails.h>
+#include <aws/lambda/model/ChainedInvokeStoppedDetails.h>
+#include <aws/lambda/model/ChainedInvokeSucceededDetails.h>
+#include <aws/lambda/model/ChainedInvokeTimedOutDetails.h>
+#include <aws/lambda/model/CheckpointDurableExecutionRequest.h>
+#include <aws/lambda/model/CheckpointDurableExecutionResult.h>
+#include <aws/lambda/model/CheckpointUpdatedExecutionState.h>
 #include <aws/lambda/model/CodeSigningConfig.h>
 #include <aws/lambda/model/CodeSigningConfigNotFoundException.h>
 #include <aws/lambda/model/CodeSigningPolicies.h>
@@ -42,6 +59,11 @@
 #include <aws/lambda/model/CodeStorageExceededException.h>
 #include <aws/lambda/model/CodeVerificationFailedException.h>
 #include <aws/lambda/model/Concurrency.h>
+#include <aws/lambda/model/ContextDetails.h>
+#include <aws/lambda/model/ContextFailedDetails.h>
+#include <aws/lambda/model/ContextOptions.h>
+#include <aws/lambda/model/ContextStartedDetails.h>
+#include <aws/lambda/model/ContextSucceededDetails.h>
 #include <aws/lambda/model/Cors.h>
 #include <aws/lambda/model/CreateAliasRequest.h>
 #include <aws/lambda/model/CreateAliasResult.h>
@@ -73,6 +95,8 @@
 #include <aws/lambda/model/DeleteProvisionedConcurrencyConfigRequest.h>
 #include <aws/lambda/model/DestinationConfig.h>
 #include <aws/lambda/model/DocumentDBEventSourceConfig.h>
+#include <aws/lambda/model/DurableConfig.h>
+#include <aws/lambda/model/DurableExecutionAlreadyStartedException.h>
 #include <aws/lambda/model/EC2AccessDeniedException.h>
 #include <aws/lambda/model/EC2ThrottledException.h>
 #include <aws/lambda/model/EC2UnexpectedException.h>
@@ -86,10 +110,24 @@
 #include <aws/lambda/model/EnvironmentError.h>
 #include <aws/lambda/model/EnvironmentResponse.h>
 #include <aws/lambda/model/EphemeralStorage.h>
+#include <aws/lambda/model/ErrorObject.h>
+#include <aws/lambda/model/Event.h>
+#include <aws/lambda/model/EventError.h>
+#include <aws/lambda/model/EventInput.h>
+#include <aws/lambda/model/EventResult.h>
 #include <aws/lambda/model/EventSourceMappingConfiguration.h>
 #include <aws/lambda/model/EventSourceMappingMetric.h>
 #include <aws/lambda/model/EventSourceMappingMetricsConfig.h>
 #include <aws/lambda/model/EventSourcePosition.h>
+#include <aws/lambda/model/EventType.h>
+#include <aws/lambda/model/Execution.h>
+#include <aws/lambda/model/ExecutionDetails.h>
+#include <aws/lambda/model/ExecutionFailedDetails.h>
+#include <aws/lambda/model/ExecutionStartedDetails.h>
+#include <aws/lambda/model/ExecutionStatus.h>
+#include <aws/lambda/model/ExecutionStoppedDetails.h>
+#include <aws/lambda/model/ExecutionSucceededDetails.h>
+#include <aws/lambda/model/ExecutionTimedOutDetails.h>
 #include <aws/lambda/model/FileSystemConfig.h>
 #include <aws/lambda/model/Filter.h>
 #include <aws/lambda/model/FilterCriteria.h>
@@ -115,6 +153,12 @@
 #include <aws/lambda/model/GetCapacityProviderResult.h>
 #include <aws/lambda/model/GetCodeSigningConfigRequest.h>
 #include <aws/lambda/model/GetCodeSigningConfigResult.h>
+#include <aws/lambda/model/GetDurableExecutionHistoryRequest.h>
+#include <aws/lambda/model/GetDurableExecutionHistoryResult.h>
+#include <aws/lambda/model/GetDurableExecutionRequest.h>
+#include <aws/lambda/model/GetDurableExecutionResult.h>
+#include <aws/lambda/model/GetDurableExecutionStateRequest.h>
+#include <aws/lambda/model/GetDurableExecutionStateResult.h>
 #include <aws/lambda/model/GetEventSourceMappingRequest.h>
 #include <aws/lambda/model/GetEventSourceMappingResult.h>
 #include <aws/lambda/model/GetFunctionCodeSigningConfigRequest.h>
@@ -156,6 +200,7 @@
 #include <aws/lambda/model/InvalidSecurityGroupIDException.h>
 #include <aws/lambda/model/InvalidSubnetIDException.h>
 #include <aws/lambda/model/InvalidZipFileException.h>
+#include <aws/lambda/model/InvocationCompletedDetails.h>
 #include <aws/lambda/model/InvocationType.h>
 #include <aws/lambda/model/InvokeMode.h>
 #include <aws/lambda/model/InvokeRequest.h>
@@ -189,6 +234,8 @@
 #include <aws/lambda/model/ListCapacityProvidersResult.h>
 #include <aws/lambda/model/ListCodeSigningConfigsRequest.h>
 #include <aws/lambda/model/ListCodeSigningConfigsResult.h>
+#include <aws/lambda/model/ListDurableExecutionsByFunctionRequest.h>
+#include <aws/lambda/model/ListDurableExecutionsByFunctionResult.h>
 #include <aws/lambda/model/ListEventSourceMappingsRequest.h>
 #include <aws/lambda/model/ListEventSourceMappingsResult.h>
 #include <aws/lambda/model/ListFunctionEventInvokeConfigsRequest.h>
@@ -217,6 +264,11 @@
 #include <aws/lambda/model/NoPublishedVersionException.h>
 #include <aws/lambda/model/OnFailure.h>
 #include <aws/lambda/model/OnSuccess.h>
+#include <aws/lambda/model/Operation.h>
+#include <aws/lambda/model/OperationAction.h>
+#include <aws/lambda/model/OperationStatus.h>
+#include <aws/lambda/model/OperationType.h>
+#include <aws/lambda/model/OperationUpdate.h>
 #include <aws/lambda/model/PackageType.h>
 #include <aws/lambda/model/PolicyLengthExceededException.h>
 #include <aws/lambda/model/PreconditionFailedException.h>
@@ -252,6 +304,7 @@
 #include <aws/lambda/model/ResourceNotFoundException.h>
 #include <aws/lambda/model/ResourceNotReadyException.h>
 #include <aws/lambda/model/ResponseStreamingInvocationType.h>
+#include <aws/lambda/model/RetryDetails.h>
 #include <aws/lambda/model/Runtime.h>
 #include <aws/lambda/model/RuntimeVersionConfig.h>
 #include <aws/lambda/model/RuntimeVersionError.h>
@@ -259,6 +312,12 @@
 #include <aws/lambda/model/SchemaRegistryEventRecordFormat.h>
 #include <aws/lambda/model/SelfManagedEventSource.h>
 #include <aws/lambda/model/SelfManagedKafkaEventSourceConfig.h>
+#include <aws/lambda/model/SendDurableExecutionCallbackFailureRequest.h>
+#include <aws/lambda/model/SendDurableExecutionCallbackFailureResult.h>
+#include <aws/lambda/model/SendDurableExecutionCallbackHeartbeatRequest.h>
+#include <aws/lambda/model/SendDurableExecutionCallbackHeartbeatResult.h>
+#include <aws/lambda/model/SendDurableExecutionCallbackSuccessRequest.h>
+#include <aws/lambda/model/SendDurableExecutionCallbackSuccessResult.h>
 #include <aws/lambda/model/SerializedRequestEntityTooLargeException.h>
 #include <aws/lambda/model/ServiceException.h>
 #include <aws/lambda/model/SnapStart.h>
@@ -272,6 +331,13 @@
 #include <aws/lambda/model/SourceAccessType.h>
 #include <aws/lambda/model/State.h>
 #include <aws/lambda/model/StateReasonCode.h>
+#include <aws/lambda/model/StepDetails.h>
+#include <aws/lambda/model/StepFailedDetails.h>
+#include <aws/lambda/model/StepOptions.h>
+#include <aws/lambda/model/StepStartedDetails.h>
+#include <aws/lambda/model/StepSucceededDetails.h>
+#include <aws/lambda/model/StopDurableExecutionRequest.h>
+#include <aws/lambda/model/StopDurableExecutionResult.h>
 #include <aws/lambda/model/SubnetIPAddressLimitReachedException.h>
 #include <aws/lambda/model/SystemLogLevel.h>
 #include <aws/lambda/model/TagResourceRequest.h>
@@ -281,6 +347,7 @@
 #include <aws/lambda/model/TenantIsolationMode.h>
 #include <aws/lambda/model/ThrottleReason.h>
 #include <aws/lambda/model/TooManyRequestsException.h>
+#include <aws/lambda/model/TraceHeader.h>
 #include <aws/lambda/model/TracingConfig.h>
 #include <aws/lambda/model/TracingConfigResponse.h>
 #include <aws/lambda/model/TracingMode.h>
@@ -305,6 +372,11 @@
 #include <aws/lambda/model/UpdateRuntimeOn.h>
 #include <aws/lambda/model/VpcConfig.h>
 #include <aws/lambda/model/VpcConfigResponse.h>
+#include <aws/lambda/model/WaitCancelledDetails.h>
+#include <aws/lambda/model/WaitDetails.h>
+#include <aws/lambda/model/WaitOptions.h>
+#include <aws/lambda/model/WaitStartedDetails.h>
+#include <aws/lambda/model/WaitSucceededDetails.h>
 
 using LambdaIncludeTest = ::testing::Test;
 

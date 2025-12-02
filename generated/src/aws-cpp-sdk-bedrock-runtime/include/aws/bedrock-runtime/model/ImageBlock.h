@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
+#include <aws/bedrock-runtime/model/ErrorBlock.h>
 #include <aws/bedrock-runtime/model/ImageFormat.h>
 #include <aws/bedrock-runtime/model/ImageSource.h>
 
@@ -65,12 +66,34 @@ class ImageBlock {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Error information if the image block could not be processed or contains
+   * invalid data.</p>
+   */
+  inline const ErrorBlock& GetError() const { return m_error; }
+  inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
+  template <typename ErrorT = ErrorBlock>
+  void SetError(ErrorT&& value) {
+    m_errorHasBeenSet = true;
+    m_error = std::forward<ErrorT>(value);
+  }
+  template <typename ErrorT = ErrorBlock>
+  ImageBlock& WithError(ErrorT&& value) {
+    SetError(std::forward<ErrorT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ImageFormat m_format{ImageFormat::NOT_SET};
   bool m_formatHasBeenSet = false;
 
   ImageSource m_source;
   bool m_sourceHasBeenSet = false;
+
+  ErrorBlock m_error;
+  bool m_errorHasBeenSet = false;
 };
 
 }  // namespace Model

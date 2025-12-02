@@ -10,7 +10,7 @@
 namespace Aws {
 namespace FSx {
 namespace Model {
-enum class S3AccessPointAttachmentType { NOT_SET, OPENZFS };
+enum class S3AccessPointAttachmentType { NOT_SET, OPENZFS, ONTAP };
 
 namespace S3AccessPointAttachmentTypeMapper {
 AWS_FSX_API S3AccessPointAttachmentType GetS3AccessPointAttachmentTypeForName(const Aws::String& name);

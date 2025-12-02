@@ -7,8 +7,11 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/observabilityadmin/ObservabilityAdminErrors.h>
 #include <aws/observabilityadmin/model/AccessDeniedException.h>
+#include <aws/observabilityadmin/model/ConflictException.h>
 #include <aws/observabilityadmin/model/InternalServerException.h>
+#include <aws/observabilityadmin/model/ResourceNotFoundException.h>
 #include <aws/observabilityadmin/model/ServiceQuotaExceededException.h>
+#include <aws/observabilityadmin/model/ValidationException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
@@ -17,6 +20,12 @@ using namespace Aws::ObservabilityAdmin::Model;
 
 namespace Aws {
 namespace ObservabilityAdmin {
+template <>
+AWS_OBSERVABILITYADMIN_API ConflictException ObservabilityAdminError::GetModeledError() {
+  assert(this->GetErrorType() == ObservabilityAdminErrors::CONFLICT);
+  return ConflictException(this->GetJsonPayload().View());
+}
+
 template <>
 AWS_OBSERVABILITYADMIN_API ServiceQuotaExceededException ObservabilityAdminError::GetModeledError() {
   assert(this->GetErrorType() == ObservabilityAdminErrors::SERVICE_QUOTA_EXCEEDED);
@@ -27,6 +36,18 @@ template <>
 AWS_OBSERVABILITYADMIN_API InternalServerException ObservabilityAdminError::GetModeledError() {
   assert(this->GetErrorType() == ObservabilityAdminErrors::INTERNAL_SERVER);
   return InternalServerException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_OBSERVABILITYADMIN_API ResourceNotFoundException ObservabilityAdminError::GetModeledError() {
+  assert(this->GetErrorType() == ObservabilityAdminErrors::RESOURCE_NOT_FOUND);
+  return ResourceNotFoundException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_OBSERVABILITYADMIN_API ValidationException ObservabilityAdminError::GetModeledError() {
+  assert(this->GetErrorType() == ObservabilityAdminErrors::VALIDATION);
+  return ValidationException(this->GetJsonPayload().View());
 }
 
 template <>
@@ -41,6 +62,7 @@ static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
+static const int INVALID_STATE_HASH = HashingUtils::HashString("InvalidStateException");
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
@@ -53,6 +75,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ObservabilityAdminErrors::INTERNAL_SERVER), RetryableType::RETRYABLE);
   } else if (hashCode == TOO_MANY_REQUESTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ObservabilityAdminErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
+  } else if (hashCode == INVALID_STATE_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ObservabilityAdminErrors::INVALID_STATE), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

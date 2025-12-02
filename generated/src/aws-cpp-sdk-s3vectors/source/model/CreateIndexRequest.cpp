@@ -43,5 +43,17 @@ Aws::String CreateIndexRequest::SerializePayload() const {
     payload.WithObject("metadataConfiguration", m_metadataConfiguration.Jsonize());
   }
 
+  if (m_encryptionConfigurationHasBeenSet) {
+    payload.WithObject("encryptionConfiguration", m_encryptionConfiguration.Jsonize());
+  }
+
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
+  }
+
   return payload.View().WriteReadable();
 }

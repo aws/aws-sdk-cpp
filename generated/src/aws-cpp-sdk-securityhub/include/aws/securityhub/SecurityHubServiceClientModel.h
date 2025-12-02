@@ -33,7 +33,6 @@
 #include <aws/securityhub/model/BatchUpdateFindingsV2Request.h>
 #include <aws/securityhub/model/BatchUpdateFindingsV2Result.h>
 #include <aws/securityhub/model/BatchUpdateStandardsControlAssociationsResult.h>
-#include <aws/securityhub/model/ConnectorRegistrationsV2Result.h>
 #include <aws/securityhub/model/CreateActionTargetResult.h>
 #include <aws/securityhub/model/CreateAggregatorV2Result.h>
 #include <aws/securityhub/model/CreateAutomationRuleResult.h>
@@ -139,6 +138,7 @@
 #include <aws/securityhub/model/ListSecurityControlDefinitionsResult.h>
 #include <aws/securityhub/model/ListStandardsControlAssociationsResult.h>
 #include <aws/securityhub/model/ListTagsForResourceResult.h>
+#include <aws/securityhub/model/RegisterConnectorV2Result.h>
 #include <aws/securityhub/model/StartConfigurationPolicyAssociationResult.h>
 #include <aws/securityhub/model/StartConfigurationPolicyDisassociationResult.h>
 #include <aws/securityhub/model/TagResourceResult.h>
@@ -202,7 +202,6 @@ class BatchUpdateAutomationRulesRequest;
 class BatchUpdateFindingsRequest;
 class BatchUpdateFindingsV2Request;
 class BatchUpdateStandardsControlAssociationsRequest;
-class ConnectorRegistrationsV2Request;
 class CreateActionTargetRequest;
 class CreateAggregatorV2Request;
 class CreateAutomationRuleRequest;
@@ -277,6 +276,7 @@ class ListOrganizationAdminAccountsRequest;
 class ListSecurityControlDefinitionsRequest;
 class ListStandardsControlAssociationsRequest;
 class ListTagsForResourceRequest;
+class RegisterConnectorV2Request;
 class StartConfigurationPolicyAssociationRequest;
 class StartConfigurationPolicyDisassociationRequest;
 class TagResourceRequest;
@@ -309,7 +309,6 @@ typedef Aws::Utils::Outcome<BatchUpdateAutomationRulesResult, SecurityHubError> 
 typedef Aws::Utils::Outcome<BatchUpdateFindingsResult, SecurityHubError> BatchUpdateFindingsOutcome;
 typedef Aws::Utils::Outcome<BatchUpdateFindingsV2Result, SecurityHubError> BatchUpdateFindingsV2Outcome;
 typedef Aws::Utils::Outcome<BatchUpdateStandardsControlAssociationsResult, SecurityHubError> BatchUpdateStandardsControlAssociationsOutcome;
-typedef Aws::Utils::Outcome<ConnectorRegistrationsV2Result, SecurityHubError> ConnectorRegistrationsV2Outcome;
 typedef Aws::Utils::Outcome<CreateActionTargetResult, SecurityHubError> CreateActionTargetOutcome;
 typedef Aws::Utils::Outcome<CreateAggregatorV2Result, SecurityHubError> CreateAggregatorV2Outcome;
 typedef Aws::Utils::Outcome<CreateAutomationRuleResult, SecurityHubError> CreateAutomationRuleOutcome;
@@ -384,6 +383,7 @@ typedef Aws::Utils::Outcome<ListOrganizationAdminAccountsResult, SecurityHubErro
 typedef Aws::Utils::Outcome<ListSecurityControlDefinitionsResult, SecurityHubError> ListSecurityControlDefinitionsOutcome;
 typedef Aws::Utils::Outcome<ListStandardsControlAssociationsResult, SecurityHubError> ListStandardsControlAssociationsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, SecurityHubError> ListTagsForResourceOutcome;
+typedef Aws::Utils::Outcome<RegisterConnectorV2Result, SecurityHubError> RegisterConnectorV2Outcome;
 typedef Aws::Utils::Outcome<StartConfigurationPolicyAssociationResult, SecurityHubError> StartConfigurationPolicyAssociationOutcome;
 typedef Aws::Utils::Outcome<StartConfigurationPolicyDisassociationResult, SecurityHubError> StartConfigurationPolicyDisassociationOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, SecurityHubError> TagResourceOutcome;
@@ -416,7 +416,6 @@ typedef std::future<BatchUpdateAutomationRulesOutcome> BatchUpdateAutomationRule
 typedef std::future<BatchUpdateFindingsOutcome> BatchUpdateFindingsOutcomeCallable;
 typedef std::future<BatchUpdateFindingsV2Outcome> BatchUpdateFindingsV2OutcomeCallable;
 typedef std::future<BatchUpdateStandardsControlAssociationsOutcome> BatchUpdateStandardsControlAssociationsOutcomeCallable;
-typedef std::future<ConnectorRegistrationsV2Outcome> ConnectorRegistrationsV2OutcomeCallable;
 typedef std::future<CreateActionTargetOutcome> CreateActionTargetOutcomeCallable;
 typedef std::future<CreateAggregatorV2Outcome> CreateAggregatorV2OutcomeCallable;
 typedef std::future<CreateAutomationRuleOutcome> CreateAutomationRuleOutcomeCallable;
@@ -491,6 +490,7 @@ typedef std::future<ListOrganizationAdminAccountsOutcome> ListOrganizationAdminA
 typedef std::future<ListSecurityControlDefinitionsOutcome> ListSecurityControlDefinitionsOutcomeCallable;
 typedef std::future<ListStandardsControlAssociationsOutcome> ListStandardsControlAssociationsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+typedef std::future<RegisterConnectorV2Outcome> RegisterConnectorV2OutcomeCallable;
 typedef std::future<StartConfigurationPolicyAssociationOutcome> StartConfigurationPolicyAssociationOutcomeCallable;
 typedef std::future<StartConfigurationPolicyDisassociationOutcome> StartConfigurationPolicyDisassociationOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -556,9 +556,6 @@ typedef std::function<void(const SecurityHubClient*, const Model::BatchUpdateSta
                            const Model::BatchUpdateStandardsControlAssociationsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     BatchUpdateStandardsControlAssociationsResponseReceivedHandler;
-typedef std::function<void(const SecurityHubClient*, const Model::ConnectorRegistrationsV2Request&,
-                           const Model::ConnectorRegistrationsV2Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
-    ConnectorRegistrationsV2ResponseReceivedHandler;
 typedef std::function<void(const SecurityHubClient*, const Model::CreateActionTargetRequest&, const Model::CreateActionTargetOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateActionTargetResponseReceivedHandler;
@@ -794,6 +791,9 @@ typedef std::function<void(const SecurityHubClient*, const Model::ListStandardsC
 typedef std::function<void(const SecurityHubClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;
+typedef std::function<void(const SecurityHubClient*, const Model::RegisterConnectorV2Request&, const Model::RegisterConnectorV2Outcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    RegisterConnectorV2ResponseReceivedHandler;
 typedef std::function<void(const SecurityHubClient*, const Model::StartConfigurationPolicyAssociationRequest&,
                            const Model::StartConfigurationPolicyAssociationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

@@ -48,6 +48,20 @@ Condition& Condition::operator=(JsonView jsonValue) {
     m_lessThanOrEqual = jsonValue.GetInt64("lessThanOrEqual");
     m_lessThanOrEqualHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("matches")) {
+    Aws::Utils::Array<JsonView> matchesJsonList = jsonValue.GetArray("matches");
+    for (unsigned matchesIndex = 0; matchesIndex < matchesJsonList.GetLength(); ++matchesIndex) {
+      m_matches.push_back(matchesJsonList[matchesIndex].AsString());
+    }
+    m_matchesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("notMatches")) {
+    Aws::Utils::Array<JsonView> notMatchesJsonList = jsonValue.GetArray("notMatches");
+    for (unsigned notMatchesIndex = 0; notMatchesIndex < notMatchesJsonList.GetLength(); ++notMatchesIndex) {
+      m_notMatches.push_back(notMatchesJsonList[notMatchesIndex].AsString());
+    }
+    m_notMatchesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -84,6 +98,22 @@ JsonValue Condition::Jsonize() const {
 
   if (m_lessThanOrEqualHasBeenSet) {
     payload.WithInt64("lessThanOrEqual", m_lessThanOrEqual);
+  }
+
+  if (m_matchesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> matchesJsonList(m_matches.size());
+    for (unsigned matchesIndex = 0; matchesIndex < matchesJsonList.GetLength(); ++matchesIndex) {
+      matchesJsonList[matchesIndex].AsString(m_matches[matchesIndex]);
+    }
+    payload.WithArray("matches", std::move(matchesJsonList));
+  }
+
+  if (m_notMatchesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> notMatchesJsonList(m_notMatches.size());
+    for (unsigned notMatchesIndex = 0; notMatchesIndex < notMatchesJsonList.GetLength(); ++notMatchesIndex) {
+      notMatchesJsonList[notMatchesIndex].AsString(m_notMatches[notMatchesIndex]);
+    }
+    payload.WithArray("notMatches", std::move(notMatchesJsonList));
   }
 
   return payload;

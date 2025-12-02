@@ -5,7 +5,9 @@
 
 #pragma once
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
+#include <aws/bedrock-agentcore/model/MemoryMetadataFilterExpression.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -84,6 +86,30 @@ class SearchCriteria {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Filters to apply to metadata associated with a memory.</p>
+   */
+  inline const Aws::Vector<MemoryMetadataFilterExpression>& GetMetadataFilters() const { return m_metadataFilters; }
+  inline bool MetadataFiltersHasBeenSet() const { return m_metadataFiltersHasBeenSet; }
+  template <typename MetadataFiltersT = Aws::Vector<MemoryMetadataFilterExpression>>
+  void SetMetadataFilters(MetadataFiltersT&& value) {
+    m_metadataFiltersHasBeenSet = true;
+    m_metadataFilters = std::forward<MetadataFiltersT>(value);
+  }
+  template <typename MetadataFiltersT = Aws::Vector<MemoryMetadataFilterExpression>>
+  SearchCriteria& WithMetadataFilters(MetadataFiltersT&& value) {
+    SetMetadataFilters(std::forward<MetadataFiltersT>(value));
+    return *this;
+  }
+  template <typename MetadataFiltersT = MemoryMetadataFilterExpression>
+  SearchCriteria& AddMetadataFilters(MetadataFiltersT&& value) {
+    m_metadataFiltersHasBeenSet = true;
+    m_metadataFilters.emplace_back(std::forward<MetadataFiltersT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_searchQuery;
   bool m_searchQueryHasBeenSet = false;
@@ -93,6 +119,9 @@ class SearchCriteria {
 
   int m_topK{0};
   bool m_topKHasBeenSet = false;
+
+  Aws::Vector<MemoryMetadataFilterExpression> m_metadataFilters;
+  bool m_metadataFiltersHasBeenSet = false;
 };
 
 }  // namespace Model

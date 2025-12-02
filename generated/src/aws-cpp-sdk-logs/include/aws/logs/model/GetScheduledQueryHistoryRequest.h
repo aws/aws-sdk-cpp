@@ -34,7 +34,7 @@ class GetScheduledQueryHistoryRequest : public CloudWatchLogsRequest {
 
   ///@{
   /**
-   * <p>The name or ARN of the scheduled query to retrieve history for.</p>
+   * <p>The ARN or name of the scheduled query to retrieve history for.</p>
    */
   inline const Aws::String& GetIdentifier() const { return m_identifier; }
   inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
@@ -52,7 +52,7 @@ class GetScheduledQueryHistoryRequest : public CloudWatchLogsRequest {
 
   ///@{
   /**
-   * <p>The start time for the history retrieval window in Unix epoch time.</p>
+   * <p>The start time for the history query in Unix epoch format.</p>
    */
   inline long long GetStartTime() const { return m_startTime; }
   inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
@@ -68,7 +68,7 @@ class GetScheduledQueryHistoryRequest : public CloudWatchLogsRequest {
 
   ///@{
   /**
-   * <p>The end time for the history retrieval window in Unix epoch time.</p>
+   * <p>The end time for the history query in Unix epoch format.</p>
    */
   inline long long GetEndTime() const { return m_endTime; }
   inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
@@ -84,8 +84,8 @@ class GetScheduledQueryHistoryRequest : public CloudWatchLogsRequest {
 
   ///@{
   /**
-   * <p>Filter results by execution status (Running, Complete, Failed, Timeout, or
-   * InvalidQuery).</p>
+   * <p>An array of execution statuses to filter the history results. Only executions
+   * with the specified statuses are returned.</p>
    */
   inline const Aws::Vector<ExecutionStatus>& GetExecutionStatuses() const { return m_executionStatuses; }
   inline bool ExecutionStatusesHasBeenSet() const { return m_executionStatusesHasBeenSet; }
@@ -108,7 +108,8 @@ class GetScheduledQueryHistoryRequest : public CloudWatchLogsRequest {
 
   ///@{
   /**
-   * <p>The maximum number of history records to return in a single call.</p>
+   * <p>The maximum number of history records to return. Valid range is 1 to
+   * 1000.</p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }

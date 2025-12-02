@@ -111,6 +111,25 @@ class InvokeResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The ARN of the durable execution that was started. This is returned when
+   * invoking a durable function and provides a unique identifier for tracking the
+   * execution.</p>
+   */
+  inline const Aws::String& GetDurableExecutionArn() const { return m_durableExecutionArn; }
+  template <typename DurableExecutionArnT = Aws::String>
+  void SetDurableExecutionArn(DurableExecutionArnT&& value) {
+    m_durableExecutionArnHasBeenSet = true;
+    m_durableExecutionArn = std::forward<DurableExecutionArnT>(value);
+  }
+  template <typename DurableExecutionArnT = Aws::String>
+  InvokeResult& WithDurableExecutionArn(DurableExecutionArnT&& value) {
+    SetDurableExecutionArn(std::forward<DurableExecutionArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -139,6 +158,9 @@ class InvokeResult {
 
   Aws::String m_executedVersion;
   bool m_executedVersionHasBeenSet = false;
+
+  Aws::String m_durableExecutionArn;
+  bool m_durableExecutionArnHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

@@ -21,11 +21,12 @@ namespace S3Vectors {
 namespace Model {
 
 /**
- * <p> <p>Amazon S3 Vectors is in preview release for Amazon S3 and is
- * subject to change.</p>  <p>The encryption configuration for a vector
- * bucket. By default, if you don't specify, all new vectors in Amazon S3 vector
- * buckets use server-side encryption with Amazon S3 managed keys (SSE-S3),
- * specifically <code>AES256</code>.</p></p><p><h3>See Also:</h3>   <a
+ * <p>The encryption configuration for a vector bucket or index. By default, if you
+ * don't specify, all new vectors in Amazon S3 vector buckets use server-side
+ * encryption with Amazon S3 managed keys (SSE-S3), specifically
+ * <code>AES256</code>. You can optionally override bucket level encryption
+ * settings, and set a specific encryption configuration for a vector index at the
+ * time of index creation.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/EncryptionConfiguration">AWS
  * API Reference</a></p>
  */

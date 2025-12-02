@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/OAuthGrantType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -103,6 +104,44 @@ class OAuthCredentialProvider {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the kind of credentials to use for authorization:</p> <ul> <li> <p>
+   * <code>CLIENT_CREDENTIALS</code> - Authorization with a client ID and secret.</p>
+   * </li> <li> <p> <code>AUTHORIZATION_CODE</code> - Authorization with a token that
+   * is specific to an individual end user.</p> </li> </ul>
+   */
+  inline OAuthGrantType GetGrantType() const { return m_grantType; }
+  inline bool GrantTypeHasBeenSet() const { return m_grantTypeHasBeenSet; }
+  inline void SetGrantType(OAuthGrantType value) {
+    m_grantTypeHasBeenSet = true;
+    m_grantType = value;
+  }
+  inline OAuthCredentialProvider& WithGrantType(OAuthGrantType value) {
+    SetGrantType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The URL where the end user's browser is redirected after obtaining the
+   * authorization code. Generally points to the customer's application.</p>
+   */
+  inline const Aws::String& GetDefaultReturnUrl() const { return m_defaultReturnUrl; }
+  inline bool DefaultReturnUrlHasBeenSet() const { return m_defaultReturnUrlHasBeenSet; }
+  template <typename DefaultReturnUrlT = Aws::String>
+  void SetDefaultReturnUrl(DefaultReturnUrlT&& value) {
+    m_defaultReturnUrlHasBeenSet = true;
+    m_defaultReturnUrl = std::forward<DefaultReturnUrlT>(value);
+  }
+  template <typename DefaultReturnUrlT = Aws::String>
+  OAuthCredentialProvider& WithDefaultReturnUrl(DefaultReturnUrlT&& value) {
+    SetDefaultReturnUrl(std::forward<DefaultReturnUrlT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_providerArn;
   bool m_providerArnHasBeenSet = false;
@@ -112,6 +151,12 @@ class OAuthCredentialProvider {
 
   Aws::Map<Aws::String, Aws::String> m_customParameters;
   bool m_customParametersHasBeenSet = false;
+
+  OAuthGrantType m_grantType{OAuthGrantType::NOT_SET};
+  bool m_grantTypeHasBeenSet = false;
+
+  Aws::String m_defaultReturnUrl;
+  bool m_defaultReturnUrlHasBeenSet = false;
 };
 
 }  // namespace Model

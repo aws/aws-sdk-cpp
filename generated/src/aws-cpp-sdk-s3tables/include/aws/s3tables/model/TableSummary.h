@@ -148,6 +148,25 @@ class TableSummary {
 
   ///@{
   /**
+   * <p>The Amazon Web Services service managing this table, if applicable. For
+   * example, a replicated table is managed by the S3 Tables replication service.</p>
+   */
+  inline const Aws::String& GetManagedByService() const { return m_managedByService; }
+  inline bool ManagedByServiceHasBeenSet() const { return m_managedByServiceHasBeenSet; }
+  template <typename ManagedByServiceT = Aws::String>
+  void SetManagedByService(ManagedByServiceT&& value) {
+    m_managedByServiceHasBeenSet = true;
+    m_managedByService = std::forward<ManagedByServiceT>(value);
+  }
+  template <typename ManagedByServiceT = Aws::String>
+  TableSummary& WithManagedByService(ManagedByServiceT&& value) {
+    SetManagedByService(std::forward<ManagedByServiceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The unique identifier for the namespace that contains this table.</p>
    */
   inline const Aws::String& GetNamespaceId() const { return m_namespaceId; }
@@ -199,6 +218,9 @@ class TableSummary {
 
   Aws::Utils::DateTime m_modifiedAt{};
   bool m_modifiedAtHasBeenSet = false;
+
+  Aws::String m_managedByService;
+  bool m_managedByServiceHasBeenSet = false;
 
   Aws::String m_namespaceId;
   bool m_namespaceIdHasBeenSet = false;

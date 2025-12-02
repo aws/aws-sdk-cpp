@@ -48,6 +48,11 @@ StorageLensConfiguration& StorageLensConfiguration::operator=(const XmlNode& xml
       m_dataExport = dataExportNode;
       m_dataExportHasBeenSet = true;
     }
+    XmlNode expandedPrefixesDataExportNode = resultNode.FirstChild("ExpandedPrefixesDataExport");
+    if (!expandedPrefixesDataExportNode.IsNull()) {
+      m_expandedPrefixesDataExport = expandedPrefixesDataExportNode;
+      m_expandedPrefixesDataExportHasBeenSet = true;
+    }
     XmlNode isEnabledNode = resultNode.FirstChild("IsEnabled");
     if (!isEnabledNode.IsNull()) {
       m_isEnabled =
@@ -63,6 +68,11 @@ StorageLensConfiguration& StorageLensConfiguration::operator=(const XmlNode& xml
     if (!storageLensArnNode.IsNull()) {
       m_storageLensArn = Aws::Utils::Xml::DecodeEscapedXmlText(storageLensArnNode.GetText());
       m_storageLensArnHasBeenSet = true;
+    }
+    XmlNode prefixDelimiterNode = resultNode.FirstChild("PrefixDelimiter");
+    if (!prefixDelimiterNode.IsNull()) {
+      m_prefixDelimiter = Aws::Utils::Xml::DecodeEscapedXmlText(prefixDelimiterNode.GetText());
+      m_prefixDelimiterHasBeenSet = true;
     }
   }
 
@@ -96,6 +106,11 @@ void StorageLensConfiguration::AddToNode(XmlNode& parentNode) const {
     m_dataExport.AddToNode(dataExportNode);
   }
 
+  if (m_expandedPrefixesDataExportHasBeenSet) {
+    XmlNode expandedPrefixesDataExportNode = parentNode.CreateChildElement("ExpandedPrefixesDataExport");
+    m_expandedPrefixesDataExport.AddToNode(expandedPrefixesDataExportNode);
+  }
+
   if (m_isEnabledHasBeenSet) {
     XmlNode isEnabledNode = parentNode.CreateChildElement("IsEnabled");
     ss << std::boolalpha << m_isEnabled;
@@ -111,6 +126,11 @@ void StorageLensConfiguration::AddToNode(XmlNode& parentNode) const {
   if (m_storageLensArnHasBeenSet) {
     XmlNode storageLensArnNode = parentNode.CreateChildElement("StorageLensArn");
     storageLensArnNode.SetText(m_storageLensArn);
+  }
+
+  if (m_prefixDelimiterHasBeenSet) {
+    XmlNode prefixDelimiterNode = parentNode.CreateChildElement("PrefixDelimiter");
+    prefixDelimiterNode.SetText(m_prefixDelimiter);
   }
 }
 

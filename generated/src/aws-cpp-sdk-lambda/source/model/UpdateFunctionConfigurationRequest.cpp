@@ -99,5 +99,9 @@ Aws::String UpdateFunctionConfigurationRequest::SerializePayload() const {
     payload.WithObject("CapacityProviderConfig", m_capacityProviderConfig.Jsonize());
   }
 
+  if (m_durableConfigHasBeenSet) {
+    payload.WithObject("DurableConfig", m_durableConfig.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

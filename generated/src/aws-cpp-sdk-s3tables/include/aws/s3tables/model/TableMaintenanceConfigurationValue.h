@@ -21,8 +21,8 @@ namespace S3Tables {
 namespace Model {
 
 /**
- * <p>Contains the values that define a maintenance configuration for a
- * table.</p><p><h3>See Also:</h3>   <a
+ * <p>The values that define a maintenance configuration for a table.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/TableMaintenanceConfigurationValue">AWS
  * API Reference</a></p>
  */

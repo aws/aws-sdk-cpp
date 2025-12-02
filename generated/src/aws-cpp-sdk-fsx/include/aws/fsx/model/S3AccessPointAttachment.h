@@ -11,6 +11,7 @@
 #include <aws/fsx/model/S3AccessPoint.h>
 #include <aws/fsx/model/S3AccessPointAttachmentLifecycle.h>
 #include <aws/fsx/model/S3AccessPointAttachmentType.h>
+#include <aws/fsx/model/S3AccessPointOntapConfiguration.h>
 #include <aws/fsx/model/S3AccessPointOpenZFSConfiguration.h>
 
 #include <utility>
@@ -148,6 +149,24 @@ class S3AccessPointAttachment {
 
   ///@{
   /**
+   * <p>The ONTAP configuration of the S3 access point attachment.</p>
+   */
+  inline const S3AccessPointOntapConfiguration& GetOntapConfiguration() const { return m_ontapConfiguration; }
+  inline bool OntapConfigurationHasBeenSet() const { return m_ontapConfigurationHasBeenSet; }
+  template <typename OntapConfigurationT = S3AccessPointOntapConfiguration>
+  void SetOntapConfiguration(OntapConfigurationT&& value) {
+    m_ontapConfigurationHasBeenSet = true;
+    m_ontapConfiguration = std::forward<OntapConfigurationT>(value);
+  }
+  template <typename OntapConfigurationT = S3AccessPointOntapConfiguration>
+  S3AccessPointAttachment& WithOntapConfiguration(OntapConfigurationT&& value) {
+    SetOntapConfiguration(std::forward<OntapConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The S3 access point configuration of the S3 access point attachment.</p>
    */
   inline const S3AccessPoint& GetS3AccessPoint() const { return m_s3AccessPoint; }
@@ -181,6 +200,9 @@ class S3AccessPointAttachment {
 
   S3AccessPointOpenZFSConfiguration m_openZFSConfiguration;
   bool m_openZFSConfigurationHasBeenSet = false;
+
+  S3AccessPointOntapConfiguration m_ontapConfiguration;
+  bool m_ontapConfigurationHasBeenSet = false;
 
   S3AccessPoint m_s3AccessPoint;
   bool m_s3AccessPointHasBeenSet = false;

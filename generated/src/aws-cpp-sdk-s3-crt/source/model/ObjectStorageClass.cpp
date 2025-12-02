@@ -27,6 +27,7 @@ static const int GLACIER_IR_HASH = HashingUtils::HashString("GLACIER_IR");
 static const int SNOW_HASH = HashingUtils::HashString("SNOW");
 static const int EXPRESS_ONEZONE_HASH = HashingUtils::HashString("EXPRESS_ONEZONE");
 static const int FSX_OPENZFS_HASH = HashingUtils::HashString("FSX_OPENZFS");
+static const int FSX_ONTAP_HASH = HashingUtils::HashString("FSX_ONTAP");
 
 ObjectStorageClass GetObjectStorageClassForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -54,6 +55,8 @@ ObjectStorageClass GetObjectStorageClassForName(const Aws::String& name) {
     return ObjectStorageClass::EXPRESS_ONEZONE;
   } else if (hashCode == FSX_OPENZFS_HASH) {
     return ObjectStorageClass::FSX_OPENZFS;
+  } else if (hashCode == FSX_ONTAP_HASH) {
+    return ObjectStorageClass::FSX_ONTAP;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -92,6 +95,8 @@ Aws::String GetNameForObjectStorageClass(ObjectStorageClass enumValue) {
       return "EXPRESS_ONEZONE";
     case ObjectStorageClass::FSX_OPENZFS:
       return "FSX_OPENZFS";
+    case ObjectStorageClass::FSX_ONTAP:
+      return "FSX_ONTAP";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

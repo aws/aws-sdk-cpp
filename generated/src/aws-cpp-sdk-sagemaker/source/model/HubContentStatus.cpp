@@ -20,6 +20,8 @@ static const int Importing_HASH = HashingUtils::HashString("Importing");
 static const int Deleting_HASH = HashingUtils::HashString("Deleting");
 static const int ImportFailed_HASH = HashingUtils::HashString("ImportFailed");
 static const int DeleteFailed_HASH = HashingUtils::HashString("DeleteFailed");
+static const int PendingImport_HASH = HashingUtils::HashString("PendingImport");
+static const int PendingDelete_HASH = HashingUtils::HashString("PendingDelete");
 
 HubContentStatus GetHubContentStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +35,10 @@ HubContentStatus GetHubContentStatusForName(const Aws::String& name) {
     return HubContentStatus::ImportFailed;
   } else if (hashCode == DeleteFailed_HASH) {
     return HubContentStatus::DeleteFailed;
+  } else if (hashCode == PendingImport_HASH) {
+    return HubContentStatus::PendingImport;
+  } else if (hashCode == PendingDelete_HASH) {
+    return HubContentStatus::PendingDelete;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +63,10 @@ Aws::String GetNameForHubContentStatus(HubContentStatus enumValue) {
       return "ImportFailed";
     case HubContentStatus::DeleteFailed:
       return "DeleteFailed";
+    case HubContentStatus::PendingImport:
+      return "PendingImport";
+    case HubContentStatus::PendingDelete:
+      return "PendingDelete";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

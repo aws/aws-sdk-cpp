@@ -7,6 +7,7 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/ModifyConsolidationConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ModifyExtractionConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/ModifyReflectionConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ModifySelfManagedConfiguration.h>
 
 #include <utility>
@@ -72,6 +73,24 @@ class ModifyStrategyConfiguration {
 
   ///@{
   /**
+   * <p>The updated reflection configuration.</p>
+   */
+  inline const ModifyReflectionConfiguration& GetReflection() const { return m_reflection; }
+  inline bool ReflectionHasBeenSet() const { return m_reflectionHasBeenSet; }
+  template <typename ReflectionT = ModifyReflectionConfiguration>
+  void SetReflection(ReflectionT&& value) {
+    m_reflectionHasBeenSet = true;
+    m_reflection = std::forward<ReflectionT>(value);
+  }
+  template <typename ReflectionT = ModifyReflectionConfiguration>
+  ModifyStrategyConfiguration& WithReflection(ReflectionT&& value) {
+    SetReflection(std::forward<ReflectionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The updated self-managed configuration.</p>
    */
   inline const ModifySelfManagedConfiguration& GetSelfManagedConfiguration() const { return m_selfManagedConfiguration; }
@@ -93,6 +112,9 @@ class ModifyStrategyConfiguration {
 
   ModifyConsolidationConfiguration m_consolidation;
   bool m_consolidationHasBeenSet = false;
+
+  ModifyReflectionConfiguration m_reflection;
+  bool m_reflectionHasBeenSet = false;
 
   ModifySelfManagedConfiguration m_selfManagedConfiguration;
   bool m_selfManagedConfigurationHasBeenSet = false;

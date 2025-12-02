@@ -15,10 +15,6 @@ using namespace Aws::Utils;
 Aws::String UpdateConnectorV2Request::SerializePayload() const {
   JsonValue payload;
 
-  if (m_clientSecretHasBeenSet) {
-    payload.WithString("ClientSecret", m_clientSecret);
-  }
-
   if (m_descriptionHasBeenSet) {
     payload.WithString("Description", m_description);
   }

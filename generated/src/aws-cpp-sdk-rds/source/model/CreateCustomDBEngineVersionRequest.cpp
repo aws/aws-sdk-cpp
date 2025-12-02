@@ -65,6 +65,18 @@ Aws::String CreateCustomDBEngineVersionRequest::SerializePayload() const {
     }
   }
 
+  if (m_databaseInstallationFilesHasBeenSet) {
+    if (m_databaseInstallationFiles.empty()) {
+      ss << "DatabaseInstallationFiles=&";
+    } else {
+      unsigned databaseInstallationFilesCount = 1;
+      for (auto& item : m_databaseInstallationFiles) {
+        ss << "DatabaseInstallationFiles.member." << databaseInstallationFilesCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        databaseInstallationFilesCount++;
+      }
+    }
+  }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

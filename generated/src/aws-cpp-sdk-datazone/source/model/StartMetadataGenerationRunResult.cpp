@@ -45,9 +45,12 @@ StartMetadataGenerationRunResult& StartMetadataGenerationRunResult::operator=(co
     m_status = MetadataGenerationRunStatusMapper::GetMetadataGenerationRunStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("type")) {
-    m_type = MetadataGenerationRunTypeMapper::GetMetadataGenerationRunTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
+  if (jsonValue.ValueExists("types")) {
+    Aws::Utils::Array<JsonView> typesJsonList = jsonValue.GetArray("types");
+    for (unsigned typesIndex = 0; typesIndex < typesJsonList.GetLength(); ++typesIndex) {
+      m_types.push_back(MetadataGenerationRunTypeMapper::GetMetadataGenerationRunTypeForName(typesJsonList[typesIndex].AsString()));
+    }
+    m_typesHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

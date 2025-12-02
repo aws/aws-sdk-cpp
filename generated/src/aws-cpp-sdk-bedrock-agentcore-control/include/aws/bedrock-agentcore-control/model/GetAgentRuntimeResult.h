@@ -206,6 +206,23 @@ class GetAgentRuntimeResult {
 
   ///@{
   /**
+   * <p>The reason for failure if the AgentCore Runtime is in a failed state.</p>
+   */
+  inline const Aws::String& GetFailureReason() const { return m_failureReason; }
+  template <typename FailureReasonT = Aws::String>
+  void SetFailureReason(FailureReasonT&& value) {
+    m_failureReasonHasBeenSet = true;
+    m_failureReason = std::forward<FailureReasonT>(value);
+  }
+  template <typename FailureReasonT = Aws::String>
+  GetAgentRuntimeResult& WithFailureReason(FailureReasonT&& value) {
+    SetFailureReason(std::forward<FailureReasonT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The description of the AgentCore Runtime.</p>
    */
   inline const Aws::String& GetDescription() const { return m_description; }
@@ -372,6 +389,9 @@ class GetAgentRuntimeResult {
 
   LifecycleConfiguration m_lifecycleConfiguration;
   bool m_lifecycleConfigurationHasBeenSet = false;
+
+  Aws::String m_failureReason;
+  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_description;
   bool m_descriptionHasBeenSet = false;

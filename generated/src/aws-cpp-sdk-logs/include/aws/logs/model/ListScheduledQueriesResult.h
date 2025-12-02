@@ -45,7 +45,7 @@ class ListScheduledQueriesResult {
 
   ///@{
   /**
-   * <p>The list of scheduled queries with summary information.</p>
+   * <p>An array of scheduled query summary information.</p>
    */
   inline const Aws::Vector<ScheduledQuerySummary>& GetScheduledQueries() const { return m_scheduledQueries; }
   template <typename ScheduledQueriesT = Aws::Vector<ScheduledQuerySummary>>

@@ -31,7 +31,7 @@ class GetBucketAclResult {
 
   ///@{
   /**
-   * <p>Container for the bucket owner's display name and ID.</p>
+   * <p>Container for the bucket owner's ID.</p>
    */
   inline const Owner& GetOwner() const { return m_owner; }
   template <typename OwnerT = Owner>

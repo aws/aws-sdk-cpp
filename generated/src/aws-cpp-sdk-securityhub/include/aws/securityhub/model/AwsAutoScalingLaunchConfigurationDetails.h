@@ -327,7 +327,8 @@ class AwsAutoScalingLaunchConfigurationDetails {
 
   ///@{
   /**
-   * <p>The security groups to assign to the instances in the Auto Scaling group.</p>
+   * <p>The security groups to assign to the instances in the Amazon EC2 Auto Scaling
+   * group.</p>
    */
   inline const Aws::Vector<Aws::String>& GetSecurityGroups() const { return m_securityGroups; }
   inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }

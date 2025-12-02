@@ -35,6 +35,9 @@ static const int Comet_HASH = HashingUtils::HashString("Comet");
 static const int DeepchecksLLMEvaluation_HASH = HashingUtils::HashString("DeepchecksLLMEvaluation");
 static const int Fiddler_HASH = HashingUtils::HashString("Fiddler");
 static const int HyperPodClusters_HASH = HashingUtils::HashString("HyperPodClusters");
+static const int RunningInstances_HASH = HashingUtils::HashString("RunningInstances");
+static const int Datasets_HASH = HashingUtils::HashString("Datasets");
+static const int Evaluators_HASH = HashingUtils::HashString("Evaluators");
 
 MlTools GetMlToolsForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -78,6 +81,12 @@ MlTools GetMlToolsForName(const Aws::String& name) {
     return MlTools::Fiddler;
   } else if (hashCode == HyperPodClusters_HASH) {
     return MlTools::HyperPodClusters;
+  } else if (hashCode == RunningInstances_HASH) {
+    return MlTools::RunningInstances;
+  } else if (hashCode == Datasets_HASH) {
+    return MlTools::Datasets;
+  } else if (hashCode == Evaluators_HASH) {
+    return MlTools::Evaluators;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -132,6 +141,12 @@ Aws::String GetNameForMlTools(MlTools enumValue) {
       return "Fiddler";
     case MlTools::HyperPodClusters:
       return "HyperPodClusters";
+    case MlTools::RunningInstances:
+      return "RunningInstances";
+    case MlTools::Datasets:
+      return "Datasets";
+    case MlTools::Evaluators:
+      return "Evaluators";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

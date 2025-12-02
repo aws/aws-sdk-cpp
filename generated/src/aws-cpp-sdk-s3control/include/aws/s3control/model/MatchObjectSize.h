@@ -32,7 +32,7 @@ class MatchObjectSize {
   ///@{
   /**
    * <p> Specifies the minimum object size in Bytes. The value must be a positive
-   * number, greater than 0 and less than 5 TB. </p>
+   * number, greater than 0 and less than 50 TB. </p>
    */
   inline long long GetBytesGreaterThan() const { return m_bytesGreaterThan; }
   inline bool BytesGreaterThanHasBeenSet() const { return m_bytesGreaterThanHasBeenSet; }
@@ -49,7 +49,7 @@ class MatchObjectSize {
   ///@{
   /**
    * <p> Specifies the maximum object size in Bytes. The value must be a positive
-   * number, greater than the minimum object size and less than 5 TB. </p>
+   * number, greater than the minimum object size and less than 50 TB. </p>
    */
   inline long long GetBytesLessThan() const { return m_bytesLessThan; }
   inline bool BytesLessThanHasBeenSet() const { return m_bytesLessThanHasBeenSet; }

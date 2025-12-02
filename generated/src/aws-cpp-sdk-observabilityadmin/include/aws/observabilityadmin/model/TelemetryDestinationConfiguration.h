@@ -6,8 +6,12 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/observabilityadmin/ObservabilityAdmin_EXPORTS.h>
+#include <aws/observabilityadmin/model/CloudtrailParameters.h>
 #include <aws/observabilityadmin/model/DestinationType.h>
+#include <aws/observabilityadmin/model/ELBLoadBalancerLoggingParameters.h>
+#include <aws/observabilityadmin/model/LogDeliveryParameters.h>
 #include <aws/observabilityadmin/model/VPCFlowLogParameters.h>
+#include <aws/observabilityadmin/model/WAFLoggingParameters.h>
 
 #include <utility>
 
@@ -104,6 +108,82 @@ class TelemetryDestinationConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> Configuration parameters specific to Amazon Web Services CloudTrail when
+   * CloudTrail is the source type. </p>
+   */
+  inline const CloudtrailParameters& GetCloudtrailParameters() const { return m_cloudtrailParameters; }
+  inline bool CloudtrailParametersHasBeenSet() const { return m_cloudtrailParametersHasBeenSet; }
+  template <typename CloudtrailParametersT = CloudtrailParameters>
+  void SetCloudtrailParameters(CloudtrailParametersT&& value) {
+    m_cloudtrailParametersHasBeenSet = true;
+    m_cloudtrailParameters = std::forward<CloudtrailParametersT>(value);
+  }
+  template <typename CloudtrailParametersT = CloudtrailParameters>
+  TelemetryDestinationConfiguration& WithCloudtrailParameters(CloudtrailParametersT&& value) {
+    SetCloudtrailParameters(std::forward<CloudtrailParametersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> Configuration parameters specific to ELB load balancer logging when ELB is
+   * the resource type. </p>
+   */
+  inline const ELBLoadBalancerLoggingParameters& GetELBLoadBalancerLoggingParameters() const { return m_eLBLoadBalancerLoggingParameters; }
+  inline bool ELBLoadBalancerLoggingParametersHasBeenSet() const { return m_eLBLoadBalancerLoggingParametersHasBeenSet; }
+  template <typename ELBLoadBalancerLoggingParametersT = ELBLoadBalancerLoggingParameters>
+  void SetELBLoadBalancerLoggingParameters(ELBLoadBalancerLoggingParametersT&& value) {
+    m_eLBLoadBalancerLoggingParametersHasBeenSet = true;
+    m_eLBLoadBalancerLoggingParameters = std::forward<ELBLoadBalancerLoggingParametersT>(value);
+  }
+  template <typename ELBLoadBalancerLoggingParametersT = ELBLoadBalancerLoggingParameters>
+  TelemetryDestinationConfiguration& WithELBLoadBalancerLoggingParameters(ELBLoadBalancerLoggingParametersT&& value) {
+    SetELBLoadBalancerLoggingParameters(std::forward<ELBLoadBalancerLoggingParametersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> Configuration parameters specific to WAF logging when WAF is the resource
+   * type. </p>
+   */
+  inline const WAFLoggingParameters& GetWAFLoggingParameters() const { return m_wAFLoggingParameters; }
+  inline bool WAFLoggingParametersHasBeenSet() const { return m_wAFLoggingParametersHasBeenSet; }
+  template <typename WAFLoggingParametersT = WAFLoggingParameters>
+  void SetWAFLoggingParameters(WAFLoggingParametersT&& value) {
+    m_wAFLoggingParametersHasBeenSet = true;
+    m_wAFLoggingParameters = std::forward<WAFLoggingParametersT>(value);
+  }
+  template <typename WAFLoggingParametersT = WAFLoggingParameters>
+  TelemetryDestinationConfiguration& WithWAFLoggingParameters(WAFLoggingParametersT&& value) {
+    SetWAFLoggingParameters(std::forward<WAFLoggingParametersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Configuration parameters specific to Amazon Bedrock AgentCore logging when
+   * Amazon Bedrock AgentCore is the resource type.</p>
+   */
+  inline const LogDeliveryParameters& GetLogDeliveryParameters() const { return m_logDeliveryParameters; }
+  inline bool LogDeliveryParametersHasBeenSet() const { return m_logDeliveryParametersHasBeenSet; }
+  template <typename LogDeliveryParametersT = LogDeliveryParameters>
+  void SetLogDeliveryParameters(LogDeliveryParametersT&& value) {
+    m_logDeliveryParametersHasBeenSet = true;
+    m_logDeliveryParameters = std::forward<LogDeliveryParametersT>(value);
+  }
+  template <typename LogDeliveryParametersT = LogDeliveryParameters>
+  TelemetryDestinationConfiguration& WithLogDeliveryParameters(LogDeliveryParametersT&& value) {
+    SetLogDeliveryParameters(std::forward<LogDeliveryParametersT>(value));
+    return *this;
+  }
+  ///@}
  private:
   DestinationType m_destinationType{DestinationType::NOT_SET};
   bool m_destinationTypeHasBeenSet = false;
@@ -116,6 +196,18 @@ class TelemetryDestinationConfiguration {
 
   VPCFlowLogParameters m_vPCFlowLogParameters;
   bool m_vPCFlowLogParametersHasBeenSet = false;
+
+  CloudtrailParameters m_cloudtrailParameters;
+  bool m_cloudtrailParametersHasBeenSet = false;
+
+  ELBLoadBalancerLoggingParameters m_eLBLoadBalancerLoggingParameters;
+  bool m_eLBLoadBalancerLoggingParametersHasBeenSet = false;
+
+  WAFLoggingParameters m_wAFLoggingParameters;
+  bool m_wAFLoggingParametersHasBeenSet = false;
+
+  LogDeliveryParameters m_logDeliveryParameters;
+  bool m_logDeliveryParametersHasBeenSet = false;
 };
 
 }  // namespace Model

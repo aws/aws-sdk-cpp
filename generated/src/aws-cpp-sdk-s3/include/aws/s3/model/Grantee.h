@@ -20,15 +20,6 @@ namespace S3 {
 namespace Model {
 
 /**
- *  <p>End of support notice: Beginning November 21, 2025, Amazon S3
- * will stop returning <code>DisplayName</code>. Update your applications to use
- * canonical IDs (unique identifier for Amazon Web Services accounts), Amazon Web
- * Services account ID (12 digit identifier) or IAM ARNs (full resource naming) as
- * a direct replacement of <code>DisplayName</code>. </p> <p>This change affects
- * the following Amazon Web Services Regions: US East (N. Virginia) Region, US West
- * (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
- * Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe
- * (Ireland) Region, and South America (São Paulo) Region.</p>
  * <p>Container for the person being granted permissions.</p><p><h3>See Also:</h3>
  * <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/Grantee">AWS API
  * Reference</a></p>
@@ -43,7 +34,7 @@ class Grantee {
 
   ///@{
   /**
-   * <p>Screen name of the grantee.</p>
+   * <p/>
    */
   inline const Aws::String& GetDisplayName() const { return m_displayName; }
   inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
@@ -61,16 +52,7 @@ class Grantee {
 
   ///@{
   /**
-   * <p>Email address of the grantee.</p>  <p>Using email addresses to specify
-   * a grantee is only supported in the following Amazon Web Services Regions: </p>
-   * <ul> <li> <p>US East (N. Virginia)</p> </li> <li> <p>US West (N. California)</p>
-   * </li> <li> <p> US West (Oregon)</p> </li> <li> <p> Asia Pacific (Singapore)</p>
-   * </li> <li> <p>Asia Pacific (Sydney)</p> </li> <li> <p>Asia Pacific (Tokyo)</p>
-   * </li> <li> <p>Europe (Ireland)</p> </li> <li> <p>South America (São Paulo)</p>
-   * </li> </ul> <p>For a list of all the Amazon S3 supported Regions and endpoints,
-   * see <a
-   * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
-   * and Endpoints</a> in the Amazon Web Services General Reference.</p>
+   * <p/>
    */
   inline const Aws::String& GetEmailAddress() const { return m_emailAddress; }
   inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }

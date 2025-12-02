@@ -174,8 +174,7 @@ class AwsEcsServiceDetails {
   ///@{
   /**
    * <p>After a task starts, the amount of time in seconds that the Amazon ECS
-   * service scheduler ignores unhealthy Elastic Load Balancing target health
-   * checks.</p>
+   * service scheduler ignores unhealthy ELB target health checks.</p>
    */
   inline int GetHealthCheckGracePeriodSeconds() const { return m_healthCheckGracePeriodSeconds; }
   inline bool HealthCheckGracePeriodSecondsHasBeenSet() const { return m_healthCheckGracePeriodSecondsHasBeenSet; }
@@ -361,8 +360,8 @@ class AwsEcsServiceDetails {
   ///@{
   /**
    * <p>The ARN of the IAM role that is associated with the service. The role allows
-   * the Amazon ECS container agent to register container instances with an Elastic
-   * Load Balancing load balancer.</p>
+   * the Amazon ECS container agent to register container instances with an ELB load
+   * balancer.</p>
    */
   inline const Aws::String& GetRole() const { return m_role; }
   inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }

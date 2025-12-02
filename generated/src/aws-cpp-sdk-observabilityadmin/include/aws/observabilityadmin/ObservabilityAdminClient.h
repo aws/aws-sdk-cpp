@@ -120,6 +120,66 @@ class AWS_OBSERVABILITYADMIN_API ObservabilityAdminClient : public Aws::Client::
   }
 
   /**
+   * <p>Creates an integration between CloudWatch and S3 Tables for analytics. This
+   * integration enables querying CloudWatch telemetry data using analytics engines
+   * like Amazon Athena, Amazon Redshift, and Apache Spark.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/CreateS3TableIntegration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateS3TableIntegrationOutcome CreateS3TableIntegration(const Model::CreateS3TableIntegrationRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateS3TableIntegration that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateS3TableIntegrationRequestT = Model::CreateS3TableIntegrationRequest>
+  Model::CreateS3TableIntegrationOutcomeCallable CreateS3TableIntegrationCallable(const CreateS3TableIntegrationRequestT& request) const {
+    return SubmitCallable(&ObservabilityAdminClient::CreateS3TableIntegration, request);
+  }
+
+  /**
+   * An Async wrapper for CreateS3TableIntegration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateS3TableIntegrationRequestT = Model::CreateS3TableIntegrationRequest>
+  void CreateS3TableIntegrationAsync(const CreateS3TableIntegrationRequestT& request,
+                                     const CreateS3TableIntegrationResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ObservabilityAdminClient::CreateS3TableIntegration, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a telemetry pipeline for processing and transforming telemetry data.
+   * The pipeline defines how data flows from sources through processors to
+   * destinations, enabling data transformation and delivering capabilities.
+   * </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/CreateTelemetryPipeline">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateTelemetryPipelineOutcome CreateTelemetryPipeline(const Model::CreateTelemetryPipelineRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateTelemetryPipeline that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateTelemetryPipelineRequestT = Model::CreateTelemetryPipelineRequest>
+  Model::CreateTelemetryPipelineOutcomeCallable CreateTelemetryPipelineCallable(const CreateTelemetryPipelineRequestT& request) const {
+    return SubmitCallable(&ObservabilityAdminClient::CreateTelemetryPipeline, request);
+  }
+
+  /**
+   * An Async wrapper for CreateTelemetryPipeline that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateTelemetryPipelineRequestT = Model::CreateTelemetryPipelineRequest>
+  void CreateTelemetryPipelineAsync(const CreateTelemetryPipelineRequestT& request,
+                                    const CreateTelemetryPipelineResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ObservabilityAdminClient::CreateTelemetryPipeline, request, handler, context);
+  }
+
+  /**
    * <p> Creates a telemetry rule that defines how telemetry should be configured for
    * Amazon Web Services resources in your account. The rule specifies which
    * resources should have telemetry enabled and how that telemetry data should be
@@ -209,6 +269,64 @@ class AWS_OBSERVABILITYADMIN_API ObservabilityAdminClient : public Aws::Client::
                                                     const DeleteCentralizationRuleForOrganizationResponseReceivedHandler& handler,
                                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ObservabilityAdminClient::DeleteCentralizationRuleForOrganization, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes an S3 Table integration and its associated data. This operation
+   * removes the connection between CloudWatch Observability Admin and S3
+   * Tables.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/DeleteS3TableIntegration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteS3TableIntegrationOutcome DeleteS3TableIntegration(const Model::DeleteS3TableIntegrationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteS3TableIntegration that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteS3TableIntegrationRequestT = Model::DeleteS3TableIntegrationRequest>
+  Model::DeleteS3TableIntegrationOutcomeCallable DeleteS3TableIntegrationCallable(const DeleteS3TableIntegrationRequestT& request) const {
+    return SubmitCallable(&ObservabilityAdminClient::DeleteS3TableIntegration, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteS3TableIntegration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteS3TableIntegrationRequestT = Model::DeleteS3TableIntegrationRequest>
+  void DeleteS3TableIntegrationAsync(const DeleteS3TableIntegrationRequestT& request,
+                                     const DeleteS3TableIntegrationResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ObservabilityAdminClient::DeleteS3TableIntegration, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a telemetry pipeline and its associated resources. This operation
+   * stops data processing and removes the pipeline configuration.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/DeleteTelemetryPipeline">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteTelemetryPipelineOutcome DeleteTelemetryPipeline(const Model::DeleteTelemetryPipelineRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteTelemetryPipeline that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteTelemetryPipelineRequestT = Model::DeleteTelemetryPipelineRequest>
+  Model::DeleteTelemetryPipelineOutcomeCallable DeleteTelemetryPipelineCallable(const DeleteTelemetryPipelineRequestT& request) const {
+    return SubmitCallable(&ObservabilityAdminClient::DeleteTelemetryPipeline, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteTelemetryPipeline that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteTelemetryPipelineRequestT = Model::DeleteTelemetryPipelineRequest>
+  void DeleteTelemetryPipelineAsync(const DeleteTelemetryPipelineRequestT& request,
+                                    const DeleteTelemetryPipelineResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ObservabilityAdminClient::DeleteTelemetryPipeline, request, handler, context);
   }
 
   /**
@@ -302,9 +420,36 @@ class AWS_OBSERVABILITYADMIN_API ObservabilityAdminClient : public Aws::Client::
   }
 
   /**
+   * <p>Retrieves information about a specific S3 Table integration, including its
+   * configuration, status, and metadata.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetS3TableIntegration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetS3TableIntegrationOutcome GetS3TableIntegration(const Model::GetS3TableIntegrationRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetS3TableIntegration that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetS3TableIntegrationRequestT = Model::GetS3TableIntegrationRequest>
+  Model::GetS3TableIntegrationOutcomeCallable GetS3TableIntegrationCallable(const GetS3TableIntegrationRequestT& request) const {
+    return SubmitCallable(&ObservabilityAdminClient::GetS3TableIntegration, request);
+  }
+
+  /**
+   * An Async wrapper for GetS3TableIntegration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetS3TableIntegrationRequestT = Model::GetS3TableIntegrationRequest>
+  void GetS3TableIntegrationAsync(const GetS3TableIntegrationRequestT& request, const GetS3TableIntegrationResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ObservabilityAdminClient::GetS3TableIntegration, request, handler, context);
+  }
+
+  /**
    * <p> Returns the current status of the resource tags for telemetry feature, which
-   * enhances telemetry data with additional resource metadata from Amazon Web
-   * Services Resource Explorer. </p><p><h3>See Also:</h3>   <a
+   * enhances telemetry data with additional resource metadata from Resource
+   * Explorer. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetTelemetryEnrichmentStatus">AWS
    * API Reference</a></p>
    */
@@ -393,6 +538,33 @@ class AWS_OBSERVABILITYADMIN_API ObservabilityAdminClient : public Aws::Client::
                                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                                         const GetTelemetryEvaluationStatusForOrganizationRequestT& request = {}) const {
     return SubmitAsync(&ObservabilityAdminClient::GetTelemetryEvaluationStatusForOrganization, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves information about a specific telemetry pipeline, including its
+   * configuration, status, and metadata.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetTelemetryPipeline">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetTelemetryPipelineOutcome GetTelemetryPipeline(const Model::GetTelemetryPipelineRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetTelemetryPipeline that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetTelemetryPipelineRequestT = Model::GetTelemetryPipelineRequest>
+  Model::GetTelemetryPipelineOutcomeCallable GetTelemetryPipelineCallable(const GetTelemetryPipelineRequestT& request) const {
+    return SubmitCallable(&ObservabilityAdminClient::GetTelemetryPipeline, request);
+  }
+
+  /**
+   * An Async wrapper for GetTelemetryPipeline that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetTelemetryPipelineRequestT = Model::GetTelemetryPipelineRequest>
+  void GetTelemetryPipelineAsync(const GetTelemetryPipelineRequestT& request, const GetTelemetryPipelineResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ObservabilityAdminClient::GetTelemetryPipeline, request, handler, context);
   }
 
   /**
@@ -546,8 +718,37 @@ class AWS_OBSERVABILITYADMIN_API ObservabilityAdminClient : public Aws::Client::
   }
 
   /**
-   * <p> Lists all tags attached to the specified telemetry rule resource.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>Lists all S3 Table integrations in your account. We recommend using
+   * pagination to ensure that the operation returns quickly and
+   * successfully.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListS3TableIntegrations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListS3TableIntegrationsOutcome ListS3TableIntegrations(const Model::ListS3TableIntegrationsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListS3TableIntegrations that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListS3TableIntegrationsRequestT = Model::ListS3TableIntegrationsRequest>
+  Model::ListS3TableIntegrationsOutcomeCallable ListS3TableIntegrationsCallable(const ListS3TableIntegrationsRequestT& request = {}) const {
+    return SubmitCallable(&ObservabilityAdminClient::ListS3TableIntegrations, request);
+  }
+
+  /**
+   * An Async wrapper for ListS3TableIntegrations that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListS3TableIntegrationsRequestT = Model::ListS3TableIntegrationsRequest>
+  void ListS3TableIntegrationsAsync(const ListS3TableIntegrationsResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                    const ListS3TableIntegrationsRequestT& request = {}) const {
+    return SubmitAsync(&ObservabilityAdminClient::ListS3TableIntegrations, request, handler, context);
+  }
+
+  /**
+   * <p> Lists all tags attached to the specified resource. Supports telemetry rule
+   * resources and telemetry pipeline resources. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListTagsForResource">AWS
    * API Reference</a></p>
    */
@@ -570,6 +771,36 @@ class AWS_OBSERVABILITYADMIN_API ObservabilityAdminClient : public Aws::Client::
   void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ObservabilityAdminClient::ListTagsForResource, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a list of telemetry pipelines in your account. Returns up to 100
+   * results. If more than 100 telemetry pipelines exist, include the
+   * <code>NextToken</code> value from the response to retrieve the next set of
+   * results.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListTelemetryPipelines">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListTelemetryPipelinesOutcome ListTelemetryPipelines(const Model::ListTelemetryPipelinesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListTelemetryPipelines that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListTelemetryPipelinesRequestT = Model::ListTelemetryPipelinesRequest>
+  Model::ListTelemetryPipelinesOutcomeCallable ListTelemetryPipelinesCallable(const ListTelemetryPipelinesRequestT& request = {}) const {
+    return SubmitCallable(&ObservabilityAdminClient::ListTelemetryPipelines, request);
+  }
+
+  /**
+   * An Async wrapper for ListTelemetryPipelines that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListTelemetryPipelinesRequestT = Model::ListTelemetryPipelinesRequest>
+  void ListTelemetryPipelinesAsync(const ListTelemetryPipelinesResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                   const ListTelemetryPipelinesRequestT& request = {}) const {
+    return SubmitAsync(&ObservabilityAdminClient::ListTelemetryPipelines, request, handler, context);
   }
 
   /**
@@ -633,9 +864,9 @@ class AWS_OBSERVABILITYADMIN_API ObservabilityAdminClient : public Aws::Client::
 
   /**
    * <p> Enables the resource tags for telemetry feature for your account, which
-   * enhances telemetry data with additional resource metadata from Amazon Web
-   * Services Resource Explorer to provide richer context for monitoring and
-   * observability. </p><p><h3>See Also:</h3>   <a
+   * enhances telemetry data with additional resource metadata from Resource Explorer
+   * to provide richer context for monitoring and observability. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/StartTelemetryEnrichment">AWS
    * API Reference</a></p>
    */
@@ -809,8 +1040,8 @@ class AWS_OBSERVABILITYADMIN_API ObservabilityAdminClient : public Aws::Client::
   }
 
   /**
-   * <p> Adds or updates tags for a telemetry rule resource. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p> Adds or updates tags for a resource. Supports telemetry rule resources and
+   * telemetry pipeline resources. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/TagResource">AWS
    * API Reference</a></p>
    */
@@ -835,7 +1066,36 @@ class AWS_OBSERVABILITYADMIN_API ObservabilityAdminClient : public Aws::Client::
   }
 
   /**
-   * <p> Removes tags from a telemetry rule resource. </p><p><h3>See Also:</h3>   <a
+   * <p>Tests a pipeline configuration with sample records to validate data
+   * processing before deployment. This operation helps ensure your pipeline
+   * configuration works as expected. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/TestTelemetryPipeline">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::TestTelemetryPipelineOutcome TestTelemetryPipeline(const Model::TestTelemetryPipelineRequest& request) const;
+
+  /**
+   * A Callable wrapper for TestTelemetryPipeline that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename TestTelemetryPipelineRequestT = Model::TestTelemetryPipelineRequest>
+  Model::TestTelemetryPipelineOutcomeCallable TestTelemetryPipelineCallable(const TestTelemetryPipelineRequestT& request) const {
+    return SubmitCallable(&ObservabilityAdminClient::TestTelemetryPipeline, request);
+  }
+
+  /**
+   * An Async wrapper for TestTelemetryPipeline that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename TestTelemetryPipelineRequestT = Model::TestTelemetryPipelineRequest>
+  void TestTelemetryPipelineAsync(const TestTelemetryPipelineRequestT& request, const TestTelemetryPipelineResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ObservabilityAdminClient::TestTelemetryPipeline, request, handler, context);
+  }
+
+  /**
+   * <p> Removes tags from a resource. Supports telemetry rule resources and
+   * telemetry pipeline resources. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/UntagResource">AWS
    * API Reference</a></p>
    */
@@ -892,8 +1152,75 @@ class AWS_OBSERVABILITYADMIN_API ObservabilityAdminClient : public Aws::Client::
   }
 
   /**
-   * <p> Updates an existing telemetry rule in your account. </p><p><h3>See
+   * <p>Updates the configuration of an existing telemetry pipeline.</p>
+   * <p>The following attributes cannot be updated after pipeline creation:</p> <ul>
+   * <li> <p> <b>Pipeline name</b> - The pipeline name is immutable</p> </li> <li>
+   * <p> <b>Pipeline ARN</b> - The ARN is automatically generated and cannot be
+   * changed</p> </li> <li> <p> <b>Source type</b> - Once a pipeline is created with
+   * a specific source type (such as S3, CloudWatch Logs, GitHub, or third-party
+   * sources), it cannot be changed to a different source type</p> </li> </ul>
+   * <p>Processors can be added, removed, or modified. However, some processors are
+   * not supported for third-party pipelines and cannot be added through updates.</p>
+   *  <p> <b>Source-Specific Update Rules</b> </p> <dl> <dt>CloudWatch Logs
+   * Sources (Vended and Custom)</dt> <dd> <p> <b>Updatable:</b>
+   * <code>sts_role_arn</code> </p> <p> <b>Fixed:</b> <code>data_source_name</code>,
+   * <code>data_source_type</code>, sink (must remain <code>@original</code>)</p>
+   * </dd> <dt>S3 Sources (Crowdstrike, Zscaler, SentinelOne, Custom)</dt> <dd> <p>
+   * <b>Updatable:</b> All SQS configuration parameters, <code>sts_role_arn</code>,
+   * codec settings, compression type, bucket ownership settings, sink log group</p>
+   * <p> <b>Fixed:</b> <code>notification_type</code>, <code>aws.region</code> </p>
+   * </dd> <dt>GitHub Audit Logs</dt> <dd> <p> <b>Updatable:</b> All Amazon Web
+   * Services Secrets Manager attributes, <code>scope</code> (can switch between
+   * ORGANIZATION/ENTERPRISE), <code>organization</code> or <code>enterprise</code>
+   * name, <code>range</code>, authentication credentials (PAT or GitHub App)</p>
+   * </dd> <dt>Microsoft Sources (Entra ID, Office365, Windows)</dt> <dd> <p>
+   * <b>Updatable:</b> All Amazon Web Services Secrets Manager attributes,
+   * <code>tenant_id</code>, <code>workspace_id</code> (Windows only), OAuth2
+   * credentials (<code>client_id</code>, <code>client_secret</code>)</p> </dd>
+   * <dt>Okta Sources (SSO, Auth0)</dt> <dd> <p> <b>Updatable:</b> All Amazon Web
+   * Services Secrets Manager attributes, <code>domain</code>, <code>range</code>
+   * (SSO only), OAuth2 credentials (<code>client_id</code>,
+   * <code>client_secret</code>)</p> </dd> <dt>Palo Alto Networks</dt> <dd> <p>
+   * <b>Updatable:</b> All Amazon Web Services Secrets Manager attributes,
+   * <code>hostname</code>, basic authentication credentials (<code>username</code>,
+   * <code>password</code>)</p> </dd> <dt>ServiceNow CMDB</dt> <dd> <p>
+   * <b>Updatable:</b> All Amazon Web Services Secrets Manager attributes,
+   * <code>instance_url</code>, <code>range</code>, OAuth2 credentials
+   * (<code>client_id</code>, <code>client_secret</code>)</p> </dd> <dt>Wiz
+   * CNAPP</dt> <dd> <p> <b>Updatable:</b> All Amazon Web Services Secrets Manager
+   * attributes, <code>region</code>, <code>range</code>, OAuth2 credentials
+   * (<code>client_id</code>, <code>client_secret</code>)</p> </dd> </dl><p><h3>See
    * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/UpdateTelemetryPipeline">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateTelemetryPipelineOutcome UpdateTelemetryPipeline(const Model::UpdateTelemetryPipelineRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateTelemetryPipeline that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateTelemetryPipelineRequestT = Model::UpdateTelemetryPipelineRequest>
+  Model::UpdateTelemetryPipelineOutcomeCallable UpdateTelemetryPipelineCallable(const UpdateTelemetryPipelineRequestT& request) const {
+    return SubmitCallable(&ObservabilityAdminClient::UpdateTelemetryPipeline, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateTelemetryPipeline that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateTelemetryPipelineRequestT = Model::UpdateTelemetryPipelineRequest>
+  void UpdateTelemetryPipelineAsync(const UpdateTelemetryPipelineRequestT& request,
+                                    const UpdateTelemetryPipelineResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ObservabilityAdminClient::UpdateTelemetryPipeline, request, handler, context);
+  }
+
+  /**
+   * <p> Updates an existing telemetry rule in your account. If multiple users
+   * attempt to modify the same telemetry rule simultaneously, a ConflictException is
+   * returned to provide specific error information for concurrent modification
+   * scenarios. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/UpdateTelemetryRule">AWS
    * API Reference</a></p>
    */
@@ -948,6 +1275,37 @@ class AWS_OBSERVABILITYADMIN_API ObservabilityAdminClient : public Aws::Client::
                                                const UpdateTelemetryRuleForOrganizationResponseReceivedHandler& handler,
                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ObservabilityAdminClient::UpdateTelemetryRuleForOrganization, request, handler, context);
+  }
+
+  /**
+   * <p>Validates a pipeline configuration without creating the pipeline. This
+   * operation checks the configuration for syntax errors and compatibility
+   * issues.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ValidateTelemetryPipelineConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ValidateTelemetryPipelineConfigurationOutcome ValidateTelemetryPipelineConfiguration(
+      const Model::ValidateTelemetryPipelineConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for ValidateTelemetryPipelineConfiguration that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename ValidateTelemetryPipelineConfigurationRequestT = Model::ValidateTelemetryPipelineConfigurationRequest>
+  Model::ValidateTelemetryPipelineConfigurationOutcomeCallable ValidateTelemetryPipelineConfigurationCallable(
+      const ValidateTelemetryPipelineConfigurationRequestT& request) const {
+    return SubmitCallable(&ObservabilityAdminClient::ValidateTelemetryPipelineConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for ValidateTelemetryPipelineConfiguration that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename ValidateTelemetryPipelineConfigurationRequestT = Model::ValidateTelemetryPipelineConfigurationRequest>
+  void ValidateTelemetryPipelineConfigurationAsync(const ValidateTelemetryPipelineConfigurationRequestT& request,
+                                                   const ValidateTelemetryPipelineConfigurationResponseReceivedHandler& handler,
+                                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ObservabilityAdminClient::ValidateTelemetryPipelineConfiguration, request, handler, context);
   }
 
   void OverrideEndpoint(const Aws::String& endpoint);

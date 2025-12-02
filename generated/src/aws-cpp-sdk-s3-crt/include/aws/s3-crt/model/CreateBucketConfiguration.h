@@ -109,12 +109,15 @@ class CreateBucketConfiguration {
   /**
    * <p>An array of tags that you can apply to the bucket that you're creating. Tags
    * are key-value pairs of metadata used to categorize and organize your buckets,
-   * track costs, and control access. </p>  <p>This parameter is only supported
-   * for S3 directory buckets. For more information, see <a
-   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Using
-   * tags with directory buckets</a>.</p> <p>You must have the
-   * <code>s3express:TagResource</code> permission to create a directory bucket with
-   * tags.</p>
+   * track costs, and control access. </p> <p>You must have the
+   * <code>s3:TagResource</code> permission to create a general purpose bucket with
+   * tags or the <code>s3express:TagResource</code> permission to create a directory
+   * bucket with tags.</p> <p>When creating buckets with tags, note that tag-based
+   * conditions using <code>aws:ResourceTag</code> and <code>s3:BucketTag</code>
+   * condition keys are applicable only after ABAC is enabled on the bucket. To learn
+   * more, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">Enabling
+   * ABAC in general purpose buckets</a>.</p>
    */
   inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
   inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }

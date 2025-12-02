@@ -48,6 +48,11 @@ BucketLevel& BucketLevel::operator=(const XmlNode& xmlNode) {
       m_detailedStatusCodesMetrics = detailedStatusCodesMetricsNode;
       m_detailedStatusCodesMetricsHasBeenSet = true;
     }
+    XmlNode advancedPerformanceMetricsNode = resultNode.FirstChild("AdvancedPerformanceMetrics");
+    if (!advancedPerformanceMetricsNode.IsNull()) {
+      m_advancedPerformanceMetrics = advancedPerformanceMetricsNode;
+      m_advancedPerformanceMetricsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -78,6 +83,11 @@ void BucketLevel::AddToNode(XmlNode& parentNode) const {
   if (m_detailedStatusCodesMetricsHasBeenSet) {
     XmlNode detailedStatusCodesMetricsNode = parentNode.CreateChildElement("DetailedStatusCodesMetrics");
     m_detailedStatusCodesMetrics.AddToNode(detailedStatusCodesMetricsNode);
+  }
+
+  if (m_advancedPerformanceMetricsHasBeenSet) {
+    XmlNode advancedPerformanceMetricsNode = parentNode.CreateChildElement("AdvancedPerformanceMetrics");
+    m_advancedPerformanceMetrics.AddToNode(advancedPerformanceMetricsNode);
   }
 }
 

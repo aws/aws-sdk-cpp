@@ -534,8 +534,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
    * <code>BatchUpdateFindingsV2</code> don't affect the value of
    * f<code>inding_info.modified_time</code>,
    * <code>finding_info.modified_time_dt</code>, <code>time</code>, <code>time_dt for
-   * a finding</code>. This API is in public preview and subject to
-   * change.</p><p><h3>See Also:</h3>   <a
+   * a finding</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateFindingsV2">AWS
    * API Reference</a></p>
    */
@@ -592,35 +591,6 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Grants permission to complete the authorization based on input parameters.
-   * This API is in public preview and subject to change.</p><p><h3>See Also:</h3>
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ConnectorRegistrationsV2">AWS
-   * API Reference</a></p>
-   */
-  virtual Model::ConnectorRegistrationsV2Outcome ConnectorRegistrationsV2(const Model::ConnectorRegistrationsV2Request& request) const;
-
-  /**
-   * A Callable wrapper for ConnectorRegistrationsV2 that returns a future to the operation so that it can be executed in parallel to other
-   * requests.
-   */
-  template <typename ConnectorRegistrationsV2RequestT = Model::ConnectorRegistrationsV2Request>
-  Model::ConnectorRegistrationsV2OutcomeCallable ConnectorRegistrationsV2Callable(const ConnectorRegistrationsV2RequestT& request) const {
-    return SubmitCallable(&SecurityHubClient::ConnectorRegistrationsV2, request);
-  }
-
-  /**
-   * An Async wrapper for ConnectorRegistrationsV2 that queues the request into a thread executor and triggers associated callback when
-   * operation has finished.
-   */
-  template <typename ConnectorRegistrationsV2RequestT = Model::ConnectorRegistrationsV2Request>
-  void ConnectorRegistrationsV2Async(const ConnectorRegistrationsV2RequestT& request,
-                                     const ConnectorRegistrationsV2ResponseReceivedHandler& handler,
-                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
-    return SubmitAsync(&SecurityHubClient::ConnectorRegistrationsV2, request, handler, context);
-  }
-
-  /**
    * <p>Creates a custom action target in Security Hub.</p> <p>You can use custom
    * actions on findings and insights in Security Hub to trigger target actions in
    * Amazon CloudWatch Events.</p><p><h3>See Also:</h3>   <a
@@ -649,8 +619,8 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Enables aggregation across Amazon Web Services Regions. This API is in public
-   * preview and subject to change.</p><p><h3>See Also:</h3>   <a
+   * <p>Enables aggregation across Amazon Web Services Regions.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateAggregatorV2">AWS
    * API Reference</a></p>
    */
@@ -703,8 +673,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates a V2 automation rule. This API is in public preview and subject to
-   * change.</p><p><h3>See Also:</h3>   <a
+   * <p>Creates a V2 automation rule.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateAutomationRuleV2">AWS
    * API Reference</a></p>
    */
@@ -761,8 +730,8 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Grants permission to create a connectorV2 based on input parameters. This API
-   * is in public preview and subject to change.</p><p><h3>See Also:</h3>   <a
+   * <p>Grants permission to create a connectorV2 based on input
+   * parameters.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateConnectorV2">AWS
    * API Reference</a></p>
    */
@@ -904,8 +873,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Grants permission to create a ticket in the chosen ITSM based on finding
-   * information for the provided finding metadata UID. This API is in public preview
-   * and subject to change.</p><p><h3>See Also:</h3>   <a
+   * information for the provided finding metadata UID.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateTicketV2">AWS
    * API Reference</a></p>
    */
@@ -993,8 +961,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Deletes the Aggregator V2. This API is in public preview and subject to
-   * change.</p><p><h3>See Also:</h3>   <a
+   * <p>Deletes the Aggregator V2.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteAggregatorV2">AWS
    * API Reference</a></p>
    */
@@ -1020,8 +987,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Deletes a V2 automation rule. This API is in public preview and subject to
-   * change.</p><p><h3>See Also:</h3>   <a
+   * <p>Deletes a V2 automation rule.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteAutomationRuleV2">AWS
    * API Reference</a></p>
    */
@@ -1081,8 +1047,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Grants permission to delete a connectorV2. This API is in public preview and
-   * subject to change.</p><p><h3>See Also:</h3>   <a
+   * <p>Grants permission to delete a connectorV2.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteConnectorV2">AWS
    * API Reference</a></p>
    */
@@ -1350,8 +1315,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Gets information about the product integration. This API is in public preview
-   * and subject to change.</p><p><h3>See Also:</h3>   <a
+   * <p>Gets information about the product integration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeProductsV2">AWS
    * API Reference</a></p>
    */
@@ -1378,8 +1342,8 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Returns details about the service resource in your account. This API is in
-   * public preview and subject to change.</p><p><h3>See Also:</h3>   <a
+   * <p>Returns details about the service resource in your account.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeSecurityHubV2">AWS
    * API Reference</a></p>
    */
@@ -1565,8 +1529,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Disable the service for the current Amazon Web Services Region or specified
-   * Amazon Web Services Region. This API is in public preview and subject to
-   * change.</p><p><h3>See Also:</h3>   <a
+   * Amazon Web Services Region.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisableSecurityHubV2">AWS
    * API Reference</a></p>
    */
@@ -1761,8 +1724,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Enables the service in account for the current Amazon Web Services Region or
-   * specified Amazon Web Services Region. This API is in public preview and subject
-   * to change.</p><p><h3>See Also:</h3>   <a
+   * specified Amazon Web Services Region.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableSecurityHubV2">AWS
    * API Reference</a></p>
    */
@@ -1819,8 +1781,8 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Returns the configuration of the specified Aggregator V2. This API is in
-   * public preview and subject to change.</p><p><h3>See Also:</h3>   <a
+   * <p>Returns the configuration of the specified Aggregator V2.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetAggregatorV2">AWS
    * API Reference</a></p>
    */
@@ -1845,8 +1807,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Returns an automation rule for the V2 service. This API is in public preview
-   * and subject to change.</p><p><h3>See Also:</h3>   <a
+   * <p>Returns an automation rule for the V2 service.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetAutomationRuleV2">AWS
    * API Reference</a></p>
    */
@@ -1934,8 +1895,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Grants permission to retrieve details for a connectorV2 based on connector
-   * id. This API is in public preview and subject to change.</p><p><h3>See
-   * Also:</h3>   <a
+   * id.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetConnectorV2">AWS
    * API Reference</a></p>
    */
@@ -2059,8 +2019,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
    * <code>GetFindingStatisticsV2</code> use
    * <code>securityhub:GetAdhocInsightResults</code> in the <code>Action</code>
    * element of an IAM policy statement. You must have permission to perform the
-   * <code>s</code> action. This API is in public preview and subject to
-   * change.</p><p><h3>See Also:</h3>   <a
+   * <code>s</code> action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingStatisticsV2">AWS
    * API Reference</a></p>
    */
@@ -2117,8 +2076,8 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Returns findings trend data based on the specified criteria. This operation
-   * helps you analyze patterns and changes in findings over time. This API is in
-   * public preview and subject to change.</p><p><h3>See Also:</h3>   <a
+   * helps you analyze patterns and changes in findings over time.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingsTrendsV2">AWS
    * API Reference</a></p>
    */
@@ -2148,8 +2107,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
    * <code>GetFindings</code> and <code>GetFindingsV2</code> both use
    * <code>securityhub:GetFindings</code> in the <code>Action</code> element of an
    * IAM policy statement. You must have permission to perform the
-   * <code>securityhub:GetFindings</code> action. This API is in public preview and
-   * subject to change.</p><p><h3>See Also:</h3>   <a
+   * <code>securityhub:GetFindings</code> action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingsV2">AWS
    * API Reference</a></p>
    */
@@ -2293,8 +2251,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Retrieves statistical information about Amazon Web Services resources and
-   * their associated security findings. This API is in public preview and subject to
-   * change.</p><p><h3>See Also:</h3>   <a
+   * their associated security findings.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetResourcesStatisticsV2">AWS
    * API Reference</a></p>
    */
@@ -2322,8 +2279,8 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Returns resource trend data based on the specified criteria. This operation
-   * helps you analyze patterns and changes in resource compliance over time. This
-   * API is in public preview and subject to change.</p><p><h3>See Also:</h3>   <a
+   * helps you analyze patterns and changes in resource compliance over
+   * time.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetResourcesTrendsV2">AWS
    * API Reference</a></p>
    */
@@ -2349,8 +2306,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Returns a list of resources. This API is in public preview and subject to
-   * change.</p><p><h3>See Also:</h3>   <a
+   * <p>Returns a list of resources.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetResourcesV2">AWS
    * API Reference</a></p>
    */
@@ -2445,8 +2401,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Retrieves a list of V2 aggregators. This API is in public preview and subject
-   * to change.</p><p><h3>See Also:</h3>   <a
+   * <p>Retrieves a list of V2 aggregators.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListAggregatorsV2">AWS
    * API Reference</a></p>
    */
@@ -2501,8 +2456,8 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Returns a list of automation rules and metadata for the calling account. This
-   * API is in public preview and subject to change.</p><p><h3>See Also:</h3>   <a
+   * <p>Returns a list of automation rules and metadata for the calling
+   * account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListAutomationRulesV2">AWS
    * API Reference</a></p>
    */
@@ -2593,8 +2548,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Grants permission to retrieve a list of connectorsV2 and their metadata for
-   * the calling account. This API is in public preview and subject to
-   * change.</p><p><h3>See Also:</h3>   <a
+   * the calling account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListConnectorsV2">AWS
    * API Reference</a></p>
    */
@@ -2864,6 +2818,33 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Grants permission to complete the authorization based on input
+   * parameters.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/RegisterConnectorV2">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RegisterConnectorV2Outcome RegisterConnectorV2(const Model::RegisterConnectorV2Request& request) const;
+
+  /**
+   * A Callable wrapper for RegisterConnectorV2 that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename RegisterConnectorV2RequestT = Model::RegisterConnectorV2Request>
+  Model::RegisterConnectorV2OutcomeCallable RegisterConnectorV2Callable(const RegisterConnectorV2RequestT& request) const {
+    return SubmitCallable(&SecurityHubClient::RegisterConnectorV2, request);
+  }
+
+  /**
+   * An Async wrapper for RegisterConnectorV2 that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename RegisterConnectorV2RequestT = Model::RegisterConnectorV2Request>
+  void RegisterConnectorV2Async(const RegisterConnectorV2RequestT& request, const RegisterConnectorV2ResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityHubClient::RegisterConnectorV2, request, handler, context);
+  }
+
+  /**
    * <p> Associates a target account, organizational unit, or the root with a
    * specified configuration. The target can be associated with a configuration
    * policy or self-managed behavior. Only the Security Hub delegated administrator
@@ -3008,8 +2989,8 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Udpates the configuration for the Aggregator V2. This API is in public
-   * preview and subject to change.</p><p><h3>See Also:</h3>   <a
+   * <p>Udpates the configuration for the Aggregator V2.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateAggregatorV2">AWS
    * API Reference</a></p>
    */
@@ -3035,8 +3016,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Updates a V2 automation rule. This API is in public preview and subject to
-   * change.</p><p><h3>See Also:</h3>   <a
+   * <p>Updates a V2 automation rule.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateAutomationRuleV2">AWS
    * API Reference</a></p>
    */
@@ -3094,8 +3074,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Grants permission to update a connectorV2 based on its id and input
-   * parameters. This API is in public preview and subject to change.</p><p><h3>See
-   * Also:</h3>   <a
+   * parameters.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateConnectorV2">AWS
    * API Reference</a></p>
    */

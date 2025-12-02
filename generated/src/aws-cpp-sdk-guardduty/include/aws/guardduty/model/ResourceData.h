@@ -6,10 +6,18 @@
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/guardduty/model/AccessKey.h>
+#include <aws/guardduty/model/AutoscalingAutoScalingGroup.h>
+#include <aws/guardduty/model/CloudformationStack.h>
 #include <aws/guardduty/model/ContainerFindingResource.h>
+#include <aws/guardduty/model/Ec2Image.h>
 #include <aws/guardduty/model/Ec2Instance.h>
+#include <aws/guardduty/model/Ec2LaunchTemplate.h>
 #include <aws/guardduty/model/Ec2NetworkInterface.h>
+#include <aws/guardduty/model/Ec2Vpc.h>
+#include <aws/guardduty/model/EcsCluster.h>
+#include <aws/guardduty/model/EcsTask.h>
 #include <aws/guardduty/model/EksCluster.h>
+#include <aws/guardduty/model/IamInstanceProfileV2.h>
 #include <aws/guardduty/model/KubernetesWorkload.h>
 #include <aws/guardduty/model/S3Bucket.h>
 #include <aws/guardduty/model/S3Object.h>
@@ -188,6 +196,158 @@ class ResourceData {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Contains detailed information about the Amazon ECS cluster associated with
+   * the activity that prompted GuardDuty to generate a finding.</p>
+   */
+  inline const EcsCluster& GetEcsCluster() const { return m_ecsCluster; }
+  inline bool EcsClusterHasBeenSet() const { return m_ecsClusterHasBeenSet; }
+  template <typename EcsClusterT = EcsCluster>
+  void SetEcsCluster(EcsClusterT&& value) {
+    m_ecsClusterHasBeenSet = true;
+    m_ecsCluster = std::forward<EcsClusterT>(value);
+  }
+  template <typename EcsClusterT = EcsCluster>
+  ResourceData& WithEcsCluster(EcsClusterT&& value) {
+    SetEcsCluster(std::forward<EcsClusterT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Contains detailed information about the Amazon ECS task associated with the
+   * activity that prompted GuardDuty to generate a finding.</p>
+   */
+  inline const EcsTask& GetEcsTask() const { return m_ecsTask; }
+  inline bool EcsTaskHasBeenSet() const { return m_ecsTaskHasBeenSet; }
+  template <typename EcsTaskT = EcsTask>
+  void SetEcsTask(EcsTaskT&& value) {
+    m_ecsTaskHasBeenSet = true;
+    m_ecsTask = std::forward<EcsTaskT>(value);
+  }
+  template <typename EcsTaskT = EcsTask>
+  ResourceData& WithEcsTask(EcsTaskT&& value) {
+    SetEcsTask(std::forward<EcsTaskT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Contains detailed information about the IAM instance profile associated with
+   * the activity that prompted GuardDuty to generate a finding.</p>
+   */
+  inline const IamInstanceProfileV2& GetIamInstanceProfile() const { return m_iamInstanceProfile; }
+  inline bool IamInstanceProfileHasBeenSet() const { return m_iamInstanceProfileHasBeenSet; }
+  template <typename IamInstanceProfileT = IamInstanceProfileV2>
+  void SetIamInstanceProfile(IamInstanceProfileT&& value) {
+    m_iamInstanceProfileHasBeenSet = true;
+    m_iamInstanceProfile = std::forward<IamInstanceProfileT>(value);
+  }
+  template <typename IamInstanceProfileT = IamInstanceProfileV2>
+  ResourceData& WithIamInstanceProfile(IamInstanceProfileT&& value) {
+    SetIamInstanceProfile(std::forward<IamInstanceProfileT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Contains detailed information about the Auto Scaling Group associated with
+   * the activity that prompted GuardDuty to generate a finding.</p>
+   */
+  inline const AutoscalingAutoScalingGroup& GetAutoscalingAutoScalingGroup() const { return m_autoscalingAutoScalingGroup; }
+  inline bool AutoscalingAutoScalingGroupHasBeenSet() const { return m_autoscalingAutoScalingGroupHasBeenSet; }
+  template <typename AutoscalingAutoScalingGroupT = AutoscalingAutoScalingGroup>
+  void SetAutoscalingAutoScalingGroup(AutoscalingAutoScalingGroupT&& value) {
+    m_autoscalingAutoScalingGroupHasBeenSet = true;
+    m_autoscalingAutoScalingGroup = std::forward<AutoscalingAutoScalingGroupT>(value);
+  }
+  template <typename AutoscalingAutoScalingGroupT = AutoscalingAutoScalingGroup>
+  ResourceData& WithAutoscalingAutoScalingGroup(AutoscalingAutoScalingGroupT&& value) {
+    SetAutoscalingAutoScalingGroup(std::forward<AutoscalingAutoScalingGroupT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Contains detailed information about the EC2 launch template associated with
+   * the activity that prompted GuardDuty to generate a finding.</p>
+   */
+  inline const Ec2LaunchTemplate& GetEc2LaunchTemplate() const { return m_ec2LaunchTemplate; }
+  inline bool Ec2LaunchTemplateHasBeenSet() const { return m_ec2LaunchTemplateHasBeenSet; }
+  template <typename Ec2LaunchTemplateT = Ec2LaunchTemplate>
+  void SetEc2LaunchTemplate(Ec2LaunchTemplateT&& value) {
+    m_ec2LaunchTemplateHasBeenSet = true;
+    m_ec2LaunchTemplate = std::forward<Ec2LaunchTemplateT>(value);
+  }
+  template <typename Ec2LaunchTemplateT = Ec2LaunchTemplate>
+  ResourceData& WithEc2LaunchTemplate(Ec2LaunchTemplateT&& value) {
+    SetEc2LaunchTemplate(std::forward<Ec2LaunchTemplateT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Contains detailed information about the EC2 VPC associated with the activity
+   * that prompted GuardDuty to generate a finding.</p>
+   */
+  inline const Ec2Vpc& GetEc2Vpc() const { return m_ec2Vpc; }
+  inline bool Ec2VpcHasBeenSet() const { return m_ec2VpcHasBeenSet; }
+  template <typename Ec2VpcT = Ec2Vpc>
+  void SetEc2Vpc(Ec2VpcT&& value) {
+    m_ec2VpcHasBeenSet = true;
+    m_ec2Vpc = std::forward<Ec2VpcT>(value);
+  }
+  template <typename Ec2VpcT = Ec2Vpc>
+  ResourceData& WithEc2Vpc(Ec2VpcT&& value) {
+    SetEc2Vpc(std::forward<Ec2VpcT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Contains detailed information about the EC2 Image associated with the
+   * activity that prompted GuardDuty to generate a finding.</p>
+   */
+  inline const Ec2Image& GetEc2Image() const { return m_ec2Image; }
+  inline bool Ec2ImageHasBeenSet() const { return m_ec2ImageHasBeenSet; }
+  template <typename Ec2ImageT = Ec2Image>
+  void SetEc2Image(Ec2ImageT&& value) {
+    m_ec2ImageHasBeenSet = true;
+    m_ec2Image = std::forward<Ec2ImageT>(value);
+  }
+  template <typename Ec2ImageT = Ec2Image>
+  ResourceData& WithEc2Image(Ec2ImageT&& value) {
+    SetEc2Image(std::forward<Ec2ImageT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Contains detailed information about the CloudFormation stack associated with
+   * the activity that prompted GuardDuty to generate a finding.</p>
+   */
+  inline const CloudformationStack& GetCloudformationStack() const { return m_cloudformationStack; }
+  inline bool CloudformationStackHasBeenSet() const { return m_cloudformationStackHasBeenSet; }
+  template <typename CloudformationStackT = CloudformationStack>
+  void SetCloudformationStack(CloudformationStackT&& value) {
+    m_cloudformationStackHasBeenSet = true;
+    m_cloudformationStack = std::forward<CloudformationStackT>(value);
+  }
+  template <typename CloudformationStackT = CloudformationStack>
+  ResourceData& WithCloudformationStack(CloudformationStackT&& value) {
+    SetCloudformationStack(std::forward<CloudformationStackT>(value));
+    return *this;
+  }
+  ///@}
  private:
   S3Bucket m_s3Bucket;
   bool m_s3BucketHasBeenSet = false;
@@ -212,6 +372,30 @@ class ResourceData {
 
   ContainerFindingResource m_container;
   bool m_containerHasBeenSet = false;
+
+  EcsCluster m_ecsCluster;
+  bool m_ecsClusterHasBeenSet = false;
+
+  EcsTask m_ecsTask;
+  bool m_ecsTaskHasBeenSet = false;
+
+  IamInstanceProfileV2 m_iamInstanceProfile;
+  bool m_iamInstanceProfileHasBeenSet = false;
+
+  AutoscalingAutoScalingGroup m_autoscalingAutoScalingGroup;
+  bool m_autoscalingAutoScalingGroupHasBeenSet = false;
+
+  Ec2LaunchTemplate m_ec2LaunchTemplate;
+  bool m_ec2LaunchTemplateHasBeenSet = false;
+
+  Ec2Vpc m_ec2Vpc;
+  bool m_ec2VpcHasBeenSet = false;
+
+  Ec2Image m_ec2Image;
+  bool m_ec2ImageHasBeenSet = false;
+
+  CloudformationStack m_cloudformationStack;
+  bool m_cloudformationStackHasBeenSet = false;
 };
 
 }  // namespace Model

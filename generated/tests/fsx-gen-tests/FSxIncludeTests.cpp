@@ -45,6 +45,7 @@
 #include <aws/fsx/model/CopySnapshotAndUpdateVolumeRequest.h>
 #include <aws/fsx/model/CopySnapshotAndUpdateVolumeResult.h>
 #include <aws/fsx/model/CreateAggregateConfiguration.h>
+#include <aws/fsx/model/CreateAndAttachS3AccessPointOntapConfiguration.h>
 #include <aws/fsx/model/CreateAndAttachS3AccessPointOpenZFSConfiguration.h>
 #include <aws/fsx/model/CreateAndAttachS3AccessPointRequest.h>
 #include <aws/fsx/model/CreateAndAttachS3AccessPointResult.h>
@@ -192,8 +193,12 @@
 #include <aws/fsx/model/NotServiceResourceError.h>
 #include <aws/fsx/model/OntapDeploymentType.h>
 #include <aws/fsx/model/OntapFileSystemConfiguration.h>
+#include <aws/fsx/model/OntapFileSystemIdentity.h>
+#include <aws/fsx/model/OntapFileSystemUserType.h>
+#include <aws/fsx/model/OntapUnixFileSystemUser.h>
 #include <aws/fsx/model/OntapVolumeConfiguration.h>
 #include <aws/fsx/model/OntapVolumeType.h>
+#include <aws/fsx/model/OntapWindowsFileSystemUser.h>
 #include <aws/fsx/model/OpenZFSClientConfiguration.h>
 #include <aws/fsx/model/OpenZFSCopyStrategy.h>
 #include <aws/fsx/model/OpenZFSCreateRootVolumeConfiguration.h>
@@ -230,6 +235,7 @@
 #include <aws/fsx/model/S3AccessPointAttachmentType.h>
 #include <aws/fsx/model/S3AccessPointAttachmentsFilter.h>
 #include <aws/fsx/model/S3AccessPointAttachmentsFilterName.h>
+#include <aws/fsx/model/S3AccessPointOntapConfiguration.h>
 #include <aws/fsx/model/S3AccessPointOpenZFSConfiguration.h>
 #include <aws/fsx/model/S3AccessPointVpcConfiguration.h>
 #include <aws/fsx/model/S3DataRepositoryConfiguration.h>

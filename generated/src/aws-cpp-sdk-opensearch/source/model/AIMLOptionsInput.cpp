@@ -26,6 +26,10 @@ AIMLOptionsInput& AIMLOptionsInput::operator=(JsonView jsonValue) {
     m_s3VectorsEngine = jsonValue.GetObject("S3VectorsEngine");
     m_s3VectorsEngineHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ServerlessVectorAcceleration")) {
+    m_serverlessVectorAcceleration = jsonValue.GetObject("ServerlessVectorAcceleration");
+    m_serverlessVectorAccelerationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue AIMLOptionsInput::Jsonize() const {
 
   if (m_s3VectorsEngineHasBeenSet) {
     payload.WithObject("S3VectorsEngine", m_s3VectorsEngine.Jsonize());
+  }
+
+  if (m_serverlessVectorAccelerationHasBeenSet) {
+    payload.WithObject("ServerlessVectorAcceleration", m_serverlessVectorAcceleration.Jsonize());
   }
 
   return payload;

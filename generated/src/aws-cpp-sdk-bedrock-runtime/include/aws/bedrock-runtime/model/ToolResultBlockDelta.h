@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
+#include <aws/core/utils/Document.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -50,9 +51,32 @@ class ToolResultBlockDelta {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The JSON schema for the tool result content block. see <a
+   * href="https://json-schema.org/understanding-json-schema/reference">JSON Schema
+   * Reference</a>.</p>
+   */
+  inline Aws::Utils::DocumentView GetJson() const { return m_json; }
+  inline bool JsonHasBeenSet() const { return m_jsonHasBeenSet; }
+  template <typename JsonT = Aws::Utils::Document>
+  void SetJson(JsonT&& value) {
+    m_jsonHasBeenSet = true;
+    m_json = std::forward<JsonT>(value);
+  }
+  template <typename JsonT = Aws::Utils::Document>
+  ToolResultBlockDelta& WithJson(JsonT&& value) {
+    SetJson(std::forward<JsonT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_text;
   bool m_textHasBeenSet = false;
+
+  Aws::Utils::Document m_json;
+  bool m_jsonHasBeenSet = false;
 };
 
 }  // namespace Model

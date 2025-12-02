@@ -13,6 +13,7 @@
 #include <aws/bedrock-agentcore/model/CreateEventRequest.h>
 #include <aws/bedrock-agentcore/model/DeleteEventRequest.h>
 #include <aws/bedrock-agentcore/model/DeleteMemoryRecordRequest.h>
+#include <aws/bedrock-agentcore/model/EvaluateRequest.h>
 #include <aws/bedrock-agentcore/model/GetAgentCardRequest.h>
 #include <aws/bedrock-agentcore/model/GetBrowserSessionRequest.h>
 #include <aws/bedrock-agentcore/model/GetCodeInterpreterSessionRequest.h>
@@ -449,6 +450,42 @@ DeleteMemoryRecordOutcome BedrockAgentCoreClient::DeleteMemoryRecord(const Delet
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemoryRecordId());
         return DeleteMemoryRecordOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+EvaluateOutcome BedrockAgentCoreClient::Evaluate(const EvaluateRequest& request) const {
+  AWS_OPERATION_GUARD(Evaluate);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, Evaluate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.EvaluatorIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("Evaluate", "Required field: EvaluatorId, is not set");
+    return EvaluateOutcome(Aws::Client::AWSError<BedrockAgentCoreErrors>(BedrockAgentCoreErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                         "Missing required field [EvaluatorId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, Evaluate, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, Evaluate, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".Evaluate",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<EvaluateOutcome>(
+      [&]() -> EvaluateOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, Evaluate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/evaluations/evaluate/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEvaluatorId());
+        return EvaluateOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

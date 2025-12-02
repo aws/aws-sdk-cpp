@@ -84,7 +84,7 @@ class UpdateScheduledQueryResult {
 
   ///@{
   /**
-   * <p>The query language used by the updated scheduled query.</p>
+   * <p>The query language of the updated scheduled query.</p>
    */
   inline QueryLanguage GetQueryLanguage() const { return m_queryLanguage; }
   inline void SetQueryLanguage(QueryLanguage value) {
@@ -116,7 +116,7 @@ class UpdateScheduledQueryResult {
 
   ///@{
   /**
-   * <p>The log group identifiers of the updated scheduled query.</p>
+   * <p>The log groups queried by the updated scheduled query.</p>
    */
   inline const Aws::Vector<Aws::String>& GetLogGroupIdentifiers() const { return m_logGroupIdentifiers; }
   template <typename LogGroupIdentifiersT = Aws::Vector<Aws::String>>
@@ -139,7 +139,7 @@ class UpdateScheduledQueryResult {
 
   ///@{
   /**
-   * <p>The schedule expression of the updated scheduled query.</p>
+   * <p>The cron expression of the updated scheduled query.</p>
    */
   inline const Aws::String& GetScheduleExpression() const { return m_scheduleExpression; }
   template <typename ScheduleExpressionT = Aws::String>
@@ -173,7 +173,7 @@ class UpdateScheduledQueryResult {
 
   ///@{
   /**
-   * <p>The start time offset of the updated scheduled query.</p>
+   * <p>The time offset of the updated scheduled query.</p>
    */
   inline long long GetStartTimeOffset() const { return m_startTimeOffset; }
   inline void SetStartTimeOffset(long long value) {
@@ -220,7 +220,7 @@ class UpdateScheduledQueryResult {
 
   ///@{
   /**
-   * <p>The time when the updated scheduled query was last executed.</p>
+   * <p>The timestamp when the updated scheduled query was last executed.</p>
    */
   inline long long GetLastTriggeredTime() const { return m_lastTriggeredTime; }
   inline void SetLastTriggeredTime(long long value) {
@@ -235,8 +235,7 @@ class UpdateScheduledQueryResult {
 
   ///@{
   /**
-   * <p>The status of the last execution of the updated scheduled query (Running,
-   * Complete, Failed, Timeout, or InvalidQuery).</p>
+   * <p>The status of the most recent execution of the updated scheduled query.</p>
    */
   inline ExecutionStatus GetLastExecutionStatus() const { return m_lastExecutionStatus; }
   inline void SetLastExecutionStatus(ExecutionStatus value) {
@@ -251,7 +250,7 @@ class UpdateScheduledQueryResult {
 
   ///@{
   /**
-   * <p>The schedule start time of the updated scheduled query.</p>
+   * <p>The start time of the updated scheduled query.</p>
    */
   inline long long GetScheduleStartTime() const { return m_scheduleStartTime; }
   inline void SetScheduleStartTime(long long value) {
@@ -266,7 +265,7 @@ class UpdateScheduledQueryResult {
 
   ///@{
   /**
-   * <p>The schedule end time of the updated scheduled query.</p>
+   * <p>The end time of the updated scheduled query.</p>
    */
   inline long long GetScheduleEndTime() const { return m_scheduleEndTime; }
   inline void SetScheduleEndTime(long long value) {
@@ -298,7 +297,7 @@ class UpdateScheduledQueryResult {
 
   ///@{
   /**
-   * <p>The creation time of the updated scheduled query.</p>
+   * <p>The timestamp when the scheduled query was originally created.</p>
    */
   inline long long GetCreationTime() const { return m_creationTime; }
   inline void SetCreationTime(long long value) {
@@ -313,7 +312,7 @@ class UpdateScheduledQueryResult {
 
   ///@{
   /**
-   * <p>The last updated time of the scheduled query.</p>
+   * <p>The timestamp when the scheduled query was last updated.</p>
    */
   inline long long GetLastUpdatedTime() const { return m_lastUpdatedTime; }
   inline void SetLastUpdatedTime(long long value) {

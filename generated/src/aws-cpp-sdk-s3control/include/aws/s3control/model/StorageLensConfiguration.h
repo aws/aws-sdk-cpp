@@ -11,6 +11,7 @@
 #include <aws/s3control/model/Include.h>
 #include <aws/s3control/model/StorageLensAwsOrg.h>
 #include <aws/s3control/model/StorageLensDataExport.h>
+#include <aws/s3control/model/StorageLensExpandedPrefixesDataExport.h>
 
 #include <utility>
 
@@ -135,6 +136,25 @@ class StorageLensConfiguration {
 
   ///@{
   /**
+   * <p>A container that configures your S3 Storage Lens expanded prefixes metrics
+   * report. </p>
+   */
+  inline const StorageLensExpandedPrefixesDataExport& GetExpandedPrefixesDataExport() const { return m_expandedPrefixesDataExport; }
+  inline bool ExpandedPrefixesDataExportHasBeenSet() const { return m_expandedPrefixesDataExportHasBeenSet; }
+  template <typename ExpandedPrefixesDataExportT = StorageLensExpandedPrefixesDataExport>
+  void SetExpandedPrefixesDataExport(ExpandedPrefixesDataExportT&& value) {
+    m_expandedPrefixesDataExportHasBeenSet = true;
+    m_expandedPrefixesDataExport = std::forward<ExpandedPrefixesDataExportT>(value);
+  }
+  template <typename ExpandedPrefixesDataExportT = StorageLensExpandedPrefixesDataExport>
+  StorageLensConfiguration& WithExpandedPrefixesDataExport(ExpandedPrefixesDataExportT&& value) {
+    SetExpandedPrefixesDataExport(std::forward<ExpandedPrefixesDataExportT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A container for whether the S3 Storage Lens configuration is enabled.</p>
    */
   inline bool GetIsEnabled() const { return m_isEnabled; }
@@ -188,6 +208,33 @@ class StorageLensConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A container for all prefix delimiters that are used for object keys in this
+   * S3 Storage Lens configuration. The prefix delimiters determine how S3 Storage
+   * Lens counts prefix depth, by separating the hierarchical levels in object
+   * keys.</p>  <ul> <li> <p>If either a prefix delimiter or existing delimiter
+   * is undefined, Amazon S3 uses the delimiter that’s defined.</p> </li> <li> <p>If
+   * both the prefix delimiter and existing delimiter are undefined, S3 uses
+   * <code>/</code> as the default delimiter.</p> </li> <li> <p>When custom
+   * delimiters are used, both the prefix delimiter and existing delimiter must
+   * specify the same special character. Otherwise, your request results in an
+   * error.</p> </li> </ul>
+   */
+  inline const Aws::String& GetPrefixDelimiter() const { return m_prefixDelimiter; }
+  inline bool PrefixDelimiterHasBeenSet() const { return m_prefixDelimiterHasBeenSet; }
+  template <typename PrefixDelimiterT = Aws::String>
+  void SetPrefixDelimiter(PrefixDelimiterT&& value) {
+    m_prefixDelimiterHasBeenSet = true;
+    m_prefixDelimiter = std::forward<PrefixDelimiterT>(value);
+  }
+  template <typename PrefixDelimiterT = Aws::String>
+  StorageLensConfiguration& WithPrefixDelimiter(PrefixDelimiterT&& value) {
+    SetPrefixDelimiter(std::forward<PrefixDelimiterT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
   bool m_idHasBeenSet = false;
@@ -204,6 +251,9 @@ class StorageLensConfiguration {
   StorageLensDataExport m_dataExport;
   bool m_dataExportHasBeenSet = false;
 
+  StorageLensExpandedPrefixesDataExport m_expandedPrefixesDataExport;
+  bool m_expandedPrefixesDataExportHasBeenSet = false;
+
   bool m_isEnabled{false};
   bool m_isEnabledHasBeenSet = false;
 
@@ -212,6 +262,9 @@ class StorageLensConfiguration {
 
   Aws::String m_storageLensArn;
   bool m_storageLensArnHasBeenSet = false;
+
+  Aws::String m_prefixDelimiter;
+  bool m_prefixDelimiterHasBeenSet = false;
 };
 
 }  // namespace Model

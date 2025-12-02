@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/datazone/model/MetadataGenerationRunStatus.h>
 #include <aws/datazone/model/MetadataGenerationRunType.h>
@@ -133,15 +134,22 @@ class StartMetadataGenerationRunResult {
 
   ///@{
   /**
-   * <p>The type of the metadata generation run.</p>
+   * <p>The types of the metadata generation run.</p>
    */
-  inline MetadataGenerationRunType GetType() const { return m_type; }
-  inline void SetType(MetadataGenerationRunType value) {
-    m_typeHasBeenSet = true;
-    m_type = value;
+  inline const Aws::Vector<MetadataGenerationRunType>& GetTypes() const { return m_types; }
+  template <typename TypesT = Aws::Vector<MetadataGenerationRunType>>
+  void SetTypes(TypesT&& value) {
+    m_typesHasBeenSet = true;
+    m_types = std::forward<TypesT>(value);
   }
-  inline StartMetadataGenerationRunResult& WithType(MetadataGenerationRunType value) {
-    SetType(value);
+  template <typename TypesT = Aws::Vector<MetadataGenerationRunType>>
+  StartMetadataGenerationRunResult& WithTypes(TypesT&& value) {
+    SetTypes(std::forward<TypesT>(value));
+    return *this;
+  }
+  inline StartMetadataGenerationRunResult& AddTypes(MetadataGenerationRunType value) {
+    m_typesHasBeenSet = true;
+    m_types.push_back(value);
     return *this;
   }
   ///@}
@@ -179,8 +187,8 @@ class StartMetadataGenerationRunResult {
   MetadataGenerationRunStatus m_status{MetadataGenerationRunStatus::NOT_SET};
   bool m_statusHasBeenSet = false;
 
-  MetadataGenerationRunType m_type{MetadataGenerationRunType::NOT_SET};
-  bool m_typeHasBeenSet = false;
+  Aws::Vector<MetadataGenerationRunType> m_types;
+  bool m_typesHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

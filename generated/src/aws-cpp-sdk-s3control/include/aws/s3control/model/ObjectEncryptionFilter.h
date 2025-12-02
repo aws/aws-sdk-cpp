@@ -23,11 +23,8 @@ namespace S3Control {
 namespace Model {
 
 /**
- * <p>An optional filter for the <code>S3JobManifestGenerator</code> that
- * identifies the subset of objects by encryption type. This filter is used to
- * create an object list for S3 Batch Operations jobs. If provided, this filter
- * will generate an object list that only includes objects with the specified
- * encryption type.</p><p><h3>See Also:</h3>   <a
+ * <p>An optional filter for the S3JobManifestGenerator that identifies the subset
+ * of objects by encryption type.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ObjectEncryptionFilter">AWS
  * API Reference</a></p>
  */
@@ -117,7 +114,7 @@ class ObjectEncryptionFilter {
 
   ///@{
   /**
-   * <p>Filters for objects that are not encrypted by server-side encryption. </p>
+   * <p>Filters for objects that are not encrypted by server-side encryption.</p>
    */
   inline const NotSSEFilter& GetNOTSSE() const { return m_nOTSSE; }
   inline bool NOTSSEHasBeenSet() const { return m_nOTSSEHasBeenSet; }

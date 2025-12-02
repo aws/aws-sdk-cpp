@@ -20,8 +20,9 @@ namespace CloudWatchLogs {
 namespace Model {
 
 /**
- * <p>Configuration for destinations where scheduled query results are delivered,
- * such as S3 buckets or EventBridge event buses.</p><p><h3>See Also:</h3>   <a
+ * <p>Configuration for where to deliver scheduled query results. Specifies the
+ * destination type and associated settings for result delivery.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DestinationConfiguration">AWS
  * API Reference</a></p>
  */
@@ -34,7 +35,7 @@ class DestinationConfiguration {
 
   ///@{
   /**
-   * <p>Configuration for delivering query results to an Amazon S3 bucket.</p>
+   * <p>Configuration for delivering query results to Amazon S3.</p>
    */
   inline const S3Configuration& GetS3Configuration() const { return m_s3Configuration; }
   inline bool S3ConfigurationHasBeenSet() const { return m_s3ConfigurationHasBeenSet; }

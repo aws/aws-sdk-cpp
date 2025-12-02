@@ -1,0 +1,56 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/bedrock-agentcore-control/model/FilterValue.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace BedrockAgentCoreControl {
+namespace Model {
+
+FilterValue::FilterValue(JsonView jsonValue) { *this = jsonValue; }
+
+FilterValue& FilterValue::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("stringValue")) {
+    m_stringValue = jsonValue.GetString("stringValue");
+    m_stringValueHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("doubleValue")) {
+    m_doubleValue = jsonValue.GetDouble("doubleValue");
+    m_doubleValueHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("booleanValue")) {
+    m_booleanValue = jsonValue.GetBool("booleanValue");
+    m_booleanValueHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue FilterValue::Jsonize() const {
+  JsonValue payload;
+
+  if (m_stringValueHasBeenSet) {
+    payload.WithString("stringValue", m_stringValue);
+  }
+
+  if (m_doubleValueHasBeenSet) {
+    payload.WithDouble("doubleValue", m_doubleValue);
+  }
+
+  if (m_booleanValueHasBeenSet) {
+    payload.WithBool("booleanValue", m_booleanValue);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace BedrockAgentCoreControl
+}  // namespace Aws

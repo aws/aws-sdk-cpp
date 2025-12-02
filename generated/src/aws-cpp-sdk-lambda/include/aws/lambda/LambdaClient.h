@@ -200,6 +200,43 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient, public Aw
   }
 
   /**
+   * <p>Saves the progress of a <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable
+   * function</a> execution during runtime. This API is used by the Lambda durable
+   * functions SDK to checkpoint completed steps and schedule asynchronous
+   * operations. You typically don't need to call this API directly as the SDK
+   * handles checkpointing automatically.</p> <p>Each checkpoint operation consumes
+   * the current checkpoint token and returns a new one for the next checkpoint. This
+   * ensures that checkpoints are applied in the correct order and prevents duplicate
+   * or out-of-order state updates.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CheckpointDurableExecution">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CheckpointDurableExecutionOutcome CheckpointDurableExecution(
+      const Model::CheckpointDurableExecutionRequest& request) const;
+
+  /**
+   * A Callable wrapper for CheckpointDurableExecution that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CheckpointDurableExecutionRequestT = Model::CheckpointDurableExecutionRequest>
+  Model::CheckpointDurableExecutionOutcomeCallable CheckpointDurableExecutionCallable(
+      const CheckpointDurableExecutionRequestT& request) const {
+    return SubmitCallable(&LambdaClient::CheckpointDurableExecution, request);
+  }
+
+  /**
+   * An Async wrapper for CheckpointDurableExecution that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CheckpointDurableExecutionRequestT = Model::CheckpointDurableExecutionRequest>
+  void CheckpointDurableExecutionAsync(const CheckpointDurableExecutionRequestT& request,
+                                       const CheckpointDurableExecutionResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LambdaClient::CheckpointDurableExecution, request, handler, context);
+  }
+
+  /**
    * <p>Creates an <a
    * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>
    * for a Lambda function version. Use aliases to provide clients with a function
@@ -912,6 +949,107 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient, public Aw
   }
 
   /**
+   * <p>Retrieves detailed information about a specific <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable
+   * execution</a>, including its current status, input payload, result or error
+   * information, and execution metadata such as start time and usage
+   * statistics.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetDurableExecution">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetDurableExecutionOutcome GetDurableExecution(const Model::GetDurableExecutionRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetDurableExecution that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetDurableExecutionRequestT = Model::GetDurableExecutionRequest>
+  Model::GetDurableExecutionOutcomeCallable GetDurableExecutionCallable(const GetDurableExecutionRequestT& request) const {
+    return SubmitCallable(&LambdaClient::GetDurableExecution, request);
+  }
+
+  /**
+   * An Async wrapper for GetDurableExecution that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetDurableExecutionRequestT = Model::GetDurableExecutionRequest>
+  void GetDurableExecutionAsync(const GetDurableExecutionRequestT& request, const GetDurableExecutionResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LambdaClient::GetDurableExecution, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the execution history for a <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable
+   * execution</a>, showing all the steps, callbacks, and events that occurred during
+   * the execution. This provides a detailed audit trail of the execution's progress
+   * over time.</p> <p>The history is available while the execution is running and
+   * for a retention period after it completes (1-90 days, default 30 days). You can
+   * control whether to include execution data such as step results and callback
+   * payloads.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetDurableExecutionHistory">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetDurableExecutionHistoryOutcome GetDurableExecutionHistory(
+      const Model::GetDurableExecutionHistoryRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetDurableExecutionHistory that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetDurableExecutionHistoryRequestT = Model::GetDurableExecutionHistoryRequest>
+  Model::GetDurableExecutionHistoryOutcomeCallable GetDurableExecutionHistoryCallable(
+      const GetDurableExecutionHistoryRequestT& request) const {
+    return SubmitCallable(&LambdaClient::GetDurableExecutionHistory, request);
+  }
+
+  /**
+   * An Async wrapper for GetDurableExecutionHistory that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetDurableExecutionHistoryRequestT = Model::GetDurableExecutionHistoryRequest>
+  void GetDurableExecutionHistoryAsync(const GetDurableExecutionHistoryRequestT& request,
+                                       const GetDurableExecutionHistoryResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LambdaClient::GetDurableExecutionHistory, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the current execution state required for the replay process during
+   * <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable
+   * function</a> execution. This API is used by the Lambda durable functions SDK to
+   * get state information needed for replay. You typically don't need to call this
+   * API directly as the SDK handles state management automatically.</p> <p>The
+   * response contains operations ordered by start sequence number in ascending
+   * order. Completed operations with children don't include child operation details
+   * since they don't need to be replayed.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetDurableExecutionState">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetDurableExecutionStateOutcome GetDurableExecutionState(const Model::GetDurableExecutionStateRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetDurableExecutionState that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetDurableExecutionStateRequestT = Model::GetDurableExecutionStateRequest>
+  Model::GetDurableExecutionStateOutcomeCallable GetDurableExecutionStateCallable(const GetDurableExecutionStateRequestT& request) const {
+    return SubmitCallable(&LambdaClient::GetDurableExecutionState, request);
+  }
+
+  /**
+   * An Async wrapper for GetDurableExecutionState that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetDurableExecutionStateRequestT = Model::GetDurableExecutionStateRequest>
+  void GetDurableExecutionStateAsync(const GetDurableExecutionStateRequestT& request,
+                                     const GetDurableExecutionStateResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LambdaClient::GetDurableExecutionState, request, handler, context);
+  }
+
+  /**
    * <p>Returns details about an event source mapping. You can get the identifier of
    * a mapping from the output of <a>ListEventSourceMappings</a>.</p><p><h3>See
    * Also:</h3>   <a
@@ -1541,6 +1679,39 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient, public Aw
                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                    const ListCodeSigningConfigsRequestT& request = {}) const {
     return SubmitAsync(&LambdaClient::ListCodeSigningConfigs, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a list of <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable
+   * executions</a> for a specified Lambda function. You can filter the results by
+   * execution name, status, and start time range. This API supports pagination for
+   * large result sets.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListDurableExecutionsByFunction">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListDurableExecutionsByFunctionOutcome ListDurableExecutionsByFunction(
+      const Model::ListDurableExecutionsByFunctionRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListDurableExecutionsByFunction that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListDurableExecutionsByFunctionRequestT = Model::ListDurableExecutionsByFunctionRequest>
+  Model::ListDurableExecutionsByFunctionOutcomeCallable ListDurableExecutionsByFunctionCallable(
+      const ListDurableExecutionsByFunctionRequestT& request) const {
+    return SubmitCallable(&LambdaClient::ListDurableExecutionsByFunction, request);
+  }
+
+  /**
+   * An Async wrapper for ListDurableExecutionsByFunction that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListDurableExecutionsByFunctionRequestT = Model::ListDurableExecutionsByFunctionRequest>
+  void ListDurableExecutionsByFunctionAsync(const ListDurableExecutionsByFunctionRequestT& request,
+                                            const ListDurableExecutionsByFunctionResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LambdaClient::ListDurableExecutionsByFunction, request, handler, context);
   }
 
   /**
@@ -2251,6 +2422,129 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient, public Aw
   void RemovePermissionAsync(const RemovePermissionRequestT& request, const RemovePermissionResponseReceivedHandler& handler,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&LambdaClient::RemovePermission, request, handler, context);
+  }
+
+  /**
+   * <p>Sends a failure response for a callback operation in a durable execution. Use
+   * this API when an external system cannot complete a callback operation
+   * successfully.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/SendDurableExecutionCallbackFailure">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SendDurableExecutionCallbackFailureOutcome SendDurableExecutionCallbackFailure(
+      const Model::SendDurableExecutionCallbackFailureRequest& request) const;
+
+  /**
+   * A Callable wrapper for SendDurableExecutionCallbackFailure that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename SendDurableExecutionCallbackFailureRequestT = Model::SendDurableExecutionCallbackFailureRequest>
+  Model::SendDurableExecutionCallbackFailureOutcomeCallable SendDurableExecutionCallbackFailureCallable(
+      const SendDurableExecutionCallbackFailureRequestT& request) const {
+    return SubmitCallable(&LambdaClient::SendDurableExecutionCallbackFailure, request);
+  }
+
+  /**
+   * An Async wrapper for SendDurableExecutionCallbackFailure that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename SendDurableExecutionCallbackFailureRequestT = Model::SendDurableExecutionCallbackFailureRequest>
+  void SendDurableExecutionCallbackFailureAsync(const SendDurableExecutionCallbackFailureRequestT& request,
+                                                const SendDurableExecutionCallbackFailureResponseReceivedHandler& handler,
+                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LambdaClient::SendDurableExecutionCallbackFailure, request, handler, context);
+  }
+
+  /**
+   * <p>Sends a heartbeat signal for a long-running callback operation to prevent
+   * timeout. Use this API to extend the callback timeout period while the external
+   * operation is still in progress.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/SendDurableExecutionCallbackHeartbeat">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SendDurableExecutionCallbackHeartbeatOutcome SendDurableExecutionCallbackHeartbeat(
+      const Model::SendDurableExecutionCallbackHeartbeatRequest& request) const;
+
+  /**
+   * A Callable wrapper for SendDurableExecutionCallbackHeartbeat that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename SendDurableExecutionCallbackHeartbeatRequestT = Model::SendDurableExecutionCallbackHeartbeatRequest>
+  Model::SendDurableExecutionCallbackHeartbeatOutcomeCallable SendDurableExecutionCallbackHeartbeatCallable(
+      const SendDurableExecutionCallbackHeartbeatRequestT& request) const {
+    return SubmitCallable(&LambdaClient::SendDurableExecutionCallbackHeartbeat, request);
+  }
+
+  /**
+   * An Async wrapper for SendDurableExecutionCallbackHeartbeat that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename SendDurableExecutionCallbackHeartbeatRequestT = Model::SendDurableExecutionCallbackHeartbeatRequest>
+  void SendDurableExecutionCallbackHeartbeatAsync(const SendDurableExecutionCallbackHeartbeatRequestT& request,
+                                                  const SendDurableExecutionCallbackHeartbeatResponseReceivedHandler& handler,
+                                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LambdaClient::SendDurableExecutionCallbackHeartbeat, request, handler, context);
+  }
+
+  /**
+   * <p>Sends a successful completion response for a callback operation in a durable
+   * execution. Use this API when an external system has successfully completed a
+   * callback operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/SendDurableExecutionCallbackSuccess">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SendDurableExecutionCallbackSuccessOutcome SendDurableExecutionCallbackSuccess(
+      const Model::SendDurableExecutionCallbackSuccessRequest& request) const;
+
+  /**
+   * A Callable wrapper for SendDurableExecutionCallbackSuccess that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename SendDurableExecutionCallbackSuccessRequestT = Model::SendDurableExecutionCallbackSuccessRequest>
+  Model::SendDurableExecutionCallbackSuccessOutcomeCallable SendDurableExecutionCallbackSuccessCallable(
+      const SendDurableExecutionCallbackSuccessRequestT& request) const {
+    return SubmitCallable(&LambdaClient::SendDurableExecutionCallbackSuccess, request);
+  }
+
+  /**
+   * An Async wrapper for SendDurableExecutionCallbackSuccess that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename SendDurableExecutionCallbackSuccessRequestT = Model::SendDurableExecutionCallbackSuccessRequest>
+  void SendDurableExecutionCallbackSuccessAsync(const SendDurableExecutionCallbackSuccessRequestT& request,
+                                                const SendDurableExecutionCallbackSuccessResponseReceivedHandler& handler,
+                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LambdaClient::SendDurableExecutionCallbackSuccess, request, handler, context);
+  }
+
+  /**
+   * <p>Stops a running <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable
+   * execution</a>. The execution transitions to STOPPED status and cannot be
+   * resumed. Any in-progress operations are terminated.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/StopDurableExecution">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StopDurableExecutionOutcome StopDurableExecution(const Model::StopDurableExecutionRequest& request) const;
+
+  /**
+   * A Callable wrapper for StopDurableExecution that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StopDurableExecutionRequestT = Model::StopDurableExecutionRequest>
+  Model::StopDurableExecutionOutcomeCallable StopDurableExecutionCallable(const StopDurableExecutionRequestT& request) const {
+    return SubmitCallable(&LambdaClient::StopDurableExecution, request);
+  }
+
+  /**
+   * An Async wrapper for StopDurableExecution that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StopDurableExecutionRequestT = Model::StopDurableExecutionRequest>
+  void StopDurableExecutionAsync(const StopDurableExecutionRequestT& request, const StopDurableExecutionResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LambdaClient::StopDurableExecution, request, handler, context);
   }
 
   /**

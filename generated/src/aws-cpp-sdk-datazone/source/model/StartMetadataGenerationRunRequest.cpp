@@ -27,8 +27,12 @@ Aws::String StartMetadataGenerationRunRequest::SerializePayload() const {
     payload.WithObject("target", m_target.Jsonize());
   }
 
-  if (m_typeHasBeenSet) {
-    payload.WithString("type", MetadataGenerationRunTypeMapper::GetNameForMetadataGenerationRunType(m_type));
+  if (m_typesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> typesJsonList(m_types.size());
+    for (unsigned typesIndex = 0; typesIndex < typesJsonList.GetLength(); ++typesIndex) {
+      typesJsonList[typesIndex].AsString(MetadataGenerationRunTypeMapper::GetNameForMetadataGenerationRunType(m_types[typesIndex]));
+    }
+    payload.WithArray("types", std::move(typesJsonList));
   }
 
   return payload.View().WriteReadable();

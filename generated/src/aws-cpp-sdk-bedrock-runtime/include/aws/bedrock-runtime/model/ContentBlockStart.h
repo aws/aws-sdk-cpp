@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
+#include <aws/bedrock-runtime/model/ImageBlockStart.h>
 #include <aws/bedrock-runtime/model/ToolResultBlockStart.h>
 #include <aws/bedrock-runtime/model/ToolUseBlockStart.h>
 
@@ -67,12 +68,33 @@ class ContentBlockStart {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The initial event indicating the start of a streaming image block.</p>
+   */
+  inline const ImageBlockStart& GetImage() const { return m_image; }
+  inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
+  template <typename ImageT = ImageBlockStart>
+  void SetImage(ImageT&& value) {
+    m_imageHasBeenSet = true;
+    m_image = std::forward<ImageT>(value);
+  }
+  template <typename ImageT = ImageBlockStart>
+  ContentBlockStart& WithImage(ImageT&& value) {
+    SetImage(std::forward<ImageT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ToolUseBlockStart m_toolUse;
   bool m_toolUseHasBeenSet = false;
 
   ToolResultBlockStart m_toolResult;
   bool m_toolResultHasBeenSet = false;
+
+  ImageBlockStart m_image;
+  bool m_imageHasBeenSet = false;
 };
 
 }  // namespace Model

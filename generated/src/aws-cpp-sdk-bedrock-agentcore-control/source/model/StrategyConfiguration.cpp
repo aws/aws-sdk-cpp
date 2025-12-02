@@ -30,6 +30,10 @@ StrategyConfiguration& StrategyConfiguration::operator=(JsonView jsonValue) {
     m_consolidation = jsonValue.GetObject("consolidation");
     m_consolidationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("reflection")) {
+    m_reflection = jsonValue.GetObject("reflection");
+    m_reflectionHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("selfManagedConfiguration")) {
     m_selfManagedConfiguration = jsonValue.GetObject("selfManagedConfiguration");
     m_selfManagedConfigurationHasBeenSet = true;
@@ -50,6 +54,10 @@ JsonValue StrategyConfiguration::Jsonize() const {
 
   if (m_consolidationHasBeenSet) {
     payload.WithObject("consolidation", m_consolidation.Jsonize());
+  }
+
+  if (m_reflectionHasBeenSet) {
+    payload.WithObject("reflection", m_reflection.Jsonize());
   }
 
   if (m_selfManagedConfigurationHasBeenSet) {

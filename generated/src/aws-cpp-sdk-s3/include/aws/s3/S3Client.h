@@ -372,7 +372,7 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
    * Virginia), US West (N. California), US West (Oregon), Asia Pacific (Singapore),
    * Asia Pacific (Sydney), Asia Pacific (Tokyo), Europe (Ireland), and South America
    * (São Paulo).</p>   <p>You can store individual objects of up
-   * to 5 TB in Amazon S3. You create a copy of your object up to 5 GB in size in a
+   * to 50 TB in Amazon S3. You create a copy of your object up to 5 GB in size in a
    * single atomic action using this API. However, to copy an object greater than 5
    * GB, you must use the multipart upload Upload Part - Copy (UploadPartCopy) API.
    * For more information, see <a
@@ -521,15 +521,8 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
   /**
-   *  <p>End of support notice: As of October 1, 2025, Amazon S3 has
-   * discontinued support for Email Grantee Access Control Lists (ACLs). If you
-   * attempt to use an Email Grantee ACL in a request after October 1, 2025, the
-   * request will receive an <code>HTTP 405</code> (Method Not Allowed) error.</p>
-   * <p>This change affects the following Amazon Web Services Regions: US East (N.
-   * Virginia), US West (N. California), US West (Oregon), Asia Pacific (Singapore),
-   * Asia Pacific (Sydney), Asia Pacific (Tokyo), Europe (Ireland), and South America
-   * (São Paulo).</p>   <p>This action creates an Amazon S3 bucket.
-   * To create an Amazon S3 on Outposts bucket, see <a
+   *  <p>This action creates an Amazon S3 bucket. To create an Amazon S3 on
+   * Outposts bucket, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html">
    * <code>CreateBucket</code> </a>.</p>  <p>Creates a new S3 bucket. To
    * create a bucket, you must set up Amazon S3 and have a valid Amazon Web Services
@@ -2356,9 +2349,11 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
   /**
    *  <p>This operation is not supported for directory buckets.</p>
    * <p>Removes the <code>PublicAccessBlock</code> configuration for an Amazon S3
-   * bucket. To use this operation, you must have the
-   * <code>s3:PutBucketPublicAccessBlock</code> permission. For more information
-   * about permissions, see <a
+   * bucket. This operation removes the bucket-level configuration only. The
+   * effective public access behavior will still be governed by account-level
+   * settings (which may inherit from organization-level policies). To use this
+   * operation, you must have the <code>s3:PutBucketPublicAccessBlock</code>
+   * permission. For more information about permissions, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
    * Related to Bucket Subresource Operations</a> and <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
@@ -2404,13 +2399,10 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
 
   /**
    * <p>Returns the attribute-based access control (ABAC) property of the general
-   * purpose bucket. If the bucket ABAC is enabled, you can use tags for bucket
-   * access control. For more information, see <a
+   * purpose bucket. If ABAC is enabled on your bucket, you can use tags on the
+   * bucket for access control. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">Enabling
-   * ABAC in general purpose buckets</a>. Whether ABAC is enabled or disabled, you
-   * can use tags for cost tracking. For more information, see <a
-   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging.html">Using
-   * tags with S3 general purpose buckets</a>.</p><p><h3>See Also:</h3>   <a
+   * ABAC in general purpose buckets</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAbac">AWS
    * API Reference</a></p>
    */
@@ -2493,17 +2485,8 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
   }
 
   /**
-   *  <p>End of support notice: Beginning November 21, 2025, Amazon S3
-   * will stop returning <code>DisplayName</code>. Update your applications to use
-   * canonical IDs (unique identifier for Amazon Web Services accounts), Amazon Web
-   * Services account ID (12 digit identifier) or IAM ARNs (full resource naming) as
-   * a direct replacement of <code>DisplayName</code>. </p> <p>This change affects
-   * the following Amazon Web Services Regions: US East (N. Virginia) Region, US West
-   * (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-   * Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe
-   * (Ireland) Region, and South America (São Paulo) Region.</p>
-   * <p>This operation is not supported for directory buckets.</p>  <p>This
-   * implementation of the <code>GET</code> action uses the <code>acl</code>
+   *  <p>This operation is not supported for directory buckets.</p>
+   * <p>This implementation of the <code>GET</code> action uses the <code>acl</code>
    * subresource to return the access control list (ACL) of a bucket. To use
    * <code>GET</code> to return the ACL of the bucket, you must have the
    * <code>READ_ACP</code> access to the bucket. If <code>READ_ACP</code> permission
@@ -2660,9 +2643,9 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
    * default, all buckets have a default encryption configuration that uses
    * server-side encryption with Amazon S3 managed keys (SSE-S3). This operation also
    * returns the <a
-   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_BucketKeyEnabled.html">BucketKeyEnabled</a>
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ServerSideEncryptionRule.html#AmazonS3-Type-ServerSideEncryptionRule-BucketKeyEnabled">BucketKeyEnabled</a>
    * and <a
-   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_BlockedEncryptionTypes.html">BlockedEncryptionTypes</a>
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ServerSideEncryptionRule.html#AmazonS3-Type-ServerSideEncryptionRule-BlockedEncryptionTypes">BlockedEncryptionTypes</a>
    * statuses. </p>  <ul> <li> <p> <b>General purpose buckets</b> - For
    * information about the bucket default encryption feature, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-encryption.html">Amazon
@@ -2992,18 +2975,9 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
   }
 
   /**
-   *  <p>End of support notice: Beginning November 21, 2025, Amazon S3
-   * will stop returning <code>DisplayName</code>. Update your applications to use
-   * canonical IDs (unique identifier for Amazon Web Services accounts), Amazon Web
-   * Services account ID (12 digit identifier) or IAM ARNs (full resource naming) as
-   * a direct replacement of <code>DisplayName</code>. </p> <p>This change affects
-   * the following Amazon Web Services Regions: US East (N. Virginia) Region, US West
-   * (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-   * Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe
-   * (Ireland) Region, and South America (São Paulo) Region.</p>
-   * <p>This operation is not supported for directory buckets.</p>  <p>Returns
-   * the logging status of a bucket and the permissions users have to view and modify
-   * that status.</p> <p>The following operations are related to
+   *  <p>This operation is not supported for directory buckets.</p>
+   * <p>Returns the logging status of a bucket and the permissions users have to view
+   * and modify that status.</p> <p>The following operations are related to
    * <code>GetBucketLogging</code>:</p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
    * </p> </li> <li> <p> <a
@@ -3826,19 +3800,10 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
   /**
-   *  <p>End of support notice: Beginning November 21, 2025, Amazon S3
-   * will stop returning <code>DisplayName</code>. Update your applications to use
-   * canonical IDs (unique identifier for Amazon Web Services accounts), Amazon Web
-   * Services account ID (12 digit identifier) or IAM ARNs (full resource naming) as
-   * a direct replacement of <code>DisplayName</code>. </p> <p>This change affects
-   * the following Amazon Web Services Regions: US East (N. Virginia) Region, US West
-   * (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-   * Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe
-   * (Ireland) Region, and South America (São Paulo) Region.</p>
-   * <p>This operation is not supported for directory buckets.</p>  <p>Returns
-   * the access control list (ACL) of an object. To use this operation, you must have
-   * <code>s3:GetObjectAcl</code> permissions or <code>READ_ACP</code> access to the
-   * object. For more information, see <a
+   *  <p>This operation is not supported for directory buckets.</p>
+   * <p>Returns the access control list (ACL) of an object. To use this operation,
+   * you must have <code>s3:GetObjectAcl</code> permissions or <code>READ_ACP</code>
+   * access to the object. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#acl-access-policy-permission-mapping">Mapping
    * of ACL permissions and access policy permissions</a> in the <i>Amazon S3 User
    * Guide</i> </p> <p>This functionality is not supported for Amazon S3 on
@@ -4253,18 +4218,22 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
   /**
    *  <p>This operation is not supported for directory buckets.</p>
    * <p>Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon S3
-   * bucket. To use this operation, you must have the
-   * <code>s3:GetBucketPublicAccessBlock</code> permission. For more information
-   * about Amazon S3 permissions, see <a
+   * bucket. This operation returns the bucket-level configuration only. To
+   * understand the effective public access behavior, you must also consider
+   * account-level settings (which may inherit from organization-level policies). To
+   * use this operation, you must have the <code>s3:GetBucketPublicAccessBlock</code>
+   * permission. For more information about Amazon S3 permissions, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
    * Permissions in a Policy</a>.</p>  <p>When Amazon S3 evaluates the
    * <code>PublicAccessBlock</code> configuration for a bucket or an object, it
    * checks the <code>PublicAccessBlock</code> configuration for both the bucket (or
-   * the bucket that contains the object) and the bucket owner's account. If the
-   * <code>PublicAccessBlock</code> settings are different between the bucket and the
-   * account, Amazon S3 uses the most restrictive combination of the bucket-level and
-   * account-level settings.</p>  <p>For more information about when
-   * Amazon S3 considers a bucket or an object public, see <a
+   * the bucket that contains the object) and the bucket owner's account.
+   * Account-level settings automatically inherit from organization-level policies
+   * when present. If the <code>PublicAccessBlock</code> settings are different
+   * between the bucket and the account, Amazon S3 uses the most restrictive
+   * combination of the bucket-level and account-level settings.</p>
+   * <p>For more information about when Amazon S3 considers a bucket or an object
+   * public, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The
    * Meaning of "Public"</a>.</p> <p>The following operations are related to
    * <code>GetPublicAccessBlock</code>:</p> <ul> <li> <p> <a
@@ -4767,18 +4736,9 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
   }
 
   /**
-   *  <p>End of support notice: Beginning November 21, 2025, Amazon S3
-   * will stop returning <code>DisplayName</code>. Update your applications to use
-   * canonical IDs (unique identifier for Amazon Web Services accounts), Amazon Web
-   * Services account ID (12 digit identifier) or IAM ARNs (full resource naming) as
-   * a direct replacement of <code>DisplayName</code>. </p> <p>This change affects
-   * the following Amazon Web Services Regions: US East (N. Virginia) Region, US West
-   * (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-   * Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe
-   * (Ireland) Region, and South America (São Paulo) Region.</p>
-   * <p>This operation is not supported for directory buckets.</p>  <p>Returns
-   * a list of all buckets owned by the authenticated sender of the request. To grant
-   * IAM permission to use this operation, you must add the
+   *  <p>This operation is not supported for directory buckets.</p>
+   * <p>Returns a list of all buckets owned by the authenticated sender of the
+   * request. To grant IAM permission to use this operation, you must add the
    * <code>s3:ListAllMyBuckets</code> policy action. </p> <p>For information about
    * Amazon S3 buckets, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-buckets-s3.html">Creating,
@@ -4878,19 +4838,10 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
   }
 
   /**
-   *  <p>End of support notice: Beginning November 21, 2025, Amazon S3
-   * will stop returning <code>DisplayName</code>. Update your applications to use
-   * canonical IDs (unique identifier for Amazon Web Services accounts), Amazon Web
-   * Services account ID (12 digit identifier) or IAM ARNs (full resource naming) as
-   * a direct replacement of <code>DisplayName</code>. </p> <p>This change affects
-   * the following Amazon Web Services Regions: US East (N. Virginia) Region, US West
-   * (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-   * Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe
-   * (Ireland) Region, and South America (São Paulo) Region.</p>  <p>This
-   * operation lists in-progress multipart uploads in a bucket. An in-progress
-   * multipart upload is a multipart upload that has been initiated by the
-   * <code>CreateMultipartUpload</code> request, but has not yet been completed or
-   * aborted.</p>  <p> <b>Directory buckets</b> - If multipart uploads in a
+   * <p>This operation lists in-progress multipart uploads in a bucket. An
+   * in-progress multipart upload is a multipart upload that has been initiated by
+   * the <code>CreateMultipartUpload</code> request, but has not yet been completed
+   * or aborted.</p>  <p> <b>Directory buckets</b> - If multipart uploads in a
    * directory bucket are in progress, you can't delete the bucket until all the
    * in-progress multipart uploads are aborted or completed. To delete these
    * in-progress multipart uploads, use the <code>ListMultipartUploads</code>
@@ -5004,25 +4955,17 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
   }
 
   /**
-   *  <p>End of support notice: Beginning November 21, 2025, Amazon S3
-   * will stop returning <code>DisplayName</code>. Update your applications to use
-   * canonical IDs (unique identifier for Amazon Web Services accounts), Amazon Web
-   * Services account ID (12 digit identifier) or IAM ARNs (full resource naming) as
-   * a direct replacement of <code>DisplayName</code>. </p> <p>This change affects
-   * the following Amazon Web Services Regions: US East (N. Virginia) Region, US West
-   * (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-   * Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe
-   * (Ireland) Region, and South America (São Paulo) Region.</p>
-   * <p>This operation is not supported for directory buckets.</p>  <p>Returns
-   * metadata about all versions of the objects in a bucket. You can also use request
-   * parameters as selection criteria to return metadata about a subset of all the
-   * object versions.</p>  <p> To use this operation, you must have
-   * permission to perform the <code>s3:ListBucketVersions</code> action. Be aware of
-   * the name difference. </p>   <p> A <code>200 OK</code> response
-   * can contain valid or invalid XML. Make sure to design your application to parse
-   * the contents of the response and handle it appropriately.</p>  <p>To use
-   * this operation, you must have READ access to the bucket.</p> <p>The following
-   * operations are related to <code>ListObjectVersions</code>:</p> <ul> <li> <p> <a
+   *  <p>This operation is not supported for directory buckets.</p>
+   * <p>Returns metadata about all versions of the objects in a bucket. You can also
+   * use request parameters as selection criteria to return metadata about a subset
+   * of all the object versions.</p>  <p> To use this operation, you must
+   * have permission to perform the <code>s3:ListBucketVersions</code> action. Be
+   * aware of the name difference. </p>   <p> A <code>200 OK</code>
+   * response can contain valid or invalid XML. Make sure to design your application
+   * to parse the contents of the response and handle it appropriately.</p>
+   * <p>To use this operation, you must have READ access to the bucket.</p> <p>The
+   * following operations are related to <code>ListObjectVersions</code>:</p> <ul>
+   * <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html">ListObjectsV2</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
@@ -5060,20 +5003,11 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
   }
 
   /**
-   *  <p>End of support notice: Beginning November 21, 2025, Amazon S3
-   * will stop returning <code>DisplayName</code>. Update your applications to use
-   * canonical IDs (unique identifier for Amazon Web Services accounts), Amazon Web
-   * Services account ID (12 digit identifier) or IAM ARNs (full resource naming) as
-   * a direct replacement of <code>DisplayName</code>. </p> <p>This change affects
-   * the following Amazon Web Services Regions: US East (N. Virginia) Region, US West
-   * (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-   * Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe
-   * (Ireland) Region, and South America (São Paulo) Region.</p>
-   * <p>This operation is not supported for directory buckets.</p>  <p>Returns
-   * some or all (up to 1,000) of the objects in a bucket. You can use the request
-   * parameters as selection criteria to return a subset of the objects in a bucket.
-   * A 200 OK response can contain valid or invalid XML. Be sure to design your
-   * application to parse the contents of the response and handle it
+   *  <p>This operation is not supported for directory buckets.</p>
+   * <p>Returns some or all (up to 1,000) of the objects in a bucket. You can use the
+   * request parameters as selection criteria to return a subset of the objects in a
+   * bucket. A 200 OK response can contain valid or invalid XML. Be sure to design
+   * your application to parse the contents of the response and handle it
    * appropriately.</p>  <p>This action has been revised. We recommend
    * that you use the newer version, <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html">ListObjectsV2</a>,
@@ -5118,15 +5052,6 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
   }
 
   /**
-   *  <p>End of support notice: Beginning November 21, 2025, Amazon S3
-   * will stop returning <code>DisplayName</code>. Update your applications to use
-   * canonical IDs (unique identifier for Amazon Web Services accounts), Amazon Web
-   * Services account ID (12 digit identifier) or IAM ARNs (full resource naming) as
-   * a direct replacement of <code>DisplayName</code>. </p> <p>This change affects
-   * the following Amazon Web Services Regions: US East (N. Virginia) Region, US West
-   * (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-   * Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe
-   * (Ireland) Region, and South America (São Paulo) Region.</p>
    * <p>Returns some or all (up to 1,000) of the objects in a bucket with each
    * request. You can use the request parameters as selection criteria to return a
    * subset of the objects in a bucket. A <code>200 OK</code> response can contain
@@ -5229,15 +5154,6 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
   }
 
   /**
-   *  <p>End of support notice: Beginning November 21, 2025, Amazon S3
-   * will stop returning <code>DisplayName</code>. Update your applications to use
-   * canonical IDs (unique identifier for Amazon Web Services accounts), Amazon Web
-   * Services account ID (12 digit identifier) or IAM ARNs (full resource naming) as
-   * a direct replacement of <code>DisplayName</code>. </p> <p>This change affects
-   * the following Amazon Web Services Regions: US East (N. Virginia) Region, US West
-   * (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-   * Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe
-   * (Ireland) Region, and South America (São Paulo) Region.</p>
    * <p>Lists the parts that have been uploaded for a specific multipart upload.</p>
    * <p>To use this operation, you must provide the <code>upload ID</code> in the
    * request. You obtain this uploadID by sending the initiate multipart upload
@@ -5338,19 +5254,17 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
 
   /**
    * <p>Sets the attribute-based access control (ABAC) property of the general
-   * purpose bucket. When you enable ABAC, you can use tags for bucket access
-   * control. Additionally, when ABAC is enabled, you must use the <a
-   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_TagResource.html">TagResource</a>,
-   * <a
-   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html">UntagResource</a>,
+   * purpose bucket. You must have <code>s3:PutBucketABAC</code> permission to
+   * perform this action. When you enable ABAC, you can use tags for access control
+   * on your buckets. Additionally, when ABAC is enabled, you must use the <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_TagResource.html">TagResource</a>
    * and <a
-   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListTagsForResource.html">ListTagsForResource</a>
-   * actions to manage bucket tags, and you can nolonger use the <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html">UntagResource</a>
+   * actions to manage tags on your buckets. You can nolonger use the <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html">PutBucketTagging</a>
    * and <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html">DeleteBucketTagging</a>
-   * actions to tag the bucket. You must also have the correct permissions for these
-   * actions. For more information, see <a
+   * actions to tag your bucket. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">Enabling
    * ABAC in general purpose buckets</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAbac">AWS
@@ -6624,18 +6538,14 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_TagResource.html">TagResource</a>
    * or <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html">UntagResource</a>
-   * operations instead.</p> <p>if ABAC is not enabled for the bucket. When you <a
-   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
-   * ABAC for a general purpose bucket</a>, you can no longer use this operation for
-   * that bucket and must use <a
-   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_TagResource.html">TagResource</a>
-   * instead.</p> <p>Use tags to organize your Amazon Web Services bill to reflect
-   * your own cost structure. To do this, sign up to get your Amazon Web Services
-   * account bill with tag key values included. Then, to see the cost of combined
-   * resources, organize your billing information according to resources with the
-   * same tag key values. For example, you can tag several resources with a specific
-   * application name, and then organize your billing information to see the total
-   * cost of that application across several services. For more information, see <a
+   * operations instead.</p> <p>Use tags to organize your Amazon Web Services bill to
+   * reflect your own cost structure. To do this, sign up to get your Amazon Web
+   * Services account bill with tag key values included. Then, to see the cost of
+   * combined resources, organize your billing information according to resources
+   * with the same tag key values. For example, you can tag several resources with a
+   * specific application name, and then organize your billing information to see the
+   * total cost of that application across several services. For more information,
+   * see <a
    * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost
    * Allocation and Tagging</a> and <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CostAllocTagging.html">Using
@@ -7276,11 +7186,13 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
    * Permissions in a Policy</a>.</p>  <p>When Amazon S3 evaluates the
    * <code>PublicAccessBlock</code> configuration for a bucket or an object, it
    * checks the <code>PublicAccessBlock</code> configuration for both the bucket (or
-   * the bucket that contains the object) and the bucket owner's account. If the
-   * <code>PublicAccessBlock</code> configurations are different between the bucket
-   * and the account, Amazon S3 uses the most restrictive combination of the
-   * bucket-level and account-level settings.</p>  <p>For more
-   * information about when Amazon S3 considers a bucket or an object public, see <a
+   * the bucket that contains the object) and the bucket owner's account.
+   * Account-level settings automatically inherit from organization-level policies
+   * when present. If the <code>PublicAccessBlock</code> configurations are different
+   * between the bucket and the account, Amazon S3 uses the most restrictive
+   * combination of the bucket-level and account-level settings.</p>
+   * <p>For more information about when Amazon S3 considers a bucket or an object
+   * public, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The
    * Meaning of "Public"</a>.</p> <p>The following operations are related to
    * <code>PutPublicAccessBlock</code>:</p> <ul> <li> <p> <a

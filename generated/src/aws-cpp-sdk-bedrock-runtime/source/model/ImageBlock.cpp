@@ -26,6 +26,10 @@ ImageBlock& ImageBlock::operator=(JsonView jsonValue) {
     m_source = jsonValue.GetObject("source");
     m_sourceHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("error")) {
+    m_error = jsonValue.GetObject("error");
+    m_errorHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue ImageBlock::Jsonize() const {
 
   if (m_sourceHasBeenSet) {
     payload.WithObject("source", m_source.Jsonize());
+  }
+
+  if (m_errorHasBeenSet) {
+    payload.WithObject("error", m_error.Jsonize());
   }
 
   return payload;

@@ -10,6 +10,7 @@
 #include <aws/lambda/model/Architecture.h>
 #include <aws/lambda/model/CapacityProviderConfig.h>
 #include <aws/lambda/model/DeadLetterConfig.h>
+#include <aws/lambda/model/DurableConfig.h>
 #include <aws/lambda/model/EnvironmentResponse.h>
 #include <aws/lambda/model/EphemeralStorage.h>
 #include <aws/lambda/model/FileSystemConfig.h>
@@ -753,6 +754,24 @@ class GetFunctionConfigurationResult {
 
   ///@{
   /**
+   * <p>The function's durable execution configuration settings, if the function is
+   * configured for durability.</p>
+   */
+  inline const DurableConfig& GetDurableConfig() const { return m_durableConfig; }
+  template <typename DurableConfigT = DurableConfig>
+  void SetDurableConfig(DurableConfigT&& value) {
+    m_durableConfigHasBeenSet = true;
+    m_durableConfig = std::forward<DurableConfigT>(value);
+  }
+  template <typename DurableConfigT = DurableConfig>
+  GetFunctionConfigurationResult& WithDurableConfig(DurableConfigT&& value) {
+    SetDurableConfig(std::forward<DurableConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The function's tenant isolation configuration settings. Determines whether
    * the Lambda function runs on a shared or dedicated infrastructure per unique
    * tenant.</p>
@@ -898,6 +917,9 @@ class GetFunctionConfigurationResult {
 
   Aws::String m_configSha256;
   bool m_configSha256HasBeenSet = false;
+
+  DurableConfig m_durableConfig;
+  bool m_durableConfigHasBeenSet = false;
 
   TenancyConfig m_tenancyConfig;
   bool m_tenancyConfigHasBeenSet = false;

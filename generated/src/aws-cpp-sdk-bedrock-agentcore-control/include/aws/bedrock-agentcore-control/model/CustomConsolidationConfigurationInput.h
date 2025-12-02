@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/EpisodicOverrideConsolidationConfigurationInput.h>
 #include <aws/bedrock-agentcore-control/model/SemanticOverrideConsolidationConfigurationInput.h>
 #include <aws/bedrock-agentcore-control/model/SummaryOverrideConsolidationConfigurationInput.h>
 #include <aws/bedrock-agentcore-control/model/UserPreferenceOverrideConsolidationConfigurationInput.h>
@@ -92,6 +93,27 @@ class CustomConsolidationConfigurationInput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configurations to override the consolidation step of the episodic
+   * strategy.</p>
+   */
+  inline const EpisodicOverrideConsolidationConfigurationInput& GetEpisodicConsolidationOverride() const {
+    return m_episodicConsolidationOverride;
+  }
+  inline bool EpisodicConsolidationOverrideHasBeenSet() const { return m_episodicConsolidationOverrideHasBeenSet; }
+  template <typename EpisodicConsolidationOverrideT = EpisodicOverrideConsolidationConfigurationInput>
+  void SetEpisodicConsolidationOverride(EpisodicConsolidationOverrideT&& value) {
+    m_episodicConsolidationOverrideHasBeenSet = true;
+    m_episodicConsolidationOverride = std::forward<EpisodicConsolidationOverrideT>(value);
+  }
+  template <typename EpisodicConsolidationOverrideT = EpisodicOverrideConsolidationConfigurationInput>
+  CustomConsolidationConfigurationInput& WithEpisodicConsolidationOverride(EpisodicConsolidationOverrideT&& value) {
+    SetEpisodicConsolidationOverride(std::forward<EpisodicConsolidationOverrideT>(value));
+    return *this;
+  }
+  ///@}
  private:
   SemanticOverrideConsolidationConfigurationInput m_semanticConsolidationOverride;
   bool m_semanticConsolidationOverrideHasBeenSet = false;
@@ -101,6 +123,9 @@ class CustomConsolidationConfigurationInput {
 
   UserPreferenceOverrideConsolidationConfigurationInput m_userPreferenceConsolidationOverride;
   bool m_userPreferenceConsolidationOverrideHasBeenSet = false;
+
+  EpisodicOverrideConsolidationConfigurationInput m_episodicConsolidationOverride;
+  bool m_episodicConsolidationOverrideHasBeenSet = false;
 };
 
 }  // namespace Model

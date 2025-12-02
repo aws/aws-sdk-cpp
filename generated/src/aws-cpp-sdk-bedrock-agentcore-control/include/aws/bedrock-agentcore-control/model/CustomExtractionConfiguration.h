@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/EpisodicExtractionOverride.h>
 #include <aws/bedrock-agentcore-control/model/SemanticExtractionOverride.h>
 #include <aws/bedrock-agentcore-control/model/UserPreferenceExtractionOverride.h>
 
@@ -68,12 +69,34 @@ class CustomExtractionConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configurations to override the default extraction step for the episodic
+   * memory strategy.</p>
+   */
+  inline const EpisodicExtractionOverride& GetEpisodicExtractionOverride() const { return m_episodicExtractionOverride; }
+  inline bool EpisodicExtractionOverrideHasBeenSet() const { return m_episodicExtractionOverrideHasBeenSet; }
+  template <typename EpisodicExtractionOverrideT = EpisodicExtractionOverride>
+  void SetEpisodicExtractionOverride(EpisodicExtractionOverrideT&& value) {
+    m_episodicExtractionOverrideHasBeenSet = true;
+    m_episodicExtractionOverride = std::forward<EpisodicExtractionOverrideT>(value);
+  }
+  template <typename EpisodicExtractionOverrideT = EpisodicExtractionOverride>
+  CustomExtractionConfiguration& WithEpisodicExtractionOverride(EpisodicExtractionOverrideT&& value) {
+    SetEpisodicExtractionOverride(std::forward<EpisodicExtractionOverrideT>(value));
+    return *this;
+  }
+  ///@}
  private:
   SemanticExtractionOverride m_semanticExtractionOverride;
   bool m_semanticExtractionOverrideHasBeenSet = false;
 
   UserPreferenceExtractionOverride m_userPreferenceExtractionOverride;
   bool m_userPreferenceExtractionOverrideHasBeenSet = false;
+
+  EpisodicExtractionOverride m_episodicExtractionOverride;
+  bool m_episodicExtractionOverrideHasBeenSet = false;
 };
 
 }  // namespace Model

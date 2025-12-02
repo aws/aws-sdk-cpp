@@ -135,6 +135,10 @@ Aws::String CreateFunctionRequest::SerializePayload() const {
     payload.WithString("PublishTo", FunctionVersionLatestPublishedMapper::GetNameForFunctionVersionLatestPublished(m_publishTo));
   }
 
+  if (m_durableConfigHasBeenSet) {
+    payload.WithObject("DurableConfig", m_durableConfig.Jsonize());
+  }
+
   if (m_tenancyConfigHasBeenSet) {
     payload.WithObject("TenancyConfig", m_tenancyConfig.Jsonize());
   }

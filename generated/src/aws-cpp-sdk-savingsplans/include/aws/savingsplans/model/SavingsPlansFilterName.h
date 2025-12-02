@@ -20,7 +20,8 @@ enum class SavingsPlansFilterName {
   savings_plan_type,
   payment_option,
   start,
-  end
+  end,
+  instance_family
 };
 
 namespace SavingsPlansFilterNameMapper {

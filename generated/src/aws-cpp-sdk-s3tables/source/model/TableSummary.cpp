@@ -45,6 +45,10 @@ TableSummary& TableSummary::operator=(JsonView jsonValue) {
     m_modifiedAt = jsonValue.GetString("modifiedAt");
     m_modifiedAtHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("managedByService")) {
+    m_managedByService = jsonValue.GetString("managedByService");
+    m_managedByServiceHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("namespaceId")) {
     m_namespaceId = jsonValue.GetString("namespaceId");
     m_namespaceIdHasBeenSet = true;
@@ -85,6 +89,10 @@ JsonValue TableSummary::Jsonize() const {
 
   if (m_modifiedAtHasBeenSet) {
     payload.WithString("modifiedAt", m_modifiedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_managedByServiceHasBeenSet) {
+    payload.WithString("managedByService", m_managedByService);
   }
 
   if (m_namespaceIdHasBeenSet) {

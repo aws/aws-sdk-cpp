@@ -92,6 +92,10 @@ CreateGatewayResult& CreateGatewayResult::operator=(const Aws::AmazonWebServiceR
     }
     m_interceptorConfigurationsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("policyEngineConfiguration")) {
+    m_policyEngineConfiguration = jsonValue.GetObject("policyEngineConfiguration");
+    m_policyEngineConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("workloadIdentityDetails")) {
     m_workloadIdentityDetails = jsonValue.GetObject("workloadIdentityDetails");
     m_workloadIdentityDetailsHasBeenSet = true;

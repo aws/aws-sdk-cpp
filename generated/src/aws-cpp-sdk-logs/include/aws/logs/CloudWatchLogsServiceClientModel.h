@@ -20,6 +20,7 @@
 
 /* Service model headers required in CloudWatchLogsClient header */
 #include <aws/core/NoResult.h>
+#include <aws/logs/model/AssociateSourceToS3TableIntegrationResult.h>
 #include <aws/logs/model/CreateDeliveryResult.h>
 #include <aws/logs/model/CreateExportTaskResult.h>
 #include <aws/logs/model/CreateLogAnomalyDetectorResult.h>
@@ -58,6 +59,7 @@
 #include <aws/logs/model/DescribeResourcePoliciesResult.h>
 #include <aws/logs/model/DescribeSubscriptionFiltersResult.h>
 #include <aws/logs/model/DisassociateKmsKeyRequest.h>
+#include <aws/logs/model/DisassociateSourceFromS3TableIntegrationResult.h>
 #include <aws/logs/model/FilterLogEventsRequest.h>
 #include <aws/logs/model/FilterLogEventsResult.h>
 #include <aws/logs/model/GetDataProtectionPolicyResult.h>
@@ -68,6 +70,7 @@
 #include <aws/logs/model/GetIntegrationResult.h>
 #include <aws/logs/model/GetLogAnomalyDetectorResult.h>
 #include <aws/logs/model/GetLogEventsResult.h>
+#include <aws/logs/model/GetLogFieldsResult.h>
 #include <aws/logs/model/GetLogGroupFieldsRequest.h>
 #include <aws/logs/model/GetLogGroupFieldsResult.h>
 #include <aws/logs/model/GetLogRecordResult.h>
@@ -75,6 +78,7 @@
 #include <aws/logs/model/GetScheduledQueryHistoryResult.h>
 #include <aws/logs/model/GetScheduledQueryResult.h>
 #include <aws/logs/model/GetTransformerResult.h>
+#include <aws/logs/model/ListAggregateLogGroupSummariesResult.h>
 #include <aws/logs/model/ListAnomaliesRequest.h>
 #include <aws/logs/model/ListAnomaliesResult.h>
 #include <aws/logs/model/ListIntegrationsRequest.h>
@@ -86,6 +90,7 @@
 #include <aws/logs/model/ListLogGroupsResult.h>
 #include <aws/logs/model/ListScheduledQueriesRequest.h>
 #include <aws/logs/model/ListScheduledQueriesResult.h>
+#include <aws/logs/model/ListSourcesForS3TableIntegrationResult.h>
 #include <aws/logs/model/ListTagsForResourceResult.h>
 #include <aws/logs/model/PutAccountPolicyResult.h>
 #include <aws/logs/model/PutDataProtectionPolicyResult.h>
@@ -139,6 +144,7 @@ using CloudWatchLogsEndpointProvider = Aws::CloudWatchLogs::Endpoint::CloudWatch
 namespace Model {
 /* Service model forward declarations required in CloudWatchLogsClient header */
 class AssociateKmsKeyRequest;
+class AssociateSourceToS3TableIntegrationRequest;
 class CancelExportTaskRequest;
 class CreateDeliveryRequest;
 class CreateExportTaskRequest;
@@ -182,6 +188,7 @@ class DescribeQueryDefinitionsRequest;
 class DescribeResourcePoliciesRequest;
 class DescribeSubscriptionFiltersRequest;
 class DisassociateKmsKeyRequest;
+class DisassociateSourceFromS3TableIntegrationRequest;
 class FilterLogEventsRequest;
 class GetDataProtectionPolicyRequest;
 class GetDeliveryRequest;
@@ -191,6 +198,7 @@ class GetDeliverySourceRequest;
 class GetIntegrationRequest;
 class GetLogAnomalyDetectorRequest;
 class GetLogEventsRequest;
+class GetLogFieldsRequest;
 class GetLogGroupFieldsRequest;
 class GetLogObjectRequest;
 class GetLogRecordRequest;
@@ -198,12 +206,14 @@ class GetQueryResultsRequest;
 class GetScheduledQueryRequest;
 class GetScheduledQueryHistoryRequest;
 class GetTransformerRequest;
+class ListAggregateLogGroupSummariesRequest;
 class ListAnomaliesRequest;
 class ListIntegrationsRequest;
 class ListLogAnomalyDetectorsRequest;
 class ListLogGroupsRequest;
 class ListLogGroupsForQueryRequest;
 class ListScheduledQueriesRequest;
+class ListSourcesForS3TableIntegrationRequest;
 class ListTagsForResourceRequest;
 class PutAccountPolicyRequest;
 class PutDataProtectionPolicyRequest;
@@ -237,6 +247,7 @@ class UpdateScheduledQueryRequest;
 
 /* Service model Outcome class definitions */
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> AssociateKmsKeyOutcome;
+typedef Aws::Utils::Outcome<AssociateSourceToS3TableIntegrationResult, CloudWatchLogsError> AssociateSourceToS3TableIntegrationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> CancelExportTaskOutcome;
 typedef Aws::Utils::Outcome<CreateDeliveryResult, CloudWatchLogsError> CreateDeliveryOutcome;
 typedef Aws::Utils::Outcome<CreateExportTaskResult, CloudWatchLogsError> CreateExportTaskOutcome;
@@ -280,6 +291,8 @@ typedef Aws::Utils::Outcome<DescribeQueryDefinitionsResult, CloudWatchLogsError>
 typedef Aws::Utils::Outcome<DescribeResourcePoliciesResult, CloudWatchLogsError> DescribeResourcePoliciesOutcome;
 typedef Aws::Utils::Outcome<DescribeSubscriptionFiltersResult, CloudWatchLogsError> DescribeSubscriptionFiltersOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> DisassociateKmsKeyOutcome;
+typedef Aws::Utils::Outcome<DisassociateSourceFromS3TableIntegrationResult, CloudWatchLogsError>
+    DisassociateSourceFromS3TableIntegrationOutcome;
 typedef Aws::Utils::Outcome<FilterLogEventsResult, CloudWatchLogsError> FilterLogEventsOutcome;
 typedef Aws::Utils::Outcome<GetDataProtectionPolicyResult, CloudWatchLogsError> GetDataProtectionPolicyOutcome;
 typedef Aws::Utils::Outcome<GetDeliveryResult, CloudWatchLogsError> GetDeliveryOutcome;
@@ -289,6 +302,7 @@ typedef Aws::Utils::Outcome<GetDeliverySourceResult, CloudWatchLogsError> GetDel
 typedef Aws::Utils::Outcome<GetIntegrationResult, CloudWatchLogsError> GetIntegrationOutcome;
 typedef Aws::Utils::Outcome<GetLogAnomalyDetectorResult, CloudWatchLogsError> GetLogAnomalyDetectorOutcome;
 typedef Aws::Utils::Outcome<GetLogEventsResult, CloudWatchLogsError> GetLogEventsOutcome;
+typedef Aws::Utils::Outcome<GetLogFieldsResult, CloudWatchLogsError> GetLogFieldsOutcome;
 typedef Aws::Utils::Outcome<GetLogGroupFieldsResult, CloudWatchLogsError> GetLogGroupFieldsOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> GetLogObjectOutcome;
 typedef Aws::Utils::Outcome<GetLogRecordResult, CloudWatchLogsError> GetLogRecordOutcome;
@@ -296,12 +310,14 @@ typedef Aws::Utils::Outcome<GetQueryResultsResult, CloudWatchLogsError> GetQuery
 typedef Aws::Utils::Outcome<GetScheduledQueryResult, CloudWatchLogsError> GetScheduledQueryOutcome;
 typedef Aws::Utils::Outcome<GetScheduledQueryHistoryResult, CloudWatchLogsError> GetScheduledQueryHistoryOutcome;
 typedef Aws::Utils::Outcome<GetTransformerResult, CloudWatchLogsError> GetTransformerOutcome;
+typedef Aws::Utils::Outcome<ListAggregateLogGroupSummariesResult, CloudWatchLogsError> ListAggregateLogGroupSummariesOutcome;
 typedef Aws::Utils::Outcome<ListAnomaliesResult, CloudWatchLogsError> ListAnomaliesOutcome;
 typedef Aws::Utils::Outcome<ListIntegrationsResult, CloudWatchLogsError> ListIntegrationsOutcome;
 typedef Aws::Utils::Outcome<ListLogAnomalyDetectorsResult, CloudWatchLogsError> ListLogAnomalyDetectorsOutcome;
 typedef Aws::Utils::Outcome<ListLogGroupsResult, CloudWatchLogsError> ListLogGroupsOutcome;
 typedef Aws::Utils::Outcome<ListLogGroupsForQueryResult, CloudWatchLogsError> ListLogGroupsForQueryOutcome;
 typedef Aws::Utils::Outcome<ListScheduledQueriesResult, CloudWatchLogsError> ListScheduledQueriesOutcome;
+typedef Aws::Utils::Outcome<ListSourcesForS3TableIntegrationResult, CloudWatchLogsError> ListSourcesForS3TableIntegrationOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, CloudWatchLogsError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<PutAccountPolicyResult, CloudWatchLogsError> PutAccountPolicyOutcome;
 typedef Aws::Utils::Outcome<PutDataProtectionPolicyResult, CloudWatchLogsError> PutDataProtectionPolicyOutcome;
@@ -335,6 +351,7 @@ typedef Aws::Utils::Outcome<UpdateScheduledQueryResult, CloudWatchLogsError> Upd
 
 /* Service model Outcome callable definitions */
 typedef std::future<AssociateKmsKeyOutcome> AssociateKmsKeyOutcomeCallable;
+typedef std::future<AssociateSourceToS3TableIntegrationOutcome> AssociateSourceToS3TableIntegrationOutcomeCallable;
 typedef std::future<CancelExportTaskOutcome> CancelExportTaskOutcomeCallable;
 typedef std::future<CreateDeliveryOutcome> CreateDeliveryOutcomeCallable;
 typedef std::future<CreateExportTaskOutcome> CreateExportTaskOutcomeCallable;
@@ -378,6 +395,7 @@ typedef std::future<DescribeQueryDefinitionsOutcome> DescribeQueryDefinitionsOut
 typedef std::future<DescribeResourcePoliciesOutcome> DescribeResourcePoliciesOutcomeCallable;
 typedef std::future<DescribeSubscriptionFiltersOutcome> DescribeSubscriptionFiltersOutcomeCallable;
 typedef std::future<DisassociateKmsKeyOutcome> DisassociateKmsKeyOutcomeCallable;
+typedef std::future<DisassociateSourceFromS3TableIntegrationOutcome> DisassociateSourceFromS3TableIntegrationOutcomeCallable;
 typedef std::future<FilterLogEventsOutcome> FilterLogEventsOutcomeCallable;
 typedef std::future<GetDataProtectionPolicyOutcome> GetDataProtectionPolicyOutcomeCallable;
 typedef std::future<GetDeliveryOutcome> GetDeliveryOutcomeCallable;
@@ -387,6 +405,7 @@ typedef std::future<GetDeliverySourceOutcome> GetDeliverySourceOutcomeCallable;
 typedef std::future<GetIntegrationOutcome> GetIntegrationOutcomeCallable;
 typedef std::future<GetLogAnomalyDetectorOutcome> GetLogAnomalyDetectorOutcomeCallable;
 typedef std::future<GetLogEventsOutcome> GetLogEventsOutcomeCallable;
+typedef std::future<GetLogFieldsOutcome> GetLogFieldsOutcomeCallable;
 typedef std::future<GetLogGroupFieldsOutcome> GetLogGroupFieldsOutcomeCallable;
 typedef std::future<GetLogObjectOutcome> GetLogObjectOutcomeCallable;
 typedef std::future<GetLogRecordOutcome> GetLogRecordOutcomeCallable;
@@ -394,12 +413,14 @@ typedef std::future<GetQueryResultsOutcome> GetQueryResultsOutcomeCallable;
 typedef std::future<GetScheduledQueryOutcome> GetScheduledQueryOutcomeCallable;
 typedef std::future<GetScheduledQueryHistoryOutcome> GetScheduledQueryHistoryOutcomeCallable;
 typedef std::future<GetTransformerOutcome> GetTransformerOutcomeCallable;
+typedef std::future<ListAggregateLogGroupSummariesOutcome> ListAggregateLogGroupSummariesOutcomeCallable;
 typedef std::future<ListAnomaliesOutcome> ListAnomaliesOutcomeCallable;
 typedef std::future<ListIntegrationsOutcome> ListIntegrationsOutcomeCallable;
 typedef std::future<ListLogAnomalyDetectorsOutcome> ListLogAnomalyDetectorsOutcomeCallable;
 typedef std::future<ListLogGroupsOutcome> ListLogGroupsOutcomeCallable;
 typedef std::future<ListLogGroupsForQueryOutcome> ListLogGroupsForQueryOutcomeCallable;
 typedef std::future<ListScheduledQueriesOutcome> ListScheduledQueriesOutcomeCallable;
+typedef std::future<ListSourcesForS3TableIntegrationOutcome> ListSourcesForS3TableIntegrationOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<PutAccountPolicyOutcome> PutAccountPolicyOutcomeCallable;
 typedef std::future<PutDataProtectionPolicyOutcome> PutDataProtectionPolicyOutcomeCallable;
@@ -438,6 +459,10 @@ class CloudWatchLogsClient;
 typedef std::function<void(const CloudWatchLogsClient*, const Model::AssociateKmsKeyRequest&, const Model::AssociateKmsKeyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AssociateKmsKeyResponseReceivedHandler;
+typedef std::function<void(const CloudWatchLogsClient*, const Model::AssociateSourceToS3TableIntegrationRequest&,
+                           const Model::AssociateSourceToS3TableIntegrationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    AssociateSourceToS3TableIntegrationResponseReceivedHandler;
 typedef std::function<void(const CloudWatchLogsClient*, const Model::CancelExportTaskRequest&, const Model::CancelExportTaskOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CancelExportTaskResponseReceivedHandler;
@@ -570,6 +595,10 @@ typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeSub
 typedef std::function<void(const CloudWatchLogsClient*, const Model::DisassociateKmsKeyRequest&, const Model::DisassociateKmsKeyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DisassociateKmsKeyResponseReceivedHandler;
+typedef std::function<void(const CloudWatchLogsClient*, const Model::DisassociateSourceFromS3TableIntegrationRequest&,
+                           const Model::DisassociateSourceFromS3TableIntegrationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DisassociateSourceFromS3TableIntegrationResponseReceivedHandler;
 typedef std::function<void(const CloudWatchLogsClient*, const Model::FilterLogEventsRequest&, const Model::FilterLogEventsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     FilterLogEventsResponseReceivedHandler;
@@ -598,6 +627,9 @@ typedef std::function<void(const CloudWatchLogsClient*, const Model::GetLogAnoma
 typedef std::function<void(const CloudWatchLogsClient*, const Model::GetLogEventsRequest&, const Model::GetLogEventsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetLogEventsResponseReceivedHandler;
+typedef std::function<void(const CloudWatchLogsClient*, const Model::GetLogFieldsRequest&, const Model::GetLogFieldsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetLogFieldsResponseReceivedHandler;
 typedef std::function<void(const CloudWatchLogsClient*, const Model::GetLogGroupFieldsRequest&, const Model::GetLogGroupFieldsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetLogGroupFieldsResponseReceivedHandler;
@@ -619,6 +651,10 @@ typedef std::function<void(const CloudWatchLogsClient*, const Model::GetSchedule
 typedef std::function<void(const CloudWatchLogsClient*, const Model::GetTransformerRequest&, const Model::GetTransformerOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetTransformerResponseReceivedHandler;
+typedef std::function<void(const CloudWatchLogsClient*, const Model::ListAggregateLogGroupSummariesRequest&,
+                           const Model::ListAggregateLogGroupSummariesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListAggregateLogGroupSummariesResponseReceivedHandler;
 typedef std::function<void(const CloudWatchLogsClient*, const Model::ListAnomaliesRequest&, const Model::ListAnomaliesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListAnomaliesResponseReceivedHandler;
@@ -637,6 +673,10 @@ typedef std::function<void(const CloudWatchLogsClient*, const Model::ListLogGrou
 typedef std::function<void(const CloudWatchLogsClient*, const Model::ListScheduledQueriesRequest&,
                            const Model::ListScheduledQueriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListScheduledQueriesResponseReceivedHandler;
+typedef std::function<void(const CloudWatchLogsClient*, const Model::ListSourcesForS3TableIntegrationRequest&,
+                           const Model::ListSourcesForS3TableIntegrationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListSourcesForS3TableIntegrationResponseReceivedHandler;
 typedef std::function<void(const CloudWatchLogsClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;

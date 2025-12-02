@@ -181,6 +181,10 @@ FunctionConfiguration& FunctionConfiguration::operator=(JsonView jsonValue) {
     m_configSha256 = jsonValue.GetString("ConfigSha256");
     m_configSha256HasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DurableConfig")) {
+    m_durableConfig = jsonValue.GetObject("DurableConfig");
+    m_durableConfigHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("TenancyConfig")) {
     m_tenancyConfig = jsonValue.GetObject("TenancyConfig");
     m_tenancyConfigHasBeenSet = true;
@@ -354,6 +358,10 @@ JsonValue FunctionConfiguration::Jsonize() const {
 
   if (m_configSha256HasBeenSet) {
     payload.WithString("ConfigSha256", m_configSha256);
+  }
+
+  if (m_durableConfigHasBeenSet) {
+    payload.WithObject("DurableConfig", m_durableConfig.Jsonize());
   }
 
   if (m_tenancyConfigHasBeenSet) {

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/RDS_EXPORTS.h>
+#include <aws/rds/model/AdditionalStorageVolume.h>
 #include <aws/rds/model/ProcessorFeature.h>
 #include <aws/rds/model/Tag.h>
 
@@ -729,6 +730,31 @@ class DBSnapshot {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The additional storage volumes associated with the DB snapshot. RDS supports
+   * additional storage volumes for RDS for Oracle and RDS for SQL Server.</p>
+   */
+  inline const Aws::Vector<AdditionalStorageVolume>& GetAdditionalStorageVolumes() const { return m_additionalStorageVolumes; }
+  inline bool AdditionalStorageVolumesHasBeenSet() const { return m_additionalStorageVolumesHasBeenSet; }
+  template <typename AdditionalStorageVolumesT = Aws::Vector<AdditionalStorageVolume>>
+  void SetAdditionalStorageVolumes(AdditionalStorageVolumesT&& value) {
+    m_additionalStorageVolumesHasBeenSet = true;
+    m_additionalStorageVolumes = std::forward<AdditionalStorageVolumesT>(value);
+  }
+  template <typename AdditionalStorageVolumesT = Aws::Vector<AdditionalStorageVolume>>
+  DBSnapshot& WithAdditionalStorageVolumes(AdditionalStorageVolumesT&& value) {
+    SetAdditionalStorageVolumes(std::forward<AdditionalStorageVolumesT>(value));
+    return *this;
+  }
+  template <typename AdditionalStorageVolumesT = AdditionalStorageVolume>
+  DBSnapshot& AddAdditionalStorageVolumes(AdditionalStorageVolumesT&& value) {
+    m_additionalStorageVolumesHasBeenSet = true;
+    m_additionalStorageVolumes.emplace_back(std::forward<AdditionalStorageVolumesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_dBSnapshotIdentifier;
   bool m_dBSnapshotIdentifierHasBeenSet = false;
@@ -840,6 +866,9 @@ class DBSnapshot {
 
   Aws::String m_snapshotAvailabilityZone;
   bool m_snapshotAvailabilityZoneHasBeenSet = false;
+
+  Aws::Vector<AdditionalStorageVolume> m_additionalStorageVolumes;
+  bool m_additionalStorageVolumesHasBeenSet = false;
 };
 
 }  // namespace Model

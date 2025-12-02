@@ -36,6 +36,7 @@ enum class StateReasonCode {
   InvalidRuntime,
   InvalidZipFileException,
   FunctionError,
+  DrainingDurableExecutions,
   VcpuLimitExceeded,
   CapacityProviderScalingLimitExceeded,
   InsufficientCapacity,

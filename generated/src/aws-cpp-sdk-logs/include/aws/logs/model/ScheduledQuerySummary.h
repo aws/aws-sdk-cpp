@@ -23,8 +23,8 @@ namespace CloudWatchLogs {
 namespace Model {
 
 /**
- * <p>Summary information about a scheduled query, used in list
- * operations.</p><p><h3>See Also:</h3>   <a
+ * <p>Summary information about a scheduled query, including basic configuration
+ * and execution status.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ScheduledQuerySummary">AWS
  * API Reference</a></p>
  */
@@ -73,7 +73,7 @@ class ScheduledQuerySummary {
 
   ///@{
   /**
-   * <p>The current state of the scheduled query (ENABLED or DISABLED).</p>
+   * <p>The current state of the scheduled query.</p>
    */
   inline ScheduledQueryState GetState() const { return m_state; }
   inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
@@ -89,7 +89,7 @@ class ScheduledQuerySummary {
 
   ///@{
   /**
-   * <p>The time when the scheduled query was last executed.</p>
+   * <p>The timestamp when the scheduled query was last executed.</p>
    */
   inline long long GetLastTriggeredTime() const { return m_lastTriggeredTime; }
   inline bool LastTriggeredTimeHasBeenSet() const { return m_lastTriggeredTimeHasBeenSet; }
@@ -105,8 +105,7 @@ class ScheduledQuerySummary {
 
   ///@{
   /**
-   * <p>The status of the last execution (Running, Complete, Failed, Timeout, or
-   * InvalidQuery).</p>
+   * <p>The status of the most recent execution.</p>
    */
   inline ExecutionStatus GetLastExecutionStatus() const { return m_lastExecutionStatus; }
   inline bool LastExecutionStatusHasBeenSet() const { return m_lastExecutionStatusHasBeenSet; }
@@ -140,7 +139,7 @@ class ScheduledQuerySummary {
 
   ///@{
   /**
-   * <p>The timezone in which the schedule expression is evaluated.</p>
+   * <p>The timezone used for evaluating the schedule expression.</p>
    */
   inline const Aws::String& GetTimezone() const { return m_timezone; }
   inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
@@ -158,7 +157,7 @@ class ScheduledQuerySummary {
 
   ///@{
   /**
-   * <p>Configuration for destinations where the query results are delivered.</p>
+   * <p>Configuration for where query results are delivered.</p>
    */
   inline const DestinationConfiguration& GetDestinationConfiguration() const { return m_destinationConfiguration; }
   inline bool DestinationConfigurationHasBeenSet() const { return m_destinationConfigurationHasBeenSet; }
@@ -176,7 +175,7 @@ class ScheduledQuerySummary {
 
   ///@{
   /**
-   * <p>The time when the scheduled query was created.</p>
+   * <p>The timestamp when the scheduled query was created.</p>
    */
   inline long long GetCreationTime() const { return m_creationTime; }
   inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
@@ -192,7 +191,7 @@ class ScheduledQuerySummary {
 
   ///@{
   /**
-   * <p>The time when the scheduled query was last updated.</p>
+   * <p>The timestamp when the scheduled query was last updated.</p>
    */
   inline long long GetLastUpdatedTime() const { return m_lastUpdatedTime; }
   inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }

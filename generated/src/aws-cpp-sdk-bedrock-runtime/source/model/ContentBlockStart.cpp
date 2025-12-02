@@ -26,6 +26,10 @@ ContentBlockStart& ContentBlockStart::operator=(JsonView jsonValue) {
     m_toolResult = jsonValue.GetObject("toolResult");
     m_toolResultHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("image")) {
+    m_image = jsonValue.GetObject("image");
+    m_imageHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue ContentBlockStart::Jsonize() const {
 
   if (m_toolResultHasBeenSet) {
     payload.WithObject("toolResult", m_toolResult.Jsonize());
+  }
+
+  if (m_imageHasBeenSet) {
+    payload.WithObject("image", m_image.Jsonize());
   }
 
   return payload;

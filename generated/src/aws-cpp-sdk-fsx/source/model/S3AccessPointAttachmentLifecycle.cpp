@@ -20,6 +20,7 @@ static const int CREATING_HASH = HashingUtils::HashString("CREATING");
 static const int DELETING_HASH = HashingUtils::HashString("DELETING");
 static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
 static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+static const int MISCONFIGURED_HASH = HashingUtils::HashString("MISCONFIGURED");
 
 S3AccessPointAttachmentLifecycle GetS3AccessPointAttachmentLifecycleForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +34,8 @@ S3AccessPointAttachmentLifecycle GetS3AccessPointAttachmentLifecycleForName(cons
     return S3AccessPointAttachmentLifecycle::UPDATING;
   } else if (hashCode == FAILED_HASH) {
     return S3AccessPointAttachmentLifecycle::FAILED;
+  } else if (hashCode == MISCONFIGURED_HASH) {
+    return S3AccessPointAttachmentLifecycle::MISCONFIGURED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +60,8 @@ Aws::String GetNameForS3AccessPointAttachmentLifecycle(S3AccessPointAttachmentLi
       return "UPDATING";
     case S3AccessPointAttachmentLifecycle::FAILED:
       return "FAILED";
+    case S3AccessPointAttachmentLifecycle::MISCONFIGURED:
+      return "MISCONFIGURED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

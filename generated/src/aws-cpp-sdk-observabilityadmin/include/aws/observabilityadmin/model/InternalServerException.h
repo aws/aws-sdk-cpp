@@ -65,12 +65,31 @@ class InternalServerException {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The number of seconds to wait before retrying the request.</p>
+   */
+  inline int GetRetryAfterSeconds() const { return m_retryAfterSeconds; }
+  inline bool RetryAfterSecondsHasBeenSet() const { return m_retryAfterSecondsHasBeenSet; }
+  inline void SetRetryAfterSeconds(int value) {
+    m_retryAfterSecondsHasBeenSet = true;
+    m_retryAfterSeconds = value;
+  }
+  inline InternalServerException& WithRetryAfterSeconds(int value) {
+    SetRetryAfterSeconds(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_message;
   bool m_messageHasBeenSet = false;
 
   Aws::String m_amznErrorType;
   bool m_amznErrorTypeHasBeenSet = false;
+
+  int m_retryAfterSeconds{0};
+  bool m_retryAfterSecondsHasBeenSet = false;
 };
 
 }  // namespace Model

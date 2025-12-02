@@ -29,6 +29,8 @@ static const int evidences_src_endpoint_autonomous_system_number_HASH =
     HashingUtils::HashString("evidences.src_endpoint.autonomous_system.number");
 static const int evidences_src_endpoint_port_HASH = HashingUtils::HashString("evidences.src_endpoint.port");
 static const int resources_image_in_use_count_HASH = HashingUtils::HashString("resources.image.in_use_count");
+static const int vulnerabilities_cve_cvss_base_score_HASH = HashingUtils::HashString("vulnerabilities.cve.cvss.base_score");
+static const int vendor_attributes_severity_id_HASH = HashingUtils::HashString("vendor_attributes.severity_id");
 
 OcsfNumberField GetOcsfNumberFieldForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -56,6 +58,10 @@ OcsfNumberField GetOcsfNumberFieldForName(const Aws::String& name) {
     return OcsfNumberField::evidences_src_endpoint_port;
   } else if (hashCode == resources_image_in_use_count_HASH) {
     return OcsfNumberField::resources_image_in_use_count;
+  } else if (hashCode == vulnerabilities_cve_cvss_base_score_HASH) {
+    return OcsfNumberField::vulnerabilities_cve_cvss_base_score;
+  } else if (hashCode == vendor_attributes_severity_id_HASH) {
+    return OcsfNumberField::vendor_attributes_severity_id;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -94,6 +100,10 @@ Aws::String GetNameForOcsfNumberField(OcsfNumberField enumValue) {
       return "evidences.src_endpoint.port";
     case OcsfNumberField::resources_image_in_use_count:
       return "resources.image.in_use_count";
+    case OcsfNumberField::vulnerabilities_cve_cvss_base_score:
+      return "vulnerabilities.cve.cvss.base_score";
+    case OcsfNumberField::vendor_attributes_severity_id:
+      return "vendor_attributes.severity_id";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

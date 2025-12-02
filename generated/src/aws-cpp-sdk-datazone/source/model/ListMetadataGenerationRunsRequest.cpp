@@ -37,6 +37,12 @@ void ListMetadataGenerationRunsRequest::AddQueryStringParameters(URI& uri) const
     ss.str("");
   }
 
+  if (m_targetIdentifierHasBeenSet) {
+    ss << m_targetIdentifier;
+    uri.AddQueryStringParameter("targetIdentifier", ss.str());
+    ss.str("");
+  }
+
   if (m_typeHasBeenSet) {
     ss << MetadataGenerationRunTypeMapper::GetNameForMetadataGenerationRunType(m_type);
     uri.AddQueryStringParameter("type", ss.str());

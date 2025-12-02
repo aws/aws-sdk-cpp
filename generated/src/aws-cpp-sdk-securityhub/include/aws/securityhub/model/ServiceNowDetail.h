@@ -53,25 +53,26 @@ class ServiceNowDetail {
 
   ///@{
   /**
-   * <p>The clientId of ServiceNow ITSM.</p>
+   * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager
+   * secret that contains the ServiceNow credentials.</p>
    */
-  inline const Aws::String& GetClientId() const { return m_clientId; }
-  inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
-  template <typename ClientIdT = Aws::String>
-  void SetClientId(ClientIdT&& value) {
-    m_clientIdHasBeenSet = true;
-    m_clientId = std::forward<ClientIdT>(value);
+  inline const Aws::String& GetSecretArn() const { return m_secretArn; }
+  inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
+  template <typename SecretArnT = Aws::String>
+  void SetSecretArn(SecretArnT&& value) {
+    m_secretArnHasBeenSet = true;
+    m_secretArn = std::forward<SecretArnT>(value);
   }
-  template <typename ClientIdT = Aws::String>
-  ServiceNowDetail& WithClientId(ClientIdT&& value) {
-    SetClientId(std::forward<ClientIdT>(value));
+  template <typename SecretArnT = Aws::String>
+  ServiceNowDetail& WithSecretArn(SecretArnT&& value) {
+    SetSecretArn(std::forward<SecretArnT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The status of the authorization between Jira Cloud and the service.</p>
+   * <p>The status of the authorization between ServiceNow and the service.</p>
    */
   inline ConnectorAuthStatus GetAuthStatus() const { return m_authStatus; }
   inline bool AuthStatusHasBeenSet() const { return m_authStatusHasBeenSet; }
@@ -88,8 +89,8 @@ class ServiceNowDetail {
   Aws::String m_instanceName;
   bool m_instanceNameHasBeenSet = false;
 
-  Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
+  Aws::String m_secretArn;
+  bool m_secretArnHasBeenSet = false;
 
   ConnectorAuthStatus m_authStatus{ConnectorAuthStatus::NOT_SET};
   bool m_authStatusHasBeenSet = false;

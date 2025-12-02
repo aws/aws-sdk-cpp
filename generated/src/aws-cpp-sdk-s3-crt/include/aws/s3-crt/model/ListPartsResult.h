@@ -228,7 +228,7 @@ class ListPartsResult {
    * <p>Container element that identifies who initiated the multipart upload. If the
    * initiator is an Amazon Web Services account, this element provides the same
    * information as the <code>Owner</code> element. If the initiator is an IAM User,
-   * this element provides the user ARN and display name.</p>
+   * this element provides the user ARN.</p>
    */
   inline const Initiator& GetInitiator() const { return m_initiator; }
   template <typename InitiatorT = Initiator>
@@ -247,9 +247,8 @@ class ListPartsResult {
   /**
    * <p>Container element that identifies the object owner, after the object is
    * created. If multipart upload is initiated by an IAM user, this element provides
-   * the parent account ID and display name.</p>  <p> <b>Directory buckets</b>
-   * - The bucket owner is returned as the object owner for all the parts.</p>
-   *
+   * the parent account ID.</p>  <p> <b>Directory buckets</b> - The bucket
+   * owner is returned as the object owner for all the parts.</p>
    */
   inline const Owner& GetOwner() const { return m_owner; }
   template <typename OwnerT = Owner>

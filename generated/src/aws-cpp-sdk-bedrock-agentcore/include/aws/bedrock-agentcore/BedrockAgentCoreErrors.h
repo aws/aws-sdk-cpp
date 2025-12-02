@@ -45,6 +45,7 @@ enum class BedrockAgentCoreErrors {
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  DUPLICATE_ID,
   INTERNAL_SERVER,
   INVALID_INPUT,
   RUNTIME_CLIENT,

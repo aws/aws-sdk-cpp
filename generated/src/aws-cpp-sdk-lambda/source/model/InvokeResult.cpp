@@ -41,6 +41,12 @@ InvokeResult& InvokeResult::operator=(Aws::AmazonWebServiceResult<ResponseStream
     m_executedVersionHasBeenSet = true;
   }
 
+  const auto& durableExecutionArnIter = headers.find("x-amz-durable-execution-arn");
+  if (durableExecutionArnIter != headers.end()) {
+    m_durableExecutionArn = durableExecutionArnIter->second;
+    m_durableExecutionArnHasBeenSet = true;
+  }
+
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
