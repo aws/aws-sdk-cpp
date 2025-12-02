@@ -21,6 +21,7 @@ static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException")
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
 static const int INTERNAL_SERVER_ERROR_HASH = HashingUtils::HashString("InternalServerErrorException");
 static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
+static const int METHOD_NOT_ALLOWED_HASH = HashingUtils::HashString("MethodNotAllowedException");
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
@@ -37,6 +38,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(S3TablesErrors::INTERNAL_SERVER_ERROR), RetryableType::RETRYABLE);
   } else if (hashCode == BAD_REQUEST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(S3TablesErrors::BAD_REQUEST), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == METHOD_NOT_ALLOWED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(S3TablesErrors::METHOD_NOT_ALLOWED), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

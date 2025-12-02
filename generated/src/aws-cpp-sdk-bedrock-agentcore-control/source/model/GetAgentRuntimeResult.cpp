@@ -61,6 +61,10 @@ GetAgentRuntimeResult& GetAgentRuntimeResult::operator=(const Aws::AmazonWebServ
     m_lifecycleConfiguration = jsonValue.GetObject("lifecycleConfiguration");
     m_lifecycleConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("failureReason")) {
+    m_failureReason = jsonValue.GetString("failureReason");
+    m_failureReasonHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;

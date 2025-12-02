@@ -30,6 +30,10 @@ CustomConfigurationInput& CustomConfigurationInput::operator=(JsonView jsonValue
     m_userPreferenceOverride = jsonValue.GetObject("userPreferenceOverride");
     m_userPreferenceOverrideHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("episodicOverride")) {
+    m_episodicOverride = jsonValue.GetObject("episodicOverride");
+    m_episodicOverrideHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("selfManagedConfiguration")) {
     m_selfManagedConfiguration = jsonValue.GetObject("selfManagedConfiguration");
     m_selfManagedConfigurationHasBeenSet = true;
@@ -50,6 +54,10 @@ JsonValue CustomConfigurationInput::Jsonize() const {
 
   if (m_userPreferenceOverrideHasBeenSet) {
     payload.WithObject("userPreferenceOverride", m_userPreferenceOverride.Jsonize());
+  }
+
+  if (m_episodicOverrideHasBeenSet) {
+    payload.WithObject("episodicOverride", m_episodicOverride.Jsonize());
   }
 
   if (m_selfManagedConfigurationHasBeenSet) {

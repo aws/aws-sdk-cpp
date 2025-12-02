@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
+#include <aws/securityhub/model/ConnectorStatus.h>
 
 #include <utility>
 
@@ -78,6 +79,21 @@ class CreateConnectorV2Result {
   ///@}
 
   ///@{
+  /**
+   * <p>The current status of the connectorV2.</p>
+   */
+  inline ConnectorStatus GetConnectorStatus() const { return m_connectorStatus; }
+  inline void SetConnectorStatus(ConnectorStatus value) {
+    m_connectorStatusHasBeenSet = true;
+    m_connectorStatus = value;
+  }
+  inline CreateConnectorV2Result& WithConnectorStatus(ConnectorStatus value) {
+    SetConnectorStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -100,6 +116,9 @@ class CreateConnectorV2Result {
 
   Aws::String m_authUrl;
   bool m_authUrlHasBeenSet = false;
+
+  ConnectorStatus m_connectorStatus{ConnectorStatus::NOT_SET};
+  bool m_connectorStatusHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

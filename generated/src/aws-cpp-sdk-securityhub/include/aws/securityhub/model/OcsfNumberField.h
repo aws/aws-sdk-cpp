@@ -23,7 +23,9 @@ enum class OcsfNumberField {
   evidences_dst_endpoint_port,
   evidences_src_endpoint_autonomous_system_number,
   evidences_src_endpoint_port,
-  resources_image_in_use_count
+  resources_image_in_use_count,
+  vulnerabilities_cve_cvss_base_score,
+  vendor_attributes_severity_id
 };
 
 namespace OcsfNumberFieldMapper {

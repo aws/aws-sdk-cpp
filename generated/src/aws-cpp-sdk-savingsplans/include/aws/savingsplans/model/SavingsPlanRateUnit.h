@@ -10,7 +10,24 @@
 namespace Aws {
 namespace SavingsPlans {
 namespace Model {
-enum class SavingsPlanRateUnit { NOT_SET, Hrs, Lambda_GB_Second, Request };
+enum class SavingsPlanRateUnit {
+  NOT_SET,
+  Hrs,
+  Lambda_GB_Second,
+  Request,
+  ACU_Hr,
+  ReadRequestUnits,
+  WriteRequestUnits,
+  ReadCapacityUnit_Hrs,
+  WriteCapacityUnit_Hrs,
+  ReplicatedWriteRequestUnits,
+  ReplicatedWriteCapacityUnit_Hrs,
+  GB_Hours,
+  DPU,
+  ElastiCacheProcessingUnit,
+  DCU_Hr,
+  NCU_hr
+};
 
 namespace SavingsPlanRateUnitMapper {
 AWS_SAVINGSPLANS_API SavingsPlanRateUnit GetSavingsPlanRateUnitForName(const Aws::String& name);

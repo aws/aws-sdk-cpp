@@ -17,6 +17,7 @@ namespace CurrencyCodeMapper {
 
 static const int CNY_HASH = HashingUtils::HashString("CNY");
 static const int USD_HASH = HashingUtils::HashString("USD");
+static const int EUR_HASH = HashingUtils::HashString("EUR");
 
 CurrencyCode GetCurrencyCodeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ CurrencyCode GetCurrencyCodeForName(const Aws::String& name) {
     return CurrencyCode::CNY;
   } else if (hashCode == USD_HASH) {
     return CurrencyCode::USD;
+  } else if (hashCode == EUR_HASH) {
+    return CurrencyCode::EUR;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForCurrencyCode(CurrencyCode enumValue) {
       return "CNY";
     case CurrencyCode::USD:
       return "USD";
+    case CurrencyCode::EUR:
+      return "EUR";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

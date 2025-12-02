@@ -18,10 +18,13 @@
 #include <aws/logs/model/ActionStatus.h>
 #include <aws/logs/model/AddKeyEntry.h>
 #include <aws/logs/model/AddKeys.h>
+#include <aws/logs/model/AggregateLogGroupSummary.h>
 #include <aws/logs/model/Anomaly.h>
 #include <aws/logs/model/AnomalyDetector.h>
 #include <aws/logs/model/AnomalyDetectorStatus.h>
 #include <aws/logs/model/AssociateKmsKeyRequest.h>
+#include <aws/logs/model/AssociateSourceToS3TableIntegrationRequest.h>
+#include <aws/logs/model/AssociateSourceToS3TableIntegrationResult.h>
 #include <aws/logs/model/CSV.h>
 #include <aws/logs/model/CancelExportTaskRequest.h>
 #include <aws/logs/model/ConfigurationTemplate.h>
@@ -40,6 +43,8 @@
 #include <aws/logs/model/CreateScheduledQueryResult.h>
 #include <aws/logs/model/DataAlreadyAcceptedException.h>
 #include <aws/logs/model/DataProtectionStatus.h>
+#include <aws/logs/model/DataSource.h>
+#include <aws/logs/model/DataSourceFilter.h>
 #include <aws/logs/model/DateTimeConverter.h>
 #include <aws/logs/model/DeleteAccountPolicyRequest.h>
 #include <aws/logs/model/DeleteDataProtectionPolicyRequest.h>
@@ -105,6 +110,8 @@
 #include <aws/logs/model/Destination.h>
 #include <aws/logs/model/DestinationConfiguration.h>
 #include <aws/logs/model/DisassociateKmsKeyRequest.h>
+#include <aws/logs/model/DisassociateSourceFromS3TableIntegrationRequest.h>
+#include <aws/logs/model/DisassociateSourceFromS3TableIntegrationResult.h>
 #include <aws/logs/model/Distribution.h>
 #include <aws/logs/model/Entity.h>
 #include <aws/logs/model/EntityRejectionErrorType.h>
@@ -137,6 +144,8 @@
 #include <aws/logs/model/GetLogAnomalyDetectorResult.h>
 #include <aws/logs/model/GetLogEventsRequest.h>
 #include <aws/logs/model/GetLogEventsResult.h>
+#include <aws/logs/model/GetLogFieldsRequest.h>
+#include <aws/logs/model/GetLogFieldsResult.h>
 #include <aws/logs/model/GetLogGroupFieldsRequest.h>
 #include <aws/logs/model/GetLogGroupFieldsResult.h>
 #include <aws/logs/model/GetLogObjectHandler.h>
@@ -154,8 +163,10 @@
 #include <aws/logs/model/GetTransformerRequest.h>
 #include <aws/logs/model/GetTransformerResult.h>
 #include <aws/logs/model/Grok.h>
+#include <aws/logs/model/GroupingIdentifier.h>
 #include <aws/logs/model/IndexPolicy.h>
 #include <aws/logs/model/IndexSource.h>
+#include <aws/logs/model/IndexType.h>
 #include <aws/logs/model/InheritedProperty.h>
 #include <aws/logs/model/InputLogEvent.h>
 #include <aws/logs/model/IntegrationDetails.h>
@@ -163,6 +174,9 @@
 #include <aws/logs/model/IntegrationSummary.h>
 #include <aws/logs/model/IntegrationType.h>
 #include <aws/logs/model/InvalidSequenceTokenException.h>
+#include <aws/logs/model/ListAggregateLogGroupSummariesGroupBy.h>
+#include <aws/logs/model/ListAggregateLogGroupSummariesRequest.h>
+#include <aws/logs/model/ListAggregateLogGroupSummariesResult.h>
 #include <aws/logs/model/ListAnomaliesRequest.h>
 #include <aws/logs/model/ListAnomaliesResult.h>
 #include <aws/logs/model/ListIntegrationsRequest.h>
@@ -175,6 +189,8 @@
 #include <aws/logs/model/ListLogGroupsResult.h>
 #include <aws/logs/model/ListScheduledQueriesRequest.h>
 #include <aws/logs/model/ListScheduledQueriesResult.h>
+#include <aws/logs/model/ListSourcesForS3TableIntegrationRequest.h>
+#include <aws/logs/model/ListSourcesForS3TableIntegrationResult.h>
 #include <aws/logs/model/ListTagsForResourceRequest.h>
 #include <aws/logs/model/ListTagsForResourceResult.h>
 #include <aws/logs/model/ListToMap.h>
@@ -183,6 +199,8 @@
 #include <aws/logs/model/LiveTailSessionStart.h>
 #include <aws/logs/model/LiveTailSessionUpdate.h>
 #include <aws/logs/model/LogEvent.h>
+#include <aws/logs/model/LogFieldType.h>
+#include <aws/logs/model/LogFieldsListItem.h>
 #include <aws/logs/model/LogGroup.h>
 #include <aws/logs/model/LogGroupClass.h>
 #include <aws/logs/model/LogGroupField.h>
@@ -269,6 +287,8 @@
 #include <aws/logs/model/ResultField.h>
 #include <aws/logs/model/S3Configuration.h>
 #include <aws/logs/model/S3DeliveryConfiguration.h>
+#include <aws/logs/model/S3TableIntegrationSource.h>
+#include <aws/logs/model/S3TableIntegrationSourceStatus.h>
 #include <aws/logs/model/ScheduledQueryDestination.h>
 #include <aws/logs/model/ScheduledQueryDestinationType.h>
 #include <aws/logs/model/ScheduledQueryState.h>

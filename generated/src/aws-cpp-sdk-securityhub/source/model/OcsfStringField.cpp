@@ -30,6 +30,7 @@ static const int finding_info_src_url_HASH = HashingUtils::HashString("finding_i
 static const int finding_info_title_HASH = HashingUtils::HashString("finding_info.title");
 static const int finding_info_types_HASH = HashingUtils::HashString("finding_info.types");
 static const int finding_info_uid_HASH = HashingUtils::HashString("finding_info.uid");
+static const int finding_info_related_events_traits_category_HASH = HashingUtils::HashString("finding_info.related_events.traits.category");
 static const int finding_info_related_events_uid_HASH = HashingUtils::HashString("finding_info.related_events.uid");
 static const int finding_info_related_events_product_uid_HASH = HashingUtils::HashString("finding_info.related_events.product.uid");
 static const int finding_info_related_events_title_HASH = HashingUtils::HashString("finding_info.related_events.title");
@@ -87,6 +88,7 @@ static const int vulnerabilities_cve_epss_score_HASH = HashingUtils::HashString(
 static const int vulnerabilities_cve_uid_HASH = HashingUtils::HashString("vulnerabilities.cve.uid");
 static const int vulnerabilities_related_vulnerabilities_HASH = HashingUtils::HashString("vulnerabilities.related_vulnerabilities");
 static const int cloud_account_name_HASH = HashingUtils::HashString("cloud.account.name");
+static const int vendor_attributes_severity_HASH = HashingUtils::HashString("vendor_attributes.severity");
 
 OcsfStringField GetOcsfStringFieldForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -120,6 +122,8 @@ OcsfStringField GetOcsfStringFieldForName(const Aws::String& name) {
     return OcsfStringField::finding_info_types;
   } else if (hashCode == finding_info_uid_HASH) {
     return OcsfStringField::finding_info_uid;
+  } else if (hashCode == finding_info_related_events_traits_category_HASH) {
+    return OcsfStringField::finding_info_related_events_traits_category;
   } else if (hashCode == finding_info_related_events_uid_HASH) {
     return OcsfStringField::finding_info_related_events_uid;
   } else if (hashCode == finding_info_related_events_product_uid_HASH) {
@@ -228,6 +232,8 @@ OcsfStringField GetOcsfStringFieldForName(const Aws::String& name) {
     return OcsfStringField::vulnerabilities_related_vulnerabilities;
   } else if (hashCode == cloud_account_name_HASH) {
     return OcsfStringField::cloud_account_name;
+  } else if (hashCode == vendor_attributes_severity_HASH) {
+    return OcsfStringField::vendor_attributes_severity;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -272,6 +278,8 @@ Aws::String GetNameForOcsfStringField(OcsfStringField enumValue) {
       return "finding_info.types";
     case OcsfStringField::finding_info_uid:
       return "finding_info.uid";
+    case OcsfStringField::finding_info_related_events_traits_category:
+      return "finding_info.related_events.traits.category";
     case OcsfStringField::finding_info_related_events_uid:
       return "finding_info.related_events.uid";
     case OcsfStringField::finding_info_related_events_product_uid:
@@ -380,6 +388,8 @@ Aws::String GetNameForOcsfStringField(OcsfStringField enumValue) {
       return "vulnerabilities.related_vulnerabilities";
     case OcsfStringField::cloud_account_name:
       return "cloud.account.name";
+    case OcsfStringField::vendor_attributes_severity:
+      return "vendor_attributes.severity";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

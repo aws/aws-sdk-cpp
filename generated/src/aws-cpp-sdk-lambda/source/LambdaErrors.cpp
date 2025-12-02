@@ -6,10 +6,12 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/lambda/LambdaErrors.h>
+#include <aws/lambda/model/CallbackTimeoutException.h>
 #include <aws/lambda/model/CapacityProviderLimitExceededException.h>
 #include <aws/lambda/model/CodeSigningConfigNotFoundException.h>
 #include <aws/lambda/model/CodeStorageExceededException.h>
 #include <aws/lambda/model/CodeVerificationFailedException.h>
+#include <aws/lambda/model/DurableExecutionAlreadyStartedException.h>
 #include <aws/lambda/model/EC2AccessDeniedException.h>
 #include <aws/lambda/model/EC2ThrottledException.h>
 #include <aws/lambda/model/EC2UnexpectedException.h>
@@ -96,6 +98,18 @@ template <>
 AWS_LAMBDA_API CapacityProviderLimitExceededException LambdaError::GetModeledError() {
   assert(this->GetErrorType() == LambdaErrors::CAPACITY_PROVIDER_LIMIT_EXCEEDED);
   return CapacityProviderLimitExceededException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_LAMBDA_API DurableExecutionAlreadyStartedException LambdaError::GetModeledError() {
+  assert(this->GetErrorType() == LambdaErrors::DURABLE_EXECUTION_ALREADY_STARTED);
+  return DurableExecutionAlreadyStartedException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_LAMBDA_API CallbackTimeoutException LambdaError::GetModeledError() {
+  assert(this->GetErrorType() == LambdaErrors::CALLBACK_TIMEOUT);
+  return CallbackTimeoutException(this->GetJsonPayload().View());
 }
 
 template <>
@@ -316,6 +330,8 @@ static const int NO_PUBLISHED_VERSION_HASH = HashingUtils::HashString("NoPublish
 static const int PROVISIONED_CONCURRENCY_CONFIG_NOT_FOUND_HASH = HashingUtils::HashString("ProvisionedConcurrencyConfigNotFoundException");
 static const int K_M_S_INVALID_STATE_HASH = HashingUtils::HashString("KMSInvalidStateException");
 static const int CAPACITY_PROVIDER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("CapacityProviderLimitExceededException");
+static const int DURABLE_EXECUTION_ALREADY_STARTED_HASH = HashingUtils::HashString("DurableExecutionAlreadyStartedException");
+static const int CALLBACK_TIMEOUT_HASH = HashingUtils::HashString("CallbackTimeoutException");
 static const int SERIALIZED_REQUEST_ENTITY_TOO_LARGE_HASH = HashingUtils::HashString("SerializedRequestEntityTooLargeException");
 static const int RECURSIVE_INVOCATION_HASH = HashingUtils::HashString("RecursiveInvocationException");
 static const int POLICY_LENGTH_EXCEEDED_HASH = HashingUtils::HashString("PolicyLengthExceededException");
@@ -368,6 +384,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::K_M_S_INVALID_STATE), RetryableType::RETRYABLE);
   } else if (hashCode == CAPACITY_PROVIDER_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::CAPACITY_PROVIDER_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == DURABLE_EXECUTION_ALREADY_STARTED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::DURABLE_EXECUTION_ALREADY_STARTED), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == CALLBACK_TIMEOUT_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::CALLBACK_TIMEOUT), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == SERIALIZED_REQUEST_ENTITY_TOO_LARGE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::SERIALIZED_REQUEST_ENTITY_TOO_LARGE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == RECURSIVE_INVOCATION_HASH) {

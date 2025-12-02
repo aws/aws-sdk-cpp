@@ -263,6 +263,22 @@ DBEngineVersion& DBEngineVersion::operator=(const XmlNode& xmlNode) {
       m_serverlessV2FeaturesSupport = serverlessV2FeaturesSupportNode;
       m_serverlessV2FeaturesSupportHasBeenSet = true;
     }
+    XmlNode databaseInstallationFilesNode = resultNode.FirstChild("DatabaseInstallationFiles");
+    if (!databaseInstallationFilesNode.IsNull()) {
+      XmlNode databaseInstallationFilesMember = databaseInstallationFilesNode.FirstChild("member");
+      m_databaseInstallationFilesHasBeenSet = !databaseInstallationFilesMember.IsNull();
+      while (!databaseInstallationFilesMember.IsNull()) {
+        m_databaseInstallationFiles.push_back(databaseInstallationFilesMember.GetText());
+        databaseInstallationFilesMember = databaseInstallationFilesMember.NextNode("member");
+      }
+
+      m_databaseInstallationFilesHasBeenSet = true;
+    }
+    XmlNode failureReasonNode = resultNode.FirstChild("FailureReason");
+    if (!failureReasonNode.IsNull()) {
+      m_failureReason = Aws::Utils::Xml::DecodeEscapedXmlText(failureReasonNode.GetText());
+      m_failureReasonHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -468,6 +484,18 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
     m_serverlessV2FeaturesSupport.OutputToStream(oStream, serverlessV2FeaturesSupportLocationAndMemberSs.str().c_str());
   }
 
+  if (m_databaseInstallationFilesHasBeenSet) {
+    unsigned databaseInstallationFilesIdx = 1;
+    for (auto& item : m_databaseInstallationFiles) {
+      oStream << location << index << locationValue << ".DatabaseInstallationFiles.member." << databaseInstallationFilesIdx++ << "="
+              << StringUtils::URLEncode(item.c_str()) << "&";
+    }
+  }
+
+  if (m_failureReasonHasBeenSet) {
+    oStream << location << index << locationValue << ".FailureReason=" << StringUtils::URLEncode(m_failureReason.c_str()) << "&";
+  }
+
   Aws::StringStream responseMetadataLocationAndMemberSs;
   responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
   m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
@@ -628,6 +656,16 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
     Aws::String serverlessV2FeaturesSupportLocationAndMember(location);
     serverlessV2FeaturesSupportLocationAndMember += ".ServerlessV2FeaturesSupport";
     m_serverlessV2FeaturesSupport.OutputToStream(oStream, serverlessV2FeaturesSupportLocationAndMember.c_str());
+  }
+  if (m_databaseInstallationFilesHasBeenSet) {
+    unsigned databaseInstallationFilesIdx = 1;
+    for (auto& item : m_databaseInstallationFiles) {
+      oStream << location << ".DatabaseInstallationFiles.member." << databaseInstallationFilesIdx++ << "="
+              << StringUtils::URLEncode(item.c_str()) << "&";
+    }
+  }
+  if (m_failureReasonHasBeenSet) {
+    oStream << location << ".FailureReason=" << StringUtils::URLEncode(m_failureReason.c_str()) << "&";
   }
   Aws::String responseMetadataLocationAndMember(location);
   responseMetadataLocationAndMember += ".ResponseMetadata";

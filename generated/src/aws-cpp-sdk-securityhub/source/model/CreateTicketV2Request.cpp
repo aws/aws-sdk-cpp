@@ -27,5 +27,9 @@ Aws::String CreateTicketV2Request::SerializePayload() const {
     payload.WithString("ClientToken", m_clientToken);
   }
 
+  if (m_modeHasBeenSet) {
+    payload.WithString("Mode", TicketCreationModeMapper::GetNameForTicketCreationMode(m_mode));
+  }
+
   return payload.View().WriteReadable();
 }

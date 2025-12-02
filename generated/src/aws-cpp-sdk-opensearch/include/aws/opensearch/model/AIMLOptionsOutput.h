@@ -7,6 +7,7 @@
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/opensearch/model/NaturalLanguageQueryGenerationOptionsOutput.h>
 #include <aws/opensearch/model/S3VectorsEngine.h>
+#include <aws/opensearch/model/ServerlessVectorAcceleration.h>
 
 #include <utility>
 
@@ -72,12 +73,33 @@ class AIMLOptionsOutput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The current serverless vector acceleration configuration for the domain.</p>
+   */
+  inline const ServerlessVectorAcceleration& GetServerlessVectorAcceleration() const { return m_serverlessVectorAcceleration; }
+  inline bool ServerlessVectorAccelerationHasBeenSet() const { return m_serverlessVectorAccelerationHasBeenSet; }
+  template <typename ServerlessVectorAccelerationT = ServerlessVectorAcceleration>
+  void SetServerlessVectorAcceleration(ServerlessVectorAccelerationT&& value) {
+    m_serverlessVectorAccelerationHasBeenSet = true;
+    m_serverlessVectorAcceleration = std::forward<ServerlessVectorAccelerationT>(value);
+  }
+  template <typename ServerlessVectorAccelerationT = ServerlessVectorAcceleration>
+  AIMLOptionsOutput& WithServerlessVectorAcceleration(ServerlessVectorAccelerationT&& value) {
+    SetServerlessVectorAcceleration(std::forward<ServerlessVectorAccelerationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   NaturalLanguageQueryGenerationOptionsOutput m_naturalLanguageQueryGenerationOptions;
   bool m_naturalLanguageQueryGenerationOptionsHasBeenSet = false;
 
   S3VectorsEngine m_s3VectorsEngine;
   bool m_s3VectorsEngineHasBeenSet = false;
+
+  ServerlessVectorAcceleration m_serverlessVectorAcceleration;
+  bool m_serverlessVectorAccelerationHasBeenSet = false;
 };
 
 }  // namespace Model

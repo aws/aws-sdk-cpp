@@ -15,6 +15,7 @@
 #include <aws/sagemaker/SageMakerServiceClientModel.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/AcceleratorPartitionConfig.h>
+#include <aws/sagemaker/model/AccountDefaultStatus.h>
 #include <aws/sagemaker/model/ActionSource.h>
 #include <aws/sagemaker/model/ActionStatus.h>
 #include <aws/sagemaker/model/ActionSummary.h>
@@ -328,6 +329,8 @@
 #include <aws/sagemaker/model/CreateInferenceRecommendationsJobResult.h>
 #include <aws/sagemaker/model/CreateLabelingJobRequest.h>
 #include <aws/sagemaker/model/CreateLabelingJobResult.h>
+#include <aws/sagemaker/model/CreateMlflowAppRequest.h>
+#include <aws/sagemaker/model/CreateMlflowAppResult.h>
 #include <aws/sagemaker/model/CreateMlflowTrackingServerRequest.h>
 #include <aws/sagemaker/model/CreateMlflowTrackingServerResult.h>
 #include <aws/sagemaker/model/CreateModelBiasJobDefinitionRequest.h>
@@ -362,6 +365,8 @@
 #include <aws/sagemaker/model/CreatePipelineResult.h>
 #include <aws/sagemaker/model/CreatePresignedDomainUrlRequest.h>
 #include <aws/sagemaker/model/CreatePresignedDomainUrlResult.h>
+#include <aws/sagemaker/model/CreatePresignedMlflowAppUrlRequest.h>
+#include <aws/sagemaker/model/CreatePresignedMlflowAppUrlResult.h>
 #include <aws/sagemaker/model/CreatePresignedMlflowTrackingServerUrlRequest.h>
 #include <aws/sagemaker/model/CreatePresignedMlflowTrackingServerUrlResult.h>
 #include <aws/sagemaker/model/CreatePresignedNotebookInstanceUrlRequest.h>
@@ -457,6 +462,8 @@
 #include <aws/sagemaker/model/DeleteInferenceComponentRequest.h>
 #include <aws/sagemaker/model/DeleteInferenceExperimentRequest.h>
 #include <aws/sagemaker/model/DeleteInferenceExperimentResult.h>
+#include <aws/sagemaker/model/DeleteMlflowAppRequest.h>
+#include <aws/sagemaker/model/DeleteMlflowAppResult.h>
 #include <aws/sagemaker/model/DeleteMlflowTrackingServerRequest.h>
 #include <aws/sagemaker/model/DeleteMlflowTrackingServerResult.h>
 #include <aws/sagemaker/model/DeleteModelBiasJobDefinitionRequest.h>
@@ -575,6 +582,8 @@
 #include <aws/sagemaker/model/DescribeLabelingJobResult.h>
 #include <aws/sagemaker/model/DescribeLineageGroupRequest.h>
 #include <aws/sagemaker/model/DescribeLineageGroupResult.h>
+#include <aws/sagemaker/model/DescribeMlflowAppRequest.h>
+#include <aws/sagemaker/model/DescribeMlflowAppResult.h>
 #include <aws/sagemaker/model/DescribeMlflowTrackingServerRequest.h>
 #include <aws/sagemaker/model/DescribeMlflowTrackingServerResult.h>
 #include <aws/sagemaker/model/DescribeModelBiasJobDefinitionRequest.h>
@@ -992,6 +1001,8 @@
 #include <aws/sagemaker/model/ListLabelingJobsResult.h>
 #include <aws/sagemaker/model/ListLineageGroupsRequest.h>
 #include <aws/sagemaker/model/ListLineageGroupsResult.h>
+#include <aws/sagemaker/model/ListMlflowAppsRequest.h>
+#include <aws/sagemaker/model/ListMlflowAppsResult.h>
 #include <aws/sagemaker/model/ListMlflowTrackingServersRequest.h>
 #include <aws/sagemaker/model/ListMlflowTrackingServersResult.h>
 #include <aws/sagemaker/model/ListModelBiasJobDefinitionsRequest.h>
@@ -1080,6 +1091,7 @@
 #include <aws/sagemaker/model/ListWorkteamsResult.h>
 #include <aws/sagemaker/model/ListWorkteamsSortByOptions.h>
 #include <aws/sagemaker/model/MIGProfileType.h>
+#include <aws/sagemaker/model/MaintenanceStatus.h>
 #include <aws/sagemaker/model/ManagedInstanceScalingStatus.h>
 #include <aws/sagemaker/model/MemberDefinition.h>
 #include <aws/sagemaker/model/MetadataProperties.h>
@@ -1091,6 +1103,8 @@
 #include <aws/sagemaker/model/MetricsConfig.h>
 #include <aws/sagemaker/model/MetricsSource.h>
 #include <aws/sagemaker/model/MlTools.h>
+#include <aws/sagemaker/model/MlflowAppStatus.h>
+#include <aws/sagemaker/model/MlflowAppSummary.h>
 #include <aws/sagemaker/model/Model.h>
 #include <aws/sagemaker/model/ModelAccessConfig.h>
 #include <aws/sagemaker/model/ModelApprovalStatus.h>
@@ -1163,6 +1177,7 @@
 #include <aws/sagemaker/model/ModelQualityJobInput.h>
 #include <aws/sagemaker/model/ModelQuantizationConfig.h>
 #include <aws/sagemaker/model/ModelRegisterSettings.h>
+#include <aws/sagemaker/model/ModelRegistrationMode.h>
 #include <aws/sagemaker/model/ModelShardingConfig.h>
 #include <aws/sagemaker/model/ModelSortKey.h>
 #include <aws/sagemaker/model/ModelSpeculativeDecodingConfig.h>
@@ -1463,6 +1478,7 @@
 #include <aws/sagemaker/model/SortExperimentsBy.h>
 #include <aws/sagemaker/model/SortInferenceExperimentsBy.h>
 #include <aws/sagemaker/model/SortLineageGroupsBy.h>
+#include <aws/sagemaker/model/SortMlflowAppBy.h>
 #include <aws/sagemaker/model/SortOrder.h>
 #include <aws/sagemaker/model/SortPipelineExecutionsBy.h>
 #include <aws/sagemaker/model/SortPipelinesBy.h>
@@ -1670,6 +1686,8 @@
 #include <aws/sagemaker/model/UpdateInferenceComponentRuntimeConfigResult.h>
 #include <aws/sagemaker/model/UpdateInferenceExperimentRequest.h>
 #include <aws/sagemaker/model/UpdateInferenceExperimentResult.h>
+#include <aws/sagemaker/model/UpdateMlflowAppRequest.h>
+#include <aws/sagemaker/model/UpdateMlflowAppResult.h>
 #include <aws/sagemaker/model/UpdateMlflowTrackingServerRequest.h>
 #include <aws/sagemaker/model/UpdateMlflowTrackingServerResult.h>
 #include <aws/sagemaker/model/UpdateModelCardRequest.h>

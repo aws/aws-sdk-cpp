@@ -263,6 +263,25 @@ OrderableDBInstanceOption& OrderableDBInstanceOption::operator=(const XmlNode& x
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsHttpEndpointNode.GetText()).c_str()).c_str());
       m_supportsHttpEndpointHasBeenSet = true;
     }
+    XmlNode supportsAdditionalStorageVolumesNode = resultNode.FirstChild("SupportsAdditionalStorageVolumes");
+    if (!supportsAdditionalStorageVolumesNode.IsNull()) {
+      m_supportsAdditionalStorageVolumes = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsAdditionalStorageVolumesNode.GetText()).c_str()).c_str());
+      m_supportsAdditionalStorageVolumesHasBeenSet = true;
+    }
+    XmlNode availableAdditionalStorageVolumesOptionsNode = resultNode.FirstChild("AvailableAdditionalStorageVolumesOptions");
+    if (!availableAdditionalStorageVolumesOptionsNode.IsNull()) {
+      XmlNode availableAdditionalStorageVolumesOptionsMember =
+          availableAdditionalStorageVolumesOptionsNode.FirstChild("AvailableAdditionalStorageVolumesOption");
+      m_availableAdditionalStorageVolumesOptionsHasBeenSet = !availableAdditionalStorageVolumesOptionsMember.IsNull();
+      while (!availableAdditionalStorageVolumesOptionsMember.IsNull()) {
+        m_availableAdditionalStorageVolumesOptions.push_back(availableAdditionalStorageVolumesOptionsMember);
+        availableAdditionalStorageVolumesOptionsMember =
+            availableAdditionalStorageVolumesOptionsMember.NextNode("AvailableAdditionalStorageVolumesOption");
+      }
+
+      m_availableAdditionalStorageVolumesOptionsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -449,6 +468,22 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
   if (m_supportsHttpEndpointHasBeenSet) {
     oStream << location << index << locationValue << ".SupportsHttpEndpoint=" << std::boolalpha << m_supportsHttpEndpoint << "&";
   }
+
+  if (m_supportsAdditionalStorageVolumesHasBeenSet) {
+    oStream << location << index << locationValue << ".SupportsAdditionalStorageVolumes=" << std::boolalpha
+            << m_supportsAdditionalStorageVolumes << "&";
+  }
+
+  if (m_availableAdditionalStorageVolumesOptionsHasBeenSet) {
+    unsigned availableAdditionalStorageVolumesOptionsIdx = 1;
+    for (auto& item : m_availableAdditionalStorageVolumesOptions) {
+      Aws::StringStream availableAdditionalStorageVolumesOptionsSs;
+      availableAdditionalStorageVolumesOptionsSs << location << index << locationValue
+                                                 << ".AvailableAdditionalStorageVolumesOptions.AvailableAdditionalStorageVolumesOption."
+                                                 << availableAdditionalStorageVolumesOptionsIdx++;
+      item.OutputToStream(oStream, availableAdditionalStorageVolumesOptionsSs.str().c_str());
+    }
+  }
 }
 
 void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -585,6 +620,19 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
   }
   if (m_supportsHttpEndpointHasBeenSet) {
     oStream << location << ".SupportsHttpEndpoint=" << std::boolalpha << m_supportsHttpEndpoint << "&";
+  }
+  if (m_supportsAdditionalStorageVolumesHasBeenSet) {
+    oStream << location << ".SupportsAdditionalStorageVolumes=" << std::boolalpha << m_supportsAdditionalStorageVolumes << "&";
+  }
+  if (m_availableAdditionalStorageVolumesOptionsHasBeenSet) {
+    unsigned availableAdditionalStorageVolumesOptionsIdx = 1;
+    for (auto& item : m_availableAdditionalStorageVolumesOptions) {
+      Aws::StringStream availableAdditionalStorageVolumesOptionsSs;
+      availableAdditionalStorageVolumesOptionsSs << location
+                                                 << ".AvailableAdditionalStorageVolumesOptions.AvailableAdditionalStorageVolumesOption."
+                                                 << availableAdditionalStorageVolumesOptionsIdx++;
+      item.OutputToStream(oStream, availableAdditionalStorageVolumesOptionsSs.str().c_str());
+    }
   }
 }
 

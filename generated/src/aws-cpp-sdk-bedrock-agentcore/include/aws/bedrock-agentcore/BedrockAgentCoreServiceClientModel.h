@@ -26,6 +26,7 @@
 #include <aws/bedrock-agentcore/model/CreateEventResult.h>
 #include <aws/bedrock-agentcore/model/DeleteEventResult.h>
 #include <aws/bedrock-agentcore/model/DeleteMemoryRecordResult.h>
+#include <aws/bedrock-agentcore/model/EvaluateResult.h>
 #include <aws/bedrock-agentcore/model/GetAgentCardResult.h>
 #include <aws/bedrock-agentcore/model/GetBrowserSessionResult.h>
 #include <aws/bedrock-agentcore/model/GetCodeInterpreterSessionResult.h>
@@ -93,6 +94,7 @@ class CompleteResourceTokenAuthRequest;
 class CreateEventRequest;
 class DeleteEventRequest;
 class DeleteMemoryRecordRequest;
+class EvaluateRequest;
 class GetAgentCardRequest;
 class GetBrowserSessionRequest;
 class GetCodeInterpreterSessionRequest;
@@ -130,6 +132,7 @@ typedef Aws::Utils::Outcome<CompleteResourceTokenAuthResult, BedrockAgentCoreErr
 typedef Aws::Utils::Outcome<CreateEventResult, BedrockAgentCoreError> CreateEventOutcome;
 typedef Aws::Utils::Outcome<DeleteEventResult, BedrockAgentCoreError> DeleteEventOutcome;
 typedef Aws::Utils::Outcome<DeleteMemoryRecordResult, BedrockAgentCoreError> DeleteMemoryRecordOutcome;
+typedef Aws::Utils::Outcome<EvaluateResult, BedrockAgentCoreError> EvaluateOutcome;
 typedef Aws::Utils::Outcome<GetAgentCardResult, BedrockAgentCoreError> GetAgentCardOutcome;
 typedef Aws::Utils::Outcome<GetBrowserSessionResult, BedrockAgentCoreError> GetBrowserSessionOutcome;
 typedef Aws::Utils::Outcome<GetCodeInterpreterSessionResult, BedrockAgentCoreError> GetCodeInterpreterSessionOutcome;
@@ -167,6 +170,7 @@ typedef std::future<CompleteResourceTokenAuthOutcome> CompleteResourceTokenAuthO
 typedef std::future<CreateEventOutcome> CreateEventOutcomeCallable;
 typedef std::future<DeleteEventOutcome> DeleteEventOutcomeCallable;
 typedef std::future<DeleteMemoryRecordOutcome> DeleteMemoryRecordOutcomeCallable;
+typedef std::future<EvaluateOutcome> EvaluateOutcomeCallable;
 typedef std::future<GetAgentCardOutcome> GetAgentCardOutcomeCallable;
 typedef std::future<GetBrowserSessionOutcome> GetBrowserSessionOutcomeCallable;
 typedef std::future<GetCodeInterpreterSessionOutcome> GetCodeInterpreterSessionOutcomeCallable;
@@ -221,6 +225,9 @@ typedef std::function<void(const BedrockAgentCoreClient*, const Model::DeleteEve
 typedef std::function<void(const BedrockAgentCoreClient*, const Model::DeleteMemoryRecordRequest&, const Model::DeleteMemoryRecordOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteMemoryRecordResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreClient*, const Model::EvaluateRequest&, const Model::EvaluateOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    EvaluateResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreClient*, const Model::GetAgentCardRequest&, const Model::GetAgentCardOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetAgentCardResponseReceivedHandler;

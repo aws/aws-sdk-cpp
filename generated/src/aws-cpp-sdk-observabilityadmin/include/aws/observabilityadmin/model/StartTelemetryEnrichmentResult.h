@@ -47,8 +47,8 @@ class StartTelemetryEnrichmentResult {
 
   ///@{
   /**
-   * <p> The Amazon Resource Name (ARN) of the Amazon Web Services Resource Explorer
-   * managed view created for resource tags for telemetry. </p>
+   * <p> The Amazon Resource Name (ARN) of the Resource Explorer managed view created
+   * for resource tags for telemetry. </p>
    */
   inline const Aws::String& GetAwsResourceExplorerManagedViewArn() const { return m_awsResourceExplorerManagedViewArn; }
   template <typename AwsResourceExplorerManagedViewArnT = Aws::String>

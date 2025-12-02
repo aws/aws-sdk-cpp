@@ -12,6 +12,7 @@
 #include <aws/rds/model/CloudwatchLogsExportConfiguration.h>
 #include <aws/rds/model/DatabaseInsightsMode.h>
 #include <aws/rds/model/MasterUserAuthenticationType.h>
+#include <aws/rds/model/ModifyAdditionalStorageVolume.h>
 #include <aws/rds/model/ProcessorFeature.h>
 #include <aws/rds/model/ReplicaMode.h>
 
@@ -1655,6 +1656,32 @@ class ModifyDBInstanceRequest : public RDSRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of additional storage volumes to modify or delete for the DB instance.
+   * You can create up to 3 additional storage volumes. Additional storage volumes
+   * are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
+   */
+  inline const Aws::Vector<ModifyAdditionalStorageVolume>& GetAdditionalStorageVolumes() const { return m_additionalStorageVolumes; }
+  inline bool AdditionalStorageVolumesHasBeenSet() const { return m_additionalStorageVolumesHasBeenSet; }
+  template <typename AdditionalStorageVolumesT = Aws::Vector<ModifyAdditionalStorageVolume>>
+  void SetAdditionalStorageVolumes(AdditionalStorageVolumesT&& value) {
+    m_additionalStorageVolumesHasBeenSet = true;
+    m_additionalStorageVolumes = std::forward<AdditionalStorageVolumesT>(value);
+  }
+  template <typename AdditionalStorageVolumesT = Aws::Vector<ModifyAdditionalStorageVolume>>
+  ModifyDBInstanceRequest& WithAdditionalStorageVolumes(AdditionalStorageVolumesT&& value) {
+    SetAdditionalStorageVolumes(std::forward<AdditionalStorageVolumesT>(value));
+    return *this;
+  }
+  template <typename AdditionalStorageVolumesT = ModifyAdditionalStorageVolume>
+  ModifyDBInstanceRequest& AddAdditionalStorageVolumes(AdditionalStorageVolumesT&& value) {
+    m_additionalStorageVolumesHasBeenSet = true;
+    m_additionalStorageVolumes.emplace_back(std::forward<AdditionalStorageVolumesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_dBInstanceIdentifier;
   bool m_dBInstanceIdentifierHasBeenSet = false;
@@ -1841,6 +1868,9 @@ class ModifyDBInstanceRequest : public RDSRequest {
 
   MasterUserAuthenticationType m_masterUserAuthenticationType{MasterUserAuthenticationType::NOT_SET};
   bool m_masterUserAuthenticationTypeHasBeenSet = false;
+
+  Aws::Vector<ModifyAdditionalStorageVolume> m_additionalStorageVolumes;
+  bool m_additionalStorageVolumesHasBeenSet = false;
 };
 
 }  // namespace Model

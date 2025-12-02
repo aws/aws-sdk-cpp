@@ -10,7 +10,7 @@
 namespace Aws {
 namespace DataZone {
 namespace Model {
-enum class MetadataGenerationRunStatus { NOT_SET, SUBMITTED, IN_PROGRESS, CANCELED, SUCCEEDED, FAILED };
+enum class MetadataGenerationRunStatus { NOT_SET, SUBMITTED, IN_PROGRESS, CANCELED, SUCCEEDED, FAILED, PARTIALLY_SUCCEEDED };
 
 namespace MetadataGenerationRunStatusMapper {
 AWS_DATAZONE_API MetadataGenerationRunStatus GetMetadataGenerationRunStatusForName(const Aws::String& name);

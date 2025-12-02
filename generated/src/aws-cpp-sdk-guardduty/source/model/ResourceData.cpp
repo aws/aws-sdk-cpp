@@ -50,6 +50,38 @@ ResourceData& ResourceData::operator=(JsonView jsonValue) {
     m_container = jsonValue.GetObject("container");
     m_containerHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ecsCluster")) {
+    m_ecsCluster = jsonValue.GetObject("ecsCluster");
+    m_ecsClusterHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ecsTask")) {
+    m_ecsTask = jsonValue.GetObject("ecsTask");
+    m_ecsTaskHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("iamInstanceProfile")) {
+    m_iamInstanceProfile = jsonValue.GetObject("iamInstanceProfile");
+    m_iamInstanceProfileHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("autoscalingAutoScalingGroup")) {
+    m_autoscalingAutoScalingGroup = jsonValue.GetObject("autoscalingAutoScalingGroup");
+    m_autoscalingAutoScalingGroupHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ec2LaunchTemplate")) {
+    m_ec2LaunchTemplate = jsonValue.GetObject("ec2LaunchTemplate");
+    m_ec2LaunchTemplateHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ec2Vpc")) {
+    m_ec2Vpc = jsonValue.GetObject("ec2Vpc");
+    m_ec2VpcHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ec2Image")) {
+    m_ec2Image = jsonValue.GetObject("ec2Image");
+    m_ec2ImageHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("cloudformationStack")) {
+    m_cloudformationStack = jsonValue.GetObject("cloudformationStack");
+    m_cloudformationStackHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -86,6 +118,38 @@ JsonValue ResourceData::Jsonize() const {
 
   if (m_containerHasBeenSet) {
     payload.WithObject("container", m_container.Jsonize());
+  }
+
+  if (m_ecsClusterHasBeenSet) {
+    payload.WithObject("ecsCluster", m_ecsCluster.Jsonize());
+  }
+
+  if (m_ecsTaskHasBeenSet) {
+    payload.WithObject("ecsTask", m_ecsTask.Jsonize());
+  }
+
+  if (m_iamInstanceProfileHasBeenSet) {
+    payload.WithObject("iamInstanceProfile", m_iamInstanceProfile.Jsonize());
+  }
+
+  if (m_autoscalingAutoScalingGroupHasBeenSet) {
+    payload.WithObject("autoscalingAutoScalingGroup", m_autoscalingAutoScalingGroup.Jsonize());
+  }
+
+  if (m_ec2LaunchTemplateHasBeenSet) {
+    payload.WithObject("ec2LaunchTemplate", m_ec2LaunchTemplate.Jsonize());
+  }
+
+  if (m_ec2VpcHasBeenSet) {
+    payload.WithObject("ec2Vpc", m_ec2Vpc.Jsonize());
+  }
+
+  if (m_ec2ImageHasBeenSet) {
+    payload.WithObject("ec2Image", m_ec2Image.Jsonize());
+  }
+
+  if (m_cloudformationStackHasBeenSet) {
+    payload.WithObject("cloudformationStack", m_cloudformationStack.Jsonize());
   }
 
   return payload;

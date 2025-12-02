@@ -16,11 +16,17 @@ namespace Model {
 namespace MetadataGenerationRunTypeMapper {
 
 static const int BUSINESS_DESCRIPTIONS_HASH = HashingUtils::HashString("BUSINESS_DESCRIPTIONS");
+static const int BUSINESS_NAMES_HASH = HashingUtils::HashString("BUSINESS_NAMES");
+static const int BUSINESS_GLOSSARY_ASSOCIATIONS_HASH = HashingUtils::HashString("BUSINESS_GLOSSARY_ASSOCIATIONS");
 
 MetadataGenerationRunType GetMetadataGenerationRunTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == BUSINESS_DESCRIPTIONS_HASH) {
     return MetadataGenerationRunType::BUSINESS_DESCRIPTIONS;
+  } else if (hashCode == BUSINESS_NAMES_HASH) {
+    return MetadataGenerationRunType::BUSINESS_NAMES;
+  } else if (hashCode == BUSINESS_GLOSSARY_ASSOCIATIONS_HASH) {
+    return MetadataGenerationRunType::BUSINESS_GLOSSARY_ASSOCIATIONS;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +43,10 @@ Aws::String GetNameForMetadataGenerationRunType(MetadataGenerationRunType enumVa
       return {};
     case MetadataGenerationRunType::BUSINESS_DESCRIPTIONS:
       return "BUSINESS_DESCRIPTIONS";
+    case MetadataGenerationRunType::BUSINESS_NAMES:
+      return "BUSINESS_NAMES";
+    case MetadataGenerationRunType::BUSINESS_GLOSSARY_ASSOCIATIONS:
+      return "BUSINESS_GLOSSARY_ASSOCIATIONS";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -142,7 +142,7 @@ class LifecycleRule {
   ///@{
   /**
    * <p> Specifies the transition rule for the lifecycle rule that describes when
-   * non-current objects transition to a specific storage class. If your bucket is
+   * noncurrent objects transition to a specific storage class. If your bucket is
    * versioning-enabled (or versioning is suspended), you can set this action to
    * request that Amazon S3 transition noncurrent object versions to a specific
    * storage class at a set period in the object's lifetime. </p>  <p>This is

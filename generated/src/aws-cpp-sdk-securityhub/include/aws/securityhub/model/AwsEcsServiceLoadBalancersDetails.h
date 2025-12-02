@@ -93,10 +93,9 @@ class AwsEcsServiceLoadBalancersDetails {
 
   ///@{
   /**
-   * <p>The ARN of the Elastic Load Balancing target group or groups associated with
-   * a service or task set.</p> <p>Only specified when using an Application Load
-   * Balancer or a Network Load Balancer. For a Classic Load Balancer, the target
-   * group ARN is omitted.</p>
+   * <p>The ARN of the ELB target group or groups associated with a service or task
+   * set.</p> <p>Only specified when using an Application Load Balancer or a Network
+   * Load Balancer. For a Classic Load Balancer, the target group ARN is omitted.</p>
    */
   inline const Aws::String& GetTargetGroupArn() const { return m_targetGroupArn; }
   inline bool TargetGroupArnHasBeenSet() const { return m_targetGroupArnHasBeenSet; }

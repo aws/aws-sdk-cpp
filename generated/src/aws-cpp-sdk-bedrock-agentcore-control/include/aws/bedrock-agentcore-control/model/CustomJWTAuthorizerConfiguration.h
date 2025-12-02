@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/CustomClaimValidationType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -101,6 +102,55 @@ class CustomJWTAuthorizerConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An array of scopes that are allowed to access the token.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetAllowedScopes() const { return m_allowedScopes; }
+  inline bool AllowedScopesHasBeenSet() const { return m_allowedScopesHasBeenSet; }
+  template <typename AllowedScopesT = Aws::Vector<Aws::String>>
+  void SetAllowedScopes(AllowedScopesT&& value) {
+    m_allowedScopesHasBeenSet = true;
+    m_allowedScopes = std::forward<AllowedScopesT>(value);
+  }
+  template <typename AllowedScopesT = Aws::Vector<Aws::String>>
+  CustomJWTAuthorizerConfiguration& WithAllowedScopes(AllowedScopesT&& value) {
+    SetAllowedScopes(std::forward<AllowedScopesT>(value));
+    return *this;
+  }
+  template <typename AllowedScopesT = Aws::String>
+  CustomJWTAuthorizerConfiguration& AddAllowedScopes(AllowedScopesT&& value) {
+    m_allowedScopesHasBeenSet = true;
+    m_allowedScopes.emplace_back(std::forward<AllowedScopesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An array of objects that define a custom claim validation name, value, and
+   * operation </p>
+   */
+  inline const Aws::Vector<CustomClaimValidationType>& GetCustomClaims() const { return m_customClaims; }
+  inline bool CustomClaimsHasBeenSet() const { return m_customClaimsHasBeenSet; }
+  template <typename CustomClaimsT = Aws::Vector<CustomClaimValidationType>>
+  void SetCustomClaims(CustomClaimsT&& value) {
+    m_customClaimsHasBeenSet = true;
+    m_customClaims = std::forward<CustomClaimsT>(value);
+  }
+  template <typename CustomClaimsT = Aws::Vector<CustomClaimValidationType>>
+  CustomJWTAuthorizerConfiguration& WithCustomClaims(CustomClaimsT&& value) {
+    SetCustomClaims(std::forward<CustomClaimsT>(value));
+    return *this;
+  }
+  template <typename CustomClaimsT = CustomClaimValidationType>
+  CustomJWTAuthorizerConfiguration& AddCustomClaims(CustomClaimsT&& value) {
+    m_customClaimsHasBeenSet = true;
+    m_customClaims.emplace_back(std::forward<CustomClaimsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_discoveryUrl;
   bool m_discoveryUrlHasBeenSet = false;
@@ -110,6 +160,12 @@ class CustomJWTAuthorizerConfiguration {
 
   Aws::Vector<Aws::String> m_allowedClients;
   bool m_allowedClientsHasBeenSet = false;
+
+  Aws::Vector<Aws::String> m_allowedScopes;
+  bool m_allowedScopesHasBeenSet = false;
+
+  Aws::Vector<CustomClaimValidationType> m_customClaims;
+  bool m_customClaimsHasBeenSet = false;
 };
 
 }  // namespace Model

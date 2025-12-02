@@ -34,6 +34,10 @@ McpTargetConfiguration& McpTargetConfiguration::operator=(JsonView jsonValue) {
     m_mcpServer = jsonValue.GetObject("mcpServer");
     m_mcpServerHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("apiGateway")) {
+    m_apiGateway = jsonValue.GetObject("apiGateway");
+    m_apiGatewayHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue McpTargetConfiguration::Jsonize() const {
 
   if (m_mcpServerHasBeenSet) {
     payload.WithObject("mcpServer", m_mcpServer.Jsonize());
+  }
+
+  if (m_apiGatewayHasBeenSet) {
+    payload.WithObject("apiGateway", m_apiGateway.Jsonize());
   }
 
   return payload;

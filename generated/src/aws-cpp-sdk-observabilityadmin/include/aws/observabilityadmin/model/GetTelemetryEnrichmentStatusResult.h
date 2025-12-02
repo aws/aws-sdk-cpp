@@ -46,9 +46,8 @@ class GetTelemetryEnrichmentStatusResult {
 
   ///@{
   /**
-   * <p> The Amazon Resource Name (ARN) of the Amazon Web Services Resource Explorer
-   * managed view used for resource tags for telemetry, if the feature is enabled.
-   * </p>
+   * <p> The Amazon Resource Name (ARN) of the Resource Explorer managed view used
+   * for resource tags for telemetry, if the feature is enabled. </p>
    */
   inline const Aws::String& GetAwsResourceExplorerManagedViewArn() const { return m_awsResourceExplorerManagedViewArn; }
   template <typename AwsResourceExplorerManagedViewArnT = Aws::String>

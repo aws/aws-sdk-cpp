@@ -21,9 +21,7 @@ namespace S3Vectors {
 namespace Model {
 
 /**
- * <p> <p>Amazon S3 Vectors is in preview release for Amazon S3 and is
- * subject to change.</p>  <p>Summary information about a vector
- * bucket.</p></p><p><h3>See Also:</h3>   <a
+ * <p>Summary information about a vector bucket.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/VectorBucketSummary">AWS
  * API Reference</a></p>
  */

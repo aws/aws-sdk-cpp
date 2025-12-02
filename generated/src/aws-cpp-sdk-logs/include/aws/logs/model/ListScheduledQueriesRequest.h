@@ -33,7 +33,8 @@ class ListScheduledQueriesRequest : public CloudWatchLogsRequest {
 
   ///@{
   /**
-   * <p>The maximum number of scheduled queries to return in a single call.</p>
+   * <p>The maximum number of scheduled queries to return. Valid range is 1 to
+   * 1000.</p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -65,7 +66,8 @@ class ListScheduledQueriesRequest : public CloudWatchLogsRequest {
 
   ///@{
   /**
-   * <p>Filter results by the state of scheduled queries (ENABLED or DISABLED).</p>
+   * <p>Filter scheduled queries by state. Valid values are <code>ENABLED</code> and
+   * <code>DISABLED</code>. If not specified, all scheduled queries are returned.</p>
    */
   inline ScheduledQueryState GetState() const { return m_state; }
   inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }

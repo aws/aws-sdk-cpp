@@ -38,6 +38,10 @@ FieldIndex& FieldIndex::operator=(JsonView jsonValue) {
     m_lastEventTime = jsonValue.GetInt64("lastEventTime");
     m_lastEventTimeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("type")) {
+    m_type = IndexTypeMapper::GetIndexTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +66,10 @@ JsonValue FieldIndex::Jsonize() const {
 
   if (m_lastEventTimeHasBeenSet) {
     payload.WithInt64("lastEventTime", m_lastEventTime);
+  }
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", IndexTypeMapper::GetNameForIndexType(m_type));
   }
 
   return payload;

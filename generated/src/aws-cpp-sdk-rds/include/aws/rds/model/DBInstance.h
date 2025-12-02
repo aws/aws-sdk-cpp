@@ -12,6 +12,7 @@
 #include <aws/rds/model/ActivityStreamMode.h>
 #include <aws/rds/model/ActivityStreamPolicyStatus.h>
 #include <aws/rds/model/ActivityStreamStatus.h>
+#include <aws/rds/model/AdditionalStorageVolumeOutput.h>
 #include <aws/rds/model/AutomationMode.h>
 #include <aws/rds/model/CertificateDetails.h>
 #include <aws/rds/model/DBInstanceAutomatedBackupsReplication.h>
@@ -1839,6 +1840,51 @@ class DBInstance {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The additional storage volumes associated with the DB instance. RDS supports
+   * additional storage volumes for RDS for Oracle and RDS for SQL Server.</p>
+   */
+  inline const Aws::Vector<AdditionalStorageVolumeOutput>& GetAdditionalStorageVolumes() const { return m_additionalStorageVolumes; }
+  inline bool AdditionalStorageVolumesHasBeenSet() const { return m_additionalStorageVolumesHasBeenSet; }
+  template <typename AdditionalStorageVolumesT = Aws::Vector<AdditionalStorageVolumeOutput>>
+  void SetAdditionalStorageVolumes(AdditionalStorageVolumesT&& value) {
+    m_additionalStorageVolumesHasBeenSet = true;
+    m_additionalStorageVolumes = std::forward<AdditionalStorageVolumesT>(value);
+  }
+  template <typename AdditionalStorageVolumesT = Aws::Vector<AdditionalStorageVolumeOutput>>
+  DBInstance& WithAdditionalStorageVolumes(AdditionalStorageVolumesT&& value) {
+    SetAdditionalStorageVolumes(std::forward<AdditionalStorageVolumesT>(value));
+    return *this;
+  }
+  template <typename AdditionalStorageVolumesT = AdditionalStorageVolumeOutput>
+  DBInstance& AddAdditionalStorageVolumes(AdditionalStorageVolumesT&& value) {
+    m_additionalStorageVolumesHasBeenSet = true;
+    m_additionalStorageVolumes.emplace_back(std::forward<AdditionalStorageVolumesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The detailed status information for storage volumes associated with the DB
+   * instance. This information helps identify which specific volume is causing the
+   * instance to be in a storage-full state.</p>
+   */
+  inline const Aws::String& GetStorageVolumeStatus() const { return m_storageVolumeStatus; }
+  inline bool StorageVolumeStatusHasBeenSet() const { return m_storageVolumeStatusHasBeenSet; }
+  template <typename StorageVolumeStatusT = Aws::String>
+  void SetStorageVolumeStatus(StorageVolumeStatusT&& value) {
+    m_storageVolumeStatusHasBeenSet = true;
+    m_storageVolumeStatus = std::forward<StorageVolumeStatusT>(value);
+  }
+  template <typename StorageVolumeStatusT = Aws::String>
+  DBInstance& WithStorageVolumeStatus(StorageVolumeStatusT&& value) {
+    SetStorageVolumeStatus(std::forward<StorageVolumeStatusT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_dBInstanceIdentifier;
   bool m_dBInstanceIdentifierHasBeenSet = false;
@@ -2103,6 +2149,12 @@ class DBInstance {
 
   Aws::String m_engineLifecycleSupport;
   bool m_engineLifecycleSupportHasBeenSet = false;
+
+  Aws::Vector<AdditionalStorageVolumeOutput> m_additionalStorageVolumes;
+  bool m_additionalStorageVolumesHasBeenSet = false;
+
+  Aws::String m_storageVolumeStatus;
+  bool m_storageVolumeStatusHasBeenSet = false;
 };
 
 }  // namespace Model

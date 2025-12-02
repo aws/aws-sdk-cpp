@@ -115,6 +115,24 @@ class ListMetadataGenerationRunsRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The target ID for which you want to list metadata generation runs.</p>
+   */
+  inline const Aws::String& GetTargetIdentifier() const { return m_targetIdentifier; }
+  inline bool TargetIdentifierHasBeenSet() const { return m_targetIdentifierHasBeenSet; }
+  template <typename TargetIdentifierT = Aws::String>
+  void SetTargetIdentifier(TargetIdentifierT&& value) {
+    m_targetIdentifierHasBeenSet = true;
+    m_targetIdentifier = std::forward<TargetIdentifierT>(value);
+  }
+  template <typename TargetIdentifierT = Aws::String>
+  ListMetadataGenerationRunsRequest& WithTargetIdentifier(TargetIdentifierT&& value) {
+    SetTargetIdentifier(std::forward<TargetIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The type of the metadata generation runs.</p>
    */
   inline MetadataGenerationRunType GetType() const { return m_type; }
@@ -140,6 +158,9 @@ class ListMetadataGenerationRunsRequest : public DataZoneRequest {
 
   MetadataGenerationRunStatus m_status{MetadataGenerationRunStatus::NOT_SET};
   bool m_statusHasBeenSet = false;
+
+  Aws::String m_targetIdentifier;
+  bool m_targetIdentifierHasBeenSet = false;
 
   MetadataGenerationRunType m_type{MetadataGenerationRunType::NOT_SET};
   bool m_typeHasBeenSet = false;

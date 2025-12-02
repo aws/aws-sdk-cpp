@@ -23,6 +23,7 @@ static const int compliance_assessments_name_HASH = HashingUtils::HashString("co
 static const int compliance_status_HASH = HashingUtils::HashString("compliance.status");
 static const int compliance_control_HASH = HashingUtils::HashString("compliance.control");
 static const int finding_info_title_HASH = HashingUtils::HashString("finding_info.title");
+static const int finding_info_related_events_traits_category_HASH = HashingUtils::HashString("finding_info.related_events.traits.category");
 static const int finding_info_types_HASH = HashingUtils::HashString("finding_info.types");
 static const int metadata_product_name_HASH = HashingUtils::HashString("metadata.product.name");
 static const int metadata_product_uid_HASH = HashingUtils::HashString("metadata.product.uid");
@@ -36,6 +37,7 @@ static const int vulnerabilities_affected_packages_name_HASH = HashingUtils::Has
 static const int finding_info_analytic_name_HASH = HashingUtils::HashString("finding_info.analytic.name");
 static const int compliance_standards_HASH = HashingUtils::HashString("compliance.standards");
 static const int cloud_account_name_HASH = HashingUtils::HashString("cloud.account.name");
+static const int vendor_attributes_severity_HASH = HashingUtils::HashString("vendor_attributes.severity");
 
 GroupByField GetGroupByFieldForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -55,6 +57,8 @@ GroupByField GetGroupByFieldForName(const Aws::String& name) {
     return GroupByField::compliance_control;
   } else if (hashCode == finding_info_title_HASH) {
     return GroupByField::finding_info_title;
+  } else if (hashCode == finding_info_related_events_traits_category_HASH) {
+    return GroupByField::finding_info_related_events_traits_category;
   } else if (hashCode == finding_info_types_HASH) {
     return GroupByField::finding_info_types;
   } else if (hashCode == metadata_product_name_HASH) {
@@ -81,6 +85,8 @@ GroupByField GetGroupByFieldForName(const Aws::String& name) {
     return GroupByField::compliance_standards;
   } else if (hashCode == cloud_account_name_HASH) {
     return GroupByField::cloud_account_name;
+  } else if (hashCode == vendor_attributes_severity_HASH) {
+    return GroupByField::vendor_attributes_severity;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -111,6 +117,8 @@ Aws::String GetNameForGroupByField(GroupByField enumValue) {
       return "compliance.control";
     case GroupByField::finding_info_title:
       return "finding_info.title";
+    case GroupByField::finding_info_related_events_traits_category:
+      return "finding_info.related_events.traits.category";
     case GroupByField::finding_info_types:
       return "finding_info.types";
     case GroupByField::metadata_product_name:
@@ -137,6 +145,8 @@ Aws::String GetNameForGroupByField(GroupByField enumValue) {
       return "compliance.standards";
     case GroupByField::cloud_account_name:
       return "cloud.account.name";
+    case GroupByField::vendor_attributes_severity:
+      return "vendor_attributes.severity";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

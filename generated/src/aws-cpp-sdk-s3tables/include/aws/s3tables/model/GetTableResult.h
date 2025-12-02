@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/s3tables/S3Tables_EXPORTS.h>
+#include <aws/s3tables/model/ManagedTableInformation.h>
 #include <aws/s3tables/model/OpenTableFormat.h>
 #include <aws/s3tables/model/TableType.h>
 
@@ -305,6 +306,24 @@ class GetTableResult {
   ///@}
 
   ///@{
+  /**
+   * <p>If this table is managed by S3 Tables, contains additional information such
+   * as replication details.</p>
+   */
+  inline const ManagedTableInformation& GetManagedTableInformation() const { return m_managedTableInformation; }
+  template <typename ManagedTableInformationT = ManagedTableInformation>
+  void SetManagedTableInformation(ManagedTableInformationT&& value) {
+    m_managedTableInformationHasBeenSet = true;
+    m_managedTableInformation = std::forward<ManagedTableInformationT>(value);
+  }
+  template <typename ManagedTableInformationT = ManagedTableInformation>
+  GetTableResult& WithManagedTableInformation(ManagedTableInformationT&& value) {
+    SetManagedTableInformation(std::forward<ManagedTableInformationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -366,6 +385,9 @@ class GetTableResult {
 
   Aws::String m_tableBucketId;
   bool m_tableBucketIdHasBeenSet = false;
+
+  ManagedTableInformation m_managedTableInformation;
+  bool m_managedTableInformationHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

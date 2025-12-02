@@ -34,6 +34,10 @@ MemoryStrategyInput& MemoryStrategyInput::operator=(JsonView jsonValue) {
     m_customMemoryStrategy = jsonValue.GetObject("customMemoryStrategy");
     m_customMemoryStrategyHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("episodicMemoryStrategy")) {
+    m_episodicMemoryStrategy = jsonValue.GetObject("episodicMemoryStrategy");
+    m_episodicMemoryStrategyHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue MemoryStrategyInput::Jsonize() const {
 
   if (m_customMemoryStrategyHasBeenSet) {
     payload.WithObject("customMemoryStrategy", m_customMemoryStrategy.Jsonize());
+  }
+
+  if (m_episodicMemoryStrategyHasBeenSet) {
+    payload.WithObject("episodicMemoryStrategy", m_episodicMemoryStrategy.Jsonize());
   }
 
   return payload;

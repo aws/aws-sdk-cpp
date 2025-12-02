@@ -10,7 +10,7 @@
 namespace Aws {
 namespace CostExplorer {
 namespace Model {
-enum class SupportedSavingsPlansType { NOT_SET, COMPUTE_SP, EC2_INSTANCE_SP, SAGEMAKER_SP };
+enum class SupportedSavingsPlansType { NOT_SET, COMPUTE_SP, EC2_INSTANCE_SP, SAGEMAKER_SP, DATABASE_SP };
 
 namespace SupportedSavingsPlansTypeMapper {
 AWS_COSTEXPLORER_API SupportedSavingsPlansType GetSupportedSavingsPlansTypeForName(const Aws::String& name);

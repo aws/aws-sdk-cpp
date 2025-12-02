@@ -52,36 +52,19 @@ class ServiceNowProviderConfiguration {
 
   ///@{
   /**
-   * <p>The client ID of ServiceNow ITSM.</p>
+   * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager
+   * secret that contains the ServiceNow credentials.</p>
    */
-  inline const Aws::String& GetClientId() const { return m_clientId; }
-  inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
-  template <typename ClientIdT = Aws::String>
-  void SetClientId(ClientIdT&& value) {
-    m_clientIdHasBeenSet = true;
-    m_clientId = std::forward<ClientIdT>(value);
+  inline const Aws::String& GetSecretArn() const { return m_secretArn; }
+  inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
+  template <typename SecretArnT = Aws::String>
+  void SetSecretArn(SecretArnT&& value) {
+    m_secretArnHasBeenSet = true;
+    m_secretArn = std::forward<SecretArnT>(value);
   }
-  template <typename ClientIdT = Aws::String>
-  ServiceNowProviderConfiguration& WithClientId(ClientIdT&& value) {
-    SetClientId(std::forward<ClientIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The client secret of ServiceNow ITSM.</p>
-   */
-  inline const Aws::String& GetClientSecret() const { return m_clientSecret; }
-  inline bool ClientSecretHasBeenSet() const { return m_clientSecretHasBeenSet; }
-  template <typename ClientSecretT = Aws::String>
-  void SetClientSecret(ClientSecretT&& value) {
-    m_clientSecretHasBeenSet = true;
-    m_clientSecret = std::forward<ClientSecretT>(value);
-  }
-  template <typename ClientSecretT = Aws::String>
-  ServiceNowProviderConfiguration& WithClientSecret(ClientSecretT&& value) {
-    SetClientSecret(std::forward<ClientSecretT>(value));
+  template <typename SecretArnT = Aws::String>
+  ServiceNowProviderConfiguration& WithSecretArn(SecretArnT&& value) {
+    SetSecretArn(std::forward<SecretArnT>(value));
     return *this;
   }
   ///@}
@@ -89,11 +72,8 @@ class ServiceNowProviderConfiguration {
   Aws::String m_instanceName;
   bool m_instanceNameHasBeenSet = false;
 
-  Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
-
-  Aws::String m_clientSecret;
-  bool m_clientSecretHasBeenSet = false;
+  Aws::String m_secretArn;
+  bool m_secretArnHasBeenSet = false;
 };
 
 }  // namespace Model

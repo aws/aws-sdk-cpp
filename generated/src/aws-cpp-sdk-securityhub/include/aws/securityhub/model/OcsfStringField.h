@@ -27,6 +27,7 @@ enum class OcsfStringField {
   finding_info_title,
   finding_info_types,
   finding_info_uid,
+  finding_info_related_events_traits_category,
   finding_info_related_events_uid,
   finding_info_related_events_product_uid,
   finding_info_related_events_title,
@@ -80,7 +81,8 @@ enum class OcsfStringField {
   vulnerabilities_cve_epss_score,
   vulnerabilities_cve_uid,
   vulnerabilities_related_vulnerabilities,
-  cloud_account_name
+  cloud_account_name,
+  vendor_attributes_severity
 };
 
 namespace OcsfStringFieldMapper {

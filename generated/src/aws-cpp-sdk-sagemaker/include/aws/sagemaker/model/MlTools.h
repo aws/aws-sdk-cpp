@@ -31,7 +31,10 @@ enum class MlTools {
   Comet,
   DeepchecksLLMEvaluation,
   Fiddler,
-  HyperPodClusters
+  HyperPodClusters,
+  RunningInstances,
+  Datasets,
+  Evaluators
 };
 
 namespace MlToolsMapper {

@@ -43,6 +43,12 @@ Aws::Http::HeaderValueCollection InvokeRequest::GetRequestSpecificHeaders() cons
     ss.str("");
   }
 
+  if (m_durableExecutionNameHasBeenSet) {
+    ss << m_durableExecutionName;
+    headers.emplace("x-amz-durable-execution-name", ss.str());
+    ss.str("");
+  }
+
   if (m_tenantIdHasBeenSet) {
     ss << m_tenantId;
     headers.emplace("x-amz-tenant-id", ss.str());

@@ -50,6 +50,10 @@ Index& Index::operator=(JsonView jsonValue) {
     m_metadataConfiguration = jsonValue.GetObject("metadataConfiguration");
     m_metadataConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("encryptionConfiguration")) {
+    m_encryptionConfiguration = jsonValue.GetObject("encryptionConfiguration");
+    m_encryptionConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -86,6 +90,10 @@ JsonValue Index::Jsonize() const {
 
   if (m_metadataConfigurationHasBeenSet) {
     payload.WithObject("metadataConfiguration", m_metadataConfiguration.Jsonize());
+  }
+
+  if (m_encryptionConfigurationHasBeenSet) {
+    payload.WithObject("encryptionConfiguration", m_encryptionConfiguration.Jsonize());
   }
 
   return payload;

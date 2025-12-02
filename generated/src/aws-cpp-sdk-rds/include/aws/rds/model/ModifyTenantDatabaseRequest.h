@@ -55,8 +55,8 @@ class ModifyTenantDatabaseRequest : public RDSRequest {
   ///@{
   /**
    * <p>The user-supplied name of the tenant database that you want to modify. This
-   * parameter isn’t case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match
-   * the identifier of an existing tenant database.</p> </li> </ul>
+   * parameter isn���t case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must
+   * match the identifier of an existing tenant database.</p> </li> </ul>
    */
   inline const Aws::String& GetTenantDBName() const { return m_tenantDBName; }
   inline bool TenantDBNameHasBeenSet() const { return m_tenantDBNameHasBeenSet; }

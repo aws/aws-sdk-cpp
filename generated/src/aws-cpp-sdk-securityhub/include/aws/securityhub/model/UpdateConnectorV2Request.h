@@ -49,24 +49,6 @@ class UpdateConnectorV2Request : public SecurityHubRequest {
 
   ///@{
   /**
-   * <p>The clientSecret of ServiceNow.</p>
-   */
-  inline const Aws::String& GetClientSecret() const { return m_clientSecret; }
-  inline bool ClientSecretHasBeenSet() const { return m_clientSecretHasBeenSet; }
-  template <typename ClientSecretT = Aws::String>
-  void SetClientSecret(ClientSecretT&& value) {
-    m_clientSecretHasBeenSet = true;
-    m_clientSecret = std::forward<ClientSecretT>(value);
-  }
-  template <typename ClientSecretT = Aws::String>
-  UpdateConnectorV2Request& WithClientSecret(ClientSecretT&& value) {
-    SetClientSecret(std::forward<ClientSecretT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The description of the connectorV2.</p>
    */
   inline const Aws::String& GetDescription() const { return m_description; }
@@ -103,9 +85,6 @@ class UpdateConnectorV2Request : public SecurityHubRequest {
  private:
   Aws::String m_connectorId;
   bool m_connectorIdHasBeenSet = false;
-
-  Aws::String m_clientSecret;
-  bool m_clientSecretHasBeenSet = false;
 
   Aws::String m_description;
   bool m_descriptionHasBeenSet = false;

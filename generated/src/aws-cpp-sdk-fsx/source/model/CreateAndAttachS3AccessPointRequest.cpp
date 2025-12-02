@@ -31,6 +31,10 @@ Aws::String CreateAndAttachS3AccessPointRequest::SerializePayload() const {
     payload.WithObject("OpenZFSConfiguration", m_openZFSConfiguration.Jsonize());
   }
 
+  if (m_ontapConfigurationHasBeenSet) {
+    payload.WithObject("OntapConfiguration", m_ontapConfiguration.Jsonize());
+  }
+
   if (m_s3AccessPointHasBeenSet) {
     payload.WithObject("S3AccessPoint", m_s3AccessPoint.Jsonize());
   }

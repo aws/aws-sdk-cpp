@@ -5,8 +5,10 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/observabilityadmin/ObservabilityAdmin_EXPORTS.h>
 #include <aws/observabilityadmin/model/ResourceType.h>
+#include <aws/observabilityadmin/model/TelemetrySourceType.h>
 #include <aws/observabilityadmin/model/TelemetryType.h>
 
 #include <utility>
@@ -133,6 +135,31 @@ class TelemetryRuleSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The types of telemetry sources configured for this rule, such as VPC Flow
+   * Logs or EKS audit logs. TelemetrySourceTypes must be correlated with the
+   * specific resource type. </p>
+   */
+  inline const Aws::Vector<TelemetrySourceType>& GetTelemetrySourceTypes() const { return m_telemetrySourceTypes; }
+  inline bool TelemetrySourceTypesHasBeenSet() const { return m_telemetrySourceTypesHasBeenSet; }
+  template <typename TelemetrySourceTypesT = Aws::Vector<TelemetrySourceType>>
+  void SetTelemetrySourceTypes(TelemetrySourceTypesT&& value) {
+    m_telemetrySourceTypesHasBeenSet = true;
+    m_telemetrySourceTypes = std::forward<TelemetrySourceTypesT>(value);
+  }
+  template <typename TelemetrySourceTypesT = Aws::Vector<TelemetrySourceType>>
+  TelemetryRuleSummary& WithTelemetrySourceTypes(TelemetrySourceTypesT&& value) {
+    SetTelemetrySourceTypes(std::forward<TelemetrySourceTypesT>(value));
+    return *this;
+  }
+  inline TelemetryRuleSummary& AddTelemetrySourceTypes(TelemetrySourceType value) {
+    m_telemetrySourceTypesHasBeenSet = true;
+    m_telemetrySourceTypes.push_back(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_ruleName;
   bool m_ruleNameHasBeenSet = false;
@@ -151,6 +178,9 @@ class TelemetryRuleSummary {
 
   TelemetryType m_telemetryType{TelemetryType::NOT_SET};
   bool m_telemetryTypeHasBeenSet = false;
+
+  Aws::Vector<TelemetrySourceType> m_telemetrySourceTypes;
+  bool m_telemetrySourceTypesHasBeenSet = false;
 };
 
 }  // namespace Model

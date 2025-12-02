@@ -600,8 +600,6 @@
 #include <aws/securityhub/model/ConnectionDirection.h>
 #include <aws/securityhub/model/ConnectorAuthStatus.h>
 #include <aws/securityhub/model/ConnectorProviderName.h>
-#include <aws/securityhub/model/ConnectorRegistrationsV2Request.h>
-#include <aws/securityhub/model/ConnectorRegistrationsV2Result.h>
 #include <aws/securityhub/model/ConnectorStatus.h>
 #include <aws/securityhub/model/ConnectorSummary.h>
 #include <aws/securityhub/model/ContainerDetails.h>
@@ -880,6 +878,8 @@
 #include <aws/securityhub/model/Record.h>
 #include <aws/securityhub/model/RecordState.h>
 #include <aws/securityhub/model/RegionAvailabilityStatus.h>
+#include <aws/securityhub/model/RegisterConnectorV2Request.h>
+#include <aws/securityhub/model/RegisterConnectorV2Result.h>
 #include <aws/securityhub/model/RelatedFinding.h>
 #include <aws/securityhub/model/Remediation.h>
 #include <aws/securityhub/model/Resource.h>
@@ -947,6 +947,8 @@
 #include <aws/securityhub/model/Sequence.h>
 #include <aws/securityhub/model/ServiceNowDetail.h>
 #include <aws/securityhub/model/ServiceNowProviderConfiguration.h>
+#include <aws/securityhub/model/ServiceNowUpdateConfiguration.h>
+#include <aws/securityhub/model/ServiceQuotaExceededException.h>
 #include <aws/securityhub/model/Severity.h>
 #include <aws/securityhub/model/SeverityLabel.h>
 #include <aws/securityhub/model/SeverityRating.h>
@@ -990,6 +992,7 @@
 #include <aws/securityhub/model/ThreatIntelIndicatorCategory.h>
 #include <aws/securityhub/model/ThreatIntelIndicatorType.h>
 #include <aws/securityhub/model/ThrottlingException.h>
+#include <aws/securityhub/model/TicketCreationMode.h>
 #include <aws/securityhub/model/TrendsMetricsResult.h>
 #include <aws/securityhub/model/TrendsValues.h>
 #include <aws/securityhub/model/UnprocessedAutomationRule.h>

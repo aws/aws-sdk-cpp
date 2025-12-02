@@ -35,11 +35,17 @@ class ModifyCustomDBEngineVersionRequest : public RDSRequest {
  public:
   ///@{
   /**
-   * <p>The database engine. RDS Custom for Oracle supports the following values:</p>
-   * <ul> <li> <p> <code>custom-oracle-ee</code> </p> </li> <li> <p>
+   * <p>The database engine.</p> <p>RDS Custom for Oracle supports the following
+   * values:</p> <ul> <li> <p> <code>custom-oracle-ee</code> </p> </li> <li> <p>
    * <code>custom-oracle-ee-cdb</code> </p> </li> <li> <p>
    * <code>custom-oracle-se2</code> </p> </li> <li> <p>
-   * <code>custom-oracle-se2-cdb</code> </p> </li> </ul>
+   * <code>custom-oracle-se2-cdb</code> </p> </li> </ul> <p>RDS Custom for SQL Server
+   * supports the following values:</p> <ul> <li> <p>
+   * <code>custom-sqlserver-ee</code> </p> </li> <li> <p>
+   * <code>custom-sqlserver-se</code> </p> </li> <li> <p>
+   * <code>ccustom-sqlserver-web</code> </p> </li> <li> <p>
+   * <code>custom-sqlserver-dev</code> </p> </li> </ul> <p>RDS for SQL Server
+   * supports only <code>sqlserver-dev-ee</code>.</p>
    */
   inline const Aws::String& GetEngine() const { return m_engine; }
   inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }

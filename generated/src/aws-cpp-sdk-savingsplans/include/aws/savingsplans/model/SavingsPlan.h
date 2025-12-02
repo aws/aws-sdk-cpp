@@ -366,7 +366,7 @@ class SavingsPlan {
   ///@{
   /**
    * <p>The time until when a return for the Savings Plan can be requested. If the
-   * Savings Plan is not returnable, the field reflects the Savings Plan start
+   * Savings Plan is not returnable, the field reflects the Savings Plans start
    * time.</p>
    */
   inline const Aws::String& GetReturnableUntil() const { return m_returnableUntil; }

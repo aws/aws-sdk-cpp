@@ -33,7 +33,7 @@ class GetScheduledQueryResult {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the scheduled query.</p>
+   * <p>The ARN of the scheduled query.</p>
    */
   inline const Aws::String& GetScheduledQueryArn() const { return m_scheduledQueryArn; }
   template <typename ScheduledQueryArnT = Aws::String>
@@ -84,7 +84,7 @@ class GetScheduledQueryResult {
 
   ///@{
   /**
-   * <p>The query language used by the scheduled query (LogsQL, PPL, or SQL).</p>
+   * <p>The query language used by the scheduled query.</p>
    */
   inline QueryLanguage GetQueryLanguage() const { return m_queryLanguage; }
   inline void SetQueryLanguage(QueryLanguage value) {
@@ -99,7 +99,7 @@ class GetScheduledQueryResult {
 
   ///@{
   /**
-   * <p>The CloudWatch Logs Insights query string being executed.</p>
+   * <p>The query string executed by the scheduled query.</p>
    */
   inline const Aws::String& GetQueryString() const { return m_queryString; }
   template <typename QueryStringT = Aws::String>
@@ -116,7 +116,7 @@ class GetScheduledQueryResult {
 
   ///@{
   /**
-   * <p>The log group identifiers being queried by the scheduled query.</p>
+   * <p>The log groups queried by the scheduled query.</p>
    */
   inline const Aws::Vector<Aws::String>& GetLogGroupIdentifiers() const { return m_logGroupIdentifiers; }
   template <typename LogGroupIdentifiersT = Aws::Vector<Aws::String>>
@@ -156,7 +156,7 @@ class GetScheduledQueryResult {
 
   ///@{
   /**
-   * <p>The timezone in which the schedule expression is evaluated.</p>
+   * <p>The timezone used for evaluating the schedule expression.</p>
    */
   inline const Aws::String& GetTimezone() const { return m_timezone; }
   template <typename TimezoneT = Aws::String>
@@ -173,8 +173,8 @@ class GetScheduledQueryResult {
 
   ///@{
   /**
-   * <p>Time offset in seconds from the execution time for the start of the query
-   * time range.</p>
+   * <p>The time offset in seconds that defines the lookback period for the
+   * query.</p>
    */
   inline long long GetStartTimeOffset() const { return m_startTimeOffset; }
   inline void SetStartTimeOffset(long long value) {
@@ -189,7 +189,7 @@ class GetScheduledQueryResult {
 
   ///@{
   /**
-   * <p>Configuration for destinations where the query results are delivered.</p>
+   * <p>Configuration for where query results are delivered.</p>
    */
   inline const DestinationConfiguration& GetDestinationConfiguration() const { return m_destinationConfiguration; }
   template <typename DestinationConfigurationT = DestinationConfiguration>
@@ -206,7 +206,7 @@ class GetScheduledQueryResult {
 
   ///@{
   /**
-   * <p>The current state of the scheduled query (ENABLED or DISABLED).</p>
+   * <p>The current state of the scheduled query.</p>
    */
   inline ScheduledQueryState GetState() const { return m_state; }
   inline void SetState(ScheduledQueryState value) {
@@ -221,7 +221,7 @@ class GetScheduledQueryResult {
 
   ///@{
   /**
-   * <p>The time when the scheduled query was last executed, in Unix epoch time.</p>
+   * <p>The timestamp when the scheduled query was last executed.</p>
    */
   inline long long GetLastTriggeredTime() const { return m_lastTriggeredTime; }
   inline void SetLastTriggeredTime(long long value) {
@@ -236,8 +236,7 @@ class GetScheduledQueryResult {
 
   ///@{
   /**
-   * <p>The status of the last executed query (Running, Complete, Failed, Timeout, or
-   * InvalidQuery).</p>
+   * <p>The status of the most recent execution of the scheduled query.</p>
    */
   inline ExecutionStatus GetLastExecutionStatus() const { return m_lastExecutionStatus; }
   inline void SetLastExecutionStatus(ExecutionStatus value) {
@@ -252,7 +251,7 @@ class GetScheduledQueryResult {
 
   ///@{
   /**
-   * <p>The start time for the query schedule in Unix epoch time.</p>
+   * <p>The start time for the scheduled query in Unix epoch format.</p>
    */
   inline long long GetScheduleStartTime() const { return m_scheduleStartTime; }
   inline void SetScheduleStartTime(long long value) {
@@ -267,7 +266,7 @@ class GetScheduledQueryResult {
 
   ///@{
   /**
-   * <p>The end time for the query schedule in Unix epoch time.</p>
+   * <p>The end time for the scheduled query in Unix epoch format.</p>
    */
   inline long long GetScheduleEndTime() const { return m_scheduleEndTime; }
   inline void SetScheduleEndTime(long long value) {
@@ -282,7 +281,7 @@ class GetScheduledQueryResult {
 
   ///@{
   /**
-   * <p>The ARN of the IAM role used to execute the scheduled query.</p>
+   * <p>The ARN of the IAM role used to execute the query and deliver results.</p>
    */
   inline const Aws::String& GetExecutionRoleArn() const { return m_executionRoleArn; }
   template <typename ExecutionRoleArnT = Aws::String>
@@ -299,7 +298,7 @@ class GetScheduledQueryResult {
 
   ///@{
   /**
-   * <p>The time when the scheduled query was created, in Unix epoch time.</p>
+   * <p>The timestamp when the scheduled query was created.</p>
    */
   inline long long GetCreationTime() const { return m_creationTime; }
   inline void SetCreationTime(long long value) {
@@ -314,7 +313,7 @@ class GetScheduledQueryResult {
 
   ///@{
   /**
-   * <p>The time when the scheduled query was last updated, in Unix epoch time.</p>
+   * <p>The timestamp when the scheduled query was last updated.</p>
    */
   inline long long GetLastUpdatedTime() const { return m_lastUpdatedTime; }
   inline void SetLastUpdatedTime(long long value) {

@@ -22,6 +22,13 @@ IcebergMetadata& IcebergMetadata::operator=(JsonView jsonValue) {
     m_schema = jsonValue.GetObject("schema");
     m_schemaHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("properties")) {
+    Aws::Map<Aws::String, JsonView> propertiesJsonMap = jsonValue.GetObject("properties").GetAllObjects();
+    for (auto& propertiesItem : propertiesJsonMap) {
+      m_properties[propertiesItem.first] = propertiesItem.second.AsString();
+    }
+    m_propertiesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +37,14 @@ JsonValue IcebergMetadata::Jsonize() const {
 
   if (m_schemaHasBeenSet) {
     payload.WithObject("schema", m_schema.Jsonize());
+  }
+
+  if (m_propertiesHasBeenSet) {
+    JsonValue propertiesJsonMap;
+    for (auto& propertiesItem : m_properties) {
+      propertiesJsonMap.WithString(propertiesItem.first, propertiesItem.second);
+    }
+    payload.WithObject("properties", std::move(propertiesJsonMap));
   }
 
   return payload;

@@ -12,6 +12,7 @@
 #include <aws/opensearchserverless/model/CollectionType.h>
 #include <aws/opensearchserverless/model/StandbyReplicas.h>
 #include <aws/opensearchserverless/model/Tag.h>
+#include <aws/opensearchserverless/model/VectorOptions.h>
 
 #include <utility>
 
@@ -130,6 +131,24 @@ class CreateCollectionRequest : public OpenSearchServerlessRequest {
 
   ///@{
   /**
+   * <p>Configuration options for vector search capabilities in the collection.</p>
+   */
+  inline const VectorOptions& GetVectorOptions() const { return m_vectorOptions; }
+  inline bool VectorOptionsHasBeenSet() const { return m_vectorOptionsHasBeenSet; }
+  template <typename VectorOptionsT = VectorOptions>
+  void SetVectorOptions(VectorOptionsT&& value) {
+    m_vectorOptionsHasBeenSet = true;
+    m_vectorOptions = std::forward<VectorOptionsT>(value);
+  }
+  template <typename VectorOptionsT = VectorOptions>
+  CreateCollectionRequest& WithVectorOptions(VectorOptionsT&& value) {
+    SetVectorOptions(std::forward<VectorOptionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
    */
   inline const Aws::String& GetClientToken() const { return m_clientToken; }
@@ -160,6 +179,9 @@ class CreateCollectionRequest : public OpenSearchServerlessRequest {
 
   StandbyReplicas m_standbyReplicas{StandbyReplicas::NOT_SET};
   bool m_standbyReplicasHasBeenSet = false;
+
+  VectorOptions m_vectorOptions;
+  bool m_vectorOptionsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_clientTokenHasBeenSet = true;

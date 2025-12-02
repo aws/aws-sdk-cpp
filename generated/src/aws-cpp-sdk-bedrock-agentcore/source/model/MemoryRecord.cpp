@@ -41,6 +41,13 @@ MemoryRecord& MemoryRecord::operator=(JsonView jsonValue) {
     m_createdAt = jsonValue.GetDouble("createdAt");
     m_createdAtHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("metadata")) {
+    Aws::Map<Aws::String, JsonView> metadataJsonMap = jsonValue.GetObject("metadata").GetAllObjects();
+    for (auto& metadataItem : metadataJsonMap) {
+      m_metadata[metadataItem.first] = metadataItem.second.AsObject();
+    }
+    m_metadataHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -69,6 +76,14 @@ JsonValue MemoryRecord::Jsonize() const {
 
   if (m_createdAtHasBeenSet) {
     payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  }
+
+  if (m_metadataHasBeenSet) {
+    JsonValue metadataJsonMap;
+    for (auto& metadataItem : m_metadata) {
+      metadataJsonMap.WithObject(metadataItem.first, metadataItem.second.Jsonize());
+    }
+    payload.WithObject("metadata", std::move(metadataJsonMap));
   }
 
   return payload;

@@ -22,13 +22,9 @@ ServiceNowProviderConfiguration& ServiceNowProviderConfiguration::operator=(Json
     m_instanceName = jsonValue.GetString("InstanceName");
     m_instanceNameHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("ClientId")) {
-    m_clientId = jsonValue.GetString("ClientId");
-    m_clientIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ClientSecret")) {
-    m_clientSecret = jsonValue.GetString("ClientSecret");
-    m_clientSecretHasBeenSet = true;
+  if (jsonValue.ValueExists("SecretArn")) {
+    m_secretArn = jsonValue.GetString("SecretArn");
+    m_secretArnHasBeenSet = true;
   }
   return *this;
 }
@@ -40,12 +36,8 @@ JsonValue ServiceNowProviderConfiguration::Jsonize() const {
     payload.WithString("InstanceName", m_instanceName);
   }
 
-  if (m_clientIdHasBeenSet) {
-    payload.WithString("ClientId", m_clientId);
-  }
-
-  if (m_clientSecretHasBeenSet) {
-    payload.WithString("ClientSecret", m_clientSecret);
+  if (m_secretArnHasBeenSet) {
+    payload.WithString("SecretArn", m_secretArn);
   }
 
   return payload;

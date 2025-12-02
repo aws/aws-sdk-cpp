@@ -56,8 +56,8 @@ class Initiator {
 
   ///@{
   /**
-   * <p>Name of the Principal.</p>  <p>This functionality is not supported for
-   * directory buckets.</p>
+   * <p/>  <p>This functionality is not supported for directory buckets.</p>
+   *
    */
   inline const Aws::String& GetDisplayName() const { return m_displayName; }
   inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }

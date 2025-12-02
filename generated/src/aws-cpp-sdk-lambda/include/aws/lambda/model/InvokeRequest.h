@@ -126,6 +126,26 @@ class InvokeRequest : public StreamingLambdaRequest {
 
   ///@{
   /**
+   * <p>Optional unique name for the durable execution. When you start your special
+   * function, you can give it a unique name to identify this specific execution.
+   * It's like giving a nickname to a task.</p>
+   */
+  inline const Aws::String& GetDurableExecutionName() const { return m_durableExecutionName; }
+  inline bool DurableExecutionNameHasBeenSet() const { return m_durableExecutionNameHasBeenSet; }
+  template <typename DurableExecutionNameT = Aws::String>
+  void SetDurableExecutionName(DurableExecutionNameT&& value) {
+    m_durableExecutionNameHasBeenSet = true;
+    m_durableExecutionName = std::forward<DurableExecutionNameT>(value);
+  }
+  template <typename DurableExecutionNameT = Aws::String>
+  InvokeRequest& WithDurableExecutionName(DurableExecutionNameT&& value) {
+    SetDurableExecutionName(std::forward<DurableExecutionNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specify a version or alias to invoke a published version of the function.</p>
    */
   inline const Aws::String& GetQualifier() const { return m_qualifier; }
@@ -171,6 +191,9 @@ class InvokeRequest : public StreamingLambdaRequest {
 
   Aws::String m_clientContext;
   bool m_clientContextHasBeenSet = false;
+
+  Aws::String m_durableExecutionName;
+  bool m_durableExecutionNameHasBeenSet = false;
 
   Aws::String m_qualifier;
   bool m_qualifierHasBeenSet = false;

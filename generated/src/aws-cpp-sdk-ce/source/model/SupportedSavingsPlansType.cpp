@@ -18,6 +18,7 @@ namespace SupportedSavingsPlansTypeMapper {
 static const int COMPUTE_SP_HASH = HashingUtils::HashString("COMPUTE_SP");
 static const int EC2_INSTANCE_SP_HASH = HashingUtils::HashString("EC2_INSTANCE_SP");
 static const int SAGEMAKER_SP_HASH = HashingUtils::HashString("SAGEMAKER_SP");
+static const int DATABASE_SP_HASH = HashingUtils::HashString("DATABASE_SP");
 
 SupportedSavingsPlansType GetSupportedSavingsPlansTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ SupportedSavingsPlansType GetSupportedSavingsPlansTypeForName(const Aws::String&
     return SupportedSavingsPlansType::EC2_INSTANCE_SP;
   } else if (hashCode == SAGEMAKER_SP_HASH) {
     return SupportedSavingsPlansType::SAGEMAKER_SP;
+  } else if (hashCode == DATABASE_SP_HASH) {
+    return SupportedSavingsPlansType::DATABASE_SP;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForSupportedSavingsPlansType(SupportedSavingsPlansType enumVa
       return "EC2_INSTANCE_SP";
     case SupportedSavingsPlansType::SAGEMAKER_SP:
       return "SAGEMAKER_SP";
+    case SupportedSavingsPlansType::DATABASE_SP:
+      return "DATABASE_SP";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

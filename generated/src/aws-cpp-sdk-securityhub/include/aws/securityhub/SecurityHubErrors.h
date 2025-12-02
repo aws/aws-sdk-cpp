@@ -51,7 +51,8 @@ enum class SecurityHubErrors {
   INVALID_INPUT,
   LIMIT_EXCEEDED,
   RESOURCE_CONFLICT,
-  RESOURCE_IN_USE
+  RESOURCE_IN_USE,
+  SERVICE_QUOTA_EXCEEDED
 };
 
 class AWS_SECURITYHUB_API SecurityHubError : public Aws::Client::AWSError<SecurityHubErrors> {

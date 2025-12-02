@@ -92,6 +92,7 @@
 #include <aws/datazone/model/ConfigurableActionParameter.h>
 #include <aws/datazone/model/ConfigurableActionTypeAuthorization.h>
 #include <aws/datazone/model/ConfigurableEnvironmentAction.h>
+#include <aws/datazone/model/ConfigurationStatus.h>
 #include <aws/datazone/model/ConnectionCredentials.h>
 #include <aws/datazone/model/ConnectionPropertiesInput.h>
 #include <aws/datazone/model/ConnectionPropertiesOutput.h>
@@ -256,6 +257,7 @@
 #include <aws/datazone/model/DomainVersion.h>
 #include <aws/datazone/model/EdgeDirection.h>
 #include <aws/datazone/model/EnableSetting.h>
+#include <aws/datazone/model/EncryptionConfiguration.h>
 #include <aws/datazone/model/EntityType.h>
 #include <aws/datazone/model/EnvironmentActionSummary.h>
 #include <aws/datazone/model/EnvironmentBlueprintConfigurationItem.h>
@@ -295,6 +297,8 @@
 #include <aws/datazone/model/GetAssetTypeResult.h>
 #include <aws/datazone/model/GetConnectionRequest.h>
 #include <aws/datazone/model/GetConnectionResult.h>
+#include <aws/datazone/model/GetDataExportConfigurationRequest.h>
+#include <aws/datazone/model/GetDataExportConfigurationResult.h>
 #include <aws/datazone/model/GetDataProductRequest.h>
 #include <aws/datazone/model/GetDataProductResult.h>
 #include <aws/datazone/model/GetDataSourceRequest.h>
@@ -502,6 +506,7 @@
 #include <aws/datazone/model/MetadataGenerationRunStatus.h>
 #include <aws/datazone/model/MetadataGenerationRunTarget.h>
 #include <aws/datazone/model/MetadataGenerationRunType.h>
+#include <aws/datazone/model/MetadataGenerationRunTypeStat.h>
 #include <aws/datazone/model/MetadataGenerationTargetType.h>
 #include <aws/datazone/model/MlflowPropertiesInput.h>
 #include <aws/datazone/model/MlflowPropertiesOutput.h>
@@ -553,6 +558,8 @@
 #include <aws/datazone/model/Protocol.h>
 #include <aws/datazone/model/ProvisioningConfiguration.h>
 #include <aws/datazone/model/ProvisioningProperties.h>
+#include <aws/datazone/model/PutDataExportConfigurationRequest.h>
+#include <aws/datazone/model/PutDataExportConfigurationResult.h>
 #include <aws/datazone/model/PutEnvironmentBlueprintConfigurationRequest.h>
 #include <aws/datazone/model/PutEnvironmentBlueprintConfigurationResult.h>
 #include <aws/datazone/model/RecommendationConfiguration.h>

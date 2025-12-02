@@ -10,6 +10,7 @@
 #include <aws/opensearchserverless/model/CollectionType.h>
 #include <aws/opensearchserverless/model/FipsEndpoints.h>
 #include <aws/opensearchserverless/model/StandbyReplicas.h>
+#include <aws/opensearchserverless/model/VectorOptions.h>
 
 #include <utility>
 
@@ -178,6 +179,24 @@ class CollectionDetail {
 
   ///@{
   /**
+   * <p>Configuration options for vector search capabilities in the collection.</p>
+   */
+  inline const VectorOptions& GetVectorOptions() const { return m_vectorOptions; }
+  inline bool VectorOptionsHasBeenSet() const { return m_vectorOptionsHasBeenSet; }
+  template <typename VectorOptionsT = VectorOptions>
+  void SetVectorOptions(VectorOptionsT&& value) {
+    m_vectorOptionsHasBeenSet = true;
+    m_vectorOptions = std::forward<VectorOptionsT>(value);
+  }
+  template <typename VectorOptionsT = VectorOptions>
+  CollectionDetail& WithVectorOptions(VectorOptionsT&& value) {
+    SetVectorOptions(std::forward<VectorOptionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Epoch time when the collection was created.</p>
    */
   inline long long GetCreatedDate() const { return m_createdDate; }
@@ -324,6 +343,9 @@ class CollectionDetail {
 
   StandbyReplicas m_standbyReplicas{StandbyReplicas::NOT_SET};
   bool m_standbyReplicasHasBeenSet = false;
+
+  VectorOptions m_vectorOptions;
+  bool m_vectorOptionsHasBeenSet = false;
 
   long long m_createdDate{0};
   bool m_createdDateHasBeenSet = false;

@@ -36,6 +36,20 @@ CustomJWTAuthorizerConfiguration& CustomJWTAuthorizerConfiguration::operator=(Js
     }
     m_allowedClientsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("allowedScopes")) {
+    Aws::Utils::Array<JsonView> allowedScopesJsonList = jsonValue.GetArray("allowedScopes");
+    for (unsigned allowedScopesIndex = 0; allowedScopesIndex < allowedScopesJsonList.GetLength(); ++allowedScopesIndex) {
+      m_allowedScopes.push_back(allowedScopesJsonList[allowedScopesIndex].AsString());
+    }
+    m_allowedScopesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("customClaims")) {
+    Aws::Utils::Array<JsonView> customClaimsJsonList = jsonValue.GetArray("customClaims");
+    for (unsigned customClaimsIndex = 0; customClaimsIndex < customClaimsJsonList.GetLength(); ++customClaimsIndex) {
+      m_customClaims.push_back(customClaimsJsonList[customClaimsIndex].AsObject());
+    }
+    m_customClaimsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -60,6 +74,22 @@ JsonValue CustomJWTAuthorizerConfiguration::Jsonize() const {
       allowedClientsJsonList[allowedClientsIndex].AsString(m_allowedClients[allowedClientsIndex]);
     }
     payload.WithArray("allowedClients", std::move(allowedClientsJsonList));
+  }
+
+  if (m_allowedScopesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> allowedScopesJsonList(m_allowedScopes.size());
+    for (unsigned allowedScopesIndex = 0; allowedScopesIndex < allowedScopesJsonList.GetLength(); ++allowedScopesIndex) {
+      allowedScopesJsonList[allowedScopesIndex].AsString(m_allowedScopes[allowedScopesIndex]);
+    }
+    payload.WithArray("allowedScopes", std::move(allowedScopesJsonList));
+  }
+
+  if (m_customClaimsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> customClaimsJsonList(m_customClaims.size());
+    for (unsigned customClaimsIndex = 0; customClaimsIndex < customClaimsJsonList.GetLength(); ++customClaimsIndex) {
+      customClaimsJsonList[customClaimsIndex].AsObject(m_customClaims[customClaimsIndex].Jsonize());
+    }
+    payload.WithArray("customClaims", std::move(customClaimsJsonList));
   }
 
   return payload;

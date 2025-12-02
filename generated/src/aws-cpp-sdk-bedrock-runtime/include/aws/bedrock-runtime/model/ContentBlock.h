@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
+#include <aws/bedrock-runtime/model/AudioBlock.h>
 #include <aws/bedrock-runtime/model/CachePointBlock.h>
 #include <aws/bedrock-runtime/model/CitationsContentBlock.h>
 #include <aws/bedrock-runtime/model/DocumentBlock.h>
@@ -115,6 +116,24 @@ class ContentBlock {
   template <typename VideoT = VideoBlock>
   ContentBlock& WithVideo(VideoT&& value) {
     SetVideo(std::forward<VideoT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An audio content block containing audio data in the conversation.</p>
+   */
+  inline const AudioBlock& GetAudio() const { return m_audio; }
+  inline bool AudioHasBeenSet() const { return m_audioHasBeenSet; }
+  template <typename AudioT = AudioBlock>
+  void SetAudio(AudioT&& value) {
+    m_audioHasBeenSet = true;
+    m_audio = std::forward<AudioT>(value);
+  }
+  template <typename AudioT = AudioBlock>
+  ContentBlock& WithAudio(AudioT&& value) {
+    SetAudio(std::forward<AudioT>(value));
     return *this;
   }
   ///@}
@@ -264,6 +283,9 @@ class ContentBlock {
 
   VideoBlock m_video;
   bool m_videoHasBeenSet = false;
+
+  AudioBlock m_audio;
+  bool m_audioHasBeenSet = false;
 
   ToolUseBlock m_toolUse;
   bool m_toolUseHasBeenSet = false;

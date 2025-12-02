@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/CustomMemoryStrategyInput.h>
+#include <aws/bedrock-agentcore-control/model/EpisodicMemoryStrategyInput.h>
 #include <aws/bedrock-agentcore-control/model/SemanticMemoryStrategyInput.h>
 #include <aws/bedrock-agentcore-control/model/SummaryMemoryStrategyInput.h>
 #include <aws/bedrock-agentcore-control/model/UserPreferenceMemoryStrategyInput.h>
@@ -106,6 +107,24 @@ class MemoryStrategyInput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Input for creating an episodic memory strategy</p>
+   */
+  inline const EpisodicMemoryStrategyInput& GetEpisodicMemoryStrategy() const { return m_episodicMemoryStrategy; }
+  inline bool EpisodicMemoryStrategyHasBeenSet() const { return m_episodicMemoryStrategyHasBeenSet; }
+  template <typename EpisodicMemoryStrategyT = EpisodicMemoryStrategyInput>
+  void SetEpisodicMemoryStrategy(EpisodicMemoryStrategyT&& value) {
+    m_episodicMemoryStrategyHasBeenSet = true;
+    m_episodicMemoryStrategy = std::forward<EpisodicMemoryStrategyT>(value);
+  }
+  template <typename EpisodicMemoryStrategyT = EpisodicMemoryStrategyInput>
+  MemoryStrategyInput& WithEpisodicMemoryStrategy(EpisodicMemoryStrategyT&& value) {
+    SetEpisodicMemoryStrategy(std::forward<EpisodicMemoryStrategyT>(value));
+    return *this;
+  }
+  ///@}
  private:
   SemanticMemoryStrategyInput m_semanticMemoryStrategy;
   bool m_semanticMemoryStrategyHasBeenSet = false;
@@ -118,6 +137,9 @@ class MemoryStrategyInput {
 
   CustomMemoryStrategyInput m_customMemoryStrategy;
   bool m_customMemoryStrategyHasBeenSet = false;
+
+  EpisodicMemoryStrategyInput m_episodicMemoryStrategy;
+  bool m_episodicMemoryStrategyHasBeenSet = false;
 };
 
 }  // namespace Model

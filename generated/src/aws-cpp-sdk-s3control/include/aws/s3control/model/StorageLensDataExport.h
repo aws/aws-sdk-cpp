@@ -7,6 +7,7 @@
 #include <aws/s3control/S3Control_EXPORTS.h>
 #include <aws/s3control/model/CloudWatchMetrics.h>
 #include <aws/s3control/model/S3BucketDestination.h>
+#include <aws/s3control/model/StorageLensTableDestination.h>
 
 #include <utility>
 
@@ -71,12 +72,34 @@ class StorageLensDataExport {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A container for configuring S3 Storage Lens data exports to read-only S3
+   * table buckets.</p>
+   */
+  inline const StorageLensTableDestination& GetStorageLensTableDestination() const { return m_storageLensTableDestination; }
+  inline bool StorageLensTableDestinationHasBeenSet() const { return m_storageLensTableDestinationHasBeenSet; }
+  template <typename StorageLensTableDestinationT = StorageLensTableDestination>
+  void SetStorageLensTableDestination(StorageLensTableDestinationT&& value) {
+    m_storageLensTableDestinationHasBeenSet = true;
+    m_storageLensTableDestination = std::forward<StorageLensTableDestinationT>(value);
+  }
+  template <typename StorageLensTableDestinationT = StorageLensTableDestination>
+  StorageLensDataExport& WithStorageLensTableDestination(StorageLensTableDestinationT&& value) {
+    SetStorageLensTableDestination(std::forward<StorageLensTableDestinationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   S3BucketDestination m_s3BucketDestination;
   bool m_s3BucketDestinationHasBeenSet = false;
 
   CloudWatchMetrics m_cloudWatchMetrics;
   bool m_cloudWatchMetricsHasBeenSet = false;
+
+  StorageLensTableDestination m_storageLensTableDestination;
+  bool m_storageLensTableDestinationHasBeenSet = false;
 };
 
 }  // namespace Model

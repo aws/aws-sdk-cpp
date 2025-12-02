@@ -34,6 +34,10 @@ ContentBlock& ContentBlock::operator=(JsonView jsonValue) {
     m_video = jsonValue.GetObject("video");
     m_videoHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("audio")) {
+    m_audio = jsonValue.GetObject("audio");
+    m_audioHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("toolUse")) {
     m_toolUse = jsonValue.GetObject("toolUse");
     m_toolUseHasBeenSet = true;
@@ -82,6 +86,10 @@ JsonValue ContentBlock::Jsonize() const {
 
   if (m_videoHasBeenSet) {
     payload.WithObject("video", m_video.Jsonize());
+  }
+
+  if (m_audioHasBeenSet) {
+    payload.WithObject("audio", m_audio.Jsonize());
   }
 
   if (m_toolUseHasBeenSet) {

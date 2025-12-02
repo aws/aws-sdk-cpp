@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
 #include <aws/bedrock-runtime/model/CitationsDelta.h>
+#include <aws/bedrock-runtime/model/ImageBlockDelta.h>
 #include <aws/bedrock-runtime/model/ReasoningContentBlockDelta.h>
 #include <aws/bedrock-runtime/model/ToolResultBlockDelta.h>
 #include <aws/bedrock-runtime/model/ToolUseBlockDelta.h>
@@ -134,6 +135,24 @@ class ContentBlockDelta {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A streaming delta event containing incremental image data.</p>
+   */
+  inline const ImageBlockDelta& GetImage() const { return m_image; }
+  inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
+  template <typename ImageT = ImageBlockDelta>
+  void SetImage(ImageT&& value) {
+    m_imageHasBeenSet = true;
+    m_image = std::forward<ImageT>(value);
+  }
+  template <typename ImageT = ImageBlockDelta>
+  ContentBlockDelta& WithImage(ImageT&& value) {
+    SetImage(std::forward<ImageT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_text;
   bool m_textHasBeenSet = false;
@@ -149,6 +168,9 @@ class ContentBlockDelta {
 
   CitationsDelta m_citation;
   bool m_citationHasBeenSet = false;
+
+  ImageBlockDelta m_image;
+  bool m_imageHasBeenSet = false;
 };
 
 }  // namespace Model

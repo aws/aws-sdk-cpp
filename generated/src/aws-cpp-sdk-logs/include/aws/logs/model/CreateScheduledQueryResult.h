@@ -29,7 +29,7 @@ class CreateScheduledQueryResult {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the created scheduled query.</p>
+   * <p>The ARN of the created scheduled query.</p>
    */
   inline const Aws::String& GetScheduledQueryArn() const { return m_scheduledQueryArn; }
   template <typename ScheduledQueryArnT = Aws::String>
@@ -46,7 +46,7 @@ class CreateScheduledQueryResult {
 
   ///@{
   /**
-   * <p>The current state of the scheduled query (ENABLED or DISABLED).</p>
+   * <p>The current state of the scheduled query.</p>
    */
   inline ScheduledQueryState GetState() const { return m_state; }
   inline void SetState(ScheduledQueryState value) {

@@ -446,8 +446,18 @@ class ClusterInstanceGroupDetails {
 
   ///@{
   /**
-   * <p>The number of nodes running a specific image ID since the last software
-   * update request.</p>
+   * <p>Represents the number of running nodes using the desired Image ID.</p> <ol>
+   * <li> <p> <b>During software update operations:</b> This count shows the number
+   * of nodes running on the desired Image ID. If a rollback occurs, the current
+   * image ID and desired image ID (both included in the describe cluster response)
+   * swap values. The TargetStateCount then shows the number of nodes running on the
+   * newly designated desired image ID (which was previously the current image
+   * ID).</p> </li> <li> <p> <b>During simultaneous scaling and software update
+   * operations:</b> This count shows the number of instances running on the desired
+   * image ID, including any new instances created as part of the scaling request.
+   * New nodes are always created using the desired image ID, so TargetStateCount
+   * reflects the total count of nodes running on the desired image ID, even during
+   * rollback scenarios.</p> </li> </ol>
    */
   inline int GetTargetStateCount() const { return m_targetStateCount; }
   inline bool TargetStateCountHasBeenSet() const { return m_targetStateCountHasBeenSet; }
@@ -463,7 +473,11 @@ class ClusterInstanceGroupDetails {
 
   ///@{
   /**
-   * <p>Status of the last software udpate request.</p>
+   * <p>Status of the last software udpate request.</p> <p>Status transitions follow
+   * these possible sequences:</p> <ul> <li> <p>Pending -&gt; InProgress -&gt;
+   * Succeeded</p> </li> <li> <p>Pending -&gt; InProgress -&gt; RollbackInProgress
+   * -&gt; RollbackComplete</p> </li> <li> <p>Pending -&gt; InProgress -&gt;
+   * RollbackInProgress -&gt; Failed</p> </li> </ul>
    */
   inline SoftwareUpdateStatus GetSoftwareUpdateStatus() const { return m_softwareUpdateStatus; }
   inline bool SoftwareUpdateStatusHasBeenSet() const { return m_softwareUpdateStatusHasBeenSet; }

@@ -4,6 +4,8 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3tables/S3Tables_EXPORTS.h>
 #include <aws/s3tables/model/IcebergSchema.h>
 
@@ -49,9 +51,36 @@ class IcebergMetadata {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Contains configuration properties for an Iceberg table.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetProperties() const { return m_properties; }
+  inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
+  template <typename PropertiesT = Aws::Map<Aws::String, Aws::String>>
+  void SetProperties(PropertiesT&& value) {
+    m_propertiesHasBeenSet = true;
+    m_properties = std::forward<PropertiesT>(value);
+  }
+  template <typename PropertiesT = Aws::Map<Aws::String, Aws::String>>
+  IcebergMetadata& WithProperties(PropertiesT&& value) {
+    SetProperties(std::forward<PropertiesT>(value));
+    return *this;
+  }
+  template <typename PropertiesKeyT = Aws::String, typename PropertiesValueT = Aws::String>
+  IcebergMetadata& AddProperties(PropertiesKeyT&& key, PropertiesValueT&& value) {
+    m_propertiesHasBeenSet = true;
+    m_properties.emplace(std::forward<PropertiesKeyT>(key), std::forward<PropertiesValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   IcebergSchema m_schema;
   bool m_schemaHasBeenSet = false;
+
+  Aws::Map<Aws::String, Aws::String> m_properties;
+  bool m_propertiesHasBeenSet = false;
 };
 
 }  // namespace Model

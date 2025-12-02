@@ -20,6 +20,7 @@ static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
 static const int CANCELED_HASH = HashingUtils::HashString("CANCELED");
 static const int SUCCEEDED_HASH = HashingUtils::HashString("SUCCEEDED");
 static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+static const int PARTIALLY_SUCCEEDED_HASH = HashingUtils::HashString("PARTIALLY_SUCCEEDED");
 
 MetadataGenerationRunStatus GetMetadataGenerationRunStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +34,8 @@ MetadataGenerationRunStatus GetMetadataGenerationRunStatusForName(const Aws::Str
     return MetadataGenerationRunStatus::SUCCEEDED;
   } else if (hashCode == FAILED_HASH) {
     return MetadataGenerationRunStatus::FAILED;
+  } else if (hashCode == PARTIALLY_SUCCEEDED_HASH) {
+    return MetadataGenerationRunStatus::PARTIALLY_SUCCEEDED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +60,8 @@ Aws::String GetNameForMetadataGenerationRunStatus(MetadataGenerationRunStatus en
       return "SUCCEEDED";
     case MetadataGenerationRunStatus::FAILED:
       return "FAILED";
+    case MetadataGenerationRunStatus::PARTIALLY_SUCCEEDED:
+      return "PARTIALLY_SUCCEEDED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

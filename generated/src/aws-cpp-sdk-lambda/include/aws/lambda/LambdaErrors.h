@@ -44,10 +44,12 @@ enum class LambdaErrors {
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CAPACITY_PROVIDER_LIMIT_EXCEEDED = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CALLBACK_TIMEOUT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CAPACITY_PROVIDER_LIMIT_EXCEEDED,
   CODE_SIGNING_CONFIG_NOT_FOUND,
   CODE_STORAGE_EXCEEDED,
   CODE_VERIFICATION_FAILED,
+  DURABLE_EXECUTION_ALREADY_STARTED,
   E_C2_ACCESS_DENIED,
   E_C2_THROTTLED,
   E_C2_UNEXPECTED,

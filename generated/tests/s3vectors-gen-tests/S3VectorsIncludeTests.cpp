@@ -43,6 +43,8 @@
 #include <aws/s3vectors/model/ListIndexesRequest.h>
 #include <aws/s3vectors/model/ListIndexesResult.h>
 #include <aws/s3vectors/model/ListOutputVector.h>
+#include <aws/s3vectors/model/ListTagsForResourceRequest.h>
+#include <aws/s3vectors/model/ListTagsForResourceResult.h>
 #include <aws/s3vectors/model/ListVectorBucketsRequest.h>
 #include <aws/s3vectors/model/ListVectorBucketsResult.h>
 #include <aws/s3vectors/model/ListVectorsRequest.h>
@@ -57,6 +59,10 @@
 #include <aws/s3vectors/model/QueryVectorsRequest.h>
 #include <aws/s3vectors/model/QueryVectorsResult.h>
 #include <aws/s3vectors/model/SseType.h>
+#include <aws/s3vectors/model/TagResourceRequest.h>
+#include <aws/s3vectors/model/TagResourceResult.h>
+#include <aws/s3vectors/model/UntagResourceRequest.h>
+#include <aws/s3vectors/model/UntagResourceResult.h>
 #include <aws/s3vectors/model/ValidationException.h>
 #include <aws/s3vectors/model/ValidationExceptionField.h>
 #include <aws/s3vectors/model/VectorBucket.h>

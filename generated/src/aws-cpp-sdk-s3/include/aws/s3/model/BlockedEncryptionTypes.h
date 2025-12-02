@@ -28,8 +28,8 @@ namespace Model {
  * specified encryption type. However, you can continue to read and list any
  * pre-existing objects already encrypted with the specified encryption type. For
  * more information, see <a
- * href="https://docs.aws.amazon.com/AmazonS3/userguide/block-encryption-type.html">Blocking
- * an encryption type for a general purpose bucket</a>. </p> <p>This data type is
+ * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/blocking-unblocking-s3-c-encryption-gpb.html">Blocking
+ * or unblocking SSE-C for a general purpose bucket</a>.</p> <p>This data type is
  * used with the following actions:</p> <ul> <li> <p> <a
  * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketEncryption.html">PutBucketEncryption</a>
  * </p> </li> <li> <p> <a

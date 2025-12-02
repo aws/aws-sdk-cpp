@@ -20,12 +20,15 @@
 #include <aws/sagemaker/SageMakerClient.h>
 #include <aws/sagemaker/SageMakerEndpointProvider.h>
 #include <aws/sagemaker/SageMakerErrorMarshaller.h>
+#include <aws/sagemaker/model/DeleteHubContentReferenceRequest.h>
+#include <aws/sagemaker/model/DeleteHubContentRequest.h>
 #include <aws/sagemaker/model/DeleteHumanTaskUiRequest.h>
 #include <aws/sagemaker/model/DeleteHyperParameterTuningJobRequest.h>
 #include <aws/sagemaker/model/DeleteImageRequest.h>
 #include <aws/sagemaker/model/DeleteImageVersionRequest.h>
 #include <aws/sagemaker/model/DeleteInferenceComponentRequest.h>
 #include <aws/sagemaker/model/DeleteInferenceExperimentRequest.h>
+#include <aws/sagemaker/model/DeleteMlflowAppRequest.h>
 #include <aws/sagemaker/model/DeleteMlflowTrackingServerRequest.h>
 #include <aws/sagemaker/model/DeleteModelBiasJobDefinitionRequest.h>
 #include <aws/sagemaker/model/DeleteModelCardRequest.h>
@@ -91,6 +94,7 @@
 #include <aws/sagemaker/model/DescribeInferenceRecommendationsJobRequest.h>
 #include <aws/sagemaker/model/DescribeLabelingJobRequest.h>
 #include <aws/sagemaker/model/DescribeLineageGroupRequest.h>
+#include <aws/sagemaker/model/DescribeMlflowAppRequest.h>
 #include <aws/sagemaker/model/DescribeMlflowTrackingServerRequest.h>
 #include <aws/sagemaker/model/DescribeModelBiasJobDefinitionRequest.h>
 #include <aws/sagemaker/model/DescribeModelCardExportJobRequest.h>
@@ -116,10 +120,6 @@
 #include <aws/sagemaker/model/DescribeSubscribedWorkteamRequest.h>
 #include <aws/sagemaker/model/DescribeTrainingJobRequest.h>
 #include <aws/sagemaker/model/DescribeTrainingPlanRequest.h>
-#include <aws/sagemaker/model/DescribeTransformJobRequest.h>
-#include <aws/sagemaker/model/DescribeTrialComponentRequest.h>
-#include <aws/sagemaker/model/DescribeTrialRequest.h>
-#include <aws/sagemaker/model/DescribeUserProfileRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,64 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DeleteHubContentOutcome SageMakerClient::DeleteHubContent(const DeleteHubContentRequest& request) const {
+  AWS_OPERATION_GUARD(DeleteHubContent);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteHubContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteHubContent, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteHubContent, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteHubContent",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteHubContentOutcome>(
+      [&]() -> DeleteHubContentOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteHubContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        return DeleteHubContentOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteHubContentReferenceOutcome SageMakerClient::DeleteHubContentReference(const DeleteHubContentReferenceRequest& request) const {
+  AWS_OPERATION_GUARD(DeleteHubContentReference);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteHubContentReference, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteHubContentReference, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteHubContentReference, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteHubContentReference",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteHubContentReferenceOutcome>(
+      [&]() -> DeleteHubContentReferenceOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteHubContentReference, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        return DeleteHubContentReferenceOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
 
 DeleteHumanTaskUiOutcome SageMakerClient::DeleteHumanTaskUi(const DeleteHumanTaskUiRequest& request) const {
   AWS_OPERATION_GUARD(DeleteHumanTaskUi);
@@ -300,6 +358,35 @@ DeleteInferenceExperimentOutcome SageMakerClient::DeleteInferenceExperiment(cons
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteInferenceExperiment, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         return DeleteInferenceExperimentOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteMlflowAppOutcome SageMakerClient::DeleteMlflowApp(const DeleteMlflowAppRequest& request) const {
+  AWS_OPERATION_GUARD(DeleteMlflowApp);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMlflowApp, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteMlflowApp, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteMlflowApp, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteMlflowApp",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteMlflowAppOutcome>(
+      [&]() -> DeleteMlflowAppOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteMlflowApp, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        return DeleteMlflowAppOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -2201,6 +2288,35 @@ DescribeLineageGroupOutcome SageMakerClient::DescribeLineageGroup(const Describe
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DescribeMlflowAppOutcome SageMakerClient::DescribeMlflowApp(const DescribeMlflowAppRequest& request) const {
+  AWS_OPERATION_GUARD(DescribeMlflowApp);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeMlflowApp, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeMlflowApp, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeMlflowApp, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeMlflowApp",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeMlflowAppOutcome>(
+      [&]() -> DescribeMlflowAppOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeMlflowApp, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        return DescribeMlflowAppOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DescribeMlflowTrackingServerOutcome SageMakerClient::DescribeMlflowTrackingServer(
     const DescribeMlflowTrackingServerRequest& request) const {
   AWS_OPERATION_GUARD(DescribeMlflowTrackingServer);
@@ -2927,122 +3043,6 @@ DescribeTrainingPlanOutcome SageMakerClient::DescribeTrainingPlan(const Describe
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeTrainingPlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         return DescribeTrainingPlanOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-DescribeTransformJobOutcome SageMakerClient::DescribeTransformJob(const DescribeTransformJobRequest& request) const {
-  AWS_OPERATION_GUARD(DescribeTransformJob);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeTransformJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeTransformJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, DescribeTransformJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeTransformJob",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DescribeTransformJobOutcome>(
-      [&]() -> DescribeTransformJobOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeTransformJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        return DescribeTransformJobOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-DescribeTrialOutcome SageMakerClient::DescribeTrial(const DescribeTrialRequest& request) const {
-  AWS_OPERATION_GUARD(DescribeTrial);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeTrial, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeTrial, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, DescribeTrial, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeTrial",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DescribeTrialOutcome>(
-      [&]() -> DescribeTrialOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeTrial, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        return DescribeTrialOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-DescribeTrialComponentOutcome SageMakerClient::DescribeTrialComponent(const DescribeTrialComponentRequest& request) const {
-  AWS_OPERATION_GUARD(DescribeTrialComponent);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeTrialComponent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeTrialComponent, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, DescribeTrialComponent, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeTrialComponent",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DescribeTrialComponentOutcome>(
-      [&]() -> DescribeTrialComponentOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeTrialComponent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        return DescribeTrialComponentOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-DescribeUserProfileOutcome SageMakerClient::DescribeUserProfile(const DescribeUserProfileRequest& request) const {
-  AWS_OPERATION_GUARD(DescribeUserProfile);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeUserProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeUserProfile, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, DescribeUserProfile, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeUserProfile",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DescribeUserProfileOutcome>(
-      [&]() -> DescribeUserProfileOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeUserProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        return DescribeUserProfileOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

@@ -165,6 +165,38 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
   }
 
   /**
+   * <p>Associates a data source with an S3 Table Integration for query access in the
+   * 'logs' namespace. This enables querying log data using analytics engines that
+   * support Iceberg such as Amazon Athena, Amazon Redshift, and Apache
+   * Spark.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/AssociateSourceToS3TableIntegration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AssociateSourceToS3TableIntegrationOutcome AssociateSourceToS3TableIntegration(
+      const Model::AssociateSourceToS3TableIntegrationRequest& request) const;
+
+  /**
+   * A Callable wrapper for AssociateSourceToS3TableIntegration that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename AssociateSourceToS3TableIntegrationRequestT = Model::AssociateSourceToS3TableIntegrationRequest>
+  Model::AssociateSourceToS3TableIntegrationOutcomeCallable AssociateSourceToS3TableIntegrationCallable(
+      const AssociateSourceToS3TableIntegrationRequestT& request) const {
+    return SubmitCallable(&CloudWatchLogsClient::AssociateSourceToS3TableIntegration, request);
+  }
+
+  /**
+   * An Async wrapper for AssociateSourceToS3TableIntegration that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename AssociateSourceToS3TableIntegrationRequestT = Model::AssociateSourceToS3TableIntegrationRequest>
+  void AssociateSourceToS3TableIntegrationAsync(const AssociateSourceToS3TableIntegrationRequestT& request,
+                                                const AssociateSourceToS3TableIntegrationResponseReceivedHandler& handler,
+                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudWatchLogsClient::AssociateSourceToS3TableIntegration, request, handler, context);
+  }
+
+  /**
    * <p>Cancels the specified export task.</p> <p>The task must be in the
    * <code>PENDING</code> or <code>RUNNING</code> state.</p><p><h3>See Also:</h3>
    * <a
@@ -427,9 +459,11 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
   }
 
   /**
-   * <p>Creates a new Scheduled Query that runs CloudWatch Logs Insights queries on a
-   * schedule and delivers results to specified destinations.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Creates a scheduled query that runs CloudWatch Logs Insights queries at
+   * regular intervals. Scheduled queries enable proactive monitoring by
+   * automatically executing queries to detect patterns and anomalies in your log
+   * data. Query results can be delivered to Amazon S3 for analysis or further
+   * processing.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateScheduledQuery">AWS
    * API Reference</a></p>
    */
@@ -456,10 +490,12 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
 
   /**
    * <p>Deletes a CloudWatch Logs account policy. This stops the account-wide policy
-   * from applying to log groups in the account. If you delete a data protection
-   * policy or subscription filter policy, any log-group level policies of those
-   * types remain in effect.</p> <p>To use this operation, you must be signed on with
-   * the correct permissions depending on the type of policy that you are
+   * from applying to log groups or data sources in the account. If you delete a data
+   * protection policy or subscription filter policy, any log-group level policies of
+   * those types remain in effect. This operation supports deletion of data
+   * source-based field index policies, including facet configurations, in addition
+   * to log group-based policies.</p> <p>To use this operation, you must be signed on
+   * with the correct permissions depending on the type of policy that you are
    * deleting.</p> <ul> <li> <p>To delete a data protection policy, you must have the
    * <code>logs:DeleteDataProtectionPolicy</code> and
    * <code>logs:DeleteAccountPolicy</code> permissions.</p> </li> <li> <p>To delete a
@@ -469,7 +505,10 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
    * transformer policy, you must have the <code>logs:DeleteTransformer</code> and
    * <code>logs:DeleteAccountPolicy</code> permissions.</p> </li> <li> <p>To delete a
    * field index policy, you must have the <code>logs:DeleteIndexPolicy</code> and
-   * <code>logs:DeleteAccountPolicy</code> permissions.</p> </li> </ul> <p>If you
+   * <code>logs:DeleteAccountPolicy</code> permissions.</p> <p>If you delete a field
+   * index policy that included facet configurations, those facets will no longer be
+   * available for interactive exploration in the CloudWatch Logs Insights console.
+   * However, facet data is retained for up to 30 days.</p> </li> </ul> <p>If you
    * delete a field index policy, the indexing of the log events that happened before
    * you deleted the policy will still be used for up to 30 days to improve
    * CloudWatch Logs Insights queries.</p><p><h3>See Also:</h3>   <a
@@ -690,13 +729,18 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
    * <p>Deletes a log-group level field index policy that was applied to a single log
    * group. The indexing of the log events that happened before you delete the policy
    * will still be used for as many as 30 days to improve CloudWatch Logs Insights
-   * queries.</p> <p>You can't use this operation to delete an account-level index
+   * queries.</p> <p>If the deleted policy included facet configurations, those
+   * facets will no longer be available for interactive exploration in the CloudWatch
+   * Logs Insights console for this log group. However, facet data is retained for up
+   * to 30 days.</p> <p>You can't use this operation to delete an account-level index
    * policy. Instead, use <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteAccountPolicy.html">DeletAccountPolicy</a>.</p>
    * <p>If you delete a log-group level field index policy and there is an
    * account-level field index policy, in a few minutes the log group begins using
-   * that account-wide policy to index new incoming log events. </p><p><h3>See
-   * Also:</h3>   <a
+   * that account-wide policy to index new incoming log events. This operation only
+   * affects log group-level policies, including any facet configurations, and
+   * preserves any data source-based account policies that may apply to the log
+   * group.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteIndexPolicy">AWS
    * API Reference</a></p>
    */
@@ -947,9 +991,9 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
   }
 
   /**
-   * <p>Deletes an existing scheduled query and all its associated configurations.
-   * This operation permanently removes the scheduled query and cannot be
-   * undone.</p><p><h3>See Also:</h3>   <a
+   * <p>Deletes a scheduled query and stops all future executions. This operation
+   * also removes any configured actions and associated resources.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteScheduledQuery">AWS
    * API Reference</a></p>
    */
@@ -1324,10 +1368,11 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
   }
 
   /**
-   * <p>Returns information about log groups. You can return all your log groups or
-   * filter the results by prefix. The results are ASCII-sorted by log group
-   * name.</p> <p>CloudWatch Logs doesn't support IAM policies that control access to
-   * the <code>DescribeLogGroups</code> action by using the
+   * <p>Returns information about log groups, including data sources that ingest into
+   * each log group. You can return all your log groups or filter the results by
+   * prefix. The results are ASCII-sorted by log group name.</p> <p>CloudWatch Logs
+   * doesn't support IAM policies that control access to the
+   * <code>DescribeLogGroups</code> action by using the
    * <code>aws:ResourceTag/<i>key-name</i> </code> condition key. Other CloudWatch
    * Logs actions do support the use of the <code>aws:ResourceTag/<i>key-name</i>
    * </code> condition key to control access. For more information about using tags
@@ -1434,7 +1479,11 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
    * <p>Returns a list of CloudWatch Logs Insights queries that are scheduled,
    * running, or have been run recently in this account. You can request all queries
    * or limit it to queries of a specific log group or queries with a certain
-   * status.</p><p><h3>See Also:</h3>   <a
+   * status.</p> <p>This operation includes both interactive queries started directly
+   * by users and automated queries executed by scheduled query configurations.
+   * Scheduled query executions appear in the results alongside manually initiated
+   * queries, providing visibility into all query activity in your
+   * account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeQueries">AWS
    * API Reference</a></p>
    */
@@ -1595,6 +1644,38 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                const DisassociateKmsKeyRequestT& request = {}) const {
     return SubmitAsync(&CloudWatchLogsClient::DisassociateKmsKey, request, handler, context);
+  }
+
+  /**
+   * <p>Disassociates a data source from an S3 Table Integration, removing query
+   * access and deleting all associated data from the integration.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DisassociateSourceFromS3TableIntegration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DisassociateSourceFromS3TableIntegrationOutcome DisassociateSourceFromS3TableIntegration(
+      const Model::DisassociateSourceFromS3TableIntegrationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DisassociateSourceFromS3TableIntegration that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename DisassociateSourceFromS3TableIntegrationRequestT = Model::DisassociateSourceFromS3TableIntegrationRequest>
+  Model::DisassociateSourceFromS3TableIntegrationOutcomeCallable DisassociateSourceFromS3TableIntegrationCallable(
+      const DisassociateSourceFromS3TableIntegrationRequestT& request) const {
+    return SubmitCallable(&CloudWatchLogsClient::DisassociateSourceFromS3TableIntegration, request);
+  }
+
+  /**
+   * An Async wrapper for DisassociateSourceFromS3TableIntegration that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename DisassociateSourceFromS3TableIntegrationRequestT = Model::DisassociateSourceFromS3TableIntegrationRequest>
+  void DisassociateSourceFromS3TableIntegrationAsync(
+      const DisassociateSourceFromS3TableIntegrationRequestT& request,
+      const DisassociateSourceFromS3TableIntegrationResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudWatchLogsClient::DisassociateSourceFromS3TableIntegration, request, handler, context);
   }
 
   /**
@@ -1922,9 +2003,38 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
   }
 
   /**
+   * <p>Discovers available fields for a specific data source and type. The response
+   * includes any field modifications introduced through pipelines, such as new
+   * fields or changed field types. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogFields">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetLogFieldsOutcome GetLogFields(const Model::GetLogFieldsRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetLogFields that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetLogFieldsRequestT = Model::GetLogFieldsRequest>
+  Model::GetLogFieldsOutcomeCallable GetLogFieldsCallable(const GetLogFieldsRequestT& request) const {
+    return SubmitCallable(&CloudWatchLogsClient::GetLogFields, request);
+  }
+
+  /**
+   * An Async wrapper for GetLogFields that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetLogFieldsRequestT = Model::GetLogFieldsRequest>
+  void GetLogFieldsAsync(const GetLogFieldsRequestT& request, const GetLogFieldsResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudWatchLogsClient::GetLogFields, request, handler, context);
+  }
+
+  /**
    * <p>Returns a list of the fields that are included in log events in the specified
    * log group. Includes the percentage of log events that contain each field. The
-   * search is limited to a time period that you specify.</p> <p>You can specify the
+   * search is limited to a time period that you specify.</p> <p>This operation is
+   * used for discovering fields within log group events. For discovering fields
+   * across data sources, use the GetLogFields operation.</p> <p>You can specify the
    * log group to search by using either <code>logGroupIdentifier</code> or
    * <code>logGroupName</code>. You must specify one of these parameters, but you
    * can't specify both. </p> <p>In the results, fields that start with
@@ -2045,10 +2155,13 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
    * Logs quotas</a>.</p> <p>If the value of the <code>Status</code> field in the
    * output is <code>Running</code>, this operation returns only partial results. If
    * you see a value of <code>Scheduled</code> or <code>Running</code> for the
-   * status, you can retry the operation later to see the final results. </p> <p>If
-   * you are using CloudWatch cross-account observability, you can use this operation
-   * in a monitoring account to start queries in linked source accounts. For more
-   * information, see <a
+   * status, you can retry the operation later to see the final results. </p> <p>This
+   * operation is used both for retrieving results from interactive queries and from
+   * automated scheduled query executions. Scheduled queries use
+   * <code>GetQueryResults</code> internally to retrieve query results for processing
+   * and delivery to configured destinations.</p> <p>If you are using CloudWatch
+   * cross-account observability, you can use this operation in a monitoring account
+   * to start queries in linked source accounts. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
    * cross-account observability</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetQueryResults">AWS
@@ -2075,9 +2188,8 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
   }
 
   /**
-   * <p>Returns detailed information about a specified scheduled query, including its
-   * configuration, current state, and execution history.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Retrieves details about a specific scheduled query, including its
+   * configuration, execution status, and metadata.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetScheduledQuery">AWS
    * API Reference</a></p>
    */
@@ -2104,8 +2216,8 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
 
   /**
    * <p>Retrieves the execution history of a scheduled query within a specified time
-   * range, including execution status and destination processing
-   * metadata.</p><p><h3>See Also:</h3>   <a
+   * range, including query results and destination processing status.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetScheduledQueryHistory">AWS
    * API Reference</a></p>
    */
@@ -2158,6 +2270,47 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
   void GetTransformerAsync(const GetTransformerRequestT& request, const GetTransformerResponseReceivedHandler& handler,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CloudWatchLogsClient::GetTransformer, request, handler, context);
+  }
+
+  /**
+   * <p>Returns an aggregate summary of all log groups in the Region grouped by
+   * specified data source characteristics. Supports optional filtering by log group
+   * class, name patterns, and data sources. If you perform this action in a
+   * monitoring account, you can also return aggregated summaries of log groups from
+   * source accounts that are linked to the monitoring account. For more information
+   * about using cross-account observability to set up monitoring accounts and source
+   * accounts, see <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
+   * cross-account observability</a>.</p> <p>The operation aggregates log groups by
+   * data source name and type and optionally format, providing counts of log groups
+   * that share these characteristics. The operation paginates results. By default,
+   * it returns up to 50 results and includes a token to retrieve more
+   * results.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListAggregateLogGroupSummaries">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAggregateLogGroupSummariesOutcome ListAggregateLogGroupSummaries(
+      const Model::ListAggregateLogGroupSummariesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListAggregateLogGroupSummaries that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListAggregateLogGroupSummariesRequestT = Model::ListAggregateLogGroupSummariesRequest>
+  Model::ListAggregateLogGroupSummariesOutcomeCallable ListAggregateLogGroupSummariesCallable(
+      const ListAggregateLogGroupSummariesRequestT& request) const {
+    return SubmitCallable(&CloudWatchLogsClient::ListAggregateLogGroupSummaries, request);
+  }
+
+  /**
+   * An Async wrapper for ListAggregateLogGroupSummaries that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListAggregateLogGroupSummariesRequestT = Model::ListAggregateLogGroupSummariesRequest>
+  void ListAggregateLogGroupSummariesAsync(const ListAggregateLogGroupSummariesRequestT& request,
+                                           const ListAggregateLogGroupSummariesResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudWatchLogsClient::ListAggregateLogGroupSummaries, request, handler, context);
   }
 
   /**
@@ -2253,11 +2406,14 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
    * accounts and source accounts, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">
    * CloudWatch cross-account observability</a>.</p> <p>You can optionally filter the
-   * list by log group class and by using regular expressions in your request to
-   * match strings in the log group names.</p> <p>This operation is paginated. By
-   * default, your first use of this operation returns 50 results, and includes a
-   * token to use in a subsequent operation to return more results.</p><p><h3>See
-   * Also:</h3>   <a
+   * list by log group class, by using regular expressions in your request to match
+   * strings in the log group names, by using the fieldIndexes parameter to filter
+   * log groups based on which field indexes are configured, by using the dataSources
+   * parameter to filter log groups by data source types, and by using the
+   * fieldIndexNames parameter to filter by specific field index names.</p> <p>This
+   * operation is paginated. By default, your first use of this operation returns 50
+   * results, and includes a token to use in a subsequent operation to return more
+   * results.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListLogGroups">AWS
    * API Reference</a></p>
    */
@@ -2316,8 +2472,9 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
   }
 
   /**
-   * <p>Lists all scheduled queries in the current AWS account and region with
-   * optional filtering by state.</p><p><h3>See Also:</h3>   <a
+   * <p>Lists all scheduled queries in your account and region. You can filter
+   * results by state to show only enabled or disabled queries.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListScheduledQueries">AWS
    * API Reference</a></p>
    */
@@ -2341,6 +2498,37 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                  const ListScheduledQueriesRequestT& request = {}) const {
     return SubmitAsync(&CloudWatchLogsClient::ListScheduledQueries, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a list of data source associations for a specified S3 Table
+   * Integration, showing which data sources are currently associated for query
+   * access.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListSourcesForS3TableIntegration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListSourcesForS3TableIntegrationOutcome ListSourcesForS3TableIntegration(
+      const Model::ListSourcesForS3TableIntegrationRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListSourcesForS3TableIntegration that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename ListSourcesForS3TableIntegrationRequestT = Model::ListSourcesForS3TableIntegrationRequest>
+  Model::ListSourcesForS3TableIntegrationOutcomeCallable ListSourcesForS3TableIntegrationCallable(
+      const ListSourcesForS3TableIntegrationRequestT& request) const {
+    return SubmitCallable(&CloudWatchLogsClient::ListSourcesForS3TableIntegration, request);
+  }
+
+  /**
+   * An Async wrapper for ListSourcesForS3TableIntegration that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListSourcesForS3TableIntegrationRequestT = Model::ListSourcesForS3TableIntegrationRequest>
+  void ListSourcesForS3TableIntegrationAsync(const ListSourcesForS3TableIntegrationRequestT& request,
+                                             const ListSourcesForS3TableIntegrationResponseReceivedHandler& handler,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudWatchLogsClient::ListSourcesForS3TableIntegration, request, handler, context);
   }
 
   /**
@@ -2373,19 +2561,28 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
   /**
    * <p>Creates an account-level data protection policy, subscription filter policy,
    * field index policy, transformer policy, or metric extraction policy that applies
-   * to all log groups or a subset of log groups in the account.</p> <p>To use this
-   * operation, you must be signed on with the correct permissions depending on the
-   * type of policy that you are creating.</p> <ul> <li> <p>To create a data
-   * protection policy, you must have the <code>logs:PutDataProtectionPolicy</code>
-   * and <code>logs:PutAccountPolicy</code> permissions.</p> </li> <li> <p>To create
-   * a subscription filter policy, you must have the
+   * to all log groups or a subset of log groups in the account.</p> <p>For field
+   * index policies, you can configure indexed fields as <i>facets</i> to enable
+   * interactive exploration of your logs. Facets provide value distributions and
+   * counts for indexed fields in the CloudWatch Logs Insights console without
+   * requiring query execution. For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Facets.html">Use
+   * facets to group and explore logs</a>.</p> <p>To use this operation, you must be
+   * signed on with the correct permissions depending on the type of policy that you
+   * are creating.</p> <ul> <li> <p>To create a data protection policy, you must have
+   * the <code>logs:PutDataProtectionPolicy</code> and
+   * <code>logs:PutAccountPolicy</code> permissions.</p> </li> <li> <p>To create a
+   * subscription filter policy, you must have the
    * <code>logs:PutSubscriptionFilter</code> and <code>logs:PutAccountPolicy</code>
    * permissions.</p> </li> <li> <p>To create a transformer policy, you must have the
    * <code>logs:PutTransformer</code> and <code>logs:PutAccountPolicy</code>
    * permissions.</p> </li> <li> <p>To create a field index policy, you must have the
    * <code>logs:PutIndexPolicy</code> and <code>logs:PutAccountPolicy</code>
-   * permissions.</p> </li> <li> <p>To create a metric extraction policy, you must
-   * have the <code>logs:PutMetricExtractionPolicy</code> and
+   * permissions.</p> </li> <li> <p>To configure facets for field index policies, you
+   * must have the <code>logs:PutIndexPolicy</code> and
+   * <code>logs:PutAccountPolicy</code> permissions.</p> </li> <li> <p>To create a
+   * metric extraction policy, you must have the
+   * <code>logs:PutMetricExtractionPolicy</code> and
    * <code>logs:PutAccountPolicy</code> permissions.</p> </li> </ul> <p> <b>Data
    * protection policy</b> </p> <p>A data protection policy can help safeguard
    * sensitive data that's ingested by your log groups by auditing and masking the
@@ -2508,9 +2705,12 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
    * log events to the names of indexed fields are case-sensitive. For example, an
    * indexed field of <code>RequestId</code> won't match a log event containing
    * <code>requestId</code>.</p> <p>You can have one account-level field index policy
-   * that applies to all log groups in the account. Or you can create as many as 20
-   * account-level field index policies that are each scoped to a subset of log
-   * groups with the <code>selectionCriteria</code> parameter. If you have multiple
+   * that applies to all log groups in the account. Or you can create as many as 40
+   * account-level field index policies (20 for log group prefix selection, 20 for
+   * data source selection) that are each scoped to a subset of log groups or data
+   * sources with the <code>selectionCriteria</code> parameter. Field index policies
+   * can now be created for specific data source name and type combinations using
+   * DataSourceName and DataSourceType selection criteria. If you have multiple
    * account-level index policies with selection criteria, no two of them can use the
    * same or overlapping log group name prefixes. For example, if you have one policy
    * filtered to log groups that start with <code>my-log</code>, you can't have
@@ -2896,8 +3096,15 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
    * indexes include request ID, session ID, userID, and instance IDs. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing.html">Create
-   * field indexes to improve query performance and reduce costs</a>.</p> <p>To find
-   * the fields that are in your log group events, use the <a
+   * field indexes to improve query performance and reduce costs</a>.</p> <p>You can
+   * configure indexed fields as <i>facets</i> to enable interactive exploration and
+   * filtering of your logs in the CloudWatch Logs Insights console. Facets allow you
+   * to view value distributions and counts for indexed fields without running
+   * queries. When you create a field index, you can optionally set it as a facet to
+   * enable this interactive analysis capability. For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Facets.html">Use
+   * facets to group and explore logs</a>.</p> <p>To find the fields that are in your
+   * log group events, use the <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogGroupFields.html">GetLogGroupFields</a>
    * operation.</p> <p>For example, suppose you have created a field index for
    * <code>requestId</code>. Then, any CloudWatch Logs Insights query on that log
@@ -2919,11 +3126,12 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
    * containing <code>requestId</code>.</p> <p>Log group-level field index policies
    * created with <code>PutIndexPolicy</code> override account-level field index
    * policies created with <a
-   * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutAccountPolicy.html">PutAccountPolicy</a>.
-   * If you use <code>PutIndexPolicy</code> to create a field index policy for a log
-   * group, that log group uses only that policy. The log group ignores any
-   * account-wide field index policy that you might have created.</p><p><h3>See
-   * Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutAccountPolicy.html">PutAccountPolicy</a>
+   * that apply to log groups. If you use <code>PutIndexPolicy</code> to create a
+   * field index policy for a log group, that log group uses only that policy for log
+   * group-level indexing, including any facet configurations. The log group ignores
+   * any account-wide field index policy that applies to log groups, but data
+   * source-based account policies may still apply.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutIndexPolicy">AWS
    * API Reference</a></p>
    */
@@ -3412,23 +3620,29 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
   }
 
   /**
-   * <p>Starts a query of one or more log groups using CloudWatch Logs Insights. You
-   * specify the log groups and time range to query and the query string to use.</p>
-   * <p>For more information, see <a
+   * <p>Starts a query of one or more log groups or data sources using CloudWatch
+   * Logs Insights. You specify the log groups or data sources and time range to
+   * query and the query string to use. You can query up to 10 data sources in a
+   * single query.</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
    * Logs Insights Query Syntax</a>.</p> <p>After you run a query using
    * <code>StartQuery</code>, the query results are stored by CloudWatch Logs. You
    * can use <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetQueryResults.html">GetQueryResults</a>
    * to retrieve the results of a query, using the <code>queryId</code> that
-   * <code>StartQuery</code> returns. </p>  <p>To specify the log groups to
-   * query, a <code>StartQuery</code> operation must include one of the
+   * <code>StartQuery</code> returns. </p> <p>Interactive queries started with
+   * <code>StartQuery</code> share concurrency limits with automated scheduled query
+   * executions. Both types of queries count toward the same regional concurrent
+   * query quota, so high scheduled query activity may affect the availability of
+   * concurrent slots for interactive queries.</p>  <p>To specify the log
+   * groups to query, a <code>StartQuery</code> operation must include one of the
    * following:</p> <ul> <li> <p>Either exactly one of the following parameters:
    * <code>logGroupName</code>, <code>logGroupNames</code>, or
    * <code>logGroupIdentifiers</code> </p> </li> <li> <p>Or the
    * <code>queryString</code> must include a <code>SOURCE</code> command to select
    * log groups for the query. The <code>SOURCE</code> command can select log groups
-   * based on log group name prefix, account ID, and log class. </p> <p>For more
+   * based on log group name prefix, account ID, and log class, or select data
+   * sources using dataSource syntax in LogsQL, PPL, and SQL. </p> <p>For more
    * information about the <code>SOURCE</code> command, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax-Source.html">SOURCE</a>.</p>
    * </li> </ul>  <p>If you have associated a KMS key with the query results
@@ -3473,7 +3687,11 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
   /**
    * <p>Stops a CloudWatch Logs Insights query that is in progress. If the query has
    * already ended, the operation returns an error indicating that the specified
-   * query is not running.</p><p><h3>See Also:</h3>   <a
+   * query is not running.</p> <p>This operation can be used to cancel both
+   * interactive queries and individual scheduled query executions. When used with
+   * scheduled queries, <code>StopQuery</code> cancels only the specific execution
+   * identified by the query ID, not the scheduled query configuration
+   * itself.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/StopQuery">AWS API
    * Reference</a></p>
    */
@@ -3712,9 +3930,9 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
   }
 
   /**
-   * <p>Updates the configuration of an existing scheduled query. This operation
-   * follows PUT semantics, replacing the existing configuration with the provided
-   * values.</p><p><h3>See Also:</h3>   <a
+   * <p>Updates an existing scheduled query with new configuration. This operation
+   * uses PUT semantics, allowing modification of query parameters, schedule, and
+   * destinations.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UpdateScheduledQuery">AWS
    * API Reference</a></p>
    */

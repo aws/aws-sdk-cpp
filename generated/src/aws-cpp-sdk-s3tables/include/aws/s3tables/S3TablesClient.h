@@ -128,12 +128,14 @@ class AWS_S3TABLES_API S3TablesClient : public Aws::Client::AWSJsonClient,
    * request parameter you must have the <code>s3tables:PutTableData</code>
    * permission. </p> </li> <li> <p>If you use this operation with the optional
    * <code>encryptionConfiguration</code> request parameter you must have the
-   * <code>s3tables:PutTableEncryption</code> permission. </p> </li> <li> <p>You must
-   * have the <code>s3tables:TagResource</code> permission in addition to
-   * <code>s3tables:CreateTable</code> permission to create a table with tags.</p>
-   * </li> </ul>  <p>Additionally, If you choose SSE-KMS encryption you must
-   * grant the S3 Tables maintenance principal access to your KMS key. For more
-   * information, see <a
+   * <code>s3tables:PutTableEncryption</code> permission. </p> </li> <li> <p>If you
+   * use this operation with the <code>storageClassConfiguration</code> request
+   * parameter, you must have the <code>s3tables:PutTableStorageClass</code>
+   * permission.</p> </li> <li> <p>To create a table with tags, you must have the
+   * <code>s3tables:TagResource</code> permission in addition to
+   * <code>s3tables:CreateTable</code> permission.</p> </li> </ul>
+   * <p>Additionally, If you choose SSE-KMS encryption you must grant the S3 Tables
+   * maintenance principal access to your KMS key. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-kms-permissions.html">Permissions
    * requirements for S3 Tables SSE-KMS encryption</a>. </p>  </dd>
    * </dl><p><h3>See Also:</h3>   <a
@@ -168,10 +170,13 @@ class AWS_S3TABLES_API S3TablesClient : public Aws::Client::AWSJsonClient,
    * <code>s3tables:CreateTableBucket</code> permission to use this operation. </p>
    * </li> <li> <p>If you use this operation with the optional
    * <code>encryptionConfiguration</code> parameter you must have the
-   * <code>s3tables:PutTableBucketEncryption</code> permission.</p> </li> <li> <p>You
-   * must have the <code>s3tables:TagResource</code> permission in addition to
-   * <code>s3tables:CreateTableBucket</code> permission to create a table bucket with
-   * tags.</p> </li> </ul> </dd> </dl><p><h3>See Also:</h3>   <a
+   * <code>s3tables:PutTableBucketEncryption</code> permission.</p> </li> <li> <p>If
+   * you use this operation with the <code>storageClassConfiguration</code> request
+   * parameter, you must have the <code>s3tables:PutTableBucketStorageClass</code>
+   * permission.</p> </li> <li> <p>To create a table bucket with tags, you must have
+   * the <code>s3tables:TagResource</code> permission in addition to
+   * <code>s3tables:CreateTableBucket</code> permission.</p> </li> </ul> </dd>
+   * </dl><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/CreateTableBucket">AWS
    * API Reference</a></p>
    */
@@ -384,6 +389,40 @@ class AWS_S3TABLES_API S3TablesClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Deletes the replication configuration for a table bucket. After deletion, new
+   * table updates will no longer be replicated to destination buckets, though
+   * existing replicated tables will remain in destination buckets.</p> <dl>
+   * <dt>Permissions</dt> <dd> <p>You must have the
+   * <code>s3tables:DeleteTableBucketReplication</code> permission to use this
+   * operation.</p> </dd> </dl><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/DeleteTableBucketReplication">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteTableBucketReplicationOutcome DeleteTableBucketReplication(
+      const Model::DeleteTableBucketReplicationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteTableBucketReplication that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeleteTableBucketReplicationRequestT = Model::DeleteTableBucketReplicationRequest>
+  Model::DeleteTableBucketReplicationOutcomeCallable DeleteTableBucketReplicationCallable(
+      const DeleteTableBucketReplicationRequestT& request) const {
+    return SubmitCallable(&S3TablesClient::DeleteTableBucketReplication, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteTableBucketReplication that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteTableBucketReplicationRequestT = Model::DeleteTableBucketReplicationRequest>
+  void DeleteTableBucketReplicationAsync(const DeleteTableBucketReplicationRequestT& request,
+                                         const DeleteTableBucketReplicationResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&S3TablesClient::DeleteTableBucketReplication, request, handler, context);
+  }
+
+  /**
    * <p>Deletes a table policy. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-table-policy.html#table-policy-delete">Deleting
    * a table policy</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
@@ -412,6 +451,38 @@ class AWS_S3TABLES_API S3TablesClient : public Aws::Client::AWSJsonClient,
   void DeleteTablePolicyAsync(const DeleteTablePolicyRequestT& request, const DeleteTablePolicyResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&S3TablesClient::DeleteTablePolicy, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes the replication configuration for a specific table. After deletion,
+   * new updates to this table will no longer be replicated to destination tables,
+   * though existing replicated copies will remain in destination buckets.</p> <dl>
+   * <dt>Permissions</dt> <dd> <p>You must have the
+   * <code>s3tables:DeleteTableReplication</code> permission to use this
+   * operation.</p> </dd> </dl><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/DeleteTableReplication">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteTableReplicationOutcome DeleteTableReplication(const Model::DeleteTableReplicationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteTableReplication that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteTableReplicationRequestT = Model::DeleteTableReplicationRequest>
+  Model::DeleteTableReplicationOutcomeCallable DeleteTableReplicationCallable(const DeleteTableReplicationRequestT& request) const {
+    return SubmitCallable(&S3TablesClient::DeleteTableReplication, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteTableReplication that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteTableReplicationRequestT = Model::DeleteTableReplicationRequest>
+  void DeleteTableReplicationAsync(const DeleteTableReplicationRequestT& request,
+                                   const DeleteTableReplicationResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&S3TablesClient::DeleteTableReplication, request, handler, context);
   }
 
   /**
@@ -633,6 +704,73 @@ class AWS_S3TABLES_API S3TablesClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Retrieves the replication configuration for a table bucket.This operation
+   * returns the IAM role, <code>versionToken</code>, and replication rules that
+   * define how tables in this bucket are replicated to other buckets.</p> <dl>
+   * <dt>Permissions</dt> <dd> <p>You must have the
+   * <code>s3tables:GetTableBucketReplication</code> permission to use this
+   * operation.</p> </dd> </dl><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableBucketReplication">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetTableBucketReplicationOutcome GetTableBucketReplication(const Model::GetTableBucketReplicationRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetTableBucketReplication that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetTableBucketReplicationRequestT = Model::GetTableBucketReplicationRequest>
+  Model::GetTableBucketReplicationOutcomeCallable GetTableBucketReplicationCallable(
+      const GetTableBucketReplicationRequestT& request) const {
+    return SubmitCallable(&S3TablesClient::GetTableBucketReplication, request);
+  }
+
+  /**
+   * An Async wrapper for GetTableBucketReplication that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetTableBucketReplicationRequestT = Model::GetTableBucketReplicationRequest>
+  void GetTableBucketReplicationAsync(const GetTableBucketReplicationRequestT& request,
+                                      const GetTableBucketReplicationResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&S3TablesClient::GetTableBucketReplication, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the storage class configuration for a specific table. This allows
+   * you to view the storage class settings that apply to an individual table, which
+   * may differ from the table bucket's default configuration.</p> <dl>
+   * <dt>Permissions</dt> <dd> <p>You must have the
+   * <code>s3tables:GetTableBucketStorageClass</code> permission to use this
+   * operation.</p> </dd> </dl><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableBucketStorageClass">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetTableBucketStorageClassOutcome GetTableBucketStorageClass(
+      const Model::GetTableBucketStorageClassRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetTableBucketStorageClass that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetTableBucketStorageClassRequestT = Model::GetTableBucketStorageClassRequest>
+  Model::GetTableBucketStorageClassOutcomeCallable GetTableBucketStorageClassCallable(
+      const GetTableBucketStorageClassRequestT& request) const {
+    return SubmitCallable(&S3TablesClient::GetTableBucketStorageClass, request);
+  }
+
+  /**
+   * An Async wrapper for GetTableBucketStorageClass that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetTableBucketStorageClassRequestT = Model::GetTableBucketStorageClassRequest>
+  void GetTableBucketStorageClassAsync(const GetTableBucketStorageClassRequestT& request,
+                                       const GetTableBucketStorageClassResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&S3TablesClient::GetTableBucketStorageClass, request, handler, context);
+  }
+
+  /**
    * <p>Gets the encryption configuration for a table.</p> <dl> <dt>Permissions</dt>
    * <dd> <p>You must have the <code>s3tables:GetTableEncryption</code> permission to
    * use this operation.</p> </dd> </dl><p><h3>See Also:</h3>   <a
@@ -790,6 +928,166 @@ class AWS_S3TABLES_API S3TablesClient : public Aws::Client::AWSJsonClient,
   void GetTablePolicyAsync(const GetTablePolicyRequestT& request, const GetTablePolicyResponseReceivedHandler& handler,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&S3TablesClient::GetTablePolicy, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the expiration configuration settings for records in a table, and
+   * the status of the configuration. If the status of the configuration is
+   * <code>enabled</code>, records expire and are automatically removed from the
+   * table after the specified number of days.</p> <dl> <dt>Permissions</dt> <dd>
+   * <p>You must have the <code>s3tables:GetTableRecordExpirationConfiguration</code>
+   * permission to use this operation.</p> </dd> </dl><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableRecordExpirationConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetTableRecordExpirationConfigurationOutcome GetTableRecordExpirationConfiguration(
+      const Model::GetTableRecordExpirationConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetTableRecordExpirationConfiguration that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename GetTableRecordExpirationConfigurationRequestT = Model::GetTableRecordExpirationConfigurationRequest>
+  Model::GetTableRecordExpirationConfigurationOutcomeCallable GetTableRecordExpirationConfigurationCallable(
+      const GetTableRecordExpirationConfigurationRequestT& request) const {
+    return SubmitCallable(&S3TablesClient::GetTableRecordExpirationConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for GetTableRecordExpirationConfiguration that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename GetTableRecordExpirationConfigurationRequestT = Model::GetTableRecordExpirationConfigurationRequest>
+  void GetTableRecordExpirationConfigurationAsync(const GetTableRecordExpirationConfigurationRequestT& request,
+                                                  const GetTableRecordExpirationConfigurationResponseReceivedHandler& handler,
+                                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&S3TablesClient::GetTableRecordExpirationConfiguration, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the status, metrics, and details of the latest record expiration
+   * job for a table. This includes when the job ran, and whether it succeeded or
+   * failed. If the job ran successfully, this also includes statistics about the
+   * records that were removed.</p> <dl> <dt>Permissions</dt> <dd> <p>You must have
+   * the <code>s3tables:GetTableRecordExpirationJobStatus</code> permission to use
+   * this operation.</p> </dd> </dl><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableRecordExpirationJobStatus">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetTableRecordExpirationJobStatusOutcome GetTableRecordExpirationJobStatus(
+      const Model::GetTableRecordExpirationJobStatusRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetTableRecordExpirationJobStatus that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename GetTableRecordExpirationJobStatusRequestT = Model::GetTableRecordExpirationJobStatusRequest>
+  Model::GetTableRecordExpirationJobStatusOutcomeCallable GetTableRecordExpirationJobStatusCallable(
+      const GetTableRecordExpirationJobStatusRequestT& request) const {
+    return SubmitCallable(&S3TablesClient::GetTableRecordExpirationJobStatus, request);
+  }
+
+  /**
+   * An Async wrapper for GetTableRecordExpirationJobStatus that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename GetTableRecordExpirationJobStatusRequestT = Model::GetTableRecordExpirationJobStatusRequest>
+  void GetTableRecordExpirationJobStatusAsync(const GetTableRecordExpirationJobStatusRequestT& request,
+                                              const GetTableRecordExpirationJobStatusResponseReceivedHandler& handler,
+                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&S3TablesClient::GetTableRecordExpirationJobStatus, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the replication configuration for a specific table.</p> <dl>
+   * <dt>Permissions</dt> <dd> <p>You must have the
+   * <code>s3tables:GetTableReplication</code> permission to use this operation.</p>
+   * </dd> </dl><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableReplication">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetTableReplicationOutcome GetTableReplication(const Model::GetTableReplicationRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetTableReplication that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetTableReplicationRequestT = Model::GetTableReplicationRequest>
+  Model::GetTableReplicationOutcomeCallable GetTableReplicationCallable(const GetTableReplicationRequestT& request) const {
+    return SubmitCallable(&S3TablesClient::GetTableReplication, request);
+  }
+
+  /**
+   * An Async wrapper for GetTableReplication that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetTableReplicationRequestT = Model::GetTableReplicationRequest>
+  void GetTableReplicationAsync(const GetTableReplicationRequestT& request, const GetTableReplicationResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&S3TablesClient::GetTableReplication, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the replication status for a table, including the status of
+   * replication to each destination. This operation provides visibility into
+   * replication health and progress.</p> <dl> <dt>Permissions</dt> <dd> <p>You must
+   * have the <code>s3tables:GetTableReplicationStatus</code> permission to use this
+   * operation.</p> </dd> </dl><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableReplicationStatus">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetTableReplicationStatusOutcome GetTableReplicationStatus(const Model::GetTableReplicationStatusRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetTableReplicationStatus that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetTableReplicationStatusRequestT = Model::GetTableReplicationStatusRequest>
+  Model::GetTableReplicationStatusOutcomeCallable GetTableReplicationStatusCallable(
+      const GetTableReplicationStatusRequestT& request) const {
+    return SubmitCallable(&S3TablesClient::GetTableReplicationStatus, request);
+  }
+
+  /**
+   * An Async wrapper for GetTableReplicationStatus that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetTableReplicationStatusRequestT = Model::GetTableReplicationStatusRequest>
+  void GetTableReplicationStatusAsync(const GetTableReplicationStatusRequestT& request,
+                                      const GetTableReplicationStatusResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&S3TablesClient::GetTableReplicationStatus, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the storage class configuration for a specific table. This allows
+   * you to view the storage class settings that apply to an individual table, which
+   * may differ from the table bucket's default configuration.</p> <dl>
+   * <dt>Permissions</dt> <dd> <p>You must have the
+   * <code>s3tables:GetTableStorageClass</code> permission to use this operation.</p>
+   * </dd> </dl><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableStorageClass">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetTableStorageClassOutcome GetTableStorageClass(const Model::GetTableStorageClassRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetTableStorageClass that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetTableStorageClassRequestT = Model::GetTableStorageClassRequest>
+  Model::GetTableStorageClassOutcomeCallable GetTableStorageClassCallable(const GetTableStorageClassRequestT& request) const {
+    return SubmitCallable(&S3TablesClient::GetTableStorageClass, request);
+  }
+
+  /**
+   * An Async wrapper for GetTableStorageClass that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetTableStorageClassRequestT = Model::GetTableStorageClassRequest>
+  void GetTableStorageClassAsync(const GetTableStorageClassRequestT& request, const GetTableStorageClassResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&S3TablesClient::GetTableStorageClass, request, handler, context);
   }
 
   /**
@@ -1053,6 +1351,87 @@ class AWS_S3TABLES_API S3TablesClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates or updates the replication configuration for a table bucket. This
+   * operation defines how tables in the source bucket are replicated to destination
+   * buckets. Replication helps ensure data availability and disaster recovery across
+   * regions or accounts.</p> <dl> <dt>Permissions</dt> <dd> <ul> <li> <p>You must
+   * have the <code>s3tables:PutTableBucketReplication</code> permission to use this
+   * operation. The IAM role specified in the configuration must have permissions to
+   * read from the source bucket and write permissions to all destination
+   * buckets.</p> </li> <li> <p>You must also have the following permissions:</p>
+   * <ul> <li> <p> <code>s3tables:GetTable</code> permission on the source table.</p>
+   * </li> <li> <p> <code>s3tables:ListTables</code> permission on the bucket
+   * containing the table.</p> </li> <li> <p> <code>s3tables:CreateTable</code>
+   * permission for the destination.</p> </li> <li> <p>
+   * <code>s3tables:CreateNamespace</code> permission for the destination.</p> </li>
+   * <li> <p> <code>s3tables:GetTableMaintenanceConfig</code> permission for the
+   * source bucket.</p> </li> <li> <p>
+   * <code>s3tables:PutTableMaintenanceConfig</code> permission for the destination
+   * bucket.</p> </li> </ul> </li> <li> <p>You must have <code>iam:PassRole</code>
+   * permission with condition allowing roles to be passed to
+   * <code>replication.s3tables.amazonaws.com</code>.</p> </li> </ul> </dd>
+   * </dl><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/PutTableBucketReplication">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutTableBucketReplicationOutcome PutTableBucketReplication(const Model::PutTableBucketReplicationRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutTableBucketReplication that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename PutTableBucketReplicationRequestT = Model::PutTableBucketReplicationRequest>
+  Model::PutTableBucketReplicationOutcomeCallable PutTableBucketReplicationCallable(
+      const PutTableBucketReplicationRequestT& request) const {
+    return SubmitCallable(&S3TablesClient::PutTableBucketReplication, request);
+  }
+
+  /**
+   * An Async wrapper for PutTableBucketReplication that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename PutTableBucketReplicationRequestT = Model::PutTableBucketReplicationRequest>
+  void PutTableBucketReplicationAsync(const PutTableBucketReplicationRequestT& request,
+                                      const PutTableBucketReplicationResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&S3TablesClient::PutTableBucketReplication, request, handler, context);
+  }
+
+  /**
+   * <p>Sets or updates the storage class configuration for a table bucket. This
+   * configuration serves as the default storage class for all new tables created in
+   * the bucket, allowing you to optimize storage costs at the bucket level.</p> <dl>
+   * <dt>Permissions</dt> <dd> <p>You must have the
+   * <code>s3tables:PutTableBucketStorageClass</code> permission to use this
+   * operation.</p> </dd> </dl><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/PutTableBucketStorageClass">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutTableBucketStorageClassOutcome PutTableBucketStorageClass(
+      const Model::PutTableBucketStorageClassRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutTableBucketStorageClass that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename PutTableBucketStorageClassRequestT = Model::PutTableBucketStorageClassRequest>
+  Model::PutTableBucketStorageClassOutcomeCallable PutTableBucketStorageClassCallable(
+      const PutTableBucketStorageClassRequestT& request) const {
+    return SubmitCallable(&S3TablesClient::PutTableBucketStorageClass, request);
+  }
+
+  /**
+   * An Async wrapper for PutTableBucketStorageClass that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename PutTableBucketStorageClassRequestT = Model::PutTableBucketStorageClassRequest>
+  void PutTableBucketStorageClassAsync(const PutTableBucketStorageClassRequestT& request,
+                                       const PutTableBucketStorageClassResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&S3TablesClient::PutTableBucketStorageClass, request, handler, context);
+  }
+
+  /**
    * <p>Creates a new maintenance configuration or replaces an existing maintenance
    * configuration for a table. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-maintenance.html">S3
@@ -1116,6 +1495,84 @@ class AWS_S3TABLES_API S3TablesClient : public Aws::Client::AWSJsonClient,
   void PutTablePolicyAsync(const PutTablePolicyRequestT& request, const PutTablePolicyResponseReceivedHandler& handler,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&S3TablesClient::PutTablePolicy, request, handler, context);
+  }
+
+  /**
+   * <p>Creates or updates the expiration configuration settings for records in a
+   * table, including the status of the configuration. If you enable record
+   * expiration for a table, records expire and are automatically removed from the
+   * table after the number of days that you specify.</p> <dl> <dt>Permissions</dt>
+   * <dd> <p>You must have the
+   * <code>s3tables:PutTableRecordExpirationConfiguration</code> permission to use
+   * this operation.</p> </dd> </dl><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/PutTableRecordExpirationConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutTableRecordExpirationConfigurationOutcome PutTableRecordExpirationConfiguration(
+      const Model::PutTableRecordExpirationConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutTableRecordExpirationConfiguration that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename PutTableRecordExpirationConfigurationRequestT = Model::PutTableRecordExpirationConfigurationRequest>
+  Model::PutTableRecordExpirationConfigurationOutcomeCallable PutTableRecordExpirationConfigurationCallable(
+      const PutTableRecordExpirationConfigurationRequestT& request) const {
+    return SubmitCallable(&S3TablesClient::PutTableRecordExpirationConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for PutTableRecordExpirationConfiguration that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename PutTableRecordExpirationConfigurationRequestT = Model::PutTableRecordExpirationConfigurationRequest>
+  void PutTableRecordExpirationConfigurationAsync(const PutTableRecordExpirationConfigurationRequestT& request,
+                                                  const PutTableRecordExpirationConfigurationResponseReceivedHandler& handler,
+                                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&S3TablesClient::PutTableRecordExpirationConfiguration, request, handler, context);
+  }
+
+  /**
+   * <p>Creates or updates the replication configuration for a specific table. This
+   * operation allows you to define table-level replication independently of
+   * bucket-level replication, providing granular control over which tables are
+   * replicated and where.</p> <dl> <dt>Permissions</dt> <dd> <ul> <li> <p>You must
+   * have the <code>s3tables:PutTableReplication</code> permission to use this
+   * operation. The IAM role specified in the configuration must have permissions to
+   * read from the source table and write to all destination tables.</p> </li> <li>
+   * <p>You must also have the following permissions:</p> <ul> <li> <p>
+   * <code>s3tables:GetTable</code> permission on the source table being
+   * replicated.</p> </li> <li> <p> <code>s3tables:CreateTable</code> permission for
+   * the destination.</p> </li> <li> <p> <code>s3tables:CreateNamespace</code>
+   * permission for the destination.</p> </li> <li> <p>
+   * <code>s3tables:GetTableMaintenanceConfig</code> permission for the source
+   * table.</p> </li> <li> <p> <code>s3tables:PutTableMaintenanceConfig</code>
+   * permission for the destination table.</p> </li> </ul> </li> <li> <p>You must
+   * have <code>iam:PassRole</code> permission with condition allowing roles to be
+   * passed to <code>replication.s3tables.amazonaws.com</code>.</p> </li> </ul> </dd>
+   * </dl><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/PutTableReplication">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutTableReplicationOutcome PutTableReplication(const Model::PutTableReplicationRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutTableReplication that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename PutTableReplicationRequestT = Model::PutTableReplicationRequest>
+  Model::PutTableReplicationOutcomeCallable PutTableReplicationCallable(const PutTableReplicationRequestT& request) const {
+    return SubmitCallable(&S3TablesClient::PutTableReplication, request);
+  }
+
+  /**
+   * An Async wrapper for PutTableReplication that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename PutTableReplicationRequestT = Model::PutTableReplicationRequest>
+  void PutTableReplicationAsync(const PutTableReplicationRequestT& request, const PutTableReplicationResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&S3TablesClient::PutTableReplication, request, handler, context);
   }
 
   /**

@@ -42,6 +42,10 @@ S3AccessPointAttachment& S3AccessPointAttachment::operator=(JsonView jsonValue) 
     m_openZFSConfiguration = jsonValue.GetObject("OpenZFSConfiguration");
     m_openZFSConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("OntapConfiguration")) {
+    m_ontapConfiguration = jsonValue.GetObject("OntapConfiguration");
+    m_ontapConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("S3AccessPoint")) {
     m_s3AccessPoint = jsonValue.GetObject("S3AccessPoint");
     m_s3AccessPointHasBeenSet = true;
@@ -74,6 +78,10 @@ JsonValue S3AccessPointAttachment::Jsonize() const {
 
   if (m_openZFSConfigurationHasBeenSet) {
     payload.WithObject("OpenZFSConfiguration", m_openZFSConfiguration.Jsonize());
+  }
+
+  if (m_ontapConfigurationHasBeenSet) {
+    payload.WithObject("OntapConfiguration", m_ontapConfiguration.Jsonize());
   }
 
   if (m_s3AccessPointHasBeenSet) {

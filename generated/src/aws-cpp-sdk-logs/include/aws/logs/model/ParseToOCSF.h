@@ -92,9 +92,7 @@ class ParseToOCSF {
 
   ///@{
   /**
-   * <p>Identifies the specific release of the Open Cybersecurity Schema Framework
-   * (OCSF) transformer being used to parse OCSF data. Defaults to the latest version
-   * if not specified. Does not automatically update.</p>
+   * <p>The version of the OCSF mapping to use for parsing log data.</p>
    */
   inline const Aws::String& GetMappingVersion() const { return m_mappingVersion; }
   inline bool MappingVersionHasBeenSet() const { return m_mappingVersionHasBeenSet; }
