@@ -4,14 +4,13 @@
  */
 #pragma once
 
+#include <smithy/Smithy_EXPORTS.h>
 #include <smithy/identity/auth/AuthSchemeOption.h>
+
 namespace smithy
 {
-struct BearerTokenAuthSchemeOption
-{
-    static AuthSchemeOption bearerTokenAuthSchemeOption;
-};
-
-AuthSchemeOption BearerTokenAuthSchemeOption::bearerTokenAuthSchemeOption =
-    AuthSchemeOption("smithy.api#HTTPBearerAuth");
+    struct BearerTokenAuthSchemeOption
+    {
+        static SMITHY_API AuthSchemeOption bearerTokenAuthSchemeOption;
+    };
 } // namespace smithy
