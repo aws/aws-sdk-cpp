@@ -29,7 +29,7 @@
 \#include <smithy/identity/auth/built-in/BearerTokenAuthSchemeOption.h>
 #end
 #if($operation.hasNoAuth())
-\#include <smithy/identity/auth/built-in/NoAuthScheme.h>
+\#include <smithy/identity/auth/built-in/NoAuthSchemeOption.h>
 #end
 #end ###if($serviceModel.useSmithyClient)
 \#include <utility>
