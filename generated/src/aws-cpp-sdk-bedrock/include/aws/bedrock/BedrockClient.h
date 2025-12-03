@@ -3016,6 +3016,37 @@ class AWS_BEDROCK_API BedrockClient : public Aws::Client::AWSJsonClient, public 
   }
 
   /**
+   * <p> Updates a custom model deployment with a new custom model. This allows you
+   * to deploy updated models without creating new deployment endpoints.
+   * </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateCustomModelDeployment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateCustomModelDeploymentOutcome UpdateCustomModelDeployment(
+      const Model::UpdateCustomModelDeploymentRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateCustomModelDeployment that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdateCustomModelDeploymentRequestT = Model::UpdateCustomModelDeploymentRequest>
+  Model::UpdateCustomModelDeploymentOutcomeCallable UpdateCustomModelDeploymentCallable(
+      const UpdateCustomModelDeploymentRequestT& request) const {
+    return SubmitCallable(&BedrockClient::UpdateCustomModelDeployment, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateCustomModelDeployment that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateCustomModelDeploymentRequestT = Model::UpdateCustomModelDeploymentRequest>
+  void UpdateCustomModelDeploymentAsync(const UpdateCustomModelDeploymentRequestT& request,
+                                        const UpdateCustomModelDeploymentResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockClient::UpdateCustomModelDeployment, request, handler, context);
+  }
+
+  /**
    * <p>Updates a guardrail with the values you specify.</p> <ul> <li> <p>Specify a
    * <code>name</code> and optional <code>description</code>.</p> </li> <li>
    * <p>Specify messages for when the guardrail successfully blocks a prompt or a

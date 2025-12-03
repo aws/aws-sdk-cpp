@@ -176,6 +176,14 @@ TrainingJob& TrainingJob::operator=(JsonView jsonValue) {
     }
     m_debugRuleEvaluationStatusesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("OutputModelPackageArn")) {
+    m_outputModelPackageArn = jsonValue.GetString("OutputModelPackageArn");
+    m_outputModelPackageArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ModelPackageConfig")) {
+    m_modelPackageConfig = jsonValue.GetObject("ModelPackageConfig");
+    m_modelPackageConfigHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ProfilerConfig")) {
     m_profilerConfig = jsonValue.GetObject("ProfilerConfig");
     m_profilerConfigHasBeenSet = true;
@@ -369,6 +377,14 @@ JsonValue TrainingJob::Jsonize() const {
           m_debugRuleEvaluationStatuses[debugRuleEvaluationStatusesIndex].Jsonize());
     }
     payload.WithArray("DebugRuleEvaluationStatuses", std::move(debugRuleEvaluationStatusesJsonList));
+  }
+
+  if (m_outputModelPackageArnHasBeenSet) {
+    payload.WithString("OutputModelPackageArn", m_outputModelPackageArn);
+  }
+
+  if (m_modelPackageConfigHasBeenSet) {
+    payload.WithObject("ModelPackageConfig", m_modelPackageConfig.Jsonize());
   }
 
   if (m_profilerConfigHasBeenSet) {

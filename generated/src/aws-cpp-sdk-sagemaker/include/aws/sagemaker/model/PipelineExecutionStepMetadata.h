@@ -6,6 +6,10 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/AutoMLJobStepMetadata.h>
+#include <aws/sagemaker/model/BedrockCustomModelDeploymentMetadata.h>
+#include <aws/sagemaker/model/BedrockCustomModelMetadata.h>
+#include <aws/sagemaker/model/BedrockModelImportMetadata.h>
+#include <aws/sagemaker/model/BedrockProvisionedModelThroughputMetadata.h>
 #include <aws/sagemaker/model/CallbackStepMetadata.h>
 #include <aws/sagemaker/model/ClarifyCheckStepMetadata.h>
 #include <aws/sagemaker/model/ConditionStepMetadata.h>
@@ -13,7 +17,9 @@
 #include <aws/sagemaker/model/EndpointConfigStepMetadata.h>
 #include <aws/sagemaker/model/EndpointStepMetadata.h>
 #include <aws/sagemaker/model/FailStepMetadata.h>
+#include <aws/sagemaker/model/InferenceComponentMetadata.h>
 #include <aws/sagemaker/model/LambdaStepMetadata.h>
+#include <aws/sagemaker/model/LineageMetadata.h>
 #include <aws/sagemaker/model/ModelStepMetadata.h>
 #include <aws/sagemaker/model/ProcessingJobStepMetadata.h>
 #include <aws/sagemaker/model/QualityCheckStepMetadata.h>
@@ -365,6 +371,121 @@ class PipelineExecutionStepMetadata {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The metadata of the Amazon Bedrock custom model used in the pipeline
+   * execution step. </p>
+   */
+  inline const BedrockCustomModelMetadata& GetBedrockCustomModel() const { return m_bedrockCustomModel; }
+  inline bool BedrockCustomModelHasBeenSet() const { return m_bedrockCustomModelHasBeenSet; }
+  template <typename BedrockCustomModelT = BedrockCustomModelMetadata>
+  void SetBedrockCustomModel(BedrockCustomModelT&& value) {
+    m_bedrockCustomModelHasBeenSet = true;
+    m_bedrockCustomModel = std::forward<BedrockCustomModelT>(value);
+  }
+  template <typename BedrockCustomModelT = BedrockCustomModelMetadata>
+  PipelineExecutionStepMetadata& WithBedrockCustomModel(BedrockCustomModelT&& value) {
+    SetBedrockCustomModel(std::forward<BedrockCustomModelT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The metadata of the Amazon Bedrock custom model deployment used in pipeline
+   * execution step. </p>
+   */
+  inline const BedrockCustomModelDeploymentMetadata& GetBedrockCustomModelDeployment() const { return m_bedrockCustomModelDeployment; }
+  inline bool BedrockCustomModelDeploymentHasBeenSet() const { return m_bedrockCustomModelDeploymentHasBeenSet; }
+  template <typename BedrockCustomModelDeploymentT = BedrockCustomModelDeploymentMetadata>
+  void SetBedrockCustomModelDeployment(BedrockCustomModelDeploymentT&& value) {
+    m_bedrockCustomModelDeploymentHasBeenSet = true;
+    m_bedrockCustomModelDeployment = std::forward<BedrockCustomModelDeploymentT>(value);
+  }
+  template <typename BedrockCustomModelDeploymentT = BedrockCustomModelDeploymentMetadata>
+  PipelineExecutionStepMetadata& WithBedrockCustomModelDeployment(BedrockCustomModelDeploymentT&& value) {
+    SetBedrockCustomModelDeployment(std::forward<BedrockCustomModelDeploymentT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The metadata of the Amazon Bedrock provisioned model throughput used in the
+   * pipeline execution step. </p>
+   */
+  inline const BedrockProvisionedModelThroughputMetadata& GetBedrockProvisionedModelThroughput() const {
+    return m_bedrockProvisionedModelThroughput;
+  }
+  inline bool BedrockProvisionedModelThroughputHasBeenSet() const { return m_bedrockProvisionedModelThroughputHasBeenSet; }
+  template <typename BedrockProvisionedModelThroughputT = BedrockProvisionedModelThroughputMetadata>
+  void SetBedrockProvisionedModelThroughput(BedrockProvisionedModelThroughputT&& value) {
+    m_bedrockProvisionedModelThroughputHasBeenSet = true;
+    m_bedrockProvisionedModelThroughput = std::forward<BedrockProvisionedModelThroughputT>(value);
+  }
+  template <typename BedrockProvisionedModelThroughputT = BedrockProvisionedModelThroughputMetadata>
+  PipelineExecutionStepMetadata& WithBedrockProvisionedModelThroughput(BedrockProvisionedModelThroughputT&& value) {
+    SetBedrockProvisionedModelThroughput(std::forward<BedrockProvisionedModelThroughputT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The metadata of Amazon Bedrock model import used in pipeline execution step.
+   * </p>
+   */
+  inline const BedrockModelImportMetadata& GetBedrockModelImport() const { return m_bedrockModelImport; }
+  inline bool BedrockModelImportHasBeenSet() const { return m_bedrockModelImportHasBeenSet; }
+  template <typename BedrockModelImportT = BedrockModelImportMetadata>
+  void SetBedrockModelImport(BedrockModelImportT&& value) {
+    m_bedrockModelImportHasBeenSet = true;
+    m_bedrockModelImport = std::forward<BedrockModelImportT>(value);
+  }
+  template <typename BedrockModelImportT = BedrockModelImportMetadata>
+  PipelineExecutionStepMetadata& WithBedrockModelImport(BedrockModelImportT&& value) {
+    SetBedrockModelImport(std::forward<BedrockModelImportT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The metadata of the inference component used in pipeline execution step.
+   * </p>
+   */
+  inline const InferenceComponentMetadata& GetInferenceComponent() const { return m_inferenceComponent; }
+  inline bool InferenceComponentHasBeenSet() const { return m_inferenceComponentHasBeenSet; }
+  template <typename InferenceComponentT = InferenceComponentMetadata>
+  void SetInferenceComponent(InferenceComponentT&& value) {
+    m_inferenceComponentHasBeenSet = true;
+    m_inferenceComponent = std::forward<InferenceComponentT>(value);
+  }
+  template <typename InferenceComponentT = InferenceComponentMetadata>
+  PipelineExecutionStepMetadata& WithInferenceComponent(InferenceComponentT&& value) {
+    SetInferenceComponent(std::forward<InferenceComponentT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The metadata of the lineage used in pipeline execution step. </p>
+   */
+  inline const LineageMetadata& GetLineage() const { return m_lineage; }
+  inline bool LineageHasBeenSet() const { return m_lineageHasBeenSet; }
+  template <typename LineageT = LineageMetadata>
+  void SetLineage(LineageT&& value) {
+    m_lineageHasBeenSet = true;
+    m_lineage = std::forward<LineageT>(value);
+  }
+  template <typename LineageT = LineageMetadata>
+  PipelineExecutionStepMetadata& WithLineage(LineageT&& value) {
+    SetLineage(std::forward<LineageT>(value));
+    return *this;
+  }
+  ///@}
  private:
   TrainingJobStepMetadata m_trainingJob;
   bool m_trainingJobHasBeenSet = false;
@@ -413,6 +534,24 @@ class PipelineExecutionStepMetadata {
 
   EndpointConfigStepMetadata m_endpointConfig;
   bool m_endpointConfigHasBeenSet = false;
+
+  BedrockCustomModelMetadata m_bedrockCustomModel;
+  bool m_bedrockCustomModelHasBeenSet = false;
+
+  BedrockCustomModelDeploymentMetadata m_bedrockCustomModelDeployment;
+  bool m_bedrockCustomModelDeploymentHasBeenSet = false;
+
+  BedrockProvisionedModelThroughputMetadata m_bedrockProvisionedModelThroughput;
+  bool m_bedrockProvisionedModelThroughputHasBeenSet = false;
+
+  BedrockModelImportMetadata m_bedrockModelImport;
+  bool m_bedrockModelImportHasBeenSet = false;
+
+  InferenceComponentMetadata m_inferenceComponent;
+  bool m_inferenceComponentHasBeenSet = false;
+
+  LineageMetadata m_lineage;
+  bool m_lineageHasBeenSet = false;
 };
 
 }  // namespace Model

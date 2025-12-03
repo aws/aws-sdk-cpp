@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/AdditionalS3DataSource.h>
+#include <aws/sagemaker/model/BaseModel.h>
 #include <aws/sagemaker/model/ModelDataSource.h>
 #include <aws/sagemaker/model/ModelInput.h>
 
@@ -293,6 +294,40 @@ class ModelPackageContainerDefinition {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The checkpoint of the model package. </p>
+   */
+  inline bool GetIsCheckpoint() const { return m_isCheckpoint; }
+  inline bool IsCheckpointHasBeenSet() const { return m_isCheckpointHasBeenSet; }
+  inline void SetIsCheckpoint(bool value) {
+    m_isCheckpointHasBeenSet = true;
+    m_isCheckpoint = value;
+  }
+  inline ModelPackageContainerDefinition& WithIsCheckpoint(bool value) {
+    SetIsCheckpoint(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The base model of the package. </p>
+   */
+  inline const BaseModel& GetBaseModel() const { return m_baseModel; }
+  inline bool BaseModelHasBeenSet() const { return m_baseModelHasBeenSet; }
+  template <typename BaseModelT = BaseModel>
+  void SetBaseModel(BaseModelT&& value) {
+    m_baseModelHasBeenSet = true;
+    m_baseModel = std::forward<BaseModelT>(value);
+  }
+  template <typename BaseModelT = BaseModel>
+  ModelPackageContainerDefinition& WithBaseModel(BaseModelT&& value) {
+    SetBaseModel(std::forward<BaseModelT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_containerHostname;
   bool m_containerHostnameHasBeenSet = false;
@@ -332,6 +367,12 @@ class ModelPackageContainerDefinition {
 
   Aws::String m_modelDataETag;
   bool m_modelDataETagHasBeenSet = false;
+
+  bool m_isCheckpoint{false};
+  bool m_isCheckpointHasBeenSet = false;
+
+  BaseModel m_baseModel;
+  bool m_baseModelHasBeenSet = false;
 };
 
 }  // namespace Model

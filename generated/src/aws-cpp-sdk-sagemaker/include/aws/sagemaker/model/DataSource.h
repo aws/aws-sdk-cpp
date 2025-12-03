@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/sagemaker/model/DatasetSource.h>
 #include <aws/sagemaker/model/FileSystemDataSource.h>
 #include <aws/sagemaker/model/S3DataSource.h>
 
@@ -67,12 +68,33 @@ class DataSource {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The dataset resource that's associated with a channel. </p>
+   */
+  inline const DatasetSource& GetDatasetSource() const { return m_datasetSource; }
+  inline bool DatasetSourceHasBeenSet() const { return m_datasetSourceHasBeenSet; }
+  template <typename DatasetSourceT = DatasetSource>
+  void SetDatasetSource(DatasetSourceT&& value) {
+    m_datasetSourceHasBeenSet = true;
+    m_datasetSource = std::forward<DatasetSourceT>(value);
+  }
+  template <typename DatasetSourceT = DatasetSource>
+  DataSource& WithDatasetSource(DatasetSourceT&& value) {
+    SetDatasetSource(std::forward<DatasetSourceT>(value));
+    return *this;
+  }
+  ///@}
  private:
   S3DataSource m_s3DataSource;
   bool m_s3DataSourceHasBeenSet = false;
 
   FileSystemDataSource m_fileSystemDataSource;
   bool m_fileSystemDataSourceHasBeenSet = false;
+
+  DatasetSource m_datasetSource;
+  bool m_datasetSourceHasBeenSet = false;
 };
 
 }  // namespace Model

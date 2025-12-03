@@ -14,6 +14,7 @@
 #include <aws/sagemaker/model/ModelApprovalStatus.h>
 #include <aws/sagemaker/model/ModelLifeCycle.h>
 #include <aws/sagemaker/model/ModelPackageModelCard.h>
+#include <aws/sagemaker/model/ModelPackageRegistrationType.h>
 
 #include <utility>
 
@@ -67,6 +68,22 @@ class UpdateModelPackageRequest : public SageMakerRequest {
   }
   inline UpdateModelPackageRequest& WithModelApprovalStatus(ModelApprovalStatus value) {
     SetModelApprovalStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The package registration type of the model package input. </p>
+   */
+  inline ModelPackageRegistrationType GetModelPackageRegistrationType() const { return m_modelPackageRegistrationType; }
+  inline bool ModelPackageRegistrationTypeHasBeenSet() const { return m_modelPackageRegistrationTypeHasBeenSet; }
+  inline void SetModelPackageRegistrationType(ModelPackageRegistrationType value) {
+    m_modelPackageRegistrationTypeHasBeenSet = true;
+    m_modelPackageRegistrationType = value;
+  }
+  inline UpdateModelPackageRequest& WithModelPackageRegistrationType(ModelPackageRegistrationType value) {
+    SetModelPackageRegistrationType(value);
     return *this;
   }
   ///@}
@@ -284,6 +301,9 @@ class UpdateModelPackageRequest : public SageMakerRequest {
 
   ModelApprovalStatus m_modelApprovalStatus{ModelApprovalStatus::NOT_SET};
   bool m_modelApprovalStatusHasBeenSet = false;
+
+  ModelPackageRegistrationType m_modelPackageRegistrationType{ModelPackageRegistrationType::NOT_SET};
+  bool m_modelPackageRegistrationTypeHasBeenSet = false;
 
   Aws::String m_approvalDescription;
   bool m_approvalDescriptionHasBeenSet = false;

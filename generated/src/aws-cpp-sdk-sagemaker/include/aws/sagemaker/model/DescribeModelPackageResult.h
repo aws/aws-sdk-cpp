@@ -17,6 +17,7 @@
 #include <aws/sagemaker/model/ModelLifeCycle.h>
 #include <aws/sagemaker/model/ModelMetrics.h>
 #include <aws/sagemaker/model/ModelPackageModelCard.h>
+#include <aws/sagemaker/model/ModelPackageRegistrationType.h>
 #include <aws/sagemaker/model/ModelPackageSecurityConfig.h>
 #include <aws/sagemaker/model/ModelPackageStatus.h>
 #include <aws/sagemaker/model/ModelPackageStatusDetails.h>
@@ -90,6 +91,21 @@ class DescribeModelPackageResult {
   }
   inline DescribeModelPackageResult& WithModelPackageVersion(int value) {
     SetModelPackageVersion(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The package registration type of the model package output. </p>
+   */
+  inline ModelPackageRegistrationType GetModelPackageRegistrationType() const { return m_modelPackageRegistrationType; }
+  inline void SetModelPackageRegistrationType(ModelPackageRegistrationType value) {
+    m_modelPackageRegistrationTypeHasBeenSet = true;
+    m_modelPackageRegistrationType = value;
+  }
+  inline DescribeModelPackageResult& WithModelPackageRegistrationType(ModelPackageRegistrationType value) {
+    SetModelPackageRegistrationType(value);
     return *this;
   }
   ///@}
@@ -608,6 +624,9 @@ class DescribeModelPackageResult {
 
   int m_modelPackageVersion{0};
   bool m_modelPackageVersionHasBeenSet = false;
+
+  ModelPackageRegistrationType m_modelPackageRegistrationType{ModelPackageRegistrationType::NOT_SET};
+  bool m_modelPackageRegistrationTypeHasBeenSet = false;
 
   Aws::String m_modelPackageArn;
   bool m_modelPackageArnHasBeenSet = false;
