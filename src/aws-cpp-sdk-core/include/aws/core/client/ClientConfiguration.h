@@ -79,13 +79,13 @@ namespace Aws
         };
 
         /**
-         * Control whether ChunkingInterceptor applies aws-chunked encoding.
-         * ENABLE: Apply aws-chunked encoding for requests with checksums (default)
-         * DISABLE: Skip ChunkingInterceptor, rely on signer for chunking
+         * Control HTTP client chunking implementation mode.
+         * DEFAULT: Use SDK's ChunkingInterceptor for aws-chunked encoding
+         * CLIENT_IMPLEMENTATION: Rely on HTTP client's native chunking (default for custom clients)
          */
-        enum class UseAwsChunkedEncoding {
-          ENABLE,
-          DISABLE,
+        enum class HttpClientChunkedMode {
+          DEFAULT,
+          CLIENT_IMPLEMENTATION,
         };
 
         struct RequestCompressionConfig {
@@ -505,10 +505,10 @@ namespace Aws
           Aws::String accountIdEndpointMode = "preferred";
 
           /**
-           * Control whether ChunkingInterceptor applies aws-chunked encoding.
-           * Default ENABLE for backward compatibility.
+           * Control HTTP client chunking implementation mode.
+           * Default is set automatically: CLIENT_IMPLEMENTATION for custom clients, DEFAULT for AWS clients.
            */
-          UseAwsChunkedEncoding useAwsChunkedEncoding = UseAwsChunkedEncoding::ENABLE;
+          HttpClientChunkedMode httpClientChunkedMode = HttpClientChunkedMode::CLIENT_IMPLEMENTATION;
           /**
           * Configuration structure for credential providers in the AWS SDK.
           * This structure allows passing configuration options to credential providers

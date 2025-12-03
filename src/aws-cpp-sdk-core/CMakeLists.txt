@@ -51,7 +51,6 @@ file(GLOB AWS_INTERNAL_HEADERS "include/aws/core/internal/*.h")
 file(GLOB NET_HEADERS "include/aws/core/net/*.h")
 file(GLOB HTTP_HEADERS "include/aws/core/http/*.h")
 file(GLOB HTTP_STANDARD_HEADERS "include/aws/core/http/standard/*.h")
-file(GLOB HTTP_INTERCEPTOR_HEADERS "include/aws/core/http/interceptor/*.h")
 file(GLOB CONFIG_HEADERS "include/aws/core/config/*.h")
 file(GLOB CONFIG_DEFAULTS_HEADERS "include/aws/core/config/defaults/*.h")
 file(GLOB ENDPOINT_HEADERS "include/aws/core/endpoint/*.h")
@@ -107,7 +106,6 @@ file(GLOB AWS_INTERNAL_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/internal/*.cpp
 file(GLOB AWS_MODEL_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/aws/model/*.cpp")
 file(GLOB HTTP_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/*.cpp")
 file(GLOB HTTP_STANDARD_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/standard/*.cpp")
-file(GLOB HTTP_INTERCEPTOR_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/interceptor/*.cpp")
 file(GLOB CONFIG_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/config/*.cpp")
 file(GLOB CONFIG_DEFAULTS_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/config/defaults/*.cpp")
 file(GLOB ENDPOINT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/endpoint/*.cpp")
@@ -227,7 +225,6 @@ file(GLOB AWS_NATIVE_SDK_COMMON_SRC
     ${AWS_AUTH_BEARER_TOKEN_PROVIDER_SOURCE}
     ${AWS_CLIENT_SOURCE}
     ${HTTP_STANDARD_SOURCE}
-    ${HTTP_INTERCEPTOR_SOURCE}
     ${HTTP_CLIENT_SOURCE}
     ${CRT_HTTP_SOURCE}
     ${CONFIG_SOURCE}
@@ -261,7 +258,6 @@ file(GLOB AWS_NATIVE_SDK_COMMON_HEADERS
   ${NET_HEADERS}
   ${HTTP_HEADERS}
   ${HTTP_STANDARD_HEADERS}
-  ${HTTP_INTERCEPTOR_HEADERS}
   ${CONFIG_HEADERS}
   ${CONFIG_DEFAULTS_HEADERS}
   ${ENDPOINT_HEADERS}
@@ -401,7 +397,6 @@ if(MSVC)
     source_group("Header Files\\aws\\core\\net" FILES ${NET_HEADERS})
     source_group("Header Files\\aws\\core\\http" FILES ${HTTP_HEADERS})
     source_group("Header Files\\aws\\core\\http\\standard" FILES ${HTTP_STANDARD_HEADERS})
-    source_group("Header Files\\aws\\core\\http\\interceptor" FILES ${HTTP_INTERCEPTOR_HEADERS})
     source_group("Header Files\\aws\\core\\config" FILES ${CONFIG_HEADERS})
     source_group("Header Files\\aws\\core\\config\\defaults" FILES ${CONFIG_DEFAULTS_HEADERS})
     source_group("Header Files\\aws\\core\\endpoint" FILES ${ENDPOINT_HEADERS})
@@ -470,7 +465,6 @@ if(MSVC)
     source_group("Source Files\\net\\windows" FILES ${NET_SOURCE})
     source_group("Source Files\\http" FILES ${HTTP_SOURCE})
     source_group("Source Files\\http\\standard" FILES ${HTTP_STANDARD_SOURCE})
-    source_group("Source Files\\http\\interceptor" FILES ${HTTP_INTERCEPTOR_SOURCE})
     source_group("Source Files\\config" FILES ${CONFIG_SOURCE})
     source_group("Source Files\\config\\defaults" FILES ${CONFIG_DEFAULTS_SOURCE})
     source_group("Source Files\\endpoint" FILES ${ENDPOINT_SOURCE})
@@ -685,7 +679,6 @@ install (FILES ${AWS_INTERNAL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core
 install (FILES ${NET_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/net)
 install (FILES ${HTTP_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/http)
 install (FILES ${HTTP_STANDARD_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/http/standard)
-install (FILES ${HTTP_INTERCEPTOR_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/http/interceptor)
 install (FILES ${CONFIG_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/config/)
 install (FILES ${CONFIG_DEFAULTS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/config/defaults)
 install (FILES ${ENDPOINT_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/endpoint)
