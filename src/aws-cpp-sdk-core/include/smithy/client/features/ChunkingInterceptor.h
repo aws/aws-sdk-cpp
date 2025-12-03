@@ -17,6 +17,10 @@ namespace features {
 
 namespace {
 
+// String constants
+static const char* const CHECKSUM_HEADER_PREFIX = "x-amz-checksum-";
+static const char* const ALLOCATION_TAG = "ChunkingInterceptor";
+
 class AwsChunkedStreamBuf : public std::streambuf {
 public:
     AwsChunkedStreamBuf(Aws::Http::HttpRequest* request, const std::shared_ptr<Aws::IOStream>& originalBody)
@@ -76,7 +80,7 @@ public:
         // Set up chunked encoding headers for checksum calculation
         const auto& hashPair = request->GetRequestHash();
         if (hashPair.second != nullptr) {
-            Aws::String checksumHeaderValue = Aws::String("x-amz-checksum-") + hashPair.first;
+            Aws::String checksumHeaderValue = Aws::String(CHECKSUM_HEADER_PREFIX) + hashPair.first;
             request->DeleteHeader(checksumHeaderValue.c_str());
             request->SetHeaderValue(Aws::Http::AWS_TRAILER_HEADER, checksumHeaderValue);
             request->SetTransferEncoding(Aws::Http::CHUNKED_VALUE);
@@ -97,7 +101,7 @@ public:
         }
 
         auto chunkedBuf = Aws::MakeUnique<AwsChunkedStreamBuf>(
-            "ChunkingInterceptor", request.get(), originalBody);
+            ALLOCATION_TAG, request.get(), originalBody);
         auto chunkedBody = std::shared_ptr<Aws::IOStream>(
             new Aws::IOStream(chunkedBuf.release()));
 
