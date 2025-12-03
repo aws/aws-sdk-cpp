@@ -9,6 +9,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/ModelApprovalStatus.h>
 #include <aws/sagemaker/model/ModelLifeCycle.h>
+#include <aws/sagemaker/model/ModelPackageRegistrationType.h>
 #include <aws/sagemaker/model/ModelPackageStatus.h>
 
 #include <utility>
@@ -194,6 +195,22 @@ class ModelPackageSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The package registration type of the model package summary. </p>
+   */
+  inline ModelPackageRegistrationType GetModelPackageRegistrationType() const { return m_modelPackageRegistrationType; }
+  inline bool ModelPackageRegistrationTypeHasBeenSet() const { return m_modelPackageRegistrationTypeHasBeenSet; }
+  inline void SetModelPackageRegistrationType(ModelPackageRegistrationType value) {
+    m_modelPackageRegistrationTypeHasBeenSet = true;
+    m_modelPackageRegistrationType = value;
+  }
+  inline ModelPackageSummary& WithModelPackageRegistrationType(ModelPackageRegistrationType value) {
+    SetModelPackageRegistrationType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_modelPackageName;
   bool m_modelPackageNameHasBeenSet = false;
@@ -221,6 +238,9 @@ class ModelPackageSummary {
 
   ModelLifeCycle m_modelLifeCycle;
   bool m_modelLifeCycleHasBeenSet = false;
+
+  ModelPackageRegistrationType m_modelPackageRegistrationType{ModelPackageRegistrationType::NOT_SET};
+  bool m_modelPackageRegistrationTypeHasBeenSet = false;
 };
 
 }  // namespace Model

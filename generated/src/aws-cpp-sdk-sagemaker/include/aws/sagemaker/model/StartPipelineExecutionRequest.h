@@ -185,6 +185,24 @@ class StartPipelineExecutionRequest : public SageMakerRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The MLflow experiment name of the start execution. </p>
+   */
+  inline const Aws::String& GetMlflowExperimentName() const { return m_mlflowExperimentName; }
+  inline bool MlflowExperimentNameHasBeenSet() const { return m_mlflowExperimentNameHasBeenSet; }
+  template <typename MlflowExperimentNameT = Aws::String>
+  void SetMlflowExperimentName(MlflowExperimentNameT&& value) {
+    m_mlflowExperimentNameHasBeenSet = true;
+    m_mlflowExperimentName = std::forward<MlflowExperimentNameT>(value);
+  }
+  template <typename MlflowExperimentNameT = Aws::String>
+  StartPipelineExecutionRequest& WithMlflowExperimentName(MlflowExperimentNameT&& value) {
+    SetMlflowExperimentName(std::forward<MlflowExperimentNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_pipelineName;
   bool m_pipelineNameHasBeenSet = false;
@@ -209,6 +227,9 @@ class StartPipelineExecutionRequest : public SageMakerRequest {
 
   long long m_pipelineVersionId{0};
   bool m_pipelineVersionIdHasBeenSet = false;
+
+  Aws::String m_mlflowExperimentName;
+  bool m_mlflowExperimentNameHasBeenSet = false;
 };
 
 }  // namespace Model

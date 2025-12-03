@@ -54,6 +54,11 @@ ModelPackageSummary& ModelPackageSummary::operator=(JsonView jsonValue) {
     m_modelLifeCycle = jsonValue.GetObject("ModelLifeCycle");
     m_modelLifeCycleHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ModelPackageRegistrationType")) {
+    m_modelPackageRegistrationType =
+        ModelPackageRegistrationTypeMapper::GetModelPackageRegistrationTypeForName(jsonValue.GetString("ModelPackageRegistrationType"));
+    m_modelPackageRegistrationTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -94,6 +99,11 @@ JsonValue ModelPackageSummary::Jsonize() const {
 
   if (m_modelLifeCycleHasBeenSet) {
     payload.WithObject("ModelLifeCycle", m_modelLifeCycle.Jsonize());
+  }
+
+  if (m_modelPackageRegistrationTypeHasBeenSet) {
+    payload.WithString("ModelPackageRegistrationType",
+                       ModelPackageRegistrationTypeMapper::GetNameForModelPackageRegistrationType(m_modelPackageRegistrationType));
   }
 
   return payload;

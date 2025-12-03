@@ -82,6 +82,30 @@ PipelineExecutionStepMetadata& PipelineExecutionStepMetadata::operator=(JsonView
     m_endpointConfig = jsonValue.GetObject("EndpointConfig");
     m_endpointConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("BedrockCustomModel")) {
+    m_bedrockCustomModel = jsonValue.GetObject("BedrockCustomModel");
+    m_bedrockCustomModelHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("BedrockCustomModelDeployment")) {
+    m_bedrockCustomModelDeployment = jsonValue.GetObject("BedrockCustomModelDeployment");
+    m_bedrockCustomModelDeploymentHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("BedrockProvisionedModelThroughput")) {
+    m_bedrockProvisionedModelThroughput = jsonValue.GetObject("BedrockProvisionedModelThroughput");
+    m_bedrockProvisionedModelThroughputHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("BedrockModelImport")) {
+    m_bedrockModelImport = jsonValue.GetObject("BedrockModelImport");
+    m_bedrockModelImportHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("InferenceComponent")) {
+    m_inferenceComponent = jsonValue.GetObject("InferenceComponent");
+    m_inferenceComponentHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Lineage")) {
+    m_lineage = jsonValue.GetObject("Lineage");
+    m_lineageHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -150,6 +174,30 @@ JsonValue PipelineExecutionStepMetadata::Jsonize() const {
 
   if (m_endpointConfigHasBeenSet) {
     payload.WithObject("EndpointConfig", m_endpointConfig.Jsonize());
+  }
+
+  if (m_bedrockCustomModelHasBeenSet) {
+    payload.WithObject("BedrockCustomModel", m_bedrockCustomModel.Jsonize());
+  }
+
+  if (m_bedrockCustomModelDeploymentHasBeenSet) {
+    payload.WithObject("BedrockCustomModelDeployment", m_bedrockCustomModelDeployment.Jsonize());
+  }
+
+  if (m_bedrockProvisionedModelThroughputHasBeenSet) {
+    payload.WithObject("BedrockProvisionedModelThroughput", m_bedrockProvisionedModelThroughput.Jsonize());
+  }
+
+  if (m_bedrockModelImportHasBeenSet) {
+    payload.WithObject("BedrockModelImport", m_bedrockModelImport.Jsonize());
+  }
+
+  if (m_inferenceComponentHasBeenSet) {
+    payload.WithObject("InferenceComponent", m_inferenceComponent.Jsonize());
+  }
+
+  if (m_lineageHasBeenSet) {
+    payload.WithObject("Lineage", m_lineage.Jsonize());
   }
 
   return payload;

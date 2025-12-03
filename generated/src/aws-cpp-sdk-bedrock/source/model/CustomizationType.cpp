@@ -18,6 +18,7 @@ namespace CustomizationTypeMapper {
 static const int FINE_TUNING_HASH = HashingUtils::HashString("FINE_TUNING");
 static const int CONTINUED_PRE_TRAINING_HASH = HashingUtils::HashString("CONTINUED_PRE_TRAINING");
 static const int DISTILLATION_HASH = HashingUtils::HashString("DISTILLATION");
+static const int REINFORCEMENT_FINE_TUNING_HASH = HashingUtils::HashString("REINFORCEMENT_FINE_TUNING");
 static const int IMPORTED_HASH = HashingUtils::HashString("IMPORTED");
 
 CustomizationType GetCustomizationTypeForName(const Aws::String& name) {
@@ -28,6 +29,8 @@ CustomizationType GetCustomizationTypeForName(const Aws::String& name) {
     return CustomizationType::CONTINUED_PRE_TRAINING;
   } else if (hashCode == DISTILLATION_HASH) {
     return CustomizationType::DISTILLATION;
+  } else if (hashCode == REINFORCEMENT_FINE_TUNING_HASH) {
+    return CustomizationType::REINFORCEMENT_FINE_TUNING;
   } else if (hashCode == IMPORTED_HASH) {
     return CustomizationType::IMPORTED;
   }
@@ -50,6 +53,8 @@ Aws::String GetNameForCustomizationType(CustomizationType enumValue) {
       return "CONTINUED_PRE_TRAINING";
     case CustomizationType::DISTILLATION:
       return "DISTILLATION";
+    case CustomizationType::REINFORCEMENT_FINE_TUNING:
+      return "REINFORCEMENT_FINE_TUNING";
     case CustomizationType::IMPORTED:
       return "IMPORTED";
     default:

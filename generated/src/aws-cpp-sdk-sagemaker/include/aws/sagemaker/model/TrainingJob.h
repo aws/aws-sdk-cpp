@@ -18,6 +18,7 @@
 #include <aws/sagemaker/model/ExperimentConfig.h>
 #include <aws/sagemaker/model/MetricData.h>
 #include <aws/sagemaker/model/ModelArtifacts.h>
+#include <aws/sagemaker/model/ModelPackageConfig.h>
 #include <aws/sagemaker/model/OutputDataConfig.h>
 #include <aws/sagemaker/model/ProfilerConfig.h>
 #include <aws/sagemaker/model/ResourceConfig.h>
@@ -754,6 +755,43 @@ class TrainingJob {
   ///@}
 
   ///@{
+  /**
+   * <p> The output model package Amazon Resource Name (ARN) that contains model
+   * weights or checkpoint. </p>
+   */
+  inline const Aws::String& GetOutputModelPackageArn() const { return m_outputModelPackageArn; }
+  inline bool OutputModelPackageArnHasBeenSet() const { return m_outputModelPackageArnHasBeenSet; }
+  template <typename OutputModelPackageArnT = Aws::String>
+  void SetOutputModelPackageArn(OutputModelPackageArnT&& value) {
+    m_outputModelPackageArnHasBeenSet = true;
+    m_outputModelPackageArn = std::forward<OutputModelPackageArnT>(value);
+  }
+  template <typename OutputModelPackageArnT = Aws::String>
+  TrainingJob& WithOutputModelPackageArn(OutputModelPackageArnT&& value) {
+    SetOutputModelPackageArn(std::forward<OutputModelPackageArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The model package configuration. </p>
+   */
+  inline const ModelPackageConfig& GetModelPackageConfig() const { return m_modelPackageConfig; }
+  inline bool ModelPackageConfigHasBeenSet() const { return m_modelPackageConfigHasBeenSet; }
+  template <typename ModelPackageConfigT = ModelPackageConfig>
+  void SetModelPackageConfig(ModelPackageConfigT&& value) {
+    m_modelPackageConfigHasBeenSet = true;
+    m_modelPackageConfig = std::forward<ModelPackageConfigT>(value);
+  }
+  template <typename ModelPackageConfigT = ModelPackageConfig>
+  TrainingJob& WithModelPackageConfig(ModelPackageConfigT&& value) {
+    SetModelPackageConfig(std::forward<ModelPackageConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const ProfilerConfig& GetProfilerConfig() const { return m_profilerConfig; }
   inline bool ProfilerConfigHasBeenSet() const { return m_profilerConfigHasBeenSet; }
@@ -941,6 +979,12 @@ class TrainingJob {
 
   Aws::Vector<DebugRuleEvaluationStatus> m_debugRuleEvaluationStatuses;
   bool m_debugRuleEvaluationStatusesHasBeenSet = false;
+
+  Aws::String m_outputModelPackageArn;
+  bool m_outputModelPackageArnHasBeenSet = false;
+
+  ModelPackageConfig m_modelPackageConfig;
+  bool m_modelPackageConfigHasBeenSet = false;
 
   ProfilerConfig m_profilerConfig;
   bool m_profilerConfigHasBeenSet = false;

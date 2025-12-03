@@ -143,6 +143,18 @@ Aws::String CreateTrainingJobRequest::SerializePayload() const {
     payload.WithObject("SessionChainingConfig", m_sessionChainingConfig.Jsonize());
   }
 
+  if (m_serverlessJobConfigHasBeenSet) {
+    payload.WithObject("ServerlessJobConfig", m_serverlessJobConfig.Jsonize());
+  }
+
+  if (m_mlflowConfigHasBeenSet) {
+    payload.WithObject("MlflowConfig", m_mlflowConfig.Jsonize());
+  }
+
+  if (m_modelPackageConfigHasBeenSet) {
+    payload.WithObject("ModelPackageConfig", m_modelPackageConfig.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

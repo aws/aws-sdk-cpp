@@ -22,6 +22,10 @@ CustomizationConfig& CustomizationConfig::operator=(JsonView jsonValue) {
     m_distillationConfig = jsonValue.GetObject("distillationConfig");
     m_distillationConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("rftConfig")) {
+    m_rftConfig = jsonValue.GetObject("rftConfig");
+    m_rftConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue CustomizationConfig::Jsonize() const {
 
   if (m_distillationConfigHasBeenSet) {
     payload.WithObject("distillationConfig", m_distillationConfig.Jsonize());
+  }
+
+  if (m_rftConfigHasBeenSet) {
+    payload.WithObject("rftConfig", m_rftConfig.Jsonize());
   }
 
   return payload;

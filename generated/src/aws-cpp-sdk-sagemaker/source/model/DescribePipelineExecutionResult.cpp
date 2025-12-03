@@ -78,6 +78,10 @@ DescribePipelineExecutionResult& DescribePipelineExecutionResult::operator=(cons
     m_pipelineVersionId = jsonValue.GetInt64("PipelineVersionId");
     m_pipelineVersionIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("MLflowConfig")) {
+    m_mLflowConfig = jsonValue.GetObject("MLflowConfig");
+    m_mLflowConfigHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

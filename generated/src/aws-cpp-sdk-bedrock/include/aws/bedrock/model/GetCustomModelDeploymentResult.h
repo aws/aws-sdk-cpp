@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/bedrock/model/CustomModelDeploymentStatus.h>
+#include <aws/bedrock/model/CustomModelDeploymentUpdateDetails.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -135,6 +136,24 @@ class GetCustomModelDeploymentResult {
 
   ///@{
   /**
+   * <p> Details about any pending or completed updates to the custom model
+   * deployment, including the new model ARN and update status. </p>
+   */
+  inline const CustomModelDeploymentUpdateDetails& GetUpdateDetails() const { return m_updateDetails; }
+  template <typename UpdateDetailsT = CustomModelDeploymentUpdateDetails>
+  void SetUpdateDetails(UpdateDetailsT&& value) {
+    m_updateDetailsHasBeenSet = true;
+    m_updateDetails = std::forward<UpdateDetailsT>(value);
+  }
+  template <typename UpdateDetailsT = CustomModelDeploymentUpdateDetails>
+  GetCustomModelDeploymentResult& WithUpdateDetails(UpdateDetailsT&& value) {
+    SetUpdateDetails(std::forward<UpdateDetailsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>If the deployment status is <code>FAILED</code>, this field contains a
    * message describing the failure reason.</p>
    */
@@ -200,6 +219,9 @@ class GetCustomModelDeploymentResult {
 
   Aws::String m_description;
   bool m_descriptionHasBeenSet = false;
+
+  CustomModelDeploymentUpdateDetails m_updateDetails;
+  bool m_updateDetailsHasBeenSet = false;
 
   Aws::String m_failureMessage;
   bool m_failureMessageHasBeenSet = false;

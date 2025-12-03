@@ -50,6 +50,11 @@ BatchDescribeModelPackageSummary& BatchDescribeModelPackageSummary::operator=(Js
     m_modelApprovalStatus = ModelApprovalStatusMapper::GetModelApprovalStatusForName(jsonValue.GetString("ModelApprovalStatus"));
     m_modelApprovalStatusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ModelPackageRegistrationType")) {
+    m_modelPackageRegistrationType =
+        ModelPackageRegistrationTypeMapper::GetModelPackageRegistrationTypeForName(jsonValue.GetString("ModelPackageRegistrationType"));
+    m_modelPackageRegistrationTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -86,6 +91,11 @@ JsonValue BatchDescribeModelPackageSummary::Jsonize() const {
 
   if (m_modelApprovalStatusHasBeenSet) {
     payload.WithString("ModelApprovalStatus", ModelApprovalStatusMapper::GetNameForModelApprovalStatus(m_modelApprovalStatus));
+  }
+
+  if (m_modelPackageRegistrationTypeHasBeenSet) {
+    payload.WithString("ModelPackageRegistrationType",
+                       ModelPackageRegistrationTypeMapper::GetNameForModelPackageRegistrationType(m_modelPackageRegistrationType));
   }
 
   return payload;

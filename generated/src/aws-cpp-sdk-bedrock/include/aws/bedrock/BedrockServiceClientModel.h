@@ -132,6 +132,7 @@
 #include <aws/bedrock/model/UpdateAutomatedReasoningPolicyAnnotationsResult.h>
 #include <aws/bedrock/model/UpdateAutomatedReasoningPolicyResult.h>
 #include <aws/bedrock/model/UpdateAutomatedReasoningPolicyTestCaseResult.h>
+#include <aws/bedrock/model/UpdateCustomModelDeploymentResult.h>
 #include <aws/bedrock/model/UpdateGuardrailResult.h>
 #include <aws/bedrock/model/UpdateMarketplaceModelEndpointResult.h>
 #include <aws/bedrock/model/UpdateProvisionedModelThroughputResult.h>
@@ -262,6 +263,7 @@ class UntagResourceRequest;
 class UpdateAutomatedReasoningPolicyRequest;
 class UpdateAutomatedReasoningPolicyAnnotationsRequest;
 class UpdateAutomatedReasoningPolicyTestCaseRequest;
+class UpdateCustomModelDeploymentRequest;
 class UpdateGuardrailRequest;
 class UpdateMarketplaceModelEndpointRequest;
 class UpdateProvisionedModelThroughputRequest;
@@ -367,6 +369,7 @@ typedef Aws::Utils::Outcome<UntagResourceResult, BedrockError> UntagResourceOutc
 typedef Aws::Utils::Outcome<UpdateAutomatedReasoningPolicyResult, BedrockError> UpdateAutomatedReasoningPolicyOutcome;
 typedef Aws::Utils::Outcome<UpdateAutomatedReasoningPolicyAnnotationsResult, BedrockError> UpdateAutomatedReasoningPolicyAnnotationsOutcome;
 typedef Aws::Utils::Outcome<UpdateAutomatedReasoningPolicyTestCaseResult, BedrockError> UpdateAutomatedReasoningPolicyTestCaseOutcome;
+typedef Aws::Utils::Outcome<UpdateCustomModelDeploymentResult, BedrockError> UpdateCustomModelDeploymentOutcome;
 typedef Aws::Utils::Outcome<UpdateGuardrailResult, BedrockError> UpdateGuardrailOutcome;
 typedef Aws::Utils::Outcome<UpdateMarketplaceModelEndpointResult, BedrockError> UpdateMarketplaceModelEndpointOutcome;
 typedef Aws::Utils::Outcome<UpdateProvisionedModelThroughputResult, BedrockError> UpdateProvisionedModelThroughputOutcome;
@@ -468,6 +471,7 @@ typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateAutomatedReasoningPolicyOutcome> UpdateAutomatedReasoningPolicyOutcomeCallable;
 typedef std::future<UpdateAutomatedReasoningPolicyAnnotationsOutcome> UpdateAutomatedReasoningPolicyAnnotationsOutcomeCallable;
 typedef std::future<UpdateAutomatedReasoningPolicyTestCaseOutcome> UpdateAutomatedReasoningPolicyTestCaseOutcomeCallable;
+typedef std::future<UpdateCustomModelDeploymentOutcome> UpdateCustomModelDeploymentOutcomeCallable;
 typedef std::future<UpdateGuardrailOutcome> UpdateGuardrailOutcomeCallable;
 typedef std::future<UpdateMarketplaceModelEndpointOutcome> UpdateMarketplaceModelEndpointOutcomeCallable;
 typedef std::future<UpdateProvisionedModelThroughputOutcome> UpdateProvisionedModelThroughputOutcomeCallable;
@@ -801,6 +805,9 @@ typedef std::function<void(const BedrockClient*, const Model::UpdateAutomatedRea
                            const Model::UpdateAutomatedReasoningPolicyTestCaseOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateAutomatedReasoningPolicyTestCaseResponseReceivedHandler;
+typedef std::function<void(const BedrockClient*, const Model::UpdateCustomModelDeploymentRequest&,
+                           const Model::UpdateCustomModelDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateCustomModelDeploymentResponseReceivedHandler;
 typedef std::function<void(const BedrockClient*, const Model::UpdateGuardrailRequest&, const Model::UpdateGuardrailOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateGuardrailResponseReceivedHandler;

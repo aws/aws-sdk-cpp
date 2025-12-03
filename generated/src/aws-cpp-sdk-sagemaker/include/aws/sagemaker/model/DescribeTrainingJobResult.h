@@ -18,7 +18,10 @@
 #include <aws/sagemaker/model/ExperimentConfig.h>
 #include <aws/sagemaker/model/InfraCheckConfig.h>
 #include <aws/sagemaker/model/MetricData.h>
+#include <aws/sagemaker/model/MlflowConfig.h>
+#include <aws/sagemaker/model/MlflowDetails.h>
 #include <aws/sagemaker/model/ModelArtifacts.h>
+#include <aws/sagemaker/model/ModelPackageConfig.h>
 #include <aws/sagemaker/model/OutputDataConfig.h>
 #include <aws/sagemaker/model/ProfilerConfig.h>
 #include <aws/sagemaker/model/ProfilerRuleConfiguration.h>
@@ -29,9 +32,11 @@
 #include <aws/sagemaker/model/RetryStrategy.h>
 #include <aws/sagemaker/model/SecondaryStatus.h>
 #include <aws/sagemaker/model/SecondaryStatusTransition.h>
+#include <aws/sagemaker/model/ServerlessJobConfig.h>
 #include <aws/sagemaker/model/StoppingCondition.h>
 #include <aws/sagemaker/model/TensorBoardOutputConfig.h>
 #include <aws/sagemaker/model/TrainingJobStatus.h>
+#include <aws/sagemaker/model/TrainingProgressInfo.h>
 #include <aws/sagemaker/model/VpcConfig.h>
 #include <aws/sagemaker/model/WarmPoolStatus.h>
 
@@ -190,20 +195,22 @@ class DescribeTrainingJobResult {
    * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SecondaryStatusTransition.html">SecondaryStatusTransition</a>.</p>
    * <p>SageMaker provides primary statuses and secondary statuses that apply to each
    * of them:</p> <dl> <dt>InProgress</dt> <dd> <ul> <li> <p> <code>Starting</code> -
-   * Starting the training job.</p> </li> <li> <p> <code>Downloading</code> - An
-   * optional stage for algorithms that support <code>File</code> training input
-   * mode. It indicates that data is being downloaded to the ML storage volumes.</p>
-   * </li> <li> <p> <code>Training</code> - Training is in progress.</p> </li> <li>
-   * <p> <code>Interrupted</code> - The job stopped because the managed spot training
-   * instances were interrupted. </p> </li> <li> <p> <code>Uploading</code> -
-   * Training is complete and the model artifacts are being uploaded to the S3
-   * location.</p> </li> </ul> </dd> <dt>Completed</dt> <dd> <ul> <li> <p>
-   * <code>Completed</code> - The training job has completed.</p> </li> </ul> </dd>
-   * <dt>Failed</dt> <dd> <ul> <li> <p> <code>Failed</code> - The training job has
-   * failed. The reason for the failure is returned in the <code>FailureReason</code>
-   * field of <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> </dd>
-   * <dt>Stopped</dt> <dd> <ul> <li> <p> <code>MaxRuntimeExceeded</code> - The job
-   * stopped because it exceeded the maximum allowed runtime.</p> </li> <li> <p>
+   * Starting the training job.</p> </li> <li> <p> <code>Pending</code> - The
+   * training job is waiting for compute capacity or compute resource provision.</p>
+   * </li> <li> <p> <code>Downloading</code> - An optional stage for algorithms that
+   * support <code>File</code> training input mode. It indicates that data is being
+   * downloaded to the ML storage volumes.</p> </li> <li> <p> <code>Training</code> -
+   * Training is in progress.</p> </li> <li> <p> <code>Interrupted</code> - The job
+   * stopped because the managed spot training instances were interrupted. </p> </li>
+   * <li> <p> <code>Uploading</code> - Training is complete and the model artifacts
+   * are being uploaded to the S3 location.</p> </li> </ul> </dd> <dt>Completed</dt>
+   * <dd> <ul> <li> <p> <code>Completed</code> - The training job has completed.</p>
+   * </li> </ul> </dd> <dt>Failed</dt> <dd> <ul> <li> <p> <code>Failed</code> - The
+   * training job has failed. The reason for the failure is returned in the
+   * <code>FailureReason</code> field of
+   * <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> </dd> <dt>Stopped</dt>
+   * <dd> <ul> <li> <p> <code>MaxRuntimeExceeded</code> - The job stopped because it
+   * exceeded the maximum allowed runtime.</p> </li> <li> <p>
    * <code>MaxWaitTimeExceeded</code> - The job stopped because it exceeded the
    * maximum allowed wait time.</p> </li> <li> <p> <code>Stopped</code> - The
    * training job has stopped.</p> </li> </ul> </dd> <dt>Stopping</dt> <dd> <ul> <li>
@@ -658,6 +665,21 @@ class DescribeTrainingJobResult {
   ///@}
 
   ///@{
+  /**
+   * <p> The billable token count for eligible serverless training jobs. </p>
+   */
+  inline long long GetBillableTokenCount() const { return m_billableTokenCount; }
+  inline void SetBillableTokenCount(long long value) {
+    m_billableTokenCountHasBeenSet = true;
+    m_billableTokenCount = value;
+  }
+  inline DescribeTrainingJobResult& WithBillableTokenCount(long long value) {
+    SetBillableTokenCount(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const DebugHookConfig& GetDebugHookConfig() const { return m_debugHookConfig; }
   template <typename DebugHookConfigT = DebugHookConfig>
@@ -917,6 +939,109 @@ class DescribeTrainingJobResult {
   ///@}
 
   ///@{
+  /**
+   * <p> The configuration for serverless training jobs. </p>
+   */
+  inline const ServerlessJobConfig& GetServerlessJobConfig() const { return m_serverlessJobConfig; }
+  template <typename ServerlessJobConfigT = ServerlessJobConfig>
+  void SetServerlessJobConfig(ServerlessJobConfigT&& value) {
+    m_serverlessJobConfigHasBeenSet = true;
+    m_serverlessJobConfig = std::forward<ServerlessJobConfigT>(value);
+  }
+  template <typename ServerlessJobConfigT = ServerlessJobConfig>
+  DescribeTrainingJobResult& WithServerlessJobConfig(ServerlessJobConfigT&& value) {
+    SetServerlessJobConfig(std::forward<ServerlessJobConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The MLflow configuration using SageMaker managed MLflow. </p>
+   */
+  inline const MlflowConfig& GetMlflowConfig() const { return m_mlflowConfig; }
+  template <typename MlflowConfigT = MlflowConfig>
+  void SetMlflowConfig(MlflowConfigT&& value) {
+    m_mlflowConfigHasBeenSet = true;
+    m_mlflowConfig = std::forward<MlflowConfigT>(value);
+  }
+  template <typename MlflowConfigT = MlflowConfig>
+  DescribeTrainingJobResult& WithMlflowConfig(MlflowConfigT&& value) {
+    SetMlflowConfig(std::forward<MlflowConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The configuration for the model package. </p>
+   */
+  inline const ModelPackageConfig& GetModelPackageConfig() const { return m_modelPackageConfig; }
+  template <typename ModelPackageConfigT = ModelPackageConfig>
+  void SetModelPackageConfig(ModelPackageConfigT&& value) {
+    m_modelPackageConfigHasBeenSet = true;
+    m_modelPackageConfig = std::forward<ModelPackageConfigT>(value);
+  }
+  template <typename ModelPackageConfigT = ModelPackageConfig>
+  DescribeTrainingJobResult& WithModelPackageConfig(ModelPackageConfigT&& value) {
+    SetModelPackageConfig(std::forward<ModelPackageConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The MLflow details of this job. </p>
+   */
+  inline const MlflowDetails& GetMlflowDetails() const { return m_mlflowDetails; }
+  template <typename MlflowDetailsT = MlflowDetails>
+  void SetMlflowDetails(MlflowDetailsT&& value) {
+    m_mlflowDetailsHasBeenSet = true;
+    m_mlflowDetails = std::forward<MlflowDetailsT>(value);
+  }
+  template <typename MlflowDetailsT = MlflowDetails>
+  DescribeTrainingJobResult& WithMlflowDetails(MlflowDetailsT&& value) {
+    SetMlflowDetails(std::forward<MlflowDetailsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The Serverless training job progress information. </p>
+   */
+  inline const TrainingProgressInfo& GetProgressInfo() const { return m_progressInfo; }
+  template <typename ProgressInfoT = TrainingProgressInfo>
+  void SetProgressInfo(ProgressInfoT&& value) {
+    m_progressInfoHasBeenSet = true;
+    m_progressInfo = std::forward<ProgressInfoT>(value);
+  }
+  template <typename ProgressInfoT = TrainingProgressInfo>
+  DescribeTrainingJobResult& WithProgressInfo(ProgressInfoT&& value) {
+    SetProgressInfo(std::forward<ProgressInfoT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The Amazon Resource Name (ARN) of the output model package containing model
+   * weights or checkpoints. </p>
+   */
+  inline const Aws::String& GetOutputModelPackageArn() const { return m_outputModelPackageArn; }
+  template <typename OutputModelPackageArnT = Aws::String>
+  void SetOutputModelPackageArn(OutputModelPackageArnT&& value) {
+    m_outputModelPackageArnHasBeenSet = true;
+    m_outputModelPackageArn = std::forward<OutputModelPackageArnT>(value);
+  }
+  template <typename OutputModelPackageArnT = Aws::String>
+  DescribeTrainingJobResult& WithOutputModelPackageArn(OutputModelPackageArnT&& value) {
+    SetOutputModelPackageArn(std::forward<OutputModelPackageArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -1021,6 +1146,9 @@ class DescribeTrainingJobResult {
   int m_billableTimeInSeconds{0};
   bool m_billableTimeInSecondsHasBeenSet = false;
 
+  long long m_billableTokenCount{0};
+  bool m_billableTokenCountHasBeenSet = false;
+
   DebugHookConfig m_debugHookConfig;
   bool m_debugHookConfigHasBeenSet = false;
 
@@ -1059,6 +1187,24 @@ class DescribeTrainingJobResult {
 
   InfraCheckConfig m_infraCheckConfig;
   bool m_infraCheckConfigHasBeenSet = false;
+
+  ServerlessJobConfig m_serverlessJobConfig;
+  bool m_serverlessJobConfigHasBeenSet = false;
+
+  MlflowConfig m_mlflowConfig;
+  bool m_mlflowConfigHasBeenSet = false;
+
+  ModelPackageConfig m_modelPackageConfig;
+  bool m_modelPackageConfigHasBeenSet = false;
+
+  MlflowDetails m_mlflowDetails;
+  bool m_mlflowDetailsHasBeenSet = false;
+
+  TrainingProgressInfo m_progressInfo;
+  bool m_progressInfoHasBeenSet = false;
+
+  Aws::String m_outputModelPackageArn;
+  bool m_outputModelPackageArnHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

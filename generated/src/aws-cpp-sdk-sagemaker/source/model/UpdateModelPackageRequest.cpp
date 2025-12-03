@@ -23,6 +23,11 @@ Aws::String UpdateModelPackageRequest::SerializePayload() const {
     payload.WithString("ModelApprovalStatus", ModelApprovalStatusMapper::GetNameForModelApprovalStatus(m_modelApprovalStatus));
   }
 
+  if (m_modelPackageRegistrationTypeHasBeenSet) {
+    payload.WithString("ModelPackageRegistrationType",
+                       ModelPackageRegistrationTypeMapper::GetNameForModelPackageRegistrationType(m_modelPackageRegistrationType));
+  }
+
   if (m_approvalDescriptionHasBeenSet) {
     payload.WithString("ApprovalDescription", m_approvalDescription);
   }

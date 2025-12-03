@@ -16,12 +16,15 @@
 #include <aws/sagemaker/model/DebugRuleConfiguration.h>
 #include <aws/sagemaker/model/ExperimentConfig.h>
 #include <aws/sagemaker/model/InfraCheckConfig.h>
+#include <aws/sagemaker/model/MlflowConfig.h>
+#include <aws/sagemaker/model/ModelPackageConfig.h>
 #include <aws/sagemaker/model/OutputDataConfig.h>
 #include <aws/sagemaker/model/ProfilerConfig.h>
 #include <aws/sagemaker/model/ProfilerRuleConfiguration.h>
 #include <aws/sagemaker/model/RemoteDebugConfig.h>
 #include <aws/sagemaker/model/ResourceConfig.h>
 #include <aws/sagemaker/model/RetryStrategy.h>
+#include <aws/sagemaker/model/ServerlessJobConfig.h>
 #include <aws/sagemaker/model/SessionChainingConfig.h>
 #include <aws/sagemaker/model/StoppingCondition.h>
 #include <aws/sagemaker/model/Tag.h>
@@ -623,6 +626,60 @@ class CreateTrainingJobRequest : public SageMakerRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The configuration for serverless training jobs. </p>
+   */
+  inline const ServerlessJobConfig& GetServerlessJobConfig() const { return m_serverlessJobConfig; }
+  inline bool ServerlessJobConfigHasBeenSet() const { return m_serverlessJobConfigHasBeenSet; }
+  template <typename ServerlessJobConfigT = ServerlessJobConfig>
+  void SetServerlessJobConfig(ServerlessJobConfigT&& value) {
+    m_serverlessJobConfigHasBeenSet = true;
+    m_serverlessJobConfig = std::forward<ServerlessJobConfigT>(value);
+  }
+  template <typename ServerlessJobConfigT = ServerlessJobConfig>
+  CreateTrainingJobRequest& WithServerlessJobConfig(ServerlessJobConfigT&& value) {
+    SetServerlessJobConfig(std::forward<ServerlessJobConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The MLflow configuration using SageMaker managed MLflow. </p>
+   */
+  inline const MlflowConfig& GetMlflowConfig() const { return m_mlflowConfig; }
+  inline bool MlflowConfigHasBeenSet() const { return m_mlflowConfigHasBeenSet; }
+  template <typename MlflowConfigT = MlflowConfig>
+  void SetMlflowConfig(MlflowConfigT&& value) {
+    m_mlflowConfigHasBeenSet = true;
+    m_mlflowConfig = std::forward<MlflowConfigT>(value);
+  }
+  template <typename MlflowConfigT = MlflowConfig>
+  CreateTrainingJobRequest& WithMlflowConfig(MlflowConfigT&& value) {
+    SetMlflowConfig(std::forward<MlflowConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The configuration for the model package. </p>
+   */
+  inline const ModelPackageConfig& GetModelPackageConfig() const { return m_modelPackageConfig; }
+  inline bool ModelPackageConfigHasBeenSet() const { return m_modelPackageConfigHasBeenSet; }
+  template <typename ModelPackageConfigT = ModelPackageConfig>
+  void SetModelPackageConfig(ModelPackageConfigT&& value) {
+    m_modelPackageConfigHasBeenSet = true;
+    m_modelPackageConfig = std::forward<ModelPackageConfigT>(value);
+  }
+  template <typename ModelPackageConfigT = ModelPackageConfig>
+  CreateTrainingJobRequest& WithModelPackageConfig(ModelPackageConfigT&& value) {
+    SetModelPackageConfig(std::forward<ModelPackageConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_trainingJobName;
   bool m_trainingJobNameHasBeenSet = false;
@@ -698,6 +755,15 @@ class CreateTrainingJobRequest : public SageMakerRequest {
 
   SessionChainingConfig m_sessionChainingConfig;
   bool m_sessionChainingConfigHasBeenSet = false;
+
+  ServerlessJobConfig m_serverlessJobConfig;
+  bool m_serverlessJobConfigHasBeenSet = false;
+
+  MlflowConfig m_mlflowConfig;
+  bool m_mlflowConfigHasBeenSet = false;
+
+  ModelPackageConfig m_modelPackageConfig;
+  bool m_modelPackageConfigHasBeenSet = false;
 };
 
 }  // namespace Model

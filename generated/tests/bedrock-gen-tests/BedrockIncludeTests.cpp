@@ -154,6 +154,8 @@
 #include <aws/bedrock/model/CustomMetricEvaluatorModelConfig.h>
 #include <aws/bedrock/model/CustomModelDeploymentStatus.h>
 #include <aws/bedrock/model/CustomModelDeploymentSummary.h>
+#include <aws/bedrock/model/CustomModelDeploymentUpdateDetails.h>
+#include <aws/bedrock/model/CustomModelDeploymentUpdateStatus.h>
 #include <aws/bedrock/model/CustomModelSummary.h>
 #include <aws/bedrock/model/CustomModelUnits.h>
 #include <aws/bedrock/model/CustomizationConfig.h>
@@ -275,6 +277,7 @@
 #include <aws/bedrock/model/GetProvisionedModelThroughputResult.h>
 #include <aws/bedrock/model/GetUseCaseForModelAccessRequest.h>
 #include <aws/bedrock/model/GetUseCaseForModelAccessResult.h>
+#include <aws/bedrock/model/GraderConfig.h>
 #include <aws/bedrock/model/GuardrailAutomatedReasoningPolicy.h>
 #include <aws/bedrock/model/GuardrailAutomatedReasoningPolicyConfig.h>
 #include <aws/bedrock/model/GuardrailConfiguration.h>
@@ -344,6 +347,7 @@
 #include <aws/bedrock/model/KnowledgeBaseRetrievalConfiguration.h>
 #include <aws/bedrock/model/KnowledgeBaseRetrieveAndGenerateConfiguration.h>
 #include <aws/bedrock/model/KnowledgeBaseVectorSearchConfiguration.h>
+#include <aws/bedrock/model/LambdaGraderConfig.h>
 #include <aws/bedrock/model/LegalTerm.h>
 #include <aws/bedrock/model/ListAutomatedReasoningPoliciesRequest.h>
 #include <aws/bedrock/model/ListAutomatedReasoningPoliciesResult.h>
@@ -431,8 +435,11 @@
 #include <aws/bedrock/model/QueryTransformationConfiguration.h>
 #include <aws/bedrock/model/QueryTransformationType.h>
 #include <aws/bedrock/model/RAGConfig.h>
+#include <aws/bedrock/model/RFTConfig.h>
+#include <aws/bedrock/model/RFTHyperParameters.h>
 #include <aws/bedrock/model/RatingScaleItem.h>
 #include <aws/bedrock/model/RatingScaleItemValue.h>
+#include <aws/bedrock/model/ReasoningEffort.h>
 #include <aws/bedrock/model/RegionAvailability.h>
 #include <aws/bedrock/model/RegisterMarketplaceModelEndpointRequest.h>
 #include <aws/bedrock/model/RegisterMarketplaceModelEndpointResult.h>
@@ -486,6 +493,8 @@
 #include <aws/bedrock/model/UpdateAutomatedReasoningPolicyResult.h>
 #include <aws/bedrock/model/UpdateAutomatedReasoningPolicyTestCaseRequest.h>
 #include <aws/bedrock/model/UpdateAutomatedReasoningPolicyTestCaseResult.h>
+#include <aws/bedrock/model/UpdateCustomModelDeploymentRequest.h>
+#include <aws/bedrock/model/UpdateCustomModelDeploymentResult.h>
 #include <aws/bedrock/model/UpdateGuardrailRequest.h>
 #include <aws/bedrock/model/UpdateGuardrailResult.h>
 #include <aws/bedrock/model/UpdateMarketplaceModelEndpointRequest.h>

@@ -73,6 +73,14 @@ ModelPackageContainerDefinition& ModelPackageContainerDefinition::operator=(Json
     m_modelDataETag = jsonValue.GetString("ModelDataETag");
     m_modelDataETagHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("IsCheckpoint")) {
+    m_isCheckpoint = jsonValue.GetBool("IsCheckpoint");
+    m_isCheckpointHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("BaseModel")) {
+    m_baseModel = jsonValue.GetObject("BaseModel");
+    m_baseModelHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -133,6 +141,14 @@ JsonValue ModelPackageContainerDefinition::Jsonize() const {
 
   if (m_modelDataETagHasBeenSet) {
     payload.WithString("ModelDataETag", m_modelDataETag);
+  }
+
+  if (m_isCheckpointHasBeenSet) {
+    payload.WithBool("IsCheckpoint", m_isCheckpoint);
+  }
+
+  if (m_baseModelHasBeenSet) {
+    payload.WithObject("BaseModel", m_baseModel.Jsonize());
   }
 
   return payload;

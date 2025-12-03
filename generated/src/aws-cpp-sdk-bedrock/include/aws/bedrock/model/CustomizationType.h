@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Bedrock {
 namespace Model {
-enum class CustomizationType { NOT_SET, FINE_TUNING, CONTINUED_PRE_TRAINING, DISTILLATION, IMPORTED };
+enum class CustomizationType { NOT_SET, FINE_TUNING, CONTINUED_PRE_TRAINING, DISTILLATION, REINFORCEMENT_FINE_TUNING, IMPORTED };
 
 namespace CustomizationTypeMapper {
 AWS_BEDROCK_API CustomizationType GetCustomizationTypeForName(const Aws::String& name);

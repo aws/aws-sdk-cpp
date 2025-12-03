@@ -7,6 +7,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/sagemaker/model/MLflowConfiguration.h>
 #include <aws/sagemaker/model/ParallelismConfiguration.h>
 #include <aws/sagemaker/model/PipelineExecutionStatus.h>
 #include <aws/sagemaker/model/PipelineExperimentConfig.h>
@@ -261,6 +262,23 @@ class DescribePipelineExecutionResult {
   ///@}
 
   ///@{
+  /**
+   * <p> The MLflow configuration of the pipeline execution. </p>
+   */
+  inline const MLflowConfiguration& GetMLflowConfig() const { return m_mLflowConfig; }
+  template <typename MLflowConfigT = MLflowConfiguration>
+  void SetMLflowConfig(MLflowConfigT&& value) {
+    m_mLflowConfigHasBeenSet = true;
+    m_mLflowConfig = std::forward<MLflowConfigT>(value);
+  }
+  template <typename MLflowConfigT = MLflowConfiguration>
+  DescribePipelineExecutionResult& WithMLflowConfig(MLflowConfigT&& value) {
+    SetMLflowConfig(std::forward<MLflowConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -316,6 +334,9 @@ class DescribePipelineExecutionResult {
 
   long long m_pipelineVersionId{0};
   bool m_pipelineVersionIdHasBeenSet = false;
+
+  MLflowConfiguration m_mLflowConfig;
+  bool m_mLflowConfigHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

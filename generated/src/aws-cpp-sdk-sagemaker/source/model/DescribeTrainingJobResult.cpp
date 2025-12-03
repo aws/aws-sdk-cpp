@@ -155,6 +155,10 @@ DescribeTrainingJobResult& DescribeTrainingJobResult::operator=(const Aws::Amazo
     m_billableTimeInSeconds = jsonValue.GetInteger("BillableTimeInSeconds");
     m_billableTimeInSecondsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("BillableTokenCount")) {
+    m_billableTokenCount = jsonValue.GetInt64("BillableTokenCount");
+    m_billableTokenCountHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("DebugHookConfig")) {
     m_debugHookConfig = jsonValue.GetObject("DebugHookConfig");
     m_debugHookConfigHasBeenSet = true;
@@ -225,6 +229,30 @@ DescribeTrainingJobResult& DescribeTrainingJobResult::operator=(const Aws::Amazo
   if (jsonValue.ValueExists("InfraCheckConfig")) {
     m_infraCheckConfig = jsonValue.GetObject("InfraCheckConfig");
     m_infraCheckConfigHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ServerlessJobConfig")) {
+    m_serverlessJobConfig = jsonValue.GetObject("ServerlessJobConfig");
+    m_serverlessJobConfigHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("MlflowConfig")) {
+    m_mlflowConfig = jsonValue.GetObject("MlflowConfig");
+    m_mlflowConfigHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ModelPackageConfig")) {
+    m_modelPackageConfig = jsonValue.GetObject("ModelPackageConfig");
+    m_modelPackageConfigHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("MlflowDetails")) {
+    m_mlflowDetails = jsonValue.GetObject("MlflowDetails");
+    m_mlflowDetailsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ProgressInfo")) {
+    m_progressInfo = jsonValue.GetObject("ProgressInfo");
+    m_progressInfoHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("OutputModelPackageArn")) {
+    m_outputModelPackageArn = jsonValue.GetString("OutputModelPackageArn");
+    m_outputModelPackageArnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

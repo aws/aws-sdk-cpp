@@ -45,6 +45,10 @@ GetCustomModelDeploymentResult& GetCustomModelDeploymentResult::operator=(const 
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("updateDetails")) {
+    m_updateDetails = jsonValue.GetObject("updateDetails");
+    m_updateDetailsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("failureMessage")) {
     m_failureMessage = jsonValue.GetString("failureMessage");
     m_failureMessageHasBeenSet = true;
