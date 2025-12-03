@@ -58,7 +58,7 @@ private:
  * Interceptor that handles chunked encoding for streaming requests with checksums.
  * Wraps request body with chunked stream and sets appropriate headers.
  */
-class AWS_CORE_API ChunkingInterceptor : public smithy::interceptor::Interceptor {
+class ChunkingInterceptor : public smithy::interceptor::Interceptor {
 public:
     ChunkingInterceptor() : m_httpClientChunkedMode(Aws::Client::HttpClientChunkedMode::DEFAULT) {}
     explicit ChunkingInterceptor(const Aws::Client::ClientConfiguration& config)
