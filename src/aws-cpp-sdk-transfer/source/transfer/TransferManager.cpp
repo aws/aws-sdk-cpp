@@ -51,6 +51,42 @@ namespace Aws
           }
         }
 
+        static std::shared_ptr<Utils::Crypto::Hash> CreateHashForAlgorithm(S3::Model::ChecksumAlgorithm algorithm) {
+          if (algorithm == S3::Model::ChecksumAlgorithm::CRC32) {
+            return Aws::MakeShared<Utils::Crypto::CRC32>(CLASS_TAG);
+          }
+          if (algorithm == S3::Model::ChecksumAlgorithm::CRC32C) {
+            return Aws::MakeShared<Utils::Crypto::CRC32C>(CLASS_TAG);
+          }
+          if (algorithm == S3::Model::ChecksumAlgorithm::SHA1) {
+            return Aws::MakeShared<Utils::Crypto::Sha1>(CLASS_TAG);
+          }
+          if (algorithm == S3::Model::ChecksumAlgorithm::SHA256) {
+            return Aws::MakeShared<Utils::Crypto::Sha256>(CLASS_TAG);
+          }
+          return Aws::MakeShared<Utils::Crypto::CRC64>(CLASS_TAG);
+        }
+
+        template <typename ResultT>
+        static Aws::String GetChecksumFromResult(const ResultT& result, S3::Model::ChecksumAlgorithm algorithm) {
+          if (algorithm == S3::Model::ChecksumAlgorithm::CRC32) {
+            return result.GetChecksumCRC32();
+          }
+          if (algorithm == S3::Model::ChecksumAlgorithm::CRC32C) {
+            return result.GetChecksumCRC32C();
+          }
+          if (algorithm == S3::Model::ChecksumAlgorithm::CRC64NVME) {
+            return result.GetChecksumCRC64NVME();
+          }
+          if (algorithm == S3::Model::ChecksumAlgorithm::SHA1) {
+            return result.GetChecksumSHA1();
+          }
+          if (algorithm == S3::Model::ChecksumAlgorithm::SHA256) {
+            return result.GetChecksumSHA256();
+          }
+          return "";
+        }
+
         struct TransferHandleAsyncContext : public Aws::Client::AsyncCallerContext
         {
             std::shared_ptr<TransferHandle> handle;
@@ -664,26 +700,7 @@ namespace Aws
             {
                 if (handle->ShouldContinue())
                 {
-                    partState->SetChecksum([&]() -> Aws::String {
-                        if (m_transferConfig.checksumAlgorithm == S3::Model::ChecksumAlgorithm::CRC32)
-                        {
-                            return outcome.GetResult().GetChecksumCRC32();
-                        }
-                        else if (m_transferConfig.checksumAlgorithm == S3::Model::ChecksumAlgorithm::CRC32C)
-                        {
-                            return outcome.GetResult().GetChecksumCRC32C();
-                        }
-                        else if (m_transferConfig.checksumAlgorithm == S3::Model::ChecksumAlgorithm::SHA1)
-                        {
-                            return outcome.GetResult().GetChecksumSHA1();
-                        }
-                        else if (m_transferConfig.checksumAlgorithm == S3::Model::ChecksumAlgorithm::SHA256)
-                        {
-                            return outcome.GetResult().GetChecksumSHA256();
-                        }
-                        //Return empty checksum for not set.
-                        return "";
-                    }());
+                    partState->SetChecksum(GetChecksumFromResult(outcome.GetResult(), m_transferConfig.checksumAlgorithm));
                     handle->ChangePartToCompleted(partState, outcome.GetResult().GetETag());
                     AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Transfer handle [" << handle->GetId()
                             << " successfully uploaded Part: [" << partState->GetPartId() << "] to Bucket: ["
@@ -913,7 +930,28 @@ namespace Aws
                 request.SetVersionId(handle->GetVersionId());
             }
 
-            request.SetResponseStreamFactory(handle->GetCreateDownloadStreamFunction());
+            // Wrap user's stream with checksum validator if enabled
+            std::shared_ptr<Utils::Crypto::Hash> singlePartHash;
+            std::shared_ptr<ChecksumValidatingStreamBuf> checksumWrapper;
+            
+            if (m_transferConfig.validateChecksums)
+            {
+                singlePartHash = CreateHashForAlgorithm(m_transferConfig.checksumAlgorithm);
+                auto userStreamFactory = handle->GetCreateDownloadStreamFunction();
+                
+                request.SetResponseStreamFactory([userStreamFactory, singlePartHash, &checksumWrapper]() -> Aws::IOStream* {
+                    auto userStream = userStreamFactory();
+                    if (userStream && singlePartHash) {
+                        checksumWrapper = Aws::MakeShared<ChecksumValidatingStreamBuf>(CLASS_TAG, userStream->rdbuf(), singlePartHash);
+                        userStream->rdbuf(checksumWrapper.get());
+                    }
+                    return userStream;
+                });
+            }
+            else
+            {
+                request.SetResponseStreamFactory(handle->GetCreateDownloadStreamFunction());
+            }
 
             request.SetDataReceivedEventHandler([this, handle, partState](const Aws::Http::HttpRequest*, Aws::Http::HttpResponse*, long long progress)
             {
@@ -938,6 +976,38 @@ namespace Aws
                 handle->SetContentType(getObjectOutcome.GetResult().GetContentType());
                 handle->ChangePartToCompleted(partState, getObjectOutcome.GetResult().GetETag());
                 getObjectOutcome.GetResult().GetBody().flush();
+                
+                // Validate checksum for single-part download
+                if (m_transferConfig.validateChecksums && singlePartHash)
+                {
+                    Aws::String expectedChecksum = GetChecksumFromResult(getObjectOutcome.GetResult(), m_transferConfig.checksumAlgorithm);
+                    
+                    if (!expectedChecksum.empty())
+                    {
+                        auto calculatedResult = singlePartHash->GetHash();
+                        if (calculatedResult.IsSuccess())
+                        {
+                            Aws::String calculatedChecksum = Utils::HashingUtils::Base64Encode(calculatedResult.GetResult());
+                            if (calculatedChecksum != expectedChecksum)
+                            {
+                                AWS_LOGSTREAM_ERROR(CLASS_TAG, "Transfer handle [" << handle->GetId()
+                                        << "] Checksum mismatch for single-part download. Expected: " 
+                                        << expectedChecksum << ", Calculated: " << calculatedChecksum);
+                                handle->ChangePartToFailed(partState);
+                                handle->UpdateStatus(TransferStatus::FAILED);
+                                Aws::Client::AWSError<Aws::S3::S3Errors> error(Aws::S3::S3Errors::INTERNAL_FAILURE,
+                                                                               "ChecksumMismatch",
+                                                                               "Single-part download checksum validation failed",
+                                                                               false);
+                                handle->SetError(error);
+                                TriggerErrorCallback(handle, error);
+                                TriggerTransferStatusUpdatedCallback(handle);
+                                return;
+                            }
+                        }
+                    }
+                }
+                
                 handle->UpdateStatus(TransferStatus::COMPLETED);
             }
             else
@@ -1074,6 +1144,12 @@ namespace Aws
                 {
                     partState->SetDownloadBuffer(buffer);
 
+                    // Initialize checksum Hash for this part if validation is enabled
+                    if (m_transferConfig.validateChecksums)
+                    {
+                        handle->SetPartChecksum(partState->GetPartId(), CreateHashForAlgorithm(m_transferConfig.checksumAlgorithm));
+                    }
+
                     auto getObjectRangeRequest = m_transferConfig.getObjectTemplate;
                     getObjectRangeRequest.SetCustomizedAccessLogTag(m_transferConfig.customizedAccessLogTag);
                     getObjectRangeRequest.SetContinueRequestHandler([handle](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
@@ -1202,6 +1278,48 @@ namespace Aws
                     Aws::IOStream* bufferStream = partState->GetDownloadPartStream();
                     assert(bufferStream);
 
+                    // Calculate and validate checksum for this part if validation is enabled
+                    if (m_transferConfig.validateChecksums)
+                    {
+                        auto hash = handle->GetPartChecksum(partState->GetPartId());
+                        if (hash && partState->GetDownloadBuffer())
+                        {
+                            hash->Update(partState->GetDownloadBuffer(), static_cast<size_t>(partState->GetSizeInBytes()));
+                            
+                            // Get expected checksum from response
+                            Aws::String expectedChecksum = GetChecksumFromResult(outcome.GetResult(), m_transferConfig.checksumAlgorithm);
+                            
+                            // Validate part checksum
+                            if (!expectedChecksum.empty())
+                            {
+                                auto calculatedResult = hash->GetHash();
+                                if (calculatedResult.IsSuccess())
+                                {
+                                    Aws::String calculatedChecksum = Utils::HashingUtils::Base64Encode(calculatedResult.GetResult());
+                                    if (calculatedChecksum != expectedChecksum)
+                                    {
+                                        AWS_LOGSTREAM_ERROR(CLASS_TAG, "Transfer handle [" << handle->GetId()
+                                                << "] Checksum mismatch for part " << partState->GetPartId()
+                                                << ". Expected: " << expectedChecksum << ", Calculated: " << calculatedChecksum);
+                                        Aws::Client::AWSError<Aws::S3::S3Errors> error(Aws::S3::S3Errors::INTERNAL_FAILURE,
+                                                                                       "ChecksumMismatch",
+                                                                                       "Part checksum validation failed",
+                                                                                       false);
+                                        handle->ChangePartToFailed(partState);
+                                        handle->SetError(error);
+                                        TriggerErrorCallback(handle, error);
+                                        if(partState->GetDownloadBuffer())
+                                        {
+                                            m_bufferManager.Release(partState->GetDownloadBuffer());
+                                            partState->SetDownloadBuffer(nullptr);
+                                        }
+                                        return;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
                     Aws::String errMsg{handle->WritePartToDownloadStream(bufferStream, partState->GetRangeBegin())};
                     if (errMsg.empty()) {
                         handle->ChangePartToCompleted(partState, outcome.GetResult().GetETag());
@@ -1239,6 +1357,7 @@ namespace Aws
             {
                 if (failedParts.size() == 0 && handle->GetBytesTransferred() == handle->GetBytesTotalSize())
                 {
+                    // TODO: Combine part checksums and validate full-object checksum when CRT provides combining utility
                     outcome.GetResult().GetBody().flush();
                     handle->UpdateStatus(TransferStatus::COMPLETED);
                 }

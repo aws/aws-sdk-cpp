@@ -79,6 +79,9 @@ namespace Aws
 
                 Aws::String GetChecksum() const { return m_checksum; };
                 void SetChecksum(const Aws::String& checksum) { m_checksum = checksum; }
+
+                std::shared_ptr<Aws::Utils::Crypto::Hash> GetChecksumHash() const { return m_checksumHash; }
+                void SetChecksumHash(std::shared_ptr<Aws::Utils::Crypto::Hash> hash) { m_checksumHash = hash; }
             private:
 
                 int m_partId = 0;
@@ -93,10 +96,47 @@ namespace Aws
                 std::atomic<unsigned char*> m_downloadBuffer;
                 bool m_lastPart = false;
                 Aws::String m_checksum;
+                std::shared_ptr<Aws::Utils::Crypto::Hash> m_checksumHash;
         };
 
         using PartPointer = std::shared_ptr< PartState >;
         using PartStateMap = Aws::Map< int, PartPointer >;
+
+        /**
+         * Stream buffer wrapper that calculates checksum while forwarding data to underlying stream.
+         * Used for single-part download checksum validation.
+         */
+        class AWS_TRANSFER_API ChecksumValidatingStreamBuf : public std::streambuf
+        {
+        public:
+            ChecksumValidatingStreamBuf(std::streambuf* underlyingBuf, 
+                                        std::shared_ptr<Aws::Utils::Crypto::Hash> hash)
+                : m_underlyingBuf(underlyingBuf), m_hash(hash) {}
+            
+            std::shared_ptr<Aws::Utils::Crypto::Hash> GetHash() const { return m_hash; }
+
+        protected:
+            std::streamsize xsputn(const char* s, std::streamsize n) override
+            {
+                if (m_hash && n > 0) {
+                    m_hash->Update(const_cast<unsigned char*>(reinterpret_cast<const unsigned char*>(s)), static_cast<size_t>(n));
+                }
+                return m_underlyingBuf->sputn(s, n);
+            }
+
+            int overflow(int c) override
+            {
+                if (m_hash && c != EOF) {
+                    unsigned char byte = static_cast<unsigned char>(c);
+                    m_hash->Update(&byte, 1);
+                }
+                return m_underlyingBuf->sputc(c);
+            }
+
+        private:
+            std::streambuf* m_underlyingBuf;
+            std::shared_ptr<Aws::Utils::Crypto::Hash> m_hash;
+        };
 
         enum class TransferStatus
         {
@@ -389,6 +429,12 @@ namespace Aws
             Aws::String GetChecksum() const { return m_checksum; }
             void SetChecksum(const Aws::String& checksum) { this->m_checksum = checksum; }
 
+            void SetPartChecksum(int partId, std::shared_ptr<Aws::Utils::Crypto::Hash> hash) { m_partChecksums[partId] = hash; }
+            std::shared_ptr<Aws::Utils::Crypto::Hash> GetPartChecksum(int partId) const { 
+                auto it = m_partChecksums.find(partId);
+                return it != m_partChecksums.end() ? it->second : nullptr;
+            }
+
            private:
             void CleanupDownloadStream();
 
@@ -430,6 +476,9 @@ namespace Aws
             mutable std::condition_variable m_waitUntilFinishedSignal;
             mutable std::mutex m_getterSetterLock;
             Aws::String m_checksum;
+            // Map of part number to Hash instance for multipart download checksum validation
+            // TODO: Add CRT checksum combining utility when available
+            Aws::Map<int, std::shared_ptr<Aws::Utils::Crypto::Hash>> m_partChecksums;
         };
 
         AWS_TRANSFER_API Aws::OStream& operator << (Aws::OStream& s, TransferStatus status);
