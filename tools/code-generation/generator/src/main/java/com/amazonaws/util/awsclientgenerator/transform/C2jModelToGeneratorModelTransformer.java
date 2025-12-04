@@ -186,7 +186,7 @@ public class C2jModelToGeneratorModelTransformer {
         // add protocol check. only for json, query protocols
         final String protocol = serviceModel.getMetadata().findFirstSupportedProtocol();
 
-        if ("json".equals(protocol)) {
+        if ("json".equals(protocol) || "smithy-rpc-v2-cbor".equals(protocol)) {
             serviceModel.getMetadata().setAwsQueryCompatible(
                     c2jServiceModel.getMetadata().getAwsQueryCompatible() != null);
         } else {
