@@ -48,7 +48,8 @@ enum class StateReasonCode {
   FunctionError_InvalidWorkingDirectory,
   FunctionError_PermissionDenied,
   FunctionError_TooManyExtensions,
-  FunctionError_InitResourceExhausted
+  FunctionError_InitResourceExhausted,
+  DisallowedByVpcEncryptionControl
 };
 
 namespace StateReasonCodeMapper {
