@@ -64,6 +64,7 @@
 #include <aws/sagemaker/model/AssociateTrialComponentRequest.h>
 #include <aws/sagemaker/model/AssociateTrialComponentResult.h>
 #include <aws/sagemaker/model/AssociationEdgeType.h>
+#include <aws/sagemaker/model/AssociationInfo.h>
 #include <aws/sagemaker/model/AssociationSummary.h>
 #include <aws/sagemaker/model/AsyncInferenceClientConfig.h>
 #include <aws/sagemaker/model/AsyncInferenceConfig.h>
@@ -120,6 +121,7 @@
 #include <aws/sagemaker/model/AutotuneMode.h>
 #include <aws/sagemaker/model/AvailableUpgrade.h>
 #include <aws/sagemaker/model/AwsManagedHumanLoopRequestSource.h>
+#include <aws/sagemaker/model/BaseModel.h>
 #include <aws/sagemaker/model/BatchAddClusterNodesError.h>
 #include <aws/sagemaker/model/BatchAddClusterNodesErrorCode.h>
 #include <aws/sagemaker/model/BatchAddClusterNodesRequest.h>
@@ -146,6 +148,10 @@
 #include <aws/sagemaker/model/BatchReplaceClusterNodesResult.h>
 #include <aws/sagemaker/model/BatchStrategy.h>
 #include <aws/sagemaker/model/BatchTransformInput.h>
+#include <aws/sagemaker/model/BedrockCustomModelDeploymentMetadata.h>
+#include <aws/sagemaker/model/BedrockCustomModelMetadata.h>
+#include <aws/sagemaker/model/BedrockModelImportMetadata.h>
+#include <aws/sagemaker/model/BedrockProvisionedModelThroughputMetadata.h>
 #include <aws/sagemaker/model/BestObjectiveNotImproving.h>
 #include <aws/sagemaker/model/Bias.h>
 #include <aws/sagemaker/model/BlueGreenUpdatePolicy.h>
@@ -401,6 +407,7 @@
 #include <aws/sagemaker/model/CustomFileSystemConfig.h>
 #include <aws/sagemaker/model/CustomImage.h>
 #include <aws/sagemaker/model/CustomPosixUserConfig.h>
+#include <aws/sagemaker/model/CustomizationTechnique.h>
 #include <aws/sagemaker/model/CustomizedMetricSpecification.h>
 #include <aws/sagemaker/model/DataCaptureConfig.h>
 #include <aws/sagemaker/model/DataCaptureConfigSummary.h>
@@ -413,6 +420,7 @@
 #include <aws/sagemaker/model/DataSource.h>
 #include <aws/sagemaker/model/DataSourceName.h>
 #include <aws/sagemaker/model/DatasetDefinition.h>
+#include <aws/sagemaker/model/DatasetSource.h>
 #include <aws/sagemaker/model/DebugHookConfig.h>
 #include <aws/sagemaker/model/DebugRuleConfiguration.h>
 #include <aws/sagemaker/model/DebugRuleEvaluationStatus.h>
@@ -721,6 +729,7 @@
 #include <aws/sagemaker/model/EnvironmentParameter.h>
 #include <aws/sagemaker/model/EnvironmentParameterRanges.h>
 #include <aws/sagemaker/model/ErrorInfo.h>
+#include <aws/sagemaker/model/EvaluationType.h>
 #include <aws/sagemaker/model/EventDetails.h>
 #include <aws/sagemaker/model/EventMetadata.h>
 #include <aws/sagemaker/model/EventSortBy.h>
@@ -844,6 +853,7 @@
 #include <aws/sagemaker/model/InferenceComponentDataCacheConfig.h>
 #include <aws/sagemaker/model/InferenceComponentDataCacheConfigSummary.h>
 #include <aws/sagemaker/model/InferenceComponentDeploymentConfig.h>
+#include <aws/sagemaker/model/InferenceComponentMetadata.h>
 #include <aws/sagemaker/model/InferenceComponentRollingUpdatePolicy.h>
 #include <aws/sagemaker/model/InferenceComponentRuntimeConfig.h>
 #include <aws/sagemaker/model/InferenceComponentRuntimeConfigSummary.h>
@@ -910,6 +920,7 @@
 #include <aws/sagemaker/model/LastUpdateStatusValue.h>
 #include <aws/sagemaker/model/LifecycleManagement.h>
 #include <aws/sagemaker/model/LineageGroupSummary.h>
+#include <aws/sagemaker/model/LineageMetadata.h>
 #include <aws/sagemaker/model/LineageType.h>
 #include <aws/sagemaker/model/ListActionsRequest.h>
 #include <aws/sagemaker/model/ListActionsResult.h>
@@ -1091,6 +1102,7 @@
 #include <aws/sagemaker/model/ListWorkteamsResult.h>
 #include <aws/sagemaker/model/ListWorkteamsSortByOptions.h>
 #include <aws/sagemaker/model/MIGProfileType.h>
+#include <aws/sagemaker/model/MLflowConfiguration.h>
 #include <aws/sagemaker/model/MaintenanceStatus.h>
 #include <aws/sagemaker/model/ManagedInstanceScalingStatus.h>
 #include <aws/sagemaker/model/MemberDefinition.h>
@@ -1105,6 +1117,8 @@
 #include <aws/sagemaker/model/MlTools.h>
 #include <aws/sagemaker/model/MlflowAppStatus.h>
 #include <aws/sagemaker/model/MlflowAppSummary.h>
+#include <aws/sagemaker/model/MlflowConfig.h>
+#include <aws/sagemaker/model/MlflowDetails.h>
 #include <aws/sagemaker/model/Model.h>
 #include <aws/sagemaker/model/ModelAccessConfig.h>
 #include <aws/sagemaker/model/ModelApprovalStatus.h>
@@ -1156,12 +1170,14 @@
 #include <aws/sagemaker/model/ModelMetadataSummary.h>
 #include <aws/sagemaker/model/ModelMetrics.h>
 #include <aws/sagemaker/model/ModelPackage.h>
+#include <aws/sagemaker/model/ModelPackageConfig.h>
 #include <aws/sagemaker/model/ModelPackageContainerDefinition.h>
 #include <aws/sagemaker/model/ModelPackageGroup.h>
 #include <aws/sagemaker/model/ModelPackageGroupSortBy.h>
 #include <aws/sagemaker/model/ModelPackageGroupStatus.h>
 #include <aws/sagemaker/model/ModelPackageGroupSummary.h>
 #include <aws/sagemaker/model/ModelPackageModelCard.h>
+#include <aws/sagemaker/model/ModelPackageRegistrationType.h>
 #include <aws/sagemaker/model/ModelPackageSecurityConfig.h>
 #include <aws/sagemaker/model/ModelPackageSortBy.h>
 #include <aws/sagemaker/model/ModelPackageStatus.h>
@@ -1283,6 +1299,7 @@
 #include <aws/sagemaker/model/PartnerAppStatus.h>
 #include <aws/sagemaker/model/PartnerAppSummary.h>
 #include <aws/sagemaker/model/PartnerAppType.h>
+#include <aws/sagemaker/model/Peft.h>
 #include <aws/sagemaker/model/PendingDeploymentSummary.h>
 #include <aws/sagemaker/model/PendingProductionVariantSummary.h>
 #include <aws/sagemaker/model/Phase.h>
@@ -1458,6 +1475,8 @@
 #include <aws/sagemaker/model/SendPipelineExecutionStepFailureResult.h>
 #include <aws/sagemaker/model/SendPipelineExecutionStepSuccessRequest.h>
 #include <aws/sagemaker/model/SendPipelineExecutionStepSuccessResult.h>
+#include <aws/sagemaker/model/ServerlessJobConfig.h>
+#include <aws/sagemaker/model/ServerlessJobType.h>
 #include <aws/sagemaker/model/ServiceCatalogProvisionedProductDetails.h>
 #include <aws/sagemaker/model/ServiceCatalogProvisioningDetails.h>
 #include <aws/sagemaker/model/ServiceCatalogProvisioningUpdateDetails.h>
@@ -1597,6 +1616,7 @@
 #include <aws/sagemaker/model/TrainingPlanSortOrder.h>
 #include <aws/sagemaker/model/TrainingPlanStatus.h>
 #include <aws/sagemaker/model/TrainingPlanSummary.h>
+#include <aws/sagemaker/model/TrainingProgressInfo.h>
 #include <aws/sagemaker/model/TrainingRepositoryAccessMode.h>
 #include <aws/sagemaker/model/TrainingRepositoryAuthConfig.h>
 #include <aws/sagemaker/model/TrainingSpecification.h>

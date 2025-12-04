@@ -27,6 +27,11 @@ Aws::String CreateModelPackageRequest::SerializePayload() const {
     payload.WithString("ModelPackageDescription", m_modelPackageDescription);
   }
 
+  if (m_modelPackageRegistrationTypeHasBeenSet) {
+    payload.WithString("ModelPackageRegistrationType",
+                       ModelPackageRegistrationTypeMapper::GetNameForModelPackageRegistrationType(m_modelPackageRegistrationType));
+  }
+
   if (m_inferenceSpecificationHasBeenSet) {
     payload.WithObject("InferenceSpecification", m_inferenceSpecification.Jsonize());
   }

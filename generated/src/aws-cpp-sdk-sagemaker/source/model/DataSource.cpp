@@ -26,6 +26,10 @@ DataSource& DataSource::operator=(JsonView jsonValue) {
     m_fileSystemDataSource = jsonValue.GetObject("FileSystemDataSource");
     m_fileSystemDataSourceHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DatasetSource")) {
+    m_datasetSource = jsonValue.GetObject("DatasetSource");
+    m_datasetSourceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue DataSource::Jsonize() const {
 
   if (m_fileSystemDataSourceHasBeenSet) {
     payload.WithObject("FileSystemDataSource", m_fileSystemDataSource.Jsonize());
+  }
+
+  if (m_datasetSourceHasBeenSet) {
+    payload.WithObject("DatasetSource", m_datasetSource.Jsonize());
   }
 
   return payload;

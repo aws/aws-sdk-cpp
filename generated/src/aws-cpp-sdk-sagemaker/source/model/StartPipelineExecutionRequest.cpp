@@ -52,6 +52,10 @@ Aws::String StartPipelineExecutionRequest::SerializePayload() const {
     payload.WithInt64("PipelineVersionId", m_pipelineVersionId);
   }
 
+  if (m_mlflowExperimentNameHasBeenSet) {
+    payload.WithString("MlflowExperimentName", m_mlflowExperimentName);
+  }
+
   return payload.View().WriteReadable();
 }
 

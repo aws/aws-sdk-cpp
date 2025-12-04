@@ -33,6 +33,11 @@ DescribeModelPackageResult& DescribeModelPackageResult::operator=(const Aws::Ama
     m_modelPackageVersion = jsonValue.GetInteger("ModelPackageVersion");
     m_modelPackageVersionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ModelPackageRegistrationType")) {
+    m_modelPackageRegistrationType =
+        ModelPackageRegistrationTypeMapper::GetModelPackageRegistrationTypeForName(jsonValue.GetString("ModelPackageRegistrationType"));
+    m_modelPackageRegistrationTypeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ModelPackageArn")) {
     m_modelPackageArn = jsonValue.GetString("ModelPackageArn");
     m_modelPackageArnHasBeenSet = true;

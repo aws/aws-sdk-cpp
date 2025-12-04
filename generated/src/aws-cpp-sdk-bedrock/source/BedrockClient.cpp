@@ -100,6 +100,7 @@
 #include <aws/bedrock/model/UpdateAutomatedReasoningPolicyAnnotationsRequest.h>
 #include <aws/bedrock/model/UpdateAutomatedReasoningPolicyRequest.h>
 #include <aws/bedrock/model/UpdateAutomatedReasoningPolicyTestCaseRequest.h>
+#include <aws/bedrock/model/UpdateCustomModelDeploymentRequest.h>
 #include <aws/bedrock/model/UpdateGuardrailRequest.h>
 #include <aws/bedrock/model/UpdateMarketplaceModelEndpointRequest.h>
 #include <aws/bedrock/model/UpdateProvisionedModelThroughputRequest.h>
@@ -3557,6 +3558,42 @@ UpdateAutomatedReasoningPolicyTestCaseOutcome BedrockClient::UpdateAutomatedReas
         endpointResolutionOutcome.GetResult().AddPathSegments("/test-cases/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTestCaseId());
         return UpdateAutomatedReasoningPolicyTestCaseOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateCustomModelDeploymentOutcome BedrockClient::UpdateCustomModelDeployment(const UpdateCustomModelDeploymentRequest& request) const {
+  AWS_OPERATION_GUARD(UpdateCustomModelDeployment);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateCustomModelDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.CustomModelDeploymentIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateCustomModelDeployment", "Required field: CustomModelDeploymentIdentifier, is not set");
+    return UpdateCustomModelDeploymentOutcome(Aws::Client::AWSError<BedrockErrors>(
+        BedrockErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CustomModelDeploymentIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateCustomModelDeployment, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateCustomModelDeployment, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateCustomModelDeployment",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateCustomModelDeploymentOutcome>(
+      [&]() -> UpdateCustomModelDeploymentOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateCustomModelDeployment, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/model-customization/custom-model-deployments/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCustomModelDeploymentIdentifier());
+        return UpdateCustomModelDeploymentOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

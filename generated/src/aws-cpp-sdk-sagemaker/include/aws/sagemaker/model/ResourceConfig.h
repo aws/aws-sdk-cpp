@@ -72,11 +72,13 @@ class ResourceConfig {
 
   ///@{
   /**
-   * <p>The size of the ML storage volume that you want to provision. </p> <p>ML
-   * storage volumes store model artifacts and incremental states. Training
-   * algorithms might also use the ML storage volume for scratch space. If you want
-   * to store the training data in the ML storage volume, choose <code>File</code> as
-   * the <code>TrainingInputMode</code> in the algorithm specification. </p> <p>When
+   * <p>The size of the ML storage volume that you want to provision. </p>
+   * <p>SageMaker automatically selects the volume size for serverless training jobs.
+   * You cannot customize this setting.</p> <p>ML storage volumes store model
+   * artifacts and incremental states. Training algorithms might also use the ML
+   * storage volume for scratch space. If you want to store the training data in the
+   * ML storage volume, choose <code>File</code> as the
+   * <code>TrainingInputMode</code> in the algorithm specification. </p> <p>When
    * using an ML instance with <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html#nvme-ssd-volumes">NVMe
    * SSD volumes</a>, SageMaker doesn't provision Amazon EBS General Purpose SSD
