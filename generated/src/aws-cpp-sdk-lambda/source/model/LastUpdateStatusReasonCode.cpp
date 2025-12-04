@@ -48,6 +48,7 @@ static const int FunctionError_InvalidWorkingDirectory_HASH = HashingUtils::Hash
 static const int FunctionError_PermissionDenied_HASH = HashingUtils::HashString("FunctionError.PermissionDenied");
 static const int FunctionError_TooManyExtensions_HASH = HashingUtils::HashString("FunctionError.TooManyExtensions");
 static const int FunctionError_InitResourceExhausted_HASH = HashingUtils::HashString("FunctionError.InitResourceExhausted");
+static const int DisallowedByVpcEncryptionControl_HASH = HashingUtils::HashString("DisallowedByVpcEncryptionControl");
 
 LastUpdateStatusReasonCode GetLastUpdateStatusReasonCodeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -117,6 +118,8 @@ LastUpdateStatusReasonCode GetLastUpdateStatusReasonCodeForName(const Aws::Strin
     return LastUpdateStatusReasonCode::FunctionError_TooManyExtensions;
   } else if (hashCode == FunctionError_InitResourceExhausted_HASH) {
     return LastUpdateStatusReasonCode::FunctionError_InitResourceExhausted;
+  } else if (hashCode == DisallowedByVpcEncryptionControl_HASH) {
+    return LastUpdateStatusReasonCode::DisallowedByVpcEncryptionControl;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -197,6 +200,8 @@ Aws::String GetNameForLastUpdateStatusReasonCode(LastUpdateStatusReasonCode enum
       return "FunctionError.TooManyExtensions";
     case LastUpdateStatusReasonCode::FunctionError_InitResourceExhausted:
       return "FunctionError.InitResourceExhausted";
+    case LastUpdateStatusReasonCode::DisallowedByVpcEncryptionControl:
+      return "DisallowedByVpcEncryptionControl";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {
