@@ -6,7 +6,6 @@
 #pragma once
 
 #include <aws/transfer/Transfer_EXPORTS.h>
-#include <aws/transfer/ChecksumValidatingStreamBuf.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSSet.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
