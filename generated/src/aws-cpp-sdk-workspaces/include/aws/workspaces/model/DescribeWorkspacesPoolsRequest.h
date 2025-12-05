@@ -116,15 +116,15 @@ class DescribeWorkspacesPoolsRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_poolIds;
-  bool m_poolIdsHasBeenSet = false;
 
   Aws::Vector<DescribeWorkspacesPoolsFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_poolIdsHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

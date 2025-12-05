@@ -128,18 +128,18 @@ class IpAddressDetails {
   ///@}
  private:
   Aws::String m_ipAddressV4;
-  bool m_ipAddressV4HasBeenSet = false;
 
   IpCity m_ipCity;
-  bool m_ipCityHasBeenSet = false;
 
   IpCountry m_ipCountry;
-  bool m_ipCountryHasBeenSet = false;
 
   IpGeoLocation m_ipGeoLocation;
-  bool m_ipGeoLocationHasBeenSet = false;
 
   IpOwner m_ipOwner;
+  bool m_ipAddressV4HasBeenSet = false;
+  bool m_ipCityHasBeenSet = false;
+  bool m_ipCountryHasBeenSet = false;
+  bool m_ipGeoLocationHasBeenSet = false;
   bool m_ipOwnerHasBeenSet = false;
 };
 

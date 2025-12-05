@@ -127,15 +127,15 @@ class GetRecommendationsRequest : public CodeGuruProfilerRequest {
   ///@}
  private:
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_locale;
-  bool m_localeHasBeenSet = false;
 
   Aws::String m_profilingGroupName;
-  bool m_profilingGroupNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
+  bool m_endTimeHasBeenSet = false;
+  bool m_localeHasBeenSet = false;
+  bool m_profilingGroupNameHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;
 };
 

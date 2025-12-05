@@ -212,33 +212,33 @@ class Hsm {
   ///@}
  private:
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_clusterId;
-  bool m_clusterIdHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_eniId;
-  bool m_eniIdHasBeenSet = false;
 
   Aws::String m_eniIp;
-  bool m_eniIpHasBeenSet = false;
 
   Aws::String m_eniIpV6;
-  bool m_eniIpV6HasBeenSet = false;
 
   Aws::String m_hsmId;
-  bool m_hsmIdHasBeenSet = false;
 
   Aws::String m_hsmType;
-  bool m_hsmTypeHasBeenSet = false;
 
   HsmState m_state{HsmState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_stateMessage;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_clusterIdHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_eniIdHasBeenSet = false;
+  bool m_eniIpHasBeenSet = false;
+  bool m_eniIpV6HasBeenSet = false;
+  bool m_hsmIdHasBeenSet = false;
+  bool m_hsmTypeHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_stateMessageHasBeenSet = false;
 };
 

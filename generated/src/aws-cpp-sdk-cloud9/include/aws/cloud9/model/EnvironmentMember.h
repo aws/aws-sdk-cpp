@@ -129,18 +129,18 @@ class EnvironmentMember {
   ///@}
  private:
   Permissions m_permissions{Permissions::NOT_SET};
-  bool m_permissionsHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_userArn;
-  bool m_userArnHasBeenSet = false;
 
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastAccess{};
+  bool m_permissionsHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_userArnHasBeenSet = false;
+  bool m_environmentIdHasBeenSet = false;
   bool m_lastAccessHasBeenSet = false;
 };
 

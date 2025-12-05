@@ -90,12 +90,12 @@ class IdentityCenterConfiguration {
   ///@}
  private:
   Aws::String m_identityCenterInstanceArn;
-  bool m_identityCenterInstanceArnHasBeenSet = false;
 
   Aws::String m_identityCenterApplicationArn;
-  bool m_identityCenterApplicationArnHasBeenSet = false;
 
   bool m_userBackgroundSessionsEnabled{false};
+  bool m_identityCenterInstanceArnHasBeenSet = false;
+  bool m_identityCenterApplicationArnHasBeenSet = false;
   bool m_userBackgroundSessionsEnabledHasBeenSet = false;
 };
 

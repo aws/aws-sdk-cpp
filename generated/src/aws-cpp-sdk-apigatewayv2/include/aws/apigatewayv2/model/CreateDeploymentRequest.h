@@ -87,12 +87,12 @@ class CreateDeploymentRequest : public ApiGatewayV2Request {
   ///@}
  private:
   Aws::String m_apiId;
-  bool m_apiIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_stageName;
+  bool m_apiIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_stageNameHasBeenSet = false;
 };
 

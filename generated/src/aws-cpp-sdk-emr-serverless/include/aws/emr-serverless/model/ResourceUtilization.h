@@ -81,12 +81,12 @@ class ResourceUtilization {
   ///@}
  private:
   double m_vCPUHour{0.0};
-  bool m_vCPUHourHasBeenSet = false;
 
   double m_memoryGBHour{0.0};
-  bool m_memoryGBHourHasBeenSet = false;
 
   double m_storageGBHour{0.0};
+  bool m_vCPUHourHasBeenSet = false;
+  bool m_memoryGBHourHasBeenSet = false;
   bool m_storageGBHourHasBeenSet = false;
 };
 

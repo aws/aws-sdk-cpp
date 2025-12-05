@@ -93,15 +93,15 @@ class ModifyVerifiedAccessGroupPolicyResponse {
   ///@}
  private:
   bool m_policyEnabled{false};
-  bool m_policyEnabledHasBeenSet = false;
 
   Aws::String m_policyDocument;
-  bool m_policyDocumentHasBeenSet = false;
 
   VerifiedAccessSseSpecificationResponse m_sseSpecification;
-  bool m_sseSpecificationHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_policyEnabledHasBeenSet = false;
+  bool m_policyDocumentHasBeenSet = false;
+  bool m_sseSpecificationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

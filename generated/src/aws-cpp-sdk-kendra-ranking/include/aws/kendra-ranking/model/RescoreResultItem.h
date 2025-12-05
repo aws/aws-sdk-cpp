@@ -68,9 +68,9 @@ class RescoreResultItem {
   ///@}
  private:
   Aws::String m_documentId;
-  bool m_documentIdHasBeenSet = false;
 
   double m_score{0.0};
+  bool m_documentIdHasBeenSet = false;
   bool m_scoreHasBeenSet = false;
 };
 

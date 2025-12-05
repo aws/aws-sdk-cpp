@@ -92,15 +92,15 @@ class DeleteVocabularyResult {
   ///@}
  private:
   Aws::String m_vocabularyArn;
-  bool m_vocabularyArnHasBeenSet = false;
 
   Aws::String m_vocabularyId;
-  bool m_vocabularyIdHasBeenSet = false;
 
   VocabularyState m_state{VocabularyState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_vocabularyArnHasBeenSet = false;
+  bool m_vocabularyIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

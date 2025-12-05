@@ -431,66 +431,66 @@ class InstanceNetworkInterfaceSpecification {
   ///@}
  private:
   bool m_associateCarrierIpAddress{false};
-  bool m_associateCarrierIpAddressHasBeenSet = false;
 
   bool m_associatePublicIpAddress{false};
-  bool m_associatePublicIpAddressHasBeenSet = false;
 
   ConnectionTrackingSpecificationRequest m_connectionTrackingSpecification;
-  bool m_connectionTrackingSpecificationHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   int m_deviceIndex{0};
-  bool m_deviceIndexHasBeenSet = false;
 
   EnaSrdSpecificationRequest m_enaSrdSpecification;
-  bool m_enaSrdSpecificationHasBeenSet = false;
 
   InterfaceTypeEnum m_interfaceType{InterfaceTypeEnum::NOT_SET};
-  bool m_interfaceTypeHasBeenSet = false;
 
   Aws::Vector<Ipv4PrefixSpecificationRequest> m_ipv4Prefixes;
-  bool m_ipv4PrefixesHasBeenSet = false;
 
   int m_ipv4PrefixCount{0};
-  bool m_ipv4PrefixCountHasBeenSet = false;
 
   int m_ipv6AddressCount{0};
-  bool m_ipv6AddressCountHasBeenSet = false;
 
   Aws::Vector<InstanceIpv6Address> m_ipv6Addresses;
-  bool m_ipv6AddressesHasBeenSet = false;
 
   Aws::Vector<Ipv6PrefixSpecificationRequest> m_ipv6Prefixes;
-  bool m_ipv6PrefixesHasBeenSet = false;
 
   int m_ipv6PrefixCount{0};
-  bool m_ipv6PrefixCountHasBeenSet = false;
 
   int m_networkCardIndex{0};
-  bool m_networkCardIndexHasBeenSet = false;
 
   Aws::String m_networkInterfaceId;
-  bool m_networkInterfaceIdHasBeenSet = false;
 
   bool m_primaryIpv6{false};
-  bool m_primaryIpv6HasBeenSet = false;
 
   Aws::String m_privateIpAddress;
-  bool m_privateIpAddressHasBeenSet = false;
 
   Aws::Vector<PrivateIpAddressSpecification> m_privateIpAddresses;
-  bool m_privateIpAddressesHasBeenSet = false;
 
   int m_secondaryPrivateIpAddressCount{0};
-  bool m_secondaryPrivateIpAddressCountHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_groups;
-  bool m_groupsHasBeenSet = false;
 
   Aws::String m_subnetId;
+  bool m_associateCarrierIpAddressHasBeenSet = false;
+  bool m_associatePublicIpAddressHasBeenSet = false;
+  bool m_connectionTrackingSpecificationHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_deviceIndexHasBeenSet = false;
+  bool m_enaSrdSpecificationHasBeenSet = false;
+  bool m_interfaceTypeHasBeenSet = false;
+  bool m_ipv4PrefixesHasBeenSet = false;
+  bool m_ipv4PrefixCountHasBeenSet = false;
+  bool m_ipv6AddressCountHasBeenSet = false;
+  bool m_ipv6AddressesHasBeenSet = false;
+  bool m_ipv6PrefixesHasBeenSet = false;
+  bool m_ipv6PrefixCountHasBeenSet = false;
+  bool m_networkCardIndexHasBeenSet = false;
+  bool m_networkInterfaceIdHasBeenSet = false;
+  bool m_primaryIpv6HasBeenSet = false;
+  bool m_privateIpAddressHasBeenSet = false;
+  bool m_privateIpAddressesHasBeenSet = false;
+  bool m_secondaryPrivateIpAddressCountHasBeenSet = false;
+  bool m_groupsHasBeenSet = false;
   bool m_subnetIdHasBeenSet = false;
 };
 

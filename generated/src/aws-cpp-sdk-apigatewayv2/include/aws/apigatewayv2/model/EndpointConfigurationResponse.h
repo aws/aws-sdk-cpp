@@ -105,15 +105,15 @@ class EndpointConfigurationResponse {
   ///@}
  private:
   Aws::String m_certificateArn;
-  bool m_certificateArnHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_portalDefaultDomainName;
-  bool m_portalDefaultDomainNameHasBeenSet = false;
 
   Aws::String m_portalDomainHostedZoneId;
+  bool m_certificateArnHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_portalDefaultDomainNameHasBeenSet = false;
   bool m_portalDomainHostedZoneIdHasBeenSet = false;
 };
 

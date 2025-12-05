@@ -165,21 +165,21 @@ class DescribeAnomalyDetectorsRequest : public CloudWatchRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::Vector<Dimension> m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
 
   Aws::Vector<AnomalyDetectorType> m_anomalyDetectorTypes;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_metricNameHasBeenSet = false;
+  bool m_dimensionsHasBeenSet = false;
   bool m_anomalyDetectorTypesHasBeenSet = false;
 };
 

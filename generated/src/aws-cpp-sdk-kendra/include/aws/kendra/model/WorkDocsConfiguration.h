@@ -184,21 +184,21 @@ class WorkDocsConfiguration {
   ///@}
  private:
   Aws::String m_organizationId;
-  bool m_organizationIdHasBeenSet = false;
 
   bool m_crawlComments{false};
-  bool m_crawlCommentsHasBeenSet = false;
 
   bool m_useChangeLog{false};
-  bool m_useChangeLogHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inclusionPatterns;
-  bool m_inclusionPatternsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_exclusionPatterns;
-  bool m_exclusionPatternsHasBeenSet = false;
 
   Aws::Vector<DataSourceToIndexFieldMapping> m_fieldMappings;
+  bool m_organizationIdHasBeenSet = false;
+  bool m_crawlCommentsHasBeenSet = false;
+  bool m_useChangeLogHasBeenSet = false;
+  bool m_inclusionPatternsHasBeenSet = false;
+  bool m_exclusionPatternsHasBeenSet = false;
   bool m_fieldMappingsHasBeenSet = false;
 };
 

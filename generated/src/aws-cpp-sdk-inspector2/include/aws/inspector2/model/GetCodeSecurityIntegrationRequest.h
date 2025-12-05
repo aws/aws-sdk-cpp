@@ -73,9 +73,9 @@ class GetCodeSecurityIntegrationRequest : public Inspector2Request {
   ///@}
  private:
   Aws::String m_integrationArn;
-  bool m_integrationArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_integrationArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

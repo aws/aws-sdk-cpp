@@ -85,9 +85,9 @@ class BrokerCountUpdateInfo {
   ///@}
  private:
   Aws::Vector<double> m_createdBrokerIds;
-  bool m_createdBrokerIdsHasBeenSet = false;
 
   Aws::Vector<double> m_deletedBrokerIds;
+  bool m_createdBrokerIdsHasBeenSet = false;
   bool m_deletedBrokerIdsHasBeenSet = false;
 };
 

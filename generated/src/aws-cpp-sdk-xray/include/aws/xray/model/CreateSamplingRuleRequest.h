@@ -84,9 +84,9 @@ class CreateSamplingRuleRequest : public XRayRequest {
   ///@}
  private:
   SamplingRule m_samplingRule;
-  bool m_samplingRuleHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_samplingRuleHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

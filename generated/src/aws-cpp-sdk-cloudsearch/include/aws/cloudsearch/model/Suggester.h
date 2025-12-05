@@ -70,9 +70,9 @@ class Suggester {
   ///@}
  private:
   Aws::String m_suggesterName;
-  bool m_suggesterNameHasBeenSet = false;
 
   DocumentSuggesterOptions m_documentSuggesterOptions;
+  bool m_suggesterNameHasBeenSet = false;
   bool m_documentSuggesterOptionsHasBeenSet = false;
 };
 

@@ -101,12 +101,12 @@ class IdentityDocument {
   ///@}
  private:
   int m_documentIndex{0};
-  bool m_documentIndexHasBeenSet = false;
 
   Aws::Vector<IdentityDocumentField> m_identityDocumentFields;
-  bool m_identityDocumentFieldsHasBeenSet = false;
 
   Aws::Vector<Block> m_blocks;
+  bool m_documentIndexHasBeenSet = false;
+  bool m_identityDocumentFieldsHasBeenSet = false;
   bool m_blocksHasBeenSet = false;
 };
 

@@ -230,30 +230,30 @@ class ListBenefitApplicationsRequest : public PartnerCentralBenefitsRequest {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_programs;
-  bool m_programsHasBeenSet = false;
 
   Aws::Vector<FulfillmentType> m_fulfillmentTypes;
-  bool m_fulfillmentTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_benefitIdentifiers;
-  bool m_benefitIdentifiersHasBeenSet = false;
 
   Aws::Vector<BenefitApplicationStatus> m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_stages;
-  bool m_stagesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_associatedResourceArns;
-  bool m_associatedResourceArnsHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_catalogHasBeenSet = false;
+  bool m_programsHasBeenSet = false;
+  bool m_fulfillmentTypesHasBeenSet = false;
+  bool m_benefitIdentifiersHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_stagesHasBeenSet = false;
+  bool m_associatedResourceArnsHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -108,15 +108,15 @@ class ListFleetsRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_buildId;
-  bool m_buildIdHasBeenSet = false;
 
   Aws::String m_scriptId;
-  bool m_scriptIdHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_buildIdHasBeenSet = false;
+  bool m_scriptIdHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

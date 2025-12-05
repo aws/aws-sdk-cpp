@@ -60,9 +60,9 @@ class ModifyVerifiedAccessGroupResponse {
   ///@}
  private:
   VerifiedAccessGroup m_verifiedAccessGroup;
-  bool m_verifiedAccessGroupHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_verifiedAccessGroupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

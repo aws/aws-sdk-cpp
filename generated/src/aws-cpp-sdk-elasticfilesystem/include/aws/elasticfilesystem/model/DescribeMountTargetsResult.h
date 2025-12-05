@@ -110,15 +110,15 @@ class DescribeMountTargetsResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<MountTargetDescription> m_mountTargets;
-  bool m_mountTargetsHasBeenSet = false;
 
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_markerHasBeenSet = false;
+  bool m_mountTargetsHasBeenSet = false;
+  bool m_nextMarkerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

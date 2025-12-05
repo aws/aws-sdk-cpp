@@ -249,36 +249,36 @@ class CreateApplicationRequest : public AppIntegrationsServiceRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ApplicationSourceConfig m_applicationSourceConfig;
-  bool m_applicationSourceConfigHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_permissions;
-  bool m_permissionsHasBeenSet = false;
 
   int m_initializationTimeout{0};
-  bool m_initializationTimeoutHasBeenSet = false;
 
   ApplicationConfig m_applicationConfig;
-  bool m_applicationConfigHasBeenSet = false;
 
   IframeConfig m_iframeConfig;
-  bool m_iframeConfigHasBeenSet = false;
 
   ApplicationType m_applicationType{ApplicationType::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_applicationSourceConfigHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_tagsHasBeenSet = false;
+  bool m_permissionsHasBeenSet = false;
+  bool m_initializationTimeoutHasBeenSet = false;
+  bool m_applicationConfigHasBeenSet = false;
+  bool m_iframeConfigHasBeenSet = false;
   bool m_applicationTypeHasBeenSet = false;
 };
 

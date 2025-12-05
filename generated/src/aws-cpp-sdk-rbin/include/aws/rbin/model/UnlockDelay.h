@@ -69,9 +69,9 @@ class UnlockDelay {
   ///@}
  private:
   int m_unlockDelayValue{0};
-  bool m_unlockDelayValueHasBeenSet = false;
 
   UnlockDelayUnit m_unlockDelayUnit{UnlockDelayUnit::NOT_SET};
+  bool m_unlockDelayValueHasBeenSet = false;
   bool m_unlockDelayUnitHasBeenSet = false;
 };
 

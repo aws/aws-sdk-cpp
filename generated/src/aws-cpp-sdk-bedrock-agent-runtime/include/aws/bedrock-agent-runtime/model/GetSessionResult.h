@@ -172,27 +172,27 @@ class GetSessionResult {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_encryptionKeyArn;
-  bool m_encryptionKeyArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_sessionArn;
-  bool m_sessionArnHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_sessionMetadata;
-  bool m_sessionMetadataHasBeenSet = false;
 
   SessionStatus m_sessionStatus{SessionStatus::NOT_SET};
-  bool m_sessionStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_createdAtHasBeenSet = false;
+  bool m_encryptionKeyArnHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_sessionArnHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_sessionMetadataHasBeenSet = false;
+  bool m_sessionStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -205,27 +205,27 @@ class CreateIntegrationRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_sourceArn;
-  bool m_sourceArnHasBeenSet = false;
 
   Aws::String m_targetArn;
-  bool m_targetArnHasBeenSet = false;
 
   Aws::String m_integrationName;
-  bool m_integrationNameHasBeenSet = false;
 
   Aws::String m_kMSKeyId;
-  bool m_kMSKeyIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_additionalEncryptionContext;
-  bool m_additionalEncryptionContextHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_dataFilter;
-  bool m_dataFilterHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_sourceArnHasBeenSet = false;
+  bool m_targetArnHasBeenSet = false;
+  bool m_integrationNameHasBeenSet = false;
+  bool m_kMSKeyIdHasBeenSet = false;
+  bool m_additionalEncryptionContextHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_dataFilterHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

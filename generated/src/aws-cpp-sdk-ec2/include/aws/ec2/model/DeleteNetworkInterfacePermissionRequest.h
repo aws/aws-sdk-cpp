@@ -91,12 +91,12 @@ class DeleteNetworkInterfacePermissionRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_networkInterfacePermissionId;
-  bool m_networkInterfacePermissionIdHasBeenSet = false;
 
   bool m_force{false};
-  bool m_forceHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_networkInterfacePermissionIdHasBeenSet = false;
+  bool m_forceHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

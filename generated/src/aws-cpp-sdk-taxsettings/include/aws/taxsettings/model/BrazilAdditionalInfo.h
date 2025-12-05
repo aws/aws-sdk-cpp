@@ -71,9 +71,9 @@ class BrazilAdditionalInfo {
   ///@}
  private:
   Aws::String m_ccmCode;
-  bool m_ccmCodeHasBeenSet = false;
 
   Aws::String m_legalNatureCode;
+  bool m_ccmCodeHasBeenSet = false;
   bool m_legalNatureCodeHasBeenSet = false;
 };
 

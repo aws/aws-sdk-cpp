@@ -105,15 +105,15 @@ class EncryptionDecryptionAttributes {
   ///@}
  private:
   SymmetricEncryptionAttributes m_symmetric;
-  bool m_symmetricHasBeenSet = false;
 
   AsymmetricEncryptionAttributes m_asymmetric;
-  bool m_asymmetricHasBeenSet = false;
 
   DukptEncryptionAttributes m_dukpt;
-  bool m_dukptHasBeenSet = false;
 
   EmvEncryptionAttributes m_emv;
+  bool m_symmetricHasBeenSet = false;
+  bool m_asymmetricHasBeenSet = false;
+  bool m_dukptHasBeenSet = false;
   bool m_emvHasBeenSet = false;
 };
 

@@ -59,9 +59,9 @@ class GetSuiteRunReportResult {
   ///@}
  private:
   Aws::String m_qualificationReportDownloadUrl;
-  bool m_qualificationReportDownloadUrlHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_qualificationReportDownloadUrlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

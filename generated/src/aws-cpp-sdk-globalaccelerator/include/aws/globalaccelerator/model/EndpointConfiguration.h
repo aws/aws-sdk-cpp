@@ -127,15 +127,15 @@ class EndpointConfiguration {
   ///@}
  private:
   Aws::String m_endpointId;
-  bool m_endpointIdHasBeenSet = false;
 
   int m_weight{0};
-  bool m_weightHasBeenSet = false;
 
   bool m_clientIPPreservationEnabled{false};
-  bool m_clientIPPreservationEnabledHasBeenSet = false;
 
   Aws::String m_attachmentArn;
+  bool m_endpointIdHasBeenSet = false;
+  bool m_weightHasBeenSet = false;
+  bool m_clientIPPreservationEnabledHasBeenSet = false;
   bool m_attachmentArnHasBeenSet = false;
 };
 

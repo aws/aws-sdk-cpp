@@ -67,9 +67,9 @@ class NamespaceError {
   ///@}
  private:
   NamespaceErrorType m_type{NamespaceErrorType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_typeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

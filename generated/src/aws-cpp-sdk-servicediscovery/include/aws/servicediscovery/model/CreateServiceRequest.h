@@ -245,30 +245,30 @@ class CreateServiceRequest : public ServiceDiscoveryRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_namespaceId;
-  bool m_namespaceIdHasBeenSet = false;
 
   Aws::String m_creatorRequestId{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_creatorRequestIdHasBeenSet = true;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   DnsConfig m_dnsConfig;
-  bool m_dnsConfigHasBeenSet = false;
 
   HealthCheckConfig m_healthCheckConfig;
-  bool m_healthCheckConfigHasBeenSet = false;
 
   HealthCheckCustomConfig m_healthCheckCustomConfig;
-  bool m_healthCheckCustomConfigHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ServiceTypeOption m_type{ServiceTypeOption::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_namespaceIdHasBeenSet = false;
+  bool m_creatorRequestIdHasBeenSet = true;
+  bool m_descriptionHasBeenSet = false;
+  bool m_dnsConfigHasBeenSet = false;
+  bool m_healthCheckConfigHasBeenSet = false;
+  bool m_healthCheckCustomConfigHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

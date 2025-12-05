@@ -110,18 +110,18 @@ class DeleteSessionResult {
   ///@}
  private:
   Aws::String m_botName;
-  bool m_botNameHasBeenSet = false;
 
   Aws::String m_botAlias;
-  bool m_botAliasHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_botNameHasBeenSet = false;
+  bool m_botAliasHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

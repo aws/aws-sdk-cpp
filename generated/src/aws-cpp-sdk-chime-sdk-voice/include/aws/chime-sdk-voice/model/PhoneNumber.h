@@ -309,48 +309,48 @@ class PhoneNumber {
   ///@}
  private:
   Aws::String m_phoneNumberId;
-  bool m_phoneNumberIdHasBeenSet = false;
 
   Aws::String m_e164PhoneNumber;
-  bool m_e164PhoneNumberHasBeenSet = false;
 
   Aws::String m_country;
-  bool m_countryHasBeenSet = false;
 
   PhoneNumberType m_type{PhoneNumberType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   PhoneNumberProductType m_productType{PhoneNumberProductType::NOT_SET};
-  bool m_productTypeHasBeenSet = false;
 
   PhoneNumberStatus m_status{PhoneNumberStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   PhoneNumberCapabilities m_capabilities;
-  bool m_capabilitiesHasBeenSet = false;
 
   Aws::Vector<PhoneNumberAssociation> m_associations;
-  bool m_associationsHasBeenSet = false;
 
   Aws::String m_callingName;
-  bool m_callingNameHasBeenSet = false;
 
   CallingNameStatus m_callingNameStatus{CallingNameStatus::NOT_SET};
-  bool m_callingNameStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedTimestamp{};
-  bool m_updatedTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_deletionTimestamp{};
-  bool m_deletionTimestampHasBeenSet = false;
 
   Aws::String m_orderId;
-  bool m_orderIdHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_phoneNumberIdHasBeenSet = false;
+  bool m_e164PhoneNumberHasBeenSet = false;
+  bool m_countryHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_productTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_capabilitiesHasBeenSet = false;
+  bool m_associationsHasBeenSet = false;
+  bool m_callingNameHasBeenSet = false;
+  bool m_callingNameStatusHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_updatedTimestampHasBeenSet = false;
+  bool m_deletionTimestampHasBeenSet = false;
+  bool m_orderIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

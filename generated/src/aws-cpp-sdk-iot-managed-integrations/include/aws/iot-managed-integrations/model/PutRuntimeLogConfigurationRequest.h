@@ -66,9 +66,9 @@ class PutRuntimeLogConfigurationRequest : public IoTManagedIntegrationsRequest {
   ///@}
  private:
   Aws::String m_managedThingId;
-  bool m_managedThingIdHasBeenSet = false;
 
   RuntimeLogConfigurations m_runtimeLogConfigurations;
+  bool m_managedThingIdHasBeenSet = false;
   bool m_runtimeLogConfigurationsHasBeenSet = false;
 };
 

@@ -105,15 +105,15 @@ class WorkspaceConnectionStatus {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   ConnectionState m_connectionState{ConnectionState::NOT_SET};
-  bool m_connectionStateHasBeenSet = false;
 
   Aws::Utils::DateTime m_connectionStateCheckTimestamp{};
-  bool m_connectionStateCheckTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastKnownUserConnectionTimestamp{};
+  bool m_workspaceIdHasBeenSet = false;
+  bool m_connectionStateHasBeenSet = false;
+  bool m_connectionStateCheckTimestampHasBeenSet = false;
   bool m_lastKnownUserConnectionTimestampHasBeenSet = false;
 };
 

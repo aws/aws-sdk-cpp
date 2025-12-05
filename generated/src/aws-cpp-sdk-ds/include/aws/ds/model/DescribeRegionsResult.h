@@ -87,12 +87,12 @@ class DescribeRegionsResult {
   ///@}
  private:
   Aws::Vector<RegionDescription> m_regionsDescription;
-  bool m_regionsDescriptionHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_regionsDescriptionHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

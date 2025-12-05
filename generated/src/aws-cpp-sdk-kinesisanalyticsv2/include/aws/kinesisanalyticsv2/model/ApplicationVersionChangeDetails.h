@@ -62,9 +62,9 @@ class ApplicationVersionChangeDetails {
   ///@}
  private:
   long long m_applicationVersionUpdatedFrom{0};
-  bool m_applicationVersionUpdatedFromHasBeenSet = false;
 
   long long m_applicationVersionUpdatedTo{0};
+  bool m_applicationVersionUpdatedFromHasBeenSet = false;
   bool m_applicationVersionUpdatedToHasBeenSet = false;
 };
 

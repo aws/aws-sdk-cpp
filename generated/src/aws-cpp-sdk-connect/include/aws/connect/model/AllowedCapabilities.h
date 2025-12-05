@@ -69,9 +69,9 @@ class AllowedCapabilities {
   ///@}
  private:
   ParticipantCapabilities m_customer;
-  bool m_customerHasBeenSet = false;
 
   ParticipantCapabilities m_agent;
+  bool m_customerHasBeenSet = false;
   bool m_agentHasBeenSet = false;
 };
 

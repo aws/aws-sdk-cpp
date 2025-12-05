@@ -121,15 +121,15 @@ class Widget {
   ///@}
  private:
   Aws::String m_queryAlias;
-  bool m_queryAliasHasBeenSet = false;
 
   Aws::String m_queryStatement;
-  bool m_queryStatementHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_queryParameters;
-  bool m_queryParametersHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_viewProperties;
+  bool m_queryAliasHasBeenSet = false;
+  bool m_queryStatementHasBeenSet = false;
+  bool m_queryParametersHasBeenSet = false;
   bool m_viewPropertiesHasBeenSet = false;
 };
 

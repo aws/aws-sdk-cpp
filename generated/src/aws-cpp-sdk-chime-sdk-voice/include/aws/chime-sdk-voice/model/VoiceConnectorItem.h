@@ -71,9 +71,9 @@ class VoiceConnectorItem {
   ///@}
  private:
   Aws::String m_voiceConnectorId;
-  bool m_voiceConnectorIdHasBeenSet = false;
 
   int m_priority{0};
+  bool m_voiceConnectorIdHasBeenSet = false;
   bool m_priorityHasBeenSet = false;
 };
 

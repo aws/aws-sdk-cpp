@@ -243,36 +243,36 @@ class KinesisSettings {
   ///@}
  private:
   Aws::String m_streamArn;
-  bool m_streamArnHasBeenSet = false;
 
   MessageFormatValue m_messageFormat{MessageFormatValue::NOT_SET};
-  bool m_messageFormatHasBeenSet = false;
 
   Aws::String m_serviceAccessRoleArn;
-  bool m_serviceAccessRoleArnHasBeenSet = false;
 
   bool m_includeTransactionDetails{false};
-  bool m_includeTransactionDetailsHasBeenSet = false;
 
   bool m_includePartitionValue{false};
-  bool m_includePartitionValueHasBeenSet = false;
 
   bool m_partitionIncludeSchemaTable{false};
-  bool m_partitionIncludeSchemaTableHasBeenSet = false;
 
   bool m_includeTableAlterOperations{false};
-  bool m_includeTableAlterOperationsHasBeenSet = false;
 
   bool m_includeControlDetails{false};
-  bool m_includeControlDetailsHasBeenSet = false;
 
   bool m_includeNullAndEmpty{false};
-  bool m_includeNullAndEmptyHasBeenSet = false;
 
   bool m_noHexPrefix{false};
-  bool m_noHexPrefixHasBeenSet = false;
 
   bool m_useLargeIntegerValue{false};
+  bool m_streamArnHasBeenSet = false;
+  bool m_messageFormatHasBeenSet = false;
+  bool m_serviceAccessRoleArnHasBeenSet = false;
+  bool m_includeTransactionDetailsHasBeenSet = false;
+  bool m_includePartitionValueHasBeenSet = false;
+  bool m_partitionIncludeSchemaTableHasBeenSet = false;
+  bool m_includeTableAlterOperationsHasBeenSet = false;
+  bool m_includeControlDetailsHasBeenSet = false;
+  bool m_includeNullAndEmptyHasBeenSet = false;
+  bool m_noHexPrefixHasBeenSet = false;
   bool m_useLargeIntegerValueHasBeenSet = false;
 };
 

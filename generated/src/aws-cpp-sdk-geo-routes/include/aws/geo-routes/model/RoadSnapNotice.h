@@ -92,12 +92,12 @@ class RoadSnapNotice {
   ///@}
  private:
   RoadSnapNoticeCode m_code{RoadSnapNoticeCode::NOT_SET};
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::Vector<int> m_tracePointIndexes;
+  bool m_codeHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
   bool m_tracePointIndexesHasBeenSet = false;
 };
 

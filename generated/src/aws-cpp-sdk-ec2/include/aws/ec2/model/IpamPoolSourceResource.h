@@ -106,15 +106,15 @@ class IpamPoolSourceResource {
   ///@}
  private:
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   IpamPoolSourceResourceType m_resourceType{IpamPoolSourceResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resourceRegion;
-  bool m_resourceRegionHasBeenSet = false;
 
   Aws::String m_resourceOwner;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceRegionHasBeenSet = false;
   bool m_resourceOwnerHasBeenSet = false;
 };
 

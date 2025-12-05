@@ -512,75 +512,75 @@ class StepExecution {
   ///@}
  private:
   Aws::String m_stepName;
-  bool m_stepNameHasBeenSet = false;
 
   Aws::String m_action;
-  bool m_actionHasBeenSet = false;
 
   long long m_timeoutSeconds{0};
-  bool m_timeoutSecondsHasBeenSet = false;
 
   Aws::String m_onFailure;
-  bool m_onFailureHasBeenSet = false;
 
   int m_maxAttempts{0};
-  bool m_maxAttemptsHasBeenSet = false;
 
   Aws::Utils::DateTime m_executionStartTime{};
-  bool m_executionStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_executionEndTime{};
-  bool m_executionEndTimeHasBeenSet = false;
 
   AutomationExecutionStatus m_stepStatus{AutomationExecutionStatus::NOT_SET};
-  bool m_stepStatusHasBeenSet = false;
 
   Aws::String m_responseCode;
-  bool m_responseCodeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_inputs;
-  bool m_inputsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_outputs;
-  bool m_outputsHasBeenSet = false;
 
   Aws::String m_response;
-  bool m_responseHasBeenSet = false;
 
   Aws::String m_failureMessage;
-  bool m_failureMessageHasBeenSet = false;
 
   FailureDetails m_failureDetails;
-  bool m_failureDetailsHasBeenSet = false;
 
   Aws::String m_stepExecutionId;
-  bool m_stepExecutionIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_overriddenParameters;
-  bool m_overriddenParametersHasBeenSet = false;
 
   bool m_isEnd{false};
-  bool m_isEndHasBeenSet = false;
 
   Aws::String m_nextStep;
-  bool m_nextStepHasBeenSet = false;
 
   bool m_isCritical{false};
-  bool m_isCriticalHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_validNextSteps;
-  bool m_validNextStepsHasBeenSet = false;
 
   Aws::Vector<Target> m_targets;
-  bool m_targetsHasBeenSet = false;
 
   TargetLocation m_targetLocation;
-  bool m_targetLocationHasBeenSet = false;
 
   Aws::Vector<AlarmStateInformation> m_triggeredAlarms;
-  bool m_triggeredAlarmsHasBeenSet = false;
 
   ParentStepDetails m_parentStepDetails;
+  bool m_stepNameHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_timeoutSecondsHasBeenSet = false;
+  bool m_onFailureHasBeenSet = false;
+  bool m_maxAttemptsHasBeenSet = false;
+  bool m_executionStartTimeHasBeenSet = false;
+  bool m_executionEndTimeHasBeenSet = false;
+  bool m_stepStatusHasBeenSet = false;
+  bool m_responseCodeHasBeenSet = false;
+  bool m_inputsHasBeenSet = false;
+  bool m_outputsHasBeenSet = false;
+  bool m_responseHasBeenSet = false;
+  bool m_failureMessageHasBeenSet = false;
+  bool m_failureDetailsHasBeenSet = false;
+  bool m_stepExecutionIdHasBeenSet = false;
+  bool m_overriddenParametersHasBeenSet = false;
+  bool m_isEndHasBeenSet = false;
+  bool m_nextStepHasBeenSet = false;
+  bool m_isCriticalHasBeenSet = false;
+  bool m_validNextStepsHasBeenSet = false;
+  bool m_targetsHasBeenSet = false;
+  bool m_targetLocationHasBeenSet = false;
+  bool m_triggeredAlarmsHasBeenSet = false;
   bool m_parentStepDetailsHasBeenSet = false;
 };
 

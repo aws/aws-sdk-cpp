@@ -96,15 +96,15 @@ class DiscoverPollEndpointResult {
   ///@}
  private:
   Aws::String m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   Aws::String m_telemetryEndpoint;
-  bool m_telemetryEndpointHasBeenSet = false;
 
   Aws::String m_serviceConnectEndpoint;
-  bool m_serviceConnectEndpointHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_endpointHasBeenSet = false;
+  bool m_telemetryEndpointHasBeenSet = false;
+  bool m_serviceConnectEndpointHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -75,9 +75,9 @@ class GenerateServiceLastAccessedDetailsRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   AccessAdvisorUsageGranularityType m_granularity{AccessAdvisorUsageGranularityType::NOT_SET};
+  bool m_arnHasBeenSet = false;
   bool m_granularityHasBeenSet = false;
 };
 

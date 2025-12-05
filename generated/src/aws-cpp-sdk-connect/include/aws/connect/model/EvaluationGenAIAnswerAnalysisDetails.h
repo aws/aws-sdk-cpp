@@ -77,9 +77,9 @@ class EvaluationGenAIAnswerAnalysisDetails {
   ///@}
  private:
   Aws::String m_justification;
-  bool m_justificationHasBeenSet = false;
 
   Aws::Vector<EvaluationTranscriptPointOfInterest> m_pointsOfInterest;
+  bool m_justificationHasBeenSet = false;
   bool m_pointsOfInterestHasBeenSet = false;
 };
 

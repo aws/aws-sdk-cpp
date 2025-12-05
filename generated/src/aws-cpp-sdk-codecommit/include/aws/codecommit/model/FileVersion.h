@@ -114,15 +114,15 @@ class FileVersion {
   ///@}
  private:
   Commit m_commit;
-  bool m_commitHasBeenSet = false;
 
   Aws::String m_blobId;
-  bool m_blobIdHasBeenSet = false;
 
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_revisionChildren;
+  bool m_commitHasBeenSet = false;
+  bool m_blobIdHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
   bool m_revisionChildrenHasBeenSet = false;
 };
 

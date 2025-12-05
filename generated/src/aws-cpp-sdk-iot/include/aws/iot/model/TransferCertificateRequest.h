@@ -93,12 +93,12 @@ class TransferCertificateRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_certificateId;
-  bool m_certificateIdHasBeenSet = false;
 
   Aws::String m_targetAwsAccount;
-  bool m_targetAwsAccountHasBeenSet = false;
 
   Aws::String m_transferMessage;
+  bool m_certificateIdHasBeenSet = false;
+  bool m_targetAwsAccountHasBeenSet = false;
   bool m_transferMessageHasBeenSet = false;
 };
 

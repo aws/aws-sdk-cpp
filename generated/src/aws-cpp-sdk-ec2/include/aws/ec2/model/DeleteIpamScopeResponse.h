@@ -60,9 +60,9 @@ class DeleteIpamScopeResponse {
   ///@}
  private:
   IpamScope m_ipamScope;
-  bool m_ipamScopeHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_ipamScopeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

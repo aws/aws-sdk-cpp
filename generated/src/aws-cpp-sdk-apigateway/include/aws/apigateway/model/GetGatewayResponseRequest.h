@@ -68,9 +68,9 @@ class GetGatewayResponseRequest : public APIGatewayRequest {
   ///@}
  private:
   Aws::String m_restApiId;
-  bool m_restApiIdHasBeenSet = false;
 
   GatewayResponseType m_responseType{GatewayResponseType::NOT_SET};
+  bool m_restApiIdHasBeenSet = false;
   bool m_responseTypeHasBeenSet = false;
 };
 

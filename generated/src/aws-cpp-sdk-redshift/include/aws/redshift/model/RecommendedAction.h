@@ -107,15 +107,15 @@ class RecommendedAction {
   ///@}
  private:
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   Aws::String m_database;
-  bool m_databaseHasBeenSet = false;
 
   Aws::String m_command;
-  bool m_commandHasBeenSet = false;
 
   RecommendedActionType m_type{RecommendedActionType::NOT_SET};
+  bool m_textHasBeenSet = false;
+  bool m_databaseHasBeenSet = false;
+  bool m_commandHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

@@ -179,27 +179,27 @@ class JobListDescriptor {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   OperationName m_operation{OperationName::NOT_SET};
-  bool m_operationHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   JobStatus m_status{JobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_terminationDate{};
-  bool m_terminationDateHasBeenSet = false;
 
   JobProgressSummary m_progressSummary;
+  bool m_jobIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_operationHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_terminationDateHasBeenSet = false;
   bool m_progressSummaryHasBeenSet = false;
 };
 

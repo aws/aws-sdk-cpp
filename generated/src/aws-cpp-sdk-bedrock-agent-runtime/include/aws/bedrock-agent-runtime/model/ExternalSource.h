@@ -88,12 +88,12 @@ class ExternalSource {
   ///@}
  private:
   ByteContentDoc m_byteContent;
-  bool m_byteContentHasBeenSet = false;
 
   S3ObjectDoc m_s3Location;
-  bool m_s3LocationHasBeenSet = false;
 
   ExternalSourceType m_sourceType{ExternalSourceType::NOT_SET};
+  bool m_byteContentHasBeenSet = false;
+  bool m_s3LocationHasBeenSet = false;
   bool m_sourceTypeHasBeenSet = false;
 };
 

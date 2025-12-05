@@ -89,12 +89,12 @@ class ListRequiredTagsResult {
   ///@}
  private:
   Aws::Vector<RequiredTag> m_requiredTags;
-  bool m_requiredTagsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_requiredTagsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

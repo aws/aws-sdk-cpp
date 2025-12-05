@@ -255,39 +255,39 @@ class MediaCapturePipeline {
   ///@}
  private:
   Aws::String m_mediaPipelineId;
-  bool m_mediaPipelineIdHasBeenSet = false;
 
   Aws::String m_mediaPipelineArn;
-  bool m_mediaPipelineArnHasBeenSet = false;
 
   MediaPipelineSourceType m_sourceType{MediaPipelineSourceType::NOT_SET};
-  bool m_sourceTypeHasBeenSet = false;
 
   Aws::String m_sourceArn;
-  bool m_sourceArnHasBeenSet = false;
 
   MediaPipelineStatus m_status{MediaPipelineStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   MediaPipelineSinkType m_sinkType{MediaPipelineSinkType::NOT_SET};
-  bool m_sinkTypeHasBeenSet = false;
 
   Aws::String m_sinkArn;
-  bool m_sinkArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedTimestamp{};
-  bool m_updatedTimestampHasBeenSet = false;
 
   ChimeSdkMeetingConfiguration m_chimeSdkMeetingConfiguration;
-  bool m_chimeSdkMeetingConfigurationHasBeenSet = false;
 
   SseAwsKeyManagementParams m_sseAwsKeyManagementParams;
-  bool m_sseAwsKeyManagementParamsHasBeenSet = false;
 
   Aws::String m_sinkIamRoleArn;
+  bool m_mediaPipelineIdHasBeenSet = false;
+  bool m_mediaPipelineArnHasBeenSet = false;
+  bool m_sourceTypeHasBeenSet = false;
+  bool m_sourceArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_sinkTypeHasBeenSet = false;
+  bool m_sinkArnHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_updatedTimestampHasBeenSet = false;
+  bool m_chimeSdkMeetingConfigurationHasBeenSet = false;
+  bool m_sseAwsKeyManagementParamsHasBeenSet = false;
   bool m_sinkIamRoleArnHasBeenSet = false;
 };
 

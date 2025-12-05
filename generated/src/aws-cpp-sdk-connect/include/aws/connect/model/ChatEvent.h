@@ -107,12 +107,12 @@ class ChatEvent {
   ///@}
  private:
   ChatEventType m_type{ChatEventType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::String m_content;
+  bool m_typeHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
   bool m_contentHasBeenSet = false;
 };
 

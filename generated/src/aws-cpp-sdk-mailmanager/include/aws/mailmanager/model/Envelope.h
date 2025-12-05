@@ -93,12 +93,12 @@ class Envelope {
   ///@}
  private:
   Aws::String m_helo;
-  bool m_heloHasBeenSet = false;
 
   Aws::String m_from;
-  bool m_fromHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_to;
+  bool m_heloHasBeenSet = false;
+  bool m_fromHasBeenSet = false;
   bool m_toHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class ColumnIdentifier {
   ///@}
  private:
   Aws::String m_dataSetIdentifier;
-  bool m_dataSetIdentifierHasBeenSet = false;
 
   Aws::String m_columnName;
+  bool m_dataSetIdentifierHasBeenSet = false;
   bool m_columnNameHasBeenSet = false;
 };
 

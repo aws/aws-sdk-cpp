@@ -85,12 +85,12 @@ class ListAnnotationImportJobsResult {
   ///@}
  private:
   Aws::Vector<AnnotationImportJobItem> m_annotationImportJobs;
-  bool m_annotationImportJobsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_annotationImportJobsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

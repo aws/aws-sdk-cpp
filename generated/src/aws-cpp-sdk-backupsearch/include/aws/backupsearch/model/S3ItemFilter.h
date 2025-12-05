@@ -166,18 +166,18 @@ class S3ItemFilter {
   ///@}
  private:
   Aws::Vector<StringCondition> m_objectKeys;
-  bool m_objectKeysHasBeenSet = false;
 
   Aws::Vector<LongCondition> m_sizes;
-  bool m_sizesHasBeenSet = false;
 
   Aws::Vector<TimeCondition> m_creationTimes;
-  bool m_creationTimesHasBeenSet = false;
 
   Aws::Vector<StringCondition> m_versionIds;
-  bool m_versionIdsHasBeenSet = false;
 
   Aws::Vector<StringCondition> m_eTags;
+  bool m_objectKeysHasBeenSet = false;
+  bool m_sizesHasBeenSet = false;
+  bool m_creationTimesHasBeenSet = false;
+  bool m_versionIdsHasBeenSet = false;
   bool m_eTagsHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class RuleNumberExpression {
   ///@}
  private:
   RuleNumberToEvaluate m_evaluate;
-  bool m_evaluateHasBeenSet = false;
 
   RuleNumberOperator m_operator{RuleNumberOperator::NOT_SET};
-  bool m_operatorHasBeenSet = false;
 
   double m_value{0.0};
+  bool m_evaluateHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

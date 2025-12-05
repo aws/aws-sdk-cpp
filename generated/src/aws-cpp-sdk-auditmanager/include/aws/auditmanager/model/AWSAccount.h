@@ -88,12 +88,12 @@ class AWSAccount {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_emailAddress;
-  bool m_emailAddressHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_idHasBeenSet = false;
+  bool m_emailAddressHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

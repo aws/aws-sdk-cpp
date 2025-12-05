@@ -111,18 +111,18 @@ class IcebergCompactionMetrics {
   ///@}
  private:
   long long m_numberOfBytesCompacted{0};
-  bool m_numberOfBytesCompactedHasBeenSet = false;
 
   long long m_numberOfFilesCompacted{0};
-  bool m_numberOfFilesCompactedHasBeenSet = false;
 
   double m_dpuHours{0.0};
-  bool m_dpuHoursHasBeenSet = false;
 
   int m_numberOfDpus{0};
-  bool m_numberOfDpusHasBeenSet = false;
 
   double m_jobDurationInHour{0.0};
+  bool m_numberOfBytesCompactedHasBeenSet = false;
+  bool m_numberOfFilesCompactedHasBeenSet = false;
+  bool m_dpuHoursHasBeenSet = false;
+  bool m_numberOfDpusHasBeenSet = false;
   bool m_jobDurationInHourHasBeenSet = false;
 };
 

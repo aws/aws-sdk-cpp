@@ -65,9 +65,9 @@ class UpdateSolNetworkPackageRequest : public TnbRequest {
   ///@}
  private:
   Aws::String m_nsdInfoId;
-  bool m_nsdInfoIdHasBeenSet = false;
 
   NsdOperationalState m_nsdOperationalState{NsdOperationalState::NOT_SET};
+  bool m_nsdInfoIdHasBeenSet = false;
   bool m_nsdOperationalStateHasBeenSet = false;
 };
 

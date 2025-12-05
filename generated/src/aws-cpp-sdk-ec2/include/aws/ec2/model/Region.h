@@ -90,12 +90,12 @@ class Region {
   ///@}
  private:
   Aws::String m_optInStatus;
-  bool m_optInStatusHasBeenSet = false;
 
   Aws::String m_regionName;
-  bool m_regionNameHasBeenSet = false;
 
   Aws::String m_endpoint;
+  bool m_optInStatusHasBeenSet = false;
+  bool m_regionNameHasBeenSet = false;
   bool m_endpointHasBeenSet = false;
 };
 

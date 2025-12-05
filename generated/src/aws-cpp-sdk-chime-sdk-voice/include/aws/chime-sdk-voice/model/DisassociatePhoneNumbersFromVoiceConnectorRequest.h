@@ -72,9 +72,9 @@ class DisassociatePhoneNumbersFromVoiceConnectorRequest : public ChimeSDKVoiceRe
   ///@}
  private:
   Aws::String m_voiceConnectorId;
-  bool m_voiceConnectorIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_e164PhoneNumbers;
+  bool m_voiceConnectorIdHasBeenSet = false;
   bool m_e164PhoneNumbersHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class DescribeReservedNodesOfferingsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ReservedNodesOffering> m_reservedNodesOfferings;
-  bool m_reservedNodesOfferingsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_reservedNodesOfferingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -285,24 +285,24 @@ class ReceiveMessageRequest : public SQSRequest {
   ///@}
  private:
   Aws::String m_queueUrl;
-  bool m_queueUrlHasBeenSet = false;
 
   Aws::Vector<MessageSystemAttributeName> m_messageSystemAttributeNames;
-  bool m_messageSystemAttributeNamesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_messageAttributeNames;
-  bool m_messageAttributeNamesHasBeenSet = false;
 
   int m_maxNumberOfMessages{0};
-  bool m_maxNumberOfMessagesHasBeenSet = false;
 
   int m_visibilityTimeout{0};
-  bool m_visibilityTimeoutHasBeenSet = false;
 
   int m_waitTimeSeconds{0};
-  bool m_waitTimeSecondsHasBeenSet = false;
 
   Aws::String m_receiveRequestAttemptId;
+  bool m_queueUrlHasBeenSet = false;
+  bool m_messageSystemAttributeNamesHasBeenSet = false;
+  bool m_messageAttributeNamesHasBeenSet = false;
+  bool m_maxNumberOfMessagesHasBeenSet = false;
+  bool m_visibilityTimeoutHasBeenSet = false;
+  bool m_waitTimeSecondsHasBeenSet = false;
   bool m_receiveRequestAttemptIdHasBeenSet = false;
 };
 

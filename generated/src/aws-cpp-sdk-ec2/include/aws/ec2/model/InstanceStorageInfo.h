@@ -110,15 +110,15 @@ class InstanceStorageInfo {
   ///@}
  private:
   long long m_totalSizeInGB{0};
-  bool m_totalSizeInGBHasBeenSet = false;
 
   Aws::Vector<DiskInfo> m_disks;
-  bool m_disksHasBeenSet = false;
 
   EphemeralNvmeSupport m_nvmeSupport{EphemeralNvmeSupport::NOT_SET};
-  bool m_nvmeSupportHasBeenSet = false;
 
   InstanceStorageEncryptionSupport m_encryptionSupport{InstanceStorageEncryptionSupport::NOT_SET};
+  bool m_totalSizeInGBHasBeenSet = false;
+  bool m_disksHasBeenSet = false;
+  bool m_nvmeSupportHasBeenSet = false;
   bool m_encryptionSupportHasBeenSet = false;
 };
 

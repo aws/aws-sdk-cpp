@@ -85,12 +85,12 @@ class DescribePatchBaselinesResult {
   ///@}
  private:
   Aws::Vector<PatchBaselineIdentity> m_baselineIdentities;
-  bool m_baselineIdentitiesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_baselineIdentitiesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

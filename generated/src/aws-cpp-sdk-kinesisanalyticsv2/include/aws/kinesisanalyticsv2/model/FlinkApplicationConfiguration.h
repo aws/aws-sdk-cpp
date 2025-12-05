@@ -97,12 +97,12 @@ class FlinkApplicationConfiguration {
   ///@}
  private:
   CheckpointConfiguration m_checkpointConfiguration;
-  bool m_checkpointConfigurationHasBeenSet = false;
 
   MonitoringConfiguration m_monitoringConfiguration;
-  bool m_monitoringConfigurationHasBeenSet = false;
 
   ParallelismConfiguration m_parallelismConfiguration;
+  bool m_checkpointConfigurationHasBeenSet = false;
+  bool m_monitoringConfigurationHasBeenSet = false;
   bool m_parallelismConfigurationHasBeenSet = false;
 };
 

@@ -163,15 +163,15 @@ class ManagedRuleGroupConfig {
   ///@}
  private:
   AWSManagedRulesBotControlRuleSet m_aWSManagedRulesBotControlRuleSet;
-  bool m_aWSManagedRulesBotControlRuleSetHasBeenSet = false;
 
   AWSManagedRulesATPRuleSet m_aWSManagedRulesATPRuleSet;
-  bool m_aWSManagedRulesATPRuleSetHasBeenSet = false;
 
   AWSManagedRulesACFPRuleSet m_aWSManagedRulesACFPRuleSet;
-  bool m_aWSManagedRulesACFPRuleSetHasBeenSet = false;
 
   AWSManagedRulesAntiDDoSRuleSet m_aWSManagedRulesAntiDDoSRuleSet;
+  bool m_aWSManagedRulesBotControlRuleSetHasBeenSet = false;
+  bool m_aWSManagedRulesATPRuleSetHasBeenSet = false;
+  bool m_aWSManagedRulesACFPRuleSetHasBeenSet = false;
   bool m_aWSManagedRulesAntiDDoSRuleSetHasBeenSet = false;
 };
 

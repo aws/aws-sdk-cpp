@@ -316,48 +316,48 @@ class ConfigRuleEvaluationStatus {
   ///@}
  private:
   Aws::String m_configRuleName;
-  bool m_configRuleNameHasBeenSet = false;
 
   Aws::String m_configRuleArn;
-  bool m_configRuleArnHasBeenSet = false;
 
   Aws::String m_configRuleId;
-  bool m_configRuleIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastSuccessfulInvocationTime{};
-  bool m_lastSuccessfulInvocationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastFailedInvocationTime{};
-  bool m_lastFailedInvocationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastSuccessfulEvaluationTime{};
-  bool m_lastSuccessfulEvaluationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastFailedEvaluationTime{};
-  bool m_lastFailedEvaluationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_firstActivatedTime{};
-  bool m_firstActivatedTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastDeactivatedTime{};
-  bool m_lastDeactivatedTimeHasBeenSet = false;
 
   Aws::String m_lastErrorCode;
-  bool m_lastErrorCodeHasBeenSet = false;
 
   Aws::String m_lastErrorMessage;
-  bool m_lastErrorMessageHasBeenSet = false;
 
   bool m_firstEvaluationStarted{false};
-  bool m_firstEvaluationStartedHasBeenSet = false;
 
   Aws::String m_lastDebugLogDeliveryStatus;
-  bool m_lastDebugLogDeliveryStatusHasBeenSet = false;
 
   Aws::String m_lastDebugLogDeliveryStatusReason;
-  bool m_lastDebugLogDeliveryStatusReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastDebugLogDeliveryTime{};
+  bool m_configRuleNameHasBeenSet = false;
+  bool m_configRuleArnHasBeenSet = false;
+  bool m_configRuleIdHasBeenSet = false;
+  bool m_lastSuccessfulInvocationTimeHasBeenSet = false;
+  bool m_lastFailedInvocationTimeHasBeenSet = false;
+  bool m_lastSuccessfulEvaluationTimeHasBeenSet = false;
+  bool m_lastFailedEvaluationTimeHasBeenSet = false;
+  bool m_firstActivatedTimeHasBeenSet = false;
+  bool m_lastDeactivatedTimeHasBeenSet = false;
+  bool m_lastErrorCodeHasBeenSet = false;
+  bool m_lastErrorMessageHasBeenSet = false;
+  bool m_firstEvaluationStartedHasBeenSet = false;
+  bool m_lastDebugLogDeliveryStatusHasBeenSet = false;
+  bool m_lastDebugLogDeliveryStatusReasonHasBeenSet = false;
   bool m_lastDebugLogDeliveryTimeHasBeenSet = false;
 };
 

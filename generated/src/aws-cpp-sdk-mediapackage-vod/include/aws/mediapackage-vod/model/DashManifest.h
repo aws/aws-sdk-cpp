@@ -141,21 +141,21 @@ class DashManifest {
   ///@}
  private:
   ManifestLayout m_manifestLayout{ManifestLayout::NOT_SET};
-  bool m_manifestLayoutHasBeenSet = false;
 
   Aws::String m_manifestName;
-  bool m_manifestNameHasBeenSet = false;
 
   int m_minBufferTimeSeconds{0};
-  bool m_minBufferTimeSecondsHasBeenSet = false;
 
   Profile m_profile{Profile::NOT_SET};
-  bool m_profileHasBeenSet = false;
 
   ScteMarkersSource m_scteMarkersSource{ScteMarkersSource::NOT_SET};
-  bool m_scteMarkersSourceHasBeenSet = false;
 
   StreamSelection m_streamSelection;
+  bool m_manifestLayoutHasBeenSet = false;
+  bool m_manifestNameHasBeenSet = false;
+  bool m_minBufferTimeSecondsHasBeenSet = false;
+  bool m_profileHasBeenSet = false;
+  bool m_scteMarkersSourceHasBeenSet = false;
   bool m_streamSelectionHasBeenSet = false;
 };
 

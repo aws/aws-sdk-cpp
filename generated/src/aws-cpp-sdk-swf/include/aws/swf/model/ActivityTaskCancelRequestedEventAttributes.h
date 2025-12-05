@@ -71,9 +71,9 @@ class ActivityTaskCancelRequestedEventAttributes {
   ///@}
  private:
   long long m_decisionTaskCompletedEventId{0};
-  bool m_decisionTaskCompletedEventIdHasBeenSet = false;
 
   Aws::String m_activityId;
+  bool m_decisionTaskCompletedEventIdHasBeenSet = false;
   bool m_activityIdHasBeenSet = false;
 };
 

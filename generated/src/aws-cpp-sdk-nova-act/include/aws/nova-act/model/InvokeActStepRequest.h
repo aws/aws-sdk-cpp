@@ -145,21 +145,21 @@ class InvokeActStepRequest : public NovaActRequest {
   ///@}
  private:
   Aws::String m_workflowDefinitionName;
-  bool m_workflowDefinitionNameHasBeenSet = false;
 
   Aws::String m_workflowRunId;
-  bool m_workflowRunIdHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_actId;
-  bool m_actIdHasBeenSet = false;
 
   Aws::Vector<CallResult> m_callResults;
-  bool m_callResultsHasBeenSet = false;
 
   Aws::String m_previousStepId;
+  bool m_workflowDefinitionNameHasBeenSet = false;
+  bool m_workflowRunIdHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_actIdHasBeenSet = false;
+  bool m_callResultsHasBeenSet = false;
   bool m_previousStepIdHasBeenSet = false;
 };
 

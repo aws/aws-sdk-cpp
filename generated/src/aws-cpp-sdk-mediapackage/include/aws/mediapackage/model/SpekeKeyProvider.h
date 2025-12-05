@@ -156,21 +156,21 @@ MediaPackage
   ///@}
  private:
   Aws::String m_certificateArn;
-  bool m_certificateArnHasBeenSet = false;
 
   EncryptionContractConfiguration m_encryptionContractConfiguration;
-  bool m_encryptionContractConfigurationHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_systemIds;
-  bool m_systemIdsHasBeenSet = false;
 
   Aws::String m_url;
+  bool m_certificateArnHasBeenSet = false;
+  bool m_encryptionContractConfigurationHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_systemIdsHasBeenSet = false;
   bool m_urlHasBeenSet = false;
 };
 

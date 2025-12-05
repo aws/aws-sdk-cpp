@@ -58,9 +58,9 @@ class SendOTPMessageResult {
   ///@}
  private:
   MessageResponse m_messageResponse;
-  bool m_messageResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_messageResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

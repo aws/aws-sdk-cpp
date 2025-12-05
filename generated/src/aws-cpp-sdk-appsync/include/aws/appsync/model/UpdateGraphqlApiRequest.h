@@ -331,48 +331,48 @@ class UpdateGraphqlApiRequest : public AppSyncRequest {
   ///@}
  private:
   Aws::String m_apiId;
-  bool m_apiIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   LogConfig m_logConfig;
-  bool m_logConfigHasBeenSet = false;
 
   AuthenticationType m_authenticationType{AuthenticationType::NOT_SET};
-  bool m_authenticationTypeHasBeenSet = false;
 
   UserPoolConfig m_userPoolConfig;
-  bool m_userPoolConfigHasBeenSet = false;
 
   OpenIDConnectConfig m_openIDConnectConfig;
-  bool m_openIDConnectConfigHasBeenSet = false;
 
   Aws::Vector<AdditionalAuthenticationProvider> m_additionalAuthenticationProviders;
-  bool m_additionalAuthenticationProvidersHasBeenSet = false;
 
   bool m_xrayEnabled{false};
-  bool m_xrayEnabledHasBeenSet = false;
 
   LambdaAuthorizerConfig m_lambdaAuthorizerConfig;
-  bool m_lambdaAuthorizerConfigHasBeenSet = false;
 
   Aws::String m_mergedApiExecutionRoleArn;
-  bool m_mergedApiExecutionRoleArnHasBeenSet = false;
 
   Aws::String m_ownerContact;
-  bool m_ownerContactHasBeenSet = false;
 
   GraphQLApiIntrospectionConfig m_introspectionConfig{GraphQLApiIntrospectionConfig::NOT_SET};
-  bool m_introspectionConfigHasBeenSet = false;
 
   int m_queryDepthLimit{0};
-  bool m_queryDepthLimitHasBeenSet = false;
 
   int m_resolverCountLimit{0};
-  bool m_resolverCountLimitHasBeenSet = false;
 
   EnhancedMetricsConfig m_enhancedMetricsConfig;
+  bool m_apiIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_logConfigHasBeenSet = false;
+  bool m_authenticationTypeHasBeenSet = false;
+  bool m_userPoolConfigHasBeenSet = false;
+  bool m_openIDConnectConfigHasBeenSet = false;
+  bool m_additionalAuthenticationProvidersHasBeenSet = false;
+  bool m_xrayEnabledHasBeenSet = false;
+  bool m_lambdaAuthorizerConfigHasBeenSet = false;
+  bool m_mergedApiExecutionRoleArnHasBeenSet = false;
+  bool m_ownerContactHasBeenSet = false;
+  bool m_introspectionConfigHasBeenSet = false;
+  bool m_queryDepthLimitHasBeenSet = false;
+  bool m_resolverCountLimitHasBeenSet = false;
   bool m_enhancedMetricsConfigHasBeenSet = false;
 };
 

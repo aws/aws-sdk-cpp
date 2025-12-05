@@ -130,18 +130,18 @@ class GetBillingGroupCostReportRequest : public BillingConductorRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   BillingPeriodRange m_billingPeriodRange;
-  bool m_billingPeriodRangeHasBeenSet = false;
 
   Aws::Vector<GroupByAttributeName> m_groupBy;
-  bool m_groupByHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_arnHasBeenSet = false;
+  bool m_billingPeriodRangeHasBeenSet = false;
+  bool m_groupByHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -85,9 +85,9 @@ class DatasetDocumentClassifierInputDataConfig {
   ///@}
  private:
   Aws::String m_s3Uri;
-  bool m_s3UriHasBeenSet = false;
 
   Aws::String m_labelDelimiter;
+  bool m_s3UriHasBeenSet = false;
   bool m_labelDelimiterHasBeenSet = false;
 };
 

@@ -106,15 +106,15 @@ class GeospatialCircleSymbolStyle {
   ///@}
  private:
   GeospatialColor m_fillColor;
-  bool m_fillColorHasBeenSet = false;
 
   GeospatialColor m_strokeColor;
-  bool m_strokeColorHasBeenSet = false;
 
   GeospatialLineWidth m_strokeWidth;
-  bool m_strokeWidthHasBeenSet = false;
 
   GeospatialCircleRadius m_circleRadius;
+  bool m_fillColorHasBeenSet = false;
+  bool m_strokeColorHasBeenSet = false;
+  bool m_strokeWidthHasBeenSet = false;
   bool m_circleRadiusHasBeenSet = false;
 };
 

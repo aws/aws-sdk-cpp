@@ -122,18 +122,18 @@ class CustomerGatewayAssociation {
   ///@}
  private:
   Aws::String m_customerGatewayArn;
-  bool m_customerGatewayArnHasBeenSet = false;
 
   Aws::String m_globalNetworkId;
-  bool m_globalNetworkIdHasBeenSet = false;
 
   Aws::String m_deviceId;
-  bool m_deviceIdHasBeenSet = false;
 
   Aws::String m_linkId;
-  bool m_linkIdHasBeenSet = false;
 
   CustomerGatewayAssociationState m_state{CustomerGatewayAssociationState::NOT_SET};
+  bool m_customerGatewayArnHasBeenSet = false;
+  bool m_globalNetworkIdHasBeenSet = false;
+  bool m_deviceIdHasBeenSet = false;
+  bool m_linkIdHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

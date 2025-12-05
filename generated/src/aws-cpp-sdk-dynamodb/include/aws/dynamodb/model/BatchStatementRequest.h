@@ -116,15 +116,15 @@ class BatchStatementRequest {
   ///@}
  private:
   Aws::String m_statement;
-  bool m_statementHasBeenSet = false;
 
   Aws::Vector<AttributeValue> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   bool m_consistentRead{false};
-  bool m_consistentReadHasBeenSet = false;
 
   ReturnValuesOnConditionCheckFailure m_returnValuesOnConditionCheckFailure{ReturnValuesOnConditionCheckFailure::NOT_SET};
+  bool m_statementHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_consistentReadHasBeenSet = false;
   bool m_returnValuesOnConditionCheckFailureHasBeenSet = false;
 };
 

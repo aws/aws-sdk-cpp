@@ -211,36 +211,36 @@ class GetMLTaskRunResult {
   ///@}
  private:
   Aws::String m_transformId;
-  bool m_transformIdHasBeenSet = false;
 
   Aws::String m_taskRunId;
-  bool m_taskRunIdHasBeenSet = false;
 
   TaskStatusType m_status{TaskStatusType::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_logGroupName;
-  bool m_logGroupNameHasBeenSet = false;
 
   TaskRunProperties m_properties;
-  bool m_propertiesHasBeenSet = false;
 
   Aws::String m_errorString;
-  bool m_errorStringHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedOn{};
-  bool m_startedOnHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedOn{};
-  bool m_lastModifiedOnHasBeenSet = false;
 
   Aws::Utils::DateTime m_completedOn{};
-  bool m_completedOnHasBeenSet = false;
 
   int m_executionTime{0};
-  bool m_executionTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_transformIdHasBeenSet = false;
+  bool m_taskRunIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_logGroupNameHasBeenSet = false;
+  bool m_propertiesHasBeenSet = false;
+  bool m_errorStringHasBeenSet = false;
+  bool m_startedOnHasBeenSet = false;
+  bool m_lastModifiedOnHasBeenSet = false;
+  bool m_completedOnHasBeenSet = false;
+  bool m_executionTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

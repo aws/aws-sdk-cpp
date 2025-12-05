@@ -69,9 +69,9 @@ class Conversational {
   ///@}
  private:
   Content m_content;
-  bool m_contentHasBeenSet = false;
 
   Role m_role{Role::NOT_SET};
+  bool m_contentHasBeenSet = false;
   bool m_roleHasBeenSet = false;
 };
 

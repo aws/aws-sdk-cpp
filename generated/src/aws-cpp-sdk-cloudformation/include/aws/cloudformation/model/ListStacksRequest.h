@@ -83,9 +83,9 @@ class ListStacksRequest : public CloudFormationRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<StackStatus> m_stackStatusFilter;
+  bool m_nextTokenHasBeenSet = false;
   bool m_stackStatusFilterHasBeenSet = false;
 };
 

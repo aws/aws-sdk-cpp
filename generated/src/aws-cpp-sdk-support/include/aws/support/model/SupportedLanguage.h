@@ -89,12 +89,12 @@ class SupportedLanguage {
   ///@}
  private:
   Aws::String m_code;
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_language;
-  bool m_languageHasBeenSet = false;
 
   Aws::String m_display;
+  bool m_codeHasBeenSet = false;
+  bool m_languageHasBeenSet = false;
   bool m_displayHasBeenSet = false;
 };
 

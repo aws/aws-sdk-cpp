@@ -84,12 +84,12 @@ class ListScenesResult {
   ///@}
  private:
   Aws::Vector<SceneSummary> m_sceneSummaries;
-  bool m_sceneSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sceneSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class UpdateProfilingGroupRequest : public CodeGuruProfilerRequest {
   ///@}
  private:
   AgentOrchestrationConfig m_agentOrchestrationConfig;
-  bool m_agentOrchestrationConfigHasBeenSet = false;
 
   Aws::String m_profilingGroupName;
+  bool m_agentOrchestrationConfigHasBeenSet = false;
   bool m_profilingGroupNameHasBeenSet = false;
 };
 

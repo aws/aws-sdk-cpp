@@ -92,12 +92,12 @@ class AudioResponseEvent {
   ///@}
  private:
   Aws::Utils::ByteBuffer m_audioChunk{};
-  bool m_audioChunkHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::String m_eventId;
+  bool m_audioChunkHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
   bool m_eventIdHasBeenSet = false;
 };
 

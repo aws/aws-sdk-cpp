@@ -200,30 +200,30 @@ class HypervisorDetails {
   ///@}
  private:
   Aws::String m_host;
-  bool m_hostHasBeenSet = false;
 
   Aws::String m_hypervisorArn;
-  bool m_hypervisorArnHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastSuccessfulMetadataSyncTime{};
-  bool m_lastSuccessfulMetadataSyncTimeHasBeenSet = false;
 
   SyncMetadataStatus m_latestMetadataSyncStatus{SyncMetadataStatus::NOT_SET};
-  bool m_latestMetadataSyncStatusHasBeenSet = false;
 
   Aws::String m_latestMetadataSyncStatusMessage;
-  bool m_latestMetadataSyncStatusMessageHasBeenSet = false;
 
   Aws::String m_logGroupArn;
-  bool m_logGroupArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   HypervisorState m_state{HypervisorState::NOT_SET};
+  bool m_hostHasBeenSet = false;
+  bool m_hypervisorArnHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
+  bool m_lastSuccessfulMetadataSyncTimeHasBeenSet = false;
+  bool m_latestMetadataSyncStatusHasBeenSet = false;
+  bool m_latestMetadataSyncStatusMessageHasBeenSet = false;
+  bool m_logGroupArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

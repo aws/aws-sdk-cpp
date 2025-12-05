@@ -70,9 +70,9 @@ class TileLayoutStyle {
   ///@}
  private:
   GutterStyle m_gutter;
-  bool m_gutterHasBeenSet = false;
 
   MarginStyle m_margin;
+  bool m_gutterHasBeenSet = false;
   bool m_marginHasBeenSet = false;
 };
 

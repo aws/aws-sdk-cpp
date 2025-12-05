@@ -140,18 +140,18 @@ class MetricsDataSource {
   ///@}
  private:
   Aws::Map<MetricDimensionName, Aws::Vector<Aws::String>> m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
 
   MetricNamespace m_namespace{MetricNamespace::NOT_SET};
-  bool m_namespaceHasBeenSet = false;
 
   Aws::Vector<ExportMetric> m_metrics;
-  bool m_metricsHasBeenSet = false;
 
   Aws::Utils::DateTime m_startDate{};
-  bool m_startDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_endDate{};
+  bool m_dimensionsHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_metricsHasBeenSet = false;
+  bool m_startDateHasBeenSet = false;
   bool m_endDateHasBeenSet = false;
 };
 

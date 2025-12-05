@@ -130,18 +130,18 @@ class GetUserAuthFactorsResult {
   ///@}
  private:
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::String m_preferredMfaSetting;
-  bool m_preferredMfaSettingHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_userMFASettingList;
-  bool m_userMFASettingListHasBeenSet = false;
 
   Aws::Vector<AuthFactorType> m_configuredUserAuthFactors;
-  bool m_configuredUserAuthFactorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_usernameHasBeenSet = false;
+  bool m_preferredMfaSettingHasBeenSet = false;
+  bool m_userMFASettingListHasBeenSet = false;
+  bool m_configuredUserAuthFactorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

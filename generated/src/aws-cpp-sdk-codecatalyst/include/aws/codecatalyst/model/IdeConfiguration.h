@@ -72,9 +72,9 @@ class IdeConfiguration {
   ///@}
  private:
   Aws::String m_runtime;
-  bool m_runtimeHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_runtimeHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class QueryGenerationConfiguration {
   ///@}
  private:
   int m_executionTimeoutSeconds{0};
-  bool m_executionTimeoutSecondsHasBeenSet = false;
 
   QueryGenerationContext m_generationContext;
+  bool m_executionTimeoutSecondsHasBeenSet = false;
   bool m_generationContextHasBeenSet = false;
 };
 

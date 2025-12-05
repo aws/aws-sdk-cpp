@@ -191,27 +191,27 @@ class PutRuleRequest : public CloudWatchEventsRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_scheduleExpression;
-  bool m_scheduleExpressionHasBeenSet = false;
 
   Aws::String m_eventPattern;
-  bool m_eventPatternHasBeenSet = false;
 
   RuleState m_state{RuleState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_eventBusName;
+  bool m_nameHasBeenSet = false;
+  bool m_scheduleExpressionHasBeenSet = false;
+  bool m_eventPatternHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_eventBusNameHasBeenSet = false;
 };
 

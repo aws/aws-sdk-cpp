@@ -532,69 +532,69 @@ class HeadObjectRequest : public S3CrtRequest {
   ///@}
  private:
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   Aws::String m_ifMatch;
-  bool m_ifMatchHasBeenSet = false;
 
   Aws::Utils::DateTime m_ifModifiedSince{};
-  bool m_ifModifiedSinceHasBeenSet = false;
 
   Aws::String m_ifNoneMatch;
-  bool m_ifNoneMatchHasBeenSet = false;
 
   Aws::Utils::DateTime m_ifUnmodifiedSince{};
-  bool m_ifUnmodifiedSinceHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_range;
-  bool m_rangeHasBeenSet = false;
 
   Aws::String m_responseCacheControl;
-  bool m_responseCacheControlHasBeenSet = false;
 
   Aws::String m_responseContentDisposition;
-  bool m_responseContentDispositionHasBeenSet = false;
 
   Aws::String m_responseContentEncoding;
-  bool m_responseContentEncodingHasBeenSet = false;
 
   Aws::String m_responseContentLanguage;
-  bool m_responseContentLanguageHasBeenSet = false;
 
   Aws::String m_responseContentType;
-  bool m_responseContentTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_responseExpires{};
-  bool m_responseExpiresHasBeenSet = false;
 
   Aws::String m_versionId;
-  bool m_versionIdHasBeenSet = false;
 
   Aws::String m_sSECustomerAlgorithm;
-  bool m_sSECustomerAlgorithmHasBeenSet = false;
 
   Aws::String m_sSECustomerKey;
-  bool m_sSECustomerKeyHasBeenSet = false;
 
   Aws::String m_sSECustomerKeyMD5;
-  bool m_sSECustomerKeyMD5HasBeenSet = false;
 
   RequestPayer m_requestPayer{RequestPayer::NOT_SET};
-  bool m_requestPayerHasBeenSet = false;
 
   int m_partNumber{0};
-  bool m_partNumberHasBeenSet = false;
 
   Aws::String m_expectedBucketOwner;
-  bool m_expectedBucketOwnerHasBeenSet = false;
 
   ChecksumMode m_checksumMode{ChecksumMode::NOT_SET};
-  bool m_checksumModeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
+  bool m_bucketHasBeenSet = false;
+  bool m_ifMatchHasBeenSet = false;
+  bool m_ifModifiedSinceHasBeenSet = false;
+  bool m_ifNoneMatchHasBeenSet = false;
+  bool m_ifUnmodifiedSinceHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
+  bool m_rangeHasBeenSet = false;
+  bool m_responseCacheControlHasBeenSet = false;
+  bool m_responseContentDispositionHasBeenSet = false;
+  bool m_responseContentEncodingHasBeenSet = false;
+  bool m_responseContentLanguageHasBeenSet = false;
+  bool m_responseContentTypeHasBeenSet = false;
+  bool m_responseExpiresHasBeenSet = false;
+  bool m_versionIdHasBeenSet = false;
+  bool m_sSECustomerAlgorithmHasBeenSet = false;
+  bool m_sSECustomerKeyHasBeenSet = false;
+  bool m_sSECustomerKeyMD5HasBeenSet = false;
+  bool m_requestPayerHasBeenSet = false;
+  bool m_partNumberHasBeenSet = false;
+  bool m_expectedBucketOwnerHasBeenSet = false;
+  bool m_checksumModeHasBeenSet = false;
   bool m_customizedAccessLogTagHasBeenSet = false;
 };
 

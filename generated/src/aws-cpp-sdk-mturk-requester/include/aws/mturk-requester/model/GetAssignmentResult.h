@@ -79,12 +79,12 @@ class GetAssignmentResult {
   ///@}
  private:
   Assignment m_assignment;
-  bool m_assignmentHasBeenSet = false;
 
   HIT m_hIT;
-  bool m_hITHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assignmentHasBeenSet = false;
+  bool m_hITHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

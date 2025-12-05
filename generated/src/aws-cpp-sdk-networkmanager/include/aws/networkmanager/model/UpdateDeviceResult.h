@@ -60,9 +60,9 @@ class UpdateDeviceResult {
   ///@}
  private:
   Device m_device;
-  bool m_deviceHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deviceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

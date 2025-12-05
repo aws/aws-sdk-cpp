@@ -109,15 +109,15 @@ class SaaSProductFilters {
   ///@}
  private:
   SaaSProductEntityIdFilter m_entityId;
-  bool m_entityIdHasBeenSet = false;
 
   SaaSProductTitleFilter m_productTitle;
-  bool m_productTitleHasBeenSet = false;
 
   SaaSProductVisibilityFilter m_visibility;
-  bool m_visibilityHasBeenSet = false;
 
   SaaSProductLastModifiedDateFilter m_lastModifiedDate;
+  bool m_entityIdHasBeenSet = false;
+  bool m_productTitleHasBeenSet = false;
+  bool m_visibilityHasBeenSet = false;
   bool m_lastModifiedDateHasBeenSet = false;
 };
 

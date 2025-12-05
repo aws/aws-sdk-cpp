@@ -126,21 +126,21 @@ class ModifyCurrentDBClusterCapacityResult {
   ///@}
  private:
   Aws::String m_dBClusterIdentifier;
-  bool m_dBClusterIdentifierHasBeenSet = false;
 
   int m_pendingCapacity{0};
-  bool m_pendingCapacityHasBeenSet = false;
 
   int m_currentCapacity{0};
-  bool m_currentCapacityHasBeenSet = false;
 
   int m_secondsBeforeTimeout{0};
-  bool m_secondsBeforeTimeoutHasBeenSet = false;
 
   Aws::String m_timeoutAction;
-  bool m_timeoutActionHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_dBClusterIdentifierHasBeenSet = false;
+  bool m_pendingCapacityHasBeenSet = false;
+  bool m_currentCapacityHasBeenSet = false;
+  bool m_secondsBeforeTimeoutHasBeenSet = false;
+  bool m_timeoutActionHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

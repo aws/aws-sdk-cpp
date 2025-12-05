@@ -64,9 +64,9 @@ class ManagedResourceSummary {
   ///@}
  private:
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   long long m_associationCount{0};
+  bool m_resourceTypeHasBeenSet = false;
   bool m_associationCountHasBeenSet = false;
 };
 

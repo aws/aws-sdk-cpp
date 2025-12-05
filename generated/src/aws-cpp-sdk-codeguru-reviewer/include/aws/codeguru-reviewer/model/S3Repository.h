@@ -69,9 +69,9 @@ class S3Repository {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_bucketName;
+  bool m_nameHasBeenSet = false;
   bool m_bucketNameHasBeenSet = false;
 };
 

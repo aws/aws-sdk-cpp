@@ -147,21 +147,21 @@ class RedshiftDataShareDetails {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_database;
-  bool m_databaseHasBeenSet = false;
 
   Aws::String m_function;
-  bool m_functionHasBeenSet = false;
 
   Aws::String m_table;
-  bool m_tableHasBeenSet = false;
 
   Aws::String m_schema;
-  bool m_schemaHasBeenSet = false;
 
   Aws::String m_view;
+  bool m_arnHasBeenSet = false;
+  bool m_databaseHasBeenSet = false;
+  bool m_functionHasBeenSet = false;
+  bool m_tableHasBeenSet = false;
+  bool m_schemaHasBeenSet = false;
   bool m_viewHasBeenSet = false;
 };
 

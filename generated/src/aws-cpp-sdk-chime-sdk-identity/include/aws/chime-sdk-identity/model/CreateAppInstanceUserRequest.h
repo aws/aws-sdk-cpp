@@ -167,24 +167,24 @@ class CreateAppInstanceUserRequest : public ChimeSDKIdentityRequest {
   ///@}
  private:
   Aws::String m_appInstanceArn;
-  bool m_appInstanceArnHasBeenSet = false;
 
   Aws::String m_appInstanceUserId;
-  bool m_appInstanceUserIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ExpirationSettings m_expirationSettings;
+  bool m_appInstanceArnHasBeenSet = false;
+  bool m_appInstanceUserIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_tagsHasBeenSet = false;
   bool m_expirationSettingsHasBeenSet = false;
 };
 

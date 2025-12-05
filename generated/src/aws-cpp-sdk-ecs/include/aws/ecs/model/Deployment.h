@@ -493,66 +493,66 @@ class Deployment {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_taskDefinition;
-  bool m_taskDefinitionHasBeenSet = false;
 
   int m_desiredCount{0};
-  bool m_desiredCountHasBeenSet = false;
 
   int m_pendingCount{0};
-  bool m_pendingCountHasBeenSet = false;
 
   int m_runningCount{0};
-  bool m_runningCountHasBeenSet = false;
 
   int m_failedTasks{0};
-  bool m_failedTasksHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::Vector<CapacityProviderStrategyItem> m_capacityProviderStrategy;
-  bool m_capacityProviderStrategyHasBeenSet = false;
 
   LaunchType m_launchType{LaunchType::NOT_SET};
-  bool m_launchTypeHasBeenSet = false;
 
   Aws::String m_platformVersion;
-  bool m_platformVersionHasBeenSet = false;
 
   Aws::String m_platformFamily;
-  bool m_platformFamilyHasBeenSet = false;
 
   NetworkConfiguration m_networkConfiguration;
-  bool m_networkConfigurationHasBeenSet = false;
 
   DeploymentRolloutState m_rolloutState{DeploymentRolloutState::NOT_SET};
-  bool m_rolloutStateHasBeenSet = false;
 
   Aws::String m_rolloutStateReason;
-  bool m_rolloutStateReasonHasBeenSet = false;
 
   ServiceConnectConfiguration m_serviceConnectConfiguration;
-  bool m_serviceConnectConfigurationHasBeenSet = false;
 
   Aws::Vector<ServiceConnectServiceResource> m_serviceConnectResources;
-  bool m_serviceConnectResourcesHasBeenSet = false;
 
   Aws::Vector<ServiceVolumeConfiguration> m_volumeConfigurations;
-  bool m_volumeConfigurationsHasBeenSet = false;
 
   DeploymentEphemeralStorage m_fargateEphemeralStorage;
-  bool m_fargateEphemeralStorageHasBeenSet = false;
 
   Aws::Vector<VpcLatticeConfiguration> m_vpcLatticeConfigurations;
+  bool m_idHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_taskDefinitionHasBeenSet = false;
+  bool m_desiredCountHasBeenSet = false;
+  bool m_pendingCountHasBeenSet = false;
+  bool m_runningCountHasBeenSet = false;
+  bool m_failedTasksHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_capacityProviderStrategyHasBeenSet = false;
+  bool m_launchTypeHasBeenSet = false;
+  bool m_platformVersionHasBeenSet = false;
+  bool m_platformFamilyHasBeenSet = false;
+  bool m_networkConfigurationHasBeenSet = false;
+  bool m_rolloutStateHasBeenSet = false;
+  bool m_rolloutStateReasonHasBeenSet = false;
+  bool m_serviceConnectConfigurationHasBeenSet = false;
+  bool m_serviceConnectResourcesHasBeenSet = false;
+  bool m_volumeConfigurationsHasBeenSet = false;
+  bool m_fargateEphemeralStorageHasBeenSet = false;
   bool m_vpcLatticeConfigurationsHasBeenSet = false;
 };
 

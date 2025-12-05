@@ -511,63 +511,64 @@ class StartCallAnalyticsStreamTranscriptionRequest : public TranscribeStreamingS
   ///@}
  private:
   CallAnalyticsLanguageCode m_languageCode{CallAnalyticsLanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   int m_mediaSampleRateHertz{0};
-  bool m_mediaSampleRateHertzHasBeenSet = false;
 
   MediaEncoding m_mediaEncoding{MediaEncoding::NOT_SET};
-  bool m_mediaEncodingHasBeenSet = false;
 
   Aws::String m_vocabularyName;
-  bool m_vocabularyNameHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   std::shared_ptr<AudioStream> m_audioStream;
-  bool m_audioStreamHasBeenSet = false;
 
   Aws::String m_vocabularyFilterName;
-  bool m_vocabularyFilterNameHasBeenSet = false;
 
   VocabularyFilterMethod m_vocabularyFilterMethod{VocabularyFilterMethod::NOT_SET};
-  bool m_vocabularyFilterMethodHasBeenSet = false;
 
   Aws::String m_languageModelName;
-  bool m_languageModelNameHasBeenSet = false;
 
   bool m_identifyLanguage{false};
-  bool m_identifyLanguageHasBeenSet = false;
 
   Aws::String m_languageOptions;
-  bool m_languageOptionsHasBeenSet = false;
 
   CallAnalyticsLanguageCode m_preferredLanguage{CallAnalyticsLanguageCode::NOT_SET};
-  bool m_preferredLanguageHasBeenSet = false;
 
   Aws::String m_vocabularyNames;
-  bool m_vocabularyNamesHasBeenSet = false;
 
   Aws::String m_vocabularyFilterNames;
-  bool m_vocabularyFilterNamesHasBeenSet = false;
 
   bool m_enablePartialResultsStabilization{false};
-  bool m_enablePartialResultsStabilizationHasBeenSet = false;
 
   PartialResultsStability m_partialResultsStability{PartialResultsStability::NOT_SET};
-  bool m_partialResultsStabilityHasBeenSet = false;
 
   ContentIdentificationType m_contentIdentificationType{ContentIdentificationType::NOT_SET};
-  bool m_contentIdentificationTypeHasBeenSet = false;
 
   ContentRedactionType m_contentRedactionType{ContentRedactionType::NOT_SET};
-  bool m_contentRedactionTypeHasBeenSet = false;
 
   Aws::String m_piiEntityTypes;
-  bool m_piiEntityTypesHasBeenSet = false;
   StartCallAnalyticsStreamTranscriptionHandler m_handler;
   Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
+
+  bool m_languageCodeHasBeenSet = false;
+  bool m_mediaSampleRateHertzHasBeenSet = false;
+  bool m_mediaEncodingHasBeenSet = false;
+  bool m_vocabularyNameHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_audioStreamHasBeenSet = false;
+  bool m_vocabularyFilterNameHasBeenSet = false;
+  bool m_vocabularyFilterMethodHasBeenSet = false;
+  bool m_languageModelNameHasBeenSet = false;
+  bool m_identifyLanguageHasBeenSet = false;
+  bool m_languageOptionsHasBeenSet = false;
+  bool m_preferredLanguageHasBeenSet = false;
+  bool m_vocabularyNamesHasBeenSet = false;
+  bool m_vocabularyFilterNamesHasBeenSet = false;
+  bool m_enablePartialResultsStabilizationHasBeenSet = false;
+  bool m_partialResultsStabilityHasBeenSet = false;
+  bool m_contentIdentificationTypeHasBeenSet = false;
+  bool m_contentRedactionTypeHasBeenSet = false;
+  bool m_piiEntityTypesHasBeenSet = false;
 };
 
 }  // namespace Model

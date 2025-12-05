@@ -90,12 +90,12 @@ class ListDataIntegrationFlowsResult {
   ///@}
  private:
   Aws::Vector<DataIntegrationFlow> m_flows;
-  bool m_flowsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_flowsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

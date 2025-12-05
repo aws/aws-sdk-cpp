@@ -59,9 +59,9 @@ class PutFunctionScalingConfigResult {
   ///@}
  private:
   State m_functionState{State::NOT_SET};
-  bool m_functionStateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_functionStateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -195,27 +195,27 @@ class CheckSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_awsServices;
-  bool m_awsServicesHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<RecommendationPillar> m_pillars;
-  bool m_pillarsHasBeenSet = false;
 
   RecommendationSource m_source{RecommendationSource::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_awsServicesHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_pillarsHasBeenSet = false;
   bool m_sourceHasBeenSet = false;
 };
 

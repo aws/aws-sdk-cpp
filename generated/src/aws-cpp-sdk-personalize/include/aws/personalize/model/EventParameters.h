@@ -85,12 +85,12 @@ class EventParameters {
   ///@}
  private:
   Aws::String m_eventType;
-  bool m_eventTypeHasBeenSet = false;
 
   double m_eventValueThreshold{0.0};
-  bool m_eventValueThresholdHasBeenSet = false;
 
   double m_weight{0.0};
+  bool m_eventTypeHasBeenSet = false;
+  bool m_eventValueThresholdHasBeenSet = false;
   bool m_weightHasBeenSet = false;
 };
 

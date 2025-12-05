@@ -60,9 +60,9 @@ class UpdateFirewallRuleResult {
   ///@}
  private:
   FirewallRule m_firewallRule;
-  bool m_firewallRuleHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_firewallRuleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

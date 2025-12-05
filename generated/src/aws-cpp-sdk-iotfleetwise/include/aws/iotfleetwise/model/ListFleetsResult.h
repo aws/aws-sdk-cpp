@@ -85,12 +85,12 @@ class ListFleetsResult {
   ///@}
  private:
   Aws::Vector<FleetSummary> m_fleetSummaries;
-  bool m_fleetSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fleetSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

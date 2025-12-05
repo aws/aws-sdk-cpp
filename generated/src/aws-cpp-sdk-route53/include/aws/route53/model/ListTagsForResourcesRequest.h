@@ -78,9 +78,9 @@ class ListTagsForResourcesRequest : public Route53Request {
   ///@}
  private:
   TagResourceType m_resourceType{TagResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceIds;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_resourceIdsHasBeenSet = false;
 };
 

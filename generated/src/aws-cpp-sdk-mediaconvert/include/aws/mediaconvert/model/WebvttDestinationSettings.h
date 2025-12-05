@@ -94,9 +94,9 @@ class WebvttDestinationSettings {
   ///@}
  private:
   WebvttAccessibilitySubs m_accessibility{WebvttAccessibilitySubs::NOT_SET};
-  bool m_accessibilityHasBeenSet = false;
 
   WebvttStylePassthrough m_stylePassthrough{WebvttStylePassthrough::NOT_SET};
+  bool m_accessibilityHasBeenSet = false;
   bool m_stylePassthroughHasBeenSet = false;
 };
 

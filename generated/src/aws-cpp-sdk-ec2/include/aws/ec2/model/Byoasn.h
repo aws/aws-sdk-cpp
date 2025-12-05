@@ -106,15 +106,15 @@ class Byoasn {
   ///@}
  private:
   Aws::String m_asn;
-  bool m_asnHasBeenSet = false;
 
   Aws::String m_ipamId;
-  bool m_ipamIdHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   AsnState m_state{AsnState::NOT_SET};
+  bool m_asnHasBeenSet = false;
+  bool m_ipamIdHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

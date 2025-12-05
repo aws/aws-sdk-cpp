@@ -207,27 +207,27 @@ class PromptConfiguration {
   ///@}
  private:
   Aws::Utils::Document m_additionalModelRequestFields;
-  bool m_additionalModelRequestFieldsHasBeenSet = false;
 
   Aws::String m_basePromptTemplate;
-  bool m_basePromptTemplateHasBeenSet = false;
 
   Aws::String m_foundationModel;
-  bool m_foundationModelHasBeenSet = false;
 
   InferenceConfiguration m_inferenceConfiguration;
-  bool m_inferenceConfigurationHasBeenSet = false;
 
   CreationMode m_parserMode{CreationMode::NOT_SET};
-  bool m_parserModeHasBeenSet = false;
 
   CreationMode m_promptCreationMode{CreationMode::NOT_SET};
-  bool m_promptCreationModeHasBeenSet = false;
 
   PromptState m_promptState{PromptState::NOT_SET};
-  bool m_promptStateHasBeenSet = false;
 
   PromptType m_promptType{PromptType::NOT_SET};
+  bool m_additionalModelRequestFieldsHasBeenSet = false;
+  bool m_basePromptTemplateHasBeenSet = false;
+  bool m_foundationModelHasBeenSet = false;
+  bool m_inferenceConfigurationHasBeenSet = false;
+  bool m_parserModeHasBeenSet = false;
+  bool m_promptCreationModeHasBeenSet = false;
+  bool m_promptStateHasBeenSet = false;
   bool m_promptTypeHasBeenSet = false;
 };
 

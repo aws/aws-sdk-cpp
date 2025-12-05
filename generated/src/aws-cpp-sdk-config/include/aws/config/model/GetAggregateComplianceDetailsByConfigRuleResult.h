@@ -87,12 +87,12 @@ class GetAggregateComplianceDetailsByConfigRuleResult {
   ///@}
  private:
   Aws::Vector<AggregateEvaluationResult> m_aggregateEvaluationResults;
-  bool m_aggregateEvaluationResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_aggregateEvaluationResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

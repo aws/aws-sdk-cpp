@@ -69,9 +69,9 @@ class PollForThirdPartyJobsRequest : public CodePipelineRequest {
   ///@}
  private:
   ActionTypeId m_actionTypeId;
-  bool m_actionTypeIdHasBeenSet = false;
 
   int m_maxBatchSize{0};
+  bool m_actionTypeIdHasBeenSet = false;
   bool m_maxBatchSizeHasBeenSet = false;
 };
 

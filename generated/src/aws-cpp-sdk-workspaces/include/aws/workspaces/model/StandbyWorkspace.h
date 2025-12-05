@@ -130,18 +130,18 @@ class StandbyWorkspace {
   ///@}
  private:
   Aws::String m_primaryWorkspaceId;
-  bool m_primaryWorkspaceIdHasBeenSet = false;
 
   Aws::String m_volumeEncryptionKey;
-  bool m_volumeEncryptionKeyHasBeenSet = false;
 
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   DataReplication m_dataReplication{DataReplication::NOT_SET};
+  bool m_primaryWorkspaceIdHasBeenSet = false;
+  bool m_volumeEncryptionKeyHasBeenSet = false;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_dataReplicationHasBeenSet = false;
 };
 

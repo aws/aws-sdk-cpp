@@ -80,9 +80,9 @@ class AcceleratorCapabilities {
   ///@}
  private:
   Aws::Vector<AcceleratorSelection> m_selections;
-  bool m_selectionsHasBeenSet = false;
 
   AcceleratorCountRange m_count;
+  bool m_selectionsHasBeenSet = false;
   bool m_countHasBeenSet = false;
 };
 

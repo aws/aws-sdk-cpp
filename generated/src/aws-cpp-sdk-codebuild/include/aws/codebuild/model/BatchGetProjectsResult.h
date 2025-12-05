@@ -90,12 +90,12 @@ class BatchGetProjectsResult {
   ///@}
  private:
   Aws::Vector<Project> m_projects;
-  bool m_projectsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_projectsNotFound;
-  bool m_projectsNotFoundHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_projectsHasBeenSet = false;
+  bool m_projectsNotFoundHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

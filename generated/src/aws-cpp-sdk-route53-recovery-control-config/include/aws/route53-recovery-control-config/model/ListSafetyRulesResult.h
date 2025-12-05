@@ -85,12 +85,12 @@ class ListSafetyRulesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Rule> m_safetyRules;
-  bool m_safetyRulesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_safetyRulesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -145,21 +145,21 @@ class ListJobRunsRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Aws::String m_jobIdentifier;
-  bool m_jobIdentifierHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   JobRunStatus m_status{JobRunStatus::NOT_SET};
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_jobIdentifierHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

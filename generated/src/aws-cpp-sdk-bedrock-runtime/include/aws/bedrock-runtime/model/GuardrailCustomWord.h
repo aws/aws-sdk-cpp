@@ -84,12 +84,12 @@ class GuardrailCustomWord {
   ///@}
  private:
   Aws::String m_match;
-  bool m_matchHasBeenSet = false;
 
   GuardrailWordPolicyAction m_action{GuardrailWordPolicyAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   bool m_detected{false};
+  bool m_matchHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
   bool m_detectedHasBeenSet = false;
 };
 

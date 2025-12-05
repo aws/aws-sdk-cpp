@@ -144,21 +144,21 @@ class ArtifactSummary {
   ///@}
  private:
   Aws::String m_artifactArn;
-  bool m_artifactArnHasBeenSet = false;
 
   Aws::String m_artifactName;
-  bool m_artifactNameHasBeenSet = false;
 
   ArtifactSource m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_artifactType;
-  bool m_artifactTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
+  bool m_artifactArnHasBeenSet = false;
+  bool m_artifactNameHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_artifactTypeHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
 };
 

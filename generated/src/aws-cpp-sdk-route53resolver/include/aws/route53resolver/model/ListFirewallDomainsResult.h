@@ -87,12 +87,12 @@ class ListFirewallDomainsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_domains;
-  bool m_domainsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_domainsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -120,18 +120,18 @@ class AnalyticsIntentNodeSummary {
   ///@}
  private:
   Aws::String m_intentName;
-  bool m_intentNameHasBeenSet = false;
 
   Aws::String m_intentPath;
-  bool m_intentPathHasBeenSet = false;
 
   int m_intentCount{0};
-  bool m_intentCountHasBeenSet = false;
 
   int m_intentLevel{0};
-  bool m_intentLevelHasBeenSet = false;
 
   AnalyticsNodeType m_nodeType{AnalyticsNodeType::NOT_SET};
+  bool m_intentNameHasBeenSet = false;
+  bool m_intentPathHasBeenSet = false;
+  bool m_intentCountHasBeenSet = false;
+  bool m_intentLevelHasBeenSet = false;
   bool m_nodeTypeHasBeenSet = false;
 };
 

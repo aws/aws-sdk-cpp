@@ -78,12 +78,12 @@ class UpdateFlowMediaStreamResult {
   ///@}
  private:
   Aws::String m_flowArn;
-  bool m_flowArnHasBeenSet = false;
 
   MediaStream m_mediaStream;
-  bool m_mediaStreamHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_flowArnHasBeenSet = false;
+  bool m_mediaStreamHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

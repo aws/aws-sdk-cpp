@@ -92,12 +92,12 @@ class DescribeCacheSubnetGroupsResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<CacheSubnetGroup> m_cacheSubnetGroups;
-  bool m_cacheSubnetGroupsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_cacheSubnetGroupsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

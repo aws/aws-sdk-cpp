@@ -66,9 +66,9 @@ class UpdateThingRuntimeConfigurationRequest : public GreengrassRequest {
   ///@}
  private:
   TelemetryConfigurationUpdate m_telemetryConfiguration;
-  bool m_telemetryConfigurationHasBeenSet = false;
 
   Aws::String m_thingName;
+  bool m_telemetryConfigurationHasBeenSet = false;
   bool m_thingNameHasBeenSet = false;
 };
 

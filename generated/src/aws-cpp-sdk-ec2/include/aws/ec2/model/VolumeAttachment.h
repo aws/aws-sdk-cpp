@@ -198,30 +198,30 @@ class VolumeAttachment {
   ///@}
  private:
   bool m_deleteOnTermination{false};
-  bool m_deleteOnTerminationHasBeenSet = false;
 
   Aws::String m_associatedResource;
-  bool m_associatedResourceHasBeenSet = false;
 
   Aws::String m_instanceOwningService;
-  bool m_instanceOwningServiceHasBeenSet = false;
 
   Aws::String m_volumeId;
-  bool m_volumeIdHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_device;
-  bool m_deviceHasBeenSet = false;
 
   VolumeAttachmentState m_state{VolumeAttachmentState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_attachTime{};
-  bool m_attachTimeHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_deleteOnTerminationHasBeenSet = false;
+  bool m_associatedResourceHasBeenSet = false;
+  bool m_instanceOwningServiceHasBeenSet = false;
+  bool m_volumeIdHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_deviceHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_attachTimeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = true;
 };
 

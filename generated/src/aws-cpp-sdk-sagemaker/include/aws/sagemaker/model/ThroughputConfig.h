@@ -97,12 +97,12 @@ class ThroughputConfig {
   ///@}
  private:
   ThroughputMode m_throughputMode{ThroughputMode::NOT_SET};
-  bool m_throughputModeHasBeenSet = false;
 
   int m_provisionedReadCapacityUnits{0};
-  bool m_provisionedReadCapacityUnitsHasBeenSet = false;
 
   int m_provisionedWriteCapacityUnits{0};
+  bool m_throughputModeHasBeenSet = false;
+  bool m_provisionedReadCapacityUnitsHasBeenSet = false;
   bool m_provisionedWriteCapacityUnitsHasBeenSet = false;
 };
 

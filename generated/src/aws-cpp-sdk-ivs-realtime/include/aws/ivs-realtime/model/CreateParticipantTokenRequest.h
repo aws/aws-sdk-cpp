@@ -140,18 +140,18 @@ class CreateParticipantTokenRequest : public IvsrealtimeRequest {
   ///@}
  private:
   Aws::String m_stageArn;
-  bool m_stageArnHasBeenSet = false;
 
   int m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::Vector<ParticipantTokenCapability> m_capabilities;
+  bool m_stageArnHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
   bool m_capabilitiesHasBeenSet = false;
 };
 

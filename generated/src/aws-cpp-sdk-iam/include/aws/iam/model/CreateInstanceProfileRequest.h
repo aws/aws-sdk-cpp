@@ -114,12 +114,12 @@ class CreateInstanceProfileRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_instanceProfileName;
-  bool m_instanceProfileNameHasBeenSet = false;
 
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_instanceProfileNameHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

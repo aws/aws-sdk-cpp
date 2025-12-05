@@ -100,12 +100,12 @@ class PathOptions {
   ///@}
  private:
   FilterExpression m_lastModifiedDateCondition;
-  bool m_lastModifiedDateConditionHasBeenSet = false;
 
   FilesLimit m_filesLimit;
-  bool m_filesLimitHasBeenSet = false;
 
   Aws::Map<Aws::String, DatasetParameter> m_parameters;
+  bool m_lastModifiedDateConditionHasBeenSet = false;
+  bool m_filesLimitHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

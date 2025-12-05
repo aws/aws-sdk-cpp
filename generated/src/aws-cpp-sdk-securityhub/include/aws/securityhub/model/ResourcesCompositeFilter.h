@@ -180,21 +180,21 @@ class ResourcesCompositeFilter {
   ///@}
  private:
   Aws::Vector<ResourcesStringFilter> m_stringFilters;
-  bool m_stringFiltersHasBeenSet = false;
 
   Aws::Vector<ResourcesDateFilter> m_dateFilters;
-  bool m_dateFiltersHasBeenSet = false;
 
   Aws::Vector<ResourcesNumberFilter> m_numberFilters;
-  bool m_numberFiltersHasBeenSet = false;
 
   Aws::Vector<ResourcesMapFilter> m_mapFilters;
-  bool m_mapFiltersHasBeenSet = false;
 
   Aws::Vector<ResourcesCompositeFilter> m_nestedCompositeFilters;
-  bool m_nestedCompositeFiltersHasBeenSet = false;
 
   AllowedOperators m_operator{AllowedOperators::NOT_SET};
+  bool m_stringFiltersHasBeenSet = false;
+  bool m_dateFiltersHasBeenSet = false;
+  bool m_numberFiltersHasBeenSet = false;
+  bool m_mapFiltersHasBeenSet = false;
+  bool m_nestedCompositeFiltersHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
 };
 

@@ -119,18 +119,18 @@ class UpdateRetrieverRequest : public QBusinessRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_retrieverId;
-  bool m_retrieverIdHasBeenSet = false;
 
   RetrieverConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_retrieverIdHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

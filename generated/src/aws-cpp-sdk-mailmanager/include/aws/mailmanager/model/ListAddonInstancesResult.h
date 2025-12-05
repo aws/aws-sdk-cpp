@@ -86,12 +86,12 @@ class ListAddonInstancesResult {
   ///@}
  private:
   Aws::Vector<AddonInstance> m_addonInstances;
-  bool m_addonInstancesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_addonInstancesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

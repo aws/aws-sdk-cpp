@@ -107,15 +107,15 @@ class DeleteObjectsResult {
   ///@}
  private:
   Aws::Vector<DeletedObject> m_deleted;
-  bool m_deletedHasBeenSet = false;
 
   RequestCharged m_requestCharged{RequestCharged::NOT_SET};
-  bool m_requestChargedHasBeenSet = false;
 
   Aws::Vector<Error> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deletedHasBeenSet = false;
+  bool m_requestChargedHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

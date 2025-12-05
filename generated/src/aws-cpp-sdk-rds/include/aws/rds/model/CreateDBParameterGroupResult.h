@@ -58,9 +58,9 @@ class CreateDBParameterGroupResult {
   ///@}
  private:
   DBParameterGroup m_dBParameterGroup;
-  bool m_dBParameterGroupHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_dBParameterGroupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

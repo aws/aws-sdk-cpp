@@ -105,15 +105,15 @@ class CodegenDependency {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_supportedVersion;
-  bool m_supportedVersionHasBeenSet = false;
 
   bool m_isSemVer{false};
-  bool m_isSemVerHasBeenSet = false;
 
   Aws::String m_reason;
+  bool m_nameHasBeenSet = false;
+  bool m_supportedVersionHasBeenSet = false;
+  bool m_isSemVerHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

@@ -198,24 +198,24 @@ class VideoOverlay {
   ///@}
  private:
   VideoOverlayCrop m_crop;
-  bool m_cropHasBeenSet = false;
 
   Aws::String m_endTimecode;
-  bool m_endTimecodeHasBeenSet = false;
 
   VideoOverlayPosition m_initialPosition;
-  bool m_initialPositionHasBeenSet = false;
 
   VideoOverlayInput m_input;
-  bool m_inputHasBeenSet = false;
 
   VideoOverlayPlayBackMode m_playback{VideoOverlayPlayBackMode::NOT_SET};
-  bool m_playbackHasBeenSet = false;
 
   Aws::String m_startTimecode;
-  bool m_startTimecodeHasBeenSet = false;
 
   Aws::Vector<VideoOverlayTransition> m_transitions;
+  bool m_cropHasBeenSet = false;
+  bool m_endTimecodeHasBeenSet = false;
+  bool m_initialPositionHasBeenSet = false;
+  bool m_inputHasBeenSet = false;
+  bool m_playbackHasBeenSet = false;
+  bool m_startTimecodeHasBeenSet = false;
   bool m_transitionsHasBeenSet = false;
 };
 

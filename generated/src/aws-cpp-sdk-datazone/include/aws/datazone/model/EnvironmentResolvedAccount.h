@@ -87,12 +87,12 @@ class EnvironmentResolvedAccount {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_regionName;
-  bool m_regionNameHasBeenSet = false;
 
   Aws::String m_sourceAccountPoolId;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_regionNameHasBeenSet = false;
   bool m_sourceAccountPoolIdHasBeenSet = false;
 };
 

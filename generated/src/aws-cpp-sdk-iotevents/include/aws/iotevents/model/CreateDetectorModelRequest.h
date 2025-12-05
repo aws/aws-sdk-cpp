@@ -169,24 +169,24 @@ class CreateDetectorModelRequest : public IoTEventsRequest {
   ///@}
  private:
   Aws::String m_detectorModelName;
-  bool m_detectorModelNameHasBeenSet = false;
 
   DetectorModelDefinition m_detectorModelDefinition;
-  bool m_detectorModelDefinitionHasBeenSet = false;
 
   Aws::String m_detectorModelDescription;
-  bool m_detectorModelDescriptionHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   EvaluationMethod m_evaluationMethod{EvaluationMethod::NOT_SET};
+  bool m_detectorModelNameHasBeenSet = false;
+  bool m_detectorModelDefinitionHasBeenSet = false;
+  bool m_detectorModelDescriptionHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_evaluationMethodHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class DeletePromptRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_promptId;
+  bool m_instanceIdHasBeenSet = false;
   bool m_promptIdHasBeenSet = false;
 };
 

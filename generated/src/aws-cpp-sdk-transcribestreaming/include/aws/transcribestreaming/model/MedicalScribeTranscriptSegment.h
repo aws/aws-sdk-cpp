@@ -167,24 +167,24 @@ class MedicalScribeTranscriptSegment {
   ///@}
  private:
   Aws::String m_segmentId;
-  bool m_segmentIdHasBeenSet = false;
 
   double m_beginAudioTime{0.0};
-  bool m_beginAudioTimeHasBeenSet = false;
 
   double m_endAudioTime{0.0};
-  bool m_endAudioTimeHasBeenSet = false;
 
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::Vector<MedicalScribeTranscriptItem> m_items;
-  bool m_itemsHasBeenSet = false;
 
   bool m_isPartial{false};
-  bool m_isPartialHasBeenSet = false;
 
   Aws::String m_channelId;
+  bool m_segmentIdHasBeenSet = false;
+  bool m_beginAudioTimeHasBeenSet = false;
+  bool m_endAudioTimeHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_itemsHasBeenSet = false;
+  bool m_isPartialHasBeenSet = false;
   bool m_channelIdHasBeenSet = false;
 };
 

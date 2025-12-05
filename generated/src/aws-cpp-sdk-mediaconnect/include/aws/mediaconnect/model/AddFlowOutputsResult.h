@@ -84,12 +84,12 @@ class AddFlowOutputsResult {
   ///@}
  private:
   Aws::String m_flowArn;
-  bool m_flowArnHasBeenSet = false;
 
   Aws::Vector<Output> m_outputs;
-  bool m_outputsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_flowArnHasBeenSet = false;
+  bool m_outputsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

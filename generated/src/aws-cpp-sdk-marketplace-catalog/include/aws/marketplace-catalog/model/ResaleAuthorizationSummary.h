@@ -230,36 +230,36 @@ class ResaleAuthorizationSummary {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_productId;
-  bool m_productIdHasBeenSet = false;
 
   Aws::String m_productName;
-  bool m_productNameHasBeenSet = false;
 
   Aws::String m_manufacturerAccountId;
-  bool m_manufacturerAccountIdHasBeenSet = false;
 
   Aws::String m_manufacturerLegalName;
-  bool m_manufacturerLegalNameHasBeenSet = false;
 
   Aws::String m_resellerAccountID;
-  bool m_resellerAccountIDHasBeenSet = false;
 
   Aws::String m_resellerLegalName;
-  bool m_resellerLegalNameHasBeenSet = false;
 
   ResaleAuthorizationStatusString m_status{ResaleAuthorizationStatusString::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_offerExtendedStatus;
-  bool m_offerExtendedStatusHasBeenSet = false;
 
   Aws::String m_createdDate;
-  bool m_createdDateHasBeenSet = false;
 
   Aws::String m_availabilityEndDate;
+  bool m_nameHasBeenSet = false;
+  bool m_productIdHasBeenSet = false;
+  bool m_productNameHasBeenSet = false;
+  bool m_manufacturerAccountIdHasBeenSet = false;
+  bool m_manufacturerLegalNameHasBeenSet = false;
+  bool m_resellerAccountIDHasBeenSet = false;
+  bool m_resellerLegalNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_offerExtendedStatusHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
   bool m_availabilityEndDateHasBeenSet = false;
 };
 

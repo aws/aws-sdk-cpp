@@ -147,21 +147,21 @@ class LocationAction {
   ///@}
  private:
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_trackerName;
-  bool m_trackerNameHasBeenSet = false;
 
   Aws::String m_deviceId;
-  bool m_deviceIdHasBeenSet = false;
 
   LocationTimestamp m_timestamp;
-  bool m_timestampHasBeenSet = false;
 
   Aws::String m_latitude;
-  bool m_latitudeHasBeenSet = false;
 
   Aws::String m_longitude;
+  bool m_roleArnHasBeenSet = false;
+  bool m_trackerNameHasBeenSet = false;
+  bool m_deviceIdHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
+  bool m_latitudeHasBeenSet = false;
   bool m_longitudeHasBeenSet = false;
 };
 

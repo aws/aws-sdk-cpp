@@ -92,12 +92,12 @@ class MetricInterval {
   ///@}
  private:
   IntervalPeriod m_interval{IntervalPeriod::NOT_SET};
-  bool m_intervalHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
+  bool m_intervalHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
 };
 

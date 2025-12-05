@@ -136,21 +136,21 @@ class GetNetworkRoutesResult {
   ///@}
  private:
   Aws::String m_routeTableArn;
-  bool m_routeTableArnHasBeenSet = false;
 
   CoreNetworkSegmentEdgeIdentifier m_coreNetworkSegmentEdge;
-  bool m_coreNetworkSegmentEdgeHasBeenSet = false;
 
   RouteTableType m_routeTableType{RouteTableType::NOT_SET};
-  bool m_routeTableTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_routeTableTimestamp{};
-  bool m_routeTableTimestampHasBeenSet = false;
 
   Aws::Vector<NetworkRoute> m_networkRoutes;
-  bool m_networkRoutesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_routeTableArnHasBeenSet = false;
+  bool m_coreNetworkSegmentEdgeHasBeenSet = false;
+  bool m_routeTableTypeHasBeenSet = false;
+  bool m_routeTableTimestampHasBeenSet = false;
+  bool m_networkRoutesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

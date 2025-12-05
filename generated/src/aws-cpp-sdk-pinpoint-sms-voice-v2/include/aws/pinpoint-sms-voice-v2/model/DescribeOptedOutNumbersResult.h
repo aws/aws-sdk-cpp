@@ -121,18 +121,18 @@ class DescribeOptedOutNumbersResult {
   ///@}
  private:
   Aws::String m_optOutListArn;
-  bool m_optOutListArnHasBeenSet = false;
 
   Aws::String m_optOutListName;
-  bool m_optOutListNameHasBeenSet = false;
 
   Aws::Vector<OptedOutNumberInformation> m_optedOutNumbers;
-  bool m_optedOutNumbersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_optOutListArnHasBeenSet = false;
+  bool m_optOutListNameHasBeenSet = false;
+  bool m_optedOutNumbersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

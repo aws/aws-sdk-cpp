@@ -70,9 +70,9 @@ class ClusterConfiguration {
   ///@}
  private:
   ExecuteCommandConfiguration m_executeCommandConfiguration;
-  bool m_executeCommandConfigurationHasBeenSet = false;
 
   ManagedStorageConfiguration m_managedStorageConfiguration;
+  bool m_executeCommandConfigurationHasBeenSet = false;
   bool m_managedStorageConfigurationHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class ListDestinationsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Destinations> m_destinationList;
-  bool m_destinationListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_destinationListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

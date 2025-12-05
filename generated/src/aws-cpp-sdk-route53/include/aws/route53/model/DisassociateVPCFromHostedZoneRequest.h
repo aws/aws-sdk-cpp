@@ -90,12 +90,12 @@ class DisassociateVPCFromHostedZoneRequest : public Route53Request {
   ///@}
  private:
   Aws::String m_hostedZoneId;
-  bool m_hostedZoneIdHasBeenSet = false;
 
   VPC m_vPC;
-  bool m_vPCHasBeenSet = false;
 
   Aws::String m_comment;
+  bool m_hostedZoneIdHasBeenSet = false;
+  bool m_vPCHasBeenSet = false;
   bool m_commentHasBeenSet = false;
 };
 

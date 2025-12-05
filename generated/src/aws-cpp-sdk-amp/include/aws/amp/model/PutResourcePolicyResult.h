@@ -75,12 +75,12 @@ class PutResourcePolicyResult {
   ///@}
  private:
   WorkspacePolicyStatusCode m_policyStatus{WorkspacePolicyStatusCode::NOT_SET};
-  bool m_policyStatusHasBeenSet = false;
 
   Aws::String m_revisionId;
-  bool m_revisionIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyStatusHasBeenSet = false;
+  bool m_revisionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

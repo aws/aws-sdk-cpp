@@ -71,9 +71,9 @@ class StopInstanceOnIdleRequest {
   ///@}
  private:
   Aws::String m_threshold;
-  bool m_thresholdHasBeenSet = false;
 
   Aws::String m_duration;
+  bool m_thresholdHasBeenSet = false;
   bool m_durationHasBeenSet = false;
 };
 

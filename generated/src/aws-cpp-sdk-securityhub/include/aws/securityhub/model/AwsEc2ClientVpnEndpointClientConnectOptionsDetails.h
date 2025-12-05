@@ -87,12 +87,12 @@ class AwsEc2ClientVpnEndpointClientConnectOptionsDetails {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_lambdaFunctionArn;
-  bool m_lambdaFunctionArnHasBeenSet = false;
 
   AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetails m_status;
+  bool m_enabledHasBeenSet = false;
+  bool m_lambdaFunctionArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

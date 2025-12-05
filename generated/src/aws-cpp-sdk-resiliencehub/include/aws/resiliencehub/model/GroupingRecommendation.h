@@ -210,30 +210,30 @@ class GroupingRecommendation {
   ///@}
  private:
   GroupingRecommendationConfidenceLevel m_confidenceLevel{GroupingRecommendationConfidenceLevel::NOT_SET};
-  bool m_confidenceLevelHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   GroupingAppComponent m_groupingAppComponent;
-  bool m_groupingAppComponentHasBeenSet = false;
 
   Aws::String m_groupingRecommendationId;
-  bool m_groupingRecommendationIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_recommendationReasons;
-  bool m_recommendationReasonsHasBeenSet = false;
 
   GroupingRecommendationRejectionReason m_rejectionReason{GroupingRecommendationRejectionReason::NOT_SET};
-  bool m_rejectionReasonHasBeenSet = false;
 
   Aws::Vector<GroupingResource> m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   double m_score{0.0};
-  bool m_scoreHasBeenSet = false;
 
   GroupingRecommendationStatusType m_status{GroupingRecommendationStatusType::NOT_SET};
+  bool m_confidenceLevelHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_groupingAppComponentHasBeenSet = false;
+  bool m_groupingRecommendationIdHasBeenSet = false;
+  bool m_recommendationReasonsHasBeenSet = false;
+  bool m_rejectionReasonHasBeenSet = false;
+  bool m_resourcesHasBeenSet = false;
+  bool m_scoreHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

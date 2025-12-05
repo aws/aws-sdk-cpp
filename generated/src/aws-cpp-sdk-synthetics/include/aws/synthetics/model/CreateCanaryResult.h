@@ -60,9 +60,9 @@ class CreateCanaryResult {
   ///@}
  private:
   Canary m_canary;
-  bool m_canaryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_canaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

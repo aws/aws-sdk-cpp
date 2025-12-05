@@ -86,12 +86,12 @@ class ErrorDetail {
   ///@}
  private:
   Aws::String m_locale;
-  bool m_localeHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   ProfileValidationErrorReason m_reason{ProfileValidationErrorReason::NOT_SET};
+  bool m_localeHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

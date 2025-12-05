@@ -134,18 +134,18 @@ class ProvisioningArtifactSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_provisioningArtifactMetadata;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
   bool m_provisioningArtifactMetadataHasBeenSet = false;
 };
 

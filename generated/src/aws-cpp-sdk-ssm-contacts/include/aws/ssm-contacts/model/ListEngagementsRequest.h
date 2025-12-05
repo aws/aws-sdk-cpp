@@ -103,15 +103,15 @@ class ListEngagementsRequest : public SSMContactsRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_incidentId;
-  bool m_incidentIdHasBeenSet = false;
 
   TimeRange m_timeRangeValue;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_incidentIdHasBeenSet = false;
   bool m_timeRangeValueHasBeenSet = false;
 };
 

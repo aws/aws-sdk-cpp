@@ -179,21 +179,21 @@ class SchemaInputAttribute {
   ///@}
  private:
   Aws::String m_fieldName;
-  bool m_fieldNameHasBeenSet = false;
 
   SchemaAttributeType m_type{SchemaAttributeType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_matchKey;
-  bool m_matchKeyHasBeenSet = false;
 
   Aws::String m_subType;
-  bool m_subTypeHasBeenSet = false;
 
   bool m_hashed{false};
+  bool m_fieldNameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_groupNameHasBeenSet = false;
+  bool m_matchKeyHasBeenSet = false;
+  bool m_subTypeHasBeenSet = false;
   bool m_hashedHasBeenSet = false;
 };
 

@@ -94,12 +94,12 @@ class TaxExemptionType {
   ///@}
  private:
   Aws::Vector<Authority> m_applicableJurisdictions;
-  bool m_applicableJurisdictionsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_displayName;
+  bool m_applicableJurisdictionsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
 };
 

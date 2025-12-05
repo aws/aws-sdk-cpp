@@ -254,42 +254,42 @@ class GetCommandResult {
   ///@}
  private:
   Aws::String m_commandId;
-  bool m_commandIdHasBeenSet = false;
 
   Aws::String m_commandArn;
-  bool m_commandArnHasBeenSet = false;
 
   CommandNamespace m_namespace{CommandNamespace::NOT_SET};
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<CommandParameter> m_mandatoryParameters;
-  bool m_mandatoryParametersHasBeenSet = false;
 
   CommandPayload m_payload;
-  bool m_payloadHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   bool m_deprecated{false};
-  bool m_deprecatedHasBeenSet = false;
 
   bool m_pendingDeletion{false};
-  bool m_pendingDeletionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_commandIdHasBeenSet = false;
+  bool m_commandArnHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_mandatoryParametersHasBeenSet = false;
+  bool m_payloadHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_deprecatedHasBeenSet = false;
+  bool m_pendingDeletionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

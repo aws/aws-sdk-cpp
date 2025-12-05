@@ -106,15 +106,15 @@ class BatchStartViewerSessionRevocationError {
   ///@}
  private:
   Aws::String m_channelArn;
-  bool m_channelArnHasBeenSet = false;
 
   Aws::String m_code;
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_viewerId;
+  bool m_channelArnHasBeenSet = false;
+  bool m_codeHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_viewerIdHasBeenSet = false;
 };
 

@@ -155,21 +155,21 @@ class CreateClientVpnRouteRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_clientVpnEndpointId;
-  bool m_clientVpnEndpointIdHasBeenSet = false;
 
   Aws::String m_destinationCidrBlock;
-  bool m_destinationCidrBlockHasBeenSet = false;
 
   Aws::String m_targetVpcSubnetId;
-  bool m_targetVpcSubnetIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   bool m_dryRun{false};
+  bool m_clientVpnEndpointIdHasBeenSet = false;
+  bool m_destinationCidrBlockHasBeenSet = false;
+  bool m_targetVpcSubnetIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_dryRunHasBeenSet = false;
 };
 

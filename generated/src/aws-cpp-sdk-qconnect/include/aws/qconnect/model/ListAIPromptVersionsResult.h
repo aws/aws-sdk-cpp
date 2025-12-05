@@ -85,12 +85,12 @@ class ListAIPromptVersionsResult {
   ///@}
  private:
   Aws::Vector<AIPromptVersionSummary> m_aiPromptVersionSummaries;
-  bool m_aiPromptVersionSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_aiPromptVersionSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

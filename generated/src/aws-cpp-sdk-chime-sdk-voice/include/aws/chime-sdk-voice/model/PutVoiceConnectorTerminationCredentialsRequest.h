@@ -73,9 +73,9 @@ class PutVoiceConnectorTerminationCredentialsRequest : public ChimeSDKVoiceReque
   ///@}
  private:
   Aws::String m_voiceConnectorId;
-  bool m_voiceConnectorIdHasBeenSet = false;
 
   Aws::Vector<Credential> m_credentials;
+  bool m_voiceConnectorIdHasBeenSet = false;
   bool m_credentialsHasBeenSet = false;
 };
 

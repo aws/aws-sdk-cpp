@@ -111,12 +111,12 @@ class RouteMatrixAvoidanceAreaGeometry {
   ///@}
  private:
   Aws::Vector<double> m_boundingBox;
-  bool m_boundingBoxHasBeenSet = false;
 
   Aws::Vector<Aws::Vector<Aws::Vector<double>>> m_polygon;
-  bool m_polygonHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_polylinePolygon;
+  bool m_boundingBoxHasBeenSet = false;
+  bool m_polygonHasBeenSet = false;
   bool m_polylinePolygonHasBeenSet = false;
 };
 

@@ -142,21 +142,21 @@ class ListMemberAccountsRequest : public NotificationsRequest {
   ///@}
  private:
   Aws::String m_notificationConfigurationArn;
-  bool m_notificationConfigurationArnHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_memberAccount;
-  bool m_memberAccountHasBeenSet = false;
 
   MemberAccountNotificationConfigurationStatus m_status{MemberAccountNotificationConfigurationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_organizationalUnitId;
+  bool m_notificationConfigurationArnHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_memberAccountHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_organizationalUnitIdHasBeenSet = false;
 };
 

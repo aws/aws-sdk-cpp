@@ -94,15 +94,15 @@ class LongColumnStatisticsData {
   ///@}
  private:
   long long m_minimumValue{0};
-  bool m_minimumValueHasBeenSet = false;
 
   long long m_maximumValue{0};
-  bool m_maximumValueHasBeenSet = false;
 
   long long m_numberOfNulls{0};
-  bool m_numberOfNullsHasBeenSet = false;
 
   long long m_numberOfDistinctValues{0};
+  bool m_minimumValueHasBeenSet = false;
+  bool m_maximumValueHasBeenSet = false;
+  bool m_numberOfNullsHasBeenSet = false;
   bool m_numberOfDistinctValuesHasBeenSet = false;
 };
 

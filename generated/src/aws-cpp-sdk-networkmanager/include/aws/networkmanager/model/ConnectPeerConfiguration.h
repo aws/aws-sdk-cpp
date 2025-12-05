@@ -136,18 +136,18 @@ class ConnectPeerConfiguration {
   ///@}
  private:
   Aws::String m_coreNetworkAddress;
-  bool m_coreNetworkAddressHasBeenSet = false;
 
   Aws::String m_peerAddress;
-  bool m_peerAddressHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_insideCidrBlocks;
-  bool m_insideCidrBlocksHasBeenSet = false;
 
   TunnelProtocol m_protocol{TunnelProtocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   Aws::Vector<ConnectPeerBgpConfiguration> m_bgpConfigurations;
+  bool m_coreNetworkAddressHasBeenSet = false;
+  bool m_peerAddressHasBeenSet = false;
+  bool m_insideCidrBlocksHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
   bool m_bgpConfigurationsHasBeenSet = false;
 };
 

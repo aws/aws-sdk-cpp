@@ -80,12 +80,12 @@ class CreateRuleGroupResult {
   ///@}
  private:
   RuleGroup m_ruleGroup;
-  bool m_ruleGroupHasBeenSet = false;
 
   Aws::String m_changeToken;
-  bool m_changeTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ruleGroupHasBeenSet = false;
+  bool m_changeTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

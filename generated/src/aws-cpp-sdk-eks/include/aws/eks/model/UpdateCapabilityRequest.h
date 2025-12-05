@@ -145,21 +145,21 @@ class UpdateCapabilityRequest : public EKSRequest {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_capabilityName;
-  bool m_capabilityNameHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   UpdateCapabilityConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   CapabilityDeletePropagationPolicy m_deletePropagationPolicy{CapabilityDeletePropagationPolicy::NOT_SET};
+  bool m_clusterNameHasBeenSet = false;
+  bool m_capabilityNameHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
   bool m_deletePropagationPolicyHasBeenSet = false;
 };
 

@@ -116,18 +116,18 @@ class VideoCodecSettings {
   ///@}
  private:
   FrameCaptureSettings m_frameCaptureSettings;
-  bool m_frameCaptureSettingsHasBeenSet = false;
 
   H264Settings m_h264Settings;
-  bool m_h264SettingsHasBeenSet = false;
 
   H265Settings m_h265Settings;
-  bool m_h265SettingsHasBeenSet = false;
 
   Mpeg2Settings m_mpeg2Settings;
-  bool m_mpeg2SettingsHasBeenSet = false;
 
   Av1Settings m_av1Settings;
+  bool m_frameCaptureSettingsHasBeenSet = false;
+  bool m_h264SettingsHasBeenSet = false;
+  bool m_h265SettingsHasBeenSet = false;
+  bool m_mpeg2SettingsHasBeenSet = false;
   bool m_av1SettingsHasBeenSet = false;
 };
 

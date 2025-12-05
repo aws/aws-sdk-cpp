@@ -102,15 +102,15 @@ class RestoreManagedPrefixListVersionRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_prefixListId;
-  bool m_prefixListIdHasBeenSet = false;
 
   long long m_previousVersion{0};
-  bool m_previousVersionHasBeenSet = false;
 
   long long m_currentVersion{0};
+  bool m_dryRunHasBeenSet = false;
+  bool m_prefixListIdHasBeenSet = false;
+  bool m_previousVersionHasBeenSet = false;
   bool m_currentVersionHasBeenSet = false;
 };
 

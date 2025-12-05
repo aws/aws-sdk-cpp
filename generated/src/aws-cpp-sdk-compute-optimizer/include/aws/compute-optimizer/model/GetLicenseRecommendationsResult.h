@@ -110,15 +110,15 @@ class GetLicenseRecommendationsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<LicenseRecommendation> m_licenseRecommendations;
-  bool m_licenseRecommendationsHasBeenSet = false;
 
   Aws::Vector<GetRecommendationError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_licenseRecommendationsHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

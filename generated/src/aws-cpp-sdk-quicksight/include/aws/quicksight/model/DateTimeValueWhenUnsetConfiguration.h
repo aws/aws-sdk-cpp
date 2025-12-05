@@ -71,9 +71,9 @@ class DateTimeValueWhenUnsetConfiguration {
   ///@}
  private:
   ValueWhenUnsetOption m_valueWhenUnsetOption{ValueWhenUnsetOption::NOT_SET};
-  bool m_valueWhenUnsetOptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_customValue{};
+  bool m_valueWhenUnsetOptionHasBeenSet = false;
   bool m_customValueHasBeenSet = false;
 };
 

@@ -90,12 +90,12 @@ class BatchGetTriggersResult {
   ///@}
  private:
   Aws::Vector<Trigger> m_triggers;
-  bool m_triggersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_triggersNotFound;
-  bool m_triggersNotFoundHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_triggersHasBeenSet = false;
+  bool m_triggersNotFoundHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

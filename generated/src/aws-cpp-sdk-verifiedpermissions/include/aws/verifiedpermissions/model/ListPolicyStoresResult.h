@@ -89,12 +89,12 @@ class ListPolicyStoresResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<PolicyStoreItem> m_policyStores;
-  bool m_policyStoresHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_policyStoresHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

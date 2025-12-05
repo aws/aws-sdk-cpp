@@ -71,9 +71,9 @@ class DeleteTableReplicationRequest : public S3TablesRequest {
   ///@}
  private:
   Aws::String m_tableArn;
-  bool m_tableArnHasBeenSet = false;
 
   Aws::String m_versionToken;
+  bool m_tableArnHasBeenSet = false;
   bool m_versionTokenHasBeenSet = false;
 };
 

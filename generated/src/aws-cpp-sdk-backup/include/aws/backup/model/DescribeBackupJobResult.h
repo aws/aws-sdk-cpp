@@ -655,102 +655,102 @@ class DescribeBackupJobResult {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_backupJobId;
-  bool m_backupJobIdHasBeenSet = false;
 
   Aws::String m_backupVaultName;
-  bool m_backupVaultNameHasBeenSet = false;
 
   Lifecycle m_recoveryPointLifecycle;
-  bool m_recoveryPointLifecycleHasBeenSet = false;
 
   Aws::String m_backupVaultArn;
-  bool m_backupVaultArnHasBeenSet = false;
 
   Aws::String m_vaultType;
-  bool m_vaultTypeHasBeenSet = false;
 
   Aws::String m_vaultLockState;
-  bool m_vaultLockStateHasBeenSet = false;
 
   Aws::String m_recoveryPointArn;
-  bool m_recoveryPointArnHasBeenSet = false;
 
   Aws::String m_encryptionKeyArn;
-  bool m_encryptionKeyArnHasBeenSet = false;
 
   bool m_isEncrypted{false};
-  bool m_isEncryptedHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_completionDate{};
-  bool m_completionDateHasBeenSet = false;
 
   BackupJobState m_state{BackupJobState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_percentDone;
-  bool m_percentDoneHasBeenSet = false;
 
   long long m_backupSizeInBytes{0};
-  bool m_backupSizeInBytesHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   RecoveryPointCreator m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   long long m_bytesTransferred{0};
-  bool m_bytesTransferredHasBeenSet = false;
 
   Aws::Utils::DateTime m_expectedCompletionDate{};
-  bool m_expectedCompletionDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_startBy{};
-  bool m_startByHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_backupOptions;
-  bool m_backupOptionsHasBeenSet = false;
 
   Aws::String m_backupType;
-  bool m_backupTypeHasBeenSet = false;
 
   Aws::String m_parentJobId;
-  bool m_parentJobIdHasBeenSet = false;
 
   bool m_isParent{false};
-  bool m_isParentHasBeenSet = false;
 
   long long m_numberOfChildJobs{0};
-  bool m_numberOfChildJobsHasBeenSet = false;
 
   Aws::Map<BackupJobState, long long> m_childJobsInState;
-  bool m_childJobsInStateHasBeenSet = false;
 
   Aws::String m_resourceName;
-  bool m_resourceNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_initiationDate{};
-  bool m_initiationDateHasBeenSet = false;
 
   Aws::String m_messageCategory;
-  bool m_messageCategoryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountIdHasBeenSet = false;
+  bool m_backupJobIdHasBeenSet = false;
+  bool m_backupVaultNameHasBeenSet = false;
+  bool m_recoveryPointLifecycleHasBeenSet = false;
+  bool m_backupVaultArnHasBeenSet = false;
+  bool m_vaultTypeHasBeenSet = false;
+  bool m_vaultLockStateHasBeenSet = false;
+  bool m_recoveryPointArnHasBeenSet = false;
+  bool m_encryptionKeyArnHasBeenSet = false;
+  bool m_isEncryptedHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_completionDateHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_percentDoneHasBeenSet = false;
+  bool m_backupSizeInBytesHasBeenSet = false;
+  bool m_iamRoleArnHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_bytesTransferredHasBeenSet = false;
+  bool m_expectedCompletionDateHasBeenSet = false;
+  bool m_startByHasBeenSet = false;
+  bool m_backupOptionsHasBeenSet = false;
+  bool m_backupTypeHasBeenSet = false;
+  bool m_parentJobIdHasBeenSet = false;
+  bool m_isParentHasBeenSet = false;
+  bool m_numberOfChildJobsHasBeenSet = false;
+  bool m_childJobsInStateHasBeenSet = false;
+  bool m_resourceNameHasBeenSet = false;
+  bool m_initiationDateHasBeenSet = false;
+  bool m_messageCategoryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

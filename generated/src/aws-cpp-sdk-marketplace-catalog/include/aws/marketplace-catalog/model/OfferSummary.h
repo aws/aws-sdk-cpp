@@ -206,30 +206,30 @@ class OfferSummary {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_productId;
-  bool m_productIdHasBeenSet = false;
 
   Aws::String m_resaleAuthorizationId;
-  bool m_resaleAuthorizationIdHasBeenSet = false;
 
   Aws::String m_releaseDate;
-  bool m_releaseDateHasBeenSet = false;
 
   Aws::String m_availabilityEndDate;
-  bool m_availabilityEndDateHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_buyerAccounts;
-  bool m_buyerAccountsHasBeenSet = false;
 
   OfferStateString m_state{OfferStateString::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Vector<OfferTargetingString> m_targeting;
-  bool m_targetingHasBeenSet = false;
 
   Aws::String m_offerSetId;
+  bool m_nameHasBeenSet = false;
+  bool m_productIdHasBeenSet = false;
+  bool m_resaleAuthorizationIdHasBeenSet = false;
+  bool m_releaseDateHasBeenSet = false;
+  bool m_availabilityEndDateHasBeenSet = false;
+  bool m_buyerAccountsHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_targetingHasBeenSet = false;
   bool m_offerSetIdHasBeenSet = false;
 };
 

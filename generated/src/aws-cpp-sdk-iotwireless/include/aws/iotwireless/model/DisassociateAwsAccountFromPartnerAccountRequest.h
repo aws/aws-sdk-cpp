@@ -69,9 +69,9 @@ class DisassociateAwsAccountFromPartnerAccountRequest : public IoTWirelessReques
   ///@}
  private:
   Aws::String m_partnerAccountId;
-  bool m_partnerAccountIdHasBeenSet = false;
 
   PartnerType m_partnerType{PartnerType::NOT_SET};
+  bool m_partnerAccountIdHasBeenSet = false;
   bool m_partnerTypeHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class GetProposalResult {
   ///@}
  private:
   Proposal m_proposal;
-  bool m_proposalHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_proposalHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

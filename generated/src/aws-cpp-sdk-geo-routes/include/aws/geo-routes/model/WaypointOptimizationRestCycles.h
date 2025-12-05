@@ -68,9 +68,9 @@ class WaypointOptimizationRestCycles {
   ///@}
  private:
   WaypointOptimizationRestCycleDurations m_longCycle;
-  bool m_longCycleHasBeenSet = false;
 
   WaypointOptimizationRestCycleDurations m_shortCycle;
+  bool m_longCycleHasBeenSet = false;
   bool m_shortCycleHasBeenSet = false;
 };
 

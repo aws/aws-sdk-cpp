@@ -84,12 +84,12 @@ class CreateHealthCheckResult {
   ///@}
  private:
   HealthCheck m_healthCheck;
-  bool m_healthCheckHasBeenSet = false;
 
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_healthCheckHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

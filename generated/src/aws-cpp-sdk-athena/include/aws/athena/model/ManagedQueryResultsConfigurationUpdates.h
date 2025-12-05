@@ -88,12 +88,12 @@ class ManagedQueryResultsConfigurationUpdates {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   ManagedQueryResultsEncryptionConfiguration m_encryptionConfiguration;
-  bool m_encryptionConfigurationHasBeenSet = false;
 
   bool m_removeEncryptionConfiguration{false};
+  bool m_enabledHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
   bool m_removeEncryptionConfigurationHasBeenSet = false;
 };
 

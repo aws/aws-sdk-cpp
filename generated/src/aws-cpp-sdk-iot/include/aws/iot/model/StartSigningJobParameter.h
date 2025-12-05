@@ -88,12 +88,12 @@ class StartSigningJobParameter {
   ///@}
  private:
   SigningProfileParameter m_signingProfileParameter;
-  bool m_signingProfileParameterHasBeenSet = false;
 
   Aws::String m_signingProfileName;
-  bool m_signingProfileNameHasBeenSet = false;
 
   Destination m_destination;
+  bool m_signingProfileParameterHasBeenSet = false;
+  bool m_signingProfileNameHasBeenSet = false;
   bool m_destinationHasBeenSet = false;
 };
 

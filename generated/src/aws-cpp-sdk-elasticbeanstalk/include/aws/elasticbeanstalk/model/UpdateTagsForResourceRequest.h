@@ -106,12 +106,12 @@ class UpdateTagsForResourceRequest : public ElasticBeanstalkRequest {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tagsToAdd;
-  bool m_tagsToAddHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagsToRemove;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_tagsToAddHasBeenSet = false;
   bool m_tagsToRemoveHasBeenSet = false;
 };
 

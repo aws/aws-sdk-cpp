@@ -128,21 +128,21 @@ class UpdateDataSetResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_dataSetId;
-  bool m_dataSetIdHasBeenSet = false;
 
   Aws::String m_ingestionArn;
-  bool m_ingestionArnHasBeenSet = false;
 
   Aws::String m_ingestionId;
-  bool m_ingestionIdHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   int m_status{0};
+  bool m_arnHasBeenSet = false;
+  bool m_dataSetIdHasBeenSet = false;
+  bool m_ingestionArnHasBeenSet = false;
+  bool m_ingestionIdHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

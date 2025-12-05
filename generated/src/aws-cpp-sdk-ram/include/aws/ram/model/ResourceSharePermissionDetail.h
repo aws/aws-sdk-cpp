@@ -305,42 +305,42 @@ class ResourceSharePermissionDetail {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   bool m_defaultVersion{false};
-  bool m_defaultVersionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_permission;
-  bool m_permissionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   bool m_isResourceTypeDefault{false};
-  bool m_isResourceTypeDefaultHasBeenSet = false;
 
   PermissionType m_permissionType{PermissionType::NOT_SET};
-  bool m_permissionTypeHasBeenSet = false;
 
   PermissionFeatureSet m_featureSet{PermissionFeatureSet::NOT_SET};
-  bool m_featureSetHasBeenSet = false;
 
   PermissionStatus m_status{PermissionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_arnHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_defaultVersionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_permissionHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_isResourceTypeDefaultHasBeenSet = false;
+  bool m_permissionTypeHasBeenSet = false;
+  bool m_featureSetHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

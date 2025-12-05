@@ -74,9 +74,9 @@ class PerObjectStatus {
   ///@}
  private:
   PerObjectSyncStatus m_syncStatus{PerObjectSyncStatus::NOT_SET};
-  bool m_syncStatusHasBeenSet = false;
 
   Aws::String m_updateToken;
+  bool m_syncStatusHasBeenSet = false;
   bool m_updateTokenHasBeenSet = false;
 };
 

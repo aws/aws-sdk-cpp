@@ -211,33 +211,33 @@ class GetImportResult {
   ///@}
  private:
   Aws::String m_importId;
-  bool m_importIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_destinations;
-  bool m_destinationsHasBeenSet = false;
 
   ImportSource m_importSource;
-  bool m_importSourceHasBeenSet = false;
 
   Aws::Utils::DateTime m_startEventTime{};
-  bool m_startEventTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endEventTime{};
-  bool m_endEventTimeHasBeenSet = false;
 
   ImportStatus m_importStatus{ImportStatus::NOT_SET};
-  bool m_importStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedTimestamp{};
-  bool m_updatedTimestampHasBeenSet = false;
 
   ImportStatistics m_importStatistics;
-  bool m_importStatisticsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_importIdHasBeenSet = false;
+  bool m_destinationsHasBeenSet = false;
+  bool m_importSourceHasBeenSet = false;
+  bool m_startEventTimeHasBeenSet = false;
+  bool m_endEventTimeHasBeenSet = false;
+  bool m_importStatusHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_updatedTimestampHasBeenSet = false;
+  bool m_importStatisticsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

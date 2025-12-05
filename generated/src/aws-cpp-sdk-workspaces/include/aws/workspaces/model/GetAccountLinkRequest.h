@@ -67,9 +67,9 @@ class GetAccountLinkRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::String m_linkId;
-  bool m_linkIdHasBeenSet = false;
 
   Aws::String m_linkedAccountId;
+  bool m_linkIdHasBeenSet = false;
   bool m_linkedAccountIdHasBeenSet = false;
 };
 

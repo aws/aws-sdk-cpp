@@ -72,9 +72,9 @@ class RetrieverConfiguration {
   ///@}
  private:
   NativeIndexConfiguration m_nativeIndexConfiguration;
-  bool m_nativeIndexConfigurationHasBeenSet = false;
 
   KendraIndexConfiguration m_kendraIndexConfiguration;
+  bool m_nativeIndexConfigurationHasBeenSet = false;
   bool m_kendraIndexConfigurationHasBeenSet = false;
 };
 

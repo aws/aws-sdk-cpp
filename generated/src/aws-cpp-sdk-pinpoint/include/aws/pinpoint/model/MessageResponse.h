@@ -126,15 +126,15 @@ class MessageResponse {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::Map<Aws::String, EndpointMessageResult> m_endpointResult;
-  bool m_endpointResultHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::Map<Aws::String, MessageResult> m_result;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_endpointResultHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_resultHasBeenSet = false;
 };
 

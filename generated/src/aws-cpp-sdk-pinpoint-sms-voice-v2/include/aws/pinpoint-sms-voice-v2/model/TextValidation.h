@@ -82,12 +82,12 @@ class TextValidation {
   ///@}
  private:
   int m_minLength{0};
-  bool m_minLengthHasBeenSet = false;
 
   int m_maxLength{0};
-  bool m_maxLengthHasBeenSet = false;
 
   Aws::String m_pattern;
+  bool m_minLengthHasBeenSet = false;
+  bool m_maxLengthHasBeenSet = false;
   bool m_patternHasBeenSet = false;
 };
 

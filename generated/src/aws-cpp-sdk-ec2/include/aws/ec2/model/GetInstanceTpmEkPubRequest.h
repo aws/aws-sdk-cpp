@@ -107,15 +107,15 @@ class GetInstanceTpmEkPubRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   EkPubKeyType m_keyType{EkPubKeyType::NOT_SET};
-  bool m_keyTypeHasBeenSet = false;
 
   EkPubKeyFormat m_keyFormat{EkPubKeyFormat::NOT_SET};
-  bool m_keyFormatHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_keyTypeHasBeenSet = false;
+  bool m_keyFormatHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

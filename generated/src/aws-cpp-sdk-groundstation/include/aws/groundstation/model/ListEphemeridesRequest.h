@@ -168,24 +168,24 @@ class ListEphemeridesRequest : public GroundStationRequest {
   ///@}
  private:
   Aws::String m_satelliteId;
-  bool m_satelliteIdHasBeenSet = false;
 
   EphemerisType m_ephemerisType{EphemerisType::NOT_SET};
-  bool m_ephemerisTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Vector<EphemerisStatus> m_statusList;
-  bool m_statusListHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_satelliteIdHasBeenSet = false;
+  bool m_ephemerisTypeHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_statusListHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

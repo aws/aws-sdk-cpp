@@ -84,12 +84,12 @@ class ListSchemasResult {
   ///@}
  private:
   Aws::Vector<DatasetSchemaSummary> m_schemas;
-  bool m_schemasHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_schemasHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

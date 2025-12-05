@@ -65,9 +65,9 @@ class GetImportJobRequest : public ConnectWisdomServiceRequest {
   ///@}
  private:
   Aws::String m_importJobId;
-  bool m_importJobIdHasBeenSet = false;
 
   Aws::String m_knowledgeBaseId;
+  bool m_importJobIdHasBeenSet = false;
   bool m_knowledgeBaseIdHasBeenSet = false;
 };
 

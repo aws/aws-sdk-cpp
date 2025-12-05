@@ -103,12 +103,12 @@ class ComponentDeploymentSpecification {
   ///@}
  private:
   Aws::String m_componentVersion;
-  bool m_componentVersionHasBeenSet = false;
 
   ComponentConfigurationUpdate m_configurationUpdate;
-  bool m_configurationUpdateHasBeenSet = false;
 
   ComponentRunWith m_runWith;
+  bool m_componentVersionHasBeenSet = false;
+  bool m_configurationUpdateHasBeenSet = false;
   bool m_runWithHasBeenSet = false;
 };
 

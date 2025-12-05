@@ -65,9 +65,9 @@ class VoiceAnalyticsProcessorConfiguration {
   ///@}
  private:
   VoiceAnalyticsConfigurationStatus m_speakerSearchStatus{VoiceAnalyticsConfigurationStatus::NOT_SET};
-  bool m_speakerSearchStatusHasBeenSet = false;
 
   VoiceAnalyticsConfigurationStatus m_voiceToneAnalysisStatus{VoiceAnalyticsConfigurationStatus::NOT_SET};
+  bool m_speakerSearchStatusHasBeenSet = false;
   bool m_voiceToneAnalysisStatusHasBeenSet = false;
 };
 

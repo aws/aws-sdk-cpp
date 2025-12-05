@@ -97,12 +97,12 @@ class ListVirtualMFADevicesRequest : public IAMRequest {
   ///@}
  private:
   AssignmentStatusType m_assignmentStatus{AssignmentStatusType::NOT_SET};
-  bool m_assignmentStatusHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_maxItems{0};
+  bool m_assignmentStatusHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_maxItemsHasBeenSet = false;
 };
 

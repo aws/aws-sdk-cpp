@@ -103,15 +103,15 @@ class EdgeMetric {
   ///@}
  private:
   Aws::String m_dimension;
-  bool m_dimensionHasBeenSet = false;
 
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   double m_value{0.0};
-  bool m_valueHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
+  bool m_dimensionHasBeenSet = false;
+  bool m_metricNameHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
 };
 

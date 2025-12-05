@@ -70,9 +70,9 @@ class MappedResourceConfigurationListItem {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_aRN;
+  bool m_typeHasBeenSet = false;
   bool m_aRNHasBeenSet = false;
 };
 

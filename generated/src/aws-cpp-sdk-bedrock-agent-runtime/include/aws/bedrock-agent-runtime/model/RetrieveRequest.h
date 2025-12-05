@@ -127,18 +127,18 @@ class RetrieveRequest : public BedrockAgentRuntimeRequest {
   ///@}
  private:
   GuardrailConfiguration m_guardrailConfiguration;
-  bool m_guardrailConfigurationHasBeenSet = false;
 
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   KnowledgeBaseRetrievalConfiguration m_retrievalConfiguration;
-  bool m_retrievalConfigurationHasBeenSet = false;
 
   KnowledgeBaseQuery m_retrievalQuery;
+  bool m_guardrailConfigurationHasBeenSet = false;
+  bool m_knowledgeBaseIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_retrievalConfigurationHasBeenSet = false;
   bool m_retrievalQueryHasBeenSet = false;
 };
 

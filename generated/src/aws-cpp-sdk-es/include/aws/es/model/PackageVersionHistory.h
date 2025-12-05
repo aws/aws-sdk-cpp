@@ -87,12 +87,12 @@ class PackageVersionHistory {
   ///@}
  private:
   Aws::String m_packageVersion;
-  bool m_packageVersionHasBeenSet = false;
 
   Aws::String m_commitMessage;
-  bool m_commitMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
+  bool m_packageVersionHasBeenSet = false;
+  bool m_commitMessageHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
 };
 

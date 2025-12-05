@@ -201,27 +201,27 @@ class PutSessionRequest : public LexRuntimeV2Request {
   ///@}
  private:
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   Aws::String m_botAliasId;
-  bool m_botAliasIdHasBeenSet = false;
 
   Aws::String m_localeId;
-  bool m_localeIdHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::Vector<Message> m_messages;
-  bool m_messagesHasBeenSet = false;
 
   SessionState m_sessionState;
-  bool m_sessionStateHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_requestAttributes;
-  bool m_requestAttributesHasBeenSet = false;
 
   Aws::String m_responseContentType;
+  bool m_botIdHasBeenSet = false;
+  bool m_botAliasIdHasBeenSet = false;
+  bool m_localeIdHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_messagesHasBeenSet = false;
+  bool m_sessionStateHasBeenSet = false;
+  bool m_requestAttributesHasBeenSet = false;
   bool m_responseContentTypeHasBeenSet = false;
 };
 

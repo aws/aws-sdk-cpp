@@ -87,12 +87,12 @@ class SetDesiredCapacityRequest : public AutoScalingRequest {
   ///@}
  private:
   Aws::String m_autoScalingGroupName;
-  bool m_autoScalingGroupNameHasBeenSet = false;
 
   int m_desiredCapacity{0};
-  bool m_desiredCapacityHasBeenSet = false;
 
   bool m_honorCooldown{false};
+  bool m_autoScalingGroupNameHasBeenSet = false;
+  bool m_desiredCapacityHasBeenSet = false;
   bool m_honorCooldownHasBeenSet = false;
 };
 

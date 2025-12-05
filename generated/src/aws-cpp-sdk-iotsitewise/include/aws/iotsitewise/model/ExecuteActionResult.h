@@ -59,9 +59,9 @@ class ExecuteActionResult {
   ///@}
  private:
   Aws::String m_actionId;
-  bool m_actionIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_actionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -106,15 +106,15 @@ class AggregationAuthorization {
   ///@}
  private:
   Aws::String m_aggregationAuthorizationArn;
-  bool m_aggregationAuthorizationArnHasBeenSet = false;
 
   Aws::String m_authorizedAccountId;
-  bool m_authorizedAccountIdHasBeenSet = false;
 
   Aws::String m_authorizedAwsRegion;
-  bool m_authorizedAwsRegionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
+  bool m_aggregationAuthorizationArnHasBeenSet = false;
+  bool m_authorizedAccountIdHasBeenSet = false;
+  bool m_authorizedAwsRegionHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
 };
 

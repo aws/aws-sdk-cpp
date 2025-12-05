@@ -118,15 +118,15 @@ class ListGroupResourcesResult {
   ///@}
  private:
   Aws::Vector<ListGroupResourcesItem> m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<QueryError> m_queryErrors;
-  bool m_queryErrorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourcesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_queryErrorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

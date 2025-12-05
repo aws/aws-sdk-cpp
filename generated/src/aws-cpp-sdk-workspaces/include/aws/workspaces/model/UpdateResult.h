@@ -71,9 +71,9 @@ class UpdateResult {
   ///@}
  private:
   bool m_updateAvailable{false};
-  bool m_updateAvailableHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_updateAvailableHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

@@ -61,9 +61,9 @@ class UpdateComputationModelResult {
   ///@}
  private:
   ComputationModelStatus m_computationModelStatus;
-  bool m_computationModelStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_computationModelStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -239,39 +239,39 @@ class GetModelCopyJobResult {
   ///@}
  private:
   Aws::String m_jobArn;
-  bool m_jobArnHasBeenSet = false;
 
   ModelCopyJobStatus m_status{ModelCopyJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_targetModelArn;
-  bool m_targetModelArnHasBeenSet = false;
 
   Aws::String m_targetModelName;
-  bool m_targetModelNameHasBeenSet = false;
 
   Aws::String m_sourceAccountId;
-  bool m_sourceAccountIdHasBeenSet = false;
 
   Aws::String m_sourceModelArn;
-  bool m_sourceModelArnHasBeenSet = false;
 
   Aws::String m_targetModelKmsKeyArn;
-  bool m_targetModelKmsKeyArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_targetModelTags;
-  bool m_targetModelTagsHasBeenSet = false;
 
   Aws::String m_failureMessage;
-  bool m_failureMessageHasBeenSet = false;
 
   Aws::String m_sourceModelName;
-  bool m_sourceModelNameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_targetModelArnHasBeenSet = false;
+  bool m_targetModelNameHasBeenSet = false;
+  bool m_sourceAccountIdHasBeenSet = false;
+  bool m_sourceModelArnHasBeenSet = false;
+  bool m_targetModelKmsKeyArnHasBeenSet = false;
+  bool m_targetModelTagsHasBeenSet = false;
+  bool m_failureMessageHasBeenSet = false;
+  bool m_sourceModelNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -148,21 +148,21 @@ class CreateOrganizationRequest : public WorkMailRequest {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Vector<Domain> m_domains;
-  bool m_domainsHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   bool m_enableInteroperability{false};
+  bool m_directoryIdHasBeenSet = false;
+  bool m_aliasHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_domainsHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
   bool m_enableInteroperabilityHasBeenSet = false;
 };
 

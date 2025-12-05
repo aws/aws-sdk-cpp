@@ -78,12 +78,12 @@ class CreateDetectorResult {
   ///@}
  private:
   Aws::String m_detectorId;
-  bool m_detectorIdHasBeenSet = false;
 
   UnprocessedDataSourcesResult m_unprocessedDataSources;
-  bool m_unprocessedDataSourcesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_detectorIdHasBeenSet = false;
+  bool m_unprocessedDataSourcesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

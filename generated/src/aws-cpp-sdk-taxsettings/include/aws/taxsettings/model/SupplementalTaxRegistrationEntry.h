@@ -103,15 +103,15 @@ class SupplementalTaxRegistrationEntry {
   ///@}
  private:
   Address m_address;
-  bool m_addressHasBeenSet = false;
 
   Aws::String m_legalName;
-  bool m_legalNameHasBeenSet = false;
 
   Aws::String m_registrationId;
-  bool m_registrationIdHasBeenSet = false;
 
   SupplementalTaxRegistrationType m_registrationType{SupplementalTaxRegistrationType::NOT_SET};
+  bool m_addressHasBeenSet = false;
+  bool m_legalNameHasBeenSet = false;
+  bool m_registrationIdHasBeenSet = false;
   bool m_registrationTypeHasBeenSet = false;
 };
 

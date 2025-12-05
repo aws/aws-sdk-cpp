@@ -97,12 +97,12 @@ class DescribeClusterParameterGroupsResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<ClusterParameterGroup> m_parameterGroups;
-  bool m_parameterGroupsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_parameterGroupsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

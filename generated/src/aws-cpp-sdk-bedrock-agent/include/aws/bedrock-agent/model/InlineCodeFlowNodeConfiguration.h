@@ -75,9 +75,9 @@ class InlineCodeFlowNodeConfiguration {
   ///@}
  private:
   Aws::String m_code;
-  bool m_codeHasBeenSet = false;
 
   SupportedLanguages m_language{SupportedLanguages::NOT_SET};
+  bool m_codeHasBeenSet = false;
   bool m_languageHasBeenSet = false;
 };
 

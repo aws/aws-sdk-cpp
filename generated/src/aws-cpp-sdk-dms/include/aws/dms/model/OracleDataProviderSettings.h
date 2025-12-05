@@ -268,39 +268,39 @@ class OracleDataProviderSettings {
   ///@}
  private:
   Aws::String m_serverName;
-  bool m_serverNameHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   DmsSslModeValue m_sslMode{DmsSslModeValue::NOT_SET};
-  bool m_sslModeHasBeenSet = false;
 
   Aws::String m_certificateArn;
-  bool m_certificateArnHasBeenSet = false;
 
   Aws::String m_asmServer;
-  bool m_asmServerHasBeenSet = false;
 
   Aws::String m_secretsManagerOracleAsmSecretId;
-  bool m_secretsManagerOracleAsmSecretIdHasBeenSet = false;
 
   Aws::String m_secretsManagerOracleAsmAccessRoleArn;
-  bool m_secretsManagerOracleAsmAccessRoleArnHasBeenSet = false;
 
   Aws::String m_secretsManagerSecurityDbEncryptionSecretId;
-  bool m_secretsManagerSecurityDbEncryptionSecretIdHasBeenSet = false;
 
   Aws::String m_secretsManagerSecurityDbEncryptionAccessRoleArn;
-  bool m_secretsManagerSecurityDbEncryptionAccessRoleArnHasBeenSet = false;
 
   Aws::String m_s3Path;
-  bool m_s3PathHasBeenSet = false;
 
   Aws::String m_s3AccessRoleArn;
+  bool m_serverNameHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_sslModeHasBeenSet = false;
+  bool m_certificateArnHasBeenSet = false;
+  bool m_asmServerHasBeenSet = false;
+  bool m_secretsManagerOracleAsmSecretIdHasBeenSet = false;
+  bool m_secretsManagerOracleAsmAccessRoleArnHasBeenSet = false;
+  bool m_secretsManagerSecurityDbEncryptionSecretIdHasBeenSet = false;
+  bool m_secretsManagerSecurityDbEncryptionAccessRoleArnHasBeenSet = false;
+  bool m_s3PathHasBeenSet = false;
   bool m_s3AccessRoleArnHasBeenSet = false;
 };
 

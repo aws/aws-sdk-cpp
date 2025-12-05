@@ -72,9 +72,9 @@ class ExportTr31KeyBlock {
   ///@}
  private:
   Aws::String m_wrappingKeyIdentifier;
-  bool m_wrappingKeyIdentifierHasBeenSet = false;
 
   KeyBlockHeaders m_keyBlockHeaders;
+  bool m_wrappingKeyIdentifierHasBeenSet = false;
   bool m_keyBlockHeadersHasBeenSet = false;
 };
 

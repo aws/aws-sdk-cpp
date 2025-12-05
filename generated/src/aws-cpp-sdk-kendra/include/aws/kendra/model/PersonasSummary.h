@@ -116,15 +116,15 @@ class PersonasSummary {
   ///@}
  private:
   Aws::String m_entityId;
-  bool m_entityIdHasBeenSet = false;
 
   Persona m_persona{Persona::NOT_SET};
-  bool m_personaHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_entityIdHasBeenSet = false;
+  bool m_personaHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

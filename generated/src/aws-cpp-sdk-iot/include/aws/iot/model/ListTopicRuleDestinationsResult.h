@@ -85,12 +85,12 @@ class ListTopicRuleDestinationsResult {
   ///@}
  private:
   Aws::Vector<TopicRuleDestinationSummary> m_destinationSummaries;
-  bool m_destinationSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_destinationSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class DescribeGlobalTableSettingsResult {
   ///@}
  private:
   Aws::String m_globalTableName;
-  bool m_globalTableNameHasBeenSet = false;
 
   Aws::Vector<ReplicaSettingsDescription> m_replicaSettings;
-  bool m_replicaSettingsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_globalTableNameHasBeenSet = false;
+  bool m_replicaSettingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

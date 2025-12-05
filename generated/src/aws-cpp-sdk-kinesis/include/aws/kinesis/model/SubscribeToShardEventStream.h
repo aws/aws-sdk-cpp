@@ -202,33 +202,33 @@ class SubscribeToShardEventStream {
   ///@}
  private:
   SubscribeToShardEvent m_subscribeToShardEvent;
-  bool m_subscribeToShardEventHasBeenSet = false;
 
   KinesisError m_resourceNotFoundException;
-  bool m_resourceNotFoundExceptionHasBeenSet = false;
 
   KinesisError m_resourceInUseException;
-  bool m_resourceInUseExceptionHasBeenSet = false;
 
   KinesisError m_kMSDisabledException;
-  bool m_kMSDisabledExceptionHasBeenSet = false;
 
   KinesisError m_kMSInvalidStateException;
-  bool m_kMSInvalidStateExceptionHasBeenSet = false;
 
   KinesisError m_kMSAccessDeniedException;
-  bool m_kMSAccessDeniedExceptionHasBeenSet = false;
 
   KinesisError m_kMSNotFoundException;
-  bool m_kMSNotFoundExceptionHasBeenSet = false;
 
   KinesisError m_kMSOptInRequired;
-  bool m_kMSOptInRequiredHasBeenSet = false;
 
   KinesisError m_kMSThrottlingException;
-  bool m_kMSThrottlingExceptionHasBeenSet = false;
 
   KinesisError m_internalFailureException;
+  bool m_subscribeToShardEventHasBeenSet = false;
+  bool m_resourceNotFoundExceptionHasBeenSet = false;
+  bool m_resourceInUseExceptionHasBeenSet = false;
+  bool m_kMSDisabledExceptionHasBeenSet = false;
+  bool m_kMSInvalidStateExceptionHasBeenSet = false;
+  bool m_kMSAccessDeniedExceptionHasBeenSet = false;
+  bool m_kMSNotFoundExceptionHasBeenSet = false;
+  bool m_kMSOptInRequiredHasBeenSet = false;
+  bool m_kMSThrottlingExceptionHasBeenSet = false;
   bool m_internalFailureExceptionHasBeenSet = false;
 };
 

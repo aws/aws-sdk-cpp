@@ -69,9 +69,9 @@ class InstanceSummary {
   ///@}
  private:
   Instance m_instance;
-  bool m_instanceHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
+  bool m_instanceHasBeenSet = false;
   bool m_lastUpdatedAtHasBeenSet = false;
 };
 

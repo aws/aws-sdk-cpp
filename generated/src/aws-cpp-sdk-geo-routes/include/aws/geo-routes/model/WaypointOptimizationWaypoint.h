@@ -188,27 +188,27 @@ class WaypointOptimizationWaypoint {
   ///@}
  private:
   WaypointOptimizationAccessHours m_accessHours;
-  bool m_accessHoursHasBeenSet = false;
 
   Aws::String m_appointmentTime;
-  bool m_appointmentTimeHasBeenSet = false;
 
   Aws::Vector<int> m_before;
-  bool m_beforeHasBeenSet = false;
 
   double m_heading{0.0};
-  bool m_headingHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Vector<double> m_position;
-  bool m_positionHasBeenSet = false;
 
   long long m_serviceDuration{0};
-  bool m_serviceDurationHasBeenSet = false;
 
   WaypointOptimizationSideOfStreetOptions m_sideOfStreet;
+  bool m_accessHoursHasBeenSet = false;
+  bool m_appointmentTimeHasBeenSet = false;
+  bool m_beforeHasBeenSet = false;
+  bool m_headingHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_positionHasBeenSet = false;
+  bool m_serviceDurationHasBeenSet = false;
   bool m_sideOfStreetHasBeenSet = false;
 };
 

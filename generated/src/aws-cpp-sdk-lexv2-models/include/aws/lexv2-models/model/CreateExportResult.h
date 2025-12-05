@@ -132,21 +132,21 @@ class CreateExportResult {
   ///@}
  private:
   Aws::String m_exportId;
-  bool m_exportIdHasBeenSet = false;
 
   ExportResourceSpecification m_resourceSpecification;
-  bool m_resourceSpecificationHasBeenSet = false;
 
   ImportExportFileFormat m_fileFormat{ImportExportFileFormat::NOT_SET};
-  bool m_fileFormatHasBeenSet = false;
 
   ExportStatus m_exportStatus{ExportStatus::NOT_SET};
-  bool m_exportStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_exportIdHasBeenSet = false;
+  bool m_resourceSpecificationHasBeenSet = false;
+  bool m_fileFormatHasBeenSet = false;
+  bool m_exportStatusHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

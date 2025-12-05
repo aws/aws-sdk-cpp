@@ -236,36 +236,36 @@ class ListFlowOperationResultsResult {
   ///@}
  private:
   Aws::String m_firewallArn;
-  bool m_firewallArnHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_vpcEndpointAssociationArn;
-  bool m_vpcEndpointAssociationArnHasBeenSet = false;
 
   Aws::String m_vpcEndpointId;
-  bool m_vpcEndpointIdHasBeenSet = false;
 
   Aws::String m_flowOperationId;
-  bool m_flowOperationIdHasBeenSet = false;
 
   FlowOperationStatus m_flowOperationStatus{FlowOperationStatus::NOT_SET};
-  bool m_flowOperationStatusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_flowRequestTimestamp{};
-  bool m_flowRequestTimestampHasBeenSet = false;
 
   Aws::Vector<Flow> m_flows;
-  bool m_flowsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_firewallArnHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_vpcEndpointAssociationArnHasBeenSet = false;
+  bool m_vpcEndpointIdHasBeenSet = false;
+  bool m_flowOperationIdHasBeenSet = false;
+  bool m_flowOperationStatusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_flowRequestTimestampHasBeenSet = false;
+  bool m_flowsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

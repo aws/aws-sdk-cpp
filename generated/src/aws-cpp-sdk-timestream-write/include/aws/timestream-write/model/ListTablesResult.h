@@ -85,12 +85,12 @@ class ListTablesResult {
   ///@}
  private:
   Aws::Vector<Table> m_tables;
-  bool m_tablesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tablesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

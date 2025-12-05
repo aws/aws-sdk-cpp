@@ -71,9 +71,9 @@ class TrainingImageConfig {
   ///@}
  private:
   TrainingRepositoryAccessMode m_trainingRepositoryAccessMode{TrainingRepositoryAccessMode::NOT_SET};
-  bool m_trainingRepositoryAccessModeHasBeenSet = false;
 
   TrainingRepositoryAuthConfig m_trainingRepositoryAuthConfig;
+  bool m_trainingRepositoryAccessModeHasBeenSet = false;
   bool m_trainingRepositoryAuthConfigHasBeenSet = false;
 };
 

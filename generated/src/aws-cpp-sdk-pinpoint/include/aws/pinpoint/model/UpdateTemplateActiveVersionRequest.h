@@ -86,12 +86,12 @@ class UpdateTemplateActiveVersionRequest : public PinpointRequest {
   ///@}
  private:
   TemplateActiveVersionRequest m_templateActiveVersionRequest;
-  bool m_templateActiveVersionRequestHasBeenSet = false;
 
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   Aws::String m_templateType;
+  bool m_templateActiveVersionRequestHasBeenSet = false;
+  bool m_templateNameHasBeenSet = false;
   bool m_templateTypeHasBeenSet = false;
 };
 

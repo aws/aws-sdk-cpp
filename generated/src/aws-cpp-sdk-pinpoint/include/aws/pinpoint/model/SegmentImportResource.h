@@ -156,21 +156,21 @@ class SegmentImportResource {
   ///@}
  private:
   Aws::Map<Aws::String, int> m_channelCounts;
-  bool m_channelCountsHasBeenSet = false;
 
   Aws::String m_externalId;
-  bool m_externalIdHasBeenSet = false;
 
   Format m_format{Format::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_s3Url;
-  bool m_s3UrlHasBeenSet = false;
 
   int m_size{0};
+  bool m_channelCountsHasBeenSet = false;
+  bool m_externalIdHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_s3UrlHasBeenSet = false;
   bool m_sizeHasBeenSet = false;
 };
 

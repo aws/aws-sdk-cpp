@@ -87,12 +87,12 @@ class ListFunctionsByCodeSigningConfigRequest : public LambdaRequest {
   ///@}
  private:
   Aws::String m_codeSigningConfigArn;
-  bool m_codeSigningConfigArnHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_maxItems{0};
+  bool m_codeSigningConfigArnHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_maxItemsHasBeenSet = false;
 };
 

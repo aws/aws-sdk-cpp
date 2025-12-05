@@ -60,9 +60,9 @@ class RegisterScalableTargetResult {
   ///@}
  private:
   Aws::String m_scalableTargetARN;
-  bool m_scalableTargetARNHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_scalableTargetARNHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -256,39 +256,39 @@ class MaintenanceWindowExecutionTaskInvocationIdentity {
   ///@}
  private:
   Aws::String m_windowExecutionId;
-  bool m_windowExecutionIdHasBeenSet = false;
 
   Aws::String m_taskExecutionId;
-  bool m_taskExecutionIdHasBeenSet = false;
 
   Aws::String m_invocationId;
-  bool m_invocationIdHasBeenSet = false;
 
   Aws::String m_executionId;
-  bool m_executionIdHasBeenSet = false;
 
   MaintenanceWindowTaskType m_taskType{MaintenanceWindowTaskType::NOT_SET};
-  bool m_taskTypeHasBeenSet = false;
 
   Aws::String m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   MaintenanceWindowExecutionStatus m_status{MaintenanceWindowExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusDetails;
-  bool m_statusDetailsHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_ownerInformation;
-  bool m_ownerInformationHasBeenSet = false;
 
   Aws::String m_windowTargetId;
+  bool m_windowExecutionIdHasBeenSet = false;
+  bool m_taskExecutionIdHasBeenSet = false;
+  bool m_invocationIdHasBeenSet = false;
+  bool m_executionIdHasBeenSet = false;
+  bool m_taskTypeHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusDetailsHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_ownerInformationHasBeenSet = false;
   bool m_windowTargetIdHasBeenSet = false;
 };
 

@@ -91,12 +91,12 @@ class BodySectionDynamicNumericDimensionConfiguration {
   ///@}
  private:
   ColumnIdentifier m_column;
-  bool m_columnHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::Vector<ColumnSort> m_sortByMetrics;
+  bool m_columnHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_sortByMetricsHasBeenSet = false;
 };
 

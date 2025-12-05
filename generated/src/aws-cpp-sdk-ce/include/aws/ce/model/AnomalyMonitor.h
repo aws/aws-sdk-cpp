@@ -225,30 +225,30 @@ class AnomalyMonitor {
   ///@}
  private:
   Aws::String m_monitorArn;
-  bool m_monitorArnHasBeenSet = false;
 
   Aws::String m_monitorName;
-  bool m_monitorNameHasBeenSet = false;
 
   Aws::String m_creationDate;
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_lastUpdatedDate;
-  bool m_lastUpdatedDateHasBeenSet = false;
 
   Aws::String m_lastEvaluatedDate;
-  bool m_lastEvaluatedDateHasBeenSet = false;
 
   MonitorType m_monitorType{MonitorType::NOT_SET};
-  bool m_monitorTypeHasBeenSet = false;
 
   MonitorDimension m_monitorDimension{MonitorDimension::NOT_SET};
-  bool m_monitorDimensionHasBeenSet = false;
 
   Expression m_monitorSpecification;
-  bool m_monitorSpecificationHasBeenSet = false;
 
   int m_dimensionalValueCount{0};
+  bool m_monitorArnHasBeenSet = false;
+  bool m_monitorNameHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_lastUpdatedDateHasBeenSet = false;
+  bool m_lastEvaluatedDateHasBeenSet = false;
+  bool m_monitorTypeHasBeenSet = false;
+  bool m_monitorDimensionHasBeenSet = false;
+  bool m_monitorSpecificationHasBeenSet = false;
   bool m_dimensionalValueCountHasBeenSet = false;
 };
 

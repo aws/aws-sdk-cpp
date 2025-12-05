@@ -68,9 +68,9 @@ class TargetResourceTypeSummary {
   ///@}
  private:
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

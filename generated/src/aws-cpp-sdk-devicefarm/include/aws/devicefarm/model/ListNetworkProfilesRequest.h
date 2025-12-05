@@ -87,12 +87,12 @@ class ListNetworkProfilesRequest : public DeviceFarmRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   NetworkProfileType m_type{NetworkProfileType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_arnHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

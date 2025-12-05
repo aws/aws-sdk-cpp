@@ -141,21 +141,21 @@ class UploadLayerPartRequest : public ECRRequest {
   ///@}
  private:
   Aws::String m_registryId;
-  bool m_registryIdHasBeenSet = false;
 
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   Aws::String m_uploadId;
-  bool m_uploadIdHasBeenSet = false;
 
   long long m_partFirstByte{0};
-  bool m_partFirstByteHasBeenSet = false;
 
   long long m_partLastByte{0};
-  bool m_partLastByteHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_layerPartBlob{};
+  bool m_registryIdHasBeenSet = false;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_uploadIdHasBeenSet = false;
+  bool m_partFirstByteHasBeenSet = false;
+  bool m_partLastByteHasBeenSet = false;
   bool m_layerPartBlobHasBeenSet = false;
 };
 

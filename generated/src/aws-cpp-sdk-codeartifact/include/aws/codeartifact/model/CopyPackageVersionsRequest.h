@@ -268,36 +268,36 @@ class CopyPackageVersionsRequest : public CodeArtifactRequest {
   ///@}
  private:
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_domainOwner;
-  bool m_domainOwnerHasBeenSet = false;
 
   Aws::String m_sourceRepository;
-  bool m_sourceRepositoryHasBeenSet = false;
 
   Aws::String m_destinationRepository;
-  bool m_destinationRepositoryHasBeenSet = false;
 
   PackageFormat m_format{PackageFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_package;
-  bool m_packageHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_versions;
-  bool m_versionsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_versionRevisions;
-  bool m_versionRevisionsHasBeenSet = false;
 
   bool m_allowOverwrite{false};
-  bool m_allowOverwriteHasBeenSet = false;
 
   bool m_includeFromUpstream{false};
+  bool m_domainHasBeenSet = false;
+  bool m_domainOwnerHasBeenSet = false;
+  bool m_sourceRepositoryHasBeenSet = false;
+  bool m_destinationRepositoryHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_packageHasBeenSet = false;
+  bool m_versionsHasBeenSet = false;
+  bool m_versionRevisionsHasBeenSet = false;
+  bool m_allowOverwriteHasBeenSet = false;
   bool m_includeFromUpstreamHasBeenSet = false;
 };
 

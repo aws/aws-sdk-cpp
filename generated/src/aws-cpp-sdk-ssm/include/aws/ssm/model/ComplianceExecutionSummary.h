@@ -100,12 +100,12 @@ class ComplianceExecutionSummary {
   ///@}
  private:
   Aws::Utils::DateTime m_executionTime{};
-  bool m_executionTimeHasBeenSet = false;
 
   Aws::String m_executionId;
-  bool m_executionIdHasBeenSet = false;
 
   Aws::String m_executionType;
+  bool m_executionTimeHasBeenSet = false;
+  bool m_executionIdHasBeenSet = false;
   bool m_executionTypeHasBeenSet = false;
 };
 

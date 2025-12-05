@@ -61,9 +61,9 @@ class DescribeWebAppCustomizationResult {
   ///@}
  private:
   DescribedWebAppCustomization m_webAppCustomization;
-  bool m_webAppCustomizationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_webAppCustomizationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

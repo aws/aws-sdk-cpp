@@ -149,18 +149,18 @@ class DescribeDBClusterEndpointsRequest : public NeptuneRequest {
   ///@}
  private:
   Aws::String m_dBClusterIdentifier;
-  bool m_dBClusterIdentifierHasBeenSet = false;
 
   Aws::String m_dBClusterEndpointIdentifier;
-  bool m_dBClusterEndpointIdentifierHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   Aws::String m_marker;
+  bool m_dBClusterIdentifierHasBeenSet = false;
+  bool m_dBClusterEndpointIdentifierHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
   bool m_markerHasBeenSet = false;
 };
 

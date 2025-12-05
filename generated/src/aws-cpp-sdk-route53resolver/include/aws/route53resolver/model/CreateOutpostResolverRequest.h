@@ -152,21 +152,21 @@ class CreateOutpostResolverRequest : public Route53ResolverRequest {
   ///@}
  private:
   Aws::String m_creatorRequestId;
-  bool m_creatorRequestIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   Aws::String m_preferredInstanceType;
-  bool m_preferredInstanceTypeHasBeenSet = false;
 
   Aws::String m_outpostArn;
-  bool m_outpostArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_creatorRequestIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_instanceCountHasBeenSet = false;
+  bool m_preferredInstanceTypeHasBeenSet = false;
+  bool m_outpostArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

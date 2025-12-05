@@ -67,9 +67,9 @@ class DescribeExecutionRequest : public TransferRequest {
   ///@}
  private:
   Aws::String m_executionId;
-  bool m_executionIdHasBeenSet = false;
 
   Aws::String m_workflowId;
+  bool m_executionIdHasBeenSet = false;
   bool m_workflowIdHasBeenSet = false;
 };
 

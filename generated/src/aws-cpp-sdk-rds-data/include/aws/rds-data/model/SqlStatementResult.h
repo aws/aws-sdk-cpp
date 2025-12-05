@@ -69,9 +69,9 @@ class SqlStatementResult {
   ///@}
  private:
   ResultFrame m_resultFrame;
-  bool m_resultFrameHasBeenSet = false;
 
   long long m_numberOfRecordsUpdated{0};
+  bool m_resultFrameHasBeenSet = false;
   bool m_numberOfRecordsUpdatedHasBeenSet = false;
 };
 

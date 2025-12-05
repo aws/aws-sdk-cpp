@@ -142,18 +142,18 @@ class CreateEventRuleRequest : public NotificationsRequest {
   ///@}
  private:
   Aws::String m_notificationConfigurationArn;
-  bool m_notificationConfigurationArnHasBeenSet = false;
 
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_eventType;
-  bool m_eventTypeHasBeenSet = false;
 
   Aws::String m_eventPattern;
-  bool m_eventPatternHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_regions;
+  bool m_notificationConfigurationArnHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_eventTypeHasBeenSet = false;
+  bool m_eventPatternHasBeenSet = false;
   bool m_regionsHasBeenSet = false;
 };
 

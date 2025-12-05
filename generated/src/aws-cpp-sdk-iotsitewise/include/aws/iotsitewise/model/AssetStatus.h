@@ -71,9 +71,9 @@ class AssetStatus {
   ///@}
  private:
   AssetState m_state{AssetState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   ErrorDetails m_error;
+  bool m_stateHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

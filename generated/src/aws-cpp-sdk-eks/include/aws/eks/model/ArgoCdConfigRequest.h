@@ -127,15 +127,15 @@ class ArgoCdConfigRequest {
   ///@}
  private:
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   ArgoCdAwsIdcConfigRequest m_awsIdc;
-  bool m_awsIdcHasBeenSet = false;
 
   Aws::Vector<ArgoCdRoleMapping> m_rbacRoleMappings;
-  bool m_rbacRoleMappingsHasBeenSet = false;
 
   ArgoCdNetworkAccessConfigRequest m_networkAccess;
+  bool m_namespaceHasBeenSet = false;
+  bool m_awsIdcHasBeenSet = false;
+  bool m_rbacRoleMappingsHasBeenSet = false;
   bool m_networkAccessHasBeenSet = false;
 };
 

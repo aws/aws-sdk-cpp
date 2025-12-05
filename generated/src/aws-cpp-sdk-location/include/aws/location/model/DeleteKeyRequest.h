@@ -73,9 +73,9 @@ class DeleteKeyRequest : public LocationServiceRequest {
   ///@}
  private:
   Aws::String m_keyName;
-  bool m_keyNameHasBeenSet = false;
 
   bool m_forceDelete{false};
+  bool m_keyNameHasBeenSet = false;
   bool m_forceDeleteHasBeenSet = false;
 };
 

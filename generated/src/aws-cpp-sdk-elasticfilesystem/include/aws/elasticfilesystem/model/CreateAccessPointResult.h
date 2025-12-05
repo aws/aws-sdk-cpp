@@ -233,36 +233,36 @@ class CreateAccessPointResult {
   ///@}
  private:
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_accessPointId;
-  bool m_accessPointIdHasBeenSet = false;
 
   Aws::String m_accessPointArn;
-  bool m_accessPointArnHasBeenSet = false;
 
   Aws::String m_fileSystemId;
-  bool m_fileSystemIdHasBeenSet = false;
 
   PosixUser m_posixUser;
-  bool m_posixUserHasBeenSet = false;
 
   RootDirectory m_rootDirectory;
-  bool m_rootDirectoryHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   LifeCycleState m_lifeCycleState{LifeCycleState::NOT_SET};
-  bool m_lifeCycleStateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_accessPointIdHasBeenSet = false;
+  bool m_accessPointArnHasBeenSet = false;
+  bool m_fileSystemIdHasBeenSet = false;
+  bool m_posixUserHasBeenSet = false;
+  bool m_rootDirectoryHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_lifeCycleStateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

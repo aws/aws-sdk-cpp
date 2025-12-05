@@ -76,12 +76,12 @@ class GetSchemaAsJsonResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_document;
-  bool m_documentHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nameHasBeenSet = false;
+  bool m_documentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

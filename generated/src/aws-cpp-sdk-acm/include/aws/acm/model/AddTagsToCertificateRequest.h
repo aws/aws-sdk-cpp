@@ -80,9 +80,9 @@ class AddTagsToCertificateRequest : public ACMRequest {
   ///@}
  private:
   Aws::String m_certificateArn;
-  bool m_certificateArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_certificateArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

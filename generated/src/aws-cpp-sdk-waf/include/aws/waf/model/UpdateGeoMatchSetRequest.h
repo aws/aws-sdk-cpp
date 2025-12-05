@@ -102,12 +102,12 @@ class UpdateGeoMatchSetRequest : public WAFRequest {
   ///@}
  private:
   Aws::String m_geoMatchSetId;
-  bool m_geoMatchSetIdHasBeenSet = false;
 
   Aws::String m_changeToken;
-  bool m_changeTokenHasBeenSet = false;
 
   Aws::Vector<GeoMatchSetUpdate> m_updates;
+  bool m_geoMatchSetIdHasBeenSet = false;
+  bool m_changeTokenHasBeenSet = false;
   bool m_updatesHasBeenSet = false;
 };
 

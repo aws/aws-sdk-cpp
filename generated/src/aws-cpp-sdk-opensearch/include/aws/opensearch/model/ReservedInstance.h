@@ -284,45 +284,45 @@ class ReservedInstance {
   ///@}
  private:
   Aws::String m_reservationName;
-  bool m_reservationNameHasBeenSet = false;
 
   Aws::String m_reservedInstanceId;
-  bool m_reservedInstanceIdHasBeenSet = false;
 
   long long m_billingSubscriptionId{0};
-  bool m_billingSubscriptionIdHasBeenSet = false;
 
   Aws::String m_reservedInstanceOfferingId;
-  bool m_reservedInstanceOfferingIdHasBeenSet = false;
 
   OpenSearchPartitionInstanceType m_instanceType{OpenSearchPartitionInstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   int m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   double m_fixedPrice{0.0};
-  bool m_fixedPriceHasBeenSet = false;
 
   double m_usagePrice{0.0};
-  bool m_usagePriceHasBeenSet = false;
 
   Aws::String m_currencyCode;
-  bool m_currencyCodeHasBeenSet = false;
 
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   ReservedInstancePaymentOption m_paymentOption{ReservedInstancePaymentOption::NOT_SET};
-  bool m_paymentOptionHasBeenSet = false;
 
   Aws::Vector<RecurringCharge> m_recurringCharges;
+  bool m_reservationNameHasBeenSet = false;
+  bool m_reservedInstanceIdHasBeenSet = false;
+  bool m_billingSubscriptionIdHasBeenSet = false;
+  bool m_reservedInstanceOfferingIdHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
+  bool m_fixedPriceHasBeenSet = false;
+  bool m_usagePriceHasBeenSet = false;
+  bool m_currencyCodeHasBeenSet = false;
+  bool m_instanceCountHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_paymentOptionHasBeenSet = false;
   bool m_recurringChargesHasBeenSet = false;
 };
 

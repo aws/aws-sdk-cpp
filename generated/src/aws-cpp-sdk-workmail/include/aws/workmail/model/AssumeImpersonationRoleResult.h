@@ -74,12 +74,12 @@ class AssumeImpersonationRoleResult {
   ///@}
  private:
   Aws::String m_token;
-  bool m_tokenHasBeenSet = false;
 
   long long m_expiresIn{0};
-  bool m_expiresInHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tokenHasBeenSet = false;
+  bool m_expiresInHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

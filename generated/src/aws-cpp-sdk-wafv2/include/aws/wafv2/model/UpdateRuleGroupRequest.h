@@ -220,27 +220,27 @@ class UpdateRuleGroupRequest : public WAFV2Request {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Scope m_scope{Scope::NOT_SET};
-  bool m_scopeHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Rule> m_rules;
-  bool m_rulesHasBeenSet = false;
 
   VisibilityConfig m_visibilityConfig;
-  bool m_visibilityConfigHasBeenSet = false;
 
   Aws::String m_lockToken;
-  bool m_lockTokenHasBeenSet = false;
 
   Aws::Map<Aws::String, CustomResponseBody> m_customResponseBodies;
+  bool m_nameHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_rulesHasBeenSet = false;
+  bool m_visibilityConfigHasBeenSet = false;
+  bool m_lockTokenHasBeenSet = false;
   bool m_customResponseBodiesHasBeenSet = false;
 };
 

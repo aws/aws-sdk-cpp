@@ -86,12 +86,12 @@ class ListVirtualInterfaceTestHistoryResult {
   ///@}
  private:
   Aws::Vector<VirtualInterfaceTestHistory> m_virtualInterfaceTestHistory;
-  bool m_virtualInterfaceTestHistoryHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_virtualInterfaceTestHistoryHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

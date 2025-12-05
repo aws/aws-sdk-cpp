@@ -85,12 +85,12 @@ class AwsRdsDbInstanceEndpoint {
   ///@}
  private:
   Aws::String m_address;
-  bool m_addressHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_hostedZoneId;
+  bool m_addressHasBeenSet = false;
+  bool m_portHasBeenSet = false;
   bool m_hostedZoneIdHasBeenSet = false;
 };
 

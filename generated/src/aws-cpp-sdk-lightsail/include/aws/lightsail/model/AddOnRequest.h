@@ -93,12 +93,12 @@ class AddOnRequest {
   ///@}
  private:
   AddOnType m_addOnType{AddOnType::NOT_SET};
-  bool m_addOnTypeHasBeenSet = false;
 
   AutoSnapshotAddOnRequest m_autoSnapshotAddOnRequest;
-  bool m_autoSnapshotAddOnRequestHasBeenSet = false;
 
   StopInstanceOnIdleRequest m_stopInstanceOnIdleRequest;
+  bool m_addOnTypeHasBeenSet = false;
+  bool m_autoSnapshotAddOnRequestHasBeenSet = false;
   bool m_stopInstanceOnIdleRequestHasBeenSet = false;
 };
 

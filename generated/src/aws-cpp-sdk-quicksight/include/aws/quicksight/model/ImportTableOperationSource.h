@@ -78,9 +78,9 @@ class ImportTableOperationSource {
   ///@}
  private:
   Aws::String m_sourceTableId;
-  bool m_sourceTableIdHasBeenSet = false;
 
   Aws::Vector<DataSetColumnIdMapping> m_columnIdMappings;
+  bool m_sourceTableIdHasBeenSet = false;
   bool m_columnIdMappingsHasBeenSet = false;
 };
 

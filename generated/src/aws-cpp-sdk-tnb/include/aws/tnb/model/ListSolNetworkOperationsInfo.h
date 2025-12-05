@@ -176,27 +176,27 @@ class ListSolNetworkOperationsInfo {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   ProblemDetails m_error;
-  bool m_errorHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   LcmOperationType m_lcmOperationType{LcmOperationType::NOT_SET};
-  bool m_lcmOperationTypeHasBeenSet = false;
 
   ListSolNetworkOperationsMetadata m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::String m_nsInstanceId;
-  bool m_nsInstanceIdHasBeenSet = false;
 
   NsLcmOperationState m_operationState{NsLcmOperationState::NOT_SET};
-  bool m_operationStateHasBeenSet = false;
 
   UpdateSolNetworkType m_updateType{UpdateSolNetworkType::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_lcmOperationTypeHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_nsInstanceIdHasBeenSet = false;
+  bool m_operationStateHasBeenSet = false;
   bool m_updateTypeHasBeenSet = false;
 };
 

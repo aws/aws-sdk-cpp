@@ -59,9 +59,9 @@ class GetKxConnectionStringResult {
   ///@}
  private:
   Aws::String m_signedConnectionString;
-  bool m_signedConnectionStringHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_signedConnectionStringHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

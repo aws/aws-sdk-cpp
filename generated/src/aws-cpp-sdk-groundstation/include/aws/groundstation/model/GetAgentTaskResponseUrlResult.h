@@ -93,15 +93,15 @@ class GetAgentTaskResponseUrlResult {
   ///@}
  private:
   Aws::String m_agentId;
-  bool m_agentIdHasBeenSet = false;
 
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   Aws::String m_presignedLogUrl;
-  bool m_presignedLogUrlHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_agentIdHasBeenSet = false;
+  bool m_taskIdHasBeenSet = false;
+  bool m_presignedLogUrlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

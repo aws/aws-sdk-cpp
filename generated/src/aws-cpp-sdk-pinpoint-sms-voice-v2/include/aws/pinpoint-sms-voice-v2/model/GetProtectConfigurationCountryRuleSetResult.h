@@ -125,18 +125,18 @@ class GetProtectConfigurationCountryRuleSetResult {
   ///@}
  private:
   Aws::String m_protectConfigurationArn;
-  bool m_protectConfigurationArnHasBeenSet = false;
 
   Aws::String m_protectConfigurationId;
-  bool m_protectConfigurationIdHasBeenSet = false;
 
   NumberCapability m_numberCapability{NumberCapability::NOT_SET};
-  bool m_numberCapabilityHasBeenSet = false;
 
   Aws::Map<Aws::String, ProtectConfigurationCountryRuleSetInformation> m_countryRuleSet;
-  bool m_countryRuleSetHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_protectConfigurationArnHasBeenSet = false;
+  bool m_protectConfigurationIdHasBeenSet = false;
+  bool m_numberCapabilityHasBeenSet = false;
+  bool m_countryRuleSetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

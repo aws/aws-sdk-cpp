@@ -69,9 +69,9 @@ class OriginApprovalRuleTemplate {
   ///@}
  private:
   Aws::String m_approvalRuleTemplateId;
-  bool m_approvalRuleTemplateIdHasBeenSet = false;
 
   Aws::String m_approvalRuleTemplateName;
+  bool m_approvalRuleTemplateIdHasBeenSet = false;
   bool m_approvalRuleTemplateNameHasBeenSet = false;
 };
 

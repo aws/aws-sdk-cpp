@@ -86,9 +86,9 @@ class UpdatePipelineNotificationsRequest : public ElasticTranscoderRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Notifications m_notifications;
+  bool m_idHasBeenSet = false;
   bool m_notificationsHasBeenSet = false;
 };
 

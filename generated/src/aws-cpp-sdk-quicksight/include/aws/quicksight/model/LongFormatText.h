@@ -70,9 +70,9 @@ class LongFormatText {
   ///@}
  private:
   Aws::String m_plainText;
-  bool m_plainTextHasBeenSet = false;
 
   Aws::String m_richText;
+  bool m_plainTextHasBeenSet = false;
   bool m_richTextHasBeenSet = false;
 };
 

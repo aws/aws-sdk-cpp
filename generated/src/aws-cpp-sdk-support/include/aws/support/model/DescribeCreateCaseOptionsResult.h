@@ -87,12 +87,12 @@ class DescribeCreateCaseOptionsResult {
   ///@}
  private:
   Aws::String m_languageAvailability;
-  bool m_languageAvailabilityHasBeenSet = false;
 
   Aws::Vector<CommunicationTypeOptions> m_communicationTypes;
-  bool m_communicationTypesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_languageAvailabilityHasBeenSet = false;
+  bool m_communicationTypesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

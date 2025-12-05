@@ -137,15 +137,15 @@ class VerificationInfo {
   ///@}
  private:
   Aws::Utils::DateTime m_lastCheckedTimestamp{};
-  bool m_lastCheckedTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastSuccessTimestamp{};
-  bool m_lastSuccessTimestampHasBeenSet = false;
 
   VerificationError m_errorType{VerificationError::NOT_SET};
-  bool m_errorTypeHasBeenSet = false;
 
   SOARecord m_sOARecord;
+  bool m_lastCheckedTimestampHasBeenSet = false;
+  bool m_lastSuccessTimestampHasBeenSet = false;
+  bool m_errorTypeHasBeenSet = false;
   bool m_sOARecordHasBeenSet = false;
 };
 

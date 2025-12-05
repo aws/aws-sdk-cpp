@@ -65,9 +65,9 @@ class CreateCustomerGatewayResponse {
   ///@}
  private:
   CustomerGateway m_customerGateway;
-  bool m_customerGatewayHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_customerGatewayHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

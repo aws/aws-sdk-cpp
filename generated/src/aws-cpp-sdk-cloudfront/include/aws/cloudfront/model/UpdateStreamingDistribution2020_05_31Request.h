@@ -91,12 +91,12 @@ class UpdateStreamingDistribution2020_05_31Request : public CloudFrontRequest {
   ///@}
  private:
   StreamingDistributionConfig m_streamingDistributionConfig;
-  bool m_streamingDistributionConfigHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_ifMatch;
+  bool m_streamingDistributionConfigHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_ifMatchHasBeenSet = false;
 };
 

@@ -82,9 +82,9 @@ class MultiMeasureMapping {
   ///@}
  private:
   Aws::String m_multiMeasureName;
-  bool m_multiMeasureNameHasBeenSet = false;
 
   Aws::Vector<MultiMeasureAttributeMapping> m_multiMeasureAttributeMappings;
+  bool m_multiMeasureNameHasBeenSet = false;
   bool m_multiMeasureAttributeMappingsHasBeenSet = false;
 };
 

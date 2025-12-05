@@ -125,18 +125,18 @@ class StartSigningJobRequest : public SignerRequest {
   ///@}
  private:
   Source m_source;
-  bool m_sourceHasBeenSet = false;
 
   Destination m_destination;
-  bool m_destinationHasBeenSet = false;
 
   Aws::String m_profileName;
-  bool m_profileNameHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::String m_profileOwner;
+  bool m_sourceHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_profileNameHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
   bool m_profileOwnerHasBeenSet = false;
 };
 

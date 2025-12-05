@@ -62,9 +62,9 @@ class GetApplicationAuthenticationMethodResult {
   ///@}
  private:
   AuthenticationMethod m_authenticationMethod;
-  bool m_authenticationMethodHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_authenticationMethodHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -172,18 +172,18 @@ class GenerateDataKeyPairWithoutPlaintextRequest : public KMSRequest {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_encryptionContext;
-  bool m_encryptionContextHasBeenSet = false;
 
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   DataKeyPairSpec m_keyPairSpec{DataKeyPairSpec::NOT_SET};
-  bool m_keyPairSpecHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_grantTokens;
-  bool m_grantTokensHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_encryptionContextHasBeenSet = false;
+  bool m_keyIdHasBeenSet = false;
+  bool m_keyPairSpecHasBeenSet = false;
+  bool m_grantTokensHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

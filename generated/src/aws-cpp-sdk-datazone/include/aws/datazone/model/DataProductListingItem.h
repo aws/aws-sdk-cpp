@@ -284,42 +284,42 @@ class DataProductListingItem {
   ///@}
  private:
   DataProductListingItemAdditionalAttributes m_additionalAttributes;
-  bool m_additionalAttributesHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_entityId;
-  bool m_entityIdHasBeenSet = false;
 
   Aws::String m_entityRevision;
-  bool m_entityRevisionHasBeenSet = false;
 
   Aws::Vector<DetailedGlossaryTerm> m_glossaryTerms;
-  bool m_glossaryTermsHasBeenSet = false;
 
   Aws::Vector<ListingSummaryItem> m_items;
-  bool m_itemsHasBeenSet = false;
 
   Aws::String m_listingCreatedBy;
-  bool m_listingCreatedByHasBeenSet = false;
 
   Aws::String m_listingId;
-  bool m_listingIdHasBeenSet = false;
 
   Aws::String m_listingRevision;
-  bool m_listingRevisionHasBeenSet = false;
 
   Aws::String m_listingUpdatedBy;
-  bool m_listingUpdatedByHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_owningProjectId;
+  bool m_additionalAttributesHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_entityIdHasBeenSet = false;
+  bool m_entityRevisionHasBeenSet = false;
+  bool m_glossaryTermsHasBeenSet = false;
+  bool m_itemsHasBeenSet = false;
+  bool m_listingCreatedByHasBeenSet = false;
+  bool m_listingIdHasBeenSet = false;
+  bool m_listingRevisionHasBeenSet = false;
+  bool m_listingUpdatedByHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_owningProjectIdHasBeenSet = false;
 };
 

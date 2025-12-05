@@ -87,12 +87,12 @@ class APIKeyConnectionMetadata {
   ///@}
  private:
   Aws::String m_baseEndpoint;
-  bool m_baseEndpointHasBeenSet = false;
 
   Aws::String m_apiKey;
-  bool m_apiKeyHasBeenSet = false;
 
   Aws::String m_email;
+  bool m_baseEndpointHasBeenSet = false;
+  bool m_apiKeyHasBeenSet = false;
   bool m_emailHasBeenSet = false;
 };
 

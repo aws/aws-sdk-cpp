@@ -120,18 +120,18 @@ class UpdateContactFlowModuleMetadataRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_contactFlowModuleId;
-  bool m_contactFlowModuleIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ContactFlowModuleState m_state{ContactFlowModuleState::NOT_SET};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_contactFlowModuleIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

@@ -237,39 +237,39 @@ class DescribeDataQualityJobDefinitionResult {
   ///@}
  private:
   Aws::String m_jobDefinitionArn;
-  bool m_jobDefinitionArnHasBeenSet = false;
 
   Aws::String m_jobDefinitionName;
-  bool m_jobDefinitionNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   DataQualityBaselineConfig m_dataQualityBaselineConfig;
-  bool m_dataQualityBaselineConfigHasBeenSet = false;
 
   DataQualityAppSpecification m_dataQualityAppSpecification;
-  bool m_dataQualityAppSpecificationHasBeenSet = false;
 
   DataQualityJobInput m_dataQualityJobInput;
-  bool m_dataQualityJobInputHasBeenSet = false;
 
   MonitoringOutputConfig m_dataQualityJobOutputConfig;
-  bool m_dataQualityJobOutputConfigHasBeenSet = false;
 
   MonitoringResources m_jobResources;
-  bool m_jobResourcesHasBeenSet = false;
 
   MonitoringNetworkConfig m_networkConfig;
-  bool m_networkConfigHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   MonitoringStoppingCondition m_stoppingCondition;
-  bool m_stoppingConditionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobDefinitionArnHasBeenSet = false;
+  bool m_jobDefinitionNameHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_dataQualityBaselineConfigHasBeenSet = false;
+  bool m_dataQualityAppSpecificationHasBeenSet = false;
+  bool m_dataQualityJobInputHasBeenSet = false;
+  bool m_dataQualityJobOutputConfigHasBeenSet = false;
+  bool m_jobResourcesHasBeenSet = false;
+  bool m_networkConfigHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_stoppingConditionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

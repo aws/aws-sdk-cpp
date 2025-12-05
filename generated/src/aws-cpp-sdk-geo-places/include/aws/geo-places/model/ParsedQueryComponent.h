@@ -100,15 +100,15 @@ class ParsedQueryComponent {
   ///@}
  private:
   int m_startIndex{0};
-  bool m_startIndexHasBeenSet = false;
 
   int m_endIndex{0};
-  bool m_endIndexHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_queryComponent;
+  bool m_startIndexHasBeenSet = false;
+  bool m_endIndexHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_queryComponentHasBeenSet = false;
 };
 

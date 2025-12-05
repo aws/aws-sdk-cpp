@@ -104,12 +104,12 @@ class PredefinedHierarchy {
   ///@}
  private:
   Aws::String m_hierarchyId;
-  bool m_hierarchyIdHasBeenSet = false;
 
   Aws::Vector<ColumnIdentifier> m_columns;
-  bool m_columnsHasBeenSet = false;
 
   Aws::Vector<DrillDownFilter> m_drillDownFilters;
+  bool m_hierarchyIdHasBeenSet = false;
+  bool m_columnsHasBeenSet = false;
   bool m_drillDownFiltersHasBeenSet = false;
 };
 

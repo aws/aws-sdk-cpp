@@ -260,42 +260,42 @@ class DescribeNodeFromTemplateJobResult {
   ///@}
  private:
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::Vector<JobResourceTags> m_jobTags;
-  bool m_jobTagsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::String m_nodeDescription;
-  bool m_nodeDescriptionHasBeenSet = false;
 
   Aws::String m_nodeName;
-  bool m_nodeNameHasBeenSet = false;
 
   Aws::String m_outputPackageName;
-  bool m_outputPackageNameHasBeenSet = false;
 
   Aws::String m_outputPackageVersion;
-  bool m_outputPackageVersionHasBeenSet = false;
 
   NodeFromTemplateJobStatus m_status{NodeFromTemplateJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_templateParameters;
-  bool m_templateParametersHasBeenSet = false;
 
   TemplateType m_templateType{TemplateType::NOT_SET};
-  bool m_templateTypeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
+  bool m_jobTagsHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_nodeDescriptionHasBeenSet = false;
+  bool m_nodeNameHasBeenSet = false;
+  bool m_outputPackageNameHasBeenSet = false;
+  bool m_outputPackageVersionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_templateParametersHasBeenSet = false;
+  bool m_templateTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

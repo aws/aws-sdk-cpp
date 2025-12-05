@@ -61,9 +61,9 @@ class GetComplianceDetailResult {
   ///@}
  private:
   PolicyComplianceDetail m_policyComplianceDetail;
-  bool m_policyComplianceDetailHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyComplianceDetailHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

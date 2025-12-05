@@ -224,24 +224,24 @@ class S3DataSource {
   ///@}
  private:
   S3DataType m_s3DataType{S3DataType::NOT_SET};
-  bool m_s3DataTypeHasBeenSet = false;
 
   Aws::String m_s3Uri;
-  bool m_s3UriHasBeenSet = false;
 
   S3DataDistribution m_s3DataDistributionType{S3DataDistribution::NOT_SET};
-  bool m_s3DataDistributionTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_attributeNames;
-  bool m_attributeNamesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_instanceGroupNames;
-  bool m_instanceGroupNamesHasBeenSet = false;
 
   ModelAccessConfig m_modelAccessConfig;
-  bool m_modelAccessConfigHasBeenSet = false;
 
   HubAccessConfig m_hubAccessConfig;
+  bool m_s3DataTypeHasBeenSet = false;
+  bool m_s3UriHasBeenSet = false;
+  bool m_s3DataDistributionTypeHasBeenSet = false;
+  bool m_attributeNamesHasBeenSet = false;
+  bool m_instanceGroupNamesHasBeenSet = false;
+  bool m_modelAccessConfigHasBeenSet = false;
   bool m_hubAccessConfigHasBeenSet = false;
 };
 

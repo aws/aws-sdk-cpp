@@ -93,12 +93,12 @@ class ChildShard {
   ///@}
  private:
   Aws::String m_shardId;
-  bool m_shardIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_parentShards;
-  bool m_parentShardsHasBeenSet = false;
 
   HashKeyRange m_hashKeyRange;
+  bool m_shardIdHasBeenSet = false;
+  bool m_parentShardsHasBeenSet = false;
   bool m_hashKeyRangeHasBeenSet = false;
 };
 

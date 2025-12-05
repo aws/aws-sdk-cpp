@@ -152,21 +152,21 @@ class CreateSavingsPlanRequest : public SavingsPlansRequest {
   ///@}
  private:
   Aws::String m_savingsPlanOfferingId;
-  bool m_savingsPlanOfferingIdHasBeenSet = false;
 
   Aws::String m_commitment;
-  bool m_commitmentHasBeenSet = false;
 
   Aws::String m_upfrontPaymentAmount;
-  bool m_upfrontPaymentAmountHasBeenSet = false;
 
   Aws::Utils::DateTime m_purchaseTime{};
-  bool m_purchaseTimeHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_savingsPlanOfferingIdHasBeenSet = false;
+  bool m_commitmentHasBeenSet = false;
+  bool m_upfrontPaymentAmountHasBeenSet = false;
+  bool m_purchaseTimeHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

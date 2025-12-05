@@ -96,12 +96,12 @@ class ConformancePackRuleCompliance {
   ///@}
  private:
   Aws::String m_configRuleName;
-  bool m_configRuleNameHasBeenSet = false;
 
   ConformancePackComplianceType m_complianceType{ConformancePackComplianceType::NOT_SET};
-  bool m_complianceTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_controls;
+  bool m_configRuleNameHasBeenSet = false;
+  bool m_complianceTypeHasBeenSet = false;
   bool m_controlsHasBeenSet = false;
 };
 

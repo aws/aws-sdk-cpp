@@ -176,24 +176,24 @@ class DBSubnetGroup {
   ///@}
  private:
   Aws::String m_dBSubnetGroupName;
-  bool m_dBSubnetGroupNameHasBeenSet = false;
 
   Aws::String m_dBSubnetGroupDescription;
-  bool m_dBSubnetGroupDescriptionHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_subnetGroupStatus;
-  bool m_subnetGroupStatusHasBeenSet = false;
 
   Aws::Vector<Subnet> m_subnets;
-  bool m_subnetsHasBeenSet = false;
 
   Aws::String m_dBSubnetGroupArn;
-  bool m_dBSubnetGroupArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supportedNetworkTypes;
+  bool m_dBSubnetGroupNameHasBeenSet = false;
+  bool m_dBSubnetGroupDescriptionHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_subnetGroupStatusHasBeenSet = false;
+  bool m_subnetsHasBeenSet = false;
+  bool m_dBSubnetGroupArnHasBeenSet = false;
   bool m_supportedNetworkTypesHasBeenSet = false;
 };
 

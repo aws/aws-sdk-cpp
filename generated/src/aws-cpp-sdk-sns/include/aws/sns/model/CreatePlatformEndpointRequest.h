@@ -123,15 +123,15 @@ class CreatePlatformEndpointRequest : public SNSRequest {
   ///@}
  private:
   Aws::String m_platformApplicationArn;
-  bool m_platformApplicationArnHasBeenSet = false;
 
   Aws::String m_token;
-  bool m_tokenHasBeenSet = false;
 
   Aws::String m_customUserData;
-  bool m_customUserDataHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
+  bool m_platformApplicationArnHasBeenSet = false;
+  bool m_tokenHasBeenSet = false;
+  bool m_customUserDataHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

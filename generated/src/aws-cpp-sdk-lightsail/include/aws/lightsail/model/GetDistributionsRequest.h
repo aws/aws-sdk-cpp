@@ -72,9 +72,9 @@ class GetDistributionsRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_distributionName;
-  bool m_distributionNameHasBeenSet = false;
 
   Aws::String m_pageToken;
+  bool m_distributionNameHasBeenSet = false;
   bool m_pageTokenHasBeenSet = false;
 };
 

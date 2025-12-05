@@ -91,12 +91,12 @@ class CustomFileSystem {
   ///@}
  private:
   EFSFileSystem m_eFSFileSystem;
-  bool m_eFSFileSystemHasBeenSet = false;
 
   FSxLustreFileSystem m_fSxLustreFileSystem;
-  bool m_fSxLustreFileSystemHasBeenSet = false;
 
   S3FileSystem m_s3FileSystem;
+  bool m_eFSFileSystemHasBeenSet = false;
+  bool m_fSxLustreFileSystemHasBeenSet = false;
   bool m_s3FileSystemHasBeenSet = false;
 };
 

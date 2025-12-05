@@ -59,9 +59,9 @@ class CreateStudioLifecycleConfigResult {
   ///@}
  private:
   Aws::String m_studioLifecycleConfigArn;
-  bool m_studioLifecycleConfigArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_studioLifecycleConfigArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

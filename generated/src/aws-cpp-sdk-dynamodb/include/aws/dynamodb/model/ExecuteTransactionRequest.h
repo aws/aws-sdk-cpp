@@ -99,12 +99,12 @@ class ExecuteTransactionRequest : public DynamoDBRequest {
   ///@}
  private:
   Aws::Vector<ParameterizedStatement> m_transactStatements;
-  bool m_transactStatementsHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   ReturnConsumedCapacity m_returnConsumedCapacity{ReturnConsumedCapacity::NOT_SET};
+  bool m_transactStatementsHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
   bool m_returnConsumedCapacityHasBeenSet = false;
 };
 

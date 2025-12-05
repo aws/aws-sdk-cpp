@@ -111,15 +111,15 @@ class FacetAttribute {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   FacetAttributeDefinition m_attributeDefinition;
-  bool m_attributeDefinitionHasBeenSet = false;
 
   FacetAttributeReference m_attributeReference;
-  bool m_attributeReferenceHasBeenSet = false;
 
   RequiredAttributeBehavior m_requiredBehavior{RequiredAttributeBehavior::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_attributeDefinitionHasBeenSet = false;
+  bool m_attributeReferenceHasBeenSet = false;
   bool m_requiredBehaviorHasBeenSet = false;
 };
 

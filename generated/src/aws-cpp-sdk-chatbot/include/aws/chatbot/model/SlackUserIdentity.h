@@ -129,18 +129,18 @@ class SlackUserIdentity {
   ///@}
  private:
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   Aws::String m_chatConfigurationArn;
-  bool m_chatConfigurationArnHasBeenSet = false;
 
   Aws::String m_slackTeamId;
-  bool m_slackTeamIdHasBeenSet = false;
 
   Aws::String m_slackUserId;
-  bool m_slackUserIdHasBeenSet = false;
 
   Aws::String m_awsUserIdentity;
+  bool m_iamRoleArnHasBeenSet = false;
+  bool m_chatConfigurationArnHasBeenSet = false;
+  bool m_slackTeamIdHasBeenSet = false;
+  bool m_slackUserIdHasBeenSet = false;
   bool m_awsUserIdentityHasBeenSet = false;
 };
 

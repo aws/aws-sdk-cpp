@@ -87,12 +87,12 @@ class EncryptionConfig {
   ///@}
  private:
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   EncryptionStatus m_status{EncryptionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   EncryptionType m_type{EncryptionType::NOT_SET};
+  bool m_keyIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

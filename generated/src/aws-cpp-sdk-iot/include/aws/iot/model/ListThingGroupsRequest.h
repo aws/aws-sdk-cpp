@@ -123,18 +123,18 @@ class ListThingGroupsRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_parentGroup;
-  bool m_parentGroupHasBeenSet = false;
 
   Aws::String m_namePrefixFilter;
-  bool m_namePrefixFilterHasBeenSet = false;
 
   bool m_recursive{false};
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_parentGroupHasBeenSet = false;
+  bool m_namePrefixFilterHasBeenSet = false;
   bool m_recursiveHasBeenSet = false;
 };
 

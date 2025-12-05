@@ -369,54 +369,54 @@ class Container {
   ///@}
  private:
   Aws::String m_containerArn;
-  bool m_containerArnHasBeenSet = false;
 
   Aws::String m_taskArn;
-  bool m_taskArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_image;
-  bool m_imageHasBeenSet = false;
 
   Aws::String m_imageDigest;
-  bool m_imageDigestHasBeenSet = false;
 
   Aws::String m_runtimeId;
-  bool m_runtimeIdHasBeenSet = false;
 
   Aws::String m_lastStatus;
-  bool m_lastStatusHasBeenSet = false;
 
   int m_exitCode{0};
-  bool m_exitCodeHasBeenSet = false;
 
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   Aws::Vector<NetworkBinding> m_networkBindings;
-  bool m_networkBindingsHasBeenSet = false;
 
   Aws::Vector<NetworkInterface> m_networkInterfaces;
-  bool m_networkInterfacesHasBeenSet = false;
 
   HealthStatus m_healthStatus{HealthStatus::NOT_SET};
-  bool m_healthStatusHasBeenSet = false;
 
   Aws::Vector<ManagedAgent> m_managedAgents;
-  bool m_managedAgentsHasBeenSet = false;
 
   Aws::String m_cpu;
-  bool m_cpuHasBeenSet = false;
 
   Aws::String m_memory;
-  bool m_memoryHasBeenSet = false;
 
   Aws::String m_memoryReservation;
-  bool m_memoryReservationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_gpuIds;
+  bool m_containerArnHasBeenSet = false;
+  bool m_taskArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_imageHasBeenSet = false;
+  bool m_imageDigestHasBeenSet = false;
+  bool m_runtimeIdHasBeenSet = false;
+  bool m_lastStatusHasBeenSet = false;
+  bool m_exitCodeHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
+  bool m_networkBindingsHasBeenSet = false;
+  bool m_networkInterfacesHasBeenSet = false;
+  bool m_healthStatusHasBeenSet = false;
+  bool m_managedAgentsHasBeenSet = false;
+  bool m_cpuHasBeenSet = false;
+  bool m_memoryHasBeenSet = false;
+  bool m_memoryReservationHasBeenSet = false;
   bool m_gpuIdsHasBeenSet = false;
 };
 

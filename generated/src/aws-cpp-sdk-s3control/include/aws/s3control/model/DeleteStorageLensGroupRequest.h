@@ -73,9 +73,9 @@ class DeleteStorageLensGroupRequest : public S3ControlRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_accountId;
+  bool m_nameHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;
 };
 

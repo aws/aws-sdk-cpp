@@ -90,12 +90,12 @@ class GetResourceSharesResult {
   ///@}
  private:
   Aws::Vector<ResourceShare> m_resourceShares;
-  bool m_resourceSharesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceSharesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

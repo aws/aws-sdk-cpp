@@ -283,42 +283,42 @@ class Instance {
   ///@}
  private:
   int m_amiLaunchIndex{0};
-  bool m_amiLaunchIndexHasBeenSet = false;
 
   Aws::Vector<InstanceBlockDeviceMapping> m_blockDeviceMappings;
-  bool m_blockDeviceMappingsHasBeenSet = false;
 
   CpuOptions m_cpuOptions;
-  bool m_cpuOptionsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_privateIpAddress;
-  bool m_privateIpAddressHasBeenSet = false;
 
   Aws::String m_publicIpAddress;
-  bool m_publicIpAddressHasBeenSet = false;
 
   Aws::String m_rootDeviceName;
-  bool m_rootDeviceNameHasBeenSet = false;
 
   Aws::Vector<SecurityGroupIdentifier> m_securityGroups;
-  bool m_securityGroupsHasBeenSet = false;
 
   InstanceState m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_amiLaunchIndexHasBeenSet = false;
+  bool m_blockDeviceMappingsHasBeenSet = false;
+  bool m_cpuOptionsHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_imageIdHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_privateIpAddressHasBeenSet = false;
+  bool m_publicIpAddressHasBeenSet = false;
+  bool m_rootDeviceNameHasBeenSet = false;
+  bool m_securityGroupsHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

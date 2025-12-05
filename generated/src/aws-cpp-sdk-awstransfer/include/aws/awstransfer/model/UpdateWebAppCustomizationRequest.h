@@ -104,15 +104,15 @@ class UpdateWebAppCustomizationRequest : public TransferRequest {
   ///@}
  private:
   Aws::String m_webAppId;
-  bool m_webAppIdHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::Utils::CryptoBuffer m_logoFile{};
-  bool m_logoFileHasBeenSet = false;
 
   Aws::Utils::CryptoBuffer m_faviconFile{};
+  bool m_webAppIdHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_logoFileHasBeenSet = false;
   bool m_faviconFileHasBeenSet = false;
 };
 

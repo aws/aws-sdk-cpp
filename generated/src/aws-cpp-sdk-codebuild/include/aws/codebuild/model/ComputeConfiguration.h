@@ -118,18 +118,18 @@ class ComputeConfiguration {
   ///@}
  private:
   long long m_vCpu{0};
-  bool m_vCpuHasBeenSet = false;
 
   long long m_memory{0};
-  bool m_memoryHasBeenSet = false;
 
   long long m_disk{0};
-  bool m_diskHasBeenSet = false;
 
   MachineType m_machineType{MachineType::NOT_SET};
-  bool m_machineTypeHasBeenSet = false;
 
   Aws::String m_instanceType;
+  bool m_vCpuHasBeenSet = false;
+  bool m_memoryHasBeenSet = false;
+  bool m_diskHasBeenSet = false;
+  bool m_machineTypeHasBeenSet = false;
   bool m_instanceTypeHasBeenSet = false;
 };
 

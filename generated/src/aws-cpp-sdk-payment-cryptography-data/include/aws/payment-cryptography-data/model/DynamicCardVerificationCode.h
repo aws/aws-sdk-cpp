@@ -108,15 +108,15 @@ class DynamicCardVerificationCode {
   ///@}
  private:
   Aws::String m_unpredictableNumber;
-  bool m_unpredictableNumberHasBeenSet = false;
 
   Aws::String m_panSequenceNumber;
-  bool m_panSequenceNumberHasBeenSet = false;
 
   Aws::String m_applicationTransactionCounter;
-  bool m_applicationTransactionCounterHasBeenSet = false;
 
   Aws::String m_trackData;
+  bool m_unpredictableNumberHasBeenSet = false;
+  bool m_panSequenceNumberHasBeenSet = false;
+  bool m_applicationTransactionCounterHasBeenSet = false;
   bool m_trackDataHasBeenSet = false;
 };
 

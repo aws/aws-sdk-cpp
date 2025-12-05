@@ -97,12 +97,12 @@ class CompleteAttachmentUploadRequest : public ConnectParticipantRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_attachmentIds;
-  bool m_attachmentIdsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_connectionToken;
+  bool m_attachmentIdsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_connectionTokenHasBeenSet = false;
 };
 

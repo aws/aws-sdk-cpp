@@ -88,12 +88,12 @@ class GetCloudFormationStackRecordsResult {
   ///@}
  private:
   Aws::Vector<CloudFormationStackRecord> m_cloudFormationStackRecords;
-  bool m_cloudFormationStackRecordsHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_cloudFormationStackRecordsHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

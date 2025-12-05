@@ -108,15 +108,15 @@ class DataLakeAccessProperties {
   ///@}
  private:
   bool m_dataLakeAccess{false};
-  bool m_dataLakeAccessHasBeenSet = false;
 
   Aws::String m_dataTransferRole;
-  bool m_dataTransferRoleHasBeenSet = false;
 
   Aws::String m_kmsKey;
-  bool m_kmsKeyHasBeenSet = false;
 
   Aws::String m_catalogType;
+  bool m_dataLakeAccessHasBeenSet = false;
+  bool m_dataTransferRoleHasBeenSet = false;
+  bool m_kmsKeyHasBeenSet = false;
   bool m_catalogTypeHasBeenSet = false;
 };
 

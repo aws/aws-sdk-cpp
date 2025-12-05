@@ -108,15 +108,15 @@ class DescribeVTLDevicesResult {
   ///@}
  private:
   Aws::String m_gatewayARN;
-  bool m_gatewayARNHasBeenSet = false;
 
   Aws::Vector<VTLDevice> m_vTLDevices;
-  bool m_vTLDevicesHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_gatewayARNHasBeenSet = false;
+  bool m_vTLDevicesHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

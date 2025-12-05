@@ -268,33 +268,33 @@ class DynamoDBAction {
   ///@}
  private:
   Aws::String m_hashKeyType;
-  bool m_hashKeyTypeHasBeenSet = false;
 
   Aws::String m_hashKeyField;
-  bool m_hashKeyFieldHasBeenSet = false;
 
   Aws::String m_hashKeyValue;
-  bool m_hashKeyValueHasBeenSet = false;
 
   Aws::String m_rangeKeyType;
-  bool m_rangeKeyTypeHasBeenSet = false;
 
   Aws::String m_rangeKeyField;
-  bool m_rangeKeyFieldHasBeenSet = false;
 
   Aws::String m_rangeKeyValue;
-  bool m_rangeKeyValueHasBeenSet = false;
 
   Aws::String m_operation;
-  bool m_operationHasBeenSet = false;
 
   Aws::String m_payloadField;
-  bool m_payloadFieldHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Payload m_payload;
+  bool m_hashKeyTypeHasBeenSet = false;
+  bool m_hashKeyFieldHasBeenSet = false;
+  bool m_hashKeyValueHasBeenSet = false;
+  bool m_rangeKeyTypeHasBeenSet = false;
+  bool m_rangeKeyFieldHasBeenSet = false;
+  bool m_rangeKeyValueHasBeenSet = false;
+  bool m_operationHasBeenSet = false;
+  bool m_payloadFieldHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
   bool m_payloadHasBeenSet = false;
 };
 

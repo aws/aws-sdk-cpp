@@ -75,9 +75,9 @@ class ModelScores {
   ///@}
  private:
   ModelVersion m_modelVersion;
-  bool m_modelVersionHasBeenSet = false;
 
   Aws::Map<Aws::String, double> m_scores;
+  bool m_modelVersionHasBeenSet = false;
   bool m_scoresHasBeenSet = false;
 };
 

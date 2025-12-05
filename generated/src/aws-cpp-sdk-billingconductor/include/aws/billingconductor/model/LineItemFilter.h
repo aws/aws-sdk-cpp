@@ -97,12 +97,12 @@ class LineItemFilter {
   ///@}
  private:
   LineItemFilterAttributeName m_attribute{LineItemFilterAttributeName::NOT_SET};
-  bool m_attributeHasBeenSet = false;
 
   MatchOption m_matchOption{MatchOption::NOT_SET};
-  bool m_matchOptionHasBeenSet = false;
 
   Aws::Vector<LineItemFilterValue> m_values;
+  bool m_attributeHasBeenSet = false;
+  bool m_matchOptionHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

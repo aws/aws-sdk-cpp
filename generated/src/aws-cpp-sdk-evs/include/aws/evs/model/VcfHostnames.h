@@ -198,30 +198,30 @@ class VcfHostnames {
   ///@}
  private:
   Aws::String m_vCenter;
-  bool m_vCenterHasBeenSet = false;
 
   Aws::String m_nsx;
-  bool m_nsxHasBeenSet = false;
 
   Aws::String m_nsxManager1;
-  bool m_nsxManager1HasBeenSet = false;
 
   Aws::String m_nsxManager2;
-  bool m_nsxManager2HasBeenSet = false;
 
   Aws::String m_nsxManager3;
-  bool m_nsxManager3HasBeenSet = false;
 
   Aws::String m_nsxEdge1;
-  bool m_nsxEdge1HasBeenSet = false;
 
   Aws::String m_nsxEdge2;
-  bool m_nsxEdge2HasBeenSet = false;
 
   Aws::String m_sddcManager;
-  bool m_sddcManagerHasBeenSet = false;
 
   Aws::String m_cloudBuilder;
+  bool m_vCenterHasBeenSet = false;
+  bool m_nsxHasBeenSet = false;
+  bool m_nsxManager1HasBeenSet = false;
+  bool m_nsxManager2HasBeenSet = false;
+  bool m_nsxManager3HasBeenSet = false;
+  bool m_nsxEdge1HasBeenSet = false;
+  bool m_nsxEdge2HasBeenSet = false;
+  bool m_sddcManagerHasBeenSet = false;
   bool m_cloudBuilderHasBeenSet = false;
 };
 

@@ -102,15 +102,15 @@ class MultiplexProgramSettings {
   ///@}
  private:
   PreferredChannelPipeline m_preferredChannelPipeline{PreferredChannelPipeline::NOT_SET};
-  bool m_preferredChannelPipelineHasBeenSet = false;
 
   int m_programNumber{0};
-  bool m_programNumberHasBeenSet = false;
 
   MultiplexProgramServiceDescriptor m_serviceDescriptor;
-  bool m_serviceDescriptorHasBeenSet = false;
 
   MultiplexVideoSettings m_videoSettings;
+  bool m_preferredChannelPipelineHasBeenSet = false;
+  bool m_programNumberHasBeenSet = false;
+  bool m_serviceDescriptorHasBeenSet = false;
   bool m_videoSettingsHasBeenSet = false;
 };
 

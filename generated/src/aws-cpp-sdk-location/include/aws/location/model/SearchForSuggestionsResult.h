@@ -131,15 +131,15 @@ class SearchForSuggestionsResult {
   ///@}
  private:
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   Aws::String m_placeId;
-  bool m_placeIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_categories;
-  bool m_categoriesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supplementalCategories;
+  bool m_textHasBeenSet = false;
+  bool m_placeIdHasBeenSet = false;
+  bool m_categoriesHasBeenSet = false;
   bool m_supplementalCategoriesHasBeenSet = false;
 };
 

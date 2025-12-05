@@ -164,21 +164,21 @@ class PrefetchRetrieval {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_dynamicVariables;
-  bool m_dynamicVariablesHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   TrafficShapingType m_trafficShapingType{TrafficShapingType::NOT_SET};
-  bool m_trafficShapingTypeHasBeenSet = false;
 
   TrafficShapingRetrievalWindow m_trafficShapingRetrievalWindow;
-  bool m_trafficShapingRetrievalWindowHasBeenSet = false;
 
   TrafficShapingTpsConfiguration m_trafficShapingTpsConfiguration;
+  bool m_dynamicVariablesHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_trafficShapingTypeHasBeenSet = false;
+  bool m_trafficShapingRetrievalWindowHasBeenSet = false;
   bool m_trafficShapingTpsConfigurationHasBeenSet = false;
 };
 

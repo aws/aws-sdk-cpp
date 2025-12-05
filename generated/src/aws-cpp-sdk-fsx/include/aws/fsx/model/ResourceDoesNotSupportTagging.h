@@ -68,9 +68,9 @@ class ResourceDoesNotSupportTagging {
   ///@}
  private:
   Aws::String m_resourceARN;
-  bool m_resourceARNHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_resourceARNHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

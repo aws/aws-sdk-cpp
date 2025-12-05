@@ -68,9 +68,9 @@ class ProjectInformation {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_projectId;
+  bool m_nameHasBeenSet = false;
   bool m_projectIdHasBeenSet = false;
 };
 

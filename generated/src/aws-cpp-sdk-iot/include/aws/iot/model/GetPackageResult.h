@@ -145,24 +145,24 @@ class GetPackageResult {
   ///@}
  private:
   Aws::String m_packageName;
-  bool m_packageNameHasBeenSet = false;
 
   Aws::String m_packageArn;
-  bool m_packageArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_defaultVersionName;
-  bool m_defaultVersionNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
-  bool m_lastModifiedDateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_packageNameHasBeenSet = false;
+  bool m_packageArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_defaultVersionNameHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

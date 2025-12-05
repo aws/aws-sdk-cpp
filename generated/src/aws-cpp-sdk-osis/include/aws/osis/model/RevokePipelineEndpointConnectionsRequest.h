@@ -73,9 +73,9 @@ class RevokePipelineEndpointConnectionsRequest : public OSISRequest {
   ///@}
  private:
   Aws::String m_pipelineArn;
-  bool m_pipelineArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_endpointIds;
+  bool m_pipelineArnHasBeenSet = false;
   bool m_endpointIdsHasBeenSet = false;
 };
 

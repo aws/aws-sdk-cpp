@@ -107,15 +107,15 @@ class ProvisionPermissionSetRequest : public SSOAdminRequest {
   ///@}
  private:
   Aws::String m_instanceArn;
-  bool m_instanceArnHasBeenSet = false;
 
   Aws::String m_permissionSetArn;
-  bool m_permissionSetArnHasBeenSet = false;
 
   Aws::String m_targetId;
-  bool m_targetIdHasBeenSet = false;
 
   ProvisionTargetType m_targetType{ProvisionTargetType::NOT_SET};
+  bool m_instanceArnHasBeenSet = false;
+  bool m_permissionSetArnHasBeenSet = false;
+  bool m_targetIdHasBeenSet = false;
   bool m_targetTypeHasBeenSet = false;
 };
 

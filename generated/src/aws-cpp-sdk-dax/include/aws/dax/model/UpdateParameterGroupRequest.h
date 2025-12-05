@@ -80,9 +80,9 @@ class UpdateParameterGroupRequest : public DAXRequest {
   ///@}
  private:
   Aws::String m_parameterGroupName;
-  bool m_parameterGroupNameHasBeenSet = false;
 
   Aws::Vector<ParameterNameValue> m_parameterNameValues;
+  bool m_parameterGroupNameHasBeenSet = false;
   bool m_parameterNameValuesHasBeenSet = false;
 };
 

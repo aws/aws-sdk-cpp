@@ -110,12 +110,12 @@ class UpdateDirectConnectGatewayAssociationRequest : public DirectConnectRequest
   ///@}
  private:
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   Aws::Vector<RouteFilterPrefix> m_addAllowedPrefixesToDirectConnectGateway;
-  bool m_addAllowedPrefixesToDirectConnectGatewayHasBeenSet = false;
 
   Aws::Vector<RouteFilterPrefix> m_removeAllowedPrefixesToDirectConnectGateway;
+  bool m_associationIdHasBeenSet = false;
+  bool m_addAllowedPrefixesToDirectConnectGatewayHasBeenSet = false;
   bool m_removeAllowedPrefixesToDirectConnectGatewayHasBeenSet = false;
 };
 

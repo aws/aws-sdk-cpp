@@ -204,30 +204,30 @@ class ListChannelHandshakesRequest : public PartnerCentralChannelRequest {
   ///@}
  private:
   HandshakeType m_handshakeType{HandshakeType::NOT_SET};
-  bool m_handshakeTypeHasBeenSet = false;
 
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   ParticipantType m_participantType{ParticipantType::NOT_SET};
-  bool m_participantTypeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Vector<HandshakeStatus> m_statuses;
-  bool m_statusesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_associatedResourceIdentifiers;
-  bool m_associatedResourceIdentifiersHasBeenSet = false;
 
   ListChannelHandshakesTypeFilters m_handshakeTypeFilters;
-  bool m_handshakeTypeFiltersHasBeenSet = false;
 
   ListChannelHandshakesTypeSort m_handshakeTypeSort;
-  bool m_handshakeTypeSortHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_handshakeTypeHasBeenSet = false;
+  bool m_catalogHasBeenSet = false;
+  bool m_participantTypeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_statusesHasBeenSet = false;
+  bool m_associatedResourceIdentifiersHasBeenSet = false;
+  bool m_handshakeTypeFiltersHasBeenSet = false;
+  bool m_handshakeTypeSortHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

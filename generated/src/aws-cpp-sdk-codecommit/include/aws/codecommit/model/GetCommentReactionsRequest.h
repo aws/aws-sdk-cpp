@@ -104,15 +104,15 @@ class GetCommentReactionsRequest : public CodeCommitRequest {
   ///@}
  private:
   Aws::String m_commentId;
-  bool m_commentIdHasBeenSet = false;
 
   Aws::String m_reactionUserArn;
-  bool m_reactionUserArnHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_commentIdHasBeenSet = false;
+  bool m_reactionUserArnHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

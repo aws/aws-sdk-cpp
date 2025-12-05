@@ -104,15 +104,15 @@ class DetectDocumentTextResult {
   ///@}
  private:
   DocumentMetadata m_documentMetadata;
-  bool m_documentMetadataHasBeenSet = false;
 
   Aws::Vector<Block> m_blocks;
-  bool m_blocksHasBeenSet = false;
 
   Aws::String m_detectDocumentTextModelVersion;
-  bool m_detectDocumentTextModelVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_documentMetadataHasBeenSet = false;
+  bool m_blocksHasBeenSet = false;
+  bool m_detectDocumentTextModelVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

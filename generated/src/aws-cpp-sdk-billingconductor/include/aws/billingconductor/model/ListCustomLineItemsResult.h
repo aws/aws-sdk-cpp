@@ -85,12 +85,12 @@ class ListCustomLineItemsResult {
   ///@}
  private:
   Aws::Vector<CustomLineItemListElement> m_customLineItems;
-  bool m_customLineItemsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_customLineItemsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

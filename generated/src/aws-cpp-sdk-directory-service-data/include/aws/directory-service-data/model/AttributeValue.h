@@ -117,15 +117,15 @@ class AttributeValue {
   ///@}
  private:
   bool m_bOOL{false};
-  bool m_bOOLHasBeenSet = false;
 
   long long m_n{0};
-  bool m_nHasBeenSet = false;
 
   Aws::String m_s;
-  bool m_sHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sS;
+  bool m_bOOLHasBeenSet = false;
+  bool m_nHasBeenSet = false;
+  bool m_sHasBeenSet = false;
   bool m_sSHasBeenSet = false;
 };
 

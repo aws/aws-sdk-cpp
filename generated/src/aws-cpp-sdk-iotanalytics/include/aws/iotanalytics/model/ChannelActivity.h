@@ -87,12 +87,12 @@ class ChannelActivity {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   Aws::String m_next;
+  bool m_nameHasBeenSet = false;
+  bool m_channelNameHasBeenSet = false;
   bool m_nextHasBeenSet = false;
 };
 

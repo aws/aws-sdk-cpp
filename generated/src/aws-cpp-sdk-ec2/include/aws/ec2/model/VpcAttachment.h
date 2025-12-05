@@ -70,9 +70,9 @@ class VpcAttachment {
   ///@}
  private:
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   AttachmentStatus m_state{AttachmentStatus::NOT_SET};
+  bool m_vpcIdHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

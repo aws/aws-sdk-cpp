@@ -134,18 +134,18 @@ class UpdateMonitoringRequest : public KafkaRequest {
   ///@}
  private:
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::String m_currentVersion;
-  bool m_currentVersionHasBeenSet = false;
 
   EnhancedMonitoring m_enhancedMonitoring{EnhancedMonitoring::NOT_SET};
-  bool m_enhancedMonitoringHasBeenSet = false;
 
   OpenMonitoringInfo m_openMonitoring;
-  bool m_openMonitoringHasBeenSet = false;
 
   LoggingInfo m_loggingInfo;
+  bool m_clusterArnHasBeenSet = false;
+  bool m_currentVersionHasBeenSet = false;
+  bool m_enhancedMonitoringHasBeenSet = false;
+  bool m_openMonitoringHasBeenSet = false;
   bool m_loggingInfoHasBeenSet = false;
 };
 

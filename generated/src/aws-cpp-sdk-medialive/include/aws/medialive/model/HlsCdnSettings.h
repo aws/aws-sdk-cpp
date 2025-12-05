@@ -116,18 +116,18 @@ class HlsCdnSettings {
   ///@}
  private:
   HlsAkamaiSettings m_hlsAkamaiSettings;
-  bool m_hlsAkamaiSettingsHasBeenSet = false;
 
   HlsBasicPutSettings m_hlsBasicPutSettings;
-  bool m_hlsBasicPutSettingsHasBeenSet = false;
 
   HlsMediaStoreSettings m_hlsMediaStoreSettings;
-  bool m_hlsMediaStoreSettingsHasBeenSet = false;
 
   HlsS3Settings m_hlsS3Settings;
-  bool m_hlsS3SettingsHasBeenSet = false;
 
   HlsWebdavSettings m_hlsWebdavSettings;
+  bool m_hlsAkamaiSettingsHasBeenSet = false;
+  bool m_hlsBasicPutSettingsHasBeenSet = false;
+  bool m_hlsMediaStoreSettingsHasBeenSet = false;
+  bool m_hlsS3SettingsHasBeenSet = false;
   bool m_hlsWebdavSettingsHasBeenSet = false;
 };
 

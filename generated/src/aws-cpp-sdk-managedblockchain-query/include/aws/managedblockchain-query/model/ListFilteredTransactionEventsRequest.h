@@ -184,27 +184,27 @@ class ListFilteredTransactionEventsRequest : public ManagedBlockchainQueryReques
   ///@}
  private:
   Aws::String m_network;
-  bool m_networkHasBeenSet = false;
 
   AddressIdentifierFilter m_addressIdentifierFilter;
-  bool m_addressIdentifierFilterHasBeenSet = false;
 
   TimeFilter m_timeFilter;
-  bool m_timeFilterHasBeenSet = false;
 
   VoutFilter m_voutFilter;
-  bool m_voutFilterHasBeenSet = false;
 
   ConfirmationStatusFilter m_confirmationStatusFilter;
-  bool m_confirmationStatusFilterHasBeenSet = false;
 
   ListFilteredTransactionEventsSort m_sort;
-  bool m_sortHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_networkHasBeenSet = false;
+  bool m_addressIdentifierFilterHasBeenSet = false;
+  bool m_timeFilterHasBeenSet = false;
+  bool m_voutFilterHasBeenSet = false;
+  bool m_confirmationStatusFilterHasBeenSet = false;
+  bool m_sortHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

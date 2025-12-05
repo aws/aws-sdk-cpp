@@ -67,9 +67,9 @@ class GetChatResponseConfigurationRequest : public QBusinessRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_chatResponseConfigurationId;
+  bool m_applicationIdHasBeenSet = false;
   bool m_chatResponseConfigurationIdHasBeenSet = false;
 };
 

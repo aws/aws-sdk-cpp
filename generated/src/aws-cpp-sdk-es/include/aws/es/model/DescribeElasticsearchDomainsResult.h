@@ -76,9 +76,9 @@ class DescribeElasticsearchDomainsResult {
   ///@}
  private:
   Aws::Vector<ElasticsearchDomainStatus> m_domainStatusList;
-  bool m_domainStatusListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainStatusListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

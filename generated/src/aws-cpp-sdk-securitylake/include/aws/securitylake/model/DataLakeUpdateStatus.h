@@ -92,12 +92,12 @@ class DataLakeUpdateStatus {
   ///@}
  private:
   DataLakeUpdateException m_exception;
-  bool m_exceptionHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   DataLakeStatus m_status{DataLakeStatus::NOT_SET};
+  bool m_exceptionHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

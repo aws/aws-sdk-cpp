@@ -200,30 +200,30 @@ class UpdateApplicationRequest : public AppIntegrationsServiceRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ApplicationSourceConfig m_applicationSourceConfig;
-  bool m_applicationSourceConfigHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_permissions;
-  bool m_permissionsHasBeenSet = false;
 
   int m_initializationTimeout{0};
-  bool m_initializationTimeoutHasBeenSet = false;
 
   ApplicationConfig m_applicationConfig;
-  bool m_applicationConfigHasBeenSet = false;
 
   IframeConfig m_iframeConfig;
-  bool m_iframeConfigHasBeenSet = false;
 
   ApplicationType m_applicationType{ApplicationType::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_applicationSourceConfigHasBeenSet = false;
+  bool m_permissionsHasBeenSet = false;
+  bool m_initializationTimeoutHasBeenSet = false;
+  bool m_applicationConfigHasBeenSet = false;
+  bool m_iframeConfigHasBeenSet = false;
   bool m_applicationTypeHasBeenSet = false;
 };
 

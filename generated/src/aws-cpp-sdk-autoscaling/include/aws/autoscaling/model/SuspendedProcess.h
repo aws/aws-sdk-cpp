@@ -74,9 +74,9 @@ class SuspendedProcess {
   ///@}
  private:
   Aws::String m_processName;
-  bool m_processNameHasBeenSet = false;
 
   Aws::String m_suspensionReason;
+  bool m_processNameHasBeenSet = false;
   bool m_suspensionReasonHasBeenSet = false;
 };
 

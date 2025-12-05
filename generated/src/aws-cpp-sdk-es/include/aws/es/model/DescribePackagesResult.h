@@ -88,12 +88,12 @@ class DescribePackagesResult {
   ///@}
  private:
   Aws::Vector<PackageDetails> m_packageDetailsList;
-  bool m_packageDetailsListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_packageDetailsListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

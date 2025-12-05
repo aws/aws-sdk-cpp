@@ -177,27 +177,27 @@ class FunctionConfiguration {
   ///@}
  private:
   EncodingType m_encodingType{EncodingType::NOT_SET};
-  bool m_encodingTypeHasBeenSet = false;
 
   FunctionConfigurationEnvironment m_environment;
-  bool m_environmentHasBeenSet = false;
 
   Aws::String m_execArgs;
-  bool m_execArgsHasBeenSet = false;
 
   Aws::String m_executable;
-  bool m_executableHasBeenSet = false;
 
   int m_memorySize{0};
-  bool m_memorySizeHasBeenSet = false;
 
   bool m_pinned{false};
-  bool m_pinnedHasBeenSet = false;
 
   int m_timeout{0};
-  bool m_timeoutHasBeenSet = false;
 
   Aws::String m_functionRuntimeOverride;
+  bool m_encodingTypeHasBeenSet = false;
+  bool m_environmentHasBeenSet = false;
+  bool m_execArgsHasBeenSet = false;
+  bool m_executableHasBeenSet = false;
+  bool m_memorySizeHasBeenSet = false;
+  bool m_pinnedHasBeenSet = false;
+  bool m_timeoutHasBeenSet = false;
   bool m_functionRuntimeOverrideHasBeenSet = false;
 };
 

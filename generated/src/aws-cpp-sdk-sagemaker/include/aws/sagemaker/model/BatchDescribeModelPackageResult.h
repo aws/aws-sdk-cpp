@@ -97,12 +97,12 @@ class BatchDescribeModelPackageResult {
   ///@}
  private:
   Aws::Map<Aws::String, BatchDescribeModelPackageSummary> m_modelPackageSummaries;
-  bool m_modelPackageSummariesHasBeenSet = false;
 
   Aws::Map<Aws::String, BatchDescribeModelPackageError> m_batchDescribeModelPackageErrorMap;
-  bool m_batchDescribeModelPackageErrorMapHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_modelPackageSummariesHasBeenSet = false;
+  bool m_batchDescribeModelPackageErrorMapHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

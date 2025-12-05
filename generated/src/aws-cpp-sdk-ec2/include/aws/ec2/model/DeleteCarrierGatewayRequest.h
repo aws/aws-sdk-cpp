@@ -70,9 +70,9 @@ class DeleteCarrierGatewayRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_carrierGatewayId;
-  bool m_carrierGatewayIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_carrierGatewayIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

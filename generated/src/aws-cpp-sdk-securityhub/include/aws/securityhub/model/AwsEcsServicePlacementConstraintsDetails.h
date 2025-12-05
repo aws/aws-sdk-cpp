@@ -74,9 +74,9 @@ class AwsEcsServicePlacementConstraintsDetails {
   ///@}
  private:
   Aws::String m_expression;
-  bool m_expressionHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_expressionHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

@@ -104,15 +104,15 @@ class ExportVectorEnrichmentJobRequest : public SageMakerGeospatialRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   ExportVectorEnrichmentJobOutputConfig m_outputConfig;
+  bool m_arnHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_executionRoleArnHasBeenSet = false;
   bool m_outputConfigHasBeenSet = false;
 };
 

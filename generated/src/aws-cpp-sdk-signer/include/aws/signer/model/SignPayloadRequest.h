@@ -103,15 +103,15 @@ class SignPayloadRequest : public SignerRequest {
   ///@}
  private:
   Aws::String m_profileName;
-  bool m_profileNameHasBeenSet = false;
 
   Aws::String m_profileOwner;
-  bool m_profileOwnerHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_payload{};
-  bool m_payloadHasBeenSet = false;
 
   Aws::String m_payloadFormat;
+  bool m_profileNameHasBeenSet = false;
+  bool m_profileOwnerHasBeenSet = false;
+  bool m_payloadHasBeenSet = false;
   bool m_payloadFormatHasBeenSet = false;
 };
 

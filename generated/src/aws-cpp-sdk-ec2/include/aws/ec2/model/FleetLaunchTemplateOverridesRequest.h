@@ -280,33 +280,33 @@ class FleetLaunchTemplateOverridesRequest {
   ///@}
  private:
   InstanceType m_instanceType{InstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_maxPrice;
-  bool m_maxPriceHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   double m_weightedCapacity{0.0};
-  bool m_weightedCapacityHasBeenSet = false;
 
   double m_priority{0.0};
-  bool m_priorityHasBeenSet = false;
 
   Placement m_placement;
-  bool m_placementHasBeenSet = false;
 
   Aws::Vector<FleetBlockDeviceMappingRequest> m_blockDeviceMappings;
-  bool m_blockDeviceMappingsHasBeenSet = false;
 
   InstanceRequirementsRequest m_instanceRequirements;
-  bool m_instanceRequirementsHasBeenSet = false;
 
   Aws::String m_imageId;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_maxPriceHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_weightedCapacityHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_placementHasBeenSet = false;
+  bool m_blockDeviceMappingsHasBeenSet = false;
+  bool m_instanceRequirementsHasBeenSet = false;
   bool m_imageIdHasBeenSet = false;
 };
 

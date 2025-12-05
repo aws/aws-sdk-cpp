@@ -61,9 +61,9 @@ class DeleteVpcConnectorResult {
   ///@}
  private:
   VpcConnector m_vpcConnector;
-  bool m_vpcConnectorHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_vpcConnectorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

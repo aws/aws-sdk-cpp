@@ -85,9 +85,9 @@ class TestSetDiscrepancyErrors {
   ///@}
  private:
   Aws::Vector<TestSetIntentDiscrepancyItem> m_intentDiscrepancies;
-  bool m_intentDiscrepanciesHasBeenSet = false;
 
   Aws::Vector<TestSetSlotDiscrepancyItem> m_slotDiscrepancies;
+  bool m_intentDiscrepanciesHasBeenSet = false;
   bool m_slotDiscrepanciesHasBeenSet = false;
 };
 

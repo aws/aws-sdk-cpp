@@ -290,45 +290,45 @@ class Project {
   ///@}
  private:
   long long m_activeExperimentCount{0};
-  bool m_activeExperimentCountHasBeenSet = false;
 
   long long m_activeLaunchCount{0};
-  bool m_activeLaunchCountHasBeenSet = false;
 
   ProjectAppConfigResource m_appConfigResource;
-  bool m_appConfigResourceHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   ProjectDataDelivery m_dataDelivery;
-  bool m_dataDeliveryHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   long long m_experimentCount{0};
-  bool m_experimentCountHasBeenSet = false;
 
   long long m_featureCount{0};
-  bool m_featureCountHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   long long m_launchCount{0};
-  bool m_launchCountHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ProjectStatus m_status{ProjectStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_activeExperimentCountHasBeenSet = false;
+  bool m_activeLaunchCountHasBeenSet = false;
+  bool m_appConfigResourceHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_dataDeliveryHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_experimentCountHasBeenSet = false;
+  bool m_featureCountHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_launchCountHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

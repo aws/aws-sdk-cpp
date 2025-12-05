@@ -78,12 +78,12 @@ class PutParameterResult {
   ///@}
  private:
   long long m_version{0};
-  bool m_versionHasBeenSet = false;
 
   ParameterTier m_tier{ParameterTier::NOT_SET};
-  bool m_tierHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_versionHasBeenSet = false;
+  bool m_tierHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

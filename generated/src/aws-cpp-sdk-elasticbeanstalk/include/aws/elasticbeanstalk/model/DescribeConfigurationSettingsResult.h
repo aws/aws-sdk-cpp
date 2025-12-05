@@ -74,9 +74,9 @@ class DescribeConfigurationSettingsResult {
   ///@}
  private:
   Aws::Vector<ConfigurationSettingsDescription> m_configurationSettings;
-  bool m_configurationSettingsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_configurationSettingsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

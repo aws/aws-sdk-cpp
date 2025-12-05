@@ -84,12 +84,12 @@ class ListCodeReviewsResult {
   ///@}
  private:
   Aws::Vector<CodeReviewSummary> m_codeReviewSummaries;
-  bool m_codeReviewSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_codeReviewSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

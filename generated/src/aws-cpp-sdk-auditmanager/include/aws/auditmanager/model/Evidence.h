@@ -336,48 +336,48 @@ class Evidence {
   ///@}
  private:
   Aws::String m_dataSource;
-  bool m_dataSourceHasBeenSet = false;
 
   Aws::String m_evidenceAwsAccountId;
-  bool m_evidenceAwsAccountIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_time{};
-  bool m_timeHasBeenSet = false;
 
   Aws::String m_eventSource;
-  bool m_eventSourceHasBeenSet = false;
 
   Aws::String m_eventName;
-  bool m_eventNameHasBeenSet = false;
 
   Aws::String m_evidenceByType;
-  bool m_evidenceByTypeHasBeenSet = false;
 
   Aws::Vector<Resource> m_resourcesIncluded;
-  bool m_resourcesIncludedHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::String m_iamId;
-  bool m_iamIdHasBeenSet = false;
 
   Aws::String m_complianceCheck;
-  bool m_complianceCheckHasBeenSet = false;
 
   Aws::String m_awsOrganization;
-  bool m_awsOrganizationHasBeenSet = false;
 
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_evidenceFolderId;
-  bool m_evidenceFolderIdHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_assessmentReportSelection;
+  bool m_dataSourceHasBeenSet = false;
+  bool m_evidenceAwsAccountIdHasBeenSet = false;
+  bool m_timeHasBeenSet = false;
+  bool m_eventSourceHasBeenSet = false;
+  bool m_eventNameHasBeenSet = false;
+  bool m_evidenceByTypeHasBeenSet = false;
+  bool m_resourcesIncludedHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_iamIdHasBeenSet = false;
+  bool m_complianceCheckHasBeenSet = false;
+  bool m_awsOrganizationHasBeenSet = false;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_evidenceFolderIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_assessmentReportSelectionHasBeenSet = false;
 };
 

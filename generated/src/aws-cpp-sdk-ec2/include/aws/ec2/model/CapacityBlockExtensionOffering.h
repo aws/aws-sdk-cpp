@@ -258,39 +258,39 @@ class CapacityBlockExtensionOffering {
   ///@}
  private:
   Aws::String m_capacityBlockExtensionOfferingId;
-  bool m_capacityBlockExtensionOfferingIdHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_startDate{};
-  bool m_startDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_capacityBlockExtensionStartDate{};
-  bool m_capacityBlockExtensionStartDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_capacityBlockExtensionEndDate{};
-  bool m_capacityBlockExtensionEndDateHasBeenSet = false;
 
   int m_capacityBlockExtensionDurationHours{0};
-  bool m_capacityBlockExtensionDurationHoursHasBeenSet = false;
 
   Aws::String m_upfrontFee;
-  bool m_upfrontFeeHasBeenSet = false;
 
   Aws::String m_currencyCode;
-  bool m_currencyCodeHasBeenSet = false;
 
   CapacityReservationTenancy m_tenancy{CapacityReservationTenancy::NOT_SET};
+  bool m_capacityBlockExtensionOfferingIdHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_instanceCountHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_startDateHasBeenSet = false;
+  bool m_capacityBlockExtensionStartDateHasBeenSet = false;
+  bool m_capacityBlockExtensionEndDateHasBeenSet = false;
+  bool m_capacityBlockExtensionDurationHoursHasBeenSet = false;
+  bool m_upfrontFeeHasBeenSet = false;
+  bool m_currencyCodeHasBeenSet = false;
   bool m_tenancyHasBeenSet = false;
 };
 

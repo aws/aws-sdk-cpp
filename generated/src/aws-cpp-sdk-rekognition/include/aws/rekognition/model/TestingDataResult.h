@@ -91,12 +91,12 @@ class TestingDataResult {
   ///@}
  private:
   TestingData m_input;
-  bool m_inputHasBeenSet = false;
 
   TestingData m_output;
-  bool m_outputHasBeenSet = false;
 
   ValidationData m_validation;
+  bool m_inputHasBeenSet = false;
+  bool m_outputHasBeenSet = false;
   bool m_validationHasBeenSet = false;
 };
 

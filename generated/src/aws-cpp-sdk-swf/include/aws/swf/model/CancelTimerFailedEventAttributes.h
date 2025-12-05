@@ -94,12 +94,12 @@ class CancelTimerFailedEventAttributes {
   ///@}
  private:
   Aws::String m_timerId;
-  bool m_timerIdHasBeenSet = false;
 
   CancelTimerFailedCause m_cause{CancelTimerFailedCause::NOT_SET};
-  bool m_causeHasBeenSet = false;
 
   long long m_decisionTaskCompletedEventId{0};
+  bool m_timerIdHasBeenSet = false;
+  bool m_causeHasBeenSet = false;
   bool m_decisionTaskCompletedEventIdHasBeenSet = false;
 };
 

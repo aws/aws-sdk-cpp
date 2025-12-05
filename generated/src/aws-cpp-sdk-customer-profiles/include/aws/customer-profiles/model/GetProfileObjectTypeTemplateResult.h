@@ -182,27 +182,27 @@ class GetProfileObjectTypeTemplateResult {
   ///@}
  private:
   Aws::String m_templateId;
-  bool m_templateIdHasBeenSet = false;
 
   Aws::String m_sourceName;
-  bool m_sourceNameHasBeenSet = false;
 
   Aws::String m_sourceObject;
-  bool m_sourceObjectHasBeenSet = false;
 
   bool m_allowProfileCreation{false};
-  bool m_allowProfileCreationHasBeenSet = false;
 
   Aws::String m_sourceLastUpdatedTimestampFormat;
-  bool m_sourceLastUpdatedTimestampFormatHasBeenSet = false;
 
   Aws::Map<Aws::String, ObjectTypeField> m_fields;
-  bool m_fieldsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<ObjectTypeKey>> m_keys;
-  bool m_keysHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_templateIdHasBeenSet = false;
+  bool m_sourceNameHasBeenSet = false;
+  bool m_sourceObjectHasBeenSet = false;
+  bool m_allowProfileCreationHasBeenSet = false;
+  bool m_sourceLastUpdatedTimestampFormatHasBeenSet = false;
+  bool m_fieldsHasBeenSet = false;
+  bool m_keysHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

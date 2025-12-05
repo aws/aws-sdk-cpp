@@ -141,21 +141,21 @@ class UpdateWorkflowRequest : public OmicsRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   StorageType m_storageType{StorageType::NOT_SET};
-  bool m_storageTypeHasBeenSet = false;
 
   int m_storageCapacity{0};
-  bool m_storageCapacityHasBeenSet = false;
 
   Aws::String m_readmeMarkdown;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_storageTypeHasBeenSet = false;
+  bool m_storageCapacityHasBeenSet = false;
   bool m_readmeMarkdownHasBeenSet = false;
 };
 

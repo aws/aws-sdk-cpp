@@ -360,51 +360,51 @@ class LoadBalancer {
   ///@}
  private:
   Aws::String m_loadBalancerArn;
-  bool m_loadBalancerArnHasBeenSet = false;
 
   Aws::String m_dNSName;
-  bool m_dNSNameHasBeenSet = false;
 
   Aws::String m_canonicalHostedZoneId;
-  bool m_canonicalHostedZoneIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_loadBalancerName;
-  bool m_loadBalancerNameHasBeenSet = false;
 
   LoadBalancerSchemeEnum m_scheme{LoadBalancerSchemeEnum::NOT_SET};
-  bool m_schemeHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   LoadBalancerState m_state;
-  bool m_stateHasBeenSet = false;
 
   LoadBalancerTypeEnum m_type{LoadBalancerTypeEnum::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<AvailabilityZone> m_availabilityZones;
-  bool m_availabilityZonesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroups;
-  bool m_securityGroupsHasBeenSet = false;
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
-  bool m_ipAddressTypeHasBeenSet = false;
 
   Aws::String m_customerOwnedIpv4Pool;
-  bool m_customerOwnedIpv4PoolHasBeenSet = false;
 
   Aws::String m_enforceSecurityGroupInboundRulesOnPrivateLinkTraffic;
-  bool m_enforceSecurityGroupInboundRulesOnPrivateLinkTrafficHasBeenSet = false;
 
   EnablePrefixForIpv6SourceNatEnum m_enablePrefixForIpv6SourceNat{EnablePrefixForIpv6SourceNatEnum::NOT_SET};
-  bool m_enablePrefixForIpv6SourceNatHasBeenSet = false;
 
   IpamPools m_ipamPools;
+  bool m_loadBalancerArnHasBeenSet = false;
+  bool m_dNSNameHasBeenSet = false;
+  bool m_canonicalHostedZoneIdHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_loadBalancerNameHasBeenSet = false;
+  bool m_schemeHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_availabilityZonesHasBeenSet = false;
+  bool m_securityGroupsHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
+  bool m_customerOwnedIpv4PoolHasBeenSet = false;
+  bool m_enforceSecurityGroupInboundRulesOnPrivateLinkTrafficHasBeenSet = false;
+  bool m_enablePrefixForIpv6SourceNatHasBeenSet = false;
   bool m_ipamPoolsHasBeenSet = false;
 };
 

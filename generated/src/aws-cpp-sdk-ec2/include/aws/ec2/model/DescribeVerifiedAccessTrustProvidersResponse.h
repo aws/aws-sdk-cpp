@@ -87,12 +87,12 @@ class DescribeVerifiedAccessTrustProvidersResponse {
   ///@}
  private:
   Aws::Vector<VerifiedAccessTrustProvider> m_verifiedAccessTrustProviders;
-  bool m_verifiedAccessTrustProvidersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_verifiedAccessTrustProvidersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

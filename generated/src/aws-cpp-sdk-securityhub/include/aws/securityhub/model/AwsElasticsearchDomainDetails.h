@@ -293,42 +293,42 @@ class AwsElasticsearchDomainDetails {
   ///@}
  private:
   Aws::String m_accessPolicies;
-  bool m_accessPoliciesHasBeenSet = false;
 
   AwsElasticsearchDomainDomainEndpointOptions m_domainEndpointOptions;
-  bool m_domainEndpointOptionsHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_endpoints;
-  bool m_endpointsHasBeenSet = false;
 
   Aws::String m_elasticsearchVersion;
-  bool m_elasticsearchVersionHasBeenSet = false;
 
   AwsElasticsearchDomainElasticsearchClusterConfigDetails m_elasticsearchClusterConfig;
-  bool m_elasticsearchClusterConfigHasBeenSet = false;
 
   AwsElasticsearchDomainEncryptionAtRestOptions m_encryptionAtRestOptions;
-  bool m_encryptionAtRestOptionsHasBeenSet = false;
 
   AwsElasticsearchDomainLogPublishingOptions m_logPublishingOptions;
-  bool m_logPublishingOptionsHasBeenSet = false;
 
   AwsElasticsearchDomainNodeToNodeEncryptionOptions m_nodeToNodeEncryptionOptions;
-  bool m_nodeToNodeEncryptionOptionsHasBeenSet = false;
 
   AwsElasticsearchDomainServiceSoftwareOptions m_serviceSoftwareOptions;
-  bool m_serviceSoftwareOptionsHasBeenSet = false;
 
   AwsElasticsearchDomainVPCOptions m_vPCOptions;
+  bool m_accessPoliciesHasBeenSet = false;
+  bool m_domainEndpointOptionsHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
+  bool m_endpointsHasBeenSet = false;
+  bool m_elasticsearchVersionHasBeenSet = false;
+  bool m_elasticsearchClusterConfigHasBeenSet = false;
+  bool m_encryptionAtRestOptionsHasBeenSet = false;
+  bool m_logPublishingOptionsHasBeenSet = false;
+  bool m_nodeToNodeEncryptionOptionsHasBeenSet = false;
+  bool m_serviceSoftwareOptionsHasBeenSet = false;
   bool m_vPCOptionsHasBeenSet = false;
 };
 

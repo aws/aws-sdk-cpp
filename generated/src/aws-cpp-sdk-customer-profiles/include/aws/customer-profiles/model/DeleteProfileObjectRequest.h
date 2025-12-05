@@ -101,15 +101,15 @@ class DeleteProfileObjectRequest : public CustomerProfilesRequest {
   ///@}
  private:
   Aws::String m_profileId;
-  bool m_profileIdHasBeenSet = false;
 
   Aws::String m_profileObjectUniqueKey;
-  bool m_profileObjectUniqueKeyHasBeenSet = false;
 
   Aws::String m_objectTypeName;
-  bool m_objectTypeNameHasBeenSet = false;
 
   Aws::String m_domainName;
+  bool m_profileIdHasBeenSet = false;
+  bool m_profileObjectUniqueKeyHasBeenSet = false;
+  bool m_objectTypeNameHasBeenSet = false;
   bool m_domainNameHasBeenSet = false;
 };
 

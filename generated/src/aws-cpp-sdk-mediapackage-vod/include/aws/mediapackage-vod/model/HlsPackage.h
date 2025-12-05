@@ -126,18 +126,18 @@ rounded to the
   ///@}
  private:
   HlsEncryption m_encryption;
-  bool m_encryptionHasBeenSet = false;
 
   Aws::Vector<HlsManifest> m_hlsManifests;
-  bool m_hlsManifestsHasBeenSet = false;
 
   bool m_includeDvbSubtitles{false};
-  bool m_includeDvbSubtitlesHasBeenSet = false;
 
   int m_segmentDurationSeconds{0};
-  bool m_segmentDurationSecondsHasBeenSet = false;
 
   bool m_useAudioRenditionGroup{false};
+  bool m_encryptionHasBeenSet = false;
+  bool m_hlsManifestsHasBeenSet = false;
+  bool m_includeDvbSubtitlesHasBeenSet = false;
+  bool m_segmentDurationSecondsHasBeenSet = false;
   bool m_useAudioRenditionGroupHasBeenSet = false;
 };
 

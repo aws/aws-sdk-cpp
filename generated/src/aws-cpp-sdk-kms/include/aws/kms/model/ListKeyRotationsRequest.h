@@ -118,15 +118,15 @@ class ListKeyRotationsRequest : public KMSRequest {
   ///@}
  private:
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   IncludeKeyMaterial m_includeKeyMaterial{IncludeKeyMaterial::NOT_SET};
-  bool m_includeKeyMaterialHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_marker;
+  bool m_keyIdHasBeenSet = false;
+  bool m_includeKeyMaterialHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_markerHasBeenSet = false;
 };
 

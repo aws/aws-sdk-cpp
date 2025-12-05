@@ -253,39 +253,39 @@ class TaskSummary {
   ///@}
  private:
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   TaskRunStatus m_runStatus{TaskRunStatus::NOT_SET};
-  bool m_runStatusHasBeenSet = false;
 
   TaskTargetRunStatus m_targetRunStatus{TaskTargetRunStatus::NOT_SET};
-  bool m_targetRunStatusHasBeenSet = false;
 
   int m_failureRetryCount{0};
-  bool m_failureRetryCountHasBeenSet = false;
 
   Aws::Map<Aws::String, TaskParameterValue> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_endedAt{};
-  bool m_endedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_updatedBy;
-  bool m_updatedByHasBeenSet = false;
 
   Aws::String m_latestSessionActionId;
+  bool m_taskIdHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_runStatusHasBeenSet = false;
+  bool m_targetRunStatusHasBeenSet = false;
+  bool m_failureRetryCountHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_endedAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_updatedByHasBeenSet = false;
   bool m_latestSessionActionIdHasBeenSet = false;
 };
 

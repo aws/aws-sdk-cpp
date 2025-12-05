@@ -73,9 +73,9 @@ class DescribeManagedProductsByVendorRequest : public WAFV2Request {
   ///@}
  private:
   Aws::String m_vendorName;
-  bool m_vendorNameHasBeenSet = false;
 
   Scope m_scope{Scope::NOT_SET};
+  bool m_vendorNameHasBeenSet = false;
   bool m_scopeHasBeenSet = false;
 };
 

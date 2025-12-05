@@ -86,12 +86,12 @@ class DescribeWorkspacesConnectionStatusResult {
   ///@}
  private:
   Aws::Vector<WorkspaceConnectionStatus> m_workspacesConnectionStatus;
-  bool m_workspacesConnectionStatusHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workspacesConnectionStatusHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

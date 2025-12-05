@@ -105,15 +105,15 @@ class DiskResourceUtilization {
   ///@}
  private:
   Aws::String m_diskReadOpsPerSecond;
-  bool m_diskReadOpsPerSecondHasBeenSet = false;
 
   Aws::String m_diskWriteOpsPerSecond;
-  bool m_diskWriteOpsPerSecondHasBeenSet = false;
 
   Aws::String m_diskReadBytesPerSecond;
-  bool m_diskReadBytesPerSecondHasBeenSet = false;
 
   Aws::String m_diskWriteBytesPerSecond;
+  bool m_diskReadOpsPerSecondHasBeenSet = false;
+  bool m_diskWriteOpsPerSecondHasBeenSet = false;
+  bool m_diskReadBytesPerSecondHasBeenSet = false;
   bool m_diskWriteBytesPerSecondHasBeenSet = false;
 };
 

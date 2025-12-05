@@ -276,36 +276,36 @@ class AuthorizeSecurityGroupIngressRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_cidrIp;
-  bool m_cidrIpHasBeenSet = false;
 
   int m_fromPort{0};
-  bool m_fromPortHasBeenSet = false;
 
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::Vector<IpPermission> m_ipPermissions;
-  bool m_ipPermissionsHasBeenSet = false;
 
   Aws::String m_ipProtocol;
-  bool m_ipProtocolHasBeenSet = false;
 
   Aws::String m_sourceSecurityGroupName;
-  bool m_sourceSecurityGroupNameHasBeenSet = false;
 
   Aws::String m_sourceSecurityGroupOwnerId;
-  bool m_sourceSecurityGroupOwnerIdHasBeenSet = false;
 
   int m_toPort{0};
-  bool m_toPortHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_cidrIpHasBeenSet = false;
+  bool m_fromPortHasBeenSet = false;
+  bool m_groupIdHasBeenSet = false;
+  bool m_groupNameHasBeenSet = false;
+  bool m_ipPermissionsHasBeenSet = false;
+  bool m_ipProtocolHasBeenSet = false;
+  bool m_sourceSecurityGroupNameHasBeenSet = false;
+  bool m_sourceSecurityGroupOwnerIdHasBeenSet = false;
+  bool m_toPortHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

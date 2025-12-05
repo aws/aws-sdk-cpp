@@ -131,15 +131,15 @@ class ThumbnailConfiguration {
   ///@}
  private:
   RecordingMode m_recordingMode{RecordingMode::NOT_SET};
-  bool m_recordingModeHasBeenSet = false;
 
   ThumbnailConfigurationResolution m_resolution{ThumbnailConfigurationResolution::NOT_SET};
-  bool m_resolutionHasBeenSet = false;
 
   Aws::Vector<ThumbnailConfigurationStorage> m_storage;
-  bool m_storageHasBeenSet = false;
 
   long long m_targetIntervalSeconds{0};
+  bool m_recordingModeHasBeenSet = false;
+  bool m_resolutionHasBeenSet = false;
+  bool m_storageHasBeenSet = false;
   bool m_targetIntervalSecondsHasBeenSet = false;
 };
 

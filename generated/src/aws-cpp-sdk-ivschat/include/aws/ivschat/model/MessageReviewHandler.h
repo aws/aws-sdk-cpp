@@ -75,9 +75,9 @@ class MessageReviewHandler {
   ///@}
  private:
   Aws::String m_uri;
-  bool m_uriHasBeenSet = false;
 
   FallbackResult m_fallbackResult{FallbackResult::NOT_SET};
+  bool m_uriHasBeenSet = false;
   bool m_fallbackResultHasBeenSet = false;
 };
 

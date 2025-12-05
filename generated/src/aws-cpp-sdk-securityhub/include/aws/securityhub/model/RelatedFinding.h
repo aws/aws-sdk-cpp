@@ -68,9 +68,9 @@ class RelatedFinding {
   ///@}
  private:
   Aws::String m_productArn;
-  bool m_productArnHasBeenSet = false;
 
   Aws::String m_id;
+  bool m_productArnHasBeenSet = false;
   bool m_idHasBeenSet = false;
 };
 

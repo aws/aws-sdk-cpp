@@ -62,9 +62,9 @@ class StartMedicalTranscriptionJobResult {
   ///@}
  private:
   MedicalTranscriptionJob m_medicalTranscriptionJob;
-  bool m_medicalTranscriptionJobHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_medicalTranscriptionJobHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

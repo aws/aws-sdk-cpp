@@ -67,9 +67,9 @@ class CreateVirtualMFADeviceResult {
   ///@}
  private:
   VirtualMFADevice m_virtualMFADevice;
-  bool m_virtualMFADeviceHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_virtualMFADeviceHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class DiscountsBreakdownAmount {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_amount;
-  bool m_amountHasBeenSet = false;
 
   Aws::String m_rate;
+  bool m_descriptionHasBeenSet = false;
+  bool m_amountHasBeenSet = false;
   bool m_rateHasBeenSet = false;
 };
 

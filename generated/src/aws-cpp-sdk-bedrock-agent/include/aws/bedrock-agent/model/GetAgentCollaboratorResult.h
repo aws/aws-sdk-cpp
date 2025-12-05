@@ -60,9 +60,9 @@ class GetAgentCollaboratorResult {
   ///@}
  private:
   AgentCollaborator m_agentCollaborator;
-  bool m_agentCollaboratorHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_agentCollaboratorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

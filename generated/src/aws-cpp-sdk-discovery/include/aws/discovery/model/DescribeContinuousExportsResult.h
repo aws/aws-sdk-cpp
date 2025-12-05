@@ -86,12 +86,12 @@ class DescribeContinuousExportsResult {
   ///@}
  private:
   Aws::Vector<ContinuousExportDescription> m_descriptions;
-  bool m_descriptionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_descriptionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class CreatePlatformEndpointResult {
   ///@}
  private:
   Aws::String m_endpointArn;
-  bool m_endpointArnHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_endpointArnHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

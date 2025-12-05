@@ -76,9 +76,9 @@ class SigningRepositoryFilter {
   ///@}
  private:
   Aws::String m_filter;
-  bool m_filterHasBeenSet = false;
 
   SigningRepositoryFilterType m_filterType{SigningRepositoryFilterType::NOT_SET};
+  bool m_filterHasBeenSet = false;
   bool m_filterTypeHasBeenSet = false;
 };
 

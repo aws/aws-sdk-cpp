@@ -106,15 +106,15 @@ class TruckDimensions {
   ///@}
  private:
   double m_length{0.0};
-  bool m_lengthHasBeenSet = false;
 
   double m_height{0.0};
-  bool m_heightHasBeenSet = false;
 
   double m_width{0.0};
-  bool m_widthHasBeenSet = false;
 
   DimensionUnit m_unit{DimensionUnit::NOT_SET};
+  bool m_lengthHasBeenSet = false;
+  bool m_heightHasBeenSet = false;
+  bool m_widthHasBeenSet = false;
   bool m_unitHasBeenSet = false;
 };
 

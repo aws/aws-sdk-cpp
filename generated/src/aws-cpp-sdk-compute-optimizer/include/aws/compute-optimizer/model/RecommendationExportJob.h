@@ -162,24 +162,24 @@ class RecommendationExportJob {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   ExportDestination m_destination;
-  bool m_destinationHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   JobStatus m_status{JobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimestamp{};
-  bool m_creationTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTimestamp{};
-  bool m_lastUpdatedTimestampHasBeenSet = false;
 
   Aws::String m_failureReason;
+  bool m_jobIdHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationTimestampHasBeenSet = false;
+  bool m_lastUpdatedTimestampHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
 };
 

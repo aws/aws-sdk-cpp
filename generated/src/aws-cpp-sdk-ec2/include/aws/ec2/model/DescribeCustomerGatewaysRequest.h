@@ -123,12 +123,12 @@ class DescribeCustomerGatewaysRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_customerGatewayIds;
-  bool m_customerGatewayIdsHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_customerGatewayIdsHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

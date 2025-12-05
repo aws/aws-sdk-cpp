@@ -85,12 +85,12 @@ class ListTaskInstancesResult {
   ///@}
  private:
   Aws::Vector<TaskInstanceSummary> m_taskInstances;
-  bool m_taskInstancesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_taskInstancesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

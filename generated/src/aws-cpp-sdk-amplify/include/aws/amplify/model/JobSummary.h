@@ -241,36 +241,36 @@ class JobSummary {
   ///@}
  private:
   Aws::String m_jobArn;
-  bool m_jobArnHasBeenSet = false;
 
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_commitId;
-  bool m_commitIdHasBeenSet = false;
 
   Aws::String m_commitMessage;
-  bool m_commitMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_commitTime{};
-  bool m_commitTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   JobStatus m_status{JobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   JobType m_jobType{JobType::NOT_SET};
-  bool m_jobTypeHasBeenSet = false;
 
   Aws::String m_sourceUrl;
-  bool m_sourceUrlHasBeenSet = false;
 
   SourceUrlType m_sourceUrlType{SourceUrlType::NOT_SET};
+  bool m_jobArnHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
+  bool m_commitIdHasBeenSet = false;
+  bool m_commitMessageHasBeenSet = false;
+  bool m_commitTimeHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_jobTypeHasBeenSet = false;
+  bool m_sourceUrlHasBeenSet = false;
   bool m_sourceUrlTypeHasBeenSet = false;
 };
 

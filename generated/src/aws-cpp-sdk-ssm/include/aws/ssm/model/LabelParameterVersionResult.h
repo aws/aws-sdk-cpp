@@ -85,12 +85,12 @@ class LabelParameterVersionResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_invalidLabels;
-  bool m_invalidLabelsHasBeenSet = false;
 
   long long m_parameterVersion{0};
-  bool m_parameterVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_invalidLabelsHasBeenSet = false;
+  bool m_parameterVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -132,18 +132,18 @@ class AnomalousLogGroup {
   ///@}
  private:
   Aws::String m_logGroupName;
-  bool m_logGroupNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_impactStartTime{};
-  bool m_impactStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_impactEndTime{};
-  bool m_impactEndTimeHasBeenSet = false;
 
   int m_numberOfLogLinesScanned{0};
-  bool m_numberOfLogLinesScannedHasBeenSet = false;
 
   Aws::Vector<LogAnomalyShowcase> m_logAnomalyShowcases;
+  bool m_logGroupNameHasBeenSet = false;
+  bool m_impactStartTimeHasBeenSet = false;
+  bool m_impactEndTimeHasBeenSet = false;
+  bool m_numberOfLogLinesScannedHasBeenSet = false;
   bool m_logAnomalyShowcasesHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class AdditionalModelDataSource {
   ///@}
  private:
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   S3ModelDataSource m_s3DataSource;
+  bool m_channelNameHasBeenSet = false;
   bool m_s3DataSourceHasBeenSet = false;
 };
 

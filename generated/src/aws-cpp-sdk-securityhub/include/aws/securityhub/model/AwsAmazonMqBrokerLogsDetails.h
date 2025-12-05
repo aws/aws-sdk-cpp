@@ -124,18 +124,18 @@ class AwsAmazonMqBrokerLogsDetails {
   ///@}
  private:
   bool m_audit{false};
-  bool m_auditHasBeenSet = false;
 
   bool m_general{false};
-  bool m_generalHasBeenSet = false;
 
   Aws::String m_auditLogGroup;
-  bool m_auditLogGroupHasBeenSet = false;
 
   Aws::String m_generalLogGroup;
-  bool m_generalLogGroupHasBeenSet = false;
 
   AwsAmazonMqBrokerLogsPendingDetails m_pending;
+  bool m_auditHasBeenSet = false;
+  bool m_generalHasBeenSet = false;
+  bool m_auditLogGroupHasBeenSet = false;
+  bool m_generalLogGroupHasBeenSet = false;
   bool m_pendingHasBeenSet = false;
 };
 

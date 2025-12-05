@@ -79,12 +79,12 @@ class ManagePropertygraphStatisticsResult {
   ///@}
  private:
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   RefreshStatisticsIdMap m_payload;
-  bool m_payloadHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_payloadHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

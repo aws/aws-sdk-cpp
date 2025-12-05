@@ -128,21 +128,21 @@ class GetManagedNotificationConfigurationResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_category;
-  bool m_categoryHasBeenSet = false;
 
   Aws::String m_subCategory;
-  bool m_subCategoryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_categoryHasBeenSet = false;
+  bool m_subCategoryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

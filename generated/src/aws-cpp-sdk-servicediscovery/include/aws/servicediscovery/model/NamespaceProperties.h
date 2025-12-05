@@ -71,9 +71,9 @@ class NamespaceProperties {
   ///@}
  private:
   DnsProperties m_dnsProperties;
-  bool m_dnsPropertiesHasBeenSet = false;
 
   HttpProperties m_httpProperties;
+  bool m_dnsPropertiesHasBeenSet = false;
   bool m_httpPropertiesHasBeenSet = false;
 };
 

@@ -75,12 +75,12 @@ class CreateAIAgentVersionResult {
   ///@}
  private:
   AIAgentData m_aiAgent;
-  bool m_aiAgentHasBeenSet = false;
 
   long long m_versionNumber{0};
-  bool m_versionNumberHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_aiAgentHasBeenSet = false;
+  bool m_versionNumberHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

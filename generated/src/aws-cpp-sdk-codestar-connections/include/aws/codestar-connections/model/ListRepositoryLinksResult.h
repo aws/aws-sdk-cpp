@@ -85,12 +85,12 @@ class ListRepositoryLinksResult {
   ///@}
  private:
   Aws::Vector<RepositoryLinkInfo> m_repositoryLinks;
-  bool m_repositoryLinksHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_repositoryLinksHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -128,21 +128,21 @@ class DeploymentOverview {
   ///@}
  private:
   long long m_pending{0};
-  bool m_pendingHasBeenSet = false;
 
   long long m_inProgress{0};
-  bool m_inProgressHasBeenSet = false;
 
   long long m_succeeded{0};
-  bool m_succeededHasBeenSet = false;
 
   long long m_failed{0};
-  bool m_failedHasBeenSet = false;
 
   long long m_skipped{0};
-  bool m_skippedHasBeenSet = false;
 
   long long m_ready{0};
+  bool m_pendingHasBeenSet = false;
+  bool m_inProgressHasBeenSet = false;
+  bool m_succeededHasBeenSet = false;
+  bool m_failedHasBeenSet = false;
+  bool m_skippedHasBeenSet = false;
   bool m_readyHasBeenSet = false;
 };
 

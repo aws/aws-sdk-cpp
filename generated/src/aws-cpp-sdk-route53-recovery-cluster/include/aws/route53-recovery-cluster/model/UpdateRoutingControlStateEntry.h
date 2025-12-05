@@ -67,9 +67,9 @@ class UpdateRoutingControlStateEntry {
   ///@}
  private:
   Aws::String m_routingControlArn;
-  bool m_routingControlArnHasBeenSet = false;
 
   RoutingControlState m_routingControlState{RoutingControlState::NOT_SET};
+  bool m_routingControlArnHasBeenSet = false;
   bool m_routingControlStateHasBeenSet = false;
 };
 

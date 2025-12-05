@@ -105,12 +105,12 @@ class CreateTagsRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_dryRunHasBeenSet = false;
+  bool m_resourcesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

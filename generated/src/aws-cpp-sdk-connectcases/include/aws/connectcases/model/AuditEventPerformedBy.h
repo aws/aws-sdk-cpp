@@ -68,9 +68,9 @@ class AuditEventPerformedBy {
   ///@}
  private:
   UserUnion m_user;
-  bool m_userHasBeenSet = false;
 
   Aws::String m_iamPrincipalArn;
+  bool m_userHasBeenSet = false;
   bool m_iamPrincipalArnHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class ListCopyJobsResult {
   ///@}
  private:
   Aws::Vector<CopyJob> m_copyJobs;
-  bool m_copyJobsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_copyJobsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

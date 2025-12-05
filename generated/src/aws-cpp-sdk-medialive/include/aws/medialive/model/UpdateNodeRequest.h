@@ -133,18 +133,18 @@ class UpdateNodeRequest : public MediaLiveRequest {
   ///@}
  private:
   Aws::String m_clusterId;
-  bool m_clusterIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_nodeId;
-  bool m_nodeIdHasBeenSet = false;
 
   NodeRole m_role{NodeRole::NOT_SET};
-  bool m_roleHasBeenSet = false;
 
   Aws::Vector<SdiSourceMappingUpdateRequest> m_sdiSourceMappings;
+  bool m_clusterIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_nodeIdHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
   bool m_sdiSourceMappingsHasBeenSet = false;
 };
 

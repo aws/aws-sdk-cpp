@@ -220,36 +220,36 @@ class GetResourceSnapshotResult {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_engagementId;
-  bool m_engagementIdHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_resourceSnapshotTemplateName;
-  bool m_resourceSnapshotTemplateNameHasBeenSet = false;
 
   int m_revision{0};
-  bool m_revisionHasBeenSet = false;
 
   ResourceSnapshotPayload m_payload;
-  bool m_payloadHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_catalogHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_engagementIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_resourceSnapshotTemplateNameHasBeenSet = false;
+  bool m_revisionHasBeenSet = false;
+  bool m_payloadHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

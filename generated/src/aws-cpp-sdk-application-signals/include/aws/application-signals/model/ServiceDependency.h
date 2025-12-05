@@ -134,15 +134,15 @@ class ServiceDependency {
   ///@}
  private:
   Aws::String m_operationName;
-  bool m_operationNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_dependencyKeyAttributes;
-  bool m_dependencyKeyAttributesHasBeenSet = false;
 
   Aws::String m_dependencyOperationName;
-  bool m_dependencyOperationNameHasBeenSet = false;
 
   Aws::Vector<MetricReference> m_metricReferences;
+  bool m_operationNameHasBeenSet = false;
+  bool m_dependencyKeyAttributesHasBeenSet = false;
+  bool m_dependencyOperationNameHasBeenSet = false;
   bool m_metricReferencesHasBeenSet = false;
 };
 

@@ -104,15 +104,15 @@ class ListIdentitiesRequest : public CognitoIdentityRequest {
   ///@}
  private:
   Aws::String m_identityPoolId;
-  bool m_identityPoolIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   bool m_hideDisabled{false};
+  bool m_identityPoolIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_hideDisabledHasBeenSet = false;
 };
 

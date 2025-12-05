@@ -85,12 +85,12 @@ class ListBatchInferenceJobsResult {
   ///@}
  private:
   Aws::Vector<BatchInferenceJobSummary> m_batchInferenceJobs;
-  bool m_batchInferenceJobsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_batchInferenceJobsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

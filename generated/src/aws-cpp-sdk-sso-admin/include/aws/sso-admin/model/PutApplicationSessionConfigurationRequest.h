@@ -70,9 +70,9 @@ class PutApplicationSessionConfigurationRequest : public SSOAdminRequest {
   ///@}
  private:
   Aws::String m_applicationArn;
-  bool m_applicationArnHasBeenSet = false;
 
   UserBackgroundSessionApplicationStatus m_userBackgroundSessionApplicationStatus{UserBackgroundSessionApplicationStatus::NOT_SET};
+  bool m_applicationArnHasBeenSet = false;
   bool m_userBackgroundSessionApplicationStatusHasBeenSet = false;
 };
 

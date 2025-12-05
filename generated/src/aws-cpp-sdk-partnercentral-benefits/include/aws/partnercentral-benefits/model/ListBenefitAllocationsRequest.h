@@ -181,24 +181,24 @@ class ListBenefitAllocationsRequest : public PartnerCentralBenefitsRequest {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::Vector<FulfillmentType> m_fulfillmentTypes;
-  bool m_fulfillmentTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_benefitIdentifiers;
-  bool m_benefitIdentifiersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_benefitApplicationIdentifiers;
-  bool m_benefitApplicationIdentifiersHasBeenSet = false;
 
   Aws::Vector<BenefitAllocationStatus> m_status;
-  bool m_statusHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_catalogHasBeenSet = false;
+  bool m_fulfillmentTypesHasBeenSet = false;
+  bool m_benefitIdentifiersHasBeenSet = false;
+  bool m_benefitApplicationIdentifiersHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

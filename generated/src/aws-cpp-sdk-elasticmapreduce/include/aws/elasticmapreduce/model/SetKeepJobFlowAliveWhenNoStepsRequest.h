@@ -77,9 +77,9 @@ class SetKeepJobFlowAliveWhenNoStepsRequest : public EMRRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_jobFlowIds;
-  bool m_jobFlowIdsHasBeenSet = false;
 
   bool m_keepJobFlowAliveWhenNoSteps{false};
+  bool m_jobFlowIdsHasBeenSet = false;
   bool m_keepJobFlowAliveWhenNoStepsHasBeenSet = false;
 };
 

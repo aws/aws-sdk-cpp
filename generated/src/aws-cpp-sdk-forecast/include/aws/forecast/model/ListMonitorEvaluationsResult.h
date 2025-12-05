@@ -92,12 +92,12 @@ class ListMonitorEvaluationsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<PredictorMonitorEvaluation> m_predictorMonitorEvaluations;
-  bool m_predictorMonitorEvaluationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_predictorMonitorEvaluationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

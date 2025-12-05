@@ -105,15 +105,15 @@ class ActivityTaskTimedOutEventAttributes {
   ///@}
  private:
   ActivityTaskTimeoutType m_timeoutType{ActivityTaskTimeoutType::NOT_SET};
-  bool m_timeoutTypeHasBeenSet = false;
 
   long long m_scheduledEventId{0};
-  bool m_scheduledEventIdHasBeenSet = false;
 
   long long m_startedEventId{0};
-  bool m_startedEventIdHasBeenSet = false;
 
   Aws::String m_details;
+  bool m_timeoutTypeHasBeenSet = false;
+  bool m_scheduledEventIdHasBeenSet = false;
+  bool m_startedEventIdHasBeenSet = false;
   bool m_detailsHasBeenSet = false;
 };
 

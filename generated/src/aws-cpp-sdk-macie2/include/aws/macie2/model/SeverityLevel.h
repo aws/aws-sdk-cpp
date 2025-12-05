@@ -73,9 +73,9 @@ class SeverityLevel {
   ///@}
  private:
   long long m_occurrencesThreshold{0};
-  bool m_occurrencesThresholdHasBeenSet = false;
 
   DataIdentifierSeverity m_severity{DataIdentifierSeverity::NOT_SET};
+  bool m_occurrencesThresholdHasBeenSet = false;
   bool m_severityHasBeenSet = false;
 };
 

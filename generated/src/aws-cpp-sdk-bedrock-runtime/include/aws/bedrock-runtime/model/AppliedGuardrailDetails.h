@@ -134,18 +134,18 @@ class AppliedGuardrailDetails {
   ///@}
  private:
   Aws::String m_guardrailId;
-  bool m_guardrailIdHasBeenSet = false;
 
   Aws::String m_guardrailVersion;
-  bool m_guardrailVersionHasBeenSet = false;
 
   Aws::String m_guardrailArn;
-  bool m_guardrailArnHasBeenSet = false;
 
   Aws::Vector<GuardrailOrigin> m_guardrailOrigin;
-  bool m_guardrailOriginHasBeenSet = false;
 
   GuardrailOwnership m_guardrailOwnership{GuardrailOwnership::NOT_SET};
+  bool m_guardrailIdHasBeenSet = false;
+  bool m_guardrailVersionHasBeenSet = false;
+  bool m_guardrailArnHasBeenSet = false;
+  bool m_guardrailOriginHasBeenSet = false;
   bool m_guardrailOwnershipHasBeenSet = false;
 };
 

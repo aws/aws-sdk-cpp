@@ -259,33 +259,33 @@ class CaptionDestinationSettings {
   ///@}
  private:
   BurninDestinationSettings m_burninDestinationSettings;
-  bool m_burninDestinationSettingsHasBeenSet = false;
 
   CaptionDestinationType m_destinationType{CaptionDestinationType::NOT_SET};
-  bool m_destinationTypeHasBeenSet = false;
 
   DvbSubDestinationSettings m_dvbSubDestinationSettings;
-  bool m_dvbSubDestinationSettingsHasBeenSet = false;
 
   EmbeddedDestinationSettings m_embeddedDestinationSettings;
-  bool m_embeddedDestinationSettingsHasBeenSet = false;
 
   ImscDestinationSettings m_imscDestinationSettings;
-  bool m_imscDestinationSettingsHasBeenSet = false;
 
   SccDestinationSettings m_sccDestinationSettings;
-  bool m_sccDestinationSettingsHasBeenSet = false;
 
   SrtDestinationSettings m_srtDestinationSettings;
-  bool m_srtDestinationSettingsHasBeenSet = false;
 
   TeletextDestinationSettings m_teletextDestinationSettings;
-  bool m_teletextDestinationSettingsHasBeenSet = false;
 
   TtmlDestinationSettings m_ttmlDestinationSettings;
-  bool m_ttmlDestinationSettingsHasBeenSet = false;
 
   WebvttDestinationSettings m_webvttDestinationSettings;
+  bool m_burninDestinationSettingsHasBeenSet = false;
+  bool m_destinationTypeHasBeenSet = false;
+  bool m_dvbSubDestinationSettingsHasBeenSet = false;
+  bool m_embeddedDestinationSettingsHasBeenSet = false;
+  bool m_imscDestinationSettingsHasBeenSet = false;
+  bool m_sccDestinationSettingsHasBeenSet = false;
+  bool m_srtDestinationSettingsHasBeenSet = false;
+  bool m_teletextDestinationSettingsHasBeenSet = false;
+  bool m_ttmlDestinationSettingsHasBeenSet = false;
   bool m_webvttDestinationSettingsHasBeenSet = false;
 };
 

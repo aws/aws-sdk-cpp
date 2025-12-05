@@ -75,9 +75,9 @@ class UpdateOrganizationalUnitRequest : public OrganizationsRequest {
   ///@}
  private:
   Aws::String m_organizationalUnitId;
-  bool m_organizationalUnitIdHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_organizationalUnitIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class AssociateApplicationToEntitlementRequest : public AppStreamRequest {
   ///@}
  private:
   Aws::String m_stackName;
-  bool m_stackNameHasBeenSet = false;
 
   Aws::String m_entitlementName;
-  bool m_entitlementNameHasBeenSet = false;
 
   Aws::String m_applicationIdentifier;
+  bool m_stackNameHasBeenSet = false;
+  bool m_entitlementNameHasBeenSet = false;
   bool m_applicationIdentifierHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class UpdateWirelessGatewayTaskCreate {
   ///@}
  private:
   Aws::String m_updateDataSource;
-  bool m_updateDataSourceHasBeenSet = false;
 
   Aws::String m_updateDataRole;
-  bool m_updateDataRoleHasBeenSet = false;
 
   LoRaWANUpdateGatewayTaskCreate m_loRaWAN;
+  bool m_updateDataSourceHasBeenSet = false;
+  bool m_updateDataRoleHasBeenSet = false;
   bool m_loRaWANHasBeenSet = false;
 };
 

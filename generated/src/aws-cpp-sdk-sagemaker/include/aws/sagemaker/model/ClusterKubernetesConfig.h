@@ -84,9 +84,9 @@ class ClusterKubernetesConfig {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_labels;
-  bool m_labelsHasBeenSet = false;
 
   Aws::Vector<ClusterKubernetesTaint> m_taints;
+  bool m_labelsHasBeenSet = false;
   bool m_taintsHasBeenSet = false;
 };
 

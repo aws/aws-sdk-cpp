@@ -89,9 +89,9 @@ class DataLakeReplicationConfiguration {
   ///@}
  private:
   Aws::Vector<Aws::String> m_regions;
-  bool m_regionsHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_regionsHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

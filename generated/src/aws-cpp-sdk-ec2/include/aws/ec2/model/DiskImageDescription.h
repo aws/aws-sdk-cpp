@@ -111,15 +111,15 @@ class DiskImageDescription {
   ///@}
  private:
   Aws::String m_checksum;
-  bool m_checksumHasBeenSet = false;
 
   DiskImageFormat m_format{DiskImageFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   Aws::String m_importManifestUrl;
-  bool m_importManifestUrlHasBeenSet = false;
 
   long long m_size{0};
+  bool m_checksumHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
+  bool m_importManifestUrlHasBeenSet = false;
   bool m_sizeHasBeenSet = false;
 };
 

@@ -262,39 +262,39 @@ class ConfiguredTableAssociation {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_configuredTableId;
-  bool m_configuredTableIdHasBeenSet = false;
 
   Aws::String m_configuredTableArn;
-  bool m_configuredTableArnHasBeenSet = false;
 
   Aws::String m_membershipId;
-  bool m_membershipIdHasBeenSet = false;
 
   Aws::String m_membershipArn;
-  bool m_membershipArnHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<ConfiguredTableAssociationAnalysisRuleType> m_analysisRuleTypes;
-  bool m_analysisRuleTypesHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_configuredTableIdHasBeenSet = false;
+  bool m_configuredTableArnHasBeenSet = false;
+  bool m_membershipIdHasBeenSet = false;
+  bool m_membershipArnHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_analysisRuleTypesHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
   bool m_updateTimeHasBeenSet = false;
 };
 

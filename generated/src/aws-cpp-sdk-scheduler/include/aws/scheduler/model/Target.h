@@ -249,33 +249,33 @@ class Target {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   DeadLetterConfig m_deadLetterConfig;
-  bool m_deadLetterConfigHasBeenSet = false;
 
   EcsParameters m_ecsParameters;
-  bool m_ecsParametersHasBeenSet = false;
 
   EventBridgeParameters m_eventBridgeParameters;
-  bool m_eventBridgeParametersHasBeenSet = false;
 
   Aws::String m_input;
-  bool m_inputHasBeenSet = false;
 
   KinesisParameters m_kinesisParameters;
-  bool m_kinesisParametersHasBeenSet = false;
 
   RetryPolicy m_retryPolicy;
-  bool m_retryPolicyHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   SageMakerPipelineParameters m_sageMakerPipelineParameters;
-  bool m_sageMakerPipelineParametersHasBeenSet = false;
 
   SqsParameters m_sqsParameters;
+  bool m_arnHasBeenSet = false;
+  bool m_deadLetterConfigHasBeenSet = false;
+  bool m_ecsParametersHasBeenSet = false;
+  bool m_eventBridgeParametersHasBeenSet = false;
+  bool m_inputHasBeenSet = false;
+  bool m_kinesisParametersHasBeenSet = false;
+  bool m_retryPolicyHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_sageMakerPipelineParametersHasBeenSet = false;
   bool m_sqsParametersHasBeenSet = false;
 };
 

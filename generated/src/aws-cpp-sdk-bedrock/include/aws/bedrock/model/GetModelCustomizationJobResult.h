@@ -462,75 +462,75 @@ class GetModelCustomizationJobResult {
   ///@}
  private:
   Aws::String m_jobArn;
-  bool m_jobArnHasBeenSet = false;
 
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   Aws::String m_outputModelName;
-  bool m_outputModelNameHasBeenSet = false;
 
   Aws::String m_outputModelArn;
-  bool m_outputModelArnHasBeenSet = false;
 
   Aws::String m_clientRequestToken;
-  bool m_clientRequestTokenHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   ModelCustomizationJobStatus m_status{ModelCustomizationJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   StatusDetails m_statusDetails;
-  bool m_statusDetailsHasBeenSet = false;
 
   Aws::String m_failureMessage;
-  bool m_failureMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_baseModelArn;
-  bool m_baseModelArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_hyperParameters;
-  bool m_hyperParametersHasBeenSet = false;
 
   TrainingDataConfig m_trainingDataConfig;
-  bool m_trainingDataConfigHasBeenSet = false;
 
   ValidationDataConfig m_validationDataConfig;
-  bool m_validationDataConfigHasBeenSet = false;
 
   OutputDataConfig m_outputDataConfig;
-  bool m_outputDataConfigHasBeenSet = false;
 
   CustomizationType m_customizationType{CustomizationType::NOT_SET};
-  bool m_customizationTypeHasBeenSet = false;
 
   Aws::String m_outputModelKmsKeyArn;
-  bool m_outputModelKmsKeyArnHasBeenSet = false;
 
   TrainingMetrics m_trainingMetrics;
-  bool m_trainingMetricsHasBeenSet = false;
 
   Aws::Vector<ValidatorMetric> m_validationMetrics;
-  bool m_validationMetricsHasBeenSet = false;
 
   VpcConfig m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   CustomizationConfig m_customizationConfig;
-  bool m_customizationConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobArnHasBeenSet = false;
+  bool m_jobNameHasBeenSet = false;
+  bool m_outputModelNameHasBeenSet = false;
+  bool m_outputModelArnHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusDetailsHasBeenSet = false;
+  bool m_failureMessageHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_baseModelArnHasBeenSet = false;
+  bool m_hyperParametersHasBeenSet = false;
+  bool m_trainingDataConfigHasBeenSet = false;
+  bool m_validationDataConfigHasBeenSet = false;
+  bool m_outputDataConfigHasBeenSet = false;
+  bool m_customizationTypeHasBeenSet = false;
+  bool m_outputModelKmsKeyArnHasBeenSet = false;
+  bool m_trainingMetricsHasBeenSet = false;
+  bool m_validationMetricsHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
+  bool m_customizationConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

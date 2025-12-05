@@ -86,12 +86,12 @@ class UtteranceLevelTestResultItem {
   ///@}
  private:
   long long m_recordNumber{0};
-  bool m_recordNumberHasBeenSet = false;
 
   Aws::String m_conversationId;
-  bool m_conversationIdHasBeenSet = false;
 
   TestSetTurnResult m_turnResult;
+  bool m_recordNumberHasBeenSet = false;
+  bool m_conversationIdHasBeenSet = false;
   bool m_turnResultHasBeenSet = false;
 };
 

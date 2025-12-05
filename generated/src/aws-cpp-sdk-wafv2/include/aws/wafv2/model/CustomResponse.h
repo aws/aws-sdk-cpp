@@ -111,12 +111,12 @@ class CustomResponse {
   ///@}
  private:
   int m_responseCode{0};
-  bool m_responseCodeHasBeenSet = false;
 
   Aws::String m_customResponseBodyKey;
-  bool m_customResponseBodyKeyHasBeenSet = false;
 
   Aws::Vector<CustomHTTPHeader> m_responseHeaders;
+  bool m_responseCodeHasBeenSet = false;
+  bool m_customResponseBodyKeyHasBeenSet = false;
   bool m_responseHeadersHasBeenSet = false;
 };
 

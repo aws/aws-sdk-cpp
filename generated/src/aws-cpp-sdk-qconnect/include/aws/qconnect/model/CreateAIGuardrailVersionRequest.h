@@ -108,15 +108,15 @@ class CreateAIGuardrailVersionRequest : public QConnectRequest {
   ///@}
  private:
   Aws::String m_assistantId;
-  bool m_assistantIdHasBeenSet = false;
 
   Aws::String m_aiGuardrailId;
-  bool m_aiGuardrailIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedTime{};
-  bool m_modifiedTimeHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_assistantIdHasBeenSet = false;
+  bool m_aiGuardrailIdHasBeenSet = false;
+  bool m_modifiedTimeHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

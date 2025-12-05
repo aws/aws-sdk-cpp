@@ -87,12 +87,12 @@ class HttpRouteHeader {
   ///@}
  private:
   bool m_invert{false};
-  bool m_invertHasBeenSet = false;
 
   HeaderMatchMethod m_match;
-  bool m_matchHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_invertHasBeenSet = false;
+  bool m_matchHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

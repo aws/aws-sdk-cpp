@@ -152,21 +152,21 @@ class ScalingConfigurationInfo {
   ///@}
  private:
   int m_minCapacity{0};
-  bool m_minCapacityHasBeenSet = false;
 
   int m_maxCapacity{0};
-  bool m_maxCapacityHasBeenSet = false;
 
   bool m_autoPause{false};
-  bool m_autoPauseHasBeenSet = false;
 
   int m_secondsUntilAutoPause{0};
-  bool m_secondsUntilAutoPauseHasBeenSet = false;
 
   Aws::String m_timeoutAction;
-  bool m_timeoutActionHasBeenSet = false;
 
   int m_secondsBeforeTimeout{0};
+  bool m_minCapacityHasBeenSet = false;
+  bool m_maxCapacityHasBeenSet = false;
+  bool m_autoPauseHasBeenSet = false;
+  bool m_secondsUntilAutoPauseHasBeenSet = false;
+  bool m_timeoutActionHasBeenSet = false;
   bool m_secondsBeforeTimeoutHasBeenSet = false;
 };
 

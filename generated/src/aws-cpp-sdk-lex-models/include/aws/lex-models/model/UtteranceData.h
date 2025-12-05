@@ -121,18 +121,18 @@ class UtteranceData {
   ///@}
  private:
   Aws::String m_utteranceString;
-  bool m_utteranceStringHasBeenSet = false;
 
   int m_count{0};
-  bool m_countHasBeenSet = false;
 
   int m_distinctUsers{0};
-  bool m_distinctUsersHasBeenSet = false;
 
   Aws::Utils::DateTime m_firstUtteredDate{};
-  bool m_firstUtteredDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUtteredDate{};
+  bool m_utteranceStringHasBeenSet = false;
+  bool m_countHasBeenSet = false;
+  bool m_distinctUsersHasBeenSet = false;
+  bool m_firstUtteredDateHasBeenSet = false;
   bool m_lastUtteredDateHasBeenSet = false;
 };
 

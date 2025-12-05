@@ -67,9 +67,9 @@ class DecimalNumber {
   ///@}
  private:
   Aws::Utils::ByteBuffer m_unscaledValue{};
-  bool m_unscaledValueHasBeenSet = false;
 
   int m_scale{0};
+  bool m_unscaledValueHasBeenSet = false;
   bool m_scaleHasBeenSet = false;
 };
 

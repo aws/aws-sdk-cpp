@@ -244,36 +244,36 @@ class OfferFilters {
   ///@}
  private:
   OfferEntityIdFilter m_entityId;
-  bool m_entityIdHasBeenSet = false;
 
   OfferNameFilter m_name;
-  bool m_nameHasBeenSet = false;
 
   OfferProductIdFilter m_productId;
-  bool m_productIdHasBeenSet = false;
 
   OfferResaleAuthorizationIdFilter m_resaleAuthorizationId;
-  bool m_resaleAuthorizationIdHasBeenSet = false;
 
   OfferReleaseDateFilter m_releaseDate;
-  bool m_releaseDateHasBeenSet = false;
 
   OfferAvailabilityEndDateFilter m_availabilityEndDate;
-  bool m_availabilityEndDateHasBeenSet = false;
 
   OfferBuyerAccountsFilter m_buyerAccounts;
-  bool m_buyerAccountsHasBeenSet = false;
 
   OfferStateFilter m_state;
-  bool m_stateHasBeenSet = false;
 
   OfferTargetingFilter m_targeting;
-  bool m_targetingHasBeenSet = false;
 
   OfferLastModifiedDateFilter m_lastModifiedDate;
-  bool m_lastModifiedDateHasBeenSet = false;
 
   OfferSetIdFilter m_offerSetId;
+  bool m_entityIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_productIdHasBeenSet = false;
+  bool m_resaleAuthorizationIdHasBeenSet = false;
+  bool m_releaseDateHasBeenSet = false;
+  bool m_availabilityEndDateHasBeenSet = false;
+  bool m_buyerAccountsHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_targetingHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
   bool m_offerSetIdHasBeenSet = false;
 };
 

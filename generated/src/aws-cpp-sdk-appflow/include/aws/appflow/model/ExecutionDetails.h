@@ -87,12 +87,12 @@ class ExecutionDetails {
   ///@}
  private:
   Aws::String m_mostRecentExecutionMessage;
-  bool m_mostRecentExecutionMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_mostRecentExecutionTime{};
-  bool m_mostRecentExecutionTimeHasBeenSet = false;
 
   ExecutionStatus m_mostRecentExecutionStatus{ExecutionStatus::NOT_SET};
+  bool m_mostRecentExecutionMessageHasBeenSet = false;
+  bool m_mostRecentExecutionTimeHasBeenSet = false;
   bool m_mostRecentExecutionStatusHasBeenSet = false;
 };
 

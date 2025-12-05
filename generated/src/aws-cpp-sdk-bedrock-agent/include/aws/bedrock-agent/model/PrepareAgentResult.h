@@ -113,18 +113,18 @@ class PrepareAgentResult {
   ///@}
  private:
   Aws::String m_agentId;
-  bool m_agentIdHasBeenSet = false;
 
   AgentStatus m_agentStatus{AgentStatus::NOT_SET};
-  bool m_agentStatusHasBeenSet = false;
 
   Aws::String m_agentVersion;
-  bool m_agentVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_preparedAt{};
-  bool m_preparedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_agentIdHasBeenSet = false;
+  bool m_agentStatusHasBeenSet = false;
+  bool m_agentVersionHasBeenSet = false;
+  bool m_preparedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

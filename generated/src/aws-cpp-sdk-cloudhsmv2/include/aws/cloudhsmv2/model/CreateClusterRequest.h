@@ -181,24 +181,24 @@ class CreateClusterRequest : public CloudHSMV2Request {
   ///@}
  private:
   BackupRetentionPolicy m_backupRetentionPolicy;
-  bool m_backupRetentionPolicyHasBeenSet = false;
 
   Aws::String m_hsmType;
-  bool m_hsmTypeHasBeenSet = false;
 
   Aws::String m_sourceBackupId;
-  bool m_sourceBackupIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   NetworkType m_networkType{NetworkType::NOT_SET};
-  bool m_networkTypeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tagList;
-  bool m_tagListHasBeenSet = false;
 
   ClusterMode m_mode{ClusterMode::NOT_SET};
+  bool m_backupRetentionPolicyHasBeenSet = false;
+  bool m_hsmTypeHasBeenSet = false;
+  bool m_sourceBackupIdHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_networkTypeHasBeenSet = false;
+  bool m_tagListHasBeenSet = false;
   bool m_modeHasBeenSet = false;
 };
 

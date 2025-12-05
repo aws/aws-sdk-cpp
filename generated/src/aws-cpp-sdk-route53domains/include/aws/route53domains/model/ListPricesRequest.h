@@ -93,12 +93,12 @@ class ListPricesRequest : public Route53DomainsRequest {
   ///@}
  private:
   Aws::String m_tld;
-  bool m_tldHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_maxItems{0};
+  bool m_tldHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_maxItemsHasBeenSet = false;
 };
 

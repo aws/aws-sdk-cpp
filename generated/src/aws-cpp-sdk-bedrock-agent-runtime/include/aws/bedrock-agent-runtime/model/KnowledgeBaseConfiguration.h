@@ -75,9 +75,9 @@ class KnowledgeBaseConfiguration {
   ///@}
  private:
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   KnowledgeBaseRetrievalConfiguration m_retrievalConfiguration;
+  bool m_knowledgeBaseIdHasBeenSet = false;
   bool m_retrievalConfigurationHasBeenSet = false;
 };
 

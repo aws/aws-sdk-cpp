@@ -92,12 +92,12 @@ class IsolineTravelModeOptions {
   ///@}
  private:
   IsolineCarOptions m_car;
-  bool m_carHasBeenSet = false;
 
   IsolineScooterOptions m_scooter;
-  bool m_scooterHasBeenSet = false;
 
   IsolineTruckOptions m_truck;
+  bool m_carHasBeenSet = false;
+  bool m_scooterHasBeenSet = false;
   bool m_truckHasBeenSet = false;
 };
 

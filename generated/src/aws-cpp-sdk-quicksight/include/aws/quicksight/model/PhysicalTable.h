@@ -110,15 +110,15 @@ class PhysicalTable {
   ///@}
  private:
   RelationalTable m_relationalTable;
-  bool m_relationalTableHasBeenSet = false;
 
   CustomSql m_customSql;
-  bool m_customSqlHasBeenSet = false;
 
   S3Source m_s3Source;
-  bool m_s3SourceHasBeenSet = false;
 
   SaaSTable m_saaSTable;
+  bool m_relationalTableHasBeenSet = false;
+  bool m_customSqlHasBeenSet = false;
+  bool m_s3SourceHasBeenSet = false;
   bool m_saaSTableHasBeenSet = false;
 };
 

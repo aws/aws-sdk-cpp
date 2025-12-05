@@ -68,9 +68,9 @@ class ManagedPersistenceMonitoringConfiguration {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_encryptionKeyArn;
+  bool m_enabledHasBeenSet = false;
   bool m_encryptionKeyArnHasBeenSet = false;
 };
 

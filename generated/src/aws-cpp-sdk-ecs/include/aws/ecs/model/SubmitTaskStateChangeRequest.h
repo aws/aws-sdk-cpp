@@ -235,33 +235,33 @@ class SubmitTaskStateChangeRequest : public ECSRequest {
   ///@}
  private:
   Aws::String m_cluster;
-  bool m_clusterHasBeenSet = false;
 
   Aws::String m_task;
-  bool m_taskHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   Aws::Vector<ContainerStateChange> m_containers;
-  bool m_containersHasBeenSet = false;
 
   Aws::Vector<AttachmentStateChange> m_attachments;
-  bool m_attachmentsHasBeenSet = false;
 
   Aws::Vector<ManagedAgentStateChange> m_managedAgents;
-  bool m_managedAgentsHasBeenSet = false;
 
   Aws::Utils::DateTime m_pullStartedAt{};
-  bool m_pullStartedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_pullStoppedAt{};
-  bool m_pullStoppedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_executionStoppedAt{};
+  bool m_clusterHasBeenSet = false;
+  bool m_taskHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
+  bool m_containersHasBeenSet = false;
+  bool m_attachmentsHasBeenSet = false;
+  bool m_managedAgentsHasBeenSet = false;
+  bool m_pullStartedAtHasBeenSet = false;
+  bool m_pullStoppedAtHasBeenSet = false;
   bool m_executionStoppedAtHasBeenSet = false;
 };
 

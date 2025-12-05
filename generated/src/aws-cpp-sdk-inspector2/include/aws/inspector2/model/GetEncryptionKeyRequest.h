@@ -67,9 +67,9 @@ class GetEncryptionKeyRequest : public Inspector2Request {
   ///@}
  private:
   ScanType m_scanType{ScanType::NOT_SET};
-  bool m_scanTypeHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
+  bool m_scanTypeHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
 };
 

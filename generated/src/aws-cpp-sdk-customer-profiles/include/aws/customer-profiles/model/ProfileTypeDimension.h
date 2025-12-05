@@ -74,9 +74,9 @@ class ProfileTypeDimension {
   ///@}
  private:
   ProfileTypeDimensionType m_dimensionType{ProfileTypeDimensionType::NOT_SET};
-  bool m_dimensionTypeHasBeenSet = false;
 
   Aws::Vector<ProfileType> m_values;
+  bool m_dimensionTypeHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

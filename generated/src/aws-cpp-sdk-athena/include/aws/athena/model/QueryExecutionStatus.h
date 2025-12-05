@@ -133,18 +133,18 @@ class QueryExecutionStatus {
   ///@}
  private:
   QueryExecutionState m_state{QueryExecutionState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_stateChangeReason;
-  bool m_stateChangeReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_submissionDateTime{};
-  bool m_submissionDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_completionDateTime{};
-  bool m_completionDateTimeHasBeenSet = false;
 
   AthenaError m_athenaError;
+  bool m_stateHasBeenSet = false;
+  bool m_stateChangeReasonHasBeenSet = false;
+  bool m_submissionDateTimeHasBeenSet = false;
+  bool m_completionDateTimeHasBeenSet = false;
   bool m_athenaErrorHasBeenSet = false;
 };
 

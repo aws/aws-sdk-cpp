@@ -99,15 +99,15 @@ class GetObjectAclResult {
   ///@}
  private:
   Owner m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::Vector<Grant> m_grants;
-  bool m_grantsHasBeenSet = false;
 
   RequestCharged m_requestCharged{RequestCharged::NOT_SET};
-  bool m_requestChargedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ownerHasBeenSet = false;
+  bool m_grantsHasBeenSet = false;
+  bool m_requestChargedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

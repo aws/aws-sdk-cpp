@@ -58,9 +58,9 @@ class CompleteMigrationResult {
   ///@}
  private:
   ReplicationGroup m_replicationGroup;
-  bool m_replicationGroupHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_replicationGroupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -109,15 +109,15 @@ class ModifyIntegrationRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_integrationIdentifier;
-  bool m_integrationIdentifierHasBeenSet = false;
 
   Aws::String m_integrationName;
-  bool m_integrationNameHasBeenSet = false;
 
   Aws::String m_dataFilter;
-  bool m_dataFilterHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_integrationIdentifierHasBeenSet = false;
+  bool m_integrationNameHasBeenSet = false;
+  bool m_dataFilterHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

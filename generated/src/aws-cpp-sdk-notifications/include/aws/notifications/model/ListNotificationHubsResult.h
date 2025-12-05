@@ -85,12 +85,12 @@ class ListNotificationHubsResult {
   ///@}
  private:
   Aws::Vector<NotificationHubOverview> m_notificationHubs;
-  bool m_notificationHubsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_notificationHubsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -195,27 +195,27 @@ class UpdateJobRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   PresignedUrlConfig m_presignedUrlConfig;
-  bool m_presignedUrlConfigHasBeenSet = false;
 
   JobExecutionsRolloutConfig m_jobExecutionsRolloutConfig;
-  bool m_jobExecutionsRolloutConfigHasBeenSet = false;
 
   AbortConfig m_abortConfig;
-  bool m_abortConfigHasBeenSet = false;
 
   TimeoutConfig m_timeoutConfig;
-  bool m_timeoutConfigHasBeenSet = false;
 
   Aws::String m_namespaceId;
-  bool m_namespaceIdHasBeenSet = false;
 
   JobExecutionsRetryConfig m_jobExecutionsRetryConfig;
+  bool m_jobIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_presignedUrlConfigHasBeenSet = false;
+  bool m_jobExecutionsRolloutConfigHasBeenSet = false;
+  bool m_abortConfigHasBeenSet = false;
+  bool m_timeoutConfigHasBeenSet = false;
+  bool m_namespaceIdHasBeenSet = false;
   bool m_jobExecutionsRetryConfigHasBeenSet = false;
 };
 

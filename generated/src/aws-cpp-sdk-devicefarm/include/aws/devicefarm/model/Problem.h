@@ -162,24 +162,24 @@ class Problem {
   ///@}
  private:
   ProblemDetail m_run;
-  bool m_runHasBeenSet = false;
 
   ProblemDetail m_job;
-  bool m_jobHasBeenSet = false;
 
   ProblemDetail m_suite;
-  bool m_suiteHasBeenSet = false;
 
   ProblemDetail m_test;
-  bool m_testHasBeenSet = false;
 
   Device m_device;
-  bool m_deviceHasBeenSet = false;
 
   ExecutionResult m_result{ExecutionResult::NOT_SET};
-  bool m_resultHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_runHasBeenSet = false;
+  bool m_jobHasBeenSet = false;
+  bool m_suiteHasBeenSet = false;
+  bool m_testHasBeenSet = false;
+  bool m_deviceHasBeenSet = false;
+  bool m_resultHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

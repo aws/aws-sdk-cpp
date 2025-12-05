@@ -117,15 +117,15 @@ class CreateFunctionDefinitionVersionRequest : public GreengrassRequest {
   ///@}
  private:
   Aws::String m_amznClientToken;
-  bool m_amznClientTokenHasBeenSet = false;
 
   FunctionDefaultConfig m_defaultConfig;
-  bool m_defaultConfigHasBeenSet = false;
 
   Aws::String m_functionDefinitionId;
-  bool m_functionDefinitionIdHasBeenSet = false;
 
   Aws::Vector<Function> m_functions;
+  bool m_amznClientTokenHasBeenSet = false;
+  bool m_defaultConfigHasBeenSet = false;
+  bool m_functionDefinitionIdHasBeenSet = false;
   bool m_functionsHasBeenSet = false;
 };
 

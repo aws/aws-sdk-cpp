@@ -75,9 +75,9 @@ class FaultRootCause {
   ///@}
  private:
   Aws::Vector<FaultRootCauseService> m_services;
-  bool m_servicesHasBeenSet = false;
 
   bool m_clientImpacting{false};
+  bool m_servicesHasBeenSet = false;
   bool m_clientImpactingHasBeenSet = false;
 };
 

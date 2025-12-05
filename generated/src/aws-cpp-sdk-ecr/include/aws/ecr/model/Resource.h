@@ -112,15 +112,15 @@ class Resource {
   ///@}
  private:
   ResourceDetails m_details;
-  bool m_detailsHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_detailsHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

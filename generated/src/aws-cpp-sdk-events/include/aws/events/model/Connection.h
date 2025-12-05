@@ -175,27 +175,27 @@ class Connection {
   ///@}
  private:
   Aws::String m_connectionArn;
-  bool m_connectionArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ConnectionState m_connectionState{ConnectionState::NOT_SET};
-  bool m_connectionStateHasBeenSet = false;
 
   Aws::String m_stateReason;
-  bool m_stateReasonHasBeenSet = false;
 
   ConnectionAuthorizationType m_authorizationType{ConnectionAuthorizationType::NOT_SET};
-  bool m_authorizationTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastAuthorizedTime{};
+  bool m_connectionArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_connectionStateHasBeenSet = false;
+  bool m_stateReasonHasBeenSet = false;
+  bool m_authorizationTypeHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_lastAuthorizedTimeHasBeenSet = false;
 };
 

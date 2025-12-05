@@ -82,12 +82,12 @@ class CreateLongTermPricingRequest : public SnowballRequest {
   ///@}
  private:
   LongTermPricingType m_longTermPricingType{LongTermPricingType::NOT_SET};
-  bool m_longTermPricingTypeHasBeenSet = false;
 
   bool m_isLongTermPricingAutoRenew{false};
-  bool m_isLongTermPricingAutoRenewHasBeenSet = false;
 
   SnowballType m_snowballType{SnowballType::NOT_SET};
+  bool m_longTermPricingTypeHasBeenSet = false;
+  bool m_isLongTermPricingAutoRenewHasBeenSet = false;
   bool m_snowballTypeHasBeenSet = false;
 };
 

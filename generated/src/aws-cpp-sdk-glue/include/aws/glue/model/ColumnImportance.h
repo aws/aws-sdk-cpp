@@ -69,9 +69,9 @@ class ColumnImportance {
   ///@}
  private:
   Aws::String m_columnName;
-  bool m_columnNameHasBeenSet = false;
 
   double m_importance{0.0};
+  bool m_columnNameHasBeenSet = false;
   bool m_importanceHasBeenSet = false;
 };
 

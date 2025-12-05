@@ -71,9 +71,9 @@ class DataLocationResource {
   ///@}
  private:
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   Aws::String m_resourceArn;
+  bool m_catalogIdHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
 };
 

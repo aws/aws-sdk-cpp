@@ -144,18 +144,18 @@ class ImageScanFindings {
   ///@}
  private:
   Aws::Utils::DateTime m_imageScanCompletedAt{};
-  bool m_imageScanCompletedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_vulnerabilitySourceUpdatedAt{};
-  bool m_vulnerabilitySourceUpdatedAtHasBeenSet = false;
 
   Aws::Map<FindingSeverity, int> m_findingSeverityCounts;
-  bool m_findingSeverityCountsHasBeenSet = false;
 
   Aws::Vector<ImageScanFinding> m_findings;
-  bool m_findingsHasBeenSet = false;
 
   Aws::Vector<EnhancedImageScanFinding> m_enhancedFindings;
+  bool m_imageScanCompletedAtHasBeenSet = false;
+  bool m_vulnerabilitySourceUpdatedAtHasBeenSet = false;
+  bool m_findingSeverityCountsHasBeenSet = false;
+  bool m_findingsHasBeenSet = false;
   bool m_enhancedFindingsHasBeenSet = false;
 };
 

@@ -134,15 +134,15 @@ class ProfileConfiguration {
   ///@}
  private:
   StatisticsConfiguration m_datasetStatisticsConfiguration;
-  bool m_datasetStatisticsConfigurationHasBeenSet = false;
 
   Aws::Vector<ColumnSelector> m_profileColumns;
-  bool m_profileColumnsHasBeenSet = false;
 
   Aws::Vector<ColumnStatisticsConfiguration> m_columnStatisticsConfigurations;
-  bool m_columnStatisticsConfigurationsHasBeenSet = false;
 
   EntityDetectorConfiguration m_entityDetectorConfiguration;
+  bool m_datasetStatisticsConfigurationHasBeenSet = false;
+  bool m_profileColumnsHasBeenSet = false;
+  bool m_columnStatisticsConfigurationsHasBeenSet = false;
   bool m_entityDetectorConfigurationHasBeenSet = false;
 };
 

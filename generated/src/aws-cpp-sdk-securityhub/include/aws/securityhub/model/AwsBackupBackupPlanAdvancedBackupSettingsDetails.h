@@ -82,9 +82,9 @@ class AwsBackupBackupPlanAdvancedBackupSettingsDetails {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_backupOptions;
-  bool m_backupOptionsHasBeenSet = false;
 
   Aws::String m_resourceType;
+  bool m_backupOptionsHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
 };
 

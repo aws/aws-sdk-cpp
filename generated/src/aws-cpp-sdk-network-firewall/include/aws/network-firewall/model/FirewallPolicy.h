@@ -293,33 +293,33 @@ class FirewallPolicy {
   ///@}
  private:
   Aws::Vector<StatelessRuleGroupReference> m_statelessRuleGroupReferences;
-  bool m_statelessRuleGroupReferencesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_statelessDefaultActions;
-  bool m_statelessDefaultActionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_statelessFragmentDefaultActions;
-  bool m_statelessFragmentDefaultActionsHasBeenSet = false;
 
   Aws::Vector<CustomAction> m_statelessCustomActions;
-  bool m_statelessCustomActionsHasBeenSet = false;
 
   Aws::Vector<StatefulRuleGroupReference> m_statefulRuleGroupReferences;
-  bool m_statefulRuleGroupReferencesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_statefulDefaultActions;
-  bool m_statefulDefaultActionsHasBeenSet = false;
 
   StatefulEngineOptions m_statefulEngineOptions;
-  bool m_statefulEngineOptionsHasBeenSet = false;
 
   Aws::String m_tLSInspectionConfigurationArn;
-  bool m_tLSInspectionConfigurationArnHasBeenSet = false;
 
   PolicyVariables m_policyVariables;
-  bool m_policyVariablesHasBeenSet = false;
 
   bool m_enableTLSSessionHolding{false};
+  bool m_statelessRuleGroupReferencesHasBeenSet = false;
+  bool m_statelessDefaultActionsHasBeenSet = false;
+  bool m_statelessFragmentDefaultActionsHasBeenSet = false;
+  bool m_statelessCustomActionsHasBeenSet = false;
+  bool m_statefulRuleGroupReferencesHasBeenSet = false;
+  bool m_statefulDefaultActionsHasBeenSet = false;
+  bool m_statefulEngineOptionsHasBeenSet = false;
+  bool m_tLSInspectionConfigurationArnHasBeenSet = false;
+  bool m_policyVariablesHasBeenSet = false;
   bool m_enableTLSSessionHoldingHasBeenSet = false;
 };
 

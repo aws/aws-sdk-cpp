@@ -76,9 +76,9 @@ class GlobalTableWitnessGroupUpdate {
   ///@}
  private:
   CreateGlobalTableWitnessGroupMemberAction m_create;
-  bool m_createHasBeenSet = false;
 
   DeleteGlobalTableWitnessGroupMemberAction m_delete;
+  bool m_createHasBeenSet = false;
   bool m_deleteHasBeenSet = false;
 };
 

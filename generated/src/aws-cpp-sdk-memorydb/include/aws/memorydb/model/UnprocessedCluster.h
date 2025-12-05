@@ -86,12 +86,12 @@ class UnprocessedCluster {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_errorType;
-  bool m_errorTypeHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_errorTypeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

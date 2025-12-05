@@ -68,9 +68,9 @@ class CapacitySizeConfig {
   ///@}
  private:
   NodeUnavailabilityType m_type{NodeUnavailabilityType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   int m_value{0};
+  bool m_typeHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

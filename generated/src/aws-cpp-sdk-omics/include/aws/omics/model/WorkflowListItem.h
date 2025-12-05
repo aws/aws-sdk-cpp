@@ -183,27 +183,27 @@ class WorkflowListItem {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   WorkflowStatus m_status{WorkflowStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   WorkflowType m_type{WorkflowType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_digest;
-  bool m_digestHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_metadata;
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_digestHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_metadataHasBeenSet = false;
 };
 

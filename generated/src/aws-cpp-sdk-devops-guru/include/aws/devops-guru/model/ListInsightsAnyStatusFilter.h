@@ -70,9 +70,9 @@ class ListInsightsAnyStatusFilter {
   ///@}
  private:
   InsightType m_type{InsightType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   StartTimeRange m_startTimeRange;
+  bool m_typeHasBeenSet = false;
   bool m_startTimeRangeHasBeenSet = false;
 };
 

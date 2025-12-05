@@ -94,12 +94,12 @@ class ListPromptsRequest : public BedrockAgentRequest {
   ///@}
  private:
   Aws::String m_promptIdentifier;
-  bool m_promptIdentifierHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_promptIdentifierHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

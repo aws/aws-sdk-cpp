@@ -72,9 +72,9 @@ class ListVersionsResult {
   ///@}
  private:
   Aws::Vector<ChannelEngineVersionResponse> m_versions;
-  bool m_versionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_versionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

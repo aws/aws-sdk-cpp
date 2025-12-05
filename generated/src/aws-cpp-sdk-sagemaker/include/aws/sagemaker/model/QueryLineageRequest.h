@@ -176,24 +176,24 @@ class QueryLineageRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_startArns;
-  bool m_startArnsHasBeenSet = false;
 
   Direction m_direction{Direction::NOT_SET};
-  bool m_directionHasBeenSet = false;
 
   bool m_includeEdges{false};
-  bool m_includeEdgesHasBeenSet = false;
 
   QueryFilters m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_maxDepth{0};
-  bool m_maxDepthHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_startArnsHasBeenSet = false;
+  bool m_directionHasBeenSet = false;
+  bool m_includeEdgesHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_maxDepthHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

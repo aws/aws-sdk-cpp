@@ -156,21 +156,21 @@ class Entitlement {
   ///@}
  private:
   Aws::String m_productCode;
-  bool m_productCodeHasBeenSet = false;
 
   Aws::String m_dimension;
-  bool m_dimensionHasBeenSet = false;
 
   Aws::String m_customerIdentifier;
-  bool m_customerIdentifierHasBeenSet = false;
 
   Aws::String m_customerAWSAccountId;
-  bool m_customerAWSAccountIdHasBeenSet = false;
 
   EntitlementValue m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::Utils::DateTime m_expirationDate{};
+  bool m_productCodeHasBeenSet = false;
+  bool m_dimensionHasBeenSet = false;
+  bool m_customerIdentifierHasBeenSet = false;
+  bool m_customerAWSAccountIdHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_expirationDateHasBeenSet = false;
 };
 

@@ -119,18 +119,18 @@ class ServiceStatistics {
   ///@}
  private:
   long long m_okCount{0};
-  bool m_okCountHasBeenSet = false;
 
   ErrorStatistics m_errorStatistics;
-  bool m_errorStatisticsHasBeenSet = false;
 
   FaultStatistics m_faultStatistics;
-  bool m_faultStatisticsHasBeenSet = false;
 
   long long m_totalCount{0};
-  bool m_totalCountHasBeenSet = false;
 
   double m_totalResponseTime{0.0};
+  bool m_okCountHasBeenSet = false;
+  bool m_errorStatisticsHasBeenSet = false;
+  bool m_faultStatisticsHasBeenSet = false;
+  bool m_totalCountHasBeenSet = false;
   bool m_totalResponseTimeHasBeenSet = false;
 };
 

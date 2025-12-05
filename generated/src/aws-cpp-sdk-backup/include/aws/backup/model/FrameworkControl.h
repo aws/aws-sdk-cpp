@@ -101,12 +101,12 @@ class FrameworkControl {
   ///@}
  private:
   Aws::String m_controlName;
-  bool m_controlNameHasBeenSet = false;
 
   Aws::Vector<ControlInputParameter> m_controlInputParameters;
-  bool m_controlInputParametersHasBeenSet = false;
 
   ControlScope m_controlScope;
+  bool m_controlNameHasBeenSet = false;
+  bool m_controlInputParametersHasBeenSet = false;
   bool m_controlScopeHasBeenSet = false;
 };
 

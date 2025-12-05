@@ -101,15 +101,15 @@ class ListBotReplicasResult {
   ///@}
  private:
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   Aws::String m_sourceRegion;
-  bool m_sourceRegionHasBeenSet = false;
 
   Aws::Vector<BotReplicaSummary> m_botReplicaSummaries;
-  bool m_botReplicaSummariesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_botIdHasBeenSet = false;
+  bool m_sourceRegionHasBeenSet = false;
+  bool m_botReplicaSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

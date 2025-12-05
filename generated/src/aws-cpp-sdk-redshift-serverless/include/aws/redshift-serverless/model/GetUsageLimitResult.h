@@ -60,9 +60,9 @@ class GetUsageLimitResult {
   ///@}
  private:
   UsageLimit m_usageLimit;
-  bool m_usageLimitHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_usageLimitHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -169,24 +169,24 @@ class LandingZoneDetail {
   ///@}
  private:
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::Vector<RemediationType> m_remediationTypes;
-  bool m_remediationTypesHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   LandingZoneStatus m_status{LandingZoneStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_latestAvailableVersion;
-  bool m_latestAvailableVersionHasBeenSet = false;
 
   LandingZoneDriftStatusSummary m_driftStatus;
-  bool m_driftStatusHasBeenSet = false;
 
   Aws::Utils::Document m_manifest;
+  bool m_versionHasBeenSet = false;
+  bool m_remediationTypesHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_latestAvailableVersionHasBeenSet = false;
+  bool m_driftStatusHasBeenSet = false;
   bool m_manifestHasBeenSet = false;
 };
 

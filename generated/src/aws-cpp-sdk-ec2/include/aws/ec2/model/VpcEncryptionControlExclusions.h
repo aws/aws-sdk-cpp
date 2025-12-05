@@ -182,27 +182,27 @@ class VpcEncryptionControlExclusions {
   ///@}
  private:
   VpcEncryptionControlExclusion m_internetGateway;
-  bool m_internetGatewayHasBeenSet = false;
 
   VpcEncryptionControlExclusion m_egressOnlyInternetGateway;
-  bool m_egressOnlyInternetGatewayHasBeenSet = false;
 
   VpcEncryptionControlExclusion m_natGateway;
-  bool m_natGatewayHasBeenSet = false;
 
   VpcEncryptionControlExclusion m_virtualPrivateGateway;
-  bool m_virtualPrivateGatewayHasBeenSet = false;
 
   VpcEncryptionControlExclusion m_vpcPeering;
-  bool m_vpcPeeringHasBeenSet = false;
 
   VpcEncryptionControlExclusion m_lambda;
-  bool m_lambdaHasBeenSet = false;
 
   VpcEncryptionControlExclusion m_vpcLattice;
-  bool m_vpcLatticeHasBeenSet = false;
 
   VpcEncryptionControlExclusion m_elasticFileSystem;
+  bool m_internetGatewayHasBeenSet = false;
+  bool m_egressOnlyInternetGatewayHasBeenSet = false;
+  bool m_natGatewayHasBeenSet = false;
+  bool m_virtualPrivateGatewayHasBeenSet = false;
+  bool m_vpcPeeringHasBeenSet = false;
+  bool m_lambdaHasBeenSet = false;
+  bool m_vpcLatticeHasBeenSet = false;
   bool m_elasticFileSystemHasBeenSet = false;
 };
 

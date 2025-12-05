@@ -83,9 +83,9 @@ class RenditionConfiguration {
   ///@}
  private:
   RenditionConfigurationRenditionSelection m_renditionSelection{RenditionConfigurationRenditionSelection::NOT_SET};
-  bool m_renditionSelectionHasBeenSet = false;
 
   Aws::Vector<RenditionConfigurationRendition> m_renditions;
+  bool m_renditionSelectionHasBeenSet = false;
   bool m_renditionsHasBeenSet = false;
 };
 

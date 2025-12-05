@@ -68,9 +68,9 @@ class ConfirmDeviceResult {
   ///@}
  private:
   bool m_userConfirmationNecessary{false};
-  bool m_userConfirmationNecessaryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_userConfirmationNecessaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

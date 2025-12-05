@@ -228,24 +228,24 @@ class CreateHyperParameterTuningJobRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_hyperParameterTuningJobName;
-  bool m_hyperParameterTuningJobNameHasBeenSet = false;
 
   HyperParameterTuningJobConfig m_hyperParameterTuningJobConfig;
-  bool m_hyperParameterTuningJobConfigHasBeenSet = false;
 
   HyperParameterTrainingJobDefinition m_trainingJobDefinition;
-  bool m_trainingJobDefinitionHasBeenSet = false;
 
   Aws::Vector<HyperParameterTrainingJobDefinition> m_trainingJobDefinitions;
-  bool m_trainingJobDefinitionsHasBeenSet = false;
 
   HyperParameterTuningJobWarmStartConfig m_warmStartConfig;
-  bool m_warmStartConfigHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Autotune m_autotune;
+  bool m_hyperParameterTuningJobNameHasBeenSet = false;
+  bool m_hyperParameterTuningJobConfigHasBeenSet = false;
+  bool m_trainingJobDefinitionHasBeenSet = false;
+  bool m_trainingJobDefinitionsHasBeenSet = false;
+  bool m_warmStartConfigHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_autotuneHasBeenSet = false;
 };
 

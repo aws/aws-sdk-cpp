@@ -83,9 +83,9 @@ class S3PresignedUrl {
   ///@}
  private:
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_headers;
+  bool m_urlHasBeenSet = false;
   bool m_headersHasBeenSet = false;
 };
 

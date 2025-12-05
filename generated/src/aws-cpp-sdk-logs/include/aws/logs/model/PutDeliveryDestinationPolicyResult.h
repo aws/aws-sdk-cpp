@@ -61,9 +61,9 @@ class PutDeliveryDestinationPolicyResult {
   ///@}
  private:
   Policy m_policy;
-  bool m_policyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -83,12 +83,12 @@ class VisualSubtitleFontConfiguration {
   ///@}
  private:
   FontConfiguration m_fontConfiguration;
-  bool m_fontConfigurationHasBeenSet = false;
 
   HorizontalTextAlignment m_textAlignment{HorizontalTextAlignment::NOT_SET};
-  bool m_textAlignmentHasBeenSet = false;
 
   TextTransform m_textTransform{TextTransform::NOT_SET};
+  bool m_fontConfigurationHasBeenSet = false;
+  bool m_textAlignmentHasBeenSet = false;
   bool m_textTransformHasBeenSet = false;
 };
 

@@ -195,30 +195,30 @@ class DescribeAgentResult {
   ///@}
  private:
   Aws::String m_agentArn;
-  bool m_agentArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   AgentStatus m_status{AgentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastConnectionTime{};
-  bool m_lastConnectionTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   EndpointType m_endpointType{EndpointType::NOT_SET};
-  bool m_endpointTypeHasBeenSet = false;
 
   PrivateLinkConfig m_privateLinkConfig;
-  bool m_privateLinkConfigHasBeenSet = false;
 
   Platform m_platform;
-  bool m_platformHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_agentArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_lastConnectionTimeHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_endpointTypeHasBeenSet = false;
+  bool m_privateLinkConfigHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

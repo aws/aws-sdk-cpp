@@ -76,9 +76,9 @@ class APISchema {
   ///@}
  private:
   Aws::String m_payload;
-  bool m_payloadHasBeenSet = false;
 
   S3Identifier m_s3;
+  bool m_payloadHasBeenSet = false;
   bool m_s3HasBeenSet = false;
 };
 

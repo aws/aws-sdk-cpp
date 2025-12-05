@@ -182,27 +182,27 @@ class ListParticipantsRequest : public IvsrealtimeRequest {
   ///@}
  private:
   Aws::String m_stageArn;
-  bool m_stageArnHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_filterByUserId;
-  bool m_filterByUserIdHasBeenSet = false;
 
   bool m_filterByPublished{false};
-  bool m_filterByPublishedHasBeenSet = false;
 
   ParticipantState m_filterByState{ParticipantState::NOT_SET};
-  bool m_filterByStateHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   ParticipantRecordingFilterByRecordingState m_filterByRecordingState{ParticipantRecordingFilterByRecordingState::NOT_SET};
+  bool m_stageArnHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_filterByUserIdHasBeenSet = false;
+  bool m_filterByPublishedHasBeenSet = false;
+  bool m_filterByStateHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_filterByRecordingStateHasBeenSet = false;
 };
 

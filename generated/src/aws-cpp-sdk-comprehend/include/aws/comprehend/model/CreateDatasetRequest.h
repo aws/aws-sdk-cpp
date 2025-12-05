@@ -171,24 +171,24 @@ class CreateDatasetRequest : public ComprehendRequest {
   ///@}
  private:
   Aws::String m_flywheelArn;
-  bool m_flywheelArnHasBeenSet = false;
 
   Aws::String m_datasetName;
-  bool m_datasetNameHasBeenSet = false;
 
   DatasetType m_datasetType{DatasetType::NOT_SET};
-  bool m_datasetTypeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   DatasetInputDataConfig m_inputDataConfig;
-  bool m_inputDataConfigHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::Vector<Tag> m_tags;
+  bool m_flywheelArnHasBeenSet = false;
+  bool m_datasetNameHasBeenSet = false;
+  bool m_datasetTypeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_inputDataConfigHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

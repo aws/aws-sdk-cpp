@@ -215,36 +215,36 @@ class GetLegalHoldResult {
   ///@}
  private:
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   LegalHoldStatus m_status{LegalHoldStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_cancelDescription;
-  bool m_cancelDescriptionHasBeenSet = false;
 
   Aws::String m_legalHoldId;
-  bool m_legalHoldIdHasBeenSet = false;
 
   Aws::String m_legalHoldArn;
-  bool m_legalHoldArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_cancellationDate{};
-  bool m_cancellationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_retainRecordUntil{};
-  bool m_retainRecordUntilHasBeenSet = false;
 
   RecoveryPointSelection m_recoveryPointSelection;
-  bool m_recoveryPointSelectionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_titleHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_cancelDescriptionHasBeenSet = false;
+  bool m_legalHoldIdHasBeenSet = false;
+  bool m_legalHoldArnHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_cancellationDateHasBeenSet = false;
+  bool m_retainRecordUntilHasBeenSet = false;
+  bool m_recoveryPointSelectionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

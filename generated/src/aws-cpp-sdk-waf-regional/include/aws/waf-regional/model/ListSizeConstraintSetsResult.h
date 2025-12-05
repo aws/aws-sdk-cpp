@@ -89,12 +89,12 @@ class ListSizeConstraintSetsResult {
   ///@}
  private:
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   Aws::Vector<SizeConstraintSetSummary> m_sizeConstraintSets;
-  bool m_sizeConstraintSetsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextMarkerHasBeenSet = false;
+  bool m_sizeConstraintSetsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

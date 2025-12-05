@@ -67,9 +67,9 @@ class SourceFileSpecifier {
   ///@}
  private:
   Aws::String m_filePath;
-  bool m_filePathHasBeenSet = false;
 
   bool m_isMove{false};
+  bool m_filePathHasBeenSet = false;
   bool m_isMoveHasBeenSet = false;
 };
 

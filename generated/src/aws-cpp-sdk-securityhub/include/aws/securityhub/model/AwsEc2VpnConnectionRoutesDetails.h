@@ -70,9 +70,9 @@ class AwsEc2VpnConnectionRoutesDetails {
   ///@}
  private:
   Aws::String m_destinationCidrBlock;
-  bool m_destinationCidrBlockHasBeenSet = false;
 
   Aws::String m_state;
+  bool m_destinationCidrBlockHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

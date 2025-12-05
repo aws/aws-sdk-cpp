@@ -89,12 +89,12 @@ class AssociatedCoreNetwork {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_ownerAccount;
-  bool m_ownerAccountHasBeenSet = false;
 
   Aws::String m_attachmentId;
+  bool m_idHasBeenSet = false;
+  bool m_ownerAccountHasBeenSet = false;
   bool m_attachmentIdHasBeenSet = false;
 };
 

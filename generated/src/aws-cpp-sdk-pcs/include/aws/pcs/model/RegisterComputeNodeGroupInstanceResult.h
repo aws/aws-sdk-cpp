@@ -102,15 +102,15 @@ class RegisterComputeNodeGroupInstanceResult {
   ///@}
  private:
   Aws::String m_nodeID;
-  bool m_nodeIDHasBeenSet = false;
 
   Aws::String m_sharedSecret;
-  bool m_sharedSecretHasBeenSet = false;
 
   Aws::Vector<Endpoint> m_endpoints;
-  bool m_endpointsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nodeIDHasBeenSet = false;
+  bool m_sharedSecretHasBeenSet = false;
+  bool m_endpointsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

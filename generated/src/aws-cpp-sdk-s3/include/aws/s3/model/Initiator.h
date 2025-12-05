@@ -74,9 +74,9 @@ class Initiator {
   ///@}
  private:
   Aws::String m_iD;
-  bool m_iDHasBeenSet = false;
 
   Aws::String m_displayName;
+  bool m_iDHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
 };
 

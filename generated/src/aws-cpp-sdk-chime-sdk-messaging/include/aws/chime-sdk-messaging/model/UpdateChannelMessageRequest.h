@@ -159,24 +159,24 @@ class UpdateChannelMessageRequest : public ChimeSDKMessagingRequest {
   ///@}
  private:
   Aws::String m_channelArn;
-  bool m_channelArnHasBeenSet = false;
 
   Aws::String m_messageId;
-  bool m_messageIdHasBeenSet = false;
 
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::String m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::String m_chimeBearer;
-  bool m_chimeBearerHasBeenSet = false;
 
   Aws::String m_subChannelId;
-  bool m_subChannelIdHasBeenSet = false;
 
   Aws::String m_contentType;
+  bool m_channelArnHasBeenSet = false;
+  bool m_messageIdHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_chimeBearerHasBeenSet = false;
+  bool m_subChannelIdHasBeenSet = false;
   bool m_contentTypeHasBeenSet = false;
 };
 

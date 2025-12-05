@@ -86,12 +86,12 @@ class ListDiscoveredResourcesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<DiscoveredResource> m_discoveredResourceList;
-  bool m_discoveredResourceListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_discoveredResourceListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

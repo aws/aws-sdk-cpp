@@ -93,12 +93,12 @@ class DnsConfiguration {
   ///@}
  private:
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   DnsConfigurationStatus m_status{DnsConfigurationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_reason;
+  bool m_domainHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

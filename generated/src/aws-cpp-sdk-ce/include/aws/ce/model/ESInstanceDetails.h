@@ -120,18 +120,18 @@ class ESInstanceDetails {
   ///@}
  private:
   Aws::String m_instanceClass;
-  bool m_instanceClassHasBeenSet = false;
 
   Aws::String m_instanceSize;
-  bool m_instanceSizeHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   bool m_currentGeneration{false};
-  bool m_currentGenerationHasBeenSet = false;
 
   bool m_sizeFlexEligible{false};
+  bool m_instanceClassHasBeenSet = false;
+  bool m_instanceSizeHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_currentGenerationHasBeenSet = false;
   bool m_sizeFlexEligibleHasBeenSet = false;
 };
 

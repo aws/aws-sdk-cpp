@@ -78,12 +78,12 @@ class CreateChannelResult {
   ///@}
  private:
   Channel m_channel;
-  bool m_channelHasBeenSet = false;
 
   StreamKey m_streamKey;
-  bool m_streamKeyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelHasBeenSet = false;
+  bool m_streamKeyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

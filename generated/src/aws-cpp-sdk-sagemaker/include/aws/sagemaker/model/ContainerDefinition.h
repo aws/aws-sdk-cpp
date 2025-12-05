@@ -308,36 +308,36 @@ class ContainerDefinition {
   ///@}
  private:
   Aws::String m_containerHostname;
-  bool m_containerHostnameHasBeenSet = false;
 
   Aws::String m_image;
-  bool m_imageHasBeenSet = false;
 
   ImageConfig m_imageConfig;
-  bool m_imageConfigHasBeenSet = false;
 
   ContainerMode m_mode{ContainerMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   Aws::String m_modelDataUrl;
-  bool m_modelDataUrlHasBeenSet = false;
 
   ModelDataSource m_modelDataSource;
-  bool m_modelDataSourceHasBeenSet = false;
 
   Aws::Vector<AdditionalModelDataSource> m_additionalModelDataSources;
-  bool m_additionalModelDataSourcesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_environment;
-  bool m_environmentHasBeenSet = false;
 
   Aws::String m_modelPackageName;
-  bool m_modelPackageNameHasBeenSet = false;
 
   Aws::String m_inferenceSpecificationName;
-  bool m_inferenceSpecificationNameHasBeenSet = false;
 
   MultiModelConfig m_multiModelConfig;
+  bool m_containerHostnameHasBeenSet = false;
+  bool m_imageHasBeenSet = false;
+  bool m_imageConfigHasBeenSet = false;
+  bool m_modeHasBeenSet = false;
+  bool m_modelDataUrlHasBeenSet = false;
+  bool m_modelDataSourceHasBeenSet = false;
+  bool m_additionalModelDataSourcesHasBeenSet = false;
+  bool m_environmentHasBeenSet = false;
+  bool m_modelPackageNameHasBeenSet = false;
+  bool m_inferenceSpecificationNameHasBeenSet = false;
   bool m_multiModelConfigHasBeenSet = false;
 };
 

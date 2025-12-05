@@ -66,9 +66,9 @@ class UpdateWirelessDeviceImportTaskRequest : public IoTWirelessRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   SidewalkUpdateImportInfo m_sidewalk;
+  bool m_idHasBeenSet = false;
   bool m_sidewalkHasBeenSet = false;
 };
 

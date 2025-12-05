@@ -117,18 +117,18 @@ class GetAggregatorV2Result {
   ///@}
  private:
   Aws::String m_aggregatorV2Arn;
-  bool m_aggregatorV2ArnHasBeenSet = false;
 
   Aws::String m_aggregationRegion;
-  bool m_aggregationRegionHasBeenSet = false;
 
   Aws::String m_regionLinkingMode;
-  bool m_regionLinkingModeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_linkedRegions;
-  bool m_linkedRegionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_aggregatorV2ArnHasBeenSet = false;
+  bool m_aggregationRegionHasBeenSet = false;
+  bool m_regionLinkingModeHasBeenSet = false;
+  bool m_linkedRegionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

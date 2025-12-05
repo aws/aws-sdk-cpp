@@ -89,12 +89,12 @@ class ListStoredQueriesResult {
   ///@}
  private:
   Aws::Vector<StoredQueryMetadata> m_storedQueryMetadata;
-  bool m_storedQueryMetadataHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_storedQueryMetadataHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

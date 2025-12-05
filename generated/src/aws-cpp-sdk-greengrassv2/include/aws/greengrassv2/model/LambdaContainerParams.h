@@ -117,15 +117,15 @@ class LambdaContainerParams {
   ///@}
  private:
   int m_memorySizeInKB{0};
-  bool m_memorySizeInKBHasBeenSet = false;
 
   bool m_mountROSysfs{false};
-  bool m_mountROSysfsHasBeenSet = false;
 
   Aws::Vector<LambdaVolumeMount> m_volumes;
-  bool m_volumesHasBeenSet = false;
 
   Aws::Vector<LambdaDeviceMount> m_devices;
+  bool m_memorySizeInKBHasBeenSet = false;
+  bool m_mountROSysfsHasBeenSet = false;
+  bool m_volumesHasBeenSet = false;
   bool m_devicesHasBeenSet = false;
 };
 

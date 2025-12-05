@@ -533,75 +533,75 @@ class ReplicationInstance {
   ///@}
  private:
   Aws::String m_replicationInstanceIdentifier;
-  bool m_replicationInstanceIdentifierHasBeenSet = false;
 
   Aws::String m_replicationInstanceClass;
-  bool m_replicationInstanceClassHasBeenSet = false;
 
   Aws::String m_replicationInstanceStatus;
-  bool m_replicationInstanceStatusHasBeenSet = false;
 
   int m_allocatedStorage{0};
-  bool m_allocatedStorageHasBeenSet = false;
 
   Aws::Utils::DateTime m_instanceCreateTime{};
-  bool m_instanceCreateTimeHasBeenSet = false;
 
   Aws::Vector<VpcSecurityGroupMembership> m_vpcSecurityGroups;
-  bool m_vpcSecurityGroupsHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   ReplicationSubnetGroup m_replicationSubnetGroup;
-  bool m_replicationSubnetGroupHasBeenSet = false;
 
   Aws::String m_preferredMaintenanceWindow;
-  bool m_preferredMaintenanceWindowHasBeenSet = false;
 
   ReplicationPendingModifiedValues m_pendingModifiedValues;
-  bool m_pendingModifiedValuesHasBeenSet = false;
 
   bool m_multiAZ{false};
-  bool m_multiAZHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   bool m_autoMinorVersionUpgrade{false};
-  bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_replicationInstanceArn;
-  bool m_replicationInstanceArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_replicationInstancePublicIpAddresses;
-  bool m_replicationInstancePublicIpAddressesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_replicationInstancePrivateIpAddresses;
-  bool m_replicationInstancePrivateIpAddressesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_replicationInstanceIpv6Addresses;
-  bool m_replicationInstanceIpv6AddressesHasBeenSet = false;
 
   bool m_publiclyAccessible{false};
-  bool m_publiclyAccessibleHasBeenSet = false;
 
   Aws::String m_secondaryAvailabilityZone;
-  bool m_secondaryAvailabilityZoneHasBeenSet = false;
 
   Aws::Utils::DateTime m_freeUntil{};
-  bool m_freeUntilHasBeenSet = false;
 
   Aws::String m_dnsNameServers;
-  bool m_dnsNameServersHasBeenSet = false;
 
   Aws::String m_networkType;
-  bool m_networkTypeHasBeenSet = false;
 
   KerberosAuthenticationSettings m_kerberosAuthenticationSettings;
+  bool m_replicationInstanceIdentifierHasBeenSet = false;
+  bool m_replicationInstanceClassHasBeenSet = false;
+  bool m_replicationInstanceStatusHasBeenSet = false;
+  bool m_allocatedStorageHasBeenSet = false;
+  bool m_instanceCreateTimeHasBeenSet = false;
+  bool m_vpcSecurityGroupsHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_replicationSubnetGroupHasBeenSet = false;
+  bool m_preferredMaintenanceWindowHasBeenSet = false;
+  bool m_pendingModifiedValuesHasBeenSet = false;
+  bool m_multiAZHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_autoMinorVersionUpgradeHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_replicationInstanceArnHasBeenSet = false;
+  bool m_replicationInstancePublicIpAddressesHasBeenSet = false;
+  bool m_replicationInstancePrivateIpAddressesHasBeenSet = false;
+  bool m_replicationInstanceIpv6AddressesHasBeenSet = false;
+  bool m_publiclyAccessibleHasBeenSet = false;
+  bool m_secondaryAvailabilityZoneHasBeenSet = false;
+  bool m_freeUntilHasBeenSet = false;
+  bool m_dnsNameServersHasBeenSet = false;
+  bool m_networkTypeHasBeenSet = false;
   bool m_kerberosAuthenticationSettingsHasBeenSet = false;
 };
 

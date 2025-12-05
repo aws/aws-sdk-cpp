@@ -236,33 +236,33 @@ class InstanceProfile {
   ///@}
  private:
   Aws::String m_instanceProfileArn;
-  bool m_instanceProfileArnHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   bool m_publiclyAccessible{false};
-  bool m_publiclyAccessibleHasBeenSet = false;
 
   Aws::String m_networkType;
-  bool m_networkTypeHasBeenSet = false;
 
   Aws::String m_instanceProfileName;
-  bool m_instanceProfileNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_instanceProfileCreationTime{};
-  bool m_instanceProfileCreationTimeHasBeenSet = false;
 
   Aws::String m_subnetGroupIdentifier;
-  bool m_subnetGroupIdentifierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcSecurityGroups;
+  bool m_instanceProfileArnHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
+  bool m_publiclyAccessibleHasBeenSet = false;
+  bool m_networkTypeHasBeenSet = false;
+  bool m_instanceProfileNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_instanceProfileCreationTimeHasBeenSet = false;
+  bool m_subnetGroupIdentifierHasBeenSet = false;
   bool m_vpcSecurityGroupsHasBeenSet = false;
 };
 

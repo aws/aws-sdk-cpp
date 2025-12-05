@@ -236,33 +236,33 @@ class ResourceTargetDefinition {
   ///@}
  private:
   ResourceAttribute m_attribute{ResourceAttribute::NOT_SET};
-  bool m_attributeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   RequiresRecreation m_requiresRecreation{RequiresRecreation::NOT_SET};
-  bool m_requiresRecreationHasBeenSet = false;
 
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   Aws::String m_beforeValue;
-  bool m_beforeValueHasBeenSet = false;
 
   Aws::String m_afterValue;
-  bool m_afterValueHasBeenSet = false;
 
   BeforeValueFrom m_beforeValueFrom{BeforeValueFrom::NOT_SET};
-  bool m_beforeValueFromHasBeenSet = false;
 
   AfterValueFrom m_afterValueFrom{AfterValueFrom::NOT_SET};
-  bool m_afterValueFromHasBeenSet = false;
 
   LiveResourceDrift m_drift;
-  bool m_driftHasBeenSet = false;
 
   AttributeChangeType m_attributeChangeType{AttributeChangeType::NOT_SET};
+  bool m_attributeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_requiresRecreationHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
+  bool m_beforeValueHasBeenSet = false;
+  bool m_afterValueHasBeenSet = false;
+  bool m_beforeValueFromHasBeenSet = false;
+  bool m_afterValueFromHasBeenSet = false;
+  bool m_driftHasBeenSet = false;
   bool m_attributeChangeTypeHasBeenSet = false;
 };
 

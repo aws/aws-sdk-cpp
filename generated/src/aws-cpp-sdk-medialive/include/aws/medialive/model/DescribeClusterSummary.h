@@ -190,27 +190,27 @@ class DescribeClusterSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_channelIds;
-  bool m_channelIdsHasBeenSet = false;
 
   ClusterType m_clusterType{ClusterType::NOT_SET};
-  bool m_clusterTypeHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_instanceRoleArn;
-  bool m_instanceRoleArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ClusterNetworkSettings m_networkSettings;
-  bool m_networkSettingsHasBeenSet = false;
 
   ClusterState m_state{ClusterState::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_channelIdsHasBeenSet = false;
+  bool m_clusterTypeHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_instanceRoleArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_networkSettingsHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

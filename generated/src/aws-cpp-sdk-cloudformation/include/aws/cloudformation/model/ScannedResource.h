@@ -106,12 +106,12 @@ class ScannedResource {
   ///@}
  private:
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_resourceIdentifier;
-  bool m_resourceIdentifierHasBeenSet = false;
 
   bool m_managedByStack{false};
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceIdentifierHasBeenSet = false;
   bool m_managedByStackHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class TextInputEvent {
   ///@}
  private:
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   long long m_clientTimestampMillis{0};
+  bool m_textHasBeenSet = false;
+  bool m_eventIdHasBeenSet = false;
   bool m_clientTimestampMillisHasBeenSet = false;
 };
 

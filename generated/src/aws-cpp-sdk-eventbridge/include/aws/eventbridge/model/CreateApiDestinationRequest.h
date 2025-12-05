@@ -138,21 +138,21 @@ class CreateApiDestinationRequest : public EventBridgeRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_connectionArn;
-  bool m_connectionArnHasBeenSet = false;
 
   Aws::String m_invocationEndpoint;
-  bool m_invocationEndpointHasBeenSet = false;
 
   ApiDestinationHttpMethod m_httpMethod{ApiDestinationHttpMethod::NOT_SET};
-  bool m_httpMethodHasBeenSet = false;
 
   int m_invocationRateLimitPerSecond{0};
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_connectionArnHasBeenSet = false;
+  bool m_invocationEndpointHasBeenSet = false;
+  bool m_httpMethodHasBeenSet = false;
   bool m_invocationRateLimitPerSecondHasBeenSet = false;
 };
 

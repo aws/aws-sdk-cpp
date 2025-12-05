@@ -69,9 +69,9 @@ class OutputColumnNameOverride {
   ///@}
  private:
   Aws::String m_sourceColumnName;
-  bool m_sourceColumnNameHasBeenSet = false;
 
   Aws::String m_outputColumnName;
+  bool m_sourceColumnNameHasBeenSet = false;
   bool m_outputColumnNameHasBeenSet = false;
 };
 

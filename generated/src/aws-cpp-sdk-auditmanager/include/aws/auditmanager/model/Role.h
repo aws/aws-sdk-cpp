@@ -74,9 +74,9 @@ class Role {
   ///@}
  private:
   RoleType m_roleType{RoleType::NOT_SET};
-  bool m_roleTypeHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_roleTypeHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

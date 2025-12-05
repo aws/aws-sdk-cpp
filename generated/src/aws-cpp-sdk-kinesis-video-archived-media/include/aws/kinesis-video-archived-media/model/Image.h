@@ -94,12 +94,12 @@ class Image {
   ///@}
  private:
   Aws::Utils::DateTime m_timeStamp{};
-  bool m_timeStampHasBeenSet = false;
 
   ImageError m_error{ImageError::NOT_SET};
-  bool m_errorHasBeenSet = false;
 
   Aws::String m_imageContent;
+  bool m_timeStampHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
   bool m_imageContentHasBeenSet = false;
 };
 

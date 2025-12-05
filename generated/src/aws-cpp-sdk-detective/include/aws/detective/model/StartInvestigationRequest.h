@@ -104,15 +104,15 @@ class StartInvestigationRequest : public DetectiveRequest {
   ///@}
  private:
   Aws::String m_graphArn;
-  bool m_graphArnHasBeenSet = false;
 
   Aws::String m_entityArn;
-  bool m_entityArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_scopeStartTime{};
-  bool m_scopeStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_scopeEndTime{};
+  bool m_graphArnHasBeenSet = false;
+  bool m_entityArnHasBeenSet = false;
+  bool m_scopeStartTimeHasBeenSet = false;
   bool m_scopeEndTimeHasBeenSet = false;
 };
 

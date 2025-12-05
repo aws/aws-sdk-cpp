@@ -330,48 +330,48 @@ class SynthesisTask {
   ///@}
  private:
   Engine m_engine{Engine::NOT_SET};
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   TaskStatus m_taskStatus{TaskStatus::NOT_SET};
-  bool m_taskStatusHasBeenSet = false;
 
   Aws::String m_taskStatusReason;
-  bool m_taskStatusReasonHasBeenSet = false;
 
   Aws::String m_outputUri;
-  bool m_outputUriHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   int m_requestCharacters{0};
-  bool m_requestCharactersHasBeenSet = false;
 
   Aws::String m_snsTopicArn;
-  bool m_snsTopicArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_lexiconNames;
-  bool m_lexiconNamesHasBeenSet = false;
 
   OutputFormat m_outputFormat{OutputFormat::NOT_SET};
-  bool m_outputFormatHasBeenSet = false;
 
   Aws::String m_sampleRate;
-  bool m_sampleRateHasBeenSet = false;
 
   Aws::Vector<SpeechMarkType> m_speechMarkTypes;
-  bool m_speechMarkTypesHasBeenSet = false;
 
   TextType m_textType{TextType::NOT_SET};
-  bool m_textTypeHasBeenSet = false;
 
   VoiceId m_voiceId{VoiceId::NOT_SET};
-  bool m_voiceIdHasBeenSet = false;
 
   LanguageCode m_languageCode{LanguageCode::NOT_SET};
+  bool m_engineHasBeenSet = false;
+  bool m_taskIdHasBeenSet = false;
+  bool m_taskStatusHasBeenSet = false;
+  bool m_taskStatusReasonHasBeenSet = false;
+  bool m_outputUriHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_requestCharactersHasBeenSet = false;
+  bool m_snsTopicArnHasBeenSet = false;
+  bool m_lexiconNamesHasBeenSet = false;
+  bool m_outputFormatHasBeenSet = false;
+  bool m_sampleRateHasBeenSet = false;
+  bool m_speechMarkTypesHasBeenSet = false;
+  bool m_textTypeHasBeenSet = false;
+  bool m_voiceIdHasBeenSet = false;
   bool m_languageCodeHasBeenSet = false;
 };
 

@@ -165,24 +165,24 @@ class ManagedApplicationAutoScalingPolicy {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   ManagedResourceStatus m_status{ManagedResourceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_policyType;
-  bool m_policyTypeHasBeenSet = false;
 
   double m_targetValue{0.0};
-  bool m_targetValueHasBeenSet = false;
 
   Aws::String m_metric;
+  bool m_arnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_policyTypeHasBeenSet = false;
+  bool m_targetValueHasBeenSet = false;
   bool m_metricHasBeenSet = false;
 };
 

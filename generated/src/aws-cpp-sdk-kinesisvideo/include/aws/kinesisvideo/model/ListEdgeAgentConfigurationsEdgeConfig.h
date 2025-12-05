@@ -158,24 +158,24 @@ class ListEdgeAgentConfigurationsEdgeConfig {
   ///@}
  private:
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   Aws::String m_streamARN;
-  bool m_streamARNHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   SyncStatus m_syncStatus{SyncStatus::NOT_SET};
-  bool m_syncStatusHasBeenSet = false;
 
   Aws::String m_failedStatusDetails;
-  bool m_failedStatusDetailsHasBeenSet = false;
 
   EdgeConfig m_edgeConfig;
+  bool m_streamNameHasBeenSet = false;
+  bool m_streamARNHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_syncStatusHasBeenSet = false;
+  bool m_failedStatusDetailsHasBeenSet = false;
   bool m_edgeConfigHasBeenSet = false;
 };
 

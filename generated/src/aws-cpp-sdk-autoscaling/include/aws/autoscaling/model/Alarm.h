@@ -70,9 +70,9 @@ class Alarm {
   ///@}
  private:
   Aws::String m_alarmName;
-  bool m_alarmNameHasBeenSet = false;
 
   Aws::String m_alarmARN;
+  bool m_alarmNameHasBeenSet = false;
   bool m_alarmARNHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class ListApplicationAssociationsResult {
   ///@}
  private:
   Aws::Vector<ApplicationAssociationSummary> m_applicationAssociations;
-  bool m_applicationAssociationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationAssociationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

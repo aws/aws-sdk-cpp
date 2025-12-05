@@ -87,12 +87,12 @@ class ListProfileObjectsItem {
   ///@}
  private:
   Aws::String m_objectTypeName;
-  bool m_objectTypeNameHasBeenSet = false;
 
   Aws::String m_profileObjectUniqueKey;
-  bool m_profileObjectUniqueKeyHasBeenSet = false;
 
   Aws::String m_object;
+  bool m_objectTypeNameHasBeenSet = false;
+  bool m_profileObjectUniqueKeyHasBeenSet = false;
   bool m_objectHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class PackageVersionOutputConfig {
   ///@}
  private:
   bool m_markLatest{false};
-  bool m_markLatestHasBeenSet = false;
 
   Aws::String m_packageName;
-  bool m_packageNameHasBeenSet = false;
 
   Aws::String m_packageVersion;
+  bool m_markLatestHasBeenSet = false;
+  bool m_packageNameHasBeenSet = false;
   bool m_packageVersionHasBeenSet = false;
 };
 

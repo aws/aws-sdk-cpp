@@ -93,12 +93,12 @@ class ErrorDetails {
   ///@}
  private:
   ErrorCode m_code{ErrorCode::NOT_SET};
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Vector<DetailedError> m_details;
+  bool m_codeHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_detailsHasBeenSet = false;
 };
 

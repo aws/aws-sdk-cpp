@@ -85,12 +85,12 @@ class ListLogSubscriptionsResult {
   ///@}
  private:
   Aws::Vector<LogSubscription> m_logSubscriptions;
-  bool m_logSubscriptionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_logSubscriptionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

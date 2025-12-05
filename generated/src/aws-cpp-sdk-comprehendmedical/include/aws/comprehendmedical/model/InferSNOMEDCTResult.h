@@ -145,21 +145,21 @@ class InferSNOMEDCTResult {
   ///@}
  private:
   Aws::Vector<SNOMEDCTEntity> m_entities;
-  bool m_entitiesHasBeenSet = false;
 
   Aws::String m_paginationToken;
-  bool m_paginationTokenHasBeenSet = false;
 
   Aws::String m_modelVersion;
-  bool m_modelVersionHasBeenSet = false;
 
   SNOMEDCTDetails m_sNOMEDCTDetails;
-  bool m_sNOMEDCTDetailsHasBeenSet = false;
 
   Characters m_characters;
-  bool m_charactersHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_entitiesHasBeenSet = false;
+  bool m_paginationTokenHasBeenSet = false;
+  bool m_modelVersionHasBeenSet = false;
+  bool m_sNOMEDCTDetailsHasBeenSet = false;
+  bool m_charactersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

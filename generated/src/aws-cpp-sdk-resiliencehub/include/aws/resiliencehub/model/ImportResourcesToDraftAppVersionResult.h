@@ -172,24 +172,24 @@ class ImportResourcesToDraftAppVersionResult {
   ///@}
  private:
   Aws::String m_appArn;
-  bool m_appArnHasBeenSet = false;
 
   Aws::String m_appVersion;
-  bool m_appVersionHasBeenSet = false;
 
   Aws::Vector<EksSource> m_eksSources;
-  bool m_eksSourcesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sourceArns;
-  bool m_sourceArnsHasBeenSet = false;
 
   ResourceImportStatusType m_status{ResourceImportStatusType::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<TerraformSource> m_terraformSources;
-  bool m_terraformSourcesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appArnHasBeenSet = false;
+  bool m_appVersionHasBeenSet = false;
+  bool m_eksSourcesHasBeenSet = false;
+  bool m_sourceArnsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_terraformSourcesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

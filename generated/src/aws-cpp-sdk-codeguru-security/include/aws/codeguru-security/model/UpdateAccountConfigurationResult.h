@@ -63,9 +63,9 @@ class UpdateAccountConfigurationResult {
   ///@}
  private:
   EncryptionConfig m_encryptionConfig;
-  bool m_encryptionConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_encryptionConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

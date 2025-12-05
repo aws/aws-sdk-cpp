@@ -61,9 +61,9 @@ class GetPresetResult {
   ///@}
  private:
   Preset m_preset;
-  bool m_presetHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_presetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

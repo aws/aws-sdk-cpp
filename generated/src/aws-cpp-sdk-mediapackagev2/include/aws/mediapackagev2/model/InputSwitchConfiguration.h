@@ -69,9 +69,9 @@ class InputSwitchConfiguration {
   ///@}
  private:
   bool m_mQCSInputSwitching{false};
-  bool m_mQCSInputSwitchingHasBeenSet = false;
 
   int m_preferredInput{0};
+  bool m_mQCSInputSwitchingHasBeenSet = false;
   bool m_preferredInputHasBeenSet = false;
 };
 

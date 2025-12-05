@@ -122,18 +122,18 @@ class ActivityScheduledEventDetails {
   ///@}
  private:
   Aws::String m_resource;
-  bool m_resourceHasBeenSet = false;
 
   Aws::String m_input;
-  bool m_inputHasBeenSet = false;
 
   HistoryEventExecutionDataDetails m_inputDetails;
-  bool m_inputDetailsHasBeenSet = false;
 
   long long m_timeoutInSeconds{0};
-  bool m_timeoutInSecondsHasBeenSet = false;
 
   long long m_heartbeatInSeconds{0};
+  bool m_resourceHasBeenSet = false;
+  bool m_inputHasBeenSet = false;
+  bool m_inputDetailsHasBeenSet = false;
+  bool m_timeoutInSecondsHasBeenSet = false;
   bool m_heartbeatInSecondsHasBeenSet = false;
 };
 

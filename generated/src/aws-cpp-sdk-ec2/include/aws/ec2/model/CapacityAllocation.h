@@ -70,9 +70,9 @@ class CapacityAllocation {
   ///@}
  private:
   AllocationType m_allocationType{AllocationType::NOT_SET};
-  bool m_allocationTypeHasBeenSet = false;
 
   int m_count{0};
+  bool m_allocationTypeHasBeenSet = false;
   bool m_countHasBeenSet = false;
 };
 

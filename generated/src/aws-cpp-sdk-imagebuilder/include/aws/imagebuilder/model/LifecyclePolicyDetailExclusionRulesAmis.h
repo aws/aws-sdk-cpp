@@ -146,18 +146,18 @@ class LifecyclePolicyDetailExclusionRulesAmis {
   ///@}
  private:
   bool m_isPublic{false};
-  bool m_isPublicHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_regions;
-  bool m_regionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sharedAccounts;
-  bool m_sharedAccountsHasBeenSet = false;
 
   LifecyclePolicyDetailExclusionRulesAmisLastLaunched m_lastLaunched;
-  bool m_lastLaunchedHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tagMap;
+  bool m_isPublicHasBeenSet = false;
+  bool m_regionsHasBeenSet = false;
+  bool m_sharedAccountsHasBeenSet = false;
+  bool m_lastLaunchedHasBeenSet = false;
   bool m_tagMapHasBeenSet = false;
 };
 

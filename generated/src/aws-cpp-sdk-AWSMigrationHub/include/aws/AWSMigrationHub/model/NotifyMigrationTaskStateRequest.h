@@ -141,21 +141,21 @@ class NotifyMigrationTaskStateRequest : public MigrationHubRequest {
   ///@}
  private:
   Aws::String m_progressUpdateStream;
-  bool m_progressUpdateStreamHasBeenSet = false;
 
   Aws::String m_migrationTaskName;
-  bool m_migrationTaskNameHasBeenSet = false;
 
   Task m_task;
-  bool m_taskHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateDateTime{};
-  bool m_updateDateTimeHasBeenSet = false;
 
   int m_nextUpdateSeconds{0};
-  bool m_nextUpdateSecondsHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_progressUpdateStreamHasBeenSet = false;
+  bool m_migrationTaskNameHasBeenSet = false;
+  bool m_taskHasBeenSet = false;
+  bool m_updateDateTimeHasBeenSet = false;
+  bool m_nextUpdateSecondsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

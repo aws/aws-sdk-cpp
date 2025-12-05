@@ -88,12 +88,12 @@ class ListTableRestoreStatusResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<TableRestoreStatus> m_tableRestoreStatuses;
-  bool m_tableRestoreStatusesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_tableRestoreStatusesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

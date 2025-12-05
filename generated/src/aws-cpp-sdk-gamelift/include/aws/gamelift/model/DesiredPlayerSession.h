@@ -71,9 +71,9 @@ class DesiredPlayerSession {
   ///@}
  private:
   Aws::String m_playerId;
-  bool m_playerIdHasBeenSet = false;
 
   Aws::String m_playerData;
+  bool m_playerIdHasBeenSet = false;
   bool m_playerDataHasBeenSet = false;
 };
 

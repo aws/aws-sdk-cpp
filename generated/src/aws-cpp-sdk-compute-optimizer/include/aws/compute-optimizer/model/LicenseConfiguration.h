@@ -183,27 +183,27 @@ class LicenseConfiguration {
   ///@}
  private:
   int m_numberOfCores{0};
-  bool m_numberOfCoresHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_operatingSystem;
-  bool m_operatingSystemHasBeenSet = false;
 
   LicenseEdition m_licenseEdition{LicenseEdition::NOT_SET};
-  bool m_licenseEditionHasBeenSet = false;
 
   LicenseName m_licenseName{LicenseName::NOT_SET};
-  bool m_licenseNameHasBeenSet = false;
 
   LicenseModel m_licenseModel{LicenseModel::NOT_SET};
-  bool m_licenseModelHasBeenSet = false;
 
   Aws::String m_licenseVersion;
-  bool m_licenseVersionHasBeenSet = false;
 
   Aws::Vector<MetricSource> m_metricsSource;
+  bool m_numberOfCoresHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_operatingSystemHasBeenSet = false;
+  bool m_licenseEditionHasBeenSet = false;
+  bool m_licenseNameHasBeenSet = false;
+  bool m_licenseModelHasBeenSet = false;
+  bool m_licenseVersionHasBeenSet = false;
   bool m_metricsSourceHasBeenSet = false;
 };
 

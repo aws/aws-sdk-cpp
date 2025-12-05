@@ -69,9 +69,9 @@ class OciDnsForwardingConfig {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_ociDnsListenerIp;
+  bool m_domainNameHasBeenSet = false;
   bool m_ociDnsListenerIpHasBeenSet = false;
 };
 

@@ -73,9 +73,9 @@ class FilterCircle {
   ///@}
  private:
   Aws::Vector<double> m_center;
-  bool m_centerHasBeenSet = false;
 
   long long m_radius{0};
+  bool m_centerHasBeenSet = false;
   bool m_radiusHasBeenSet = false;
 };
 

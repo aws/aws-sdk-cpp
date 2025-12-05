@@ -108,15 +108,15 @@ class ListSavingsPlansPurchaseRecommendationGenerationRequest : public CostExplo
   ///@}
  private:
   GenerationStatus m_generationStatus{GenerationStatus::NOT_SET};
-  bool m_generationStatusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_recommendationIds;
-  bool m_recommendationIdsHasBeenSet = false;
 
   int m_pageSize{0};
-  bool m_pageSizeHasBeenSet = false;
 
   Aws::String m_nextPageToken;
+  bool m_generationStatusHasBeenSet = false;
+  bool m_recommendationIdsHasBeenSet = false;
+  bool m_pageSizeHasBeenSet = false;
   bool m_nextPageTokenHasBeenSet = false;
 };
 

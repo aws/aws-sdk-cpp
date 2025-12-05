@@ -291,45 +291,45 @@ class Operation {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_parentId;
-  bool m_parentIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   OperationType m_type{OperationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_subType;
-  bool m_subTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTimestamp{};
-  bool m_startTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTimestamp{};
-  bool m_endTimestampHasBeenSet = false;
 
   OperationStatus m_status{OperationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ExecutionDetails m_executionDetails;
-  bool m_executionDetailsHasBeenSet = false;
 
   ContextDetails m_contextDetails;
-  bool m_contextDetailsHasBeenSet = false;
 
   StepDetails m_stepDetails;
-  bool m_stepDetailsHasBeenSet = false;
 
   WaitDetails m_waitDetails;
-  bool m_waitDetailsHasBeenSet = false;
 
   CallbackDetails m_callbackDetails;
-  bool m_callbackDetailsHasBeenSet = false;
 
   ChainedInvokeDetails m_chainedInvokeDetails;
+  bool m_idHasBeenSet = false;
+  bool m_parentIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_subTypeHasBeenSet = false;
+  bool m_startTimestampHasBeenSet = false;
+  bool m_endTimestampHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_executionDetailsHasBeenSet = false;
+  bool m_contextDetailsHasBeenSet = false;
+  bool m_stepDetailsHasBeenSet = false;
+  bool m_waitDetailsHasBeenSet = false;
+  bool m_callbackDetailsHasBeenSet = false;
   bool m_chainedInvokeDetailsHasBeenSet = false;
 };
 

@@ -99,12 +99,12 @@ class LensMetric {
   ///@}
  private:
   Aws::String m_lensArn;
-  bool m_lensArnHasBeenSet = false;
 
   Aws::Vector<PillarMetric> m_pillars;
-  bool m_pillarsHasBeenSet = false;
 
   Aws::Map<Risk, int> m_riskCounts;
+  bool m_lensArnHasBeenSet = false;
+  bool m_pillarsHasBeenSet = false;
   bool m_riskCountsHasBeenSet = false;
 };
 

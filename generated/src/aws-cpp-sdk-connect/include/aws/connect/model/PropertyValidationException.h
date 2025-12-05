@@ -72,9 +72,9 @@ class PropertyValidationException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Vector<PropertyValidationExceptionProperty> m_propertyList;
+  bool m_messageHasBeenSet = false;
   bool m_propertyListHasBeenSet = false;
 };
 

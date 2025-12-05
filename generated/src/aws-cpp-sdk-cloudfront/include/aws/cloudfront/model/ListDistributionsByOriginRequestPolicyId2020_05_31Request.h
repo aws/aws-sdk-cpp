@@ -93,12 +93,12 @@ class ListDistributionsByOriginRequestPolicyId2020_05_31Request : public CloudFr
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_maxItems;
-  bool m_maxItemsHasBeenSet = false;
 
   Aws::String m_originRequestPolicyId;
+  bool m_markerHasBeenSet = false;
+  bool m_maxItemsHasBeenSet = false;
   bool m_originRequestPolicyIdHasBeenSet = false;
 };
 

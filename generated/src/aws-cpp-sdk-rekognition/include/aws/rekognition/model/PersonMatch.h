@@ -99,12 +99,12 @@ class PersonMatch {
   ///@}
  private:
   long long m_timestamp{0};
-  bool m_timestampHasBeenSet = false;
 
   PersonDetail m_person;
-  bool m_personHasBeenSet = false;
 
   Aws::Vector<FaceMatch> m_faceMatches;
+  bool m_timestampHasBeenSet = false;
+  bool m_personHasBeenSet = false;
   bool m_faceMatchesHasBeenSet = false;
 };
 

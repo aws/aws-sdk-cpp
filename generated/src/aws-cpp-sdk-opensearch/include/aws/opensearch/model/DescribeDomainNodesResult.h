@@ -75,9 +75,9 @@ class DescribeDomainNodesResult {
   ///@}
  private:
   Aws::Vector<DomainNodesStatus> m_domainNodesStatusList;
-  bool m_domainNodesStatusListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainNodesStatusListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

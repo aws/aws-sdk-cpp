@@ -69,9 +69,9 @@ class UpdateBackendAuthMFAConfig {
   ///@}
  private:
   MFAMode m_mFAMode{MFAMode::NOT_SET};
-  bool m_mFAModeHasBeenSet = false;
 
   Settings m_settings;
+  bool m_mFAModeHasBeenSet = false;
   bool m_settingsHasBeenSet = false;
 };
 

@@ -258,30 +258,30 @@ class Rule {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   Statement m_statement;
-  bool m_statementHasBeenSet = false;
 
   RuleAction m_action;
-  bool m_actionHasBeenSet = false;
 
   OverrideAction m_overrideAction;
-  bool m_overrideActionHasBeenSet = false;
 
   Aws::Vector<Label> m_ruleLabels;
-  bool m_ruleLabelsHasBeenSet = false;
 
   VisibilityConfig m_visibilityConfig;
-  bool m_visibilityConfigHasBeenSet = false;
 
   CaptchaConfig m_captchaConfig;
-  bool m_captchaConfigHasBeenSet = false;
 
   ChallengeConfig m_challengeConfig;
+  bool m_nameHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_statementHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_overrideActionHasBeenSet = false;
+  bool m_ruleLabelsHasBeenSet = false;
+  bool m_visibilityConfigHasBeenSet = false;
+  bool m_captchaConfigHasBeenSet = false;
   bool m_challengeConfigHasBeenSet = false;
 };
 

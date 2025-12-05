@@ -70,9 +70,9 @@ class StopPipelineExecutionRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_pipelineExecutionArn;
-  bool m_pipelineExecutionArnHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_pipelineExecutionArnHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
 };
 

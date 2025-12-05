@@ -59,9 +59,9 @@ class PutProfileObjectResult {
   ///@}
  private:
   Aws::String m_profileObjectUniqueKey;
-  bool m_profileObjectUniqueKeyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_profileObjectUniqueKeyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

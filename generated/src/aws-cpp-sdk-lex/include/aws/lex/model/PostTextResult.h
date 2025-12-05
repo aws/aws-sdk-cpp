@@ -385,48 +385,48 @@ class PostTextResult {
   ///@}
  private:
   Aws::String m_intentName;
-  bool m_intentNameHasBeenSet = false;
 
   IntentConfidence m_nluIntentConfidence;
-  bool m_nluIntentConfidenceHasBeenSet = false;
 
   Aws::Vector<PredictedIntent> m_alternativeIntents;
-  bool m_alternativeIntentsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_slots;
-  bool m_slotsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_sessionAttributes;
-  bool m_sessionAttributesHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   SentimentResponse m_sentimentResponse;
-  bool m_sentimentResponseHasBeenSet = false;
 
   MessageFormatType m_messageFormat{MessageFormatType::NOT_SET};
-  bool m_messageFormatHasBeenSet = false;
 
   DialogState m_dialogState{DialogState::NOT_SET};
-  bool m_dialogStateHasBeenSet = false;
 
   Aws::String m_slotToElicit;
-  bool m_slotToElicitHasBeenSet = false;
 
   ResponseCard m_responseCard;
-  bool m_responseCardHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_botVersion;
-  bool m_botVersionHasBeenSet = false;
 
   Aws::Vector<ActiveContext> m_activeContexts;
-  bool m_activeContextsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_intentNameHasBeenSet = false;
+  bool m_nluIntentConfidenceHasBeenSet = false;
+  bool m_alternativeIntentsHasBeenSet = false;
+  bool m_slotsHasBeenSet = false;
+  bool m_sessionAttributesHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_sentimentResponseHasBeenSet = false;
+  bool m_messageFormatHasBeenSet = false;
+  bool m_dialogStateHasBeenSet = false;
+  bool m_slotToElicitHasBeenSet = false;
+  bool m_responseCardHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_botVersionHasBeenSet = false;
+  bool m_activeContextsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

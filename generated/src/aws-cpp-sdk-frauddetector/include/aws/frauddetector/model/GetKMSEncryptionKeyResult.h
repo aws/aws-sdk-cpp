@@ -60,9 +60,9 @@ class GetKMSEncryptionKeyResult {
   ///@}
  private:
   KMSKey m_kmsKey;
-  bool m_kmsKeyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_kmsKeyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

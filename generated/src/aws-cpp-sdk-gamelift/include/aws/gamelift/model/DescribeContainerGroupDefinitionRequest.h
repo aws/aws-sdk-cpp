@@ -67,9 +67,9 @@ class DescribeContainerGroupDefinitionRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_versionNumber{0};
+  bool m_nameHasBeenSet = false;
   bool m_versionNumberHasBeenSet = false;
 };
 

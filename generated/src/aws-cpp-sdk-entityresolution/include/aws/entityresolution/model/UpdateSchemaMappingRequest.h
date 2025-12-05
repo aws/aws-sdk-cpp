@@ -94,12 +94,12 @@ class UpdateSchemaMappingRequest : public EntityResolutionRequest {
   ///@}
  private:
   Aws::String m_schemaName;
-  bool m_schemaNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<SchemaInputAttribute> m_mappedInputFields;
+  bool m_schemaNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_mappedInputFieldsHasBeenSet = false;
 };
 

@@ -66,9 +66,9 @@ class LockRuleRequest : public RecycleBinRequest {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   LockConfiguration m_lockConfiguration;
+  bool m_identifierHasBeenSet = false;
   bool m_lockConfigurationHasBeenSet = false;
 };
 

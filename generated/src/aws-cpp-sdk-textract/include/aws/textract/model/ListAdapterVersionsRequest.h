@@ -126,18 +126,18 @@ class ListAdapterVersionsRequest : public TextractRequest {
   ///@}
  private:
   Aws::String m_adapterId;
-  bool m_adapterIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_afterCreationTime{};
-  bool m_afterCreationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_beforeCreationTime{};
-  bool m_beforeCreationTimeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_adapterIdHasBeenSet = false;
+  bool m_afterCreationTimeHasBeenSet = false;
+  bool m_beforeCreationTimeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

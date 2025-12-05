@@ -145,21 +145,21 @@ class AuthParameter {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   bool m_isRequired{false};
-  bool m_isRequiredHasBeenSet = false;
 
   Aws::String m_label;
-  bool m_labelHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_isSensitiveField{false};
-  bool m_isSensitiveFieldHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_connectorSuppliedValues;
+  bool m_keyHasBeenSet = false;
+  bool m_isRequiredHasBeenSet = false;
+  bool m_labelHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_isSensitiveFieldHasBeenSet = false;
   bool m_connectorSuppliedValuesHasBeenSet = false;
 };
 

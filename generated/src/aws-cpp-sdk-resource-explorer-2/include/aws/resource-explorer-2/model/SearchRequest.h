@@ -129,15 +129,15 @@ class SearchRequest : public ResourceExplorer2Request {
   ///@}
  private:
   Aws::String m_queryString;
-  bool m_queryStringHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_viewArn;
-  bool m_viewArnHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_queryStringHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_viewArnHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

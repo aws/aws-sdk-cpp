@@ -75,9 +75,9 @@ class AzElSegmentsData {
   ///@}
  private:
   S3Object m_s3Object;
-  bool m_s3ObjectHasBeenSet = false;
 
   AzElSegments m_azElData;
+  bool m_s3ObjectHasBeenSet = false;
   bool m_azElDataHasBeenSet = false;
 };
 

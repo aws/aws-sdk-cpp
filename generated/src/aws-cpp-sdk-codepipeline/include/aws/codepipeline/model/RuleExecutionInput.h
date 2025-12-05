@@ -172,21 +172,21 @@ class RuleExecutionInput {
   ///@}
  private:
   RuleTypeId m_ruleTypeId;
-  bool m_ruleTypeIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_resolvedConfiguration;
-  bool m_resolvedConfigurationHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::Vector<ArtifactDetail> m_inputArtifacts;
+  bool m_ruleTypeIdHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_resolvedConfigurationHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
   bool m_inputArtifactsHasBeenSet = false;
 };
 

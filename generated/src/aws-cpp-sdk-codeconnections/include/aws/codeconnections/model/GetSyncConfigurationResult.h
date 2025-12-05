@@ -61,9 +61,9 @@ class GetSyncConfigurationResult {
   ///@}
  private:
   SyncConfiguration m_syncConfiguration;
-  bool m_syncConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_syncConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

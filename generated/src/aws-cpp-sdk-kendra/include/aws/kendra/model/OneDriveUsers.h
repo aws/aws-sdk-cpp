@@ -82,9 +82,9 @@ class OneDriveUsers {
   ///@}
  private:
   Aws::Vector<Aws::String> m_oneDriveUserList;
-  bool m_oneDriveUserListHasBeenSet = false;
 
   S3Path m_oneDriveUserS3Path;
+  bool m_oneDriveUserListHasBeenSet = false;
   bool m_oneDriveUserS3PathHasBeenSet = false;
 };
 

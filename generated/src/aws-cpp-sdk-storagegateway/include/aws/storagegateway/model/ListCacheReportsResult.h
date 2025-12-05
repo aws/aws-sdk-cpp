@@ -88,12 +88,12 @@ class ListCacheReportsResult {
   ///@}
  private:
   Aws::Vector<CacheReportInfo> m_cacheReportList;
-  bool m_cacheReportListHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_cacheReportListHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

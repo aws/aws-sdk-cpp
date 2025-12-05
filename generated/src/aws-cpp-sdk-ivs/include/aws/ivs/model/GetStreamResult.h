@@ -60,9 +60,9 @@ class GetStreamResult {
   ///@}
  private:
   Stream m_stream;
-  bool m_streamHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_streamHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

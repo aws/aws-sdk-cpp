@@ -91,12 +91,12 @@ class LiveResourceDrift {
   ///@}
  private:
   Aws::String m_previousValue;
-  bool m_previousValueHasBeenSet = false;
 
   Aws::String m_actualValue;
-  bool m_actualValueHasBeenSet = false;
 
   Aws::Utils::DateTime m_driftDetectionTimestamp{};
+  bool m_previousValueHasBeenSet = false;
+  bool m_actualValueHasBeenSet = false;
   bool m_driftDetectionTimestampHasBeenSet = false;
 };
 

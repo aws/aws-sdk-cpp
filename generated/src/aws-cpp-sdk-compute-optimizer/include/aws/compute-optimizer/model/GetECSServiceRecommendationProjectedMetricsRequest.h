@@ -122,18 +122,18 @@ class GetECSServiceRecommendationProjectedMetricsRequest : public ComputeOptimiz
   ///@}
  private:
   Aws::String m_serviceArn;
-  bool m_serviceArnHasBeenSet = false;
 
   MetricStatistic m_stat{MetricStatistic::NOT_SET};
-  bool m_statHasBeenSet = false;
 
   int m_period{0};
-  bool m_periodHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
+  bool m_serviceArnHasBeenSet = false;
+  bool m_statHasBeenSet = false;
+  bool m_periodHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
 };
 

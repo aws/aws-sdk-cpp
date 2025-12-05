@@ -89,12 +89,12 @@ class LocalVolumeResourceData {
   ///@}
  private:
   Aws::String m_destinationPath;
-  bool m_destinationPathHasBeenSet = false;
 
   GroupOwnerSetting m_groupOwnerSetting;
-  bool m_groupOwnerSettingHasBeenSet = false;
 
   Aws::String m_sourcePath;
+  bool m_destinationPathHasBeenSet = false;
+  bool m_groupOwnerSettingHasBeenSet = false;
   bool m_sourcePathHasBeenSet = false;
 };
 

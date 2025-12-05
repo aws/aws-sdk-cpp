@@ -65,9 +65,9 @@ class ConversationState {
   ///@}
  private:
   ConversationStatus m_status{ConversationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ConversationStatusReason m_reason{ConversationStatusReason::NOT_SET};
+  bool m_statusHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

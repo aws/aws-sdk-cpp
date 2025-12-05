@@ -125,18 +125,18 @@ class GetEc2DeepInspectionConfigurationResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_packagePaths;
-  bool m_packagePathsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_orgPackagePaths;
-  bool m_orgPackagePathsHasBeenSet = false;
 
   Ec2DeepInspectionStatus m_status{Ec2DeepInspectionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_packagePathsHasBeenSet = false;
+  bool m_orgPackagePathsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

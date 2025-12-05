@@ -177,24 +177,24 @@ class VpcPeeringConnectionVpcInfo {
   ///@}
  private:
   Aws::String m_cidrBlock;
-  bool m_cidrBlockHasBeenSet = false;
 
   Aws::Vector<Ipv6CidrBlock> m_ipv6CidrBlockSet;
-  bool m_ipv6CidrBlockSetHasBeenSet = false;
 
   Aws::Vector<CidrBlock> m_cidrBlockSet;
-  bool m_cidrBlockSetHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   VpcPeeringConnectionOptionsDescription m_peeringOptions;
-  bool m_peeringOptionsHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_region;
+  bool m_cidrBlockHasBeenSet = false;
+  bool m_ipv6CidrBlockSetHasBeenSet = false;
+  bool m_cidrBlockSetHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_peeringOptionsHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
   bool m_regionHasBeenSet = false;
 };
 

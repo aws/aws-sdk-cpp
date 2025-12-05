@@ -82,12 +82,12 @@ class DescribeFieldIndexesResult {
   ///@}
  private:
   Aws::Vector<FieldIndex> m_fieldIndexes;
-  bool m_fieldIndexesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fieldIndexesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

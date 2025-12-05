@@ -108,15 +108,15 @@ class GetBuiltinIntentResult {
   ///@}
  private:
   Aws::String m_signature;
-  bool m_signatureHasBeenSet = false;
 
   Aws::Vector<Locale> m_supportedLocales;
-  bool m_supportedLocalesHasBeenSet = false;
 
   Aws::Vector<BuiltinIntentSlot> m_slots;
-  bool m_slotsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_signatureHasBeenSet = false;
+  bool m_supportedLocalesHasBeenSet = false;
+  bool m_slotsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

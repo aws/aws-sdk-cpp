@@ -84,12 +84,12 @@ class GetFreeTierUsageResult {
   ///@}
  private:
   Aws::Vector<FreeTierUsage> m_freeTierUsages;
-  bool m_freeTierUsagesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_freeTierUsagesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -120,15 +120,15 @@ class Prediction {
   ///@}
  private:
   Aws::String m_predictedLabel;
-  bool m_predictedLabelHasBeenSet = false;
 
   double m_predictedValue{0.0};
-  bool m_predictedValueHasBeenSet = false;
 
   Aws::Map<Aws::String, double> m_predictedScores;
-  bool m_predictedScoresHasBeenSet = false;
 
   Aws::Map<DetailsAttributes, Aws::String> m_details;
+  bool m_predictedLabelHasBeenSet = false;
+  bool m_predictedValueHasBeenSet = false;
+  bool m_predictedScoresHasBeenSet = false;
   bool m_detailsHasBeenSet = false;
 };
 

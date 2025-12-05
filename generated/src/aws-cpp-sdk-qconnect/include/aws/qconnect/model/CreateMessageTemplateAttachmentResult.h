@@ -60,9 +60,9 @@ class CreateMessageTemplateAttachmentResult {
   ///@}
  private:
   MessageTemplateAttachment m_attachment;
-  bool m_attachmentHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_attachmentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

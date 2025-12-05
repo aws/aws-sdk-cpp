@@ -589,90 +589,90 @@ class DirectoryDescription {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_shortName;
-  bool m_shortNameHasBeenSet = false;
 
   DirectorySize m_size{DirectorySize::NOT_SET};
-  bool m_sizeHasBeenSet = false;
 
   DirectoryEdition m_edition{DirectoryEdition::NOT_SET};
-  bool m_editionHasBeenSet = false;
 
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   Aws::String m_accessUrl;
-  bool m_accessUrlHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dnsIpAddrs;
-  bool m_dnsIpAddrsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dnsIpv6Addrs;
-  bool m_dnsIpv6AddrsHasBeenSet = false;
 
   DirectoryStage m_stage{DirectoryStage::NOT_SET};
-  bool m_stageHasBeenSet = false;
 
   ShareStatus m_shareStatus{ShareStatus::NOT_SET};
-  bool m_shareStatusHasBeenSet = false;
 
   ShareMethod m_shareMethod{ShareMethod::NOT_SET};
-  bool m_shareMethodHasBeenSet = false;
 
   Aws::String m_shareNotes;
-  bool m_shareNotesHasBeenSet = false;
 
   Aws::Utils::DateTime m_launchTime{};
-  bool m_launchTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_stageLastUpdatedDateTime{};
-  bool m_stageLastUpdatedDateTimeHasBeenSet = false;
 
   DirectoryType m_type{DirectoryType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   DirectoryVpcSettingsDescription m_vpcSettings;
-  bool m_vpcSettingsHasBeenSet = false;
 
   DirectoryConnectSettingsDescription m_connectSettings;
-  bool m_connectSettingsHasBeenSet = false;
 
   RadiusSettings m_radiusSettings;
-  bool m_radiusSettingsHasBeenSet = false;
 
   RadiusStatus m_radiusStatus{RadiusStatus::NOT_SET};
-  bool m_radiusStatusHasBeenSet = false;
 
   Aws::String m_stageReason;
-  bool m_stageReasonHasBeenSet = false;
 
   bool m_ssoEnabled{false};
-  bool m_ssoEnabledHasBeenSet = false;
 
   int m_desiredNumberOfDomainControllers{0};
-  bool m_desiredNumberOfDomainControllersHasBeenSet = false;
 
   OwnerDirectoryDescription m_ownerDirectoryDescription;
-  bool m_ownerDirectoryDescriptionHasBeenSet = false;
 
   RegionsInfo m_regionsInfo;
-  bool m_regionsInfoHasBeenSet = false;
 
   OSVersion m_osVersion{OSVersion::NOT_SET};
-  bool m_osVersionHasBeenSet = false;
 
   HybridSettingsDescription m_hybridSettings;
-  bool m_hybridSettingsHasBeenSet = false;
 
   NetworkType m_networkType{NetworkType::NOT_SET};
+  bool m_directoryIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_shortNameHasBeenSet = false;
+  bool m_sizeHasBeenSet = false;
+  bool m_editionHasBeenSet = false;
+  bool m_aliasHasBeenSet = false;
+  bool m_accessUrlHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_dnsIpAddrsHasBeenSet = false;
+  bool m_dnsIpv6AddrsHasBeenSet = false;
+  bool m_stageHasBeenSet = false;
+  bool m_shareStatusHasBeenSet = false;
+  bool m_shareMethodHasBeenSet = false;
+  bool m_shareNotesHasBeenSet = false;
+  bool m_launchTimeHasBeenSet = false;
+  bool m_stageLastUpdatedDateTimeHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_vpcSettingsHasBeenSet = false;
+  bool m_connectSettingsHasBeenSet = false;
+  bool m_radiusSettingsHasBeenSet = false;
+  bool m_radiusStatusHasBeenSet = false;
+  bool m_stageReasonHasBeenSet = false;
+  bool m_ssoEnabledHasBeenSet = false;
+  bool m_desiredNumberOfDomainControllersHasBeenSet = false;
+  bool m_ownerDirectoryDescriptionHasBeenSet = false;
+  bool m_regionsInfoHasBeenSet = false;
+  bool m_osVersionHasBeenSet = false;
+  bool m_hybridSettingsHasBeenSet = false;
   bool m_networkTypeHasBeenSet = false;
 };
 

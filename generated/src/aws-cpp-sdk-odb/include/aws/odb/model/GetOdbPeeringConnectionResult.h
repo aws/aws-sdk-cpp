@@ -58,9 +58,9 @@ class GetOdbPeeringConnectionResult {
   ///@}
  private:
   OdbPeeringConnection m_odbPeeringConnection;
-  bool m_odbPeeringConnectionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_odbPeeringConnectionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

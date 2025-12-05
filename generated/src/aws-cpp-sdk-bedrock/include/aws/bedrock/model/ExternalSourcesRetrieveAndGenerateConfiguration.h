@@ -100,12 +100,12 @@ class ExternalSourcesRetrieveAndGenerateConfiguration {
   ///@}
  private:
   Aws::String m_modelArn;
-  bool m_modelArnHasBeenSet = false;
 
   Aws::Vector<ExternalSource> m_sources;
-  bool m_sourcesHasBeenSet = false;
 
   ExternalSourcesGenerationConfiguration m_generationConfiguration;
+  bool m_modelArnHasBeenSet = false;
+  bool m_sourcesHasBeenSet = false;
   bool m_generationConfigurationHasBeenSet = false;
 };
 

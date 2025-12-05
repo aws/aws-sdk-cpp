@@ -228,24 +228,24 @@ class GetComplianceSummaryRequest : public ResourceGroupsTaggingAPIRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_targetIdFilters;
-  bool m_targetIdFiltersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_regionFilters;
-  bool m_regionFiltersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceTypeFilters;
-  bool m_resourceTypeFiltersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagKeyFilters;
-  bool m_tagKeyFiltersHasBeenSet = false;
 
   Aws::Vector<GroupByAttribute> m_groupBy;
-  bool m_groupByHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_paginationToken;
+  bool m_targetIdFiltersHasBeenSet = false;
+  bool m_regionFiltersHasBeenSet = false;
+  bool m_resourceTypeFiltersHasBeenSet = false;
+  bool m_tagKeyFiltersHasBeenSet = false;
+  bool m_groupByHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_paginationTokenHasBeenSet = false;
 };
 

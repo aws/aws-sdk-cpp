@@ -87,12 +87,12 @@ class MalformedConditionExpressionFlowValidationDetails {
   ///@}
  private:
   Aws::String m_node;
-  bool m_nodeHasBeenSet = false;
 
   Aws::String m_condition;
-  bool m_conditionHasBeenSet = false;
 
   Aws::String m_cause;
+  bool m_nodeHasBeenSet = false;
+  bool m_conditionHasBeenSet = false;
   bool m_causeHasBeenSet = false;
 };
 

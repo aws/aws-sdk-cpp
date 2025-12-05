@@ -103,15 +103,15 @@ class ListSyncConfigurationsRequest : public CodeConnectionsRequest {
   ///@}
  private:
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_repositoryLinkId;
-  bool m_repositoryLinkIdHasBeenSet = false;
 
   SyncConfigurationType m_syncType{SyncConfigurationType::NOT_SET};
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_repositoryLinkIdHasBeenSet = false;
   bool m_syncTypeHasBeenSet = false;
 };
 

@@ -63,9 +63,9 @@ class GetMonitoringSubscription2020_05_31Result {
   ///@}
  private:
   MonitoringSubscription m_monitoringSubscription;
-  bool m_monitoringSubscriptionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_monitoringSubscriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

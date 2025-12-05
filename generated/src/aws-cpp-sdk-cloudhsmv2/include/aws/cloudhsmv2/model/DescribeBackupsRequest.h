@@ -147,18 +147,18 @@ class DescribeBackupsRequest : public CloudHSMV2Request {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   bool m_shared{false};
-  bool m_sharedHasBeenSet = false;
 
   bool m_sortAscending{false};
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_sharedHasBeenSet = false;
   bool m_sortAscendingHasBeenSet = false;
 };
 

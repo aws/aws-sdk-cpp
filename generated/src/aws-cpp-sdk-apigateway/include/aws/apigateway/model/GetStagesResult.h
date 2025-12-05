@@ -73,9 +73,9 @@ class GetStagesResult {
   ///@}
  private:
   Aws::Vector<Stage> m_item;
-  bool m_itemHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_itemHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

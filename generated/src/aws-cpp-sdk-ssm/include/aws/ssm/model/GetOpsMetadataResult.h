@@ -102,15 +102,15 @@ class GetOpsMetadataResult {
   ///@}
  private:
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::Map<Aws::String, MetadataValue> m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

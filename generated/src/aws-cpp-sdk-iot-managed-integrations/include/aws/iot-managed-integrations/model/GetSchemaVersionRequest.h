@@ -87,12 +87,12 @@ class GetSchemaVersionRequest : public IoTManagedIntegrationsRequest {
   ///@}
  private:
   SchemaVersionType m_type{SchemaVersionType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_schemaVersionedId;
-  bool m_schemaVersionedIdHasBeenSet = false;
 
   SchemaVersionFormat m_format{SchemaVersionFormat::NOT_SET};
+  bool m_typeHasBeenSet = false;
+  bool m_schemaVersionedIdHasBeenSet = false;
   bool m_formatHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class VideoMonitoringSetting {
   ///@}
  private:
   BlackFrames m_blackFrames;
-  bool m_blackFramesHasBeenSet = false;
 
   FrozenFrames m_frozenFrames;
+  bool m_blackFramesHasBeenSet = false;
   bool m_frozenFramesHasBeenSet = false;
 };
 

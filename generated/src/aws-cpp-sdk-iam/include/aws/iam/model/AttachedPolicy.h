@@ -81,9 +81,9 @@ class AttachedPolicy {
   ///@}
  private:
   Aws::String m_policyName;
-  bool m_policyNameHasBeenSet = false;
 
   Aws::String m_policyArn;
+  bool m_policyNameHasBeenSet = false;
   bool m_policyArnHasBeenSet = false;
 };
 

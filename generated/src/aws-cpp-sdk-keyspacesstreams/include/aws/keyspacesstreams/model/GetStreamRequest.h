@@ -110,15 +110,15 @@ class GetStreamRequest : public KeyspacesStreamsRequest {
   ///@}
  private:
   Aws::String m_streamArn;
-  bool m_streamArnHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   ShardFilter m_shardFilter;
-  bool m_shardFilterHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_streamArnHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_shardFilterHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

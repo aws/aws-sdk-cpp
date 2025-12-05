@@ -205,24 +205,24 @@ class CreateMLModelRequest : public MachineLearningRequest {
   ///@}
  private:
   Aws::String m_mLModelId;
-  bool m_mLModelIdHasBeenSet = false;
 
   Aws::String m_mLModelName;
-  bool m_mLModelNameHasBeenSet = false;
 
   MLModelType m_mLModelType{MLModelType::NOT_SET};
-  bool m_mLModelTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::String m_trainingDataSourceId;
-  bool m_trainingDataSourceIdHasBeenSet = false;
 
   Aws::String m_recipe;
-  bool m_recipeHasBeenSet = false;
 
   Aws::String m_recipeUri;
+  bool m_mLModelIdHasBeenSet = false;
+  bool m_mLModelNameHasBeenSet = false;
+  bool m_mLModelTypeHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_trainingDataSourceIdHasBeenSet = false;
+  bool m_recipeHasBeenSet = false;
   bool m_recipeUriHasBeenSet = false;
 };
 

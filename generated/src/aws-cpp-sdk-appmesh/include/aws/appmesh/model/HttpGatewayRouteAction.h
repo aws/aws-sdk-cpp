@@ -71,9 +71,9 @@ class HttpGatewayRouteAction {
   ///@}
  private:
   HttpGatewayRouteRewrite m_rewrite;
-  bool m_rewriteHasBeenSet = false;
 
   GatewayRouteTarget m_target;
+  bool m_rewriteHasBeenSet = false;
   bool m_targetHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class CustomPluginConfiguration {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   APISchemaType m_apiSchemaType{APISchemaType::NOT_SET};
-  bool m_apiSchemaTypeHasBeenSet = false;
 
   APISchema m_apiSchema;
+  bool m_descriptionHasBeenSet = false;
+  bool m_apiSchemaTypeHasBeenSet = false;
   bool m_apiSchemaHasBeenSet = false;
 };
 

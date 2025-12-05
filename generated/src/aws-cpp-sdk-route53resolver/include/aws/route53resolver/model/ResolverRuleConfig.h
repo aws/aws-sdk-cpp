@@ -100,12 +100,12 @@ class ResolverRuleConfig {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<TargetAddress> m_targetIps;
-  bool m_targetIpsHasBeenSet = false;
 
   Aws::String m_resolverEndpointId;
+  bool m_nameHasBeenSet = false;
+  bool m_targetIpsHasBeenSet = false;
   bool m_resolverEndpointIdHasBeenSet = false;
 };
 

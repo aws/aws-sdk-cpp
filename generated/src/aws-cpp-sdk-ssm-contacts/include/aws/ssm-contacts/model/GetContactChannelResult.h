@@ -146,24 +146,24 @@ class GetContactChannelResult {
   ///@}
  private:
   Aws::String m_contactArn;
-  bool m_contactArnHasBeenSet = false;
 
   Aws::String m_contactChannelArn;
-  bool m_contactChannelArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ChannelType m_type{ChannelType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   ContactChannelAddress m_deliveryAddress;
-  bool m_deliveryAddressHasBeenSet = false;
 
   ActivationStatus m_activationStatus{ActivationStatus::NOT_SET};
-  bool m_activationStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_contactArnHasBeenSet = false;
+  bool m_contactChannelArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_deliveryAddressHasBeenSet = false;
+  bool m_activationStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

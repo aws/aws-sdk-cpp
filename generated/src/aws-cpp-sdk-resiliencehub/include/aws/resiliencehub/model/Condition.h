@@ -87,12 +87,12 @@ class Condition {
   ///@}
  private:
   Aws::String m_field;
-  bool m_fieldHasBeenSet = false;
 
   ConditionOperatorType m_operator{ConditionOperatorType::NOT_SET};
-  bool m_operatorHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_fieldHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

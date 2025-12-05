@@ -60,9 +60,9 @@ class DescribeDeliveryStreamResult {
   ///@}
  private:
   DeliveryStreamDescription m_deliveryStreamDescription;
-  bool m_deliveryStreamDescriptionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deliveryStreamDescriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

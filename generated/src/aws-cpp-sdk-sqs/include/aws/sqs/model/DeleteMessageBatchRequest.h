@@ -79,9 +79,9 @@ class DeleteMessageBatchRequest : public SQSRequest {
   ///@}
  private:
   Aws::String m_queueUrl;
-  bool m_queueUrlHasBeenSet = false;
 
   Aws::Vector<DeleteMessageBatchRequestEntry> m_entries;
+  bool m_queueUrlHasBeenSet = false;
   bool m_entriesHasBeenSet = false;
 };
 

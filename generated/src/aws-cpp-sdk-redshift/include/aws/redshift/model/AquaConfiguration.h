@@ -71,9 +71,9 @@ class AquaConfiguration {
   ///@}
  private:
   AquaStatus m_aquaStatus{AquaStatus::NOT_SET};
-  bool m_aquaStatusHasBeenSet = false;
 
   AquaConfigurationStatus m_aquaConfigurationStatus{AquaConfigurationStatus::NOT_SET};
+  bool m_aquaStatusHasBeenSet = false;
   bool m_aquaConfigurationStatusHasBeenSet = false;
 };
 

@@ -92,12 +92,12 @@ class ListDomainMaintenancesResult {
   ///@}
  private:
   Aws::Vector<DomainMaintenanceDetails> m_domainMaintenances;
-  bool m_domainMaintenancesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainMaintenancesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -120,15 +120,15 @@ class DeleteFirewallRuleRequest : public Route53ResolverRequest {
   ///@}
  private:
   Aws::String m_firewallRuleGroupId;
-  bool m_firewallRuleGroupIdHasBeenSet = false;
 
   Aws::String m_firewallDomainListId;
-  bool m_firewallDomainListIdHasBeenSet = false;
 
   Aws::String m_firewallThreatProtectionId;
-  bool m_firewallThreatProtectionIdHasBeenSet = false;
 
   Aws::String m_qtype;
+  bool m_firewallRuleGroupIdHasBeenSet = false;
+  bool m_firewallDomainListIdHasBeenSet = false;
+  bool m_firewallThreatProtectionIdHasBeenSet = false;
   bool m_qtypeHasBeenSet = false;
 };
 

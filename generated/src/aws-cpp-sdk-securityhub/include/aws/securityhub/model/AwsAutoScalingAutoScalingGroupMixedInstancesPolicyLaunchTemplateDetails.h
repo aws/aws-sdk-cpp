@@ -86,9 +86,9 @@ class AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails {
   ///@}
  private:
   AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification m_launchTemplateSpecification;
-  bool m_launchTemplateSpecificationHasBeenSet = false;
 
   Aws::Vector<AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails> m_overrides;
+  bool m_launchTemplateSpecificationHasBeenSet = false;
   bool m_overridesHasBeenSet = false;
 };
 

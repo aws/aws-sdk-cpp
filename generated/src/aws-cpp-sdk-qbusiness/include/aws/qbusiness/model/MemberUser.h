@@ -67,9 +67,9 @@ class MemberUser {
   ///@}
  private:
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   MembershipType m_type{MembershipType::NOT_SET};
+  bool m_userIdHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

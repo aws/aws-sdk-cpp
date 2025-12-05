@@ -140,21 +140,21 @@ class UpdateComputeQuotaRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_computeQuotaId;
-  bool m_computeQuotaIdHasBeenSet = false;
 
   int m_targetVersion{0};
-  bool m_targetVersionHasBeenSet = false;
 
   ComputeQuotaConfig m_computeQuotaConfig;
-  bool m_computeQuotaConfigHasBeenSet = false;
 
   ComputeQuotaTarget m_computeQuotaTarget;
-  bool m_computeQuotaTargetHasBeenSet = false;
 
   ActivationState m_activationState{ActivationState::NOT_SET};
-  bool m_activationStateHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_computeQuotaIdHasBeenSet = false;
+  bool m_targetVersionHasBeenSet = false;
+  bool m_computeQuotaConfigHasBeenSet = false;
+  bool m_computeQuotaTargetHasBeenSet = false;
+  bool m_activationStateHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

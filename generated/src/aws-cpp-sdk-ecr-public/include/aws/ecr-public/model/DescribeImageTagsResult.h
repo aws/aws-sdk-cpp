@@ -88,12 +88,12 @@ class DescribeImageTagsResult {
   ///@}
  private:
   Aws::Vector<ImageTagDetail> m_imageTagDetails;
-  bool m_imageTagDetailsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_imageTagDetailsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

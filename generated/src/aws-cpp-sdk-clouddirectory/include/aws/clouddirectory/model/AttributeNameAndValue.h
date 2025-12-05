@@ -70,9 +70,9 @@ class AttributeNameAndValue {
   ///@}
  private:
   Aws::String m_attributeName;
-  bool m_attributeNameHasBeenSet = false;
 
   TypedAttributeValue m_value;
+  bool m_attributeNameHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

@@ -59,9 +59,9 @@ class GetFileUploadURLResult {
   ///@}
  private:
   Aws::String m_fileUploadURL;
-  bool m_fileUploadURLHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fileUploadURLHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

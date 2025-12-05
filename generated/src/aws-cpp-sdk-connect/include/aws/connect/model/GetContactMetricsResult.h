@@ -103,15 +103,15 @@ class GetContactMetricsResult {
   ///@}
  private:
   Aws::Vector<ContactMetricResult> m_metricResults;
-  bool m_metricResultsHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_metricResultsHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

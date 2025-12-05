@@ -68,9 +68,9 @@ class FreeFormLayoutElementBackgroundStyle {
   ///@}
  private:
   Visibility m_visibility{Visibility::NOT_SET};
-  bool m_visibilityHasBeenSet = false;
 
   Aws::String m_color;
+  bool m_visibilityHasBeenSet = false;
   bool m_colorHasBeenSet = false;
 };
 

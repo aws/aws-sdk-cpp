@@ -67,9 +67,9 @@ class GroupDefinition {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   GroupDefinitionType m_type{GroupDefinitionType::NOT_SET};
+  bool m_keyHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

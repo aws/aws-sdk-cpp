@@ -60,9 +60,9 @@ class PutAccountPolicyResult {
   ///@}
  private:
   AccountPolicy m_accountPolicy;
-  bool m_accountPolicyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountPolicyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -261,39 +261,39 @@ class RouteAvoidanceOptions {
   ///@}
  private:
   Aws::Vector<RouteAvoidanceArea> m_areas;
-  bool m_areasHasBeenSet = false;
 
   bool m_carShuttleTrains{false};
-  bool m_carShuttleTrainsHasBeenSet = false;
 
   bool m_controlledAccessHighways{false};
-  bool m_controlledAccessHighwaysHasBeenSet = false;
 
   bool m_dirtRoads{false};
-  bool m_dirtRoadsHasBeenSet = false;
 
   bool m_ferries{false};
-  bool m_ferriesHasBeenSet = false;
 
   bool m_seasonalClosure{false};
-  bool m_seasonalClosureHasBeenSet = false;
 
   bool m_tollRoads{false};
-  bool m_tollRoadsHasBeenSet = false;
 
   bool m_tollTransponders{false};
-  bool m_tollTranspondersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_truckRoadTypes;
-  bool m_truckRoadTypesHasBeenSet = false;
 
   bool m_tunnels{false};
-  bool m_tunnelsHasBeenSet = false;
 
   bool m_uTurns{false};
-  bool m_uTurnsHasBeenSet = false;
 
   Aws::Vector<RouteAvoidanceZoneCategory> m_zoneCategories;
+  bool m_areasHasBeenSet = false;
+  bool m_carShuttleTrainsHasBeenSet = false;
+  bool m_controlledAccessHighwaysHasBeenSet = false;
+  bool m_dirtRoadsHasBeenSet = false;
+  bool m_ferriesHasBeenSet = false;
+  bool m_seasonalClosureHasBeenSet = false;
+  bool m_tollRoadsHasBeenSet = false;
+  bool m_tollTranspondersHasBeenSet = false;
+  bool m_truckRoadTypesHasBeenSet = false;
+  bool m_tunnelsHasBeenSet = false;
+  bool m_uTurnsHasBeenSet = false;
   bool m_zoneCategoriesHasBeenSet = false;
 };
 

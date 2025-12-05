@@ -85,9 +85,9 @@ class DataSourceVpcConfiguration {
   ///@}
  private:
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
+  bool m_subnetIdsHasBeenSet = false;
   bool m_securityGroupIdsHasBeenSet = false;
 };
 

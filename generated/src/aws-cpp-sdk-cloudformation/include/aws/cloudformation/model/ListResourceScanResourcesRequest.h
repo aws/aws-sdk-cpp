@@ -165,24 +165,24 @@ class ListResourceScanResourcesRequest : public CloudFormationRequest {
   ///@}
  private:
   Aws::String m_resourceScanId;
-  bool m_resourceScanIdHasBeenSet = false;
 
   Aws::String m_resourceIdentifier;
-  bool m_resourceIdentifierHasBeenSet = false;
 
   Aws::String m_resourceTypePrefix;
-  bool m_resourceTypePrefixHasBeenSet = false;
 
   Aws::String m_tagKey;
-  bool m_tagKeyHasBeenSet = false;
 
   Aws::String m_tagValue;
-  bool m_tagValueHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_resourceScanIdHasBeenSet = false;
+  bool m_resourceIdentifierHasBeenSet = false;
+  bool m_resourceTypePrefixHasBeenSet = false;
+  bool m_tagKeyHasBeenSet = false;
+  bool m_tagValueHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

@@ -151,24 +151,24 @@ class GetExecutionFlowSnapshotResult {
   ///@}
  private:
   Aws::String m_customerEncryptionKeyArn;
-  bool m_customerEncryptionKeyArnHasBeenSet = false;
 
   Aws::String m_definition;
-  bool m_definitionHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   Aws::String m_flowAliasIdentifier;
-  bool m_flowAliasIdentifierHasBeenSet = false;
 
   Aws::String m_flowIdentifier;
-  bool m_flowIdentifierHasBeenSet = false;
 
   Aws::String m_flowVersion;
-  bool m_flowVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_customerEncryptionKeyArnHasBeenSet = false;
+  bool m_definitionHasBeenSet = false;
+  bool m_executionRoleArnHasBeenSet = false;
+  bool m_flowAliasIdentifierHasBeenSet = false;
+  bool m_flowIdentifierHasBeenSet = false;
+  bool m_flowVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

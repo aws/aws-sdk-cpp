@@ -108,12 +108,12 @@ class ScopeDetails {
   ///@}
  private:
   Aws::Vector<LakeFormationTagPolicyDetails> m_lakeFormationTagPolicies;
-  bool m_lakeFormationTagPoliciesHasBeenSet = false;
 
   Aws::Vector<RedshiftDataShareDetails> m_redshiftDataShares;
-  bool m_redshiftDataSharesHasBeenSet = false;
 
   Aws::Vector<S3DataAccessDetails> m_s3DataAccesses;
+  bool m_lakeFormationTagPoliciesHasBeenSet = false;
+  bool m_redshiftDataSharesHasBeenSet = false;
   bool m_s3DataAccessesHasBeenSet = false;
 };
 

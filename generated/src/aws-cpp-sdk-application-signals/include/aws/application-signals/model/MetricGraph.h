@@ -99,12 +99,12 @@ class MetricGraph {
   ///@}
  private:
   Aws::Vector<MetricDataQuery> m_metricDataQueries;
-  bool m_metricDataQueriesHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
+  bool m_metricDataQueriesHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
 };
 

@@ -145,21 +145,21 @@ class S3ReportExportConfig {
   ///@}
  private:
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   Aws::String m_bucketOwner;
-  bool m_bucketOwnerHasBeenSet = false;
 
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   ReportPackagingType m_packaging{ReportPackagingType::NOT_SET};
-  bool m_packagingHasBeenSet = false;
 
   Aws::String m_encryptionKey;
-  bool m_encryptionKeyHasBeenSet = false;
 
   bool m_encryptionDisabled{false};
+  bool m_bucketHasBeenSet = false;
+  bool m_bucketOwnerHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
+  bool m_packagingHasBeenSet = false;
+  bool m_encryptionKeyHasBeenSet = false;
   bool m_encryptionDisabledHasBeenSet = false;
 };
 

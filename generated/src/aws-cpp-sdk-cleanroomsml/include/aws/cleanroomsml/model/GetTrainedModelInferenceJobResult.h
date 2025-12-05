@@ -472,75 +472,75 @@ class GetTrainedModelInferenceJobResult {
   ///@}
  private:
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   Aws::String m_trainedModelInferenceJobArn;
-  bool m_trainedModelInferenceJobArnHasBeenSet = false;
 
   Aws::String m_configuredModelAlgorithmAssociationArn;
-  bool m_configuredModelAlgorithmAssociationArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   TrainedModelInferenceJobStatus m_status{TrainedModelInferenceJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_trainedModelArn;
-  bool m_trainedModelArnHasBeenSet = false;
 
   Aws::String m_trainedModelVersionIdentifier;
-  bool m_trainedModelVersionIdentifierHasBeenSet = false;
 
   InferenceResourceConfig m_resourceConfig;
-  bool m_resourceConfigHasBeenSet = false;
 
   InferenceOutputConfiguration m_outputConfiguration;
-  bool m_outputConfigurationHasBeenSet = false;
 
   Aws::String m_membershipIdentifier;
-  bool m_membershipIdentifierHasBeenSet = false;
 
   ModelInferenceDataSource m_dataSource;
-  bool m_dataSourceHasBeenSet = false;
 
   InferenceContainerExecutionParameters m_containerExecutionParameters;
-  bool m_containerExecutionParametersHasBeenSet = false;
 
   StatusDetails m_statusDetails;
-  bool m_statusDetailsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_inferenceContainerImageDigest;
-  bool m_inferenceContainerImageDigestHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_environment;
-  bool m_environmentHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   MetricsStatus m_metricsStatus{MetricsStatus::NOT_SET};
-  bool m_metricsStatusHasBeenSet = false;
 
   Aws::String m_metricsStatusDetails;
-  bool m_metricsStatusDetailsHasBeenSet = false;
 
   LogsStatus m_logsStatus{LogsStatus::NOT_SET};
-  bool m_logsStatusHasBeenSet = false;
 
   Aws::String m_logsStatusDetails;
-  bool m_logsStatusDetailsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_createTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_trainedModelInferenceJobArnHasBeenSet = false;
+  bool m_configuredModelAlgorithmAssociationArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_trainedModelArnHasBeenSet = false;
+  bool m_trainedModelVersionIdentifierHasBeenSet = false;
+  bool m_resourceConfigHasBeenSet = false;
+  bool m_outputConfigurationHasBeenSet = false;
+  bool m_membershipIdentifierHasBeenSet = false;
+  bool m_dataSourceHasBeenSet = false;
+  bool m_containerExecutionParametersHasBeenSet = false;
+  bool m_statusDetailsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_inferenceContainerImageDigestHasBeenSet = false;
+  bool m_environmentHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
+  bool m_metricsStatusHasBeenSet = false;
+  bool m_metricsStatusDetailsHasBeenSet = false;
+  bool m_logsStatusHasBeenSet = false;
+  bool m_logsStatusDetailsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

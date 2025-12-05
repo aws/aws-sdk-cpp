@@ -71,9 +71,9 @@ class ClickFeedback {
   ///@}
  private:
   Aws::String m_resultId;
-  bool m_resultIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_clickTime{};
+  bool m_resultIdHasBeenSet = false;
   bool m_clickTimeHasBeenSet = false;
 };
 

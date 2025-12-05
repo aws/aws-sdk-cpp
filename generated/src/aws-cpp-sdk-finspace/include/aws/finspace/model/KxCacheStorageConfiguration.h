@@ -74,9 +74,9 @@ class KxCacheStorageConfiguration {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   int m_size{0};
+  bool m_typeHasBeenSet = false;
   bool m_sizeHasBeenSet = false;
 };
 

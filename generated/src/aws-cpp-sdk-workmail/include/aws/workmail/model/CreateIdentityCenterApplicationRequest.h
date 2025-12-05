@@ -86,12 +86,12 @@ class CreateIdentityCenterApplicationRequest : public WorkMailRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_instanceArn;
-  bool m_instanceArnHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_nameHasBeenSet = false;
+  bool m_instanceArnHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

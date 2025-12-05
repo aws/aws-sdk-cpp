@@ -82,9 +82,9 @@ class AlarmIdentifier {
   ///@}
  private:
   CloudWatchRegion m_region{CloudWatchRegion::NOT_SET};
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_regionHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

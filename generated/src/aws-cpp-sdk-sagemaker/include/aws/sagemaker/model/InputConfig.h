@@ -222,15 +222,15 @@ class InputConfig {
   ///@}
  private:
   Aws::String m_s3Uri;
-  bool m_s3UriHasBeenSet = false;
 
   Aws::String m_dataInputConfig;
-  bool m_dataInputConfigHasBeenSet = false;
 
   Framework m_framework{Framework::NOT_SET};
-  bool m_frameworkHasBeenSet = false;
 
   Aws::String m_frameworkVersion;
+  bool m_s3UriHasBeenSet = false;
+  bool m_dataInputConfigHasBeenSet = false;
+  bool m_frameworkHasBeenSet = false;
   bool m_frameworkVersionHasBeenSet = false;
 };
 

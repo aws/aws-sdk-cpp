@@ -176,27 +176,27 @@ class CisCheckAggregation {
   ///@}
  private:
   Aws::String m_scanArn;
-  bool m_scanArnHasBeenSet = false;
 
   Aws::String m_checkId;
-  bool m_checkIdHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_checkDescription;
-  bool m_checkDescriptionHasBeenSet = false;
 
   CisSecurityLevel m_level{CisSecurityLevel::NOT_SET};
-  bool m_levelHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   StatusCounts m_statusCounts;
-  bool m_statusCountsHasBeenSet = false;
 
   Aws::String m_platform;
+  bool m_scanArnHasBeenSet = false;
+  bool m_checkIdHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_checkDescriptionHasBeenSet = false;
+  bool m_levelHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_statusCountsHasBeenSet = false;
   bool m_platformHasBeenSet = false;
 };
 

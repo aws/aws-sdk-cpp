@@ -82,12 +82,12 @@ class GradientStop {
   ///@}
  private:
   double m_gradientOffset{0.0};
-  bool m_gradientOffsetHasBeenSet = false;
 
   double m_dataValue{0.0};
-  bool m_dataValueHasBeenSet = false;
 
   Aws::String m_color;
+  bool m_gradientOffsetHasBeenSet = false;
+  bool m_dataValueHasBeenSet = false;
   bool m_colorHasBeenSet = false;
 };
 

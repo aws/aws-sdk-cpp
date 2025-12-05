@@ -68,9 +68,9 @@ class PackageGroupAllowedRepository {
   ///@}
  private:
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   PackageGroupOriginRestrictionType m_originRestrictionType{PackageGroupOriginRestrictionType::NOT_SET};
+  bool m_repositoryNameHasBeenSet = false;
   bool m_originRestrictionTypeHasBeenSet = false;
 };
 

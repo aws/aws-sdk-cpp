@@ -81,9 +81,9 @@ class IpAddresses {
   ///@}
  private:
   Aws::Vector<Aws::String> m_ipV4Addresses;
-  bool m_ipV4AddressesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ipV6Addresses;
+  bool m_ipV4AddressesHasBeenSet = false;
   bool m_ipV6AddressesHasBeenSet = false;
 };
 

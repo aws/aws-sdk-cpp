@@ -77,9 +77,9 @@ class TFITrainingMetricsValue {
   ///@}
  private:
   Aws::Vector<TFIMetricDataPoint> m_metricDataPoints;
-  bool m_metricDataPointsHasBeenSet = false;
 
   TFIModelPerformance m_modelPerformance;
+  bool m_metricDataPointsHasBeenSet = false;
   bool m_modelPerformanceHasBeenSet = false;
 };
 

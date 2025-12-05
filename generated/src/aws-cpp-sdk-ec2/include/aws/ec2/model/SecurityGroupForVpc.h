@@ -151,21 +151,21 @@ class SecurityGroupForVpc {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_primaryVpcId;
+  bool m_descriptionHasBeenSet = false;
+  bool m_groupNameHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_groupIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_primaryVpcIdHasBeenSet = false;
 };
 

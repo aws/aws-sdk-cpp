@@ -73,9 +73,9 @@ class PutProfileOutboundRequestBatchRequest : public ConnectCampaignsV2Request {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Vector<ProfileOutboundRequest> m_profileOutboundRequests;
+  bool m_idHasBeenSet = false;
   bool m_profileOutboundRequestsHasBeenSet = false;
 };
 

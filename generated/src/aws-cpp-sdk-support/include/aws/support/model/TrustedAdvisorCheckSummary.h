@@ -141,21 +141,21 @@ class TrustedAdvisorCheckSummary {
   ///@}
  private:
   Aws::String m_checkId;
-  bool m_checkIdHasBeenSet = false;
 
   Aws::String m_timestamp;
-  bool m_timestampHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   bool m_hasFlaggedResources{false};
-  bool m_hasFlaggedResourcesHasBeenSet = false;
 
   TrustedAdvisorResourcesSummary m_resourcesSummary;
-  bool m_resourcesSummaryHasBeenSet = false;
 
   TrustedAdvisorCategorySpecificSummary m_categorySpecificSummary;
+  bool m_checkIdHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_hasFlaggedResourcesHasBeenSet = false;
+  bool m_resourcesSummaryHasBeenSet = false;
   bool m_categorySpecificSummaryHasBeenSet = false;
 };
 

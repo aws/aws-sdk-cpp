@@ -67,9 +67,9 @@ class GetRouteServerPropagationsResponse {
   ///@}
  private:
   Aws::Vector<RouteServerPropagation> m_routeServerPropagations;
-  bool m_routeServerPropagationsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_routeServerPropagationsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

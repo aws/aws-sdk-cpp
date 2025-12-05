@@ -71,9 +71,9 @@ class ResourcePolicy {
   ///@}
  private:
   ResourcePolicySummary m_resourcePolicySummary;
-  bool m_resourcePolicySummaryHasBeenSet = false;
 
   Aws::String m_content;
+  bool m_resourcePolicySummaryHasBeenSet = false;
   bool m_contentHasBeenSet = false;
 };
 

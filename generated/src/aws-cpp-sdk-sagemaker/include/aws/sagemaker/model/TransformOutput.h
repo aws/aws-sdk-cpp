@@ -141,15 +141,15 @@ class TransformOutput {
   ///@}
  private:
   Aws::String m_s3OutputPath;
-  bool m_s3OutputPathHasBeenSet = false;
 
   Aws::String m_accept;
-  bool m_acceptHasBeenSet = false;
 
   AssemblyType m_assembleWith{AssemblyType::NOT_SET};
-  bool m_assembleWithHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
+  bool m_s3OutputPathHasBeenSet = false;
+  bool m_acceptHasBeenSet = false;
+  bool m_assembleWithHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
 };
 

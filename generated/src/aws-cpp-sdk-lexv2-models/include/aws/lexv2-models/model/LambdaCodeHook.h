@@ -70,9 +70,9 @@ class LambdaCodeHook {
   ///@}
  private:
   Aws::String m_lambdaARN;
-  bool m_lambdaARNHasBeenSet = false;
 
   Aws::String m_codeHookInterfaceVersion;
+  bool m_lambdaARNHasBeenSet = false;
   bool m_codeHookInterfaceVersionHasBeenSet = false;
 };
 

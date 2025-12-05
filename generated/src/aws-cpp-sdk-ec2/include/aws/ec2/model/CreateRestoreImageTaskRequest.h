@@ -139,18 +139,18 @@ class CreateRestoreImageTaskRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   Aws::String m_objectKey;
-  bool m_objectKeyHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_bucketHasBeenSet = false;
+  bool m_objectKeyHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

@@ -61,9 +61,9 @@ class CisNumberFilter {
   ///@}
  private:
   int m_upperInclusive{0};
-  bool m_upperInclusiveHasBeenSet = false;
 
   int m_lowerInclusive{0};
+  bool m_upperInclusiveHasBeenSet = false;
   bool m_lowerInclusiveHasBeenSet = false;
 };
 

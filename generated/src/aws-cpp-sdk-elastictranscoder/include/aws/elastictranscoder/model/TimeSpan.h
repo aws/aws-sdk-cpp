@@ -77,9 +77,9 @@ class TimeSpan {
   ///@}
  private:
   Aws::String m_startTime;
-  bool m_startTimeHasBeenSet = false;
 
   Aws::String m_duration;
+  bool m_startTimeHasBeenSet = false;
   bool m_durationHasBeenSet = false;
 };
 

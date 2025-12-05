@@ -76,12 +76,12 @@ class CreateTableResult {
   ///@}
  private:
   Aws::String m_tableARN;
-  bool m_tableARNHasBeenSet = false;
 
   Aws::String m_versionToken;
-  bool m_versionTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tableARNHasBeenSet = false;
+  bool m_versionTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

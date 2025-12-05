@@ -73,9 +73,9 @@ class ModelPackageValidationProfile {
   ///@}
  private:
   Aws::String m_profileName;
-  bool m_profileNameHasBeenSet = false;
 
   TransformJobDefinition m_transformJobDefinition;
+  bool m_profileNameHasBeenSet = false;
   bool m_transformJobDefinitionHasBeenSet = false;
 };
 

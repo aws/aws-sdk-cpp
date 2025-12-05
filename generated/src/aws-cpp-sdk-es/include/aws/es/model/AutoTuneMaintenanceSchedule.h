@@ -96,12 +96,12 @@ class AutoTuneMaintenanceSchedule {
   ///@}
  private:
   Aws::Utils::DateTime m_startAt{};
-  bool m_startAtHasBeenSet = false;
 
   Duration m_duration;
-  bool m_durationHasBeenSet = false;
 
   Aws::String m_cronExpressionForRecurrence;
+  bool m_startAtHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
   bool m_cronExpressionForRecurrenceHasBeenSet = false;
 };
 

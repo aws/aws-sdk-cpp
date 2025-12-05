@@ -68,9 +68,9 @@ class UsageMetricBasis {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   double m_percentageAdjust{0.0};
+  bool m_nameHasBeenSet = false;
   bool m_percentageAdjustHasBeenSet = false;
 };
 

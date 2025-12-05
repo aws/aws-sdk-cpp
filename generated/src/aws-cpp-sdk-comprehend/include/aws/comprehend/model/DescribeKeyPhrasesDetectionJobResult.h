@@ -62,9 +62,9 @@ class DescribeKeyPhrasesDetectionJobResult {
   ///@}
  private:
   KeyPhrasesDetectionJobProperties m_keyPhrasesDetectionJobProperties;
-  bool m_keyPhrasesDetectionJobPropertiesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_keyPhrasesDetectionJobPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -141,21 +141,21 @@ class StopCisSessionMessage {
   ///@}
  private:
   StopCisSessionStatus m_status{StopCisSessionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   StopCisMessageProgress m_progress;
-  bool m_progressHasBeenSet = false;
 
   ComputePlatform m_computePlatform;
-  bool m_computePlatformHasBeenSet = false;
 
   Aws::String m_benchmarkVersion;
-  bool m_benchmarkVersionHasBeenSet = false;
 
   Aws::String m_benchmarkProfile;
+  bool m_statusHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
+  bool m_progressHasBeenSet = false;
+  bool m_computePlatformHasBeenSet = false;
+  bool m_benchmarkVersionHasBeenSet = false;
   bool m_benchmarkProfileHasBeenSet = false;
 };
 

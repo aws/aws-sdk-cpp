@@ -58,9 +58,9 @@ class CreateInAppTemplateResult {
   ///@}
  private:
   TemplateCreateMessageBody m_templateCreateMessageBody;
-  bool m_templateCreateMessageBodyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_templateCreateMessageBodyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -73,12 +73,12 @@ class GetSnowballUsageResult {
   ///@}
  private:
   int m_snowballLimit{0};
-  bool m_snowballLimitHasBeenSet = false;
 
   int m_snowballsInUse{0};
-  bool m_snowballsInUseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_snowballLimitHasBeenSet = false;
+  bool m_snowballsInUseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

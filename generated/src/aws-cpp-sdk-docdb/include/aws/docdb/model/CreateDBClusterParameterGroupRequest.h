@@ -120,15 +120,15 @@ class CreateDBClusterParameterGroupRequest : public DocDBRequest {
   ///@}
  private:
   Aws::String m_dBClusterParameterGroupName;
-  bool m_dBClusterParameterGroupNameHasBeenSet = false;
 
   Aws::String m_dBParameterGroupFamily;
-  bool m_dBParameterGroupFamilyHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_dBClusterParameterGroupNameHasBeenSet = false;
+  bool m_dBParameterGroupFamilyHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -104,15 +104,15 @@ class ListWorkflowsRequest : public OmicsRequest {
   ///@}
  private:
   WorkflowType m_type{WorkflowType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_startingToken;
-  bool m_startingTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_typeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_startingTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

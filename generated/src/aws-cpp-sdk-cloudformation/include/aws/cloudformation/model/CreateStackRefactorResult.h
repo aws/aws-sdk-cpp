@@ -61,9 +61,9 @@ class CreateStackRefactorResult {
   ///@}
  private:
   Aws::String m_stackRefactorId;
-  bool m_stackRefactorIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_stackRefactorIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

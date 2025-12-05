@@ -66,9 +66,9 @@ class DeleteSyncJobRequest : public IoTTwinMakerRequest {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Aws::String m_syncSource;
+  bool m_workspaceIdHasBeenSet = false;
   bool m_syncSourceHasBeenSet = false;
 };
 

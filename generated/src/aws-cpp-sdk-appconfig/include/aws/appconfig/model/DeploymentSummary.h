@@ -239,39 +239,39 @@ class DeploymentSummary {
   ///@}
  private:
   int m_deploymentNumber{0};
-  bool m_deploymentNumberHasBeenSet = false;
 
   Aws::String m_configurationName;
-  bool m_configurationNameHasBeenSet = false;
 
   Aws::String m_configurationVersion;
-  bool m_configurationVersionHasBeenSet = false;
 
   int m_deploymentDurationInMinutes{0};
-  bool m_deploymentDurationInMinutesHasBeenSet = false;
 
   GrowthType m_growthType{GrowthType::NOT_SET};
-  bool m_growthTypeHasBeenSet = false;
 
   double m_growthFactor{0.0};
-  bool m_growthFactorHasBeenSet = false;
 
   int m_finalBakeTimeInMinutes{0};
-  bool m_finalBakeTimeInMinutesHasBeenSet = false;
 
   DeploymentState m_state{DeploymentState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   double m_percentageComplete{0.0};
-  bool m_percentageCompleteHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_completedAt{};
-  bool m_completedAtHasBeenSet = false;
 
   Aws::String m_versionLabel;
+  bool m_deploymentNumberHasBeenSet = false;
+  bool m_configurationNameHasBeenSet = false;
+  bool m_configurationVersionHasBeenSet = false;
+  bool m_deploymentDurationInMinutesHasBeenSet = false;
+  bool m_growthTypeHasBeenSet = false;
+  bool m_growthFactorHasBeenSet = false;
+  bool m_finalBakeTimeInMinutesHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_percentageCompleteHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_completedAtHasBeenSet = false;
   bool m_versionLabelHasBeenSet = false;
 };
 

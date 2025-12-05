@@ -101,12 +101,12 @@ class CreateGatewayRequest : public MediaConnectRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_egressCidrBlocks;
-  bool m_egressCidrBlocksHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<GatewayNetwork> m_networks;
+  bool m_egressCidrBlocksHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_networksHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class UpdateDeviceDefinitionRequest : public GreengrassRequest {
   ///@}
  private:
   Aws::String m_deviceDefinitionId;
-  bool m_deviceDefinitionIdHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_deviceDefinitionIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

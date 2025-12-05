@@ -59,9 +59,9 @@ class CreateWebACLMigrationStackResult {
   ///@}
  private:
   Aws::String m_s3ObjectUrl;
-  bool m_s3ObjectUrlHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_s3ObjectUrlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

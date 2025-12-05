@@ -85,12 +85,12 @@ class GetConnectPeerAssociationsResult {
   ///@}
  private:
   Aws::Vector<ConnectPeerAssociation> m_connectPeerAssociations;
-  bool m_connectPeerAssociationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectPeerAssociationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class ServiceInfo {
   ///@}
  private:
   Aws::String m_serviceCode;
-  bool m_serviceCodeHasBeenSet = false;
 
   Aws::String m_serviceName;
+  bool m_serviceCodeHasBeenSet = false;
   bool m_serviceNameHasBeenSet = false;
 };
 

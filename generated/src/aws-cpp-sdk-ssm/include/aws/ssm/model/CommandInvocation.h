@@ -381,51 +381,51 @@ class CommandInvocation {
   ///@}
  private:
   Aws::String m_commandId;
-  bool m_commandIdHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_instanceName;
-  bool m_instanceNameHasBeenSet = false;
 
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   Aws::String m_documentName;
-  bool m_documentNameHasBeenSet = false;
 
   Aws::String m_documentVersion;
-  bool m_documentVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_requestedDateTime{};
-  bool m_requestedDateTimeHasBeenSet = false;
 
   CommandInvocationStatus m_status{CommandInvocationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusDetails;
-  bool m_statusDetailsHasBeenSet = false;
 
   Aws::String m_traceOutput;
-  bool m_traceOutputHasBeenSet = false;
 
   Aws::String m_standardOutputUrl;
-  bool m_standardOutputUrlHasBeenSet = false;
 
   Aws::String m_standardErrorUrl;
-  bool m_standardErrorUrlHasBeenSet = false;
 
   Aws::Vector<CommandPlugin> m_commandPlugins;
-  bool m_commandPluginsHasBeenSet = false;
 
   Aws::String m_serviceRole;
-  bool m_serviceRoleHasBeenSet = false;
 
   NotificationConfig m_notificationConfig;
-  bool m_notificationConfigHasBeenSet = false;
 
   CloudWatchOutputConfig m_cloudWatchOutputConfig;
+  bool m_commandIdHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_instanceNameHasBeenSet = false;
+  bool m_commentHasBeenSet = false;
+  bool m_documentNameHasBeenSet = false;
+  bool m_documentVersionHasBeenSet = false;
+  bool m_requestedDateTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusDetailsHasBeenSet = false;
+  bool m_traceOutputHasBeenSet = false;
+  bool m_standardOutputUrlHasBeenSet = false;
+  bool m_standardErrorUrlHasBeenSet = false;
+  bool m_commandPluginsHasBeenSet = false;
+  bool m_serviceRoleHasBeenSet = false;
+  bool m_notificationConfigHasBeenSet = false;
   bool m_cloudWatchOutputConfigHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class CancelMLTaskRunRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_transformId;
-  bool m_transformIdHasBeenSet = false;
 
   Aws::String m_taskRunId;
+  bool m_transformIdHasBeenSet = false;
   bool m_taskRunIdHasBeenSet = false;
 };
 

@@ -90,12 +90,12 @@ class EnableFastSnapshotRestoreStateErrorItem {
   ///@}
  private:
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   EnableFastSnapshotRestoreStateError m_error;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

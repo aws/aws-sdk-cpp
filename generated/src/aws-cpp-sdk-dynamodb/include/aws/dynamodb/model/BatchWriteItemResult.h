@@ -164,15 +164,15 @@ class BatchWriteItemResult {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::Vector<WriteRequest>> m_unprocessedItems;
-  bool m_unprocessedItemsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<ItemCollectionMetrics>> m_itemCollectionMetrics;
-  bool m_itemCollectionMetricsHasBeenSet = false;
 
   Aws::Vector<ConsumedCapacity> m_consumedCapacity;
-  bool m_consumedCapacityHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_unprocessedItemsHasBeenSet = false;
+  bool m_itemCollectionMetricsHasBeenSet = false;
+  bool m_consumedCapacityHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

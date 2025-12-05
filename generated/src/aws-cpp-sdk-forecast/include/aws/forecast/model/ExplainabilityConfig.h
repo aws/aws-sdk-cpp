@@ -81,9 +81,9 @@ class ExplainabilityConfig {
   ///@}
  private:
   TimeSeriesGranularity m_timeSeriesGranularity{TimeSeriesGranularity::NOT_SET};
-  bool m_timeSeriesGranularityHasBeenSet = false;
 
   TimePointGranularity m_timePointGranularity{TimePointGranularity::NOT_SET};
+  bool m_timeSeriesGranularityHasBeenSet = false;
   bool m_timePointGranularityHasBeenSet = false;
 };
 

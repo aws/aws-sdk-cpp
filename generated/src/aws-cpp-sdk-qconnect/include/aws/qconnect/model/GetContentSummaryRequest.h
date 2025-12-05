@@ -67,9 +67,9 @@ class GetContentSummaryRequest : public QConnectRequest {
   ///@}
  private:
   Aws::String m_contentId;
-  bool m_contentIdHasBeenSet = false;
 
   Aws::String m_knowledgeBaseId;
+  bool m_contentIdHasBeenSet = false;
   bool m_knowledgeBaseIdHasBeenSet = false;
 };
 

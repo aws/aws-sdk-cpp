@@ -262,39 +262,39 @@ class ConnectorDetail {
   ///@}
  private:
   Aws::String m_connectorDescription;
-  bool m_connectorDescriptionHasBeenSet = false;
 
   Aws::String m_connectorName;
-  bool m_connectorNameHasBeenSet = false;
 
   Aws::String m_connectorOwner;
-  bool m_connectorOwnerHasBeenSet = false;
 
   Aws::String m_connectorVersion;
-  bool m_connectorVersionHasBeenSet = false;
 
   Aws::String m_applicationType;
-  bool m_applicationTypeHasBeenSet = false;
 
   ConnectorType m_connectorType{ConnectorType::NOT_SET};
-  bool m_connectorTypeHasBeenSet = false;
 
   Aws::String m_connectorLabel;
-  bool m_connectorLabelHasBeenSet = false;
 
   Aws::Utils::DateTime m_registeredAt{};
-  bool m_registeredAtHasBeenSet = false;
 
   Aws::String m_registeredBy;
-  bool m_registeredByHasBeenSet = false;
 
   ConnectorProvisioningType m_connectorProvisioningType{ConnectorProvisioningType::NOT_SET};
-  bool m_connectorProvisioningTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_connectorModes;
-  bool m_connectorModesHasBeenSet = false;
 
   Aws::Vector<SupportedDataTransferType> m_supportedDataTransferTypes;
+  bool m_connectorDescriptionHasBeenSet = false;
+  bool m_connectorNameHasBeenSet = false;
+  bool m_connectorOwnerHasBeenSet = false;
+  bool m_connectorVersionHasBeenSet = false;
+  bool m_applicationTypeHasBeenSet = false;
+  bool m_connectorTypeHasBeenSet = false;
+  bool m_connectorLabelHasBeenSet = false;
+  bool m_registeredAtHasBeenSet = false;
+  bool m_registeredByHasBeenSet = false;
+  bool m_connectorProvisioningTypeHasBeenSet = false;
+  bool m_connectorModesHasBeenSet = false;
   bool m_supportedDataTransferTypesHasBeenSet = false;
 };
 

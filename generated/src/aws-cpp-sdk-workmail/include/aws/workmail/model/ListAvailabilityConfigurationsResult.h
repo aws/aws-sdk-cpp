@@ -86,12 +86,12 @@ class ListAvailabilityConfigurationsResult {
   ///@}
  private:
   Aws::Vector<AvailabilityConfiguration> m_availabilityConfigurations;
-  bool m_availabilityConfigurationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_availabilityConfigurationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

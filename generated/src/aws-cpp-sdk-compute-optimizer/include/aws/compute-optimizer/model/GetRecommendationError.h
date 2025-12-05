@@ -89,12 +89,12 @@ class GetRecommendationError {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_code;
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_identifierHasBeenSet = false;
+  bool m_codeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

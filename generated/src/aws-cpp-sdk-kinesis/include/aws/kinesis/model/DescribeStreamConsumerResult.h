@@ -60,9 +60,9 @@ class DescribeStreamConsumerResult {
   ///@}
  private:
   ConsumerDescription m_consumerDescription;
-  bool m_consumerDescriptionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_consumerDescriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

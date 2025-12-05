@@ -175,27 +175,27 @@ class RelationalDatabaseParameter {
   ///@}
  private:
   Aws::String m_allowedValues;
-  bool m_allowedValuesHasBeenSet = false;
 
   Aws::String m_applyMethod;
-  bool m_applyMethodHasBeenSet = false;
 
   Aws::String m_applyType;
-  bool m_applyTypeHasBeenSet = false;
 
   Aws::String m_dataType;
-  bool m_dataTypeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_isModifiable{false};
-  bool m_isModifiableHasBeenSet = false;
 
   Aws::String m_parameterName;
-  bool m_parameterNameHasBeenSet = false;
 
   Aws::String m_parameterValue;
+  bool m_allowedValuesHasBeenSet = false;
+  bool m_applyMethodHasBeenSet = false;
+  bool m_applyTypeHasBeenSet = false;
+  bool m_dataTypeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_isModifiableHasBeenSet = false;
+  bool m_parameterNameHasBeenSet = false;
   bool m_parameterValueHasBeenSet = false;
 };
 

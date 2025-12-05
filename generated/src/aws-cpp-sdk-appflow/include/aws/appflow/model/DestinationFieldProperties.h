@@ -142,21 +142,21 @@ class DestinationFieldProperties {
   ///@}
  private:
   bool m_isCreatable{false};
-  bool m_isCreatableHasBeenSet = false;
 
   bool m_isNullable{false};
-  bool m_isNullableHasBeenSet = false;
 
   bool m_isUpsertable{false};
-  bool m_isUpsertableHasBeenSet = false;
 
   bool m_isUpdatable{false};
-  bool m_isUpdatableHasBeenSet = false;
 
   bool m_isDefaultedOnCreate{false};
-  bool m_isDefaultedOnCreateHasBeenSet = false;
 
   Aws::Vector<WriteOperationType> m_supportedWriteOperations;
+  bool m_isCreatableHasBeenSet = false;
+  bool m_isNullableHasBeenSet = false;
+  bool m_isUpsertableHasBeenSet = false;
+  bool m_isUpdatableHasBeenSet = false;
+  bool m_isDefaultedOnCreateHasBeenSet = false;
   bool m_supportedWriteOperationsHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class GetReportMetadataResult {
   ///@}
  private:
   ReportDetail m_reportDetails;
-  bool m_reportDetailsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_reportDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

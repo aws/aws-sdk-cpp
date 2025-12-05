@@ -280,42 +280,42 @@ class WorkspacesPool {
   ///@}
  private:
   Aws::String m_poolId;
-  bool m_poolIdHasBeenSet = false;
 
   Aws::String m_poolArn;
-  bool m_poolArnHasBeenSet = false;
 
   CapacityStatus m_capacityStatus;
-  bool m_capacityStatusHasBeenSet = false;
 
   Aws::String m_poolName;
-  bool m_poolNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   WorkspacesPoolState m_state{WorkspacesPoolState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_bundleId;
-  bool m_bundleIdHasBeenSet = false;
 
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::Vector<WorkspacesPoolError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   ApplicationSettingsResponse m_applicationSettings;
-  bool m_applicationSettingsHasBeenSet = false;
 
   TimeoutSettings m_timeoutSettings;
-  bool m_timeoutSettingsHasBeenSet = false;
 
   PoolsRunningMode m_runningMode{PoolsRunningMode::NOT_SET};
+  bool m_poolIdHasBeenSet = false;
+  bool m_poolArnHasBeenSet = false;
+  bool m_capacityStatusHasBeenSet = false;
+  bool m_poolNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_bundleIdHasBeenSet = false;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
+  bool m_applicationSettingsHasBeenSet = false;
+  bool m_timeoutSettingsHasBeenSet = false;
   bool m_runningModeHasBeenSet = false;
 };
 

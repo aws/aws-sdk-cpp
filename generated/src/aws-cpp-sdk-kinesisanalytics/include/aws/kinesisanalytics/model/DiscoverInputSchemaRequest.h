@@ -132,18 +132,18 @@ class DiscoverInputSchemaRequest : public KinesisAnalyticsRequest {
   ///@}
  private:
   Aws::String m_resourceARN;
-  bool m_resourceARNHasBeenSet = false;
 
   Aws::String m_roleARN;
-  bool m_roleARNHasBeenSet = false;
 
   InputStartingPositionConfiguration m_inputStartingPositionConfiguration;
-  bool m_inputStartingPositionConfigurationHasBeenSet = false;
 
   S3Configuration m_s3Configuration;
-  bool m_s3ConfigurationHasBeenSet = false;
 
   InputProcessingConfiguration m_inputProcessingConfiguration;
+  bool m_resourceARNHasBeenSet = false;
+  bool m_roleARNHasBeenSet = false;
+  bool m_inputStartingPositionConfigurationHasBeenSet = false;
+  bool m_s3ConfigurationHasBeenSet = false;
   bool m_inputProcessingConfigurationHasBeenSet = false;
 };
 

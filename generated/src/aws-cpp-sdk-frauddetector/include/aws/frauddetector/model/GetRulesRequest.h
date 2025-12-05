@@ -119,18 +119,18 @@ class GetRulesRequest : public FraudDetectorRequest {
   ///@}
  private:
   Aws::String m_ruleId;
-  bool m_ruleIdHasBeenSet = false;
 
   Aws::String m_detectorId;
-  bool m_detectorIdHasBeenSet = false;
 
   Aws::String m_ruleVersion;
-  bool m_ruleVersionHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_ruleIdHasBeenSet = false;
+  bool m_detectorIdHasBeenSet = false;
+  bool m_ruleVersionHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

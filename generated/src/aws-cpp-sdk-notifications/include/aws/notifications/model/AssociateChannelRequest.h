@@ -69,9 +69,9 @@ class AssociateChannelRequest : public NotificationsRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_notificationConfigurationArn;
+  bool m_arnHasBeenSet = false;
   bool m_notificationConfigurationArnHasBeenSet = false;
 };
 

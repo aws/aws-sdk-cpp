@@ -67,9 +67,9 @@ class AssociateVehicleFleetRequest : public IoTFleetWiseRequest {
   ///@}
  private:
   Aws::String m_vehicleName;
-  bool m_vehicleNameHasBeenSet = false;
 
   Aws::String m_fleetId;
+  bool m_vehicleNameHasBeenSet = false;
   bool m_fleetIdHasBeenSet = false;
 };
 

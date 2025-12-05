@@ -76,12 +76,12 @@ class UpdateRoleAliasResult {
   ///@}
  private:
   Aws::String m_roleAlias;
-  bool m_roleAliasHasBeenSet = false;
 
   Aws::String m_roleAliasArn;
-  bool m_roleAliasArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_roleAliasHasBeenSet = false;
+  bool m_roleAliasArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class DataIntegrationFlowExecutionSourceInfo {
   ///@}
  private:
   DataIntegrationFlowSourceType m_sourceType{DataIntegrationFlowSourceType::NOT_SET};
-  bool m_sourceTypeHasBeenSet = false;
 
   DataIntegrationFlowS3Source m_s3Source;
-  bool m_s3SourceHasBeenSet = false;
 
   DataIntegrationFlowDatasetSource m_datasetSource;
+  bool m_sourceTypeHasBeenSet = false;
+  bool m_s3SourceHasBeenSet = false;
   bool m_datasetSourceHasBeenSet = false;
 };
 

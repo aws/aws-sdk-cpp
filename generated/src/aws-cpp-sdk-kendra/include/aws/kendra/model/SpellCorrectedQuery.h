@@ -76,9 +76,9 @@ class SpellCorrectedQuery {
   ///@}
  private:
   Aws::String m_suggestedQueryText;
-  bool m_suggestedQueryTextHasBeenSet = false;
 
   Aws::Vector<Correction> m_corrections;
+  bool m_suggestedQueryTextHasBeenSet = false;
   bool m_correctionsHasBeenSet = false;
 };
 

@@ -179,24 +179,24 @@ class CreateServiceNetworkVpcAssociationRequest : public VPCLatticeRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_serviceNetworkIdentifier;
-  bool m_serviceNetworkIdentifierHasBeenSet = false;
 
   Aws::String m_vpcIdentifier;
-  bool m_vpcIdentifierHasBeenSet = false;
 
   bool m_privateDnsEnabled{false};
-  bool m_privateDnsEnabledHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   DnsOptions m_dnsOptions;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_serviceNetworkIdentifierHasBeenSet = false;
+  bool m_vpcIdentifierHasBeenSet = false;
+  bool m_privateDnsEnabledHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_dnsOptionsHasBeenSet = false;
 };
 

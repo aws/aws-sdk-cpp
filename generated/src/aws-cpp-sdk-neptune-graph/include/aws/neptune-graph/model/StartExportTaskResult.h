@@ -211,36 +211,36 @@ class StartExportTaskResult {
   ///@}
  private:
   Aws::String m_graphId;
-  bool m_graphIdHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   ExportTaskStatus m_status{ExportTaskStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ExportFormat m_format{ExportFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   Aws::String m_destination;
-  bool m_destinationHasBeenSet = false;
 
   Aws::String m_kmsKeyIdentifier;
-  bool m_kmsKeyIdentifierHasBeenSet = false;
 
   ParquetType m_parquetType{ParquetType::NOT_SET};
-  bool m_parquetTypeHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   ExportFilter m_exportFilter;
-  bool m_exportFilterHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_graphIdHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_taskIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_kmsKeyIdentifierHasBeenSet = false;
+  bool m_parquetTypeHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_exportFilterHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

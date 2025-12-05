@@ -85,12 +85,12 @@ class DescribeProductsV2Result {
   ///@}
  private:
   Aws::Vector<ProductV2> m_productsV2;
-  bool m_productsV2HasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_productsV2HasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

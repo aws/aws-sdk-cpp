@@ -87,12 +87,12 @@ class SanitizationWarning {
   ///@}
  private:
   Aws::String m_attributeName;
-  bool m_attributeNameHasBeenSet = false;
 
   Aws::String m_elementName;
-  bool m_elementNameHasBeenSet = false;
 
   SanitizationWarningReason m_reason{SanitizationWarningReason::NOT_SET};
+  bool m_attributeNameHasBeenSet = false;
+  bool m_elementNameHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

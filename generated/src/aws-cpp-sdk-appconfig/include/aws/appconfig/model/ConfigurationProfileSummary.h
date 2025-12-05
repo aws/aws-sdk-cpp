@@ -153,21 +153,21 @@ class ConfigurationProfileSummary {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_locationUri;
-  bool m_locationUriHasBeenSet = false;
 
   Aws::Vector<ValidatorType> m_validatorTypes;
-  bool m_validatorTypesHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_locationUriHasBeenSet = false;
+  bool m_validatorTypesHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

@@ -75,9 +75,9 @@ class SelfManagedKafkaEventSourceConfig {
   ///@}
  private:
   Aws::String m_consumerGroupId;
-  bool m_consumerGroupIdHasBeenSet = false;
 
   KafkaSchemaRegistryConfig m_schemaRegistryConfig;
+  bool m_consumerGroupIdHasBeenSet = false;
   bool m_schemaRegistryConfigHasBeenSet = false;
 };
 

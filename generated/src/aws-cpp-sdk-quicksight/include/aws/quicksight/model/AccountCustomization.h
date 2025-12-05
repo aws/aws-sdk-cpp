@@ -70,9 +70,9 @@ class AccountCustomization {
   ///@}
  private:
   Aws::String m_defaultTheme;
-  bool m_defaultThemeHasBeenSet = false;
 
   Aws::String m_defaultEmailCustomizationTemplate;
+  bool m_defaultThemeHasBeenSet = false;
   bool m_defaultEmailCustomizationTemplateHasBeenSet = false;
 };
 

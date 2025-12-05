@@ -60,9 +60,9 @@ class DescribeConnectorResult {
   ///@}
  private:
   DescribedConnector m_connector;
-  bool m_connectorHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

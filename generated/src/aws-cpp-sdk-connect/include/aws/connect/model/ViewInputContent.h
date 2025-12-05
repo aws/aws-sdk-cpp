@@ -77,9 +77,9 @@ class ViewInputContent {
   ///@}
  private:
   Aws::String m_template;
-  bool m_templateHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_actions;
+  bool m_templateHasBeenSet = false;
   bool m_actionsHasBeenSet = false;
 };
 

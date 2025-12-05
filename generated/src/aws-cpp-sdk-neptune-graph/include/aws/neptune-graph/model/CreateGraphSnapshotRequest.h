@@ -99,12 +99,12 @@ class CreateGraphSnapshotRequest : public NeptuneGraphRequest {
   ///@}
  private:
   Aws::String m_graphIdentifier;
-  bool m_graphIdentifierHasBeenSet = false;
 
   Aws::String m_snapshotName;
-  bool m_snapshotNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_graphIdentifierHasBeenSet = false;
+  bool m_snapshotNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

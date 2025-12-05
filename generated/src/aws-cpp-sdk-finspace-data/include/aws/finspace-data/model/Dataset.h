@@ -216,33 +216,33 @@ class Dataset {
   ///@}
  private:
   Aws::String m_datasetId;
-  bool m_datasetIdHasBeenSet = false;
 
   Aws::String m_datasetArn;
-  bool m_datasetArnHasBeenSet = false;
 
   Aws::String m_datasetTitle;
-  bool m_datasetTitleHasBeenSet = false;
 
   DatasetKind m_kind{DatasetKind::NOT_SET};
-  bool m_kindHasBeenSet = false;
 
   Aws::String m_datasetDescription;
-  bool m_datasetDescriptionHasBeenSet = false;
 
   DatasetOwnerInfo m_ownerInfo;
-  bool m_ownerInfoHasBeenSet = false;
 
   long long m_createTime{0};
-  bool m_createTimeHasBeenSet = false;
 
   long long m_lastModifiedTime{0};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   SchemaUnion m_schemaDefinition;
-  bool m_schemaDefinitionHasBeenSet = false;
 
   Aws::String m_alias;
+  bool m_datasetIdHasBeenSet = false;
+  bool m_datasetArnHasBeenSet = false;
+  bool m_datasetTitleHasBeenSet = false;
+  bool m_kindHasBeenSet = false;
+  bool m_datasetDescriptionHasBeenSet = false;
+  bool m_ownerInfoHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_schemaDefinitionHasBeenSet = false;
   bool m_aliasHasBeenSet = false;
 };
 

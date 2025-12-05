@@ -130,18 +130,18 @@ class TopicConstantValue {
   ///@}
  private:
   ConstantType m_constantType{ConstantType::NOT_SET};
-  bool m_constantTypeHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_minimum;
-  bool m_minimumHasBeenSet = false;
 
   Aws::String m_maximum;
-  bool m_maximumHasBeenSet = false;
 
   Aws::Vector<CollectiveConstantEntry> m_valueList;
+  bool m_constantTypeHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_minimumHasBeenSet = false;
+  bool m_maximumHasBeenSet = false;
   bool m_valueListHasBeenSet = false;
 };
 

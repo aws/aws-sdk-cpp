@@ -77,9 +77,9 @@ class BatchGetRecordRequest : public SageMakerFeatureStoreRuntimeRequest {
   ///@}
  private:
   Aws::Vector<BatchGetRecordIdentifier> m_identifiers;
-  bool m_identifiersHasBeenSet = false;
 
   ExpirationTimeResponse m_expirationTimeResponse{ExpirationTimeResponse::NOT_SET};
+  bool m_identifiersHasBeenSet = false;
   bool m_expirationTimeResponseHasBeenSet = false;
 };
 

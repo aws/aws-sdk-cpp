@@ -61,9 +61,9 @@ class UpdatePortalResult {
   ///@}
  private:
   PortalStatus m_portalStatus;
-  bool m_portalStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_portalStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

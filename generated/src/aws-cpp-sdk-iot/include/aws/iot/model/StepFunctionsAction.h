@@ -91,12 +91,12 @@ class StepFunctionsAction {
   ///@}
  private:
   Aws::String m_executionNamePrefix;
-  bool m_executionNamePrefixHasBeenSet = false;
 
   Aws::String m_stateMachineName;
-  bool m_stateMachineNameHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_executionNamePrefixHasBeenSet = false;
+  bool m_stateMachineNameHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

@@ -164,24 +164,24 @@ class InventoryDeletionStatusItem {
   ///@}
  private:
   Aws::String m_deletionId;
-  bool m_deletionIdHasBeenSet = false;
 
   Aws::String m_typeName;
-  bool m_typeNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_deletionStartTime{};
-  bool m_deletionStartTimeHasBeenSet = false;
 
   InventoryDeletionStatus m_lastStatus{InventoryDeletionStatus::NOT_SET};
-  bool m_lastStatusHasBeenSet = false;
 
   Aws::String m_lastStatusMessage;
-  bool m_lastStatusMessageHasBeenSet = false;
 
   InventoryDeletionSummary m_deletionSummary;
-  bool m_deletionSummaryHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastStatusUpdateTime{};
+  bool m_deletionIdHasBeenSet = false;
+  bool m_typeNameHasBeenSet = false;
+  bool m_deletionStartTimeHasBeenSet = false;
+  bool m_lastStatusHasBeenSet = false;
+  bool m_lastStatusMessageHasBeenSet = false;
+  bool m_deletionSummaryHasBeenSet = false;
   bool m_lastStatusUpdateTimeHasBeenSet = false;
 };
 

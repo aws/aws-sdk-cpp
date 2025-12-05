@@ -81,12 +81,12 @@ class ResourcePolicyLimitExceededException {
   ///@}
  private:
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_limitType;
-  bool m_limitTypeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_limitHasBeenSet = false;
+  bool m_limitTypeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

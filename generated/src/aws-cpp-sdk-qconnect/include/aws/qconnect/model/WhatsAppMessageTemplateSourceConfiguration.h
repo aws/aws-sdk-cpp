@@ -96,12 +96,12 @@ class WhatsAppMessageTemplateSourceConfiguration {
   ///@}
  private:
   Aws::String m_businessAccountId;
-  bool m_businessAccountIdHasBeenSet = false;
 
   Aws::String m_templateId;
-  bool m_templateIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_components;
+  bool m_businessAccountIdHasBeenSet = false;
+  bool m_templateIdHasBeenSet = false;
   bool m_componentsHasBeenSet = false;
 };
 

@@ -91,15 +91,15 @@ class DeleteTemplateResult {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_templateId;
-  bool m_templateIdHasBeenSet = false;
 
   int m_status{0};
+  bool m_requestIdHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_templateIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

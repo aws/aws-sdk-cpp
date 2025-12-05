@@ -127,21 +127,21 @@ class IcebergRetentionMetrics {
   ///@}
  private:
   long long m_numberOfDataFilesDeleted{0};
-  bool m_numberOfDataFilesDeletedHasBeenSet = false;
 
   long long m_numberOfManifestFilesDeleted{0};
-  bool m_numberOfManifestFilesDeletedHasBeenSet = false;
 
   long long m_numberOfManifestListsDeleted{0};
-  bool m_numberOfManifestListsDeletedHasBeenSet = false;
 
   double m_dpuHours{0.0};
-  bool m_dpuHoursHasBeenSet = false;
 
   int m_numberOfDpus{0};
-  bool m_numberOfDpusHasBeenSet = false;
 
   double m_jobDurationInHour{0.0};
+  bool m_numberOfDataFilesDeletedHasBeenSet = false;
+  bool m_numberOfManifestFilesDeletedHasBeenSet = false;
+  bool m_numberOfManifestListsDeletedHasBeenSet = false;
+  bool m_dpuHoursHasBeenSet = false;
+  bool m_numberOfDpusHasBeenSet = false;
   bool m_jobDurationInHourHasBeenSet = false;
 };
 

@@ -95,12 +95,12 @@ class DescribeCacheSubnetGroupsRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_cacheSubnetGroupName;
-  bool m_cacheSubnetGroupNameHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   Aws::String m_marker;
+  bool m_cacheSubnetGroupNameHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
   bool m_markerHasBeenSet = false;
 };
 

@@ -224,33 +224,33 @@ class SendMessageRequest : public QConnectRequest {
   ///@}
  private:
   Aws::String m_assistantId;
-  bool m_assistantIdHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   MessageType m_type{MessageType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   MessageInput m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_aiAgentId;
-  bool m_aiAgentIdHasBeenSet = false;
 
   ConversationContext m_conversationContext;
-  bool m_conversationContextHasBeenSet = false;
 
   MessageConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_orchestratorUseCase;
-  bool m_orchestratorUseCaseHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_metadata;
+  bool m_assistantIdHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_aiAgentIdHasBeenSet = false;
+  bool m_conversationContextHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_orchestratorUseCaseHasBeenSet = false;
   bool m_metadataHasBeenSet = false;
 };
 

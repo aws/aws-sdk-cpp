@@ -145,21 +145,21 @@ class CreateIntegrationWorkflowRequest : public CustomerProfilesRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   WorkflowType m_workflowType{WorkflowType::NOT_SET};
-  bool m_workflowTypeHasBeenSet = false;
 
   IntegrationConfig m_integrationConfig;
-  bool m_integrationConfigHasBeenSet = false;
 
   Aws::String m_objectTypeName;
-  bool m_objectTypeNameHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_domainNameHasBeenSet = false;
+  bool m_workflowTypeHasBeenSet = false;
+  bool m_integrationConfigHasBeenSet = false;
+  bool m_objectTypeNameHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

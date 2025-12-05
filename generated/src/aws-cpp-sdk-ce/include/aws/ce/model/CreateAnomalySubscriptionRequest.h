@@ -90,9 +90,9 @@ class CreateAnomalySubscriptionRequest : public CostExplorerRequest {
   ///@}
  private:
   AnomalySubscription m_anomalySubscription;
-  bool m_anomalySubscriptionHasBeenSet = false;
 
   Aws::Vector<ResourceTag> m_resourceTags;
+  bool m_anomalySubscriptionHasBeenSet = false;
   bool m_resourceTagsHasBeenSet = false;
 };
 

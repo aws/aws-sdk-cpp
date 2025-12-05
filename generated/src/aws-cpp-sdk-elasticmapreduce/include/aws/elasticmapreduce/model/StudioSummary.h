@@ -163,24 +163,24 @@ class StudioSummary {
   ///@}
  private:
   Aws::String m_studioId;
-  bool m_studioIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   AuthMode m_authMode{AuthMode::NOT_SET};
-  bool m_authModeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
+  bool m_studioIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_urlHasBeenSet = false;
+  bool m_authModeHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
 };
 

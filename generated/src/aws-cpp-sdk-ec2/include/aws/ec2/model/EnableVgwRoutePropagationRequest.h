@@ -95,12 +95,12 @@ class EnableVgwRoutePropagationRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_gatewayId;
-  bool m_gatewayIdHasBeenSet = false;
 
   Aws::String m_routeTableId;
-  bool m_routeTableIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_gatewayIdHasBeenSet = false;
+  bool m_routeTableIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

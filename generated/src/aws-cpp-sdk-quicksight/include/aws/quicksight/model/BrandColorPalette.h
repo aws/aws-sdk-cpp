@@ -194,30 +194,30 @@ class BrandColorPalette {
   ///@}
  private:
   Palette m_primary;
-  bool m_primaryHasBeenSet = false;
 
   Palette m_secondary;
-  bool m_secondaryHasBeenSet = false;
 
   Palette m_accent;
-  bool m_accentHasBeenSet = false;
 
   Palette m_measure;
-  bool m_measureHasBeenSet = false;
 
   Palette m_dimension;
-  bool m_dimensionHasBeenSet = false;
 
   Palette m_success;
-  bool m_successHasBeenSet = false;
 
   Palette m_info;
-  bool m_infoHasBeenSet = false;
 
   Palette m_warning;
-  bool m_warningHasBeenSet = false;
 
   Palette m_danger;
+  bool m_primaryHasBeenSet = false;
+  bool m_secondaryHasBeenSet = false;
+  bool m_accentHasBeenSet = false;
+  bool m_measureHasBeenSet = false;
+  bool m_dimensionHasBeenSet = false;
+  bool m_successHasBeenSet = false;
+  bool m_infoHasBeenSet = false;
+  bool m_warningHasBeenSet = false;
   bool m_dangerHasBeenSet = false;
 };
 

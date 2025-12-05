@@ -83,12 +83,12 @@ class TopicNullFilter {
   ///@}
  private:
   NullFilterType m_nullFilterType{NullFilterType::NOT_SET};
-  bool m_nullFilterTypeHasBeenSet = false;
 
   TopicSingularFilterConstant m_constant;
-  bool m_constantHasBeenSet = false;
 
   bool m_inverse{false};
+  bool m_nullFilterTypeHasBeenSet = false;
+  bool m_constantHasBeenSet = false;
   bool m_inverseHasBeenSet = false;
 };
 

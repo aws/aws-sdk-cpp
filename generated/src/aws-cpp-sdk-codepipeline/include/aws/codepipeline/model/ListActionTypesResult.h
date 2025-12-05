@@ -92,12 +92,12 @@ class ListActionTypesResult {
   ///@}
  private:
   Aws::Vector<ActionType> m_actionTypes;
-  bool m_actionTypesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_actionTypesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

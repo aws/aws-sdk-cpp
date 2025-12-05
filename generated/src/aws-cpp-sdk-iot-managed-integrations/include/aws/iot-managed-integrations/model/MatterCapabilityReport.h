@@ -94,12 +94,12 @@ class MatterCapabilityReport {
   ///@}
  private:
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_nodeId;
-  bool m_nodeIdHasBeenSet = false;
 
   Aws::Vector<MatterCapabilityReportEndpoint> m_endpoints;
+  bool m_versionHasBeenSet = false;
+  bool m_nodeIdHasBeenSet = false;
   bool m_endpointsHasBeenSet = false;
 };
 

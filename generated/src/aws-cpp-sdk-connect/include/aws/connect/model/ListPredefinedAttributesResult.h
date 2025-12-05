@@ -87,12 +87,12 @@ class ListPredefinedAttributesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<PredefinedAttributeSummary> m_predefinedAttributeSummaryList;
-  bool m_predefinedAttributeSummaryListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_predefinedAttributeSummaryListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

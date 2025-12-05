@@ -140,21 +140,21 @@ class ListObjectParentsRequest : public CloudDirectoryRequest {
   ///@}
  private:
   Aws::String m_directoryArn;
-  bool m_directoryArnHasBeenSet = false;
 
   ObjectReference m_objectReference;
-  bool m_objectReferenceHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   ConsistencyLevel m_consistencyLevel{ConsistencyLevel::NOT_SET};
-  bool m_consistencyLevelHasBeenSet = false;
 
   bool m_includeAllLinksToEachParent{false};
+  bool m_directoryArnHasBeenSet = false;
+  bool m_objectReferenceHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_consistencyLevelHasBeenSet = false;
   bool m_includeAllLinksToEachParentHasBeenSet = false;
 };
 

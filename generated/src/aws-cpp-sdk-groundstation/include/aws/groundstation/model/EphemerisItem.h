@@ -174,27 +174,27 @@ class EphemerisItem {
   ///@}
  private:
   Aws::String m_ephemerisId;
-  bool m_ephemerisIdHasBeenSet = false;
 
   EphemerisType m_ephemerisType{EphemerisType::NOT_SET};
-  bool m_ephemerisTypeHasBeenSet = false;
 
   EphemerisStatus m_status{EphemerisStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   S3Object m_sourceS3Object;
+  bool m_ephemerisIdHasBeenSet = false;
+  bool m_ephemerisTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_sourceS3ObjectHasBeenSet = false;
 };
 

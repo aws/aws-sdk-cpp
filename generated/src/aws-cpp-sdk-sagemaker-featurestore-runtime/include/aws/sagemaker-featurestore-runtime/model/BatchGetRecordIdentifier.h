@@ -102,12 +102,12 @@ class BatchGetRecordIdentifier {
   ///@}
  private:
   Aws::String m_featureGroupName;
-  bool m_featureGroupNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_recordIdentifiersValueAsString;
-  bool m_recordIdentifiersValueAsStringHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_featureNames;
+  bool m_featureGroupNameHasBeenSet = false;
+  bool m_recordIdentifiersValueAsStringHasBeenSet = false;
   bool m_featureNamesHasBeenSet = false;
 };
 

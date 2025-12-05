@@ -70,9 +70,9 @@ class GetReputationEntityRequest : public SESV2Request {
   ///@}
  private:
   Aws::String m_reputationEntityReference;
-  bool m_reputationEntityReferenceHasBeenSet = false;
 
   ReputationEntityType m_reputationEntityType{ReputationEntityType::NOT_SET};
+  bool m_reputationEntityReferenceHasBeenSet = false;
   bool m_reputationEntityTypeHasBeenSet = false;
 };
 

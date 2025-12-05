@@ -111,15 +111,15 @@ class ListRegistrationAssociationsRequest : public PinpointSMSVoiceV2Request {
   ///@}
  private:
   Aws::String m_registrationId;
-  bool m_registrationIdHasBeenSet = false;
 
   Aws::Vector<RegistrationAssociationFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_registrationIdHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

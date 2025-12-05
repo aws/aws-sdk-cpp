@@ -59,9 +59,9 @@ class SubmitTaskStateChangeResult {
   ///@}
  private:
   Aws::String m_acknowledgment;
-  bool m_acknowledgmentHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_acknowledgmentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

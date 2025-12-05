@@ -66,9 +66,9 @@ class SearchedLogStream {
   ///@}
  private:
   Aws::String m_logStreamName;
-  bool m_logStreamNameHasBeenSet = false;
 
   bool m_searchedCompletely{false};
+  bool m_logStreamNameHasBeenSet = false;
   bool m_searchedCompletelyHasBeenSet = false;
 };
 

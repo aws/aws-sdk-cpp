@@ -70,9 +70,9 @@ class SecretsManagerEncryptionKeyConfiguration {
   ///@}
  private:
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_secretArnHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

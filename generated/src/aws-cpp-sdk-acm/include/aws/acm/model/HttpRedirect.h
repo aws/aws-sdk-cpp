@@ -73,9 +73,9 @@ class HttpRedirect {
   ///@}
  private:
   Aws::String m_redirectFrom;
-  bool m_redirectFromHasBeenSet = false;
 
   Aws::String m_redirectTo;
+  bool m_redirectFromHasBeenSet = false;
   bool m_redirectToHasBeenSet = false;
 };
 

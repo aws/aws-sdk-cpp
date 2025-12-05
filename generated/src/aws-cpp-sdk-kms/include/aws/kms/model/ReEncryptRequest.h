@@ -285,30 +285,30 @@ class ReEncryptRequest : public KMSRequest {
   ///@}
  private:
   Aws::Utils::ByteBuffer m_ciphertextBlob{};
-  bool m_ciphertextBlobHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_sourceEncryptionContext;
-  bool m_sourceEncryptionContextHasBeenSet = false;
 
   Aws::String m_sourceKeyId;
-  bool m_sourceKeyIdHasBeenSet = false;
 
   Aws::String m_destinationKeyId;
-  bool m_destinationKeyIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_destinationEncryptionContext;
-  bool m_destinationEncryptionContextHasBeenSet = false;
 
   EncryptionAlgorithmSpec m_sourceEncryptionAlgorithm{EncryptionAlgorithmSpec::NOT_SET};
-  bool m_sourceEncryptionAlgorithmHasBeenSet = false;
 
   EncryptionAlgorithmSpec m_destinationEncryptionAlgorithm{EncryptionAlgorithmSpec::NOT_SET};
-  bool m_destinationEncryptionAlgorithmHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_grantTokens;
-  bool m_grantTokensHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_ciphertextBlobHasBeenSet = false;
+  bool m_sourceEncryptionContextHasBeenSet = false;
+  bool m_sourceKeyIdHasBeenSet = false;
+  bool m_destinationKeyIdHasBeenSet = false;
+  bool m_destinationEncryptionContextHasBeenSet = false;
+  bool m_sourceEncryptionAlgorithmHasBeenSet = false;
+  bool m_destinationEncryptionAlgorithmHasBeenSet = false;
+  bool m_grantTokensHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

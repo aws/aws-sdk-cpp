@@ -105,15 +105,15 @@ class DbServerPatchingDetails {
   ///@}
  private:
   int m_estimatedPatchDuration{0};
-  bool m_estimatedPatchDurationHasBeenSet = false;
 
   DbServerPatchingStatus m_patchingStatus{DbServerPatchingStatus::NOT_SET};
-  bool m_patchingStatusHasBeenSet = false;
 
   Aws::String m_timePatchingEnded;
-  bool m_timePatchingEndedHasBeenSet = false;
 
   Aws::String m_timePatchingStarted;
+  bool m_estimatedPatchDurationHasBeenSet = false;
+  bool m_patchingStatusHasBeenSet = false;
+  bool m_timePatchingEndedHasBeenSet = false;
   bool m_timePatchingStartedHasBeenSet = false;
 };
 

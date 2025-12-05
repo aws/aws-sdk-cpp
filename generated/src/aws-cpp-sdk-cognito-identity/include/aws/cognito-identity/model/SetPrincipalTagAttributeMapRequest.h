@@ -109,15 +109,15 @@ class SetPrincipalTagAttributeMapRequest : public CognitoIdentityRequest {
   ///@}
  private:
   Aws::String m_identityPoolId;
-  bool m_identityPoolIdHasBeenSet = false;
 
   Aws::String m_identityProviderName;
-  bool m_identityProviderNameHasBeenSet = false;
 
   bool m_useDefaults{false};
-  bool m_useDefaultsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_principalTags;
+  bool m_identityPoolIdHasBeenSet = false;
+  bool m_identityProviderNameHasBeenSet = false;
+  bool m_useDefaultsHasBeenSet = false;
   bool m_principalTagsHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class RejectRule {
   ///@}
  private:
   RejectRuleBehavior m_rule{RejectRuleBehavior::NOT_SET};
-  bool m_ruleHasBeenSet = false;
 
   double m_threshold{0.0};
+  bool m_ruleHasBeenSet = false;
   bool m_thresholdHasBeenSet = false;
 };
 

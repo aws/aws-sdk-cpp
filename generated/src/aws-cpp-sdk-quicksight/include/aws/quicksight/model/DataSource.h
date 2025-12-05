@@ -294,42 +294,42 @@ class DataSource {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_dataSourceId;
-  bool m_dataSourceIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   DataSourceType m_type{DataSourceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   ResourceStatus m_status{ResourceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   DataSourceParameters m_dataSourceParameters;
-  bool m_dataSourceParametersHasBeenSet = false;
 
   Aws::Vector<DataSourceParameters> m_alternateDataSourceParameters;
-  bool m_alternateDataSourceParametersHasBeenSet = false;
 
   VpcConnectionProperties m_vpcConnectionProperties;
-  bool m_vpcConnectionPropertiesHasBeenSet = false;
 
   SslProperties m_sslProperties;
-  bool m_sslPropertiesHasBeenSet = false;
 
   DataSourceErrorInfo m_errorInfo;
-  bool m_errorInfoHasBeenSet = false;
 
   Aws::String m_secretArn;
+  bool m_arnHasBeenSet = false;
+  bool m_dataSourceIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_dataSourceParametersHasBeenSet = false;
+  bool m_alternateDataSourceParametersHasBeenSet = false;
+  bool m_vpcConnectionPropertiesHasBeenSet = false;
+  bool m_sslPropertiesHasBeenSet = false;
+  bool m_errorInfoHasBeenSet = false;
   bool m_secretArnHasBeenSet = false;
 };
 

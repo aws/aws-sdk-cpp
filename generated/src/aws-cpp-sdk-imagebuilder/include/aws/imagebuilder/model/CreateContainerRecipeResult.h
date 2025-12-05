@@ -98,15 +98,15 @@ class CreateContainerRecipeResult {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::String m_containerRecipeArn;
-  bool m_containerRecipeArnHasBeenSet = false;
 
   LatestVersionReferences m_latestVersionReferences;
+  bool m_requestIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_containerRecipeArnHasBeenSet = false;
   bool m_latestVersionReferencesHasBeenSet = false;
 };
 

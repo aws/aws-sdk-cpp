@@ -159,21 +159,21 @@ class DataCaptureConfig {
   ///@}
  private:
   bool m_enableCapture{false};
-  bool m_enableCaptureHasBeenSet = false;
 
   int m_initialSamplingPercentage{0};
-  bool m_initialSamplingPercentageHasBeenSet = false;
 
   Aws::String m_destinationS3Uri;
-  bool m_destinationS3UriHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::Vector<CaptureOption> m_captureOptions;
-  bool m_captureOptionsHasBeenSet = false;
 
   CaptureContentTypeHeader m_captureContentTypeHeader;
+  bool m_enableCaptureHasBeenSet = false;
+  bool m_initialSamplingPercentageHasBeenSet = false;
+  bool m_destinationS3UriHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_captureOptionsHasBeenSet = false;
   bool m_captureContentTypeHeaderHasBeenSet = false;
 };
 

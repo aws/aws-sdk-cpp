@@ -145,21 +145,21 @@ class FileCacheLustreConfiguration {
   ///@}
  private:
   int m_perUnitStorageThroughput{0};
-  bool m_perUnitStorageThroughputHasBeenSet = false;
 
   FileCacheLustreDeploymentType m_deploymentType{FileCacheLustreDeploymentType::NOT_SET};
-  bool m_deploymentTypeHasBeenSet = false;
 
   Aws::String m_mountName;
-  bool m_mountNameHasBeenSet = false;
 
   Aws::String m_weeklyMaintenanceStartTime;
-  bool m_weeklyMaintenanceStartTimeHasBeenSet = false;
 
   FileCacheLustreMetadataConfiguration m_metadataConfiguration;
-  bool m_metadataConfigurationHasBeenSet = false;
 
   LustreLogConfiguration m_logConfiguration;
+  bool m_perUnitStorageThroughputHasBeenSet = false;
+  bool m_deploymentTypeHasBeenSet = false;
+  bool m_mountNameHasBeenSet = false;
+  bool m_weeklyMaintenanceStartTimeHasBeenSet = false;
+  bool m_metadataConfigurationHasBeenSet = false;
   bool m_logConfigurationHasBeenSet = false;
 };
 

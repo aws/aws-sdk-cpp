@@ -90,12 +90,12 @@ class ListTagsResult {
   ///@}
  private:
   Aws::Vector<ResourceTag> m_resourceTagList;
-  bool m_resourceTagListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceTagListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

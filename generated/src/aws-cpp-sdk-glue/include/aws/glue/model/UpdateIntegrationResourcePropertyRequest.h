@@ -87,12 +87,12 @@ class UpdateIntegrationResourcePropertyRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   SourceProcessingProperties m_sourceProcessingProperties;
-  bool m_sourceProcessingPropertiesHasBeenSet = false;
 
   TargetProcessingProperties m_targetProcessingProperties;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_sourceProcessingPropertiesHasBeenSet = false;
   bool m_targetProcessingPropertiesHasBeenSet = false;
 };
 

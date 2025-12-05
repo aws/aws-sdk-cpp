@@ -93,12 +93,12 @@ class EnterStandbyRequest : public AutoScalingRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_instanceIds;
-  bool m_instanceIdsHasBeenSet = false;
 
   Aws::String m_autoScalingGroupName;
-  bool m_autoScalingGroupNameHasBeenSet = false;
 
   bool m_shouldDecrementDesiredCapacity{false};
+  bool m_instanceIdsHasBeenSet = false;
+  bool m_autoScalingGroupNameHasBeenSet = false;
   bool m_shouldDecrementDesiredCapacityHasBeenSet = false;
 };
 

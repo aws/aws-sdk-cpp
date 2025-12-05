@@ -223,33 +223,33 @@ class Computation {
   ///@}
  private:
   TopBottomRankedComputation m_topBottomRanked;
-  bool m_topBottomRankedHasBeenSet = false;
 
   TopBottomMoversComputation m_topBottomMovers;
-  bool m_topBottomMoversHasBeenSet = false;
 
   TotalAggregationComputation m_totalAggregation;
-  bool m_totalAggregationHasBeenSet = false;
 
   MaximumMinimumComputation m_maximumMinimum;
-  bool m_maximumMinimumHasBeenSet = false;
 
   MetricComparisonComputation m_metricComparison;
-  bool m_metricComparisonHasBeenSet = false;
 
   PeriodOverPeriodComputation m_periodOverPeriod;
-  bool m_periodOverPeriodHasBeenSet = false;
 
   PeriodToDateComputation m_periodToDate;
-  bool m_periodToDateHasBeenSet = false;
 
   GrowthRateComputation m_growthRate;
-  bool m_growthRateHasBeenSet = false;
 
   UniqueValuesComputation m_uniqueValues;
-  bool m_uniqueValuesHasBeenSet = false;
 
   ForecastComputation m_forecast;
+  bool m_topBottomRankedHasBeenSet = false;
+  bool m_topBottomMoversHasBeenSet = false;
+  bool m_totalAggregationHasBeenSet = false;
+  bool m_maximumMinimumHasBeenSet = false;
+  bool m_metricComparisonHasBeenSet = false;
+  bool m_periodOverPeriodHasBeenSet = false;
+  bool m_periodToDateHasBeenSet = false;
+  bool m_growthRateHasBeenSet = false;
+  bool m_uniqueValuesHasBeenSet = false;
   bool m_forecastHasBeenSet = false;
 };
 

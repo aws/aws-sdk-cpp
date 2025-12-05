@@ -68,9 +68,9 @@ class EnableIoTLoggingParams {
   ///@}
  private:
   Aws::String m_roleArnForLogging;
-  bool m_roleArnForLoggingHasBeenSet = false;
 
   LogLevel m_logLevel{LogLevel::NOT_SET};
+  bool m_roleArnForLoggingHasBeenSet = false;
   bool m_logLevelHasBeenSet = false;
 };
 

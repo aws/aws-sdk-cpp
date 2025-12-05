@@ -150,21 +150,21 @@ class NotifyConfigurationType {
   ///@}
  private:
   Aws::String m_from;
-  bool m_fromHasBeenSet = false;
 
   Aws::String m_replyTo;
-  bool m_replyToHasBeenSet = false;
 
   Aws::String m_sourceArn;
-  bool m_sourceArnHasBeenSet = false;
 
   NotifyEmailType m_blockEmail;
-  bool m_blockEmailHasBeenSet = false;
 
   NotifyEmailType m_noActionEmail;
-  bool m_noActionEmailHasBeenSet = false;
 
   NotifyEmailType m_mfaEmail;
+  bool m_fromHasBeenSet = false;
+  bool m_replyToHasBeenSet = false;
+  bool m_sourceArnHasBeenSet = false;
+  bool m_blockEmailHasBeenSet = false;
+  bool m_noActionEmailHasBeenSet = false;
   bool m_mfaEmailHasBeenSet = false;
 };
 

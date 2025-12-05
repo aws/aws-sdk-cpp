@@ -107,15 +107,15 @@ class UpdateModelRequest : public LookoutEquipmentRequest {
   ///@}
  private:
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   LabelsInputConfiguration m_labelsInputConfiguration;
-  bool m_labelsInputConfigurationHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   ModelDiagnosticsOutputConfiguration m_modelDiagnosticsOutputConfiguration;
+  bool m_modelNameHasBeenSet = false;
+  bool m_labelsInputConfigurationHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_modelDiagnosticsOutputConfigurationHasBeenSet = false;
 };
 

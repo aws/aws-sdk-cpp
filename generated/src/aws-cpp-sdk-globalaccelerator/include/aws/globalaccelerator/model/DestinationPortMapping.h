@@ -189,27 +189,27 @@ class DestinationPortMapping {
   ///@}
  private:
   Aws::String m_acceleratorArn;
-  bool m_acceleratorArnHasBeenSet = false;
 
   Aws::Vector<SocketAddress> m_acceleratorSocketAddresses;
-  bool m_acceleratorSocketAddressesHasBeenSet = false;
 
   Aws::String m_endpointGroupArn;
-  bool m_endpointGroupArnHasBeenSet = false;
 
   Aws::String m_endpointId;
-  bool m_endpointIdHasBeenSet = false;
 
   Aws::String m_endpointGroupRegion;
-  bool m_endpointGroupRegionHasBeenSet = false;
 
   SocketAddress m_destinationSocketAddress;
-  bool m_destinationSocketAddressHasBeenSet = false;
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
-  bool m_ipAddressTypeHasBeenSet = false;
 
   CustomRoutingDestinationTrafficState m_destinationTrafficState{CustomRoutingDestinationTrafficState::NOT_SET};
+  bool m_acceleratorArnHasBeenSet = false;
+  bool m_acceleratorSocketAddressesHasBeenSet = false;
+  bool m_endpointGroupArnHasBeenSet = false;
+  bool m_endpointIdHasBeenSet = false;
+  bool m_endpointGroupRegionHasBeenSet = false;
+  bool m_destinationSocketAddressHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
   bool m_destinationTrafficStateHasBeenSet = false;
 };
 

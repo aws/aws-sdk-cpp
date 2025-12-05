@@ -94,15 +94,15 @@ class CancelQueryResult {
   ///@}
  private:
   Aws::String m_queryId;
-  bool m_queryIdHasBeenSet = false;
 
   QueryStatus m_queryStatus{QueryStatus::NOT_SET};
-  bool m_queryStatusHasBeenSet = false;
 
   Aws::String m_eventDataStoreOwnerAccountId;
-  bool m_eventDataStoreOwnerAccountIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_queryIdHasBeenSet = false;
+  bool m_queryStatusHasBeenSet = false;
+  bool m_eventDataStoreOwnerAccountIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

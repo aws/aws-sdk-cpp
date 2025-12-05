@@ -92,15 +92,15 @@ class UpdateDataSetPermissionsResult {
   ///@}
  private:
   Aws::String m_dataSetArn;
-  bool m_dataSetArnHasBeenSet = false;
 
   Aws::String m_dataSetId;
-  bool m_dataSetIdHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   int m_status{0};
+  bool m_dataSetArnHasBeenSet = false;
+  bool m_dataSetIdHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

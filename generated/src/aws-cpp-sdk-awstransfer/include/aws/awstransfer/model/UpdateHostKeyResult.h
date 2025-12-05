@@ -77,12 +77,12 @@ class UpdateHostKeyResult {
   ///@}
  private:
   Aws::String m_serverId;
-  bool m_serverIdHasBeenSet = false;
 
   Aws::String m_hostKeyId;
-  bool m_hostKeyIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_serverIdHasBeenSet = false;
+  bool m_hostKeyIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

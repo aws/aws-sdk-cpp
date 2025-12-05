@@ -154,21 +154,21 @@ class ClusterSlurmConfiguration {
   ///@}
  private:
   int m_scaleDownIdleTimeInSeconds{0};
-  bool m_scaleDownIdleTimeInSecondsHasBeenSet = false;
 
   Aws::Vector<SlurmCustomSetting> m_slurmCustomSettings;
-  bool m_slurmCustomSettingsHasBeenSet = false;
 
   SlurmAuthKey m_authKey;
-  bool m_authKeyHasBeenSet = false;
 
   JwtAuth m_jwtAuth;
-  bool m_jwtAuthHasBeenSet = false;
 
   Accounting m_accounting;
-  bool m_accountingHasBeenSet = false;
 
   SlurmRest m_slurmRest;
+  bool m_scaleDownIdleTimeInSecondsHasBeenSet = false;
+  bool m_slurmCustomSettingsHasBeenSet = false;
+  bool m_authKeyHasBeenSet = false;
+  bool m_jwtAuthHasBeenSet = false;
+  bool m_accountingHasBeenSet = false;
   bool m_slurmRestHasBeenSet = false;
 };
 

@@ -73,9 +73,9 @@ class SourceConnection {
   ///@}
  private:
   SourceType m_type{SourceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   SourceConnectionParameters m_connectionParameters;
+  bool m_typeHasBeenSet = false;
   bool m_connectionParametersHasBeenSet = false;
 };
 

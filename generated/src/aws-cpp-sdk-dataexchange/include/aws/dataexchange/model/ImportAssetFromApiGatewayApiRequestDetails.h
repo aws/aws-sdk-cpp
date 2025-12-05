@@ -194,30 +194,30 @@ class ImportAssetFromApiGatewayApiRequestDetails {
   ///@}
  private:
   Aws::String m_apiDescription;
-  bool m_apiDescriptionHasBeenSet = false;
 
   Aws::String m_apiId;
-  bool m_apiIdHasBeenSet = false;
 
   Aws::String m_apiKey;
-  bool m_apiKeyHasBeenSet = false;
 
   Aws::String m_apiName;
-  bool m_apiNameHasBeenSet = false;
 
   Aws::String m_apiSpecificationMd5Hash;
-  bool m_apiSpecificationMd5HashHasBeenSet = false;
 
   Aws::String m_dataSetId;
-  bool m_dataSetIdHasBeenSet = false;
 
   ProtocolType m_protocolType{ProtocolType::NOT_SET};
-  bool m_protocolTypeHasBeenSet = false;
 
   Aws::String m_revisionId;
-  bool m_revisionIdHasBeenSet = false;
 
   Aws::String m_stage;
+  bool m_apiDescriptionHasBeenSet = false;
+  bool m_apiIdHasBeenSet = false;
+  bool m_apiKeyHasBeenSet = false;
+  bool m_apiNameHasBeenSet = false;
+  bool m_apiSpecificationMd5HashHasBeenSet = false;
+  bool m_dataSetIdHasBeenSet = false;
+  bool m_protocolTypeHasBeenSet = false;
+  bool m_revisionIdHasBeenSet = false;
   bool m_stageHasBeenSet = false;
 };
 

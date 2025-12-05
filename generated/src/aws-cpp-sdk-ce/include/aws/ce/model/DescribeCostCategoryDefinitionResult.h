@@ -59,9 +59,9 @@ class DescribeCostCategoryDefinitionResult {
   ///@}
  private:
   CostCategory m_costCategory;
-  bool m_costCategoryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_costCategoryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -66,9 +66,9 @@ class ResetChannelStateRequest : public Mediapackagev2Request {
   ///@}
  private:
   Aws::String m_channelGroupName;
-  bool m_channelGroupNameHasBeenSet = false;
 
   Aws::String m_channelName;
+  bool m_channelGroupNameHasBeenSet = false;
   bool m_channelNameHasBeenSet = false;
 };
 

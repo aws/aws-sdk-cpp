@@ -86,12 +86,12 @@ class GetIpamPrefixListResolverRulesResponse {
   ///@}
  private:
   Aws::Vector<IpamPrefixListResolverRule> m_rules;
-  bool m_rulesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_rulesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

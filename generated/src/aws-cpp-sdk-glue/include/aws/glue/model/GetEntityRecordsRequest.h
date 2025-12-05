@@ -225,33 +225,33 @@ class GetEntityRecordsRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_connectionName;
-  bool m_connectionNameHasBeenSet = false;
 
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   Aws::String m_entityName;
-  bool m_entityNameHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_dataStoreApiVersion;
-  bool m_dataStoreApiVersionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_connectionOptions;
-  bool m_connectionOptionsHasBeenSet = false;
 
   Aws::String m_filterPredicate;
-  bool m_filterPredicateHasBeenSet = false;
 
   long long m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_orderBy;
-  bool m_orderByHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_selectedFields;
+  bool m_connectionNameHasBeenSet = false;
+  bool m_catalogIdHasBeenSet = false;
+  bool m_entityNameHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_dataStoreApiVersionHasBeenSet = false;
+  bool m_connectionOptionsHasBeenSet = false;
+  bool m_filterPredicateHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
+  bool m_orderByHasBeenSet = false;
   bool m_selectedFieldsHasBeenSet = false;
 };
 

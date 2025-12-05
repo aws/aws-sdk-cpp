@@ -65,9 +65,9 @@ class DisassociateResourceFromProfileRequest : public Route53ProfilesRequest {
   ///@}
  private:
   Aws::String m_profileId;
-  bool m_profileIdHasBeenSet = false;
 
   Aws::String m_resourceArn;
+  bool m_profileIdHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
 };
 

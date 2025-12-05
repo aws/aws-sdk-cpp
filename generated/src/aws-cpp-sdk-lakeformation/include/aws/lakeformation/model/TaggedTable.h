@@ -126,15 +126,15 @@ class TaggedTable {
   ///@}
  private:
   TableResource m_table;
-  bool m_tableHasBeenSet = false;
 
   Aws::Vector<LFTagPair> m_lFTagOnDatabase;
-  bool m_lFTagOnDatabaseHasBeenSet = false;
 
   Aws::Vector<LFTagPair> m_lFTagsOnTable;
-  bool m_lFTagsOnTableHasBeenSet = false;
 
   Aws::Vector<ColumnLFTag> m_lFTagsOnColumns;
+  bool m_tableHasBeenSet = false;
+  bool m_lFTagOnDatabaseHasBeenSet = false;
+  bool m_lFTagsOnTableHasBeenSet = false;
   bool m_lFTagsOnColumnsHasBeenSet = false;
 };
 

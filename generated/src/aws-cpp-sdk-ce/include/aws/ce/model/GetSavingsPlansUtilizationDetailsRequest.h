@@ -171,21 +171,21 @@ class GetSavingsPlansUtilizationDetailsRequest : public CostExplorerRequest {
   ///@}
  private:
   DateInterval m_timePeriod;
-  bool m_timePeriodHasBeenSet = false;
 
   Expression m_filter;
-  bool m_filterHasBeenSet = false;
 
   Aws::Vector<SavingsPlansDataType> m_dataType;
-  bool m_dataTypeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   SortDefinition m_sortBy;
+  bool m_timePeriodHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
+  bool m_dataTypeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_sortByHasBeenSet = false;
 };
 

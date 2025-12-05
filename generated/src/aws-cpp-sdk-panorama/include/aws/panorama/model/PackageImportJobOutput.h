@@ -105,15 +105,15 @@ class PackageImportJobOutput {
   ///@}
  private:
   OutPutS3Location m_outputS3Location;
-  bool m_outputS3LocationHasBeenSet = false;
 
   Aws::String m_packageId;
-  bool m_packageIdHasBeenSet = false;
 
   Aws::String m_packageVersion;
-  bool m_packageVersionHasBeenSet = false;
 
   Aws::String m_patchVersion;
+  bool m_outputS3LocationHasBeenSet = false;
+  bool m_packageIdHasBeenSet = false;
+  bool m_packageVersionHasBeenSet = false;
   bool m_patchVersionHasBeenSet = false;
 };
 

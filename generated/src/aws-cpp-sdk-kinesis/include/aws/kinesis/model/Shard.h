@@ -126,18 +126,18 @@ class Shard {
   ///@}
  private:
   Aws::String m_shardId;
-  bool m_shardIdHasBeenSet = false;
 
   Aws::String m_parentShardId;
-  bool m_parentShardIdHasBeenSet = false;
 
   Aws::String m_adjacentParentShardId;
-  bool m_adjacentParentShardIdHasBeenSet = false;
 
   HashKeyRange m_hashKeyRange;
-  bool m_hashKeyRangeHasBeenSet = false;
 
   SequenceNumberRange m_sequenceNumberRange;
+  bool m_shardIdHasBeenSet = false;
+  bool m_parentShardIdHasBeenSet = false;
+  bool m_adjacentParentShardIdHasBeenSet = false;
+  bool m_hashKeyRangeHasBeenSet = false;
   bool m_sequenceNumberRangeHasBeenSet = false;
 };
 

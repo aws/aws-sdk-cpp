@@ -70,9 +70,9 @@ class AvailabilityZone {
   ///@}
  private:
   Aws::String m_zoneName;
-  bool m_zoneNameHasBeenSet = false;
 
   Aws::String m_state;
+  bool m_zoneNameHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

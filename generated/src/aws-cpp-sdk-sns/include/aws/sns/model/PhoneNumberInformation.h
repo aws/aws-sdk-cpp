@@ -150,21 +150,21 @@ class PhoneNumberInformation {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_phoneNumber;
-  bool m_phoneNumberHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_iso2CountryCode;
-  bool m_iso2CountryCodeHasBeenSet = false;
 
   RouteType m_routeType{RouteType::NOT_SET};
-  bool m_routeTypeHasBeenSet = false;
 
   Aws::Vector<NumberCapability> m_numberCapabilities;
+  bool m_createdAtHasBeenSet = false;
+  bool m_phoneNumberHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_iso2CountryCodeHasBeenSet = false;
+  bool m_routeTypeHasBeenSet = false;
   bool m_numberCapabilitiesHasBeenSet = false;
 };
 

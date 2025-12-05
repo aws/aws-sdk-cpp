@@ -197,24 +197,24 @@ class OneDriveConfiguration {
   ///@}
  private:
   Aws::String m_tenantDomain;
-  bool m_tenantDomainHasBeenSet = false;
 
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   OneDriveUsers m_oneDriveUsers;
-  bool m_oneDriveUsersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inclusionPatterns;
-  bool m_inclusionPatternsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_exclusionPatterns;
-  bool m_exclusionPatternsHasBeenSet = false;
 
   Aws::Vector<DataSourceToIndexFieldMapping> m_fieldMappings;
-  bool m_fieldMappingsHasBeenSet = false;
 
   bool m_disableLocalGroups{false};
+  bool m_tenantDomainHasBeenSet = false;
+  bool m_secretArnHasBeenSet = false;
+  bool m_oneDriveUsersHasBeenSet = false;
+  bool m_inclusionPatternsHasBeenSet = false;
+  bool m_exclusionPatternsHasBeenSet = false;
+  bool m_fieldMappingsHasBeenSet = false;
   bool m_disableLocalGroupsHasBeenSet = false;
 };
 

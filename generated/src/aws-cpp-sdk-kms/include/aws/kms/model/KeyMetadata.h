@@ -581,78 +581,78 @@ class KeyMetadata {
   ///@}
  private:
   Aws::String m_aWSAccountId;
-  bool m_aWSAccountIdHasBeenSet = false;
 
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   KeyUsageType m_keyUsage{KeyUsageType::NOT_SET};
-  bool m_keyUsageHasBeenSet = false;
 
   KeyState m_keyState{KeyState::NOT_SET};
-  bool m_keyStateHasBeenSet = false;
 
   Aws::Utils::DateTime m_deletionDate{};
-  bool m_deletionDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_validTo{};
-  bool m_validToHasBeenSet = false;
 
   OriginType m_origin{OriginType::NOT_SET};
-  bool m_originHasBeenSet = false;
 
   Aws::String m_customKeyStoreId;
-  bool m_customKeyStoreIdHasBeenSet = false;
 
   Aws::String m_cloudHsmClusterId;
-  bool m_cloudHsmClusterIdHasBeenSet = false;
 
   ExpirationModelType m_expirationModel{ExpirationModelType::NOT_SET};
-  bool m_expirationModelHasBeenSet = false;
 
   KeyManagerType m_keyManager{KeyManagerType::NOT_SET};
-  bool m_keyManagerHasBeenSet = false;
 
   KeySpec m_keySpec{KeySpec::NOT_SET};
-  bool m_keySpecHasBeenSet = false;
 
   Aws::Vector<EncryptionAlgorithmSpec> m_encryptionAlgorithms;
-  bool m_encryptionAlgorithmsHasBeenSet = false;
 
   Aws::Vector<SigningAlgorithmSpec> m_signingAlgorithms;
-  bool m_signingAlgorithmsHasBeenSet = false;
 
   Aws::Vector<KeyAgreementAlgorithmSpec> m_keyAgreementAlgorithms;
-  bool m_keyAgreementAlgorithmsHasBeenSet = false;
 
   bool m_multiRegion{false};
-  bool m_multiRegionHasBeenSet = false;
 
   MultiRegionConfiguration m_multiRegionConfiguration;
-  bool m_multiRegionConfigurationHasBeenSet = false;
 
   int m_pendingDeletionWindowInDays{0};
-  bool m_pendingDeletionWindowInDaysHasBeenSet = false;
 
   Aws::Vector<MacAlgorithmSpec> m_macAlgorithms;
-  bool m_macAlgorithmsHasBeenSet = false;
 
   XksKeyConfigurationType m_xksKeyConfiguration;
-  bool m_xksKeyConfigurationHasBeenSet = false;
 
   Aws::String m_currentKeyMaterialId;
+  bool m_aWSAccountIdHasBeenSet = false;
+  bool m_keyIdHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_keyUsageHasBeenSet = false;
+  bool m_keyStateHasBeenSet = false;
+  bool m_deletionDateHasBeenSet = false;
+  bool m_validToHasBeenSet = false;
+  bool m_originHasBeenSet = false;
+  bool m_customKeyStoreIdHasBeenSet = false;
+  bool m_cloudHsmClusterIdHasBeenSet = false;
+  bool m_expirationModelHasBeenSet = false;
+  bool m_keyManagerHasBeenSet = false;
+  bool m_keySpecHasBeenSet = false;
+  bool m_encryptionAlgorithmsHasBeenSet = false;
+  bool m_signingAlgorithmsHasBeenSet = false;
+  bool m_keyAgreementAlgorithmsHasBeenSet = false;
+  bool m_multiRegionHasBeenSet = false;
+  bool m_multiRegionConfigurationHasBeenSet = false;
+  bool m_pendingDeletionWindowInDaysHasBeenSet = false;
+  bool m_macAlgorithmsHasBeenSet = false;
+  bool m_xksKeyConfigurationHasBeenSet = false;
   bool m_currentKeyMaterialIdHasBeenSet = false;
 };
 

@@ -270,39 +270,39 @@ class Network {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Framework m_framework{Framework::NOT_SET};
-  bool m_frameworkHasBeenSet = false;
 
   Aws::String m_frameworkVersion;
-  bool m_frameworkVersionHasBeenSet = false;
 
   NetworkFrameworkAttributes m_frameworkAttributes;
-  bool m_frameworkAttributesHasBeenSet = false;
 
   Aws::String m_vpcEndpointServiceName;
-  bool m_vpcEndpointServiceNameHasBeenSet = false;
 
   VotingPolicy m_votingPolicy;
-  bool m_votingPolicyHasBeenSet = false;
 
   NetworkStatus m_status{NetworkStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_arn;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_frameworkHasBeenSet = false;
+  bool m_frameworkVersionHasBeenSet = false;
+  bool m_frameworkAttributesHasBeenSet = false;
+  bool m_vpcEndpointServiceNameHasBeenSet = false;
+  bool m_votingPolicyHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_arnHasBeenSet = false;
 };
 

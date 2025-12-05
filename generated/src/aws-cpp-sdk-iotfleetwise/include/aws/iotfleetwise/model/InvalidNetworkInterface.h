@@ -68,9 +68,9 @@ class InvalidNetworkInterface {
   ///@}
  private:
   Aws::String m_interfaceId;
-  bool m_interfaceIdHasBeenSet = false;
 
   NetworkInterfaceFailureReason m_reason{NetworkInterfaceFailureReason::NOT_SET};
+  bool m_interfaceIdHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class LandingZoneOperationSummary {
   ///@}
  private:
   LandingZoneOperationType m_operationType{LandingZoneOperationType::NOT_SET};
-  bool m_operationTypeHasBeenSet = false;
 
   Aws::String m_operationIdentifier;
-  bool m_operationIdentifierHasBeenSet = false;
 
   LandingZoneOperationStatus m_status{LandingZoneOperationStatus::NOT_SET};
+  bool m_operationTypeHasBeenSet = false;
+  bool m_operationIdentifierHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

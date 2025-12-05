@@ -108,15 +108,15 @@ class DeleteVectorsRequest : public S3VectorsRequest {
   ///@}
  private:
   Aws::String m_vectorBucketName;
-  bool m_vectorBucketNameHasBeenSet = false;
 
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   Aws::String m_indexArn;
-  bool m_indexArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_keys;
+  bool m_vectorBucketNameHasBeenSet = false;
+  bool m_indexNameHasBeenSet = false;
+  bool m_indexArnHasBeenSet = false;
   bool m_keysHasBeenSet = false;
 };
 

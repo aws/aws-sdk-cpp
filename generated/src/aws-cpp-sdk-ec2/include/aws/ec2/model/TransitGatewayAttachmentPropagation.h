@@ -69,9 +69,9 @@ class TransitGatewayAttachmentPropagation {
   ///@}
  private:
   Aws::String m_transitGatewayRouteTableId;
-  bool m_transitGatewayRouteTableIdHasBeenSet = false;
 
   TransitGatewayPropagationState m_state{TransitGatewayPropagationState::NOT_SET};
+  bool m_transitGatewayRouteTableIdHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

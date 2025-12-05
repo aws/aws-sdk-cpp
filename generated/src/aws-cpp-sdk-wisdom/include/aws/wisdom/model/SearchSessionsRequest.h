@@ -107,15 +107,15 @@ class SearchSessionsRequest : public ConnectWisdomServiceRequest {
   ///@}
  private:
   Aws::String m_assistantId;
-  bool m_assistantIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   SearchExpression m_searchExpression;
+  bool m_assistantIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_searchExpressionHasBeenSet = false;
 };
 

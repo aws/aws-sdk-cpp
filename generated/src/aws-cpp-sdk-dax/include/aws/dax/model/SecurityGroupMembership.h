@@ -69,9 +69,9 @@ class SecurityGroupMembership {
   ///@}
  private:
   Aws::String m_securityGroupIdentifier;
-  bool m_securityGroupIdentifierHasBeenSet = false;
 
   Aws::String m_status;
+  bool m_securityGroupIdentifierHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

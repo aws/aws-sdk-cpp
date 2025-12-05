@@ -86,9 +86,9 @@ class AudioChannelTaggingSettings {
   ///@}
  private:
   AudioChannelTag m_channelTag{AudioChannelTag::NOT_SET};
-  bool m_channelTagHasBeenSet = false;
 
   Aws::Vector<AudioChannelTag> m_channelTags;
+  bool m_channelTagHasBeenSet = false;
   bool m_channelTagsHasBeenSet = false;
 };
 

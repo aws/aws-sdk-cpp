@@ -91,12 +91,12 @@ class DatastoreStorageSummary {
   ///@}
  private:
   ServiceManagedDatastoreS3StorageSummary m_serviceManagedS3;
-  bool m_serviceManagedS3HasBeenSet = false;
 
   CustomerManagedDatastoreS3StorageSummary m_customerManagedS3;
-  bool m_customerManagedS3HasBeenSet = false;
 
   DatastoreIotSiteWiseMultiLayerStorageSummary m_iotSiteWiseMultiLayerStorage;
+  bool m_serviceManagedS3HasBeenSet = false;
+  bool m_customerManagedS3HasBeenSet = false;
   bool m_iotSiteWiseMultiLayerStorageHasBeenSet = false;
 };
 

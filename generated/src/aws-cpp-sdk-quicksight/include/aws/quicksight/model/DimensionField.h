@@ -88,12 +88,12 @@ class DimensionField {
   ///@}
  private:
   NumericalDimensionField m_numericalDimensionField;
-  bool m_numericalDimensionFieldHasBeenSet = false;
 
   CategoricalDimensionField m_categoricalDimensionField;
-  bool m_categoricalDimensionFieldHasBeenSet = false;
 
   DateDimensionField m_dateDimensionField;
+  bool m_numericalDimensionFieldHasBeenSet = false;
+  bool m_categoricalDimensionFieldHasBeenSet = false;
   bool m_dateDimensionFieldHasBeenSet = false;
 };
 

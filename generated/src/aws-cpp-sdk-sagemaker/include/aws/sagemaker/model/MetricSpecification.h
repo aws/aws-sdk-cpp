@@ -70,9 +70,9 @@ class MetricSpecification {
   ///@}
  private:
   PredefinedMetricSpecification m_predefined;
-  bool m_predefinedHasBeenSet = false;
 
   CustomizedMetricSpecification m_customized;
+  bool m_predefinedHasBeenSet = false;
   bool m_customizedHasBeenSet = false;
 };
 

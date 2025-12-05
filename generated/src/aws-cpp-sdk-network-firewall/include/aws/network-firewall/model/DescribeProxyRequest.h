@@ -70,9 +70,9 @@ class DescribeProxyRequest : public NetworkFirewallRequest {
   ///@}
  private:
   Aws::String m_proxyName;
-  bool m_proxyNameHasBeenSet = false;
 
   Aws::String m_proxyArn;
+  bool m_proxyNameHasBeenSet = false;
   bool m_proxyArnHasBeenSet = false;
 };
 

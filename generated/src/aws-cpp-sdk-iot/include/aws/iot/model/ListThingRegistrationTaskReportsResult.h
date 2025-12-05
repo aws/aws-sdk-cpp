@@ -100,15 +100,15 @@ class ListThingRegistrationTaskReportsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_resourceLinks;
-  bool m_resourceLinksHasBeenSet = false;
 
   ReportType m_reportType{ReportType::NOT_SET};
-  bool m_reportTypeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceLinksHasBeenSet = false;
+  bool m_reportTypeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

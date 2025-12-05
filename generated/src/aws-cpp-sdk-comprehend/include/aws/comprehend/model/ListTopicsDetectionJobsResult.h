@@ -86,12 +86,12 @@ class ListTopicsDetectionJobsResult {
   ///@}
  private:
   Aws::Vector<TopicsDetectionJobProperties> m_topicsDetectionJobPropertiesList;
-  bool m_topicsDetectionJobPropertiesListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_topicsDetectionJobPropertiesListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

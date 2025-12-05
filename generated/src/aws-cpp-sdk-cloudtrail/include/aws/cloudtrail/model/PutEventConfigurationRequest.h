@@ -141,18 +141,18 @@ class PutEventConfigurationRequest : public CloudTrailRequest {
   ///@}
  private:
   Aws::String m_trailName;
-  bool m_trailNameHasBeenSet = false;
 
   Aws::String m_eventDataStore;
-  bool m_eventDataStoreHasBeenSet = false;
 
   MaxEventSize m_maxEventSize{MaxEventSize::NOT_SET};
-  bool m_maxEventSizeHasBeenSet = false;
 
   Aws::Vector<ContextKeySelector> m_contextKeySelectors;
-  bool m_contextKeySelectorsHasBeenSet = false;
 
   Aws::Vector<AggregationConfiguration> m_aggregationConfigurations;
+  bool m_trailNameHasBeenSet = false;
+  bool m_eventDataStoreHasBeenSet = false;
+  bool m_maxEventSizeHasBeenSet = false;
+  bool m_contextKeySelectorsHasBeenSet = false;
   bool m_aggregationConfigurationsHasBeenSet = false;
 };
 

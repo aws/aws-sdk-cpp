@@ -92,12 +92,12 @@ class NotifyEmailType {
   ///@}
  private:
   Aws::String m_subject;
-  bool m_subjectHasBeenSet = false;
 
   Aws::String m_htmlBody;
-  bool m_htmlBodyHasBeenSet = false;
 
   Aws::String m_textBody;
+  bool m_subjectHasBeenSet = false;
+  bool m_htmlBodyHasBeenSet = false;
   bool m_textBodyHasBeenSet = false;
 };
 

@@ -168,24 +168,24 @@ class RestoreRequest {
   ///@}
  private:
   int m_days{0};
-  bool m_daysHasBeenSet = false;
 
   GlacierJobParameters m_glacierJobParameters;
-  bool m_glacierJobParametersHasBeenSet = false;
 
   RestoreRequestType m_type{RestoreRequestType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Tier m_tier{Tier::NOT_SET};
-  bool m_tierHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   SelectParameters m_selectParameters;
-  bool m_selectParametersHasBeenSet = false;
 
   OutputLocation m_outputLocation;
+  bool m_daysHasBeenSet = false;
+  bool m_glacierJobParametersHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_tierHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_selectParametersHasBeenSet = false;
   bool m_outputLocationHasBeenSet = false;
 };
 

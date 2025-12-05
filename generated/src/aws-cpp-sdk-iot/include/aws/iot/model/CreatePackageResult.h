@@ -93,15 +93,15 @@ class CreatePackageResult {
   ///@}
  private:
   Aws::String m_packageName;
-  bool m_packageNameHasBeenSet = false;
 
   Aws::String m_packageArn;
-  bool m_packageArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_packageNameHasBeenSet = false;
+  bool m_packageArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

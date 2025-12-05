@@ -342,48 +342,48 @@ class ImageRecipe {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   ImageType m_type{ImageType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Platform m_platform{Platform::NOT_SET};
-  bool m_platformHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::Vector<ComponentConfiguration> m_components;
-  bool m_componentsHasBeenSet = false;
 
   Aws::String m_parentImage;
-  bool m_parentImageHasBeenSet = false;
 
   Aws::Vector<InstanceBlockDeviceMapping> m_blockDeviceMappings;
-  bool m_blockDeviceMappingsHasBeenSet = false;
 
   Aws::String m_dateCreated;
-  bool m_dateCreatedHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_workingDirectory;
-  bool m_workingDirectoryHasBeenSet = false;
 
   AdditionalInstanceConfiguration m_additionalInstanceConfiguration;
-  bool m_additionalInstanceConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_amiTags;
+  bool m_arnHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_componentsHasBeenSet = false;
+  bool m_parentImageHasBeenSet = false;
+  bool m_blockDeviceMappingsHasBeenSet = false;
+  bool m_dateCreatedHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_workingDirectoryHasBeenSet = false;
+  bool m_additionalInstanceConfigurationHasBeenSet = false;
   bool m_amiTagsHasBeenSet = false;
 };
 

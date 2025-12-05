@@ -92,12 +92,12 @@ class DeviceSelectionResult {
   ///@}
  private:
   Aws::Vector<DeviceFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_matchedDevicesCount{0};
-  bool m_matchedDevicesCountHasBeenSet = false;
 
   int m_maxDevices{0};
+  bool m_filtersHasBeenSet = false;
+  bool m_matchedDevicesCountHasBeenSet = false;
   bool m_maxDevicesHasBeenSet = false;
 };
 

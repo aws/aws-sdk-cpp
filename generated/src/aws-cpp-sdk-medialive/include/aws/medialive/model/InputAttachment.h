@@ -134,18 +134,18 @@ class InputAttachment {
   ///@}
  private:
   AutomaticInputFailoverSettings m_automaticInputFailoverSettings;
-  bool m_automaticInputFailoverSettingsHasBeenSet = false;
 
   Aws::String m_inputAttachmentName;
-  bool m_inputAttachmentNameHasBeenSet = false;
 
   Aws::String m_inputId;
-  bool m_inputIdHasBeenSet = false;
 
   InputSettings m_inputSettings;
-  bool m_inputSettingsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_logicalInterfaceNames;
+  bool m_automaticInputFailoverSettingsHasBeenSet = false;
+  bool m_inputAttachmentNameHasBeenSet = false;
+  bool m_inputIdHasBeenSet = false;
+  bool m_inputSettingsHasBeenSet = false;
   bool m_logicalInterfaceNamesHasBeenSet = false;
 };
 

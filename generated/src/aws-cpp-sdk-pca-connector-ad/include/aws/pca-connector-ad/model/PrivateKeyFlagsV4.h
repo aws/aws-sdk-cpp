@@ -135,21 +135,21 @@ class PrivateKeyFlagsV4 {
   ///@}
  private:
   ClientCompatibilityV4 m_clientVersion{ClientCompatibilityV4::NOT_SET};
-  bool m_clientVersionHasBeenSet = false;
 
   bool m_exportableKey{false};
-  bool m_exportableKeyHasBeenSet = false;
 
   bool m_requireAlternateSignatureAlgorithm{false};
-  bool m_requireAlternateSignatureAlgorithmHasBeenSet = false;
 
   bool m_requireSameKeyRenewal{false};
-  bool m_requireSameKeyRenewalHasBeenSet = false;
 
   bool m_strongKeyProtectionRequired{false};
-  bool m_strongKeyProtectionRequiredHasBeenSet = false;
 
   bool m_useLegacyProvider{false};
+  bool m_clientVersionHasBeenSet = false;
+  bool m_exportableKeyHasBeenSet = false;
+  bool m_requireAlternateSignatureAlgorithmHasBeenSet = false;
+  bool m_requireSameKeyRenewalHasBeenSet = false;
+  bool m_strongKeyProtectionRequiredHasBeenSet = false;
   bool m_useLegacyProviderHasBeenSet = false;
 };
 

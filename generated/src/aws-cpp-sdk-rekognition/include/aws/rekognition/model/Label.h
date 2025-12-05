@@ -172,21 +172,21 @@ class Label {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   double m_confidence{0.0};
-  bool m_confidenceHasBeenSet = false;
 
   Aws::Vector<Instance> m_instances;
-  bool m_instancesHasBeenSet = false;
 
   Aws::Vector<Parent> m_parents;
-  bool m_parentsHasBeenSet = false;
 
   Aws::Vector<LabelAlias> m_aliases;
-  bool m_aliasesHasBeenSet = false;
 
   Aws::Vector<LabelCategory> m_categories;
+  bool m_nameHasBeenSet = false;
+  bool m_confidenceHasBeenSet = false;
+  bool m_instancesHasBeenSet = false;
+  bool m_parentsHasBeenSet = false;
+  bool m_aliasesHasBeenSet = false;
   bool m_categoriesHasBeenSet = false;
 };
 

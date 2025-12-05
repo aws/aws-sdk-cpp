@@ -61,9 +61,9 @@ class GetCampaignStateResult {
   ///@}
  private:
   CampaignState m_state{CampaignState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_stateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

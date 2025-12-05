@@ -269,42 +269,42 @@ class GetLinkResult {
   ///@}
  private:
   Aws::String m_gatewayId;
-  bool m_gatewayIdHasBeenSet = false;
 
   Aws::String m_peerGatewayId;
-  bool m_peerGatewayIdHasBeenSet = false;
 
   LinkStatus m_status{LinkStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   LinkDirection m_direction{LinkDirection::NOT_SET};
-  bool m_directionHasBeenSet = false;
 
   Aws::Vector<ModuleConfiguration> m_flowModules;
-  bool m_flowModulesHasBeenSet = false;
 
   Aws::Vector<ModuleConfiguration> m_pendingFlowModules;
-  bool m_pendingFlowModulesHasBeenSet = false;
 
   LinkAttributes m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::String m_linkId;
-  bool m_linkIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   LinkLogSettings m_logSettings;
-  bool m_logSettingsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_gatewayIdHasBeenSet = false;
+  bool m_peerGatewayIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_directionHasBeenSet = false;
+  bool m_flowModulesHasBeenSet = false;
+  bool m_pendingFlowModulesHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_linkIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_logSettingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

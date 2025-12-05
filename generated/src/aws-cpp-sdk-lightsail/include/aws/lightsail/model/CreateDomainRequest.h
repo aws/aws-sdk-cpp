@@ -77,9 +77,9 @@ class CreateDomainRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_domainNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -90,12 +90,12 @@ class ComponentBindingPropertiesValue {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   ComponentBindingPropertiesValueProperties m_bindingProperties;
-  bool m_bindingPropertiesHasBeenSet = false;
 
   Aws::String m_defaultValue;
+  bool m_typeHasBeenSet = false;
+  bool m_bindingPropertiesHasBeenSet = false;
   bool m_defaultValueHasBeenSet = false;
 };
 

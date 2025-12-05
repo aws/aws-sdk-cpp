@@ -77,9 +77,9 @@ class StartWorkflowRunRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_runProperties;
+  bool m_nameHasBeenSet = false;
   bool m_runPropertiesHasBeenSet = false;
 };
 

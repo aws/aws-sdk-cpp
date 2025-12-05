@@ -67,9 +67,9 @@ class Scte20SourceSettings {
   ///@}
  private:
   Scte20Convert608To708 m_convert608To708{Scte20Convert608To708::NOT_SET};
-  bool m_convert608To708HasBeenSet = false;
 
   int m_source608ChannelNumber{0};
+  bool m_convert608To708HasBeenSet = false;
   bool m_source608ChannelNumberHasBeenSet = false;
 };
 

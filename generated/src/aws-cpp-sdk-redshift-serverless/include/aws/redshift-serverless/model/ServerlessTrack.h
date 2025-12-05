@@ -99,12 +99,12 @@ class ServerlessTrack {
   ///@}
  private:
   Aws::String m_trackName;
-  bool m_trackNameHasBeenSet = false;
 
   Aws::Vector<UpdateTarget> m_updateTargets;
-  bool m_updateTargetsHasBeenSet = false;
 
   Aws::String m_workgroupVersion;
+  bool m_trackNameHasBeenSet = false;
+  bool m_updateTargetsHasBeenSet = false;
   bool m_workgroupVersionHasBeenSet = false;
 };
 

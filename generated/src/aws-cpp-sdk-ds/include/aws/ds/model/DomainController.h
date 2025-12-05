@@ -231,36 +231,36 @@ class DomainController {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::String m_domainControllerId;
-  bool m_domainControllerIdHasBeenSet = false;
 
   Aws::String m_dnsIpAddr;
-  bool m_dnsIpAddrHasBeenSet = false;
 
   Aws::String m_dnsIpv6Addr;
-  bool m_dnsIpv6AddrHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   DomainControllerStatus m_status{DomainControllerStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_launchTime{};
-  bool m_launchTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_statusLastUpdatedDateTime{};
+  bool m_directoryIdHasBeenSet = false;
+  bool m_domainControllerIdHasBeenSet = false;
+  bool m_dnsIpAddrHasBeenSet = false;
+  bool m_dnsIpv6AddrHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_launchTimeHasBeenSet = false;
   bool m_statusLastUpdatedDateTimeHasBeenSet = false;
 };
 

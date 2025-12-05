@@ -117,18 +117,18 @@ class GuardrailContextualGroundingFilter {
   ///@}
  private:
   GuardrailContextualGroundingFilterType m_type{GuardrailContextualGroundingFilterType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   double m_threshold{0.0};
-  bool m_thresholdHasBeenSet = false;
 
   double m_score{0.0};
-  bool m_scoreHasBeenSet = false;
 
   GuardrailContextualGroundingPolicyAction m_action{GuardrailContextualGroundingPolicyAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   bool m_detected{false};
+  bool m_typeHasBeenSet = false;
+  bool m_thresholdHasBeenSet = false;
+  bool m_scoreHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
   bool m_detectedHasBeenSet = false;
 };
 

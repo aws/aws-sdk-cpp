@@ -528,57 +528,57 @@ class CreateStackRequest : public CloudFormationRequest {
   ///@}
  private:
   Aws::String m_stackName;
-  bool m_stackNameHasBeenSet = false;
 
   Aws::String m_templateBody;
-  bool m_templateBodyHasBeenSet = false;
 
   Aws::String m_templateURL;
-  bool m_templateURLHasBeenSet = false;
 
   Aws::Vector<Parameter> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   bool m_disableRollback{false};
-  bool m_disableRollbackHasBeenSet = false;
 
   RollbackConfiguration m_rollbackConfiguration;
-  bool m_rollbackConfigurationHasBeenSet = false;
 
   int m_timeoutInMinutes{0};
-  bool m_timeoutInMinutesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_notificationARNs;
-  bool m_notificationARNsHasBeenSet = false;
 
   Aws::Vector<Capability> m_capabilities;
-  bool m_capabilitiesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceTypes;
-  bool m_resourceTypesHasBeenSet = false;
 
   Aws::String m_roleARN;
-  bool m_roleARNHasBeenSet = false;
 
   OnFailure m_onFailure{OnFailure::NOT_SET};
-  bool m_onFailureHasBeenSet = false;
 
   Aws::String m_stackPolicyBody;
-  bool m_stackPolicyBodyHasBeenSet = false;
 
   Aws::String m_stackPolicyURL;
-  bool m_stackPolicyURLHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientRequestToken;
-  bool m_clientRequestTokenHasBeenSet = false;
 
   bool m_enableTerminationProtection{false};
-  bool m_enableTerminationProtectionHasBeenSet = false;
 
   bool m_retainExceptOnCreate{false};
+  bool m_stackNameHasBeenSet = false;
+  bool m_templateBodyHasBeenSet = false;
+  bool m_templateURLHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_disableRollbackHasBeenSet = false;
+  bool m_rollbackConfigurationHasBeenSet = false;
+  bool m_timeoutInMinutesHasBeenSet = false;
+  bool m_notificationARNsHasBeenSet = false;
+  bool m_capabilitiesHasBeenSet = false;
+  bool m_resourceTypesHasBeenSet = false;
+  bool m_roleARNHasBeenSet = false;
+  bool m_onFailureHasBeenSet = false;
+  bool m_stackPolicyBodyHasBeenSet = false;
+  bool m_stackPolicyURLHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = false;
+  bool m_enableTerminationProtectionHasBeenSet = false;
   bool m_retainExceptOnCreateHasBeenSet = false;
 };
 

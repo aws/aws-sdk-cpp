@@ -190,24 +190,24 @@ class CreateRotationRequest : public SSMContactsRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_contactIds;
-  bool m_contactIdsHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::String m_timeZoneId;
-  bool m_timeZoneIdHasBeenSet = false;
 
   RecurrenceSettings m_recurrence;
-  bool m_recurrenceHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_idempotencyToken;
+  bool m_nameHasBeenSet = false;
+  bool m_contactIdsHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_timeZoneIdHasBeenSet = false;
+  bool m_recurrenceHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_idempotencyTokenHasBeenSet = false;
 };
 

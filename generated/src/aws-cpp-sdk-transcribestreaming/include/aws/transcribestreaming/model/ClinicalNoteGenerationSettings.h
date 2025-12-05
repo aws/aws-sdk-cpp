@@ -95,9 +95,9 @@ class ClinicalNoteGenerationSettings {
   ///@}
  private:
   Aws::String m_outputBucketName;
-  bool m_outputBucketNameHasBeenSet = false;
 
   MedicalScribeNoteTemplate m_noteTemplate{MedicalScribeNoteTemplate::NOT_SET};
+  bool m_outputBucketNameHasBeenSet = false;
   bool m_noteTemplateHasBeenSet = false;
 };
 

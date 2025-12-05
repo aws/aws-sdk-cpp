@@ -151,21 +151,21 @@ class ImportKeyMaterial {
   ///@}
  private:
   RootCertificatePublicKey m_rootCertificatePublicKey;
-  bool m_rootCertificatePublicKeyHasBeenSet = false;
 
   TrustedCertificatePublicKey m_trustedCertificatePublicKey;
-  bool m_trustedCertificatePublicKeyHasBeenSet = false;
 
   ImportTr31KeyBlock m_tr31KeyBlock;
-  bool m_tr31KeyBlockHasBeenSet = false;
 
   ImportTr34KeyBlock m_tr34KeyBlock;
-  bool m_tr34KeyBlockHasBeenSet = false;
 
   ImportKeyCryptogram m_keyCryptogram;
-  bool m_keyCryptogramHasBeenSet = false;
 
   ImportDiffieHellmanTr31KeyBlock m_diffieHellmanTr31KeyBlock;
+  bool m_rootCertificatePublicKeyHasBeenSet = false;
+  bool m_trustedCertificatePublicKeyHasBeenSet = false;
+  bool m_tr31KeyBlockHasBeenSet = false;
+  bool m_tr34KeyBlockHasBeenSet = false;
+  bool m_keyCryptogramHasBeenSet = false;
   bool m_diffieHellmanTr31KeyBlockHasBeenSet = false;
 };
 

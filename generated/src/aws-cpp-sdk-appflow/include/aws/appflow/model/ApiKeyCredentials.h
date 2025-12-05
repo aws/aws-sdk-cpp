@@ -69,9 +69,9 @@ class ApiKeyCredentials {
   ///@}
  private:
   Aws::String m_apiKey;
-  bool m_apiKeyHasBeenSet = false;
 
   Aws::String m_apiSecretKey;
+  bool m_apiKeyHasBeenSet = false;
   bool m_apiSecretKeyHasBeenSet = false;
 };
 

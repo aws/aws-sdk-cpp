@@ -101,15 +101,15 @@ class IsolineCarOptions {
   ///@}
  private:
   IsolineEngineType m_engineType{IsolineEngineType::NOT_SET};
-  bool m_engineTypeHasBeenSet = false;
 
   IsolineVehicleLicensePlate m_licensePlate;
-  bool m_licensePlateHasBeenSet = false;
 
   double m_maxSpeed{0.0};
-  bool m_maxSpeedHasBeenSet = false;
 
   int m_occupancy{0};
+  bool m_engineTypeHasBeenSet = false;
+  bool m_licensePlateHasBeenSet = false;
+  bool m_maxSpeedHasBeenSet = false;
   bool m_occupancyHasBeenSet = false;
 };
 

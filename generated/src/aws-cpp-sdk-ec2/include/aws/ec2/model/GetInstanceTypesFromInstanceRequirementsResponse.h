@@ -87,12 +87,12 @@ class GetInstanceTypesFromInstanceRequirementsResponse {
   ///@}
  private:
   Aws::Vector<InstanceTypeInfoFromInstanceRequirements> m_instanceTypes;
-  bool m_instanceTypesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_instanceTypesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

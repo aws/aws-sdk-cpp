@@ -185,27 +185,27 @@ class FunnelChartConfiguration {
   ///@}
  private:
   FunnelChartFieldWells m_fieldWells;
-  bool m_fieldWellsHasBeenSet = false;
 
   FunnelChartSortConfiguration m_sortConfiguration;
-  bool m_sortConfigurationHasBeenSet = false;
 
   ChartAxisLabelOptions m_categoryLabelOptions;
-  bool m_categoryLabelOptionsHasBeenSet = false;
 
   ChartAxisLabelOptions m_valueLabelOptions;
-  bool m_valueLabelOptionsHasBeenSet = false;
 
   TooltipOptions m_tooltip;
-  bool m_tooltipHasBeenSet = false;
 
   FunnelChartDataLabelOptions m_dataLabelOptions;
-  bool m_dataLabelOptionsHasBeenSet = false;
 
   VisualPalette m_visualPalette;
-  bool m_visualPaletteHasBeenSet = false;
 
   VisualInteractionOptions m_interactions;
+  bool m_fieldWellsHasBeenSet = false;
+  bool m_sortConfigurationHasBeenSet = false;
+  bool m_categoryLabelOptionsHasBeenSet = false;
+  bool m_valueLabelOptionsHasBeenSet = false;
+  bool m_tooltipHasBeenSet = false;
+  bool m_dataLabelOptionsHasBeenSet = false;
+  bool m_visualPaletteHasBeenSet = false;
   bool m_interactionsHasBeenSet = false;
 };
 

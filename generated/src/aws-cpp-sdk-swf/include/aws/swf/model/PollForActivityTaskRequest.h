@@ -94,12 +94,12 @@ class PollForActivityTaskRequest : public SWFRequest {
   ///@}
  private:
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   TaskList m_taskList;
-  bool m_taskListHasBeenSet = false;
 
   Aws::String m_identity;
+  bool m_domainHasBeenSet = false;
+  bool m_taskListHasBeenSet = false;
   bool m_identityHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class ListPropertiesResult {
   ///@}
  private:
   Aws::Vector<PropertySummary> m_propertySummaries;
-  bool m_propertySummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_propertySummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -1045,117 +1045,117 @@ class AutomationRulesFindingFilters {
   ///@}
  private:
   Aws::Vector<StringFilter> m_productArn;
-  bool m_productArnHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_generatorId;
-  bool m_generatorIdHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<DateFilter> m_firstObservedAt;
-  bool m_firstObservedAtHasBeenSet = false;
 
   Aws::Vector<DateFilter> m_lastObservedAt;
-  bool m_lastObservedAtHasBeenSet = false;
 
   Aws::Vector<DateFilter> m_createdAt;
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Vector<DateFilter> m_updatedAt;
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::Vector<NumberFilter> m_confidence;
-  bool m_confidenceHasBeenSet = false;
 
   Aws::Vector<NumberFilter> m_criticality;
-  bool m_criticalityHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_sourceUrl;
-  bool m_sourceUrlHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_productName;
-  bool m_productNameHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_companyName;
-  bool m_companyNameHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_severityLabel;
-  bool m_severityLabelHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_resourcePartition;
-  bool m_resourcePartitionHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_resourceRegion;
-  bool m_resourceRegionHasBeenSet = false;
 
   Aws::Vector<MapFilter> m_resourceTags;
-  bool m_resourceTagsHasBeenSet = false;
 
   Aws::Vector<MapFilter> m_resourceDetailsOther;
-  bool m_resourceDetailsOtherHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_complianceStatus;
-  bool m_complianceStatusHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_complianceSecurityControlId;
-  bool m_complianceSecurityControlIdHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_complianceAssociatedStandardsId;
-  bool m_complianceAssociatedStandardsIdHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_verificationState;
-  bool m_verificationStateHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_workflowStatus;
-  bool m_workflowStatusHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_recordState;
-  bool m_recordStateHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_relatedFindingsProductArn;
-  bool m_relatedFindingsProductArnHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_relatedFindingsId;
-  bool m_relatedFindingsIdHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_noteText;
-  bool m_noteTextHasBeenSet = false;
 
   Aws::Vector<DateFilter> m_noteUpdatedAt;
-  bool m_noteUpdatedAtHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_noteUpdatedBy;
-  bool m_noteUpdatedByHasBeenSet = false;
 
   Aws::Vector<MapFilter> m_userDefinedFields;
-  bool m_userDefinedFieldsHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_resourceApplicationArn;
-  bool m_resourceApplicationArnHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_resourceApplicationName;
-  bool m_resourceApplicationNameHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_awsAccountName;
+  bool m_productArnHasBeenSet = false;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_generatorIdHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_firstObservedAtHasBeenSet = false;
+  bool m_lastObservedAtHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_confidenceHasBeenSet = false;
+  bool m_criticalityHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_sourceUrlHasBeenSet = false;
+  bool m_productNameHasBeenSet = false;
+  bool m_companyNameHasBeenSet = false;
+  bool m_severityLabelHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_resourcePartitionHasBeenSet = false;
+  bool m_resourceRegionHasBeenSet = false;
+  bool m_resourceTagsHasBeenSet = false;
+  bool m_resourceDetailsOtherHasBeenSet = false;
+  bool m_complianceStatusHasBeenSet = false;
+  bool m_complianceSecurityControlIdHasBeenSet = false;
+  bool m_complianceAssociatedStandardsIdHasBeenSet = false;
+  bool m_verificationStateHasBeenSet = false;
+  bool m_workflowStatusHasBeenSet = false;
+  bool m_recordStateHasBeenSet = false;
+  bool m_relatedFindingsProductArnHasBeenSet = false;
+  bool m_relatedFindingsIdHasBeenSet = false;
+  bool m_noteTextHasBeenSet = false;
+  bool m_noteUpdatedAtHasBeenSet = false;
+  bool m_noteUpdatedByHasBeenSet = false;
+  bool m_userDefinedFieldsHasBeenSet = false;
+  bool m_resourceApplicationArnHasBeenSet = false;
+  bool m_resourceApplicationNameHasBeenSet = false;
   bool m_awsAccountNameHasBeenSet = false;
 };
 

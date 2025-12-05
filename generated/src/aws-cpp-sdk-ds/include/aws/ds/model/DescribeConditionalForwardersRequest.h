@@ -80,9 +80,9 @@ class DescribeConditionalForwardersRequest : public DirectoryServiceRequest {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_remoteDomainNames;
+  bool m_directoryIdHasBeenSet = false;
   bool m_remoteDomainNamesHasBeenSet = false;
 };
 

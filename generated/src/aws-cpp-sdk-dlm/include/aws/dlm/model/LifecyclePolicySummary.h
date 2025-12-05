@@ -151,21 +151,21 @@ class LifecyclePolicySummary {
   ///@}
  private:
   Aws::String m_policyId;
-  bool m_policyIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   GettablePolicyStateValues m_state{GettablePolicyStateValues::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   PolicyTypeValues m_policyType{PolicyTypeValues::NOT_SET};
-  bool m_policyTypeHasBeenSet = false;
 
   bool m_defaultPolicy{false};
+  bool m_policyIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_policyTypeHasBeenSet = false;
   bool m_defaultPolicyHasBeenSet = false;
 };
 

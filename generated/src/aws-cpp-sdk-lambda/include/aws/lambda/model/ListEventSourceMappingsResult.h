@@ -85,12 +85,12 @@ class ListEventSourceMappingsResult {
   ///@}
  private:
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   Aws::Vector<EventSourceMappingConfiguration> m_eventSourceMappings;
-  bool m_eventSourceMappingsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextMarkerHasBeenSet = false;
+  bool m_eventSourceMappingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

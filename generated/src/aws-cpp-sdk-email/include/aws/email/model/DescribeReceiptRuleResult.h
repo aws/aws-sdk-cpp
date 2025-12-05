@@ -67,9 +67,9 @@ class DescribeReceiptRuleResult {
   ///@}
  private:
   ReceiptRule m_rule;
-  bool m_ruleHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_ruleHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

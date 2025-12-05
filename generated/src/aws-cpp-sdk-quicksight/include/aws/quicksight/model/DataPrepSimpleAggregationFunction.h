@@ -71,9 +71,9 @@ class DataPrepSimpleAggregationFunction {
   ///@}
  private:
   Aws::String m_inputColumnName;
-  bool m_inputColumnNameHasBeenSet = false;
 
   DataPrepSimpleAggregationFunctionType m_functionType{DataPrepSimpleAggregationFunctionType::NOT_SET};
+  bool m_inputColumnNameHasBeenSet = false;
   bool m_functionTypeHasBeenSet = false;
 };
 

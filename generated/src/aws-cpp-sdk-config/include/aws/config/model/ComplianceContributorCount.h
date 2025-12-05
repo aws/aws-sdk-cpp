@@ -64,9 +64,9 @@ class ComplianceContributorCount {
   ///@}
  private:
   int m_cappedCount{0};
-  bool m_cappedCountHasBeenSet = false;
 
   bool m_capExceeded{false};
+  bool m_cappedCountHasBeenSet = false;
   bool m_capExceededHasBeenSet = false;
 };
 

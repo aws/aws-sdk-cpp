@@ -58,9 +58,9 @@ class CreateCacheSecurityGroupResult {
   ///@}
  private:
   CacheSecurityGroup m_cacheSecurityGroup;
-  bool m_cacheSecurityGroupHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_cacheSecurityGroupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

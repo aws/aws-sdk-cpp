@@ -96,12 +96,12 @@ class DisassociateFileSystemAliasesRequest : public FSxRequest {
   ///@}
  private:
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::String m_fileSystemId;
-  bool m_fileSystemIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_aliases;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_fileSystemIdHasBeenSet = false;
   bool m_aliasesHasBeenSet = false;
 };
 

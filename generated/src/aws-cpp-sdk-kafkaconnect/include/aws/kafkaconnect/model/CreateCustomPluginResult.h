@@ -107,18 +107,18 @@ class CreateCustomPluginResult {
   ///@}
  private:
   Aws::String m_customPluginArn;
-  bool m_customPluginArnHasBeenSet = false;
 
   CustomPluginState m_customPluginState{CustomPluginState::NOT_SET};
-  bool m_customPluginStateHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   long long m_revision{0};
-  bool m_revisionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_customPluginArnHasBeenSet = false;
+  bool m_customPluginStateHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_revisionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

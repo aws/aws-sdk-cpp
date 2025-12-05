@@ -60,9 +60,9 @@ class CreateStackResult {
   ///@}
  private:
   Stack m_stack;
-  bool m_stackHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_stackHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

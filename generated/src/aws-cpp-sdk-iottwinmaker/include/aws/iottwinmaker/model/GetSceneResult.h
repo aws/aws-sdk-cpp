@@ -252,39 +252,39 @@ class GetSceneResult {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Aws::String m_sceneId;
-  bool m_sceneIdHasBeenSet = false;
 
   Aws::String m_contentLocation;
-  bool m_contentLocationHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateDateTime{};
-  bool m_updateDateTimeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_capabilities;
-  bool m_capabilitiesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_sceneMetadata;
-  bool m_sceneMetadataHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_generatedSceneMetadata;
-  bool m_generatedSceneMetadataHasBeenSet = false;
 
   SceneError m_error;
-  bool m_errorHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workspaceIdHasBeenSet = false;
+  bool m_sceneIdHasBeenSet = false;
+  bool m_contentLocationHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_updateDateTimeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_capabilitiesHasBeenSet = false;
+  bool m_sceneMetadataHasBeenSet = false;
+  bool m_generatedSceneMetadataHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

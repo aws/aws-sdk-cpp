@@ -254,39 +254,39 @@ class GetDetectorVersionResult {
   ///@}
  private:
   Aws::String m_detectorId;
-  bool m_detectorIdHasBeenSet = false;
 
   Aws::String m_detectorVersionId;
-  bool m_detectorVersionIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_externalModelEndpoints;
-  bool m_externalModelEndpointsHasBeenSet = false;
 
   Aws::Vector<ModelVersion> m_modelVersions;
-  bool m_modelVersionsHasBeenSet = false;
 
   Aws::Vector<Rule> m_rules;
-  bool m_rulesHasBeenSet = false;
 
   DetectorVersionStatus m_status{DetectorVersionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_lastUpdatedTime;
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::String m_createdTime;
-  bool m_createdTimeHasBeenSet = false;
 
   RuleExecutionMode m_ruleExecutionMode{RuleExecutionMode::NOT_SET};
-  bool m_ruleExecutionModeHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_detectorIdHasBeenSet = false;
+  bool m_detectorVersionIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_externalModelEndpointsHasBeenSet = false;
+  bool m_modelVersionsHasBeenSet = false;
+  bool m_rulesHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_ruleExecutionModeHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

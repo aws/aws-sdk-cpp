@@ -115,15 +115,15 @@ class DeleteStudioSessionMappingRequest : public EMRRequest {
   ///@}
  private:
   Aws::String m_studioId;
-  bool m_studioIdHasBeenSet = false;
 
   Aws::String m_identityId;
-  bool m_identityIdHasBeenSet = false;
 
   Aws::String m_identityName;
-  bool m_identityNameHasBeenSet = false;
 
   IdentityType m_identityType{IdentityType::NOT_SET};
+  bool m_studioIdHasBeenSet = false;
+  bool m_identityIdHasBeenSet = false;
+  bool m_identityNameHasBeenSet = false;
   bool m_identityTypeHasBeenSet = false;
 };
 

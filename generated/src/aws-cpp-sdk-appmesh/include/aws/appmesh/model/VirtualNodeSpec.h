@@ -144,18 +144,18 @@ class VirtualNodeSpec {
   ///@}
  private:
   BackendDefaults m_backendDefaults;
-  bool m_backendDefaultsHasBeenSet = false;
 
   Aws::Vector<Backend> m_backends;
-  bool m_backendsHasBeenSet = false;
 
   Aws::Vector<Listener> m_listeners;
-  bool m_listenersHasBeenSet = false;
 
   Logging m_logging;
-  bool m_loggingHasBeenSet = false;
 
   ServiceDiscovery m_serviceDiscovery;
+  bool m_backendDefaultsHasBeenSet = false;
+  bool m_backendsHasBeenSet = false;
+  bool m_listenersHasBeenSet = false;
+  bool m_loggingHasBeenSet = false;
   bool m_serviceDiscoveryHasBeenSet = false;
 };
 

@@ -165,21 +165,21 @@ class ListGeofenceResponseEntry {
   ///@}
  private:
   Aws::String m_geofenceId;
-  bool m_geofenceIdHasBeenSet = false;
 
   GeofenceGeometry m_geometry;
-  bool m_geometryHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_geofenceProperties;
+  bool m_geofenceIdHasBeenSet = false;
+  bool m_geometryHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
   bool m_geofencePropertiesHasBeenSet = false;
 };
 

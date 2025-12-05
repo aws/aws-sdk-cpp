@@ -59,9 +59,9 @@ class CreateSignalingChannelResult {
   ///@}
  private:
   Aws::String m_channelARN;
-  bool m_channelARNHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelARNHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

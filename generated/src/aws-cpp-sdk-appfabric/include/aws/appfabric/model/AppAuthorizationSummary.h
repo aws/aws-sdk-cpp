@@ -154,21 +154,21 @@ class AppAuthorizationSummary {
   ///@}
  private:
   Aws::String m_appAuthorizationArn;
-  bool m_appAuthorizationArnHasBeenSet = false;
 
   Aws::String m_appBundleArn;
-  bool m_appBundleArnHasBeenSet = false;
 
   Aws::String m_app;
-  bool m_appHasBeenSet = false;
 
   Tenant m_tenant;
-  bool m_tenantHasBeenSet = false;
 
   AppAuthorizationStatus m_status{AppAuthorizationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_appAuthorizationArnHasBeenSet = false;
+  bool m_appBundleArnHasBeenSet = false;
+  bool m_appHasBeenSet = false;
+  bool m_tenantHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

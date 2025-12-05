@@ -107,15 +107,15 @@ class Receipt {
   ///@}
  private:
   Aws::String m_contactChannelArn;
-  bool m_contactChannelArnHasBeenSet = false;
 
   ReceiptType m_receiptType{ReceiptType::NOT_SET};
-  bool m_receiptTypeHasBeenSet = false;
 
   Aws::String m_receiptInfo;
-  bool m_receiptInfoHasBeenSet = false;
 
   Aws::Utils::DateTime m_receiptTime{};
+  bool m_contactChannelArnHasBeenSet = false;
+  bool m_receiptTypeHasBeenSet = false;
+  bool m_receiptInfoHasBeenSet = false;
   bool m_receiptTimeHasBeenSet = false;
 };
 

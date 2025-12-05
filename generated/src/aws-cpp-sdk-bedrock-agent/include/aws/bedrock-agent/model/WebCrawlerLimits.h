@@ -64,9 +64,9 @@ class WebCrawlerLimits {
   ///@}
  private:
   int m_rateLimit{0};
-  bool m_rateLimitHasBeenSet = false;
 
   int m_maxPages{0};
+  bool m_rateLimitHasBeenSet = false;
   bool m_maxPagesHasBeenSet = false;
 };
 

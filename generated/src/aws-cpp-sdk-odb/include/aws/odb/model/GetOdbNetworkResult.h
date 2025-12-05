@@ -60,9 +60,9 @@ class GetOdbNetworkResult {
   ///@}
  private:
   OdbNetwork m_odbNetwork;
-  bool m_odbNetworkHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_odbNetworkHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

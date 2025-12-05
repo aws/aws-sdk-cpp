@@ -120,15 +120,15 @@ class AtigData {
   ///@}
  private:
   Aws::Utils::DateTime m_firstSeen{};
-  bool m_firstSeenHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastSeen{};
-  bool m_lastSeenHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_targets;
-  bool m_targetsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ttps;
+  bool m_firstSeenHasBeenSet = false;
+  bool m_lastSeenHasBeenSet = false;
+  bool m_targetsHasBeenSet = false;
   bool m_ttpsHasBeenSet = false;
 };
 

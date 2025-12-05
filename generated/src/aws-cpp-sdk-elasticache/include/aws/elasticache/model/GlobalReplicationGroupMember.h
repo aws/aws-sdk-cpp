@@ -126,18 +126,18 @@ class GlobalReplicationGroupMember {
   ///@}
  private:
   Aws::String m_replicationGroupId;
-  bool m_replicationGroupIdHasBeenSet = false;
 
   Aws::String m_replicationGroupRegion;
-  bool m_replicationGroupRegionHasBeenSet = false;
 
   Aws::String m_role;
-  bool m_roleHasBeenSet = false;
 
   AutomaticFailoverStatus m_automaticFailover{AutomaticFailoverStatus::NOT_SET};
-  bool m_automaticFailoverHasBeenSet = false;
 
   Aws::String m_status;
+  bool m_replicationGroupIdHasBeenSet = false;
+  bool m_replicationGroupRegionHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
+  bool m_automaticFailoverHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

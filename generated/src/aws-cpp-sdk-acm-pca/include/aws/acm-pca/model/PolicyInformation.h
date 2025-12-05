@@ -82,9 +82,9 @@ class PolicyInformation {
   ///@}
  private:
   Aws::String m_certPolicyId;
-  bool m_certPolicyIdHasBeenSet = false;
 
   Aws::Vector<PolicyQualifierInfo> m_policyQualifiers;
+  bool m_certPolicyIdHasBeenSet = false;
   bool m_policyQualifiersHasBeenSet = false;
 };
 

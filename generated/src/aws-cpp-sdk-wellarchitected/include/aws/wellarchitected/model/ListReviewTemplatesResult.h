@@ -82,12 +82,12 @@ class ListReviewTemplatesResult {
   ///@}
  private:
   Aws::Vector<ReviewTemplateSummary> m_reviewTemplates;
-  bool m_reviewTemplatesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_reviewTemplatesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

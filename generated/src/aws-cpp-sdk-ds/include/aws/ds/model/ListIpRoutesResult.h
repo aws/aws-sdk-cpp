@@ -86,12 +86,12 @@ class ListIpRoutesResult {
   ///@}
  private:
   Aws::Vector<IpRouteInfo> m_ipRoutesInfo;
-  bool m_ipRoutesInfoHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ipRoutesInfoHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

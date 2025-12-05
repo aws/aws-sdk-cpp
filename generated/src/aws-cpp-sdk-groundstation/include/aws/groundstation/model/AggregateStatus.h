@@ -73,9 +73,9 @@ class AggregateStatus {
   ///@}
  private:
   AgentStatus m_status{AgentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Aws::String, bool> m_signatureMap;
+  bool m_statusHasBeenSet = false;
   bool m_signatureMapHasBeenSet = false;
 };
 

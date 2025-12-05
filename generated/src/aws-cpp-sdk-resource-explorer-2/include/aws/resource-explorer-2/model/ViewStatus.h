@@ -87,12 +87,12 @@ class ViewStatus {
   ///@}
  private:
   OperationStatus m_status{OperationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   View m_view;
-  bool m_viewHasBeenSet = false;
 
   ErrorDetails m_errorDetails;
+  bool m_statusHasBeenSet = false;
+  bool m_viewHasBeenSet = false;
   bool m_errorDetailsHasBeenSet = false;
 };
 

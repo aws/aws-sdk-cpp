@@ -211,33 +211,33 @@ class VoiceConnector {
   ///@}
  private:
   Aws::String m_voiceConnectorId;
-  bool m_voiceConnectorIdHasBeenSet = false;
 
   VoiceConnectorAwsRegion m_awsRegion{VoiceConnectorAwsRegion::NOT_SET};
-  bool m_awsRegionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_outboundHostName;
-  bool m_outboundHostNameHasBeenSet = false;
 
   bool m_requireEncryption{false};
-  bool m_requireEncryptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedTimestamp{};
-  bool m_updatedTimestampHasBeenSet = false;
 
   Aws::String m_voiceConnectorArn;
-  bool m_voiceConnectorArnHasBeenSet = false;
 
   VoiceConnectorIntegrationType m_integrationType{VoiceConnectorIntegrationType::NOT_SET};
-  bool m_integrationTypeHasBeenSet = false;
 
   NetworkType m_networkType{NetworkType::NOT_SET};
+  bool m_voiceConnectorIdHasBeenSet = false;
+  bool m_awsRegionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_outboundHostNameHasBeenSet = false;
+  bool m_requireEncryptionHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_updatedTimestampHasBeenSet = false;
+  bool m_voiceConnectorArnHasBeenSet = false;
+  bool m_integrationTypeHasBeenSet = false;
   bool m_networkTypeHasBeenSet = false;
 };
 

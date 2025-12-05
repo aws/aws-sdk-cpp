@@ -120,15 +120,15 @@ class GetPlaceRequest : public LocationServiceRequest {
   ///@}
  private:
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   Aws::String m_placeId;
-  bool m_placeIdHasBeenSet = false;
 
   Aws::String m_language;
-  bool m_languageHasBeenSet = false;
 
   Aws::String m_key;
+  bool m_indexNameHasBeenSet = false;
+  bool m_placeIdHasBeenSet = false;
+  bool m_languageHasBeenSet = false;
   bool m_keyHasBeenSet = false;
 };
 

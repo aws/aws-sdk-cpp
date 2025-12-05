@@ -358,54 +358,54 @@ class SavingsPlansPurchaseRecommendationDetail {
   ///@}
  private:
   SavingsPlansDetails m_savingsPlansDetails;
-  bool m_savingsPlansDetailsHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_upfrontCost;
-  bool m_upfrontCostHasBeenSet = false;
 
   Aws::String m_estimatedROI;
-  bool m_estimatedROIHasBeenSet = false;
 
   Aws::String m_currencyCode;
-  bool m_currencyCodeHasBeenSet = false;
 
   Aws::String m_estimatedSPCost;
-  bool m_estimatedSPCostHasBeenSet = false;
 
   Aws::String m_estimatedOnDemandCost;
-  bool m_estimatedOnDemandCostHasBeenSet = false;
 
   Aws::String m_estimatedOnDemandCostWithCurrentCommitment;
-  bool m_estimatedOnDemandCostWithCurrentCommitmentHasBeenSet = false;
 
   Aws::String m_estimatedSavingsAmount;
-  bool m_estimatedSavingsAmountHasBeenSet = false;
 
   Aws::String m_estimatedSavingsPercentage;
-  bool m_estimatedSavingsPercentageHasBeenSet = false;
 
   Aws::String m_hourlyCommitmentToPurchase;
-  bool m_hourlyCommitmentToPurchaseHasBeenSet = false;
 
   Aws::String m_estimatedAverageUtilization;
-  bool m_estimatedAverageUtilizationHasBeenSet = false;
 
   Aws::String m_estimatedMonthlySavingsAmount;
-  bool m_estimatedMonthlySavingsAmountHasBeenSet = false;
 
   Aws::String m_currentMinimumHourlyOnDemandSpend;
-  bool m_currentMinimumHourlyOnDemandSpendHasBeenSet = false;
 
   Aws::String m_currentMaximumHourlyOnDemandSpend;
-  bool m_currentMaximumHourlyOnDemandSpendHasBeenSet = false;
 
   Aws::String m_currentAverageHourlyOnDemandSpend;
-  bool m_currentAverageHourlyOnDemandSpendHasBeenSet = false;
 
   Aws::String m_recommendationDetailId;
+  bool m_savingsPlansDetailsHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_upfrontCostHasBeenSet = false;
+  bool m_estimatedROIHasBeenSet = false;
+  bool m_currencyCodeHasBeenSet = false;
+  bool m_estimatedSPCostHasBeenSet = false;
+  bool m_estimatedOnDemandCostHasBeenSet = false;
+  bool m_estimatedOnDemandCostWithCurrentCommitmentHasBeenSet = false;
+  bool m_estimatedSavingsAmountHasBeenSet = false;
+  bool m_estimatedSavingsPercentageHasBeenSet = false;
+  bool m_hourlyCommitmentToPurchaseHasBeenSet = false;
+  bool m_estimatedAverageUtilizationHasBeenSet = false;
+  bool m_estimatedMonthlySavingsAmountHasBeenSet = false;
+  bool m_currentMinimumHourlyOnDemandSpendHasBeenSet = false;
+  bool m_currentMaximumHourlyOnDemandSpendHasBeenSet = false;
+  bool m_currentAverageHourlyOnDemandSpendHasBeenSet = false;
   bool m_recommendationDetailIdHasBeenSet = false;
 };
 

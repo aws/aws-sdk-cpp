@@ -88,12 +88,12 @@ class ListFarmsRequest : public DeadlineRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_principalId;
-  bool m_principalIdHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_nextTokenHasBeenSet = false;
+  bool m_principalIdHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

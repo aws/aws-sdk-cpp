@@ -87,12 +87,12 @@ class ListClusterSchedulerConfigsResult {
   ///@}
  private:
   Aws::Vector<ClusterSchedulerConfigSummary> m_clusterSchedulerConfigSummaries;
-  bool m_clusterSchedulerConfigSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_clusterSchedulerConfigSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

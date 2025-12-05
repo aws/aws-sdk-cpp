@@ -87,12 +87,12 @@ class OptedOutNumberInformation {
   ///@}
  private:
   Aws::String m_optedOutNumber;
-  bool m_optedOutNumberHasBeenSet = false;
 
   Aws::Utils::DateTime m_optedOutTimestamp{};
-  bool m_optedOutTimestampHasBeenSet = false;
 
   bool m_endUserOptedOut{false};
+  bool m_optedOutNumberHasBeenSet = false;
+  bool m_optedOutTimestampHasBeenSet = false;
   bool m_endUserOptedOutHasBeenSet = false;
 };
 

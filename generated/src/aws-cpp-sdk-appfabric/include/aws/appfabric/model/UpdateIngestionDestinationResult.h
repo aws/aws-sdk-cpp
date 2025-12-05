@@ -60,9 +60,9 @@ class UpdateIngestionDestinationResult {
   ///@}
  private:
   IngestionDestination m_ingestionDestination;
-  bool m_ingestionDestinationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ingestionDestinationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

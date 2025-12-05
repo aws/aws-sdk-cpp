@@ -86,12 +86,12 @@ class CreateHomeRegionControlRequest : public MigrationHubConfigRequest {
   ///@}
  private:
   Aws::String m_homeRegion;
-  bool m_homeRegionHasBeenSet = false;
 
   Target m_target;
-  bool m_targetHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_homeRegionHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

@@ -205,30 +205,30 @@ class ListInsightsMetricDataResult {
   ///@}
  private:
   Aws::String m_trailARN;
-  bool m_trailARNHasBeenSet = false;
 
   Aws::String m_eventSource;
-  bool m_eventSourceHasBeenSet = false;
 
   Aws::String m_eventName;
-  bool m_eventNameHasBeenSet = false;
 
   InsightType m_insightType{InsightType::NOT_SET};
-  bool m_insightTypeHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::Vector<Aws::Utils::DateTime> m_timestamps;
-  bool m_timestampsHasBeenSet = false;
 
   Aws::Vector<double> m_values;
-  bool m_valuesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trailARNHasBeenSet = false;
+  bool m_eventSourceHasBeenSet = false;
+  bool m_eventNameHasBeenSet = false;
+  bool m_insightTypeHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
+  bool m_timestampsHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

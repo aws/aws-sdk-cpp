@@ -60,9 +60,9 @@ class ProvisionIpamPoolCidrResponse {
   ///@}
  private:
   IpamPoolCidr m_ipamPoolCidr;
-  bool m_ipamPoolCidrHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_ipamPoolCidrHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

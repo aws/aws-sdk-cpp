@@ -126,18 +126,18 @@ class GetMssManifestConfiguration {
   ///@}
  private:
   Aws::String m_manifestName;
-  bool m_manifestNameHasBeenSet = false;
 
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   FilterConfiguration m_filterConfiguration;
-  bool m_filterConfigurationHasBeenSet = false;
 
   int m_manifestWindowSeconds{0};
-  bool m_manifestWindowSecondsHasBeenSet = false;
 
   MssManifestLayout m_manifestLayout{MssManifestLayout::NOT_SET};
+  bool m_manifestNameHasBeenSet = false;
+  bool m_urlHasBeenSet = false;
+  bool m_filterConfigurationHasBeenSet = false;
+  bool m_manifestWindowSecondsHasBeenSet = false;
   bool m_manifestLayoutHasBeenSet = false;
 };
 

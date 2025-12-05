@@ -143,21 +143,21 @@ class ProjectPolicy {
   ///@}
  private:
   Aws::String m_projectArn;
-  bool m_projectArnHasBeenSet = false;
 
   Aws::String m_policyName;
-  bool m_policyNameHasBeenSet = false;
 
   Aws::String m_policyRevisionId;
-  bool m_policyRevisionIdHasBeenSet = false;
 
   Aws::String m_policyDocument;
-  bool m_policyDocumentHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimestamp{};
-  bool m_creationTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTimestamp{};
+  bool m_projectArnHasBeenSet = false;
+  bool m_policyNameHasBeenSet = false;
+  bool m_policyRevisionIdHasBeenSet = false;
+  bool m_policyDocumentHasBeenSet = false;
+  bool m_creationTimestampHasBeenSet = false;
   bool m_lastUpdatedTimestampHasBeenSet = false;
 };
 

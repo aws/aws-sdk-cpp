@@ -140,9 +140,9 @@ class ScanStatus {
   ///@}
  private:
   ScanStatusCode m_statusCode{ScanStatusCode::NOT_SET};
-  bool m_statusCodeHasBeenSet = false;
 
   ScanStatusReason m_reason{ScanStatusReason::NOT_SET};
+  bool m_statusCodeHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

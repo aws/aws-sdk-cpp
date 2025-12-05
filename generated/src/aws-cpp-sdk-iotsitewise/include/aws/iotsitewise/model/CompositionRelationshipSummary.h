@@ -88,12 +88,12 @@ class CompositionRelationshipSummary {
   ///@}
  private:
   Aws::String m_assetModelId;
-  bool m_assetModelIdHasBeenSet = false;
 
   Aws::String m_assetModelCompositeModelId;
-  bool m_assetModelCompositeModelIdHasBeenSet = false;
 
   Aws::String m_assetModelCompositeModelType;
+  bool m_assetModelIdHasBeenSet = false;
+  bool m_assetModelCompositeModelIdHasBeenSet = false;
   bool m_assetModelCompositeModelTypeHasBeenSet = false;
 };
 

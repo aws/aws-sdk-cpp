@@ -119,18 +119,18 @@ class RequestValidator {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   bool m_validateRequestBody{false};
-  bool m_validateRequestBodyHasBeenSet = false;
 
   bool m_validateRequestParameters{false};
-  bool m_validateRequestParametersHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_validateRequestBodyHasBeenSet = false;
+  bool m_validateRequestParametersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

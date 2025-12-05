@@ -128,15 +128,15 @@ class GetResourceRequest : public CloudControlApiRequest {
   ///@}
  private:
   Aws::String m_typeName;
-  bool m_typeNameHasBeenSet = false;
 
   Aws::String m_typeVersionId;
-  bool m_typeVersionIdHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_identifier;
+  bool m_typeNameHasBeenSet = false;
+  bool m_typeVersionIdHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
 };
 

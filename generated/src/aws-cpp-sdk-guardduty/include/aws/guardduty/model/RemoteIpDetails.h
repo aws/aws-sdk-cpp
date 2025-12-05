@@ -145,21 +145,21 @@ class RemoteIpDetails {
   ///@}
  private:
   City m_city;
-  bool m_cityHasBeenSet = false;
 
   Country m_country;
-  bool m_countryHasBeenSet = false;
 
   GeoLocation m_geoLocation;
-  bool m_geoLocationHasBeenSet = false;
 
   Aws::String m_ipAddressV4;
-  bool m_ipAddressV4HasBeenSet = false;
 
   Aws::String m_ipAddressV6;
-  bool m_ipAddressV6HasBeenSet = false;
 
   Organization m_organization;
+  bool m_cityHasBeenSet = false;
+  bool m_countryHasBeenSet = false;
+  bool m_geoLocationHasBeenSet = false;
+  bool m_ipAddressV4HasBeenSet = false;
+  bool m_ipAddressV6HasBeenSet = false;
   bool m_organizationHasBeenSet = false;
 };
 

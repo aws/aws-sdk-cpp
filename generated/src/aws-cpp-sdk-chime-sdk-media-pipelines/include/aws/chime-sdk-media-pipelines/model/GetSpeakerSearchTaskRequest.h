@@ -66,9 +66,9 @@ class GetSpeakerSearchTaskRequest : public ChimeSDKMediaPipelinesRequest {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_speakerSearchTaskId;
+  bool m_identifierHasBeenSet = false;
   bool m_speakerSearchTaskIdHasBeenSet = false;
 };
 

@@ -129,18 +129,18 @@ class GetScalingConfigurationRecommendationRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_inferenceRecommendationsJobName;
-  bool m_inferenceRecommendationsJobNameHasBeenSet = false;
 
   Aws::String m_recommendationId;
-  bool m_recommendationIdHasBeenSet = false;
 
   Aws::String m_endpointName;
-  bool m_endpointNameHasBeenSet = false;
 
   int m_targetCpuUtilizationPerCore{0};
-  bool m_targetCpuUtilizationPerCoreHasBeenSet = false;
 
   ScalingPolicyObjective m_scalingPolicyObjective;
+  bool m_inferenceRecommendationsJobNameHasBeenSet = false;
+  bool m_recommendationIdHasBeenSet = false;
+  bool m_endpointNameHasBeenSet = false;
+  bool m_targetCpuUtilizationPerCoreHasBeenSet = false;
   bool m_scalingPolicyObjectiveHasBeenSet = false;
 };
 

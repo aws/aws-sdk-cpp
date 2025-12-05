@@ -98,12 +98,12 @@ class BatchAddClusterNodesResult {
   ///@}
  private:
   Aws::Vector<NodeAdditionResult> m_successful;
-  bool m_successfulHasBeenSet = false;
 
   Aws::Vector<BatchAddClusterNodesError> m_failed;
-  bool m_failedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_successfulHasBeenSet = false;
+  bool m_failedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

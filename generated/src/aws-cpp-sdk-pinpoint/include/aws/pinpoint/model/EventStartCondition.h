@@ -66,9 +66,9 @@ class EventStartCondition {
   ///@}
  private:
   EventFilter m_eventFilter;
-  bool m_eventFilterHasBeenSet = false;
 
   Aws::String m_segmentId;
+  bool m_eventFilterHasBeenSet = false;
   bool m_segmentIdHasBeenSet = false;
 };
 

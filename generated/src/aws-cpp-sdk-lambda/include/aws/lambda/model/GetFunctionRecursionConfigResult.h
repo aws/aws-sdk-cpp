@@ -65,9 +65,9 @@ class GetFunctionRecursionConfigResult {
   ///@}
  private:
   RecursiveLoop m_recursiveLoop{RecursiveLoop::NOT_SET};
-  bool m_recursiveLoopHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_recursiveLoopHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

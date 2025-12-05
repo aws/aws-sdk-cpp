@@ -103,15 +103,15 @@ class FinalAutoMLJobObjectiveMetric {
   ///@}
  private:
   AutoMLJobObjectiveType m_type{AutoMLJobObjectiveType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   AutoMLMetricEnum m_metricName{AutoMLMetricEnum::NOT_SET};
-  bool m_metricNameHasBeenSet = false;
 
   double m_value{0.0};
-  bool m_valueHasBeenSet = false;
 
   AutoMLMetricEnum m_standardMetricName{AutoMLMetricEnum::NOT_SET};
+  bool m_typeHasBeenSet = false;
+  bool m_metricNameHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_standardMetricNameHasBeenSet = false;
 };
 

@@ -94,12 +94,12 @@ class StorageLensGroup {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   StorageLensGroupFilter m_filter;
-  bool m_filterHasBeenSet = false;
 
   Aws::String m_storageLensGroupArn;
+  bool m_nameHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
   bool m_storageLensGroupArnHasBeenSet = false;
 };
 

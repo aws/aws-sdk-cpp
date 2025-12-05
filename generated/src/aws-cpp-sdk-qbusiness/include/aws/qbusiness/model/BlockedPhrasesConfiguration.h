@@ -79,9 +79,9 @@ class BlockedPhrasesConfiguration {
   ///@}
  private:
   Aws::Vector<Aws::String> m_blockedPhrases;
-  bool m_blockedPhrasesHasBeenSet = false;
 
   Aws::String m_systemMessageOverride;
+  bool m_blockedPhrasesHasBeenSet = false;
   bool m_systemMessageOverrideHasBeenSet = false;
 };
 

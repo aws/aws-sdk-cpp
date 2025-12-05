@@ -69,9 +69,9 @@ class HttpGatewayRoutePrefixRewrite {
   ///@}
  private:
   DefaultGatewayRouteRewrite m_defaultPrefix{DefaultGatewayRouteRewrite::NOT_SET};
-  bool m_defaultPrefixHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_defaultPrefixHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

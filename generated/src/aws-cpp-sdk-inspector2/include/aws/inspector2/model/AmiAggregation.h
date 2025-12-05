@@ -92,12 +92,12 @@ class AmiAggregation {
   ///@}
  private:
   Aws::Vector<StringFilter> m_amis;
-  bool m_amisHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   AmiSortBy m_sortBy{AmiSortBy::NOT_SET};
+  bool m_amisHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
   bool m_sortByHasBeenSet = false;
 };
 

@@ -125,21 +125,21 @@ class ListBlueprintsRequest : public BedrockDataAutomationRequest {
   ///@}
  private:
   Aws::String m_blueprintArn;
-  bool m_blueprintArnHasBeenSet = false;
 
   ResourceOwner m_resourceOwner{ResourceOwner::NOT_SET};
-  bool m_resourceOwnerHasBeenSet = false;
 
   BlueprintStageFilter m_blueprintStageFilter{BlueprintStageFilter::NOT_SET};
-  bool m_blueprintStageFilterHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   DataAutomationProjectFilter m_projectFilter;
+  bool m_blueprintArnHasBeenSet = false;
+  bool m_resourceOwnerHasBeenSet = false;
+  bool m_blueprintStageFilterHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_projectFilterHasBeenSet = false;
 };
 

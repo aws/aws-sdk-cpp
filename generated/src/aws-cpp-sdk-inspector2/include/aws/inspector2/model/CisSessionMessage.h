@@ -86,12 +86,12 @@ class CisSessionMessage {
   ///@}
  private:
   Aws::String m_ruleId;
-  bool m_ruleIdHasBeenSet = false;
 
   CisRuleStatus m_status{CisRuleStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_cisRuleDetails{};
+  bool m_ruleIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_cisRuleDetailsHasBeenSet = false;
 };
 

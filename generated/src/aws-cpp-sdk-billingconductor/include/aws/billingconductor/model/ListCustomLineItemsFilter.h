@@ -131,15 +131,15 @@ class ListCustomLineItemsFilter {
   ///@}
  private:
   Aws::Vector<Aws::String> m_names;
-  bool m_namesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_billingGroups;
-  bool m_billingGroupsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_arns;
-  bool m_arnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_accountIds;
+  bool m_namesHasBeenSet = false;
+  bool m_billingGroupsHasBeenSet = false;
+  bool m_arnsHasBeenSet = false;
   bool m_accountIdsHasBeenSet = false;
 };
 

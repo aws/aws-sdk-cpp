@@ -192,27 +192,27 @@ class ModelInvocationInput {
   ///@}
  private:
   Aws::String m_foundationModel;
-  bool m_foundationModelHasBeenSet = false;
 
   InferenceConfiguration m_inferenceConfiguration;
-  bool m_inferenceConfigurationHasBeenSet = false;
 
   Aws::String m_overrideLambda;
-  bool m_overrideLambdaHasBeenSet = false;
 
   CreationMode m_parserMode{CreationMode::NOT_SET};
-  bool m_parserModeHasBeenSet = false;
 
   CreationMode m_promptCreationMode{CreationMode::NOT_SET};
-  bool m_promptCreationModeHasBeenSet = false;
 
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   Aws::String m_traceId;
-  bool m_traceIdHasBeenSet = false;
 
   PromptType m_type{PromptType::NOT_SET};
+  bool m_foundationModelHasBeenSet = false;
+  bool m_inferenceConfigurationHasBeenSet = false;
+  bool m_overrideLambdaHasBeenSet = false;
+  bool m_parserModeHasBeenSet = false;
+  bool m_promptCreationModeHasBeenSet = false;
+  bool m_textHasBeenSet = false;
+  bool m_traceIdHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

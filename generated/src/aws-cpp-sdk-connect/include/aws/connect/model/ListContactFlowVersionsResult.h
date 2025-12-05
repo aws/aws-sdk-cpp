@@ -85,12 +85,12 @@ class ListContactFlowVersionsResult {
   ///@}
  private:
   Aws::Vector<ContactFlowVersionSummary> m_contactFlowVersionSummaryList;
-  bool m_contactFlowVersionSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_contactFlowVersionSummaryListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

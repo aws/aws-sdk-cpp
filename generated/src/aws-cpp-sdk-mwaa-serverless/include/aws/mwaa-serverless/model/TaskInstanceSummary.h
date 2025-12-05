@@ -159,24 +159,24 @@ class TaskInstanceSummary {
   ///@}
  private:
   Aws::String m_workflowArn;
-  bool m_workflowArnHasBeenSet = false;
 
   Aws::String m_workflowVersion;
-  bool m_workflowVersionHasBeenSet = false;
 
   Aws::String m_runId;
-  bool m_runIdHasBeenSet = false;
 
   Aws::String m_taskInstanceId;
-  bool m_taskInstanceIdHasBeenSet = false;
 
   TaskInstanceStatus m_status{TaskInstanceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   int m_durationInSeconds{0};
-  bool m_durationInSecondsHasBeenSet = false;
 
   Aws::String m_operatorName;
+  bool m_workflowArnHasBeenSet = false;
+  bool m_workflowVersionHasBeenSet = false;
+  bool m_runIdHasBeenSet = false;
+  bool m_taskInstanceIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_durationInSecondsHasBeenSet = false;
   bool m_operatorNameHasBeenSet = false;
 };
 

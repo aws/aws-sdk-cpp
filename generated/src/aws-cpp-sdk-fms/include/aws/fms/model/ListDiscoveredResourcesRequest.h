@@ -117,15 +117,15 @@ class ListDiscoveredResourcesRequest : public FMSRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_memberAccountIds;
-  bool m_memberAccountIdsHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_memberAccountIdsHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

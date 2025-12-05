@@ -247,39 +247,39 @@ class WorkloadEstimateUsageItem {
   ///@}
  private:
   Aws::String m_serviceCode;
-  bool m_serviceCodeHasBeenSet = false;
 
   Aws::String m_usageType;
-  bool m_usageTypeHasBeenSet = false;
 
   Aws::String m_operation;
-  bool m_operationHasBeenSet = false;
 
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_usageAccountId;
-  bool m_usageAccountIdHasBeenSet = false;
 
   Aws::String m_group;
-  bool m_groupHasBeenSet = false;
 
   WorkloadEstimateUsageQuantity m_quantity;
-  bool m_quantityHasBeenSet = false;
 
   double m_cost{0.0};
-  bool m_costHasBeenSet = false;
 
   CurrencyCode m_currency{CurrencyCode::NOT_SET};
-  bool m_currencyHasBeenSet = false;
 
   WorkloadEstimateCostStatus m_status{WorkloadEstimateCostStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   HistoricalUsageEntity m_historicalUsage;
+  bool m_serviceCodeHasBeenSet = false;
+  bool m_usageTypeHasBeenSet = false;
+  bool m_operationHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_usageAccountIdHasBeenSet = false;
+  bool m_groupHasBeenSet = false;
+  bool m_quantityHasBeenSet = false;
+  bool m_costHasBeenSet = false;
+  bool m_currencyHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_historicalUsageHasBeenSet = false;
 };
 

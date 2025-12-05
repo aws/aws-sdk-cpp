@@ -111,12 +111,12 @@ class X12CodeListValidationRule {
   ///@}
  private:
   Aws::String m_elementId;
-  bool m_elementIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_codesToAdd;
-  bool m_codesToAddHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_codesToRemove;
+  bool m_elementIdHasBeenSet = false;
+  bool m_codesToAddHasBeenSet = false;
   bool m_codesToRemoveHasBeenSet = false;
 };
 

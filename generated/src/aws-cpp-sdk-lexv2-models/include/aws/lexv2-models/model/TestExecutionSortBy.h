@@ -67,9 +67,9 @@ class TestExecutionSortBy {
   ///@}
  private:
   TestExecutionSortAttribute m_attribute{TestExecutionSortAttribute::NOT_SET};
-  bool m_attributeHasBeenSet = false;
 
   SortOrder m_order{SortOrder::NOT_SET};
+  bool m_attributeHasBeenSet = false;
   bool m_orderHasBeenSet = false;
 };
 

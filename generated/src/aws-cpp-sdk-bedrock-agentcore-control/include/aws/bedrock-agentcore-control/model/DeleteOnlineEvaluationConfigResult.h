@@ -95,15 +95,15 @@ class DeleteOnlineEvaluationConfigResult {
   ///@}
  private:
   Aws::String m_onlineEvaluationConfigArn;
-  bool m_onlineEvaluationConfigArnHasBeenSet = false;
 
   Aws::String m_onlineEvaluationConfigId;
-  bool m_onlineEvaluationConfigIdHasBeenSet = false;
 
   OnlineEvaluationConfigStatus m_status{OnlineEvaluationConfigStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_onlineEvaluationConfigArnHasBeenSet = false;
+  bool m_onlineEvaluationConfigIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

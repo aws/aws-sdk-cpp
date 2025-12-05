@@ -69,9 +69,9 @@ class GetApplicationAccessScopeRequest : public SSOAdminRequest {
   ///@}
  private:
   Aws::String m_applicationArn;
-  bool m_applicationArnHasBeenSet = false;
 
   Aws::String m_scope;
+  bool m_applicationArnHasBeenSet = false;
   bool m_scopeHasBeenSet = false;
 };
 

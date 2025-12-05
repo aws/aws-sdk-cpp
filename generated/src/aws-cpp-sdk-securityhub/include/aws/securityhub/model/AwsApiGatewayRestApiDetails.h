@@ -209,30 +209,30 @@ class AwsApiGatewayRestApiDetails {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_createdDate;
-  bool m_createdDateHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_binaryMediaTypes;
-  bool m_binaryMediaTypesHasBeenSet = false;
 
   int m_minimumCompressionSize{0};
-  bool m_minimumCompressionSizeHasBeenSet = false;
 
   Aws::String m_apiKeySource;
-  bool m_apiKeySourceHasBeenSet = false;
 
   AwsApiGatewayEndpointConfiguration m_endpointConfiguration;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_binaryMediaTypesHasBeenSet = false;
+  bool m_minimumCompressionSizeHasBeenSet = false;
+  bool m_apiKeySourceHasBeenSet = false;
   bool m_endpointConfigurationHasBeenSet = false;
 };
 

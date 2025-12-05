@@ -79,12 +79,12 @@ class CreateVpcEndpointResponse {
   ///@}
  private:
   VpcEndpoint m_vpcEndpoint;
-  bool m_vpcEndpointHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_vpcEndpointHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

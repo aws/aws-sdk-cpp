@@ -126,18 +126,18 @@ class ImportSourceCredentialsRequest : public CodeBuildRequest {
   ///@}
  private:
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::String m_token;
-  bool m_tokenHasBeenSet = false;
 
   ServerType m_serverType{ServerType::NOT_SET};
-  bool m_serverTypeHasBeenSet = false;
 
   AuthType m_authType{AuthType::NOT_SET};
-  bool m_authTypeHasBeenSet = false;
 
   bool m_shouldOverwrite{false};
+  bool m_usernameHasBeenSet = false;
+  bool m_tokenHasBeenSet = false;
+  bool m_serverTypeHasBeenSet = false;
+  bool m_authTypeHasBeenSet = false;
   bool m_shouldOverwriteHasBeenSet = false;
 };
 

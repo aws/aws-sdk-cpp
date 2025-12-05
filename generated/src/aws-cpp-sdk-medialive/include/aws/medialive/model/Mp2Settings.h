@@ -81,12 +81,12 @@ class Mp2Settings {
   ///@}
  private:
   double m_bitrate{0.0};
-  bool m_bitrateHasBeenSet = false;
 
   Mp2CodingMode m_codingMode{Mp2CodingMode::NOT_SET};
-  bool m_codingModeHasBeenSet = false;
 
   double m_sampleRate{0.0};
+  bool m_bitrateHasBeenSet = false;
+  bool m_codingModeHasBeenSet = false;
   bool m_sampleRateHasBeenSet = false;
 };
 

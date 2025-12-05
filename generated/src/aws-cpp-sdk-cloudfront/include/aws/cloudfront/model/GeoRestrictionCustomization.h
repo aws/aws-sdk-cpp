@@ -82,9 +82,9 @@ class GeoRestrictionCustomization {
   ///@}
  private:
   GeoRestrictionType m_restrictionType{GeoRestrictionType::NOT_SET};
-  bool m_restrictionTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_locations;
+  bool m_restrictionTypeHasBeenSet = false;
   bool m_locationsHasBeenSet = false;
 };
 

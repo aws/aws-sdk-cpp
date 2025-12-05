@@ -236,33 +236,33 @@ class CreateDataMigrationRequest : public DatabaseMigrationServiceRequest {
   ///@}
  private:
   Aws::String m_dataMigrationName;
-  bool m_dataMigrationNameHasBeenSet = false;
 
   Aws::String m_migrationProjectIdentifier;
-  bool m_migrationProjectIdentifierHasBeenSet = false;
 
   MigrationTypeValue m_dataMigrationType{MigrationTypeValue::NOT_SET};
-  bool m_dataMigrationTypeHasBeenSet = false;
 
   Aws::String m_serviceAccessRoleArn;
-  bool m_serviceAccessRoleArnHasBeenSet = false;
 
   bool m_enableCloudwatchLogs{false};
-  bool m_enableCloudwatchLogsHasBeenSet = false;
 
   Aws::Vector<SourceDataSetting> m_sourceDataSettings;
-  bool m_sourceDataSettingsHasBeenSet = false;
 
   Aws::Vector<TargetDataSetting> m_targetDataSettings;
-  bool m_targetDataSettingsHasBeenSet = false;
 
   int m_numberOfJobs{0};
-  bool m_numberOfJobsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_selectionRules;
+  bool m_dataMigrationNameHasBeenSet = false;
+  bool m_migrationProjectIdentifierHasBeenSet = false;
+  bool m_dataMigrationTypeHasBeenSet = false;
+  bool m_serviceAccessRoleArnHasBeenSet = false;
+  bool m_enableCloudwatchLogsHasBeenSet = false;
+  bool m_sourceDataSettingsHasBeenSet = false;
+  bool m_targetDataSettingsHasBeenSet = false;
+  bool m_numberOfJobsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_selectionRulesHasBeenSet = false;
 };
 

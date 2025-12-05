@@ -81,9 +81,9 @@ class CachePolicyCookiesConfig {
   ///@}
  private:
   CachePolicyCookieBehavior m_cookieBehavior{CachePolicyCookieBehavior::NOT_SET};
-  bool m_cookieBehaviorHasBeenSet = false;
 
   CookieNames m_cookies;
+  bool m_cookieBehaviorHasBeenSet = false;
   bool m_cookiesHasBeenSet = false;
 };
 

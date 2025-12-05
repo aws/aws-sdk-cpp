@@ -78,9 +78,9 @@ class VerificationDetails {
   ///@}
  private:
   Aws::String m_dateOfBirth;
-  bool m_dateOfBirthHasBeenSet = false;
 
   Aws::Vector<TaxRegistrationDocument> m_taxRegistrationDocuments;
+  bool m_dateOfBirthHasBeenSet = false;
   bool m_taxRegistrationDocumentsHasBeenSet = false;
 };
 

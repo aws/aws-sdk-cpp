@@ -123,18 +123,18 @@ class SnoozeAlarmActionRequest {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_alarmModelName;
-  bool m_alarmModelNameHasBeenSet = false;
 
   Aws::String m_keyValue;
-  bool m_keyValueHasBeenSet = false;
 
   Aws::String m_note;
-  bool m_noteHasBeenSet = false;
 
   int m_snoozeDuration{0};
+  bool m_requestIdHasBeenSet = false;
+  bool m_alarmModelNameHasBeenSet = false;
+  bool m_keyValueHasBeenSet = false;
+  bool m_noteHasBeenSet = false;
   bool m_snoozeDurationHasBeenSet = false;
 };
 

@@ -124,15 +124,15 @@ class UpdatePullRequestApprovalRuleContentRequest : public CodeCommitRequest {
   ///@}
  private:
   Aws::String m_pullRequestId;
-  bool m_pullRequestIdHasBeenSet = false;
 
   Aws::String m_approvalRuleName;
-  bool m_approvalRuleNameHasBeenSet = false;
 
   Aws::String m_existingRuleContentSha256;
-  bool m_existingRuleContentSha256HasBeenSet = false;
 
   Aws::String m_newRuleContent;
+  bool m_pullRequestIdHasBeenSet = false;
+  bool m_approvalRuleNameHasBeenSet = false;
+  bool m_existingRuleContentSha256HasBeenSet = false;
   bool m_newRuleContentHasBeenSet = false;
 };
 

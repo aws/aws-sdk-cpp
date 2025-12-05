@@ -159,24 +159,24 @@ class GetCostEstimationResult {
   ///@}
  private:
   CostEstimationResourceCollectionFilter m_resourceCollection;
-  bool m_resourceCollectionHasBeenSet = false;
 
   CostEstimationStatus m_status{CostEstimationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<ServiceResourceCost> m_costs;
-  bool m_costsHasBeenSet = false;
 
   CostEstimationTimeRange m_timeRange;
-  bool m_timeRangeHasBeenSet = false;
 
   double m_totalCost{0.0};
-  bool m_totalCostHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceCollectionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_costsHasBeenSet = false;
+  bool m_timeRangeHasBeenSet = false;
+  bool m_totalCostHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -76,9 +76,9 @@ class EdgeOverride {
   ///@}
  private:
   Aws::Vector<Aws::Vector<Aws::String>> m_edgeSets;
-  bool m_edgeSetsHasBeenSet = false;
 
   Aws::String m_useEdge;
+  bool m_edgeSetsHasBeenSet = false;
   bool m_useEdgeHasBeenSet = false;
 };
 

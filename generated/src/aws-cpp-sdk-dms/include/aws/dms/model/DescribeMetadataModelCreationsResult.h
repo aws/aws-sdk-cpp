@@ -89,12 +89,12 @@ class DescribeMetadataModelCreationsResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<SchemaConversionRequest> m_requests;
-  bool m_requestsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_markerHasBeenSet = false;
+  bool m_requestsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

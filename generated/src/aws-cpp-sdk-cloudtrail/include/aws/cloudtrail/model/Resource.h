@@ -78,9 +78,9 @@ class Resource {
   ///@}
  private:
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resourceName;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_resourceNameHasBeenSet = false;
 };
 

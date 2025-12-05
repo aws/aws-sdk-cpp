@@ -88,12 +88,12 @@ class DeprovisionPublicIpv4PoolCidrRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_poolId;
-  bool m_poolIdHasBeenSet = false;
 
   Aws::String m_cidr;
+  bool m_dryRunHasBeenSet = false;
+  bool m_poolIdHasBeenSet = false;
   bool m_cidrHasBeenSet = false;
 };
 

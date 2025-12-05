@@ -112,15 +112,15 @@ class ListAssetRelationshipsRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   Aws::String m_assetId;
-  bool m_assetIdHasBeenSet = false;
 
   TraversalType m_traversalType{TraversalType::NOT_SET};
-  bool m_traversalTypeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_assetIdHasBeenSet = false;
+  bool m_traversalTypeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

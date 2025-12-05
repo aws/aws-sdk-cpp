@@ -75,12 +75,12 @@ class RollbackApplicationResult {
   ///@}
  private:
   ApplicationDetail m_applicationDetail;
-  bool m_applicationDetailHasBeenSet = false;
 
   Aws::String m_operationId;
-  bool m_operationIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationDetailHasBeenSet = false;
+  bool m_operationIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

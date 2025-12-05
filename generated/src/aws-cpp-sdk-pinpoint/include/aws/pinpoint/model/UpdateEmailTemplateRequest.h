@@ -126,15 +126,15 @@ class UpdateEmailTemplateRequest : public PinpointRequest {
   ///@}
  private:
   bool m_createNewVersion{false};
-  bool m_createNewVersionHasBeenSet = false;
 
   EmailTemplateRequest m_emailTemplateRequest;
-  bool m_emailTemplateRequestHasBeenSet = false;
 
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   Aws::String m_version;
+  bool m_createNewVersionHasBeenSet = false;
+  bool m_emailTemplateRequestHasBeenSet = false;
+  bool m_templateNameHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

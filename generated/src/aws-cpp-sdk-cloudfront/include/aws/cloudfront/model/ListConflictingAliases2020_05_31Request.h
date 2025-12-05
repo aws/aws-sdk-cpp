@@ -109,15 +109,15 @@ class ListConflictingAliases2020_05_31Request : public CloudFrontRequest {
   ///@}
  private:
   Aws::String m_distributionId;
-  bool m_distributionIdHasBeenSet = false;
 
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_maxItems{0};
+  bool m_distributionIdHasBeenSet = false;
+  bool m_aliasHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_maxItemsHasBeenSet = false;
 };
 

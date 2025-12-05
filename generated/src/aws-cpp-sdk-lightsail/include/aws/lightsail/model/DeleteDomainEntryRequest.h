@@ -69,9 +69,9 @@ class DeleteDomainEntryRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   DomainEntry m_domainEntry;
+  bool m_domainNameHasBeenSet = false;
   bool m_domainEntryHasBeenSet = false;
 };
 

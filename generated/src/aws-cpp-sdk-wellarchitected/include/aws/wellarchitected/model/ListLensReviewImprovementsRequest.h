@@ -148,24 +148,24 @@ class ListLensReviewImprovementsRequest : public WellArchitectedRequest {
   ///@}
  private:
   Aws::String m_workloadId;
-  bool m_workloadIdHasBeenSet = false;
 
   Aws::String m_lensAlias;
-  bool m_lensAliasHasBeenSet = false;
 
   Aws::String m_pillarId;
-  bool m_pillarIdHasBeenSet = false;
 
   int m_milestoneNumber{0};
-  bool m_milestoneNumberHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   QuestionPriority m_questionPriority{QuestionPriority::NOT_SET};
+  bool m_workloadIdHasBeenSet = false;
+  bool m_lensAliasHasBeenSet = false;
+  bool m_pillarIdHasBeenSet = false;
+  bool m_milestoneNumberHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_questionPriorityHasBeenSet = false;
 };
 

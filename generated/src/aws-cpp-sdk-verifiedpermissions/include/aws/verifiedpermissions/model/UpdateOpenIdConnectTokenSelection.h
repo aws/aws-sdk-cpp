@@ -79,9 +79,9 @@ class UpdateOpenIdConnectTokenSelection {
   ///@}
  private:
   UpdateOpenIdConnectAccessTokenConfiguration m_accessTokenOnly;
-  bool m_accessTokenOnlyHasBeenSet = false;
 
   UpdateOpenIdConnectIdentityTokenConfiguration m_identityTokenOnly;
+  bool m_accessTokenOnlyHasBeenSet = false;
   bool m_identityTokenOnlyHasBeenSet = false;
 };
 

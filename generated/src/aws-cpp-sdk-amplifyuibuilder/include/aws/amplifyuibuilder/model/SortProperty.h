@@ -68,9 +68,9 @@ class SortProperty {
   ///@}
  private:
   Aws::String m_field;
-  bool m_fieldHasBeenSet = false;
 
   SortDirection m_direction{SortDirection::NOT_SET};
+  bool m_fieldHasBeenSet = false;
   bool m_directionHasBeenSet = false;
 };
 

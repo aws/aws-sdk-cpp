@@ -77,9 +77,9 @@ class GuardrailTopicPolicyConfig {
   ///@}
  private:
   Aws::Vector<GuardrailTopicConfig> m_topicsConfig;
-  bool m_topicsConfigHasBeenSet = false;
 
   GuardrailTopicsTierConfig m_tierConfig;
+  bool m_topicsConfigHasBeenSet = false;
   bool m_tierConfigHasBeenSet = false;
 };
 

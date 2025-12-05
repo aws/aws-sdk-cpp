@@ -90,12 +90,12 @@ class ChangedBlock {
   ///@}
  private:
   int m_blockIndex{0};
-  bool m_blockIndexHasBeenSet = false;
 
   Aws::String m_firstBlockToken;
-  bool m_firstBlockTokenHasBeenSet = false;
 
   Aws::String m_secondBlockToken;
+  bool m_blockIndexHasBeenSet = false;
+  bool m_firstBlockTokenHasBeenSet = false;
   bool m_secondBlockTokenHasBeenSet = false;
 };
 

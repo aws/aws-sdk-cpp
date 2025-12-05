@@ -80,9 +80,9 @@ class NumericalAggregationFunction {
   ///@}
  private:
   SimpleNumericalAggregationFunction m_simpleNumericalAggregation{SimpleNumericalAggregationFunction::NOT_SET};
-  bool m_simpleNumericalAggregationHasBeenSet = false;
 
   PercentileAggregation m_percentileAggregation;
+  bool m_simpleNumericalAggregationHasBeenSet = false;
   bool m_percentileAggregationHasBeenSet = false;
 };
 

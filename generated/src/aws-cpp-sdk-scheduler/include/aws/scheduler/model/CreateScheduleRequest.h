@@ -297,42 +297,42 @@ class CreateScheduleRequest : public SchedulerRequest {
   ///@}
  private:
   ActionAfterCompletion m_actionAfterCompletion{ActionAfterCompletion::NOT_SET};
-  bool m_actionAfterCompletionHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_endDate{};
-  bool m_endDateHasBeenSet = false;
 
   FlexibleTimeWindow m_flexibleTimeWindow;
-  bool m_flexibleTimeWindowHasBeenSet = false;
 
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_scheduleExpression;
-  bool m_scheduleExpressionHasBeenSet = false;
 
   Aws::String m_scheduleExpressionTimezone;
-  bool m_scheduleExpressionTimezoneHasBeenSet = false;
 
   Aws::Utils::DateTime m_startDate{};
-  bool m_startDateHasBeenSet = false;
 
   ScheduleState m_state{ScheduleState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Target m_target;
+  bool m_actionAfterCompletionHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_descriptionHasBeenSet = false;
+  bool m_endDateHasBeenSet = false;
+  bool m_flexibleTimeWindowHasBeenSet = false;
+  bool m_groupNameHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_scheduleExpressionHasBeenSet = false;
+  bool m_scheduleExpressionTimezoneHasBeenSet = false;
+  bool m_startDateHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_targetHasBeenSet = false;
 };
 

@@ -226,30 +226,30 @@ class CreateLoadBalancerRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_loadBalancerName;
-  bool m_loadBalancerNameHasBeenSet = false;
 
   int m_instancePort{0};
-  bool m_instancePortHasBeenSet = false;
 
   Aws::String m_healthCheckPath;
-  bool m_healthCheckPathHasBeenSet = false;
 
   Aws::String m_certificateName;
-  bool m_certificateNameHasBeenSet = false;
 
   Aws::String m_certificateDomainName;
-  bool m_certificateDomainNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_certificateAlternativeNames;
-  bool m_certificateAlternativeNamesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
-  bool m_ipAddressTypeHasBeenSet = false;
 
   Aws::String m_tlsPolicyName;
+  bool m_loadBalancerNameHasBeenSet = false;
+  bool m_instancePortHasBeenSet = false;
+  bool m_healthCheckPathHasBeenSet = false;
+  bool m_certificateNameHasBeenSet = false;
+  bool m_certificateDomainNameHasBeenSet = false;
+  bool m_certificateAlternativeNamesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
   bool m_tlsPolicyNameHasBeenSet = false;
 };
 

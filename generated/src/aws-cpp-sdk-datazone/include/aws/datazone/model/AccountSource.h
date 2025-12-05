@@ -78,9 +78,9 @@ class AccountSource {
   ///@}
  private:
   Aws::Vector<AccountInfo> m_accounts;
-  bool m_accountsHasBeenSet = false;
 
   CustomAccountPoolHandler m_customAccountPoolHandler;
+  bool m_accountsHasBeenSet = false;
   bool m_customAccountPoolHandlerHasBeenSet = false;
 };
 

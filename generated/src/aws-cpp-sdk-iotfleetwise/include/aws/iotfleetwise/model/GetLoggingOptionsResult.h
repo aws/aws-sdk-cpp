@@ -60,9 +60,9 @@ class GetLoggingOptionsResult {
   ///@}
  private:
   CloudWatchLogDeliveryOptions m_cloudWatchLogDelivery;
-  bool m_cloudWatchLogDeliveryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_cloudWatchLogDeliveryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

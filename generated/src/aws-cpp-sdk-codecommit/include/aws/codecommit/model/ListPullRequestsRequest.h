@@ -123,18 +123,18 @@ class ListPullRequestsRequest : public CodeCommitRequest {
   ///@}
  private:
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   Aws::String m_authorArn;
-  bool m_authorArnHasBeenSet = false;
 
   PullRequestStatusEnum m_pullRequestStatus{PullRequestStatusEnum::NOT_SET};
-  bool m_pullRequestStatusHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_authorArnHasBeenSet = false;
+  bool m_pullRequestStatusHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

@@ -97,12 +97,12 @@ class CreateReceiptRuleRequest : public SESRequest {
   ///@}
  private:
   Aws::String m_ruleSetName;
-  bool m_ruleSetNameHasBeenSet = false;
 
   Aws::String m_after;
-  bool m_afterHasBeenSet = false;
 
   ReceiptRule m_rule;
+  bool m_ruleSetNameHasBeenSet = false;
+  bool m_afterHasBeenSet = false;
   bool m_ruleHasBeenSet = false;
 };
 

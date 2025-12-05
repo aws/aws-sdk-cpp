@@ -108,15 +108,15 @@ class TimerStartedEventAttributes {
   ///@}
  private:
   Aws::String m_timerId;
-  bool m_timerIdHasBeenSet = false;
 
   Aws::String m_control;
-  bool m_controlHasBeenSet = false;
 
   Aws::String m_startToFireTimeout;
-  bool m_startToFireTimeoutHasBeenSet = false;
 
   long long m_decisionTaskCompletedEventId{0};
+  bool m_timerIdHasBeenSet = false;
+  bool m_controlHasBeenSet = false;
+  bool m_startToFireTimeoutHasBeenSet = false;
   bool m_decisionTaskCompletedEventIdHasBeenSet = false;
 };
 

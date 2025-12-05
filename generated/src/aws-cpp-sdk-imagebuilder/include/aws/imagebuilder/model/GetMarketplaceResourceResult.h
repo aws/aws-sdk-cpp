@@ -94,15 +94,15 @@ class GetMarketplaceResourceResult {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::String m_data;
-  bool m_dataHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_urlHasBeenSet = false;
+  bool m_dataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

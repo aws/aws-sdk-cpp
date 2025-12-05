@@ -107,15 +107,15 @@ class SetAlarmStateRequest : public CloudWatchRequest {
   ///@}
  private:
   Aws::String m_alarmName;
-  bool m_alarmNameHasBeenSet = false;
 
   StateValue m_stateValue{StateValue::NOT_SET};
-  bool m_stateValueHasBeenSet = false;
 
   Aws::String m_stateReason;
-  bool m_stateReasonHasBeenSet = false;
 
   Aws::String m_stateReasonData;
+  bool m_alarmNameHasBeenSet = false;
+  bool m_stateValueHasBeenSet = false;
+  bool m_stateReasonHasBeenSet = false;
   bool m_stateReasonDataHasBeenSet = false;
 };
 

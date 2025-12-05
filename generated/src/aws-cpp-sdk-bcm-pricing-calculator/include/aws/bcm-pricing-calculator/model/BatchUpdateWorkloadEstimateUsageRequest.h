@@ -77,9 +77,9 @@ class BatchUpdateWorkloadEstimateUsageRequest : public BCMPricingCalculatorReque
   ///@}
  private:
   Aws::String m_workloadEstimateId;
-  bool m_workloadEstimateIdHasBeenSet = false;
 
   Aws::Vector<BatchUpdateWorkloadEstimateUsageEntry> m_usage;
+  bool m_workloadEstimateIdHasBeenSet = false;
   bool m_usageHasBeenSet = false;
 };
 

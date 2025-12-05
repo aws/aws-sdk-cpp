@@ -68,9 +68,9 @@ class ProxyRuleGroupAttachment {
   ///@}
  private:
   Aws::String m_proxyRuleGroupName;
-  bool m_proxyRuleGroupNameHasBeenSet = false;
 
   int m_insertPosition{0};
+  bool m_proxyRuleGroupNameHasBeenSet = false;
   bool m_insertPositionHasBeenSet = false;
 };
 

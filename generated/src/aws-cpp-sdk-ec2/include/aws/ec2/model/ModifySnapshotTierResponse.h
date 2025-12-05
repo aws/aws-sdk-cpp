@@ -78,12 +78,12 @@ class ModifySnapshotTierResponse {
   ///@}
  private:
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_tieringStartTime{};
-  bool m_tieringStartTimeHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_snapshotIdHasBeenSet = false;
+  bool m_tieringStartTimeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

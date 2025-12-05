@@ -74,9 +74,9 @@ class SupportedEmailDomainsParameters {
   ///@}
  private:
   FeatureEnableParameter m_enabled{FeatureEnableParameter::NOT_SET};
-  bool m_enabledHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowedDomains;
+  bool m_enabledHasBeenSet = false;
   bool m_allowedDomainsHasBeenSet = false;
 };
 

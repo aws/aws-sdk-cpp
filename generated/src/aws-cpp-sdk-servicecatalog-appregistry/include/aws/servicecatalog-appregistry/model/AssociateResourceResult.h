@@ -101,15 +101,15 @@ class AssociateResourceResult {
   ///@}
  private:
   Aws::String m_applicationArn;
-  bool m_applicationArnHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::Vector<AssociationOption> m_options;
-  bool m_optionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationArnHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_optionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

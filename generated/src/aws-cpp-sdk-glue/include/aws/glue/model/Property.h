@@ -178,24 +178,24 @@ class Property {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_required{false};
-  bool m_requiredHasBeenSet = false;
 
   Aws::String m_defaultValue;
-  bool m_defaultValueHasBeenSet = false;
 
   Aws::Vector<PropertyType> m_propertyTypes;
-  bool m_propertyTypesHasBeenSet = false;
 
   Aws::Vector<AllowedValue> m_allowedValues;
-  bool m_allowedValuesHasBeenSet = false;
 
   Aws::Vector<DataOperation> m_dataOperationScopes;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_requiredHasBeenSet = false;
+  bool m_defaultValueHasBeenSet = false;
+  bool m_propertyTypesHasBeenSet = false;
+  bool m_allowedValuesHasBeenSet = false;
   bool m_dataOperationScopesHasBeenSet = false;
 };
 

@@ -135,18 +135,18 @@ class SupportedEndpointType {
   ///@}
  private:
   Aws::String m_engineName;
-  bool m_engineNameHasBeenSet = false;
 
   bool m_supportsCDC{false};
-  bool m_supportsCDCHasBeenSet = false;
 
   ReplicationEndpointTypeValue m_endpointType{ReplicationEndpointTypeValue::NOT_SET};
-  bool m_endpointTypeHasBeenSet = false;
 
   Aws::String m_replicationInstanceEngineMinimumVersion;
-  bool m_replicationInstanceEngineMinimumVersionHasBeenSet = false;
 
   Aws::String m_engineDisplayName;
+  bool m_engineNameHasBeenSet = false;
+  bool m_supportsCDCHasBeenSet = false;
+  bool m_endpointTypeHasBeenSet = false;
+  bool m_replicationInstanceEngineMinimumVersionHasBeenSet = false;
   bool m_engineDisplayNameHasBeenSet = false;
 };
 

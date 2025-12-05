@@ -62,9 +62,9 @@ class RegisterStreamConsumerResult {
   ///@}
  private:
   Consumer m_consumer;
-  bool m_consumerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_consumerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

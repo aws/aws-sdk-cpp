@@ -69,9 +69,9 @@ class PutFindingsPublicationConfigurationRequest : public Macie2Request {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   SecurityHubConfiguration m_securityHubConfiguration;
+  bool m_clientTokenHasBeenSet = true;
   bool m_securityHubConfigurationHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class UpdateSPICECapacityConfigurationRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   PurchaseMode m_purchaseMode{PurchaseMode::NOT_SET};
+  bool m_awsAccountIdHasBeenSet = false;
   bool m_purchaseModeHasBeenSet = false;
 };
 

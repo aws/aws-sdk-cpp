@@ -70,9 +70,9 @@ class Listener {
   ///@}
  private:
   Aws::String m_protocol;
-  bool m_protocolHasBeenSet = false;
 
   int m_port{0};
+  bool m_protocolHasBeenSet = false;
   bool m_portHasBeenSet = false;
 };
 

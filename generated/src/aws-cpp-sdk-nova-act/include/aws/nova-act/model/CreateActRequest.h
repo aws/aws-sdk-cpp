@@ -148,21 +148,21 @@ class CreateActRequest : public NovaActRequest {
   ///@}
  private:
   Aws::String m_workflowDefinitionName;
-  bool m_workflowDefinitionNameHasBeenSet = false;
 
   Aws::String m_workflowRunId;
-  bool m_workflowRunIdHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_task;
-  bool m_taskHasBeenSet = false;
 
   Aws::Vector<ToolSpec> m_toolSpecs;
-  bool m_toolSpecsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_workflowDefinitionNameHasBeenSet = false;
+  bool m_workflowRunIdHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_taskHasBeenSet = false;
+  bool m_toolSpecsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

@@ -112,15 +112,15 @@ class SuggestResult {
   ///@}
  private:
   Aws::String m_pricingBucket;
-  bool m_pricingBucketHasBeenSet = false;
 
   Aws::Vector<SuggestResultItem> m_resultItems;
-  bool m_resultItemsHasBeenSet = false;
 
   Aws::Vector<QueryRefinement> m_queryRefinements;
-  bool m_queryRefinementsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_pricingBucketHasBeenSet = false;
+  bool m_resultItemsHasBeenSet = false;
+  bool m_queryRefinementsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

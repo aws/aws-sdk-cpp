@@ -91,12 +91,12 @@ class GitConfig {
   ///@}
  private:
   Aws::String m_repositoryUrl;
-  bool m_repositoryUrlHasBeenSet = false;
 
   Aws::String m_branch;
-  bool m_branchHasBeenSet = false;
 
   Aws::String m_secretArn;
+  bool m_repositoryUrlHasBeenSet = false;
+  bool m_branchHasBeenSet = false;
   bool m_secretArnHasBeenSet = false;
 };
 

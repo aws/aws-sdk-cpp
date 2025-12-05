@@ -97,12 +97,12 @@ class StartServiceSoftwareUpdateRequest : public OpenSearchServiceRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   ScheduleAt m_scheduleAt{ScheduleAt::NOT_SET};
-  bool m_scheduleAtHasBeenSet = false;
 
   long long m_desiredStartTime{0};
+  bool m_domainNameHasBeenSet = false;
+  bool m_scheduleAtHasBeenSet = false;
   bool m_desiredStartTimeHasBeenSet = false;
 };
 

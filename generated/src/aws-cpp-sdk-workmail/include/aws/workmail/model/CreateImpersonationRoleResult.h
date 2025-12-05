@@ -59,9 +59,9 @@ class CreateImpersonationRoleResult {
   ///@}
  private:
   Aws::String m_impersonationRoleId;
-  bool m_impersonationRoleIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_impersonationRoleIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

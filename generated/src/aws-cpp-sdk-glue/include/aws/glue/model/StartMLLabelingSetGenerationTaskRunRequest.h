@@ -68,9 +68,9 @@ class StartMLLabelingSetGenerationTaskRunRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_transformId;
-  bool m_transformIdHasBeenSet = false;
 
   Aws::String m_outputS3Path;
+  bool m_transformIdHasBeenSet = false;
   bool m_outputS3PathHasBeenSet = false;
 };
 

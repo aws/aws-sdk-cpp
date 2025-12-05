@@ -60,9 +60,9 @@ class StartTrainedModelInferenceJobResult {
   ///@}
  private:
   Aws::String m_trainedModelInferenceJobArn;
-  bool m_trainedModelInferenceJobArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trainedModelInferenceJobArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

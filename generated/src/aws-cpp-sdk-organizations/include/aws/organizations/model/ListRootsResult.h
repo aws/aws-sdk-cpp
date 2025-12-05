@@ -88,12 +88,12 @@ class ListRootsResult {
   ///@}
  private:
   Aws::Vector<Root> m_roots;
-  bool m_rootsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_rootsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

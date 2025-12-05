@@ -92,12 +92,12 @@ class FindingsStatistics {
   ///@}
  private:
   ExternalAccessFindingsStatistics m_externalAccessFindingsStatistics;
-  bool m_externalAccessFindingsStatisticsHasBeenSet = false;
 
   InternalAccessFindingsStatistics m_internalAccessFindingsStatistics;
-  bool m_internalAccessFindingsStatisticsHasBeenSet = false;
 
   UnusedAccessFindingsStatistics m_unusedAccessFindingsStatistics;
+  bool m_externalAccessFindingsStatisticsHasBeenSet = false;
+  bool m_internalAccessFindingsStatisticsHasBeenSet = false;
   bool m_unusedAccessFindingsStatisticsHasBeenSet = false;
 };
 

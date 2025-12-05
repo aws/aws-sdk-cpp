@@ -70,9 +70,9 @@ class CanaryLastRun {
   ///@}
  private:
   Aws::String m_canaryName;
-  bool m_canaryNameHasBeenSet = false;
 
   CanaryRun m_lastRun;
+  bool m_canaryNameHasBeenSet = false;
   bool m_lastRunHasBeenSet = false;
 };
 

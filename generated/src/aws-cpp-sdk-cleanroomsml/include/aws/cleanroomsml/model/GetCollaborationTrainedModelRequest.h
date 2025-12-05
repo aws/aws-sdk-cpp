@@ -92,12 +92,12 @@ class GetCollaborationTrainedModelRequest : public CleanRoomsMLRequest {
   ///@}
  private:
   Aws::String m_trainedModelArn;
-  bool m_trainedModelArnHasBeenSet = false;
 
   Aws::String m_collaborationIdentifier;
-  bool m_collaborationIdentifierHasBeenSet = false;
 
   Aws::String m_versionIdentifier;
+  bool m_trainedModelArnHasBeenSet = false;
+  bool m_collaborationIdentifierHasBeenSet = false;
   bool m_versionIdentifierHasBeenSet = false;
 };
 

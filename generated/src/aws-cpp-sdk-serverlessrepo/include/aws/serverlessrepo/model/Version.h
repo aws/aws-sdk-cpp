@@ -269,30 +269,30 @@ in which it is being retrieved.</p>
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_creationTime;
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Vector<ParameterDefinition> m_parameterDefinitions;
-  bool m_parameterDefinitionsHasBeenSet = false;
 
   Aws::Vector<Capability> m_requiredCapabilities;
-  bool m_requiredCapabilitiesHasBeenSet = false;
 
   bool m_resourcesSupported{false};
-  bool m_resourcesSupportedHasBeenSet = false;
 
   Aws::String m_semanticVersion;
-  bool m_semanticVersionHasBeenSet = false;
 
   Aws::String m_sourceCodeArchiveUrl;
-  bool m_sourceCodeArchiveUrlHasBeenSet = false;
 
   Aws::String m_sourceCodeUrl;
-  bool m_sourceCodeUrlHasBeenSet = false;
 
   Aws::String m_templateUrl;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_parameterDefinitionsHasBeenSet = false;
+  bool m_requiredCapabilitiesHasBeenSet = false;
+  bool m_resourcesSupportedHasBeenSet = false;
+  bool m_semanticVersionHasBeenSet = false;
+  bool m_sourceCodeArchiveUrlHasBeenSet = false;
+  bool m_sourceCodeUrlHasBeenSet = false;
   bool m_templateUrlHasBeenSet = false;
 };
 

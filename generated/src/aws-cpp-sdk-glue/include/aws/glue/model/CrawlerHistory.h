@@ -212,33 +212,33 @@ class CrawlerHistory {
   ///@}
  private:
   Aws::String m_crawlId;
-  bool m_crawlIdHasBeenSet = false;
 
   CrawlerHistoryState m_state{CrawlerHistoryState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_summary;
-  bool m_summaryHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_logGroup;
-  bool m_logGroupHasBeenSet = false;
 
   Aws::String m_logStream;
-  bool m_logStreamHasBeenSet = false;
 
   Aws::String m_messagePrefix;
-  bool m_messagePrefixHasBeenSet = false;
 
   double m_dPUHour{0.0};
+  bool m_crawlIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_summaryHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_logGroupHasBeenSet = false;
+  bool m_logStreamHasBeenSet = false;
+  bool m_messagePrefixHasBeenSet = false;
   bool m_dPUHourHasBeenSet = false;
 };
 

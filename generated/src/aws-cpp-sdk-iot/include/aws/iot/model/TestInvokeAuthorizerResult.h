@@ -129,21 +129,21 @@ class TestInvokeAuthorizerResult {
   ///@}
  private:
   bool m_isAuthenticated{false};
-  bool m_isAuthenticatedHasBeenSet = false;
 
   Aws::String m_principalId;
-  bool m_principalIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_policyDocuments;
-  bool m_policyDocumentsHasBeenSet = false;
 
   int m_refreshAfterInSeconds{0};
-  bool m_refreshAfterInSecondsHasBeenSet = false;
 
   int m_disconnectAfterInSeconds{0};
-  bool m_disconnectAfterInSecondsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_isAuthenticatedHasBeenSet = false;
+  bool m_principalIdHasBeenSet = false;
+  bool m_policyDocumentsHasBeenSet = false;
+  bool m_refreshAfterInSecondsHasBeenSet = false;
+  bool m_disconnectAfterInSecondsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

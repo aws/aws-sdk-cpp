@@ -66,9 +66,9 @@ class ConfigureHealthCheckResult {
   ///@}
  private:
   HealthCheck m_healthCheck;
-  bool m_healthCheckHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_healthCheckHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

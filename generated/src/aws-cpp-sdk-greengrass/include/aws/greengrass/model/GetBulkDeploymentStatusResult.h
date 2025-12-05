@@ -159,24 +159,24 @@ class GetBulkDeploymentStatusResult {
   ///@}
  private:
   BulkDeploymentMetrics m_bulkDeploymentMetrics;
-  bool m_bulkDeploymentMetricsHasBeenSet = false;
 
   BulkDeploymentStatus m_bulkDeploymentStatus{BulkDeploymentStatus::NOT_SET};
-  bool m_bulkDeploymentStatusHasBeenSet = false;
 
   Aws::String m_createdAt;
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Vector<ErrorDetail> m_errorDetails;
-  bool m_errorDetailsHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_bulkDeploymentMetricsHasBeenSet = false;
+  bool m_bulkDeploymentStatusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_errorDetailsHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

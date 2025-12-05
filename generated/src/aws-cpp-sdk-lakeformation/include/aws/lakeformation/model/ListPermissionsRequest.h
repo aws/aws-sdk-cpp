@@ -165,24 +165,24 @@ class ListPermissionsRequest : public LakeFormationRequest {
   ///@}
  private:
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   DataLakePrincipal m_principal;
-  bool m_principalHasBeenSet = false;
 
   DataLakeResourceType m_resourceType{DataLakeResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Resource m_resource;
-  bool m_resourceHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_includeRelated;
+  bool m_catalogIdHasBeenSet = false;
+  bool m_principalHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_includeRelatedHasBeenSet = false;
 };
 

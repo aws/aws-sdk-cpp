@@ -69,9 +69,9 @@ class UpdateInferenceComponentRuntimeConfigRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_inferenceComponentName;
-  bool m_inferenceComponentNameHasBeenSet = false;
 
   InferenceComponentRuntimeConfig m_desiredRuntimeConfig;
+  bool m_inferenceComponentNameHasBeenSet = false;
   bool m_desiredRuntimeConfigHasBeenSet = false;
 };
 

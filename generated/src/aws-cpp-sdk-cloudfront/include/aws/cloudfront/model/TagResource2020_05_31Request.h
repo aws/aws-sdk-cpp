@@ -75,9 +75,9 @@ class TagResource2020_05_31Request : public CloudFrontRequest {
   ///@}
  private:
   Aws::String m_resource;
-  bool m_resourceHasBeenSet = false;
 
   Tags m_tags;
+  bool m_resourceHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

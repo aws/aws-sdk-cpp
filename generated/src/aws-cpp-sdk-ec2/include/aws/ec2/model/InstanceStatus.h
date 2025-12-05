@@ -231,33 +231,33 @@ class InstanceStatus {
   ///@}
  private:
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   Aws::String m_outpostArn;
-  bool m_outpostArnHasBeenSet = false;
 
   OperatorResponse m_operator;
-  bool m_operatorHasBeenSet = false;
 
   Aws::Vector<InstanceStatusEvent> m_events;
-  bool m_eventsHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   InstanceState m_instanceState;
-  bool m_instanceStateHasBeenSet = false;
 
   InstanceStatusSummary m_instanceStatus;
-  bool m_instanceStatusHasBeenSet = false;
 
   InstanceStatusSummary m_systemStatus;
-  bool m_systemStatusHasBeenSet = false;
 
   EbsStatusSummary m_attachedEbsStatus;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_outpostArnHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
+  bool m_eventsHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_instanceStateHasBeenSet = false;
+  bool m_instanceStatusHasBeenSet = false;
+  bool m_systemStatusHasBeenSet = false;
   bool m_attachedEbsStatusHasBeenSet = false;
 };
 

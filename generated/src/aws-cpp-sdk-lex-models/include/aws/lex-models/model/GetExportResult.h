@@ -165,27 +165,27 @@ class GetExportResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   ExportType m_exportType{ExportType::NOT_SET};
-  bool m_exportTypeHasBeenSet = false;
 
   ExportStatus m_exportStatus{ExportStatus::NOT_SET};
-  bool m_exportStatusHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nameHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_exportTypeHasBeenSet = false;
+  bool m_exportStatusHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_urlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

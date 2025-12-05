@@ -152,21 +152,21 @@ is going to be on the customer local network.
   ///@}
  private:
   Aws::String m_ip;
-  bool m_ipHasBeenSet = false;
 
   Aws::String m_port;
-  bool m_portHasBeenSet = false;
 
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   InputDestinationVpc m_vpc;
-  bool m_vpcHasBeenSet = false;
 
   Aws::String m_network;
-  bool m_networkHasBeenSet = false;
 
   Aws::Vector<InputDestinationRoute> m_networkRoutes;
+  bool m_ipHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_urlHasBeenSet = false;
+  bool m_vpcHasBeenSet = false;
+  bool m_networkHasBeenSet = false;
   bool m_networkRoutesHasBeenSet = false;
 };
 

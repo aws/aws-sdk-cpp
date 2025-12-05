@@ -124,15 +124,15 @@ class ModifyClusterIamRolesRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_addIamRoles;
-  bool m_addIamRolesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_removeIamRoles;
-  bool m_removeIamRolesHasBeenSet = false;
 
   Aws::String m_defaultIamRoleArn;
+  bool m_clusterIdentifierHasBeenSet = false;
+  bool m_addIamRolesHasBeenSet = false;
+  bool m_removeIamRolesHasBeenSet = false;
   bool m_defaultIamRoleArnHasBeenSet = false;
 };
 

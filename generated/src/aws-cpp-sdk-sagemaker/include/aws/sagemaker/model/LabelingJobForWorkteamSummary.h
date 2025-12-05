@@ -142,21 +142,21 @@ class LabelingJobForWorkteamSummary {
   ///@}
  private:
   Aws::String m_labelingJobName;
-  bool m_labelingJobNameHasBeenSet = false;
 
   Aws::String m_jobReferenceCode;
-  bool m_jobReferenceCodeHasBeenSet = false;
 
   Aws::String m_workRequesterAccountId;
-  bool m_workRequesterAccountIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   LabelCountersForWorkteam m_labelCounters;
-  bool m_labelCountersHasBeenSet = false;
 
   int m_numberOfHumanWorkersPerDataObject{0};
+  bool m_labelingJobNameHasBeenSet = false;
+  bool m_jobReferenceCodeHasBeenSet = false;
+  bool m_workRequesterAccountIdHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_labelCountersHasBeenSet = false;
   bool m_numberOfHumanWorkersPerDataObjectHasBeenSet = false;
 };
 

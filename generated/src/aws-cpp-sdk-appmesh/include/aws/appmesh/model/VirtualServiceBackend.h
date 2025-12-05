@@ -70,9 +70,9 @@ class VirtualServiceBackend {
   ///@}
  private:
   ClientPolicy m_clientPolicy;
-  bool m_clientPolicyHasBeenSet = false;
 
   Aws::String m_virtualServiceName;
+  bool m_clientPolicyHasBeenSet = false;
   bool m_virtualServiceNameHasBeenSet = false;
 };
 

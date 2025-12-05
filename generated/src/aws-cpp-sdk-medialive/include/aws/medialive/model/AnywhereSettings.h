@@ -68,9 +68,9 @@ class AnywhereSettings {
   ///@}
  private:
   Aws::String m_channelPlacementGroupId;
-  bool m_channelPlacementGroupIdHasBeenSet = false;
 
   Aws::String m_clusterId;
+  bool m_channelPlacementGroupIdHasBeenSet = false;
   bool m_clusterIdHasBeenSet = false;
 };
 

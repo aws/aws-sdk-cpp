@@ -102,12 +102,12 @@ class DataConfig {
   ///@}
  private:
   Aws::String m_datasetGroupArn;
-  bool m_datasetGroupArnHasBeenSet = false;
 
   Aws::Vector<AttributeConfig> m_attributeConfigs;
-  bool m_attributeConfigsHasBeenSet = false;
 
   Aws::Vector<AdditionalDataset> m_additionalDatasets;
+  bool m_datasetGroupArnHasBeenSet = false;
+  bool m_attributeConfigsHasBeenSet = false;
   bool m_additionalDatasetsHasBeenSet = false;
 };
 

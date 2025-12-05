@@ -85,12 +85,12 @@ class ListEnforcedGuardrailsConfigurationResult {
   ///@}
  private:
   Aws::Vector<AccountEnforcedGuardrailOutputConfiguration> m_guardrailsConfig;
-  bool m_guardrailsConfigHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_guardrailsConfigHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

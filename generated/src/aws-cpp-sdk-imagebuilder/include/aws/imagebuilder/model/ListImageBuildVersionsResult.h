@@ -88,12 +88,12 @@ class ListImageBuildVersionsResult {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::Vector<ImageSummary> m_imageSummaryList;
-  bool m_imageSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_requestIdHasBeenSet = false;
+  bool m_imageSummaryListHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

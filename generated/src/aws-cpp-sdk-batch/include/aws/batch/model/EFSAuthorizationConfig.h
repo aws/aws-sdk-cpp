@@ -83,9 +83,9 @@ class EFSAuthorizationConfig {
   ///@}
  private:
   Aws::String m_accessPointId;
-  bool m_accessPointIdHasBeenSet = false;
 
   EFSAuthorizationConfigIAM m_iam{EFSAuthorizationConfigIAM::NOT_SET};
+  bool m_accessPointIdHasBeenSet = false;
   bool m_iamHasBeenSet = false;
 };
 

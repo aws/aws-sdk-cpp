@@ -91,12 +91,12 @@ class AssumeRootResult {
   ///@}
  private:
   Credentials m_credentials;
-  bool m_credentialsHasBeenSet = false;
 
   Aws::String m_sourceIdentity;
-  bool m_sourceIdentityHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_credentialsHasBeenSet = false;
+  bool m_sourceIdentityHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -73,9 +73,9 @@ class CatalogConfiguration {
   ///@}
  private:
   Aws::String m_catalogARN;
-  bool m_catalogARNHasBeenSet = false;
 
   Aws::String m_warehouseLocation;
+  bool m_catalogARNHasBeenSet = false;
   bool m_warehouseLocationHasBeenSet = false;
 };
 

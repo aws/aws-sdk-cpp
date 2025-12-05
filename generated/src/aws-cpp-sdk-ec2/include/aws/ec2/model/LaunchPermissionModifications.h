@@ -85,9 +85,9 @@ class LaunchPermissionModifications {
   ///@}
  private:
   Aws::Vector<LaunchPermission> m_add;
-  bool m_addHasBeenSet = false;
 
   Aws::Vector<LaunchPermission> m_remove;
+  bool m_addHasBeenSet = false;
   bool m_removeHasBeenSet = false;
 };
 

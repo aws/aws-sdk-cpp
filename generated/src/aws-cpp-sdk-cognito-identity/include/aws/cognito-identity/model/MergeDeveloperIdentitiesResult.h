@@ -65,9 +65,9 @@ class MergeDeveloperIdentitiesResult {
   ///@}
  private:
   Aws::String m_identityId;
-  bool m_identityIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_identityIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

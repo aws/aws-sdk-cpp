@@ -187,24 +187,24 @@ class GetResourceShareAssociationsRequest : public RAMRequest {
   ///@}
  private:
   ResourceShareAssociationType m_associationType{ResourceShareAssociationType::NOT_SET};
-  bool m_associationTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceShareArns;
-  bool m_resourceShareArnsHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_principal;
-  bool m_principalHasBeenSet = false;
 
   ResourceShareAssociationStatus m_associationStatus{ResourceShareAssociationStatus::NOT_SET};
-  bool m_associationStatusHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_associationTypeHasBeenSet = false;
+  bool m_resourceShareArnsHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_principalHasBeenSet = false;
+  bool m_associationStatusHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

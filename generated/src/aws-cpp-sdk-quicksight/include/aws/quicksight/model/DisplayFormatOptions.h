@@ -244,39 +244,39 @@ class DisplayFormatOptions {
   ///@}
  private:
   bool m_useBlankCellFormat{false};
-  bool m_useBlankCellFormatHasBeenSet = false;
 
   Aws::String m_blankCellFormat;
-  bool m_blankCellFormatHasBeenSet = false;
 
   Aws::String m_dateFormat;
-  bool m_dateFormatHasBeenSet = false;
 
   TopicNumericSeparatorSymbol m_decimalSeparator{TopicNumericSeparatorSymbol::NOT_SET};
-  bool m_decimalSeparatorHasBeenSet = false;
 
   Aws::String m_groupingSeparator;
-  bool m_groupingSeparatorHasBeenSet = false;
 
   bool m_useGrouping{false};
-  bool m_useGroupingHasBeenSet = false;
 
   int m_fractionDigits{0};
-  bool m_fractionDigitsHasBeenSet = false;
 
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   Aws::String m_suffix;
-  bool m_suffixHasBeenSet = false;
 
   NumberScale m_unitScaler{NumberScale::NOT_SET};
-  bool m_unitScalerHasBeenSet = false;
 
   NegativeFormat m_negativeFormat;
-  bool m_negativeFormatHasBeenSet = false;
 
   Aws::String m_currencySymbol;
+  bool m_useBlankCellFormatHasBeenSet = false;
+  bool m_blankCellFormatHasBeenSet = false;
+  bool m_dateFormatHasBeenSet = false;
+  bool m_decimalSeparatorHasBeenSet = false;
+  bool m_groupingSeparatorHasBeenSet = false;
+  bool m_useGroupingHasBeenSet = false;
+  bool m_fractionDigitsHasBeenSet = false;
+  bool m_prefixHasBeenSet = false;
+  bool m_suffixHasBeenSet = false;
+  bool m_unitScalerHasBeenSet = false;
+  bool m_negativeFormatHasBeenSet = false;
   bool m_currencySymbolHasBeenSet = false;
 };
 

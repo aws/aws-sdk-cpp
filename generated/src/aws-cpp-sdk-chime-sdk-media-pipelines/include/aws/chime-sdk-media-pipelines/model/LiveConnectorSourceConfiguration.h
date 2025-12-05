@@ -70,9 +70,9 @@ class LiveConnectorSourceConfiguration {
   ///@}
  private:
   LiveConnectorSourceType m_sourceType{LiveConnectorSourceType::NOT_SET};
-  bool m_sourceTypeHasBeenSet = false;
 
   ChimeSdkMeetingLiveConnectorConfiguration m_chimeSdkMeetingLiveConnectorConfiguration;
+  bool m_sourceTypeHasBeenSet = false;
   bool m_chimeSdkMeetingLiveConnectorConfigurationHasBeenSet = false;
 };
 

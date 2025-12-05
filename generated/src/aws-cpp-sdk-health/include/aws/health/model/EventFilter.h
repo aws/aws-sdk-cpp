@@ -414,48 +414,48 @@ class EventFilter {
   ///@}
  private:
   Aws::Vector<EventActionability> m_actionabilities;
-  bool m_actionabilitiesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_eventArns;
-  bool m_eventArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_eventTypeCodes;
-  bool m_eventTypeCodesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_services;
-  bool m_servicesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_regions;
-  bool m_regionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_availabilityZones;
-  bool m_availabilityZonesHasBeenSet = false;
 
   Aws::Vector<DateTimeRange> m_startTimes;
-  bool m_startTimesHasBeenSet = false;
 
   Aws::Vector<DateTimeRange> m_endTimes;
-  bool m_endTimesHasBeenSet = false;
 
   Aws::Vector<DateTimeRange> m_lastUpdatedTimes;
-  bool m_lastUpdatedTimesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_entityArns;
-  bool m_entityArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_entityValues;
-  bool m_entityValuesHasBeenSet = false;
 
   Aws::Vector<EventTypeCategory> m_eventTypeCategories;
-  bool m_eventTypeCategoriesHasBeenSet = false;
 
   Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<EventStatusCode> m_eventStatusCodes;
-  bool m_eventStatusCodesHasBeenSet = false;
 
   Aws::Vector<EventPersona> m_personas;
+  bool m_actionabilitiesHasBeenSet = false;
+  bool m_eventArnsHasBeenSet = false;
+  bool m_eventTypeCodesHasBeenSet = false;
+  bool m_servicesHasBeenSet = false;
+  bool m_regionsHasBeenSet = false;
+  bool m_availabilityZonesHasBeenSet = false;
+  bool m_startTimesHasBeenSet = false;
+  bool m_endTimesHasBeenSet = false;
+  bool m_lastUpdatedTimesHasBeenSet = false;
+  bool m_entityArnsHasBeenSet = false;
+  bool m_entityValuesHasBeenSet = false;
+  bool m_eventTypeCategoriesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_eventStatusCodesHasBeenSet = false;
   bool m_personasHasBeenSet = false;
 };
 

@@ -75,9 +75,9 @@ class CustomModelUnits {
   ///@}
  private:
   int m_customModelUnitsPerModelCopy{0};
-  bool m_customModelUnitsPerModelCopyHasBeenSet = false;
 
   Aws::String m_customModelUnitsVersion;
+  bool m_customModelUnitsPerModelCopyHasBeenSet = false;
   bool m_customModelUnitsVersionHasBeenSet = false;
 };
 

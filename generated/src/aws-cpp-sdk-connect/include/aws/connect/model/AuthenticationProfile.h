@@ -298,42 +298,42 @@ class AuthenticationProfile {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowedIps;
-  bool m_allowedIpsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_blockedIps;
-  bool m_blockedIpsHasBeenSet = false;
 
   bool m_isDefault{false};
-  bool m_isDefaultHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_lastModifiedRegion;
-  bool m_lastModifiedRegionHasBeenSet = false;
 
   int m_maxSessionDuration{0};
-  bool m_maxSessionDurationHasBeenSet = false;
 
   int m_sessionInactivityDuration{0};
-  bool m_sessionInactivityDurationHasBeenSet = false;
 
   bool m_sessionInactivityHandlingEnabled{false};
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_allowedIpsHasBeenSet = false;
+  bool m_blockedIpsHasBeenSet = false;
+  bool m_isDefaultHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_lastModifiedRegionHasBeenSet = false;
+  bool m_maxSessionDurationHasBeenSet = false;
+  bool m_sessionInactivityDurationHasBeenSet = false;
   bool m_sessionInactivityHandlingEnabledHasBeenSet = false;
 };
 

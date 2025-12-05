@@ -69,9 +69,9 @@ class RoutingProfileQueueReference {
   ///@}
  private:
   Aws::String m_queueId;
-  bool m_queueIdHasBeenSet = false;
 
   Channel m_channel{Channel::NOT_SET};
+  bool m_queueIdHasBeenSet = false;
   bool m_channelHasBeenSet = false;
 };
 

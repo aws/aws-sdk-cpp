@@ -91,12 +91,12 @@ class BlobMetadata {
   ///@}
  private:
   Aws::String m_blobId;
-  bool m_blobIdHasBeenSet = false;
 
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   Aws::String m_mode;
+  bool m_blobIdHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
   bool m_modeHasBeenSet = false;
 };
 

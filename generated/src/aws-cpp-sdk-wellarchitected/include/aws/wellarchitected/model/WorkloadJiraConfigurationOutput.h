@@ -103,15 +103,15 @@ class WorkloadJiraConfigurationOutput {
   ///@}
  private:
   WorkloadIssueManagementStatus m_issueManagementStatus{WorkloadIssueManagementStatus::NOT_SET};
-  bool m_issueManagementStatusHasBeenSet = false;
 
   IssueManagementType m_issueManagementType{IssueManagementType::NOT_SET};
-  bool m_issueManagementTypeHasBeenSet = false;
 
   Aws::String m_jiraProjectKey;
-  bool m_jiraProjectKeyHasBeenSet = false;
 
   Aws::String m_statusMessage;
+  bool m_issueManagementStatusHasBeenSet = false;
+  bool m_issueManagementTypeHasBeenSet = false;
+  bool m_jiraProjectKeyHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
 };
 

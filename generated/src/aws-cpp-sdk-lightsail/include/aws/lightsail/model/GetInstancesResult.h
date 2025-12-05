@@ -88,12 +88,12 @@ class GetInstancesResult {
   ///@}
  private:
   Aws::Vector<Instance> m_instances;
-  bool m_instancesHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_instancesHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -163,21 +163,21 @@ class MetricValue {
   ///@}
  private:
   long long m_count{0};
-  bool m_countHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_cidrs;
-  bool m_cidrsHasBeenSet = false;
 
   Aws::Vector<int> m_ports;
-  bool m_portsHasBeenSet = false;
 
   double m_number{0.0};
-  bool m_numberHasBeenSet = false;
 
   Aws::Vector<double> m_numbers;
-  bool m_numbersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_strings;
+  bool m_countHasBeenSet = false;
+  bool m_cidrsHasBeenSet = false;
+  bool m_portsHasBeenSet = false;
+  bool m_numberHasBeenSet = false;
+  bool m_numbersHasBeenSet = false;
   bool m_stringsHasBeenSet = false;
 };
 

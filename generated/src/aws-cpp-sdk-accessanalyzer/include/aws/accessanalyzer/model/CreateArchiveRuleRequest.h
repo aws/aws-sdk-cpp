@@ -113,15 +113,15 @@ class CreateArchiveRuleRequest : public AccessAnalyzerRequest {
   ///@}
  private:
   Aws::String m_analyzerName;
-  bool m_analyzerNameHasBeenSet = false;
 
   Aws::String m_ruleName;
-  bool m_ruleNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Criterion> m_filter;
-  bool m_filterHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_analyzerNameHasBeenSet = false;
+  bool m_ruleNameHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

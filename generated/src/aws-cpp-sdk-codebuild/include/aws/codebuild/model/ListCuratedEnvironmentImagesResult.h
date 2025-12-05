@@ -68,9 +68,9 @@ class ListCuratedEnvironmentImagesResult {
   ///@}
  private:
   Aws::Vector<EnvironmentPlatform> m_platforms;
-  bool m_platformsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_platformsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

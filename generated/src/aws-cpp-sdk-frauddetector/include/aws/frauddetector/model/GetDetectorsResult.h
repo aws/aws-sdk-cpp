@@ -84,12 +84,12 @@ class GetDetectorsResult {
   ///@}
  private:
   Aws::Vector<Detector> m_detectors;
-  bool m_detectorsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_detectorsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class ListConnectorsRequest : public KafkaConnectRequest {
   ///@}
  private:
   Aws::String m_connectorNamePrefix;
-  bool m_connectorNamePrefixHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_connectorNamePrefixHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

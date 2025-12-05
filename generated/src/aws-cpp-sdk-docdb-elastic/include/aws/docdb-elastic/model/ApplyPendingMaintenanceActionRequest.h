@@ -108,15 +108,15 @@ class ApplyPendingMaintenanceActionRequest : public DocDBElasticRequest {
   ///@}
  private:
   Aws::String m_applyAction;
-  bool m_applyActionHasBeenSet = false;
 
   Aws::String m_applyOn;
-  bool m_applyOnHasBeenSet = false;
 
   OptInType m_optInType{OptInType::NOT_SET};
-  bool m_optInTypeHasBeenSet = false;
 
   Aws::String m_resourceArn;
+  bool m_applyActionHasBeenSet = false;
+  bool m_applyOnHasBeenSet = false;
+  bool m_optInTypeHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
 };
 

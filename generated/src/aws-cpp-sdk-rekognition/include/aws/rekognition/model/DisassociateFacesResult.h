@@ -114,15 +114,15 @@ class DisassociateFacesResult {
   ///@}
  private:
   Aws::Vector<DisassociatedFace> m_disassociatedFaces;
-  bool m_disassociatedFacesHasBeenSet = false;
 
   Aws::Vector<UnsuccessfulFaceDisassociation> m_unsuccessfulFaceDisassociations;
-  bool m_unsuccessfulFaceDisassociationsHasBeenSet = false;
 
   UserStatus m_userStatus{UserStatus::NOT_SET};
-  bool m_userStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_disassociatedFacesHasBeenSet = false;
+  bool m_unsuccessfulFaceDisassociationsHasBeenSet = false;
+  bool m_userStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

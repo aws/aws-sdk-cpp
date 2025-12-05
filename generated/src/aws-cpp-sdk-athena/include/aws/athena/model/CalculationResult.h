@@ -107,15 +107,15 @@ class CalculationResult {
   ///@}
  private:
   Aws::String m_stdOutS3Uri;
-  bool m_stdOutS3UriHasBeenSet = false;
 
   Aws::String m_stdErrorS3Uri;
-  bool m_stdErrorS3UriHasBeenSet = false;
 
   Aws::String m_resultS3Uri;
-  bool m_resultS3UriHasBeenSet = false;
 
   Aws::String m_resultType;
+  bool m_stdOutS3UriHasBeenSet = false;
+  bool m_stdErrorS3UriHasBeenSet = false;
+  bool m_resultS3UriHasBeenSet = false;
   bool m_resultTypeHasBeenSet = false;
 };
 

@@ -82,9 +82,9 @@ class SchemaDefinition {
   ///@}
  private:
   Aws::Vector<ColumnDefinition> m_columns;
-  bool m_columnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_primaryKeyColumns;
+  bool m_columnsHasBeenSet = false;
   bool m_primaryKeyColumnsHasBeenSet = false;
 };
 

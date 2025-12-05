@@ -61,9 +61,9 @@ class PublishFunction2020_05_31Result {
   ///@}
  private:
   FunctionSummary m_functionSummary;
-  bool m_functionSummaryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_functionSummaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

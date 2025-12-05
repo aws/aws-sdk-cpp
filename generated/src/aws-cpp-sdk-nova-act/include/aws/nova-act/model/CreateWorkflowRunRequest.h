@@ -123,18 +123,18 @@ class CreateWorkflowRunRequest : public NovaActRequest {
   ///@}
  private:
   Aws::String m_workflowDefinitionName;
-  bool m_workflowDefinitionNameHasBeenSet = false;
 
   Aws::String m_modelId;
-  bool m_modelIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_logGroupName;
-  bool m_logGroupNameHasBeenSet = false;
 
   ClientInfo m_clientInfo;
+  bool m_workflowDefinitionNameHasBeenSet = false;
+  bool m_modelIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_logGroupNameHasBeenSet = false;
   bool m_clientInfoHasBeenSet = false;
 };
 

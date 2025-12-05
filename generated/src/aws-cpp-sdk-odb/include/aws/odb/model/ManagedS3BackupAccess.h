@@ -75,9 +75,9 @@ class ManagedS3BackupAccess {
   ///@}
  private:
   ManagedResourceStatus m_status{ManagedResourceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ipv4Addresses;
+  bool m_statusHasBeenSet = false;
   bool m_ipv4AddressesHasBeenSet = false;
 };
 

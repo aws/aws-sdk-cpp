@@ -126,15 +126,15 @@ class OpportunityInvitationPayload {
   ///@}
  private:
   Aws::Vector<SenderContact> m_senderContacts;
-  bool m_senderContactsHasBeenSet = false;
 
   Aws::Vector<ReceiverResponsibility> m_receiverResponsibilities;
-  bool m_receiverResponsibilitiesHasBeenSet = false;
 
   EngagementCustomer m_customer;
-  bool m_customerHasBeenSet = false;
 
   ProjectDetails m_project;
+  bool m_senderContactsHasBeenSet = false;
+  bool m_receiverResponsibilitiesHasBeenSet = false;
+  bool m_customerHasBeenSet = false;
   bool m_projectHasBeenSet = false;
 };
 

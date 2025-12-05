@@ -102,12 +102,12 @@ class ServiceAttributes {
   ///@}
  private:
   Aws::String m_serviceArn;
-  bool m_serviceArnHasBeenSet = false;
 
   Aws::String m_resourceOwner;
-  bool m_resourceOwnerHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
+  bool m_serviceArnHasBeenSet = false;
+  bool m_resourceOwnerHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

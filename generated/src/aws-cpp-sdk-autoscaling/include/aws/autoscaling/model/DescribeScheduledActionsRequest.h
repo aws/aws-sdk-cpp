@@ -154,21 +154,21 @@ class DescribeScheduledActionsRequest : public AutoScalingRequest {
   ///@}
  private:
   Aws::String m_autoScalingGroupName;
-  bool m_autoScalingGroupNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_scheduledActionNames;
-  bool m_scheduledActionNamesHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxRecords{0};
+  bool m_autoScalingGroupNameHasBeenSet = false;
+  bool m_scheduledActionNamesHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxRecordsHasBeenSet = false;
 };
 

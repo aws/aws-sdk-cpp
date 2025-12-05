@@ -125,18 +125,18 @@ class CaseRuleSummary {
   ///@}
  private:
   Aws::String m_caseRuleId;
-  bool m_caseRuleIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_caseRuleArn;
-  bool m_caseRuleArnHasBeenSet = false;
 
   RuleType m_ruleType{RuleType::NOT_SET};
-  bool m_ruleTypeHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_caseRuleIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_caseRuleArnHasBeenSet = false;
+  bool m_ruleTypeHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

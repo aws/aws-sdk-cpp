@@ -78,9 +78,9 @@ class AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails {
   ///@}
  private:
   AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails m_instancesDistribution;
-  bool m_instancesDistributionHasBeenSet = false;
 
   AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails m_launchTemplate;
+  bool m_instancesDistributionHasBeenSet = false;
   bool m_launchTemplateHasBeenSet = false;
 };
 

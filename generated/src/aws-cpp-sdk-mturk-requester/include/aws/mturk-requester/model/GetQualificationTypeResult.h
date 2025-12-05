@@ -60,9 +60,9 @@ class GetQualificationTypeResult {
   ///@}
  private:
   QualificationType m_qualificationType;
-  bool m_qualificationTypeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_qualificationTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

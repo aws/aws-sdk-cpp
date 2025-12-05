@@ -80,9 +80,9 @@ class ProtectedQueryDistributeOutput {
   ///@}
  private:
   ProtectedQueryS3Output m_s3;
-  bool m_s3HasBeenSet = false;
 
   Aws::Vector<ProtectedQuerySingleMemberOutput> m_memberList;
+  bool m_s3HasBeenSet = false;
   bool m_memberListHasBeenSet = false;
 };
 

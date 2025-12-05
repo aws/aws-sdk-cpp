@@ -71,9 +71,9 @@ class PurchaseReservedNodeOfferingRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_reservedNodeOfferingId;
-  bool m_reservedNodeOfferingIdHasBeenSet = false;
 
   int m_nodeCount{0};
+  bool m_reservedNodeOfferingIdHasBeenSet = false;
   bool m_nodeCountHasBeenSet = false;
 };
 

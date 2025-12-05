@@ -65,9 +65,9 @@ class DeleteProgramRequest : public MediaTailorRequest {
   ///@}
  private:
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   Aws::String m_programName;
+  bool m_channelNameHasBeenSet = false;
   bool m_programNameHasBeenSet = false;
 };
 

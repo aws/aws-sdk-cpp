@@ -115,18 +115,18 @@ class PutMaintenanceStartTimeRequest : public BackupGatewayRequest {
   ///@}
  private:
   int m_dayOfMonth{0};
-  bool m_dayOfMonthHasBeenSet = false;
 
   int m_dayOfWeek{0};
-  bool m_dayOfWeekHasBeenSet = false;
 
   Aws::String m_gatewayArn;
-  bool m_gatewayArnHasBeenSet = false;
 
   int m_hourOfDay{0};
-  bool m_hourOfDayHasBeenSet = false;
 
   int m_minuteOfHour{0};
+  bool m_dayOfMonthHasBeenSet = false;
+  bool m_dayOfWeekHasBeenSet = false;
+  bool m_gatewayArnHasBeenSet = false;
+  bool m_hourOfDayHasBeenSet = false;
   bool m_minuteOfHourHasBeenSet = false;
 };
 

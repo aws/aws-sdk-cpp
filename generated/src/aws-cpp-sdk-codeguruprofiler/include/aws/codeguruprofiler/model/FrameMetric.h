@@ -98,12 +98,12 @@ class FrameMetric {
   ///@}
  private:
   Aws::String m_frameName;
-  bool m_frameNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_threadStates;
-  bool m_threadStatesHasBeenSet = false;
 
   MetricType m_type{MetricType::NOT_SET};
+  bool m_frameNameHasBeenSet = false;
+  bool m_threadStatesHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

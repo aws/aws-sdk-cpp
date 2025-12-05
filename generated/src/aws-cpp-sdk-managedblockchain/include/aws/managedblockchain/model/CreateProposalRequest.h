@@ -165,21 +165,21 @@ class CreateProposalRequest : public ManagedBlockchainRequest {
   ///@}
  private:
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::String m_networkId;
-  bool m_networkIdHasBeenSet = false;
 
   Aws::String m_memberId;
-  bool m_memberIdHasBeenSet = false;
 
   ProposalActions m_actions;
-  bool m_actionsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_networkIdHasBeenSet = false;
+  bool m_memberIdHasBeenSet = false;
+  bool m_actionsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

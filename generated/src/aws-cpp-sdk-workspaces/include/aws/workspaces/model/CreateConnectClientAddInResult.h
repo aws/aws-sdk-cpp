@@ -59,9 +59,9 @@ class CreateConnectClientAddInResult {
   ///@}
  private:
   Aws::String m_addInId;
-  bool m_addInIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_addInIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

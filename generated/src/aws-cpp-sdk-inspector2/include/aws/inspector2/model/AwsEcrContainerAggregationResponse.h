@@ -205,30 +205,30 @@ class AwsEcrContainerAggregationResponse {
   ///@}
  private:
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_imageSha;
-  bool m_imageShaHasBeenSet = false;
 
   Aws::String m_repository;
-  bool m_repositoryHasBeenSet = false;
 
   Aws::String m_architecture;
-  bool m_architectureHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_imageTags;
-  bool m_imageTagsHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   SeverityCounts m_severityCounts;
-  bool m_severityCountsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastInUseAt{};
-  bool m_lastInUseAtHasBeenSet = false;
 
   long long m_inUseCount{0};
+  bool m_resourceIdHasBeenSet = false;
+  bool m_imageShaHasBeenSet = false;
+  bool m_repositoryHasBeenSet = false;
+  bool m_architectureHasBeenSet = false;
+  bool m_imageTagsHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_severityCountsHasBeenSet = false;
+  bool m_lastInUseAtHasBeenSet = false;
   bool m_inUseCountHasBeenSet = false;
 };
 

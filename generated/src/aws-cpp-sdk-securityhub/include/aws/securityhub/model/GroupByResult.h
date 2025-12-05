@@ -78,9 +78,9 @@ class GroupByResult {
   ///@}
  private:
   Aws::String m_groupByField;
-  bool m_groupByFieldHasBeenSet = false;
 
   Aws::Vector<GroupByValue> m_groupByValues;
+  bool m_groupByFieldHasBeenSet = false;
   bool m_groupByValuesHasBeenSet = false;
 };
 

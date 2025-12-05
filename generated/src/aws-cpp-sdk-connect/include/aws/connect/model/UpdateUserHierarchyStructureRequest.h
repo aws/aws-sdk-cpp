@@ -68,9 +68,9 @@ class UpdateUserHierarchyStructureRequest : public ConnectRequest {
   ///@}
  private:
   HierarchyStructureUpdate m_hierarchyStructure;
-  bool m_hierarchyStructureHasBeenSet = false;
 
   Aws::String m_instanceId;
+  bool m_hierarchyStructureHasBeenSet = false;
   bool m_instanceIdHasBeenSet = false;
 };
 

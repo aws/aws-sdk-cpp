@@ -60,9 +60,9 @@ class UpdateAccountPreferencesResult {
   ///@}
  private:
   AccountPreferences m_accountPreferences;
-  bool m_accountPreferencesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountPreferencesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

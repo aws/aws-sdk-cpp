@@ -88,12 +88,12 @@ class ContainerImage {
   ///@}
  private:
   Aws::String m_image;
-  bool m_imageHasBeenSet = false;
 
   Aws::String m_digest;
-  bool m_digestHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
+  bool m_imageHasBeenSet = false;
+  bool m_digestHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
 };
 

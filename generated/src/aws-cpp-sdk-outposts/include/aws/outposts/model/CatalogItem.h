@@ -173,24 +173,24 @@ class CatalogItem {
   ///@}
  private:
   Aws::String m_catalogItemId;
-  bool m_catalogItemIdHasBeenSet = false;
 
   CatalogItemStatus m_itemStatus{CatalogItemStatus::NOT_SET};
-  bool m_itemStatusHasBeenSet = false;
 
   Aws::Vector<EC2Capacity> m_eC2Capacities;
-  bool m_eC2CapacitiesHasBeenSet = false;
 
   double m_powerKva{0.0};
-  bool m_powerKvaHasBeenSet = false;
 
   int m_weightLbs{0};
-  bool m_weightLbsHasBeenSet = false;
 
   Aws::Vector<int> m_supportedUplinkGbps;
-  bool m_supportedUplinkGbpsHasBeenSet = false;
 
   Aws::Vector<SupportedStorageEnum> m_supportedStorage;
+  bool m_catalogItemIdHasBeenSet = false;
+  bool m_itemStatusHasBeenSet = false;
+  bool m_eC2CapacitiesHasBeenSet = false;
+  bool m_powerKvaHasBeenSet = false;
+  bool m_weightLbsHasBeenSet = false;
+  bool m_supportedUplinkGbpsHasBeenSet = false;
   bool m_supportedStorageHasBeenSet = false;
 };
 

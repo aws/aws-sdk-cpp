@@ -94,12 +94,12 @@ class DisassociateApplicationsResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_applicationArns;
-  bool m_applicationArnsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_applicationArnsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

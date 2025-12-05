@@ -109,15 +109,15 @@ class ListSourceRepositoryBranchesItem {
   ///@}
  private:
   Aws::String m_ref;
-  bool m_refHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::String m_headCommitId;
+  bool m_refHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
   bool m_headCommitIdHasBeenSet = false;
 };
 

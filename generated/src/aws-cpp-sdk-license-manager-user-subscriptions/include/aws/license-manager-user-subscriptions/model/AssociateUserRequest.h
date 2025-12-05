@@ -128,18 +128,18 @@ class AssociateUserRequest : public LicenseManagerUserSubscriptionsRequest {
   ///@}
  private:
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   IdentityProvider m_identityProvider;
-  bool m_identityProviderHasBeenSet = false;
 
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_usernameHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_identityProviderHasBeenSet = false;
+  bool m_domainHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

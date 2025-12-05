@@ -103,12 +103,12 @@ class PutEvaluationsRequest : public ConfigServiceRequest {
   ///@}
  private:
   Aws::Vector<Evaluation> m_evaluations;
-  bool m_evaluationsHasBeenSet = false;
 
   Aws::String m_resultToken;
-  bool m_resultTokenHasBeenSet = false;
 
   bool m_testMode{false};
+  bool m_evaluationsHasBeenSet = false;
+  bool m_resultTokenHasBeenSet = false;
   bool m_testModeHasBeenSet = false;
 };
 

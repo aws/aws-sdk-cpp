@@ -101,12 +101,12 @@ class AdminAccountSummary {
   ///@}
  private:
   Aws::String m_adminAccount;
-  bool m_adminAccountHasBeenSet = false;
 
   bool m_defaultAdmin{false};
-  bool m_defaultAdminHasBeenSet = false;
 
   OrganizationStatus m_status{OrganizationStatus::NOT_SET};
+  bool m_adminAccountHasBeenSet = false;
+  bool m_defaultAdminHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

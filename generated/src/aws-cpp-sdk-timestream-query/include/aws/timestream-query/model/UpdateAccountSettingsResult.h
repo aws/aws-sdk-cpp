@@ -92,15 +92,15 @@ class UpdateAccountSettingsResult {
   ///@}
  private:
   int m_maxQueryTCU{0};
-  bool m_maxQueryTCUHasBeenSet = false;
 
   QueryPricingModel m_queryPricingModel{QueryPricingModel::NOT_SET};
-  bool m_queryPricingModelHasBeenSet = false;
 
   QueryComputeResponse m_queryCompute;
-  bool m_queryComputeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_maxQueryTCUHasBeenSet = false;
+  bool m_queryPricingModelHasBeenSet = false;
+  bool m_queryComputeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

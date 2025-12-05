@@ -105,15 +105,15 @@ class ListConnectionsRequest : public CodeConnectionsRequest {
   ///@}
  private:
   ProviderType m_providerTypeFilter{ProviderType::NOT_SET};
-  bool m_providerTypeFilterHasBeenSet = false;
 
   Aws::String m_hostArnFilter;
-  bool m_hostArnFilterHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_providerTypeFilterHasBeenSet = false;
+  bool m_hostArnFilterHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

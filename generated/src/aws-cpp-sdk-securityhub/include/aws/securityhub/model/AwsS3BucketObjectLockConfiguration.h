@@ -71,9 +71,9 @@ class AwsS3BucketObjectLockConfiguration {
   ///@}
  private:
   Aws::String m_objectLockEnabled;
-  bool m_objectLockEnabledHasBeenSet = false;
 
   AwsS3BucketObjectLockConfigurationRuleDetails m_rule;
+  bool m_objectLockEnabledHasBeenSet = false;
   bool m_ruleHasBeenSet = false;
 };
 

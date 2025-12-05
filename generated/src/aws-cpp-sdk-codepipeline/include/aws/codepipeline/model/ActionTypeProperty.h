@@ -138,21 +138,21 @@ class ActionTypeProperty {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   bool m_optional{false};
-  bool m_optionalHasBeenSet = false;
 
   bool m_key{false};
-  bool m_keyHasBeenSet = false;
 
   bool m_noEcho{false};
-  bool m_noEchoHasBeenSet = false;
 
   bool m_queryable{false};
-  bool m_queryableHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_nameHasBeenSet = false;
+  bool m_optionalHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
+  bool m_noEchoHasBeenSet = false;
+  bool m_queryableHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

@@ -139,21 +139,21 @@ class Host {
   ///@}
  private:
   Aws::String m_hostName;
-  bool m_hostNameHasBeenSet = false;
 
   Aws::String m_hostIp;
-  bool m_hostIpHasBeenSet = false;
 
   Aws::String m_eC2InstanceId;
-  bool m_eC2InstanceIdHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   HostRole m_hostRole{HostRole::NOT_SET};
-  bool m_hostRoleHasBeenSet = false;
 
   Aws::String m_osVersion;
+  bool m_hostNameHasBeenSet = false;
+  bool m_hostIpHasBeenSet = false;
+  bool m_eC2InstanceIdHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_hostRoleHasBeenSet = false;
   bool m_osVersionHasBeenSet = false;
 };
 

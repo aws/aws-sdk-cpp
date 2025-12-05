@@ -84,9 +84,9 @@ class ConfiguredTableAssociationAnalysisRuleCustom {
   ///@}
  private:
   Aws::Vector<Aws::String> m_allowedResultReceivers;
-  bool m_allowedResultReceiversHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowedAdditionalAnalyses;
+  bool m_allowedResultReceiversHasBeenSet = false;
   bool m_allowedAdditionalAnalysesHasBeenSet = false;
 };
 

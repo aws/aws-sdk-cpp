@@ -113,15 +113,15 @@ class ProtectiveEquipmentPerson {
   ///@}
  private:
   Aws::Vector<ProtectiveEquipmentBodyPart> m_bodyParts;
-  bool m_bodyPartsHasBeenSet = false;
 
   BoundingBox m_boundingBox;
-  bool m_boundingBoxHasBeenSet = false;
 
   double m_confidence{0.0};
-  bool m_confidenceHasBeenSet = false;
 
   int m_id{0};
+  bool m_bodyPartsHasBeenSet = false;
+  bool m_boundingBoxHasBeenSet = false;
+  bool m_confidenceHasBeenSet = false;
   bool m_idHasBeenSet = false;
 };
 

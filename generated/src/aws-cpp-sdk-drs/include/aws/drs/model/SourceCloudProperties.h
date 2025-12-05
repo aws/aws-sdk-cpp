@@ -105,15 +105,15 @@ class SourceCloudProperties {
   ///@}
  private:
   Aws::String m_originAccountID;
-  bool m_originAccountIDHasBeenSet = false;
 
   Aws::String m_originAvailabilityZone;
-  bool m_originAvailabilityZoneHasBeenSet = false;
 
   Aws::String m_originRegion;
-  bool m_originRegionHasBeenSet = false;
 
   Aws::String m_sourceOutpostArn;
+  bool m_originAccountIDHasBeenSet = false;
+  bool m_originAvailabilityZoneHasBeenSet = false;
+  bool m_originRegionHasBeenSet = false;
   bool m_sourceOutpostArnHasBeenSet = false;
 };
 

@@ -154,24 +154,24 @@ class ParameterSliderControl {
   ///@}
  private:
   Aws::String m_parameterControlId;
-  bool m_parameterControlIdHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_sourceParameterName;
-  bool m_sourceParameterNameHasBeenSet = false;
 
   SliderControlDisplayOptions m_displayOptions;
-  bool m_displayOptionsHasBeenSet = false;
 
   double m_maximumValue{0.0};
-  bool m_maximumValueHasBeenSet = false;
 
   double m_minimumValue{0.0};
-  bool m_minimumValueHasBeenSet = false;
 
   double m_stepSize{0.0};
+  bool m_parameterControlIdHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_sourceParameterNameHasBeenSet = false;
+  bool m_displayOptionsHasBeenSet = false;
+  bool m_maximumValueHasBeenSet = false;
+  bool m_minimumValueHasBeenSet = false;
   bool m_stepSizeHasBeenSet = false;
 };
 

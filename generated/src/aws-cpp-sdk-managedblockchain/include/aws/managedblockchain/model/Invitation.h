@@ -157,21 +157,21 @@ class Invitation {
   ///@}
  private:
   Aws::String m_invitationId;
-  bool m_invitationIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_expirationDate{};
-  bool m_expirationDateHasBeenSet = false;
 
   InvitationStatus m_status{InvitationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   NetworkSummary m_networkSummary;
-  bool m_networkSummaryHasBeenSet = false;
 
   Aws::String m_arn;
+  bool m_invitationIdHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_expirationDateHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_networkSummaryHasBeenSet = false;
   bool m_arnHasBeenSet = false;
 };
 

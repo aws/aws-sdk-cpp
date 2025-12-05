@@ -147,15 +147,15 @@ class CreateDatasetGroupRequest : public ForecastServiceRequest {
   ///@}
  private:
   Aws::String m_datasetGroupName;
-  bool m_datasetGroupNameHasBeenSet = false;
 
   Domain m_domain{Domain::NOT_SET};
-  bool m_domainHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_datasetArns;
-  bool m_datasetArnsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_datasetGroupNameHasBeenSet = false;
+  bool m_domainHasBeenSet = false;
+  bool m_datasetArnsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class AssetModelPropertyBindingValue {
   ///@}
  private:
   Aws::String m_assetModelId;
-  bool m_assetModelIdHasBeenSet = false;
 
   Aws::String m_propertyId;
+  bool m_assetModelIdHasBeenSet = false;
   bool m_propertyIdHasBeenSet = false;
 };
 

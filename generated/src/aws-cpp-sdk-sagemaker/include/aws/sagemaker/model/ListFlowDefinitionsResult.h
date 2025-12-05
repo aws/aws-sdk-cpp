@@ -84,12 +84,12 @@ class ListFlowDefinitionsResult {
   ///@}
  private:
   Aws::Vector<FlowDefinitionSummary> m_flowDefinitionSummaries;
-  bool m_flowDefinitionSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_flowDefinitionSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

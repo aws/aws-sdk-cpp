@@ -168,21 +168,21 @@ class PutMethodResponseRequest : public APIGatewayRequest {
   ///@}
  private:
   Aws::String m_restApiId;
-  bool m_restApiIdHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_httpMethod;
-  bool m_httpMethodHasBeenSet = false;
 
   Aws::String m_statusCode;
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::Map<Aws::String, bool> m_responseParameters;
-  bool m_responseParametersHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_responseModels;
+  bool m_restApiIdHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_httpMethodHasBeenSet = false;
+  bool m_statusCodeHasBeenSet = false;
+  bool m_responseParametersHasBeenSet = false;
   bool m_responseModelsHasBeenSet = false;
 };
 

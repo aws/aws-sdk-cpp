@@ -137,18 +137,18 @@ class GetCostAndUsageWithResourcesResult {
   ///@}
  private:
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::Vector<GroupDefinition> m_groupDefinitions;
-  bool m_groupDefinitionsHasBeenSet = false;
 
   Aws::Vector<ResultByTime> m_resultsByTime;
-  bool m_resultsByTimeHasBeenSet = false;
 
   Aws::Vector<DimensionValuesWithAttributes> m_dimensionValueAttributes;
-  bool m_dimensionValueAttributesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextPageTokenHasBeenSet = false;
+  bool m_groupDefinitionsHasBeenSet = false;
+  bool m_resultsByTimeHasBeenSet = false;
+  bool m_dimensionValueAttributesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

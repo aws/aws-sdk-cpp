@@ -120,15 +120,15 @@ class PutBucketPolicyRequest : public S3ControlRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   bool m_confirmRemoveSelfBucketAccess{false};
-  bool m_confirmRemoveSelfBucketAccessHasBeenSet = false;
 
   Aws::String m_policy;
+  bool m_accountIdHasBeenSet = false;
+  bool m_bucketHasBeenSet = false;
+  bool m_confirmRemoveSelfBucketAccessHasBeenSet = false;
   bool m_policyHasBeenSet = false;
 };
 

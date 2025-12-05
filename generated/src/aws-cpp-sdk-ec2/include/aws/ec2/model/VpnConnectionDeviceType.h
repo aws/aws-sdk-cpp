@@ -111,15 +111,15 @@ class VpnConnectionDeviceType {
   ///@}
  private:
   Aws::String m_vpnConnectionDeviceTypeId;
-  bool m_vpnConnectionDeviceTypeIdHasBeenSet = false;
 
   Aws::String m_vendor;
-  bool m_vendorHasBeenSet = false;
 
   Aws::String m_platform;
-  bool m_platformHasBeenSet = false;
 
   Aws::String m_software;
+  bool m_vpnConnectionDeviceTypeIdHasBeenSet = false;
+  bool m_vendorHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
   bool m_softwareHasBeenSet = false;
 };
 

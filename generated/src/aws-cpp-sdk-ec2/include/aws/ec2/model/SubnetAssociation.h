@@ -70,9 +70,9 @@ class SubnetAssociation {
   ///@}
  private:
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   TransitGatewayMulitcastDomainAssociationState m_state{TransitGatewayMulitcastDomainAssociationState::NOT_SET};
+  bool m_subnetIdHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

@@ -74,9 +74,9 @@ class DescribeSeverityLevelsResult {
   ///@}
  private:
   Aws::Vector<SeverityLevel> m_severityLevels;
-  bool m_severityLevelsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_severityLevelsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

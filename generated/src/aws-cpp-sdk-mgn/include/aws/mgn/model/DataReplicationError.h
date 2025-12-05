@@ -67,9 +67,9 @@ class DataReplicationError {
   ///@}
  private:
   DataReplicationErrorString m_error{DataReplicationErrorString::NOT_SET};
-  bool m_errorHasBeenSet = false;
 
   Aws::String m_rawError;
+  bool m_errorHasBeenSet = false;
   bool m_rawErrorHasBeenSet = false;
 };
 

@@ -98,12 +98,12 @@ class GuardrailAutomatedReasoningImpossibleFinding {
   ///@}
  private:
   GuardrailAutomatedReasoningTranslation m_translation;
-  bool m_translationHasBeenSet = false;
 
   Aws::Vector<GuardrailAutomatedReasoningRule> m_contradictingRules;
-  bool m_contradictingRulesHasBeenSet = false;
 
   GuardrailAutomatedReasoningLogicWarning m_logicWarning;
+  bool m_translationHasBeenSet = false;
+  bool m_contradictingRulesHasBeenSet = false;
   bool m_logicWarningHasBeenSet = false;
 };
 

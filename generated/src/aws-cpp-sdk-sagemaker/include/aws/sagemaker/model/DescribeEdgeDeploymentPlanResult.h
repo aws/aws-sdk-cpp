@@ -240,39 +240,39 @@ class DescribeEdgeDeploymentPlanResult {
   ///@}
  private:
   Aws::String m_edgeDeploymentPlanArn;
-  bool m_edgeDeploymentPlanArnHasBeenSet = false;
 
   Aws::String m_edgeDeploymentPlanName;
-  bool m_edgeDeploymentPlanNameHasBeenSet = false;
 
   Aws::Vector<EdgeDeploymentModelConfig> m_modelConfigs;
-  bool m_modelConfigsHasBeenSet = false;
 
   Aws::String m_deviceFleetName;
-  bool m_deviceFleetNameHasBeenSet = false;
 
   int m_edgeDeploymentSuccess{0};
-  bool m_edgeDeploymentSuccessHasBeenSet = false;
 
   int m_edgeDeploymentPending{0};
-  bool m_edgeDeploymentPendingHasBeenSet = false;
 
   int m_edgeDeploymentFailed{0};
-  bool m_edgeDeploymentFailedHasBeenSet = false;
 
   Aws::Vector<DeploymentStageStatusSummary> m_stages;
-  bool m_stagesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_edgeDeploymentPlanArnHasBeenSet = false;
+  bool m_edgeDeploymentPlanNameHasBeenSet = false;
+  bool m_modelConfigsHasBeenSet = false;
+  bool m_deviceFleetNameHasBeenSet = false;
+  bool m_edgeDeploymentSuccessHasBeenSet = false;
+  bool m_edgeDeploymentPendingHasBeenSet = false;
+  bool m_edgeDeploymentFailedHasBeenSet = false;
+  bool m_stagesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

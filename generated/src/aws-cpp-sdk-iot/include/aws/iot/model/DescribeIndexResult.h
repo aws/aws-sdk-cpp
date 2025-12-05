@@ -102,15 +102,15 @@ class DescribeIndexResult {
   ///@}
  private:
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   IndexStatus m_indexStatus{IndexStatus::NOT_SET};
-  bool m_indexStatusHasBeenSet = false;
 
   Aws::String m_schema;
-  bool m_schemaHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_indexNameHasBeenSet = false;
+  bool m_indexStatusHasBeenSet = false;
+  bool m_schemaHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

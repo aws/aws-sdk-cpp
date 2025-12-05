@@ -72,9 +72,9 @@ class ContextEnrichmentConfiguration {
   ///@}
  private:
   ContextEnrichmentType m_type{ContextEnrichmentType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   BedrockFoundationModelContextEnrichmentConfiguration m_bedrockFoundationModelConfiguration;
+  bool m_typeHasBeenSet = false;
   bool m_bedrockFoundationModelConfigurationHasBeenSet = false;
 };
 

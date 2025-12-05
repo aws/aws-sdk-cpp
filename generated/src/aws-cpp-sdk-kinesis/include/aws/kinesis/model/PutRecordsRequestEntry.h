@@ -99,12 +99,12 @@ class PutRecordsRequestEntry {
   ///@}
  private:
   Aws::Utils::ByteBuffer m_data{};
-  bool m_dataHasBeenSet = false;
 
   Aws::String m_explicitHashKey;
-  bool m_explicitHashKeyHasBeenSet = false;
 
   Aws::String m_partitionKey;
+  bool m_dataHasBeenSet = false;
+  bool m_explicitHashKeyHasBeenSet = false;
   bool m_partitionKeyHasBeenSet = false;
 };
 

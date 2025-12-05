@@ -68,9 +68,9 @@ class DescribeAvailabilityZonesResponse {
   ///@}
  private:
   Aws::Vector<AvailabilityZone> m_availabilityZones;
-  bool m_availabilityZonesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_availabilityZonesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

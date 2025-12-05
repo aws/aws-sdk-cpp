@@ -69,9 +69,9 @@ class URL {
   ///@}
  private:
   Aws::String m_hyperlinkName;
-  bool m_hyperlinkNameHasBeenSet = false;
 
   Aws::String m_link;
+  bool m_hyperlinkNameHasBeenSet = false;
   bool m_linkHasBeenSet = false;
 };
 

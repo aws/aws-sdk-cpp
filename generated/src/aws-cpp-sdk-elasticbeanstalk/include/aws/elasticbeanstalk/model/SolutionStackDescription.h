@@ -78,9 +78,9 @@ class SolutionStackDescription {
   ///@}
  private:
   Aws::String m_solutionStackName;
-  bool m_solutionStackNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_permittedFileTypes;
+  bool m_solutionStackNameHasBeenSet = false;
   bool m_permittedFileTypesHasBeenSet = false;
 };
 

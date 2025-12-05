@@ -60,9 +60,9 @@ class GetBucketEncryptionResult {
   ///@}
  private:
   ServerSideEncryptionConfiguration m_serverSideEncryptionConfiguration;
-  bool m_serverSideEncryptionConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_serverSideEncryptionConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

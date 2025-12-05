@@ -164,27 +164,27 @@ class DescribeCacheResult {
   ///@}
  private:
   Aws::String m_gatewayARN;
-  bool m_gatewayARNHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_diskIds;
-  bool m_diskIdsHasBeenSet = false;
 
   long long m_cacheAllocatedInBytes{0};
-  bool m_cacheAllocatedInBytesHasBeenSet = false;
 
   double m_cacheUsedPercentage{0.0};
-  bool m_cacheUsedPercentageHasBeenSet = false;
 
   double m_cacheDirtyPercentage{0.0};
-  bool m_cacheDirtyPercentageHasBeenSet = false;
 
   double m_cacheHitPercentage{0.0};
-  bool m_cacheHitPercentageHasBeenSet = false;
 
   double m_cacheMissPercentage{0.0};
-  bool m_cacheMissPercentageHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_gatewayARNHasBeenSet = false;
+  bool m_diskIdsHasBeenSet = false;
+  bool m_cacheAllocatedInBytesHasBeenSet = false;
+  bool m_cacheUsedPercentageHasBeenSet = false;
+  bool m_cacheDirtyPercentageHasBeenSet = false;
+  bool m_cacheHitPercentageHasBeenSet = false;
+  bool m_cacheMissPercentageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

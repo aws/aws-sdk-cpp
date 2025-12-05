@@ -146,21 +146,21 @@ class InvocationInput {
   ///@}
  private:
   ActionGroupInvocationInput m_actionGroupInvocationInput;
-  bool m_actionGroupInvocationInputHasBeenSet = false;
 
   AgentCollaboratorInvocationInput m_agentCollaboratorInvocationInput;
-  bool m_agentCollaboratorInvocationInputHasBeenSet = false;
 
   CodeInterpreterInvocationInput m_codeInterpreterInvocationInput;
-  bool m_codeInterpreterInvocationInputHasBeenSet = false;
 
   InvocationType m_invocationType{InvocationType::NOT_SET};
-  bool m_invocationTypeHasBeenSet = false;
 
   KnowledgeBaseLookupInput m_knowledgeBaseLookupInput;
-  bool m_knowledgeBaseLookupInputHasBeenSet = false;
 
   Aws::String m_traceId;
+  bool m_actionGroupInvocationInputHasBeenSet = false;
+  bool m_agentCollaboratorInvocationInputHasBeenSet = false;
+  bool m_codeInterpreterInvocationInputHasBeenSet = false;
+  bool m_invocationTypeHasBeenSet = false;
+  bool m_knowledgeBaseLookupInputHasBeenSet = false;
   bool m_traceIdHasBeenSet = false;
 };
 

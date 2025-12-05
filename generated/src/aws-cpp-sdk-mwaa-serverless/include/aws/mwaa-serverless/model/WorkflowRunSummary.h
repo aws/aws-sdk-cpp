@@ -123,18 +123,18 @@ class WorkflowRunSummary {
   ///@}
  private:
   Aws::String m_runId;
-  bool m_runIdHasBeenSet = false;
 
   Aws::String m_workflowArn;
-  bool m_workflowArnHasBeenSet = false;
 
   Aws::String m_workflowVersion;
-  bool m_workflowVersionHasBeenSet = false;
 
   RunType m_runType{RunType::NOT_SET};
-  bool m_runTypeHasBeenSet = false;
 
   RunDetailSummary m_runDetailSummary;
+  bool m_runIdHasBeenSet = false;
+  bool m_workflowArnHasBeenSet = false;
+  bool m_workflowVersionHasBeenSet = false;
+  bool m_runTypeHasBeenSet = false;
   bool m_runDetailSummaryHasBeenSet = false;
 };
 

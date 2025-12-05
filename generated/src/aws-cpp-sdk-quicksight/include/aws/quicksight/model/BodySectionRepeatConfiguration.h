@@ -108,12 +108,12 @@ class BodySectionRepeatConfiguration {
   ///@}
  private:
   Aws::Vector<BodySectionRepeatDimensionConfiguration> m_dimensionConfigurations;
-  bool m_dimensionConfigurationsHasBeenSet = false;
 
   BodySectionRepeatPageBreakConfiguration m_pageBreakConfiguration;
-  bool m_pageBreakConfigurationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_nonRepeatingVisuals;
+  bool m_dimensionConfigurationsHasBeenSet = false;
+  bool m_pageBreakConfigurationHasBeenSet = false;
   bool m_nonRepeatingVisualsHasBeenSet = false;
 };
 

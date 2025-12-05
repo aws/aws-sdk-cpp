@@ -126,18 +126,18 @@ class ConfigurationTag {
   ///@}
  private:
   ConfigurationItemType m_configurationType{ConfigurationItemType::NOT_SET};
-  bool m_configurationTypeHasBeenSet = false;
 
   Aws::String m_configurationId;
-  bool m_configurationIdHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::Utils::DateTime m_timeOfCreation{};
+  bool m_configurationTypeHasBeenSet = false;
+  bool m_configurationIdHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_timeOfCreationHasBeenSet = false;
 };
 

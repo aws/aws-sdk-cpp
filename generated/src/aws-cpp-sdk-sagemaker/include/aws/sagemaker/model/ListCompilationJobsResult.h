@@ -88,12 +88,12 @@ class ListCompilationJobsResult {
   ///@}
  private:
   Aws::Vector<CompilationJobSummary> m_compilationJobSummaries;
-  bool m_compilationJobSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_compilationJobSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

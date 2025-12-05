@@ -72,9 +72,9 @@ class FilterCriterion {
   ///@}
  private:
   CriterionKey m_criterionKey{CriterionKey::NOT_SET};
-  bool m_criterionKeyHasBeenSet = false;
 
   FilterCondition m_filterCondition;
+  bool m_criterionKeyHasBeenSet = false;
   bool m_filterConditionHasBeenSet = false;
 };
 

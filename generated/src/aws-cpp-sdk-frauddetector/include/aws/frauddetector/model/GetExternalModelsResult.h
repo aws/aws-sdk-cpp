@@ -84,12 +84,12 @@ class GetExternalModelsResult {
   ///@}
  private:
   Aws::Vector<ExternalModel> m_externalModels;
-  bool m_externalModelsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_externalModelsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

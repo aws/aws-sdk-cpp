@@ -88,12 +88,12 @@ class DeleteAgentVersionRequest : public BedrockAgentRequest {
   ///@}
  private:
   Aws::String m_agentId;
-  bool m_agentIdHasBeenSet = false;
 
   Aws::String m_agentVersion;
-  bool m_agentVersionHasBeenSet = false;
 
   bool m_skipResourceInUseCheck{false};
+  bool m_agentIdHasBeenSet = false;
+  bool m_agentVersionHasBeenSet = false;
   bool m_skipResourceInUseCheckHasBeenSet = false;
 };
 

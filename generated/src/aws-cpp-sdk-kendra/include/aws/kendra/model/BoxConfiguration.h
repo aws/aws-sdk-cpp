@@ -352,42 +352,42 @@ class BoxConfiguration {
   ///@}
  private:
   Aws::String m_enterpriseId;
-  bool m_enterpriseIdHasBeenSet = false;
 
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   bool m_useChangeLog{false};
-  bool m_useChangeLogHasBeenSet = false;
 
   bool m_crawlComments{false};
-  bool m_crawlCommentsHasBeenSet = false;
 
   bool m_crawlTasks{false};
-  bool m_crawlTasksHasBeenSet = false;
 
   bool m_crawlWebLinks{false};
-  bool m_crawlWebLinksHasBeenSet = false;
 
   Aws::Vector<DataSourceToIndexFieldMapping> m_fileFieldMappings;
-  bool m_fileFieldMappingsHasBeenSet = false;
 
   Aws::Vector<DataSourceToIndexFieldMapping> m_taskFieldMappings;
-  bool m_taskFieldMappingsHasBeenSet = false;
 
   Aws::Vector<DataSourceToIndexFieldMapping> m_commentFieldMappings;
-  bool m_commentFieldMappingsHasBeenSet = false;
 
   Aws::Vector<DataSourceToIndexFieldMapping> m_webLinkFieldMappings;
-  bool m_webLinkFieldMappingsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inclusionPatterns;
-  bool m_inclusionPatternsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_exclusionPatterns;
-  bool m_exclusionPatternsHasBeenSet = false;
 
   DataSourceVpcConfiguration m_vpcConfiguration;
+  bool m_enterpriseIdHasBeenSet = false;
+  bool m_secretArnHasBeenSet = false;
+  bool m_useChangeLogHasBeenSet = false;
+  bool m_crawlCommentsHasBeenSet = false;
+  bool m_crawlTasksHasBeenSet = false;
+  bool m_crawlWebLinksHasBeenSet = false;
+  bool m_fileFieldMappingsHasBeenSet = false;
+  bool m_taskFieldMappingsHasBeenSet = false;
+  bool m_commentFieldMappingsHasBeenSet = false;
+  bool m_webLinkFieldMappingsHasBeenSet = false;
+  bool m_inclusionPatternsHasBeenSet = false;
+  bool m_exclusionPatternsHasBeenSet = false;
   bool m_vpcConfigurationHasBeenSet = false;
 };
 

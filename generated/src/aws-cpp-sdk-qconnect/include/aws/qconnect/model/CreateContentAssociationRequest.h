@@ -149,21 +149,21 @@ class CreateContentAssociationRequest : public QConnectRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::String m_contentId;
-  bool m_contentIdHasBeenSet = false;
 
   ContentAssociationType m_associationType{ContentAssociationType::NOT_SET};
-  bool m_associationTypeHasBeenSet = false;
 
   ContentAssociationContents m_association;
-  bool m_associationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_knowledgeBaseIdHasBeenSet = false;
+  bool m_contentIdHasBeenSet = false;
+  bool m_associationTypeHasBeenSet = false;
+  bool m_associationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

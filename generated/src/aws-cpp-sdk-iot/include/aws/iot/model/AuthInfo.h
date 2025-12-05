@@ -75,9 +75,9 @@ class AuthInfo {
   ///@}
  private:
   ActionType m_actionType{ActionType::NOT_SET};
-  bool m_actionTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resources;
+  bool m_actionTypeHasBeenSet = false;
   bool m_resourcesHasBeenSet = false;
 };
 

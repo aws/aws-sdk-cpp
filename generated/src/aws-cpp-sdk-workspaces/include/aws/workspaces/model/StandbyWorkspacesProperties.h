@@ -89,12 +89,12 @@ class StandbyWorkspacesProperties {
   ///@}
  private:
   Aws::String m_standbyWorkspaceId;
-  bool m_standbyWorkspaceIdHasBeenSet = false;
 
   DataReplication m_dataReplication{DataReplication::NOT_SET};
-  bool m_dataReplicationHasBeenSet = false;
 
   Aws::Utils::DateTime m_recoverySnapshotTime{};
+  bool m_standbyWorkspaceIdHasBeenSet = false;
+  bool m_dataReplicationHasBeenSet = false;
   bool m_recoverySnapshotTimeHasBeenSet = false;
 };
 

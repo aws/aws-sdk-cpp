@@ -106,15 +106,15 @@ class IpamCidrConfig {
   ///@}
  private:
   Aws::String m_cidr;
-  bool m_cidrHasBeenSet = false;
 
   Aws::String m_ipamPoolArn;
-  bool m_ipamPoolArnHasBeenSet = false;
 
   Aws::String m_anycastIp;
-  bool m_anycastIpHasBeenSet = false;
 
   IpamCidrStatus m_status{IpamCidrStatus::NOT_SET};
+  bool m_cidrHasBeenSet = false;
+  bool m_ipamPoolArnHasBeenSet = false;
+  bool m_anycastIpHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

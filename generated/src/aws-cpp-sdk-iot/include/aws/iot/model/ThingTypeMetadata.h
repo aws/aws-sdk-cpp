@@ -88,12 +88,12 @@ class ThingTypeMetadata {
   ///@}
  private:
   bool m_deprecated{false};
-  bool m_deprecatedHasBeenSet = false;
 
   Aws::Utils::DateTime m_deprecationDate{};
-  bool m_deprecationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
+  bool m_deprecatedHasBeenSet = false;
+  bool m_deprecationDateHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;
 };
 

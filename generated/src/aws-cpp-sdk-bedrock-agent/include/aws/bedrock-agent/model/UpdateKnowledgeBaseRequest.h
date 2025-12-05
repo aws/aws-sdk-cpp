@@ -143,21 +143,21 @@ class UpdateKnowledgeBaseRequest : public BedrockAgentRequest {
   ///@}
  private:
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   KnowledgeBaseConfiguration m_knowledgeBaseConfiguration;
-  bool m_knowledgeBaseConfigurationHasBeenSet = false;
 
   StorageConfiguration m_storageConfiguration;
+  bool m_knowledgeBaseIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_knowledgeBaseConfigurationHasBeenSet = false;
   bool m_storageConfigurationHasBeenSet = false;
 };
 

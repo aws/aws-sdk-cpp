@@ -66,9 +66,9 @@ class DescribeStepResult {
   ///@}
  private:
   Step m_step;
-  bool m_stepHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_stepHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

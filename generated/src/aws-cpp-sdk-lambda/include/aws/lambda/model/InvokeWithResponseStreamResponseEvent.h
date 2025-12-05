@@ -72,9 +72,9 @@ class InvokeWithResponseStreamResponseEvent {
   ///@}
  private:
   InvokeResponseStreamUpdate m_payloadChunk;
-  bool m_payloadChunkHasBeenSet = false;
 
   InvokeWithResponseStreamCompleteEvent m_invokeComplete;
+  bool m_payloadChunkHasBeenSet = false;
   bool m_invokeCompleteHasBeenSet = false;
 };
 

@@ -267,36 +267,36 @@ class ComponentVersion {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Platform m_platform{Platform::NOT_SET};
-  bool m_platformHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supportedOsVersions;
-  bool m_supportedOsVersionsHasBeenSet = false;
 
   ComponentType m_type{ComponentType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::String m_dateCreated;
-  bool m_dateCreatedHasBeenSet = false;
 
   ComponentStatus m_status{ComponentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<ProductCodeListItem> m_productCodes;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_supportedOsVersionsHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_dateCreatedHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_productCodesHasBeenSet = false;
 };
 

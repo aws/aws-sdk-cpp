@@ -67,9 +67,9 @@ class DescribeEmailAddressRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_emailAddressId;
+  bool m_instanceIdHasBeenSet = false;
   bool m_emailAddressIdHasBeenSet = false;
 };
 

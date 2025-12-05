@@ -114,15 +114,15 @@ class BatchGetCaseRuleResult {
   ///@}
  private:
   Aws::Vector<GetCaseRuleResponse> m_caseRules;
-  bool m_caseRulesHasBeenSet = false;
 
   Aws::Vector<CaseRuleError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_unprocessedCaseRules;
-  bool m_unprocessedCaseRulesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_caseRulesHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
+  bool m_unprocessedCaseRulesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

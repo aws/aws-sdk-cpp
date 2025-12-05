@@ -99,12 +99,12 @@ class FilterClause {
   ///@}
  private:
   Aws::Vector<FilterClause> m_and;
-  bool m_andHasBeenSet = false;
 
   Filter m_filter;
-  bool m_filterHasBeenSet = false;
 
   Aws::Vector<FilterClause> m_or;
+  bool m_andHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
   bool m_orHasBeenSet = false;
 };
 

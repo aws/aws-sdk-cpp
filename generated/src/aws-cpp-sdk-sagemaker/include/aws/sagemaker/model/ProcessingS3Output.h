@@ -91,12 +91,12 @@ class ProcessingS3Output {
   ///@}
  private:
   Aws::String m_s3Uri;
-  bool m_s3UriHasBeenSet = false;
 
   Aws::String m_localPath;
-  bool m_localPathHasBeenSet = false;
 
   ProcessingS3UploadMode m_s3UploadMode{ProcessingS3UploadMode::NOT_SET};
+  bool m_s3UriHasBeenSet = false;
+  bool m_localPathHasBeenSet = false;
   bool m_s3UploadModeHasBeenSet = false;
 };
 

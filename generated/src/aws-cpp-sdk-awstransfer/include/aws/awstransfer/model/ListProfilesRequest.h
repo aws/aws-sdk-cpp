@@ -86,12 +86,12 @@ class ListProfilesRequest : public TransferRequest {
   ///@}
  private:
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ProfileType m_profileType{ProfileType::NOT_SET};
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_profileTypeHasBeenSet = false;
 };
 

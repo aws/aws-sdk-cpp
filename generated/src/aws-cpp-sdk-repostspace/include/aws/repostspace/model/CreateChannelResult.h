@@ -59,9 +59,9 @@ class CreateChannelResult {
   ///@}
  private:
   Aws::String m_channelId;
-  bool m_channelIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

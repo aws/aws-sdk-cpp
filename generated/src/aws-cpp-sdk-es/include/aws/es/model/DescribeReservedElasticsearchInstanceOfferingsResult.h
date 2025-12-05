@@ -97,12 +97,12 @@ class DescribeReservedElasticsearchInstanceOfferingsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ReservedElasticsearchInstanceOffering> m_reservedElasticsearchInstanceOfferings;
-  bool m_reservedElasticsearchInstanceOfferingsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_reservedElasticsearchInstanceOfferingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

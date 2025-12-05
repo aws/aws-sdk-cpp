@@ -89,12 +89,12 @@ class AntennaDownlinkDemodDecodeConfig {
   ///@}
  private:
   SpectrumConfig m_spectrumConfig;
-  bool m_spectrumConfigHasBeenSet = false;
 
   DemodulationConfig m_demodulationConfig;
-  bool m_demodulationConfigHasBeenSet = false;
 
   DecodeConfig m_decodeConfig;
+  bool m_spectrumConfigHasBeenSet = false;
+  bool m_demodulationConfigHasBeenSet = false;
   bool m_decodeConfigHasBeenSet = false;
 };
 

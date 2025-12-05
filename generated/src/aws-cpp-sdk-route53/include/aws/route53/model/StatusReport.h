@@ -75,9 +75,9 @@ class StatusReport {
   ///@}
  private:
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_checkedTime{};
+  bool m_statusHasBeenSet = false;
   bool m_checkedTimeHasBeenSet = false;
 };
 

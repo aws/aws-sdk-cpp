@@ -149,21 +149,21 @@ class CreateUserRequest : public MQRequest {
   ///@}
  private:
   Aws::String m_brokerId;
-  bool m_brokerIdHasBeenSet = false;
 
   bool m_consoleAccess{false};
-  bool m_consoleAccessHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_groups;
-  bool m_groupsHasBeenSet = false;
 
   Aws::String m_password;
-  bool m_passwordHasBeenSet = false;
 
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   bool m_replicationUser{false};
+  bool m_brokerIdHasBeenSet = false;
+  bool m_consoleAccessHasBeenSet = false;
+  bool m_groupsHasBeenSet = false;
+  bool m_passwordHasBeenSet = false;
+  bool m_usernameHasBeenSet = false;
   bool m_replicationUserHasBeenSet = false;
 };
 

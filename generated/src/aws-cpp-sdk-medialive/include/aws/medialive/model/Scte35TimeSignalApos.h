@@ -86,12 +86,12 @@ class Scte35TimeSignalApos {
   ///@}
  private:
   int m_adAvailOffset{0};
-  bool m_adAvailOffsetHasBeenSet = false;
 
   Scte35AposNoRegionalBlackoutBehavior m_noRegionalBlackoutFlag{Scte35AposNoRegionalBlackoutBehavior::NOT_SET};
-  bool m_noRegionalBlackoutFlagHasBeenSet = false;
 
   Scte35AposWebDeliveryAllowedBehavior m_webDeliveryAllowedFlag{Scte35AposWebDeliveryAllowedBehavior::NOT_SET};
+  bool m_adAvailOffsetHasBeenSet = false;
+  bool m_noRegionalBlackoutFlagHasBeenSet = false;
   bool m_webDeliveryAllowedFlagHasBeenSet = false;
 };
 

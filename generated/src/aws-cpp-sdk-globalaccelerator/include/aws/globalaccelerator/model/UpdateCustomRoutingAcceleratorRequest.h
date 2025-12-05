@@ -130,18 +130,18 @@ class UpdateCustomRoutingAcceleratorRequest : public GlobalAcceleratorRequest {
   ///@}
  private:
   Aws::String m_acceleratorArn;
-  bool m_acceleratorArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
-  bool m_ipAddressTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ipAddresses;
-  bool m_ipAddressesHasBeenSet = false;
 
   bool m_enabled{false};
+  bool m_acceleratorArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
+  bool m_ipAddressesHasBeenSet = false;
   bool m_enabledHasBeenSet = false;
 };
 

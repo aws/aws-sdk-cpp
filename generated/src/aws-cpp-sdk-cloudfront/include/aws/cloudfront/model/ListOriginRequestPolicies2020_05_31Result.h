@@ -61,9 +61,9 @@ class ListOriginRequestPolicies2020_05_31Result {
   ///@}
  private:
   OriginRequestPolicyList m_originRequestPolicyList;
-  bool m_originRequestPolicyListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_originRequestPolicyListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

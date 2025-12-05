@@ -67,9 +67,9 @@ class UpdateSAMLProviderResult {
   ///@}
  private:
   Aws::String m_sAMLProviderArn;
-  bool m_sAMLProviderArnHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_sAMLProviderArnHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

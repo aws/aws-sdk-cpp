@@ -105,15 +105,15 @@ class FirewallSubnetMissingVPCEndpointViolation {
   ///@}
  private:
   Aws::String m_firewallSubnetId;
-  bool m_firewallSubnetIdHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_subnetAvailabilityZone;
-  bool m_subnetAvailabilityZoneHasBeenSet = false;
 
   Aws::String m_subnetAvailabilityZoneId;
+  bool m_firewallSubnetIdHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_subnetAvailabilityZoneHasBeenSet = false;
   bool m_subnetAvailabilityZoneIdHasBeenSet = false;
 };
 

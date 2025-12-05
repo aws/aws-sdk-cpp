@@ -86,12 +86,12 @@ class ListDataAutomationProjectsResult {
   ///@}
  private:
   Aws::Vector<DataAutomationProjectSummary> m_projects;
-  bool m_projectsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_projectsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

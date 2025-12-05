@@ -100,12 +100,12 @@ class AuthenticationDescription {
   ///@}
  private:
   AwsSsoAuthentication m_awsSso;
-  bool m_awsSsoHasBeenSet = false;
 
   Aws::Vector<AuthenticationProviderTypes> m_providers;
-  bool m_providersHasBeenSet = false;
 
   SamlAuthentication m_saml;
+  bool m_awsSsoHasBeenSet = false;
+  bool m_providersHasBeenSet = false;
   bool m_samlHasBeenSet = false;
 };
 

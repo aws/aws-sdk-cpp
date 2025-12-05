@@ -58,9 +58,9 @@ class RestoreDBInstanceToPointInTimeResult {
   ///@}
  private:
   DBInstance m_dBInstance;
-  bool m_dBInstanceHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_dBInstanceHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -114,12 +114,12 @@ class FilterParameter {
   ///@}
  private:
   Aws::String m_field;
-  bool m_fieldHasBeenSet = false;
 
   Operator m_operator{Operator::NOT_SET};
-  bool m_operatorHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_fieldHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

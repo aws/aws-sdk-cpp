@@ -80,12 +80,12 @@ class EncryptionConfig {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   EncryptionType m_encryptionType{EncryptionType::NOT_SET};
-  bool m_encryptionTypeHasBeenSet = false;
 
   Aws::String m_keyArn;
+  bool m_enabledHasBeenSet = false;
+  bool m_encryptionTypeHasBeenSet = false;
   bool m_keyArnHasBeenSet = false;
 };
 

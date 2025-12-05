@@ -91,12 +91,12 @@ class UpdateSipMediaApplicationRequest : public ChimeSDKVoiceRequest {
   ///@}
  private:
   Aws::String m_sipMediaApplicationId;
-  bool m_sipMediaApplicationIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<SipMediaApplicationEndpoint> m_endpoints;
+  bool m_sipMediaApplicationIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_endpointsHasBeenSet = false;
 };
 

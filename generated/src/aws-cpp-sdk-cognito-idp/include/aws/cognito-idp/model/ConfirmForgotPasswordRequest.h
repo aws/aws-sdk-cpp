@@ -229,27 +229,27 @@ class ConfirmForgotPasswordRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
 
   Aws::String m_secretHash;
-  bool m_secretHashHasBeenSet = false;
 
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::String m_confirmationCode;
-  bool m_confirmationCodeHasBeenSet = false;
 
   Aws::String m_password;
-  bool m_passwordHasBeenSet = false;
 
   AnalyticsMetadataType m_analyticsMetadata;
-  bool m_analyticsMetadataHasBeenSet = false;
 
   UserContextDataType m_userContextData;
-  bool m_userContextDataHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_clientMetadata;
+  bool m_clientIdHasBeenSet = false;
+  bool m_secretHashHasBeenSet = false;
+  bool m_usernameHasBeenSet = false;
+  bool m_confirmationCodeHasBeenSet = false;
+  bool m_passwordHasBeenSet = false;
+  bool m_analyticsMetadataHasBeenSet = false;
+  bool m_userContextDataHasBeenSet = false;
   bool m_clientMetadataHasBeenSet = false;
 };
 

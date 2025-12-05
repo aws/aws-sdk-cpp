@@ -105,15 +105,15 @@ class LambdaFunctionFailedEventAttributes {
   ///@}
  private:
   long long m_scheduledEventId{0};
-  bool m_scheduledEventIdHasBeenSet = false;
 
   long long m_startedEventId{0};
-  bool m_startedEventIdHasBeenSet = false;
 
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   Aws::String m_details;
+  bool m_scheduledEventIdHasBeenSet = false;
+  bool m_startedEventIdHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
   bool m_detailsHasBeenSet = false;
 };
 

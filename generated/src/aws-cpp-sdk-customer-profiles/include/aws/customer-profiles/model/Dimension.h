@@ -78,9 +78,9 @@ class Dimension {
   ///@}
  private:
   ProfileAttributes m_profileAttributes;
-  bool m_profileAttributesHasBeenSet = false;
 
   Aws::Map<Aws::String, CalculatedAttributeDimension> m_calculatedAttributes;
+  bool m_profileAttributesHasBeenSet = false;
   bool m_calculatedAttributesHasBeenSet = false;
 };
 

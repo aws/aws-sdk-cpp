@@ -67,9 +67,9 @@ class Authentication {
   ///@}
  private:
   AuthenticationType m_type{AuthenticationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   int m_passwordCount{0};
+  bool m_typeHasBeenSet = false;
   bool m_passwordCountHasBeenSet = false;
 };
 

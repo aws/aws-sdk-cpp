@@ -269,42 +269,42 @@ class BillingViewElement {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   BillingViewType m_billingViewType{BillingViewType::NOT_SET};
-  bool m_billingViewTypeHasBeenSet = false;
 
   Aws::String m_ownerAccountId;
-  bool m_ownerAccountIdHasBeenSet = false;
 
   Aws::String m_sourceAccountId;
-  bool m_sourceAccountIdHasBeenSet = false;
 
   Expression m_dataFilterExpression;
-  bool m_dataFilterExpressionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   int m_derivedViewCount{0};
-  bool m_derivedViewCountHasBeenSet = false;
 
   int m_sourceViewCount{0};
-  bool m_sourceViewCountHasBeenSet = false;
 
   Aws::Utils::DateTime m_viewDefinitionLastUpdatedAt{};
-  bool m_viewDefinitionLastUpdatedAtHasBeenSet = false;
 
   BillingViewHealthStatus m_healthStatus;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_billingViewTypeHasBeenSet = false;
+  bool m_ownerAccountIdHasBeenSet = false;
+  bool m_sourceAccountIdHasBeenSet = false;
+  bool m_dataFilterExpressionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_derivedViewCountHasBeenSet = false;
+  bool m_sourceViewCountHasBeenSet = false;
+  bool m_viewDefinitionLastUpdatedAtHasBeenSet = false;
   bool m_healthStatusHasBeenSet = false;
 };
 

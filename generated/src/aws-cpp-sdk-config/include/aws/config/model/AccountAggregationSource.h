@@ -97,12 +97,12 @@ class AccountAggregationSource {
   ///@}
  private:
   Aws::Vector<Aws::String> m_accountIds;
-  bool m_accountIdsHasBeenSet = false;
 
   bool m_allAwsRegions{false};
-  bool m_allAwsRegionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_awsRegions;
+  bool m_accountIdsHasBeenSet = false;
+  bool m_allAwsRegionsHasBeenSet = false;
   bool m_awsRegionsHasBeenSet = false;
 };
 

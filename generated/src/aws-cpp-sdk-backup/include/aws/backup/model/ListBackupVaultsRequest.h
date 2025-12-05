@@ -104,15 +104,15 @@ class ListBackupVaultsRequest : public BackupRequest {
   ///@}
  private:
   VaultType m_byVaultType{VaultType::NOT_SET};
-  bool m_byVaultTypeHasBeenSet = false;
 
   bool m_byShared{false};
-  bool m_bySharedHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_byVaultTypeHasBeenSet = false;
+  bool m_bySharedHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

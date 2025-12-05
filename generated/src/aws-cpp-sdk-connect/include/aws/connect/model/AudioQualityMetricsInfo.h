@@ -77,9 +77,9 @@ class AudioQualityMetricsInfo {
   ///@}
  private:
   double m_qualityScore{0.0};
-  bool m_qualityScoreHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_potentialQualityIssues;
+  bool m_qualityScoreHasBeenSet = false;
   bool m_potentialQualityIssuesHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class StringFormatConfiguration {
   ///@}
  private:
   NullValueFormatConfiguration m_nullValueFormatConfiguration;
-  bool m_nullValueFormatConfigurationHasBeenSet = false;
 
   NumericFormatConfiguration m_numericFormatConfiguration;
+  bool m_nullValueFormatConfigurationHasBeenSet = false;
   bool m_numericFormatConfigurationHasBeenSet = false;
 };
 

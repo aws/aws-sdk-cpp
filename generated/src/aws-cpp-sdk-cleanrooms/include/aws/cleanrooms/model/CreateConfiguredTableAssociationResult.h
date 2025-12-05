@@ -61,9 +61,9 @@ class CreateConfiguredTableAssociationResult {
   ///@}
  private:
   ConfiguredTableAssociation m_configuredTableAssociation;
-  bool m_configuredTableAssociationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_configuredTableAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

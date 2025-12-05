@@ -86,12 +86,12 @@ class ListPolicyGenerationsResult {
   ///@}
  private:
   Aws::Vector<PolicyGeneration> m_policyGenerations;
-  bool m_policyGenerationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyGenerationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

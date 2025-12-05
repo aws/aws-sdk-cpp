@@ -74,9 +74,9 @@ class RuntimeSettings {
   ///@}
  private:
   SlotResolutionImprovementSpecification m_slotResolutionImprovement;
-  bool m_slotResolutionImprovementHasBeenSet = false;
 
   NluImprovementSpecification m_nluImprovement;
+  bool m_slotResolutionImprovementHasBeenSet = false;
   bool m_nluImprovementHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class Conditions {
   ///@}
  private:
   Range m_range;
-  bool m_rangeHasBeenSet = false;
 
   int m_objectCount{0};
-  bool m_objectCountHasBeenSet = false;
 
   Threshold m_threshold;
+  bool m_rangeHasBeenSet = false;
+  bool m_objectCountHasBeenSet = false;
   bool m_thresholdHasBeenSet = false;
 };
 

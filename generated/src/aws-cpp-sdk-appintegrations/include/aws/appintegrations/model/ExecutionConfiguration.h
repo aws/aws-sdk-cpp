@@ -83,12 +83,12 @@ class ExecutionConfiguration {
   ///@}
  private:
   ExecutionMode m_executionMode{ExecutionMode::NOT_SET};
-  bool m_executionModeHasBeenSet = false;
 
   OnDemandConfiguration m_onDemandConfiguration;
-  bool m_onDemandConfigurationHasBeenSet = false;
 
   ScheduleConfiguration m_scheduleConfiguration;
+  bool m_executionModeHasBeenSet = false;
+  bool m_onDemandConfigurationHasBeenSet = false;
   bool m_scheduleConfigurationHasBeenSet = false;
 };
 

@@ -181,30 +181,30 @@ class DeploymentStrategy {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   int m_deploymentDurationInMinutes{0};
-  bool m_deploymentDurationInMinutesHasBeenSet = false;
 
   GrowthType m_growthType{GrowthType::NOT_SET};
-  bool m_growthTypeHasBeenSet = false;
 
   double m_growthFactor{0.0};
-  bool m_growthFactorHasBeenSet = false;
 
   int m_finalBakeTimeInMinutes{0};
-  bool m_finalBakeTimeInMinutesHasBeenSet = false;
 
   ReplicateTo m_replicateTo{ReplicateTo::NOT_SET};
-  bool m_replicateToHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_deploymentDurationInMinutesHasBeenSet = false;
+  bool m_growthTypeHasBeenSet = false;
+  bool m_growthFactorHasBeenSet = false;
+  bool m_finalBakeTimeInMinutesHasBeenSet = false;
+  bool m_replicateToHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

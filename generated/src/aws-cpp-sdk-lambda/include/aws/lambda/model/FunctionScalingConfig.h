@@ -65,9 +65,9 @@ class FunctionScalingConfig {
   ///@}
  private:
   int m_minExecutionEnvironments{0};
-  bool m_minExecutionEnvironmentsHasBeenSet = false;
 
   int m_maxExecutionEnvironments{0};
+  bool m_minExecutionEnvironmentsHasBeenSet = false;
   bool m_maxExecutionEnvironmentsHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class S3Location {
   ///@}
  private:
   Aws::String m_bucketName;
-  bool m_bucketNameHasBeenSet = false;
 
   Aws::String m_key;
+  bool m_bucketNameHasBeenSet = false;
   bool m_keyHasBeenSet = false;
 };
 

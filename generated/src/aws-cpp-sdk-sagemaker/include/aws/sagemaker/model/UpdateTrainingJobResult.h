@@ -59,9 +59,9 @@ class UpdateTrainingJobResult {
   ///@}
  private:
   Aws::String m_trainingJobArn;
-  bool m_trainingJobArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trainingJobArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -80,9 +80,9 @@ class RejectResourceGroupingRecommendationsRequest : public ResilienceHubRequest
   ///@}
  private:
   Aws::String m_appArn;
-  bool m_appArnHasBeenSet = false;
 
   Aws::Vector<RejectGroupingRecommendationEntry> m_entries;
+  bool m_appArnHasBeenSet = false;
   bool m_entriesHasBeenSet = false;
 };
 

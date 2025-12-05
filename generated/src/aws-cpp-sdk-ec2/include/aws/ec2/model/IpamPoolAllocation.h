@@ -163,24 +163,24 @@ class IpamPoolAllocation {
   ///@}
  private:
   Aws::String m_cidr;
-  bool m_cidrHasBeenSet = false;
 
   Aws::String m_ipamPoolAllocationId;
-  bool m_ipamPoolAllocationIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   IpamPoolAllocationResourceType m_resourceType{IpamPoolAllocationResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resourceRegion;
-  bool m_resourceRegionHasBeenSet = false;
 
   Aws::String m_resourceOwner;
+  bool m_cidrHasBeenSet = false;
+  bool m_ipamPoolAllocationIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceRegionHasBeenSet = false;
   bool m_resourceOwnerHasBeenSet = false;
 };
 

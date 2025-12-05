@@ -75,9 +75,9 @@ class PutProtocolsListRequest : public FMSRequest {
   ///@}
  private:
   ProtocolsListData m_protocolsList;
-  bool m_protocolsListHasBeenSet = false;
 
   Aws::Vector<Tag> m_tagList;
+  bool m_protocolsListHasBeenSet = false;
   bool m_tagListHasBeenSet = false;
 };
 

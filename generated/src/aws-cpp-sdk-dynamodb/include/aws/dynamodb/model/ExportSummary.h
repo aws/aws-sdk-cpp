@@ -86,12 +86,12 @@ class ExportSummary {
   ///@}
  private:
   Aws::String m_exportArn;
-  bool m_exportArnHasBeenSet = false;
 
   ExportStatus m_exportStatus{ExportStatus::NOT_SET};
-  bool m_exportStatusHasBeenSet = false;
 
   ExportType m_exportType{ExportType::NOT_SET};
+  bool m_exportArnHasBeenSet = false;
+  bool m_exportStatusHasBeenSet = false;
   bool m_exportTypeHasBeenSet = false;
 };
 

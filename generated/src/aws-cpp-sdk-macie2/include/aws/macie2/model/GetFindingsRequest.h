@@ -74,9 +74,9 @@ class GetFindingsRequest : public Macie2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_findingIds;
-  bool m_findingIdsHasBeenSet = false;
 
   SortCriteria m_sortCriteria;
+  bool m_findingIdsHasBeenSet = false;
   bool m_sortCriteriaHasBeenSet = false;
 };
 

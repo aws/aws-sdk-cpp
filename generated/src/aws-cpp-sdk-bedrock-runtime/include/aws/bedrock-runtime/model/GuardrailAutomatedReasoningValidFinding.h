@@ -118,15 +118,15 @@ class GuardrailAutomatedReasoningValidFinding {
   ///@}
  private:
   GuardrailAutomatedReasoningTranslation m_translation;
-  bool m_translationHasBeenSet = false;
 
   GuardrailAutomatedReasoningScenario m_claimsTrueScenario;
-  bool m_claimsTrueScenarioHasBeenSet = false;
 
   Aws::Vector<GuardrailAutomatedReasoningRule> m_supportingRules;
-  bool m_supportingRulesHasBeenSet = false;
 
   GuardrailAutomatedReasoningLogicWarning m_logicWarning;
+  bool m_translationHasBeenSet = false;
+  bool m_claimsTrueScenarioHasBeenSet = false;
+  bool m_supportingRulesHasBeenSet = false;
   bool m_logicWarningHasBeenSet = false;
 };
 

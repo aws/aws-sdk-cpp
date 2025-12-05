@@ -67,9 +67,9 @@ class AmiProductSort {
   ///@}
  private:
   AmiProductSortBy m_sortBy{AmiProductSortBy::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
+  bool m_sortByHasBeenSet = false;
   bool m_sortOrderHasBeenSet = false;
 };
 

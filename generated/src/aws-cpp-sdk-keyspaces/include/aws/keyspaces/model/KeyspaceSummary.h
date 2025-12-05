@@ -114,15 +114,15 @@ class KeyspaceSummary {
   ///@}
  private:
   Aws::String m_keyspaceName;
-  bool m_keyspaceNameHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Rs m_replicationStrategy{Rs::NOT_SET};
-  bool m_replicationStrategyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_replicationRegions;
+  bool m_keyspaceNameHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_replicationStrategyHasBeenSet = false;
   bool m_replicationRegionsHasBeenSet = false;
 };
 

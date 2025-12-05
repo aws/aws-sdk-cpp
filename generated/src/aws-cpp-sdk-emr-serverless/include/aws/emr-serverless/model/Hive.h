@@ -86,12 +86,12 @@ class Hive {
   ///@}
  private:
   Aws::String m_query;
-  bool m_queryHasBeenSet = false;
 
   Aws::String m_initQueryFile;
-  bool m_initQueryFileHasBeenSet = false;
 
   Aws::String m_parameters;
+  bool m_queryHasBeenSet = false;
+  bool m_initQueryFileHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

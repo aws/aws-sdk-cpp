@@ -132,12 +132,12 @@ class EksMetadata {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_labels;
-  bool m_labelsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_annotations;
-  bool m_annotationsHasBeenSet = false;
 
   Aws::String m_namespace;
+  bool m_labelsHasBeenSet = false;
+  bool m_annotationsHasBeenSet = false;
   bool m_namespaceHasBeenSet = false;
 };
 

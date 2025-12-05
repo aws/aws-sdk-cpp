@@ -69,9 +69,9 @@ class EmailTemplateMetadata {
   ///@}
  private:
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
+  bool m_templateNameHasBeenSet = false;
   bool m_createdTimestampHasBeenSet = false;
 };
 

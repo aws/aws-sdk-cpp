@@ -89,12 +89,12 @@ class ListInstancesResult {
   ///@}
  private:
   Aws::Vector<Instance> m_instances;
-  bool m_instancesHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_instancesHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -77,9 +77,9 @@ class AwsEksMetadataDetails {
   ///@}
  private:
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::Vector<AwsEksWorkloadInfo> m_workloadInfoList;
+  bool m_namespaceHasBeenSet = false;
   bool m_workloadInfoListHasBeenSet = false;
 };
 

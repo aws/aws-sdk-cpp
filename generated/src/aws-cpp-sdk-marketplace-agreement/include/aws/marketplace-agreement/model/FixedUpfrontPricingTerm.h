@@ -132,18 +132,18 @@ class FixedUpfrontPricingTerm {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_currencyCode;
-  bool m_currencyCodeHasBeenSet = false;
 
   Aws::String m_duration;
-  bool m_durationHasBeenSet = false;
 
   Aws::String m_price;
-  bool m_priceHasBeenSet = false;
 
   Aws::Vector<GrantItem> m_grants;
+  bool m_typeHasBeenSet = false;
+  bool m_currencyCodeHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
+  bool m_priceHasBeenSet = false;
   bool m_grantsHasBeenSet = false;
 };
 

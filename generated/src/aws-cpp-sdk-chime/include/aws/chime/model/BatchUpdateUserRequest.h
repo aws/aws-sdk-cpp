@@ -73,9 +73,9 @@ class BatchUpdateUserRequest : public ChimeRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::Vector<UpdateUserRequestItem> m_updateUserRequestItems;
+  bool m_accountIdHasBeenSet = false;
   bool m_updateUserRequestItemsHasBeenSet = false;
 };
 

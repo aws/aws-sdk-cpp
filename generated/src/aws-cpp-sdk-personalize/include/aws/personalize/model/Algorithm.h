@@ -231,33 +231,33 @@ class Algorithm {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_algorithmArn;
-  bool m_algorithmArnHasBeenSet = false;
 
   AlgorithmImage m_algorithmImage;
-  bool m_algorithmImageHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_defaultHyperParameters;
-  bool m_defaultHyperParametersHasBeenSet = false;
 
   DefaultHyperParameterRanges m_defaultHyperParameterRanges;
-  bool m_defaultHyperParameterRangesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_defaultResourceConfig;
-  bool m_defaultResourceConfigHasBeenSet = false;
 
   Aws::String m_trainingInputMode;
-  bool m_trainingInputModeHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
+  bool m_nameHasBeenSet = false;
+  bool m_algorithmArnHasBeenSet = false;
+  bool m_algorithmImageHasBeenSet = false;
+  bool m_defaultHyperParametersHasBeenSet = false;
+  bool m_defaultHyperParameterRangesHasBeenSet = false;
+  bool m_defaultResourceConfigHasBeenSet = false;
+  bool m_trainingInputModeHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
   bool m_lastUpdatedDateTimeHasBeenSet = false;
 };
 

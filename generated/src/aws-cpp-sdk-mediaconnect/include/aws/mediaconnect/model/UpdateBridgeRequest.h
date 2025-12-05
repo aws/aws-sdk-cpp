@@ -106,15 +106,15 @@ class UpdateBridgeRequest : public MediaConnectRequest {
   ///@}
  private:
   Aws::String m_bridgeArn;
-  bool m_bridgeArnHasBeenSet = false;
 
   UpdateEgressGatewayBridgeRequest m_egressGatewayBridge;
-  bool m_egressGatewayBridgeHasBeenSet = false;
 
   UpdateIngressGatewayBridgeRequest m_ingressGatewayBridge;
-  bool m_ingressGatewayBridgeHasBeenSet = false;
 
   UpdateFailoverConfig m_sourceFailoverConfig;
+  bool m_bridgeArnHasBeenSet = false;
+  bool m_egressGatewayBridgeHasBeenSet = false;
+  bool m_ingressGatewayBridgeHasBeenSet = false;
   bool m_sourceFailoverConfigHasBeenSet = false;
 };
 

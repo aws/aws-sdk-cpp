@@ -232,33 +232,33 @@ class FilterLogEventsRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::String m_logGroupName;
-  bool m_logGroupNameHasBeenSet = false;
 
   Aws::String m_logGroupIdentifier;
-  bool m_logGroupIdentifierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_logStreamNames;
-  bool m_logStreamNamesHasBeenSet = false;
 
   Aws::String m_logStreamNamePrefix;
-  bool m_logStreamNamePrefixHasBeenSet = false;
 
   long long m_startTime{0};
-  bool m_startTimeHasBeenSet = false;
 
   long long m_endTime{0};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_filterPattern;
-  bool m_filterPatternHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   bool m_unmask{false};
+  bool m_logGroupNameHasBeenSet = false;
+  bool m_logGroupIdentifierHasBeenSet = false;
+  bool m_logStreamNamesHasBeenSet = false;
+  bool m_logStreamNamePrefixHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_filterPatternHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_unmaskHasBeenSet = false;
 };
 

@@ -98,12 +98,12 @@ class ConditionResultEvent {
   ///@}
  private:
   Aws::String m_nodeName;
-  bool m_nodeNameHasBeenSet = false;
 
   Aws::Vector<SatisfiedCondition> m_satisfiedConditions;
-  bool m_satisfiedConditionsHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
+  bool m_nodeNameHasBeenSet = false;
+  bool m_satisfiedConditionsHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
 };
 

@@ -214,33 +214,33 @@ class DescribeStorageConfigurationResult {
   ///@}
  private:
   StorageType m_storageType{StorageType::NOT_SET};
-  bool m_storageTypeHasBeenSet = false;
 
   MultiLayerStorage m_multiLayerStorage;
-  bool m_multiLayerStorageHasBeenSet = false;
 
   DisassociatedDataStorageState m_disassociatedDataStorage{DisassociatedDataStorageState::NOT_SET};
-  bool m_disassociatedDataStorageHasBeenSet = false;
 
   RetentionPeriod m_retentionPeriod;
-  bool m_retentionPeriodHasBeenSet = false;
 
   ConfigurationStatus m_configurationStatus;
-  bool m_configurationStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateDate{};
-  bool m_lastUpdateDateHasBeenSet = false;
 
   WarmTierState m_warmTier{WarmTierState::NOT_SET};
-  bool m_warmTierHasBeenSet = false;
 
   WarmTierRetentionPeriod m_warmTierRetentionPeriod;
-  bool m_warmTierRetentionPeriodHasBeenSet = false;
 
   bool m_disallowIngestNullNaN{false};
-  bool m_disallowIngestNullNaNHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_storageTypeHasBeenSet = false;
+  bool m_multiLayerStorageHasBeenSet = false;
+  bool m_disassociatedDataStorageHasBeenSet = false;
+  bool m_retentionPeriodHasBeenSet = false;
+  bool m_configurationStatusHasBeenSet = false;
+  bool m_lastUpdateDateHasBeenSet = false;
+  bool m_warmTierHasBeenSet = false;
+  bool m_warmTierRetentionPeriodHasBeenSet = false;
+  bool m_disallowIngestNullNaNHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

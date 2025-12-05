@@ -74,9 +74,9 @@ class ConnectionRecordingPreferences {
   ///@}
  private:
   Aws::String m_kMSKeyArn;
-  bool m_kMSKeyArnHasBeenSet = false;
 
   RecordingDestinations m_recordingDestinations;
+  bool m_kMSKeyArnHasBeenSet = false;
   bool m_recordingDestinationsHasBeenSet = false;
 };
 

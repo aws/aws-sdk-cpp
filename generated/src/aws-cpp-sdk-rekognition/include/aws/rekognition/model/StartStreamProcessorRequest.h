@@ -96,12 +96,12 @@ class StartStreamProcessorRequest : public RekognitionRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   StreamProcessingStartSelector m_startSelector;
-  bool m_startSelectorHasBeenSet = false;
 
   StreamProcessingStopSelector m_stopSelector;
+  bool m_nameHasBeenSet = false;
+  bool m_startSelectorHasBeenSet = false;
   bool m_stopSelectorHasBeenSet = false;
 };
 

@@ -295,36 +295,36 @@ class RefreshPreferences {
   ///@}
  private:
   int m_minHealthyPercentage{0};
-  bool m_minHealthyPercentageHasBeenSet = false;
 
   int m_instanceWarmup{0};
-  bool m_instanceWarmupHasBeenSet = false;
 
   Aws::Vector<int> m_checkpointPercentages;
-  bool m_checkpointPercentagesHasBeenSet = false;
 
   int m_checkpointDelay{0};
-  bool m_checkpointDelayHasBeenSet = false;
 
   bool m_skipMatching{false};
-  bool m_skipMatchingHasBeenSet = false;
 
   bool m_autoRollback{false};
-  bool m_autoRollbackHasBeenSet = false;
 
   ScaleInProtectedInstances m_scaleInProtectedInstances{ScaleInProtectedInstances::NOT_SET};
-  bool m_scaleInProtectedInstancesHasBeenSet = false;
 
   StandbyInstances m_standbyInstances{StandbyInstances::NOT_SET};
-  bool m_standbyInstancesHasBeenSet = false;
 
   AlarmSpecification m_alarmSpecification;
-  bool m_alarmSpecificationHasBeenSet = false;
 
   int m_maxHealthyPercentage{0};
-  bool m_maxHealthyPercentageHasBeenSet = false;
 
   int m_bakeTime{0};
+  bool m_minHealthyPercentageHasBeenSet = false;
+  bool m_instanceWarmupHasBeenSet = false;
+  bool m_checkpointPercentagesHasBeenSet = false;
+  bool m_checkpointDelayHasBeenSet = false;
+  bool m_skipMatchingHasBeenSet = false;
+  bool m_autoRollbackHasBeenSet = false;
+  bool m_scaleInProtectedInstancesHasBeenSet = false;
+  bool m_standbyInstancesHasBeenSet = false;
+  bool m_alarmSpecificationHasBeenSet = false;
+  bool m_maxHealthyPercentageHasBeenSet = false;
   bool m_bakeTimeHasBeenSet = false;
 };
 

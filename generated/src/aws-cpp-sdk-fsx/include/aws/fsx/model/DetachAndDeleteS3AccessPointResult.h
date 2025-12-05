@@ -75,12 +75,12 @@ class DetachAndDeleteS3AccessPointResult {
   ///@}
  private:
   S3AccessPointAttachmentLifecycle m_lifecycle{S3AccessPointAttachmentLifecycle::NOT_SET};
-  bool m_lifecycleHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_lifecycleHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

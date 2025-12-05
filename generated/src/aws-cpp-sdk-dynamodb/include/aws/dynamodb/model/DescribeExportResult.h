@@ -60,9 +60,9 @@ class DescribeExportResult {
   ///@}
  private:
   ExportDescription m_exportDescription;
-  bool m_exportDescriptionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_exportDescriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

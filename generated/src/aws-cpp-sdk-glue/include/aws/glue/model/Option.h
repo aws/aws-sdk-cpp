@@ -86,12 +86,12 @@ class Option {
   ///@}
  private:
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_label;
-  bool m_labelHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_valueHasBeenSet = false;
+  bool m_labelHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class ListVoiceProfilesRequest : public ChimeSDKVoiceRequest {
   ///@}
  private:
   Aws::String m_voiceProfileDomainId;
-  bool m_voiceProfileDomainIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_voiceProfileDomainIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

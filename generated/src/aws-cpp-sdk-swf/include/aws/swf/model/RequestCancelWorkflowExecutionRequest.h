@@ -85,12 +85,12 @@ class RequestCancelWorkflowExecutionRequest : public SWFRequest {
   ///@}
  private:
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_workflowId;
-  bool m_workflowIdHasBeenSet = false;
 
   Aws::String m_runId;
+  bool m_domainHasBeenSet = false;
+  bool m_workflowIdHasBeenSet = false;
   bool m_runIdHasBeenSet = false;
 };
 

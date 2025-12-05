@@ -106,15 +106,15 @@ class GuardrailRegexConfig {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_pattern;
-  bool m_patternHasBeenSet = false;
 
   GuardrailSensitiveInformationAction m_action{GuardrailSensitiveInformationAction::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_patternHasBeenSet = false;
   bool m_actionHasBeenSet = false;
 };
 

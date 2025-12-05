@@ -69,9 +69,9 @@ class InstanceEventWindowStateChange {
   ///@}
  private:
   Aws::String m_instanceEventWindowId;
-  bool m_instanceEventWindowIdHasBeenSet = false;
 
   InstanceEventWindowState m_state{InstanceEventWindowState::NOT_SET};
+  bool m_instanceEventWindowIdHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

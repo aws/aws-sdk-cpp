@@ -144,21 +144,21 @@ class CreateRecommenderRequest : public CustomerProfilesRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_recommenderName;
-  bool m_recommenderNameHasBeenSet = false;
 
   RecommenderRecipeName m_recommenderRecipeName{RecommenderRecipeName::NOT_SET};
-  bool m_recommenderRecipeNameHasBeenSet = false;
 
   RecommenderConfig m_recommenderConfig;
-  bool m_recommenderConfigHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_domainNameHasBeenSet = false;
+  bool m_recommenderNameHasBeenSet = false;
+  bool m_recommenderRecipeNameHasBeenSet = false;
+  bool m_recommenderConfigHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

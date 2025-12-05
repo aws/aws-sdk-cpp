@@ -107,12 +107,12 @@ class WebContentFilteringPolicy {
   ///@}
  private:
   Aws::Vector<Category> m_blockedCategories;
-  bool m_blockedCategoriesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowedUrls;
-  bool m_allowedUrlsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_blockedUrls;
+  bool m_blockedCategoriesHasBeenSet = false;
+  bool m_allowedUrlsHasBeenSet = false;
   bool m_blockedUrlsHasBeenSet = false;
 };
 

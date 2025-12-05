@@ -125,18 +125,18 @@ class AccountFindingsMetric {
   ///@}
  private:
   Aws::Utils::DateTime m_date{};
-  bool m_dateHasBeenSet = false;
 
   FindingMetricsValuePerSeverity m_newFindings;
-  bool m_newFindingsHasBeenSet = false;
 
   FindingMetricsValuePerSeverity m_closedFindings;
-  bool m_closedFindingsHasBeenSet = false;
 
   FindingMetricsValuePerSeverity m_openFindings;
-  bool m_openFindingsHasBeenSet = false;
 
   FindingMetricsValuePerSeverity m_meanTimeToClose;
+  bool m_dateHasBeenSet = false;
+  bool m_newFindingsHasBeenSet = false;
+  bool m_closedFindingsHasBeenSet = false;
+  bool m_openFindingsHasBeenSet = false;
   bool m_meanTimeToCloseHasBeenSet = false;
 };
 

@@ -103,15 +103,15 @@ class ListAnomalousLogGroupsResult {
   ///@}
  private:
   Aws::String m_insightId;
-  bool m_insightIdHasBeenSet = false;
 
   Aws::Vector<AnomalousLogGroup> m_anomalousLogGroups;
-  bool m_anomalousLogGroupsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_insightIdHasBeenSet = false;
+  bool m_anomalousLogGroupsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

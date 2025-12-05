@@ -372,54 +372,54 @@ class DataMigration {
   ///@}
  private:
   Aws::String m_dataMigrationName;
-  bool m_dataMigrationNameHasBeenSet = false;
 
   Aws::String m_dataMigrationArn;
-  bool m_dataMigrationArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_dataMigrationCreateTime{};
-  bool m_dataMigrationCreateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_dataMigrationStartTime{};
-  bool m_dataMigrationStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_dataMigrationEndTime{};
-  bool m_dataMigrationEndTimeHasBeenSet = false;
 
   Aws::String m_serviceAccessRoleArn;
-  bool m_serviceAccessRoleArnHasBeenSet = false;
 
   Aws::String m_migrationProjectArn;
-  bool m_migrationProjectArnHasBeenSet = false;
 
   MigrationTypeValue m_dataMigrationType{MigrationTypeValue::NOT_SET};
-  bool m_dataMigrationTypeHasBeenSet = false;
 
   DataMigrationSettings m_dataMigrationSettings;
-  bool m_dataMigrationSettingsHasBeenSet = false;
 
   Aws::Vector<SourceDataSetting> m_sourceDataSettings;
-  bool m_sourceDataSettingsHasBeenSet = false;
 
   Aws::Vector<TargetDataSetting> m_targetDataSettings;
-  bool m_targetDataSettingsHasBeenSet = false;
 
   DataMigrationStatistics m_dataMigrationStatistics;
-  bool m_dataMigrationStatisticsHasBeenSet = false;
 
   Aws::String m_dataMigrationStatus;
-  bool m_dataMigrationStatusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_publicIpAddresses;
-  bool m_publicIpAddressesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dataMigrationCidrBlocks;
-  bool m_dataMigrationCidrBlocksHasBeenSet = false;
 
   Aws::String m_lastFailureMessage;
-  bool m_lastFailureMessageHasBeenSet = false;
 
   Aws::String m_stopReason;
+  bool m_dataMigrationNameHasBeenSet = false;
+  bool m_dataMigrationArnHasBeenSet = false;
+  bool m_dataMigrationCreateTimeHasBeenSet = false;
+  bool m_dataMigrationStartTimeHasBeenSet = false;
+  bool m_dataMigrationEndTimeHasBeenSet = false;
+  bool m_serviceAccessRoleArnHasBeenSet = false;
+  bool m_migrationProjectArnHasBeenSet = false;
+  bool m_dataMigrationTypeHasBeenSet = false;
+  bool m_dataMigrationSettingsHasBeenSet = false;
+  bool m_sourceDataSettingsHasBeenSet = false;
+  bool m_targetDataSettingsHasBeenSet = false;
+  bool m_dataMigrationStatisticsHasBeenSet = false;
+  bool m_dataMigrationStatusHasBeenSet = false;
+  bool m_publicIpAddressesHasBeenSet = false;
+  bool m_dataMigrationCidrBlocksHasBeenSet = false;
+  bool m_lastFailureMessageHasBeenSet = false;
   bool m_stopReasonHasBeenSet = false;
 };
 

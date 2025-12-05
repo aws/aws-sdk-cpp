@@ -87,9 +87,9 @@ class EvaluationRagConfigSummary {
   ///@}
  private:
   Aws::Vector<Aws::String> m_bedrockKnowledgeBaseIdentifiers;
-  bool m_bedrockKnowledgeBaseIdentifiersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_precomputedRagSourceIdentifiers;
+  bool m_bedrockKnowledgeBaseIdentifiersHasBeenSet = false;
   bool m_precomputedRagSourceIdentifiersHasBeenSet = false;
 };
 

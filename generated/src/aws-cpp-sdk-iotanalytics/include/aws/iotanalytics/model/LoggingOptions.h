@@ -84,12 +84,12 @@ class LoggingOptions {
   ///@}
  private:
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   LoggingLevel m_level{LoggingLevel::NOT_SET};
-  bool m_levelHasBeenSet = false;
 
   bool m_enabled{false};
+  bool m_roleArnHasBeenSet = false;
+  bool m_levelHasBeenSet = false;
   bool m_enabledHasBeenSet = false;
 };
 

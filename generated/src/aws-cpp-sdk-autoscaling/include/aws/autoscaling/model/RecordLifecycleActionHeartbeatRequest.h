@@ -107,15 +107,15 @@ class RecordLifecycleActionHeartbeatRequest : public AutoScalingRequest {
   ///@}
  private:
   Aws::String m_lifecycleHookName;
-  bool m_lifecycleHookNameHasBeenSet = false;
 
   Aws::String m_autoScalingGroupName;
-  bool m_autoScalingGroupNameHasBeenSet = false;
 
   Aws::String m_lifecycleActionToken;
-  bool m_lifecycleActionTokenHasBeenSet = false;
 
   Aws::String m_instanceId;
+  bool m_lifecycleHookNameHasBeenSet = false;
+  bool m_autoScalingGroupNameHasBeenSet = false;
+  bool m_lifecycleActionTokenHasBeenSet = false;
   bool m_instanceIdHasBeenSet = false;
 };
 

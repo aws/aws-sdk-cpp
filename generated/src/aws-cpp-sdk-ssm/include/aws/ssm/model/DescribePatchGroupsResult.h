@@ -89,12 +89,12 @@ class DescribePatchGroupsResult {
   ///@}
  private:
   Aws::Vector<PatchGroupPatchBaselineMapping> m_mappings;
-  bool m_mappingsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_mappingsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

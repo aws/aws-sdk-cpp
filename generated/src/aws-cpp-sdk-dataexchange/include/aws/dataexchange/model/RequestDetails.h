@@ -211,30 +211,30 @@ class RequestDetails {
   ///@}
  private:
   ExportAssetToSignedUrlRequestDetails m_exportAssetToSignedUrl;
-  bool m_exportAssetToSignedUrlHasBeenSet = false;
 
   ExportAssetsToS3RequestDetails m_exportAssetsToS3;
-  bool m_exportAssetsToS3HasBeenSet = false;
 
   ExportRevisionsToS3RequestDetails m_exportRevisionsToS3;
-  bool m_exportRevisionsToS3HasBeenSet = false;
 
   ImportAssetFromSignedUrlRequestDetails m_importAssetFromSignedUrl;
-  bool m_importAssetFromSignedUrlHasBeenSet = false;
 
   ImportAssetsFromS3RequestDetails m_importAssetsFromS3;
-  bool m_importAssetsFromS3HasBeenSet = false;
 
   ImportAssetsFromRedshiftDataSharesRequestDetails m_importAssetsFromRedshiftDataShares;
-  bool m_importAssetsFromRedshiftDataSharesHasBeenSet = false;
 
   ImportAssetFromApiGatewayApiRequestDetails m_importAssetFromApiGatewayApi;
-  bool m_importAssetFromApiGatewayApiHasBeenSet = false;
 
   CreateS3DataAccessFromS3BucketRequestDetails m_createS3DataAccessFromS3Bucket;
-  bool m_createS3DataAccessFromS3BucketHasBeenSet = false;
 
   ImportAssetsFromLakeFormationTagPolicyRequestDetails m_importAssetsFromLakeFormationTagPolicy;
+  bool m_exportAssetToSignedUrlHasBeenSet = false;
+  bool m_exportAssetsToS3HasBeenSet = false;
+  bool m_exportRevisionsToS3HasBeenSet = false;
+  bool m_importAssetFromSignedUrlHasBeenSet = false;
+  bool m_importAssetsFromS3HasBeenSet = false;
+  bool m_importAssetsFromRedshiftDataSharesHasBeenSet = false;
+  bool m_importAssetFromApiGatewayApiHasBeenSet = false;
+  bool m_createS3DataAccessFromS3BucketHasBeenSet = false;
   bool m_importAssetsFromLakeFormationTagPolicyHasBeenSet = false;
 };
 

@@ -82,12 +82,12 @@ class GetOutpostInstanceTypesRequest : public OutpostsRequest {
   ///@}
  private:
   Aws::String m_outpostId;
-  bool m_outpostIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_outpostIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

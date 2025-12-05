@@ -67,9 +67,9 @@ class DisableUserRequest : public AppStreamRequest {
   ///@}
  private:
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   AuthenticationType m_authenticationType{AuthenticationType::NOT_SET};
+  bool m_userNameHasBeenSet = false;
   bool m_authenticationTypeHasBeenSet = false;
 };
 

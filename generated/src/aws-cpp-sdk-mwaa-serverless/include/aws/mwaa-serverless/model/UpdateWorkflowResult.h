@@ -119,18 +119,18 @@ class UpdateWorkflowResult {
   ///@}
  private:
   Aws::String m_workflowArn;
-  bool m_workflowArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
-  bool m_modifiedAtHasBeenSet = false;
 
   Aws::String m_workflowVersion;
-  bool m_workflowVersionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_warnings;
-  bool m_warningsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workflowArnHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
+  bool m_workflowVersionHasBeenSet = false;
+  bool m_warningsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class UsageStatisticsSortBy {
   ///@}
  private:
   UsageStatisticsSortKey m_key{UsageStatisticsSortKey::NOT_SET};
-  bool m_keyHasBeenSet = false;
 
   OrderBy m_orderBy{OrderBy::NOT_SET};
+  bool m_keyHasBeenSet = false;
   bool m_orderByHasBeenSet = false;
 };
 

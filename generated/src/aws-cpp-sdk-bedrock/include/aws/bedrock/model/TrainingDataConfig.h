@@ -69,9 +69,9 @@ class TrainingDataConfig {
   ///@}
  private:
   Aws::String m_s3Uri;
-  bool m_s3UriHasBeenSet = false;
 
   InvocationLogsConfig m_invocationLogsConfig;
+  bool m_s3UriHasBeenSet = false;
   bool m_invocationLogsConfigHasBeenSet = false;
 };
 

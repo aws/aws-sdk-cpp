@@ -108,15 +108,15 @@ class CreateSourceNetworkRequest : public DrsRequest {
   ///@}
  private:
   Aws::String m_originAccountID;
-  bool m_originAccountIDHasBeenSet = false;
 
   Aws::String m_originRegion;
-  bool m_originRegionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_vpcID;
+  bool m_originAccountIDHasBeenSet = false;
+  bool m_originRegionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_vpcIDHasBeenSet = false;
 };
 

@@ -147,21 +147,21 @@ class ImageDiskContainer {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_deviceName;
-  bool m_deviceNameHasBeenSet = false;
 
   Aws::String m_format;
-  bool m_formatHasBeenSet = false;
 
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   UserBucket m_userBucket;
+  bool m_descriptionHasBeenSet = false;
+  bool m_deviceNameHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
+  bool m_snapshotIdHasBeenSet = false;
+  bool m_urlHasBeenSet = false;
   bool m_userBucketHasBeenSet = false;
 };
 

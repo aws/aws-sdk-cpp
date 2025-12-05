@@ -68,9 +68,9 @@ for any single frame within an encoded HDR video
   ///@}
  private:
   int m_maxCll{0};
-  bool m_maxCllHasBeenSet = false;
 
   int m_maxFall{0};
+  bool m_maxCllHasBeenSet = false;
   bool m_maxFallHasBeenSet = false;
 };
 

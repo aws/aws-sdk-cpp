@@ -91,12 +91,12 @@ class BatchGetNamedQueryResult {
   ///@}
  private:
   Aws::Vector<NamedQuery> m_namedQueries;
-  bool m_namedQueriesHasBeenSet = false;
 
   Aws::Vector<UnprocessedNamedQueryId> m_unprocessedNamedQueryIds;
-  bool m_unprocessedNamedQueryIdsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_namedQueriesHasBeenSet = false;
+  bool m_unprocessedNamedQueryIdsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

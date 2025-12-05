@@ -117,15 +117,15 @@ class OriginGroup {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   OriginGroupFailoverCriteria m_failoverCriteria;
-  bool m_failoverCriteriaHasBeenSet = false;
 
   OriginGroupMembers m_members;
-  bool m_membersHasBeenSet = false;
 
   OriginGroupSelectionCriteria m_selectionCriteria{OriginGroupSelectionCriteria::NOT_SET};
+  bool m_idHasBeenSet = false;
+  bool m_failoverCriteriaHasBeenSet = false;
+  bool m_membersHasBeenSet = false;
   bool m_selectionCriteriaHasBeenSet = false;
 };
 

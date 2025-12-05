@@ -60,9 +60,9 @@ class CreateRecordingConfigurationResult {
   ///@}
  private:
   RecordingConfiguration m_recordingConfiguration;
-  bool m_recordingConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_recordingConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -76,9 +76,9 @@ class ResourceCostCalculation {
   ///@}
  private:
   Aws::Vector<Usage> m_usages;
-  bool m_usagesHasBeenSet = false;
 
   ResourcePricing m_pricing;
+  bool m_usagesHasBeenSet = false;
   bool m_pricingHasBeenSet = false;
 };
 

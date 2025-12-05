@@ -255,30 +255,30 @@ class CisScanResultsAggregatedByTargetResourceFilterCriteria {
   ///@}
  private:
   Aws::Vector<CisStringFilter> m_accountIdFilters;
-  bool m_accountIdFiltersHasBeenSet = false;
 
   Aws::Vector<CisResultStatusFilter> m_statusFilters;
-  bool m_statusFiltersHasBeenSet = false;
 
   Aws::Vector<CisStringFilter> m_checkIdFilters;
-  bool m_checkIdFiltersHasBeenSet = false;
 
   Aws::Vector<CisStringFilter> m_targetResourceIdFilters;
-  bool m_targetResourceIdFiltersHasBeenSet = false;
 
   Aws::Vector<TagFilter> m_targetResourceTagFilters;
-  bool m_targetResourceTagFiltersHasBeenSet = false;
 
   Aws::Vector<CisStringFilter> m_platformFilters;
-  bool m_platformFiltersHasBeenSet = false;
 
   Aws::Vector<CisTargetStatusFilter> m_targetStatusFilters;
-  bool m_targetStatusFiltersHasBeenSet = false;
 
   Aws::Vector<CisTargetStatusReasonFilter> m_targetStatusReasonFilters;
-  bool m_targetStatusReasonFiltersHasBeenSet = false;
 
   Aws::Vector<CisNumberFilter> m_failedChecksFilters;
+  bool m_accountIdFiltersHasBeenSet = false;
+  bool m_statusFiltersHasBeenSet = false;
+  bool m_checkIdFiltersHasBeenSet = false;
+  bool m_targetResourceIdFiltersHasBeenSet = false;
+  bool m_targetResourceTagFiltersHasBeenSet = false;
+  bool m_platformFiltersHasBeenSet = false;
+  bool m_targetStatusFiltersHasBeenSet = false;
+  bool m_targetStatusReasonFiltersHasBeenSet = false;
   bool m_failedChecksFiltersHasBeenSet = false;
 };
 

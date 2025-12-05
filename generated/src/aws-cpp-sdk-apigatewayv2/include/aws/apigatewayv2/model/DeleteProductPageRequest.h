@@ -65,9 +65,9 @@ class DeleteProductPageRequest : public ApiGatewayV2Request {
   ///@}
  private:
   Aws::String m_portalProductId;
-  bool m_portalProductIdHasBeenSet = false;
 
   Aws::String m_productPageId;
+  bool m_portalProductIdHasBeenSet = false;
   bool m_productPageIdHasBeenSet = false;
 };
 

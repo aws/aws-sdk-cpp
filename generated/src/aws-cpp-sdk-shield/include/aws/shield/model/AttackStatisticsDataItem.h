@@ -70,9 +70,9 @@ class AttackStatisticsDataItem {
   ///@}
  private:
   AttackVolume m_attackVolume;
-  bool m_attackVolumeHasBeenSet = false;
 
   long long m_attackCount{0};
+  bool m_attackVolumeHasBeenSet = false;
   bool m_attackCountHasBeenSet = false;
 };
 

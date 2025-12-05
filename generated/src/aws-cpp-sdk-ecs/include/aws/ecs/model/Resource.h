@@ -148,21 +148,21 @@ class Resource {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   double m_doubleValue{0.0};
-  bool m_doubleValueHasBeenSet = false;
 
   long long m_longValue{0};
-  bool m_longValueHasBeenSet = false;
 
   int m_integerValue{0};
-  bool m_integerValueHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_stringSetValue;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_doubleValueHasBeenSet = false;
+  bool m_longValueHasBeenSet = false;
+  bool m_integerValueHasBeenSet = false;
   bool m_stringSetValueHasBeenSet = false;
 };
 

@@ -110,15 +110,15 @@ class RedisEnterpriseCloudConfiguration {
   ///@}
  private:
   Aws::String m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   Aws::String m_vectorIndexName;
-  bool m_vectorIndexNameHasBeenSet = false;
 
   Aws::String m_credentialsSecretArn;
-  bool m_credentialsSecretArnHasBeenSet = false;
 
   RedisEnterpriseCloudFieldMapping m_fieldMapping;
+  bool m_endpointHasBeenSet = false;
+  bool m_vectorIndexNameHasBeenSet = false;
+  bool m_credentialsSecretArnHasBeenSet = false;
   bool m_fieldMappingHasBeenSet = false;
 };
 

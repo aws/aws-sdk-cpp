@@ -196,30 +196,30 @@ class CanaryRun {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_scheduledRunId;
-  bool m_scheduledRunIdHasBeenSet = false;
 
   int m_retryAttempt{0};
-  bool m_retryAttemptHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   CanaryRunStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   CanaryRunTimeline m_timeline;
-  bool m_timelineHasBeenSet = false;
 
   Aws::String m_artifactS3Location;
-  bool m_artifactS3LocationHasBeenSet = false;
 
   CanaryDryRunConfigOutput m_dryRunConfig;
-  bool m_dryRunConfigHasBeenSet = false;
 
   BrowserType m_browserType{BrowserType::NOT_SET};
+  bool m_idHasBeenSet = false;
+  bool m_scheduledRunIdHasBeenSet = false;
+  bool m_retryAttemptHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_timelineHasBeenSet = false;
+  bool m_artifactS3LocationHasBeenSet = false;
+  bool m_dryRunConfigHasBeenSet = false;
   bool m_browserTypeHasBeenSet = false;
 };
 

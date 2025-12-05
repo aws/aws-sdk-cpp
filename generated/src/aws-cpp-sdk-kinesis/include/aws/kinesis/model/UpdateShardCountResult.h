@@ -106,18 +106,18 @@ class UpdateShardCountResult {
   ///@}
  private:
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   int m_currentShardCount{0};
-  bool m_currentShardCountHasBeenSet = false;
 
   int m_targetShardCount{0};
-  bool m_targetShardCountHasBeenSet = false;
 
   Aws::String m_streamARN;
-  bool m_streamARNHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_streamNameHasBeenSet = false;
+  bool m_currentShardCountHasBeenSet = false;
+  bool m_targetShardCountHasBeenSet = false;
+  bool m_streamARNHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

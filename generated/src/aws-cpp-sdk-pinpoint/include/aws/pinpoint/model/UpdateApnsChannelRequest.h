@@ -65,9 +65,9 @@ class UpdateApnsChannelRequest : public PinpointRequest {
   ///@}
  private:
   APNSChannelRequest m_aPNSChannelRequest;
-  bool m_aPNSChannelRequestHasBeenSet = false;
 
   Aws::String m_applicationId;
+  bool m_aPNSChannelRequestHasBeenSet = false;
   bool m_applicationIdHasBeenSet = false;
 };
 

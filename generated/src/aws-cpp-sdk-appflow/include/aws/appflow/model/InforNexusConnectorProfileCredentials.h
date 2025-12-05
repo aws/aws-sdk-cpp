@@ -105,15 +105,15 @@ class InforNexusConnectorProfileCredentials {
   ///@}
  private:
   Aws::String m_accessKeyId;
-  bool m_accessKeyIdHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_secretAccessKey;
-  bool m_secretAccessKeyHasBeenSet = false;
 
   Aws::String m_datakey;
+  bool m_accessKeyIdHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_secretAccessKeyHasBeenSet = false;
   bool m_datakeyHasBeenSet = false;
 };
 

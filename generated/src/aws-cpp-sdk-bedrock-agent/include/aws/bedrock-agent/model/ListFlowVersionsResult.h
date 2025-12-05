@@ -86,12 +86,12 @@ class ListFlowVersionsResult {
   ///@}
  private:
   Aws::Vector<FlowVersionSummary> m_flowVersionSummaries;
-  bool m_flowVersionSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_flowVersionSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

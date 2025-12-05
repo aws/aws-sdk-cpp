@@ -60,9 +60,9 @@ class UpdateLinkResult {
   ///@}
  private:
   Link m_link;
-  bool m_linkHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_linkHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

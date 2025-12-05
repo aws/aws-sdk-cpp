@@ -152,24 +152,24 @@ class CreateBlueprintRequest : public BedrockDataAutomationRequest {
   ///@}
  private:
   Aws::String m_blueprintName;
-  bool m_blueprintNameHasBeenSet = false;
 
   Type m_type{Type::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   BlueprintStage m_blueprintStage{BlueprintStage::NOT_SET};
-  bool m_blueprintStageHasBeenSet = false;
 
   Aws::String m_schema;
-  bool m_schemaHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   EncryptionConfiguration m_encryptionConfiguration;
-  bool m_encryptionConfigurationHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_blueprintNameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_blueprintStageHasBeenSet = false;
+  bool m_schemaHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_encryptionConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

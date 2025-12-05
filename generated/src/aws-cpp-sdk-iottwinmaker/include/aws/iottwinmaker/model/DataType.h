@@ -131,18 +131,18 @@ class DataType {
   ///@}
  private:
   Type m_type{Type::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   std::shared_ptr<DataType> m_nestedType;
-  bool m_nestedTypeHasBeenSet = false;
 
   Aws::Vector<DataValue> m_allowedValues;
-  bool m_allowedValuesHasBeenSet = false;
 
   Aws::String m_unitOfMeasure;
-  bool m_unitOfMeasureHasBeenSet = false;
 
   Relationship m_relationship;
+  bool m_typeHasBeenSet = false;
+  bool m_nestedTypeHasBeenSet = false;
+  bool m_allowedValuesHasBeenSet = false;
+  bool m_unitOfMeasureHasBeenSet = false;
   bool m_relationshipHasBeenSet = false;
 };
 

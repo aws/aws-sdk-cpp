@@ -142,21 +142,21 @@ class StartPlanExecutionRequest : public ARCRegionswitchRequest {
   ///@}
  private:
   Aws::String m_planArn;
-  bool m_planArnHasBeenSet = false;
 
   Aws::String m_targetRegion;
-  bool m_targetRegionHasBeenSet = false;
 
   ExecutionAction m_action{ExecutionAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   ExecutionMode m_mode{ExecutionMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   Aws::String m_latestVersion;
+  bool m_planArnHasBeenSet = false;
+  bool m_targetRegionHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_modeHasBeenSet = false;
+  bool m_commentHasBeenSet = false;
   bool m_latestVersionHasBeenSet = false;
 };
 

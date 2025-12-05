@@ -214,30 +214,30 @@ class PushBaiduMessageTemplateContent {
   ///@}
  private:
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   MessageTemplateBodyContentProvider m_body;
-  bool m_bodyHasBeenSet = false;
 
   PushMessageAction m_action{PushMessageAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_sound;
-  bool m_soundHasBeenSet = false;
 
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::String m_imageUrl;
-  bool m_imageUrlHasBeenSet = false;
 
   Aws::String m_imageIconUrl;
-  bool m_imageIconUrlHasBeenSet = false;
 
   Aws::String m_smallImageIconUrl;
-  bool m_smallImageIconUrlHasBeenSet = false;
 
   MessageTemplateBodyContentProvider m_rawContent;
+  bool m_titleHasBeenSet = false;
+  bool m_bodyHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_soundHasBeenSet = false;
+  bool m_urlHasBeenSet = false;
+  bool m_imageUrlHasBeenSet = false;
+  bool m_imageIconUrlHasBeenSet = false;
+  bool m_smallImageIconUrlHasBeenSet = false;
   bool m_rawContentHasBeenSet = false;
 };
 

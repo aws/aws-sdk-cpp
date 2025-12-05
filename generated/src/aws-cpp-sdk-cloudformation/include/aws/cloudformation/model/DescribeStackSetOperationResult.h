@@ -61,9 +61,9 @@ class DescribeStackSetOperationResult {
   ///@}
  private:
   StackSetOperation m_stackSetOperation;
-  bool m_stackSetOperationHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_stackSetOperationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

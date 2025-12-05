@@ -172,24 +172,24 @@ class AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails {
   ///@}
  private:
   AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails m_capabilities;
-  bool m_capabilitiesHasBeenSet = false;
 
   Aws::Vector<AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails> m_devices;
-  bool m_devicesHasBeenSet = false;
 
   bool m_initProcessEnabled{false};
-  bool m_initProcessEnabledHasBeenSet = false;
 
   int m_maxSwap{0};
-  bool m_maxSwapHasBeenSet = false;
 
   int m_sharedMemorySize{0};
-  bool m_sharedMemorySizeHasBeenSet = false;
 
   int m_swappiness{0};
-  bool m_swappinessHasBeenSet = false;
 
   Aws::Vector<AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails> m_tmpfs;
+  bool m_capabilitiesHasBeenSet = false;
+  bool m_devicesHasBeenSet = false;
+  bool m_initProcessEnabledHasBeenSet = false;
+  bool m_maxSwapHasBeenSet = false;
+  bool m_sharedMemorySizeHasBeenSet = false;
+  bool m_swappinessHasBeenSet = false;
   bool m_tmpfsHasBeenSet = false;
 };
 

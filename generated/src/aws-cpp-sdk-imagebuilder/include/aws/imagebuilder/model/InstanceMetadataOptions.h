@@ -83,9 +83,9 @@ class InstanceMetadataOptions {
   ///@}
  private:
   Aws::String m_httpTokens;
-  bool m_httpTokensHasBeenSet = false;
 
   int m_httpPutResponseHopLimit{0};
+  bool m_httpTokensHasBeenSet = false;
   bool m_httpPutResponseHopLimitHasBeenSet = false;
 };
 

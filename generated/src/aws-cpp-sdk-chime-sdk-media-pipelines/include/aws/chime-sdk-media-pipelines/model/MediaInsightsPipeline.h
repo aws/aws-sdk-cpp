@@ -248,33 +248,33 @@ class MediaInsightsPipeline {
   ///@}
  private:
   Aws::String m_mediaPipelineId;
-  bool m_mediaPipelineIdHasBeenSet = false;
 
   Aws::String m_mediaPipelineArn;
-  bool m_mediaPipelineArnHasBeenSet = false;
 
   Aws::String m_mediaInsightsPipelineConfigurationArn;
-  bool m_mediaInsightsPipelineConfigurationArnHasBeenSet = false;
 
   MediaPipelineStatus m_status{MediaPipelineStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   KinesisVideoStreamSourceRuntimeConfiguration m_kinesisVideoStreamSourceRuntimeConfiguration;
-  bool m_kinesisVideoStreamSourceRuntimeConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_mediaInsightsRuntimeMetadata;
-  bool m_mediaInsightsRuntimeMetadataHasBeenSet = false;
 
   KinesisVideoStreamRecordingSourceRuntimeConfiguration m_kinesisVideoStreamRecordingSourceRuntimeConfiguration;
-  bool m_kinesisVideoStreamRecordingSourceRuntimeConfigurationHasBeenSet = false;
 
   S3RecordingSinkRuntimeConfiguration m_s3RecordingSinkRuntimeConfiguration;
-  bool m_s3RecordingSinkRuntimeConfigurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Vector<MediaInsightsPipelineElementStatus> m_elementStatuses;
+  bool m_mediaPipelineIdHasBeenSet = false;
+  bool m_mediaPipelineArnHasBeenSet = false;
+  bool m_mediaInsightsPipelineConfigurationArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_kinesisVideoStreamSourceRuntimeConfigurationHasBeenSet = false;
+  bool m_mediaInsightsRuntimeMetadataHasBeenSet = false;
+  bool m_kinesisVideoStreamRecordingSourceRuntimeConfigurationHasBeenSet = false;
+  bool m_s3RecordingSinkRuntimeConfigurationHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
   bool m_elementStatusesHasBeenSet = false;
 };
 

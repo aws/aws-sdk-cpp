@@ -150,21 +150,21 @@ class UpdateEndpointRequest : public EventBridgeRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   RoutingConfig m_routingConfig;
-  bool m_routingConfigHasBeenSet = false;
 
   ReplicationConfig m_replicationConfig;
-  bool m_replicationConfigHasBeenSet = false;
 
   Aws::Vector<EndpointEventBus> m_eventBuses;
-  bool m_eventBusesHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_routingConfigHasBeenSet = false;
+  bool m_replicationConfigHasBeenSet = false;
+  bool m_eventBusesHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

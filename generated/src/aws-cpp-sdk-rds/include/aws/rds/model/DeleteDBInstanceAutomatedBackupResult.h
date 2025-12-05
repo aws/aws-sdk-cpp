@@ -58,9 +58,9 @@ class DeleteDBInstanceAutomatedBackupResult {
   ///@}
  private:
   DBInstanceAutomatedBackup m_dBInstanceAutomatedBackup;
-  bool m_dBInstanceAutomatedBackupHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_dBInstanceAutomatedBackupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

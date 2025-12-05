@@ -112,15 +112,15 @@ class CreateMeetingWithAttendeesResult {
   ///@}
  private:
   Meeting m_meeting;
-  bool m_meetingHasBeenSet = false;
 
   Aws::Vector<Attendee> m_attendees;
-  bool m_attendeesHasBeenSet = false;
 
   Aws::Vector<CreateAttendeeError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_meetingHasBeenSet = false;
+  bool m_attendeesHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

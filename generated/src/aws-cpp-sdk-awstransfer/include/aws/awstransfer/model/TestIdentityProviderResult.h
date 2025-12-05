@@ -112,18 +112,18 @@ class TestIdentityProviderResult {
   ///@}
  private:
   Aws::String m_response;
-  bool m_responseHasBeenSet = false;
 
   int m_statusCode{0};
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_responseHasBeenSet = false;
+  bool m_statusCodeHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_urlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

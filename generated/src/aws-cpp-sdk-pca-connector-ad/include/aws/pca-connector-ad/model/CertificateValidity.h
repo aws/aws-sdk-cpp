@@ -85,9 +85,9 @@ class CertificateValidity {
   ///@}
  private:
   ValidityPeriod m_renewalPeriod;
-  bool m_renewalPeriodHasBeenSet = false;
 
   ValidityPeriod m_validityPeriod;
+  bool m_renewalPeriodHasBeenSet = false;
   bool m_validityPeriodHasBeenSet = false;
 };
 

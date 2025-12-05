@@ -89,12 +89,12 @@ class CloudWatchLogsLogGroupArnConfigDetails {
   ///@}
  private:
   Aws::String m_cloudWatchLogsLogGroupArn;
-  bool m_cloudWatchLogsLogGroupArnHasBeenSet = false;
 
   Aws::String m_hostedZoneId;
-  bool m_hostedZoneIdHasBeenSet = false;
 
   Aws::String m_id;
+  bool m_cloudWatchLogsLogGroupArnHasBeenSet = false;
+  bool m_hostedZoneIdHasBeenSet = false;
   bool m_idHasBeenSet = false;
 };
 

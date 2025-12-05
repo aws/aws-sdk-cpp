@@ -76,12 +76,12 @@ class DeleteApplicationInputProcessingConfigurationResult {
   ///@}
  private:
   Aws::String m_applicationARN;
-  bool m_applicationARNHasBeenSet = false;
 
   long long m_applicationVersionId{0};
-  bool m_applicationVersionIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationARNHasBeenSet = false;
+  bool m_applicationVersionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

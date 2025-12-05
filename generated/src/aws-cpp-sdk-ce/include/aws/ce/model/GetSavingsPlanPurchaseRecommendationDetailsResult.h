@@ -80,12 +80,12 @@ class GetSavingsPlanPurchaseRecommendationDetailsResult {
   ///@}
  private:
   Aws::String m_recommendationDetailId;
-  bool m_recommendationDetailIdHasBeenSet = false;
 
   RecommendationDetailData m_recommendationDetailData;
-  bool m_recommendationDetailDataHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_recommendationDetailIdHasBeenSet = false;
+  bool m_recommendationDetailDataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -92,12 +92,12 @@ class BatchUpdateAutomationRulesResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_processedAutomationRules;
-  bool m_processedAutomationRulesHasBeenSet = false;
 
   Aws::Vector<UnprocessedAutomationRule> m_unprocessedAutomationRules;
-  bool m_unprocessedAutomationRulesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_processedAutomationRulesHasBeenSet = false;
+  bool m_unprocessedAutomationRulesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

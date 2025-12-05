@@ -157,24 +157,24 @@ class UpdateConfigurationResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_created{};
-  bool m_createdHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   ConfigurationRevision m_latestRevision;
-  bool m_latestRevisionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<SanitizationWarning> m_warnings;
-  bool m_warningsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_createdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_latestRevisionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_warningsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

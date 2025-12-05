@@ -89,12 +89,12 @@ class VerifiedAccessEndpointTarget {
   ///@}
  private:
   Aws::String m_verifiedAccessEndpointId;
-  bool m_verifiedAccessEndpointIdHasBeenSet = false;
 
   Aws::String m_verifiedAccessEndpointTargetIpAddress;
-  bool m_verifiedAccessEndpointTargetIpAddressHasBeenSet = false;
 
   Aws::String m_verifiedAccessEndpointTargetDns;
+  bool m_verifiedAccessEndpointIdHasBeenSet = false;
+  bool m_verifiedAccessEndpointTargetIpAddressHasBeenSet = false;
   bool m_verifiedAccessEndpointTargetDnsHasBeenSet = false;
 };
 

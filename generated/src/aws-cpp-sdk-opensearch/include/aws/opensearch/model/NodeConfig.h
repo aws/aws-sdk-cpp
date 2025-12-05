@@ -82,12 +82,12 @@ class NodeConfig {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   OpenSearchPartitionInstanceType m_type{OpenSearchPartitionInstanceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   int m_count{0};
+  bool m_enabledHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_countHasBeenSet = false;
 };
 

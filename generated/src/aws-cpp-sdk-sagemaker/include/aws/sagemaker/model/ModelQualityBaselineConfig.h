@@ -70,9 +70,9 @@ class ModelQualityBaselineConfig {
   ///@}
  private:
   Aws::String m_baseliningJobName;
-  bool m_baseliningJobNameHasBeenSet = false;
 
   MonitoringConstraintsResource m_constraintsResource;
+  bool m_baseliningJobNameHasBeenSet = false;
   bool m_constraintsResourceHasBeenSet = false;
 };
 

@@ -64,9 +64,9 @@ class CallbackOptions {
   ///@}
  private:
   int m_timeoutSeconds{0};
-  bool m_timeoutSecondsHasBeenSet = false;
 
   int m_heartbeatTimeoutSeconds{0};
+  bool m_timeoutSecondsHasBeenSet = false;
   bool m_heartbeatTimeoutSecondsHasBeenSet = false;
 };
 

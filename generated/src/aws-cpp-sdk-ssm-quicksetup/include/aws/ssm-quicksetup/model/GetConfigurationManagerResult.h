@@ -202,30 +202,30 @@ class GetConfigurationManagerResult {
   ///@}
  private:
   Aws::Vector<ConfigurationDefinition> m_configurationDefinitions;
-  bool m_configurationDefinitionsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedAt{};
-  bool m_lastModifiedAtHasBeenSet = false;
 
   Aws::String m_managerArn;
-  bool m_managerArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<StatusSummary> m_statusSummaries;
-  bool m_statusSummariesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_configurationDefinitionsHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_lastModifiedAtHasBeenSet = false;
+  bool m_managerArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusSummariesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -92,12 +92,12 @@ class TokenIdentifier {
   ///@}
  private:
   QueryNetwork m_network{QueryNetwork::NOT_SET};
-  bool m_networkHasBeenSet = false;
 
   Aws::String m_contractAddress;
-  bool m_contractAddressHasBeenSet = false;
 
   Aws::String m_tokenId;
+  bool m_networkHasBeenSet = false;
+  bool m_contractAddressHasBeenSet = false;
   bool m_tokenIdHasBeenSet = false;
 };
 

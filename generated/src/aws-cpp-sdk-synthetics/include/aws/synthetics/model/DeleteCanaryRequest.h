@@ -75,9 +75,9 @@ class DeleteCanaryRequest : public SyntheticsRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   bool m_deleteLambda{false};
+  bool m_nameHasBeenSet = false;
   bool m_deleteLambdaHasBeenSet = false;
 };
 

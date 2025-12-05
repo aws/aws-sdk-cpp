@@ -102,15 +102,15 @@ class ListAppInstanceAdminsResult {
   ///@}
  private:
   Aws::String m_appInstanceArn;
-  bool m_appInstanceArnHasBeenSet = false;
 
   Aws::Vector<AppInstanceAdminSummary> m_appInstanceAdmins;
-  bool m_appInstanceAdminsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appInstanceArnHasBeenSet = false;
+  bool m_appInstanceAdminsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

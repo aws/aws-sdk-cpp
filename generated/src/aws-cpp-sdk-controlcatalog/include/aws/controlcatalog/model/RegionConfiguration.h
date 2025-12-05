@@ -96,9 +96,9 @@ class RegionConfiguration {
   ///@}
  private:
   ControlScope m_scope{ControlScope::NOT_SET};
-  bool m_scopeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_deployableRegions;
+  bool m_scopeHasBeenSet = false;
   bool m_deployableRegionsHasBeenSet = false;
 };
 

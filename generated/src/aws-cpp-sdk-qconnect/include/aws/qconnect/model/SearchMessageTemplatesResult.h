@@ -85,12 +85,12 @@ class SearchMessageTemplatesResult {
   ///@}
  private:
   Aws::Vector<MessageTemplateSearchResultData> m_results;
-  bool m_resultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

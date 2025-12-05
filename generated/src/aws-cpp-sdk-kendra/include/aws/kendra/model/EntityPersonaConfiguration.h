@@ -76,9 +76,9 @@ class EntityPersonaConfiguration {
   ///@}
  private:
   Aws::String m_entityId;
-  bool m_entityIdHasBeenSet = false;
 
   Persona m_persona{Persona::NOT_SET};
+  bool m_entityIdHasBeenSet = false;
   bool m_personaHasBeenSet = false;
 };
 

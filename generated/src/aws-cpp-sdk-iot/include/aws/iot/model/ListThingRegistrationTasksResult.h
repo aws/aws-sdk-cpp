@@ -84,12 +84,12 @@ class ListThingRegistrationTasksResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_taskIds;
-  bool m_taskIdsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_taskIdsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

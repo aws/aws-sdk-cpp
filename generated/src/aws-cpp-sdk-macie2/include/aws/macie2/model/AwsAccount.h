@@ -71,9 +71,9 @@ class AwsAccount {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_principalId;
+  bool m_accountIdHasBeenSet = false;
   bool m_principalIdHasBeenSet = false;
 };
 

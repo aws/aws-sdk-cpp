@@ -73,9 +73,9 @@ class StorageLensTableDestination {
   ///@}
  private:
   bool m_isEnabled{false};
-  bool m_isEnabledHasBeenSet = false;
 
   StorageLensDataExportEncryption m_encryption;
+  bool m_isEnabledHasBeenSet = false;
   bool m_encryptionHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class DescribeUserHierarchyStructureResult {
   ///@}
  private:
   HierarchyStructure m_hierarchyStructure;
-  bool m_hierarchyStructureHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_hierarchyStructureHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

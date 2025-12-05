@@ -183,27 +183,27 @@ class CreateEphemerisRequest : public GroundStationRequest {
   ///@}
  private:
   Aws::String m_satelliteId;
-  bool m_satelliteIdHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   Aws::Utils::DateTime m_expirationTime{};
-  bool m_expirationTimeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   EphemerisData m_ephemeris;
-  bool m_ephemerisHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_satelliteIdHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_expirationTimeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
+  bool m_ephemerisHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

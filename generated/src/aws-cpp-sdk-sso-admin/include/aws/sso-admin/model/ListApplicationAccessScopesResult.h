@@ -90,12 +90,12 @@ class ListApplicationAccessScopesResult {
   ///@}
  private:
   Aws::Vector<ScopeDetails> m_scopes;
-  bool m_scopesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_scopesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

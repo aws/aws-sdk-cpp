@@ -75,9 +75,9 @@ class TagResourceRequest : public PCSRequest {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_resourceArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

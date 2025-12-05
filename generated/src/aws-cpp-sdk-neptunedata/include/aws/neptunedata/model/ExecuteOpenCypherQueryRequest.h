@@ -67,9 +67,9 @@ class ExecuteOpenCypherQueryRequest : public NeptunedataRequest {
   ///@}
  private:
   Aws::String m_openCypherQuery;
-  bool m_openCypherQueryHasBeenSet = false;
 
   Aws::String m_parameters;
+  bool m_openCypherQueryHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

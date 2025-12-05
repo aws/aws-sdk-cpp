@@ -300,45 +300,45 @@ class ContentData {
   ///@}
  private:
   Aws::String m_contentArn;
-  bool m_contentArnHasBeenSet = false;
 
   Aws::String m_contentId;
-  bool m_contentIdHasBeenSet = false;
 
   Aws::String m_knowledgeBaseArn;
-  bool m_knowledgeBaseArnHasBeenSet = false;
 
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_revisionId;
-  bool m_revisionIdHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   ContentStatus m_status{ContentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_linkOutUri;
-  bool m_linkOutUriHasBeenSet = false;
 
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::Utils::DateTime m_urlExpiry{};
+  bool m_contentArnHasBeenSet = false;
+  bool m_contentIdHasBeenSet = false;
+  bool m_knowledgeBaseArnHasBeenSet = false;
+  bool m_knowledgeBaseIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_revisionIdHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_linkOutUriHasBeenSet = false;
+  bool m_urlHasBeenSet = false;
   bool m_urlExpiryHasBeenSet = false;
 };
 

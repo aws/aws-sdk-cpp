@@ -85,12 +85,12 @@ class InvalidSignalDecoder {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   SignalDecoderFailureReason m_reason{SignalDecoderFailureReason::NOT_SET};
-  bool m_reasonHasBeenSet = false;
 
   Aws::String m_hint;
+  bool m_nameHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
   bool m_hintHasBeenSet = false;
 };
 

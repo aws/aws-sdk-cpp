@@ -82,12 +82,12 @@ class DescribeComponentResult {
   ///@}
  private:
   ApplicationComponent m_applicationComponent;
-  bool m_applicationComponentHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceList;
-  bool m_resourceListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationComponentHasBeenSet = false;
+  bool m_resourceListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

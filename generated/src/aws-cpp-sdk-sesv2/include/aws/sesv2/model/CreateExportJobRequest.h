@@ -70,9 +70,9 @@ class CreateExportJobRequest : public SESV2Request {
   ///@}
  private:
   ExportDataSource m_exportDataSource;
-  bool m_exportDataSourceHasBeenSet = false;
 
   ExportDestination m_exportDestination;
+  bool m_exportDataSourceHasBeenSet = false;
   bool m_exportDestinationHasBeenSet = false;
 };
 

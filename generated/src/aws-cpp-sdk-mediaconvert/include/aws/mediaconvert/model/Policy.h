@@ -83,12 +83,12 @@ class Policy {
   ///@}
  private:
   InputPolicy m_httpInputs{InputPolicy::NOT_SET};
-  bool m_httpInputsHasBeenSet = false;
 
   InputPolicy m_httpsInputs{InputPolicy::NOT_SET};
-  bool m_httpsInputsHasBeenSet = false;
 
   InputPolicy m_s3Inputs{InputPolicy::NOT_SET};
+  bool m_httpInputsHasBeenSet = false;
+  bool m_httpsInputsHasBeenSet = false;
   bool m_s3InputsHasBeenSet = false;
 };
 

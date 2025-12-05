@@ -308,51 +308,51 @@ class GetTaskInstanceResult {
   ///@}
  private:
   Aws::String m_workflowArn;
-  bool m_workflowArnHasBeenSet = false;
 
   Aws::String m_runId;
-  bool m_runIdHasBeenSet = false;
 
   Aws::String m_taskInstanceId;
-  bool m_taskInstanceIdHasBeenSet = false;
 
   Aws::String m_workflowVersion;
-  bool m_workflowVersionHasBeenSet = false;
 
   TaskInstanceStatus m_status{TaskInstanceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   int m_durationInSeconds{0};
-  bool m_durationInSecondsHasBeenSet = false;
 
   Aws::String m_operatorName;
-  bool m_operatorNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
-  bool m_modifiedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_endedAt{};
-  bool m_endedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   int m_attemptNumber{0};
-  bool m_attemptNumberHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   Aws::String m_logStream;
-  bool m_logStreamHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_xcom;
-  bool m_xcomHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workflowArnHasBeenSet = false;
+  bool m_runIdHasBeenSet = false;
+  bool m_taskInstanceIdHasBeenSet = false;
+  bool m_workflowVersionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_durationInSecondsHasBeenSet = false;
+  bool m_operatorNameHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
+  bool m_endedAtHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_attemptNumberHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_taskIdHasBeenSet = false;
+  bool m_logStreamHasBeenSet = false;
+  bool m_xcomHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

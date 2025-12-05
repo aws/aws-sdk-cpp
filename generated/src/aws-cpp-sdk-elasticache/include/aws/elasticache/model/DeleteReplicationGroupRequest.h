@@ -94,12 +94,12 @@ class DeleteReplicationGroupRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_replicationGroupId;
-  bool m_replicationGroupIdHasBeenSet = false;
 
   bool m_retainPrimaryCluster{false};
-  bool m_retainPrimaryClusterHasBeenSet = false;
 
   Aws::String m_finalSnapshotIdentifier;
+  bool m_replicationGroupIdHasBeenSet = false;
+  bool m_retainPrimaryClusterHasBeenSet = false;
   bool m_finalSnapshotIdentifierHasBeenSet = false;
 };
 

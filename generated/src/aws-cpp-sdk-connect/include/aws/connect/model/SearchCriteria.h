@@ -273,36 +273,36 @@ class SearchCriteria {
   ///@}
  private:
   NameCriteria m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_agentIds;
-  bool m_agentIdsHasBeenSet = false;
 
   AgentHierarchyGroups m_agentHierarchyGroups;
-  bool m_agentHierarchyGroupsHasBeenSet = false;
 
   Aws::Vector<Channel> m_channels;
-  bool m_channelsHasBeenSet = false;
 
   ContactAnalysis m_contactAnalysis;
-  bool m_contactAnalysisHasBeenSet = false;
 
   Aws::Vector<ContactInitiationMethod> m_initiationMethods;
-  bool m_initiationMethodsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_queueIds;
-  bool m_queueIdsHasBeenSet = false;
 
   SearchableRoutingCriteria m_routingCriteria;
-  bool m_routingCriteriaHasBeenSet = false;
 
   SearchContactsAdditionalTimeRange m_additionalTimeRange;
-  bool m_additionalTimeRangeHasBeenSet = false;
 
   SearchableContactAttributes m_searchableContactAttributes;
-  bool m_searchableContactAttributesHasBeenSet = false;
 
   SearchableSegmentAttributes m_searchableSegmentAttributes;
+  bool m_nameHasBeenSet = false;
+  bool m_agentIdsHasBeenSet = false;
+  bool m_agentHierarchyGroupsHasBeenSet = false;
+  bool m_channelsHasBeenSet = false;
+  bool m_contactAnalysisHasBeenSet = false;
+  bool m_initiationMethodsHasBeenSet = false;
+  bool m_queueIdsHasBeenSet = false;
+  bool m_routingCriteriaHasBeenSet = false;
+  bool m_additionalTimeRangeHasBeenSet = false;
+  bool m_searchableContactAttributesHasBeenSet = false;
   bool m_searchableSegmentAttributesHasBeenSet = false;
 };
 

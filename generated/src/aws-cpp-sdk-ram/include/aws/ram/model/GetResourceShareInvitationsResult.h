@@ -89,12 +89,12 @@ class GetResourceShareInvitationsResult {
   ///@}
  private:
   Aws::Vector<ResourceShareInvitation> m_resourceShareInvitations;
-  bool m_resourceShareInvitationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceShareInvitationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

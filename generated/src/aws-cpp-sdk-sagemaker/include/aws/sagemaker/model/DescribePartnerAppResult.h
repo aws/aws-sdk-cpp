@@ -387,63 +387,63 @@ class DescribePartnerAppResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   PartnerAppType m_type{PartnerAppType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   PartnerAppStatus m_status{PartnerAppStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_baseUrl;
-  bool m_baseUrlHasBeenSet = false;
 
   PartnerAppMaintenanceConfig m_maintenanceConfig;
-  bool m_maintenanceConfigHasBeenSet = false;
 
   Aws::String m_tier;
-  bool m_tierHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   PartnerAppConfig m_applicationConfig;
-  bool m_applicationConfigHasBeenSet = false;
 
   PartnerAppAuthType m_authType{PartnerAppAuthType::NOT_SET};
-  bool m_authTypeHasBeenSet = false;
 
   bool m_enableIamSessionBasedIdentity{false};
-  bool m_enableIamSessionBasedIdentityHasBeenSet = false;
 
   ErrorInfo m_error;
-  bool m_errorHasBeenSet = false;
 
   bool m_enableAutoMinorVersionUpgrade{false};
-  bool m_enableAutoMinorVersionUpgradeHasBeenSet = false;
 
   Aws::Utils::DateTime m_currentVersionEolDate{};
-  bool m_currentVersionEolDateHasBeenSet = false;
 
   AvailableUpgrade m_availableUpgrade;
-  bool m_availableUpgradeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_executionRoleArnHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_baseUrlHasBeenSet = false;
+  bool m_maintenanceConfigHasBeenSet = false;
+  bool m_tierHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_applicationConfigHasBeenSet = false;
+  bool m_authTypeHasBeenSet = false;
+  bool m_enableIamSessionBasedIdentityHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
+  bool m_enableAutoMinorVersionUpgradeHasBeenSet = false;
+  bool m_currentVersionEolDateHasBeenSet = false;
+  bool m_availableUpgradeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -139,21 +139,21 @@ class AutoScalingConfiguration {
   ///@}
  private:
   int m_minNodeCount{0};
-  bool m_minNodeCountHasBeenSet = false;
 
   int m_maxNodeCount{0};
-  bool m_maxNodeCountHasBeenSet = false;
 
   AutoScalingMetric m_autoScalingMetric{AutoScalingMetric::NOT_SET};
-  bool m_autoScalingMetricHasBeenSet = false;
 
   double m_metricTarget{0.0};
-  bool m_metricTargetHasBeenSet = false;
 
   double m_scaleInCooldownSeconds{0.0};
-  bool m_scaleInCooldownSecondsHasBeenSet = false;
 
   double m_scaleOutCooldownSeconds{0.0};
+  bool m_minNodeCountHasBeenSet = false;
+  bool m_maxNodeCountHasBeenSet = false;
+  bool m_autoScalingMetricHasBeenSet = false;
+  bool m_metricTargetHasBeenSet = false;
+  bool m_scaleInCooldownSecondsHasBeenSet = false;
   bool m_scaleOutCooldownSecondsHasBeenSet = false;
 };
 

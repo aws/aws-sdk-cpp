@@ -93,12 +93,12 @@ class UnfilteredPartition {
   ///@}
  private:
   Partition m_partition;
-  bool m_partitionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_authorizedColumns;
-  bool m_authorizedColumnsHasBeenSet = false;
 
   bool m_isRegisteredWithLakeFormation{false};
+  bool m_partitionHasBeenSet = false;
+  bool m_authorizedColumnsHasBeenSet = false;
   bool m_isRegisteredWithLakeFormationHasBeenSet = false;
 };
 

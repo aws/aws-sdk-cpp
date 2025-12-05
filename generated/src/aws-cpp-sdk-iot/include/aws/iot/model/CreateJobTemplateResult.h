@@ -76,12 +76,12 @@ class CreateJobTemplateResult {
   ///@}
  private:
   Aws::String m_jobTemplateArn;
-  bool m_jobTemplateArnHasBeenSet = false;
 
   Aws::String m_jobTemplateId;
-  bool m_jobTemplateIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobTemplateArnHasBeenSet = false;
+  bool m_jobTemplateIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

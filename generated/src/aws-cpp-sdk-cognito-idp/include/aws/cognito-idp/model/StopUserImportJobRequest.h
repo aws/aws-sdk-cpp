@@ -71,9 +71,9 @@ class StopUserImportJobRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::String m_userPoolId;
-  bool m_userPoolIdHasBeenSet = false;
 
   Aws::String m_jobId;
+  bool m_userPoolIdHasBeenSet = false;
   bool m_jobIdHasBeenSet = false;
 };
 

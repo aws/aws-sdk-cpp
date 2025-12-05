@@ -93,15 +93,15 @@ class MetadataTransferJobProgress {
   ///@}
  private:
   int m_totalCount{0};
-  bool m_totalCountHasBeenSet = false;
 
   int m_succeededCount{0};
-  bool m_succeededCountHasBeenSet = false;
 
   int m_skippedCount{0};
-  bool m_skippedCountHasBeenSet = false;
 
   int m_failedCount{0};
+  bool m_totalCountHasBeenSet = false;
+  bool m_succeededCountHasBeenSet = false;
+  bool m_skippedCountHasBeenSet = false;
   bool m_failedCountHasBeenSet = false;
 };
 

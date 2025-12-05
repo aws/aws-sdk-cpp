@@ -75,12 +75,12 @@ class GenerateMappingResult {
   ///@}
  private:
   Aws::String m_mappingTemplate;
-  bool m_mappingTemplateHasBeenSet = false;
 
   double m_mappingAccuracy{0.0};
-  bool m_mappingAccuracyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_mappingTemplateHasBeenSet = false;
+  bool m_mappingAccuracyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

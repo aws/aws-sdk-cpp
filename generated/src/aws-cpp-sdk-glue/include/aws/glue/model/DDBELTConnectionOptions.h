@@ -174,24 +174,24 @@ class DDBELTConnectionOptions {
   ///@}
  private:
   DdbExportType m_dynamodbExport{DdbExportType::NOT_SET};
-  bool m_dynamodbExportHasBeenSet = false;
 
   bool m_dynamodbUnnestDDBJson{false};
-  bool m_dynamodbUnnestDDBJsonHasBeenSet = false;
 
   Aws::String m_dynamodbTableArn;
-  bool m_dynamodbTableArnHasBeenSet = false;
 
   Aws::String m_dynamodbS3Bucket;
-  bool m_dynamodbS3BucketHasBeenSet = false;
 
   Aws::String m_dynamodbS3Prefix;
-  bool m_dynamodbS3PrefixHasBeenSet = false;
 
   Aws::String m_dynamodbS3BucketOwner;
-  bool m_dynamodbS3BucketOwnerHasBeenSet = false;
 
   Aws::String m_dynamodbStsRoleArn;
+  bool m_dynamodbExportHasBeenSet = false;
+  bool m_dynamodbUnnestDDBJsonHasBeenSet = false;
+  bool m_dynamodbTableArnHasBeenSet = false;
+  bool m_dynamodbS3BucketHasBeenSet = false;
+  bool m_dynamodbS3PrefixHasBeenSet = false;
+  bool m_dynamodbS3BucketOwnerHasBeenSet = false;
   bool m_dynamodbStsRoleArnHasBeenSet = false;
 };
 

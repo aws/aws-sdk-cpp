@@ -69,9 +69,9 @@ class DeleteScheduledActionRequest : public AutoScalingRequest {
   ///@}
  private:
   Aws::String m_autoScalingGroupName;
-  bool m_autoScalingGroupNameHasBeenSet = false;
 
   Aws::String m_scheduledActionName;
+  bool m_autoScalingGroupNameHasBeenSet = false;
   bool m_scheduledActionNameHasBeenSet = false;
 };
 

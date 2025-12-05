@@ -91,12 +91,12 @@ class SearchTypesResultItem {
   ///@}
  private:
   AssetTypeItem m_assetTypeItem;
-  bool m_assetTypeItemHasBeenSet = false;
 
   FormTypeData m_formTypeItem;
-  bool m_formTypeItemHasBeenSet = false;
 
   LineageNodeTypeItem m_lineageNodeTypeItem;
+  bool m_assetTypeItemHasBeenSet = false;
+  bool m_formTypeItemHasBeenSet = false;
   bool m_lineageNodeTypeItemHasBeenSet = false;
 };
 

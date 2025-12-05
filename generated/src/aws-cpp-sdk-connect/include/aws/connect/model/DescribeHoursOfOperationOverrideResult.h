@@ -60,9 +60,9 @@ class DescribeHoursOfOperationOverrideResult {
   ///@}
  private:
   HoursOfOperationOverride m_hoursOfOperationOverride;
-  bool m_hoursOfOperationOverrideHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_hoursOfOperationOverrideHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

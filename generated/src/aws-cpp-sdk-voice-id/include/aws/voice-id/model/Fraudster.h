@@ -112,15 +112,15 @@ class Fraudster {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_generatedFraudsterId;
-  bool m_generatedFraudsterIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_watchlistIds;
+  bool m_createdAtHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_generatedFraudsterIdHasBeenSet = false;
   bool m_watchlistIdsHasBeenSet = false;
 };
 

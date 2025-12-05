@@ -69,9 +69,9 @@ class GroupOwnerSetting {
   ///@}
  private:
   bool m_autoAddGroupOwner{false};
-  bool m_autoAddGroupOwnerHasBeenSet = false;
 
   Aws::String m_groupOwner;
+  bool m_autoAddGroupOwnerHasBeenSet = false;
   bool m_groupOwnerHasBeenSet = false;
 };
 

@@ -107,15 +107,15 @@ class S3OnDeviceServiceConfiguration {
   ///@}
  private:
   double m_storageLimit{0.0};
-  bool m_storageLimitHasBeenSet = false;
 
   StorageUnit m_storageUnit{StorageUnit::NOT_SET};
-  bool m_storageUnitHasBeenSet = false;
 
   int m_serviceSize{0};
-  bool m_serviceSizeHasBeenSet = false;
 
   int m_faultTolerance{0};
+  bool m_storageLimitHasBeenSet = false;
+  bool m_storageUnitHasBeenSet = false;
+  bool m_serviceSizeHasBeenSet = false;
   bool m_faultToleranceHasBeenSet = false;
 };
 

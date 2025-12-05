@@ -80,12 +80,12 @@ class ErrorStatistics {
   ///@}
  private:
   long long m_throttleCount{0};
-  bool m_throttleCountHasBeenSet = false;
 
   long long m_otherCount{0};
-  bool m_otherCountHasBeenSet = false;
 
   long long m_totalCount{0};
+  bool m_throttleCountHasBeenSet = false;
+  bool m_otherCountHasBeenSet = false;
   bool m_totalCountHasBeenSet = false;
 };
 

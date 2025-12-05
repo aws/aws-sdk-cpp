@@ -216,30 +216,30 @@ class ActionParameters {
   ///@}
  private:
   ComponentProperty m_type;
-  bool m_typeHasBeenSet = false;
 
   ComponentProperty m_url;
-  bool m_urlHasBeenSet = false;
 
   ComponentProperty m_anchor;
-  bool m_anchorHasBeenSet = false;
 
   ComponentProperty m_target;
-  bool m_targetHasBeenSet = false;
 
   ComponentProperty m_global;
-  bool m_globalHasBeenSet = false;
 
   Aws::String m_model;
-  bool m_modelHasBeenSet = false;
 
   ComponentProperty m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Map<Aws::String, ComponentProperty> m_fields;
-  bool m_fieldsHasBeenSet = false;
 
   MutationActionSetStateParameter m_state;
+  bool m_typeHasBeenSet = false;
+  bool m_urlHasBeenSet = false;
+  bool m_anchorHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
+  bool m_globalHasBeenSet = false;
+  bool m_modelHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_fieldsHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

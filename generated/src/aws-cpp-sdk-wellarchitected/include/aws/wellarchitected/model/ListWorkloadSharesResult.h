@@ -100,15 +100,15 @@ class ListWorkloadSharesResult {
   ///@}
  private:
   Aws::String m_workloadId;
-  bool m_workloadIdHasBeenSet = false;
 
   Aws::Vector<WorkloadShareSummary> m_workloadShareSummaries;
-  bool m_workloadShareSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workloadIdHasBeenSet = false;
+  bool m_workloadShareSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class HoursOfOperationOverrideConfig {
   ///@}
  private:
   OverrideDays m_day{OverrideDays::NOT_SET};
-  bool m_dayHasBeenSet = false;
 
   OverrideTimeSlice m_startTime;
-  bool m_startTimeHasBeenSet = false;
 
   OverrideTimeSlice m_endTime;
+  bool m_dayHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
 };
 

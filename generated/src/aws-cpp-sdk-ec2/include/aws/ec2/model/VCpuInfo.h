@@ -130,18 +130,18 @@ class VCpuInfo {
   ///@}
  private:
   int m_defaultVCpus{0};
-  bool m_defaultVCpusHasBeenSet = false;
 
   int m_defaultCores{0};
-  bool m_defaultCoresHasBeenSet = false;
 
   int m_defaultThreadsPerCore{0};
-  bool m_defaultThreadsPerCoreHasBeenSet = false;
 
   Aws::Vector<int> m_validCores;
-  bool m_validCoresHasBeenSet = false;
 
   Aws::Vector<int> m_validThreadsPerCore;
+  bool m_defaultVCpusHasBeenSet = false;
+  bool m_defaultCoresHasBeenSet = false;
+  bool m_defaultThreadsPerCoreHasBeenSet = false;
+  bool m_validCoresHasBeenSet = false;
   bool m_validThreadsPerCoreHasBeenSet = false;
 };
 

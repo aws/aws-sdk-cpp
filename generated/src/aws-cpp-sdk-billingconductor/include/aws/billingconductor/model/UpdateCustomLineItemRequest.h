@@ -120,18 +120,18 @@ class UpdateCustomLineItemRequest : public BillingConductorRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   UpdateCustomLineItemChargeDetails m_chargeDetails;
-  bool m_chargeDetailsHasBeenSet = false;
 
   CustomLineItemBillingPeriodRange m_billingPeriodRange;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_chargeDetailsHasBeenSet = false;
   bool m_billingPeriodRangeHasBeenSet = false;
 };
 

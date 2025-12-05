@@ -89,12 +89,12 @@ class StartExecutionPreviewRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_documentName;
-  bool m_documentNameHasBeenSet = false;
 
   Aws::String m_documentVersion;
-  bool m_documentVersionHasBeenSet = false;
 
   ExecutionInputs m_executionInputs;
+  bool m_documentNameHasBeenSet = false;
+  bool m_documentVersionHasBeenSet = false;
   bool m_executionInputsHasBeenSet = false;
 };
 

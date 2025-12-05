@@ -66,9 +66,9 @@ class InvokeInlineAgentInitialResponse {
   ///@}
  private:
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::String m_sessionId;
+  bool m_contentTypeHasBeenSet = false;
   bool m_sessionIdHasBeenSet = false;
 };
 

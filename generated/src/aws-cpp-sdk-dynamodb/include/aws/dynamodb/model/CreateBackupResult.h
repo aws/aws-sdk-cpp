@@ -60,9 +60,9 @@ class CreateBackupResult {
   ///@}
  private:
   BackupDetails m_backupDetails;
-  bool m_backupDetailsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_backupDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

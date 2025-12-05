@@ -86,12 +86,12 @@ class ListMatchingJobsRequest : public EntityResolutionRequest {
   ///@}
  private:
   Aws::String m_workflowName;
-  bool m_workflowNameHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_workflowNameHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

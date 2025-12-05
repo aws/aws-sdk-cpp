@@ -91,12 +91,12 @@ class IdMappingWorkflowInputSource {
   ///@}
  private:
   Aws::String m_inputSourceARN;
-  bool m_inputSourceARNHasBeenSet = false;
 
   Aws::String m_schemaName;
-  bool m_schemaNameHasBeenSet = false;
 
   IdNamespaceType m_type{IdNamespaceType::NOT_SET};
+  bool m_inputSourceARNHasBeenSet = false;
+  bool m_schemaNameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

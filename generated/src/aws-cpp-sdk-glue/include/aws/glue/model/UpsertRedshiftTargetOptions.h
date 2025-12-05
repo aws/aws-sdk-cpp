@@ -94,12 +94,12 @@ class UpsertRedshiftTargetOptions {
   ///@}
  private:
   Aws::String m_tableLocation;
-  bool m_tableLocationHasBeenSet = false;
 
   Aws::String m_connectionName;
-  bool m_connectionNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_upsertKeys;
+  bool m_tableLocationHasBeenSet = false;
+  bool m_connectionNameHasBeenSet = false;
   bool m_upsertKeysHasBeenSet = false;
 };
 

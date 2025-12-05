@@ -83,12 +83,12 @@ class TemplateInput {
   ///@}
  private:
   Aws::String m_inputName;
-  bool m_inputNameHasBeenSet = false;
 
   DataType m_dataType{DataType::NOT_SET};
-  bool m_dataTypeHasBeenSet = false;
 
   bool m_required{false};
+  bool m_inputNameHasBeenSet = false;
+  bool m_dataTypeHasBeenSet = false;
   bool m_requiredHasBeenSet = false;
 };
 

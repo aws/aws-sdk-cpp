@@ -113,15 +113,15 @@ class LookupDeveloperIdentityResult {
   ///@}
  private:
   Aws::String m_identityId;
-  bool m_identityIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_developerUserIdentifierList;
-  bool m_developerUserIdentifierListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_identityIdHasBeenSet = false;
+  bool m_developerUserIdentifierListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

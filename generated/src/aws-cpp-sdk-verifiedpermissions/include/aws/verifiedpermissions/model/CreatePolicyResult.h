@@ -210,33 +210,33 @@ class CreatePolicyResult {
   ///@}
  private:
   Aws::String m_policyStoreId;
-  bool m_policyStoreIdHasBeenSet = false;
 
   Aws::String m_policyId;
-  bool m_policyIdHasBeenSet = false;
 
   PolicyType m_policyType{PolicyType::NOT_SET};
-  bool m_policyTypeHasBeenSet = false;
 
   EntityIdentifier m_principal;
-  bool m_principalHasBeenSet = false;
 
   EntityIdentifier m_resource;
-  bool m_resourceHasBeenSet = false;
 
   Aws::Vector<ActionIdentifier> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
-  bool m_createdDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDate{};
-  bool m_lastUpdatedDateHasBeenSet = false;
 
   PolicyEffect m_effect{PolicyEffect::NOT_SET};
-  bool m_effectHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyStoreIdHasBeenSet = false;
+  bool m_policyIdHasBeenSet = false;
+  bool m_policyTypeHasBeenSet = false;
+  bool m_principalHasBeenSet = false;
+  bool m_resourceHasBeenSet = false;
+  bool m_actionsHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
+  bool m_lastUpdatedDateHasBeenSet = false;
+  bool m_effectHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

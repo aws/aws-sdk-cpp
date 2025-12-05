@@ -65,9 +65,9 @@ class DeleteTokenRequest : public AmplifyBackendRequest {
   ///@}
  private:
   Aws::String m_appId;
-  bool m_appIdHasBeenSet = false;
 
   Aws::String m_sessionId;
+  bool m_appIdHasBeenSet = false;
   bool m_sessionIdHasBeenSet = false;
 };
 

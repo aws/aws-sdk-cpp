@@ -60,9 +60,9 @@ class CancelLifecycleExecutionResult {
   ///@}
  private:
   Aws::String m_lifecycleExecutionId;
-  bool m_lifecycleExecutionIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_lifecycleExecutionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

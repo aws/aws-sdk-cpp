@@ -69,9 +69,9 @@ class ActiveIAMPolicyAssignment {
   ///@}
  private:
   Aws::String m_assignmentName;
-  bool m_assignmentNameHasBeenSet = false;
 
   Aws::String m_policyArn;
+  bool m_assignmentNameHasBeenSet = false;
   bool m_policyArnHasBeenSet = false;
 };
 

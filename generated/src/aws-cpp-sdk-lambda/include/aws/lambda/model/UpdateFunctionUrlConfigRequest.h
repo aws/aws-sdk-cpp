@@ -144,18 +144,18 @@ class UpdateFunctionUrlConfigRequest : public LambdaRequest {
   ///@}
  private:
   Aws::String m_functionName;
-  bool m_functionNameHasBeenSet = false;
 
   Aws::String m_qualifier;
-  bool m_qualifierHasBeenSet = false;
 
   FunctionUrlAuthType m_authType{FunctionUrlAuthType::NOT_SET};
-  bool m_authTypeHasBeenSet = false;
 
   Cors m_cors;
-  bool m_corsHasBeenSet = false;
 
   InvokeMode m_invokeMode{InvokeMode::NOT_SET};
+  bool m_functionNameHasBeenSet = false;
+  bool m_qualifierHasBeenSet = false;
+  bool m_authTypeHasBeenSet = false;
+  bool m_corsHasBeenSet = false;
   bool m_invokeModeHasBeenSet = false;
 };
 

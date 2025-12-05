@@ -110,18 +110,18 @@ class CreateBackendStorageResult {
   ///@}
  private:
   Aws::String m_appId;
-  bool m_appIdHasBeenSet = false;
 
   Aws::String m_backendEnvironmentName;
-  bool m_backendEnvironmentNameHasBeenSet = false;
 
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appIdHasBeenSet = false;
+  bool m_backendEnvironmentNameHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

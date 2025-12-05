@@ -426,75 +426,75 @@ class GetRecommendationResult {
   ///@}
  private:
   Aws::String m_recommendationId;
-  bool m_recommendationIdHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_currencyCode;
-  bool m_currencyCodeHasBeenSet = false;
 
   int m_recommendationLookbackPeriodInDays{0};
-  bool m_recommendationLookbackPeriodInDaysHasBeenSet = false;
 
   int m_costCalculationLookbackPeriodInDays{0};
-  bool m_costCalculationLookbackPeriodInDaysHasBeenSet = false;
 
   double m_estimatedSavingsPercentage{0.0};
-  bool m_estimatedSavingsPercentageHasBeenSet = false;
 
   double m_estimatedSavingsOverCostCalculationLookbackPeriod{0.0};
-  bool m_estimatedSavingsOverCostCalculationLookbackPeriodHasBeenSet = false;
 
   ResourceType m_currentResourceType{ResourceType::NOT_SET};
-  bool m_currentResourceTypeHasBeenSet = false;
 
   ResourceType m_recommendedResourceType{ResourceType::NOT_SET};
-  bool m_recommendedResourceTypeHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Source m_source{Source::NOT_SET};
-  bool m_sourceHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastRefreshTimestamp{};
-  bool m_lastRefreshTimestampHasBeenSet = false;
 
   double m_estimatedMonthlySavings{0.0};
-  bool m_estimatedMonthlySavingsHasBeenSet = false;
 
   double m_estimatedMonthlyCost{0.0};
-  bool m_estimatedMonthlyCostHasBeenSet = false;
 
   ImplementationEffort m_implementationEffort{ImplementationEffort::NOT_SET};
-  bool m_implementationEffortHasBeenSet = false;
 
   bool m_restartNeeded{false};
-  bool m_restartNeededHasBeenSet = false;
 
   ActionType m_actionType{ActionType::NOT_SET};
-  bool m_actionTypeHasBeenSet = false;
 
   bool m_rollbackPossible{false};
-  bool m_rollbackPossibleHasBeenSet = false;
 
   ResourceDetails m_currentResourceDetails;
-  bool m_currentResourceDetailsHasBeenSet = false;
 
   ResourceDetails m_recommendedResourceDetails;
-  bool m_recommendedResourceDetailsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_recommendationIdHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_currencyCodeHasBeenSet = false;
+  bool m_recommendationLookbackPeriodInDaysHasBeenSet = false;
+  bool m_costCalculationLookbackPeriodInDaysHasBeenSet = false;
+  bool m_estimatedSavingsPercentageHasBeenSet = false;
+  bool m_estimatedSavingsOverCostCalculationLookbackPeriodHasBeenSet = false;
+  bool m_currentResourceTypeHasBeenSet = false;
+  bool m_recommendedResourceTypeHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_lastRefreshTimestampHasBeenSet = false;
+  bool m_estimatedMonthlySavingsHasBeenSet = false;
+  bool m_estimatedMonthlyCostHasBeenSet = false;
+  bool m_implementationEffortHasBeenSet = false;
+  bool m_restartNeededHasBeenSet = false;
+  bool m_actionTypeHasBeenSet = false;
+  bool m_rollbackPossibleHasBeenSet = false;
+  bool m_currentResourceDetailsHasBeenSet = false;
+  bool m_recommendedResourceDetailsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

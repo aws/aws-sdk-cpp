@@ -148,18 +148,18 @@ class DirectoryConnectSettings {
   ///@}
  private:
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_customerDnsIps;
-  bool m_customerDnsIpsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_customerDnsIpsV6;
-  bool m_customerDnsIpsV6HasBeenSet = false;
 
   Aws::String m_customerUserName;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_customerDnsIpsHasBeenSet = false;
+  bool m_customerDnsIpsV6HasBeenSet = false;
   bool m_customerUserNameHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class VerifiedAccessLogKinesisDataFirehoseDestination {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   VerifiedAccessLogDeliveryStatus m_deliveryStatus;
-  bool m_deliveryStatusHasBeenSet = false;
 
   Aws::String m_deliveryStream;
+  bool m_enabledHasBeenSet = false;
+  bool m_deliveryStatusHasBeenSet = false;
   bool m_deliveryStreamHasBeenSet = false;
 };
 

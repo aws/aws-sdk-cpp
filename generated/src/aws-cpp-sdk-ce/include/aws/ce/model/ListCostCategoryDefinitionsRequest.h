@@ -85,12 +85,12 @@ class ListCostCategoryDefinitionsRequest : public CostExplorerRequest {
   ///@}
  private:
   Aws::String m_effectiveOn;
-  bool m_effectiveOnHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_effectiveOnHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

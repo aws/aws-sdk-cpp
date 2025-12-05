@@ -235,24 +235,24 @@ class CreateApplicationRequest : public KinesisAnalyticsRequest {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   Aws::String m_applicationDescription;
-  bool m_applicationDescriptionHasBeenSet = false;
 
   Aws::Vector<Input> m_inputs;
-  bool m_inputsHasBeenSet = false;
 
   Aws::Vector<Output> m_outputs;
-  bool m_outputsHasBeenSet = false;
 
   Aws::Vector<CloudWatchLoggingOption> m_cloudWatchLoggingOptions;
-  bool m_cloudWatchLoggingOptionsHasBeenSet = false;
 
   Aws::String m_applicationCode;
-  bool m_applicationCodeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_applicationNameHasBeenSet = false;
+  bool m_applicationDescriptionHasBeenSet = false;
+  bool m_inputsHasBeenSet = false;
+  bool m_outputsHasBeenSet = false;
+  bool m_cloudWatchLoggingOptionsHasBeenSet = false;
+  bool m_applicationCodeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

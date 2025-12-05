@@ -70,9 +70,9 @@ class QueryArgProfile {
   ///@}
  private:
   Aws::String m_queryArg;
-  bool m_queryArgHasBeenSet = false;
 
   Aws::String m_profileId;
+  bool m_queryArgHasBeenSet = false;
   bool m_profileIdHasBeenSet = false;
 };
 

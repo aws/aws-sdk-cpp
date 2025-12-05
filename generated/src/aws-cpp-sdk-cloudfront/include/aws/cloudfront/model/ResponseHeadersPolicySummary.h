@@ -69,9 +69,9 @@ class ResponseHeadersPolicySummary {
   ///@}
  private:
   ResponseHeadersPolicyType m_type{ResponseHeadersPolicyType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   ResponseHeadersPolicy m_responseHeadersPolicy;
+  bool m_typeHasBeenSet = false;
   bool m_responseHeadersPolicyHasBeenSet = false;
 };
 

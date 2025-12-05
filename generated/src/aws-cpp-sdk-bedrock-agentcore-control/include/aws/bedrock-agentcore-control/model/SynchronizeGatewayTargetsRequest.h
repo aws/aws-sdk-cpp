@@ -72,9 +72,9 @@ class SynchronizeGatewayTargetsRequest : public BedrockAgentCoreControlRequest {
   ///@}
  private:
   Aws::String m_gatewayIdentifier;
-  bool m_gatewayIdentifierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_targetIdList;
+  bool m_gatewayIdentifierHasBeenSet = false;
   bool m_targetIdListHasBeenSet = false;
 };
 

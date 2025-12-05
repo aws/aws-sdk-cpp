@@ -86,12 +86,12 @@ class VoteSummary {
   ///@}
  private:
   VoteValue m_vote{VoteValue::NOT_SET};
-  bool m_voteHasBeenSet = false;
 
   Aws::String m_memberName;
-  bool m_memberNameHasBeenSet = false;
 
   Aws::String m_memberId;
+  bool m_voteHasBeenSet = false;
+  bool m_memberNameHasBeenSet = false;
   bool m_memberIdHasBeenSet = false;
 };
 

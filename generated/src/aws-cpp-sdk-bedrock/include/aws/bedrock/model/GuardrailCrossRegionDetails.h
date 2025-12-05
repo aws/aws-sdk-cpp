@@ -77,9 +77,9 @@ class GuardrailCrossRegionDetails {
   ///@}
  private:
   Aws::String m_guardrailProfileId;
-  bool m_guardrailProfileIdHasBeenSet = false;
 
   Aws::String m_guardrailProfileArn;
+  bool m_guardrailProfileIdHasBeenSet = false;
   bool m_guardrailProfileArnHasBeenSet = false;
 };
 

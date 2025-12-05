@@ -75,9 +75,9 @@ class RouteTollPaymentSite {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<double> m_position;
+  bool m_nameHasBeenSet = false;
   bool m_positionHasBeenSet = false;
 };
 

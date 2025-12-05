@@ -212,36 +212,36 @@ class PutLaunchActionRequest : public DrsRequest {
   ///@}
  private:
   Aws::String m_actionCode;
-  bool m_actionCodeHasBeenSet = false;
 
   Aws::String m_actionId;
-  bool m_actionIdHasBeenSet = false;
 
   Aws::String m_actionVersion;
-  bool m_actionVersionHasBeenSet = false;
 
   bool m_active{false};
-  bool m_activeHasBeenSet = false;
 
   LaunchActionCategory m_category{LaunchActionCategory::NOT_SET};
-  bool m_categoryHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   bool m_optional{false};
-  bool m_optionalHasBeenSet = false;
 
   int m_order{0};
-  bool m_orderHasBeenSet = false;
 
   Aws::Map<Aws::String, LaunchActionParameter> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::String m_resourceId;
+  bool m_actionCodeHasBeenSet = false;
+  bool m_actionIdHasBeenSet = false;
+  bool m_actionVersionHasBeenSet = false;
+  bool m_activeHasBeenSet = false;
+  bool m_categoryHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_optionalHasBeenSet = false;
+  bool m_orderHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
   bool m_resourceIdHasBeenSet = false;
 };
 

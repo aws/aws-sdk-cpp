@@ -69,9 +69,9 @@ class ImageStaticFile {
   ///@}
  private:
   Aws::String m_staticFileId;
-  bool m_staticFileIdHasBeenSet = false;
 
   StaticFileSource m_source;
+  bool m_staticFileIdHasBeenSet = false;
   bool m_sourceHasBeenSet = false;
 };
 

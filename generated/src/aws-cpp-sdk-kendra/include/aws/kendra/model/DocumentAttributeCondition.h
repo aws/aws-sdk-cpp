@@ -105,12 +105,12 @@ class DocumentAttributeCondition {
   ///@}
  private:
   Aws::String m_conditionDocumentAttributeKey;
-  bool m_conditionDocumentAttributeKeyHasBeenSet = false;
 
   ConditionOperator m_operator{ConditionOperator::NOT_SET};
-  bool m_operatorHasBeenSet = false;
 
   DocumentAttributeValue m_conditionOnValue;
+  bool m_conditionDocumentAttributeKeyHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
   bool m_conditionOnValueHasBeenSet = false;
 };
 

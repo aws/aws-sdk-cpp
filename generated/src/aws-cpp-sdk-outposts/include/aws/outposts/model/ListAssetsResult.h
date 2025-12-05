@@ -82,12 +82,12 @@ class ListAssetsResult {
   ///@}
  private:
   Aws::Vector<AssetInfo> m_assets;
-  bool m_assetsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assetsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

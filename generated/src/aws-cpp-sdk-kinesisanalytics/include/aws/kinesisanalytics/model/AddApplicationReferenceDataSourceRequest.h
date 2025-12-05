@@ -97,12 +97,12 @@ class AddApplicationReferenceDataSourceRequest : public KinesisAnalyticsRequest 
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   long long m_currentApplicationVersionId{0};
-  bool m_currentApplicationVersionIdHasBeenSet = false;
 
   ReferenceDataSource m_referenceDataSource;
+  bool m_applicationNameHasBeenSet = false;
+  bool m_currentApplicationVersionIdHasBeenSet = false;
   bool m_referenceDataSourceHasBeenSet = false;
 };
 

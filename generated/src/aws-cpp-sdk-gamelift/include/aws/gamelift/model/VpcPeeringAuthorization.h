@@ -141,18 +141,18 @@ class VpcPeeringAuthorization {
   ///@}
  private:
   Aws::String m_gameLiftAwsAccountId;
-  bool m_gameLiftAwsAccountIdHasBeenSet = false;
 
   Aws::String m_peerVpcAwsAccountId;
-  bool m_peerVpcAwsAccountIdHasBeenSet = false;
 
   Aws::String m_peerVpcId;
-  bool m_peerVpcIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_expirationTime{};
+  bool m_gameLiftAwsAccountIdHasBeenSet = false;
+  bool m_peerVpcAwsAccountIdHasBeenSet = false;
+  bool m_peerVpcIdHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_expirationTimeHasBeenSet = false;
 };
 

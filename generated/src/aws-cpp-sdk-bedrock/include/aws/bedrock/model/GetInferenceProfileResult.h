@@ -209,33 +209,33 @@ class GetInferenceProfileResult {
   ///@}
  private:
   Aws::String m_inferenceProfileName;
-  bool m_inferenceProfileNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_inferenceProfileArn;
-  bool m_inferenceProfileArnHasBeenSet = false;
 
   Aws::Vector<InferenceProfileModel> m_models;
-  bool m_modelsHasBeenSet = false;
 
   Aws::String m_inferenceProfileId;
-  bool m_inferenceProfileIdHasBeenSet = false;
 
   InferenceProfileStatus m_status{InferenceProfileStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   InferenceProfileType m_type{InferenceProfileType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_inferenceProfileNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_inferenceProfileArnHasBeenSet = false;
+  bool m_modelsHasBeenSet = false;
+  bool m_inferenceProfileIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

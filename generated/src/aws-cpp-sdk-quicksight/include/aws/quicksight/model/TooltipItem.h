@@ -70,9 +70,9 @@ class TooltipItem {
   ///@}
  private:
   FieldTooltipItem m_fieldTooltipItem;
-  bool m_fieldTooltipItemHasBeenSet = false;
 
   ColumnTooltipItem m_columnTooltipItem;
+  bool m_fieldTooltipItemHasBeenSet = false;
   bool m_columnTooltipItemHasBeenSet = false;
 };
 

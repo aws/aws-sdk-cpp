@@ -139,21 +139,21 @@ class CreateHostedZoneResult {
   ///@}
  private:
   HostedZone m_hostedZone;
-  bool m_hostedZoneHasBeenSet = false;
 
   ChangeInfo m_changeInfo;
-  bool m_changeInfoHasBeenSet = false;
 
   DelegationSet m_delegationSet;
-  bool m_delegationSetHasBeenSet = false;
 
   VPC m_vPC;
-  bool m_vPCHasBeenSet = false;
 
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_hostedZoneHasBeenSet = false;
+  bool m_changeInfoHasBeenSet = false;
+  bool m_delegationSetHasBeenSet = false;
+  bool m_vPCHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

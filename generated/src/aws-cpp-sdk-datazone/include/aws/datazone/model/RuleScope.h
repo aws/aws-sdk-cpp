@@ -85,12 +85,12 @@ class RuleScope {
   ///@}
  private:
   AssetTypesForRule m_assetType;
-  bool m_assetTypeHasBeenSet = false;
 
   bool m_dataProduct{false};
-  bool m_dataProductHasBeenSet = false;
 
   ProjectsForRule m_project;
+  bool m_assetTypeHasBeenSet = false;
+  bool m_dataProductHasBeenSet = false;
   bool m_projectHasBeenSet = false;
 };
 

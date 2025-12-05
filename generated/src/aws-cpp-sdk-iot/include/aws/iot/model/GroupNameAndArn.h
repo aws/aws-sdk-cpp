@@ -68,9 +68,9 @@ class GroupNameAndArn {
   ///@}
  private:
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_groupArn;
+  bool m_groupNameHasBeenSet = false;
   bool m_groupArnHasBeenSet = false;
 };
 

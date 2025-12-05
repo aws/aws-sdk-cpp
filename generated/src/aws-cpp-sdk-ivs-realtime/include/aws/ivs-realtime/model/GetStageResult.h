@@ -60,9 +60,9 @@ class GetStageResult {
   ///@}
  private:
   Stage m_stage;
-  bool m_stageHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_stageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

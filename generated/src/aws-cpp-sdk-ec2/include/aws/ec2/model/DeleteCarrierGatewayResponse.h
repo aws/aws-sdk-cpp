@@ -60,9 +60,9 @@ class DeleteCarrierGatewayResponse {
   ///@}
  private:
   CarrierGateway m_carrierGateway;
-  bool m_carrierGatewayHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_carrierGatewayHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

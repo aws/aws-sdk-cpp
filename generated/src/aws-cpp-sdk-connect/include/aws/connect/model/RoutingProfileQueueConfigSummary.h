@@ -142,21 +142,21 @@ class RoutingProfileQueueConfigSummary {
   ///@}
  private:
   Aws::String m_queueId;
-  bool m_queueIdHasBeenSet = false;
 
   Aws::String m_queueArn;
-  bool m_queueArnHasBeenSet = false;
 
   Aws::String m_queueName;
-  bool m_queueNameHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   int m_delay{0};
-  bool m_delayHasBeenSet = false;
 
   Channel m_channel{Channel::NOT_SET};
+  bool m_queueIdHasBeenSet = false;
+  bool m_queueArnHasBeenSet = false;
+  bool m_queueNameHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_delayHasBeenSet = false;
   bool m_channelHasBeenSet = false;
 };
 

@@ -81,9 +81,9 @@ class DriftStatusSummary {
   ///@}
  private:
   DriftStatus m_driftStatus{DriftStatus::NOT_SET};
-  bool m_driftStatusHasBeenSet = false;
 
   EnabledControlDriftTypes m_types;
+  bool m_driftStatusHasBeenSet = false;
   bool m_typesHasBeenSet = false;
 };
 

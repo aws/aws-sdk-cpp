@@ -459,69 +459,69 @@ class ExtendedMessageTemplateData {
   ///@}
  private:
   Aws::String m_messageTemplateArn;
-  bool m_messageTemplateArnHasBeenSet = false;
 
   Aws::String m_messageTemplateId;
-  bool m_messageTemplateIdHasBeenSet = false;
 
   Aws::String m_knowledgeBaseArn;
-  bool m_knowledgeBaseArnHasBeenSet = false;
 
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_channel;
-  bool m_channelHasBeenSet = false;
 
   ChannelSubtype m_channelSubtype{ChannelSubtype::NOT_SET};
-  bool m_channelSubtypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_lastModifiedBy;
-  bool m_lastModifiedByHasBeenSet = false;
 
   MessageTemplateContentProvider m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_language;
-  bool m_languageHasBeenSet = false;
 
   MessageTemplateSourceConfigurationSummary m_sourceConfigurationSummary;
-  bool m_sourceConfigurationSummaryHasBeenSet = false;
 
   GroupingConfiguration m_groupingConfiguration;
-  bool m_groupingConfigurationHasBeenSet = false;
 
   MessageTemplateAttributes m_defaultAttributes;
-  bool m_defaultAttributesHasBeenSet = false;
 
   Aws::Vector<MessageTemplateAttributeType> m_attributeTypes;
-  bool m_attributeTypesHasBeenSet = false;
 
   Aws::Vector<MessageTemplateAttachment> m_attachments;
-  bool m_attachmentsHasBeenSet = false;
 
   bool m_isActive{false};
-  bool m_isActiveHasBeenSet = false;
 
   long long m_versionNumber{0};
-  bool m_versionNumberHasBeenSet = false;
 
   Aws::String m_messageTemplateContentSha256;
-  bool m_messageTemplateContentSha256HasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_messageTemplateArnHasBeenSet = false;
+  bool m_messageTemplateIdHasBeenSet = false;
+  bool m_knowledgeBaseArnHasBeenSet = false;
+  bool m_knowledgeBaseIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_channelHasBeenSet = false;
+  bool m_channelSubtypeHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_lastModifiedByHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_languageHasBeenSet = false;
+  bool m_sourceConfigurationSummaryHasBeenSet = false;
+  bool m_groupingConfigurationHasBeenSet = false;
+  bool m_defaultAttributesHasBeenSet = false;
+  bool m_attributeTypesHasBeenSet = false;
+  bool m_attachmentsHasBeenSet = false;
+  bool m_isActiveHasBeenSet = false;
+  bool m_versionNumberHasBeenSet = false;
+  bool m_messageTemplateContentSha256HasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

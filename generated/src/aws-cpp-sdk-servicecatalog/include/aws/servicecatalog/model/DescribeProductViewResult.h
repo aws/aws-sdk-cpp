@@ -85,12 +85,12 @@ class DescribeProductViewResult {
   ///@}
  private:
   ProductViewSummary m_productViewSummary;
-  bool m_productViewSummaryHasBeenSet = false;
 
   Aws::Vector<ProvisioningArtifact> m_provisioningArtifacts;
-  bool m_provisioningArtifactsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_productViewSummaryHasBeenSet = false;
+  bool m_provisioningArtifactsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

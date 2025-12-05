@@ -184,27 +184,27 @@ class UpdateAIPromptRequest : public QConnectRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_assistantId;
-  bool m_assistantIdHasBeenSet = false;
 
   Aws::String m_aiPromptId;
-  bool m_aiPromptIdHasBeenSet = false;
 
   VisibilityStatus m_visibilityStatus{VisibilityStatus::NOT_SET};
-  bool m_visibilityStatusHasBeenSet = false;
 
   AIPromptTemplateConfiguration m_templateConfiguration;
-  bool m_templateConfigurationHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_modelId;
-  bool m_modelIdHasBeenSet = false;
 
   AIPromptInferenceConfiguration m_inferenceConfiguration;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_assistantIdHasBeenSet = false;
+  bool m_aiPromptIdHasBeenSet = false;
+  bool m_visibilityStatusHasBeenSet = false;
+  bool m_templateConfigurationHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_modelIdHasBeenSet = false;
   bool m_inferenceConfigurationHasBeenSet = false;
 };
 

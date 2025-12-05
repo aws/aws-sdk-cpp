@@ -146,21 +146,21 @@ class DatabaseSummary {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_componentId;
-  bool m_componentIdHasBeenSet = false;
 
   Aws::String m_databaseId;
-  bool m_databaseIdHasBeenSet = false;
 
   DatabaseType m_databaseType{DatabaseType::NOT_SET};
-  bool m_databaseTypeHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_componentIdHasBeenSet = false;
+  bool m_databaseIdHasBeenSet = false;
+  bool m_databaseTypeHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

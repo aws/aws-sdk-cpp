@@ -93,12 +93,12 @@ class CreateEmailContactRequest : public NotificationsContactsRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_emailAddress;
-  bool m_emailAddressHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_emailAddressHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

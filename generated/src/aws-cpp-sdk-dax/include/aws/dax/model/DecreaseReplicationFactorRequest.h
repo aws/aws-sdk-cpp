@@ -114,15 +114,15 @@ class DecreaseReplicationFactorRequest : public DAXRequest {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   int m_newReplicationFactor{0};
-  bool m_newReplicationFactorHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_availabilityZones;
-  bool m_availabilityZonesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_nodeIdsToRemove;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_newReplicationFactorHasBeenSet = false;
+  bool m_availabilityZonesHasBeenSet = false;
   bool m_nodeIdsToRemoveHasBeenSet = false;
 };
 

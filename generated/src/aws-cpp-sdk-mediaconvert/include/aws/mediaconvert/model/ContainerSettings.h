@@ -214,30 +214,30 @@ class ContainerSettings {
   ///@}
  private:
   CmfcSettings m_cmfcSettings;
-  bool m_cmfcSettingsHasBeenSet = false;
 
   ContainerType m_container{ContainerType::NOT_SET};
-  bool m_containerHasBeenSet = false;
 
   F4vSettings m_f4vSettings;
-  bool m_f4vSettingsHasBeenSet = false;
 
   M2tsSettings m_m2tsSettings;
-  bool m_m2tsSettingsHasBeenSet = false;
 
   M3u8Settings m_m3u8Settings;
-  bool m_m3u8SettingsHasBeenSet = false;
 
   MovSettings m_movSettings;
-  bool m_movSettingsHasBeenSet = false;
 
   Mp4Settings m_mp4Settings;
-  bool m_mp4SettingsHasBeenSet = false;
 
   MpdSettings m_mpdSettings;
-  bool m_mpdSettingsHasBeenSet = false;
 
   MxfSettings m_mxfSettings;
+  bool m_cmfcSettingsHasBeenSet = false;
+  bool m_containerHasBeenSet = false;
+  bool m_f4vSettingsHasBeenSet = false;
+  bool m_m2tsSettingsHasBeenSet = false;
+  bool m_m3u8SettingsHasBeenSet = false;
+  bool m_movSettingsHasBeenSet = false;
+  bool m_mp4SettingsHasBeenSet = false;
+  bool m_mpdSettingsHasBeenSet = false;
   bool m_mxfSettingsHasBeenSet = false;
 };
 

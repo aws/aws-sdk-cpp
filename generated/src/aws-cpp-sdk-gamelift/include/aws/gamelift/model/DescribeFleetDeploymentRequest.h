@@ -68,9 +68,9 @@ class DescribeFleetDeploymentRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::String m_deploymentId;
+  bool m_fleetIdHasBeenSet = false;
   bool m_deploymentIdHasBeenSet = false;
 };
 

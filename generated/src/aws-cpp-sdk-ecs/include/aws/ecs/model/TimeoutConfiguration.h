@@ -74,9 +74,9 @@ class TimeoutConfiguration {
   ///@}
  private:
   int m_idleTimeoutSeconds{0};
-  bool m_idleTimeoutSecondsHasBeenSet = false;
 
   int m_perRequestTimeoutSeconds{0};
+  bool m_idleTimeoutSecondsHasBeenSet = false;
   bool m_perRequestTimeoutSecondsHasBeenSet = false;
 };
 

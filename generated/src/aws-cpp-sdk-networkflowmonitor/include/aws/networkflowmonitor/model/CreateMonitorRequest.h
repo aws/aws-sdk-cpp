@@ -180,21 +180,21 @@ class CreateMonitorRequest : public NetworkFlowMonitorRequest {
   ///@}
  private:
   Aws::String m_monitorName;
-  bool m_monitorNameHasBeenSet = false;
 
   Aws::Vector<MonitorLocalResource> m_localResources;
-  bool m_localResourcesHasBeenSet = false;
 
   Aws::Vector<MonitorRemoteResource> m_remoteResources;
-  bool m_remoteResourcesHasBeenSet = false;
 
   Aws::String m_scopeArn;
-  bool m_scopeArnHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_monitorNameHasBeenSet = false;
+  bool m_localResourcesHasBeenSet = false;
+  bool m_remoteResourcesHasBeenSet = false;
+  bool m_scopeArnHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

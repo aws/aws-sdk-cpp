@@ -94,15 +94,15 @@ class GetSinkPolicyResult {
   ///@}
  private:
   Aws::String m_policy;
-  bool m_policyHasBeenSet = false;
 
   Aws::String m_sinkArn;
-  bool m_sinkArnHasBeenSet = false;
 
   Aws::String m_sinkId;
-  bool m_sinkIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyHasBeenSet = false;
+  bool m_sinkArnHasBeenSet = false;
+  bool m_sinkIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

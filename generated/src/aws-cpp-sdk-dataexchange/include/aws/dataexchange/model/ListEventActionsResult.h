@@ -85,12 +85,12 @@ class ListEventActionsResult {
   ///@}
  private:
   Aws::Vector<EventActionEntry> m_eventActions;
-  bool m_eventActionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventActionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

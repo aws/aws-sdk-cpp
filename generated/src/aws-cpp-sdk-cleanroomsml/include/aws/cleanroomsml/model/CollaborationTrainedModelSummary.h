@@ -262,39 +262,39 @@ class CollaborationTrainedModelSummary {
   ///@}
  private:
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   Aws::String m_trainedModelArn;
-  bool m_trainedModelArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_versionIdentifier;
-  bool m_versionIdentifierHasBeenSet = false;
 
   Aws::Vector<IncrementalTrainingDataChannelOutput> m_incrementalTrainingDataChannels;
-  bool m_incrementalTrainingDataChannelsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_membershipIdentifier;
-  bool m_membershipIdentifierHasBeenSet = false;
 
   Aws::String m_collaborationIdentifier;
-  bool m_collaborationIdentifierHasBeenSet = false;
 
   TrainedModelStatus m_status{TrainedModelStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_configuredModelAlgorithmAssociationArn;
-  bool m_configuredModelAlgorithmAssociationArnHasBeenSet = false;
 
   Aws::String m_creatorAccountId;
+  bool m_createTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_trainedModelArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_versionIdentifierHasBeenSet = false;
+  bool m_incrementalTrainingDataChannelsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_membershipIdentifierHasBeenSet = false;
+  bool m_collaborationIdentifierHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_configuredModelAlgorithmAssociationArnHasBeenSet = false;
   bool m_creatorAccountIdHasBeenSet = false;
 };
 

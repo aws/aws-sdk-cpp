@@ -64,9 +64,9 @@ class FaultStatistics {
   ///@}
  private:
   long long m_otherCount{0};
-  bool m_otherCountHasBeenSet = false;
 
   long long m_totalCount{0};
+  bool m_otherCountHasBeenSet = false;
   bool m_totalCountHasBeenSet = false;
 };
 

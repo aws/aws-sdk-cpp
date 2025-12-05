@@ -58,9 +58,9 @@ class GetCampaignVersionResult {
   ///@}
  private:
   CampaignResponse m_campaignResponse;
-  bool m_campaignResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_campaignResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

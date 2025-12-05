@@ -93,15 +93,15 @@ class CreateCollectionResult {
   ///@}
  private:
   int m_statusCode{0};
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_collectionArn;
-  bool m_collectionArnHasBeenSet = false;
 
   Aws::String m_faceModelVersion;
-  bool m_faceModelVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusCodeHasBeenSet = false;
+  bool m_collectionArnHasBeenSet = false;
+  bool m_faceModelVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

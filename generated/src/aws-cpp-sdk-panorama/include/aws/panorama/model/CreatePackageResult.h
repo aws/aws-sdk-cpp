@@ -94,15 +94,15 @@ class CreatePackageResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_packageId;
-  bool m_packageIdHasBeenSet = false;
 
   StorageLocation m_storageLocation;
-  bool m_storageLocationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_packageIdHasBeenSet = false;
+  bool m_storageLocationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

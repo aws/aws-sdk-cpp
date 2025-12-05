@@ -59,9 +59,9 @@ class CreateAlgorithmResult {
   ///@}
  private:
   Aws::String m_algorithmArn;
-  bool m_algorithmArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_algorithmArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

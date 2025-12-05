@@ -171,24 +171,24 @@ class LambdaFunctionAggregationResponse {
   ///@}
  private:
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_functionName;
-  bool m_functionNameHasBeenSet = false;
 
   Aws::String m_runtime;
-  bool m_runtimeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_lambdaTags;
-  bool m_lambdaTagsHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   SeverityCounts m_severityCounts;
-  bool m_severityCountsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedAt{};
+  bool m_resourceIdHasBeenSet = false;
+  bool m_functionNameHasBeenSet = false;
+  bool m_runtimeHasBeenSet = false;
+  bool m_lambdaTagsHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_severityCountsHasBeenSet = false;
   bool m_lastModifiedAtHasBeenSet = false;
 };
 

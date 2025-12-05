@@ -111,15 +111,15 @@ class AnonymousUserEmbeddingExperienceConfiguration {
   ///@}
  private:
   AnonymousUserDashboardEmbeddingConfiguration m_dashboard;
-  bool m_dashboardHasBeenSet = false;
 
   AnonymousUserDashboardVisualEmbeddingConfiguration m_dashboardVisual;
-  bool m_dashboardVisualHasBeenSet = false;
 
   AnonymousUserQSearchBarEmbeddingConfiguration m_qSearchBar;
-  bool m_qSearchBarHasBeenSet = false;
 
   AnonymousUserGenerativeQnAEmbeddingConfiguration m_generativeQnA;
+  bool m_dashboardHasBeenSet = false;
+  bool m_dashboardVisualHasBeenSet = false;
+  bool m_qSearchBarHasBeenSet = false;
   bool m_generativeQnAHasBeenSet = false;
 };
 

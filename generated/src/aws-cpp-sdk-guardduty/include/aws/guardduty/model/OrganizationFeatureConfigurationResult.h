@@ -105,12 +105,12 @@ class OrganizationFeatureConfigurationResult {
   ///@}
  private:
   OrgFeature m_name{OrgFeature::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   OrgFeatureStatus m_autoEnable{OrgFeatureStatus::NOT_SET};
-  bool m_autoEnableHasBeenSet = false;
 
   Aws::Vector<OrganizationAdditionalConfigurationResult> m_additionalConfiguration;
+  bool m_nameHasBeenSet = false;
+  bool m_autoEnableHasBeenSet = false;
   bool m_additionalConfigurationHasBeenSet = false;
 };
 

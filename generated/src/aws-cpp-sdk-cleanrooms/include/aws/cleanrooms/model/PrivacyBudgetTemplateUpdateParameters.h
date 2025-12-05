@@ -72,9 +72,9 @@ class PrivacyBudgetTemplateUpdateParameters {
   ///@}
  private:
   DifferentialPrivacyTemplateUpdateParameters m_differentialPrivacy;
-  bool m_differentialPrivacyHasBeenSet = false;
 
   AccessBudgetsPrivacyTemplateUpdateParameters m_accessBudget;
+  bool m_differentialPrivacyHasBeenSet = false;
   bool m_accessBudgetHasBeenSet = false;
 };
 

@@ -197,27 +197,27 @@ class AssessmentControlSet {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ControlSetStatus m_status{ControlSetStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Role> m_roles;
-  bool m_rolesHasBeenSet = false;
 
   Aws::Vector<AssessmentControl> m_controls;
-  bool m_controlsHasBeenSet = false;
 
   Aws::Vector<Delegation> m_delegations;
-  bool m_delegationsHasBeenSet = false;
 
   int m_systemEvidenceCount{0};
-  bool m_systemEvidenceCountHasBeenSet = false;
 
   int m_manualEvidenceCount{0};
+  bool m_idHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_rolesHasBeenSet = false;
+  bool m_controlsHasBeenSet = false;
+  bool m_delegationsHasBeenSet = false;
+  bool m_systemEvidenceCountHasBeenSet = false;
   bool m_manualEvidenceCountHasBeenSet = false;
 };
 

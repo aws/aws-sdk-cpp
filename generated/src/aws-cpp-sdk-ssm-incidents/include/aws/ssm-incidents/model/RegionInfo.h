@@ -107,15 +107,15 @@ class RegionInfo {
   ///@}
  private:
   Aws::String m_sseKmsKeyId;
-  bool m_sseKmsKeyIdHasBeenSet = false;
 
   RegionStatus m_status{RegionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_statusUpdateDateTime{};
+  bool m_sseKmsKeyIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
   bool m_statusUpdateDateTimeHasBeenSet = false;
 };
 

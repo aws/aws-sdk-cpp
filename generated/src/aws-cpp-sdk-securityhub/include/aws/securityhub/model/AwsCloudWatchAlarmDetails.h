@@ -470,69 +470,69 @@ class AwsCloudWatchAlarmDetails {
   ///@}
  private:
   bool m_actionsEnabled{false};
-  bool m_actionsEnabledHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_alarmActions;
-  bool m_alarmActionsHasBeenSet = false;
 
   Aws::String m_alarmArn;
-  bool m_alarmArnHasBeenSet = false;
 
   Aws::String m_alarmConfigurationUpdatedTimestamp;
-  bool m_alarmConfigurationUpdatedTimestampHasBeenSet = false;
 
   Aws::String m_alarmDescription;
-  bool m_alarmDescriptionHasBeenSet = false;
 
   Aws::String m_alarmName;
-  bool m_alarmNameHasBeenSet = false;
 
   Aws::String m_comparisonOperator;
-  bool m_comparisonOperatorHasBeenSet = false;
 
   int m_datapointsToAlarm{0};
-  bool m_datapointsToAlarmHasBeenSet = false;
 
   Aws::Vector<AwsCloudWatchAlarmDimensionsDetails> m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
 
   Aws::String m_evaluateLowSampleCountPercentile;
-  bool m_evaluateLowSampleCountPercentileHasBeenSet = false;
 
   int m_evaluationPeriods{0};
-  bool m_evaluationPeriodsHasBeenSet = false;
 
   Aws::String m_extendedStatistic;
-  bool m_extendedStatisticHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_insufficientDataActions;
-  bool m_insufficientDataActionsHasBeenSet = false;
 
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_okActions;
-  bool m_okActionsHasBeenSet = false;
 
   int m_period{0};
-  bool m_periodHasBeenSet = false;
 
   Aws::String m_statistic;
-  bool m_statisticHasBeenSet = false;
 
   double m_threshold{0.0};
-  bool m_thresholdHasBeenSet = false;
 
   Aws::String m_thresholdMetricId;
-  bool m_thresholdMetricIdHasBeenSet = false;
 
   Aws::String m_treatMissingData;
-  bool m_treatMissingDataHasBeenSet = false;
 
   Aws::String m_unit;
+  bool m_actionsEnabledHasBeenSet = false;
+  bool m_alarmActionsHasBeenSet = false;
+  bool m_alarmArnHasBeenSet = false;
+  bool m_alarmConfigurationUpdatedTimestampHasBeenSet = false;
+  bool m_alarmDescriptionHasBeenSet = false;
+  bool m_alarmNameHasBeenSet = false;
+  bool m_comparisonOperatorHasBeenSet = false;
+  bool m_datapointsToAlarmHasBeenSet = false;
+  bool m_dimensionsHasBeenSet = false;
+  bool m_evaluateLowSampleCountPercentileHasBeenSet = false;
+  bool m_evaluationPeriodsHasBeenSet = false;
+  bool m_extendedStatisticHasBeenSet = false;
+  bool m_insufficientDataActionsHasBeenSet = false;
+  bool m_metricNameHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_okActionsHasBeenSet = false;
+  bool m_periodHasBeenSet = false;
+  bool m_statisticHasBeenSet = false;
+  bool m_thresholdHasBeenSet = false;
+  bool m_thresholdMetricIdHasBeenSet = false;
+  bool m_treatMissingDataHasBeenSet = false;
   bool m_unitHasBeenSet = false;
 };
 

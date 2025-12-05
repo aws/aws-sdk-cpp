@@ -101,12 +101,12 @@ class SalesforceConnectorProfileProperties {
   ///@}
  private:
   Aws::String m_instanceUrl;
-  bool m_instanceUrlHasBeenSet = false;
 
   bool m_isSandboxEnvironment{false};
-  bool m_isSandboxEnvironmentHasBeenSet = false;
 
   bool m_usePrivateLinkForMetadataAndAuthorization{false};
+  bool m_instanceUrlHasBeenSet = false;
+  bool m_isSandboxEnvironmentHasBeenSet = false;
   bool m_usePrivateLinkForMetadataAndAuthorizationHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class ListTagsForStreamRequest : public KinesisVideoRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_streamARN;
-  bool m_streamARNHasBeenSet = false;
 
   Aws::String m_streamName;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_streamARNHasBeenSet = false;
   bool m_streamNameHasBeenSet = false;
 };
 

@@ -117,15 +117,15 @@ class UpdateDashboardRequest : public CloudTrailRequest {
   ///@}
  private:
   Aws::String m_dashboardId;
-  bool m_dashboardIdHasBeenSet = false;
 
   Aws::Vector<RequestWidget> m_widgets;
-  bool m_widgetsHasBeenSet = false;
 
   RefreshSchedule m_refreshSchedule;
-  bool m_refreshScheduleHasBeenSet = false;
 
   bool m_terminationProtectionEnabled{false};
+  bool m_dashboardIdHasBeenSet = false;
+  bool m_widgetsHasBeenSet = false;
+  bool m_refreshScheduleHasBeenSet = false;
   bool m_terminationProtectionEnabledHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class BatchDeleteDelegationByAssessmentRequest : public AuditManagerRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_delegationIds;
-  bool m_delegationIdsHasBeenSet = false;
 
   Aws::String m_assessmentId;
+  bool m_delegationIdsHasBeenSet = false;
   bool m_assessmentIdHasBeenSet = false;
 };
 

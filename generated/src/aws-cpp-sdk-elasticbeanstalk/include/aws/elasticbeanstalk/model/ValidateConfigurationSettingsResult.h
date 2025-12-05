@@ -73,9 +73,9 @@ class ValidateConfigurationSettingsResult {
   ///@}
  private:
   Aws::Vector<ValidationMessage> m_messages;
-  bool m_messagesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_messagesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

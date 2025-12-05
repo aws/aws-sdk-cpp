@@ -107,15 +107,15 @@ class ListUtteranceAnalyticsDataResult {
   ///@}
  private:
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<UtteranceSpecification> m_utterances;
-  bool m_utterancesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_botIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_utterancesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

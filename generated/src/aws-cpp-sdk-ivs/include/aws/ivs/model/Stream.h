@@ -165,24 +165,24 @@ class Stream {
   ///@}
  private:
   Aws::String m_channelArn;
-  bool m_channelArnHasBeenSet = false;
 
   StreamHealth m_health{StreamHealth::NOT_SET};
-  bool m_healthHasBeenSet = false;
 
   Aws::String m_playbackUrl;
-  bool m_playbackUrlHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   StreamState m_state{StreamState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_streamId;
-  bool m_streamIdHasBeenSet = false;
 
   long long m_viewerCount{0};
+  bool m_channelArnHasBeenSet = false;
+  bool m_healthHasBeenSet = false;
+  bool m_playbackUrlHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_streamIdHasBeenSet = false;
   bool m_viewerCountHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class DefaultTextAreaControlOptions {
   ///@}
  private:
   Aws::String m_delimiter;
-  bool m_delimiterHasBeenSet = false;
 
   TextAreaControlDisplayOptions m_displayOptions;
+  bool m_delimiterHasBeenSet = false;
   bool m_displayOptionsHasBeenSet = false;
 };
 

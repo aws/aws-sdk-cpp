@@ -94,12 +94,12 @@ class CapacityProviderScalingConfig {
   ///@}
  private:
   int m_maxVCpuCount{0};
-  bool m_maxVCpuCountHasBeenSet = false;
 
   CapacityProviderScalingMode m_scalingMode{CapacityProviderScalingMode::NOT_SET};
-  bool m_scalingModeHasBeenSet = false;
 
   Aws::Vector<TargetTrackingScalingPolicy> m_scalingPolicies;
+  bool m_maxVCpuCountHasBeenSet = false;
+  bool m_scalingModeHasBeenSet = false;
   bool m_scalingPoliciesHasBeenSet = false;
 };
 

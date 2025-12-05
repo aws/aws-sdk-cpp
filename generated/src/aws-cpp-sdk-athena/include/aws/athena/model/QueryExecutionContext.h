@@ -70,9 +70,9 @@ class QueryExecutionContext {
   ///@}
  private:
   Aws::String m_database;
-  bool m_databaseHasBeenSet = false;
 
   Aws::String m_catalog;
+  bool m_databaseHasBeenSet = false;
   bool m_catalogHasBeenSet = false;
 };
 

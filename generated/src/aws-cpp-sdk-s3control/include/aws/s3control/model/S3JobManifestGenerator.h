@@ -134,18 +134,18 @@ class S3JobManifestGenerator {
   ///@}
  private:
   Aws::String m_expectedBucketOwner;
-  bool m_expectedBucketOwnerHasBeenSet = false;
 
   Aws::String m_sourceBucket;
-  bool m_sourceBucketHasBeenSet = false;
 
   S3ManifestOutputLocation m_manifestOutputLocation;
-  bool m_manifestOutputLocationHasBeenSet = false;
 
   JobManifestGeneratorFilter m_filter;
-  bool m_filterHasBeenSet = false;
 
   bool m_enableManifestOutput{false};
+  bool m_expectedBucketOwnerHasBeenSet = false;
+  bool m_sourceBucketHasBeenSet = false;
+  bool m_manifestOutputLocationHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
   bool m_enableManifestOutputHasBeenSet = false;
 };
 

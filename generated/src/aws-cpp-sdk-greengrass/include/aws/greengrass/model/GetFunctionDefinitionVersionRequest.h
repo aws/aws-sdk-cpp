@@ -94,12 +94,12 @@ class GetFunctionDefinitionVersionRequest : public GreengrassRequest {
   ///@}
  private:
   Aws::String m_functionDefinitionId;
-  bool m_functionDefinitionIdHasBeenSet = false;
 
   Aws::String m_functionDefinitionVersionId;
-  bool m_functionDefinitionVersionIdHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_functionDefinitionIdHasBeenSet = false;
+  bool m_functionDefinitionVersionIdHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

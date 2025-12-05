@@ -77,9 +77,9 @@ class CreateMemberRequest : public Macie2Request {
   ///@}
  private:
   AccountDetail m_account;
-  bool m_accountHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_accountHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

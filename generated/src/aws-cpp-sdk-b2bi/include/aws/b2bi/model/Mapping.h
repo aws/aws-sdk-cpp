@@ -69,9 +69,9 @@ class Mapping {
   ///@}
  private:
   MappingTemplateLanguage m_templateLanguage{MappingTemplateLanguage::NOT_SET};
-  bool m_templateLanguageHasBeenSet = false;
 
   Aws::String m_template;
+  bool m_templateLanguageHasBeenSet = false;
   bool m_templateHasBeenSet = false;
 };
 

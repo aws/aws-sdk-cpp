@@ -127,12 +127,12 @@ class GetSensitiveDataOccurrencesAvailabilityResult {
   ///@}
  private:
   AvailabilityCode m_code{AvailabilityCode::NOT_SET};
-  bool m_codeHasBeenSet = false;
 
   Aws::Vector<UnavailabilityReasonCode> m_reasons;
-  bool m_reasonsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_codeHasBeenSet = false;
+  bool m_reasonsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

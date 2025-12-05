@@ -217,30 +217,30 @@ class Database {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_locationUri;
-  bool m_locationUriHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Vector<PrincipalPermissions> m_createTableDefaultPermissions;
-  bool m_createTableDefaultPermissionsHasBeenSet = false;
 
   DatabaseIdentifier m_targetDatabase;
-  bool m_targetDatabaseHasBeenSet = false;
 
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   FederatedDatabase m_federatedDatabase;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_locationUriHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_createTableDefaultPermissionsHasBeenSet = false;
+  bool m_targetDatabaseHasBeenSet = false;
+  bool m_catalogIdHasBeenSet = false;
   bool m_federatedDatabaseHasBeenSet = false;
 };
 

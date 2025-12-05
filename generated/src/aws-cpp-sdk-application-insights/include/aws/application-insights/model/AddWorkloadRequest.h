@@ -87,12 +87,12 @@ class AddWorkloadRequest : public ApplicationInsightsRequest {
   ///@}
  private:
   Aws::String m_resourceGroupName;
-  bool m_resourceGroupNameHasBeenSet = false;
 
   Aws::String m_componentName;
-  bool m_componentNameHasBeenSet = false;
 
   WorkloadConfiguration m_workloadConfiguration;
+  bool m_resourceGroupNameHasBeenSet = false;
+  bool m_componentNameHasBeenSet = false;
   bool m_workloadConfigurationHasBeenSet = false;
 };
 

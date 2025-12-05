@@ -426,63 +426,63 @@ class Output {
   ///@}
  private:
   int m_dataTransferSubscriberFeePercent{0};
-  bool m_dataTransferSubscriberFeePercentHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_destination;
-  bool m_destinationHasBeenSet = false;
 
   Encryption m_encryption;
-  bool m_encryptionHasBeenSet = false;
 
   Aws::String m_entitlementArn;
-  bool m_entitlementArnHasBeenSet = false;
 
   Aws::String m_listenerAddress;
-  bool m_listenerAddressHasBeenSet = false;
 
   Aws::String m_mediaLiveInputArn;
-  bool m_mediaLiveInputArnHasBeenSet = false;
 
   Aws::Vector<MediaStreamOutputConfiguration> m_mediaStreamOutputConfigurations;
-  bool m_mediaStreamOutputConfigurationsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_outputArn;
-  bool m_outputArnHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Transport m_transport;
-  bool m_transportHasBeenSet = false;
 
   VpcInterfaceAttachment m_vpcInterfaceAttachment;
-  bool m_vpcInterfaceAttachmentHasBeenSet = false;
 
   Aws::String m_bridgeArn;
-  bool m_bridgeArnHasBeenSet = false;
 
   Aws::Vector<int> m_bridgePorts;
-  bool m_bridgePortsHasBeenSet = false;
 
   OutputStatus m_outputStatus{OutputStatus::NOT_SET};
-  bool m_outputStatusHasBeenSet = false;
 
   Aws::String m_peerIpAddress;
-  bool m_peerIpAddressHasBeenSet = false;
 
   State m_routerIntegrationState{State::NOT_SET};
-  bool m_routerIntegrationStateHasBeenSet = false;
 
   FlowTransitEncryption m_routerIntegrationTransitEncryption;
-  bool m_routerIntegrationTransitEncryptionHasBeenSet = false;
 
   Aws::String m_connectedRouterInputArn;
+  bool m_dataTransferSubscriberFeePercentHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_encryptionHasBeenSet = false;
+  bool m_entitlementArnHasBeenSet = false;
+  bool m_listenerAddressHasBeenSet = false;
+  bool m_mediaLiveInputArnHasBeenSet = false;
+  bool m_mediaStreamOutputConfigurationsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_outputArnHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_transportHasBeenSet = false;
+  bool m_vpcInterfaceAttachmentHasBeenSet = false;
+  bool m_bridgeArnHasBeenSet = false;
+  bool m_bridgePortsHasBeenSet = false;
+  bool m_outputStatusHasBeenSet = false;
+  bool m_peerIpAddressHasBeenSet = false;
+  bool m_routerIntegrationStateHasBeenSet = false;
+  bool m_routerIntegrationTransitEncryptionHasBeenSet = false;
   bool m_connectedRouterInputArnHasBeenSet = false;
 };
 

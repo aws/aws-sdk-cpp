@@ -279,45 +279,45 @@ class CreateCalculatedAttributeDefinitionResult {
   ///@}
  private:
   Aws::String m_calculatedAttributeName;
-  bool m_calculatedAttributeNameHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   AttributeDetails m_attributeDetails;
-  bool m_attributeDetailsHasBeenSet = false;
 
   Conditions m_conditions;
-  bool m_conditionsHasBeenSet = false;
 
   Filter m_filter;
-  bool m_filterHasBeenSet = false;
 
   Statistic m_statistic{Statistic::NOT_SET};
-  bool m_statisticHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   bool m_useHistoricalData{false};
-  bool m_useHistoricalDataHasBeenSet = false;
 
   ReadinessStatus m_status{ReadinessStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Readiness m_readiness;
-  bool m_readinessHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_calculatedAttributeNameHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_attributeDetailsHasBeenSet = false;
+  bool m_conditionsHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
+  bool m_statisticHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_useHistoricalDataHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_readinessHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

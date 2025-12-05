@@ -87,12 +87,12 @@ class Evidence {
   ///@}
  private:
   Aws::String m_evidenceRule;
-  bool m_evidenceRuleHasBeenSet = false;
 
   Aws::String m_evidenceDetail;
-  bool m_evidenceDetailHasBeenSet = false;
 
   Aws::String m_severity;
+  bool m_evidenceRuleHasBeenSet = false;
+  bool m_evidenceDetailHasBeenSet = false;
   bool m_severityHasBeenSet = false;
 };
 

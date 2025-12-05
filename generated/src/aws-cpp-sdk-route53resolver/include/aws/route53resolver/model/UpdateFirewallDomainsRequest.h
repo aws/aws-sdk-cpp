@@ -103,12 +103,12 @@ class UpdateFirewallDomainsRequest : public Route53ResolverRequest {
   ///@}
  private:
   Aws::String m_firewallDomainListId;
-  bool m_firewallDomainListIdHasBeenSet = false;
 
   FirewallDomainUpdateOperation m_operation{FirewallDomainUpdateOperation::NOT_SET};
-  bool m_operationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_domains;
+  bool m_firewallDomainListIdHasBeenSet = false;
+  bool m_operationHasBeenSet = false;
   bool m_domainsHasBeenSet = false;
 };
 

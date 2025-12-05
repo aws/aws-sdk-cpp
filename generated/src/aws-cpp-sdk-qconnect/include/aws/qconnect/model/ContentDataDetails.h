@@ -69,9 +69,9 @@ class ContentDataDetails {
   ///@}
  private:
   TextData m_textData;
-  bool m_textDataHasBeenSet = false;
 
   RankingData m_rankingData;
+  bool m_textDataHasBeenSet = false;
   bool m_rankingDataHasBeenSet = false;
 };
 

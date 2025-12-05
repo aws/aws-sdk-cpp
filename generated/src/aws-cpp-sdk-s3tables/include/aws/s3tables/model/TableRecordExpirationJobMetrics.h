@@ -80,12 +80,12 @@ class TableRecordExpirationJobMetrics {
   ///@}
  private:
   long long m_deletedDataFiles{0};
-  bool m_deletedDataFilesHasBeenSet = false;
 
   long long m_deletedRecords{0};
-  bool m_deletedRecordsHasBeenSet = false;
 
   long long m_removedFilesSize{0};
+  bool m_deletedDataFilesHasBeenSet = false;
+  bool m_deletedRecordsHasBeenSet = false;
   bool m_removedFilesSizeHasBeenSet = false;
 };
 

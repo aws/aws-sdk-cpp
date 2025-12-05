@@ -155,24 +155,24 @@ class ListEventsRequest : public BedrockAgentCoreRequest {
   ///@}
  private:
   Aws::String m_memoryId;
-  bool m_memoryIdHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_actorId;
-  bool m_actorIdHasBeenSet = false;
 
   bool m_includePayloads{false};
-  bool m_includePayloadsHasBeenSet = false;
 
   FilterInput m_filter;
-  bool m_filterHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_memoryIdHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_actorIdHasBeenSet = false;
+  bool m_includePayloadsHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

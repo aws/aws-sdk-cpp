@@ -122,18 +122,18 @@ class BillOfMaterialsImportJob {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   ConfigurationJobStatus m_status{ConfigurationJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_s3uri;
-  bool m_s3uriHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_s3uriHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

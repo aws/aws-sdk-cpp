@@ -92,12 +92,12 @@ class ListWorkspaceInstancesResult {
   ///@}
  private:
   Aws::Vector<WorkspaceInstance> m_workspaceInstances;
-  bool m_workspaceInstancesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workspaceInstancesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

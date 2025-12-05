@@ -61,9 +61,9 @@ class RejectChannelHandshakeResult {
   ///@}
  private:
   RejectChannelHandshakeDetail m_channelHandshakeDetail;
-  bool m_channelHandshakeDetailHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelHandshakeDetailHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

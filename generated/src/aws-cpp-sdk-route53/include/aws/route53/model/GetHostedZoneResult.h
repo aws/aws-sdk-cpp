@@ -112,15 +112,15 @@ class GetHostedZoneResult {
   ///@}
  private:
   HostedZone m_hostedZone;
-  bool m_hostedZoneHasBeenSet = false;
 
   DelegationSet m_delegationSet;
-  bool m_delegationSetHasBeenSet = false;
 
   Aws::Vector<VPC> m_vPCs;
-  bool m_vPCsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_hostedZoneHasBeenSet = false;
+  bool m_delegationSetHasBeenSet = false;
+  bool m_vPCsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

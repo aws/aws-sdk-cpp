@@ -68,9 +68,9 @@ class NotifyWorkersResult {
   ///@}
  private:
   Aws::Vector<NotifyWorkersFailureStatus> m_notifyWorkersFailureStatuses;
-  bool m_notifyWorkersFailureStatusesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_notifyWorkersFailureStatusesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

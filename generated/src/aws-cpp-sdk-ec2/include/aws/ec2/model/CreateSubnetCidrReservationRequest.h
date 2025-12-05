@@ -153,21 +153,21 @@ class CreateSubnetCidrReservationRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_cidr;
-  bool m_cidrHasBeenSet = false;
 
   SubnetCidrReservationType m_reservationType{SubnetCidrReservationType::NOT_SET};
-  bool m_reservationTypeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_cidrHasBeenSet = false;
+  bool m_reservationTypeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
   bool m_tagSpecificationsHasBeenSet = false;
 };
 

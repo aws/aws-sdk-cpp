@@ -82,9 +82,9 @@ class RoutingPolicyAssociationDetail {
   ///@}
  private:
   Aws::Vector<Aws::String> m_routingPolicyNames;
-  bool m_routingPolicyNamesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sharedSegments;
+  bool m_routingPolicyNamesHasBeenSet = false;
   bool m_sharedSegmentsHasBeenSet = false;
 };
 

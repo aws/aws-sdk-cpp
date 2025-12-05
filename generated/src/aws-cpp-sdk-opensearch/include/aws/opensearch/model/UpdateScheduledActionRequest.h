@@ -132,18 +132,18 @@ class UpdateScheduledActionRequest : public OpenSearchServiceRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_actionID;
-  bool m_actionIDHasBeenSet = false;
 
   ActionType m_actionType{ActionType::NOT_SET};
-  bool m_actionTypeHasBeenSet = false;
 
   ScheduleAt m_scheduleAt{ScheduleAt::NOT_SET};
-  bool m_scheduleAtHasBeenSet = false;
 
   long long m_desiredStartTime{0};
+  bool m_domainNameHasBeenSet = false;
+  bool m_actionIDHasBeenSet = false;
+  bool m_actionTypeHasBeenSet = false;
+  bool m_scheduleAtHasBeenSet = false;
   bool m_desiredStartTimeHasBeenSet = false;
 };
 

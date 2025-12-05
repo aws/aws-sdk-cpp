@@ -106,15 +106,15 @@ class ChimeSdkMeetingLiveConnectorConfiguration {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   LiveConnectorMuxType m_muxType{LiveConnectorMuxType::NOT_SET};
-  bool m_muxTypeHasBeenSet = false;
 
   CompositedVideoArtifactsConfiguration m_compositedVideo;
-  bool m_compositedVideoHasBeenSet = false;
 
   SourceConfiguration m_sourceConfiguration;
+  bool m_arnHasBeenSet = false;
+  bool m_muxTypeHasBeenSet = false;
+  bool m_compositedVideoHasBeenSet = false;
   bool m_sourceConfigurationHasBeenSet = false;
 };
 

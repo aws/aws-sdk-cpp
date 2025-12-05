@@ -132,18 +132,18 @@ class EvaluationFormSection {
   ///@}
  private:
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_refId;
-  bool m_refIdHasBeenSet = false;
 
   Aws::String m_instructions;
-  bool m_instructionsHasBeenSet = false;
 
   Aws::Vector<EvaluationFormItem> m_items;
-  bool m_itemsHasBeenSet = false;
 
   double m_weight{0.0};
+  bool m_titleHasBeenSet = false;
+  bool m_refIdHasBeenSet = false;
+  bool m_instructionsHasBeenSet = false;
+  bool m_itemsHasBeenSet = false;
   bool m_weightHasBeenSet = false;
 };
 

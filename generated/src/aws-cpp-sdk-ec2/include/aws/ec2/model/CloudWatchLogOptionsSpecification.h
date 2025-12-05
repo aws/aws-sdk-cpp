@@ -148,21 +148,21 @@ class CloudWatchLogOptionsSpecification {
   ///@}
  private:
   bool m_logEnabled{false};
-  bool m_logEnabledHasBeenSet = false;
 
   Aws::String m_logGroupArn;
-  bool m_logGroupArnHasBeenSet = false;
 
   Aws::String m_logOutputFormat;
-  bool m_logOutputFormatHasBeenSet = false;
 
   bool m_bgpLogEnabled{false};
-  bool m_bgpLogEnabledHasBeenSet = false;
 
   Aws::String m_bgpLogGroupArn;
-  bool m_bgpLogGroupArnHasBeenSet = false;
 
   Aws::String m_bgpLogOutputFormat;
+  bool m_logEnabledHasBeenSet = false;
+  bool m_logGroupArnHasBeenSet = false;
+  bool m_logOutputFormatHasBeenSet = false;
+  bool m_bgpLogEnabledHasBeenSet = false;
+  bool m_bgpLogGroupArnHasBeenSet = false;
   bool m_bgpLogOutputFormatHasBeenSet = false;
 };
 

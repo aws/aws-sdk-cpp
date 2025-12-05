@@ -69,9 +69,9 @@ class IngressPointConfiguration {
   ///@}
  private:
   Aws::String m_smtpPassword;
-  bool m_smtpPasswordHasBeenSet = false;
 
   Aws::String m_secretArn;
+  bool m_smtpPasswordHasBeenSet = false;
   bool m_secretArnHasBeenSet = false;
 };
 

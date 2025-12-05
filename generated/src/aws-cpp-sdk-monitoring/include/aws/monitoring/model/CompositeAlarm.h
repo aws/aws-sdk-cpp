@@ -415,60 +415,60 @@ class CompositeAlarm {
   ///@}
  private:
   bool m_actionsEnabled{false};
-  bool m_actionsEnabledHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_alarmActions;
-  bool m_alarmActionsHasBeenSet = false;
 
   Aws::String m_alarmArn;
-  bool m_alarmArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_alarmConfigurationUpdatedTimestamp{};
-  bool m_alarmConfigurationUpdatedTimestampHasBeenSet = false;
 
   Aws::String m_alarmDescription;
-  bool m_alarmDescriptionHasBeenSet = false;
 
   Aws::String m_alarmName;
-  bool m_alarmNameHasBeenSet = false;
 
   Aws::String m_alarmRule;
-  bool m_alarmRuleHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_insufficientDataActions;
-  bool m_insufficientDataActionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_oKActions;
-  bool m_oKActionsHasBeenSet = false;
 
   Aws::String m_stateReason;
-  bool m_stateReasonHasBeenSet = false;
 
   Aws::String m_stateReasonData;
-  bool m_stateReasonDataHasBeenSet = false;
 
   Aws::Utils::DateTime m_stateUpdatedTimestamp{};
-  bool m_stateUpdatedTimestampHasBeenSet = false;
 
   StateValue m_stateValue{StateValue::NOT_SET};
-  bool m_stateValueHasBeenSet = false;
 
   Aws::Utils::DateTime m_stateTransitionedTimestamp{};
-  bool m_stateTransitionedTimestampHasBeenSet = false;
 
   ActionsSuppressedBy m_actionsSuppressedBy{ActionsSuppressedBy::NOT_SET};
-  bool m_actionsSuppressedByHasBeenSet = false;
 
   Aws::String m_actionsSuppressedReason;
-  bool m_actionsSuppressedReasonHasBeenSet = false;
 
   Aws::String m_actionsSuppressor;
-  bool m_actionsSuppressorHasBeenSet = false;
 
   int m_actionsSuppressorWaitPeriod{0};
-  bool m_actionsSuppressorWaitPeriodHasBeenSet = false;
 
   int m_actionsSuppressorExtensionPeriod{0};
+  bool m_actionsEnabledHasBeenSet = false;
+  bool m_alarmActionsHasBeenSet = false;
+  bool m_alarmArnHasBeenSet = false;
+  bool m_alarmConfigurationUpdatedTimestampHasBeenSet = false;
+  bool m_alarmDescriptionHasBeenSet = false;
+  bool m_alarmNameHasBeenSet = false;
+  bool m_alarmRuleHasBeenSet = false;
+  bool m_insufficientDataActionsHasBeenSet = false;
+  bool m_oKActionsHasBeenSet = false;
+  bool m_stateReasonHasBeenSet = false;
+  bool m_stateReasonDataHasBeenSet = false;
+  bool m_stateUpdatedTimestampHasBeenSet = false;
+  bool m_stateValueHasBeenSet = false;
+  bool m_stateTransitionedTimestampHasBeenSet = false;
+  bool m_actionsSuppressedByHasBeenSet = false;
+  bool m_actionsSuppressedReasonHasBeenSet = false;
+  bool m_actionsSuppressorHasBeenSet = false;
+  bool m_actionsSuppressorWaitPeriodHasBeenSet = false;
   bool m_actionsSuppressorExtensionPeriodHasBeenSet = false;
 };
 

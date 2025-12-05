@@ -191,27 +191,27 @@ class ListNotificationsRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::Utils::DateTime m_afterTimestamp{};
-  bool m_afterTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_beforeTimestamp{};
-  bool m_beforeTimestampHasBeenSet = false;
 
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subjects;
-  bool m_subjectsHasBeenSet = false;
 
   TaskStatus m_taskStatus{TaskStatus::NOT_SET};
-  bool m_taskStatusHasBeenSet = false;
 
   NotificationType m_type{NotificationType::NOT_SET};
+  bool m_afterTimestampHasBeenSet = false;
+  bool m_beforeTimestampHasBeenSet = false;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_subjectsHasBeenSet = false;
+  bool m_taskStatusHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

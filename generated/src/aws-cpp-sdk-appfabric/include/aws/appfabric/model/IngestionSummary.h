@@ -103,15 +103,15 @@ class IngestionSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_app;
-  bool m_appHasBeenSet = false;
 
   Aws::String m_tenantId;
-  bool m_tenantIdHasBeenSet = false;
 
   IngestionState m_state{IngestionState::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_appHasBeenSet = false;
+  bool m_tenantIdHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

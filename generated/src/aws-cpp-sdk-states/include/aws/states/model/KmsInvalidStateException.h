@@ -68,9 +68,9 @@ class KmsInvalidStateException {
   ///@}
  private:
   KmsKeyState m_kmsKeyState{KmsKeyState::NOT_SET};
-  bool m_kmsKeyStateHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_kmsKeyStateHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class RuleAction {
   ///@}
  private:
   ForwardAction m_forward;
-  bool m_forwardHasBeenSet = false;
 
   FixedResponseAction m_fixedResponse;
+  bool m_forwardHasBeenSet = false;
   bool m_fixedResponseHasBeenSet = false;
 };
 

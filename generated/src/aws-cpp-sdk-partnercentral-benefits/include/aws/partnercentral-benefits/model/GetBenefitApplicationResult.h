@@ -410,63 +410,63 @@ class GetBenefitApplicationResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_benefitId;
-  bool m_benefitIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<FulfillmentType> m_fulfillmentTypes;
-  bool m_fulfillmentTypesHasBeenSet = false;
 
   Aws::Utils::Document m_benefitApplicationDetails;
-  bool m_benefitApplicationDetailsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_programs;
-  bool m_programsHasBeenSet = false;
 
   BenefitApplicationStatus m_status{BenefitApplicationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_stage;
-  bool m_stageHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_statusReasonCodes;
-  bool m_statusReasonCodesHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_revision;
-  bool m_revisionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_associatedResources;
-  bool m_associatedResourcesHasBeenSet = false;
 
   Aws::Vector<Contact> m_partnerContacts;
-  bool m_partnerContactsHasBeenSet = false;
 
   Aws::Vector<FileDetail> m_fileDetails;
-  bool m_fileDetailsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_catalogHasBeenSet = false;
+  bool m_benefitIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_fulfillmentTypesHasBeenSet = false;
+  bool m_benefitApplicationDetailsHasBeenSet = false;
+  bool m_programsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_stageHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_statusReasonCodesHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_revisionHasBeenSet = false;
+  bool m_associatedResourcesHasBeenSet = false;
+  bool m_partnerContactsHasBeenSet = false;
+  bool m_fileDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

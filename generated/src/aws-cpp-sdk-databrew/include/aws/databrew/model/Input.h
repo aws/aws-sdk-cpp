@@ -108,15 +108,15 @@ class Input {
   ///@}
  private:
   S3Location m_s3InputDefinition;
-  bool m_s3InputDefinitionHasBeenSet = false;
 
   DataCatalogInputDefinition m_dataCatalogInputDefinition;
-  bool m_dataCatalogInputDefinitionHasBeenSet = false;
 
   DatabaseInputDefinition m_databaseInputDefinition;
-  bool m_databaseInputDefinitionHasBeenSet = false;
 
   Metadata m_metadata;
+  bool m_s3InputDefinitionHasBeenSet = false;
+  bool m_dataCatalogInputDefinitionHasBeenSet = false;
+  bool m_databaseInputDefinitionHasBeenSet = false;
   bool m_metadataHasBeenSet = false;
 };
 

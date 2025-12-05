@@ -165,24 +165,24 @@ class CreateSecurityConfigRequest : public OpenSearchServerlessRequest {
   ///@}
  private:
   SecurityConfigType m_type{SecurityConfigType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   SamlConfigOptions m_samlOptions;
-  bool m_samlOptionsHasBeenSet = false;
 
   CreateIamIdentityCenterConfigOptions m_iamIdentityCenterOptions;
-  bool m_iamIdentityCenterOptionsHasBeenSet = false;
 
   IamFederationConfigOptions m_iamFederationOptions;
-  bool m_iamFederationOptionsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_typeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_samlOptionsHasBeenSet = false;
+  bool m_iamIdentityCenterOptionsHasBeenSet = false;
+  bool m_iamFederationOptionsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

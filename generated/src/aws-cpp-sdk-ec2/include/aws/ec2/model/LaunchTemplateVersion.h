@@ -195,30 +195,30 @@ class LaunchTemplateVersion {
   ///@}
  private:
   Aws::String m_launchTemplateId;
-  bool m_launchTemplateIdHasBeenSet = false;
 
   Aws::String m_launchTemplateName;
-  bool m_launchTemplateNameHasBeenSet = false;
 
   long long m_versionNumber{0};
-  bool m_versionNumberHasBeenSet = false;
 
   Aws::String m_versionDescription;
-  bool m_versionDescriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   bool m_defaultVersion{false};
-  bool m_defaultVersionHasBeenSet = false;
 
   ResponseLaunchTemplateData m_launchTemplateData;
-  bool m_launchTemplateDataHasBeenSet = false;
 
   OperatorResponse m_operator;
+  bool m_launchTemplateIdHasBeenSet = false;
+  bool m_launchTemplateNameHasBeenSet = false;
+  bool m_versionNumberHasBeenSet = false;
+  bool m_versionDescriptionHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_defaultVersionHasBeenSet = false;
+  bool m_launchTemplateDataHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
 };
 

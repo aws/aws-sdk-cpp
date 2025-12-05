@@ -233,30 +233,30 @@ class UncompressedSettings {
   ///@}
  private:
   UncompressedFourcc m_fourcc{UncompressedFourcc::NOT_SET};
-  bool m_fourccHasBeenSet = false;
 
   UncompressedFramerateControl m_framerateControl{UncompressedFramerateControl::NOT_SET};
-  bool m_framerateControlHasBeenSet = false;
 
   UncompressedFramerateConversionAlgorithm m_framerateConversionAlgorithm{UncompressedFramerateConversionAlgorithm::NOT_SET};
-  bool m_framerateConversionAlgorithmHasBeenSet = false;
 
   int m_framerateDenominator{0};
-  bool m_framerateDenominatorHasBeenSet = false;
 
   int m_framerateNumerator{0};
-  bool m_framerateNumeratorHasBeenSet = false;
 
   UncompressedInterlaceMode m_interlaceMode{UncompressedInterlaceMode::NOT_SET};
-  bool m_interlaceModeHasBeenSet = false;
 
   UncompressedScanTypeConversionMode m_scanTypeConversionMode{UncompressedScanTypeConversionMode::NOT_SET};
-  bool m_scanTypeConversionModeHasBeenSet = false;
 
   UncompressedSlowPal m_slowPal{UncompressedSlowPal::NOT_SET};
-  bool m_slowPalHasBeenSet = false;
 
   UncompressedTelecine m_telecine{UncompressedTelecine::NOT_SET};
+  bool m_fourccHasBeenSet = false;
+  bool m_framerateControlHasBeenSet = false;
+  bool m_framerateConversionAlgorithmHasBeenSet = false;
+  bool m_framerateDenominatorHasBeenSet = false;
+  bool m_framerateNumeratorHasBeenSet = false;
+  bool m_interlaceModeHasBeenSet = false;
+  bool m_scanTypeConversionModeHasBeenSet = false;
+  bool m_slowPalHasBeenSet = false;
   bool m_telecineHasBeenSet = false;
 };
 

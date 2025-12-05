@@ -65,9 +65,9 @@ class StartInstanceOnboardingJobRequest : public ConnectCampaignsRequest {
   ///@}
  private:
   Aws::String m_connectInstanceId;
-  bool m_connectInstanceIdHasBeenSet = false;
 
   EncryptionConfig m_encryptionConfig;
+  bool m_connectInstanceIdHasBeenSet = false;
   bool m_encryptionConfigHasBeenSet = false;
 };
 

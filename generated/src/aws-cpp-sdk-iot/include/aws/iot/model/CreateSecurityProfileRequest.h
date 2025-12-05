@@ -192,24 +192,24 @@ class CreateSecurityProfileRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_securityProfileName;
-  bool m_securityProfileNameHasBeenSet = false;
 
   Aws::String m_securityProfileDescription;
-  bool m_securityProfileDescriptionHasBeenSet = false;
 
   Aws::Vector<Behavior> m_behaviors;
-  bool m_behaviorsHasBeenSet = false;
 
   Aws::Map<AlertTargetType, AlertTarget> m_alertTargets;
-  bool m_alertTargetsHasBeenSet = false;
 
   Aws::Vector<MetricToRetain> m_additionalMetricsToRetainV2;
-  bool m_additionalMetricsToRetainV2HasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   MetricsExportConfig m_metricsExportConfig;
+  bool m_securityProfileNameHasBeenSet = false;
+  bool m_securityProfileDescriptionHasBeenSet = false;
+  bool m_behaviorsHasBeenSet = false;
+  bool m_alertTargetsHasBeenSet = false;
+  bool m_additionalMetricsToRetainV2HasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_metricsExportConfigHasBeenSet = false;
 };
 

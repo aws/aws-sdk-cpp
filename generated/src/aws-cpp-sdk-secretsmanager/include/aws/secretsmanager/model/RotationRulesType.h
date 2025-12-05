@@ -128,12 +128,12 @@ class RotationRulesType {
   ///@}
  private:
   long long m_automaticallyAfterDays{0};
-  bool m_automaticallyAfterDaysHasBeenSet = false;
 
   Aws::String m_duration;
-  bool m_durationHasBeenSet = false;
 
   Aws::String m_scheduleExpression;
+  bool m_automaticallyAfterDaysHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
   bool m_scheduleExpressionHasBeenSet = false;
 };
 

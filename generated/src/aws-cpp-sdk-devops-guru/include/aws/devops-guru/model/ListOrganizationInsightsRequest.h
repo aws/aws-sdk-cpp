@@ -132,18 +132,18 @@ class ListOrganizationInsightsRequest : public DevOpsGuruRequest {
   ///@}
  private:
   ListInsightsStatusFilter m_statusFilter;
-  bool m_statusFilterHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_accountIds;
-  bool m_accountIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_organizationalUnitIds;
-  bool m_organizationalUnitIdsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_statusFilterHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_accountIdsHasBeenSet = false;
+  bool m_organizationalUnitIdsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

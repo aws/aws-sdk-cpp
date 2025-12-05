@@ -78,12 +78,12 @@ class PublishStateMachineVersionResult {
   ///@}
  private:
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_stateMachineVersionArn;
-  bool m_stateMachineVersionArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_creationDateHasBeenSet = false;
+  bool m_stateMachineVersionArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class DeleteLicenseServerEndpointRequest : public LicenseManagerUserSubscription
   ///@}
  private:
   Aws::String m_licenseServerEndpointArn;
-  bool m_licenseServerEndpointArnHasBeenSet = false;
 
   ServerType m_serverType{ServerType::NOT_SET};
+  bool m_licenseServerEndpointArnHasBeenSet = false;
   bool m_serverTypeHasBeenSet = false;
 };
 

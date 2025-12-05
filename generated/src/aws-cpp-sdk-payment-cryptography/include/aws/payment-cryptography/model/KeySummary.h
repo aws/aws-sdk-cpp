@@ -182,27 +182,27 @@ class KeySummary {
   ///@}
  private:
   Aws::String m_keyArn;
-  bool m_keyArnHasBeenSet = false;
 
   KeyState m_keyState{KeyState::NOT_SET};
-  bool m_keyStateHasBeenSet = false;
 
   KeyAttributes m_keyAttributes;
-  bool m_keyAttributesHasBeenSet = false;
 
   Aws::String m_keyCheckValue;
-  bool m_keyCheckValueHasBeenSet = false;
 
   bool m_exportable{false};
-  bool m_exportableHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   MultiRegionKeyType m_multiRegionKeyType{MultiRegionKeyType::NOT_SET};
-  bool m_multiRegionKeyTypeHasBeenSet = false;
 
   Aws::String m_primaryRegion;
+  bool m_keyArnHasBeenSet = false;
+  bool m_keyStateHasBeenSet = false;
+  bool m_keyAttributesHasBeenSet = false;
+  bool m_keyCheckValueHasBeenSet = false;
+  bool m_exportableHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
+  bool m_multiRegionKeyTypeHasBeenSet = false;
   bool m_primaryRegionHasBeenSet = false;
 };
 

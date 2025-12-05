@@ -76,9 +76,9 @@ class SnowflakeTableSchemaV1 {
   ///@}
  private:
   Aws::String m_columnName;
-  bool m_columnNameHasBeenSet = false;
 
   Aws::String m_columnType;
+  bool m_columnNameHasBeenSet = false;
   bool m_columnTypeHasBeenSet = false;
 };
 

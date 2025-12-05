@@ -74,12 +74,12 @@ class DescribeQPersonalizationConfigurationResult {
   ///@}
  private:
   PersonalizationMode m_personalizationMode{PersonalizationMode::NOT_SET};
-  bool m_personalizationModeHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   int m_status{0};
+  bool m_personalizationModeHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

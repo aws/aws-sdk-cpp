@@ -66,9 +66,9 @@ class InstallToRemoteAccessSessionResult {
   ///@}
  private:
   Upload m_appUpload;
-  bool m_appUploadHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appUploadHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

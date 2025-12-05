@@ -76,12 +76,12 @@ class CreateAddressListImportJobResult {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_preSignedUrl;
-  bool m_preSignedUrlHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobIdHasBeenSet = false;
+  bool m_preSignedUrlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

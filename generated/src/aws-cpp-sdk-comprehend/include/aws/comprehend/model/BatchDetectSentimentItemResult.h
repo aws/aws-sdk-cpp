@@ -86,12 +86,12 @@ class BatchDetectSentimentItemResult {
   ///@}
  private:
   int m_index{0};
-  bool m_indexHasBeenSet = false;
 
   SentimentType m_sentiment{SentimentType::NOT_SET};
-  bool m_sentimentHasBeenSet = false;
 
   SentimentScore m_sentimentScore;
+  bool m_indexHasBeenSet = false;
+  bool m_sentimentHasBeenSet = false;
   bool m_sentimentScoreHasBeenSet = false;
 };
 

@@ -63,9 +63,9 @@ class FixedSizeChunkingConfiguration {
   ///@}
  private:
   int m_maxTokens{0};
-  bool m_maxTokensHasBeenSet = false;
 
   int m_overlapPercentage{0};
+  bool m_maxTokensHasBeenSet = false;
   bool m_overlapPercentageHasBeenSet = false;
 };
 

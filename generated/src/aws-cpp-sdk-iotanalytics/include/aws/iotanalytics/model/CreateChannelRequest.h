@@ -116,15 +116,15 @@ class CreateChannelRequest : public IoTAnalyticsRequest {
   ///@}
  private:
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   ChannelStorage m_channelStorage;
-  bool m_channelStorageHasBeenSet = false;
 
   RetentionPeriod m_retentionPeriod;
-  bool m_retentionPeriodHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_channelNameHasBeenSet = false;
+  bool m_channelStorageHasBeenSet = false;
+  bool m_retentionPeriodHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

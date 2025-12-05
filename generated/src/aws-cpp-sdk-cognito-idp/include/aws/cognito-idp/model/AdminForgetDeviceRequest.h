@@ -93,12 +93,12 @@ class AdminForgetDeviceRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::String m_userPoolId;
-  bool m_userPoolIdHasBeenSet = false;
 
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::String m_deviceKey;
+  bool m_userPoolIdHasBeenSet = false;
+  bool m_usernameHasBeenSet = false;
   bool m_deviceKeyHasBeenSet = false;
 };
 

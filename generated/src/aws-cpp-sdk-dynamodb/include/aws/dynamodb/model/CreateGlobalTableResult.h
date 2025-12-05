@@ -60,9 +60,9 @@ class CreateGlobalTableResult {
   ///@}
  private:
   GlobalTableDescription m_globalTableDescription;
-  bool m_globalTableDescriptionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_globalTableDescriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class ListTaxRegistrationsResult {
   ///@}
  private:
   Aws::Vector<AccountDetails> m_accountDetails;
-  bool m_accountDetailsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountDetailsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

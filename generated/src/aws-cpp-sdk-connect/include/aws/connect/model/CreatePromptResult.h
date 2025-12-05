@@ -76,12 +76,12 @@ class CreatePromptResult {
   ///@}
  private:
   Aws::String m_promptARN;
-  bool m_promptARNHasBeenSet = false;
 
   Aws::String m_promptId;
-  bool m_promptIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_promptARNHasBeenSet = false;
+  bool m_promptIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

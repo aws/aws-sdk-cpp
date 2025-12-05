@@ -66,9 +66,9 @@ class GetAnalyzedResourceResult {
   ///@}
  private:
   AnalyzedResource m_resource;
-  bool m_resourceHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

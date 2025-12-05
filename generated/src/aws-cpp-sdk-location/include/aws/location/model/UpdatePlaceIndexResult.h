@@ -99,15 +99,15 @@ class UpdatePlaceIndexResult {
   ///@}
  private:
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   Aws::String m_indexArn;
-  bool m_indexArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_indexNameHasBeenSet = false;
+  bool m_indexArnHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

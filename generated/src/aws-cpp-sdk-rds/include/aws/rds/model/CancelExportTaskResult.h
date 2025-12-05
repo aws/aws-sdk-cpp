@@ -345,54 +345,54 @@ class CancelExportTaskResult {
   ///@}
  private:
   Aws::String m_exportTaskIdentifier;
-  bool m_exportTaskIdentifierHasBeenSet = false;
 
   Aws::String m_sourceArn;
-  bool m_sourceArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_exportOnly;
-  bool m_exportOnlyHasBeenSet = false;
 
   Aws::Utils::DateTime m_snapshotTime{};
-  bool m_snapshotTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_taskStartTime{};
-  bool m_taskStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_taskEndTime{};
-  bool m_taskEndTimeHasBeenSet = false;
 
   Aws::String m_s3Bucket;
-  bool m_s3BucketHasBeenSet = false;
 
   Aws::String m_s3Prefix;
-  bool m_s3PrefixHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   int m_percentProgress{0};
-  bool m_percentProgressHasBeenSet = false;
 
   int m_totalExtractedDataInGB{0};
-  bool m_totalExtractedDataInGBHasBeenSet = false;
 
   Aws::String m_failureCause;
-  bool m_failureCauseHasBeenSet = false;
 
   Aws::String m_warningMessage;
-  bool m_warningMessageHasBeenSet = false;
 
   ExportSourceType m_sourceType{ExportSourceType::NOT_SET};
-  bool m_sourceTypeHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_exportTaskIdentifierHasBeenSet = false;
+  bool m_sourceArnHasBeenSet = false;
+  bool m_exportOnlyHasBeenSet = false;
+  bool m_snapshotTimeHasBeenSet = false;
+  bool m_taskStartTimeHasBeenSet = false;
+  bool m_taskEndTimeHasBeenSet = false;
+  bool m_s3BucketHasBeenSet = false;
+  bool m_s3PrefixHasBeenSet = false;
+  bool m_iamRoleArnHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_percentProgressHasBeenSet = false;
+  bool m_totalExtractedDataInGBHasBeenSet = false;
+  bool m_failureCauseHasBeenSet = false;
+  bool m_warningMessageHasBeenSet = false;
+  bool m_sourceTypeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

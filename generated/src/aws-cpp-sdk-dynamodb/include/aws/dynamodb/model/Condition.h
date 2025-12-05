@@ -198,9 +198,9 @@ class Condition {
   ///@}
  private:
   Aws::Vector<AttributeValue> m_attributeValueList;
-  bool m_attributeValueListHasBeenSet = false;
 
   ComparisonOperator m_comparisonOperator{ComparisonOperator::NOT_SET};
+  bool m_attributeValueListHasBeenSet = false;
   bool m_comparisonOperatorHasBeenSet = false;
 };
 

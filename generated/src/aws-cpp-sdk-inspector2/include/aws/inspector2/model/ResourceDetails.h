@@ -112,15 +112,15 @@ class ResourceDetails {
   ///@}
  private:
   AwsEc2InstanceDetails m_awsEc2Instance;
-  bool m_awsEc2InstanceHasBeenSet = false;
 
   AwsEcrContainerImageDetails m_awsEcrContainerImage;
-  bool m_awsEcrContainerImageHasBeenSet = false;
 
   AwsLambdaFunctionDetails m_awsLambdaFunction;
-  bool m_awsLambdaFunctionHasBeenSet = false;
 
   CodeRepositoryDetails m_codeRepository;
+  bool m_awsEc2InstanceHasBeenSet = false;
+  bool m_awsEcrContainerImageHasBeenSet = false;
+  bool m_awsLambdaFunctionHasBeenSet = false;
   bool m_codeRepositoryHasBeenSet = false;
 };
 

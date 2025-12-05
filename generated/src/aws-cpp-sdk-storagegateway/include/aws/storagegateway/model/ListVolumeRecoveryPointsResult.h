@@ -82,12 +82,12 @@ class ListVolumeRecoveryPointsResult {
   ///@}
  private:
   Aws::String m_gatewayARN;
-  bool m_gatewayARNHasBeenSet = false;
 
   Aws::Vector<VolumeRecoveryPointInfo> m_volumeRecoveryPointInfos;
-  bool m_volumeRecoveryPointInfosHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_gatewayARNHasBeenSet = false;
+  bool m_volumeRecoveryPointInfosHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

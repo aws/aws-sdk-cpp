@@ -146,21 +146,21 @@ class AvailabilityConfiguration {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   AvailabilityProviderType m_providerType{AvailabilityProviderType::NOT_SET};
-  bool m_providerTypeHasBeenSet = false;
 
   RedactedEwsAvailabilityProvider m_ewsProvider;
-  bool m_ewsProviderHasBeenSet = false;
 
   LambdaAvailabilityProvider m_lambdaProvider;
-  bool m_lambdaProviderHasBeenSet = false;
 
   Aws::Utils::DateTime m_dateCreated{};
-  bool m_dateCreatedHasBeenSet = false;
 
   Aws::Utils::DateTime m_dateModified{};
+  bool m_domainNameHasBeenSet = false;
+  bool m_providerTypeHasBeenSet = false;
+  bool m_ewsProviderHasBeenSet = false;
+  bool m_lambdaProviderHasBeenSet = false;
+  bool m_dateCreatedHasBeenSet = false;
   bool m_dateModifiedHasBeenSet = false;
 };
 

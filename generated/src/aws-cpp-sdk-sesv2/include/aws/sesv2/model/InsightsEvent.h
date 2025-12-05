@@ -105,12 +105,12 @@ class InsightsEvent {
   ///@}
  private:
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   EventType m_type{EventType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   EventDetails m_details;
+  bool m_timestampHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_detailsHasBeenSet = false;
 };
 

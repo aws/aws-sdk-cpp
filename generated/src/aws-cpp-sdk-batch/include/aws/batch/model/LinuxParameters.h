@@ -209,21 +209,21 @@ class LinuxParameters {
   ///@}
  private:
   Aws::Vector<Device> m_devices;
-  bool m_devicesHasBeenSet = false;
 
   bool m_initProcessEnabled{false};
-  bool m_initProcessEnabledHasBeenSet = false;
 
   int m_sharedMemorySize{0};
-  bool m_sharedMemorySizeHasBeenSet = false;
 
   Aws::Vector<Tmpfs> m_tmpfs;
-  bool m_tmpfsHasBeenSet = false;
 
   int m_maxSwap{0};
-  bool m_maxSwapHasBeenSet = false;
 
   int m_swappiness{0};
+  bool m_devicesHasBeenSet = false;
+  bool m_initProcessEnabledHasBeenSet = false;
+  bool m_sharedMemorySizeHasBeenSet = false;
+  bool m_tmpfsHasBeenSet = false;
+  bool m_maxSwapHasBeenSet = false;
   bool m_swappinessHasBeenSet = false;
 };
 

@@ -74,9 +74,9 @@ class DescribeElasticsearchInstanceTypeLimitsResult {
   ///@}
  private:
   Aws::Map<Aws::String, Limits> m_limitsByRole;
-  bool m_limitsByRoleHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_limitsByRoleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

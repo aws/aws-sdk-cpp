@@ -60,9 +60,9 @@ class GetPlaybackRestrictionPolicyResult {
   ///@}
  private:
   PlaybackRestrictionPolicy m_playbackRestrictionPolicy;
-  bool m_playbackRestrictionPolicyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_playbackRestrictionPolicyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

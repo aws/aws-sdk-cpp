@@ -163,18 +163,18 @@ class Extensions {
   ///@}
  private:
   Aws::Vector<PolicyInformation> m_certificatePolicies;
-  bool m_certificatePoliciesHasBeenSet = false;
 
   Aws::Vector<ExtendedKeyUsage> m_extendedKeyUsage;
-  bool m_extendedKeyUsageHasBeenSet = false;
 
   KeyUsage m_keyUsage;
-  bool m_keyUsageHasBeenSet = false;
 
   Aws::Vector<GeneralName> m_subjectAlternativeNames;
-  bool m_subjectAlternativeNamesHasBeenSet = false;
 
   Aws::Vector<CustomExtension> m_customExtensions;
+  bool m_certificatePoliciesHasBeenSet = false;
+  bool m_extendedKeyUsageHasBeenSet = false;
+  bool m_keyUsageHasBeenSet = false;
+  bool m_subjectAlternativeNamesHasBeenSet = false;
   bool m_customExtensionsHasBeenSet = false;
 };
 

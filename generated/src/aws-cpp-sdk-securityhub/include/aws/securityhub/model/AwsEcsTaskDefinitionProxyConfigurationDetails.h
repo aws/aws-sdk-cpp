@@ -99,12 +99,12 @@ class AwsEcsTaskDefinitionProxyConfigurationDetails {
   ///@}
  private:
   Aws::String m_containerName;
-  bool m_containerNameHasBeenSet = false;
 
   Aws::Vector<AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails> m_proxyConfigurationProperties;
-  bool m_proxyConfigurationPropertiesHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_containerNameHasBeenSet = false;
+  bool m_proxyConfigurationPropertiesHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

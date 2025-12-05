@@ -70,9 +70,9 @@ class ActionConfiguration {
   ///@}
  private:
   Aws::String m_action;
-  bool m_actionHasBeenSet = false;
 
   ActionFilterConfiguration m_filterConfiguration;
+  bool m_actionHasBeenSet = false;
   bool m_filterConfigurationHasBeenSet = false;
 };
 

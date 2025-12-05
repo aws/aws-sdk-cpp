@@ -97,12 +97,12 @@ class DescribeSnapshotCopyGrantsResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<SnapshotCopyGrant> m_snapshotCopyGrants;
-  bool m_snapshotCopyGrantsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_snapshotCopyGrantsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

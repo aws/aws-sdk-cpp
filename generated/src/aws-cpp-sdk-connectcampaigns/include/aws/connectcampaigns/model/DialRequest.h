@@ -104,15 +104,15 @@ class DialRequest {
   ///@}
  private:
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::String m_phoneNumber;
-  bool m_phoneNumberHasBeenSet = false;
 
   Aws::Utils::DateTime m_expirationTime{};
-  bool m_expirationTimeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_phoneNumberHasBeenSet = false;
+  bool m_expirationTimeHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

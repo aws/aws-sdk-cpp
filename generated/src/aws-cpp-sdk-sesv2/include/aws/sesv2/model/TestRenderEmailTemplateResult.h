@@ -67,9 +67,9 @@ class TestRenderEmailTemplateResult {
   ///@}
  private:
   Aws::String m_renderedTemplate;
-  bool m_renderedTemplateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_renderedTemplateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

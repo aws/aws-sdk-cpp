@@ -91,12 +91,12 @@ class DescribeApplicationAssignmentRequest : public SSOAdminRequest {
   ///@}
  private:
   Aws::String m_applicationArn;
-  bool m_applicationArnHasBeenSet = false;
 
   Aws::String m_principalId;
-  bool m_principalIdHasBeenSet = false;
 
   PrincipalType m_principalType{PrincipalType::NOT_SET};
+  bool m_applicationArnHasBeenSet = false;
+  bool m_principalIdHasBeenSet = false;
   bool m_principalTypeHasBeenSet = false;
 };
 

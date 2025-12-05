@@ -98,12 +98,12 @@ class LocalHealthEventsConfig {
   ///@}
  private:
   LocalHealthEventsConfigStatus m_status{LocalHealthEventsConfigStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   double m_healthScoreThreshold{0.0};
-  bool m_healthScoreThresholdHasBeenSet = false;
 
   double m_minTrafficImpact{0.0};
+  bool m_statusHasBeenSet = false;
+  bool m_healthScoreThresholdHasBeenSet = false;
   bool m_minTrafficImpactHasBeenSet = false;
 };
 

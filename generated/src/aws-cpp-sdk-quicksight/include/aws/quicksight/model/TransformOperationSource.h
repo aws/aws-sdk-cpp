@@ -78,9 +78,9 @@ class TransformOperationSource {
   ///@}
  private:
   Aws::String m_transformOperationId;
-  bool m_transformOperationIdHasBeenSet = false;
 
   Aws::Vector<DataSetColumnIdMapping> m_columnIdMappings;
+  bool m_transformOperationIdHasBeenSet = false;
   bool m_columnIdMappingsHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class Identity {
   ///@}
  private:
   Aws::String m_principalId;
-  bool m_principalIdHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_principalIdHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

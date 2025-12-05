@@ -133,18 +133,18 @@ class DnsRuleGroupPriorityConflictViolation {
   ///@}
  private:
   Aws::String m_violationTarget;
-  bool m_violationTargetHasBeenSet = false;
 
   Aws::String m_violationTargetDescription;
-  bool m_violationTargetDescriptionHasBeenSet = false;
 
   int m_conflictingPriority{0};
-  bool m_conflictingPriorityHasBeenSet = false;
 
   Aws::String m_conflictingPolicyId;
-  bool m_conflictingPolicyIdHasBeenSet = false;
 
   Aws::Vector<int> m_unavailablePriorities;
+  bool m_violationTargetHasBeenSet = false;
+  bool m_violationTargetDescriptionHasBeenSet = false;
+  bool m_conflictingPriorityHasBeenSet = false;
+  bool m_conflictingPolicyIdHasBeenSet = false;
   bool m_unavailablePrioritiesHasBeenSet = false;
 };
 

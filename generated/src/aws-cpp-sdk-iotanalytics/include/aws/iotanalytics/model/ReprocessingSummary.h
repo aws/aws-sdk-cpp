@@ -87,12 +87,12 @@ class ReprocessingSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   ReprocessingStatus m_status{ReprocessingStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
+  bool m_idHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
 };
 

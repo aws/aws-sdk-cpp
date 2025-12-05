@@ -69,9 +69,9 @@ class AccessLogSettings {
   ///@}
  private:
   Aws::String m_destinationArn;
-  bool m_destinationArnHasBeenSet = false;
 
   Aws::String m_format;
+  bool m_destinationArnHasBeenSet = false;
   bool m_formatHasBeenSet = false;
 };
 

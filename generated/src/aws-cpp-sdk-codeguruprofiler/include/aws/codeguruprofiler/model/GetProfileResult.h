@@ -97,15 +97,15 @@ class GetProfileResult {
   ///@}
  private:
   Aws::String m_contentEncoding;
-  bool m_contentEncodingHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::Utils::Stream::ResponseStream m_profile{};
-  bool m_profileHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_contentEncodingHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_profileHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

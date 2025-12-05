@@ -63,9 +63,9 @@ class LteLocalId {
   ///@}
  private:
   int m_earfcn{0};
-  bool m_earfcnHasBeenSet = false;
 
   int m_pci{0};
+  bool m_earfcnHasBeenSet = false;
   bool m_pciHasBeenSet = false;
 };
 

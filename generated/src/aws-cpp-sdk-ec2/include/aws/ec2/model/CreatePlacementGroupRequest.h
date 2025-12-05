@@ -150,21 +150,21 @@ class CreatePlacementGroupRequest : public EC2Request {
   ///@}
  private:
   int m_partitionCount{0};
-  bool m_partitionCountHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   SpreadLevel m_spreadLevel{SpreadLevel::NOT_SET};
-  bool m_spreadLevelHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   PlacementStrategy m_strategy{PlacementStrategy::NOT_SET};
+  bool m_partitionCountHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_spreadLevelHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_groupNameHasBeenSet = false;
   bool m_strategyHasBeenSet = false;
 };
 

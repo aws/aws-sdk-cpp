@@ -65,9 +65,9 @@ class QuickResponseContents {
   ///@}
  private:
   QuickResponseContentProvider m_plainText;
-  bool m_plainTextHasBeenSet = false;
 
   QuickResponseContentProvider m_markdown;
+  bool m_plainTextHasBeenSet = false;
   bool m_markdownHasBeenSet = false;
 };
 

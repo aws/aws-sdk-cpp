@@ -71,9 +71,9 @@ class VpcIngressConnectionSummary {
   ///@}
  private:
   Aws::String m_vpcIngressConnectionArn;
-  bool m_vpcIngressConnectionArnHasBeenSet = false;
 
   Aws::String m_serviceArn;
+  bool m_vpcIngressConnectionArnHasBeenSet = false;
   bool m_serviceArnHasBeenSet = false;
 };
 

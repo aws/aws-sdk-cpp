@@ -113,15 +113,15 @@ class IntegerParameterRange {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_minValue;
-  bool m_minValueHasBeenSet = false;
 
   Aws::String m_maxValue;
-  bool m_maxValueHasBeenSet = false;
 
   HyperParameterScalingType m_scalingType{HyperParameterScalingType::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_minValueHasBeenSet = false;
+  bool m_maxValueHasBeenSet = false;
   bool m_scalingTypeHasBeenSet = false;
 };
 

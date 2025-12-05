@@ -71,9 +71,9 @@ class DescribeThumbnailsResult {
   ///@}
  private:
   Aws::Vector<ThumbnailDetail> m_thumbnailDetails;
-  bool m_thumbnailDetailsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_thumbnailDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

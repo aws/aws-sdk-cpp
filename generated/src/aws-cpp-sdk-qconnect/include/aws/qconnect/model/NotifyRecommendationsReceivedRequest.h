@@ -92,12 +92,12 @@ class NotifyRecommendationsReceivedRequest : public QConnectRequest {
   ///@}
  private:
   Aws::String m_assistantId;
-  bool m_assistantIdHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_recommendationIds;
+  bool m_assistantIdHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
   bool m_recommendationIdsHasBeenSet = false;
 };
 

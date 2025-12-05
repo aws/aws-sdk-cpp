@@ -83,12 +83,12 @@ class DeleteIntegrationResponseRequest : public ApiGatewayV2Request {
   ///@}
  private:
   Aws::String m_apiId;
-  bool m_apiIdHasBeenSet = false;
 
   Aws::String m_integrationId;
-  bool m_integrationIdHasBeenSet = false;
 
   Aws::String m_integrationResponseId;
+  bool m_apiIdHasBeenSet = false;
+  bool m_integrationIdHasBeenSet = false;
   bool m_integrationResponseIdHasBeenSet = false;
 };
 

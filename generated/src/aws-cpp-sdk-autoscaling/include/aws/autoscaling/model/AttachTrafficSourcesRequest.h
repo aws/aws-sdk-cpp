@@ -99,12 +99,12 @@ class AttachTrafficSourcesRequest : public AutoScalingRequest {
   ///@}
  private:
   Aws::String m_autoScalingGroupName;
-  bool m_autoScalingGroupNameHasBeenSet = false;
 
   Aws::Vector<TrafficSourceIdentifier> m_trafficSources;
-  bool m_trafficSourcesHasBeenSet = false;
 
   bool m_skipZonalShiftValidation{false};
+  bool m_autoScalingGroupNameHasBeenSet = false;
+  bool m_trafficSourcesHasBeenSet = false;
   bool m_skipZonalShiftValidationHasBeenSet = false;
 };
 

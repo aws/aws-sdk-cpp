@@ -88,12 +88,12 @@ class ContentBlockStart {
   ///@}
  private:
   ToolUseBlockStart m_toolUse;
-  bool m_toolUseHasBeenSet = false;
 
   ToolResultBlockStart m_toolResult;
-  bool m_toolResultHasBeenSet = false;
 
   ImageBlockStart m_image;
+  bool m_toolUseHasBeenSet = false;
+  bool m_toolResultHasBeenSet = false;
   bool m_imageHasBeenSet = false;
 };
 

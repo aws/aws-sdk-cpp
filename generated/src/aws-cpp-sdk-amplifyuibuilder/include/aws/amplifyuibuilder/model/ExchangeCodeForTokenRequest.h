@@ -65,9 +65,9 @@ class ExchangeCodeForTokenRequest : public AmplifyUIBuilderRequest {
   ///@}
  private:
   TokenProviders m_provider{TokenProviders::NOT_SET};
-  bool m_providerHasBeenSet = false;
 
   ExchangeCodeForTokenRequestBody m_request;
+  bool m_providerHasBeenSet = false;
   bool m_requestHasBeenSet = false;
 };
 

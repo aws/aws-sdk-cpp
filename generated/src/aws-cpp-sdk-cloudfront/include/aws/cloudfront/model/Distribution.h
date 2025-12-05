@@ -240,33 +240,33 @@ class Distribution {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_aRN;
-  bool m_aRNHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   int m_inProgressInvalidationBatches{0};
-  bool m_inProgressInvalidationBatchesHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   ActiveTrustedSigners m_activeTrustedSigners;
-  bool m_activeTrustedSignersHasBeenSet = false;
 
   ActiveTrustedKeyGroups m_activeTrustedKeyGroups;
-  bool m_activeTrustedKeyGroupsHasBeenSet = false;
 
   DistributionConfig m_distributionConfig;
-  bool m_distributionConfigHasBeenSet = false;
 
   Aws::Vector<AliasICPRecordal> m_aliasICPRecordals;
+  bool m_idHasBeenSet = false;
+  bool m_aRNHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_inProgressInvalidationBatchesHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_activeTrustedSignersHasBeenSet = false;
+  bool m_activeTrustedKeyGroupsHasBeenSet = false;
+  bool m_distributionConfigHasBeenSet = false;
   bool m_aliasICPRecordalsHasBeenSet = false;
 };
 

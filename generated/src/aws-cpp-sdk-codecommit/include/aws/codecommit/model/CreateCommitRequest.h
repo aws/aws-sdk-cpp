@@ -237,33 +237,33 @@ class CreateCommitRequest : public CodeCommitRequest {
   ///@}
  private:
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   Aws::String m_branchName;
-  bool m_branchNameHasBeenSet = false;
 
   Aws::String m_parentCommitId;
-  bool m_parentCommitIdHasBeenSet = false;
 
   Aws::String m_authorName;
-  bool m_authorNameHasBeenSet = false;
 
   Aws::String m_email;
-  bool m_emailHasBeenSet = false;
 
   Aws::String m_commitMessage;
-  bool m_commitMessageHasBeenSet = false;
 
   bool m_keepEmptyFolders{false};
-  bool m_keepEmptyFoldersHasBeenSet = false;
 
   Aws::Vector<PutFileEntry> m_putFiles;
-  bool m_putFilesHasBeenSet = false;
 
   Aws::Vector<DeleteFileEntry> m_deleteFiles;
-  bool m_deleteFilesHasBeenSet = false;
 
   Aws::Vector<SetFileModeEntry> m_setFileModes;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_branchNameHasBeenSet = false;
+  bool m_parentCommitIdHasBeenSet = false;
+  bool m_authorNameHasBeenSet = false;
+  bool m_emailHasBeenSet = false;
+  bool m_commitMessageHasBeenSet = false;
+  bool m_keepEmptyFoldersHasBeenSet = false;
+  bool m_putFilesHasBeenSet = false;
+  bool m_deleteFilesHasBeenSet = false;
   bool m_setFileModesHasBeenSet = false;
 };
 

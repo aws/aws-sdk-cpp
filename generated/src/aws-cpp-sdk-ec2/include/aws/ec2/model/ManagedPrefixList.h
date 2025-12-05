@@ -259,39 +259,39 @@ class ManagedPrefixList {
   ///@}
  private:
   Aws::String m_prefixListId;
-  bool m_prefixListIdHasBeenSet = false;
 
   Aws::String m_addressFamily;
-  bool m_addressFamilyHasBeenSet = false;
 
   PrefixListState m_state{PrefixListState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_stateMessage;
-  bool m_stateMessageHasBeenSet = false;
 
   Aws::String m_prefixListArn;
-  bool m_prefixListArnHasBeenSet = false;
 
   Aws::String m_prefixListName;
-  bool m_prefixListNameHasBeenSet = false;
 
   int m_maxEntries{0};
-  bool m_maxEntriesHasBeenSet = false;
 
   long long m_version{0};
-  bool m_versionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_ipamPrefixListResolverTargetId;
-  bool m_ipamPrefixListResolverTargetIdHasBeenSet = false;
 
   bool m_ipamPrefixListResolverSyncEnabled{false};
+  bool m_prefixListIdHasBeenSet = false;
+  bool m_addressFamilyHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_stateMessageHasBeenSet = false;
+  bool m_prefixListArnHasBeenSet = false;
+  bool m_prefixListNameHasBeenSet = false;
+  bool m_maxEntriesHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_ipamPrefixListResolverTargetIdHasBeenSet = false;
   bool m_ipamPrefixListResolverSyncEnabledHasBeenSet = false;
 };
 

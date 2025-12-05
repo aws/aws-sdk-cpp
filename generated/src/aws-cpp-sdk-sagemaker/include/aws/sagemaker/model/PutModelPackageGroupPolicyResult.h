@@ -59,9 +59,9 @@ class PutModelPackageGroupPolicyResult {
   ///@}
  private:
   Aws::String m_modelPackageGroupArn;
-  bool m_modelPackageGroupArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_modelPackageGroupArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

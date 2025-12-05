@@ -89,12 +89,12 @@ class DescribeInstanceRefreshesResult {
   ///@}
  private:
   Aws::Vector<InstanceRefresh> m_instanceRefreshes;
-  bool m_instanceRefreshesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_instanceRefreshesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

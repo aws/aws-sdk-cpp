@@ -211,36 +211,36 @@ class UpdateTestSetResult {
   ///@}
  private:
   Aws::String m_testSetId;
-  bool m_testSetIdHasBeenSet = false;
 
   Aws::String m_testSetName;
-  bool m_testSetNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   TestSetModality m_modality{TestSetModality::NOT_SET};
-  bool m_modalityHasBeenSet = false;
 
   TestSetStatus m_status{TestSetStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   int m_numTurns{0};
-  bool m_numTurnsHasBeenSet = false;
 
   TestSetStorageLocation m_storageLocation;
-  bool m_storageLocationHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
-  bool m_lastUpdatedDateTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_testSetIdHasBeenSet = false;
+  bool m_testSetNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_modalityHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_numTurnsHasBeenSet = false;
+  bool m_storageLocationHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_lastUpdatedDateTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

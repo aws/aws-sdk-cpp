@@ -86,12 +86,12 @@ class GetLensVersionDifferenceRequest : public WellArchitectedRequest {
   ///@}
  private:
   Aws::String m_lensAlias;
-  bool m_lensAliasHasBeenSet = false;
 
   Aws::String m_baseLensVersion;
-  bool m_baseLensVersionHasBeenSet = false;
 
   Aws::String m_targetLensVersion;
+  bool m_lensAliasHasBeenSet = false;
+  bool m_baseLensVersionHasBeenSet = false;
   bool m_targetLensVersionHasBeenSet = false;
 };
 

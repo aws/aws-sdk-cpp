@@ -109,15 +109,15 @@ class SavingsPlansCoverageData {
   ///@}
  private:
   Aws::String m_spendCoveredBySavingsPlans;
-  bool m_spendCoveredBySavingsPlansHasBeenSet = false;
 
   Aws::String m_onDemandCost;
-  bool m_onDemandCostHasBeenSet = false;
 
   Aws::String m_totalCost;
-  bool m_totalCostHasBeenSet = false;
 
   Aws::String m_coveragePercentage;
+  bool m_spendCoveredBySavingsPlansHasBeenSet = false;
+  bool m_onDemandCostHasBeenSet = false;
+  bool m_totalCostHasBeenSet = false;
   bool m_coveragePercentageHasBeenSet = false;
 };
 

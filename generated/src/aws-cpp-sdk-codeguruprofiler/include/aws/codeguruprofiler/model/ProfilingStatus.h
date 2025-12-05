@@ -97,12 +97,12 @@ class ProfilingStatus {
   ///@}
  private:
   Aws::Utils::DateTime m_latestAgentOrchestratedAt{};
-  bool m_latestAgentOrchestratedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_latestAgentProfileReportedAt{};
-  bool m_latestAgentProfileReportedAtHasBeenSet = false;
 
   AggregatedProfileTime m_latestAggregatedProfile;
+  bool m_latestAgentOrchestratedAtHasBeenSet = false;
+  bool m_latestAgentProfileReportedAtHasBeenSet = false;
   bool m_latestAggregatedProfileHasBeenSet = false;
 };
 

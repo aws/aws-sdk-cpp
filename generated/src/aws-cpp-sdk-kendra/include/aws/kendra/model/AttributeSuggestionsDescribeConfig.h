@@ -87,9 +87,9 @@ class AttributeSuggestionsDescribeConfig {
   ///@}
  private:
   Aws::Vector<SuggestableConfig> m_suggestableConfigList;
-  bool m_suggestableConfigListHasBeenSet = false;
 
   AttributeSuggestionsMode m_attributeSuggestionsMode{AttributeSuggestionsMode::NOT_SET};
+  bool m_suggestableConfigListHasBeenSet = false;
   bool m_attributeSuggestionsModeHasBeenSet = false;
 };
 

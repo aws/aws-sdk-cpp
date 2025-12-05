@@ -69,9 +69,9 @@ class MulticastSource {
   ///@}
  private:
   Aws::String m_sourceIp;
-  bool m_sourceIpHasBeenSet = false;
 
   Aws::String m_url;
+  bool m_sourceIpHasBeenSet = false;
   bool m_urlHasBeenSet = false;
 };
 

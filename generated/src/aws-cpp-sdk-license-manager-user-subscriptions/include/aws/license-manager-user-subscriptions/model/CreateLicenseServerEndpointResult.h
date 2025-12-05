@@ -79,12 +79,12 @@ class CreateLicenseServerEndpointResult {
   ///@}
  private:
   Aws::String m_identityProviderArn;
-  bool m_identityProviderArnHasBeenSet = false;
 
   Aws::String m_licenseServerEndpointArn;
-  bool m_licenseServerEndpointArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_identityProviderArnHasBeenSet = false;
+  bool m_licenseServerEndpointArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

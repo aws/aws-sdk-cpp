@@ -98,12 +98,12 @@ class DailyVolume {
   ///@}
  private:
   Aws::Utils::DateTime m_startDate{};
-  bool m_startDateHasBeenSet = false;
 
   VolumeStatistics m_volumeStatistics;
-  bool m_volumeStatisticsHasBeenSet = false;
 
   Aws::Vector<DomainIspPlacement> m_domainIspPlacements;
+  bool m_startDateHasBeenSet = false;
+  bool m_volumeStatisticsHasBeenSet = false;
   bool m_domainIspPlacementsHasBeenSet = false;
 };
 

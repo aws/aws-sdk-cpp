@@ -242,36 +242,36 @@ class ListCustomModelsRequest : public BedrockRequest {
   ///@}
  private:
   Aws::Utils::DateTime m_creationTimeBefore{};
-  bool m_creationTimeBeforeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimeAfter{};
-  bool m_creationTimeAfterHasBeenSet = false;
 
   Aws::String m_nameContains;
-  bool m_nameContainsHasBeenSet = false;
 
   Aws::String m_baseModelArnEquals;
-  bool m_baseModelArnEqualsHasBeenSet = false;
 
   Aws::String m_foundationModelArnEquals;
-  bool m_foundationModelArnEqualsHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   SortModelsBy m_sortBy{SortModelsBy::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   bool m_isOwned{false};
-  bool m_isOwnedHasBeenSet = false;
 
   ModelStatus m_modelStatus{ModelStatus::NOT_SET};
+  bool m_creationTimeBeforeHasBeenSet = false;
+  bool m_creationTimeAfterHasBeenSet = false;
+  bool m_nameContainsHasBeenSet = false;
+  bool m_baseModelArnEqualsHasBeenSet = false;
+  bool m_foundationModelArnEqualsHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
+  bool m_isOwnedHasBeenSet = false;
   bool m_modelStatusHasBeenSet = false;
 };
 

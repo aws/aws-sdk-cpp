@@ -111,15 +111,15 @@ class NFSFileShareDefaults {
   ///@}
  private:
   Aws::String m_fileMode;
-  bool m_fileModeHasBeenSet = false;
 
   Aws::String m_directoryMode;
-  bool m_directoryModeHasBeenSet = false;
 
   long long m_groupId{0};
-  bool m_groupIdHasBeenSet = false;
 
   long long m_ownerId{0};
+  bool m_fileModeHasBeenSet = false;
+  bool m_directoryModeHasBeenSet = false;
+  bool m_groupIdHasBeenSet = false;
   bool m_ownerIdHasBeenSet = false;
 };
 

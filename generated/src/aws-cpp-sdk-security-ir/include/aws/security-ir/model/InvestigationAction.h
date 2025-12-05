@@ -169,24 +169,24 @@ class InvestigationAction {
   ///@}
  private:
   Aws::String m_investigationId;
-  bool m_investigationIdHasBeenSet = false;
 
   ActionType m_actionType{ActionType::NOT_SET};
-  bool m_actionTypeHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   ExecutionStatus m_status{ExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdated{};
-  bool m_lastUpdatedHasBeenSet = false;
 
   InvestigationFeedback m_feedback;
+  bool m_investigationIdHasBeenSet = false;
+  bool m_actionTypeHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_lastUpdatedHasBeenSet = false;
   bool m_feedbackHasBeenSet = false;
 };
 

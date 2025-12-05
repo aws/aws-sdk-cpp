@@ -108,15 +108,15 @@ class TimeAlignmentBoundary {
   ///@}
  private:
   Month m_month{Month::NOT_SET};
-  bool m_monthHasBeenSet = false;
 
   int m_dayOfMonth{0};
-  bool m_dayOfMonthHasBeenSet = false;
 
   DayOfWeek m_dayOfWeek{DayOfWeek::NOT_SET};
-  bool m_dayOfWeekHasBeenSet = false;
 
   int m_hour{0};
+  bool m_monthHasBeenSet = false;
+  bool m_dayOfMonthHasBeenSet = false;
+  bool m_dayOfWeekHasBeenSet = false;
   bool m_hourHasBeenSet = false;
 };
 

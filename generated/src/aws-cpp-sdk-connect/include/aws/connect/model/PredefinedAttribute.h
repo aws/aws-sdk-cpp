@@ -153,21 +153,21 @@ class PredefinedAttribute {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   PredefinedAttributeValues m_values;
-  bool m_valuesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_purposes;
-  bool m_purposesHasBeenSet = false;
 
   PredefinedAttributeConfiguration m_attributeConfiguration;
-  bool m_attributeConfigurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_lastModifiedRegion;
+  bool m_nameHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
+  bool m_purposesHasBeenSet = false;
+  bool m_attributeConfigurationHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_lastModifiedRegionHasBeenSet = false;
 };
 

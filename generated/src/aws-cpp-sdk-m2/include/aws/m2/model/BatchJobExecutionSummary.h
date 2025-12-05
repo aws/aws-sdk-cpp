@@ -217,33 +217,33 @@ class BatchJobExecutionSummary {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   BatchJobIdentifier m_batchJobIdentifier;
-  bool m_batchJobIdentifierHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_executionId;
-  bool m_executionIdHasBeenSet = false;
 
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   BatchJobType m_jobType{BatchJobType::NOT_SET};
-  bool m_jobTypeHasBeenSet = false;
 
   Aws::String m_returnCode;
-  bool m_returnCodeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   BatchJobExecutionStatus m_status{BatchJobExecutionStatus::NOT_SET};
+  bool m_applicationIdHasBeenSet = false;
+  bool m_batchJobIdentifierHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_executionIdHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
+  bool m_jobNameHasBeenSet = false;
+  bool m_jobTypeHasBeenSet = false;
+  bool m_returnCodeHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

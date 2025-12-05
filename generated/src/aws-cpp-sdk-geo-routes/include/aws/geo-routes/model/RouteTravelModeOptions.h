@@ -111,15 +111,15 @@ class RouteTravelModeOptions {
   ///@}
  private:
   RouteCarOptions m_car;
-  bool m_carHasBeenSet = false;
 
   RoutePedestrianOptions m_pedestrian;
-  bool m_pedestrianHasBeenSet = false;
 
   RouteScooterOptions m_scooter;
-  bool m_scooterHasBeenSet = false;
 
   RouteTruckOptions m_truck;
+  bool m_carHasBeenSet = false;
+  bool m_pedestrianHasBeenSet = false;
+  bool m_scooterHasBeenSet = false;
   bool m_truckHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class DescribeNetworkInsightsAccessScopeAnalysesResponse {
   ///@}
  private:
   Aws::Vector<NetworkInsightsAccessScopeAnalysis> m_networkInsightsAccessScopeAnalyses;
-  bool m_networkInsightsAccessScopeAnalysesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_networkInsightsAccessScopeAnalysesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

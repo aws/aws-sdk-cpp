@@ -313,54 +313,54 @@ class DescribeMlflowTrackingServerResult {
   ///@}
  private:
   Aws::String m_trackingServerArn;
-  bool m_trackingServerArnHasBeenSet = false;
 
   Aws::String m_trackingServerName;
-  bool m_trackingServerNameHasBeenSet = false;
 
   Aws::String m_artifactStoreUri;
-  bool m_artifactStoreUriHasBeenSet = false;
 
   TrackingServerSize m_trackingServerSize{TrackingServerSize::NOT_SET};
-  bool m_trackingServerSizeHasBeenSet = false;
 
   Aws::String m_mlflowVersion;
-  bool m_mlflowVersionHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   TrackingServerStatus m_trackingServerStatus{TrackingServerStatus::NOT_SET};
-  bool m_trackingServerStatusHasBeenSet = false;
 
   TrackingServerMaintenanceStatus m_trackingServerMaintenanceStatus{TrackingServerMaintenanceStatus::NOT_SET};
-  bool m_trackingServerMaintenanceStatusHasBeenSet = false;
 
   IsTrackingServerActive m_isActive{IsTrackingServerActive::NOT_SET};
-  bool m_isActiveHasBeenSet = false;
 
   Aws::String m_trackingServerUrl;
-  bool m_trackingServerUrlHasBeenSet = false;
 
   Aws::String m_weeklyMaintenanceWindowStart;
-  bool m_weeklyMaintenanceWindowStartHasBeenSet = false;
 
   bool m_automaticModelRegistration{false};
-  bool m_automaticModelRegistrationHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   UserContext m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   UserContext m_lastModifiedBy;
-  bool m_lastModifiedByHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trackingServerArnHasBeenSet = false;
+  bool m_trackingServerNameHasBeenSet = false;
+  bool m_artifactStoreUriHasBeenSet = false;
+  bool m_trackingServerSizeHasBeenSet = false;
+  bool m_mlflowVersionHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_trackingServerStatusHasBeenSet = false;
+  bool m_trackingServerMaintenanceStatusHasBeenSet = false;
+  bool m_isActiveHasBeenSet = false;
+  bool m_trackingServerUrlHasBeenSet = false;
+  bool m_weeklyMaintenanceWindowStartHasBeenSet = false;
+  bool m_automaticModelRegistrationHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_lastModifiedByHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

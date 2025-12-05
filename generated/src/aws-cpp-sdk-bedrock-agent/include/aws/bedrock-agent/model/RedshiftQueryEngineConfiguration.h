@@ -91,12 +91,12 @@ class RedshiftQueryEngineConfiguration {
   ///@}
  private:
   RedshiftQueryEngineType m_type{RedshiftQueryEngineType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   RedshiftServerlessConfiguration m_serverlessConfiguration;
-  bool m_serverlessConfigurationHasBeenSet = false;
 
   RedshiftProvisionedConfiguration m_provisionedConfiguration;
+  bool m_typeHasBeenSet = false;
+  bool m_serverlessConfigurationHasBeenSet = false;
   bool m_provisionedConfigurationHasBeenSet = false;
 };
 

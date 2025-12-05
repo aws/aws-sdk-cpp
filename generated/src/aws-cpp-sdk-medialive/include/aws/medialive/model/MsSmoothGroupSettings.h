@@ -392,60 +392,60 @@ Options:
   ///@}
  private:
   Aws::String m_acquisitionPointId;
-  bool m_acquisitionPointIdHasBeenSet = false;
 
   SmoothGroupAudioOnlyTimecodeControl m_audioOnlyTimecodeControl{SmoothGroupAudioOnlyTimecodeControl::NOT_SET};
-  bool m_audioOnlyTimecodeControlHasBeenSet = false;
 
   SmoothGroupCertificateMode m_certificateMode{SmoothGroupCertificateMode::NOT_SET};
-  bool m_certificateModeHasBeenSet = false;
 
   int m_connectionRetryInterval{0};
-  bool m_connectionRetryIntervalHasBeenSet = false;
 
   OutputLocationRef m_destination;
-  bool m_destinationHasBeenSet = false;
 
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   SmoothGroupEventIdMode m_eventIdMode{SmoothGroupEventIdMode::NOT_SET};
-  bool m_eventIdModeHasBeenSet = false;
 
   SmoothGroupEventStopBehavior m_eventStopBehavior{SmoothGroupEventStopBehavior::NOT_SET};
-  bool m_eventStopBehaviorHasBeenSet = false;
 
   int m_filecacheDuration{0};
-  bool m_filecacheDurationHasBeenSet = false;
 
   int m_fragmentLength{0};
-  bool m_fragmentLengthHasBeenSet = false;
 
   InputLossActionForMsSmoothOut m_inputLossAction{InputLossActionForMsSmoothOut::NOT_SET};
-  bool m_inputLossActionHasBeenSet = false;
 
   int m_numRetries{0};
-  bool m_numRetriesHasBeenSet = false;
 
   int m_restartDelay{0};
-  bool m_restartDelayHasBeenSet = false;
 
   SmoothGroupSegmentationMode m_segmentationMode{SmoothGroupSegmentationMode::NOT_SET};
-  bool m_segmentationModeHasBeenSet = false;
 
   int m_sendDelayMs{0};
-  bool m_sendDelayMsHasBeenSet = false;
 
   SmoothGroupSparseTrackType m_sparseTrackType{SmoothGroupSparseTrackType::NOT_SET};
-  bool m_sparseTrackTypeHasBeenSet = false;
 
   SmoothGroupStreamManifestBehavior m_streamManifestBehavior{SmoothGroupStreamManifestBehavior::NOT_SET};
-  bool m_streamManifestBehaviorHasBeenSet = false;
 
   Aws::String m_timestampOffset;
-  bool m_timestampOffsetHasBeenSet = false;
 
   SmoothGroupTimestampOffsetMode m_timestampOffsetMode{SmoothGroupTimestampOffsetMode::NOT_SET};
+  bool m_acquisitionPointIdHasBeenSet = false;
+  bool m_audioOnlyTimecodeControlHasBeenSet = false;
+  bool m_certificateModeHasBeenSet = false;
+  bool m_connectionRetryIntervalHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_eventIdHasBeenSet = false;
+  bool m_eventIdModeHasBeenSet = false;
+  bool m_eventStopBehaviorHasBeenSet = false;
+  bool m_filecacheDurationHasBeenSet = false;
+  bool m_fragmentLengthHasBeenSet = false;
+  bool m_inputLossActionHasBeenSet = false;
+  bool m_numRetriesHasBeenSet = false;
+  bool m_restartDelayHasBeenSet = false;
+  bool m_segmentationModeHasBeenSet = false;
+  bool m_sendDelayMsHasBeenSet = false;
+  bool m_sparseTrackTypeHasBeenSet = false;
+  bool m_streamManifestBehaviorHasBeenSet = false;
+  bool m_timestampOffsetHasBeenSet = false;
   bool m_timestampOffsetModeHasBeenSet = false;
 };
 

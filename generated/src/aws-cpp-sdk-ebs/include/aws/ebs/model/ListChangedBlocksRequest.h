@@ -135,18 +135,18 @@ class ListChangedBlocksRequest : public EBSRequest {
   ///@}
  private:
   Aws::String m_firstSnapshotId;
-  bool m_firstSnapshotIdHasBeenSet = false;
 
   Aws::String m_secondSnapshotId;
-  bool m_secondSnapshotIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   int m_startingBlockIndex{0};
+  bool m_firstSnapshotIdHasBeenSet = false;
+  bool m_secondSnapshotIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_startingBlockIndexHasBeenSet = false;
 };
 

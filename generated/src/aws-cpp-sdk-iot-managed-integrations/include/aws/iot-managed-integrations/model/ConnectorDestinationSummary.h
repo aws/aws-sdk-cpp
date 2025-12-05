@@ -107,15 +107,15 @@ class ConnectorDestinationSummary {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_cloudConnectorId;
-  bool m_cloudConnectorIdHasBeenSet = false;
 
   Aws::String m_id;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_cloudConnectorIdHasBeenSet = false;
   bool m_idHasBeenSet = false;
 };
 

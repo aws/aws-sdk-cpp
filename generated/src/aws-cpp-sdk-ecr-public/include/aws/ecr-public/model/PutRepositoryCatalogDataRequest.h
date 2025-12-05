@@ -89,12 +89,12 @@ class PutRepositoryCatalogDataRequest : public ECRPublicRequest {
   ///@}
  private:
   Aws::String m_registryId;
-  bool m_registryIdHasBeenSet = false;
 
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   RepositoryCatalogDataInput m_catalogData;
+  bool m_registryIdHasBeenSet = false;
+  bool m_repositoryNameHasBeenSet = false;
   bool m_catalogDataHasBeenSet = false;
 };
 

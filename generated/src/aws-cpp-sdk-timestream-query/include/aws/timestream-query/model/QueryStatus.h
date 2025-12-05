@@ -84,12 +84,12 @@ class QueryStatus {
   ///@}
  private:
   double m_progressPercentage{0.0};
-  bool m_progressPercentageHasBeenSet = false;
 
   long long m_cumulativeBytesScanned{0};
-  bool m_cumulativeBytesScannedHasBeenSet = false;
 
   long long m_cumulativeBytesMetered{0};
+  bool m_progressPercentageHasBeenSet = false;
+  bool m_cumulativeBytesScannedHasBeenSet = false;
   bool m_cumulativeBytesMeteredHasBeenSet = false;
 };
 

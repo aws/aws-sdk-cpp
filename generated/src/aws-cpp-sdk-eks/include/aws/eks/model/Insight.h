@@ -270,39 +270,39 @@ class Insight {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Category m_category{Category::NOT_SET};
-  bool m_categoryHasBeenSet = false;
 
   Aws::String m_kubernetesVersion;
-  bool m_kubernetesVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastRefreshTime{};
-  bool m_lastRefreshTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastTransitionTime{};
-  bool m_lastTransitionTimeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   InsightStatus m_insightStatus;
-  bool m_insightStatusHasBeenSet = false;
 
   Aws::String m_recommendation;
-  bool m_recommendationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_additionalInfo;
-  bool m_additionalInfoHasBeenSet = false;
 
   Aws::Vector<InsightResourceDetail> m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   InsightCategorySpecificSummary m_categorySpecificSummary;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_categoryHasBeenSet = false;
+  bool m_kubernetesVersionHasBeenSet = false;
+  bool m_lastRefreshTimeHasBeenSet = false;
+  bool m_lastTransitionTimeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_insightStatusHasBeenSet = false;
+  bool m_recommendationHasBeenSet = false;
+  bool m_additionalInfoHasBeenSet = false;
+  bool m_resourcesHasBeenSet = false;
   bool m_categorySpecificSummaryHasBeenSet = false;
 };
 

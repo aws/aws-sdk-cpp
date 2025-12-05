@@ -82,9 +82,9 @@ class FlowOperation {
   ///@}
  private:
   int m_minimumFlowAgeInSeconds{0};
-  bool m_minimumFlowAgeInSecondsHasBeenSet = false;
 
   Aws::Vector<FlowFilter> m_flowFilters;
+  bool m_minimumFlowAgeInSecondsHasBeenSet = false;
   bool m_flowFiltersHasBeenSet = false;
 };
 

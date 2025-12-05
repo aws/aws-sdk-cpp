@@ -82,9 +82,9 @@ class TagInstanceProfileRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_instanceProfileName;
-  bool m_instanceProfileNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_instanceProfileNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

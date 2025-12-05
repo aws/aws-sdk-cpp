@@ -174,24 +174,24 @@ class DescribeVerifiedAccessEndpointsRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_verifiedAccessEndpointIds;
-  bool m_verifiedAccessEndpointIdsHasBeenSet = false;
 
   Aws::String m_verifiedAccessInstanceId;
-  bool m_verifiedAccessInstanceIdHasBeenSet = false;
 
   Aws::String m_verifiedAccessGroupId;
-  bool m_verifiedAccessGroupIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_verifiedAccessEndpointIdsHasBeenSet = false;
+  bool m_verifiedAccessInstanceIdHasBeenSet = false;
+  bool m_verifiedAccessGroupIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

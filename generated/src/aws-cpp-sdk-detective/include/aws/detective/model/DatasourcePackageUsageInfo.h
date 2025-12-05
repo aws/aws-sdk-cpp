@@ -70,9 +70,9 @@ class DatasourcePackageUsageInfo {
   ///@}
  private:
   long long m_volumeUsageInBytes{0};
-  bool m_volumeUsageInBytesHasBeenSet = false;
 
   Aws::Utils::DateTime m_volumeUsageUpdateTime{};
+  bool m_volumeUsageInBytesHasBeenSet = false;
   bool m_volumeUsageUpdateTimeHasBeenSet = false;
 };
 

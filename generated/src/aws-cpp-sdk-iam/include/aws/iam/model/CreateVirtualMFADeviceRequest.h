@@ -115,12 +115,12 @@ class CreateVirtualMFADeviceRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   Aws::String m_virtualMFADeviceName;
-  bool m_virtualMFADeviceNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_pathHasBeenSet = false;
+  bool m_virtualMFADeviceNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

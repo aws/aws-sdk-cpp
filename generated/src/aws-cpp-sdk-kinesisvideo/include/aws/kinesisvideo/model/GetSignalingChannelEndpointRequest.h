@@ -70,9 +70,9 @@ class GetSignalingChannelEndpointRequest : public KinesisVideoRequest {
   ///@}
  private:
   Aws::String m_channelARN;
-  bool m_channelARNHasBeenSet = false;
 
   SingleMasterChannelEndpointConfiguration m_singleMasterChannelEndpointConfiguration;
+  bool m_channelARNHasBeenSet = false;
   bool m_singleMasterChannelEndpointConfigurationHasBeenSet = false;
 };
 

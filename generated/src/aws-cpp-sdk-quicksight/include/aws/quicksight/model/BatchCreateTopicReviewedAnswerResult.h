@@ -142,21 +142,21 @@ class BatchCreateTopicReviewedAnswerResult {
   ///@}
  private:
   Aws::String m_topicId;
-  bool m_topicIdHasBeenSet = false;
 
   Aws::String m_topicArn;
-  bool m_topicArnHasBeenSet = false;
 
   Aws::Vector<SucceededTopicReviewedAnswer> m_succeededAnswers;
-  bool m_succeededAnswersHasBeenSet = false;
 
   Aws::Vector<InvalidTopicReviewedAnswer> m_invalidAnswers;
-  bool m_invalidAnswersHasBeenSet = false;
 
   int m_status{0};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_topicIdHasBeenSet = false;
+  bool m_topicArnHasBeenSet = false;
+  bool m_succeededAnswersHasBeenSet = false;
+  bool m_invalidAnswersHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

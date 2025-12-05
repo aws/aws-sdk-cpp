@@ -124,18 +124,18 @@ class CancelConnectionRequest : public PartnerCentralAccountRequest {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   ConnectionType m_connectionType{ConnectionType::NOT_SET};
-  bool m_connectionTypeHasBeenSet = false;
 
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_catalogHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
+  bool m_connectionTypeHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

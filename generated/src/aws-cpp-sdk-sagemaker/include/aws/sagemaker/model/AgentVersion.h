@@ -66,9 +66,9 @@ class AgentVersion {
   ///@}
  private:
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   long long m_agentCount{0};
+  bool m_versionHasBeenSet = false;
   bool m_agentCountHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class Logo {
   ///@}
  private:
   Aws::String m_altText;
-  bool m_altTextHasBeenSet = false;
 
   LogoSet m_logoSet;
+  bool m_altTextHasBeenSet = false;
   bool m_logoSetHasBeenSet = false;
 };
 

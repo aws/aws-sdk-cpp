@@ -67,9 +67,9 @@ class GetAllianceLeadContactRequest : public PartnerCentralAccountRequest {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_identifier;
+  bool m_catalogHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
 };
 

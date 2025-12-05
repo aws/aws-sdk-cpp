@@ -74,9 +74,9 @@ class EvaluationPrecomputedRagSourceConfig {
   ///@}
  private:
   EvaluationPrecomputedRetrieveSourceConfig m_retrieveSourceConfig;
-  bool m_retrieveSourceConfigHasBeenSet = false;
 
   EvaluationPrecomputedRetrieveAndGenerateSourceConfig m_retrieveAndGenerateSourceConfig;
+  bool m_retrieveSourceConfigHasBeenSet = false;
   bool m_retrieveAndGenerateSourceConfigHasBeenSet = false;
 };
 

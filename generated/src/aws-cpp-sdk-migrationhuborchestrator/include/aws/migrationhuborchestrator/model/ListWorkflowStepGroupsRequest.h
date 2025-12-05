@@ -86,12 +86,12 @@ class ListWorkflowStepGroupsRequest : public MigrationHubOrchestratorRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_workflowId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_workflowIdHasBeenSet = false;
 };
 

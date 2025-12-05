@@ -219,30 +219,30 @@ class CodeSecurityScanConfigurationSummary {
   ///@}
  private:
   Aws::String m_scanConfigurationArn;
-  bool m_scanConfigurationArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_ownerAccountId;
-  bool m_ownerAccountIdHasBeenSet = false;
 
   PeriodicScanFrequency m_periodicScanFrequency{PeriodicScanFrequency::NOT_SET};
-  bool m_periodicScanFrequencyHasBeenSet = false;
 
   Aws::String m_frequencyExpression;
-  bool m_frequencyExpressionHasBeenSet = false;
 
   Aws::Vector<ContinuousIntegrationScanEvent> m_continuousIntegrationScanSupportedEvents;
-  bool m_continuousIntegrationScanSupportedEventsHasBeenSet = false;
 
   Aws::Vector<RuleSetCategory> m_ruleSetCategories;
-  bool m_ruleSetCategoriesHasBeenSet = false;
 
   ScopeSettings m_scopeSettings;
-  bool m_scopeSettingsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_scanConfigurationArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_ownerAccountIdHasBeenSet = false;
+  bool m_periodicScanFrequencyHasBeenSet = false;
+  bool m_frequencyExpressionHasBeenSet = false;
+  bool m_continuousIntegrationScanSupportedEventsHasBeenSet = false;
+  bool m_ruleSetCategoriesHasBeenSet = false;
+  bool m_scopeSettingsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

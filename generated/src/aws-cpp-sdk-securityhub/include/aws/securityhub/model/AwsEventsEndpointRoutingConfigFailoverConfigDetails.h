@@ -71,9 +71,9 @@ class AwsEventsEndpointRoutingConfigFailoverConfigDetails {
   ///@}
  private:
   AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails m_primary;
-  bool m_primaryHasBeenSet = false;
 
   AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails m_secondary;
+  bool m_primaryHasBeenSet = false;
   bool m_secondaryHasBeenSet = false;
 };
 

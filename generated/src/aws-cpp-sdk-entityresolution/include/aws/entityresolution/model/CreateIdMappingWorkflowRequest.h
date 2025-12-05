@@ -202,27 +202,27 @@ class CreateIdMappingWorkflowRequest : public EntityResolutionRequest {
   ///@}
  private:
   Aws::String m_workflowName;
-  bool m_workflowNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<IdMappingWorkflowInputSource> m_inputSourceConfig;
-  bool m_inputSourceConfigHasBeenSet = false;
 
   Aws::Vector<IdMappingWorkflowOutputSource> m_outputSourceConfig;
-  bool m_outputSourceConfigHasBeenSet = false;
 
   IdMappingTechniques m_idMappingTechniques;
-  bool m_idMappingTechniquesHasBeenSet = false;
 
   IdMappingIncrementalRunConfig m_incrementalRunConfig;
-  bool m_incrementalRunConfigHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_workflowNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_inputSourceConfigHasBeenSet = false;
+  bool m_outputSourceConfigHasBeenSet = false;
+  bool m_idMappingTechniquesHasBeenSet = false;
+  bool m_incrementalRunConfigHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

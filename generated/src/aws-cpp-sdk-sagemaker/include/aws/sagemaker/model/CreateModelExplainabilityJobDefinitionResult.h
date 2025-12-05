@@ -60,9 +60,9 @@ class CreateModelExplainabilityJobDefinitionResult {
   ///@}
  private:
   Aws::String m_jobDefinitionArn;
-  bool m_jobDefinitionArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobDefinitionArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

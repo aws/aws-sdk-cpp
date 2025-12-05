@@ -77,9 +77,9 @@ class AggregateLogGroupSummary {
   ///@}
  private:
   int m_logGroupCount{0};
-  bool m_logGroupCountHasBeenSet = false;
 
   Aws::Vector<GroupingIdentifier> m_groupingIdentifiers;
+  bool m_logGroupCountHasBeenSet = false;
   bool m_groupingIdentifiersHasBeenSet = false;
 };
 

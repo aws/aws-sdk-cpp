@@ -415,54 +415,54 @@ class NatGateway {
   ///@}
  private:
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_deleteTime{};
-  bool m_deleteTimeHasBeenSet = false;
 
   Aws::String m_failureCode;
-  bool m_failureCodeHasBeenSet = false;
 
   Aws::String m_failureMessage;
-  bool m_failureMessageHasBeenSet = false;
 
   Aws::Vector<NatGatewayAddress> m_natGatewayAddresses;
-  bool m_natGatewayAddressesHasBeenSet = false;
 
   Aws::String m_natGatewayId;
-  bool m_natGatewayIdHasBeenSet = false;
 
   ProvisionedBandwidth m_provisionedBandwidth;
-  bool m_provisionedBandwidthHasBeenSet = false;
 
   NatGatewayState m_state{NatGatewayState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ConnectivityType m_connectivityType{ConnectivityType::NOT_SET};
-  bool m_connectivityTypeHasBeenSet = false;
 
   AvailabilityMode m_availabilityMode{AvailabilityMode::NOT_SET};
-  bool m_availabilityModeHasBeenSet = false;
 
   AutoScalingIpsState m_autoScalingIps{AutoScalingIpsState::NOT_SET};
-  bool m_autoScalingIpsHasBeenSet = false;
 
   AutoProvisionZonesState m_autoProvisionZones{AutoProvisionZonesState::NOT_SET};
-  bool m_autoProvisionZonesHasBeenSet = false;
 
   Aws::Vector<NatGatewayAttachedAppliance> m_attachedAppliances;
-  bool m_attachedAppliancesHasBeenSet = false;
 
   Aws::String m_routeTableId;
+  bool m_createTimeHasBeenSet = false;
+  bool m_deleteTimeHasBeenSet = false;
+  bool m_failureCodeHasBeenSet = false;
+  bool m_failureMessageHasBeenSet = false;
+  bool m_natGatewayAddressesHasBeenSet = false;
+  bool m_natGatewayIdHasBeenSet = false;
+  bool m_provisionedBandwidthHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_connectivityTypeHasBeenSet = false;
+  bool m_availabilityModeHasBeenSet = false;
+  bool m_autoScalingIpsHasBeenSet = false;
+  bool m_autoProvisionZonesHasBeenSet = false;
+  bool m_attachedAppliancesHasBeenSet = false;
   bool m_routeTableIdHasBeenSet = false;
 };
 

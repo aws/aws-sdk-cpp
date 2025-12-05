@@ -84,12 +84,12 @@ class ListByoipCidrsResult {
   ///@}
  private:
   Aws::Vector<ByoipCidr> m_byoipCidrs;
-  bool m_byoipCidrsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_byoipCidrsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

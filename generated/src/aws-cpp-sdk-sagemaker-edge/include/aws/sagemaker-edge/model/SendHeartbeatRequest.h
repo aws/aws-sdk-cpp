@@ -154,21 +154,21 @@ class SendHeartbeatRequest : public SagemakerEdgeManagerRequest {
   ///@}
  private:
   Aws::Vector<EdgeMetric> m_agentMetrics;
-  bool m_agentMetricsHasBeenSet = false;
 
   Aws::Vector<Model> m_models;
-  bool m_modelsHasBeenSet = false;
 
   Aws::String m_agentVersion;
-  bool m_agentVersionHasBeenSet = false;
 
   Aws::String m_deviceName;
-  bool m_deviceNameHasBeenSet = false;
 
   Aws::String m_deviceFleetName;
-  bool m_deviceFleetNameHasBeenSet = false;
 
   DeploymentResult m_deploymentResult;
+  bool m_agentMetricsHasBeenSet = false;
+  bool m_modelsHasBeenSet = false;
+  bool m_agentVersionHasBeenSet = false;
+  bool m_deviceNameHasBeenSet = false;
+  bool m_deviceFleetNameHasBeenSet = false;
   bool m_deploymentResultHasBeenSet = false;
 };
 

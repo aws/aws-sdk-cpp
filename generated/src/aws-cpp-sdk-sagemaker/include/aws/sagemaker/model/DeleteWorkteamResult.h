@@ -58,9 +58,9 @@ class DeleteWorkteamResult {
   ///@}
  private:
   bool m_success{false};
-  bool m_successHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_successHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

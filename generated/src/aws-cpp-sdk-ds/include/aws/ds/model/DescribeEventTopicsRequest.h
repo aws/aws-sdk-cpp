@@ -81,9 +81,9 @@ class DescribeEventTopicsRequest : public DirectoryServiceRequest {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_topicNames;
+  bool m_directoryIdHasBeenSet = false;
   bool m_topicNamesHasBeenSet = false;
 };
 

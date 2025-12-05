@@ -83,9 +83,9 @@ class AwsBackupBackupVaultNotificationsDetails {
   ///@}
  private:
   Aws::Vector<Aws::String> m_backupVaultEvents;
-  bool m_backupVaultEventsHasBeenSet = false;
 
   Aws::String m_snsTopicArn;
+  bool m_backupVaultEventsHasBeenSet = false;
   bool m_snsTopicArnHasBeenSet = false;
 };
 

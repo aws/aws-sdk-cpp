@@ -81,12 +81,12 @@ class GetComponentResult {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Component m_component;
-  bool m_componentHasBeenSet = false;
 
   LatestVersionReferences m_latestVersionReferences;
+  bool m_requestIdHasBeenSet = false;
+  bool m_componentHasBeenSet = false;
   bool m_latestVersionReferencesHasBeenSet = false;
 };
 

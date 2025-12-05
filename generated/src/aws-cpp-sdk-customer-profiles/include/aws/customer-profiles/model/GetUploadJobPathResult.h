@@ -101,15 +101,15 @@ class GetUploadJobPathResult {
   ///@}
  private:
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::Utils::DateTime m_validUntil{};
-  bool m_validUntilHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_urlHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_validUntilHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

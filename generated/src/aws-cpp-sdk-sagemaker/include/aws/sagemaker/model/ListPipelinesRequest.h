@@ -159,24 +159,24 @@ class ListPipelinesRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_pipelineNamePrefix;
-  bool m_pipelineNamePrefixHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAfter{};
-  bool m_createdAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdBefore{};
-  bool m_createdBeforeHasBeenSet = false;
 
   SortPipelinesBy m_sortBy{SortPipelinesBy::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_pipelineNamePrefixHasBeenSet = false;
+  bool m_createdAfterHasBeenSet = false;
+  bool m_createdBeforeHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class DescribeImageAssociationsResult {
   ///@}
  private:
   Aws::Vector<ImageResourceAssociation> m_associations;
-  bool m_associationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_associationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -124,15 +124,15 @@ class AssociateRepositoryRequest : public CodeGuruReviewerRequest {
   ///@}
  private:
   Repository m_repository;
-  bool m_repositoryHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   KMSKeyDetails m_kMSKeyDetails;
+  bool m_repositoryHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_tagsHasBeenSet = false;
   bool m_kMSKeyDetailsHasBeenSet = false;
 };
 

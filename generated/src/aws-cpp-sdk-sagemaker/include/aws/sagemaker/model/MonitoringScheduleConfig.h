@@ -106,15 +106,15 @@ class MonitoringScheduleConfig {
   ///@}
  private:
   ScheduleConfig m_scheduleConfig;
-  bool m_scheduleConfigHasBeenSet = false;
 
   MonitoringJobDefinition m_monitoringJobDefinition;
-  bool m_monitoringJobDefinitionHasBeenSet = false;
 
   Aws::String m_monitoringJobDefinitionName;
-  bool m_monitoringJobDefinitionNameHasBeenSet = false;
 
   MonitoringType m_monitoringType{MonitoringType::NOT_SET};
+  bool m_scheduleConfigHasBeenSet = false;
+  bool m_monitoringJobDefinitionHasBeenSet = false;
+  bool m_monitoringJobDefinitionNameHasBeenSet = false;
   bool m_monitoringTypeHasBeenSet = false;
 };
 

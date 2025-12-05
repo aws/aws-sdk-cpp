@@ -105,12 +105,12 @@ class IdentityDkimAttributes {
   ///@}
  private:
   bool m_dkimEnabled{false};
-  bool m_dkimEnabledHasBeenSet = false;
 
   VerificationStatus m_dkimVerificationStatus{VerificationStatus::NOT_SET};
-  bool m_dkimVerificationStatusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dkimTokens;
+  bool m_dkimEnabledHasBeenSet = false;
+  bool m_dkimVerificationStatusHasBeenSet = false;
   bool m_dkimTokensHasBeenSet = false;
 };
 

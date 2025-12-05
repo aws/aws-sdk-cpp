@@ -103,15 +103,15 @@ class HistogramBinOptions {
   ///@}
  private:
   HistogramBinType m_selectedBinType{HistogramBinType::NOT_SET};
-  bool m_selectedBinTypeHasBeenSet = false;
 
   BinCountOptions m_binCount;
-  bool m_binCountHasBeenSet = false;
 
   BinWidthOptions m_binWidth;
-  bool m_binWidthHasBeenSet = false;
 
   double m_startValue{0.0};
+  bool m_selectedBinTypeHasBeenSet = false;
+  bool m_binCountHasBeenSet = false;
+  bool m_binWidthHasBeenSet = false;
   bool m_startValueHasBeenSet = false;
 };
 

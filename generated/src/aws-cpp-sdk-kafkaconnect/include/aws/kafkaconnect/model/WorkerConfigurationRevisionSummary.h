@@ -85,12 +85,12 @@ class WorkerConfigurationRevisionSummary {
   ///@}
  private:
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   long long m_revision{0};
+  bool m_creationTimeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_revisionHasBeenSet = false;
 };
 

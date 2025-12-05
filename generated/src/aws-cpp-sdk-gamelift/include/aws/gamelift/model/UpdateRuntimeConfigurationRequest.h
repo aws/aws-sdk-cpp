@@ -72,9 +72,9 @@ class UpdateRuntimeConfigurationRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   RuntimeConfiguration m_runtimeConfiguration;
+  bool m_fleetIdHasBeenSet = false;
   bool m_runtimeConfigurationHasBeenSet = false;
 };
 

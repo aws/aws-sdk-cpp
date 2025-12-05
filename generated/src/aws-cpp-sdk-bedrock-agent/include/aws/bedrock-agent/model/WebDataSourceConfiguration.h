@@ -70,9 +70,9 @@ class WebDataSourceConfiguration {
   ///@}
  private:
   WebSourceConfiguration m_sourceConfiguration;
-  bool m_sourceConfigurationHasBeenSet = false;
 
   WebCrawlerConfiguration m_crawlerConfiguration;
+  bool m_sourceConfigurationHasBeenSet = false;
   bool m_crawlerConfigurationHasBeenSet = false;
 };
 

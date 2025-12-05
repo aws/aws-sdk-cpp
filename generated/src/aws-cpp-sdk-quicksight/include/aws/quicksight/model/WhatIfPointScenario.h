@@ -67,9 +67,9 @@ class WhatIfPointScenario {
   ///@}
  private:
   Aws::Utils::DateTime m_date{};
-  bool m_dateHasBeenSet = false;
 
   double m_value{0.0};
+  bool m_dateHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

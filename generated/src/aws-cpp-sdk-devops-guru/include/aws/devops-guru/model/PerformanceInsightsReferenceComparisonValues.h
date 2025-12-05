@@ -76,9 +76,9 @@ class PerformanceInsightsReferenceComparisonValues {
   ///@}
  private:
   PerformanceInsightsReferenceScalar m_referenceScalar;
-  bool m_referenceScalarHasBeenSet = false;
 
   PerformanceInsightsReferenceMetric m_referenceMetric;
+  bool m_referenceScalarHasBeenSet = false;
   bool m_referenceMetricHasBeenSet = false;
 };
 

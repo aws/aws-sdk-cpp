@@ -111,9 +111,9 @@ class TumblingWindow {
   ///@}
  private:
   Aws::String m_interval;
-  bool m_intervalHasBeenSet = false;
 
   Aws::String m_offset;
+  bool m_intervalHasBeenSet = false;
   bool m_offsetHasBeenSet = false;
 };
 

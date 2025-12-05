@@ -129,15 +129,15 @@ class UpdateTableReplicaAutoScalingRequest : public DynamoDBRequest {
   ///@}
  private:
   Aws::Vector<GlobalSecondaryIndexAutoScalingUpdate> m_globalSecondaryIndexUpdates;
-  bool m_globalSecondaryIndexUpdatesHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   AutoScalingSettingsUpdate m_provisionedWriteCapacityAutoScalingUpdate;
-  bool m_provisionedWriteCapacityAutoScalingUpdateHasBeenSet = false;
 
   Aws::Vector<ReplicaAutoScalingUpdate> m_replicaUpdates;
+  bool m_globalSecondaryIndexUpdatesHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
+  bool m_provisionedWriteCapacityAutoScalingUpdateHasBeenSet = false;
   bool m_replicaUpdatesHasBeenSet = false;
 };
 

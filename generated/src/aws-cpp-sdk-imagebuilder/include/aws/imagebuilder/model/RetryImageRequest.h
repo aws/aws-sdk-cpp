@@ -69,9 +69,9 @@ class RetryImageRequest : public ImagebuilderRequest {
   ///@}
  private:
   Aws::String m_imageBuildVersionArn;
-  bool m_imageBuildVersionArnHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_imageBuildVersionArnHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

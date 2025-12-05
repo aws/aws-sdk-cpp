@@ -134,18 +134,18 @@ class SearchUsersByImageResult {
   ///@}
  private:
   Aws::Vector<UserMatch> m_userMatches;
-  bool m_userMatchesHasBeenSet = false;
 
   Aws::String m_faceModelVersion;
-  bool m_faceModelVersionHasBeenSet = false;
 
   SearchedFaceDetails m_searchedFace;
-  bool m_searchedFaceHasBeenSet = false;
 
   Aws::Vector<UnsearchedFace> m_unsearchedFaces;
-  bool m_unsearchedFacesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_userMatchesHasBeenSet = false;
+  bool m_faceModelVersionHasBeenSet = false;
+  bool m_searchedFaceHasBeenSet = false;
+  bool m_unsearchedFacesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

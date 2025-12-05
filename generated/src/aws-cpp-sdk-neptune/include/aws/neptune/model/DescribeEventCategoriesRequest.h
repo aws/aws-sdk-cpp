@@ -78,9 +78,9 @@ class DescribeEventCategoriesRequest : public NeptuneRequest {
   ///@}
  private:
   Aws::String m_sourceType;
-  bool m_sourceTypeHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
+  bool m_sourceTypeHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

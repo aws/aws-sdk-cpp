@@ -84,9 +84,9 @@ class GeocodeFilter {
   ///@}
  private:
   Aws::Vector<Aws::String> m_includeCountries;
-  bool m_includeCountriesHasBeenSet = false;
 
   Aws::Vector<GeocodeFilterPlaceType> m_includePlaceTypes;
+  bool m_includeCountriesHasBeenSet = false;
   bool m_includePlaceTypesHasBeenSet = false;
 };
 

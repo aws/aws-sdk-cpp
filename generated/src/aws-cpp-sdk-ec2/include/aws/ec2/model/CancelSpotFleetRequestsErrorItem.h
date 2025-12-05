@@ -72,9 +72,9 @@ class CancelSpotFleetRequestsErrorItem {
   ///@}
  private:
   CancelSpotFleetRequestsError m_error;
-  bool m_errorHasBeenSet = false;
 
   Aws::String m_spotFleetRequestId;
+  bool m_errorHasBeenSet = false;
   bool m_spotFleetRequestIdHasBeenSet = false;
 };
 

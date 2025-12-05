@@ -73,9 +73,9 @@ class AwsCodeBuildProjectEnvironmentRegistryCredential {
   ///@}
  private:
   Aws::String m_credential;
-  bool m_credentialHasBeenSet = false;
 
   Aws::String m_credentialProvider;
+  bool m_credentialHasBeenSet = false;
   bool m_credentialProviderHasBeenSet = false;
 };
 

@@ -83,12 +83,12 @@ class UpdateProjectVisibilityRequest : public CodeBuildRequest {
   ///@}
  private:
   Aws::String m_projectArn;
-  bool m_projectArnHasBeenSet = false;
 
   ProjectVisibilityType m_projectVisibility{ProjectVisibilityType::NOT_SET};
-  bool m_projectVisibilityHasBeenSet = false;
 
   Aws::String m_resourceAccessRole;
+  bool m_projectArnHasBeenSet = false;
+  bool m_projectVisibilityHasBeenSet = false;
   bool m_resourceAccessRoleHasBeenSet = false;
 };
 

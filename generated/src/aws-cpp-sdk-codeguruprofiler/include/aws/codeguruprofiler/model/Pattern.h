@@ -175,24 +175,24 @@ class Pattern {
   ///@}
  private:
   Aws::Vector<Aws::String> m_countersToAggregate;
-  bool m_countersToAggregateHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_resolutionSteps;
-  bool m_resolutionStepsHasBeenSet = false;
 
   Aws::Vector<Aws::Vector<Aws::String>> m_targetFrames;
-  bool m_targetFramesHasBeenSet = false;
 
   double m_thresholdPercent{0.0};
+  bool m_countersToAggregateHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_resolutionStepsHasBeenSet = false;
+  bool m_targetFramesHasBeenSet = false;
   bool m_thresholdPercentHasBeenSet = false;
 };
 

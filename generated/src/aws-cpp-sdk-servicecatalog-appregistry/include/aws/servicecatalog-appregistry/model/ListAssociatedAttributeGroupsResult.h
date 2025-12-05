@@ -85,12 +85,12 @@ class ListAssociatedAttributeGroupsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_attributeGroups;
-  bool m_attributeGroupsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_attributeGroupsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

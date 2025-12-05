@@ -78,9 +78,9 @@ class DeleteRemediationExceptionsRequest : public ConfigServiceRequest {
   ///@}
  private:
   Aws::String m_configRuleName;
-  bool m_configRuleNameHasBeenSet = false;
 
   Aws::Vector<RemediationExceptionResourceKey> m_resourceKeys;
+  bool m_configRuleNameHasBeenSet = false;
   bool m_resourceKeysHasBeenSet = false;
 };
 

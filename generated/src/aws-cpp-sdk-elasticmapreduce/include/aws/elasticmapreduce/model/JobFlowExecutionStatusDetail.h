@@ -141,21 +141,21 @@ class JobFlowExecutionStatusDetail {
   ///@}
  private:
   JobFlowExecutionState m_state{JobFlowExecutionState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startDateTime{};
-  bool m_startDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_readyDateTime{};
-  bool m_readyDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endDateTime{};
-  bool m_endDateTimeHasBeenSet = false;
 
   Aws::String m_lastStateChangeReason;
+  bool m_stateHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_startDateTimeHasBeenSet = false;
+  bool m_readyDateTimeHasBeenSet = false;
+  bool m_endDateTimeHasBeenSet = false;
   bool m_lastStateChangeReasonHasBeenSet = false;
 };
 

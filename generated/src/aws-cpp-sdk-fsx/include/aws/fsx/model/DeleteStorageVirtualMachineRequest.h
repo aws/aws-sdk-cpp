@@ -66,9 +66,9 @@ class DeleteStorageVirtualMachineRequest : public FSxRequest {
   ///@}
  private:
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::String m_storageVirtualMachineId;
+  bool m_clientRequestTokenHasBeenSet = true;
   bool m_storageVirtualMachineIdHasBeenSet = false;
 };
 

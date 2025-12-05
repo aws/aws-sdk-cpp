@@ -91,12 +91,12 @@ class CreateClusterSnapshotRequest : public DocDBElasticRequest {
   ///@}
  private:
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::String m_snapshotName;
-  bool m_snapshotNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_clusterArnHasBeenSet = false;
+  bool m_snapshotNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

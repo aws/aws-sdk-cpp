@@ -150,21 +150,21 @@ class CreateSubscriptionGrantRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::Vector<AssetTargetNameMap> m_assetTargetNames;
-  bool m_assetTargetNamesHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Aws::String m_environmentIdentifier;
-  bool m_environmentIdentifierHasBeenSet = false;
 
   GrantedEntityInput m_grantedEntity;
-  bool m_grantedEntityHasBeenSet = false;
 
   Aws::String m_subscriptionTargetIdentifier;
+  bool m_assetTargetNamesHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_environmentIdentifierHasBeenSet = false;
+  bool m_grantedEntityHasBeenSet = false;
   bool m_subscriptionTargetIdentifierHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class BasicAuthenticationCredentials {
   ///@}
  private:
   Aws::String m_password;
-  bool m_passwordHasBeenSet = false;
 
   Aws::String m_userName;
+  bool m_passwordHasBeenSet = false;
   bool m_userNameHasBeenSet = false;
 };
 

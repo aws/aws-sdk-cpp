@@ -60,9 +60,9 @@ class GetNetworkResult {
   ///@}
  private:
   Network m_network;
-  bool m_networkHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_networkHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

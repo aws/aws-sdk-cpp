@@ -65,9 +65,9 @@ class GetCollaborationConfiguredAudienceModelAssociationResult {
   ///@}
  private:
   CollaborationConfiguredAudienceModelAssociation m_collaborationConfiguredAudienceModelAssociation;
-  bool m_collaborationConfiguredAudienceModelAssociationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_collaborationConfiguredAudienceModelAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

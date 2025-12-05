@@ -79,12 +79,12 @@ class GetAutomatedReasoningPolicyNextScenarioResult {
   ///@}
  private:
   Aws::String m_policyArn;
-  bool m_policyArnHasBeenSet = false;
 
   AutomatedReasoningPolicyScenario m_scenario;
-  bool m_scenarioHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyArnHasBeenSet = false;
+  bool m_scenarioHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

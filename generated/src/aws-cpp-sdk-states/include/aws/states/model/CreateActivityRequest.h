@@ -113,12 +113,12 @@ class CreateActivityRequest : public SFNRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
+  bool m_nameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_encryptionConfigurationHasBeenSet = false;
 };
 

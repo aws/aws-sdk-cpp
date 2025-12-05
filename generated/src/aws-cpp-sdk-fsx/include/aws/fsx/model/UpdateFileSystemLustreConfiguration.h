@@ -277,36 +277,36 @@ class UpdateFileSystemLustreConfiguration {
   ///@}
  private:
   Aws::String m_weeklyMaintenanceStartTime;
-  bool m_weeklyMaintenanceStartTimeHasBeenSet = false;
 
   Aws::String m_dailyAutomaticBackupStartTime;
-  bool m_dailyAutomaticBackupStartTimeHasBeenSet = false;
 
   int m_automaticBackupRetentionDays{0};
-  bool m_automaticBackupRetentionDaysHasBeenSet = false;
 
   AutoImportPolicyType m_autoImportPolicy{AutoImportPolicyType::NOT_SET};
-  bool m_autoImportPolicyHasBeenSet = false;
 
   DataCompressionType m_dataCompressionType{DataCompressionType::NOT_SET};
-  bool m_dataCompressionTypeHasBeenSet = false;
 
   LustreLogCreateConfiguration m_logConfiguration;
-  bool m_logConfigurationHasBeenSet = false;
 
   LustreRootSquashConfiguration m_rootSquashConfiguration;
-  bool m_rootSquashConfigurationHasBeenSet = false;
 
   int m_perUnitStorageThroughput{0};
-  bool m_perUnitStorageThroughputHasBeenSet = false;
 
   UpdateFileSystemLustreMetadataConfiguration m_metadataConfiguration;
-  bool m_metadataConfigurationHasBeenSet = false;
 
   int m_throughputCapacity{0};
-  bool m_throughputCapacityHasBeenSet = false;
 
   LustreReadCacheConfiguration m_dataReadCacheConfiguration;
+  bool m_weeklyMaintenanceStartTimeHasBeenSet = false;
+  bool m_dailyAutomaticBackupStartTimeHasBeenSet = false;
+  bool m_automaticBackupRetentionDaysHasBeenSet = false;
+  bool m_autoImportPolicyHasBeenSet = false;
+  bool m_dataCompressionTypeHasBeenSet = false;
+  bool m_logConfigurationHasBeenSet = false;
+  bool m_rootSquashConfigurationHasBeenSet = false;
+  bool m_perUnitStorageThroughputHasBeenSet = false;
+  bool m_metadataConfigurationHasBeenSet = false;
+  bool m_throughputCapacityHasBeenSet = false;
   bool m_dataReadCacheConfigurationHasBeenSet = false;
 };
 

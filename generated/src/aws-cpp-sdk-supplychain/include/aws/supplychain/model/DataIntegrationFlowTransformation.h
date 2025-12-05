@@ -68,9 +68,9 @@ class DataIntegrationFlowTransformation {
   ///@}
  private:
   DataIntegrationFlowTransformationType m_transformationType{DataIntegrationFlowTransformationType::NOT_SET};
-  bool m_transformationTypeHasBeenSet = false;
 
   DataIntegrationFlowSQLTransformationConfiguration m_sqlTransformation;
+  bool m_transformationTypeHasBeenSet = false;
   bool m_sqlTransformationHasBeenSet = false;
 };
 

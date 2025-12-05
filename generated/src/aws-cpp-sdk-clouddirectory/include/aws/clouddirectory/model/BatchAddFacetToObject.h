@@ -96,12 +96,12 @@ class BatchAddFacetToObject {
   ///@}
  private:
   SchemaFacet m_schemaFacet;
-  bool m_schemaFacetHasBeenSet = false;
 
   Aws::Vector<AttributeKeyAndValue> m_objectAttributeList;
-  bool m_objectAttributeListHasBeenSet = false;
 
   ObjectReference m_objectReference;
+  bool m_schemaFacetHasBeenSet = false;
+  bool m_objectAttributeListHasBeenSet = false;
   bool m_objectReferenceHasBeenSet = false;
 };
 

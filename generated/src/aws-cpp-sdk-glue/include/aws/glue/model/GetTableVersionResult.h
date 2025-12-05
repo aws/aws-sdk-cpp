@@ -60,9 +60,9 @@ class GetTableVersionResult {
   ///@}
  private:
   TableVersion m_tableVersion;
-  bool m_tableVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tableVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

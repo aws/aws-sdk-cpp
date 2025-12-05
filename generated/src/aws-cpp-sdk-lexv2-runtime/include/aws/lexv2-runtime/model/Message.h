@@ -85,12 +85,12 @@ class Message {
   ///@}
  private:
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   MessageContentType m_contentType{MessageContentType::NOT_SET};
-  bool m_contentTypeHasBeenSet = false;
 
   ImageResponseCard m_imageResponseCard;
+  bool m_contentHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
   bool m_imageResponseCardHasBeenSet = false;
 };
 

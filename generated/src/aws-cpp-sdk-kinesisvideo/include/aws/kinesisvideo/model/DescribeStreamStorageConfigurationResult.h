@@ -96,15 +96,15 @@ class DescribeStreamStorageConfigurationResult {
   ///@}
  private:
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   Aws::String m_streamARN;
-  bool m_streamARNHasBeenSet = false;
 
   StreamStorageConfiguration m_streamStorageConfiguration;
-  bool m_streamStorageConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_streamNameHasBeenSet = false;
+  bool m_streamARNHasBeenSet = false;
+  bool m_streamStorageConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

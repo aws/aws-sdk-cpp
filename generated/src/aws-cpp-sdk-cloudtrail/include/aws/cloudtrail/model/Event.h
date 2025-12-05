@@ -208,30 +208,30 @@ class Event {
   ///@}
  private:
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   Aws::String m_eventName;
-  bool m_eventNameHasBeenSet = false;
 
   Aws::String m_readOnly;
-  bool m_readOnlyHasBeenSet = false;
 
   Aws::String m_accessKeyId;
-  bool m_accessKeyIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_eventTime{};
-  bool m_eventTimeHasBeenSet = false;
 
   Aws::String m_eventSource;
-  bool m_eventSourceHasBeenSet = false;
 
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::Vector<Resource> m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   Aws::String m_cloudTrailEvent;
+  bool m_eventIdHasBeenSet = false;
+  bool m_eventNameHasBeenSet = false;
+  bool m_readOnlyHasBeenSet = false;
+  bool m_accessKeyIdHasBeenSet = false;
+  bool m_eventTimeHasBeenSet = false;
+  bool m_eventSourceHasBeenSet = false;
+  bool m_usernameHasBeenSet = false;
+  bool m_resourcesHasBeenSet = false;
   bool m_cloudTrailEventHasBeenSet = false;
 };
 

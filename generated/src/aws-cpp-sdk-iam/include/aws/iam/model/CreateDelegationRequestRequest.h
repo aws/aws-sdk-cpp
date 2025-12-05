@@ -222,30 +222,30 @@ class CreateDelegationRequestRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_ownerAccountId;
-  bool m_ownerAccountIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   DelegationPermission m_permissions;
-  bool m_permissionsHasBeenSet = false;
 
   Aws::String m_requestMessage;
-  bool m_requestMessageHasBeenSet = false;
 
   Aws::String m_requestorWorkflowId;
-  bool m_requestorWorkflowIdHasBeenSet = false;
 
   Aws::String m_redirectUrl;
-  bool m_redirectUrlHasBeenSet = false;
 
   Aws::String m_notificationChannel;
-  bool m_notificationChannelHasBeenSet = false;
 
   int m_sessionDuration{0};
-  bool m_sessionDurationHasBeenSet = false;
 
   bool m_onlySendByOwner{false};
+  bool m_ownerAccountIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_permissionsHasBeenSet = false;
+  bool m_requestMessageHasBeenSet = false;
+  bool m_requestorWorkflowIdHasBeenSet = false;
+  bool m_redirectUrlHasBeenSet = false;
+  bool m_notificationChannelHasBeenSet = false;
+  bool m_sessionDurationHasBeenSet = false;
   bool m_onlySendByOwnerHasBeenSet = false;
 };
 

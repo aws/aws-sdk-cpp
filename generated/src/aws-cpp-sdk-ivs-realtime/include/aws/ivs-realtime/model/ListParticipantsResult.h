@@ -85,12 +85,12 @@ class ListParticipantsResult {
   ///@}
  private:
   Aws::Vector<ParticipantSummary> m_participants;
-  bool m_participantsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_participantsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

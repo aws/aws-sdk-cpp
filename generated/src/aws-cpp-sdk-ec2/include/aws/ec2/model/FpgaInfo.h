@@ -75,9 +75,9 @@ class FpgaInfo {
   ///@}
  private:
   Aws::Vector<FpgaDeviceInfo> m_fpgas;
-  bool m_fpgasHasBeenSet = false;
 
   int m_totalFpgaMemoryInMiB{0};
+  bool m_fpgasHasBeenSet = false;
   bool m_totalFpgaMemoryInMiBHasBeenSet = false;
 };
 

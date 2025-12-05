@@ -151,21 +151,21 @@ class GetScopeResult {
   ///@}
  private:
   Aws::String m_scopeId;
-  bool m_scopeIdHasBeenSet = false;
 
   ScopeStatus m_status{ScopeStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_scopeArn;
-  bool m_scopeArnHasBeenSet = false;
 
   Aws::Vector<TargetResource> m_targets;
-  bool m_targetsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_scopeIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_scopeArnHasBeenSet = false;
+  bool m_targetsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

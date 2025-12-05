@@ -86,9 +86,9 @@ class RateLimitHeader {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<TextTransformation> m_textTransformations;
+  bool m_nameHasBeenSet = false;
   bool m_textTransformationsHasBeenSet = false;
 };
 

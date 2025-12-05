@@ -116,15 +116,15 @@ class CaseFilter {
   ///@}
  private:
   FieldFilter m_field;
-  bool m_fieldHasBeenSet = false;
 
   std::shared_ptr<CaseFilter> m_not;
-  bool m_notHasBeenSet = false;
 
   Aws::Vector<CaseFilter> m_andAll;
-  bool m_andAllHasBeenSet = false;
 
   Aws::Vector<CaseFilter> m_orAll;
+  bool m_fieldHasBeenSet = false;
+  bool m_notHasBeenSet = false;
+  bool m_andAllHasBeenSet = false;
   bool m_orAllHasBeenSet = false;
 };
 

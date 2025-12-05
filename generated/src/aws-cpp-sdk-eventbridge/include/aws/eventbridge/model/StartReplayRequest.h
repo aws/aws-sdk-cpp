@@ -146,21 +146,21 @@ class StartReplayRequest : public EventBridgeRequest {
   ///@}
  private:
   Aws::String m_replayName;
-  bool m_replayNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_eventSourceArn;
-  bool m_eventSourceArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_eventStartTime{};
-  bool m_eventStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_eventEndTime{};
-  bool m_eventEndTimeHasBeenSet = false;
 
   ReplayDestination m_destination;
+  bool m_replayNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_eventSourceArnHasBeenSet = false;
+  bool m_eventStartTimeHasBeenSet = false;
+  bool m_eventEndTimeHasBeenSet = false;
   bool m_destinationHasBeenSet = false;
 };
 

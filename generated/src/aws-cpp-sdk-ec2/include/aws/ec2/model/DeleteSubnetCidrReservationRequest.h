@@ -70,9 +70,9 @@ class DeleteSubnetCidrReservationRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_subnetCidrReservationId;
-  bool m_subnetCidrReservationIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_subnetCidrReservationIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

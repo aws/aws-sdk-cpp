@@ -86,12 +86,12 @@ class UpdateVpcOrigin2020_05_31Request : public CloudFrontRequest {
   ///@}
  private:
   VpcOriginEndpointConfig m_vpcOriginEndpointConfig;
-  bool m_vpcOriginEndpointConfigHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_ifMatch;
+  bool m_vpcOriginEndpointConfigHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_ifMatchHasBeenSet = false;
 };
 

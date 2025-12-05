@@ -108,15 +108,15 @@ class AddressAttribute {
   ///@}
  private:
   Aws::String m_publicIp;
-  bool m_publicIpHasBeenSet = false;
 
   Aws::String m_allocationId;
-  bool m_allocationIdHasBeenSet = false;
 
   Aws::String m_ptrRecord;
-  bool m_ptrRecordHasBeenSet = false;
 
   PtrUpdateStatus m_ptrRecordUpdate;
+  bool m_publicIpHasBeenSet = false;
+  bool m_allocationIdHasBeenSet = false;
+  bool m_ptrRecordHasBeenSet = false;
   bool m_ptrRecordUpdateHasBeenSet = false;
 };
 

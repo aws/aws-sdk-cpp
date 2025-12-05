@@ -162,21 +162,21 @@ class CreateScanRequest : public CodeGuruSecurityRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   ResourceId m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_scanName;
-  bool m_scanNameHasBeenSet = false;
 
   ScanType m_scanType{ScanType::NOT_SET};
-  bool m_scanTypeHasBeenSet = false;
 
   AnalysisType m_analysisType{AnalysisType::NOT_SET};
-  bool m_analysisTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_scanNameHasBeenSet = false;
+  bool m_scanTypeHasBeenSet = false;
+  bool m_analysisTypeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

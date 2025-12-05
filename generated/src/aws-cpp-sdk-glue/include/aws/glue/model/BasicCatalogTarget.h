@@ -139,18 +139,18 @@ class BasicCatalogTarget {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inputs;
-  bool m_inputsHasBeenSet = false;
 
   Aws::Vector<Aws::Vector<Aws::String>> m_partitionKeys;
-  bool m_partitionKeysHasBeenSet = false;
 
   Aws::String m_database;
-  bool m_databaseHasBeenSet = false;
 
   Aws::String m_table;
+  bool m_nameHasBeenSet = false;
+  bool m_inputsHasBeenSet = false;
+  bool m_partitionKeysHasBeenSet = false;
+  bool m_databaseHasBeenSet = false;
   bool m_tableHasBeenSet = false;
 };
 

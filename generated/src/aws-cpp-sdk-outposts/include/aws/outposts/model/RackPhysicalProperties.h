@@ -194,30 +194,30 @@ class RackPhysicalProperties {
   ///@}
  private:
   PowerDrawKva m_powerDrawKva{PowerDrawKva::NOT_SET};
-  bool m_powerDrawKvaHasBeenSet = false;
 
   PowerPhase m_powerPhase{PowerPhase::NOT_SET};
-  bool m_powerPhaseHasBeenSet = false;
 
   PowerConnector m_powerConnector{PowerConnector::NOT_SET};
-  bool m_powerConnectorHasBeenSet = false;
 
   PowerFeedDrop m_powerFeedDrop{PowerFeedDrop::NOT_SET};
-  bool m_powerFeedDropHasBeenSet = false;
 
   UplinkGbps m_uplinkGbps{UplinkGbps::NOT_SET};
-  bool m_uplinkGbpsHasBeenSet = false;
 
   UplinkCount m_uplinkCount{UplinkCount::NOT_SET};
-  bool m_uplinkCountHasBeenSet = false;
 
   FiberOpticCableType m_fiberOpticCableType{FiberOpticCableType::NOT_SET};
-  bool m_fiberOpticCableTypeHasBeenSet = false;
 
   OpticalStandard m_opticalStandard{OpticalStandard::NOT_SET};
-  bool m_opticalStandardHasBeenSet = false;
 
   MaximumSupportedWeightLbs m_maximumSupportedWeightLbs{MaximumSupportedWeightLbs::NOT_SET};
+  bool m_powerDrawKvaHasBeenSet = false;
+  bool m_powerPhaseHasBeenSet = false;
+  bool m_powerConnectorHasBeenSet = false;
+  bool m_powerFeedDropHasBeenSet = false;
+  bool m_uplinkGbpsHasBeenSet = false;
+  bool m_uplinkCountHasBeenSet = false;
+  bool m_fiberOpticCableTypeHasBeenSet = false;
+  bool m_opticalStandardHasBeenSet = false;
   bool m_maximumSupportedWeightLbsHasBeenSet = false;
 };
 

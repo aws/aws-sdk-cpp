@@ -59,9 +59,9 @@ class GetDiscoveredSchemaResult {
   ///@}
  private:
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_contentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -107,15 +107,15 @@ class EventStreamDestinationDetails {
   ///@}
  private:
   Aws::String m_uri;
-  bool m_uriHasBeenSet = false;
 
   EventStreamDestinationStatus m_status{EventStreamDestinationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_unhealthySince{};
-  bool m_unhealthySinceHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_uriHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_unhealthySinceHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

@@ -180,24 +180,24 @@ class PolicyComplianceStatus {
   ///@}
  private:
   Aws::String m_policyOwner;
-  bool m_policyOwnerHasBeenSet = false;
 
   Aws::String m_policyId;
-  bool m_policyIdHasBeenSet = false;
 
   Aws::String m_policyName;
-  bool m_policyNameHasBeenSet = false;
 
   Aws::String m_memberAccount;
-  bool m_memberAccountHasBeenSet = false;
 
   Aws::Vector<EvaluationResult> m_evaluationResults;
-  bool m_evaluationResultsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdated{};
-  bool m_lastUpdatedHasBeenSet = false;
 
   Aws::Map<DependentServiceName, Aws::String> m_issueInfoMap;
+  bool m_policyOwnerHasBeenSet = false;
+  bool m_policyIdHasBeenSet = false;
+  bool m_policyNameHasBeenSet = false;
+  bool m_memberAccountHasBeenSet = false;
+  bool m_evaluationResultsHasBeenSet = false;
+  bool m_lastUpdatedHasBeenSet = false;
   bool m_issueInfoMapHasBeenSet = false;
 };
 

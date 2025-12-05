@@ -102,15 +102,15 @@ class AccountAggregationResponse {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   SeverityCounts m_severityCounts;
-  bool m_severityCountsHasBeenSet = false;
 
   long long m_exploitAvailableCount{0};
-  bool m_exploitAvailableCountHasBeenSet = false;
 
   long long m_fixAvailableCount{0};
+  bool m_accountIdHasBeenSet = false;
+  bool m_severityCountsHasBeenSet = false;
+  bool m_exploitAvailableCountHasBeenSet = false;
   bool m_fixAvailableCountHasBeenSet = false;
 };
 

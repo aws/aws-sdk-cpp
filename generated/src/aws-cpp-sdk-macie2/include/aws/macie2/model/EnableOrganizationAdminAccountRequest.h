@@ -68,9 +68,9 @@ class EnableOrganizationAdminAccountRequest : public Macie2Request {
   ///@}
  private:
   Aws::String m_adminAccountId;
-  bool m_adminAccountIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_adminAccountIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

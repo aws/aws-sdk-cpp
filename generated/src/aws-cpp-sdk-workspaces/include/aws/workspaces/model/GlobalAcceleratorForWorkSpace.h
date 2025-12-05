@@ -67,9 +67,9 @@ class GlobalAcceleratorForWorkSpace {
   ///@}
  private:
   AGAModeForWorkSpaceEnum m_mode{AGAModeForWorkSpaceEnum::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   AGAPreferredProtocolForWorkSpace m_preferredProtocol{AGAPreferredProtocolForWorkSpace::NOT_SET};
+  bool m_modeHasBeenSet = false;
   bool m_preferredProtocolHasBeenSet = false;
 };
 

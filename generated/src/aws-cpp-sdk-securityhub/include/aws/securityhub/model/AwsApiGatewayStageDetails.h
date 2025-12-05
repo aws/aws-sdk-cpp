@@ -343,51 +343,51 @@ class AwsApiGatewayStageDetails {
   ///@}
  private:
   Aws::String m_deploymentId;
-  bool m_deploymentIdHasBeenSet = false;
 
   Aws::String m_clientCertificateId;
-  bool m_clientCertificateIdHasBeenSet = false;
 
   Aws::String m_stageName;
-  bool m_stageNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_cacheClusterEnabled{false};
-  bool m_cacheClusterEnabledHasBeenSet = false;
 
   Aws::String m_cacheClusterSize;
-  bool m_cacheClusterSizeHasBeenSet = false;
 
   Aws::String m_cacheClusterStatus;
-  bool m_cacheClusterStatusHasBeenSet = false;
 
   Aws::Vector<AwsApiGatewayMethodSettings> m_methodSettings;
-  bool m_methodSettingsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_variables;
-  bool m_variablesHasBeenSet = false;
 
   Aws::String m_documentationVersion;
-  bool m_documentationVersionHasBeenSet = false;
 
   AwsApiGatewayAccessLogSettings m_accessLogSettings;
-  bool m_accessLogSettingsHasBeenSet = false;
 
   AwsApiGatewayCanarySettings m_canarySettings;
-  bool m_canarySettingsHasBeenSet = false;
 
   bool m_tracingEnabled{false};
-  bool m_tracingEnabledHasBeenSet = false;
 
   Aws::String m_createdDate;
-  bool m_createdDateHasBeenSet = false;
 
   Aws::String m_lastUpdatedDate;
-  bool m_lastUpdatedDateHasBeenSet = false;
 
   Aws::String m_webAclArn;
+  bool m_deploymentIdHasBeenSet = false;
+  bool m_clientCertificateIdHasBeenSet = false;
+  bool m_stageNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_cacheClusterEnabledHasBeenSet = false;
+  bool m_cacheClusterSizeHasBeenSet = false;
+  bool m_cacheClusterStatusHasBeenSet = false;
+  bool m_methodSettingsHasBeenSet = false;
+  bool m_variablesHasBeenSet = false;
+  bool m_documentationVersionHasBeenSet = false;
+  bool m_accessLogSettingsHasBeenSet = false;
+  bool m_canarySettingsHasBeenSet = false;
+  bool m_tracingEnabledHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
+  bool m_lastUpdatedDateHasBeenSet = false;
   bool m_webAclArnHasBeenSet = false;
 };
 

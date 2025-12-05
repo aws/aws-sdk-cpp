@@ -69,9 +69,9 @@ class AwsEcsTaskDefinitionInferenceAcceleratorsDetails {
   ///@}
  private:
   Aws::String m_deviceName;
-  bool m_deviceNameHasBeenSet = false;
 
   Aws::String m_deviceType;
+  bool m_deviceNameHasBeenSet = false;
   bool m_deviceTypeHasBeenSet = false;
 };
 

@@ -85,9 +85,9 @@ class AssetBundleImportJobVPCConnectionOverrideTags {
   ///@}
  private:
   Aws::Vector<Aws::String> m_vPCConnectionIds;
-  bool m_vPCConnectionIdsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_vPCConnectionIdsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

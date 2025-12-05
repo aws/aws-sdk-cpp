@@ -194,24 +194,24 @@ class ResponseHeadersPolicyCorsConfig {
   ///@}
  private:
   ResponseHeadersPolicyAccessControlAllowOrigins m_accessControlAllowOrigins;
-  bool m_accessControlAllowOriginsHasBeenSet = false;
 
   ResponseHeadersPolicyAccessControlAllowHeaders m_accessControlAllowHeaders;
-  bool m_accessControlAllowHeadersHasBeenSet = false;
 
   ResponseHeadersPolicyAccessControlAllowMethods m_accessControlAllowMethods;
-  bool m_accessControlAllowMethodsHasBeenSet = false;
 
   bool m_accessControlAllowCredentials{false};
-  bool m_accessControlAllowCredentialsHasBeenSet = false;
 
   ResponseHeadersPolicyAccessControlExposeHeaders m_accessControlExposeHeaders;
-  bool m_accessControlExposeHeadersHasBeenSet = false;
 
   int m_accessControlMaxAgeSec{0};
-  bool m_accessControlMaxAgeSecHasBeenSet = false;
 
   bool m_originOverride{false};
+  bool m_accessControlAllowOriginsHasBeenSet = false;
+  bool m_accessControlAllowHeadersHasBeenSet = false;
+  bool m_accessControlAllowMethodsHasBeenSet = false;
+  bool m_accessControlAllowCredentialsHasBeenSet = false;
+  bool m_accessControlExposeHeadersHasBeenSet = false;
+  bool m_accessControlMaxAgeSecHasBeenSet = false;
   bool m_originOverrideHasBeenSet = false;
 };
 

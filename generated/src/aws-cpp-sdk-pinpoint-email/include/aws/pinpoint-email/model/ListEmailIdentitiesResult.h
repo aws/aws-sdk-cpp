@@ -95,12 +95,12 @@ class ListEmailIdentitiesResult {
   ///@}
  private:
   Aws::Vector<IdentityInfo> m_emailIdentities;
-  bool m_emailIdentitiesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_emailIdentitiesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

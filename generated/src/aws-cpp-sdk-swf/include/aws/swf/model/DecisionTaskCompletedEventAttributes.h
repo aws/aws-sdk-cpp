@@ -123,18 +123,18 @@ class DecisionTaskCompletedEventAttributes {
   ///@}
  private:
   Aws::String m_executionContext;
-  bool m_executionContextHasBeenSet = false;
 
   long long m_scheduledEventId{0};
-  bool m_scheduledEventIdHasBeenSet = false;
 
   long long m_startedEventId{0};
-  bool m_startedEventIdHasBeenSet = false;
 
   TaskList m_taskList;
-  bool m_taskListHasBeenSet = false;
 
   Aws::String m_taskListScheduleToStartTimeout;
+  bool m_executionContextHasBeenSet = false;
+  bool m_scheduledEventIdHasBeenSet = false;
+  bool m_startedEventIdHasBeenSet = false;
+  bool m_taskListHasBeenSet = false;
   bool m_taskListScheduleToStartTimeoutHasBeenSet = false;
 };
 

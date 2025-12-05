@@ -115,15 +115,15 @@ class MetricQueryResult {
   ///@}
  private:
   MetricQueryResultStatus m_status{MetricQueryResultStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Vector<long long> m_xAxisValues;
-  bool m_xAxisValuesHasBeenSet = false;
 
   Aws::Vector<double> m_metricValues;
+  bool m_statusHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_xAxisValuesHasBeenSet = false;
   bool m_metricValuesHasBeenSet = false;
 };
 

@@ -185,27 +185,27 @@ class ConnectionNotification {
   ///@}
  private:
   Aws::String m_connectionNotificationId;
-  bool m_connectionNotificationIdHasBeenSet = false;
 
   Aws::String m_serviceId;
-  bool m_serviceIdHasBeenSet = false;
 
   Aws::String m_vpcEndpointId;
-  bool m_vpcEndpointIdHasBeenSet = false;
 
   ConnectionNotificationType m_connectionNotificationType{ConnectionNotificationType::NOT_SET};
-  bool m_connectionNotificationTypeHasBeenSet = false;
 
   Aws::String m_connectionNotificationArn;
-  bool m_connectionNotificationArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_connectionEvents;
-  bool m_connectionEventsHasBeenSet = false;
 
   ConnectionNotificationState m_connectionNotificationState{ConnectionNotificationState::NOT_SET};
-  bool m_connectionNotificationStateHasBeenSet = false;
 
   Aws::String m_serviceRegion;
+  bool m_connectionNotificationIdHasBeenSet = false;
+  bool m_serviceIdHasBeenSet = false;
+  bool m_vpcEndpointIdHasBeenSet = false;
+  bool m_connectionNotificationTypeHasBeenSet = false;
+  bool m_connectionNotificationArnHasBeenSet = false;
+  bool m_connectionEventsHasBeenSet = false;
+  bool m_connectionNotificationStateHasBeenSet = false;
   bool m_serviceRegionHasBeenSet = false;
 };
 

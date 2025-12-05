@@ -92,12 +92,12 @@ class WorkflowExecutionCancelRequestedEventAttributes {
   ///@}
  private:
   WorkflowExecution m_externalWorkflowExecution;
-  bool m_externalWorkflowExecutionHasBeenSet = false;
 
   long long m_externalInitiatedEventId{0};
-  bool m_externalInitiatedEventIdHasBeenSet = false;
 
   WorkflowExecutionCancelRequestedCause m_cause{WorkflowExecutionCancelRequestedCause::NOT_SET};
+  bool m_externalWorkflowExecutionHasBeenSet = false;
+  bool m_externalInitiatedEventIdHasBeenSet = false;
   bool m_causeHasBeenSet = false;
 };
 

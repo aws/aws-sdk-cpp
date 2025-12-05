@@ -85,12 +85,12 @@ class ResponseBudgetAction {
   ///@}
  private:
   BudgetActionType m_type{BudgetActionType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   double m_thresholdPercentage{0.0};
-  bool m_thresholdPercentageHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_typeHasBeenSet = false;
+  bool m_thresholdPercentageHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

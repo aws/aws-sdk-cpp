@@ -96,12 +96,12 @@ class LayoutConfiguration {
   ///@}
  private:
   GridLayoutConfiguration m_gridLayout;
-  bool m_gridLayoutHasBeenSet = false;
 
   FreeFormLayoutConfiguration m_freeFormLayout;
-  bool m_freeFormLayoutHasBeenSet = false;
 
   SectionBasedLayoutConfiguration m_sectionBasedLayout;
+  bool m_gridLayoutHasBeenSet = false;
+  bool m_freeFormLayoutHasBeenSet = false;
   bool m_sectionBasedLayoutHasBeenSet = false;
 };
 

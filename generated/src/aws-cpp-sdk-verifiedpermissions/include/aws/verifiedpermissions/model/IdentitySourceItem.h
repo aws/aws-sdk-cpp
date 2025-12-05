@@ -146,21 +146,21 @@ class IdentitySourceItem {
   ///@}
  private:
   Aws::Utils::DateTime m_createdDate{};
-  bool m_createdDateHasBeenSet = false;
 
   Aws::String m_identitySourceId;
-  bool m_identitySourceIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDate{};
-  bool m_lastUpdatedDateHasBeenSet = false;
 
   Aws::String m_policyStoreId;
-  bool m_policyStoreIdHasBeenSet = false;
 
   Aws::String m_principalEntityType;
-  bool m_principalEntityTypeHasBeenSet = false;
 
   ConfigurationItem m_configuration;
+  bool m_createdDateHasBeenSet = false;
+  bool m_identitySourceIdHasBeenSet = false;
+  bool m_lastUpdatedDateHasBeenSet = false;
+  bool m_policyStoreIdHasBeenSet = false;
+  bool m_principalEntityTypeHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
 };
 

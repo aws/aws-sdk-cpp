@@ -148,18 +148,18 @@ class OrchestrationConfiguration {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::Utils::Document> m_additionalModelRequestFields;
-  bool m_additionalModelRequestFieldsHasBeenSet = false;
 
   InferenceConfig m_inferenceConfig;
-  bool m_inferenceConfigHasBeenSet = false;
 
   PerformanceConfiguration m_performanceConfig;
-  bool m_performanceConfigHasBeenSet = false;
 
   PromptTemplate m_promptTemplate;
-  bool m_promptTemplateHasBeenSet = false;
 
   QueryTransformationConfiguration m_queryTransformationConfiguration;
+  bool m_additionalModelRequestFieldsHasBeenSet = false;
+  bool m_inferenceConfigHasBeenSet = false;
+  bool m_performanceConfigHasBeenSet = false;
+  bool m_promptTemplateHasBeenSet = false;
   bool m_queryTransformationConfigurationHasBeenSet = false;
 };
 

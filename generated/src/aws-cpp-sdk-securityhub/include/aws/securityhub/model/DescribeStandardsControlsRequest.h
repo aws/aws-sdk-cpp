@@ -92,12 +92,12 @@ class DescribeStandardsControlsRequest : public SecurityHubRequest {
   ///@}
  private:
   Aws::String m_standardsSubscriptionArn;
-  bool m_standardsSubscriptionArnHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_standardsSubscriptionArnHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

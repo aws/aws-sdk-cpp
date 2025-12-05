@@ -88,12 +88,12 @@ class GetCapacityManagerMetricDimensionsResponse {
   ///@}
  private:
   Aws::Vector<CapacityManagerDimension> m_metricDimensionResults;
-  bool m_metricDimensionResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_metricDimensionResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

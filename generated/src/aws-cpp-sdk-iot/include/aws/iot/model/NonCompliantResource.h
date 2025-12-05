@@ -94,12 +94,12 @@ class NonCompliantResource {
   ///@}
  private:
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   ResourceIdentifier m_resourceIdentifier;
-  bool m_resourceIdentifierHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_additionalInfo;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceIdentifierHasBeenSet = false;
   bool m_additionalInfoHasBeenSet = false;
 };
 

@@ -153,24 +153,24 @@ class CustomParameter {
   ///@}
  private:
   Aws::String m_defaultValue;
-  bool m_defaultValueHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_fieldType;
-  bool m_fieldTypeHasBeenSet = false;
 
   bool m_isEditable{false};
-  bool m_isEditableHasBeenSet = false;
 
   bool m_isOptional{false};
-  bool m_isOptionalHasBeenSet = false;
 
   bool m_isUpdateSupported{false};
-  bool m_isUpdateSupportedHasBeenSet = false;
 
   Aws::String m_keyName;
+  bool m_defaultValueHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_fieldTypeHasBeenSet = false;
+  bool m_isEditableHasBeenSet = false;
+  bool m_isOptionalHasBeenSet = false;
+  bool m_isUpdateSupportedHasBeenSet = false;
   bool m_keyNameHasBeenSet = false;
 };
 

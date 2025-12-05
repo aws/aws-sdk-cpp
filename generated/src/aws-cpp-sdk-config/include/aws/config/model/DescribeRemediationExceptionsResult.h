@@ -86,12 +86,12 @@ class DescribeRemediationExceptionsResult {
   ///@}
  private:
   Aws::Vector<RemediationException> m_remediationExceptions;
-  bool m_remediationExceptionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_remediationExceptionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

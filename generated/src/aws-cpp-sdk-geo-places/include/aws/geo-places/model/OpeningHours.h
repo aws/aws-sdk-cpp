@@ -125,15 +125,15 @@ class OpeningHours {
   ///@}
  private:
   Aws::Vector<Aws::String> m_display;
-  bool m_displayHasBeenSet = false;
 
   bool m_openNow{false};
-  bool m_openNowHasBeenSet = false;
 
   Aws::Vector<OpeningHoursComponents> m_components;
-  bool m_componentsHasBeenSet = false;
 
   Aws::Vector<Category> m_categories;
+  bool m_displayHasBeenSet = false;
+  bool m_openNowHasBeenSet = false;
+  bool m_componentsHasBeenSet = false;
   bool m_categoriesHasBeenSet = false;
 };
 

@@ -90,12 +90,12 @@ class DTMFInputEvent {
   ///@}
  private:
   Aws::String m_inputCharacter;
-  bool m_inputCharacterHasBeenSet = false;
 
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   long long m_clientTimestampMillis{0};
+  bool m_inputCharacterHasBeenSet = false;
+  bool m_eventIdHasBeenSet = false;
   bool m_clientTimestampMillisHasBeenSet = false;
 };
 

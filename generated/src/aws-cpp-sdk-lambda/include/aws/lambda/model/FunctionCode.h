@@ -152,21 +152,21 @@ class FunctionCode {
   ///@}
  private:
   Aws::Utils::CryptoBuffer m_zipFile{};
-  bool m_zipFileHasBeenSet = false;
 
   Aws::String m_s3Bucket;
-  bool m_s3BucketHasBeenSet = false;
 
   Aws::String m_s3Key;
-  bool m_s3KeyHasBeenSet = false;
 
   Aws::String m_s3ObjectVersion;
-  bool m_s3ObjectVersionHasBeenSet = false;
 
   Aws::String m_imageUri;
-  bool m_imageUriHasBeenSet = false;
 
   Aws::String m_sourceKMSKeyArn;
+  bool m_zipFileHasBeenSet = false;
+  bool m_s3BucketHasBeenSet = false;
+  bool m_s3KeyHasBeenSet = false;
+  bool m_s3ObjectVersionHasBeenSet = false;
+  bool m_imageUriHasBeenSet = false;
   bool m_sourceKMSKeyArnHasBeenSet = false;
 };
 

@@ -80,12 +80,12 @@ class ResourceLimits {
   ///@}
  private:
   int m_maxNumberOfTrainingJobs{0};
-  bool m_maxNumberOfTrainingJobsHasBeenSet = false;
 
   int m_maxParallelTrainingJobs{0};
-  bool m_maxParallelTrainingJobsHasBeenSet = false;
 
   int m_maxRuntimeInSeconds{0};
+  bool m_maxNumberOfTrainingJobsHasBeenSet = false;
+  bool m_maxParallelTrainingJobsHasBeenSet = false;
   bool m_maxRuntimeInSecondsHasBeenSet = false;
 };
 

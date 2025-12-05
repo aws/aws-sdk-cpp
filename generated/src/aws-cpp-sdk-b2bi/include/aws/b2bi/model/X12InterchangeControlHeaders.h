@@ -181,24 +181,24 @@ class X12InterchangeControlHeaders {
   ///@}
  private:
   Aws::String m_senderIdQualifier;
-  bool m_senderIdQualifierHasBeenSet = false;
 
   Aws::String m_senderId;
-  bool m_senderIdHasBeenSet = false;
 
   Aws::String m_receiverIdQualifier;
-  bool m_receiverIdQualifierHasBeenSet = false;
 
   Aws::String m_receiverId;
-  bool m_receiverIdHasBeenSet = false;
 
   Aws::String m_repetitionSeparator;
-  bool m_repetitionSeparatorHasBeenSet = false;
 
   Aws::String m_acknowledgmentRequestedCode;
-  bool m_acknowledgmentRequestedCodeHasBeenSet = false;
 
   Aws::String m_usageIndicatorCode;
+  bool m_senderIdQualifierHasBeenSet = false;
+  bool m_senderIdHasBeenSet = false;
+  bool m_receiverIdQualifierHasBeenSet = false;
+  bool m_receiverIdHasBeenSet = false;
+  bool m_repetitionSeparatorHasBeenSet = false;
+  bool m_acknowledgmentRequestedCodeHasBeenSet = false;
   bool m_usageIndicatorCodeHasBeenSet = false;
 };
 

@@ -77,9 +77,9 @@ class BackendServerDescription {
   ///@}
  private:
   int m_instancePort{0};
-  bool m_instancePortHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_policyNames;
+  bool m_instancePortHasBeenSet = false;
   bool m_policyNamesHasBeenSet = false;
 };
 

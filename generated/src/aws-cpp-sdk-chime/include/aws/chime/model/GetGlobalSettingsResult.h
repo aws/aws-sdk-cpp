@@ -78,12 +78,12 @@ class GetGlobalSettingsResult {
   ///@}
  private:
   BusinessCallingSettings m_businessCalling;
-  bool m_businessCallingHasBeenSet = false;
 
   VoiceConnectorSettings m_voiceConnector;
-  bool m_voiceConnectorHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_businessCallingHasBeenSet = false;
+  bool m_voiceConnectorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

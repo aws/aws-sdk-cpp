@@ -147,21 +147,21 @@ class GetServiceSettingsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_homeRegions;
-  bool m_homeRegionsHasBeenSet = false;
 
   LinuxSubscriptionsDiscovery m_linuxSubscriptionsDiscovery{LinuxSubscriptionsDiscovery::NOT_SET};
-  bool m_linuxSubscriptionsDiscoveryHasBeenSet = false;
 
   LinuxSubscriptionsDiscoverySettings m_linuxSubscriptionsDiscoverySettings;
-  bool m_linuxSubscriptionsDiscoverySettingsHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_homeRegionsHasBeenSet = false;
+  bool m_linuxSubscriptionsDiscoveryHasBeenSet = false;
+  bool m_linuxSubscriptionsDiscoverySettingsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

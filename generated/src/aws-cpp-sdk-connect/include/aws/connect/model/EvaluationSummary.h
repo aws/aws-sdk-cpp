@@ -302,48 +302,48 @@ class EvaluationSummary {
   ///@}
  private:
   Aws::String m_evaluationId;
-  bool m_evaluationIdHasBeenSet = false;
 
   Aws::String m_evaluationArn;
-  bool m_evaluationArnHasBeenSet = false;
 
   Aws::String m_evaluationFormTitle;
-  bool m_evaluationFormTitleHasBeenSet = false;
 
   Aws::String m_evaluationFormId;
-  bool m_evaluationFormIdHasBeenSet = false;
 
   Aws::String m_calibrationSessionId;
-  bool m_calibrationSessionIdHasBeenSet = false;
 
   EvaluationStatus m_status{EvaluationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   bool m_autoEvaluationEnabled{false};
-  bool m_autoEvaluationEnabledHasBeenSet = false;
 
   AutoEvaluationStatus m_autoEvaluationStatus{AutoEvaluationStatus::NOT_SET};
-  bool m_autoEvaluationStatusHasBeenSet = false;
 
   Aws::String m_evaluatorArn;
-  bool m_evaluatorArnHasBeenSet = false;
 
   EvaluationScore m_score;
-  bool m_scoreHasBeenSet = false;
 
   EvaluationAcknowledgementSummary m_acknowledgement;
-  bool m_acknowledgementHasBeenSet = false;
 
   EvaluationType m_evaluationType{EvaluationType::NOT_SET};
-  bool m_evaluationTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   EvaluationContactParticipant m_contactParticipant;
+  bool m_evaluationIdHasBeenSet = false;
+  bool m_evaluationArnHasBeenSet = false;
+  bool m_evaluationFormTitleHasBeenSet = false;
+  bool m_evaluationFormIdHasBeenSet = false;
+  bool m_calibrationSessionIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_autoEvaluationEnabledHasBeenSet = false;
+  bool m_autoEvaluationStatusHasBeenSet = false;
+  bool m_evaluatorArnHasBeenSet = false;
+  bool m_scoreHasBeenSet = false;
+  bool m_acknowledgementHasBeenSet = false;
+  bool m_evaluationTypeHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_contactParticipantHasBeenSet = false;
 };
 

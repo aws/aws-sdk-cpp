@@ -120,18 +120,18 @@ class UpdateMessageTemplateMetadataRequest : public QConnectRequest {
   ///@}
  private:
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::String m_messageTemplateId;
-  bool m_messageTemplateIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   GroupingConfiguration m_groupingConfiguration;
+  bool m_knowledgeBaseIdHasBeenSet = false;
+  bool m_messageTemplateIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_groupingConfigurationHasBeenSet = false;
 };
 

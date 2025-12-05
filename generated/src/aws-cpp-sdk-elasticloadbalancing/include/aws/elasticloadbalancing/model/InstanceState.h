@@ -125,15 +125,15 @@ class InstanceState {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_reasonCode;
-  bool m_reasonCodeHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_reasonCodeHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

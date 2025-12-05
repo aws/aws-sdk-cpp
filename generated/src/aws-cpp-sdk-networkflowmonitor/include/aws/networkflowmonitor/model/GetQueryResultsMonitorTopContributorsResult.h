@@ -104,15 +104,15 @@ class GetQueryResultsMonitorTopContributorsResult {
   ///@}
  private:
   MetricUnit m_unit{MetricUnit::NOT_SET};
-  bool m_unitHasBeenSet = false;
 
   Aws::Vector<MonitorTopContributorsRow> m_topContributors;
-  bool m_topContributorsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_unitHasBeenSet = false;
+  bool m_topContributorsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

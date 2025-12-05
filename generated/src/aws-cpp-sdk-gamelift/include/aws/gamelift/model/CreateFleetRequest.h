@@ -591,72 +591,72 @@ class CreateFleetRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_buildId;
-  bool m_buildIdHasBeenSet = false;
 
   Aws::String m_scriptId;
-  bool m_scriptIdHasBeenSet = false;
 
   Aws::String m_serverLaunchPath;
-  bool m_serverLaunchPathHasBeenSet = false;
 
   Aws::String m_serverLaunchParameters;
-  bool m_serverLaunchParametersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_logPaths;
-  bool m_logPathsHasBeenSet = false;
 
   EC2InstanceType m_eC2InstanceType{EC2InstanceType::NOT_SET};
-  bool m_eC2InstanceTypeHasBeenSet = false;
 
   Aws::Vector<IpPermission> m_eC2InboundPermissions;
-  bool m_eC2InboundPermissionsHasBeenSet = false;
 
   ProtectionPolicy m_newGameSessionProtectionPolicy{ProtectionPolicy::NOT_SET};
-  bool m_newGameSessionProtectionPolicyHasBeenSet = false;
 
   RuntimeConfiguration m_runtimeConfiguration;
-  bool m_runtimeConfigurationHasBeenSet = false;
 
   ResourceCreationLimitPolicy m_resourceCreationLimitPolicy;
-  bool m_resourceCreationLimitPolicyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_metricGroups;
-  bool m_metricGroupsHasBeenSet = false;
 
   Aws::String m_peerVpcAwsAccountId;
-  bool m_peerVpcAwsAccountIdHasBeenSet = false;
 
   Aws::String m_peerVpcId;
-  bool m_peerVpcIdHasBeenSet = false;
 
   FleetType m_fleetType{FleetType::NOT_SET};
-  bool m_fleetTypeHasBeenSet = false;
 
   Aws::String m_instanceRoleArn;
-  bool m_instanceRoleArnHasBeenSet = false;
 
   CertificateConfiguration m_certificateConfiguration;
-  bool m_certificateConfigurationHasBeenSet = false;
 
   Aws::Vector<LocationConfiguration> m_locations;
-  bool m_locationsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ComputeType m_computeType{ComputeType::NOT_SET};
-  bool m_computeTypeHasBeenSet = false;
 
   AnywhereConfiguration m_anywhereConfiguration;
-  bool m_anywhereConfigurationHasBeenSet = false;
 
   InstanceRoleCredentialsProvider m_instanceRoleCredentialsProvider{InstanceRoleCredentialsProvider::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_buildIdHasBeenSet = false;
+  bool m_scriptIdHasBeenSet = false;
+  bool m_serverLaunchPathHasBeenSet = false;
+  bool m_serverLaunchParametersHasBeenSet = false;
+  bool m_logPathsHasBeenSet = false;
+  bool m_eC2InstanceTypeHasBeenSet = false;
+  bool m_eC2InboundPermissionsHasBeenSet = false;
+  bool m_newGameSessionProtectionPolicyHasBeenSet = false;
+  bool m_runtimeConfigurationHasBeenSet = false;
+  bool m_resourceCreationLimitPolicyHasBeenSet = false;
+  bool m_metricGroupsHasBeenSet = false;
+  bool m_peerVpcAwsAccountIdHasBeenSet = false;
+  bool m_peerVpcIdHasBeenSet = false;
+  bool m_fleetTypeHasBeenSet = false;
+  bool m_instanceRoleArnHasBeenSet = false;
+  bool m_certificateConfigurationHasBeenSet = false;
+  bool m_locationsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_computeTypeHasBeenSet = false;
+  bool m_anywhereConfigurationHasBeenSet = false;
   bool m_instanceRoleCredentialsProviderHasBeenSet = false;
 };
 

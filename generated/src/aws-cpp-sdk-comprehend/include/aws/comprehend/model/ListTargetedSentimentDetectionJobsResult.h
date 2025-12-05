@@ -89,12 +89,12 @@ class ListTargetedSentimentDetectionJobsResult {
   ///@}
  private:
   Aws::Vector<TargetedSentimentDetectionJobProperties> m_targetedSentimentDetectionJobPropertiesList;
-  bool m_targetedSentimentDetectionJobPropertiesListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_targetedSentimentDetectionJobPropertiesListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -93,12 +93,12 @@ class DashboardError {
   ///@}
  private:
   DashboardErrorType m_type{DashboardErrorType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Vector<Entity> m_violatedEntities;
+  bool m_typeHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_violatedEntitiesHasBeenSet = false;
 };
 

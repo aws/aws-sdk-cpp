@@ -74,9 +74,9 @@ class AcknowledgeJobRequest : public CodePipelineRequest {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_nonce;
+  bool m_jobIdHasBeenSet = false;
   bool m_nonceHasBeenSet = false;
 };
 

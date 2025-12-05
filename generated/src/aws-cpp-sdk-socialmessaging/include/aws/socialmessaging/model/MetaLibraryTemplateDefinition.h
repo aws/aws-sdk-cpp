@@ -227,33 +227,33 @@ class MetaLibraryTemplateDefinition {
   ///@}
  private:
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   Aws::String m_templateLanguage;
-  bool m_templateLanguageHasBeenSet = false;
 
   Aws::String m_templateCategory;
-  bool m_templateCategoryHasBeenSet = false;
 
   Aws::String m_templateTopic;
-  bool m_templateTopicHasBeenSet = false;
 
   Aws::String m_templateUseCase;
-  bool m_templateUseCaseHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_templateIndustry;
-  bool m_templateIndustryHasBeenSet = false;
 
   Aws::String m_templateHeader;
-  bool m_templateHeaderHasBeenSet = false;
 
   Aws::String m_templateBody;
-  bool m_templateBodyHasBeenSet = false;
 
   Aws::Vector<LibraryTemplateButtonList> m_templateButtons;
-  bool m_templateButtonsHasBeenSet = false;
 
   Aws::String m_templateId;
+  bool m_templateNameHasBeenSet = false;
+  bool m_templateLanguageHasBeenSet = false;
+  bool m_templateCategoryHasBeenSet = false;
+  bool m_templateTopicHasBeenSet = false;
+  bool m_templateUseCaseHasBeenSet = false;
+  bool m_templateIndustryHasBeenSet = false;
+  bool m_templateHeaderHasBeenSet = false;
+  bool m_templateBodyHasBeenSet = false;
+  bool m_templateButtonsHasBeenSet = false;
   bool m_templateIdHasBeenSet = false;
 };
 

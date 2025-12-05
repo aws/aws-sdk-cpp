@@ -237,30 +237,30 @@ class SynthesizeSpeechRequest : public PollyRequest {
   ///@}
  private:
   Engine m_engine{Engine::NOT_SET};
-  bool m_engineHasBeenSet = false;
 
   LanguageCode m_languageCode{LanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_lexiconNames;
-  bool m_lexiconNamesHasBeenSet = false;
 
   OutputFormat m_outputFormat{OutputFormat::NOT_SET};
-  bool m_outputFormatHasBeenSet = false;
 
   Aws::String m_sampleRate;
-  bool m_sampleRateHasBeenSet = false;
 
   Aws::Vector<SpeechMarkType> m_speechMarkTypes;
-  bool m_speechMarkTypesHasBeenSet = false;
 
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   TextType m_textType{TextType::NOT_SET};
-  bool m_textTypeHasBeenSet = false;
 
   VoiceId m_voiceId{VoiceId::NOT_SET};
+  bool m_engineHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
+  bool m_lexiconNamesHasBeenSet = false;
+  bool m_outputFormatHasBeenSet = false;
+  bool m_sampleRateHasBeenSet = false;
+  bool m_speechMarkTypesHasBeenSet = false;
+  bool m_textHasBeenSet = false;
+  bool m_textTypeHasBeenSet = false;
   bool m_voiceIdHasBeenSet = false;
 };
 

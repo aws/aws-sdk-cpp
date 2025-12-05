@@ -63,9 +63,9 @@ class TooManyRequestsException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   ThrottleReason m_reason{ThrottleReason::NOT_SET};
+  bool m_messageHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

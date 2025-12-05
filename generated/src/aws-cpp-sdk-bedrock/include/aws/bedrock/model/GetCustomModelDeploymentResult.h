@@ -203,33 +203,33 @@ class GetCustomModelDeploymentResult {
   ///@}
  private:
   Aws::String m_customModelDeploymentArn;
-  bool m_customModelDeploymentArnHasBeenSet = false;
 
   Aws::String m_modelDeploymentName;
-  bool m_modelDeploymentNameHasBeenSet = false;
 
   Aws::String m_modelArn;
-  bool m_modelArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   CustomModelDeploymentStatus m_status{CustomModelDeploymentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   CustomModelDeploymentUpdateDetails m_updateDetails;
-  bool m_updateDetailsHasBeenSet = false;
 
   Aws::String m_failureMessage;
-  bool m_failureMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_customModelDeploymentArnHasBeenSet = false;
+  bool m_modelDeploymentNameHasBeenSet = false;
+  bool m_modelArnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_updateDetailsHasBeenSet = false;
+  bool m_failureMessageHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

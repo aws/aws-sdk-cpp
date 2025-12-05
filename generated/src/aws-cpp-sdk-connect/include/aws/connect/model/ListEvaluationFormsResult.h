@@ -86,12 +86,12 @@ class ListEvaluationFormsResult {
   ///@}
  private:
   Aws::Vector<EvaluationFormSummary> m_evaluationFormSummaryList;
-  bool m_evaluationFormSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_evaluationFormSummaryListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

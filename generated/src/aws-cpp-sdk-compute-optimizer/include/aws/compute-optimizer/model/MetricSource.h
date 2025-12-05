@@ -68,9 +68,9 @@ class MetricSource {
   ///@}
  private:
   MetricSourceProvider m_provider{MetricSourceProvider::NOT_SET};
-  bool m_providerHasBeenSet = false;
 
   Aws::String m_providerArn;
+  bool m_providerHasBeenSet = false;
   bool m_providerArnHasBeenSet = false;
 };
 

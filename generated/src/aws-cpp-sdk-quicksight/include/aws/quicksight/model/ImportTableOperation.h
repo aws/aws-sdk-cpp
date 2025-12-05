@@ -71,9 +71,9 @@ class ImportTableOperation {
   ///@}
  private:
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   ImportTableOperationSource m_source;
+  bool m_aliasHasBeenSet = false;
   bool m_sourceHasBeenSet = false;
 };
 

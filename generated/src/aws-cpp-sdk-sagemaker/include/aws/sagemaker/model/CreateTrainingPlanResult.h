@@ -59,9 +59,9 @@ class CreateTrainingPlanResult {
   ///@}
  private:
   Aws::String m_trainingPlanArn;
-  bool m_trainingPlanArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trainingPlanArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

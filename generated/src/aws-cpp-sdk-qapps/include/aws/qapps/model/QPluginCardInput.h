@@ -140,21 +140,21 @@ class QPluginCardInput {
   ///@}
  private:
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   CardType m_type{CardType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_prompt;
-  bool m_promptHasBeenSet = false;
 
   Aws::String m_pluginId;
-  bool m_pluginIdHasBeenSet = false;
 
   Aws::String m_actionIdentifier;
+  bool m_titleHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_promptHasBeenSet = false;
+  bool m_pluginIdHasBeenSet = false;
   bool m_actionIdentifierHasBeenSet = false;
 };
 

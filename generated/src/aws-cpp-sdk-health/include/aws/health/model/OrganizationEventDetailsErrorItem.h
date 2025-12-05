@@ -124,15 +124,15 @@ class OrganizationEventDetailsErrorItem {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_eventArn;
-  bool m_eventArnHasBeenSet = false;
 
   Aws::String m_errorName;
-  bool m_errorNameHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_eventArnHasBeenSet = false;
+  bool m_errorNameHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

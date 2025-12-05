@@ -82,12 +82,12 @@ class DescribeMetricFiltersResult {
   ///@}
  private:
   Aws::Vector<MetricFilter> m_metricFilters;
-  bool m_metricFiltersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_metricFiltersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

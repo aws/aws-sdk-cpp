@@ -67,9 +67,9 @@ class PutContactPolicyRequest : public SSMContactsRequest {
   ///@}
  private:
   Aws::String m_contactArn;
-  bool m_contactArnHasBeenSet = false;
 
   Aws::String m_policy;
+  bool m_contactArnHasBeenSet = false;
   bool m_policyHasBeenSet = false;
 };
 

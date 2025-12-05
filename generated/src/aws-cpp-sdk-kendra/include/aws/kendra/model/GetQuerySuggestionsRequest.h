@@ -139,18 +139,18 @@ class GetQuerySuggestionsRequest : public KendraRequest {
   ///@}
  private:
   Aws::String m_indexId;
-  bool m_indexIdHasBeenSet = false;
 
   Aws::String m_queryText;
-  bool m_queryTextHasBeenSet = false;
 
   int m_maxSuggestionsCount{0};
-  bool m_maxSuggestionsCountHasBeenSet = false;
 
   Aws::Vector<SuggestionType> m_suggestionTypes;
-  bool m_suggestionTypesHasBeenSet = false;
 
   AttributeSuggestionsGetConfig m_attributeSuggestionsConfig;
+  bool m_indexIdHasBeenSet = false;
+  bool m_queryTextHasBeenSet = false;
+  bool m_maxSuggestionsCountHasBeenSet = false;
+  bool m_suggestionTypesHasBeenSet = false;
   bool m_attributeSuggestionsConfigHasBeenSet = false;
 };
 

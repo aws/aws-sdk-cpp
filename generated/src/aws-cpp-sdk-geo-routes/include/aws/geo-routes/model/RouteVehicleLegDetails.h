@@ -321,39 +321,39 @@ class RouteVehicleLegDetails {
   ///@}
  private:
   RouteVehicleArrival m_arrival;
-  bool m_arrivalHasBeenSet = false;
 
   RouteVehicleDeparture m_departure;
-  bool m_departureHasBeenSet = false;
 
   Aws::Vector<RouteVehicleIncident> m_incidents;
-  bool m_incidentsHasBeenSet = false;
 
   Aws::Vector<RouteVehicleNotice> m_notices;
-  bool m_noticesHasBeenSet = false;
 
   Aws::Vector<RoutePassThroughWaypoint> m_passThroughWaypoints;
-  bool m_passThroughWaypointsHasBeenSet = false;
 
   Aws::Vector<RouteVehicleSpan> m_spans;
-  bool m_spansHasBeenSet = false;
 
   RouteVehicleSummary m_summary;
-  bool m_summaryHasBeenSet = false;
 
   Aws::Vector<RouteToll> m_tolls;
-  bool m_tollsHasBeenSet = false;
 
   Aws::Vector<RouteTollSystem> m_tollSystems;
-  bool m_tollSystemsHasBeenSet = false;
 
   Aws::Vector<RouteVehicleTravelStep> m_travelSteps;
-  bool m_travelStepsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_truckRoadTypes;
-  bool m_truckRoadTypesHasBeenSet = false;
 
   Aws::Vector<RouteZone> m_zones;
+  bool m_arrivalHasBeenSet = false;
+  bool m_departureHasBeenSet = false;
+  bool m_incidentsHasBeenSet = false;
+  bool m_noticesHasBeenSet = false;
+  bool m_passThroughWaypointsHasBeenSet = false;
+  bool m_spansHasBeenSet = false;
+  bool m_summaryHasBeenSet = false;
+  bool m_tollsHasBeenSet = false;
+  bool m_tollSystemsHasBeenSet = false;
+  bool m_travelStepsHasBeenSet = false;
+  bool m_truckRoadTypesHasBeenSet = false;
   bool m_zonesHasBeenSet = false;
 };
 

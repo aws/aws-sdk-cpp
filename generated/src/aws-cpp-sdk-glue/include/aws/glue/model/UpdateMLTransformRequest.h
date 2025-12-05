@@ -247,36 +247,36 @@ class UpdateMLTransformRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_transformId;
-  bool m_transformIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   TransformParameters m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::String m_role;
-  bool m_roleHasBeenSet = false;
 
   Aws::String m_glueVersion;
-  bool m_glueVersionHasBeenSet = false;
 
   double m_maxCapacity{0.0};
-  bool m_maxCapacityHasBeenSet = false;
 
   WorkerType m_workerType{WorkerType::NOT_SET};
-  bool m_workerTypeHasBeenSet = false;
 
   int m_numberOfWorkers{0};
-  bool m_numberOfWorkersHasBeenSet = false;
 
   int m_timeout{0};
-  bool m_timeoutHasBeenSet = false;
 
   int m_maxRetries{0};
+  bool m_transformIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
+  bool m_glueVersionHasBeenSet = false;
+  bool m_maxCapacityHasBeenSet = false;
+  bool m_workerTypeHasBeenSet = false;
+  bool m_numberOfWorkersHasBeenSet = false;
+  bool m_timeoutHasBeenSet = false;
   bool m_maxRetriesHasBeenSet = false;
 };
 

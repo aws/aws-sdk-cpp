@@ -84,12 +84,12 @@ class ListKxScalingGroupsResult {
   ///@}
  private:
   Aws::Vector<KxScalingGroup> m_scalingGroups;
-  bool m_scalingGroupsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_scalingGroupsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

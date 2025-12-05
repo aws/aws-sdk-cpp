@@ -126,18 +126,18 @@ class AccountInfo {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   EnrollmentStatus m_status{EnrollmentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   OrganizationRuleMode m_organizationRuleMode{OrganizationRuleMode::NOT_SET};
-  bool m_organizationRuleModeHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTimestamp{};
+  bool m_accountIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_organizationRuleModeHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
   bool m_lastUpdatedTimestampHasBeenSet = false;
 };
 

@@ -207,18 +207,18 @@ class SubscribeRequest : public SNSRequest {
   ///@}
  private:
   Aws::String m_topicArn;
-  bool m_topicArnHasBeenSet = false;
 
   Aws::String m_protocol;
-  bool m_protocolHasBeenSet = false;
 
   Aws::String m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   bool m_returnSubscriptionArn{false};
+  bool m_topicArnHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
   bool m_returnSubscriptionArnHasBeenSet = false;
 };
 

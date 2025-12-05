@@ -70,9 +70,9 @@ class AwsLogSourceResource {
   ///@}
  private:
   AwsLogSourceName m_sourceName{AwsLogSourceName::NOT_SET};
-  bool m_sourceNameHasBeenSet = false;
 
   Aws::String m_sourceVersion;
+  bool m_sourceNameHasBeenSet = false;
   bool m_sourceVersionHasBeenSet = false;
 };
 

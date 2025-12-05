@@ -81,9 +81,9 @@ class ProcessingOutputConfig {
   ///@}
  private:
   Aws::Vector<ProcessingOutput> m_outputs;
-  bool m_outputsHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
+  bool m_outputsHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
 };
 

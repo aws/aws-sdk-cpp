@@ -60,9 +60,9 @@ class CreateVpcEndpointResult {
   ///@}
  private:
   CreateVpcEndpointDetail m_createVpcEndpointDetail;
-  bool m_createVpcEndpointDetailHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_createVpcEndpointDetailHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

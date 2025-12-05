@@ -65,9 +65,9 @@ class GetSegmentDefinitionRequest : public CustomerProfilesRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_segmentDefinitionName;
+  bool m_domainNameHasBeenSet = false;
   bool m_segmentDefinitionNameHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class GetLensResult {
   ///@}
  private:
   Lens m_lens;
-  bool m_lensHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_lensHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

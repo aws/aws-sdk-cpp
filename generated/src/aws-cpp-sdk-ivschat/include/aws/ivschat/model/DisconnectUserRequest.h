@@ -84,12 +84,12 @@ class DisconnectUserRequest : public IvschatRequest {
   ///@}
  private:
   Aws::String m_roomIdentifier;
-  bool m_roomIdentifierHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_reason;
+  bool m_roomIdentifierHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

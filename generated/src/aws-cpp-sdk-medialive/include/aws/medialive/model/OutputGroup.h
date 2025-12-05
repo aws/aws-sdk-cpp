@@ -94,12 +94,12 @@ class OutputGroup {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   OutputGroupSettings m_outputGroupSettings;
-  bool m_outputGroupSettingsHasBeenSet = false;
 
   Aws::Vector<Output> m_outputs;
+  bool m_nameHasBeenSet = false;
+  bool m_outputGroupSettingsHasBeenSet = false;
   bool m_outputsHasBeenSet = false;
 };
 

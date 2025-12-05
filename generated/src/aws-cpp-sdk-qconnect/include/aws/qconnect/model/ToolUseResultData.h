@@ -105,15 +105,15 @@ class ToolUseResultData {
   ///@}
  private:
   Aws::String m_toolUseId;
-  bool m_toolUseIdHasBeenSet = false;
 
   Aws::String m_toolName;
-  bool m_toolNameHasBeenSet = false;
 
   Aws::Utils::Document m_toolResult;
-  bool m_toolResultHasBeenSet = false;
 
   Aws::Utils::Document m_inputSchema;
+  bool m_toolUseIdHasBeenSet = false;
+  bool m_toolNameHasBeenSet = false;
+  bool m_toolResultHasBeenSet = false;
   bool m_inputSchemaHasBeenSet = false;
 };
 

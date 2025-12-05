@@ -78,9 +78,9 @@ class CreateOpenZFSOriginSnapshotConfiguration {
   ///@}
  private:
   Aws::String m_snapshotARN;
-  bool m_snapshotARNHasBeenSet = false;
 
   OpenZFSCopyStrategy m_copyStrategy{OpenZFSCopyStrategy::NOT_SET};
+  bool m_snapshotARNHasBeenSet = false;
   bool m_copyStrategyHasBeenSet = false;
 };
 

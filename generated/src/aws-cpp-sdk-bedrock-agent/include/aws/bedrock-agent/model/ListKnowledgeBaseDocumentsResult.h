@@ -87,12 +87,12 @@ class ListKnowledgeBaseDocumentsResult {
   ///@}
  private:
   Aws::Vector<KnowledgeBaseDocumentDetail> m_documentDetails;
-  bool m_documentDetailsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_documentDetailsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

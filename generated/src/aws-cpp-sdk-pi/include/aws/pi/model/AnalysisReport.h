@@ -186,27 +186,27 @@ class AnalysisReport {
   ///@}
  private:
   Aws::String m_analysisReportId;
-  bool m_analysisReportIdHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   ServiceType m_serviceType{ServiceType::NOT_SET};
-  bool m_serviceTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   AnalysisStatus m_status{AnalysisStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Insight> m_insights;
+  bool m_analysisReportIdHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
+  bool m_serviceTypeHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_insightsHasBeenSet = false;
 };
 

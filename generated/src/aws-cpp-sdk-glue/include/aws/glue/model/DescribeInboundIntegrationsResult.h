@@ -85,12 +85,12 @@ class DescribeInboundIntegrationsResult {
   ///@}
  private:
   Aws::Vector<InboundIntegration> m_inboundIntegrations;
-  bool m_inboundIntegrationsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_inboundIntegrationsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

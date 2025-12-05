@@ -61,9 +61,9 @@ class UpdateAssessmentResult {
   ///@}
  private:
   Assessment m_assessment;
-  bool m_assessmentHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assessmentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

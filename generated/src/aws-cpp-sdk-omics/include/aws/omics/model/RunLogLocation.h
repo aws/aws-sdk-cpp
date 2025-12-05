@@ -68,9 +68,9 @@ class RunLogLocation {
   ///@}
  private:
   Aws::String m_engineLogStream;
-  bool m_engineLogStreamHasBeenSet = false;
 
   Aws::String m_runLogStream;
+  bool m_engineLogStreamHasBeenSet = false;
   bool m_runLogStreamHasBeenSet = false;
 };
 

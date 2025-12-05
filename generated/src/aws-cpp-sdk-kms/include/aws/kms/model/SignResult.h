@@ -106,15 +106,15 @@ class SignResult {
   ///@}
  private:
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_signature{};
-  bool m_signatureHasBeenSet = false;
 
   SigningAlgorithmSpec m_signingAlgorithm{SigningAlgorithmSpec::NOT_SET};
-  bool m_signingAlgorithmHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_keyIdHasBeenSet = false;
+  bool m_signatureHasBeenSet = false;
+  bool m_signingAlgorithmHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

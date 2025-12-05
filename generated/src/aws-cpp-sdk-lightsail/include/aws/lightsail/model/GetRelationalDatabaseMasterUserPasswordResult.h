@@ -79,12 +79,12 @@ class GetRelationalDatabaseMasterUserPasswordResult {
   ///@}
  private:
   Aws::String m_masterUserPassword;
-  bool m_masterUserPasswordHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_masterUserPasswordHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -75,9 +75,9 @@ class GetSolVnfInfo {
   ///@}
  private:
   VnfOperationalState m_vnfState{VnfOperationalState::NOT_SET};
-  bool m_vnfStateHasBeenSet = false;
 
   Aws::Vector<GetSolVnfcResourceInfo> m_vnfcResourceInfo;
+  bool m_vnfStateHasBeenSet = false;
   bool m_vnfcResourceInfoHasBeenSet = false;
 };
 

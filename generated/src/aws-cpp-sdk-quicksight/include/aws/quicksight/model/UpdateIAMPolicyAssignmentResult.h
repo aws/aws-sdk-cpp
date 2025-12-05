@@ -156,24 +156,24 @@ class UpdateIAMPolicyAssignmentResult {
   ///@}
  private:
   Aws::String m_assignmentName;
-  bool m_assignmentNameHasBeenSet = false;
 
   Aws::String m_assignmentId;
-  bool m_assignmentIdHasBeenSet = false;
 
   Aws::String m_policyArn;
-  bool m_policyArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_identities;
-  bool m_identitiesHasBeenSet = false;
 
   AssignmentStatus m_assignmentStatus{AssignmentStatus::NOT_SET};
-  bool m_assignmentStatusHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   int m_status{0};
+  bool m_assignmentNameHasBeenSet = false;
+  bool m_assignmentIdHasBeenSet = false;
+  bool m_policyArnHasBeenSet = false;
+  bool m_identitiesHasBeenSet = false;
+  bool m_assignmentStatusHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

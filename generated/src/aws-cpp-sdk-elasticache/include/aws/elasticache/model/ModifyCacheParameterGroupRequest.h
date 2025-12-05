@@ -83,9 +83,9 @@ class ModifyCacheParameterGroupRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_cacheParameterGroupName;
-  bool m_cacheParameterGroupNameHasBeenSet = false;
 
   Aws::Vector<ParameterNameValue> m_parameterNameValues;
+  bool m_cacheParameterGroupNameHasBeenSet = false;
   bool m_parameterNameValuesHasBeenSet = false;
 };
 

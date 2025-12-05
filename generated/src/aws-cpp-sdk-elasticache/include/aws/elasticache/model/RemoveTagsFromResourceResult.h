@@ -74,9 +74,9 @@ class RemoveTagsFromResourceResult {
   ///@}
  private:
   Aws::Vector<Tag> m_tagList;
-  bool m_tagListHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_tagListHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

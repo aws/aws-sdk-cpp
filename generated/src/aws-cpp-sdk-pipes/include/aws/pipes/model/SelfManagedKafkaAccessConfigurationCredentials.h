@@ -105,15 +105,15 @@ class SelfManagedKafkaAccessConfigurationCredentials {
   ///@}
  private:
   Aws::String m_basicAuth;
-  bool m_basicAuthHasBeenSet = false;
 
   Aws::String m_saslScram512Auth;
-  bool m_saslScram512AuthHasBeenSet = false;
 
   Aws::String m_saslScram256Auth;
-  bool m_saslScram256AuthHasBeenSet = false;
 
   Aws::String m_clientCertificateTlsAuth;
+  bool m_basicAuthHasBeenSet = false;
+  bool m_saslScram512AuthHasBeenSet = false;
+  bool m_saslScram256AuthHasBeenSet = false;
   bool m_clientCertificateTlsAuthHasBeenSet = false;
 };
 

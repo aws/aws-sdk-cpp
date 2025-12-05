@@ -60,9 +60,9 @@ class DescribeCopyJobResult {
   ///@}
  private:
   CopyJob m_copyJob;
-  bool m_copyJobHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_copyJobHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

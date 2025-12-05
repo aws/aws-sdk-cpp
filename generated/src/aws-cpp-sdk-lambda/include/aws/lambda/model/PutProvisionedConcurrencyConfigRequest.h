@@ -94,12 +94,12 @@ class PutProvisionedConcurrencyConfigRequest : public LambdaRequest {
   ///@}
  private:
   Aws::String m_functionName;
-  bool m_functionNameHasBeenSet = false;
 
   Aws::String m_qualifier;
-  bool m_qualifierHasBeenSet = false;
 
   int m_provisionedConcurrentExecutions{0};
+  bool m_functionNameHasBeenSet = false;
+  bool m_qualifierHasBeenSet = false;
   bool m_provisionedConcurrentExecutionsHasBeenSet = false;
 };
 

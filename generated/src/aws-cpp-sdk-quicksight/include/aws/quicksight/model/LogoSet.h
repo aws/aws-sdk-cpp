@@ -68,9 +68,9 @@ class LogoSet {
   ///@}
  private:
   ImageSet m_primary;
-  bool m_primaryHasBeenSet = false;
 
   ImageSet m_favicon;
+  bool m_primaryHasBeenSet = false;
   bool m_faviconHasBeenSet = false;
 };
 

@@ -105,15 +105,15 @@ class TraversedComponent {
   ///@}
  private:
   Aws::String m_componentId;
-  bool m_componentIdHasBeenSet = false;
 
   Aws::String m_componentType;
-  bool m_componentTypeHasBeenSet = false;
 
   Aws::String m_componentArn;
-  bool m_componentArnHasBeenSet = false;
 
   Aws::String m_serviceName;
+  bool m_componentIdHasBeenSet = false;
+  bool m_componentTypeHasBeenSet = false;
+  bool m_componentArnHasBeenSet = false;
   bool m_serviceNameHasBeenSet = false;
 };
 

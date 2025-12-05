@@ -353,57 +353,57 @@ class BatchUpdateFirewallRuleResult {
   ///@}
  private:
   FirewallRuleAction m_action{FirewallRuleAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   BlockOverrideDnsQueryType m_blockOverrideDnsType{BlockOverrideDnsQueryType::NOT_SET};
-  bool m_blockOverrideDnsTypeHasBeenSet = false;
 
   Aws::String m_blockOverrideDomain;
-  bool m_blockOverrideDomainHasBeenSet = false;
 
   int m_blockOverrideTtl{0};
-  bool m_blockOverrideTtlHasBeenSet = false;
 
   FirewallBlockResponse m_blockResponse{FirewallBlockResponse::NOT_SET};
-  bool m_blockResponseHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   ConfidenceThreshold m_confidenceThreshold{ConfidenceThreshold::NOT_SET};
-  bool m_confidenceThresholdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   DnsAdvancedProtection m_dnsAdvancedProtection{DnsAdvancedProtection::NOT_SET};
-  bool m_dnsAdvancedProtectionHasBeenSet = false;
 
   Aws::String m_firewallDomainListId;
-  bool m_firewallDomainListIdHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   long long m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   Aws::String m_dnsViewId;
-  bool m_dnsViewIdHasBeenSet = false;
 
   Aws::String m_queryType;
-  bool m_queryTypeHasBeenSet = false;
 
   CRResourceStatus m_status{CRResourceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_actionHasBeenSet = false;
+  bool m_blockOverrideDnsTypeHasBeenSet = false;
+  bool m_blockOverrideDomainHasBeenSet = false;
+  bool m_blockOverrideTtlHasBeenSet = false;
+  bool m_blockResponseHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_confidenceThresholdHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_dnsAdvancedProtectionHasBeenSet = false;
+  bool m_firewallDomainListIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_dnsViewIdHasBeenSet = false;
+  bool m_queryTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

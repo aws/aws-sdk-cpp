@@ -156,21 +156,21 @@ class CreateTermsRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::String m_userPoolId;
-  bool m_userPoolIdHasBeenSet = false;
 
   Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
 
   Aws::String m_termsName;
-  bool m_termsNameHasBeenSet = false;
 
   TermsSourceType m_termsSource{TermsSourceType::NOT_SET};
-  bool m_termsSourceHasBeenSet = false;
 
   TermsEnforcementType m_enforcement{TermsEnforcementType::NOT_SET};
-  bool m_enforcementHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_links;
+  bool m_userPoolIdHasBeenSet = false;
+  bool m_clientIdHasBeenSet = false;
+  bool m_termsNameHasBeenSet = false;
+  bool m_termsSourceHasBeenSet = false;
+  bool m_enforcementHasBeenSet = false;
   bool m_linksHasBeenSet = false;
 };
 

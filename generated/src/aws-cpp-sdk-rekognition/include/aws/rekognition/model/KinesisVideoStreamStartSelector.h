@@ -74,9 +74,9 @@ class KinesisVideoStreamStartSelector {
   ///@}
  private:
   long long m_producerTimestamp{0};
-  bool m_producerTimestampHasBeenSet = false;
 
   Aws::String m_fragmentNumber;
+  bool m_producerTimestampHasBeenSet = false;
   bool m_fragmentNumberHasBeenSet = false;
 };
 

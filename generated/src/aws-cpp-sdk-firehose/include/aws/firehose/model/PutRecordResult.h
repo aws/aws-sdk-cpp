@@ -75,12 +75,12 @@ class PutRecordResult {
   ///@}
  private:
   Aws::String m_recordId;
-  bool m_recordIdHasBeenSet = false;
 
   bool m_encrypted{false};
-  bool m_encryptedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_recordIdHasBeenSet = false;
+  bool m_encryptedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

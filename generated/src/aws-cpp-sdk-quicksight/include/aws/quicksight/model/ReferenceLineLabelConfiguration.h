@@ -146,21 +146,21 @@ class ReferenceLineLabelConfiguration {
   ///@}
  private:
   ReferenceLineValueLabelConfiguration m_valueLabelConfiguration;
-  bool m_valueLabelConfigurationHasBeenSet = false;
 
   ReferenceLineCustomLabelConfiguration m_customLabelConfiguration;
-  bool m_customLabelConfigurationHasBeenSet = false;
 
   FontConfiguration m_fontConfiguration;
-  bool m_fontConfigurationHasBeenSet = false;
 
   Aws::String m_fontColor;
-  bool m_fontColorHasBeenSet = false;
 
   ReferenceLineLabelHorizontalPosition m_horizontalPosition{ReferenceLineLabelHorizontalPosition::NOT_SET};
-  bool m_horizontalPositionHasBeenSet = false;
 
   ReferenceLineLabelVerticalPosition m_verticalPosition{ReferenceLineLabelVerticalPosition::NOT_SET};
+  bool m_valueLabelConfigurationHasBeenSet = false;
+  bool m_customLabelConfigurationHasBeenSet = false;
+  bool m_fontConfigurationHasBeenSet = false;
+  bool m_fontColorHasBeenSet = false;
+  bool m_horizontalPositionHasBeenSet = false;
   bool m_verticalPositionHasBeenSet = false;
 };
 

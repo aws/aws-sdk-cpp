@@ -95,15 +95,15 @@ class CdmaNmrObj {
   ///@}
  private:
   int m_pnOffset{0};
-  bool m_pnOffsetHasBeenSet = false;
 
   int m_cdmaChannel{0};
-  bool m_cdmaChannelHasBeenSet = false;
 
   int m_pilotPower{0};
-  bool m_pilotPowerHasBeenSet = false;
 
   int m_baseStationId{0};
+  bool m_pnOffsetHasBeenSet = false;
+  bool m_cdmaChannelHasBeenSet = false;
+  bool m_pilotPowerHasBeenSet = false;
   bool m_baseStationIdHasBeenSet = false;
 };
 

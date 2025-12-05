@@ -119,15 +119,15 @@ class ModifyTransitGatewayMeteringPolicyRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_transitGatewayMeteringPolicyId;
-  bool m_transitGatewayMeteringPolicyIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_addMiddleboxAttachmentIds;
-  bool m_addMiddleboxAttachmentIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_removeMiddleboxAttachmentIds;
-  bool m_removeMiddleboxAttachmentIdsHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_transitGatewayMeteringPolicyIdHasBeenSet = false;
+  bool m_addMiddleboxAttachmentIdsHasBeenSet = false;
+  bool m_removeMiddleboxAttachmentIdsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

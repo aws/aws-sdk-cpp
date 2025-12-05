@@ -67,9 +67,9 @@ class DisassociateBackupVaultMpaApprovalTeamRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_backupVaultName;
-  bool m_backupVaultNameHasBeenSet = false;
 
   Aws::String m_requesterComment;
+  bool m_backupVaultNameHasBeenSet = false;
   bool m_requesterCommentHasBeenSet = false;
 };
 

@@ -219,27 +219,27 @@ class Handshake {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Vector<HandshakeParty> m_parties;
-  bool m_partiesHasBeenSet = false;
 
   HandshakeState m_state{HandshakeState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_requestedTimestamp{};
-  bool m_requestedTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_expirationTimestamp{};
-  bool m_expirationTimestampHasBeenSet = false;
 
   ActionType m_action{ActionType::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::Vector<HandshakeResource> m_resources;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_partiesHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_requestedTimestampHasBeenSet = false;
+  bool m_expirationTimestampHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
   bool m_resourcesHasBeenSet = false;
 };
 

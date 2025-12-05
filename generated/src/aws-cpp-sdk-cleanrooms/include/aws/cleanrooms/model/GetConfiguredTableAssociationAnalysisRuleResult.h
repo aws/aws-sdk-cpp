@@ -64,9 +64,9 @@ class GetConfiguredTableAssociationAnalysisRuleResult {
   ///@}
  private:
   ConfiguredTableAssociationAnalysisRule m_analysisRule;
-  bool m_analysisRuleHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_analysisRuleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

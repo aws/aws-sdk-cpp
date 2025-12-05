@@ -138,21 +138,21 @@ class SeveritySummary {
   ///@}
  private:
   int m_criticalCount{0};
-  bool m_criticalCountHasBeenSet = false;
 
   int m_highCount{0};
-  bool m_highCountHasBeenSet = false;
 
   int m_mediumCount{0};
-  bool m_mediumCountHasBeenSet = false;
 
   int m_lowCount{0};
-  bool m_lowCountHasBeenSet = false;
 
   int m_informationalCount{0};
-  bool m_informationalCountHasBeenSet = false;
 
   int m_unspecifiedCount{0};
+  bool m_criticalCountHasBeenSet = false;
+  bool m_highCountHasBeenSet = false;
+  bool m_mediumCountHasBeenSet = false;
+  bool m_lowCountHasBeenSet = false;
+  bool m_informationalCountHasBeenSet = false;
   bool m_unspecifiedCountHasBeenSet = false;
 };
 

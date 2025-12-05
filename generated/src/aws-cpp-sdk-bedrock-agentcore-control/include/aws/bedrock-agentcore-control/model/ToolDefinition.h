@@ -111,15 +111,15 @@ class ToolDefinition {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   SchemaDefinition m_inputSchema;
-  bool m_inputSchemaHasBeenSet = false;
 
   SchemaDefinition m_outputSchema;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_inputSchemaHasBeenSet = false;
   bool m_outputSchemaHasBeenSet = false;
 };
 

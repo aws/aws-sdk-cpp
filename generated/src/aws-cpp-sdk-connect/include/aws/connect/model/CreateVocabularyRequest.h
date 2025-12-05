@@ -162,21 +162,21 @@ class CreateVocabularyRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_vocabularyName;
-  bool m_vocabularyNameHasBeenSet = false;
 
   VocabularyLanguageCode m_languageCode{VocabularyLanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_vocabularyNameHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

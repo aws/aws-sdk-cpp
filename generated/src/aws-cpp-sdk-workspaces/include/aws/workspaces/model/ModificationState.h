@@ -65,9 +65,9 @@ class ModificationState {
   ///@}
  private:
   ModificationResourceEnum m_resource{ModificationResourceEnum::NOT_SET};
-  bool m_resourceHasBeenSet = false;
 
   ModificationStateEnum m_state{ModificationStateEnum::NOT_SET};
+  bool m_resourceHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

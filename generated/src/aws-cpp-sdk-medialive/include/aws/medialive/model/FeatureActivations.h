@@ -74,10 +74,10 @@ to display/clear/modify image overlays on
   ///@}
  private:
   FeatureActivationsInputPrepareScheduleActions m_inputPrepareScheduleActions{FeatureActivationsInputPrepareScheduleActions::NOT_SET};
-  bool m_inputPrepareScheduleActionsHasBeenSet = false;
 
   FeatureActivationsOutputStaticImageOverlayScheduleActions m_outputStaticImageOverlayScheduleActions{
       FeatureActivationsOutputStaticImageOverlayScheduleActions::NOT_SET};
+  bool m_inputPrepareScheduleActionsHasBeenSet = false;
   bool m_outputStaticImageOverlayScheduleActionsHasBeenSet = false;
 };
 

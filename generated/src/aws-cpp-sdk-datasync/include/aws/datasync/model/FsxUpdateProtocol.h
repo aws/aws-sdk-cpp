@@ -73,9 +73,9 @@ class FsxUpdateProtocol {
   ///@}
  private:
   FsxProtocolNfs m_nFS;
-  bool m_nFSHasBeenSet = false;
 
   FsxUpdateProtocolSmb m_sMB;
+  bool m_nFSHasBeenSet = false;
   bool m_sMBHasBeenSet = false;
 };
 

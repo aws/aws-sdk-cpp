@@ -78,9 +78,9 @@ class DeleteClusterSnapshotRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_snapshotIdentifier;
-  bool m_snapshotIdentifierHasBeenSet = false;
 
   Aws::String m_snapshotClusterIdentifier;
+  bool m_snapshotIdentifierHasBeenSet = false;
   bool m_snapshotClusterIdentifierHasBeenSet = false;
 };
 

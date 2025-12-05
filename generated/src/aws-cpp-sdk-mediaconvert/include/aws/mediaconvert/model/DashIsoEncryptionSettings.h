@@ -74,9 +74,9 @@ class DashIsoEncryptionSettings {
   ///@}
  private:
   DashIsoPlaybackDeviceCompatibility m_playbackDeviceCompatibility{DashIsoPlaybackDeviceCompatibility::NOT_SET};
-  bool m_playbackDeviceCompatibilityHasBeenSet = false;
 
   SpekeKeyProvider m_spekeKeyProvider;
+  bool m_playbackDeviceCompatibilityHasBeenSet = false;
   bool m_spekeKeyProviderHasBeenSet = false;
 };
 

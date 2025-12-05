@@ -86,12 +86,12 @@ class DbIormConfig {
   ///@}
  private:
   Aws::String m_dbName;
-  bool m_dbNameHasBeenSet = false;
 
   Aws::String m_flashCacheLimit;
-  bool m_flashCacheLimitHasBeenSet = false;
 
   int m_share{0};
+  bool m_dbNameHasBeenSet = false;
+  bool m_flashCacheLimitHasBeenSet = false;
   bool m_shareHasBeenSet = false;
 };
 

@@ -75,9 +75,9 @@ class UpdateFileSystemProtectionRequest : public EFSRequest {
   ///@}
  private:
   Aws::String m_fileSystemId;
-  bool m_fileSystemIdHasBeenSet = false;
 
   ReplicationOverwriteProtection m_replicationOverwriteProtection{ReplicationOverwriteProtection::NOT_SET};
+  bool m_fileSystemIdHasBeenSet = false;
   bool m_replicationOverwriteProtectionHasBeenSet = false;
 };
 

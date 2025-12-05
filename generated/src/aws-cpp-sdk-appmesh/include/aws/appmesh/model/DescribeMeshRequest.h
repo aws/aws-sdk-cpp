@@ -77,9 +77,9 @@ class DescribeMeshRequest : public AppMeshRequest {
   ///@}
  private:
   Aws::String m_meshName;
-  bool m_meshNameHasBeenSet = false;
 
   Aws::String m_meshOwner;
+  bool m_meshNameHasBeenSet = false;
   bool m_meshOwnerHasBeenSet = false;
 };
 

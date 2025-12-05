@@ -59,9 +59,9 @@ class CreateFarmResult {
   ///@}
  private:
   Aws::String m_farmId;
-  bool m_farmIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_farmIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

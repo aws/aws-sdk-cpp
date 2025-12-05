@@ -98,12 +98,12 @@ class UntagContactRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_contactId;
-  bool m_contactIdHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagKeys;
+  bool m_contactIdHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
   bool m_tagKeysHasBeenSet = false;
 };
 

@@ -73,9 +73,9 @@ class ListTagsForResourceResult {
   ///@}
  private:
   Aws::Vector<Tag> m_tagList;
-  bool m_tagListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tagListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

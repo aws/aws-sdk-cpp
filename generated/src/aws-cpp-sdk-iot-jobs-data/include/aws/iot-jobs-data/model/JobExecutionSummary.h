@@ -135,21 +135,21 @@ class JobExecutionSummary {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   long long m_queuedAt{0};
-  bool m_queuedAtHasBeenSet = false;
 
   long long m_startedAt{0};
-  bool m_startedAtHasBeenSet = false;
 
   long long m_lastUpdatedAt{0};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   long long m_versionNumber{0};
-  bool m_versionNumberHasBeenSet = false;
 
   long long m_executionNumber{0};
+  bool m_jobIdHasBeenSet = false;
+  bool m_queuedAtHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_versionNumberHasBeenSet = false;
   bool m_executionNumberHasBeenSet = false;
 };
 

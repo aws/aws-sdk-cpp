@@ -325,48 +325,48 @@ class PIIDetection {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inputs;
-  bool m_inputsHasBeenSet = false;
 
   PiiType m_piiType{PiiType::NOT_SET};
-  bool m_piiTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_entityTypesToDetect;
-  bool m_entityTypesToDetectHasBeenSet = false;
 
   Aws::String m_outputColumnName;
-  bool m_outputColumnNameHasBeenSet = false;
 
   double m_sampleFraction{0.0};
-  bool m_sampleFractionHasBeenSet = false;
 
   double m_thresholdFraction{0.0};
-  bool m_thresholdFractionHasBeenSet = false;
 
   Aws::String m_maskValue;
-  bool m_maskValueHasBeenSet = false;
 
   Aws::String m_redactText;
-  bool m_redactTextHasBeenSet = false;
 
   Aws::String m_redactChar;
-  bool m_redactCharHasBeenSet = false;
 
   Aws::String m_matchPattern;
-  bool m_matchPatternHasBeenSet = false;
 
   int m_numLeftCharsToExclude{0};
-  bool m_numLeftCharsToExcludeHasBeenSet = false;
 
   int m_numRightCharsToExclude{0};
-  bool m_numRightCharsToExcludeHasBeenSet = false;
 
   Aws::String m_detectionParameters;
-  bool m_detectionParametersHasBeenSet = false;
 
   Aws::String m_detectionSensitivity;
+  bool m_nameHasBeenSet = false;
+  bool m_inputsHasBeenSet = false;
+  bool m_piiTypeHasBeenSet = false;
+  bool m_entityTypesToDetectHasBeenSet = false;
+  bool m_outputColumnNameHasBeenSet = false;
+  bool m_sampleFractionHasBeenSet = false;
+  bool m_thresholdFractionHasBeenSet = false;
+  bool m_maskValueHasBeenSet = false;
+  bool m_redactTextHasBeenSet = false;
+  bool m_redactCharHasBeenSet = false;
+  bool m_matchPatternHasBeenSet = false;
+  bool m_numLeftCharsToExcludeHasBeenSet = false;
+  bool m_numRightCharsToExcludeHasBeenSet = false;
+  bool m_detectionParametersHasBeenSet = false;
   bool m_detectionSensitivityHasBeenSet = false;
 };
 

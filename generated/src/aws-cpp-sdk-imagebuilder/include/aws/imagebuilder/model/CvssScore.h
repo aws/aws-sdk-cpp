@@ -110,15 +110,15 @@ class CvssScore {
   ///@}
  private:
   double m_baseScore{0.0};
-  bool m_baseScoreHasBeenSet = false;
 
   Aws::String m_scoringVector;
-  bool m_scoringVectorHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_source;
+  bool m_baseScoreHasBeenSet = false;
+  bool m_scoringVectorHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
   bool m_sourceHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class JoinStorageSessionAsViewerRequest : public KinesisVideoWebRTCStorageReques
   ///@}
  private:
   Aws::String m_channelArn;
-  bool m_channelArnHasBeenSet = false;
 
   Aws::String m_clientId;
+  bool m_channelArnHasBeenSet = false;
   bool m_clientIdHasBeenSet = false;
 };
 

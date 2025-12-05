@@ -74,9 +74,9 @@ class AccessMethod {
   ///@}
  private:
   Aws::String m_customObjectIdentifier;
-  bool m_customObjectIdentifierHasBeenSet = false;
 
   AccessMethodType m_accessMethodType{AccessMethodType::NOT_SET};
+  bool m_customObjectIdentifierHasBeenSet = false;
   bool m_accessMethodTypeHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class DescribeOrganizationConformancePackStatusesResult {
   ///@}
  private:
   Aws::Vector<OrganizationConformancePackStatus> m_organizationConformancePackStatuses;
-  bool m_organizationConformancePackStatusesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_organizationConformancePackStatusesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

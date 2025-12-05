@@ -109,15 +109,15 @@ class ListCallAnalyticsJobsRequest : public TranscribeServiceRequest {
   ///@}
  private:
   CallAnalyticsJobStatus m_status{CallAnalyticsJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_jobNameContains;
-  bool m_jobNameContainsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_statusHasBeenSet = false;
+  bool m_jobNameContainsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

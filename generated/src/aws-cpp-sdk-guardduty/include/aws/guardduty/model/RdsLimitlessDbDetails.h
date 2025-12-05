@@ -169,24 +169,24 @@ class RdsLimitlessDbDetails {
   ///@}
  private:
   Aws::String m_dbShardGroupIdentifier;
-  bool m_dbShardGroupIdentifierHasBeenSet = false;
 
   Aws::String m_dbShardGroupResourceId;
-  bool m_dbShardGroupResourceIdHasBeenSet = false;
 
   Aws::String m_dbShardGroupArn;
-  bool m_dbShardGroupArnHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_dbClusterIdentifier;
-  bool m_dbClusterIdentifierHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_dbShardGroupIdentifierHasBeenSet = false;
+  bool m_dbShardGroupResourceIdHasBeenSet = false;
+  bool m_dbShardGroupArnHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_dbClusterIdentifierHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -177,27 +177,27 @@ class ListSolFunctionInstanceInfo {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   GetSolInstantiatedVnfInfo m_instantiatedVnfInfo;
-  bool m_instantiatedVnfInfoHasBeenSet = false;
 
   VnfInstantiationState m_instantiationState{VnfInstantiationState::NOT_SET};
-  bool m_instantiationStateHasBeenSet = false;
 
   ListSolFunctionInstanceMetadata m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::String m_nsInstanceId;
-  bool m_nsInstanceIdHasBeenSet = false;
 
   Aws::String m_vnfPkgId;
-  bool m_vnfPkgIdHasBeenSet = false;
 
   Aws::String m_vnfPkgName;
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_instantiatedVnfInfoHasBeenSet = false;
+  bool m_instantiationStateHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_nsInstanceIdHasBeenSet = false;
+  bool m_vnfPkgIdHasBeenSet = false;
   bool m_vnfPkgNameHasBeenSet = false;
 };
 

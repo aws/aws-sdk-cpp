@@ -92,12 +92,12 @@ class ListUserPoolsResult {
   ///@}
  private:
   Aws::Vector<UserPoolDescriptionType> m_userPools;
-  bool m_userPoolsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_userPoolsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

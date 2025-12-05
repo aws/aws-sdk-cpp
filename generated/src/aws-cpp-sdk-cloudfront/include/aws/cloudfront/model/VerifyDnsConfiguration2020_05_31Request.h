@@ -66,9 +66,9 @@ class VerifyDnsConfiguration2020_05_31Request : public CloudFrontRequest {
   ///@}
  private:
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_identifier;
+  bool m_domainHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
 };
 

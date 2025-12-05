@@ -85,12 +85,12 @@ class ListDocumentsResult {
   ///@}
  private:
   Aws::Vector<DocumentIdentifier> m_documentIdentifiers;
-  bool m_documentIdentifiersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_documentIdentifiersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

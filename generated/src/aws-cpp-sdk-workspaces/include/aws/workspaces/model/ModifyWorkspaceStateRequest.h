@@ -66,9 +66,9 @@ class ModifyWorkspaceStateRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   TargetWorkspaceState m_workspaceState{TargetWorkspaceState::NOT_SET};
+  bool m_workspaceIdHasBeenSet = false;
   bool m_workspaceStateHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class EvaluateExpressionRequest : public DataPipelineRequest {
   ///@}
  private:
   Aws::String m_pipelineId;
-  bool m_pipelineIdHasBeenSet = false;
 
   Aws::String m_objectId;
-  bool m_objectIdHasBeenSet = false;
 
   Aws::String m_expression;
+  bool m_pipelineIdHasBeenSet = false;
+  bool m_objectIdHasBeenSet = false;
   bool m_expressionHasBeenSet = false;
 };
 

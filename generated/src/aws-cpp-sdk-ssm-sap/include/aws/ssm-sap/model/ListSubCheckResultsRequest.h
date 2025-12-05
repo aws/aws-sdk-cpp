@@ -82,12 +82,12 @@ class ListSubCheckResultsRequest : public SsmSapRequest {
   ///@}
  private:
   Aws::String m_operationId;
-  bool m_operationIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_operationIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

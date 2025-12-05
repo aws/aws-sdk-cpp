@@ -90,12 +90,12 @@ class TimeRangeFilterValue {
   ///@}
  private:
   Aws::Utils::DateTime m_staticValue{};
-  bool m_staticValueHasBeenSet = false;
 
   RollingDateConfiguration m_rollingDate;
-  bool m_rollingDateHasBeenSet = false;
 
   Aws::String m_parameter;
+  bool m_staticValueHasBeenSet = false;
+  bool m_rollingDateHasBeenSet = false;
   bool m_parameterHasBeenSet = false;
 };
 

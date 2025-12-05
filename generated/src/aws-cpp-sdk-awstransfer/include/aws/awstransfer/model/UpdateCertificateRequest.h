@@ -108,15 +108,15 @@ class UpdateCertificateRequest : public TransferRequest {
   ///@}
  private:
   Aws::String m_certificateId;
-  bool m_certificateIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_activeDate{};
-  bool m_activeDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_inactiveDate{};
-  bool m_inactiveDateHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_certificateIdHasBeenSet = false;
+  bool m_activeDateHasBeenSet = false;
+  bool m_inactiveDateHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

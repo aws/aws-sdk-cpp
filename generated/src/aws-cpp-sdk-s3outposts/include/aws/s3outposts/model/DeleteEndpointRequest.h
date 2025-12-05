@@ -70,9 +70,9 @@ class DeleteEndpointRequest : public S3OutpostsRequest {
   ///@}
  private:
   Aws::String m_endpointId;
-  bool m_endpointIdHasBeenSet = false;
 
   Aws::String m_outpostId;
+  bool m_endpointIdHasBeenSet = false;
   bool m_outpostIdHasBeenSet = false;
 };
 

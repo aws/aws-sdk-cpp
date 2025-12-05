@@ -199,30 +199,30 @@ class Application {
   ///@}
  private:
   Aws::String m_applicationArn;
-  bool m_applicationArnHasBeenSet = false;
 
   Aws::String m_applicationProviderArn;
-  bool m_applicationProviderArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_applicationAccount;
-  bool m_applicationAccountHasBeenSet = false;
 
   Aws::String m_instanceArn;
-  bool m_instanceArnHasBeenSet = false;
 
   ApplicationStatus m_status{ApplicationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   PortalOptions m_portalOptions;
-  bool m_portalOptionsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
+  bool m_applicationArnHasBeenSet = false;
+  bool m_applicationProviderArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_applicationAccountHasBeenSet = false;
+  bool m_instanceArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_portalOptionsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_createdDateHasBeenSet = false;
 };
 

@@ -73,9 +73,9 @@ class XksProxyAuthenticationCredentialType {
   ///@}
  private:
   Aws::String m_accessKeyId;
-  bool m_accessKeyIdHasBeenSet = false;
 
   Aws::String m_rawSecretAccessKey;
+  bool m_accessKeyIdHasBeenSet = false;
   bool m_rawSecretAccessKeyHasBeenSet = false;
 };
 

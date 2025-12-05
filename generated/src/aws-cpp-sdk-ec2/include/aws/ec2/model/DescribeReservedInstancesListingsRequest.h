@@ -105,12 +105,12 @@ class DescribeReservedInstancesListingsRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_reservedInstancesId;
-  bool m_reservedInstancesIdHasBeenSet = false;
 
   Aws::String m_reservedInstancesListingId;
-  bool m_reservedInstancesListingIdHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
+  bool m_reservedInstancesIdHasBeenSet = false;
+  bool m_reservedInstancesListingIdHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

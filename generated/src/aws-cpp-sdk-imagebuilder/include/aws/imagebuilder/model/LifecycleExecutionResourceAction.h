@@ -69,9 +69,9 @@ class LifecycleExecutionResourceAction {
   ///@}
  private:
   LifecycleExecutionResourceActionName m_name{LifecycleExecutionResourceActionName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_reason;
+  bool m_nameHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

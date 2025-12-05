@@ -86,12 +86,12 @@ class ListResourceSnapshotJobsResult {
   ///@}
  private:
   Aws::Vector<ResourceSnapshotJobSummary> m_resourceSnapshotJobSummaries;
-  bool m_resourceSnapshotJobSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceSnapshotJobSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

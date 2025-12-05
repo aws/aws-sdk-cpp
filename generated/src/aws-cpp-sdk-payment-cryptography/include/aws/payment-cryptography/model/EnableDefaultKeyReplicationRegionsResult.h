@@ -76,9 +76,9 @@ class EnableDefaultKeyReplicationRegionsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_enabledReplicationRegions;
-  bool m_enabledReplicationRegionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_enabledReplicationRegionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class ListMicrosoftTeamsChannelConfigurationsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<TeamsChannelConfiguration> m_teamChannelConfigurations;
-  bool m_teamChannelConfigurationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_teamChannelConfigurationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

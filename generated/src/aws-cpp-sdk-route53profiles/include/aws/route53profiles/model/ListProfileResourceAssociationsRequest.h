@@ -113,15 +113,15 @@ class ListProfileResourceAssociationsRequest : public Route53ProfilesRequest {
   ///@}
  private:
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_profileId;
-  bool m_profileIdHasBeenSet = false;
 
   Aws::String m_resourceType;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_profileIdHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
 };
 

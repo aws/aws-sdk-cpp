@@ -576,84 +576,84 @@ class DescribeTaskExecutionResult {
   ///@}
  private:
   Aws::String m_taskExecutionArn;
-  bool m_taskExecutionArnHasBeenSet = false;
 
   TaskExecutionStatus m_status{TaskExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Options m_options;
-  bool m_optionsHasBeenSet = false;
 
   Aws::Vector<FilterRule> m_excludes;
-  bool m_excludesHasBeenSet = false;
 
   Aws::Vector<FilterRule> m_includes;
-  bool m_includesHasBeenSet = false;
 
   ManifestConfig m_manifestConfig;
-  bool m_manifestConfigHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   long long m_estimatedFilesToTransfer{0};
-  bool m_estimatedFilesToTransferHasBeenSet = false;
 
   long long m_estimatedBytesToTransfer{0};
-  bool m_estimatedBytesToTransferHasBeenSet = false;
 
   long long m_filesTransferred{0};
-  bool m_filesTransferredHasBeenSet = false;
 
   long long m_bytesWritten{0};
-  bool m_bytesWrittenHasBeenSet = false;
 
   long long m_bytesTransferred{0};
-  bool m_bytesTransferredHasBeenSet = false;
 
   long long m_bytesCompressed{0};
-  bool m_bytesCompressedHasBeenSet = false;
 
   TaskExecutionResultDetail m_result;
-  bool m_resultHasBeenSet = false;
 
   TaskReportConfig m_taskReportConfig;
-  bool m_taskReportConfigHasBeenSet = false;
 
   long long m_filesDeleted{0};
-  bool m_filesDeletedHasBeenSet = false;
 
   long long m_filesSkipped{0};
-  bool m_filesSkippedHasBeenSet = false;
 
   long long m_filesVerified{0};
-  bool m_filesVerifiedHasBeenSet = false;
 
   ReportResult m_reportResult;
-  bool m_reportResultHasBeenSet = false;
 
   long long m_estimatedFilesToDelete{0};
-  bool m_estimatedFilesToDeleteHasBeenSet = false;
 
   TaskMode m_taskMode{TaskMode::NOT_SET};
-  bool m_taskModeHasBeenSet = false;
 
   long long m_filesPrepared{0};
-  bool m_filesPreparedHasBeenSet = false;
 
   TaskExecutionFilesListedDetail m_filesListed;
-  bool m_filesListedHasBeenSet = false;
 
   TaskExecutionFilesFailedDetail m_filesFailed;
-  bool m_filesFailedHasBeenSet = false;
 
   Aws::Utils::DateTime m_launchTime{};
-  bool m_launchTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_taskExecutionArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_optionsHasBeenSet = false;
+  bool m_excludesHasBeenSet = false;
+  bool m_includesHasBeenSet = false;
+  bool m_manifestConfigHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_estimatedFilesToTransferHasBeenSet = false;
+  bool m_estimatedBytesToTransferHasBeenSet = false;
+  bool m_filesTransferredHasBeenSet = false;
+  bool m_bytesWrittenHasBeenSet = false;
+  bool m_bytesTransferredHasBeenSet = false;
+  bool m_bytesCompressedHasBeenSet = false;
+  bool m_resultHasBeenSet = false;
+  bool m_taskReportConfigHasBeenSet = false;
+  bool m_filesDeletedHasBeenSet = false;
+  bool m_filesSkippedHasBeenSet = false;
+  bool m_filesVerifiedHasBeenSet = false;
+  bool m_reportResultHasBeenSet = false;
+  bool m_estimatedFilesToDeleteHasBeenSet = false;
+  bool m_taskModeHasBeenSet = false;
+  bool m_filesPreparedHasBeenSet = false;
+  bool m_filesListedHasBeenSet = false;
+  bool m_filesFailedHasBeenSet = false;
+  bool m_launchTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

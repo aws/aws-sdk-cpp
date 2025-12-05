@@ -73,9 +73,9 @@ class DescribeStackResourcesResult {
   ///@}
  private:
   Aws::Vector<StackResource> m_stackResources;
-  bool m_stackResourcesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_stackResourcesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

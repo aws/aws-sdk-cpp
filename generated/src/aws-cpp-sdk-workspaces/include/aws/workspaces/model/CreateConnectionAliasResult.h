@@ -59,9 +59,9 @@ class CreateConnectionAliasResult {
   ///@}
  private:
   Aws::String m_aliasId;
-  bool m_aliasIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_aliasIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

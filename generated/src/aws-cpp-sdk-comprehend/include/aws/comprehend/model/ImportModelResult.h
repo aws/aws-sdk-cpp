@@ -59,9 +59,9 @@ class ImportModelResult {
   ///@}
  private:
   Aws::String m_modelArn;
-  bool m_modelArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_modelArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

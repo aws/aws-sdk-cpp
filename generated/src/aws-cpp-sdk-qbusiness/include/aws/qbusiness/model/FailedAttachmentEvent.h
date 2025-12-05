@@ -107,15 +107,15 @@ class FailedAttachmentEvent {
   ///@}
  private:
   Aws::String m_conversationId;
-  bool m_conversationIdHasBeenSet = false;
 
   Aws::String m_userMessageId;
-  bool m_userMessageIdHasBeenSet = false;
 
   Aws::String m_systemMessageId;
-  bool m_systemMessageIdHasBeenSet = false;
 
   AttachmentOutput m_attachment;
+  bool m_conversationIdHasBeenSet = false;
+  bool m_userMessageIdHasBeenSet = false;
+  bool m_systemMessageIdHasBeenSet = false;
   bool m_attachmentHasBeenSet = false;
 };
 

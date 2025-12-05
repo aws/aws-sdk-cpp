@@ -66,9 +66,9 @@ class GetArchiveMessageContentResult {
   ///@}
  private:
   MessageBody m_body;
-  bool m_bodyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_bodyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

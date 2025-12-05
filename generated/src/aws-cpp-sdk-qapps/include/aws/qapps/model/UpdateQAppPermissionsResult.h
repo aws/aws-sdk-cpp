@@ -103,15 +103,15 @@ class UpdateQAppPermissionsResult {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_appId;
-  bool m_appIdHasBeenSet = false;
 
   Aws::Vector<PermissionOutput> m_permissions;
-  bool m_permissionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_appIdHasBeenSet = false;
+  bool m_permissionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

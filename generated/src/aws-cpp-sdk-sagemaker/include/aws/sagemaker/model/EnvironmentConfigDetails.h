@@ -72,9 +72,9 @@ class EnvironmentConfigDetails {
   ///@}
  private:
   FSxLustreConfig m_fSxLustreConfig;
-  bool m_fSxLustreConfigHasBeenSet = false;
 
   Aws::String m_s3OutputPath;
+  bool m_fSxLustreConfigHasBeenSet = false;
   bool m_s3OutputPathHasBeenSet = false;
 };
 

@@ -190,27 +190,27 @@ class EngineVersion {
   ///@}
  private:
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_lifecycle;
-  bool m_lifecycleHasBeenSet = false;
 
   ReleaseStatusValues m_releaseStatus{ReleaseStatusValues::NOT_SET};
-  bool m_releaseStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_launchDate{};
-  bool m_launchDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_autoUpgradeDate{};
-  bool m_autoUpgradeDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_deprecationDate{};
-  bool m_deprecationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_forceUpgradeDate{};
-  bool m_forceUpgradeDateHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_availableUpgrades;
+  bool m_versionHasBeenSet = false;
+  bool m_lifecycleHasBeenSet = false;
+  bool m_releaseStatusHasBeenSet = false;
+  bool m_launchDateHasBeenSet = false;
+  bool m_autoUpgradeDateHasBeenSet = false;
+  bool m_deprecationDateHasBeenSet = false;
+  bool m_forceUpgradeDateHasBeenSet = false;
   bool m_availableUpgradesHasBeenSet = false;
 };
 

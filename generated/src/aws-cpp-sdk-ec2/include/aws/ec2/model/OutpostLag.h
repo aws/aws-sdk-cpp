@@ -181,24 +181,24 @@ class OutpostLag {
   ///@}
  private:
   Aws::String m_outpostArn;
-  bool m_outpostArnHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_outpostLagId;
-  bool m_outpostLagIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_localGatewayVirtualInterfaceIds;
-  bool m_localGatewayVirtualInterfaceIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_serviceLinkVirtualInterfaceIds;
-  bool m_serviceLinkVirtualInterfaceIdsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_outpostArnHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_outpostLagIdHasBeenSet = false;
+  bool m_localGatewayVirtualInterfaceIdsHasBeenSet = false;
+  bool m_serviceLinkVirtualInterfaceIdsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

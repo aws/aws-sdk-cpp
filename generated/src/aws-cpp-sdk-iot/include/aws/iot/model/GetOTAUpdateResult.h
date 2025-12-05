@@ -60,9 +60,9 @@ class GetOTAUpdateResult {
   ///@}
  private:
   OTAUpdateInfo m_otaUpdateInfo;
-  bool m_otaUpdateInfoHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_otaUpdateInfoHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

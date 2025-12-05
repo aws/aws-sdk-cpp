@@ -76,9 +76,9 @@ class VpcInformation {
   ///@}
  private:
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
-  bool m_ipAddressTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
+  bool m_ipAddressTypeHasBeenSet = false;
   bool m_securityGroupIdsHasBeenSet = false;
 };
 

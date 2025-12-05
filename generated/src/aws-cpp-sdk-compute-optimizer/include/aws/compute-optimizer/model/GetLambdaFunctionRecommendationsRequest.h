@@ -154,18 +154,18 @@ class GetLambdaFunctionRecommendationsRequest : public ComputeOptimizerRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_functionArns;
-  bool m_functionArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_accountIds;
-  bool m_accountIdsHasBeenSet = false;
 
   Aws::Vector<LambdaFunctionRecommendationFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_functionArnsHasBeenSet = false;
+  bool m_accountIdsHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

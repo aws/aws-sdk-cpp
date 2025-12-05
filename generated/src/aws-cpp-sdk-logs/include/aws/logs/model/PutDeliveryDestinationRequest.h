@@ -145,18 +145,18 @@ class PutDeliveryDestinationRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   OutputFormat m_outputFormat{OutputFormat::NOT_SET};
-  bool m_outputFormatHasBeenSet = false;
 
   DeliveryDestinationConfiguration m_deliveryDestinationConfiguration;
-  bool m_deliveryDestinationConfigurationHasBeenSet = false;
 
   DeliveryDestinationType m_deliveryDestinationType{DeliveryDestinationType::NOT_SET};
-  bool m_deliveryDestinationTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_outputFormatHasBeenSet = false;
+  bool m_deliveryDestinationConfigurationHasBeenSet = false;
+  bool m_deliveryDestinationTypeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -107,15 +107,15 @@ class TargetProcessingProperties {
   ///@}
  private:
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_kmsArn;
-  bool m_kmsArnHasBeenSet = false;
 
   Aws::String m_connectionName;
-  bool m_connectionNameHasBeenSet = false;
 
   Aws::String m_eventBusArn;
+  bool m_roleArnHasBeenSet = false;
+  bool m_kmsArnHasBeenSet = false;
+  bool m_connectionNameHasBeenSet = false;
   bool m_eventBusArnHasBeenSet = false;
 };
 

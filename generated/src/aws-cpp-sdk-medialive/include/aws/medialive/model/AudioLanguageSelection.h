@@ -72,9 +72,9 @@ class AudioLanguageSelection {
   ///@}
  private:
   Aws::String m_languageCode;
-  bool m_languageCodeHasBeenSet = false;
 
   AudioLanguageSelectionPolicy m_languageSelectionPolicy{AudioLanguageSelectionPolicy::NOT_SET};
+  bool m_languageCodeHasBeenSet = false;
   bool m_languageSelectionPolicyHasBeenSet = false;
 };
 

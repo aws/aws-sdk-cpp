@@ -71,9 +71,9 @@ class ScanningRepositoryFilter {
   ///@}
  private:
   Aws::String m_filter;
-  bool m_filterHasBeenSet = false;
 
   ScanningRepositoryFilterType m_filterType{ScanningRepositoryFilterType::NOT_SET};
+  bool m_filterHasBeenSet = false;
   bool m_filterTypeHasBeenSet = false;
 };
 

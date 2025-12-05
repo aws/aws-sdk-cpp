@@ -142,21 +142,21 @@ class JobLogEventData {
   ///@}
  private:
   ConversionProperties m_conversionProperties;
-  bool m_conversionPropertiesHasBeenSet = false;
 
   Aws::String m_conversionServerID;
-  bool m_conversionServerIDHasBeenSet = false;
 
   EventResourceData m_eventResourceData;
-  bool m_eventResourceDataHasBeenSet = false;
 
   Aws::String m_rawError;
-  bool m_rawErrorHasBeenSet = false;
 
   Aws::String m_sourceServerID;
-  bool m_sourceServerIDHasBeenSet = false;
 
   Aws::String m_targetInstanceID;
+  bool m_conversionPropertiesHasBeenSet = false;
+  bool m_conversionServerIDHasBeenSet = false;
+  bool m_eventResourceDataHasBeenSet = false;
+  bool m_rawErrorHasBeenSet = false;
+  bool m_sourceServerIDHasBeenSet = false;
   bool m_targetInstanceIDHasBeenSet = false;
 };
 

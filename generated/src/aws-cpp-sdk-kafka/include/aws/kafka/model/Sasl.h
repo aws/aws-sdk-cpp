@@ -76,9 +76,9 @@ class Sasl {
   ///@}
  private:
   Scram m_scram;
-  bool m_scramHasBeenSet = false;
 
   Iam m_iam;
+  bool m_scramHasBeenSet = false;
   bool m_iamHasBeenSet = false;
 };
 

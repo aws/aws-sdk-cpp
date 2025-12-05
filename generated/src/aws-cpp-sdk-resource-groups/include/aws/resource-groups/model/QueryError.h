@@ -68,9 +68,9 @@ class QueryError {
   ///@}
  private:
   QueryErrorCode m_errorCode{QueryErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_errorCodeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

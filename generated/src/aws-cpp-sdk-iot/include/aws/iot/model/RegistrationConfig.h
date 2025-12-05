@@ -86,12 +86,12 @@ class RegistrationConfig {
   ///@}
  private:
   Aws::String m_templateBody;
-  bool m_templateBodyHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_templateName;
+  bool m_templateBodyHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_templateNameHasBeenSet = false;
 };
 

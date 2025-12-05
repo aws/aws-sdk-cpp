@@ -109,15 +109,15 @@ class DeviceSelectionConfig {
   ///@}
  private:
   DeviceSubsetType m_deviceSubsetType{DeviceSubsetType::NOT_SET};
-  bool m_deviceSubsetTypeHasBeenSet = false;
 
   int m_percentage{0};
-  bool m_percentageHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_deviceNames;
-  bool m_deviceNamesHasBeenSet = false;
 
   Aws::String m_deviceNameContains;
+  bool m_deviceSubsetTypeHasBeenSet = false;
+  bool m_percentageHasBeenSet = false;
+  bool m_deviceNamesHasBeenSet = false;
   bool m_deviceNameContainsHasBeenSet = false;
 };
 

@@ -81,9 +81,9 @@ class StartApplicationRequest : public KinesisAnalyticsRequest {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   Aws::Vector<InputConfiguration> m_inputConfigurations;
+  bool m_applicationNameHasBeenSet = false;
   bool m_inputConfigurationsHasBeenSet = false;
 };
 

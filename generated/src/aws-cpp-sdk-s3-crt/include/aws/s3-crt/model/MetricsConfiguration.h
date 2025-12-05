@@ -79,9 +79,9 @@ class MetricsConfiguration {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   MetricsFilter m_filter;
+  bool m_idHasBeenSet = false;
   bool m_filterHasBeenSet = false;
 };
 

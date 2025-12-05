@@ -104,15 +104,15 @@ class LifeCycleForView {
   ///@}
  private:
   Aws::String m_targetCloseDate;
-  bool m_targetCloseDateHasBeenSet = false;
 
   ReviewStatus m_reviewStatus{ReviewStatus::NOT_SET};
-  bool m_reviewStatusHasBeenSet = false;
 
   Stage m_stage{Stage::NOT_SET};
-  bool m_stageHasBeenSet = false;
 
   Aws::String m_nextSteps;
+  bool m_targetCloseDateHasBeenSet = false;
+  bool m_reviewStatusHasBeenSet = false;
+  bool m_stageHasBeenSet = false;
   bool m_nextStepsHasBeenSet = false;
 };
 

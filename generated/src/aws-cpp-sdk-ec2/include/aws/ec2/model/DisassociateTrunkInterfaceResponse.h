@@ -78,12 +78,12 @@ class DisassociateTrunkInterfaceResponse {
   ///@}
  private:
   bool m_return{false};
-  bool m_returnHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_returnHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

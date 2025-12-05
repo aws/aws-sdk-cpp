@@ -59,9 +59,9 @@ class DisableImageBlockPublicAccessResponse {
   ///@}
  private:
   ImageBlockPublicAccessDisabledState m_imageBlockPublicAccessState{ImageBlockPublicAccessDisabledState::NOT_SET};
-  bool m_imageBlockPublicAccessStateHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_imageBlockPublicAccessStateHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

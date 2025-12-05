@@ -80,9 +80,9 @@ class LaunchTemplate {
   ///@}
  private:
   LaunchTemplateSpecification m_launchTemplateSpecification;
-  bool m_launchTemplateSpecificationHasBeenSet = false;
 
   Aws::Vector<LaunchTemplateOverrides> m_overrides;
+  bool m_launchTemplateSpecificationHasBeenSet = false;
   bool m_overridesHasBeenSet = false;
 };
 

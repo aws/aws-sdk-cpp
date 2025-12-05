@@ -92,12 +92,12 @@ class DescribeDBLogFilesResult {
   ///@}
  private:
   Aws::Vector<DescribeDBLogFilesDetails> m_describeDBLogFiles;
-  bool m_describeDBLogFilesHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_describeDBLogFilesHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

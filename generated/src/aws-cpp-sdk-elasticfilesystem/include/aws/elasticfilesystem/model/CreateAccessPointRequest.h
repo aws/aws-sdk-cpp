@@ -147,18 +147,18 @@ class CreateAccessPointRequest : public EFSRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_fileSystemId;
-  bool m_fileSystemIdHasBeenSet = false;
 
   PosixUser m_posixUser;
-  bool m_posixUserHasBeenSet = false;
 
   RootDirectory m_rootDirectory;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_tagsHasBeenSet = false;
+  bool m_fileSystemIdHasBeenSet = false;
+  bool m_posixUserHasBeenSet = false;
   bool m_rootDirectoryHasBeenSet = false;
 };
 

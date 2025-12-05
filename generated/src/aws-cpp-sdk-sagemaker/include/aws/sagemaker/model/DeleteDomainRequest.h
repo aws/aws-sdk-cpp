@@ -70,9 +70,9 @@ class DeleteDomainRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   RetentionPolicy m_retentionPolicy;
+  bool m_domainIdHasBeenSet = false;
   bool m_retentionPolicyHasBeenSet = false;
 };
 

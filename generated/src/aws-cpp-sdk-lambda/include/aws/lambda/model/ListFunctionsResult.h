@@ -89,12 +89,12 @@ class ListFunctionsResult {
   ///@}
  private:
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   Aws::Vector<FunctionConfiguration> m_functions;
-  bool m_functionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextMarkerHasBeenSet = false;
+  bool m_functionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

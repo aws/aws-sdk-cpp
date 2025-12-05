@@ -91,12 +91,12 @@ class ListPartnerEventSourceAccountsRequest : public EventBridgeRequest {
   ///@}
  private:
   Aws::String m_eventSourceName;
-  bool m_eventSourceNameHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_limit{0};
+  bool m_eventSourceNameHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_limitHasBeenSet = false;
 };
 

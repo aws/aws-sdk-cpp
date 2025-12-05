@@ -149,21 +149,21 @@ class StartMediaAnalysisJobRequest : public RekognitionRequest {
   ///@}
  private:
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   MediaAnalysisOperationsConfig m_operationsConfig;
-  bool m_operationsConfigHasBeenSet = false;
 
   MediaAnalysisInput m_input;
-  bool m_inputHasBeenSet = false;
 
   MediaAnalysisOutputConfig m_outputConfig;
-  bool m_outputConfigHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_jobNameHasBeenSet = false;
+  bool m_operationsConfigHasBeenSet = false;
+  bool m_inputHasBeenSet = false;
+  bool m_outputConfigHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
 };
 

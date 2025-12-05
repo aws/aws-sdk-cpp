@@ -108,15 +108,15 @@ class EC2InstanceLimit {
   ///@}
  private:
   EC2InstanceType m_eC2InstanceType{EC2InstanceType::NOT_SET};
-  bool m_eC2InstanceTypeHasBeenSet = false;
 
   int m_currentInstances{0};
-  bool m_currentInstancesHasBeenSet = false;
 
   int m_instanceLimit{0};
-  bool m_instanceLimitHasBeenSet = false;
 
   Aws::String m_location;
+  bool m_eC2InstanceTypeHasBeenSet = false;
+  bool m_currentInstancesHasBeenSet = false;
+  bool m_instanceLimitHasBeenSet = false;
   bool m_locationHasBeenSet = false;
 };
 

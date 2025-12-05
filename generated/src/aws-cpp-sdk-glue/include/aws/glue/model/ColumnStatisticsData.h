@@ -185,27 +185,27 @@ class ColumnStatisticsData {
   ///@}
  private:
   ColumnStatisticsType m_type{ColumnStatisticsType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   BooleanColumnStatisticsData m_booleanColumnStatisticsData;
-  bool m_booleanColumnStatisticsDataHasBeenSet = false;
 
   DateColumnStatisticsData m_dateColumnStatisticsData;
-  bool m_dateColumnStatisticsDataHasBeenSet = false;
 
   DecimalColumnStatisticsData m_decimalColumnStatisticsData;
-  bool m_decimalColumnStatisticsDataHasBeenSet = false;
 
   DoubleColumnStatisticsData m_doubleColumnStatisticsData;
-  bool m_doubleColumnStatisticsDataHasBeenSet = false;
 
   LongColumnStatisticsData m_longColumnStatisticsData;
-  bool m_longColumnStatisticsDataHasBeenSet = false;
 
   StringColumnStatisticsData m_stringColumnStatisticsData;
-  bool m_stringColumnStatisticsDataHasBeenSet = false;
 
   BinaryColumnStatisticsData m_binaryColumnStatisticsData;
+  bool m_typeHasBeenSet = false;
+  bool m_booleanColumnStatisticsDataHasBeenSet = false;
+  bool m_dateColumnStatisticsDataHasBeenSet = false;
+  bool m_decimalColumnStatisticsDataHasBeenSet = false;
+  bool m_doubleColumnStatisticsDataHasBeenSet = false;
+  bool m_longColumnStatisticsDataHasBeenSet = false;
+  bool m_stringColumnStatisticsDataHasBeenSet = false;
   bool m_binaryColumnStatisticsDataHasBeenSet = false;
 };
 

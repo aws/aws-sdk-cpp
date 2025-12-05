@@ -70,9 +70,9 @@ class AssociateSourceToS3TableIntegrationRequest : public CloudWatchLogsRequest 
   ///@}
  private:
   Aws::String m_integrationArn;
-  bool m_integrationArnHasBeenSet = false;
 
   DataSource m_dataSource;
+  bool m_integrationArnHasBeenSet = false;
   bool m_dataSourceHasBeenSet = false;
 };
 

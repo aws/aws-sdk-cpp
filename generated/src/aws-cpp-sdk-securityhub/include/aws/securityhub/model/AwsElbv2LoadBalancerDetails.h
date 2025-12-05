@@ -257,36 +257,36 @@ class AwsElbv2LoadBalancerDetails {
   ///@}
  private:
   Aws::Vector<AvailabilityZone> m_availabilityZones;
-  bool m_availabilityZonesHasBeenSet = false;
 
   Aws::String m_canonicalHostedZoneId;
-  bool m_canonicalHostedZoneIdHasBeenSet = false;
 
   Aws::String m_createdTime;
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_dNSName;
-  bool m_dNSNameHasBeenSet = false;
 
   Aws::String m_ipAddressType;
-  bool m_ipAddressTypeHasBeenSet = false;
 
   Aws::String m_scheme;
-  bool m_schemeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroups;
-  bool m_securityGroupsHasBeenSet = false;
 
   LoadBalancerState m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Vector<AwsElbv2LoadBalancerAttribute> m_loadBalancerAttributes;
+  bool m_availabilityZonesHasBeenSet = false;
+  bool m_canonicalHostedZoneIdHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_dNSNameHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
+  bool m_schemeHasBeenSet = false;
+  bool m_securityGroupsHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
   bool m_loadBalancerAttributesHasBeenSet = false;
 };
 

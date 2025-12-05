@@ -75,9 +75,9 @@ class AttributeAndCondition {
   ///@}
  private:
   Aws::Vector<TagCondition> m_tagConditions;
-  bool m_tagConditionsHasBeenSet = false;
 
   HierarchyGroupCondition m_hierarchyGroupCondition;
+  bool m_tagConditionsHasBeenSet = false;
   bool m_hierarchyGroupConditionHasBeenSet = false;
 };
 

@@ -102,15 +102,15 @@ class ListRecipesRequest : public PersonalizeRequest {
   ///@}
  private:
   RecipeProvider m_recipeProvider{RecipeProvider::NOT_SET};
-  bool m_recipeProviderHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Domain m_domain{Domain::NOT_SET};
+  bool m_recipeProviderHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_domainHasBeenSet = false;
 };
 

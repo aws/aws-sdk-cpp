@@ -106,15 +106,15 @@ class TransitGatewayRouteTableAssociation {
   ///@}
  private:
   Aws::String m_transitGatewayAttachmentId;
-  bool m_transitGatewayAttachmentIdHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   TransitGatewayAttachmentResourceType m_resourceType{TransitGatewayAttachmentResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   TransitGatewayAssociationState m_state{TransitGatewayAssociationState::NOT_SET};
+  bool m_transitGatewayAttachmentIdHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

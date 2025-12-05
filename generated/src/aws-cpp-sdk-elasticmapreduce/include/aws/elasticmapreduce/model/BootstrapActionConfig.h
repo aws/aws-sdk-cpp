@@ -69,9 +69,9 @@ class BootstrapActionConfig {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ScriptBootstrapActionConfig m_scriptBootstrapAction;
+  bool m_nameHasBeenSet = false;
   bool m_scriptBootstrapActionHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class GetFlowLogsIntegrationTemplateResponse {
   ///@}
  private:
   Aws::String m_result;
-  bool m_resultHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_resultHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

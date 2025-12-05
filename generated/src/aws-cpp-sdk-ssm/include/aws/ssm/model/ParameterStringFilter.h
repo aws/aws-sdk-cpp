@@ -113,12 +113,12 @@ class ParameterStringFilter {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_option;
-  bool m_optionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_keyHasBeenSet = false;
+  bool m_optionHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

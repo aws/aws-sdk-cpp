@@ -189,30 +189,30 @@ class CdmaObj {
   ///@}
  private:
   int m_systemId{0};
-  bool m_systemIdHasBeenSet = false;
 
   int m_networkId{0};
-  bool m_networkIdHasBeenSet = false;
 
   int m_baseStationId{0};
-  bool m_baseStationIdHasBeenSet = false;
 
   int m_registrationZone{0};
-  bool m_registrationZoneHasBeenSet = false;
 
   CdmaLocalId m_cdmaLocalId;
-  bool m_cdmaLocalIdHasBeenSet = false;
 
   int m_pilotPower{0};
-  bool m_pilotPowerHasBeenSet = false;
 
   double m_baseLat{0.0};
-  bool m_baseLatHasBeenSet = false;
 
   double m_baseLng{0.0};
-  bool m_baseLngHasBeenSet = false;
 
   Aws::Vector<CdmaNmrObj> m_cdmaNmr;
+  bool m_systemIdHasBeenSet = false;
+  bool m_networkIdHasBeenSet = false;
+  bool m_baseStationIdHasBeenSet = false;
+  bool m_registrationZoneHasBeenSet = false;
+  bool m_cdmaLocalIdHasBeenSet = false;
+  bool m_pilotPowerHasBeenSet = false;
+  bool m_baseLatHasBeenSet = false;
+  bool m_baseLngHasBeenSet = false;
   bool m_cdmaNmrHasBeenSet = false;
 };
 

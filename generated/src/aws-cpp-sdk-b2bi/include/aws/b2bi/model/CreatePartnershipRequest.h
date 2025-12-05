@@ -195,27 +195,27 @@ class CreatePartnershipRequest : public B2BIRequest {
   ///@}
  private:
   Aws::String m_profileId;
-  bool m_profileIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_email;
-  bool m_emailHasBeenSet = false;
 
   Aws::String m_phone;
-  bool m_phoneHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_capabilities;
-  bool m_capabilitiesHasBeenSet = false;
 
   CapabilityOptions m_capabilityOptions;
-  bool m_capabilityOptionsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Vector<Tag> m_tags;
+  bool m_profileIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_emailHasBeenSet = false;
+  bool m_phoneHasBeenSet = false;
+  bool m_capabilitiesHasBeenSet = false;
+  bool m_capabilityOptionsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

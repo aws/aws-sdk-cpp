@@ -107,15 +107,15 @@ class CoverageResourceDetails {
   ///@}
  private:
   CoverageEksClusterDetails m_eksClusterDetails;
-  bool m_eksClusterDetailsHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   CoverageEcsClusterDetails m_ecsClusterDetails;
-  bool m_ecsClusterDetailsHasBeenSet = false;
 
   CoverageEc2InstanceDetails m_ec2InstanceDetails;
+  bool m_eksClusterDetailsHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_ecsClusterDetailsHasBeenSet = false;
   bool m_ec2InstanceDetailsHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class DeleteRuleGroupRequest : public WAFRequest {
   ///@}
  private:
   Aws::String m_ruleGroupId;
-  bool m_ruleGroupIdHasBeenSet = false;
 
   Aws::String m_changeToken;
+  bool m_ruleGroupIdHasBeenSet = false;
   bool m_changeTokenHasBeenSet = false;
 };
 

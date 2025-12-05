@@ -59,9 +59,9 @@ class EnableAllowedImagesSettingsResponse {
   ///@}
  private:
   AllowedImagesSettingsEnabledState m_allowedImagesSettingsState{AllowedImagesSettingsEnabledState::NOT_SET};
-  bool m_allowedImagesSettingsStateHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_allowedImagesSettingsStateHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class ResolveComponentCandidatesResult {
   ///@}
  private:
   Aws::Vector<ResolvedComponentVersion> m_resolvedComponentVersions;
-  bool m_resolvedComponentVersionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resolvedComponentVersionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

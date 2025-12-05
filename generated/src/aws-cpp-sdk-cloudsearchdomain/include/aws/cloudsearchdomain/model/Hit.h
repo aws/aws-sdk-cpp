@@ -125,15 +125,15 @@ class Hit {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_fields;
-  bool m_fieldsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_exprs;
-  bool m_exprsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_highlights;
+  bool m_idHasBeenSet = false;
+  bool m_fieldsHasBeenSet = false;
+  bool m_exprsHasBeenSet = false;
   bool m_highlightsHasBeenSet = false;
 };
 

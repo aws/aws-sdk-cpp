@@ -88,12 +88,12 @@ class VerifiedAccessLogCloudWatchLogsDestination {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   VerifiedAccessLogDeliveryStatus m_deliveryStatus;
-  bool m_deliveryStatusHasBeenSet = false;
 
   Aws::String m_logGroup;
+  bool m_enabledHasBeenSet = false;
+  bool m_deliveryStatusHasBeenSet = false;
   bool m_logGroupHasBeenSet = false;
 };
 

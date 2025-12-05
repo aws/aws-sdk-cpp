@@ -90,12 +90,12 @@ class DescribeGlobalReplicationGroupsResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<GlobalReplicationGroup> m_globalReplicationGroups;
-  bool m_globalReplicationGroupsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_globalReplicationGroupsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

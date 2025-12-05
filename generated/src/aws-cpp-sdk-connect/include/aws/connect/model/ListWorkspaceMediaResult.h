@@ -67,9 +67,9 @@ class ListWorkspaceMediaResult {
   ///@}
  private:
   Aws::Vector<MediaItem> m_media;
-  bool m_mediaHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_mediaHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

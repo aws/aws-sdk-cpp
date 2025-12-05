@@ -121,18 +121,18 @@ class CreateDeploymentRequest : public GreengrassRequest {
   ///@}
  private:
   Aws::String m_amznClientToken;
-  bool m_amznClientTokenHasBeenSet = false;
 
   Aws::String m_deploymentId;
-  bool m_deploymentIdHasBeenSet = false;
 
   DeploymentType m_deploymentType{DeploymentType::NOT_SET};
-  bool m_deploymentTypeHasBeenSet = false;
 
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   Aws::String m_groupVersionId;
+  bool m_amznClientTokenHasBeenSet = false;
+  bool m_deploymentIdHasBeenSet = false;
+  bool m_deploymentTypeHasBeenSet = false;
+  bool m_groupIdHasBeenSet = false;
   bool m_groupVersionIdHasBeenSet = false;
 };
 

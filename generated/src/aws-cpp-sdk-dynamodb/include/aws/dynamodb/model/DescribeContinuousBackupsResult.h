@@ -61,9 +61,9 @@ class DescribeContinuousBackupsResult {
   ///@}
  private:
   ContinuousBackupsDescription m_continuousBackupsDescription;
-  bool m_continuousBackupsDescriptionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_continuousBackupsDescriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -94,12 +94,12 @@ class GetSubscriptionDefinitionVersionRequest : public GreengrassRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_subscriptionDefinitionId;
-  bool m_subscriptionDefinitionIdHasBeenSet = false;
 
   Aws::String m_subscriptionDefinitionVersionId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_subscriptionDefinitionIdHasBeenSet = false;
   bool m_subscriptionDefinitionVersionIdHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class CreateEnvironmentResult {
   ///@}
  private:
   EnvironmentSummary m_environment;
-  bool m_environmentHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_environmentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

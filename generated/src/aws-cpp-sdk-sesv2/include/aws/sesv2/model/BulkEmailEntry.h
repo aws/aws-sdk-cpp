@@ -141,15 +141,15 @@ class BulkEmailEntry {
   ///@}
  private:
   Destination m_destination;
-  bool m_destinationHasBeenSet = false;
 
   Aws::Vector<MessageTag> m_replacementTags;
-  bool m_replacementTagsHasBeenSet = false;
 
   ReplacementEmailContent m_replacementEmailContent;
-  bool m_replacementEmailContentHasBeenSet = false;
 
   Aws::Vector<MessageHeader> m_replacementHeaders;
+  bool m_destinationHasBeenSet = false;
+  bool m_replacementTagsHasBeenSet = false;
+  bool m_replacementEmailContentHasBeenSet = false;
   bool m_replacementHeadersHasBeenSet = false;
 };
 

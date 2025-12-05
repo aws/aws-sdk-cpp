@@ -60,9 +60,9 @@ class DeletePlatformVersionResult {
   ///@}
  private:
   PlatformSummary m_platformSummary;
-  bool m_platformSummaryHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_platformSummaryHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

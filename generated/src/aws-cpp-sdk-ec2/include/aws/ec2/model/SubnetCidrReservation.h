@@ -167,24 +167,24 @@ class SubnetCidrReservation {
   ///@}
  private:
   Aws::String m_subnetCidrReservationId;
-  bool m_subnetCidrReservationIdHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_cidr;
-  bool m_cidrHasBeenSet = false;
 
   SubnetCidrReservationType m_reservationType{SubnetCidrReservationType::NOT_SET};
-  bool m_reservationTypeHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_subnetCidrReservationIdHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_cidrHasBeenSet = false;
+  bool m_reservationTypeHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

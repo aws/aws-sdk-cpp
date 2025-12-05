@@ -86,12 +86,12 @@ class DescribeLaunchTemplateVersionsResponse {
   ///@}
  private:
   Aws::Vector<LaunchTemplateVersion> m_launchTemplateVersions;
-  bool m_launchTemplateVersionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_launchTemplateVersionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

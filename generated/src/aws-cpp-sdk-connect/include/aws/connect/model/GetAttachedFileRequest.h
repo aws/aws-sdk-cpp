@@ -113,15 +113,15 @@ class GetAttachedFileRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_fileId;
-  bool m_fileIdHasBeenSet = false;
 
   int m_urlExpiryInSeconds{0};
-  bool m_urlExpiryInSecondsHasBeenSet = false;
 
   Aws::String m_associatedResourceArn;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_fileIdHasBeenSet = false;
+  bool m_urlExpiryInSecondsHasBeenSet = false;
   bool m_associatedResourceArnHasBeenSet = false;
 };
 

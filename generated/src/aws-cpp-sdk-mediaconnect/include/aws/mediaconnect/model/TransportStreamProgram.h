@@ -128,18 +128,18 @@ class TransportStreamProgram {
   ///@}
  private:
   int m_pcrPid{0};
-  bool m_pcrPidHasBeenSet = false;
 
   Aws::String m_programName;
-  bool m_programNameHasBeenSet = false;
 
   int m_programNumber{0};
-  bool m_programNumberHasBeenSet = false;
 
   int m_programPid{0};
-  bool m_programPidHasBeenSet = false;
 
   Aws::Vector<TransportStream> m_streams;
+  bool m_pcrPidHasBeenSet = false;
+  bool m_programNameHasBeenSet = false;
+  bool m_programNumberHasBeenSet = false;
+  bool m_programPidHasBeenSet = false;
   bool m_streamsHasBeenSet = false;
 };
 

@@ -381,57 +381,57 @@ class RouteSummary {
   ///@}
  private:
   bool m_appendSourcePath{false};
-  bool m_appendSourcePathHasBeenSet = false;
 
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_createdByAccountId;
-  bool m_createdByAccountIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   ErrorResponse m_error;
-  bool m_errorHasBeenSet = false;
 
   bool m_includeChildPaths{false};
-  bool m_includeChildPathsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::Vector<HttpMethod> m_methods;
-  bool m_methodsHasBeenSet = false;
 
   Aws::String m_ownerAccountId;
-  bool m_ownerAccountIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_pathResourceToId;
-  bool m_pathResourceToIdHasBeenSet = false;
 
   Aws::String m_routeId;
-  bool m_routeIdHasBeenSet = false;
 
   RouteType m_routeType{RouteType::NOT_SET};
-  bool m_routeTypeHasBeenSet = false;
 
   Aws::String m_serviceId;
-  bool m_serviceIdHasBeenSet = false;
 
   Aws::String m_sourcePath;
-  bool m_sourcePathHasBeenSet = false;
 
   RouteState m_state{RouteState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_appendSourcePathHasBeenSet = false;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_createdByAccountIdHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
+  bool m_includeChildPathsHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_methodsHasBeenSet = false;
+  bool m_ownerAccountIdHasBeenSet = false;
+  bool m_pathResourceToIdHasBeenSet = false;
+  bool m_routeIdHasBeenSet = false;
+  bool m_routeTypeHasBeenSet = false;
+  bool m_serviceIdHasBeenSet = false;
+  bool m_sourcePathHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

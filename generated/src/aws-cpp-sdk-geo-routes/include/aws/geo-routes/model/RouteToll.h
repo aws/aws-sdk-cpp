@@ -126,15 +126,15 @@ class RouteToll {
   ///@}
  private:
   Aws::String m_country;
-  bool m_countryHasBeenSet = false;
 
   Aws::Vector<RouteTollPaymentSite> m_paymentSites;
-  bool m_paymentSitesHasBeenSet = false;
 
   Aws::Vector<RouteTollRate> m_rates;
-  bool m_ratesHasBeenSet = false;
 
   Aws::Vector<int> m_systems;
+  bool m_countryHasBeenSet = false;
+  bool m_paymentSitesHasBeenSet = false;
+  bool m_ratesHasBeenSet = false;
   bool m_systemsHasBeenSet = false;
 };
 

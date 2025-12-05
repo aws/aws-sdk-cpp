@@ -104,15 +104,15 @@ class ExecuteQueryRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   Aws::String m_queryStatement;
-  bool m_queryStatementHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_queryStatementHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

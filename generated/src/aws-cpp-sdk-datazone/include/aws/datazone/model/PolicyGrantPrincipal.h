@@ -107,15 +107,15 @@ class PolicyGrantPrincipal {
   ///@}
  private:
   DomainUnitPolicyGrantPrincipal m_domainUnit;
-  bool m_domainUnitHasBeenSet = false;
 
   GroupPolicyGrantPrincipal m_group;
-  bool m_groupHasBeenSet = false;
 
   ProjectPolicyGrantPrincipal m_project;
-  bool m_projectHasBeenSet = false;
 
   UserPolicyGrantPrincipal m_user;
+  bool m_domainUnitHasBeenSet = false;
+  bool m_groupHasBeenSet = false;
+  bool m_projectHasBeenSet = false;
   bool m_userHasBeenSet = false;
 };
 

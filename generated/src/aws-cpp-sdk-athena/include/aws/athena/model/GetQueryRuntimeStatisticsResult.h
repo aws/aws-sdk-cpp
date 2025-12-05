@@ -60,9 +60,9 @@ class GetQueryRuntimeStatisticsResult {
   ///@}
  private:
   QueryRuntimeStatistics m_queryRuntimeStatistics;
-  bool m_queryRuntimeStatisticsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_queryRuntimeStatisticsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

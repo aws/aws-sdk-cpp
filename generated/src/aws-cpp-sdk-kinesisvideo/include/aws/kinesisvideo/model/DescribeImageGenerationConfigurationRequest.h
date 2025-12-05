@@ -69,9 +69,9 @@ class DescribeImageGenerationConfigurationRequest : public KinesisVideoRequest {
   ///@}
  private:
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   Aws::String m_streamARN;
+  bool m_streamNameHasBeenSet = false;
   bool m_streamARNHasBeenSet = false;
 };
 

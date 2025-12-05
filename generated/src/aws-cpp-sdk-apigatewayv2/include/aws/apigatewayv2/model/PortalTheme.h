@@ -69,9 +69,9 @@ class PortalTheme {
   ///@}
  private:
   CustomColors m_customColors;
-  bool m_customColorsHasBeenSet = false;
 
   Aws::Utils::DateTime m_logoLastUploaded{};
+  bool m_customColorsHasBeenSet = false;
   bool m_logoLastUploadedHasBeenSet = false;
 };
 

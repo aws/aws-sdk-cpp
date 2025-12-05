@@ -133,18 +133,18 @@ class DescribeServerlessCacheSnapshotsRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_serverlessCacheName;
-  bool m_serverlessCacheNameHasBeenSet = false;
 
   Aws::String m_serverlessCacheSnapshotName;
-  bool m_serverlessCacheSnapshotNameHasBeenSet = false;
 
   Aws::String m_snapshotType;
-  bool m_snapshotTypeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_serverlessCacheNameHasBeenSet = false;
+  bool m_serverlessCacheSnapshotNameHasBeenSet = false;
+  bool m_snapshotTypeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

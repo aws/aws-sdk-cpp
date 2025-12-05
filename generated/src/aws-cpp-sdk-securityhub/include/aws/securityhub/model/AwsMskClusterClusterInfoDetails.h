@@ -143,21 +143,21 @@ class AwsMskClusterClusterInfoDetails {
   ///@}
  private:
   AwsMskClusterClusterInfoEncryptionInfoDetails m_encryptionInfo;
-  bool m_encryptionInfoHasBeenSet = false;
 
   Aws::String m_currentVersion;
-  bool m_currentVersionHasBeenSet = false;
 
   int m_numberOfBrokerNodes{0};
-  bool m_numberOfBrokerNodesHasBeenSet = false;
 
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   AwsMskClusterClusterInfoClientAuthenticationDetails m_clientAuthentication;
-  bool m_clientAuthenticationHasBeenSet = false;
 
   Aws::String m_enhancedMonitoring;
+  bool m_encryptionInfoHasBeenSet = false;
+  bool m_currentVersionHasBeenSet = false;
+  bool m_numberOfBrokerNodesHasBeenSet = false;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_clientAuthenticationHasBeenSet = false;
   bool m_enhancedMonitoringHasBeenSet = false;
 };
 

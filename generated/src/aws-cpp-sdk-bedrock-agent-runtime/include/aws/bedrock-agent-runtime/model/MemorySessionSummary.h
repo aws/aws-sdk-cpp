@@ -123,18 +123,18 @@ class MemorySessionSummary {
   ///@}
  private:
   Aws::String m_memoryId;
-  bool m_memoryIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_sessionExpiryTime{};
-  bool m_sessionExpiryTimeHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_sessionStartTime{};
-  bool m_sessionStartTimeHasBeenSet = false;
 
   Aws::String m_summaryText;
+  bool m_memoryIdHasBeenSet = false;
+  bool m_sessionExpiryTimeHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_sessionStartTimeHasBeenSet = false;
   bool m_summaryTextHasBeenSet = false;
 };
 

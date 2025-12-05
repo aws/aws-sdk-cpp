@@ -99,15 +99,15 @@ class DescribeMultiRegionClustersRequest : public MemoryDBRequest {
   ///@}
  private:
   Aws::String m_multiRegionClusterName;
-  bool m_multiRegionClusterNameHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   bool m_showClusterDetails{false};
+  bool m_multiRegionClusterNameHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_showClusterDetailsHasBeenSet = false;
 };
 

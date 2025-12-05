@@ -85,12 +85,12 @@ class AssociatePhoneNumberContactFlowRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_phoneNumberId;
-  bool m_phoneNumberIdHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_contactFlowId;
+  bool m_phoneNumberIdHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
   bool m_contactFlowIdHasBeenSet = false;
 };
 

@@ -197,30 +197,30 @@ class EC2ResourceDetails {
   ///@}
  private:
   Aws::String m_hourlyOnDemandRate;
-  bool m_hourlyOnDemandRateHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_platform;
-  bool m_platformHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_sku;
-  bool m_skuHasBeenSet = false;
 
   Aws::String m_memory;
-  bool m_memoryHasBeenSet = false;
 
   Aws::String m_networkPerformance;
-  bool m_networkPerformanceHasBeenSet = false;
 
   Aws::String m_storage;
-  bool m_storageHasBeenSet = false;
 
   Aws::String m_vcpu;
+  bool m_hourlyOnDemandRateHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_skuHasBeenSet = false;
+  bool m_memoryHasBeenSet = false;
+  bool m_networkPerformanceHasBeenSet = false;
+  bool m_storageHasBeenSet = false;
   bool m_vcpuHasBeenSet = false;
 };
 

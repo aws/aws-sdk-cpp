@@ -107,15 +107,15 @@ class NumericalDimensionField {
   ///@}
  private:
   Aws::String m_fieldId;
-  bool m_fieldIdHasBeenSet = false;
 
   ColumnIdentifier m_column;
-  bool m_columnHasBeenSet = false;
 
   Aws::String m_hierarchyId;
-  bool m_hierarchyIdHasBeenSet = false;
 
   NumberFormatConfiguration m_formatConfiguration;
+  bool m_fieldIdHasBeenSet = false;
+  bool m_columnHasBeenSet = false;
+  bool m_hierarchyIdHasBeenSet = false;
   bool m_formatConfigurationHasBeenSet = false;
 };
 

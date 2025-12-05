@@ -63,9 +63,9 @@ class UpdateConfiguredAudienceModelAssociationResult {
   ///@}
  private:
   ConfiguredAudienceModelAssociation m_configuredAudienceModelAssociation;
-  bool m_configuredAudienceModelAssociationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_configuredAudienceModelAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -112,15 +112,15 @@ class UntagResourceRequest : public ComputeOptimizerAutomationRequest {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   long long m_ruleRevision{0};
-  bool m_ruleRevisionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagKeys;
-  bool m_tagKeysHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_resourceArnHasBeenSet = false;
+  bool m_ruleRevisionHasBeenSet = false;
+  bool m_tagKeysHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

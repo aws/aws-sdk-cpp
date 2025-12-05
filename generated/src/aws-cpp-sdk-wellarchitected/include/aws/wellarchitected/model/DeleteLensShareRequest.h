@@ -83,12 +83,12 @@ class DeleteLensShareRequest : public WellArchitectedRequest {
   ///@}
  private:
   Aws::String m_shareId;
-  bool m_shareIdHasBeenSet = false;
 
   Aws::String m_lensAlias;
-  bool m_lensAliasHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_shareIdHasBeenSet = false;
+  bool m_lensAliasHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
 };
 

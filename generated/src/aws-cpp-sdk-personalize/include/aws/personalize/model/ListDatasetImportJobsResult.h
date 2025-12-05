@@ -84,12 +84,12 @@ class ListDatasetImportJobsResult {
   ///@}
  private:
   Aws::Vector<DatasetImportJobSummary> m_datasetImportJobs;
-  bool m_datasetImportJobsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_datasetImportJobsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -83,12 +83,12 @@ class ListLocalDisksResult {
   ///@}
  private:
   Aws::String m_gatewayARN;
-  bool m_gatewayARNHasBeenSet = false;
 
   Aws::Vector<Disk> m_disks;
-  bool m_disksHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_gatewayARNHasBeenSet = false;
+  bool m_disksHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

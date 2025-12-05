@@ -79,12 +79,12 @@ class DescribeChannelResult {
   ///@}
  private:
   Channel m_channel;
-  bool m_channelHasBeenSet = false;
 
   ChannelStatistics m_statistics;
-  bool m_statisticsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelHasBeenSet = false;
+  bool m_statisticsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

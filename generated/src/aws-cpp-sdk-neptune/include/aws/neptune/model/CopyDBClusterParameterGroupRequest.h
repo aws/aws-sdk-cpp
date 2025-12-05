@@ -129,15 +129,15 @@ class CopyDBClusterParameterGroupRequest : public NeptuneRequest {
   ///@}
  private:
   Aws::String m_sourceDBClusterParameterGroupIdentifier;
-  bool m_sourceDBClusterParameterGroupIdentifierHasBeenSet = false;
 
   Aws::String m_targetDBClusterParameterGroupIdentifier;
-  bool m_targetDBClusterParameterGroupIdentifierHasBeenSet = false;
 
   Aws::String m_targetDBClusterParameterGroupDescription;
-  bool m_targetDBClusterParameterGroupDescriptionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_sourceDBClusterParameterGroupIdentifierHasBeenSet = false;
+  bool m_targetDBClusterParameterGroupIdentifierHasBeenSet = false;
+  bool m_targetDBClusterParameterGroupDescriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

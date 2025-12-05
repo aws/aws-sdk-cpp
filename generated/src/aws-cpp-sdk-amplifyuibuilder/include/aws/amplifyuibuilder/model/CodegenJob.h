@@ -298,45 +298,45 @@ class CodegenJob {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_appId;
-  bool m_appIdHasBeenSet = false;
 
   Aws::String m_environmentName;
-  bool m_environmentNameHasBeenSet = false;
 
   CodegenJobRenderConfig m_renderConfig;
-  bool m_renderConfigHasBeenSet = false;
 
   CodegenJobGenericDataSchema m_genericDataSchema;
-  bool m_genericDataSchemaHasBeenSet = false;
 
   bool m_autoGenerateForms{false};
-  bool m_autoGenerateFormsHasBeenSet = false;
 
   CodegenFeatureFlags m_features;
-  bool m_featuresHasBeenSet = false;
 
   CodegenJobStatus m_status{CodegenJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   CodegenJobAsset m_asset;
-  bool m_assetHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
-  bool m_modifiedAtHasBeenSet = false;
 
   Aws::Vector<CodegenDependency> m_dependencies;
+  bool m_idHasBeenSet = false;
+  bool m_appIdHasBeenSet = false;
+  bool m_environmentNameHasBeenSet = false;
+  bool m_renderConfigHasBeenSet = false;
+  bool m_genericDataSchemaHasBeenSet = false;
+  bool m_autoGenerateFormsHasBeenSet = false;
+  bool m_featuresHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_assetHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
   bool m_dependenciesHasBeenSet = false;
 };
 

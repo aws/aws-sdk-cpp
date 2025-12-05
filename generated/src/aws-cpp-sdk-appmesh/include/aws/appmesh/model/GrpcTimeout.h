@@ -74,9 +74,9 @@ class GrpcTimeout {
   ///@}
  private:
   Duration m_idle;
-  bool m_idleHasBeenSet = false;
 
   Duration m_perRequest;
+  bool m_idleHasBeenSet = false;
   bool m_perRequestHasBeenSet = false;
 };
 

@@ -167,21 +167,21 @@ class WriteApplicationSettingsRequest {
   ///@}
  private:
   CampaignHook m_campaignHook;
-  bool m_campaignHookHasBeenSet = false;
 
   bool m_cloudWatchMetricsEnabled{false};
-  bool m_cloudWatchMetricsEnabledHasBeenSet = false;
 
   bool m_eventTaggingEnabled{false};
-  bool m_eventTaggingEnabledHasBeenSet = false;
 
   CampaignLimits m_limits;
-  bool m_limitsHasBeenSet = false;
 
   QuietTime m_quietTime;
-  bool m_quietTimeHasBeenSet = false;
 
   ApplicationSettingsJourneyLimits m_journeyLimits;
+  bool m_campaignHookHasBeenSet = false;
+  bool m_cloudWatchMetricsEnabledHasBeenSet = false;
+  bool m_eventTaggingEnabledHasBeenSet = false;
+  bool m_limitsHasBeenSet = false;
+  bool m_quietTimeHasBeenSet = false;
   bool m_journeyLimitsHasBeenSet = false;
 };
 

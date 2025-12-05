@@ -185,30 +185,30 @@ class GetTrafficPolicyResult {
   ///@}
  private:
   Aws::String m_trafficPolicyName;
-  bool m_trafficPolicyNameHasBeenSet = false;
 
   Aws::String m_trafficPolicyId;
-  bool m_trafficPolicyIdHasBeenSet = false;
 
   Aws::String m_trafficPolicyArn;
-  bool m_trafficPolicyArnHasBeenSet = false;
 
   Aws::Vector<PolicyStatement> m_policyStatements;
-  bool m_policyStatementsHasBeenSet = false;
 
   int m_maxMessageSizeBytes{0};
-  bool m_maxMessageSizeBytesHasBeenSet = false;
 
   AcceptAction m_defaultAction{AcceptAction::NOT_SET};
-  bool m_defaultActionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTimestamp{};
-  bool m_lastUpdatedTimestampHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trafficPolicyNameHasBeenSet = false;
+  bool m_trafficPolicyIdHasBeenSet = false;
+  bool m_trafficPolicyArnHasBeenSet = false;
+  bool m_policyStatementsHasBeenSet = false;
+  bool m_maxMessageSizeBytesHasBeenSet = false;
+  bool m_defaultActionHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_lastUpdatedTimestampHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

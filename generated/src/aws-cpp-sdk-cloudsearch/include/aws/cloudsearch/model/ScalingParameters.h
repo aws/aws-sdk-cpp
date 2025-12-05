@@ -85,12 +85,12 @@ class ScalingParameters {
   ///@}
  private:
   PartitionInstanceType m_desiredInstanceType{PartitionInstanceType::NOT_SET};
-  bool m_desiredInstanceTypeHasBeenSet = false;
 
   int m_desiredReplicationCount{0};
-  bool m_desiredReplicationCountHasBeenSet = false;
 
   int m_desiredPartitionCount{0};
+  bool m_desiredInstanceTypeHasBeenSet = false;
+  bool m_desiredReplicationCountHasBeenSet = false;
   bool m_desiredPartitionCountHasBeenSet = false;
 };
 

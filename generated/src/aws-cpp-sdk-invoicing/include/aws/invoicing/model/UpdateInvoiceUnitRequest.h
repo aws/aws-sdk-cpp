@@ -105,15 +105,15 @@ class UpdateInvoiceUnitRequest : public InvoicingRequest {
   ///@}
  private:
   Aws::String m_invoiceUnitArn;
-  bool m_invoiceUnitArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_taxInheritanceDisabled{false};
-  bool m_taxInheritanceDisabledHasBeenSet = false;
 
   InvoiceUnitRule m_rule;
+  bool m_invoiceUnitArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_taxInheritanceDisabledHasBeenSet = false;
   bool m_ruleHasBeenSet = false;
 };
 

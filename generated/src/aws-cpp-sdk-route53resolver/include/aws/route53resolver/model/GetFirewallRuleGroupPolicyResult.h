@@ -62,9 +62,9 @@ class GetFirewallRuleGroupPolicyResult {
   ///@}
  private:
   Aws::String m_firewallRuleGroupPolicy;
-  bool m_firewallRuleGroupPolicyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_firewallRuleGroupPolicyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

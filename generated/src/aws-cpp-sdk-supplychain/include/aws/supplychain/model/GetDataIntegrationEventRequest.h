@@ -69,9 +69,9 @@ class GetDataIntegrationEventRequest : public SupplyChainRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_eventId;
+  bool m_instanceIdHasBeenSet = false;
   bool m_eventIdHasBeenSet = false;
 };
 

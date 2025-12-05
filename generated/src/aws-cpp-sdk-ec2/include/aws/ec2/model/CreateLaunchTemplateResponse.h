@@ -80,12 +80,12 @@ class CreateLaunchTemplateResponse {
   ///@}
  private:
   LaunchTemplate m_launchTemplate;
-  bool m_launchTemplateHasBeenSet = false;
 
   ValidationWarning m_warning;
-  bool m_warningHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_launchTemplateHasBeenSet = false;
+  bool m_warningHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

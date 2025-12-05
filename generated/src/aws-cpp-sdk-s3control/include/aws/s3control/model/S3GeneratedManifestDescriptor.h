@@ -67,9 +67,9 @@ class S3GeneratedManifestDescriptor {
   ///@}
  private:
   GeneratedManifestFormat m_format{GeneratedManifestFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   JobManifestLocation m_location;
+  bool m_formatHasBeenSet = false;
   bool m_locationHasBeenSet = false;
 };
 

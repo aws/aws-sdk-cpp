@@ -65,9 +65,9 @@ class GetCollaborationPrivacyBudgetTemplateRequest : public CleanRoomsRequest {
   ///@}
  private:
   Aws::String m_collaborationIdentifier;
-  bool m_collaborationIdentifierHasBeenSet = false;
 
   Aws::String m_privacyBudgetTemplateIdentifier;
+  bool m_collaborationIdentifierHasBeenSet = false;
   bool m_privacyBudgetTemplateIdentifierHasBeenSet = false;
 };
 

@@ -82,12 +82,12 @@ class ValidateSecurityProfileBehaviorsResult {
   ///@}
  private:
   bool m_valid{false};
-  bool m_validHasBeenSet = false;
 
   Aws::Vector<ValidationError> m_validationErrors;
-  bool m_validationErrorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_validHasBeenSet = false;
+  bool m_validationErrorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

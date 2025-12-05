@@ -86,12 +86,12 @@ class GetIntentsResult {
   ///@}
  private:
   Aws::Vector<IntentMetadata> m_intents;
-  bool m_intentsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_intentsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

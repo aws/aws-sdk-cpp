@@ -78,12 +78,12 @@ class UpdateCostCategoryDefinitionResult {
   ///@}
  private:
   Aws::String m_costCategoryArn;
-  bool m_costCategoryArnHasBeenSet = false;
 
   Aws::String m_effectiveStart;
-  bool m_effectiveStartHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_costCategoryArnHasBeenSet = false;
+  bool m_effectiveStartHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

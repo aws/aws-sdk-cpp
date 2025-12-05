@@ -103,15 +103,15 @@ class Invite {
   ///@}
  private:
   Aws::String m_inviteId;
-  bool m_inviteIdHasBeenSet = false;
 
   InviteStatus m_status{InviteStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_emailAddress;
-  bool m_emailAddressHasBeenSet = false;
 
   EmailStatus m_emailStatus{EmailStatus::NOT_SET};
+  bool m_inviteIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_emailAddressHasBeenSet = false;
   bool m_emailStatusHasBeenSet = false;
 };
 

@@ -58,9 +58,9 @@ class AssociateSecurityGroupVpcResponse {
   ///@}
  private:
   SecurityGroupVpcAssociationState m_state{SecurityGroupVpcAssociationState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_stateHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -240,30 +240,30 @@ class Event {
   ///@}
  private:
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   Aws::String m_eventType;
-  bool m_eventTypeHasBeenSet = false;
 
   double m_eventValue{0.0};
-  bool m_eventValueHasBeenSet = false;
 
   Aws::String m_itemId;
-  bool m_itemIdHasBeenSet = false;
 
   Aws::String m_properties;
-  bool m_propertiesHasBeenSet = false;
 
   Aws::Utils::DateTime m_sentAt{};
-  bool m_sentAtHasBeenSet = false;
 
   Aws::String m_recommendationId;
-  bool m_recommendationIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_impression;
-  bool m_impressionHasBeenSet = false;
 
   MetricAttribution m_metricAttribution;
+  bool m_eventIdHasBeenSet = false;
+  bool m_eventTypeHasBeenSet = false;
+  bool m_eventValueHasBeenSet = false;
+  bool m_itemIdHasBeenSet = false;
+  bool m_propertiesHasBeenSet = false;
+  bool m_sentAtHasBeenSet = false;
+  bool m_recommendationIdHasBeenSet = false;
+  bool m_impressionHasBeenSet = false;
   bool m_metricAttributionHasBeenSet = false;
 };
 

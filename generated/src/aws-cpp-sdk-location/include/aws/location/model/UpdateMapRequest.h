@@ -85,12 +85,12 @@ class UpdateMapRequest : public LocationServiceRequest {
   ///@}
  private:
   Aws::String m_mapName;
-  bool m_mapNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   MapConfigurationUpdate m_configurationUpdate;
+  bool m_mapNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_configurationUpdateHasBeenSet = false;
 };
 

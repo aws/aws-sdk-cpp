@@ -58,9 +58,9 @@ class ListJourneysResult {
   ///@}
  private:
   JourneysResponse m_journeysResponse;
-  bool m_journeysResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_journeysResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

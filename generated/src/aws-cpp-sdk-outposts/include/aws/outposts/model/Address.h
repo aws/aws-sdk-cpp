@@ -230,36 +230,36 @@ class Address {
   ///@}
  private:
   Aws::String m_contactName;
-  bool m_contactNameHasBeenSet = false;
 
   Aws::String m_contactPhoneNumber;
-  bool m_contactPhoneNumberHasBeenSet = false;
 
   Aws::String m_addressLine1;
-  bool m_addressLine1HasBeenSet = false;
 
   Aws::String m_addressLine2;
-  bool m_addressLine2HasBeenSet = false;
 
   Aws::String m_addressLine3;
-  bool m_addressLine3HasBeenSet = false;
 
   Aws::String m_city;
-  bool m_cityHasBeenSet = false;
 
   Aws::String m_stateOrRegion;
-  bool m_stateOrRegionHasBeenSet = false;
 
   Aws::String m_districtOrCounty;
-  bool m_districtOrCountyHasBeenSet = false;
 
   Aws::String m_postalCode;
-  bool m_postalCodeHasBeenSet = false;
 
   Aws::String m_countryCode;
-  bool m_countryCodeHasBeenSet = false;
 
   Aws::String m_municipality;
+  bool m_contactNameHasBeenSet = false;
+  bool m_contactPhoneNumberHasBeenSet = false;
+  bool m_addressLine1HasBeenSet = false;
+  bool m_addressLine2HasBeenSet = false;
+  bool m_addressLine3HasBeenSet = false;
+  bool m_cityHasBeenSet = false;
+  bool m_stateOrRegionHasBeenSet = false;
+  bool m_districtOrCountyHasBeenSet = false;
+  bool m_postalCodeHasBeenSet = false;
+  bool m_countryCodeHasBeenSet = false;
   bool m_municipalityHasBeenSet = false;
 };
 

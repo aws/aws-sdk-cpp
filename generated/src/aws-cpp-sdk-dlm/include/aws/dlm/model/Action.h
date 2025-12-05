@@ -77,9 +77,9 @@ class Action {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<CrossRegionCopyAction> m_crossRegionCopy;
+  bool m_nameHasBeenSet = false;
   bool m_crossRegionCopyHasBeenSet = false;
 };
 

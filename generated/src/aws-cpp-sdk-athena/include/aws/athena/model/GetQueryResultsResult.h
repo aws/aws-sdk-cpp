@@ -96,15 +96,15 @@ class GetQueryResultsResult {
   ///@}
  private:
   long long m_updateCount{0};
-  bool m_updateCountHasBeenSet = false;
 
   ResultSet m_resultSet;
-  bool m_resultSetHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_updateCountHasBeenSet = false;
+  bool m_resultSetHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

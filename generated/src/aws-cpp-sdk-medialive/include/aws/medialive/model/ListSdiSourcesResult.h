@@ -85,12 +85,12 @@ class ListSdiSourcesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<SdiSourceSummary> m_sdiSources;
-  bool m_sdiSourcesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_sdiSourcesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

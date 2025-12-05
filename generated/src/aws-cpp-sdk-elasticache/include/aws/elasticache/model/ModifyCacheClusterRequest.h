@@ -611,72 +611,72 @@ class ModifyCacheClusterRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_cacheClusterId;
-  bool m_cacheClusterIdHasBeenSet = false;
 
   int m_numCacheNodes{0};
-  bool m_numCacheNodesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_cacheNodeIdsToRemove;
-  bool m_cacheNodeIdsToRemoveHasBeenSet = false;
 
   AZMode m_aZMode{AZMode::NOT_SET};
-  bool m_aZModeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_newAvailabilityZones;
-  bool m_newAvailabilityZonesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_cacheSecurityGroupNames;
-  bool m_cacheSecurityGroupNamesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::String m_preferredMaintenanceWindow;
-  bool m_preferredMaintenanceWindowHasBeenSet = false;
 
   Aws::String m_notificationTopicArn;
-  bool m_notificationTopicArnHasBeenSet = false;
 
   Aws::String m_cacheParameterGroupName;
-  bool m_cacheParameterGroupNameHasBeenSet = false;
 
   Aws::String m_notificationTopicStatus;
-  bool m_notificationTopicStatusHasBeenSet = false;
 
   bool m_applyImmediately{false};
-  bool m_applyImmediatelyHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   bool m_autoMinorVersionUpgrade{false};
-  bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
   int m_snapshotRetentionLimit{0};
-  bool m_snapshotRetentionLimitHasBeenSet = false;
 
   Aws::String m_snapshotWindow;
-  bool m_snapshotWindowHasBeenSet = false;
 
   Aws::String m_cacheNodeType;
-  bool m_cacheNodeTypeHasBeenSet = false;
 
   Aws::String m_authToken;
-  bool m_authTokenHasBeenSet = false;
 
   AuthTokenUpdateStrategyType m_authTokenUpdateStrategy{AuthTokenUpdateStrategyType::NOT_SET};
-  bool m_authTokenUpdateStrategyHasBeenSet = false;
 
   Aws::Vector<LogDeliveryConfigurationRequest> m_logDeliveryConfigurations;
-  bool m_logDeliveryConfigurationsHasBeenSet = false;
 
   IpDiscovery m_ipDiscovery{IpDiscovery::NOT_SET};
-  bool m_ipDiscoveryHasBeenSet = false;
 
   ScaleConfig m_scaleConfig;
+  bool m_cacheClusterIdHasBeenSet = false;
+  bool m_numCacheNodesHasBeenSet = false;
+  bool m_cacheNodeIdsToRemoveHasBeenSet = false;
+  bool m_aZModeHasBeenSet = false;
+  bool m_newAvailabilityZonesHasBeenSet = false;
+  bool m_cacheSecurityGroupNamesHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_preferredMaintenanceWindowHasBeenSet = false;
+  bool m_notificationTopicArnHasBeenSet = false;
+  bool m_cacheParameterGroupNameHasBeenSet = false;
+  bool m_notificationTopicStatusHasBeenSet = false;
+  bool m_applyImmediatelyHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_autoMinorVersionUpgradeHasBeenSet = false;
+  bool m_snapshotRetentionLimitHasBeenSet = false;
+  bool m_snapshotWindowHasBeenSet = false;
+  bool m_cacheNodeTypeHasBeenSet = false;
+  bool m_authTokenHasBeenSet = false;
+  bool m_authTokenUpdateStrategyHasBeenSet = false;
+  bool m_logDeliveryConfigurationsHasBeenSet = false;
+  bool m_ipDiscoveryHasBeenSet = false;
   bool m_scaleConfigHasBeenSet = false;
 };
 

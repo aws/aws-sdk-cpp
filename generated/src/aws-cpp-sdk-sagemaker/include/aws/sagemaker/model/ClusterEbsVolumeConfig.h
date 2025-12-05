@@ -105,12 +105,12 @@ class ClusterEbsVolumeConfig {
   ///@}
  private:
   int m_volumeSizeInGB{0};
-  bool m_volumeSizeInGBHasBeenSet = false;
 
   Aws::String m_volumeKmsKeyId;
-  bool m_volumeKmsKeyIdHasBeenSet = false;
 
   bool m_rootVolume{false};
+  bool m_volumeSizeInGBHasBeenSet = false;
+  bool m_volumeKmsKeyIdHasBeenSet = false;
   bool m_rootVolumeHasBeenSet = false;
 };
 

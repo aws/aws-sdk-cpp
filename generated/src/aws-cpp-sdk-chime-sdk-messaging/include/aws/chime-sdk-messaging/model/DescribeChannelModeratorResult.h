@@ -61,9 +61,9 @@ class DescribeChannelModeratorResult {
   ///@}
  private:
   ChannelModerator m_channelModerator;
-  bool m_channelModeratorHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelModeratorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

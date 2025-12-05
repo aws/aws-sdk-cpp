@@ -112,15 +112,15 @@ class DescribeReplicationTaskAssessmentResultsResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_bucketName;
-  bool m_bucketNameHasBeenSet = false;
 
   Aws::Vector<ReplicationTaskAssessmentResult> m_replicationTaskAssessmentResults;
-  bool m_replicationTaskAssessmentResultsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_markerHasBeenSet = false;
+  bool m_bucketNameHasBeenSet = false;
+  bool m_replicationTaskAssessmentResultsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

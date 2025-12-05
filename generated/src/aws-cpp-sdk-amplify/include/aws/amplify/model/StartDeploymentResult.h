@@ -66,9 +66,9 @@ class StartDeploymentResult {
   ///@}
  private:
   JobSummary m_jobSummary;
-  bool m_jobSummaryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobSummaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

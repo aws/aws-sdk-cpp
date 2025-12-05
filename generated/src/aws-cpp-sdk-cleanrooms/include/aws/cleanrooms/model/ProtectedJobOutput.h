@@ -78,9 +78,9 @@ class ProtectedJobOutput {
   ///@}
  private:
   ProtectedJobS3Output m_s3;
-  bool m_s3HasBeenSet = false;
 
   Aws::Vector<ProtectedJobSingleMemberOutput> m_memberList;
+  bool m_s3HasBeenSet = false;
   bool m_memberListHasBeenSet = false;
 };
 

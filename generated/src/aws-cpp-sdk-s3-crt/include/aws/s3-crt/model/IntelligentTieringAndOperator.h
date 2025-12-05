@@ -80,9 +80,9 @@ class IntelligentTieringAndOperator {
   ///@}
  private:
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_prefixHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

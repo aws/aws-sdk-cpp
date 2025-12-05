@@ -223,30 +223,30 @@ class Action {
   ///@}
  private:
   ActionTypeEnum m_type{ActionTypeEnum::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_targetGroupArn;
-  bool m_targetGroupArnHasBeenSet = false;
 
   AuthenticateOidcActionConfig m_authenticateOidcConfig;
-  bool m_authenticateOidcConfigHasBeenSet = false;
 
   AuthenticateCognitoActionConfig m_authenticateCognitoConfig;
-  bool m_authenticateCognitoConfigHasBeenSet = false;
 
   int m_order{0};
-  bool m_orderHasBeenSet = false;
 
   RedirectActionConfig m_redirectConfig;
-  bool m_redirectConfigHasBeenSet = false;
 
   FixedResponseActionConfig m_fixedResponseConfig;
-  bool m_fixedResponseConfigHasBeenSet = false;
 
   ForwardActionConfig m_forwardConfig;
-  bool m_forwardConfigHasBeenSet = false;
 
   JwtValidationActionConfig m_jwtValidationConfig;
+  bool m_typeHasBeenSet = false;
+  bool m_targetGroupArnHasBeenSet = false;
+  bool m_authenticateOidcConfigHasBeenSet = false;
+  bool m_authenticateCognitoConfigHasBeenSet = false;
+  bool m_orderHasBeenSet = false;
+  bool m_redirectConfigHasBeenSet = false;
+  bool m_fixedResponseConfigHasBeenSet = false;
+  bool m_forwardConfigHasBeenSet = false;
   bool m_jwtValidationConfigHasBeenSet = false;
 };
 

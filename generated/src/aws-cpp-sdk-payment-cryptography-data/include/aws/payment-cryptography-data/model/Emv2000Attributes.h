@@ -107,15 +107,15 @@ class Emv2000Attributes {
   ///@}
  private:
   MajorKeyDerivationMode m_majorKeyDerivationMode{MajorKeyDerivationMode::NOT_SET};
-  bool m_majorKeyDerivationModeHasBeenSet = false;
 
   Aws::String m_primaryAccountNumber;
-  bool m_primaryAccountNumberHasBeenSet = false;
 
   Aws::String m_panSequenceNumber;
-  bool m_panSequenceNumberHasBeenSet = false;
 
   Aws::String m_applicationTransactionCounter;
+  bool m_majorKeyDerivationModeHasBeenSet = false;
+  bool m_primaryAccountNumberHasBeenSet = false;
+  bool m_panSequenceNumberHasBeenSet = false;
   bool m_applicationTransactionCounterHasBeenSet = false;
 };
 

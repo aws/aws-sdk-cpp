@@ -68,9 +68,9 @@ class ViewerMtlsConfig {
   ///@}
  private:
   ViewerMtlsMode m_mode{ViewerMtlsMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   TrustStoreConfig m_trustStoreConfig;
+  bool m_modeHasBeenSet = false;
   bool m_trustStoreConfigHasBeenSet = false;
 };
 

@@ -151,18 +151,18 @@ class ListBucketsRequest : public S3Request {
   ///@}
  private:
   int m_maxBuckets{0};
-  bool m_maxBucketsHasBeenSet = false;
 
   Aws::String m_continuationToken;
-  bool m_continuationTokenHasBeenSet = false;
 
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   Aws::String m_bucketRegion;
-  bool m_bucketRegionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
+  bool m_maxBucketsHasBeenSet = false;
+  bool m_continuationTokenHasBeenSet = false;
+  bool m_prefixHasBeenSet = false;
+  bool m_bucketRegionHasBeenSet = false;
   bool m_customizedAccessLogTagHasBeenSet = false;
 };
 

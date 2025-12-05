@@ -175,27 +175,27 @@ class ContactFlowModuleAliasInfo {
   ///@}
  private:
   Aws::String m_contactFlowModuleId;
-  bool m_contactFlowModuleIdHasBeenSet = false;
 
   Aws::String m_contactFlowModuleArn;
-  bool m_contactFlowModuleArnHasBeenSet = false;
 
   Aws::String m_aliasId;
-  bool m_aliasIdHasBeenSet = false;
 
   long long m_version{0};
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_lastModifiedRegion;
-  bool m_lastModifiedRegionHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
+  bool m_contactFlowModuleIdHasBeenSet = false;
+  bool m_contactFlowModuleArnHasBeenSet = false;
+  bool m_aliasIdHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_lastModifiedRegionHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
 };
 

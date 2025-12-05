@@ -70,9 +70,9 @@ class FlowAliasConcurrencyConfiguration {
   ///@}
  private:
   ConcurrencyType m_type{ConcurrencyType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   int m_maxConcurrency{0};
+  bool m_typeHasBeenSet = false;
   bool m_maxConcurrencyHasBeenSet = false;
 };
 

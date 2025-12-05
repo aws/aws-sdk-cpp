@@ -273,39 +273,39 @@ class VoiceTemplateResponse {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_body;
-  bool m_bodyHasBeenSet = false;
 
   Aws::String m_creationDate;
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_defaultSubstitutions;
-  bool m_defaultSubstitutionsHasBeenSet = false;
 
   Aws::String m_languageCode;
-  bool m_languageCodeHasBeenSet = false;
 
   Aws::String m_lastModifiedDate;
-  bool m_lastModifiedDateHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_templateDescription;
-  bool m_templateDescriptionHasBeenSet = false;
 
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   TemplateType m_templateType{TemplateType::NOT_SET};
-  bool m_templateTypeHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_voiceId;
+  bool m_arnHasBeenSet = false;
+  bool m_bodyHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_defaultSubstitutionsHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_templateDescriptionHasBeenSet = false;
+  bool m_templateNameHasBeenSet = false;
+  bool m_templateTypeHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
   bool m_voiceIdHasBeenSet = false;
 };
 

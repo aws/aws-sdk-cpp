@@ -239,36 +239,36 @@ class NotificationOutput {
   ///@}
  private:
   Aws::String m_actionLink;
-  bool m_actionLinkHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimestamp{};
-  bool m_creationTimestampHasBeenSet = false;
 
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTimestamp{};
-  bool m_lastUpdatedTimestampHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   TaskStatus m_status{TaskStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Topic m_topic;
-  bool m_topicHasBeenSet = false;
 
   NotificationType m_type{NotificationType::NOT_SET};
+  bool m_actionLinkHasBeenSet = false;
+  bool m_creationTimestampHasBeenSet = false;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
+  bool m_lastUpdatedTimestampHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_topicHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

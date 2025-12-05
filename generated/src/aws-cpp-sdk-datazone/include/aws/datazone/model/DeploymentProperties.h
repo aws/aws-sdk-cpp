@@ -62,9 +62,9 @@ class DeploymentProperties {
   ///@}
  private:
   int m_endTimeoutMinutes{0};
-  bool m_endTimeoutMinutesHasBeenSet = false;
 
   int m_startTimeoutMinutes{0};
+  bool m_endTimeoutMinutesHasBeenSet = false;
   bool m_startTimeoutMinutesHasBeenSet = false;
 };
 

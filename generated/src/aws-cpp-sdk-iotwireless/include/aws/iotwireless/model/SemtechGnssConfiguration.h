@@ -66,9 +66,9 @@ class SemtechGnssConfiguration {
   ///@}
  private:
   PositionConfigurationStatus m_status{PositionConfigurationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   PositionConfigurationFec m_fec{PositionConfigurationFec::NOT_SET};
+  bool m_statusHasBeenSet = false;
   bool m_fecHasBeenSet = false;
 };
 

@@ -481,72 +481,72 @@ class InstancePatchState {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_patchGroup;
-  bool m_patchGroupHasBeenSet = false;
 
   Aws::String m_baselineId;
-  bool m_baselineIdHasBeenSet = false;
 
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   Aws::String m_installOverrideList;
-  bool m_installOverrideListHasBeenSet = false;
 
   Aws::String m_ownerInformation;
-  bool m_ownerInformationHasBeenSet = false;
 
   int m_installedCount{0};
-  bool m_installedCountHasBeenSet = false;
 
   int m_installedOtherCount{0};
-  bool m_installedOtherCountHasBeenSet = false;
 
   int m_installedPendingRebootCount{0};
-  bool m_installedPendingRebootCountHasBeenSet = false;
 
   int m_installedRejectedCount{0};
-  bool m_installedRejectedCountHasBeenSet = false;
 
   int m_missingCount{0};
-  bool m_missingCountHasBeenSet = false;
 
   int m_failedCount{0};
-  bool m_failedCountHasBeenSet = false;
 
   int m_unreportedNotApplicableCount{0};
-  bool m_unreportedNotApplicableCountHasBeenSet = false;
 
   int m_notApplicableCount{0};
-  bool m_notApplicableCountHasBeenSet = false;
 
   int m_availableSecurityUpdateCount{0};
-  bool m_availableSecurityUpdateCountHasBeenSet = false;
 
   Aws::Utils::DateTime m_operationStartTime{};
-  bool m_operationStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_operationEndTime{};
-  bool m_operationEndTimeHasBeenSet = false;
 
   PatchOperationType m_operation{PatchOperationType::NOT_SET};
-  bool m_operationHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastNoRebootInstallOperationTime{};
-  bool m_lastNoRebootInstallOperationTimeHasBeenSet = false;
 
   RebootOption m_rebootOption{RebootOption::NOT_SET};
-  bool m_rebootOptionHasBeenSet = false;
 
   int m_criticalNonCompliantCount{0};
-  bool m_criticalNonCompliantCountHasBeenSet = false;
 
   int m_securityNonCompliantCount{0};
-  bool m_securityNonCompliantCountHasBeenSet = false;
 
   int m_otherNonCompliantCount{0};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_patchGroupHasBeenSet = false;
+  bool m_baselineIdHasBeenSet = false;
+  bool m_snapshotIdHasBeenSet = false;
+  bool m_installOverrideListHasBeenSet = false;
+  bool m_ownerInformationHasBeenSet = false;
+  bool m_installedCountHasBeenSet = false;
+  bool m_installedOtherCountHasBeenSet = false;
+  bool m_installedPendingRebootCountHasBeenSet = false;
+  bool m_installedRejectedCountHasBeenSet = false;
+  bool m_missingCountHasBeenSet = false;
+  bool m_failedCountHasBeenSet = false;
+  bool m_unreportedNotApplicableCountHasBeenSet = false;
+  bool m_notApplicableCountHasBeenSet = false;
+  bool m_availableSecurityUpdateCountHasBeenSet = false;
+  bool m_operationStartTimeHasBeenSet = false;
+  bool m_operationEndTimeHasBeenSet = false;
+  bool m_operationHasBeenSet = false;
+  bool m_lastNoRebootInstallOperationTimeHasBeenSet = false;
+  bool m_rebootOptionHasBeenSet = false;
+  bool m_criticalNonCompliantCountHasBeenSet = false;
+  bool m_securityNonCompliantCountHasBeenSet = false;
   bool m_otherNonCompliantCountHasBeenSet = false;
 };
 

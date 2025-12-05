@@ -82,12 +82,12 @@ class ListOrdersResult {
   ///@}
  private:
   Aws::Vector<OrderSummary> m_orders;
-  bool m_ordersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ordersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

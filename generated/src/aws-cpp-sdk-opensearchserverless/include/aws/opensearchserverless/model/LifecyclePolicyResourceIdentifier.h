@@ -68,9 +68,9 @@ class LifecyclePolicyResourceIdentifier {
   ///@}
  private:
   LifecyclePolicyType m_type{LifecyclePolicyType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_resource;
+  bool m_typeHasBeenSet = false;
   bool m_resourceHasBeenSet = false;
 };
 

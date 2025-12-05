@@ -104,15 +104,15 @@ class ExecutionAttempt {
   ///@}
  private:
   ExecutionStatus m_status{ExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_columnStatisticsTaskRunId;
-  bool m_columnStatisticsTaskRunIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_executionTimestamp{};
-  bool m_executionTimestampHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_statusHasBeenSet = false;
+  bool m_columnStatisticsTaskRunIdHasBeenSet = false;
+  bool m_executionTimestampHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

@@ -174,24 +174,24 @@ class DescribeApplicationsRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_applicationIds;
-  bool m_applicationIdsHasBeenSet = false;
 
   Aws::Vector<Compute> m_computeTypeNames;
-  bool m_computeTypeNamesHasBeenSet = false;
 
   WorkSpaceApplicationLicenseType m_licenseType{WorkSpaceApplicationLicenseType::NOT_SET};
-  bool m_licenseTypeHasBeenSet = false;
 
   Aws::Vector<OperatingSystemName> m_operatingSystemNames;
-  bool m_operatingSystemNamesHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_applicationIdsHasBeenSet = false;
+  bool m_computeTypeNamesHasBeenSet = false;
+  bool m_licenseTypeHasBeenSet = false;
+  bool m_operatingSystemNamesHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

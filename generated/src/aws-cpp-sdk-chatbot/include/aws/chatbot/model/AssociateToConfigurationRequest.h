@@ -65,9 +65,9 @@ class AssociateToConfigurationRequest : public ChatbotRequest {
   ///@}
  private:
   Aws::String m_resource;
-  bool m_resourceHasBeenSet = false;
 
   Aws::String m_chatConfiguration;
+  bool m_resourceHasBeenSet = false;
   bool m_chatConfigurationHasBeenSet = false;
 };
 

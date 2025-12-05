@@ -85,9 +85,9 @@ class ListTagsRequest : public CloudTrailRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_resourceIdList;
-  bool m_resourceIdListHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_resourceIdListHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

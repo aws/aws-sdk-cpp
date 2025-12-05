@@ -108,15 +108,15 @@ class RemoveResourcePermissionRequest : public WorkDocsRequest {
   ///@}
  private:
   Aws::String m_authenticationToken;
-  bool m_authenticationTokenHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_principalId;
-  bool m_principalIdHasBeenSet = false;
 
   PrincipalType m_principalType{PrincipalType::NOT_SET};
+  bool m_authenticationTokenHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_principalIdHasBeenSet = false;
   bool m_principalTypeHasBeenSet = false;
 };
 

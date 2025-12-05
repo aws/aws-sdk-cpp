@@ -89,12 +89,12 @@ class ApplicationState {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   ApplicationStatus m_applicationStatus{ApplicationStatus::NOT_SET};
-  bool m_applicationStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
+  bool m_applicationIdHasBeenSet = false;
+  bool m_applicationStatusHasBeenSet = false;
   bool m_lastUpdatedTimeHasBeenSet = false;
 };
 

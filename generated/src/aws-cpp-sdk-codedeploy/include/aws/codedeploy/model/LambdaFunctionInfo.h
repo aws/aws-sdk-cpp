@@ -125,18 +125,18 @@ class LambdaFunctionInfo {
   ///@}
  private:
   Aws::String m_functionName;
-  bool m_functionNameHasBeenSet = false;
 
   Aws::String m_functionAlias;
-  bool m_functionAliasHasBeenSet = false;
 
   Aws::String m_currentVersion;
-  bool m_currentVersionHasBeenSet = false;
 
   Aws::String m_targetVersion;
-  bool m_targetVersionHasBeenSet = false;
 
   double m_targetVersionWeight{0.0};
+  bool m_functionNameHasBeenSet = false;
+  bool m_functionAliasHasBeenSet = false;
+  bool m_currentVersionHasBeenSet = false;
+  bool m_targetVersionHasBeenSet = false;
   bool m_targetVersionWeightHasBeenSet = false;
 };
 

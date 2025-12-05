@@ -462,72 +462,72 @@ class ProcurementPortalPreference {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_procurementPortalPreferenceArn;
-  bool m_procurementPortalPreferenceArnHasBeenSet = false;
 
   ProcurementPortalName m_procurementPortalName{ProcurementPortalName::NOT_SET};
-  bool m_procurementPortalNameHasBeenSet = false;
 
   BuyerDomain m_buyerDomain{BuyerDomain::NOT_SET};
-  bool m_buyerDomainHasBeenSet = false;
 
   Aws::String m_buyerIdentifier;
-  bool m_buyerIdentifierHasBeenSet = false;
 
   SupplierDomain m_supplierDomain{SupplierDomain::NOT_SET};
-  bool m_supplierDomainHasBeenSet = false;
 
   Aws::String m_supplierIdentifier;
-  bool m_supplierIdentifierHasBeenSet = false;
 
   ProcurementPortalPreferenceSelector m_selector;
-  bool m_selectorHasBeenSet = false;
 
   Aws::String m_procurementPortalSharedSecret;
-  bool m_procurementPortalSharedSecretHasBeenSet = false;
 
   Aws::String m_procurementPortalInstanceEndpoint;
-  bool m_procurementPortalInstanceEndpointHasBeenSet = false;
 
   Aws::String m_purchaseOrderRetrievalEndpoint;
-  bool m_purchaseOrderRetrievalEndpointHasBeenSet = false;
 
   TestEnvPreference m_testEnvPreference;
-  bool m_testEnvPreferenceHasBeenSet = false;
 
   bool m_einvoiceDeliveryEnabled{false};
-  bool m_einvoiceDeliveryEnabledHasBeenSet = false;
 
   EinvoiceDeliveryPreference m_einvoiceDeliveryPreference;
-  bool m_einvoiceDeliveryPreferenceHasBeenSet = false;
 
   bool m_purchaseOrderRetrievalEnabled{false};
-  bool m_purchaseOrderRetrievalEnabledHasBeenSet = false;
 
   Aws::Vector<Contact> m_contacts;
-  bool m_contactsHasBeenSet = false;
 
   ProcurementPortalPreferenceStatus m_einvoiceDeliveryPreferenceStatus{ProcurementPortalPreferenceStatus::NOT_SET};
-  bool m_einvoiceDeliveryPreferenceStatusHasBeenSet = false;
 
   Aws::String m_einvoiceDeliveryPreferenceStatusReason;
-  bool m_einvoiceDeliveryPreferenceStatusReasonHasBeenSet = false;
 
   ProcurementPortalPreferenceStatus m_purchaseOrderRetrievalPreferenceStatus{ProcurementPortalPreferenceStatus::NOT_SET};
-  bool m_purchaseOrderRetrievalPreferenceStatusHasBeenSet = false;
 
   Aws::String m_purchaseOrderRetrievalPreferenceStatusReason;
-  bool m_purchaseOrderRetrievalPreferenceStatusReasonHasBeenSet = false;
 
   long long m_version{0};
-  bool m_versionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createDate{};
-  bool m_createDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateDate{};
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_procurementPortalPreferenceArnHasBeenSet = false;
+  bool m_procurementPortalNameHasBeenSet = false;
+  bool m_buyerDomainHasBeenSet = false;
+  bool m_buyerIdentifierHasBeenSet = false;
+  bool m_supplierDomainHasBeenSet = false;
+  bool m_supplierIdentifierHasBeenSet = false;
+  bool m_selectorHasBeenSet = false;
+  bool m_procurementPortalSharedSecretHasBeenSet = false;
+  bool m_procurementPortalInstanceEndpointHasBeenSet = false;
+  bool m_purchaseOrderRetrievalEndpointHasBeenSet = false;
+  bool m_testEnvPreferenceHasBeenSet = false;
+  bool m_einvoiceDeliveryEnabledHasBeenSet = false;
+  bool m_einvoiceDeliveryPreferenceHasBeenSet = false;
+  bool m_purchaseOrderRetrievalEnabledHasBeenSet = false;
+  bool m_contactsHasBeenSet = false;
+  bool m_einvoiceDeliveryPreferenceStatusHasBeenSet = false;
+  bool m_einvoiceDeliveryPreferenceStatusReasonHasBeenSet = false;
+  bool m_purchaseOrderRetrievalPreferenceStatusHasBeenSet = false;
+  bool m_purchaseOrderRetrievalPreferenceStatusReasonHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_createDateHasBeenSet = false;
   bool m_lastUpdateDateHasBeenSet = false;
 };
 

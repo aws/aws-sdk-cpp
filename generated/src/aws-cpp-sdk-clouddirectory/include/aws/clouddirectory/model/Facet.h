@@ -92,12 +92,12 @@ class Facet {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ObjectType m_objectType{ObjectType::NOT_SET};
-  bool m_objectTypeHasBeenSet = false;
 
   FacetStyle m_facetStyle{FacetStyle::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_objectTypeHasBeenSet = false;
   bool m_facetStyleHasBeenSet = false;
 };
 

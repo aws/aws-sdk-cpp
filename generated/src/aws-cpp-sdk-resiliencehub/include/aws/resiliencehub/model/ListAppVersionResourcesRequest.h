@@ -125,18 +125,18 @@ class ListAppVersionResourcesRequest : public ResilienceHubRequest {
   ///@}
  private:
   Aws::String m_appArn;
-  bool m_appArnHasBeenSet = false;
 
   Aws::String m_appVersion;
-  bool m_appVersionHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_resolutionId;
+  bool m_appArnHasBeenSet = false;
+  bool m_appVersionHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_resolutionIdHasBeenSet = false;
 };
 

@@ -151,21 +151,21 @@ class NodeRepairConfig {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   int m_maxUnhealthyNodeThresholdCount{0};
-  bool m_maxUnhealthyNodeThresholdCountHasBeenSet = false;
 
   int m_maxUnhealthyNodeThresholdPercentage{0};
-  bool m_maxUnhealthyNodeThresholdPercentageHasBeenSet = false;
 
   int m_maxParallelNodesRepairedCount{0};
-  bool m_maxParallelNodesRepairedCountHasBeenSet = false;
 
   int m_maxParallelNodesRepairedPercentage{0};
-  bool m_maxParallelNodesRepairedPercentageHasBeenSet = false;
 
   Aws::Vector<NodeRepairConfigOverrides> m_nodeRepairConfigOverrides;
+  bool m_enabledHasBeenSet = false;
+  bool m_maxUnhealthyNodeThresholdCountHasBeenSet = false;
+  bool m_maxUnhealthyNodeThresholdPercentageHasBeenSet = false;
+  bool m_maxParallelNodesRepairedCountHasBeenSet = false;
+  bool m_maxParallelNodesRepairedPercentageHasBeenSet = false;
   bool m_nodeRepairConfigOverridesHasBeenSet = false;
 };
 

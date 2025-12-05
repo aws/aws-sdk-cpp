@@ -75,9 +75,9 @@ class BatchGetServiceLevelObjectiveBudgetReportRequest : public ApplicationSigna
   ///@}
  private:
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sloIds;
+  bool m_timestampHasBeenSet = false;
   bool m_sloIdsHasBeenSet = false;
 };
 

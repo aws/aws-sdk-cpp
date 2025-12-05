@@ -270,39 +270,39 @@ class AutoScalingConfiguration {
   ///@}
  private:
   Aws::String m_autoScalingConfigurationArn;
-  bool m_autoScalingConfigurationArnHasBeenSet = false;
 
   Aws::String m_autoScalingConfigurationName;
-  bool m_autoScalingConfigurationNameHasBeenSet = false;
 
   int m_autoScalingConfigurationRevision{0};
-  bool m_autoScalingConfigurationRevisionHasBeenSet = false;
 
   bool m_latest{false};
-  bool m_latestHasBeenSet = false;
 
   AutoScalingConfigurationStatus m_status{AutoScalingConfigurationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   int m_maxConcurrency{0};
-  bool m_maxConcurrencyHasBeenSet = false;
 
   int m_minSize{0};
-  bool m_minSizeHasBeenSet = false;
 
   int m_maxSize{0};
-  bool m_maxSizeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_deletedAt{};
-  bool m_deletedAtHasBeenSet = false;
 
   bool m_hasAssociatedService{false};
-  bool m_hasAssociatedServiceHasBeenSet = false;
 
   bool m_isDefault{false};
+  bool m_autoScalingConfigurationArnHasBeenSet = false;
+  bool m_autoScalingConfigurationNameHasBeenSet = false;
+  bool m_autoScalingConfigurationRevisionHasBeenSet = false;
+  bool m_latestHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_maxConcurrencyHasBeenSet = false;
+  bool m_minSizeHasBeenSet = false;
+  bool m_maxSizeHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_deletedAtHasBeenSet = false;
+  bool m_hasAssociatedServiceHasBeenSet = false;
   bool m_isDefaultHasBeenSet = false;
 };
 

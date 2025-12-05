@@ -166,24 +166,24 @@ class IcebergStructField {
   ///@}
  private:
   int m_id{0};
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::Document m_type;
-  bool m_typeHasBeenSet = false;
 
   bool m_required{false};
-  bool m_requiredHasBeenSet = false;
 
   Aws::String m_doc;
-  bool m_docHasBeenSet = false;
 
   Aws::Utils::Document m_initialDefault;
-  bool m_initialDefaultHasBeenSet = false;
 
   Aws::Utils::Document m_writeDefault;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_requiredHasBeenSet = false;
+  bool m_docHasBeenSet = false;
+  bool m_initialDefaultHasBeenSet = false;
   bool m_writeDefaultHasBeenSet = false;
 };
 

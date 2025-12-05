@@ -476,72 +476,72 @@ class Image {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_baseImageArn;
-  bool m_baseImageArnHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   ImageState m_state{ImageState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   VisibilityType m_visibility{VisibilityType::NOT_SET};
-  bool m_visibilityHasBeenSet = false;
 
   bool m_imageBuilderSupported{false};
-  bool m_imageBuilderSupportedHasBeenSet = false;
 
   Aws::String m_imageBuilderName;
-  bool m_imageBuilderNameHasBeenSet = false;
 
   PlatformType m_platform{PlatformType::NOT_SET};
-  bool m_platformHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ImageStateChangeReason m_stateChangeReason;
-  bool m_stateChangeReasonHasBeenSet = false;
 
   Aws::Vector<Application> m_applications;
-  bool m_applicationsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_publicBaseImageReleasedDate{};
-  bool m_publicBaseImageReleasedDateHasBeenSet = false;
 
   Aws::String m_appstreamAgentVersion;
-  bool m_appstreamAgentVersionHasBeenSet = false;
 
   ImagePermissions m_imagePermissions;
-  bool m_imagePermissionsHasBeenSet = false;
 
   Aws::Vector<ResourceError> m_imageErrors;
-  bool m_imageErrorsHasBeenSet = false;
 
   LatestAppstreamAgentVersion m_latestAppstreamAgentVersion{LatestAppstreamAgentVersion::NOT_SET};
-  bool m_latestAppstreamAgentVersionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supportedInstanceFamilies;
-  bool m_supportedInstanceFamiliesHasBeenSet = false;
 
   DynamicAppProvidersEnabled m_dynamicAppProvidersEnabled{DynamicAppProvidersEnabled::NOT_SET};
-  bool m_dynamicAppProvidersEnabledHasBeenSet = false;
 
   ImageSharedWithOthers m_imageSharedWithOthers{ImageSharedWithOthers::NOT_SET};
-  bool m_imageSharedWithOthersHasBeenSet = false;
 
   bool m_managedSoftwareIncluded{false};
-  bool m_managedSoftwareIncludedHasBeenSet = false;
 
   ImageType m_imageType{ImageType::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_baseImageArnHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_visibilityHasBeenSet = false;
+  bool m_imageBuilderSupportedHasBeenSet = false;
+  bool m_imageBuilderNameHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_stateChangeReasonHasBeenSet = false;
+  bool m_applicationsHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_publicBaseImageReleasedDateHasBeenSet = false;
+  bool m_appstreamAgentVersionHasBeenSet = false;
+  bool m_imagePermissionsHasBeenSet = false;
+  bool m_imageErrorsHasBeenSet = false;
+  bool m_latestAppstreamAgentVersionHasBeenSet = false;
+  bool m_supportedInstanceFamiliesHasBeenSet = false;
+  bool m_dynamicAppProvidersEnabledHasBeenSet = false;
+  bool m_imageSharedWithOthersHasBeenSet = false;
+  bool m_managedSoftwareIncludedHasBeenSet = false;
   bool m_imageTypeHasBeenSet = false;
 };
 

@@ -61,9 +61,9 @@ class DeleteTransitGatewayMeteringPolicyResponse {
   ///@}
  private:
   TransitGatewayMeteringPolicy m_transitGatewayMeteringPolicy;
-  bool m_transitGatewayMeteringPolicyHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_transitGatewayMeteringPolicyHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

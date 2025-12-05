@@ -302,39 +302,39 @@ class ConfluenceConfiguration {
   ///@}
  private:
   Aws::String m_serverUrl;
-  bool m_serverUrlHasBeenSet = false;
 
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   ConfluenceVersion m_version{ConfluenceVersion::NOT_SET};
-  bool m_versionHasBeenSet = false;
 
   ConfluenceSpaceConfiguration m_spaceConfiguration;
-  bool m_spaceConfigurationHasBeenSet = false;
 
   ConfluencePageConfiguration m_pageConfiguration;
-  bool m_pageConfigurationHasBeenSet = false;
 
   ConfluenceBlogConfiguration m_blogConfiguration;
-  bool m_blogConfigurationHasBeenSet = false;
 
   ConfluenceAttachmentConfiguration m_attachmentConfiguration;
-  bool m_attachmentConfigurationHasBeenSet = false;
 
   DataSourceVpcConfiguration m_vpcConfiguration;
-  bool m_vpcConfigurationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inclusionPatterns;
-  bool m_inclusionPatternsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_exclusionPatterns;
-  bool m_exclusionPatternsHasBeenSet = false;
 
   ProxyConfiguration m_proxyConfiguration;
-  bool m_proxyConfigurationHasBeenSet = false;
 
   ConfluenceAuthenticationType m_authenticationType{ConfluenceAuthenticationType::NOT_SET};
+  bool m_serverUrlHasBeenSet = false;
+  bool m_secretArnHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_spaceConfigurationHasBeenSet = false;
+  bool m_pageConfigurationHasBeenSet = false;
+  bool m_blogConfigurationHasBeenSet = false;
+  bool m_attachmentConfigurationHasBeenSet = false;
+  bool m_vpcConfigurationHasBeenSet = false;
+  bool m_inclusionPatternsHasBeenSet = false;
+  bool m_exclusionPatternsHasBeenSet = false;
+  bool m_proxyConfigurationHasBeenSet = false;
   bool m_authenticationTypeHasBeenSet = false;
 };
 

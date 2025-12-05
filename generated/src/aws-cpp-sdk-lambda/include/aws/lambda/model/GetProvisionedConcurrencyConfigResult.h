@@ -142,24 +142,24 @@ class GetProvisionedConcurrencyConfigResult {
   ///@}
  private:
   int m_requestedProvisionedConcurrentExecutions{0};
-  bool m_requestedProvisionedConcurrentExecutionsHasBeenSet = false;
 
   int m_availableProvisionedConcurrentExecutions{0};
-  bool m_availableProvisionedConcurrentExecutionsHasBeenSet = false;
 
   int m_allocatedProvisionedConcurrentExecutions{0};
-  bool m_allocatedProvisionedConcurrentExecutionsHasBeenSet = false;
 
   ProvisionedConcurrencyStatusEnum m_status{ProvisionedConcurrencyStatusEnum::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::String m_lastModified;
-  bool m_lastModifiedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_requestedProvisionedConcurrentExecutionsHasBeenSet = false;
+  bool m_availableProvisionedConcurrentExecutionsHasBeenSet = false;
+  bool m_allocatedProvisionedConcurrentExecutionsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_lastModifiedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

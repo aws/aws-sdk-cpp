@@ -85,12 +85,12 @@ class GetMetricStatisticsResult {
   ///@}
  private:
   Aws::String m_label;
-  bool m_labelHasBeenSet = false;
 
   Aws::Vector<Datapoint> m_datapoints;
-  bool m_datapointsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_labelHasBeenSet = false;
+  bool m_datapointsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

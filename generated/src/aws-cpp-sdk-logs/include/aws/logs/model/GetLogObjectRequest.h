@@ -101,12 +101,13 @@ class GetLogObjectRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   bool m_unmask{false};
-  bool m_unmaskHasBeenSet = false;
 
   Aws::String m_logObjectPointer;
-  bool m_logObjectPointerHasBeenSet = false;
   GetLogObjectHandler m_handler;
   Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
+
+  bool m_unmaskHasBeenSet = false;
+  bool m_logObjectPointerHasBeenSet = false;
 };
 
 }  // namespace Model

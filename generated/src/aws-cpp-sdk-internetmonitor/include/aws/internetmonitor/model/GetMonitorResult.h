@@ -296,45 +296,45 @@ class GetMonitorResult {
   ///@}
  private:
   Aws::String m_monitorName;
-  bool m_monitorNameHasBeenSet = false;
 
   Aws::String m_monitorArn;
-  bool m_monitorArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   MonitorConfigState m_status{MonitorConfigState::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
-  bool m_modifiedAtHasBeenSet = false;
 
   MonitorProcessingStatusCode m_processingStatus{MonitorProcessingStatusCode::NOT_SET};
-  bool m_processingStatusHasBeenSet = false;
 
   Aws::String m_processingStatusInfo;
-  bool m_processingStatusInfoHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   int m_maxCityNetworksToMonitor{0};
-  bool m_maxCityNetworksToMonitorHasBeenSet = false;
 
   InternetMeasurementsLogDelivery m_internetMeasurementsLogDelivery;
-  bool m_internetMeasurementsLogDeliveryHasBeenSet = false;
 
   int m_trafficPercentageToMonitor{0};
-  bool m_trafficPercentageToMonitorHasBeenSet = false;
 
   HealthEventsConfig m_healthEventsConfig;
-  bool m_healthEventsConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_monitorNameHasBeenSet = false;
+  bool m_monitorArnHasBeenSet = false;
+  bool m_resourcesHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
+  bool m_processingStatusHasBeenSet = false;
+  bool m_processingStatusInfoHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_maxCityNetworksToMonitorHasBeenSet = false;
+  bool m_internetMeasurementsLogDeliveryHasBeenSet = false;
+  bool m_trafficPercentageToMonitorHasBeenSet = false;
+  bool m_healthEventsConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

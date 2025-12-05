@@ -379,60 +379,60 @@ class DescribeFeatureGroupResult {
   ///@}
  private:
   Aws::String m_featureGroupArn;
-  bool m_featureGroupArnHasBeenSet = false;
 
   Aws::String m_featureGroupName;
-  bool m_featureGroupNameHasBeenSet = false;
 
   Aws::String m_recordIdentifierFeatureName;
-  bool m_recordIdentifierFeatureNameHasBeenSet = false;
 
   Aws::String m_eventTimeFeatureName;
-  bool m_eventTimeFeatureNameHasBeenSet = false;
 
   Aws::Vector<FeatureDefinition> m_featureDefinitions;
-  bool m_featureDefinitionsHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   OnlineStoreConfig m_onlineStoreConfig;
-  bool m_onlineStoreConfigHasBeenSet = false;
 
   OfflineStoreConfig m_offlineStoreConfig;
-  bool m_offlineStoreConfigHasBeenSet = false;
 
   ThroughputConfigDescription m_throughputConfig;
-  bool m_throughputConfigHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   FeatureGroupStatus m_featureGroupStatus{FeatureGroupStatus::NOT_SET};
-  bool m_featureGroupStatusHasBeenSet = false;
 
   OfflineStoreStatus m_offlineStoreStatus;
-  bool m_offlineStoreStatusHasBeenSet = false;
 
   LastUpdateStatus m_lastUpdateStatus;
-  bool m_lastUpdateStatusHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   long long m_onlineStoreTotalSizeBytes{0};
-  bool m_onlineStoreTotalSizeBytesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_featureGroupArnHasBeenSet = false;
+  bool m_featureGroupNameHasBeenSet = false;
+  bool m_recordIdentifierFeatureNameHasBeenSet = false;
+  bool m_eventTimeFeatureNameHasBeenSet = false;
+  bool m_featureDefinitionsHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_onlineStoreConfigHasBeenSet = false;
+  bool m_offlineStoreConfigHasBeenSet = false;
+  bool m_throughputConfigHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_featureGroupStatusHasBeenSet = false;
+  bool m_offlineStoreStatusHasBeenSet = false;
+  bool m_lastUpdateStatusHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_onlineStoreTotalSizeBytesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

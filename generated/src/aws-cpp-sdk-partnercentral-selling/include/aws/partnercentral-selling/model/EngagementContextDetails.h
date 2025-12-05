@@ -92,12 +92,12 @@ class EngagementContextDetails {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   EngagementContextType m_type{EngagementContextType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   EngagementContextPayload m_payload;
+  bool m_idHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_payloadHasBeenSet = false;
 };
 

@@ -61,9 +61,9 @@ class GetVoiceConnectorOriginationResult {
   ///@}
  private:
   Origination m_origination;
-  bool m_originationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_originationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

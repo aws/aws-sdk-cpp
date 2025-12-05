@@ -106,15 +106,15 @@ class ConversionTarget {
   ///@}
  private:
   ConversionTargetFormat m_fileFormat{ConversionTargetFormat::NOT_SET};
-  bool m_fileFormatHasBeenSet = false;
 
   ConversionTargetFormatDetails m_formatDetails;
-  bool m_formatDetailsHasBeenSet = false;
 
   OutputSampleFileSource m_outputSampleFile;
-  bool m_outputSampleFileHasBeenSet = false;
 
   AdvancedOptions m_advancedOptions;
+  bool m_fileFormatHasBeenSet = false;
+  bool m_formatDetailsHasBeenSet = false;
+  bool m_outputSampleFileHasBeenSet = false;
   bool m_advancedOptionsHasBeenSet = false;
 };
 

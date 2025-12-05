@@ -72,9 +72,9 @@ class RuntimePlatform {
   ///@}
  private:
   CPUArchitecture m_cpuArchitecture{CPUArchitecture::NOT_SET};
-  bool m_cpuArchitectureHasBeenSet = false;
 
   OSFamily m_operatingSystemFamily{OSFamily::NOT_SET};
+  bool m_cpuArchitectureHasBeenSet = false;
   bool m_operatingSystemFamilyHasBeenSet = false;
 };
 

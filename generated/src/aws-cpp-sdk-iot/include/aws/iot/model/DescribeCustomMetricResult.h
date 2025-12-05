@@ -150,24 +150,24 @@ class DescribeCustomMetricResult {
   ///@}
  private:
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::String m_metricArn;
-  bool m_metricArnHasBeenSet = false;
 
   CustomMetricType m_metricType{CustomMetricType::NOT_SET};
-  bool m_metricTypeHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
-  bool m_lastModifiedDateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_metricNameHasBeenSet = false;
+  bool m_metricArnHasBeenSet = false;
+  bool m_metricTypeHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

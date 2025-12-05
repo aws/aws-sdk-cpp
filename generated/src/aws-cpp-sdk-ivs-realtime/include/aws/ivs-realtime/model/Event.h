@@ -223,27 +223,27 @@ class Event {
   ///@}
  private:
   EventName m_name{EventName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_participantId;
-  bool m_participantIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_eventTime{};
-  bool m_eventTimeHasBeenSet = false;
 
   Aws::String m_remoteParticipantId;
-  bool m_remoteParticipantIdHasBeenSet = false;
 
   EventErrorCode m_errorCode{EventErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_destinationStageArn;
-  bool m_destinationStageArnHasBeenSet = false;
 
   Aws::String m_destinationSessionId;
-  bool m_destinationSessionIdHasBeenSet = false;
 
   bool m_replica{false};
+  bool m_nameHasBeenSet = false;
+  bool m_participantIdHasBeenSet = false;
+  bool m_eventTimeHasBeenSet = false;
+  bool m_remoteParticipantIdHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
+  bool m_destinationStageArnHasBeenSet = false;
+  bool m_destinationSessionIdHasBeenSet = false;
   bool m_replicaHasBeenSet = false;
 };
 

@@ -76,9 +76,9 @@ class GetRemainingFreeTrialDaysRequest : public GuardDutyRequest {
   ///@}
  private:
   Aws::String m_detectorId;
-  bool m_detectorIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_accountIds;
+  bool m_detectorIdHasBeenSet = false;
   bool m_accountIdsHasBeenSet = false;
 };
 

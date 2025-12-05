@@ -108,15 +108,15 @@ class ConfigRuleComplianceFilters {
   ///@}
  private:
   Aws::String m_configRuleName;
-  bool m_configRuleNameHasBeenSet = false;
 
   ComplianceType m_complianceType{ComplianceType::NOT_SET};
-  bool m_complianceTypeHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_awsRegion;
+  bool m_configRuleNameHasBeenSet = false;
+  bool m_complianceTypeHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
   bool m_awsRegionHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class GetLaunchRequest : public CloudWatchEvidentlyRequest {
   ///@}
  private:
   Aws::String m_launch;
-  bool m_launchHasBeenSet = false;
 
   Aws::String m_project;
+  bool m_launchHasBeenSet = false;
   bool m_projectHasBeenSet = false;
 };
 

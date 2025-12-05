@@ -125,18 +125,18 @@ class RescoreExecutionPlanSummary {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   RescoreExecutionPlanStatus m_status{RescoreExecutionPlanStatus::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

@@ -77,12 +77,12 @@ class GetConsoleScreenshotResponse {
   ///@}
  private:
   Aws::String m_imageData;
-  bool m_imageDataHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_imageDataHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

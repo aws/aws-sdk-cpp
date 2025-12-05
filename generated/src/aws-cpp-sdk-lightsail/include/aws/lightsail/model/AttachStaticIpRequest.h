@@ -67,9 +67,9 @@ class AttachStaticIpRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_staticIpName;
-  bool m_staticIpNameHasBeenSet = false;
 
   Aws::String m_instanceName;
+  bool m_staticIpNameHasBeenSet = false;
   bool m_instanceNameHasBeenSet = false;
 };
 

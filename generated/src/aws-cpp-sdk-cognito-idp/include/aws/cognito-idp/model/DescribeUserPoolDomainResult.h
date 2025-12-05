@@ -61,9 +61,9 @@ class DescribeUserPoolDomainResult {
   ///@}
  private:
   DomainDescriptionType m_domainDescription;
-  bool m_domainDescriptionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainDescriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

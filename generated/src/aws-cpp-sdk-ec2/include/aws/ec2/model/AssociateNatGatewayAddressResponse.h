@@ -85,12 +85,12 @@ class AssociateNatGatewayAddressResponse {
   ///@}
  private:
   Aws::String m_natGatewayId;
-  bool m_natGatewayIdHasBeenSet = false;
 
   Aws::Vector<NatGatewayAddress> m_natGatewayAddresses;
-  bool m_natGatewayAddressesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_natGatewayIdHasBeenSet = false;
+  bool m_natGatewayAddressesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

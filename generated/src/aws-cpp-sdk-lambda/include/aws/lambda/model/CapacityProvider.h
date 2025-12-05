@@ -181,27 +181,27 @@ class CapacityProvider {
   ///@}
  private:
   Aws::String m_capacityProviderArn;
-  bool m_capacityProviderArnHasBeenSet = false;
 
   CapacityProviderState m_state{CapacityProviderState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   CapacityProviderVpcConfig m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   CapacityProviderPermissionsConfig m_permissionsConfig;
-  bool m_permissionsConfigHasBeenSet = false;
 
   InstanceRequirements m_instanceRequirements;
-  bool m_instanceRequirementsHasBeenSet = false;
 
   CapacityProviderScalingConfig m_capacityProviderScalingConfig;
-  bool m_capacityProviderScalingConfigHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   Aws::String m_lastModified;
+  bool m_capacityProviderArnHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
+  bool m_permissionsConfigHasBeenSet = false;
+  bool m_instanceRequirementsHasBeenSet = false;
+  bool m_capacityProviderScalingConfigHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
   bool m_lastModifiedHasBeenSet = false;
 };
 

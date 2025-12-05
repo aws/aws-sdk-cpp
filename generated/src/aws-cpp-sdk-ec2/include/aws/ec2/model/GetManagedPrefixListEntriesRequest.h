@@ -123,18 +123,18 @@ class GetManagedPrefixListEntriesRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_prefixListId;
-  bool m_prefixListIdHasBeenSet = false;
 
   long long m_targetVersion{0};
-  bool m_targetVersionHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_dryRunHasBeenSet = false;
+  bool m_prefixListIdHasBeenSet = false;
+  bool m_targetVersionHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

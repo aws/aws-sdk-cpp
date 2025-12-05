@@ -71,9 +71,9 @@ class PolylineCorridor {
   ///@}
  private:
   Aws::String m_polyline;
-  bool m_polylineHasBeenSet = false;
 
   int m_radius{0};
+  bool m_polylineHasBeenSet = false;
   bool m_radiusHasBeenSet = false;
 };
 

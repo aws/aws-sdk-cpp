@@ -93,12 +93,12 @@ class FlinkApplicationConfigurationUpdate {
   ///@}
  private:
   CheckpointConfigurationUpdate m_checkpointConfigurationUpdate;
-  bool m_checkpointConfigurationUpdateHasBeenSet = false;
 
   MonitoringConfigurationUpdate m_monitoringConfigurationUpdate;
-  bool m_monitoringConfigurationUpdateHasBeenSet = false;
 
   ParallelismConfigurationUpdate m_parallelismConfigurationUpdate;
+  bool m_checkpointConfigurationUpdateHasBeenSet = false;
+  bool m_monitoringConfigurationUpdateHasBeenSet = false;
   bool m_parallelismConfigurationUpdateHasBeenSet = false;
 };
 

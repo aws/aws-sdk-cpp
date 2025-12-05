@@ -101,15 +101,15 @@ class DataEncryptionMetadata {
   ///@}
  private:
   bool m_allowCleartext{false};
-  bool m_allowCleartextHasBeenSet = false;
 
   bool m_allowDuplicates{false};
-  bool m_allowDuplicatesHasBeenSet = false;
 
   bool m_allowJoinsOnColumnsWithDifferentNames{false};
-  bool m_allowJoinsOnColumnsWithDifferentNamesHasBeenSet = false;
 
   bool m_preserveNulls{false};
+  bool m_allowCleartextHasBeenSet = false;
+  bool m_allowDuplicatesHasBeenSet = false;
+  bool m_allowJoinsOnColumnsWithDifferentNamesHasBeenSet = false;
   bool m_preserveNullsHasBeenSet = false;
 };
 

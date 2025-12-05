@@ -71,9 +71,9 @@ class IdcAuthConfiguration {
   ///@}
  private:
   Aws::String m_idcApplicationArn;
-  bool m_idcApplicationArnHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_idcApplicationArnHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

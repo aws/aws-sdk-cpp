@@ -109,15 +109,15 @@ class AssignPrivateIpAddressesResponse {
   ///@}
  private:
   Aws::String m_networkInterfaceId;
-  bool m_networkInterfaceIdHasBeenSet = false;
 
   Aws::Vector<AssignedPrivateIpAddress> m_assignedPrivateIpAddresses;
-  bool m_assignedPrivateIpAddressesHasBeenSet = false;
 
   Aws::Vector<Ipv4PrefixSpecification> m_assignedIpv4Prefixes;
-  bool m_assignedIpv4PrefixesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_networkInterfaceIdHasBeenSet = false;
+  bool m_assignedPrivateIpAddressesHasBeenSet = false;
+  bool m_assignedIpv4PrefixesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

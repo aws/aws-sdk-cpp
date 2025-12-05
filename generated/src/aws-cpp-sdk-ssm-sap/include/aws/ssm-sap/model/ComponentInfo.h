@@ -89,12 +89,12 @@ class ComponentInfo {
   ///@}
  private:
   ComponentType m_componentType{ComponentType::NOT_SET};
-  bool m_componentTypeHasBeenSet = false;
 
   Aws::String m_sid;
-  bool m_sidHasBeenSet = false;
 
   Aws::String m_ec2InstanceId;
+  bool m_componentTypeHasBeenSet = false;
+  bool m_sidHasBeenSet = false;
   bool m_ec2InstanceIdHasBeenSet = false;
 };
 

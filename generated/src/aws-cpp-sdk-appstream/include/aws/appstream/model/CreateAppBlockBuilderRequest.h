@@ -251,33 +251,33 @@ class CreateAppBlockBuilderRequest : public AppStreamRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   AppBlockBuilderPlatformType m_platform{AppBlockBuilderPlatformType::NOT_SET};
-  bool m_platformHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   VpcConfig m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   bool m_enableDefaultInternetAccess{false};
-  bool m_enableDefaultInternetAccessHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   Aws::Vector<AccessEndpoint> m_accessEndpoints;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
+  bool m_enableDefaultInternetAccessHasBeenSet = false;
+  bool m_iamRoleArnHasBeenSet = false;
   bool m_accessEndpointsHasBeenSet = false;
 };
 

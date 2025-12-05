@@ -259,36 +259,36 @@ class PipelineExecutionSummary {
   ///@}
  private:
   Aws::String m_pipelineExecutionId;
-  bool m_pipelineExecutionIdHasBeenSet = false;
 
   PipelineExecutionStatus m_status{PipelineExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusSummary;
-  bool m_statusSummaryHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateTime{};
-  bool m_lastUpdateTimeHasBeenSet = false;
 
   Aws::Vector<SourceRevision> m_sourceRevisions;
-  bool m_sourceRevisionsHasBeenSet = false;
 
   ExecutionTrigger m_trigger;
-  bool m_triggerHasBeenSet = false;
 
   StopExecutionTrigger m_stopTrigger;
-  bool m_stopTriggerHasBeenSet = false;
 
   ExecutionMode m_executionMode{ExecutionMode::NOT_SET};
-  bool m_executionModeHasBeenSet = false;
 
   ExecutionType m_executionType{ExecutionType::NOT_SET};
-  bool m_executionTypeHasBeenSet = false;
 
   PipelineRollbackMetadata m_rollbackMetadata;
+  bool m_pipelineExecutionIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusSummaryHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_lastUpdateTimeHasBeenSet = false;
+  bool m_sourceRevisionsHasBeenSet = false;
+  bool m_triggerHasBeenSet = false;
+  bool m_stopTriggerHasBeenSet = false;
+  bool m_executionModeHasBeenSet = false;
+  bool m_executionTypeHasBeenSet = false;
   bool m_rollbackMetadataHasBeenSet = false;
 };
 

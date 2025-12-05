@@ -99,15 +99,15 @@ class CreateParticipantConnectionResult {
   ///@}
  private:
   Websocket m_websocket;
-  bool m_websocketHasBeenSet = false;
 
   ConnectionCredentials m_connectionCredentials;
-  bool m_connectionCredentialsHasBeenSet = false;
 
   WebRTCConnection m_webRTCConnection;
-  bool m_webRTCConnectionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_websocketHasBeenSet = false;
+  bool m_connectionCredentialsHasBeenSet = false;
+  bool m_webRTCConnectionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

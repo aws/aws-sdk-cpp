@@ -148,21 +148,21 @@ class Alert {
   ///@}
  private:
   Aws::String m_alertCode;
-  bool m_alertCodeHasBeenSet = false;
 
   Aws::String m_alertMessage;
-  bool m_alertMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_relatedResourceArns;
-  bool m_relatedResourceArnsHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   AlertCategory m_category{AlertCategory::NOT_SET};
+  bool m_alertCodeHasBeenSet = false;
+  bool m_alertMessageHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_relatedResourceArnsHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
   bool m_categoryHasBeenSet = false;
 };
 

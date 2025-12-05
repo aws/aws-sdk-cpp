@@ -112,15 +112,15 @@ class StateMachineListItem {
   ///@}
  private:
   Aws::String m_stateMachineArn;
-  bool m_stateMachineArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   StateMachineType m_type{StateMachineType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
+  bool m_stateMachineArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;
 };
 

@@ -143,21 +143,21 @@ class SceneSummary {
   ///@}
  private:
   Aws::String m_sceneId;
-  bool m_sceneIdHasBeenSet = false;
 
   Aws::String m_contentLocation;
-  bool m_contentLocationHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateDateTime{};
-  bool m_updateDateTimeHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_sceneIdHasBeenSet = false;
+  bool m_contentLocationHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_updateDateTimeHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

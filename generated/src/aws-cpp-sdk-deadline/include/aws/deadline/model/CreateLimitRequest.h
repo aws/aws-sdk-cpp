@@ -150,21 +150,21 @@ class CreateLimitRequest : public DeadlineRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_amountRequirementName;
-  bool m_amountRequirementNameHasBeenSet = false;
 
   int m_maxCount{0};
-  bool m_maxCountHasBeenSet = false;
 
   Aws::String m_farmId;
-  bool m_farmIdHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_displayNameHasBeenSet = false;
+  bool m_amountRequirementNameHasBeenSet = false;
+  bool m_maxCountHasBeenSet = false;
+  bool m_farmIdHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

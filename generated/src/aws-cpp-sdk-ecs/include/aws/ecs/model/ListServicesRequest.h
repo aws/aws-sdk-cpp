@@ -152,21 +152,21 @@ class ListServicesRequest : public ECSRequest {
   ///@}
  private:
   Aws::String m_cluster;
-  bool m_clusterHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   LaunchType m_launchType{LaunchType::NOT_SET};
-  bool m_launchTypeHasBeenSet = false;
 
   SchedulingStrategy m_schedulingStrategy{SchedulingStrategy::NOT_SET};
-  bool m_schedulingStrategyHasBeenSet = false;
 
   ResourceManagementType m_resourceManagementType{ResourceManagementType::NOT_SET};
+  bool m_clusterHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_launchTypeHasBeenSet = false;
+  bool m_schedulingStrategyHasBeenSet = false;
   bool m_resourceManagementTypeHasBeenSet = false;
 };
 

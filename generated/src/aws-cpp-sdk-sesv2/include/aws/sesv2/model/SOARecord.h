@@ -85,12 +85,12 @@ class SOARecord {
   ///@}
  private:
   Aws::String m_primaryNameServer;
-  bool m_primaryNameServerHasBeenSet = false;
 
   Aws::String m_adminEmail;
-  bool m_adminEmailHasBeenSet = false;
 
   long long m_serialNumber{0};
+  bool m_primaryNameServerHasBeenSet = false;
+  bool m_adminEmailHasBeenSet = false;
   bool m_serialNumberHasBeenSet = false;
 };
 

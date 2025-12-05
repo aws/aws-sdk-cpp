@@ -69,9 +69,9 @@ class EbsVolume {
   ///@}
  private:
   Aws::String m_device;
-  bool m_deviceHasBeenSet = false;
 
   Aws::String m_volumeId;
+  bool m_deviceHasBeenSet = false;
   bool m_volumeIdHasBeenSet = false;
 };
 

@@ -173,21 +173,21 @@ class HTTPRequest {
   ///@}
  private:
   Aws::String m_clientIP;
-  bool m_clientIPHasBeenSet = false;
 
   Aws::String m_country;
-  bool m_countryHasBeenSet = false;
 
   Aws::String m_uRI;
-  bool m_uRIHasBeenSet = false;
 
   Aws::String m_method;
-  bool m_methodHasBeenSet = false;
 
   Aws::String m_hTTPVersion;
-  bool m_hTTPVersionHasBeenSet = false;
 
   Aws::Vector<HTTPHeader> m_headers;
+  bool m_clientIPHasBeenSet = false;
+  bool m_countryHasBeenSet = false;
+  bool m_uRIHasBeenSet = false;
+  bool m_methodHasBeenSet = false;
+  bool m_hTTPVersionHasBeenSet = false;
   bool m_headersHasBeenSet = false;
 };
 

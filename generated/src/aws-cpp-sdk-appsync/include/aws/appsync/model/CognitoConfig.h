@@ -87,12 +87,12 @@ class CognitoConfig {
   ///@}
  private:
   Aws::String m_userPoolId;
-  bool m_userPoolIdHasBeenSet = false;
 
   Aws::String m_awsRegion;
-  bool m_awsRegionHasBeenSet = false;
 
   Aws::String m_appIdClientRegex;
+  bool m_userPoolIdHasBeenSet = false;
+  bool m_awsRegionHasBeenSet = false;
   bool m_appIdClientRegexHasBeenSet = false;
 };
 

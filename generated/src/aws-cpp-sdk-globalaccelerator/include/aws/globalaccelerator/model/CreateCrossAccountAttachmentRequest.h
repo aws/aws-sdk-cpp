@@ -151,18 +151,18 @@ class CreateCrossAccountAttachmentRequest : public GlobalAcceleratorRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_principals;
-  bool m_principalsHasBeenSet = false;
 
   Aws::Vector<Resource> m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   Aws::String m_idempotencyToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_idempotencyTokenHasBeenSet = true;
 
   Aws::Vector<Tag> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_principalsHasBeenSet = false;
+  bool m_resourcesHasBeenSet = false;
+  bool m_idempotencyTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

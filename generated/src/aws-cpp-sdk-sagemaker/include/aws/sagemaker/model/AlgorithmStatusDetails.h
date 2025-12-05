@@ -82,9 +82,9 @@ class AlgorithmStatusDetails {
   ///@}
  private:
   Aws::Vector<AlgorithmStatusItem> m_validationStatuses;
-  bool m_validationStatusesHasBeenSet = false;
 
   Aws::Vector<AlgorithmStatusItem> m_imageScanStatuses;
+  bool m_validationStatusesHasBeenSet = false;
   bool m_imageScanStatusesHasBeenSet = false;
 };
 

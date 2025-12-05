@@ -85,12 +85,12 @@ class DescribeSettingsRequest : public DirectoryServiceRequest {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   DirectoryConfigurationStatus m_status{DirectoryConfigurationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

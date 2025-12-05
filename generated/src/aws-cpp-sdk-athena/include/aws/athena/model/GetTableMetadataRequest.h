@@ -105,15 +105,15 @@ class GetTableMetadataRequest : public AthenaRequest {
   ///@}
  private:
   Aws::String m_catalogName;
-  bool m_catalogNameHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::String m_workGroup;
+  bool m_catalogNameHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
   bool m_workGroupHasBeenSet = false;
 };
 

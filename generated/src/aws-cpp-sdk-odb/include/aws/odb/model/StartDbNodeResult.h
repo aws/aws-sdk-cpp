@@ -93,15 +93,15 @@ class StartDbNodeResult {
   ///@}
  private:
   Aws::String m_dbNodeId;
-  bool m_dbNodeIdHasBeenSet = false;
 
   DbNodeResourceStatus m_status{DbNodeResourceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dbNodeIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

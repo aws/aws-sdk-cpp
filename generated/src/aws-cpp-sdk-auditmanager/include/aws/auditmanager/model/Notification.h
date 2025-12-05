@@ -179,27 +179,27 @@ class Notification {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_assessmentId;
-  bool m_assessmentIdHasBeenSet = false;
 
   Aws::String m_assessmentName;
-  bool m_assessmentNameHasBeenSet = false;
 
   Aws::String m_controlSetId;
-  bool m_controlSetIdHasBeenSet = false;
 
   Aws::String m_controlSetName;
-  bool m_controlSetNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_eventTime{};
-  bool m_eventTimeHasBeenSet = false;
 
   Aws::String m_source;
+  bool m_idHasBeenSet = false;
+  bool m_assessmentIdHasBeenSet = false;
+  bool m_assessmentNameHasBeenSet = false;
+  bool m_controlSetIdHasBeenSet = false;
+  bool m_controlSetNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_eventTimeHasBeenSet = false;
   bool m_sourceHasBeenSet = false;
 };
 

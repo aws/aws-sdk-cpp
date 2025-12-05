@@ -113,15 +113,15 @@ class ImportHostKeyRequest : public TransferRequest {
   ///@}
  private:
   Aws::String m_serverId;
-  bool m_serverIdHasBeenSet = false;
 
   Aws::String m_hostKeyBody;
-  bool m_hostKeyBodyHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_serverIdHasBeenSet = false;
+  bool m_hostKeyBodyHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

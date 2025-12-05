@@ -118,15 +118,15 @@ class UpdateCampaignRequest : public IoTFleetWiseRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dataExtraDimensions;
-  bool m_dataExtraDimensionsHasBeenSet = false;
 
   UpdateCampaignAction m_action{UpdateCampaignAction::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_dataExtraDimensionsHasBeenSet = false;
   bool m_actionHasBeenSet = false;
 };
 

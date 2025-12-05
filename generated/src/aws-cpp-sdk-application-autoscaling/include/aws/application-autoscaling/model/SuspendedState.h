@@ -86,12 +86,12 @@ class SuspendedState {
   ///@}
  private:
   bool m_dynamicScalingInSuspended{false};
-  bool m_dynamicScalingInSuspendedHasBeenSet = false;
 
   bool m_dynamicScalingOutSuspended{false};
-  bool m_dynamicScalingOutSuspendedHasBeenSet = false;
 
   bool m_scheduledScalingSuspended{false};
+  bool m_dynamicScalingInSuspendedHasBeenSet = false;
+  bool m_dynamicScalingOutSuspendedHasBeenSet = false;
   bool m_scheduledScalingSuspendedHasBeenSet = false;
 };
 

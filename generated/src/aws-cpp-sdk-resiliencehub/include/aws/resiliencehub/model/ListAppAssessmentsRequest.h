@@ -189,27 +189,27 @@ class ListAppAssessmentsRequest : public ResilienceHubRequest {
   ///@}
  private:
   Aws::String m_appArn;
-  bool m_appArnHasBeenSet = false;
 
   Aws::String m_assessmentName;
-  bool m_assessmentNameHasBeenSet = false;
 
   Aws::Vector<AssessmentStatus> m_assessmentStatus;
-  bool m_assessmentStatusHasBeenSet = false;
 
   ComplianceStatus m_complianceStatus{ComplianceStatus::NOT_SET};
-  bool m_complianceStatusHasBeenSet = false;
 
   AssessmentInvoker m_invoker{AssessmentInvoker::NOT_SET};
-  bool m_invokerHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   bool m_reverseOrder{false};
+  bool m_appArnHasBeenSet = false;
+  bool m_assessmentNameHasBeenSet = false;
+  bool m_assessmentStatusHasBeenSet = false;
+  bool m_complianceStatusHasBeenSet = false;
+  bool m_invokerHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_reverseOrderHasBeenSet = false;
 };
 

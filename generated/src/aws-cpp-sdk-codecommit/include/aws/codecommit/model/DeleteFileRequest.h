@@ -186,27 +186,27 @@ class DeleteFileRequest : public CodeCommitRequest {
   ///@}
  private:
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   Aws::String m_branchName;
-  bool m_branchNameHasBeenSet = false;
 
   Aws::String m_filePath;
-  bool m_filePathHasBeenSet = false;
 
   Aws::String m_parentCommitId;
-  bool m_parentCommitIdHasBeenSet = false;
 
   bool m_keepEmptyFolders{false};
-  bool m_keepEmptyFoldersHasBeenSet = false;
 
   Aws::String m_commitMessage;
-  bool m_commitMessageHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_email;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_branchNameHasBeenSet = false;
+  bool m_filePathHasBeenSet = false;
+  bool m_parentCommitIdHasBeenSet = false;
+  bool m_keepEmptyFoldersHasBeenSet = false;
+  bool m_commitMessageHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_emailHasBeenSet = false;
 };
 

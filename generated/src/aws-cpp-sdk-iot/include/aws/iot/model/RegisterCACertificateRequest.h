@@ -187,24 +187,24 @@ class RegisterCACertificateRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_caCertificate;
-  bool m_caCertificateHasBeenSet = false;
 
   Aws::String m_verificationCertificate;
-  bool m_verificationCertificateHasBeenSet = false;
 
   bool m_setAsActive{false};
-  bool m_setAsActiveHasBeenSet = false;
 
   bool m_allowAutoRegistration{false};
-  bool m_allowAutoRegistrationHasBeenSet = false;
 
   RegistrationConfig m_registrationConfig;
-  bool m_registrationConfigHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   CertificateMode m_certificateMode{CertificateMode::NOT_SET};
+  bool m_caCertificateHasBeenSet = false;
+  bool m_verificationCertificateHasBeenSet = false;
+  bool m_setAsActiveHasBeenSet = false;
+  bool m_allowAutoRegistrationHasBeenSet = false;
+  bool m_registrationConfigHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_certificateModeHasBeenSet = false;
 };
 

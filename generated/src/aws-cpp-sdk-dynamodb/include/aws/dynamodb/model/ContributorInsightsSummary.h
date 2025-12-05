@@ -106,15 +106,15 @@ class ContributorInsightsSummary {
   ///@}
  private:
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   ContributorInsightsStatus m_contributorInsightsStatus{ContributorInsightsStatus::NOT_SET};
-  bool m_contributorInsightsStatusHasBeenSet = false;
 
   ContributorInsightsMode m_contributorInsightsMode{ContributorInsightsMode::NOT_SET};
+  bool m_tableNameHasBeenSet = false;
+  bool m_indexNameHasBeenSet = false;
+  bool m_contributorInsightsStatusHasBeenSet = false;
   bool m_contributorInsightsModeHasBeenSet = false;
 };
 

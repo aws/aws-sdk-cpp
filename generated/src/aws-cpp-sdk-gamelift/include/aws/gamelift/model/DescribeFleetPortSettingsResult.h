@@ -141,21 +141,21 @@ class DescribeFleetPortSettingsResult {
   ///@}
  private:
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::String m_fleetArn;
-  bool m_fleetArnHasBeenSet = false;
 
   Aws::Vector<IpPermission> m_inboundPermissions;
-  bool m_inboundPermissionsHasBeenSet = false;
 
   LocationUpdateStatus m_updateStatus{LocationUpdateStatus::NOT_SET};
-  bool m_updateStatusHasBeenSet = false;
 
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fleetIdHasBeenSet = false;
+  bool m_fleetArnHasBeenSet = false;
+  bool m_inboundPermissionsHasBeenSet = false;
+  bool m_updateStatusHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

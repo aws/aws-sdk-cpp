@@ -69,9 +69,9 @@ class OpportunityEngagementInvitationSort {
   ///@}
  private:
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   OpportunityEngagementInvitationSortName m_sortBy{OpportunityEngagementInvitationSortName::NOT_SET};
+  bool m_sortOrderHasBeenSet = false;
   bool m_sortByHasBeenSet = false;
 };
 

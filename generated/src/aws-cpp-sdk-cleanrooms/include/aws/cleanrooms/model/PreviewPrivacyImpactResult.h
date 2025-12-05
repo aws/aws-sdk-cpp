@@ -62,9 +62,9 @@ class PreviewPrivacyImpactResult {
   ///@}
  private:
   PrivacyImpact m_privacyImpact;
-  bool m_privacyImpactHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_privacyImpactHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

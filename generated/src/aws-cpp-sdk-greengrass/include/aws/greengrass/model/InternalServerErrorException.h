@@ -76,9 +76,9 @@ class InternalServerErrorException {
   ///@}
  private:
   Aws::Vector<ErrorDetail> m_errorDetails;
-  bool m_errorDetailsHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_errorDetailsHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

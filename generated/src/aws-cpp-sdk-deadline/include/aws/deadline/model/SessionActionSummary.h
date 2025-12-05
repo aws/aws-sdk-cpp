@@ -185,27 +185,27 @@ class SessionActionSummary {
   ///@}
  private:
   Aws::String m_sessionActionId;
-  bool m_sessionActionIdHasBeenSet = false;
 
   SessionActionStatus m_status{SessionActionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_endedAt{};
-  bool m_endedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_workerUpdatedAt{};
-  bool m_workerUpdatedAtHasBeenSet = false;
 
   double m_progressPercent{0.0};
-  bool m_progressPercentHasBeenSet = false;
 
   SessionActionDefinitionSummary m_definition;
-  bool m_definitionHasBeenSet = false;
 
   Aws::Vector<TaskRunManifestPropertiesResponse> m_manifests;
+  bool m_sessionActionIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_endedAtHasBeenSet = false;
+  bool m_workerUpdatedAtHasBeenSet = false;
+  bool m_progressPercentHasBeenSet = false;
+  bool m_definitionHasBeenSet = false;
   bool m_manifestsHasBeenSet = false;
 };
 

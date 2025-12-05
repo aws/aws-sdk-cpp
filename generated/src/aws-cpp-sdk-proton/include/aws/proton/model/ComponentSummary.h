@@ -272,42 +272,42 @@ class ComponentSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   DeploymentStatus m_deploymentStatus{DeploymentStatus::NOT_SET};
-  bool m_deploymentStatusHasBeenSet = false;
 
   Aws::String m_deploymentStatusMessage;
-  bool m_deploymentStatusMessageHasBeenSet = false;
 
   Aws::String m_environmentName;
-  bool m_environmentNameHasBeenSet = false;
 
   Aws::String m_lastAttemptedDeploymentId;
-  bool m_lastAttemptedDeploymentIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastDeploymentAttemptedAt{};
-  bool m_lastDeploymentAttemptedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastDeploymentSucceededAt{};
-  bool m_lastDeploymentSucceededAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedAt{};
-  bool m_lastModifiedAtHasBeenSet = false;
 
   Aws::String m_lastSucceededDeploymentId;
-  bool m_lastSucceededDeploymentIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_serviceInstanceName;
-  bool m_serviceInstanceNameHasBeenSet = false;
 
   Aws::String m_serviceName;
+  bool m_arnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_deploymentStatusHasBeenSet = false;
+  bool m_deploymentStatusMessageHasBeenSet = false;
+  bool m_environmentNameHasBeenSet = false;
+  bool m_lastAttemptedDeploymentIdHasBeenSet = false;
+  bool m_lastDeploymentAttemptedAtHasBeenSet = false;
+  bool m_lastDeploymentSucceededAtHasBeenSet = false;
+  bool m_lastModifiedAtHasBeenSet = false;
+  bool m_lastSucceededDeploymentIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_serviceInstanceNameHasBeenSet = false;
   bool m_serviceNameHasBeenSet = false;
 };
 

@@ -80,9 +80,9 @@ class BatchUpdateRecommendationStatusRequest : public ResilienceHubRequest {
   ///@}
  private:
   Aws::String m_appArn;
-  bool m_appArnHasBeenSet = false;
 
   Aws::Vector<UpdateRecommendationStatusRequestEntry> m_requestEntries;
+  bool m_appArnHasBeenSet = false;
   bool m_requestEntriesHasBeenSet = false;
 };
 

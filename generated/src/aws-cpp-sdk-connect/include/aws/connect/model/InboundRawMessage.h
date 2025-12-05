@@ -112,15 +112,15 @@ class InboundRawMessage {
   ///@}
  private:
   Aws::String m_subject;
-  bool m_subjectHasBeenSet = false;
 
   Aws::String m_body;
-  bool m_bodyHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::Map<EmailHeaderType, Aws::String> m_headers;
+  bool m_subjectHasBeenSet = false;
+  bool m_bodyHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
   bool m_headersHasBeenSet = false;
 };
 

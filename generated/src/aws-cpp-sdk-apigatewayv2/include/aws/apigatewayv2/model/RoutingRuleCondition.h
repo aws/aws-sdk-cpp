@@ -69,9 +69,9 @@ class RoutingRuleCondition {
   ///@}
  private:
   RoutingRuleMatchBasePaths m_matchBasePaths;
-  bool m_matchBasePathsHasBeenSet = false;
 
   RoutingRuleMatchHeaders m_matchHeaders;
+  bool m_matchBasePathsHasBeenSet = false;
   bool m_matchHeadersHasBeenSet = false;
 };
 

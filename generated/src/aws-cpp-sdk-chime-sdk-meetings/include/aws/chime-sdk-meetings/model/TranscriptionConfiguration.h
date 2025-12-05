@@ -72,9 +72,9 @@ class TranscriptionConfiguration {
   ///@}
  private:
   EngineTranscribeSettings m_engineTranscribeSettings;
-  bool m_engineTranscribeSettingsHasBeenSet = false;
 
   EngineTranscribeMedicalSettings m_engineTranscribeMedicalSettings;
+  bool m_engineTranscribeSettingsHasBeenSet = false;
   bool m_engineTranscribeMedicalSettingsHasBeenSet = false;
 };
 

@@ -185,27 +185,27 @@ class GeneralName {
   ///@}
  private:
   OtherName m_otherName;
-  bool m_otherNameHasBeenSet = false;
 
   Aws::String m_rfc822Name;
-  bool m_rfc822NameHasBeenSet = false;
 
   Aws::String m_dnsName;
-  bool m_dnsNameHasBeenSet = false;
 
   ASN1Subject m_directoryName;
-  bool m_directoryNameHasBeenSet = false;
 
   EdiPartyName m_ediPartyName;
-  bool m_ediPartyNameHasBeenSet = false;
 
   Aws::String m_uniformResourceIdentifier;
-  bool m_uniformResourceIdentifierHasBeenSet = false;
 
   Aws::String m_ipAddress;
-  bool m_ipAddressHasBeenSet = false;
 
   Aws::String m_registeredId;
+  bool m_otherNameHasBeenSet = false;
+  bool m_rfc822NameHasBeenSet = false;
+  bool m_dnsNameHasBeenSet = false;
+  bool m_directoryNameHasBeenSet = false;
+  bool m_ediPartyNameHasBeenSet = false;
+  bool m_uniformResourceIdentifierHasBeenSet = false;
+  bool m_ipAddressHasBeenSet = false;
   bool m_registeredIdHasBeenSet = false;
 };
 

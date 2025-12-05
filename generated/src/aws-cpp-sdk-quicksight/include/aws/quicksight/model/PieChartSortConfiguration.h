@@ -118,15 +118,15 @@ class PieChartSortConfiguration {
   ///@}
  private:
   Aws::Vector<FieldSortOptions> m_categorySort;
-  bool m_categorySortHasBeenSet = false;
 
   ItemsLimitConfiguration m_categoryItemsLimit;
-  bool m_categoryItemsLimitHasBeenSet = false;
 
   Aws::Vector<FieldSortOptions> m_smallMultiplesSort;
-  bool m_smallMultiplesSortHasBeenSet = false;
 
   ItemsLimitConfiguration m_smallMultiplesLimitConfiguration;
+  bool m_categorySortHasBeenSet = false;
+  bool m_categoryItemsLimitHasBeenSet = false;
+  bool m_smallMultiplesSortHasBeenSet = false;
   bool m_smallMultiplesLimitConfigurationHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class ResetUserPasswordRequest : public DirectoryServiceRequest {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_newPassword;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_userNameHasBeenSet = false;
   bool m_newPasswordHasBeenSet = false;
 };
 

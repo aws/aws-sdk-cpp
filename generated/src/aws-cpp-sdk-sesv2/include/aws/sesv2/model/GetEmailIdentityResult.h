@@ -253,36 +253,36 @@ class GetEmailIdentityResult {
   ///@}
  private:
   IdentityType m_identityType{IdentityType::NOT_SET};
-  bool m_identityTypeHasBeenSet = false;
 
   bool m_feedbackForwardingStatus{false};
-  bool m_feedbackForwardingStatusHasBeenSet = false;
 
   bool m_verifiedForSendingStatus{false};
-  bool m_verifiedForSendingStatusHasBeenSet = false;
 
   DkimAttributes m_dkimAttributes;
-  bool m_dkimAttributesHasBeenSet = false;
 
   MailFromAttributes m_mailFromAttributes;
-  bool m_mailFromAttributesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_policies;
-  bool m_policiesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_configurationSetName;
-  bool m_configurationSetNameHasBeenSet = false;
 
   VerificationStatus m_verificationStatus{VerificationStatus::NOT_SET};
-  bool m_verificationStatusHasBeenSet = false;
 
   VerificationInfo m_verificationInfo;
-  bool m_verificationInfoHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_identityTypeHasBeenSet = false;
+  bool m_feedbackForwardingStatusHasBeenSet = false;
+  bool m_verifiedForSendingStatusHasBeenSet = false;
+  bool m_dkimAttributesHasBeenSet = false;
+  bool m_mailFromAttributesHasBeenSet = false;
+  bool m_policiesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_configurationSetNameHasBeenSet = false;
+  bool m_verificationStatusHasBeenSet = false;
+  bool m_verificationInfoHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

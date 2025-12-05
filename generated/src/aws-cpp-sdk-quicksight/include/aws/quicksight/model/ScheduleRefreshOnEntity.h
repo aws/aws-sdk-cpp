@@ -68,9 +68,9 @@ class ScheduleRefreshOnEntity {
   ///@}
  private:
   DayOfWeek m_dayOfWeek{DayOfWeek::NOT_SET};
-  bool m_dayOfWeekHasBeenSet = false;
 
   Aws::String m_dayOfMonth;
+  bool m_dayOfWeekHasBeenSet = false;
   bool m_dayOfMonthHasBeenSet = false;
 };
 

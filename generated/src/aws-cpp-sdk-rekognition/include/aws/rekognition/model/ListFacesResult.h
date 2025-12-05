@@ -103,15 +103,15 @@ class ListFacesResult {
   ///@}
  private:
   Aws::Vector<Face> m_faces;
-  bool m_facesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_faceModelVersion;
-  bool m_faceModelVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_facesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_faceModelVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

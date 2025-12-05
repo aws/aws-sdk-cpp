@@ -139,18 +139,18 @@ class UpdateFunctionEventInvokeConfigRequest : public LambdaRequest {
   ///@}
  private:
   Aws::String m_functionName;
-  bool m_functionNameHasBeenSet = false;
 
   Aws::String m_qualifier;
-  bool m_qualifierHasBeenSet = false;
 
   int m_maximumRetryAttempts{0};
-  bool m_maximumRetryAttemptsHasBeenSet = false;
 
   int m_maximumEventAgeInSeconds{0};
-  bool m_maximumEventAgeInSecondsHasBeenSet = false;
 
   DestinationConfig m_destinationConfig;
+  bool m_functionNameHasBeenSet = false;
+  bool m_qualifierHasBeenSet = false;
+  bool m_maximumRetryAttemptsHasBeenSet = false;
+  bool m_maximumEventAgeInSecondsHasBeenSet = false;
   bool m_destinationConfigHasBeenSet = false;
 };
 

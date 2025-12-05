@@ -86,12 +86,12 @@ class ListContainerGroupDefinitionsRequest : public GameLiftRequest {
   ///@}
  private:
   ContainerGroupType m_containerGroupType{ContainerGroupType::NOT_SET};
-  bool m_containerGroupTypeHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_containerGroupTypeHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

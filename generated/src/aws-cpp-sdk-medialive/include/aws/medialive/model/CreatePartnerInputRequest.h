@@ -96,12 +96,12 @@ exactly once
   ///@}
  private:
   Aws::String m_inputId;
-  bool m_inputIdHasBeenSet = false;
 
   Aws::String m_requestId{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_requestIdHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_inputIdHasBeenSet = false;
+  bool m_requestIdHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

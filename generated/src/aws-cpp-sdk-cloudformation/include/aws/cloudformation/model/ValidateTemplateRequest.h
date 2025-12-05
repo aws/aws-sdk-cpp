@@ -80,9 +80,9 @@ class ValidateTemplateRequest : public CloudFormationRequest {
   ///@}
  private:
   Aws::String m_templateBody;
-  bool m_templateBodyHasBeenSet = false;
 
   Aws::String m_templateURL;
+  bool m_templateBodyHasBeenSet = false;
   bool m_templateURLHasBeenSet = false;
 };
 

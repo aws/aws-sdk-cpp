@@ -68,9 +68,9 @@ class ApprovalRuleOverriddenEventMetadata {
   ///@}
  private:
   Aws::String m_revisionId;
-  bool m_revisionIdHasBeenSet = false;
 
   OverrideStatus m_overrideStatus{OverrideStatus::NOT_SET};
+  bool m_revisionIdHasBeenSet = false;
   bool m_overrideStatusHasBeenSet = false;
 };
 

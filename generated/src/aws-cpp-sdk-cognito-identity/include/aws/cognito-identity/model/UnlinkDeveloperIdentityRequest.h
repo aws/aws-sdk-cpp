@@ -108,15 +108,15 @@ class UnlinkDeveloperIdentityRequest : public CognitoIdentityRequest {
   ///@}
  private:
   Aws::String m_identityId;
-  bool m_identityIdHasBeenSet = false;
 
   Aws::String m_identityPoolId;
-  bool m_identityPoolIdHasBeenSet = false;
 
   Aws::String m_developerProviderName;
-  bool m_developerProviderNameHasBeenSet = false;
 
   Aws::String m_developerUserIdentifier;
+  bool m_identityIdHasBeenSet = false;
+  bool m_identityPoolIdHasBeenSet = false;
+  bool m_developerProviderNameHasBeenSet = false;
   bool m_developerUserIdentifierHasBeenSet = false;
 };
 

@@ -59,9 +59,9 @@ class DescribeApplicationVersionResult {
   ///@}
  private:
   ApplicationDetail m_applicationVersionDetail;
-  bool m_applicationVersionDetailHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationVersionDetailHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

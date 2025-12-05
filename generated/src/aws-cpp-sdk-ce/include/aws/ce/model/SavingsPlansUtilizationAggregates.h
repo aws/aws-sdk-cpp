@@ -93,12 +93,12 @@ class SavingsPlansUtilizationAggregates {
   ///@}
  private:
   SavingsPlansUtilization m_utilization;
-  bool m_utilizationHasBeenSet = false;
 
   SavingsPlansSavings m_savings;
-  bool m_savingsHasBeenSet = false;
 
   SavingsPlansAmortizedCommitment m_amortizedCommitment;
+  bool m_utilizationHasBeenSet = false;
+  bool m_savingsHasBeenSet = false;
   bool m_amortizedCommitmentHasBeenSet = false;
 };
 

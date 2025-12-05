@@ -87,12 +87,12 @@ class RecipeVersionErrorDetail {
   ///@}
  private:
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_recipeVersion;
+  bool m_errorCodeHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
   bool m_recipeVersionHasBeenSet = false;
 };
 

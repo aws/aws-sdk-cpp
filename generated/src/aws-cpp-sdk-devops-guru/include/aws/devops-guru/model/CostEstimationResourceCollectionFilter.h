@@ -110,9 +110,9 @@ class CostEstimationResourceCollectionFilter {
   ///@}
  private:
   CloudFormationCostEstimationResourceCollectionFilter m_cloudFormation;
-  bool m_cloudFormationHasBeenSet = false;
 
   Aws::Vector<TagCostEstimationResourceCollectionFilter> m_tags;
+  bool m_cloudFormationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class AcceptReservedInstancesExchangeQuoteResponse {
   ///@}
  private:
   Aws::String m_exchangeId;
-  bool m_exchangeIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_exchangeIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

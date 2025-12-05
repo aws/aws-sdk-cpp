@@ -115,18 +115,18 @@ class ErrorMetric {
   ///@}
  private:
   Aws::String m_forecastType;
-  bool m_forecastTypeHasBeenSet = false;
 
   double m_wAPE{0.0};
-  bool m_wAPEHasBeenSet = false;
 
   double m_rMSE{0.0};
-  bool m_rMSEHasBeenSet = false;
 
   double m_mASE{0.0};
-  bool m_mASEHasBeenSet = false;
 
   double m_mAPE{0.0};
+  bool m_forecastTypeHasBeenSet = false;
+  bool m_wAPEHasBeenSet = false;
+  bool m_rMSEHasBeenSet = false;
+  bool m_mASEHasBeenSet = false;
   bool m_mAPEHasBeenSet = false;
 };
 

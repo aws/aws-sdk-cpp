@@ -165,18 +165,18 @@ class FindingProviderFields {
   ///@}
  private:
   int m_confidence{0};
-  bool m_confidenceHasBeenSet = false;
 
   int m_criticality{0};
-  bool m_criticalityHasBeenSet = false;
 
   Aws::Vector<RelatedFinding> m_relatedFindings;
-  bool m_relatedFindingsHasBeenSet = false;
 
   FindingProviderSeverity m_severity;
-  bool m_severityHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_types;
+  bool m_confidenceHasBeenSet = false;
+  bool m_criticalityHasBeenSet = false;
+  bool m_relatedFindingsHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
   bool m_typesHasBeenSet = false;
 };
 

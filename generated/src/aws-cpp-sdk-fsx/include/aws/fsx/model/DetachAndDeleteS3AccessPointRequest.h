@@ -66,9 +66,9 @@ class DetachAndDeleteS3AccessPointRequest : public FSxRequest {
   ///@}
  private:
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::String m_name;
+  bool m_clientRequestTokenHasBeenSet = true;
   bool m_nameHasBeenSet = false;
 };
 

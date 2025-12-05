@@ -182,27 +182,27 @@ class EntityTypeFilters {
   ///@}
  private:
   DataProductFilters m_dataProductFilters;
-  bool m_dataProductFiltersHasBeenSet = false;
 
   SaaSProductFilters m_saaSProductFilters;
-  bool m_saaSProductFiltersHasBeenSet = false;
 
   AmiProductFilters m_amiProductFilters;
-  bool m_amiProductFiltersHasBeenSet = false;
 
   OfferFilters m_offerFilters;
-  bool m_offerFiltersHasBeenSet = false;
 
   ContainerProductFilters m_containerProductFilters;
-  bool m_containerProductFiltersHasBeenSet = false;
 
   ResaleAuthorizationFilters m_resaleAuthorizationFilters;
-  bool m_resaleAuthorizationFiltersHasBeenSet = false;
 
   MachineLearningProductFilters m_machineLearningProductFilters;
-  bool m_machineLearningProductFiltersHasBeenSet = false;
 
   OfferSetFilters m_offerSetFilters;
+  bool m_dataProductFiltersHasBeenSet = false;
+  bool m_saaSProductFiltersHasBeenSet = false;
+  bool m_amiProductFiltersHasBeenSet = false;
+  bool m_offerFiltersHasBeenSet = false;
+  bool m_containerProductFiltersHasBeenSet = false;
+  bool m_resaleAuthorizationFiltersHasBeenSet = false;
+  bool m_machineLearningProductFiltersHasBeenSet = false;
   bool m_offerSetFiltersHasBeenSet = false;
 };
 

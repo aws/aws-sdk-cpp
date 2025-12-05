@@ -269,42 +269,42 @@ class InferenceRecommendationsJob {
   ///@}
  private:
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   Aws::String m_jobDescription;
-  bool m_jobDescriptionHasBeenSet = false;
 
   RecommendationJobType m_jobType{RecommendationJobType::NOT_SET};
-  bool m_jobTypeHasBeenSet = false;
 
   Aws::String m_jobArn;
-  bool m_jobArnHasBeenSet = false;
 
   RecommendationJobStatus m_status{RecommendationJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_completionTime{};
-  bool m_completionTimeHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   Aws::String m_samplePayloadUrl;
-  bool m_samplePayloadUrlHasBeenSet = false;
 
   Aws::String m_modelPackageVersionArn;
+  bool m_jobNameHasBeenSet = false;
+  bool m_jobDescriptionHasBeenSet = false;
+  bool m_jobTypeHasBeenSet = false;
+  bool m_jobArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_completionTimeHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_modelNameHasBeenSet = false;
+  bool m_samplePayloadUrlHasBeenSet = false;
   bool m_modelPackageVersionArnHasBeenSet = false;
 };
 

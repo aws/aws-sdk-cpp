@@ -157,24 +157,24 @@ class TrackingServerSummary {
   ///@}
  private:
   Aws::String m_trackingServerArn;
-  bool m_trackingServerArnHasBeenSet = false;
 
   Aws::String m_trackingServerName;
-  bool m_trackingServerNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   TrackingServerStatus m_trackingServerStatus{TrackingServerStatus::NOT_SET};
-  bool m_trackingServerStatusHasBeenSet = false;
 
   IsTrackingServerActive m_isActive{IsTrackingServerActive::NOT_SET};
-  bool m_isActiveHasBeenSet = false;
 
   Aws::String m_mlflowVersion;
+  bool m_trackingServerArnHasBeenSet = false;
+  bool m_trackingServerNameHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_trackingServerStatusHasBeenSet = false;
+  bool m_isActiveHasBeenSet = false;
   bool m_mlflowVersionHasBeenSet = false;
 };
 

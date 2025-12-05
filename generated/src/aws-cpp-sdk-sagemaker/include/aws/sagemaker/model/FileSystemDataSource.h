@@ -105,15 +105,15 @@ class FileSystemDataSource {
   ///@}
  private:
   Aws::String m_fileSystemId;
-  bool m_fileSystemIdHasBeenSet = false;
 
   FileSystemAccessMode m_fileSystemAccessMode{FileSystemAccessMode::NOT_SET};
-  bool m_fileSystemAccessModeHasBeenSet = false;
 
   FileSystemType m_fileSystemType{FileSystemType::NOT_SET};
-  bool m_fileSystemTypeHasBeenSet = false;
 
   Aws::String m_directoryPath;
+  bool m_fileSystemIdHasBeenSet = false;
+  bool m_fileSystemAccessModeHasBeenSet = false;
+  bool m_fileSystemTypeHasBeenSet = false;
   bool m_directoryPathHasBeenSet = false;
 };
 

@@ -104,15 +104,15 @@ class ThrottlingException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   int m_retryAfterSeconds{0};
-  bool m_retryAfterSecondsHasBeenSet = false;
 
   ThrottlingExceptionReason m_reason{ThrottlingExceptionReason::NOT_SET};
+  bool m_messageHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+  bool m_retryAfterSecondsHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

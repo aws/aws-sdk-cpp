@@ -93,12 +93,12 @@ class UpdateReplicationSetRequest : public SSMIncidentsRequest {
   ///@}
  private:
   Aws::Vector<UpdateReplicationSetAction> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_actionsHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

@@ -107,15 +107,15 @@ class ListInvoiceSummariesRequest : public InvoicingRequest {
   ///@}
  private:
   InvoiceSummariesSelector m_selector;
-  bool m_selectorHasBeenSet = false;
 
   InvoiceSummariesFilter m_filter;
-  bool m_filterHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_selectorHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

@@ -108,15 +108,15 @@ class GetQueryResultsRequest : public AthenaRequest {
   ///@}
  private:
   Aws::String m_queryExecutionId;
-  bool m_queryExecutionIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   QueryResultType m_queryResultType{QueryResultType::NOT_SET};
+  bool m_queryExecutionIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_queryResultTypeHasBeenSet = false;
 };
 

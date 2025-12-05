@@ -111,15 +111,15 @@ class CreateGatewayRequest : public BackupGatewayRequest {
   ///@}
  private:
   Aws::String m_activationKey;
-  bool m_activationKeyHasBeenSet = false;
 
   Aws::String m_gatewayDisplayName;
-  bool m_gatewayDisplayNameHasBeenSet = false;
 
   GatewayType m_gatewayType{GatewayType::NOT_SET};
-  bool m_gatewayTypeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_activationKeyHasBeenSet = false;
+  bool m_gatewayDisplayNameHasBeenSet = false;
+  bool m_gatewayTypeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

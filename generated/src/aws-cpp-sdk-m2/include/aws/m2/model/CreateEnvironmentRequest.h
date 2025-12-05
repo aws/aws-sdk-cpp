@@ -336,48 +336,48 @@ class CreateEnvironmentRequest : public MainframeModernizationRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   EngineType m_engineType{EngineType::NOT_SET};
-  bool m_engineTypeHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   HighAvailabilityConfig m_highAvailabilityConfig;
-  bool m_highAvailabilityConfigHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   NetworkType m_networkType{NetworkType::NOT_SET};
-  bool m_networkTypeHasBeenSet = false;
 
   Aws::String m_preferredMaintenanceWindow;
-  bool m_preferredMaintenanceWindowHasBeenSet = false;
 
   bool m_publiclyAccessible{false};
-  bool m_publiclyAccessibleHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::Vector<StorageConfiguration> m_storageConfigurations;
-  bool m_storageConfigurationsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_descriptionHasBeenSet = false;
+  bool m_engineTypeHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_highAvailabilityConfigHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_networkTypeHasBeenSet = false;
+  bool m_preferredMaintenanceWindowHasBeenSet = false;
+  bool m_publiclyAccessibleHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_storageConfigurationsHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

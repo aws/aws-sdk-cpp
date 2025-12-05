@@ -89,12 +89,12 @@ class DefaultNewSheetConfiguration {
   ///@}
  private:
   DefaultInteractiveLayoutConfiguration m_interactiveLayoutConfiguration;
-  bool m_interactiveLayoutConfigurationHasBeenSet = false;
 
   DefaultPaginatedLayoutConfiguration m_paginatedLayoutConfiguration;
-  bool m_paginatedLayoutConfigurationHasBeenSet = false;
 
   SheetContentType m_sheetContentType{SheetContentType::NOT_SET};
+  bool m_interactiveLayoutConfigurationHasBeenSet = false;
+  bool m_paginatedLayoutConfigurationHasBeenSet = false;
   bool m_sheetContentTypeHasBeenSet = false;
 };
 

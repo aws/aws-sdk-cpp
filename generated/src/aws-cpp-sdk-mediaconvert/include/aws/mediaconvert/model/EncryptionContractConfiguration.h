@@ -86,9 +86,9 @@ class EncryptionContractConfiguration {
   ///@}
  private:
   PresetSpeke20Audio m_spekeAudioPreset{PresetSpeke20Audio::NOT_SET};
-  bool m_spekeAudioPresetHasBeenSet = false;
 
   PresetSpeke20Video m_spekeVideoPreset{PresetSpeke20Video::NOT_SET};
+  bool m_spekeAudioPresetHasBeenSet = false;
   bool m_spekeVideoPresetHasBeenSet = false;
 };
 

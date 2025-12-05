@@ -106,15 +106,15 @@ class LambdaVolumeMount {
   ///@}
  private:
   Aws::String m_sourcePath;
-  bool m_sourcePathHasBeenSet = false;
 
   Aws::String m_destinationPath;
-  bool m_destinationPathHasBeenSet = false;
 
   LambdaFilesystemPermission m_permission{LambdaFilesystemPermission::NOT_SET};
-  bool m_permissionHasBeenSet = false;
 
   bool m_addGroupOwner{false};
+  bool m_sourcePathHasBeenSet = false;
+  bool m_destinationPathHasBeenSet = false;
+  bool m_permissionHasBeenSet = false;
   bool m_addGroupOwnerHasBeenSet = false;
 };
 

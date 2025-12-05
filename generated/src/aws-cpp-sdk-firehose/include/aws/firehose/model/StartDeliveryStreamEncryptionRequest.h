@@ -75,9 +75,9 @@ class StartDeliveryStreamEncryptionRequest : public FirehoseRequest {
   ///@}
  private:
   Aws::String m_deliveryStreamName;
-  bool m_deliveryStreamNameHasBeenSet = false;
 
   DeliveryStreamEncryptionConfigurationInput m_deliveryStreamEncryptionConfigurationInput;
+  bool m_deliveryStreamNameHasBeenSet = false;
   bool m_deliveryStreamEncryptionConfigurationInputHasBeenSet = false;
 };
 

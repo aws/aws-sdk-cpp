@@ -69,9 +69,9 @@ class ChangeSetHookTargetDetails {
   ///@}
  private:
   HookTargetType m_targetType{HookTargetType::NOT_SET};
-  bool m_targetTypeHasBeenSet = false;
 
   ChangeSetHookResourceTargetDetails m_resourceTargetDetails;
+  bool m_targetTypeHasBeenSet = false;
   bool m_resourceTargetDetailsHasBeenSet = false;
 };
 

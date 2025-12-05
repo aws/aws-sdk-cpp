@@ -213,27 +213,27 @@ class ListResourcesRequest : public RAMRequest {
   ///@}
  private:
   ResourceOwner m_resourceOwner{ResourceOwner::NOT_SET};
-  bool m_resourceOwnerHasBeenSet = false;
 
   Aws::String m_principal;
-  bool m_principalHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceArns;
-  bool m_resourceArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceShareArns;
-  bool m_resourceShareArnsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   ResourceRegionScopeFilter m_resourceRegionScope{ResourceRegionScopeFilter::NOT_SET};
+  bool m_resourceOwnerHasBeenSet = false;
+  bool m_principalHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceArnsHasBeenSet = false;
+  bool m_resourceShareArnsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_resourceRegionScopeHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class ListCustomRoutingPortMappingsByDestinationResult {
   ///@}
  private:
   Aws::Vector<DestinationPortMapping> m_destinationPortMappings;
-  bool m_destinationPortMappingsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_destinationPortMappingsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

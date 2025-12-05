@@ -128,15 +128,15 @@ class RenewalSummary {
   ///@}
  private:
   Aws::Vector<DomainValidationRecord> m_domainValidationRecords;
-  bool m_domainValidationRecordsHasBeenSet = false;
 
   RenewalStatus m_renewalStatus{RenewalStatus::NOT_SET};
-  bool m_renewalStatusHasBeenSet = false;
 
   Aws::String m_renewalStatusReason;
-  bool m_renewalStatusReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_domainValidationRecordsHasBeenSet = false;
+  bool m_renewalStatusHasBeenSet = false;
+  bool m_renewalStatusReasonHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

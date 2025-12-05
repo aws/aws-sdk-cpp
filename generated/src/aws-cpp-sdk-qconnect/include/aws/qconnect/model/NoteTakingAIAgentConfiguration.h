@@ -88,12 +88,12 @@ class NoteTakingAIAgentConfiguration {
   ///@}
  private:
   Aws::String m_noteTakingAIPromptId;
-  bool m_noteTakingAIPromptIdHasBeenSet = false;
 
   Aws::String m_noteTakingAIGuardrailId;
-  bool m_noteTakingAIGuardrailIdHasBeenSet = false;
 
   Aws::String m_locale;
+  bool m_noteTakingAIPromptIdHasBeenSet = false;
+  bool m_noteTakingAIGuardrailIdHasBeenSet = false;
   bool m_localeHasBeenSet = false;
 };
 

@@ -133,18 +133,18 @@ class S3BucketTranscriptSource {
   ///@}
  private:
   Aws::String m_s3BucketName;
-  bool m_s3BucketNameHasBeenSet = false;
 
   PathFormat m_pathFormat;
-  bool m_pathFormatHasBeenSet = false;
 
   TranscriptFormat m_transcriptFormat{TranscriptFormat::NOT_SET};
-  bool m_transcriptFormatHasBeenSet = false;
 
   TranscriptFilter m_transcriptFilter;
-  bool m_transcriptFilterHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
+  bool m_s3BucketNameHasBeenSet = false;
+  bool m_pathFormatHasBeenSet = false;
+  bool m_transcriptFormatHasBeenSet = false;
+  bool m_transcriptFilterHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
 };
 

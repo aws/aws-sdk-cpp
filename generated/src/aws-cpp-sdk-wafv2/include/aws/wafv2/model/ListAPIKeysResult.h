@@ -107,15 +107,15 @@ class ListAPIKeysResult {
   ///@}
  private:
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   Aws::Vector<APIKeySummary> m_aPIKeySummaries;
-  bool m_aPIKeySummariesHasBeenSet = false;
 
   Aws::String m_applicationIntegrationURL;
-  bool m_applicationIntegrationURLHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextMarkerHasBeenSet = false;
+  bool m_aPIKeySummariesHasBeenSet = false;
+  bool m_applicationIntegrationURLHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

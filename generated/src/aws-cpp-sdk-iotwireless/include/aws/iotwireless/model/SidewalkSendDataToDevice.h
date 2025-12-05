@@ -78,12 +78,12 @@ class SidewalkSendDataToDevice {
   ///@}
  private:
   int m_seq{0};
-  bool m_seqHasBeenSet = false;
 
   MessageType m_messageType{MessageType::NOT_SET};
-  bool m_messageTypeHasBeenSet = false;
 
   int m_ackModeRetryDurationSecs{0};
+  bool m_seqHasBeenSet = false;
+  bool m_messageTypeHasBeenSet = false;
   bool m_ackModeRetryDurationSecsHasBeenSet = false;
 };
 

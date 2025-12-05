@@ -133,18 +133,18 @@ class NetworkInsightsAccessScope {
   ///@}
  private:
   Aws::String m_networkInsightsAccessScopeId;
-  bool m_networkInsightsAccessScopeIdHasBeenSet = false;
 
   Aws::String m_networkInsightsAccessScopeArn;
-  bool m_networkInsightsAccessScopeArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
-  bool m_createdDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedDate{};
-  bool m_updatedDateHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_networkInsightsAccessScopeIdHasBeenSet = false;
+  bool m_networkInsightsAccessScopeArnHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
+  bool m_updatedDateHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

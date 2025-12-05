@@ -61,9 +61,9 @@ class DescribeSignalingChannelResult {
   ///@}
  private:
   ChannelInfo m_channelInfo;
-  bool m_channelInfoHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelInfoHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

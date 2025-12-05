@@ -85,12 +85,12 @@ class ListInputRoutingsResult {
   ///@}
  private:
   Aws::Vector<RoutedResource> m_routedResources;
-  bool m_routedResourcesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_routedResourcesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

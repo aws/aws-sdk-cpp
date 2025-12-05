@@ -135,18 +135,18 @@ class CreateCapacityReservationBySplittingRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_sourceCapacityReservationId;
-  bool m_sourceCapacityReservationIdHasBeenSet = false;
 
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
+  bool m_dryRunHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_sourceCapacityReservationIdHasBeenSet = false;
+  bool m_instanceCountHasBeenSet = false;
   bool m_tagSpecificationsHasBeenSet = false;
 };
 

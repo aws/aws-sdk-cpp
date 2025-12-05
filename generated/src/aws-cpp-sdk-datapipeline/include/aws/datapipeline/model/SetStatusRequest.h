@@ -99,12 +99,12 @@ class SetStatusRequest : public DataPipelineRequest {
   ///@}
  private:
   Aws::String m_pipelineId;
-  bool m_pipelineIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_objectIds;
-  bool m_objectIdsHasBeenSet = false;
 
   Aws::String m_status;
+  bool m_pipelineIdHasBeenSet = false;
+  bool m_objectIdsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

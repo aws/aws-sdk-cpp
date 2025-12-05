@@ -100,15 +100,15 @@ class ListThemesResult {
   ///@}
  private:
   Aws::Vector<ThemeSummary> m_themeSummaryList;
-  bool m_themeSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_status{0};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_themeSummaryListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

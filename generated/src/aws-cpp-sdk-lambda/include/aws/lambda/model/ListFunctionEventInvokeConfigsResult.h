@@ -84,12 +84,12 @@ class ListFunctionEventInvokeConfigsResult {
   ///@}
  private:
   Aws::Vector<FunctionEventInvokeConfig> m_functionEventInvokeConfigs;
-  bool m_functionEventInvokeConfigsHasBeenSet = false;
 
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_functionEventInvokeConfigsHasBeenSet = false;
+  bool m_nextMarkerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

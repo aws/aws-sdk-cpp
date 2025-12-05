@@ -65,9 +65,9 @@ class DescribeOrganizationResult {
   ///@}
  private:
   Organization m_organization;
-  bool m_organizationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_organizationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

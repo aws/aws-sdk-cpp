@@ -182,24 +182,24 @@ class ChannelMessageCallback {
   ///@}
  private:
   Aws::String m_messageId;
-  bool m_messageIdHasBeenSet = false;
 
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::String m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   PushNotificationConfiguration m_pushNotification;
-  bool m_pushNotificationHasBeenSet = false;
 
   Aws::Map<Aws::String, MessageAttributeValue> m_messageAttributes;
-  bool m_messageAttributesHasBeenSet = false;
 
   Aws::String m_subChannelId;
-  bool m_subChannelIdHasBeenSet = false;
 
   Aws::String m_contentType;
+  bool m_messageIdHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_pushNotificationHasBeenSet = false;
+  bool m_messageAttributesHasBeenSet = false;
+  bool m_subChannelIdHasBeenSet = false;
   bool m_contentTypeHasBeenSet = false;
 };
 

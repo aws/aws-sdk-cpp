@@ -85,12 +85,12 @@ class JobDetailsError {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   JobEntityErrorCode m_code{JobEntityErrorCode::NOT_SET};
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_jobIdHasBeenSet = false;
+  bool m_codeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

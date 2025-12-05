@@ -71,9 +71,9 @@ class SavingsPlansSavings {
   ///@}
  private:
   Aws::String m_netSavings;
-  bool m_netSavingsHasBeenSet = false;
 
   Aws::String m_onDemandCostEquivalent;
+  bool m_netSavingsHasBeenSet = false;
   bool m_onDemandCostEquivalentHasBeenSet = false;
 };
 

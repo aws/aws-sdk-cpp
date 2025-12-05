@@ -165,21 +165,21 @@ class MemberAccountStatus {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_configRuleName;
-  bool m_configRuleNameHasBeenSet = false;
 
   MemberAccountRuleStatus m_memberAccountRuleStatus{MemberAccountRuleStatus::NOT_SET};
-  bool m_memberAccountRuleStatusHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateTime{};
+  bool m_accountIdHasBeenSet = false;
+  bool m_configRuleNameHasBeenSet = false;
+  bool m_memberAccountRuleStatusHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
   bool m_lastUpdateTimeHasBeenSet = false;
 };
 

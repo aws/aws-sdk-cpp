@@ -65,9 +65,9 @@ class GetDICOMImportJobRequest : public MedicalImagingRequest {
   ///@}
  private:
   Aws::String m_datastoreId;
-  bool m_datastoreIdHasBeenSet = false;
 
   Aws::String m_jobId;
+  bool m_datastoreIdHasBeenSet = false;
   bool m_jobIdHasBeenSet = false;
 };
 

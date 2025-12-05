@@ -318,45 +318,45 @@ class UpdateAgentRequest : public BedrockAgentRequest {
   ///@}
  private:
   Aws::String m_agentId;
-  bool m_agentIdHasBeenSet = false;
 
   Aws::String m_agentName;
-  bool m_agentNameHasBeenSet = false;
 
   Aws::String m_instruction;
-  bool m_instructionHasBeenSet = false;
 
   Aws::String m_foundationModel;
-  bool m_foundationModelHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   OrchestrationType m_orchestrationType{OrchestrationType::NOT_SET};
-  bool m_orchestrationTypeHasBeenSet = false;
 
   CustomOrchestration m_customOrchestration;
-  bool m_customOrchestrationHasBeenSet = false;
 
   int m_idleSessionTTLInSeconds{0};
-  bool m_idleSessionTTLInSecondsHasBeenSet = false;
 
   Aws::String m_agentResourceRoleArn;
-  bool m_agentResourceRoleArnHasBeenSet = false;
 
   Aws::String m_customerEncryptionKeyArn;
-  bool m_customerEncryptionKeyArnHasBeenSet = false;
 
   PromptOverrideConfiguration m_promptOverrideConfiguration;
-  bool m_promptOverrideConfigurationHasBeenSet = false;
 
   GuardrailConfiguration m_guardrailConfiguration;
-  bool m_guardrailConfigurationHasBeenSet = false;
 
   MemoryConfiguration m_memoryConfiguration;
-  bool m_memoryConfigurationHasBeenSet = false;
 
   AgentCollaboration m_agentCollaboration{AgentCollaboration::NOT_SET};
+  bool m_agentIdHasBeenSet = false;
+  bool m_agentNameHasBeenSet = false;
+  bool m_instructionHasBeenSet = false;
+  bool m_foundationModelHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_orchestrationTypeHasBeenSet = false;
+  bool m_customOrchestrationHasBeenSet = false;
+  bool m_idleSessionTTLInSecondsHasBeenSet = false;
+  bool m_agentResourceRoleArnHasBeenSet = false;
+  bool m_customerEncryptionKeyArnHasBeenSet = false;
+  bool m_promptOverrideConfigurationHasBeenSet = false;
+  bool m_guardrailConfigurationHasBeenSet = false;
+  bool m_memoryConfigurationHasBeenSet = false;
   bool m_agentCollaborationHasBeenSet = false;
 };
 

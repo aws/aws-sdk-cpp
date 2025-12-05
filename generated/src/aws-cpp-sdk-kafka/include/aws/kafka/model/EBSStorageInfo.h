@@ -74,9 +74,9 @@ class EBSStorageInfo {
   ///@}
  private:
   ProvisionedThroughput m_provisionedThroughput;
-  bool m_provisionedThroughputHasBeenSet = false;
 
   int m_volumeSize{0};
+  bool m_provisionedThroughputHasBeenSet = false;
   bool m_volumeSizeHasBeenSet = false;
 };
 

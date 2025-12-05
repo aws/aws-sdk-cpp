@@ -108,15 +108,15 @@ class CustomContentConfiguration {
   ///@}
  private:
   Aws::String m_contentUrl;
-  bool m_contentUrlHasBeenSet = false;
 
   CustomContentType m_contentType{CustomContentType::NOT_SET};
-  bool m_contentTypeHasBeenSet = false;
 
   CustomContentImageScalingConfiguration m_imageScaling{CustomContentImageScalingConfiguration::NOT_SET};
-  bool m_imageScalingHasBeenSet = false;
 
   VisualInteractionOptions m_interactions;
+  bool m_contentUrlHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_imageScalingHasBeenSet = false;
   bool m_interactionsHasBeenSet = false;
 };
 

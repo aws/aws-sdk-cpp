@@ -75,9 +75,9 @@ class DBSecurityGroupMembership {
   ///@}
  private:
   Aws::String m_dBSecurityGroupName;
-  bool m_dBSecurityGroupNameHasBeenSet = false;
 
   Aws::String m_status;
+  bool m_dBSecurityGroupNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

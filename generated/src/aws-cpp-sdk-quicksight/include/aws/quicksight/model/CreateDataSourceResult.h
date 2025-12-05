@@ -108,18 +108,18 @@ class CreateDataSourceResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_dataSourceId;
-  bool m_dataSourceIdHasBeenSet = false;
 
   ResourceStatus m_creationStatus{ResourceStatus::NOT_SET};
-  bool m_creationStatusHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   int m_status{0};
+  bool m_arnHasBeenSet = false;
+  bool m_dataSourceIdHasBeenSet = false;
+  bool m_creationStatusHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

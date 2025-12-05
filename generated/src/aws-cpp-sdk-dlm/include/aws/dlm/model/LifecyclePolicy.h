@@ -240,36 +240,36 @@ class LifecyclePolicy {
   ///@}
  private:
   Aws::String m_policyId;
-  bool m_policyIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   GettablePolicyStateValues m_state{GettablePolicyStateValues::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_dateCreated{};
-  bool m_dateCreatedHasBeenSet = false;
 
   Aws::Utils::DateTime m_dateModified{};
-  bool m_dateModifiedHasBeenSet = false;
 
   PolicyDetails m_policyDetails;
-  bool m_policyDetailsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_policyArn;
-  bool m_policyArnHasBeenSet = false;
 
   bool m_defaultPolicy{false};
+  bool m_policyIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_executionRoleArnHasBeenSet = false;
+  bool m_dateCreatedHasBeenSet = false;
+  bool m_dateModifiedHasBeenSet = false;
+  bool m_policyDetailsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_policyArnHasBeenSet = false;
   bool m_defaultPolicyHasBeenSet = false;
 };
 

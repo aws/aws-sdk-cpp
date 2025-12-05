@@ -105,15 +105,15 @@ class VerifySoftwareTokenRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::String m_accessToken;
-  bool m_accessTokenHasBeenSet = false;
 
   Aws::String m_session;
-  bool m_sessionHasBeenSet = false;
 
   Aws::String m_userCode;
-  bool m_userCodeHasBeenSet = false;
 
   Aws::String m_friendlyDeviceName;
+  bool m_accessTokenHasBeenSet = false;
+  bool m_sessionHasBeenSet = false;
+  bool m_userCodeHasBeenSet = false;
   bool m_friendlyDeviceNameHasBeenSet = false;
 };
 

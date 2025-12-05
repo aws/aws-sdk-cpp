@@ -93,12 +93,12 @@ class ProposedSegmentChange {
   ///@}
  private:
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   int m_attachmentPolicyRuleNumber{0};
-  bool m_attachmentPolicyRuleNumberHasBeenSet = false;
 
   Aws::String m_segmentName;
+  bool m_tagsHasBeenSet = false;
+  bool m_attachmentPolicyRuleNumberHasBeenSet = false;
   bool m_segmentNameHasBeenSet = false;
 };
 

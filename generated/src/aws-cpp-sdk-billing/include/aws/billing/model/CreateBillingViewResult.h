@@ -78,12 +78,12 @@ class CreateBillingViewResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

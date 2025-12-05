@@ -95,12 +95,12 @@ class ServerSideEncryptionUpdateDetails {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_oldKmsKeyId;
-  bool m_oldKmsKeyIdHasBeenSet = false;
 
   ServerSideEncryptionUpdateStatus m_updateStatus{ServerSideEncryptionUpdateStatus::NOT_SET};
+  bool m_messageHasBeenSet = false;
+  bool m_oldKmsKeyIdHasBeenSet = false;
   bool m_updateStatusHasBeenSet = false;
 };
 

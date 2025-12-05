@@ -115,15 +115,15 @@ class SourceConfiguration {
   ///@}
  private:
   CodeRepository m_codeRepository;
-  bool m_codeRepositoryHasBeenSet = false;
 
   ImageRepository m_imageRepository;
-  bool m_imageRepositoryHasBeenSet = false;
 
   bool m_autoDeploymentsEnabled{false};
-  bool m_autoDeploymentsEnabledHasBeenSet = false;
 
   AuthenticationConfiguration m_authenticationConfiguration;
+  bool m_codeRepositoryHasBeenSet = false;
+  bool m_imageRepositoryHasBeenSet = false;
+  bool m_autoDeploymentsEnabledHasBeenSet = false;
   bool m_authenticationConfigurationHasBeenSet = false;
 };
 

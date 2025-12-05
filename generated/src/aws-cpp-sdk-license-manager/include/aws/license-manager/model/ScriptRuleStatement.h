@@ -69,9 +69,9 @@ class ScriptRuleStatement {
   ///@}
  private:
   Aws::String m_keyToMatch;
-  bool m_keyToMatchHasBeenSet = false;
 
   Aws::String m_script;
+  bool m_keyToMatchHasBeenSet = false;
   bool m_scriptHasBeenSet = false;
 };
 

@@ -177,27 +177,27 @@ class UpdateAnswerRequest : public WellArchitectedRequest {
   ///@}
  private:
   Aws::String m_workloadId;
-  bool m_workloadIdHasBeenSet = false;
 
   Aws::String m_lensAlias;
-  bool m_lensAliasHasBeenSet = false;
 
   Aws::String m_questionId;
-  bool m_questionIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_selectedChoices;
-  bool m_selectedChoicesHasBeenSet = false;
 
   Aws::Map<Aws::String, ChoiceUpdate> m_choiceUpdates;
-  bool m_choiceUpdatesHasBeenSet = false;
 
   Aws::String m_notes;
-  bool m_notesHasBeenSet = false;
 
   bool m_isApplicable{false};
-  bool m_isApplicableHasBeenSet = false;
 
   AnswerReason m_reason{AnswerReason::NOT_SET};
+  bool m_workloadIdHasBeenSet = false;
+  bool m_lensAliasHasBeenSet = false;
+  bool m_questionIdHasBeenSet = false;
+  bool m_selectedChoicesHasBeenSet = false;
+  bool m_choiceUpdatesHasBeenSet = false;
+  bool m_notesHasBeenSet = false;
+  bool m_isApplicableHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class PipelineOutput {
   ///@}
  private:
   Record m_record;
-  bool m_recordHasBeenSet = false;
 
   PipelineOutputError m_error;
+  bool m_recordHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

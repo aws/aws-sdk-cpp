@@ -70,9 +70,9 @@ class QualityMetrics {
   ///@}
  private:
   AgentQualityMetrics m_agent;
-  bool m_agentHasBeenSet = false;
 
   CustomerQualityMetrics m_customer;
+  bool m_agentHasBeenSet = false;
   bool m_customerHasBeenSet = false;
 };
 

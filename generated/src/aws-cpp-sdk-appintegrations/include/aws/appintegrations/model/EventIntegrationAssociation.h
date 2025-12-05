@@ -149,21 +149,21 @@ class EventIntegrationAssociation {
   ///@}
  private:
   Aws::String m_eventIntegrationAssociationArn;
-  bool m_eventIntegrationAssociationArnHasBeenSet = false;
 
   Aws::String m_eventIntegrationAssociationId;
-  bool m_eventIntegrationAssociationIdHasBeenSet = false;
 
   Aws::String m_eventIntegrationName;
-  bool m_eventIntegrationNameHasBeenSet = false;
 
   Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
 
   Aws::String m_eventBridgeRuleName;
-  bool m_eventBridgeRuleNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_clientAssociationMetadata;
+  bool m_eventIntegrationAssociationArnHasBeenSet = false;
+  bool m_eventIntegrationAssociationIdHasBeenSet = false;
+  bool m_eventIntegrationNameHasBeenSet = false;
+  bool m_clientIdHasBeenSet = false;
+  bool m_eventBridgeRuleNameHasBeenSet = false;
   bool m_clientAssociationMetadataHasBeenSet = false;
 };
 

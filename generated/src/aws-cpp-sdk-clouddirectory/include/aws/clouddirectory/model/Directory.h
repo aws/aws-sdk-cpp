@@ -107,15 +107,15 @@ class Directory {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_directoryArn;
-  bool m_directoryArnHasBeenSet = false;
 
   DirectoryState m_state{DirectoryState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
+  bool m_nameHasBeenSet = false;
+  bool m_directoryArnHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_creationDateTimeHasBeenSet = false;
 };
 

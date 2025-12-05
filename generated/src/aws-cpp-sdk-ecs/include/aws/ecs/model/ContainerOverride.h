@@ -222,27 +222,27 @@ class ContainerOverride {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_command;
-  bool m_commandHasBeenSet = false;
 
   Aws::Vector<KeyValuePair> m_environment;
-  bool m_environmentHasBeenSet = false;
 
   Aws::Vector<EnvironmentFile> m_environmentFiles;
-  bool m_environmentFilesHasBeenSet = false;
 
   int m_cpu{0};
-  bool m_cpuHasBeenSet = false;
 
   int m_memory{0};
-  bool m_memoryHasBeenSet = false;
 
   int m_memoryReservation{0};
-  bool m_memoryReservationHasBeenSet = false;
 
   Aws::Vector<ResourceRequirement> m_resourceRequirements;
+  bool m_nameHasBeenSet = false;
+  bool m_commandHasBeenSet = false;
+  bool m_environmentHasBeenSet = false;
+  bool m_environmentFilesHasBeenSet = false;
+  bool m_cpuHasBeenSet = false;
+  bool m_memoryHasBeenSet = false;
+  bool m_memoryReservationHasBeenSet = false;
   bool m_resourceRequirementsHasBeenSet = false;
 };
 

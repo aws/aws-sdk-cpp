@@ -333,45 +333,45 @@ class ScalingPolicy {
   ///@}
  private:
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::String m_fleetArn;
-  bool m_fleetArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ScalingStatusType m_status{ScalingStatusType::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   int m_scalingAdjustment{0};
-  bool m_scalingAdjustmentHasBeenSet = false;
 
   ScalingAdjustmentType m_scalingAdjustmentType{ScalingAdjustmentType::NOT_SET};
-  bool m_scalingAdjustmentTypeHasBeenSet = false;
 
   ComparisonOperatorType m_comparisonOperator{ComparisonOperatorType::NOT_SET};
-  bool m_comparisonOperatorHasBeenSet = false;
 
   double m_threshold{0.0};
-  bool m_thresholdHasBeenSet = false;
 
   int m_evaluationPeriods{0};
-  bool m_evaluationPeriodsHasBeenSet = false;
 
   MetricName m_metricName{MetricName::NOT_SET};
-  bool m_metricNameHasBeenSet = false;
 
   PolicyType m_policyType{PolicyType::NOT_SET};
-  bool m_policyTypeHasBeenSet = false;
 
   TargetConfiguration m_targetConfiguration;
-  bool m_targetConfigurationHasBeenSet = false;
 
   LocationUpdateStatus m_updateStatus{LocationUpdateStatus::NOT_SET};
-  bool m_updateStatusHasBeenSet = false;
 
   Aws::String m_location;
+  bool m_fleetIdHasBeenSet = false;
+  bool m_fleetArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_scalingAdjustmentHasBeenSet = false;
+  bool m_scalingAdjustmentTypeHasBeenSet = false;
+  bool m_comparisonOperatorHasBeenSet = false;
+  bool m_thresholdHasBeenSet = false;
+  bool m_evaluationPeriodsHasBeenSet = false;
+  bool m_metricNameHasBeenSet = false;
+  bool m_policyTypeHasBeenSet = false;
+  bool m_targetConfigurationHasBeenSet = false;
+  bool m_updateStatusHasBeenSet = false;
   bool m_locationHasBeenSet = false;
 };
 

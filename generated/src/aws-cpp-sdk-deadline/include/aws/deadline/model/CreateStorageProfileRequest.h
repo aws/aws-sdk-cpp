@@ -133,18 +133,18 @@ class CreateStorageProfileRequest : public DeadlineRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_farmId;
-  bool m_farmIdHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   StorageProfileOperatingSystemFamily m_osFamily{StorageProfileOperatingSystemFamily::NOT_SET};
-  bool m_osFamilyHasBeenSet = false;
 
   Aws::Vector<FileSystemLocation> m_fileSystemLocations;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_farmIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_osFamilyHasBeenSet = false;
   bool m_fileSystemLocationsHasBeenSet = false;
 };
 

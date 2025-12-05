@@ -217,36 +217,36 @@ class GetSessionResult {
   ///@}
  private:
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_workGroup;
-  bool m_workGroupHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   EngineConfiguration m_engineConfiguration;
-  bool m_engineConfigurationHasBeenSet = false;
 
   Aws::String m_notebookVersion;
-  bool m_notebookVersionHasBeenSet = false;
 
   MonitoringConfiguration m_monitoringConfiguration;
-  bool m_monitoringConfigurationHasBeenSet = false;
 
   SessionConfiguration m_sessionConfiguration;
-  bool m_sessionConfigurationHasBeenSet = false;
 
   SessionStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   SessionStatistics m_statistics;
-  bool m_statisticsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_workGroupHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_engineConfigurationHasBeenSet = false;
+  bool m_notebookVersionHasBeenSet = false;
+  bool m_monitoringConfigurationHasBeenSet = false;
+  bool m_sessionConfigurationHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statisticsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

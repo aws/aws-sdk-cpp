@@ -82,12 +82,12 @@ class GetArtifactUrlResult {
   ///@}
  private:
   Aws::String m_artifactId;
-  bool m_artifactIdHasBeenSet = false;
 
   Aws::String m_artifactUrl;
-  bool m_artifactUrlHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_artifactIdHasBeenSet = false;
+  bool m_artifactUrlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -78,9 +78,9 @@ class GuardrailContentPolicyConfig {
   ///@}
  private:
   Aws::Vector<GuardrailContentFilterConfig> m_filtersConfig;
-  bool m_filtersConfigHasBeenSet = false;
 
   GuardrailContentFiltersTierConfig m_tierConfig;
+  bool m_filtersConfigHasBeenSet = false;
   bool m_tierConfigHasBeenSet = false;
 };
 

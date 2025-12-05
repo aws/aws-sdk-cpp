@@ -89,12 +89,12 @@ class SourceS3Location {
   ///@}
  private:
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   S3BucketRegion m_region{S3BucketRegion::NOT_SET};
+  bool m_bucketHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
   bool m_regionHasBeenSet = false;
 };
 

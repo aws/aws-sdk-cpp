@@ -74,9 +74,9 @@ class DeleteVpnConnectionRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_vpnConnectionId;
-  bool m_vpnConnectionIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_vpnConnectionIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

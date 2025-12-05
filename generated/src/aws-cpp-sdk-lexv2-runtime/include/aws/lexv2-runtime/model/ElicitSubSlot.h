@@ -69,9 +69,9 @@ class ElicitSubSlot {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   std::shared_ptr<ElicitSubSlot> m_subSlotToElicit;
+  bool m_nameHasBeenSet = false;
   bool m_subSlotToElicitHasBeenSet = false;
 };
 

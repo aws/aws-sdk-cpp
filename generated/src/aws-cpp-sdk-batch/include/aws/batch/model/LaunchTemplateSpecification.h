@@ -164,18 +164,18 @@ class LaunchTemplateSpecification {
   ///@}
  private:
   Aws::String m_launchTemplateId;
-  bool m_launchTemplateIdHasBeenSet = false;
 
   Aws::String m_launchTemplateName;
-  bool m_launchTemplateNameHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::Vector<LaunchTemplateSpecificationOverride> m_overrides;
-  bool m_overridesHasBeenSet = false;
 
   UserdataType m_userdataType{UserdataType::NOT_SET};
+  bool m_launchTemplateIdHasBeenSet = false;
+  bool m_launchTemplateNameHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_overridesHasBeenSet = false;
   bool m_userdataTypeHasBeenSet = false;
 };
 

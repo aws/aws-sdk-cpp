@@ -110,15 +110,15 @@ class FilePaths {
   ///@}
  private:
   Aws::String m_filePath;
-  bool m_filePathHasBeenSet = false;
 
   Aws::String m_fileName;
-  bool m_fileNameHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_hash;
+  bool m_filePathHasBeenSet = false;
+  bool m_fileNameHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
   bool m_hashHasBeenSet = false;
 };
 

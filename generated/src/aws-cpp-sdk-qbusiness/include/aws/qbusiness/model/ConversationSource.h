@@ -69,9 +69,9 @@ class ConversationSource {
   ///@}
  private:
   Aws::String m_conversationId;
-  bool m_conversationIdHasBeenSet = false;
 
   Aws::String m_attachmentId;
+  bool m_conversationIdHasBeenSet = false;
   bool m_attachmentIdHasBeenSet = false;
 };
 

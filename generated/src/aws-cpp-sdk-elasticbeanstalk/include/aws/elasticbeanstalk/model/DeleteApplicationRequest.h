@@ -71,9 +71,9 @@ class DeleteApplicationRequest : public ElasticBeanstalkRequest {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   bool m_terminateEnvByForce{false};
+  bool m_applicationNameHasBeenSet = false;
   bool m_terminateEnvByForceHasBeenSet = false;
 };
 

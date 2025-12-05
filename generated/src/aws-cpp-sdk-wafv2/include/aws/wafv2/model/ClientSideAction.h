@@ -145,12 +145,12 @@ class ClientSideAction {
   ///@}
  private:
   UsageOfAction m_usageOfAction{UsageOfAction::NOT_SET};
-  bool m_usageOfActionHasBeenSet = false;
 
   SensitivityToAct m_sensitivity{SensitivityToAct::NOT_SET};
-  bool m_sensitivityHasBeenSet = false;
 
   Aws::Vector<Regex> m_exemptUriRegularExpressions;
+  bool m_usageOfActionHasBeenSet = false;
+  bool m_sensitivityHasBeenSet = false;
   bool m_exemptUriRegularExpressionsHasBeenSet = false;
 };
 

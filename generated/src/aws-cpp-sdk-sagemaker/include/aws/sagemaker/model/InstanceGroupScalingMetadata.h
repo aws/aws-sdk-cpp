@@ -100,15 +100,15 @@ class InstanceGroupScalingMetadata {
   ///@}
  private:
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   int m_targetCount{0};
-  bool m_targetCountHasBeenSet = false;
 
   int m_minCount{0};
-  bool m_minCountHasBeenSet = false;
 
   Aws::String m_failureMessage;
+  bool m_instanceCountHasBeenSet = false;
+  bool m_targetCountHasBeenSet = false;
+  bool m_minCountHasBeenSet = false;
   bool m_failureMessageHasBeenSet = false;
 };
 

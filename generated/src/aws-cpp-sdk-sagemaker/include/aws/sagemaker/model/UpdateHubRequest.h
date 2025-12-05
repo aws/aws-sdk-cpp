@@ -110,15 +110,15 @@ class UpdateHubRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_hubName;
-  bool m_hubNameHasBeenSet = false;
 
   Aws::String m_hubDescription;
-  bool m_hubDescriptionHasBeenSet = false;
 
   Aws::String m_hubDisplayName;
-  bool m_hubDisplayNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_hubSearchKeywords;
+  bool m_hubNameHasBeenSet = false;
+  bool m_hubDescriptionHasBeenSet = false;
+  bool m_hubDisplayNameHasBeenSet = false;
   bool m_hubSearchKeywordsHasBeenSet = false;
 };
 

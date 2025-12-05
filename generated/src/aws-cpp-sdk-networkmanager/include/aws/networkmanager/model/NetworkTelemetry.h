@@ -196,30 +196,30 @@ class NetworkTelemetry {
   ///@}
  private:
   Aws::String m_registeredGatewayArn;
-  bool m_registeredGatewayArnHasBeenSet = false;
 
   Aws::String m_coreNetworkId;
-  bool m_coreNetworkIdHasBeenSet = false;
 
   Aws::String m_awsRegion;
-  bool m_awsRegionHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_address;
-  bool m_addressHasBeenSet = false;
 
   ConnectionHealth m_health;
+  bool m_registeredGatewayArnHasBeenSet = false;
+  bool m_coreNetworkIdHasBeenSet = false;
+  bool m_awsRegionHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_addressHasBeenSet = false;
   bool m_healthHasBeenSet = false;
 };
 

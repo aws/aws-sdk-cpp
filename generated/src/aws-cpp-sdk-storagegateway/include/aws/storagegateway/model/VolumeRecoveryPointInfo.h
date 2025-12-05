@@ -103,15 +103,15 @@ class VolumeRecoveryPointInfo {
   ///@}
  private:
   Aws::String m_volumeARN;
-  bool m_volumeARNHasBeenSet = false;
 
   long long m_volumeSizeInBytes{0};
-  bool m_volumeSizeInBytesHasBeenSet = false;
 
   long long m_volumeUsageInBytes{0};
-  bool m_volumeUsageInBytesHasBeenSet = false;
 
   Aws::String m_volumeRecoveryPointTime;
+  bool m_volumeARNHasBeenSet = false;
+  bool m_volumeSizeInBytesHasBeenSet = false;
+  bool m_volumeUsageInBytesHasBeenSet = false;
   bool m_volumeRecoveryPointTimeHasBeenSet = false;
 };
 

@@ -91,12 +91,12 @@ class ListComputationModelResolveToResourcesResult {
   ///@}
  private:
   Aws::Vector<ComputationModelResolveToResourceSummary> m_computationModelResolveToResourceSummaries;
-  bool m_computationModelResolveToResourceSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_computationModelResolveToResourceSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class GetKxScalingGroupRequest : public FinspaceRequest {
   ///@}
  private:
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::String m_scalingGroupName;
+  bool m_environmentIdHasBeenSet = false;
   bool m_scalingGroupNameHasBeenSet = false;
 };
 

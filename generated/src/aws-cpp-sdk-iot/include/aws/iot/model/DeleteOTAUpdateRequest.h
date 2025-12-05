@@ -88,12 +88,12 @@ class DeleteOTAUpdateRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_otaUpdateId;
-  bool m_otaUpdateIdHasBeenSet = false;
 
   bool m_deleteStream{false};
-  bool m_deleteStreamHasBeenSet = false;
 
   bool m_forceDeleteAWSJob{false};
+  bool m_otaUpdateIdHasBeenSet = false;
+  bool m_deleteStreamHasBeenSet = false;
   bool m_forceDeleteAWSJobHasBeenSet = false;
 };
 

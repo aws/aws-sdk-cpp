@@ -162,21 +162,21 @@ class DescribeSavingsPlansRequest : public SavingsPlansRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_savingsPlanArns;
-  bool m_savingsPlanArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_savingsPlanIds;
-  bool m_savingsPlanIdsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Vector<SavingsPlanState> m_states;
-  bool m_statesHasBeenSet = false;
 
   Aws::Vector<SavingsPlanFilter> m_filters;
+  bool m_savingsPlanArnsHasBeenSet = false;
+  bool m_savingsPlanIdsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_statesHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

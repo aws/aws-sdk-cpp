@@ -142,21 +142,21 @@ class SnowflakeParameters {
   ///@}
  private:
   Aws::String m_host;
-  bool m_hostHasBeenSet = false;
 
   Aws::String m_database;
-  bool m_databaseHasBeenSet = false;
 
   Aws::String m_warehouse;
-  bool m_warehouseHasBeenSet = false;
 
   AuthenticationType m_authenticationType{AuthenticationType::NOT_SET};
-  bool m_authenticationTypeHasBeenSet = false;
 
   Aws::String m_databaseAccessControlRole;
-  bool m_databaseAccessControlRoleHasBeenSet = false;
 
   OAuthParameters m_oAuthParameters;
+  bool m_hostHasBeenSet = false;
+  bool m_databaseHasBeenSet = false;
+  bool m_warehouseHasBeenSet = false;
+  bool m_authenticationTypeHasBeenSet = false;
+  bool m_databaseAccessControlRoleHasBeenSet = false;
   bool m_oAuthParametersHasBeenSet = false;
 };
 

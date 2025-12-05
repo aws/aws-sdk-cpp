@@ -143,21 +143,21 @@ class VpcEndpoint {
   ///@}
  private:
   Aws::String m_vpcEndpointId;
-  bool m_vpcEndpointIdHasBeenSet = false;
 
   Aws::String m_vpcEndpointOwner;
-  bool m_vpcEndpointOwnerHasBeenSet = false;
 
   Aws::String m_domainArn;
-  bool m_domainArnHasBeenSet = false;
 
   VPCDerivedInfo m_vpcOptions;
-  bool m_vpcOptionsHasBeenSet = false;
 
   VpcEndpointStatus m_status{VpcEndpointStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_endpoint;
+  bool m_vpcEndpointIdHasBeenSet = false;
+  bool m_vpcEndpointOwnerHasBeenSet = false;
+  bool m_domainArnHasBeenSet = false;
+  bool m_vpcOptionsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_endpointHasBeenSet = false;
 };
 

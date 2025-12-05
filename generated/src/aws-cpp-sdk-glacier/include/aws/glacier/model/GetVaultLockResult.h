@@ -120,18 +120,18 @@ class GetVaultLockResult {
   ///@}
  private:
   Aws::String m_policy;
-  bool m_policyHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_expirationDate;
-  bool m_expirationDateHasBeenSet = false;
 
   Aws::String m_creationDate;
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_expirationDateHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

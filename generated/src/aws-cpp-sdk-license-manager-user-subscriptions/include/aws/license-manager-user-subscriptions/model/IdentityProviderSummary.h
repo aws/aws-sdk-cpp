@@ -163,24 +163,24 @@ class IdentityProviderSummary {
   ///@}
  private:
   IdentityProvider m_identityProvider;
-  bool m_identityProviderHasBeenSet = false;
 
   Settings m_settings;
-  bool m_settingsHasBeenSet = false;
 
   Aws::String m_product;
-  bool m_productHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_identityProviderArn;
-  bool m_identityProviderArnHasBeenSet = false;
 
   Aws::String m_failureMessage;
-  bool m_failureMessageHasBeenSet = false;
 
   Aws::String m_ownerAccountId;
+  bool m_identityProviderHasBeenSet = false;
+  bool m_settingsHasBeenSet = false;
+  bool m_productHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_identityProviderArnHasBeenSet = false;
+  bool m_failureMessageHasBeenSet = false;
   bool m_ownerAccountIdHasBeenSet = false;
 };
 

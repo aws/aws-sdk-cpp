@@ -93,12 +93,12 @@ class BatchIsAuthorizedWithTokenInputItem {
   ///@}
  private:
   ActionIdentifier m_action;
-  bool m_actionHasBeenSet = false;
 
   EntityIdentifier m_resource;
-  bool m_resourceHasBeenSet = false;
 
   ContextDefinition m_context;
+  bool m_actionHasBeenSet = false;
+  bool m_resourceHasBeenSet = false;
   bool m_contextHasBeenSet = false;
 };
 

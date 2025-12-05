@@ -179,24 +179,24 @@ class ListAssetInstancesRequest : public OutpostsRequest {
   ///@}
  private:
   Aws::String m_outpostIdentifier;
-  bool m_outpostIdentifierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_assetIdFilter;
-  bool m_assetIdFilterHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_instanceTypeFilter;
-  bool m_instanceTypeFilterHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_accountIdFilter;
-  bool m_accountIdFilterHasBeenSet = false;
 
   Aws::Vector<AWSServiceName> m_awsServiceFilter;
-  bool m_awsServiceFilterHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_outpostIdentifierHasBeenSet = false;
+  bool m_assetIdFilterHasBeenSet = false;
+  bool m_instanceTypeFilterHasBeenSet = false;
+  bool m_accountIdFilterHasBeenSet = false;
+  bool m_awsServiceFilterHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -215,27 +215,27 @@ class Distribution {
   ///@}
  private:
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   AmiDistributionConfiguration m_amiDistributionConfiguration;
-  bool m_amiDistributionConfigurationHasBeenSet = false;
 
   ContainerDistributionConfiguration m_containerDistributionConfiguration;
-  bool m_containerDistributionConfigurationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_licenseConfigurationArns;
-  bool m_licenseConfigurationArnsHasBeenSet = false;
 
   Aws::Vector<LaunchTemplateConfiguration> m_launchTemplateConfigurations;
-  bool m_launchTemplateConfigurationsHasBeenSet = false;
 
   S3ExportConfiguration m_s3ExportConfiguration;
-  bool m_s3ExportConfigurationHasBeenSet = false;
 
   Aws::Vector<FastLaunchConfiguration> m_fastLaunchConfigurations;
-  bool m_fastLaunchConfigurationsHasBeenSet = false;
 
   Aws::Vector<SsmParameterConfiguration> m_ssmParameterConfigurations;
+  bool m_regionHasBeenSet = false;
+  bool m_amiDistributionConfigurationHasBeenSet = false;
+  bool m_containerDistributionConfigurationHasBeenSet = false;
+  bool m_licenseConfigurationArnsHasBeenSet = false;
+  bool m_launchTemplateConfigurationsHasBeenSet = false;
+  bool m_s3ExportConfigurationHasBeenSet = false;
+  bool m_fastLaunchConfigurationsHasBeenSet = false;
   bool m_ssmParameterConfigurationsHasBeenSet = false;
 };
 

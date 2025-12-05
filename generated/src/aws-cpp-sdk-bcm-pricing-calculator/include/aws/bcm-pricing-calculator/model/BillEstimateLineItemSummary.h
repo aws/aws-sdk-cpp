@@ -314,48 +314,48 @@ class BillEstimateLineItemSummary {
   ///@}
  private:
   Aws::String m_serviceCode;
-  bool m_serviceCodeHasBeenSet = false;
 
   Aws::String m_usageType;
-  bool m_usageTypeHasBeenSet = false;
 
   Aws::String m_operation;
-  bool m_operationHasBeenSet = false;
 
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_lineItemId;
-  bool m_lineItemIdHasBeenSet = false;
 
   Aws::String m_lineItemType;
-  bool m_lineItemTypeHasBeenSet = false;
 
   Aws::String m_payerAccountId;
-  bool m_payerAccountIdHasBeenSet = false;
 
   Aws::String m_usageAccountId;
-  bool m_usageAccountIdHasBeenSet = false;
 
   UsageQuantityResult m_estimatedUsageQuantity;
-  bool m_estimatedUsageQuantityHasBeenSet = false;
 
   CostAmount m_estimatedCost;
-  bool m_estimatedCostHasBeenSet = false;
 
   UsageQuantityResult m_historicalUsageQuantity;
-  bool m_historicalUsageQuantityHasBeenSet = false;
 
   CostAmount m_historicalCost;
-  bool m_historicalCostHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_savingsPlanArns;
+  bool m_serviceCodeHasBeenSet = false;
+  bool m_usageTypeHasBeenSet = false;
+  bool m_operationHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_lineItemIdHasBeenSet = false;
+  bool m_lineItemTypeHasBeenSet = false;
+  bool m_payerAccountIdHasBeenSet = false;
+  bool m_usageAccountIdHasBeenSet = false;
+  bool m_estimatedUsageQuantityHasBeenSet = false;
+  bool m_estimatedCostHasBeenSet = false;
+  bool m_historicalUsageQuantityHasBeenSet = false;
+  bool m_historicalCostHasBeenSet = false;
   bool m_savingsPlanArnsHasBeenSet = false;
 };
 

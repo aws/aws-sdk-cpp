@@ -90,12 +90,12 @@ class UpdatePackageScopeRequest : public OpenSearchServiceRequest {
   ///@}
  private:
   Aws::String m_packageID;
-  bool m_packageIDHasBeenSet = false;
 
   PackageScopeOperationEnum m_operation{PackageScopeOperationEnum::NOT_SET};
-  bool m_operationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_packageUserList;
+  bool m_packageIDHasBeenSet = false;
+  bool m_operationHasBeenSet = false;
   bool m_packageUserListHasBeenSet = false;
 };
 

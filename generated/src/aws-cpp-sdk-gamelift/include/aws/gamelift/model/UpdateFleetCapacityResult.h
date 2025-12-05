@@ -99,15 +99,15 @@ class UpdateFleetCapacityResult {
   ///@}
  private:
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::String m_fleetArn;
-  bool m_fleetArnHasBeenSet = false;
 
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fleetIdHasBeenSet = false;
+  bool m_fleetArnHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

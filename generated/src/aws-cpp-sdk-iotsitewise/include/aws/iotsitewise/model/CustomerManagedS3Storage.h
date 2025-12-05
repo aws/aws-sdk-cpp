@@ -77,9 +77,9 @@ class CustomerManagedS3Storage {
   ///@}
  private:
   Aws::String m_s3ResourceArn;
-  bool m_s3ResourceArnHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_s3ResourceArnHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class DescribeAvailablePatchesResult {
   ///@}
  private:
   Aws::Vector<Patch> m_patches;
-  bool m_patchesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_patchesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

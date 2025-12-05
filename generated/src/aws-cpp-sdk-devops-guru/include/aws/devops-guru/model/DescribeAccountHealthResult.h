@@ -122,21 +122,21 @@ class DescribeAccountHealthResult {
   ///@}
  private:
   int m_openReactiveInsights{0};
-  bool m_openReactiveInsightsHasBeenSet = false;
 
   int m_openProactiveInsights{0};
-  bool m_openProactiveInsightsHasBeenSet = false;
 
   int m_metricsAnalyzed{0};
-  bool m_metricsAnalyzedHasBeenSet = false;
 
   long long m_resourceHours{0};
-  bool m_resourceHoursHasBeenSet = false;
 
   long long m_analyzedResourceCount{0};
-  bool m_analyzedResourceCountHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_openReactiveInsightsHasBeenSet = false;
+  bool m_openProactiveInsightsHasBeenSet = false;
+  bool m_metricsAnalyzedHasBeenSet = false;
+  bool m_resourceHoursHasBeenSet = false;
+  bool m_analyzedResourceCountHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -129,18 +129,18 @@ class UpdateWebAppRequest : public TransferRequest {
   ///@}
  private:
   Aws::String m_webAppId;
-  bool m_webAppIdHasBeenSet = false;
 
   UpdateWebAppIdentityProviderDetails m_identityProviderDetails;
-  bool m_identityProviderDetailsHasBeenSet = false;
 
   Aws::String m_accessEndpoint;
-  bool m_accessEndpointHasBeenSet = false;
 
   WebAppUnits m_webAppUnits;
-  bool m_webAppUnitsHasBeenSet = false;
 
   UpdateWebAppEndpointDetails m_endpointDetails;
+  bool m_webAppIdHasBeenSet = false;
+  bool m_identityProviderDetailsHasBeenSet = false;
+  bool m_accessEndpointHasBeenSet = false;
+  bool m_webAppUnitsHasBeenSet = false;
   bool m_endpointDetailsHasBeenSet = false;
 };
 

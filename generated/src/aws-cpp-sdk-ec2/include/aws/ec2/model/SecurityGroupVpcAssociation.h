@@ -143,21 +143,21 @@ class SecurityGroupVpcAssociation {
   ///@}
  private:
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_vpcOwnerId;
-  bool m_vpcOwnerIdHasBeenSet = false;
 
   SecurityGroupVpcAssociationState m_state{SecurityGroupVpcAssociationState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_stateReason;
-  bool m_stateReasonHasBeenSet = false;
 
   Aws::String m_groupOwnerId;
+  bool m_groupIdHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_vpcOwnerIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_stateReasonHasBeenSet = false;
   bool m_groupOwnerIdHasBeenSet = false;
 };
 

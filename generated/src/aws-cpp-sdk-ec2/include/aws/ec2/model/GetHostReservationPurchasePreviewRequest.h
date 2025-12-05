@@ -76,9 +76,9 @@ class GetHostReservationPurchasePreviewRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_hostIdSet;
-  bool m_hostIdSetHasBeenSet = false;
 
   Aws::String m_offeringId;
+  bool m_hostIdSetHasBeenSet = false;
   bool m_offeringIdHasBeenSet = false;
 };
 

@@ -97,12 +97,12 @@ class RuleVerdictExpression {
   ///@}
  private:
   RuleVerdictToEvaluate m_evaluate;
-  bool m_evaluateHasBeenSet = false;
 
   RuleVerdictOperator m_operator{RuleVerdictOperator::NOT_SET};
-  bool m_operatorHasBeenSet = false;
 
   Aws::Vector<RuleVerdict> m_values;
+  bool m_evaluateHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

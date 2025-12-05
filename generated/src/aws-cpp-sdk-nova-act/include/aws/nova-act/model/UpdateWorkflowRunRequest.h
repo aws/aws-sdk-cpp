@@ -82,12 +82,12 @@ class UpdateWorkflowRunRequest : public NovaActRequest {
   ///@}
  private:
   Aws::String m_workflowDefinitionName;
-  bool m_workflowDefinitionNameHasBeenSet = false;
 
   Aws::String m_workflowRunId;
-  bool m_workflowRunIdHasBeenSet = false;
 
   WorkflowRunStatus m_status{WorkflowRunStatus::NOT_SET};
+  bool m_workflowDefinitionNameHasBeenSet = false;
+  bool m_workflowRunIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

@@ -240,33 +240,33 @@ class Upload {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_created{};
-  bool m_createdHasBeenSet = false;
 
   UploadType m_type{UploadType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   UploadStatus m_status{UploadStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::String m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   UploadCategory m_category{UploadCategory::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_createdHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_urlHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_categoryHasBeenSet = false;
 };
 

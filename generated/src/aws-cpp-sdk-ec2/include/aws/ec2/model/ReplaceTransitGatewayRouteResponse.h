@@ -60,9 +60,9 @@ class ReplaceTransitGatewayRouteResponse {
   ///@}
  private:
   TransitGatewayRoute m_route;
-  bool m_routeHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_routeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

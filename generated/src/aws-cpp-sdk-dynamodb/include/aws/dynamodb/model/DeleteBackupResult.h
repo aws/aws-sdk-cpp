@@ -60,9 +60,9 @@ class DeleteBackupResult {
   ///@}
  private:
   BackupDescription m_backupDescription;
-  bool m_backupDescriptionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_backupDescriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

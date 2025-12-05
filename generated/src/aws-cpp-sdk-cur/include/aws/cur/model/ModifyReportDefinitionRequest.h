@@ -64,9 +64,9 @@ class ModifyReportDefinitionRequest : public CostandUsageReportServiceRequest {
   ///@}
  private:
   Aws::String m_reportName;
-  bool m_reportNameHasBeenSet = false;
 
   ReportDefinition m_reportDefinition;
+  bool m_reportNameHasBeenSet = false;
   bool m_reportDefinitionHasBeenSet = false;
 };
 

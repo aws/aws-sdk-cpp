@@ -72,9 +72,9 @@ class UpdateBudgetRequest : public BudgetsRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Budget m_newBudget;
+  bool m_accountIdHasBeenSet = false;
   bool m_newBudgetHasBeenSet = false;
 };
 

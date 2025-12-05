@@ -88,12 +88,12 @@ class ByteContentDoc {
   ///@}
  private:
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::Utils::CryptoBuffer m_data{};
-  bool m_dataHasBeenSet = false;
 
   Aws::String m_identifier;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_dataHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
 };
 

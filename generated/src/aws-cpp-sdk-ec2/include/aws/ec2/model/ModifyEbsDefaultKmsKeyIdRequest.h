@@ -82,9 +82,9 @@ class ModifyEbsDefaultKmsKeyIdRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_kmsKeyIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

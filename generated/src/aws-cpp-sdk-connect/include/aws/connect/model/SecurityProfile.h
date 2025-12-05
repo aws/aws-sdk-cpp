@@ -304,42 +304,42 @@ class SecurityProfile {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_organizationResourceId;
-  bool m_organizationResourceIdHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_securityProfileName;
-  bool m_securityProfileNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_allowedAccessControlTags;
-  bool m_allowedAccessControlTagsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagRestrictedResources;
-  bool m_tagRestrictedResourcesHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_lastModifiedRegion;
-  bool m_lastModifiedRegionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_hierarchyRestrictedResources;
-  bool m_hierarchyRestrictedResourcesHasBeenSet = false;
 
   Aws::String m_allowedAccessControlHierarchyGroupId;
-  bool m_allowedAccessControlHierarchyGroupIdHasBeenSet = false;
 
   GranularAccessControlConfiguration m_granularAccessControlConfiguration;
+  bool m_idHasBeenSet = false;
+  bool m_organizationResourceIdHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_securityProfileNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_allowedAccessControlTagsHasBeenSet = false;
+  bool m_tagRestrictedResourcesHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_lastModifiedRegionHasBeenSet = false;
+  bool m_hierarchyRestrictedResourcesHasBeenSet = false;
+  bool m_allowedAccessControlHierarchyGroupIdHasBeenSet = false;
   bool m_granularAccessControlConfigurationHasBeenSet = false;
 };
 

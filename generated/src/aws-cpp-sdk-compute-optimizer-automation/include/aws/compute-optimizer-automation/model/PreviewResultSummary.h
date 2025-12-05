@@ -68,9 +68,9 @@ class PreviewResultSummary {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   RulePreviewTotal m_total;
+  bool m_keyHasBeenSet = false;
   bool m_totalHasBeenSet = false;
 };
 

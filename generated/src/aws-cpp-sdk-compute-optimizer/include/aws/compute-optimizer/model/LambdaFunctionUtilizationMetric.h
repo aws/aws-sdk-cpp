@@ -97,12 +97,12 @@ class LambdaFunctionUtilizationMetric {
   ///@}
  private:
   LambdaFunctionMetricName m_name{LambdaFunctionMetricName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   LambdaFunctionMetricStatistic m_statistic{LambdaFunctionMetricStatistic::NOT_SET};
-  bool m_statisticHasBeenSet = false;
 
   double m_value{0.0};
+  bool m_nameHasBeenSet = false;
+  bool m_statisticHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

@@ -94,12 +94,12 @@ class ResourceGroup {
   ///@}
  private:
   ResourceGroupState m_state{ResourceGroupState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_stateHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

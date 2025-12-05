@@ -125,18 +125,18 @@ class SendVoiceMessageRequest : public PinpointSMSVoiceRequest {
   ///@}
  private:
   Aws::String m_callerId;
-  bool m_callerIdHasBeenSet = false;
 
   Aws::String m_configurationSetName;
-  bool m_configurationSetNameHasBeenSet = false;
 
   VoiceMessageContent m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::String m_destinationPhoneNumber;
-  bool m_destinationPhoneNumberHasBeenSet = false;
 
   Aws::String m_originationPhoneNumber;
+  bool m_callerIdHasBeenSet = false;
+  bool m_configurationSetNameHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_destinationPhoneNumberHasBeenSet = false;
   bool m_originationPhoneNumberHasBeenSet = false;
 };
 

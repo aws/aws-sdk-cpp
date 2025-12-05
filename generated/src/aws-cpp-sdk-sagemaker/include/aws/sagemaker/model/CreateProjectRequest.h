@@ -149,18 +149,18 @@ class CreateProjectRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_projectName;
-  bool m_projectNameHasBeenSet = false;
 
   Aws::String m_projectDescription;
-  bool m_projectDescriptionHasBeenSet = false;
 
   ServiceCatalogProvisioningDetails m_serviceCatalogProvisioningDetails;
-  bool m_serviceCatalogProvisioningDetailsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<CreateTemplateProvider> m_templateProviders;
+  bool m_projectNameHasBeenSet = false;
+  bool m_projectDescriptionHasBeenSet = false;
+  bool m_serviceCatalogProvisioningDetailsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_templateProvidersHasBeenSet = false;
 };
 

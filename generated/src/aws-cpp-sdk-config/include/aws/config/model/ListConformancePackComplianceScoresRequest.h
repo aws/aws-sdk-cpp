@@ -135,18 +135,18 @@ class ListConformancePackComplianceScoresRequest : public ConfigServiceRequest {
   ///@}
  private:
   ConformancePackComplianceScoresFilters m_filters;
-  bool m_filtersHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   SortBy m_sortBy{SortBy::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_filtersHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

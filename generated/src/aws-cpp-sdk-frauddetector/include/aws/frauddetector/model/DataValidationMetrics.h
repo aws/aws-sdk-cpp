@@ -82,9 +82,9 @@ class DataValidationMetrics {
   ///@}
  private:
   Aws::Vector<FileValidationMessage> m_fileLevelMessages;
-  bool m_fileLevelMessagesHasBeenSet = false;
 
   Aws::Vector<FieldValidationMessage> m_fieldLevelMessages;
+  bool m_fileLevelMessagesHasBeenSet = false;
   bool m_fieldLevelMessagesHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class GlobalReplicationGroupInfo {
   ///@}
  private:
   Aws::String m_globalReplicationGroupId;
-  bool m_globalReplicationGroupIdHasBeenSet = false;
 
   Aws::String m_globalReplicationGroupMemberRole;
+  bool m_globalReplicationGroupIdHasBeenSet = false;
   bool m_globalReplicationGroupMemberRoleHasBeenSet = false;
 };
 

@@ -61,9 +61,9 @@ class AssociateAgentKnowledgeBaseResult {
   ///@}
  private:
   AgentKnowledgeBase m_agentKnowledgeBase;
-  bool m_agentKnowledgeBaseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_agentKnowledgeBaseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

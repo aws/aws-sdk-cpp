@@ -174,24 +174,24 @@ class RDFGraphSummary {
   ///@}
  private:
   long long m_numDistinctSubjects{0};
-  bool m_numDistinctSubjectsHasBeenSet = false;
 
   long long m_numDistinctPredicates{0};
-  bool m_numDistinctPredicatesHasBeenSet = false;
 
   long long m_numQuads{0};
-  bool m_numQuadsHasBeenSet = false;
 
   long long m_numClasses{0};
-  bool m_numClassesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_classes;
-  bool m_classesHasBeenSet = false;
 
   Aws::Vector<Aws::Map<Aws::String, long long>> m_predicates;
-  bool m_predicatesHasBeenSet = false;
 
   Aws::Vector<SubjectStructure> m_subjectStructures;
+  bool m_numDistinctSubjectsHasBeenSet = false;
+  bool m_numDistinctPredicatesHasBeenSet = false;
+  bool m_numQuadsHasBeenSet = false;
+  bool m_numClassesHasBeenSet = false;
+  bool m_classesHasBeenSet = false;
+  bool m_predicatesHasBeenSet = false;
   bool m_subjectStructuresHasBeenSet = false;
 };
 

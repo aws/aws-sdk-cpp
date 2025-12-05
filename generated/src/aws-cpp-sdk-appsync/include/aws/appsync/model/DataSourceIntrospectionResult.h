@@ -80,9 +80,9 @@ class DataSourceIntrospectionResult {
   ///@}
  private:
   Aws::Vector<DataSourceIntrospectionModel> m_models;
-  bool m_modelsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_modelsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

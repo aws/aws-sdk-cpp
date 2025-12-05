@@ -95,12 +95,12 @@ class InlineCustomDocumentEnrichmentConfiguration {
   ///@}
  private:
   DocumentAttributeCondition m_condition;
-  bool m_conditionHasBeenSet = false;
 
   DocumentAttributeTarget m_target;
-  bool m_targetHasBeenSet = false;
 
   bool m_documentContentDeletion{false};
+  bool m_conditionHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
   bool m_documentContentDeletionHasBeenSet = false;
 };
 

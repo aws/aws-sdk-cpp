@@ -214,33 +214,33 @@ class UpdateDeviceRequest : public NetworkManagerRequest {
   ///@}
  private:
   Aws::String m_globalNetworkId;
-  bool m_globalNetworkIdHasBeenSet = false;
 
   Aws::String m_deviceId;
-  bool m_deviceIdHasBeenSet = false;
 
   AWSLocation m_aWSLocation;
-  bool m_aWSLocationHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_vendor;
-  bool m_vendorHasBeenSet = false;
 
   Aws::String m_model;
-  bool m_modelHasBeenSet = false;
 
   Aws::String m_serialNumber;
-  bool m_serialNumberHasBeenSet = false;
 
   Location m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::String m_siteId;
+  bool m_globalNetworkIdHasBeenSet = false;
+  bool m_deviceIdHasBeenSet = false;
+  bool m_aWSLocationHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_vendorHasBeenSet = false;
+  bool m_modelHasBeenSet = false;
+  bool m_serialNumberHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
   bool m_siteIdHasBeenSet = false;
 };
 

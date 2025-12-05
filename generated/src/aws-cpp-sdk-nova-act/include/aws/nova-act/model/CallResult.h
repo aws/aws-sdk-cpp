@@ -77,9 +77,9 @@ class CallResult {
   ///@}
  private:
   Aws::String m_callId;
-  bool m_callIdHasBeenSet = false;
 
   Aws::Vector<CallResultContent> m_content;
+  bool m_callIdHasBeenSet = false;
   bool m_contentHasBeenSet = false;
 };
 

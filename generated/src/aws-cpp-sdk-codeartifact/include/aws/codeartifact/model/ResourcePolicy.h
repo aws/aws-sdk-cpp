@@ -87,12 +87,12 @@ class ResourcePolicy {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_revision;
-  bool m_revisionHasBeenSet = false;
 
   Aws::String m_document;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_revisionHasBeenSet = false;
   bool m_documentHasBeenSet = false;
 };
 

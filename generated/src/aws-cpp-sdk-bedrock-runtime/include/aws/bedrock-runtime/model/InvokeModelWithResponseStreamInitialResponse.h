@@ -81,12 +81,12 @@ class InvokeModelWithResponseStreamInitialResponse {
   ///@}
  private:
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   PerformanceConfigLatency m_performanceConfigLatency{PerformanceConfigLatency::NOT_SET};
-  bool m_performanceConfigLatencyHasBeenSet = false;
 
   ServiceTierType m_serviceTier{ServiceTierType::NOT_SET};
+  bool m_contentTypeHasBeenSet = false;
+  bool m_performanceConfigLatencyHasBeenSet = false;
   bool m_serviceTierHasBeenSet = false;
 };
 

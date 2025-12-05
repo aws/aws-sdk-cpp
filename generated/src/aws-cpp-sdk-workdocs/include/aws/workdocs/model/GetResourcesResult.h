@@ -109,15 +109,15 @@ class GetResourcesResult {
   ///@}
  private:
   Aws::Vector<FolderMetadata> m_folders;
-  bool m_foldersHasBeenSet = false;
 
   Aws::Vector<DocumentMetadata> m_documents;
-  bool m_documentsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_foldersHasBeenSet = false;
+  bool m_documentsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class CalculatedColumn {
   ///@}
  private:
   Aws::String m_columnName;
-  bool m_columnNameHasBeenSet = false;
 
   Aws::String m_columnId;
-  bool m_columnIdHasBeenSet = false;
 
   Aws::String m_expression;
+  bool m_columnNameHasBeenSet = false;
+  bool m_columnIdHasBeenSet = false;
   bool m_expressionHasBeenSet = false;
 };
 

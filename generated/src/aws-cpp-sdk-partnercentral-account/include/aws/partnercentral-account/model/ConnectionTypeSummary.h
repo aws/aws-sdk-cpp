@@ -68,9 +68,9 @@ class ConnectionTypeSummary {
   ///@}
  private:
   ConnectionTypeStatus m_status{ConnectionTypeStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Participant m_otherParticipant;
+  bool m_statusHasBeenSet = false;
   bool m_otherParticipantHasBeenSet = false;
 };
 

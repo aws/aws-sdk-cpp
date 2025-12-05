@@ -90,12 +90,12 @@ class ThirdPartyJobDetails {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   ThirdPartyJobData m_data;
-  bool m_dataHasBeenSet = false;
 
   Aws::String m_nonce;
+  bool m_idHasBeenSet = false;
+  bool m_dataHasBeenSet = false;
   bool m_nonceHasBeenSet = false;
 };
 

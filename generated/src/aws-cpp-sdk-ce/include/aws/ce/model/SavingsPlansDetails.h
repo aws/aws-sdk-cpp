@@ -88,12 +88,12 @@ class SavingsPlansDetails {
   ///@}
  private:
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_instanceFamily;
-  bool m_instanceFamilyHasBeenSet = false;
 
   Aws::String m_offeringId;
+  bool m_regionHasBeenSet = false;
+  bool m_instanceFamilyHasBeenSet = false;
   bool m_offeringIdHasBeenSet = false;
 };
 

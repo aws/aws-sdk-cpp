@@ -262,42 +262,42 @@ class ScheduledInstanceAvailability {
   ///@}
  private:
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   int m_availableInstanceCount{0};
-  bool m_availableInstanceCountHasBeenSet = false;
 
   Aws::Utils::DateTime m_firstSlotStartTime{};
-  bool m_firstSlotStartTimeHasBeenSet = false;
 
   Aws::String m_hourlyPrice;
-  bool m_hourlyPriceHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   int m_maxTermDurationInDays{0};
-  bool m_maxTermDurationInDaysHasBeenSet = false;
 
   int m_minTermDurationInDays{0};
-  bool m_minTermDurationInDaysHasBeenSet = false;
 
   Aws::String m_networkPlatform;
-  bool m_networkPlatformHasBeenSet = false;
 
   Aws::String m_platform;
-  bool m_platformHasBeenSet = false;
 
   Aws::String m_purchaseToken;
-  bool m_purchaseTokenHasBeenSet = false;
 
   ScheduledInstanceRecurrence m_recurrence;
-  bool m_recurrenceHasBeenSet = false;
 
   int m_slotDurationInHours{0};
-  bool m_slotDurationInHoursHasBeenSet = false;
 
   int m_totalScheduledInstanceHours{0};
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_availableInstanceCountHasBeenSet = false;
+  bool m_firstSlotStartTimeHasBeenSet = false;
+  bool m_hourlyPriceHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_maxTermDurationInDaysHasBeenSet = false;
+  bool m_minTermDurationInDaysHasBeenSet = false;
+  bool m_networkPlatformHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_purchaseTokenHasBeenSet = false;
+  bool m_recurrenceHasBeenSet = false;
+  bool m_slotDurationInHoursHasBeenSet = false;
   bool m_totalScheduledInstanceHoursHasBeenSet = false;
 };
 

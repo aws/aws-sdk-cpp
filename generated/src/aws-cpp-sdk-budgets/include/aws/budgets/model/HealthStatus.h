@@ -92,12 +92,12 @@ class HealthStatus {
   ///@}
  private:
   HealthStatusValue m_status{HealthStatusValue::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   HealthStatusReason m_statusReason{HealthStatusReason::NOT_SET};
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
   bool m_lastUpdatedTimeHasBeenSet = false;
 };
 

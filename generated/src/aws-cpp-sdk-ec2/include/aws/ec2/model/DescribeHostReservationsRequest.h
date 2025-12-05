@@ -134,15 +134,15 @@ class DescribeHostReservationsRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<Filter> m_filter;
-  bool m_filterHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_hostReservationIdSet;
-  bool m_hostReservationIdSetHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_filterHasBeenSet = false;
+  bool m_hostReservationIdSetHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

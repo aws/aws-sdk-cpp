@@ -214,24 +214,24 @@ class AdvancedFieldSelector {
   ///@}
  private:
   Aws::String m_field;
-  bool m_fieldHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_equals;
-  bool m_equalsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_startsWith;
-  bool m_startsWithHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_endsWith;
-  bool m_endsWithHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_notEquals;
-  bool m_notEqualsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_notStartsWith;
-  bool m_notStartsWithHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_notEndsWith;
+  bool m_fieldHasBeenSet = false;
+  bool m_equalsHasBeenSet = false;
+  bool m_startsWithHasBeenSet = false;
+  bool m_endsWithHasBeenSet = false;
+  bool m_notEqualsHasBeenSet = false;
+  bool m_notStartsWithHasBeenSet = false;
   bool m_notEndsWithHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class FlowInputField {
   ///@}
  private:
   FlowExecutionContent m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_contentHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

@@ -61,9 +61,9 @@ class GetIndexResult {
   ///@}
  private:
   Aws::Utils::Document m_indexSchema;
-  bool m_indexSchemaHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_indexSchemaHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -614,69 +614,69 @@ class ContainerProperties {
   ///@}
  private:
   Aws::String m_image;
-  bool m_imageHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_command;
-  bool m_commandHasBeenSet = false;
 
   Aws::String m_jobRoleArn;
-  bool m_jobRoleArnHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   Aws::Vector<Volume> m_volumes;
-  bool m_volumesHasBeenSet = false;
 
   Aws::Vector<KeyValuePair> m_environment;
-  bool m_environmentHasBeenSet = false;
 
   Aws::Vector<MountPoint> m_mountPoints;
-  bool m_mountPointsHasBeenSet = false;
 
   bool m_readonlyRootFilesystem{false};
-  bool m_readonlyRootFilesystemHasBeenSet = false;
 
   bool m_privileged{false};
-  bool m_privilegedHasBeenSet = false;
 
   Aws::Vector<Ulimit> m_ulimits;
-  bool m_ulimitsHasBeenSet = false;
 
   Aws::String m_user;
-  bool m_userHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::Vector<ResourceRequirement> m_resourceRequirements;
-  bool m_resourceRequirementsHasBeenSet = false;
 
   LinuxParameters m_linuxParameters;
-  bool m_linuxParametersHasBeenSet = false;
 
   LogConfiguration m_logConfiguration;
-  bool m_logConfigurationHasBeenSet = false;
 
   Aws::Vector<Secret> m_secrets;
-  bool m_secretsHasBeenSet = false;
 
   NetworkConfiguration m_networkConfiguration;
-  bool m_networkConfigurationHasBeenSet = false;
 
   FargatePlatformConfiguration m_fargatePlatformConfiguration;
-  bool m_fargatePlatformConfigurationHasBeenSet = false;
 
   bool m_enableExecuteCommand{false};
-  bool m_enableExecuteCommandHasBeenSet = false;
 
   EphemeralStorage m_ephemeralStorage;
-  bool m_ephemeralStorageHasBeenSet = false;
 
   RuntimePlatform m_runtimePlatform;
-  bool m_runtimePlatformHasBeenSet = false;
 
   RepositoryCredentials m_repositoryCredentials;
+  bool m_imageHasBeenSet = false;
+  bool m_commandHasBeenSet = false;
+  bool m_jobRoleArnHasBeenSet = false;
+  bool m_executionRoleArnHasBeenSet = false;
+  bool m_volumesHasBeenSet = false;
+  bool m_environmentHasBeenSet = false;
+  bool m_mountPointsHasBeenSet = false;
+  bool m_readonlyRootFilesystemHasBeenSet = false;
+  bool m_privilegedHasBeenSet = false;
+  bool m_ulimitsHasBeenSet = false;
+  bool m_userHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_resourceRequirementsHasBeenSet = false;
+  bool m_linuxParametersHasBeenSet = false;
+  bool m_logConfigurationHasBeenSet = false;
+  bool m_secretsHasBeenSet = false;
+  bool m_networkConfigurationHasBeenSet = false;
+  bool m_fargatePlatformConfigurationHasBeenSet = false;
+  bool m_enableExecuteCommandHasBeenSet = false;
+  bool m_ephemeralStorageHasBeenSet = false;
+  bool m_runtimePlatformHasBeenSet = false;
   bool m_repositoryCredentialsHasBeenSet = false;
 };
 

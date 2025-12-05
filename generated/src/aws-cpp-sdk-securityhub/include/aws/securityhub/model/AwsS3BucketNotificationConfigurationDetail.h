@@ -118,15 +118,15 @@ class AwsS3BucketNotificationConfigurationDetail {
   ///@}
  private:
   Aws::Vector<Aws::String> m_events;
-  bool m_eventsHasBeenSet = false;
 
   AwsS3BucketNotificationConfigurationFilter m_filter;
-  bool m_filterHasBeenSet = false;
 
   Aws::String m_destination;
-  bool m_destinationHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_eventsHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

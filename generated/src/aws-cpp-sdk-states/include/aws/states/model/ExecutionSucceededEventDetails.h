@@ -71,9 +71,9 @@ class ExecutionSucceededEventDetails {
   ///@}
  private:
   Aws::String m_output;
-  bool m_outputHasBeenSet = false;
 
   HistoryEventExecutionDataDetails m_outputDetails;
+  bool m_outputHasBeenSet = false;
   bool m_outputDetailsHasBeenSet = false;
 };
 

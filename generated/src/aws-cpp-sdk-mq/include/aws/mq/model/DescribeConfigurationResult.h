@@ -229,36 +229,36 @@ class DescribeConfigurationResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   AuthenticationStrategy m_authenticationStrategy{AuthenticationStrategy::NOT_SET};
-  bool m_authenticationStrategyHasBeenSet = false;
 
   Aws::Utils::DateTime m_created{};
-  bool m_createdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   EngineType m_engineType{EngineType::NOT_SET};
-  bool m_engineTypeHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   ConfigurationRevision m_latestRevision;
-  bool m_latestRevisionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_authenticationStrategyHasBeenSet = false;
+  bool m_createdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_engineTypeHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_latestRevisionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

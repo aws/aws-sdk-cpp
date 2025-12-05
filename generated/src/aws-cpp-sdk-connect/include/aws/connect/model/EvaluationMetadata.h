@@ -200,30 +200,30 @@ class EvaluationMetadata {
   ///@}
  private:
   Aws::String m_contactId;
-  bool m_contactIdHasBeenSet = false;
 
   Aws::String m_evaluatorArn;
-  bool m_evaluatorArnHasBeenSet = false;
 
   Aws::String m_contactAgentId;
-  bool m_contactAgentIdHasBeenSet = false;
 
   Aws::String m_calibrationSessionId;
-  bool m_calibrationSessionIdHasBeenSet = false;
 
   EvaluationScore m_score;
-  bool m_scoreHasBeenSet = false;
 
   AutoEvaluationDetails m_autoEvaluation;
-  bool m_autoEvaluationHasBeenSet = false;
 
   EvaluationAcknowledgement m_acknowledgement;
-  bool m_acknowledgementHasBeenSet = false;
 
   EvaluationContactParticipant m_contactParticipant;
-  bool m_contactParticipantHasBeenSet = false;
 
   Aws::String m_samplingJobId;
+  bool m_contactIdHasBeenSet = false;
+  bool m_evaluatorArnHasBeenSet = false;
+  bool m_contactAgentIdHasBeenSet = false;
+  bool m_calibrationSessionIdHasBeenSet = false;
+  bool m_scoreHasBeenSet = false;
+  bool m_autoEvaluationHasBeenSet = false;
+  bool m_acknowledgementHasBeenSet = false;
+  bool m_contactParticipantHasBeenSet = false;
   bool m_samplingJobIdHasBeenSet = false;
 };
 

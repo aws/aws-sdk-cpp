@@ -110,15 +110,15 @@ class CreateRoutingControlRequest : public Route53RecoveryControlConfigRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::String m_controlPanelArn;
-  bool m_controlPanelArnHasBeenSet = false;
 
   Aws::String m_routingControlName;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_clusterArnHasBeenSet = false;
+  bool m_controlPanelArnHasBeenSet = false;
   bool m_routingControlNameHasBeenSet = false;
 };
 

@@ -87,9 +87,9 @@ class RevocationConfiguration {
   ///@}
  private:
   CrlConfiguration m_crlConfiguration;
-  bool m_crlConfigurationHasBeenSet = false;
 
   OcspConfiguration m_ocspConfiguration;
+  bool m_crlConfigurationHasBeenSet = false;
   bool m_ocspConfigurationHasBeenSet = false;
 };
 

@@ -76,12 +76,12 @@ class GetSchemaCreationStatusResult {
   ///@}
  private:
   SchemaStatus m_status{SchemaStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_details;
-  bool m_detailsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_detailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -201,33 +201,33 @@ class ArchiveWaveResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_creationDateTime;
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_isArchived{false};
-  bool m_isArchivedHasBeenSet = false;
 
   Aws::String m_lastModifiedDateTime;
-  bool m_lastModifiedDateTimeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   WaveAggregatedStatus m_waveAggregatedStatus;
-  bool m_waveAggregatedStatusHasBeenSet = false;
 
   Aws::String m_waveID;
-  bool m_waveIDHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_isArchivedHasBeenSet = false;
+  bool m_lastModifiedDateTimeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_waveAggregatedStatusHasBeenSet = false;
+  bool m_waveIDHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

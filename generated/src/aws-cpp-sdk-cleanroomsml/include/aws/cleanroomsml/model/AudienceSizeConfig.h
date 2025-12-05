@@ -81,9 +81,9 @@ class AudienceSizeConfig {
   ///@}
  private:
   AudienceSizeType m_audienceSizeType{AudienceSizeType::NOT_SET};
-  bool m_audienceSizeTypeHasBeenSet = false;
 
   Aws::Vector<int> m_audienceSizeBins;
+  bool m_audienceSizeTypeHasBeenSet = false;
   bool m_audienceSizeBinsHasBeenSet = false;
 };
 

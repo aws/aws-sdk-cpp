@@ -283,45 +283,45 @@ class GetHookResultResult {
   ///@}
  private:
   Aws::String m_hookResultId;
-  bool m_hookResultIdHasBeenSet = false;
 
   HookInvocationPoint m_invocationPoint{HookInvocationPoint::NOT_SET};
-  bool m_invocationPointHasBeenSet = false;
 
   HookFailureMode m_failureMode{HookFailureMode::NOT_SET};
-  bool m_failureModeHasBeenSet = false;
 
   Aws::String m_typeName;
-  bool m_typeNameHasBeenSet = false;
 
   Aws::String m_originalTypeName;
-  bool m_originalTypeNameHasBeenSet = false;
 
   Aws::String m_typeVersionId;
-  bool m_typeVersionIdHasBeenSet = false;
 
   Aws::String m_typeConfigurationVersionId;
-  bool m_typeConfigurationVersionIdHasBeenSet = false;
 
   Aws::String m_typeArn;
-  bool m_typeArnHasBeenSet = false;
 
   HookStatus m_status{HookStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_hookStatusReason;
-  bool m_hookStatusReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_invokedAt{};
-  bool m_invokedAtHasBeenSet = false;
 
   HookTarget m_target;
-  bool m_targetHasBeenSet = false;
 
   Aws::Vector<Annotation> m_annotations;
-  bool m_annotationsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_hookResultIdHasBeenSet = false;
+  bool m_invocationPointHasBeenSet = false;
+  bool m_failureModeHasBeenSet = false;
+  bool m_typeNameHasBeenSet = false;
+  bool m_originalTypeNameHasBeenSet = false;
+  bool m_typeVersionIdHasBeenSet = false;
+  bool m_typeConfigurationVersionIdHasBeenSet = false;
+  bool m_typeArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_hookStatusReasonHasBeenSet = false;
+  bool m_invokedAtHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
+  bool m_annotationsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

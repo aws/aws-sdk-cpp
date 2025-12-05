@@ -112,15 +112,15 @@ class DescribeCapacityProvidersResult {
   ///@}
  private:
   Aws::Vector<CapacityProvider> m_capacityProviders;
-  bool m_capacityProvidersHasBeenSet = false;
 
   Aws::Vector<Failure> m_failures;
-  bool m_failuresHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_capacityProvidersHasBeenSet = false;
+  bool m_failuresHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

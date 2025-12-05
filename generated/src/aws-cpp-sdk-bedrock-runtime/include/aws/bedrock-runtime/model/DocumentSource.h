@@ -119,15 +119,15 @@ class DocumentSource {
   ///@}
  private:
   Aws::Utils::ByteBuffer m_bytes{};
-  bool m_bytesHasBeenSet = false;
 
   S3Location m_s3Location;
-  bool m_s3LocationHasBeenSet = false;
 
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   Aws::Vector<DocumentContentBlock> m_content;
+  bool m_bytesHasBeenSet = false;
+  bool m_s3LocationHasBeenSet = false;
+  bool m_textHasBeenSet = false;
   bool m_contentHasBeenSet = false;
 };
 

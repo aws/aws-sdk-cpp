@@ -68,9 +68,9 @@ class ArchiveBooleanExpression {
   ///@}
  private:
   ArchiveBooleanToEvaluate m_evaluate;
-  bool m_evaluateHasBeenSet = false;
 
   ArchiveBooleanOperator m_operator{ArchiveBooleanOperator::NOT_SET};
+  bool m_evaluateHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class ExternalEventsDetail {
   ///@}
  private:
   Aws::String m_dataLocation;
-  bool m_dataLocationHasBeenSet = false;
 
   Aws::String m_dataAccessRoleArn;
+  bool m_dataLocationHasBeenSet = false;
   bool m_dataAccessRoleArnHasBeenSet = false;
 };
 

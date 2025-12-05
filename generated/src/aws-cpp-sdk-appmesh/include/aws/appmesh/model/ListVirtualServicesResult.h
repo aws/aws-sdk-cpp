@@ -93,12 +93,12 @@ class ListVirtualServicesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<VirtualServiceRef> m_virtualServices;
-  bool m_virtualServicesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_virtualServicesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

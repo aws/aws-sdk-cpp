@@ -122,18 +122,18 @@ class CreateConfigurationSetResult {
   ///@}
  private:
   Aws::String m_configurationSetArn;
-  bool m_configurationSetArnHasBeenSet = false;
 
   Aws::String m_configurationSetName;
-  bool m_configurationSetNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_configurationSetArnHasBeenSet = false;
+  bool m_configurationSetNameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

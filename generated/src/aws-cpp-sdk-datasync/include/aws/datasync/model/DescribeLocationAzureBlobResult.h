@@ -238,36 +238,36 @@ class DescribeLocationAzureBlobResult {
   ///@}
  private:
   Aws::String m_locationArn;
-  bool m_locationArnHasBeenSet = false;
 
   Aws::String m_locationUri;
-  bool m_locationUriHasBeenSet = false;
 
   AzureBlobAuthenticationType m_authenticationType{AzureBlobAuthenticationType::NOT_SET};
-  bool m_authenticationTypeHasBeenSet = false;
 
   AzureBlobType m_blobType{AzureBlobType::NOT_SET};
-  bool m_blobTypeHasBeenSet = false;
 
   AzureAccessTier m_accessTier{AzureAccessTier::NOT_SET};
-  bool m_accessTierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_agentArns;
-  bool m_agentArnsHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   ManagedSecretConfig m_managedSecretConfig;
-  bool m_managedSecretConfigHasBeenSet = false;
 
   CmkSecretConfig m_cmkSecretConfig;
-  bool m_cmkSecretConfigHasBeenSet = false;
 
   CustomSecretConfig m_customSecretConfig;
-  bool m_customSecretConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_locationArnHasBeenSet = false;
+  bool m_locationUriHasBeenSet = false;
+  bool m_authenticationTypeHasBeenSet = false;
+  bool m_blobTypeHasBeenSet = false;
+  bool m_accessTierHasBeenSet = false;
+  bool m_agentArnsHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_managedSecretConfigHasBeenSet = false;
+  bool m_cmkSecretConfigHasBeenSet = false;
+  bool m_customSecretConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

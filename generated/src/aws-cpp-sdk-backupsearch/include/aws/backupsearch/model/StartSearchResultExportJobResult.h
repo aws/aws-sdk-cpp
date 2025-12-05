@@ -77,12 +77,12 @@ class StartSearchResultExportJobResult {
   ///@}
  private:
   Aws::String m_exportJobArn;
-  bool m_exportJobArnHasBeenSet = false;
 
   Aws::String m_exportJobIdentifier;
-  bool m_exportJobIdentifierHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_exportJobArnHasBeenSet = false;
+  bool m_exportJobIdentifierHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

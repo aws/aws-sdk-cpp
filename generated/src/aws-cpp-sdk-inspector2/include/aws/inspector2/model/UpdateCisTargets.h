@@ -82,9 +82,9 @@ class UpdateCisTargets {
   ///@}
  private:
   Aws::Vector<Aws::String> m_accountIds;
-  bool m_accountIdsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_targetResourceTags;
+  bool m_accountIdsHasBeenSet = false;
   bool m_targetResourceTagsHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class ListEarthObservationJobsResult {
   ///@}
  private:
   Aws::Vector<ListEarthObservationJobOutputConfig> m_earthObservationJobSummaries;
-  bool m_earthObservationJobSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_earthObservationJobSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

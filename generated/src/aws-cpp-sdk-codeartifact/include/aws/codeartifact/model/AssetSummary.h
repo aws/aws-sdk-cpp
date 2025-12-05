@@ -92,12 +92,12 @@ class AssetSummary {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   long long m_size{0};
-  bool m_sizeHasBeenSet = false;
 
   Aws::Map<HashAlgorithm, Aws::String> m_hashes;
+  bool m_nameHasBeenSet = false;
+  bool m_sizeHasBeenSet = false;
   bool m_hashesHasBeenSet = false;
 };
 

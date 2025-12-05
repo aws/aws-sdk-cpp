@@ -120,18 +120,18 @@ class GetPersistentAppUIPresignedURLRequest : public EMRRequest {
   ///@}
  private:
   Aws::String m_persistentAppUIId;
-  bool m_persistentAppUIIdHasBeenSet = false;
 
   PersistentAppUIType m_persistentAppUIType{PersistentAppUIType::NOT_SET};
-  bool m_persistentAppUITypeHasBeenSet = false;
 
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   bool m_authProxyCall{false};
-  bool m_authProxyCallHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
+  bool m_persistentAppUIIdHasBeenSet = false;
+  bool m_persistentAppUITypeHasBeenSet = false;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_authProxyCallHasBeenSet = false;
   bool m_executionRoleArnHasBeenSet = false;
 };
 

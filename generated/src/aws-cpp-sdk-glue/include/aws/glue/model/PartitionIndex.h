@@ -75,9 +75,9 @@ class PartitionIndex {
   ///@}
  private:
   Aws::Vector<Aws::String> m_keys;
-  bool m_keysHasBeenSet = false;
 
   Aws::String m_indexName;
+  bool m_keysHasBeenSet = false;
   bool m_indexNameHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class CreateStarterMappingTemplateRequest : public B2BIRequest {
   ///@}
  private:
   S3Location m_outputSampleLocation;
-  bool m_outputSampleLocationHasBeenSet = false;
 
   MappingType m_mappingType{MappingType::NOT_SET};
-  bool m_mappingTypeHasBeenSet = false;
 
   TemplateDetails m_templateDetails;
+  bool m_outputSampleLocationHasBeenSet = false;
+  bool m_mappingTypeHasBeenSet = false;
   bool m_templateDetailsHasBeenSet = false;
 };
 

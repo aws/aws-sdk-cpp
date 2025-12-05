@@ -66,9 +66,9 @@ class WorkflowParameter {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_optional{false};
+  bool m_descriptionHasBeenSet = false;
   bool m_optionalHasBeenSet = false;
 };
 

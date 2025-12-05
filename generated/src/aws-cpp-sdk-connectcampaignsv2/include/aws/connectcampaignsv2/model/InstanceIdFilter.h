@@ -63,9 +63,9 @@ class InstanceIdFilter {
   ///@}
  private:
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   InstanceIdFilterOperator m_operator{InstanceIdFilterOperator::NOT_SET};
+  bool m_valueHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
 };
 

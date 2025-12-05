@@ -267,39 +267,39 @@ class IdleRecommendation {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   IdleRecommendationResourceType m_resourceType{IdleRecommendationResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   IdleFinding m_finding{IdleFinding::NOT_SET};
-  bool m_findingHasBeenSet = false;
 
   Aws::String m_findingDescription;
-  bool m_findingDescriptionHasBeenSet = false;
 
   IdleSavingsOpportunity m_savingsOpportunity;
-  bool m_savingsOpportunityHasBeenSet = false;
 
   IdleSavingsOpportunityAfterDiscounts m_savingsOpportunityAfterDiscounts;
-  bool m_savingsOpportunityAfterDiscountsHasBeenSet = false;
 
   Aws::Vector<IdleUtilizationMetric> m_utilizationMetrics;
-  bool m_utilizationMetricsHasBeenSet = false;
 
   double m_lookBackPeriodInDays{0.0};
-  bool m_lookBackPeriodInDaysHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastRefreshTimestamp{};
-  bool m_lastRefreshTimestampHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_findingHasBeenSet = false;
+  bool m_findingDescriptionHasBeenSet = false;
+  bool m_savingsOpportunityHasBeenSet = false;
+  bool m_savingsOpportunityAfterDiscountsHasBeenSet = false;
+  bool m_utilizationMetricsHasBeenSet = false;
+  bool m_lookBackPeriodInDaysHasBeenSet = false;
+  bool m_lastRefreshTimestampHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -125,18 +125,18 @@ class UpdateApplicationRequest : public SSOAdminRequest {
   ///@}
  private:
   Aws::String m_applicationArn;
-  bool m_applicationArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ApplicationStatus m_status{ApplicationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   UpdateApplicationPortalOptions m_portalOptions;
+  bool m_applicationArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_portalOptionsHasBeenSet = false;
 };
 

@@ -112,18 +112,18 @@ class GetNotificationEventResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_notificationConfigurationArn;
-  bool m_notificationConfigurationArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   NotificationEvent m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_notificationConfigurationArnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class GetMessagingStreamingConfigurationsResult {
   ///@}
  private:
   Aws::Vector<StreamingConfiguration> m_streamingConfigurations;
-  bool m_streamingConfigurationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_streamingConfigurationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

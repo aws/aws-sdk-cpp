@@ -74,9 +74,9 @@ class AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservatio
   ///@}
  private:
   Aws::String m_capacityReservationId;
-  bool m_capacityReservationIdHasBeenSet = false;
 
   Aws::String m_capacityReservationResourceGroupArn;
+  bool m_capacityReservationIdHasBeenSet = false;
   bool m_capacityReservationResourceGroupArnHasBeenSet = false;
 };
 

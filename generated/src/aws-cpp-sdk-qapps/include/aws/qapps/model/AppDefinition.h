@@ -95,12 +95,12 @@ class AppDefinition {
   ///@}
  private:
   Aws::String m_appDefinitionVersion;
-  bool m_appDefinitionVersionHasBeenSet = false;
 
   Aws::Vector<Card> m_cards;
-  bool m_cardsHasBeenSet = false;
 
   bool m_canEdit{false};
+  bool m_appDefinitionVersionHasBeenSet = false;
+  bool m_cardsHasBeenSet = false;
   bool m_canEditHasBeenSet = false;
 };
 

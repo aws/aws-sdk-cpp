@@ -77,9 +77,9 @@ class AwsElbLoadBalancerListenerDescription {
   ///@}
  private:
   AwsElbLoadBalancerListener m_listener;
-  bool m_listenerHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_policyNames;
+  bool m_listenerHasBeenSet = false;
   bool m_policyNamesHasBeenSet = false;
 };
 

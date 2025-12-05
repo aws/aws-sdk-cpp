@@ -337,51 +337,51 @@ class RequestedServiceQuotaChange {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_caseId;
-  bool m_caseIdHasBeenSet = false;
 
   Aws::String m_serviceCode;
-  bool m_serviceCodeHasBeenSet = false;
 
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   Aws::String m_quotaCode;
-  bool m_quotaCodeHasBeenSet = false;
 
   Aws::String m_quotaName;
-  bool m_quotaNameHasBeenSet = false;
 
   double m_desiredValue{0.0};
-  bool m_desiredValueHasBeenSet = false;
 
   RequestStatus m_status{RequestStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_created{};
-  bool m_createdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdated{};
-  bool m_lastUpdatedHasBeenSet = false;
 
   Aws::String m_requester;
-  bool m_requesterHasBeenSet = false;
 
   Aws::String m_quotaArn;
-  bool m_quotaArnHasBeenSet = false;
 
   bool m_globalQuota{false};
-  bool m_globalQuotaHasBeenSet = false;
 
   Aws::String m_unit;
-  bool m_unitHasBeenSet = false;
 
   AppliedLevelEnum m_quotaRequestedAtLevel{AppliedLevelEnum::NOT_SET};
-  bool m_quotaRequestedAtLevelHasBeenSet = false;
 
   QuotaContextInfo m_quotaContext;
+  bool m_idHasBeenSet = false;
+  bool m_caseIdHasBeenSet = false;
+  bool m_serviceCodeHasBeenSet = false;
+  bool m_serviceNameHasBeenSet = false;
+  bool m_quotaCodeHasBeenSet = false;
+  bool m_quotaNameHasBeenSet = false;
+  bool m_desiredValueHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdHasBeenSet = false;
+  bool m_lastUpdatedHasBeenSet = false;
+  bool m_requesterHasBeenSet = false;
+  bool m_quotaArnHasBeenSet = false;
+  bool m_globalQuotaHasBeenSet = false;
+  bool m_unitHasBeenSet = false;
+  bool m_quotaRequestedAtLevelHasBeenSet = false;
   bool m_quotaContextHasBeenSet = false;
 };
 

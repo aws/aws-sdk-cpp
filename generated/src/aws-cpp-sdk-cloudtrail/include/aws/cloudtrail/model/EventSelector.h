@@ -156,15 +156,15 @@ class EventSelector {
   ///@}
  private:
   ReadWriteType m_readWriteType{ReadWriteType::NOT_SET};
-  bool m_readWriteTypeHasBeenSet = false;
 
   bool m_includeManagementEvents{false};
-  bool m_includeManagementEventsHasBeenSet = false;
 
   Aws::Vector<DataResource> m_dataResources;
-  bool m_dataResourcesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_excludeManagementEventSources;
+  bool m_readWriteTypeHasBeenSet = false;
+  bool m_includeManagementEventsHasBeenSet = false;
+  bool m_dataResourcesHasBeenSet = false;
   bool m_excludeManagementEventSourcesHasBeenSet = false;
 };
 

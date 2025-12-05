@@ -121,18 +121,18 @@ class PhoneNumberSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_phoneNumber;
-  bool m_phoneNumberHasBeenSet = false;
 
   PhoneNumberType m_phoneNumberType{PhoneNumberType::NOT_SET};
-  bool m_phoneNumberTypeHasBeenSet = false;
 
   PhoneNumberCountryCode m_phoneNumberCountryCode{PhoneNumberCountryCode::NOT_SET};
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_phoneNumberHasBeenSet = false;
+  bool m_phoneNumberTypeHasBeenSet = false;
   bool m_phoneNumberCountryCodeHasBeenSet = false;
 };
 

@@ -253,39 +253,39 @@ class TrafficMirrorFilterRule {
   ///@}
  private:
   Aws::String m_trafficMirrorFilterRuleId;
-  bool m_trafficMirrorFilterRuleIdHasBeenSet = false;
 
   Aws::String m_trafficMirrorFilterId;
-  bool m_trafficMirrorFilterIdHasBeenSet = false;
 
   TrafficDirection m_trafficDirection{TrafficDirection::NOT_SET};
-  bool m_trafficDirectionHasBeenSet = false;
 
   int m_ruleNumber{0};
-  bool m_ruleNumberHasBeenSet = false;
 
   TrafficMirrorRuleAction m_ruleAction{TrafficMirrorRuleAction::NOT_SET};
-  bool m_ruleActionHasBeenSet = false;
 
   int m_protocol{0};
-  bool m_protocolHasBeenSet = false;
 
   TrafficMirrorPortRange m_destinationPortRange;
-  bool m_destinationPortRangeHasBeenSet = false;
 
   TrafficMirrorPortRange m_sourcePortRange;
-  bool m_sourcePortRangeHasBeenSet = false;
 
   Aws::String m_destinationCidrBlock;
-  bool m_destinationCidrBlockHasBeenSet = false;
 
   Aws::String m_sourceCidrBlock;
-  bool m_sourceCidrBlockHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_trafficMirrorFilterRuleIdHasBeenSet = false;
+  bool m_trafficMirrorFilterIdHasBeenSet = false;
+  bool m_trafficDirectionHasBeenSet = false;
+  bool m_ruleNumberHasBeenSet = false;
+  bool m_ruleActionHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_destinationPortRangeHasBeenSet = false;
+  bool m_sourcePortRangeHasBeenSet = false;
+  bool m_destinationCidrBlockHasBeenSet = false;
+  bool m_sourceCidrBlockHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

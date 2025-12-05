@@ -66,9 +66,9 @@ class GetDeploymentConfigResult {
   ///@}
  private:
   DeploymentConfigInfo m_deploymentConfigInfo;
-  bool m_deploymentConfigInfoHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deploymentConfigInfoHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -91,12 +91,12 @@ class DefaultDetection {
   ///@}
  private:
   long long m_count{0};
-  bool m_countHasBeenSet = false;
 
   Occurrences m_occurrences;
-  bool m_occurrencesHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_countHasBeenSet = false;
+  bool m_occurrencesHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

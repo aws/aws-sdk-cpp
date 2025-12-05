@@ -109,15 +109,15 @@ class DataProductFilters {
   ///@}
  private:
   DataProductEntityIdFilter m_entityId;
-  bool m_entityIdHasBeenSet = false;
 
   DataProductTitleFilter m_productTitle;
-  bool m_productTitleHasBeenSet = false;
 
   DataProductVisibilityFilter m_visibility;
-  bool m_visibilityHasBeenSet = false;
 
   DataProductLastModifiedDateFilter m_lastModifiedDate;
+  bool m_entityIdHasBeenSet = false;
+  bool m_productTitleHasBeenSet = false;
+  bool m_visibilityHasBeenSet = false;
   bool m_lastModifiedDateHasBeenSet = false;
 };
 

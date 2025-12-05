@@ -78,12 +78,12 @@ class USD {
   ///@}
  private:
   int m_dollars{0};
-  bool m_dollarsHasBeenSet = false;
 
   int m_cents{0};
-  bool m_centsHasBeenSet = false;
 
   int m_tenthFractionsOfACent{0};
+  bool m_dollarsHasBeenSet = false;
+  bool m_centsHasBeenSet = false;
   bool m_tenthFractionsOfACentHasBeenSet = false;
 };
 

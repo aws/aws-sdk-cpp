@@ -74,9 +74,9 @@ class HlsId3SegmentTaggingScheduleActionSettings {
   ///@}
  private:
   Aws::String m_tag;
-  bool m_tagHasBeenSet = false;
 
   Aws::String m_id3;
+  bool m_tagHasBeenSet = false;
   bool m_id3HasBeenSet = false;
 };
 

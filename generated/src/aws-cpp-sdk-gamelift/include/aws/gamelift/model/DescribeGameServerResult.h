@@ -60,9 +60,9 @@ class DescribeGameServerResult {
   ///@}
  private:
   GameServer m_gameServer;
-  bool m_gameServerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_gameServerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

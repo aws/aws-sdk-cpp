@@ -59,9 +59,9 @@ class CreateScheduledAuditResult {
   ///@}
  private:
   Aws::String m_scheduledAuditArn;
-  bool m_scheduledAuditArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_scheduledAuditArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

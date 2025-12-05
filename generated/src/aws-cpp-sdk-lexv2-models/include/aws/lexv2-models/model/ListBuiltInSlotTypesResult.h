@@ -109,15 +109,15 @@ class ListBuiltInSlotTypesResult {
   ///@}
  private:
   Aws::Vector<BuiltInSlotTypeSummary> m_builtInSlotTypeSummaries;
-  bool m_builtInSlotTypeSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_localeId;
-  bool m_localeIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_builtInSlotTypeSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_localeIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

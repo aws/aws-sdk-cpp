@@ -92,12 +92,12 @@ class DatasetEntityRecognizerInputDataConfig {
   ///@}
  private:
   DatasetEntityRecognizerAnnotations m_annotations;
-  bool m_annotationsHasBeenSet = false;
 
   DatasetEntityRecognizerDocuments m_documents;
-  bool m_documentsHasBeenSet = false;
 
   DatasetEntityRecognizerEntityList m_entityList;
+  bool m_annotationsHasBeenSet = false;
+  bool m_documentsHasBeenSet = false;
   bool m_entityListHasBeenSet = false;
 };
 

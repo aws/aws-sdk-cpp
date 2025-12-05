@@ -72,9 +72,9 @@ class DetectedLanguageLowConfidenceException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_detectedLanguageCode;
+  bool m_messageHasBeenSet = false;
   bool m_detectedLanguageCodeHasBeenSet = false;
 };
 

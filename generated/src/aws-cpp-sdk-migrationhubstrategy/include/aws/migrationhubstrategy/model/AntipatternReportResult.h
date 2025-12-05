@@ -103,15 +103,15 @@ class AntipatternReportResult {
   ///@}
  private:
   AnalyzerNameUnion m_analyzerName;
-  bool m_analyzerNameHasBeenSet = false;
 
   S3Object m_antiPatternReportS3Object;
-  bool m_antiPatternReportS3ObjectHasBeenSet = false;
 
   AntipatternReportStatus m_antipatternReportStatus{AntipatternReportStatus::NOT_SET};
-  bool m_antipatternReportStatusHasBeenSet = false;
 
   Aws::String m_antipatternReportStatusMessage;
+  bool m_analyzerNameHasBeenSet = false;
+  bool m_antiPatternReportS3ObjectHasBeenSet = false;
+  bool m_antipatternReportStatusHasBeenSet = false;
   bool m_antipatternReportStatusMessageHasBeenSet = false;
 };
 

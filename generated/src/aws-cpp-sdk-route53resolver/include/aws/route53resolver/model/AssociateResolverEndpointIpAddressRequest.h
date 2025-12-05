@@ -71,9 +71,9 @@ class AssociateResolverEndpointIpAddressRequest : public Route53ResolverRequest 
   ///@}
  private:
   Aws::String m_resolverEndpointId;
-  bool m_resolverEndpointIdHasBeenSet = false;
 
   IpAddressUpdate m_ipAddress;
+  bool m_resolverEndpointIdHasBeenSet = false;
   bool m_ipAddressHasBeenSet = false;
 };
 

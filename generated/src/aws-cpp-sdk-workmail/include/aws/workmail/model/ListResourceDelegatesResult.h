@@ -86,12 +86,12 @@ class ListResourceDelegatesResult {
   ///@}
  private:
   Aws::Vector<Delegate> m_delegates;
-  bool m_delegatesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_delegatesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

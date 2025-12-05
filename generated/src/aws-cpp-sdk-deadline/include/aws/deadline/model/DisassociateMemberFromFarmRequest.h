@@ -65,9 +65,9 @@ class DisassociateMemberFromFarmRequest : public DeadlineRequest {
   ///@}
  private:
   Aws::String m_farmId;
-  bool m_farmIdHasBeenSet = false;
 
   Aws::String m_principalId;
+  bool m_farmIdHasBeenSet = false;
   bool m_principalIdHasBeenSet = false;
 };
 

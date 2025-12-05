@@ -202,27 +202,27 @@ class ImageGenerationConfiguration {
   ///@}
  private:
   ConfigurationStatus m_status{ConfigurationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ImageSelectorType m_imageSelectorType{ImageSelectorType::NOT_SET};
-  bool m_imageSelectorTypeHasBeenSet = false;
 
   ImageGenerationDestinationConfig m_destinationConfig;
-  bool m_destinationConfigHasBeenSet = false;
 
   int m_samplingInterval{0};
-  bool m_samplingIntervalHasBeenSet = false;
 
   Format m_format{Format::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   Aws::Map<FormatConfigKey, Aws::String> m_formatConfig;
-  bool m_formatConfigHasBeenSet = false;
 
   int m_widthPixels{0};
-  bool m_widthPixelsHasBeenSet = false;
 
   int m_heightPixels{0};
+  bool m_statusHasBeenSet = false;
+  bool m_imageSelectorTypeHasBeenSet = false;
+  bool m_destinationConfigHasBeenSet = false;
+  bool m_samplingIntervalHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
+  bool m_formatConfigHasBeenSet = false;
+  bool m_widthPixelsHasBeenSet = false;
   bool m_heightPixelsHasBeenSet = false;
 };
 

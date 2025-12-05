@@ -164,24 +164,24 @@ class LogStream {
   ///@}
  private:
   Aws::String m_logStreamName;
-  bool m_logStreamNameHasBeenSet = false;
 
   long long m_creationTime{0};
-  bool m_creationTimeHasBeenSet = false;
 
   long long m_firstEventTimestamp{0};
-  bool m_firstEventTimestampHasBeenSet = false;
 
   long long m_lastEventTimestamp{0};
-  bool m_lastEventTimestampHasBeenSet = false;
 
   long long m_lastIngestionTime{0};
-  bool m_lastIngestionTimeHasBeenSet = false;
 
   Aws::String m_uploadSequenceToken;
-  bool m_uploadSequenceTokenHasBeenSet = false;
 
   Aws::String m_arn;
+  bool m_logStreamNameHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_firstEventTimestampHasBeenSet = false;
+  bool m_lastEventTimestampHasBeenSet = false;
+  bool m_lastIngestionTimeHasBeenSet = false;
+  bool m_uploadSequenceTokenHasBeenSet = false;
   bool m_arnHasBeenSet = false;
 };
 

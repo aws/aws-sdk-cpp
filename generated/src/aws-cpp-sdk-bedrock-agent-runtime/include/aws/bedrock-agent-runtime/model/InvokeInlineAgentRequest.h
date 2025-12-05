@@ -520,72 +520,73 @@ class InvokeInlineAgentRequest : public BedrockAgentRuntimeRequest {
   ///@}
  private:
   Aws::Vector<AgentActionGroup> m_actionGroups;
-  bool m_actionGroupsHasBeenSet = false;
 
   AgentCollaboration m_agentCollaboration{AgentCollaboration::NOT_SET};
-  bool m_agentCollaborationHasBeenSet = false;
 
   Aws::String m_agentName;
-  bool m_agentNameHasBeenSet = false;
 
   InlineBedrockModelConfigurations m_bedrockModelConfigurations;
-  bool m_bedrockModelConfigurationsHasBeenSet = false;
 
   Aws::Vector<CollaboratorConfiguration> m_collaboratorConfigurations;
-  bool m_collaboratorConfigurationsHasBeenSet = false;
 
   Aws::Vector<Collaborator> m_collaborators;
-  bool m_collaboratorsHasBeenSet = false;
 
   CustomOrchestration m_customOrchestration;
-  bool m_customOrchestrationHasBeenSet = false;
 
   Aws::String m_customerEncryptionKeyArn;
-  bool m_customerEncryptionKeyArnHasBeenSet = false;
 
   bool m_enableTrace{false};
-  bool m_enableTraceHasBeenSet = false;
 
   bool m_endSession{false};
-  bool m_endSessionHasBeenSet = false;
 
   Aws::String m_foundationModel;
-  bool m_foundationModelHasBeenSet = false;
 
   GuardrailConfigurationWithArn m_guardrailConfiguration;
-  bool m_guardrailConfigurationHasBeenSet = false;
 
   int m_idleSessionTTLInSeconds{0};
-  bool m_idleSessionTTLInSecondsHasBeenSet = false;
 
   InlineSessionState m_inlineSessionState;
-  bool m_inlineSessionStateHasBeenSet = false;
 
   Aws::String m_inputText;
-  bool m_inputTextHasBeenSet = false;
 
   Aws::String m_instruction;
-  bool m_instructionHasBeenSet = false;
 
   Aws::Vector<KnowledgeBase> m_knowledgeBases;
-  bool m_knowledgeBasesHasBeenSet = false;
 
   OrchestrationType m_orchestrationType{OrchestrationType::NOT_SET};
-  bool m_orchestrationTypeHasBeenSet = false;
 
   PromptCreationConfigurations m_promptCreationConfigurations;
-  bool m_promptCreationConfigurationsHasBeenSet = false;
 
   PromptOverrideConfiguration m_promptOverrideConfiguration;
-  bool m_promptOverrideConfigurationHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   StreamingConfigurations m_streamingConfigurations;
-  bool m_streamingConfigurationsHasBeenSet = false;
   InvokeInlineAgentHandler m_handler;
   Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
+
+  bool m_actionGroupsHasBeenSet = false;
+  bool m_agentCollaborationHasBeenSet = false;
+  bool m_agentNameHasBeenSet = false;
+  bool m_bedrockModelConfigurationsHasBeenSet = false;
+  bool m_collaboratorConfigurationsHasBeenSet = false;
+  bool m_collaboratorsHasBeenSet = false;
+  bool m_customOrchestrationHasBeenSet = false;
+  bool m_customerEncryptionKeyArnHasBeenSet = false;
+  bool m_enableTraceHasBeenSet = false;
+  bool m_endSessionHasBeenSet = false;
+  bool m_foundationModelHasBeenSet = false;
+  bool m_guardrailConfigurationHasBeenSet = false;
+  bool m_idleSessionTTLInSecondsHasBeenSet = false;
+  bool m_inlineSessionStateHasBeenSet = false;
+  bool m_inputTextHasBeenSet = false;
+  bool m_instructionHasBeenSet = false;
+  bool m_knowledgeBasesHasBeenSet = false;
+  bool m_orchestrationTypeHasBeenSet = false;
+  bool m_promptCreationConfigurationsHasBeenSet = false;
+  bool m_promptOverrideConfigurationHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_streamingConfigurationsHasBeenSet = false;
 };
 
 }  // namespace Model

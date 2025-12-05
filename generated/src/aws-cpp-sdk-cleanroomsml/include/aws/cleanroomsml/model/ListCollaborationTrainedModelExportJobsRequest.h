@@ -127,18 +127,18 @@ class ListCollaborationTrainedModelExportJobsRequest : public CleanRoomsMLReques
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_collaborationIdentifier;
-  bool m_collaborationIdentifierHasBeenSet = false;
 
   Aws::String m_trainedModelArn;
-  bool m_trainedModelArnHasBeenSet = false;
 
   Aws::String m_trainedModelVersionIdentifier;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_collaborationIdentifierHasBeenSet = false;
+  bool m_trainedModelArnHasBeenSet = false;
   bool m_trainedModelVersionIdentifierHasBeenSet = false;
 };
 

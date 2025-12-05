@@ -80,12 +80,12 @@ class CreateDashboardResult {
   ///@}
  private:
   Aws::String m_dashboardId;
-  bool m_dashboardIdHasBeenSet = false;
 
   Aws::String m_dashboardArn;
-  bool m_dashboardArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dashboardIdHasBeenSet = false;
+  bool m_dashboardArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

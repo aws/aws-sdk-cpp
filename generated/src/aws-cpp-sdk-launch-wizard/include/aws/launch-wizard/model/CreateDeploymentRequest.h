@@ -166,21 +166,21 @@ class CreateDeploymentRequest : public LaunchWizardRequest {
   ///@}
  private:
   Aws::String m_deploymentPatternName;
-  bool m_deploymentPatternNameHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_specifications;
-  bool m_specificationsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_workloadName;
+  bool m_deploymentPatternNameHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_specificationsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_workloadNameHasBeenSet = false;
 };
 

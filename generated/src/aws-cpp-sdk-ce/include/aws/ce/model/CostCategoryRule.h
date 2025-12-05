@@ -125,15 +125,15 @@ class CostCategoryRule {
   ///@}
  private:
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Expression m_rule;
-  bool m_ruleHasBeenSet = false;
 
   CostCategoryInheritedValueDimension m_inheritedValue;
-  bool m_inheritedValueHasBeenSet = false;
 
   CostCategoryRuleType m_type{CostCategoryRuleType::NOT_SET};
+  bool m_valueHasBeenSet = false;
+  bool m_ruleHasBeenSet = false;
+  bool m_inheritedValueHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

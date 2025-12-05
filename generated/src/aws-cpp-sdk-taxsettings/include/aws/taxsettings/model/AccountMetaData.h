@@ -129,18 +129,18 @@ class AccountMetaData {
   ///@}
  private:
   Aws::String m_accountName;
-  bool m_accountNameHasBeenSet = false;
 
   Address m_address;
-  bool m_addressHasBeenSet = false;
 
   Aws::Map<AddressRoleType, Jurisdiction> m_addressRoleMap;
-  bool m_addressRoleMapHasBeenSet = false;
 
   AddressRoleType m_addressType{AddressRoleType::NOT_SET};
-  bool m_addressTypeHasBeenSet = false;
 
   Aws::String m_seller;
+  bool m_accountNameHasBeenSet = false;
+  bool m_addressHasBeenSet = false;
+  bool m_addressRoleMapHasBeenSet = false;
+  bool m_addressTypeHasBeenSet = false;
   bool m_sellerHasBeenSet = false;
 };
 

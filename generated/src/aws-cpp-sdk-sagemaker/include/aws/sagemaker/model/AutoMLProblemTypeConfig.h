@@ -137,18 +137,18 @@ class AutoMLProblemTypeConfig {
   ///@}
  private:
   ImageClassificationJobConfig m_imageClassificationJobConfig;
-  bool m_imageClassificationJobConfigHasBeenSet = false;
 
   TextClassificationJobConfig m_textClassificationJobConfig;
-  bool m_textClassificationJobConfigHasBeenSet = false;
 
   TimeSeriesForecastingJobConfig m_timeSeriesForecastingJobConfig;
-  bool m_timeSeriesForecastingJobConfigHasBeenSet = false;
 
   TabularJobConfig m_tabularJobConfig;
-  bool m_tabularJobConfigHasBeenSet = false;
 
   TextGenerationJobConfig m_textGenerationJobConfig;
+  bool m_imageClassificationJobConfigHasBeenSet = false;
+  bool m_textClassificationJobConfigHasBeenSet = false;
+  bool m_timeSeriesForecastingJobConfigHasBeenSet = false;
+  bool m_tabularJobConfigHasBeenSet = false;
   bool m_textGenerationJobConfigHasBeenSet = false;
 };
 

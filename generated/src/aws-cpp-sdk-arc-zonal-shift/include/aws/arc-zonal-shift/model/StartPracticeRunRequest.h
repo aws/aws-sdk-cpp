@@ -91,12 +91,12 @@ class StartPracticeRunRequest : public ARCZonalShiftRequest {
   ///@}
  private:
   Aws::String m_resourceIdentifier;
-  bool m_resourceIdentifierHasBeenSet = false;
 
   Aws::String m_awayFrom;
-  bool m_awayFromHasBeenSet = false;
 
   Aws::String m_comment;
+  bool m_resourceIdentifierHasBeenSet = false;
+  bool m_awayFromHasBeenSet = false;
   bool m_commentHasBeenSet = false;
 };
 

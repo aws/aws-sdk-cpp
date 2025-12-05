@@ -138,18 +138,18 @@ class CreateChatTokenRequest : public IvschatRequest {
   ///@}
  private:
   Aws::String m_roomIdentifier;
-  bool m_roomIdentifierHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::Vector<ChatTokenCapability> m_capabilities;
-  bool m_capabilitiesHasBeenSet = false;
 
   int m_sessionDurationInMinutes{0};
-  bool m_sessionDurationInMinutesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
+  bool m_roomIdentifierHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_capabilitiesHasBeenSet = false;
+  bool m_sessionDurationInMinutesHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

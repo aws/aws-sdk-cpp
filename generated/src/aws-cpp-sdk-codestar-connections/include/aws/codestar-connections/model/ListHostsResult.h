@@ -87,12 +87,12 @@ class ListHostsResult {
   ///@}
  private:
   Aws::Vector<Host> m_hosts;
-  bool m_hostsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_hostsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

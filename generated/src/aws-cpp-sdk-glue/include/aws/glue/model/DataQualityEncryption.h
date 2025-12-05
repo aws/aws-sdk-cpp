@@ -72,9 +72,9 @@ class DataQualityEncryption {
   ///@}
  private:
   DataQualityEncryptionMode m_dataQualityEncryptionMode{DataQualityEncryptionMode::NOT_SET};
-  bool m_dataQualityEncryptionModeHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
+  bool m_dataQualityEncryptionModeHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
 };
 

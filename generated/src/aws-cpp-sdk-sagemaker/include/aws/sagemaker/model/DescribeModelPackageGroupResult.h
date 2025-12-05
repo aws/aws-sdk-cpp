@@ -143,24 +143,24 @@ class DescribeModelPackageGroupResult {
   ///@}
  private:
   Aws::String m_modelPackageGroupName;
-  bool m_modelPackageGroupNameHasBeenSet = false;
 
   Aws::String m_modelPackageGroupArn;
-  bool m_modelPackageGroupArnHasBeenSet = false;
 
   Aws::String m_modelPackageGroupDescription;
-  bool m_modelPackageGroupDescriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   UserContext m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   ModelPackageGroupStatus m_modelPackageGroupStatus{ModelPackageGroupStatus::NOT_SET};
-  bool m_modelPackageGroupStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_modelPackageGroupNameHasBeenSet = false;
+  bool m_modelPackageGroupArnHasBeenSet = false;
+  bool m_modelPackageGroupDescriptionHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_modelPackageGroupStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

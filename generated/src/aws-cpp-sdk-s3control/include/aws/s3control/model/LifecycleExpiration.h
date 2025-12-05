@@ -90,12 +90,12 @@ class LifecycleExpiration {
   ///@}
  private:
   Aws::Utils::DateTime m_date{};
-  bool m_dateHasBeenSet = false;
 
   int m_days{0};
-  bool m_daysHasBeenSet = false;
 
   bool m_expiredObjectDeleteMarker{false};
+  bool m_dateHasBeenSet = false;
+  bool m_daysHasBeenSet = false;
   bool m_expiredObjectDeleteMarkerHasBeenSet = false;
 };
 

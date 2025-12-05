@@ -107,15 +107,15 @@ class ListSecurityProfileApplicationsRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_securityProfileId;
-  bool m_securityProfileIdHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_securityProfileIdHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

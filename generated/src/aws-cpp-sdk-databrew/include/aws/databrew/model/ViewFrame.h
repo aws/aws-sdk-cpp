@@ -143,21 +143,21 @@ class ViewFrame {
   ///@}
  private:
   int m_startColumnIndex{0};
-  bool m_startColumnIndexHasBeenSet = false;
 
   int m_columnRange{0};
-  bool m_columnRangeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_hiddenColumns;
-  bool m_hiddenColumnsHasBeenSet = false;
 
   int m_startRowIndex{0};
-  bool m_startRowIndexHasBeenSet = false;
 
   int m_rowRange{0};
-  bool m_rowRangeHasBeenSet = false;
 
   AnalyticsMode m_analytics{AnalyticsMode::NOT_SET};
+  bool m_startColumnIndexHasBeenSet = false;
+  bool m_columnRangeHasBeenSet = false;
+  bool m_hiddenColumnsHasBeenSet = false;
+  bool m_startRowIndexHasBeenSet = false;
+  bool m_rowRangeHasBeenSet = false;
   bool m_analyticsHasBeenSet = false;
 };
 

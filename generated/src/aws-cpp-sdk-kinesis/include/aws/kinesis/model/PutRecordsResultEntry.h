@@ -114,15 +114,15 @@ class PutRecordsResultEntry {
   ///@}
  private:
   Aws::String m_sequenceNumber;
-  bool m_sequenceNumberHasBeenSet = false;
 
   Aws::String m_shardId;
-  bool m_shardIdHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_sequenceNumberHasBeenSet = false;
+  bool m_shardIdHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

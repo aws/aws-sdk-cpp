@@ -140,21 +140,21 @@ class LayerMapVisual {
   ///@}
  private:
   Aws::String m_visualId;
-  bool m_visualIdHasBeenSet = false;
 
   VisualTitleLabelOptions m_title;
-  bool m_titleHasBeenSet = false;
 
   VisualSubtitleLabelOptions m_subtitle;
-  bool m_subtitleHasBeenSet = false;
 
   GeospatialLayerMapConfiguration m_chartConfiguration;
-  bool m_chartConfigurationHasBeenSet = false;
 
   Aws::String m_dataSetIdentifier;
-  bool m_dataSetIdentifierHasBeenSet = false;
 
   Aws::String m_visualContentAltText;
+  bool m_visualIdHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_subtitleHasBeenSet = false;
+  bool m_chartConfigurationHasBeenSet = false;
+  bool m_dataSetIdentifierHasBeenSet = false;
   bool m_visualContentAltTextHasBeenSet = false;
 };
 

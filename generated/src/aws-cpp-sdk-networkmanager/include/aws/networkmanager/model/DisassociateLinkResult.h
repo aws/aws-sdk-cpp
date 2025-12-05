@@ -60,9 +60,9 @@ class DisassociateLinkResult {
   ///@}
  private:
   LinkAssociation m_linkAssociation;
-  bool m_linkAssociationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_linkAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

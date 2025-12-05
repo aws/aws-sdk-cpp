@@ -97,12 +97,12 @@ class ParticipantThumbnailConfiguration {
   ///@}
  private:
   int m_targetIntervalSeconds{0};
-  bool m_targetIntervalSecondsHasBeenSet = false;
 
   Aws::Vector<ThumbnailStorageType> m_storage;
-  bool m_storageHasBeenSet = false;
 
   ThumbnailRecordingMode m_recordingMode{ThumbnailRecordingMode::NOT_SET};
+  bool m_targetIntervalSecondsHasBeenSet = false;
+  bool m_storageHasBeenSet = false;
   bool m_recordingModeHasBeenSet = false;
 };
 

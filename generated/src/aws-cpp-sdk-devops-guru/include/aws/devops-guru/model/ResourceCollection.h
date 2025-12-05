@@ -111,9 +111,9 @@ class ResourceCollection {
   ///@}
  private:
   CloudFormationCollection m_cloudFormation;
-  bool m_cloudFormationHasBeenSet = false;
 
   Aws::Vector<TagCollection> m_tags;
+  bool m_cloudFormationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

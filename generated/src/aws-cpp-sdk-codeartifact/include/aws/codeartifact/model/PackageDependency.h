@@ -124,15 +124,15 @@ class PackageDependency {
   ///@}
  private:
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_package;
-  bool m_packageHasBeenSet = false;
 
   Aws::String m_dependencyType;
-  bool m_dependencyTypeHasBeenSet = false;
 
   Aws::String m_versionRequirement;
+  bool m_namespaceHasBeenSet = false;
+  bool m_packageHasBeenSet = false;
+  bool m_dependencyTypeHasBeenSet = false;
   bool m_versionRequirementHasBeenSet = false;
 };
 

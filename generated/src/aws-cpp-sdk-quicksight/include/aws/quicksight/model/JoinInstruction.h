@@ -140,21 +140,21 @@ class JoinInstruction {
   ///@}
  private:
   Aws::String m_leftOperand;
-  bool m_leftOperandHasBeenSet = false;
 
   Aws::String m_rightOperand;
-  bool m_rightOperandHasBeenSet = false;
 
   JoinKeyProperties m_leftJoinKeyProperties;
-  bool m_leftJoinKeyPropertiesHasBeenSet = false;
 
   JoinKeyProperties m_rightJoinKeyProperties;
-  bool m_rightJoinKeyPropertiesHasBeenSet = false;
 
   JoinType m_type{JoinType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_onClause;
+  bool m_leftOperandHasBeenSet = false;
+  bool m_rightOperandHasBeenSet = false;
+  bool m_leftJoinKeyPropertiesHasBeenSet = false;
+  bool m_rightJoinKeyPropertiesHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_onClauseHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class GetTriggerResult {
   ///@}
  private:
   Trigger m_trigger;
-  bool m_triggerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_triggerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

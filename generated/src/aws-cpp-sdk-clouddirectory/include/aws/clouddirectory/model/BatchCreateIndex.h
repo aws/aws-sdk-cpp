@@ -135,18 +135,18 @@ class BatchCreateIndex {
   ///@}
  private:
   Aws::Vector<AttributeKey> m_orderedIndexedAttributeList;
-  bool m_orderedIndexedAttributeListHasBeenSet = false;
 
   bool m_isUnique{false};
-  bool m_isUniqueHasBeenSet = false;
 
   ObjectReference m_parentReference;
-  bool m_parentReferenceHasBeenSet = false;
 
   Aws::String m_linkName;
-  bool m_linkNameHasBeenSet = false;
 
   Aws::String m_batchReferenceName;
+  bool m_orderedIndexedAttributeListHasBeenSet = false;
+  bool m_isUniqueHasBeenSet = false;
+  bool m_parentReferenceHasBeenSet = false;
+  bool m_linkNameHasBeenSet = false;
   bool m_batchReferenceNameHasBeenSet = false;
 };
 

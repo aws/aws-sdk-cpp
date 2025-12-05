@@ -69,9 +69,9 @@ class GaugeChartColorConfiguration {
   ///@}
  private:
   Aws::String m_foregroundColor;
-  bool m_foregroundColorHasBeenSet = false;
 
   Aws::String m_backgroundColor;
+  bool m_foregroundColorHasBeenSet = false;
   bool m_backgroundColorHasBeenSet = false;
 };
 

@@ -124,18 +124,18 @@ class DestinationParameterValueConfiguration {
   ///@}
  private:
   CustomValuesConfiguration m_customValuesConfiguration;
-  bool m_customValuesConfigurationHasBeenSet = false;
 
   SelectAllValueOptions m_selectAllValueOptions{SelectAllValueOptions::NOT_SET};
-  bool m_selectAllValueOptionsHasBeenSet = false;
 
   Aws::String m_sourceParameterName;
-  bool m_sourceParameterNameHasBeenSet = false;
 
   Aws::String m_sourceField;
-  bool m_sourceFieldHasBeenSet = false;
 
   ColumnIdentifier m_sourceColumn;
+  bool m_customValuesConfigurationHasBeenSet = false;
+  bool m_selectAllValueOptionsHasBeenSet = false;
+  bool m_sourceParameterNameHasBeenSet = false;
+  bool m_sourceFieldHasBeenSet = false;
   bool m_sourceColumnHasBeenSet = false;
 };
 

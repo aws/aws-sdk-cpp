@@ -106,12 +106,12 @@ class X12ValidationRule {
   ///@}
  private:
   X12CodeListValidationRule m_codeListValidationRule;
-  bool m_codeListValidationRuleHasBeenSet = false;
 
   X12ElementLengthValidationRule m_elementLengthValidationRule;
-  bool m_elementLengthValidationRuleHasBeenSet = false;
 
   X12ElementRequirementValidationRule m_elementRequirementValidationRule;
+  bool m_codeListValidationRuleHasBeenSet = false;
+  bool m_elementLengthValidationRuleHasBeenSet = false;
   bool m_elementRequirementValidationRuleHasBeenSet = false;
 };
 

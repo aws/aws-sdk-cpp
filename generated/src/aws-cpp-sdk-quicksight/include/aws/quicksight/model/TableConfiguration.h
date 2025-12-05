@@ -191,27 +191,27 @@ class TableConfiguration {
   ///@}
  private:
   TableFieldWells m_fieldWells;
-  bool m_fieldWellsHasBeenSet = false;
 
   TableSortConfiguration m_sortConfiguration;
-  bool m_sortConfigurationHasBeenSet = false;
 
   TableOptions m_tableOptions;
-  bool m_tableOptionsHasBeenSet = false;
 
   TotalOptions m_totalOptions;
-  bool m_totalOptionsHasBeenSet = false;
 
   TableFieldOptions m_fieldOptions;
-  bool m_fieldOptionsHasBeenSet = false;
 
   TablePaginatedReportOptions m_paginatedReportOptions;
-  bool m_paginatedReportOptionsHasBeenSet = false;
 
   Aws::Vector<TableInlineVisualization> m_tableInlineVisualizations;
-  bool m_tableInlineVisualizationsHasBeenSet = false;
 
   VisualInteractionOptions m_interactions;
+  bool m_fieldWellsHasBeenSet = false;
+  bool m_sortConfigurationHasBeenSet = false;
+  bool m_tableOptionsHasBeenSet = false;
+  bool m_totalOptionsHasBeenSet = false;
+  bool m_fieldOptionsHasBeenSet = false;
+  bool m_paginatedReportOptionsHasBeenSet = false;
+  bool m_tableInlineVisualizationsHasBeenSet = false;
   bool m_interactionsHasBeenSet = false;
 };
 

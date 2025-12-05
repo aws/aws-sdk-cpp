@@ -89,12 +89,12 @@ class DescribeAppBlockBuilderAppBlockAssociationsResult {
   ///@}
  private:
   Aws::Vector<AppBlockBuilderAppBlockAssociation> m_appBlockBuilderAppBlockAssociations;
-  bool m_appBlockBuilderAppBlockAssociationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appBlockBuilderAppBlockAssociationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class UpdateControlPanelRequest : public Route53RecoveryControlConfigRequest {
   ///@}
  private:
   Aws::String m_controlPanelArn;
-  bool m_controlPanelArnHasBeenSet = false;
 
   Aws::String m_controlPanelName;
+  bool m_controlPanelArnHasBeenSet = false;
   bool m_controlPanelNameHasBeenSet = false;
 };
 

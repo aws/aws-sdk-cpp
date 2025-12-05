@@ -143,21 +143,21 @@ class ListAuditTasksRequest : public IoTRequest {
   ///@}
  private:
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   AuditTaskType m_taskType{AuditTaskType::NOT_SET};
-  bool m_taskTypeHasBeenSet = false;
 
   AuditTaskStatus m_taskStatus{AuditTaskStatus::NOT_SET};
-  bool m_taskStatusHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_taskTypeHasBeenSet = false;
+  bool m_taskStatusHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

@@ -66,9 +66,9 @@ class InvokeDataAutomationAsyncResult {
   ///@}
  private:
   Aws::String m_invocationArn;
-  bool m_invocationArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_invocationArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

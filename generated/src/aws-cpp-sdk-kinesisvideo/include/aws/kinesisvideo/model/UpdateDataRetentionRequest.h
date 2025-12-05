@@ -122,18 +122,18 @@ class UpdateDataRetentionRequest : public KinesisVideoRequest {
   ///@}
  private:
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   Aws::String m_streamARN;
-  bool m_streamARNHasBeenSet = false;
 
   Aws::String m_currentVersion;
-  bool m_currentVersionHasBeenSet = false;
 
   UpdateDataRetentionOperation m_operation{UpdateDataRetentionOperation::NOT_SET};
-  bool m_operationHasBeenSet = false;
 
   int m_dataRetentionChangeInHours{0};
+  bool m_streamNameHasBeenSet = false;
+  bool m_streamARNHasBeenSet = false;
+  bool m_currentVersionHasBeenSet = false;
+  bool m_operationHasBeenSet = false;
   bool m_dataRetentionChangeInHoursHasBeenSet = false;
 };
 

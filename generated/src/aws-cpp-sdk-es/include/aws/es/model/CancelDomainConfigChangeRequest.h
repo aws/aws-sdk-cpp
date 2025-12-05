@@ -68,9 +68,9 @@ class CancelDomainConfigChangeRequest : public ElasticsearchServiceRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_domainNameHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class SupportedResourceType {
   ///@}
  private:
   Aws::String m_service;
-  bool m_serviceHasBeenSet = false;
 
   Aws::String m_resourceType;
+  bool m_serviceHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
 };
 

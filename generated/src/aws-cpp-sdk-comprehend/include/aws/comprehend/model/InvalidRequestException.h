@@ -80,12 +80,12 @@ class InvalidRequestException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   InvalidRequestReason m_reason{InvalidRequestReason::NOT_SET};
-  bool m_reasonHasBeenSet = false;
 
   InvalidRequestDetail m_detail;
+  bool m_messageHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
   bool m_detailHasBeenSet = false;
 };
 

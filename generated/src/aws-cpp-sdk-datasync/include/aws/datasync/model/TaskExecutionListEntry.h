@@ -91,12 +91,12 @@ class TaskExecutionListEntry {
   ///@}
  private:
   Aws::String m_taskExecutionArn;
-  bool m_taskExecutionArnHasBeenSet = false;
 
   TaskExecutionStatus m_status{TaskExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   TaskMode m_taskMode{TaskMode::NOT_SET};
+  bool m_taskExecutionArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_taskModeHasBeenSet = false;
 };
 

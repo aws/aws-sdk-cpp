@@ -107,15 +107,15 @@ class ListNamespacesResult {
   ///@}
  private:
   Aws::Vector<NamespaceInfoV2> m_namespaces;
-  bool m_namespacesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   int m_status{0};
+  bool m_namespacesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class PreProcessingParsedResponse {
   ///@}
  private:
   bool m_isValid{false};
-  bool m_isValidHasBeenSet = false;
 
   Aws::String m_rationale;
+  bool m_isValidHasBeenSet = false;
   bool m_rationaleHasBeenSet = false;
 };
 

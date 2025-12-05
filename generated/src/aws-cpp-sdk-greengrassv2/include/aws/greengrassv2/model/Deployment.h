@@ -180,27 +180,27 @@ class Deployment {
   ///@}
  private:
   Aws::String m_targetArn;
-  bool m_targetArnHasBeenSet = false;
 
   Aws::String m_revisionId;
-  bool m_revisionIdHasBeenSet = false;
 
   Aws::String m_deploymentId;
-  bool m_deploymentIdHasBeenSet = false;
 
   Aws::String m_deploymentName;
-  bool m_deploymentNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimestamp{};
-  bool m_creationTimestampHasBeenSet = false;
 
   DeploymentStatus m_deploymentStatus{DeploymentStatus::NOT_SET};
-  bool m_deploymentStatusHasBeenSet = false;
 
   bool m_isLatestForTarget{false};
-  bool m_isLatestForTargetHasBeenSet = false;
 
   Aws::String m_parentTargetArn;
+  bool m_targetArnHasBeenSet = false;
+  bool m_revisionIdHasBeenSet = false;
+  bool m_deploymentIdHasBeenSet = false;
+  bool m_deploymentNameHasBeenSet = false;
+  bool m_creationTimestampHasBeenSet = false;
+  bool m_deploymentStatusHasBeenSet = false;
+  bool m_isLatestForTargetHasBeenSet = false;
   bool m_parentTargetArnHasBeenSet = false;
 };
 

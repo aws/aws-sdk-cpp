@@ -103,15 +103,15 @@ class Category {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_localizedName;
-  bool m_localizedNameHasBeenSet = false;
 
   bool m_primary{false};
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_localizedNameHasBeenSet = false;
   bool m_primaryHasBeenSet = false;
 };
 

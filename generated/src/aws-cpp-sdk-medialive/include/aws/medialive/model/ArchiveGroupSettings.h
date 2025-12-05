@@ -86,12 +86,12 @@ class ArchiveGroupSettings {
   ///@}
  private:
   ArchiveCdnSettings m_archiveCdnSettings;
-  bool m_archiveCdnSettingsHasBeenSet = false;
 
   OutputLocationRef m_destination;
-  bool m_destinationHasBeenSet = false;
 
   int m_rolloverInterval{0};
+  bool m_archiveCdnSettingsHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
   bool m_rolloverIntervalHasBeenSet = false;
 };
 

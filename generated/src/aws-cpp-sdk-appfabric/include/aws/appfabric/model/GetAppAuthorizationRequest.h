@@ -67,9 +67,9 @@ class GetAppAuthorizationRequest : public AppFabricRequest {
   ///@}
  private:
   Aws::String m_appBundleIdentifier;
-  bool m_appBundleIdentifierHasBeenSet = false;
 
   Aws::String m_appAuthorizationIdentifier;
+  bool m_appBundleIdentifierHasBeenSet = false;
   bool m_appAuthorizationIdentifierHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class RuleSet {
   ///@}
  private:
   Aws::String m_ruleSetId;
-  bool m_ruleSetIdHasBeenSet = false;
 
   Aws::String m_ruleSetName;
-  bool m_ruleSetNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModificationDate{};
+  bool m_ruleSetIdHasBeenSet = false;
+  bool m_ruleSetNameHasBeenSet = false;
   bool m_lastModificationDateHasBeenSet = false;
 };
 

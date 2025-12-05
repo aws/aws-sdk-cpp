@@ -206,30 +206,30 @@ class Anomaly {
   ///@}
  private:
   Aws::String m_anomalyId;
-  bool m_anomalyIdHasBeenSet = false;
 
   Aws::String m_anomalyStartDate;
-  bool m_anomalyStartDateHasBeenSet = false;
 
   Aws::String m_anomalyEndDate;
-  bool m_anomalyEndDateHasBeenSet = false;
 
   Aws::String m_dimensionValue;
-  bool m_dimensionValueHasBeenSet = false;
 
   Aws::Vector<RootCause> m_rootCauses;
-  bool m_rootCausesHasBeenSet = false;
 
   AnomalyScore m_anomalyScore;
-  bool m_anomalyScoreHasBeenSet = false;
 
   Impact m_impact;
-  bool m_impactHasBeenSet = false;
 
   Aws::String m_monitorArn;
-  bool m_monitorArnHasBeenSet = false;
 
   AnomalyFeedbackType m_feedback{AnomalyFeedbackType::NOT_SET};
+  bool m_anomalyIdHasBeenSet = false;
+  bool m_anomalyStartDateHasBeenSet = false;
+  bool m_anomalyEndDateHasBeenSet = false;
+  bool m_dimensionValueHasBeenSet = false;
+  bool m_rootCausesHasBeenSet = false;
+  bool m_anomalyScoreHasBeenSet = false;
+  bool m_impactHasBeenSet = false;
+  bool m_monitorArnHasBeenSet = false;
   bool m_feedbackHasBeenSet = false;
 };
 

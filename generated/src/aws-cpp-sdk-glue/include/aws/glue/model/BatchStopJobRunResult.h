@@ -93,12 +93,12 @@ class BatchStopJobRunResult {
   ///@}
  private:
   Aws::Vector<BatchStopJobRunSuccessfulSubmission> m_successfulSubmissions;
-  bool m_successfulSubmissionsHasBeenSet = false;
 
   Aws::Vector<BatchStopJobRunError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_successfulSubmissionsHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

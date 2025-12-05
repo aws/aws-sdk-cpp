@@ -141,21 +141,21 @@ class MaintenanceWindowExecution {
   ///@}
  private:
   Aws::String m_windowId;
-  bool m_windowIdHasBeenSet = false;
 
   Aws::String m_windowExecutionId;
-  bool m_windowExecutionIdHasBeenSet = false;
 
   MaintenanceWindowExecutionStatus m_status{MaintenanceWindowExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusDetails;
-  bool m_statusDetailsHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
+  bool m_windowIdHasBeenSet = false;
+  bool m_windowExecutionIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusDetailsHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
 };
 

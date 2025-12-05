@@ -114,15 +114,15 @@ class DescribeFileSystemsRequest : public EFSRequest {
   ///@}
  private:
   int m_maxItems{0};
-  bool m_maxItemsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_creationToken;
-  bool m_creationTokenHasBeenSet = false;
 
   Aws::String m_fileSystemId;
+  bool m_maxItemsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
+  bool m_creationTokenHasBeenSet = false;
   bool m_fileSystemIdHasBeenSet = false;
 };
 

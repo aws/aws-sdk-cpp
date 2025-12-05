@@ -86,12 +86,12 @@ class DescribeTransitGatewayRouteTablesResponse {
   ///@}
  private:
   Aws::Vector<TransitGatewayRouteTable> m_transitGatewayRouteTables;
-  bool m_transitGatewayRouteTablesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_transitGatewayRouteTablesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

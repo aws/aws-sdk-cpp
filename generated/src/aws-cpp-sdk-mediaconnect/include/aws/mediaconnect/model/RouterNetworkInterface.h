@@ -252,39 +252,39 @@ class RouterNetworkInterface {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   RouterNetworkInterfaceState m_state{RouterNetworkInterfaceState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   RouterNetworkInterfaceType m_networkInterfaceType{RouterNetworkInterfaceType::NOT_SET};
-  bool m_networkInterfaceTypeHasBeenSet = false;
 
   RouterNetworkInterfaceConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   int m_associatedOutputCount{0};
-  bool m_associatedOutputCountHasBeenSet = false;
 
   int m_associatedInputCount{0};
-  bool m_associatedInputCountHasBeenSet = false;
 
   Aws::String m_regionName;
-  bool m_regionNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_networkInterfaceTypeHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_associatedOutputCountHasBeenSet = false;
+  bool m_associatedInputCountHasBeenSet = false;
+  bool m_regionNameHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

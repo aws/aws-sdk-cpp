@@ -72,9 +72,9 @@ class CidrRoutingConfig {
   ///@}
  private:
   Aws::String m_collectionId;
-  bool m_collectionIdHasBeenSet = false;
 
   Aws::String m_locationName;
+  bool m_collectionIdHasBeenSet = false;
   bool m_locationNameHasBeenSet = false;
 };
 

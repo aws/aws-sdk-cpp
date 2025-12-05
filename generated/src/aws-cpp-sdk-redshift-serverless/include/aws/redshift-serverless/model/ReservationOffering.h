@@ -134,21 +134,21 @@ class ReservationOffering {
   ///@}
  private:
   Aws::String m_currencyCode;
-  bool m_currencyCodeHasBeenSet = false;
 
   int m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   double m_hourlyCharge{0.0};
-  bool m_hourlyChargeHasBeenSet = false;
 
   Aws::String m_offeringId;
-  bool m_offeringIdHasBeenSet = false;
 
   OfferingType m_offeringType{OfferingType::NOT_SET};
-  bool m_offeringTypeHasBeenSet = false;
 
   double m_upfrontCharge{0.0};
+  bool m_currencyCodeHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
+  bool m_hourlyChargeHasBeenSet = false;
+  bool m_offeringIdHasBeenSet = false;
+  bool m_offeringTypeHasBeenSet = false;
   bool m_upfrontChargeHasBeenSet = false;
 };
 

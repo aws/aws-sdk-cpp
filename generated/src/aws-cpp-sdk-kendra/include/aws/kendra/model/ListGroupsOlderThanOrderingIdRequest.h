@@ -124,18 +124,18 @@ class ListGroupsOlderThanOrderingIdRequest : public KendraRequest {
   ///@}
  private:
   Aws::String m_indexId;
-  bool m_indexIdHasBeenSet = false;
 
   Aws::String m_dataSourceId;
-  bool m_dataSourceIdHasBeenSet = false;
 
   long long m_orderingId{0};
-  bool m_orderingIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_indexIdHasBeenSet = false;
+  bool m_dataSourceIdHasBeenSet = false;
+  bool m_orderingIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

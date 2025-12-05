@@ -66,9 +66,9 @@ class GetAnalyzerResult {
   ///@}
  private:
   AnalyzerSummary m_analyzer;
-  bool m_analyzerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_analyzerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

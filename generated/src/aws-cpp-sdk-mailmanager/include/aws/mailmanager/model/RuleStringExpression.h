@@ -99,12 +99,12 @@ class RuleStringExpression {
   ///@}
  private:
   RuleStringToEvaluate m_evaluate;
-  bool m_evaluateHasBeenSet = false;
 
   RuleStringOperator m_operator{RuleStringOperator::NOT_SET};
-  bool m_operatorHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_evaluateHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

@@ -62,9 +62,9 @@ class StartSessionsStatisticsAggregationResult {
   ///@}
  private:
   Aws::String m_aggregationId;
-  bool m_aggregationIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_aggregationIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

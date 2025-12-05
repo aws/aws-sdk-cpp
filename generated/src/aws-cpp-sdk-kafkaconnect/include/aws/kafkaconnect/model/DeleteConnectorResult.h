@@ -76,12 +76,12 @@ class DeleteConnectorResult {
   ///@}
  private:
   Aws::String m_connectorArn;
-  bool m_connectorArnHasBeenSet = false;
 
   ConnectorState m_connectorState{ConnectorState::NOT_SET};
-  bool m_connectorStateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectorArnHasBeenSet = false;
+  bool m_connectorStateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

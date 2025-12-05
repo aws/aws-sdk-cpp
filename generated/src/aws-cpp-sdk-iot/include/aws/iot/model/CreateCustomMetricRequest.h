@@ -137,18 +137,18 @@ class CreateCustomMetricRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   CustomMetricType m_metricType{CustomMetricType::NOT_SET};
-  bool m_metricTypeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_metricNameHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_metricTypeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
 };
 

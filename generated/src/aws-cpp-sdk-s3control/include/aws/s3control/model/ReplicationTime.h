@@ -72,9 +72,9 @@ class ReplicationTime {
   ///@}
  private:
   ReplicationTimeStatus m_status{ReplicationTimeStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ReplicationTimeValue m_time;
+  bool m_statusHasBeenSet = false;
   bool m_timeHasBeenSet = false;
 };
 

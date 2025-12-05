@@ -67,9 +67,9 @@ class GetRevocationStatusResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_revokedEntities;
-  bool m_revokedEntitiesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_revokedEntitiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

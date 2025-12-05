@@ -130,18 +130,18 @@ class NetworkRoute {
   ///@}
  private:
   Aws::String m_destinationCidrBlock;
-  bool m_destinationCidrBlockHasBeenSet = false;
 
   Aws::Vector<NetworkRouteDestination> m_destinations;
-  bool m_destinationsHasBeenSet = false;
 
   Aws::String m_prefixListId;
-  bool m_prefixListIdHasBeenSet = false;
 
   RouteState m_state{RouteState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   RouteType m_type{RouteType::NOT_SET};
+  bool m_destinationCidrBlockHasBeenSet = false;
+  bool m_destinationsHasBeenSet = false;
+  bool m_prefixListIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

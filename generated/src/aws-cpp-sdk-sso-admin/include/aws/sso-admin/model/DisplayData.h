@@ -87,12 +87,12 @@ class DisplayData {
   ///@}
  private:
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_iconUrl;
-  bool m_iconUrlHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_displayNameHasBeenSet = false;
+  bool m_iconUrlHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

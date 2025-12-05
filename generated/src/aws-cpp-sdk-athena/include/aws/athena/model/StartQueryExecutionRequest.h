@@ -203,27 +203,27 @@ class StartQueryExecutionRequest : public AthenaRequest {
   ///@}
  private:
   Aws::String m_queryString;
-  bool m_queryStringHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   QueryExecutionContext m_queryExecutionContext;
-  bool m_queryExecutionContextHasBeenSet = false;
 
   ResultConfiguration m_resultConfiguration;
-  bool m_resultConfigurationHasBeenSet = false;
 
   Aws::String m_workGroup;
-  bool m_workGroupHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_executionParameters;
-  bool m_executionParametersHasBeenSet = false;
 
   ResultReuseConfiguration m_resultReuseConfiguration;
-  bool m_resultReuseConfigurationHasBeenSet = false;
 
   EngineConfiguration m_engineConfiguration;
+  bool m_queryStringHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_queryExecutionContextHasBeenSet = false;
+  bool m_resultConfigurationHasBeenSet = false;
+  bool m_workGroupHasBeenSet = false;
+  bool m_executionParametersHasBeenSet = false;
+  bool m_resultReuseConfigurationHasBeenSet = false;
   bool m_engineConfigurationHasBeenSet = false;
 };
 

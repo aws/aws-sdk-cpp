@@ -204,33 +204,33 @@ class GetAccountAssociationResult {
   ///@}
  private:
   Aws::String m_accountAssociationId;
-  bool m_accountAssociationIdHasBeenSet = false;
 
   AssociationState m_associationState{AssociationState::NOT_SET};
-  bool m_associationStateHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_connectorDestinationId;
-  bool m_connectorDestinationIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_oAuthAuthorizationUrl;
-  bool m_oAuthAuthorizationUrlHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountAssociationIdHasBeenSet = false;
+  bool m_associationStateHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_connectorDestinationIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_oAuthAuthorizationUrlHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

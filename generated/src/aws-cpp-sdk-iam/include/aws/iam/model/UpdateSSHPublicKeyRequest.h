@@ -95,12 +95,12 @@ class UpdateSSHPublicKeyRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_sSHPublicKeyId;
-  bool m_sSHPublicKeyIdHasBeenSet = false;
 
   StatusType m_status{StatusType::NOT_SET};
+  bool m_userNameHasBeenSet = false;
+  bool m_sSHPublicKeyIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

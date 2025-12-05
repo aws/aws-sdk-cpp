@@ -131,18 +131,18 @@ class CreateTemplateRequest : public MigrationHubOrchestratorRequest {
   ///@}
  private:
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   Aws::String m_templateDescription;
-  bool m_templateDescriptionHasBeenSet = false;
 
   TemplateSource m_templateSource;
-  bool m_templateSourceHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_templateNameHasBeenSet = false;
+  bool m_templateDescriptionHasBeenSet = false;
+  bool m_templateSourceHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

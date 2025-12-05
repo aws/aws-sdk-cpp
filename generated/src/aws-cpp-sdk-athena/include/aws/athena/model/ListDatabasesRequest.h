@@ -105,15 +105,15 @@ class ListDatabasesRequest : public AthenaRequest {
   ///@}
  private:
   Aws::String m_catalogName;
-  bool m_catalogNameHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_workGroup;
+  bool m_catalogNameHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_workGroupHasBeenSet = false;
 };
 

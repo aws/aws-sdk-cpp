@@ -109,15 +109,15 @@ class ScoringComponentResiliencyScore {
   ///@}
  private:
   long long m_excludedCount{0};
-  bool m_excludedCountHasBeenSet = false;
 
   long long m_outstandingCount{0};
-  bool m_outstandingCountHasBeenSet = false;
 
   double m_possibleScore{0.0};
-  bool m_possibleScoreHasBeenSet = false;
 
   double m_score{0.0};
+  bool m_excludedCountHasBeenSet = false;
+  bool m_outstandingCountHasBeenSet = false;
+  bool m_possibleScoreHasBeenSet = false;
   bool m_scoreHasBeenSet = false;
 };
 

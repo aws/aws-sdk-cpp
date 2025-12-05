@@ -125,15 +125,15 @@ class BedrockEmbeddingModelConfiguration {
   ///@}
  private:
   int m_dimensions{0};
-  bool m_dimensionsHasBeenSet = false;
 
   EmbeddingDataType m_embeddingDataType{EmbeddingDataType::NOT_SET};
-  bool m_embeddingDataTypeHasBeenSet = false;
 
   Aws::Vector<AudioConfiguration> m_audio;
-  bool m_audioHasBeenSet = false;
 
   Aws::Vector<VideoConfiguration> m_video;
+  bool m_dimensionsHasBeenSet = false;
+  bool m_embeddingDataTypeHasBeenSet = false;
+  bool m_audioHasBeenSet = false;
   bool m_videoHasBeenSet = false;
 };
 

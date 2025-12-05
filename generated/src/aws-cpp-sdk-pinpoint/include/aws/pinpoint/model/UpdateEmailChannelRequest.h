@@ -65,9 +65,9 @@ class UpdateEmailChannelRequest : public PinpointRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   EmailChannelRequest m_emailChannelRequest;
+  bool m_applicationIdHasBeenSet = false;
   bool m_emailChannelRequestHasBeenSet = false;
 };
 

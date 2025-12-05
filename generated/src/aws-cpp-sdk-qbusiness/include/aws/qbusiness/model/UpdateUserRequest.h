@@ -115,15 +115,15 @@ class UpdateUserRequest : public QBusinessRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::Vector<UserAlias> m_userAliasesToUpdate;
-  bool m_userAliasesToUpdateHasBeenSet = false;
 
   Aws::Vector<UserAlias> m_userAliasesToDelete;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_userAliasesToUpdateHasBeenSet = false;
   bool m_userAliasesToDeleteHasBeenSet = false;
 };
 

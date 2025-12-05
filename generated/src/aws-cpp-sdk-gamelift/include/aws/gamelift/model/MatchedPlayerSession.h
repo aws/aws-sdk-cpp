@@ -73,9 +73,9 @@ class MatchedPlayerSession {
   ///@}
  private:
   Aws::String m_playerId;
-  bool m_playerIdHasBeenSet = false;
 
   Aws::String m_playerSessionId;
+  bool m_playerIdHasBeenSet = false;
   bool m_playerSessionIdHasBeenSet = false;
 };
 

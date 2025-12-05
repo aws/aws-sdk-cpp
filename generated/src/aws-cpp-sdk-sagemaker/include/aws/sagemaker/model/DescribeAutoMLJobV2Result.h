@@ -463,75 +463,75 @@ class DescribeAutoMLJobV2Result {
   ///@}
  private:
   Aws::String m_autoMLJobName;
-  bool m_autoMLJobNameHasBeenSet = false;
 
   Aws::String m_autoMLJobArn;
-  bool m_autoMLJobArnHasBeenSet = false;
 
   Aws::Vector<AutoMLJobChannel> m_autoMLJobInputDataConfig;
-  bool m_autoMLJobInputDataConfigHasBeenSet = false;
 
   AutoMLOutputDataConfig m_outputDataConfig;
-  bool m_outputDataConfigHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   AutoMLJobObjective m_autoMLJobObjective;
-  bool m_autoMLJobObjectiveHasBeenSet = false;
 
   AutoMLProblemTypeConfig m_autoMLProblemTypeConfig;
-  bool m_autoMLProblemTypeConfigHasBeenSet = false;
 
   AutoMLProblemTypeConfigName m_autoMLProblemTypeConfigName{AutoMLProblemTypeConfigName::NOT_SET};
-  bool m_autoMLProblemTypeConfigNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::Vector<AutoMLPartialFailureReason> m_partialFailureReasons;
-  bool m_partialFailureReasonsHasBeenSet = false;
 
   AutoMLCandidate m_bestCandidate;
-  bool m_bestCandidateHasBeenSet = false;
 
   AutoMLJobStatus m_autoMLJobStatus{AutoMLJobStatus::NOT_SET};
-  bool m_autoMLJobStatusHasBeenSet = false;
 
   AutoMLJobSecondaryStatus m_autoMLJobSecondaryStatus{AutoMLJobSecondaryStatus::NOT_SET};
-  bool m_autoMLJobSecondaryStatusHasBeenSet = false;
 
   AutoMLJobArtifacts m_autoMLJobArtifacts;
-  bool m_autoMLJobArtifactsHasBeenSet = false;
 
   AutoMLResolvedAttributes m_resolvedAttributes;
-  bool m_resolvedAttributesHasBeenSet = false;
 
   ModelDeployConfig m_modelDeployConfig;
-  bool m_modelDeployConfigHasBeenSet = false;
 
   ModelDeployResult m_modelDeployResult;
-  bool m_modelDeployResultHasBeenSet = false;
 
   AutoMLDataSplitConfig m_dataSplitConfig;
-  bool m_dataSplitConfigHasBeenSet = false;
 
   AutoMLSecurityConfig m_securityConfig;
-  bool m_securityConfigHasBeenSet = false;
 
   AutoMLComputeConfig m_autoMLComputeConfig;
-  bool m_autoMLComputeConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_autoMLJobNameHasBeenSet = false;
+  bool m_autoMLJobArnHasBeenSet = false;
+  bool m_autoMLJobInputDataConfigHasBeenSet = false;
+  bool m_outputDataConfigHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_autoMLJobObjectiveHasBeenSet = false;
+  bool m_autoMLProblemTypeConfigHasBeenSet = false;
+  bool m_autoMLProblemTypeConfigNameHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_partialFailureReasonsHasBeenSet = false;
+  bool m_bestCandidateHasBeenSet = false;
+  bool m_autoMLJobStatusHasBeenSet = false;
+  bool m_autoMLJobSecondaryStatusHasBeenSet = false;
+  bool m_autoMLJobArtifactsHasBeenSet = false;
+  bool m_resolvedAttributesHasBeenSet = false;
+  bool m_modelDeployConfigHasBeenSet = false;
+  bool m_modelDeployResultHasBeenSet = false;
+  bool m_dataSplitConfigHasBeenSet = false;
+  bool m_securityConfigHasBeenSet = false;
+  bool m_autoMLComputeConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

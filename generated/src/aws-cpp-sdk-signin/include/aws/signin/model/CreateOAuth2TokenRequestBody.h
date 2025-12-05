@@ -150,21 +150,21 @@ class CreateOAuth2TokenRequestBody {
   ///@}
  private:
   Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
 
   Aws::String m_grantType;
-  bool m_grantTypeHasBeenSet = false;
 
   Aws::String m_code;
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_redirectUri;
-  bool m_redirectUriHasBeenSet = false;
 
   Aws::String m_codeVerifier;
-  bool m_codeVerifierHasBeenSet = false;
 
   Aws::String m_refreshToken;
+  bool m_clientIdHasBeenSet = false;
+  bool m_grantTypeHasBeenSet = false;
+  bool m_codeHasBeenSet = false;
+  bool m_redirectUriHasBeenSet = false;
+  bool m_codeVerifierHasBeenSet = false;
   bool m_refreshTokenHasBeenSet = false;
 };
 

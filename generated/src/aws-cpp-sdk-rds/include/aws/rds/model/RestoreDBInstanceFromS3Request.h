@@ -1209,162 +1209,162 @@ class RestoreDBInstanceFromS3Request : public RDSRequest {
   ///@}
  private:
   Aws::String m_dBName;
-  bool m_dBNameHasBeenSet = false;
 
   Aws::String m_dBInstanceIdentifier;
-  bool m_dBInstanceIdentifierHasBeenSet = false;
 
   int m_allocatedStorage{0};
-  bool m_allocatedStorageHasBeenSet = false;
 
   Aws::String m_dBInstanceClass;
-  bool m_dBInstanceClassHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_masterUsername;
-  bool m_masterUsernameHasBeenSet = false;
 
   Aws::String m_masterUserPassword;
-  bool m_masterUserPasswordHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dBSecurityGroups;
-  bool m_dBSecurityGroupsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-  bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_dBSubnetGroupName;
-  bool m_dBSubnetGroupNameHasBeenSet = false;
 
   Aws::String m_preferredMaintenanceWindow;
-  bool m_preferredMaintenanceWindowHasBeenSet = false;
 
   Aws::String m_dBParameterGroupName;
-  bool m_dBParameterGroupNameHasBeenSet = false;
 
   int m_backupRetentionPeriod{0};
-  bool m_backupRetentionPeriodHasBeenSet = false;
 
   Aws::String m_preferredBackupWindow;
-  bool m_preferredBackupWindowHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   bool m_multiAZ{false};
-  bool m_multiAZHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   bool m_autoMinorVersionUpgrade{false};
-  bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
   Aws::String m_licenseModel;
-  bool m_licenseModelHasBeenSet = false;
 
   int m_iops{0};
-  bool m_iopsHasBeenSet = false;
 
   int m_storageThroughput{0};
-  bool m_storageThroughputHasBeenSet = false;
 
   Aws::String m_optionGroupName;
-  bool m_optionGroupNameHasBeenSet = false;
 
   bool m_publiclyAccessible{false};
-  bool m_publiclyAccessibleHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_storageType;
-  bool m_storageTypeHasBeenSet = false;
 
   bool m_storageEncrypted{false};
-  bool m_storageEncryptedHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   bool m_copyTagsToSnapshot{false};
-  bool m_copyTagsToSnapshotHasBeenSet = false;
 
   int m_monitoringInterval{0};
-  bool m_monitoringIntervalHasBeenSet = false;
 
   Aws::String m_monitoringRoleArn;
-  bool m_monitoringRoleArnHasBeenSet = false;
 
   bool m_enableIAMDatabaseAuthentication{false};
-  bool m_enableIAMDatabaseAuthenticationHasBeenSet = false;
 
   Aws::String m_sourceEngine;
-  bool m_sourceEngineHasBeenSet = false;
 
   Aws::String m_sourceEngineVersion;
-  bool m_sourceEngineVersionHasBeenSet = false;
 
   Aws::String m_s3BucketName;
-  bool m_s3BucketNameHasBeenSet = false;
 
   Aws::String m_s3Prefix;
-  bool m_s3PrefixHasBeenSet = false;
 
   Aws::String m_s3IngestionRoleArn;
-  bool m_s3IngestionRoleArnHasBeenSet = false;
 
   DatabaseInsightsMode m_databaseInsightsMode{DatabaseInsightsMode::NOT_SET};
-  bool m_databaseInsightsModeHasBeenSet = false;
 
   bool m_enablePerformanceInsights{false};
-  bool m_enablePerformanceInsightsHasBeenSet = false;
 
   Aws::String m_performanceInsightsKMSKeyId;
-  bool m_performanceInsightsKMSKeyIdHasBeenSet = false;
 
   int m_performanceInsightsRetentionPeriod{0};
-  bool m_performanceInsightsRetentionPeriodHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_enableCloudwatchLogsExports;
-  bool m_enableCloudwatchLogsExportsHasBeenSet = false;
 
   Aws::Vector<ProcessorFeature> m_processorFeatures;
-  bool m_processorFeaturesHasBeenSet = false;
 
   bool m_useDefaultProcessorFeatures{false};
-  bool m_useDefaultProcessorFeaturesHasBeenSet = false;
 
   bool m_deletionProtection{false};
-  bool m_deletionProtectionHasBeenSet = false;
 
   int m_maxAllocatedStorage{0};
-  bool m_maxAllocatedStorageHasBeenSet = false;
 
   Aws::String m_networkType;
-  bool m_networkTypeHasBeenSet = false;
 
   bool m_manageMasterUserPassword{false};
-  bool m_manageMasterUserPasswordHasBeenSet = false;
 
   Aws::String m_masterUserSecretKmsKeyId;
-  bool m_masterUserSecretKmsKeyIdHasBeenSet = false;
 
   bool m_dedicatedLogVolume{false};
-  bool m_dedicatedLogVolumeHasBeenSet = false;
 
   Aws::String m_cACertificateIdentifier;
-  bool m_cACertificateIdentifierHasBeenSet = false;
 
   Aws::String m_engineLifecycleSupport;
-  bool m_engineLifecycleSupportHasBeenSet = false;
 
   Aws::Vector<AdditionalStorageVolume> m_additionalStorageVolumes;
+  bool m_dBNameHasBeenSet = false;
+  bool m_dBInstanceIdentifierHasBeenSet = false;
+  bool m_allocatedStorageHasBeenSet = false;
+  bool m_dBInstanceClassHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_masterUsernameHasBeenSet = false;
+  bool m_masterUserPasswordHasBeenSet = false;
+  bool m_dBSecurityGroupsHasBeenSet = false;
+  bool m_vpcSecurityGroupIdsHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_dBSubnetGroupNameHasBeenSet = false;
+  bool m_preferredMaintenanceWindowHasBeenSet = false;
+  bool m_dBParameterGroupNameHasBeenSet = false;
+  bool m_backupRetentionPeriodHasBeenSet = false;
+  bool m_preferredBackupWindowHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_multiAZHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_autoMinorVersionUpgradeHasBeenSet = false;
+  bool m_licenseModelHasBeenSet = false;
+  bool m_iopsHasBeenSet = false;
+  bool m_storageThroughputHasBeenSet = false;
+  bool m_optionGroupNameHasBeenSet = false;
+  bool m_publiclyAccessibleHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_storageTypeHasBeenSet = false;
+  bool m_storageEncryptedHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_copyTagsToSnapshotHasBeenSet = false;
+  bool m_monitoringIntervalHasBeenSet = false;
+  bool m_monitoringRoleArnHasBeenSet = false;
+  bool m_enableIAMDatabaseAuthenticationHasBeenSet = false;
+  bool m_sourceEngineHasBeenSet = false;
+  bool m_sourceEngineVersionHasBeenSet = false;
+  bool m_s3BucketNameHasBeenSet = false;
+  bool m_s3PrefixHasBeenSet = false;
+  bool m_s3IngestionRoleArnHasBeenSet = false;
+  bool m_databaseInsightsModeHasBeenSet = false;
+  bool m_enablePerformanceInsightsHasBeenSet = false;
+  bool m_performanceInsightsKMSKeyIdHasBeenSet = false;
+  bool m_performanceInsightsRetentionPeriodHasBeenSet = false;
+  bool m_enableCloudwatchLogsExportsHasBeenSet = false;
+  bool m_processorFeaturesHasBeenSet = false;
+  bool m_useDefaultProcessorFeaturesHasBeenSet = false;
+  bool m_deletionProtectionHasBeenSet = false;
+  bool m_maxAllocatedStorageHasBeenSet = false;
+  bool m_networkTypeHasBeenSet = false;
+  bool m_manageMasterUserPasswordHasBeenSet = false;
+  bool m_masterUserSecretKmsKeyIdHasBeenSet = false;
+  bool m_dedicatedLogVolumeHasBeenSet = false;
+  bool m_cACertificateIdentifierHasBeenSet = false;
+  bool m_engineLifecycleSupportHasBeenSet = false;
   bool m_additionalStorageVolumesHasBeenSet = false;
 };
 

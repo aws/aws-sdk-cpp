@@ -103,12 +103,12 @@ class AssessmentTemplateFilter {
   ///@}
  private:
   Aws::String m_namePattern;
-  bool m_namePatternHasBeenSet = false;
 
   DurationRange m_durationRange;
-  bool m_durationRangeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_rulesPackageArns;
+  bool m_namePatternHasBeenSet = false;
+  bool m_durationRangeHasBeenSet = false;
   bool m_rulesPackageArnsHasBeenSet = false;
 };
 

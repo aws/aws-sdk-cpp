@@ -77,12 +77,12 @@ class GetAIPromptResult {
   ///@}
  private:
   AIPromptData m_aiPrompt;
-  bool m_aiPromptHasBeenSet = false;
 
   long long m_versionNumber{0};
-  bool m_versionNumberHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_aiPromptHasBeenSet = false;
+  bool m_versionNumberHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

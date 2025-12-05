@@ -89,12 +89,12 @@ class BatchUpdateScheduleRequest : public MediaLiveRequest {
   ///@}
  private:
   Aws::String m_channelId;
-  bool m_channelIdHasBeenSet = false;
 
   BatchScheduleActionCreateRequest m_creates;
-  bool m_createsHasBeenSet = false;
 
   BatchScheduleActionDeleteRequest m_deletes;
+  bool m_channelIdHasBeenSet = false;
+  bool m_createsHasBeenSet = false;
   bool m_deletesHasBeenSet = false;
 };
 

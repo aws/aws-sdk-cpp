@@ -99,12 +99,12 @@ class GetFindingsReportAccountSummaryResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<FindingsReportSummary> m_reportSummaries;
-  bool m_reportSummariesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_reportSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

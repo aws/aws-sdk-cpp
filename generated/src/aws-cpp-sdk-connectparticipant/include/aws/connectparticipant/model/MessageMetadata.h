@@ -93,12 +93,12 @@ class MessageMetadata {
   ///@}
  private:
   Aws::String m_messageId;
-  bool m_messageIdHasBeenSet = false;
 
   Aws::Vector<Receipt> m_receipts;
-  bool m_receiptsHasBeenSet = false;
 
   MessageProcessingStatus m_messageProcessingStatus{MessageProcessingStatus::NOT_SET};
+  bool m_messageIdHasBeenSet = false;
+  bool m_receiptsHasBeenSet = false;
   bool m_messageProcessingStatusHasBeenSet = false;
 };
 

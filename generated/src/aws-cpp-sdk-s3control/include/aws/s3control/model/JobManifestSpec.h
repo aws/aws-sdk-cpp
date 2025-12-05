@@ -77,9 +77,9 @@ class JobManifestSpec {
   ///@}
  private:
   JobManifestFormat m_format{JobManifestFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   Aws::Vector<JobManifestFieldName> m_fields;
+  bool m_formatHasBeenSet = false;
   bool m_fieldsHasBeenSet = false;
 };
 

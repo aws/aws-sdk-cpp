@@ -60,9 +60,9 @@ class DeprovisionIpamByoasnResponse {
   ///@}
  private:
   Byoasn m_byoasn;
-  bool m_byoasnHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_byoasnHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

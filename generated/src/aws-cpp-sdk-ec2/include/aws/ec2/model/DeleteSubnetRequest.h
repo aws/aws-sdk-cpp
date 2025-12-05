@@ -70,9 +70,9 @@ class DeleteSubnetRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_subnetIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

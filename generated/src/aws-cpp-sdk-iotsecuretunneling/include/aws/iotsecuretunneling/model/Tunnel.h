@@ -244,36 +244,36 @@ class Tunnel {
   ///@}
  private:
   Aws::String m_tunnelId;
-  bool m_tunnelIdHasBeenSet = false;
 
   Aws::String m_tunnelArn;
-  bool m_tunnelArnHasBeenSet = false;
 
   TunnelStatus m_status{TunnelStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ConnectionState m_sourceConnectionState;
-  bool m_sourceConnectionStateHasBeenSet = false;
 
   ConnectionState m_destinationConnectionState;
-  bool m_destinationConnectionStateHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   DestinationConfig m_destinationConfig;
-  bool m_destinationConfigHasBeenSet = false;
 
   TimeoutConfig m_timeoutConfig;
-  bool m_timeoutConfigHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
+  bool m_tunnelIdHasBeenSet = false;
+  bool m_tunnelArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_sourceConnectionStateHasBeenSet = false;
+  bool m_destinationConnectionStateHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_destinationConfigHasBeenSet = false;
+  bool m_timeoutConfigHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_lastUpdatedAtHasBeenSet = false;
 };
 

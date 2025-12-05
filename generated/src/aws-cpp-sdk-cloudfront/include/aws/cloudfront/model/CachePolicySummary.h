@@ -69,9 +69,9 @@ class CachePolicySummary {
   ///@}
  private:
   CachePolicyType m_type{CachePolicyType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   CachePolicy m_cachePolicy;
+  bool m_typeHasBeenSet = false;
   bool m_cachePolicyHasBeenSet = false;
 };
 

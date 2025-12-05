@@ -119,18 +119,18 @@ class ListChannelsRequest : public IVSRequest {
   ///@}
  private:
   Aws::String m_filterByName;
-  bool m_filterByNameHasBeenSet = false;
 
   Aws::String m_filterByPlaybackRestrictionPolicyArn;
-  bool m_filterByPlaybackRestrictionPolicyArnHasBeenSet = false;
 
   Aws::String m_filterByRecordingConfigurationArn;
-  bool m_filterByRecordingConfigurationArnHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_filterByNameHasBeenSet = false;
+  bool m_filterByPlaybackRestrictionPolicyArnHasBeenSet = false;
+  bool m_filterByRecordingConfigurationArnHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

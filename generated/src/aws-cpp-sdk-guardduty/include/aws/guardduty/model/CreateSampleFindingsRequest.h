@@ -76,9 +76,9 @@ class CreateSampleFindingsRequest : public GuardDutyRequest {
   ///@}
  private:
   Aws::String m_detectorId;
-  bool m_detectorIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_findingTypes;
+  bool m_detectorIdHasBeenSet = false;
   bool m_findingTypesHasBeenSet = false;
 };
 

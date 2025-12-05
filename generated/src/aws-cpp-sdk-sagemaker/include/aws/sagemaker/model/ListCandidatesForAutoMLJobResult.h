@@ -85,12 +85,12 @@ class ListCandidatesForAutoMLJobResult {
   ///@}
  private:
   Aws::Vector<AutoMLCandidate> m_candidates;
-  bool m_candidatesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_candidatesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

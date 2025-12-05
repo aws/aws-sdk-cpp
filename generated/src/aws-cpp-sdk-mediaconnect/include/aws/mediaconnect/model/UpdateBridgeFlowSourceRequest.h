@@ -70,9 +70,9 @@ class UpdateBridgeFlowSourceRequest {
   ///@}
  private:
   Aws::String m_flowArn;
-  bool m_flowArnHasBeenSet = false;
 
   VpcInterfaceAttachment m_flowVpcInterfaceAttachment;
+  bool m_flowArnHasBeenSet = false;
   bool m_flowVpcInterfaceAttachmentHasBeenSet = false;
 };
 

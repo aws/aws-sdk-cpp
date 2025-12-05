@@ -161,21 +161,21 @@ class CreateTrustedTokenIssuerRequest : public SSOAdminRequest {
   ///@}
  private:
   Aws::String m_instanceArn;
-  bool m_instanceArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   TrustedTokenIssuerType m_trustedTokenIssuerType{TrustedTokenIssuerType::NOT_SET};
-  bool m_trustedTokenIssuerTypeHasBeenSet = false;
 
   TrustedTokenIssuerConfiguration m_trustedTokenIssuerConfiguration;
-  bool m_trustedTokenIssuerConfigurationHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Vector<Tag> m_tags;
+  bool m_instanceArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_trustedTokenIssuerTypeHasBeenSet = false;
+  bool m_trustedTokenIssuerConfigurationHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

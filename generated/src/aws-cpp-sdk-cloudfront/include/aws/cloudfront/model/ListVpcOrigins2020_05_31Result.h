@@ -60,9 +60,9 @@ class ListVpcOrigins2020_05_31Result {
   ///@}
  private:
   VpcOriginList m_vpcOriginList;
-  bool m_vpcOriginListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_vpcOriginListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -173,24 +173,24 @@ class DomainMembership {
   ///@}
  private:
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_fQDN;
-  bool m_fQDNHasBeenSet = false;
 
   Aws::String m_iAMRoleName;
-  bool m_iAMRoleNameHasBeenSet = false;
 
   Aws::String m_oU;
-  bool m_oUHasBeenSet = false;
 
   Aws::String m_authSecretArn;
-  bool m_authSecretArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dnsIps;
+  bool m_domainHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_fQDNHasBeenSet = false;
+  bool m_iAMRoleNameHasBeenSet = false;
+  bool m_oUHasBeenSet = false;
+  bool m_authSecretArnHasBeenSet = false;
   bool m_dnsIpsHasBeenSet = false;
 };
 

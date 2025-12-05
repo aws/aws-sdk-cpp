@@ -219,30 +219,30 @@ class ListEntitiesRequest : public MarketplaceCatalogRequest {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_entityType;
-  bool m_entityTypeHasBeenSet = false;
 
   Aws::Vector<Filter> m_filterList;
-  bool m_filterListHasBeenSet = false;
 
   Sort m_sort;
-  bool m_sortHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   OwnershipType m_ownershipType{OwnershipType::NOT_SET};
-  bool m_ownershipTypeHasBeenSet = false;
 
   EntityTypeFilters m_entityTypeFilters;
-  bool m_entityTypeFiltersHasBeenSet = false;
 
   EntityTypeSort m_entityTypeSort;
+  bool m_catalogHasBeenSet = false;
+  bool m_entityTypeHasBeenSet = false;
+  bool m_filterListHasBeenSet = false;
+  bool m_sortHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_ownershipTypeHasBeenSet = false;
+  bool m_entityTypeFiltersHasBeenSet = false;
   bool m_entityTypeSortHasBeenSet = false;
 };
 

@@ -119,15 +119,15 @@ class AlarmContributor {
   ///@}
  private:
   Aws::String m_contributorId;
-  bool m_contributorIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_contributorAttributes;
-  bool m_contributorAttributesHasBeenSet = false;
 
   Aws::String m_stateReason;
-  bool m_stateReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_stateTransitionedTimestamp{};
+  bool m_contributorIdHasBeenSet = false;
+  bool m_contributorAttributesHasBeenSet = false;
+  bool m_stateReasonHasBeenSet = false;
   bool m_stateTransitionedTimestampHasBeenSet = false;
 };
 

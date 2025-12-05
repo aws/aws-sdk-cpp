@@ -80,9 +80,9 @@ class StartFailbackLaunchRequest : public DrsRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_recoveryInstanceIDs;
-  bool m_recoveryInstanceIDsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_recoveryInstanceIDsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -150,21 +150,21 @@ class DataTableValue {
   ///@}
  private:
   Aws::Vector<PrimaryValue> m_primaryValues;
-  bool m_primaryValuesHasBeenSet = false;
 
   Aws::String m_attributeName;
-  bool m_attributeNameHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   DataTableLockVersion m_lockVersion;
-  bool m_lockVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_lastModifiedRegion;
+  bool m_primaryValuesHasBeenSet = false;
+  bool m_attributeNameHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_lockVersionHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_lastModifiedRegionHasBeenSet = false;
 };
 

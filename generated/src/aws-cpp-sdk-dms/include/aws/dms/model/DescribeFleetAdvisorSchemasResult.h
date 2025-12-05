@@ -89,12 +89,12 @@ class DescribeFleetAdvisorSchemasResult {
   ///@}
  private:
   Aws::Vector<SchemaResponse> m_fleetAdvisorSchemas;
-  bool m_fleetAdvisorSchemasHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fleetAdvisorSchemasHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

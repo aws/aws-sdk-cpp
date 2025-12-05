@@ -94,12 +94,12 @@ class AmazonRedshiftTarget {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   AmazonRedshiftNodeData m_data;
-  bool m_dataHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inputs;
+  bool m_nameHasBeenSet = false;
+  bool m_dataHasBeenSet = false;
   bool m_inputsHasBeenSet = false;
 };
 

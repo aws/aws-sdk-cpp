@@ -61,9 +61,9 @@ class GetServicePrincipalNameResult {
   ///@}
  private:
   ServicePrincipalName m_servicePrincipalName;
-  bool m_servicePrincipalNameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_servicePrincipalNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

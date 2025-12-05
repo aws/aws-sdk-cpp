@@ -294,45 +294,45 @@ class DescribeDomainHealthResult {
   ///@}
  private:
   DomainState m_domainState{DomainState::NOT_SET};
-  bool m_domainStateHasBeenSet = false;
 
   Aws::String m_availabilityZoneCount;
-  bool m_availabilityZoneCountHasBeenSet = false;
 
   Aws::String m_activeAvailabilityZoneCount;
-  bool m_activeAvailabilityZoneCountHasBeenSet = false;
 
   Aws::String m_standByAvailabilityZoneCount;
-  bool m_standByAvailabilityZoneCountHasBeenSet = false;
 
   Aws::String m_dataNodeCount;
-  bool m_dataNodeCountHasBeenSet = false;
 
   bool m_dedicatedMaster{false};
-  bool m_dedicatedMasterHasBeenSet = false;
 
   Aws::String m_masterEligibleNodeCount;
-  bool m_masterEligibleNodeCountHasBeenSet = false;
 
   Aws::String m_warmNodeCount;
-  bool m_warmNodeCountHasBeenSet = false;
 
   MasterNodeStatus m_masterNode{MasterNodeStatus::NOT_SET};
-  bool m_masterNodeHasBeenSet = false;
 
   DomainHealth m_clusterHealth{DomainHealth::NOT_SET};
-  bool m_clusterHealthHasBeenSet = false;
 
   Aws::String m_totalShards;
-  bool m_totalShardsHasBeenSet = false;
 
   Aws::String m_totalUnAssignedShards;
-  bool m_totalUnAssignedShardsHasBeenSet = false;
 
   Aws::Vector<EnvironmentInfo> m_environmentInformation;
-  bool m_environmentInformationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainStateHasBeenSet = false;
+  bool m_availabilityZoneCountHasBeenSet = false;
+  bool m_activeAvailabilityZoneCountHasBeenSet = false;
+  bool m_standByAvailabilityZoneCountHasBeenSet = false;
+  bool m_dataNodeCountHasBeenSet = false;
+  bool m_dedicatedMasterHasBeenSet = false;
+  bool m_masterEligibleNodeCountHasBeenSet = false;
+  bool m_warmNodeCountHasBeenSet = false;
+  bool m_masterNodeHasBeenSet = false;
+  bool m_clusterHealthHasBeenSet = false;
+  bool m_totalShardsHasBeenSet = false;
+  bool m_totalUnAssignedShardsHasBeenSet = false;
+  bool m_environmentInformationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class GetDataLakeOrganizationConfigurationResult {
   ///@}
  private:
   Aws::Vector<DataLakeAutoEnableNewAccountConfiguration> m_autoEnableNewAccount;
-  bool m_autoEnableNewAccountHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_autoEnableNewAccountHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

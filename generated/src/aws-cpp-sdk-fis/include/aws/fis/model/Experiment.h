@@ -372,54 +372,54 @@ class Experiment {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_experimentTemplateId;
-  bool m_experimentTemplateIdHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   ExperimentState m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::Map<Aws::String, ExperimentTarget> m_targets;
-  bool m_targetsHasBeenSet = false;
 
   Aws::Map<Aws::String, ExperimentAction> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   Aws::Vector<ExperimentStopCondition> m_stopConditions;
-  bool m_stopConditionsHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ExperimentLogConfiguration m_logConfiguration;
-  bool m_logConfigurationHasBeenSet = false;
 
   ExperimentOptions m_experimentOptions;
-  bool m_experimentOptionsHasBeenSet = false;
 
   long long m_targetAccountConfigurationsCount{0};
-  bool m_targetAccountConfigurationsCountHasBeenSet = false;
 
   ExperimentReportConfiguration m_experimentReportConfiguration;
-  bool m_experimentReportConfigurationHasBeenSet = false;
 
   ExperimentReport m_experimentReport;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_experimentTemplateIdHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_targetsHasBeenSet = false;
+  bool m_actionsHasBeenSet = false;
+  bool m_stopConditionsHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_logConfigurationHasBeenSet = false;
+  bool m_experimentOptionsHasBeenSet = false;
+  bool m_targetAccountConfigurationsCountHasBeenSet = false;
+  bool m_experimentReportConfigurationHasBeenSet = false;
   bool m_experimentReportHasBeenSet = false;
 };
 

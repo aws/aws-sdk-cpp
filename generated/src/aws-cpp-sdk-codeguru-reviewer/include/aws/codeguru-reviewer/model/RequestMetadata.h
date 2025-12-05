@@ -113,15 +113,15 @@ class RequestMetadata {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_requester;
-  bool m_requesterHasBeenSet = false;
 
   EventInfo m_eventInfo;
-  bool m_eventInfoHasBeenSet = false;
 
   VendorName m_vendorName{VendorName::NOT_SET};
+  bool m_requestIdHasBeenSet = false;
+  bool m_requesterHasBeenSet = false;
+  bool m_eventInfoHasBeenSet = false;
   bool m_vendorNameHasBeenSet = false;
 };
 

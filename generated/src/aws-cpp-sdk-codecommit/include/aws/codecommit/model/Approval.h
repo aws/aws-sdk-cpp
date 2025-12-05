@@ -69,9 +69,9 @@ class Approval {
   ///@}
  private:
   Aws::String m_userArn;
-  bool m_userArnHasBeenSet = false;
 
   ApprovalState m_approvalState{ApprovalState::NOT_SET};
+  bool m_userArnHasBeenSet = false;
   bool m_approvalStateHasBeenSet = false;
 };
 

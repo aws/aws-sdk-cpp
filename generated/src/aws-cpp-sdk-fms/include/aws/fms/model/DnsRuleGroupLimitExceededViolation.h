@@ -87,12 +87,12 @@ class DnsRuleGroupLimitExceededViolation {
   ///@}
  private:
   Aws::String m_violationTarget;
-  bool m_violationTargetHasBeenSet = false;
 
   Aws::String m_violationTargetDescription;
-  bool m_violationTargetDescriptionHasBeenSet = false;
 
   int m_numberOfRuleGroupsAlreadyAssociated{0};
+  bool m_violationTargetHasBeenSet = false;
+  bool m_violationTargetDescriptionHasBeenSet = false;
   bool m_numberOfRuleGroupsAlreadyAssociatedHasBeenSet = false;
 };
 

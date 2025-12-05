@@ -85,12 +85,12 @@ class DescribeWorkspacesPoolsResult {
   ///@}
  private:
   Aws::Vector<WorkspacesPool> m_workspacesPools;
-  bool m_workspacesPoolsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workspacesPoolsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

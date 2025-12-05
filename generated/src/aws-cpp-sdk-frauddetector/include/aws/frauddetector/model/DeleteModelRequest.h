@@ -66,9 +66,9 @@ class DeleteModelRequest : public FraudDetectorRequest {
   ///@}
  private:
   Aws::String m_modelId;
-  bool m_modelIdHasBeenSet = false;
 
   ModelTypeEnum m_modelType{ModelTypeEnum::NOT_SET};
+  bool m_modelIdHasBeenSet = false;
   bool m_modelTypeHasBeenSet = false;
 };
 

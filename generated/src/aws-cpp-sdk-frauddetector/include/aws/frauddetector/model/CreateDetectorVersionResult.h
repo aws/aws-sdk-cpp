@@ -92,15 +92,15 @@ class CreateDetectorVersionResult {
   ///@}
  private:
   Aws::String m_detectorId;
-  bool m_detectorIdHasBeenSet = false;
 
   Aws::String m_detectorVersionId;
-  bool m_detectorVersionIdHasBeenSet = false;
 
   DetectorVersionStatus m_status{DetectorVersionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_detectorIdHasBeenSet = false;
+  bool m_detectorVersionIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

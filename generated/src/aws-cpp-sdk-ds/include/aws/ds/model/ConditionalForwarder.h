@@ -125,15 +125,15 @@ class ConditionalForwarder {
   ///@}
  private:
   Aws::String m_remoteDomainName;
-  bool m_remoteDomainNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dnsIpAddrs;
-  bool m_dnsIpAddrsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dnsIpv6Addrs;
-  bool m_dnsIpv6AddrsHasBeenSet = false;
 
   ReplicationScope m_replicationScope{ReplicationScope::NOT_SET};
+  bool m_remoteDomainNameHasBeenSet = false;
+  bool m_dnsIpAddrsHasBeenSet = false;
+  bool m_dnsIpv6AddrsHasBeenSet = false;
   bool m_replicationScopeHasBeenSet = false;
 };
 

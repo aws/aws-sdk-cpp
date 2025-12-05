@@ -64,9 +64,9 @@ class UpdateVTLDeviceTypeResult {
   ///@}
  private:
   Aws::String m_vTLDeviceARN;
-  bool m_vTLDeviceARNHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_vTLDeviceARNHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

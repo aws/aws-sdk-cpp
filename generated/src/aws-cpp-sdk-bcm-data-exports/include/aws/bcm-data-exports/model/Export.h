@@ -144,21 +144,21 @@ class Export {
   ///@}
  private:
   DataQuery m_dataQuery;
-  bool m_dataQueryHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   DestinationConfigurations m_destinationConfigurations;
-  bool m_destinationConfigurationsHasBeenSet = false;
 
   Aws::String m_exportArn;
-  bool m_exportArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   RefreshCadence m_refreshCadence;
+  bool m_dataQueryHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_destinationConfigurationsHasBeenSet = false;
+  bool m_exportArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_refreshCadenceHasBeenSet = false;
 };
 

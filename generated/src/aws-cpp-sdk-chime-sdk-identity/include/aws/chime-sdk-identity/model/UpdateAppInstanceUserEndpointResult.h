@@ -77,12 +77,12 @@ class UpdateAppInstanceUserEndpointResult {
   ///@}
  private:
   Aws::String m_appInstanceUserArn;
-  bool m_appInstanceUserArnHasBeenSet = false;
 
   Aws::String m_endpointId;
-  bool m_endpointIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appInstanceUserArnHasBeenSet = false;
+  bool m_endpointIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

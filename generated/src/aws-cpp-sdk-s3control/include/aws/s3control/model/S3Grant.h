@@ -67,9 +67,9 @@ class S3Grant {
   ///@}
  private:
   S3Grantee m_grantee;
-  bool m_granteeHasBeenSet = false;
 
   S3Permission m_permission{S3Permission::NOT_SET};
+  bool m_granteeHasBeenSet = false;
   bool m_permissionHasBeenSet = false;
 };
 

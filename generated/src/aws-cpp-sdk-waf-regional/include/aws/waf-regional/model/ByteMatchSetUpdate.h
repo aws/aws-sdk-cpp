@@ -82,9 +82,9 @@ class ByteMatchSetUpdate {
   ///@}
  private:
   ChangeAction m_action{ChangeAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   ByteMatchTuple m_byteMatchTuple;
+  bool m_actionHasBeenSet = false;
   bool m_byteMatchTupleHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class MediaCapturePipelineSourceConfiguration {
   ///@}
  private:
   Aws::String m_mediaPipelineArn;
-  bool m_mediaPipelineArnHasBeenSet = false;
 
   ChimeSdkMeetingConcatenationConfiguration m_chimeSdkMeetingConfiguration;
+  bool m_mediaPipelineArnHasBeenSet = false;
   bool m_chimeSdkMeetingConfigurationHasBeenSet = false;
 };
 

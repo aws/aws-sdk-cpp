@@ -189,27 +189,27 @@ class OptionGroupOptionSetting {
   ///@}
  private:
   Aws::String m_settingName;
-  bool m_settingNameHasBeenSet = false;
 
   Aws::String m_settingDescription;
-  bool m_settingDescriptionHasBeenSet = false;
 
   Aws::String m_defaultValue;
-  bool m_defaultValueHasBeenSet = false;
 
   Aws::String m_applyType;
-  bool m_applyTypeHasBeenSet = false;
 
   Aws::String m_allowedValues;
-  bool m_allowedValuesHasBeenSet = false;
 
   bool m_isModifiable{false};
-  bool m_isModifiableHasBeenSet = false;
 
   bool m_isRequired{false};
-  bool m_isRequiredHasBeenSet = false;
 
   Aws::Vector<MinimumEngineVersionPerAllowedValue> m_minimumEngineVersionPerAllowedValue;
+  bool m_settingNameHasBeenSet = false;
+  bool m_settingDescriptionHasBeenSet = false;
+  bool m_defaultValueHasBeenSet = false;
+  bool m_applyTypeHasBeenSet = false;
+  bool m_allowedValuesHasBeenSet = false;
+  bool m_isModifiableHasBeenSet = false;
+  bool m_isRequiredHasBeenSet = false;
   bool m_minimumEngineVersionPerAllowedValueHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class AwsIamAccessKeySessionContextAttributes {
   ///@}
  private:
   bool m_mfaAuthenticated{false};
-  bool m_mfaAuthenticatedHasBeenSet = false;
 
   Aws::String m_creationDate;
+  bool m_mfaAuthenticatedHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;
 };
 

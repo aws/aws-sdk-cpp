@@ -122,18 +122,18 @@ class ListNetworksRequest : public ManagedBlockchainRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Framework m_framework{Framework::NOT_SET};
-  bool m_frameworkHasBeenSet = false;
 
   NetworkStatus m_status{NetworkStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_nameHasBeenSet = false;
+  bool m_frameworkHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

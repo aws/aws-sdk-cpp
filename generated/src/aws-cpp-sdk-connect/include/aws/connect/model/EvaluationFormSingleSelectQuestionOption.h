@@ -122,18 +122,18 @@ class EvaluationFormSingleSelectQuestionOption {
   ///@}
  private:
   Aws::String m_refId;
-  bool m_refIdHasBeenSet = false;
 
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   int m_score{0};
-  bool m_scoreHasBeenSet = false;
 
   bool m_automaticFail{false};
-  bool m_automaticFailHasBeenSet = false;
 
   AutomaticFailConfiguration m_automaticFailConfiguration;
+  bool m_refIdHasBeenSet = false;
+  bool m_textHasBeenSet = false;
+  bool m_scoreHasBeenSet = false;
+  bool m_automaticFailHasBeenSet = false;
   bool m_automaticFailConfigurationHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class OutputConversion {
   ///@}
  private:
   ToFormat m_toFormat{ToFormat::NOT_SET};
-  bool m_toFormatHasBeenSet = false;
 
   FormatOptions m_formatOptions;
-  bool m_formatOptionsHasBeenSet = false;
 
   AdvancedOptions m_advancedOptions;
+  bool m_toFormatHasBeenSet = false;
+  bool m_formatOptionsHasBeenSet = false;
   bool m_advancedOptionsHasBeenSet = false;
 };
 

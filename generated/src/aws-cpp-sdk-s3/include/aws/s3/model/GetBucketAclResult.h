@@ -85,12 +85,12 @@ class GetBucketAclResult {
   ///@}
  private:
   Owner m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::Vector<Grant> m_grants;
-  bool m_grantsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ownerHasBeenSet = false;
+  bool m_grantsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

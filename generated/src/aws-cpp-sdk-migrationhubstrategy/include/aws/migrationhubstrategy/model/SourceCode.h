@@ -104,15 +104,15 @@ class SourceCode {
   ///@}
  private:
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::String m_projectName;
-  bool m_projectNameHasBeenSet = false;
 
   Aws::String m_sourceVersion;
-  bool m_sourceVersionHasBeenSet = false;
 
   VersionControl m_versionControl{VersionControl::NOT_SET};
+  bool m_locationHasBeenSet = false;
+  bool m_projectNameHasBeenSet = false;
+  bool m_sourceVersionHasBeenSet = false;
   bool m_versionControlHasBeenSet = false;
 };
 

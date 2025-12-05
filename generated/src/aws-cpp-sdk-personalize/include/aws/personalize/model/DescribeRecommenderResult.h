@@ -60,9 +60,9 @@ class DescribeRecommenderResult {
   ///@}
  private:
   Recommender m_recommender;
-  bool m_recommenderHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_recommenderHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

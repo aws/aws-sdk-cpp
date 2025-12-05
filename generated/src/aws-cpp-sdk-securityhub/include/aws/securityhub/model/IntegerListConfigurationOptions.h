@@ -108,15 +108,15 @@ class IntegerListConfigurationOptions {
   ///@}
  private:
   Aws::Vector<int> m_defaultValue;
-  bool m_defaultValueHasBeenSet = false;
 
   int m_min{0};
-  bool m_minHasBeenSet = false;
 
   int m_max{0};
-  bool m_maxHasBeenSet = false;
 
   int m_maxItems{0};
+  bool m_defaultValueHasBeenSet = false;
+  bool m_minHasBeenSet = false;
+  bool m_maxHasBeenSet = false;
   bool m_maxItemsHasBeenSet = false;
 };
 

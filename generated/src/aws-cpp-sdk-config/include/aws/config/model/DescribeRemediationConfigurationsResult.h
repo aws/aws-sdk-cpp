@@ -68,9 +68,9 @@ class DescribeRemediationConfigurationsResult {
   ///@}
  private:
   Aws::Vector<RemediationConfiguration> m_remediationConfigurations;
-  bool m_remediationConfigurationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_remediationConfigurationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

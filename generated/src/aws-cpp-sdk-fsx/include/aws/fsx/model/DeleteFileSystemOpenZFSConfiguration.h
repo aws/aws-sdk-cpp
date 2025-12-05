@@ -104,12 +104,12 @@ class DeleteFileSystemOpenZFSConfiguration {
   ///@}
  private:
   bool m_skipFinalBackup{false};
-  bool m_skipFinalBackupHasBeenSet = false;
 
   Aws::Vector<Tag> m_finalBackupTags;
-  bool m_finalBackupTagsHasBeenSet = false;
 
   Aws::Vector<DeleteFileSystemOpenZFSOption> m_options;
+  bool m_skipFinalBackupHasBeenSet = false;
+  bool m_finalBackupTagsHasBeenSet = false;
   bool m_optionsHasBeenSet = false;
 };
 

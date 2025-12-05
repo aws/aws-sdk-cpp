@@ -93,12 +93,12 @@ class DescribeDBEngineVersionsResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<DBEngineVersion> m_dBEngineVersions;
-  bool m_dBEngineVersionsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_dBEngineVersionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

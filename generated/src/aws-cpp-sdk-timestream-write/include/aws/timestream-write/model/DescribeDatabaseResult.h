@@ -60,9 +60,9 @@ class DescribeDatabaseResult {
   ///@}
  private:
   Database m_database;
-  bool m_databaseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_databaseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -82,12 +82,12 @@ class ListDataCellsFilterRequest : public LakeFormationRequest {
   ///@}
  private:
   TableResource m_table;
-  bool m_tableHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_tableHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

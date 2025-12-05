@@ -87,12 +87,12 @@ class ListCapabilitiesResult {
   ///@}
  private:
   Aws::Vector<CapabilitySummary> m_capabilities;
-  bool m_capabilitiesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_capabilitiesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

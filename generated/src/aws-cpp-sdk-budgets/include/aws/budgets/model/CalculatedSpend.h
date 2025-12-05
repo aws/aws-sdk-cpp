@@ -77,9 +77,9 @@ class CalculatedSpend {
   ///@}
  private:
   Spend m_actualSpend;
-  bool m_actualSpendHasBeenSet = false;
 
   Spend m_forecastedSpend;
+  bool m_actualSpendHasBeenSet = false;
   bool m_forecastedSpendHasBeenSet = false;
 };
 

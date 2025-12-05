@@ -124,18 +124,18 @@ class RouteVehicleIncident {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_endTime;
-  bool m_endTimeHasBeenSet = false;
 
   RouteVehicleIncidentSeverity m_severity{RouteVehicleIncidentSeverity::NOT_SET};
-  bool m_severityHasBeenSet = false;
 
   Aws::String m_startTime;
-  bool m_startTimeHasBeenSet = false;
 
   RouteVehicleIncidentType m_type{RouteVehicleIncidentType::NOT_SET};
+  bool m_descriptionHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

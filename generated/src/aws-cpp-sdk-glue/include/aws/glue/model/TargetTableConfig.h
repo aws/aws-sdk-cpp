@@ -95,12 +95,12 @@ class TargetTableConfig {
   ///@}
  private:
   UnnestSpec m_unnestSpec{UnnestSpec::NOT_SET};
-  bool m_unnestSpecHasBeenSet = false;
 
   Aws::Vector<IntegrationPartition> m_partitionSpec;
-  bool m_partitionSpecHasBeenSet = false;
 
   Aws::String m_targetTableName;
+  bool m_unnestSpecHasBeenSet = false;
+  bool m_partitionSpecHasBeenSet = false;
   bool m_targetTableNameHasBeenSet = false;
 };
 

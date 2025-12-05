@@ -74,9 +74,9 @@ class PutActionsRequest : public PersonalizeEventsRequest {
   ///@}
  private:
   Aws::String m_datasetArn;
-  bool m_datasetArnHasBeenSet = false;
 
   Aws::Vector<Action> m_actions;
+  bool m_datasetArnHasBeenSet = false;
   bool m_actionsHasBeenSet = false;
 };
 

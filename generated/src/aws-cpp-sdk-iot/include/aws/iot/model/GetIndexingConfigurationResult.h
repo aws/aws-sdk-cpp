@@ -78,12 +78,12 @@ class GetIndexingConfigurationResult {
   ///@}
  private:
   ThingIndexingConfiguration m_thingIndexingConfiguration;
-  bool m_thingIndexingConfigurationHasBeenSet = false;
 
   ThingGroupIndexingConfiguration m_thingGroupIndexingConfiguration;
-  bool m_thingGroupIndexingConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_thingIndexingConfigurationHasBeenSet = false;
+  bool m_thingGroupIndexingConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

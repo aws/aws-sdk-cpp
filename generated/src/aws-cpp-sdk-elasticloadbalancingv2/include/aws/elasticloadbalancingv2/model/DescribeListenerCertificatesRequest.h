@@ -86,12 +86,12 @@ class DescribeListenerCertificatesRequest : public ElasticLoadBalancingv2Request
   ///@}
  private:
   Aws::String m_listenerArn;
-  bool m_listenerArnHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_pageSize{0};
+  bool m_listenerArnHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_pageSizeHasBeenSet = false;
 };
 

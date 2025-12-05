@@ -68,9 +68,9 @@ class ServiceNetworkEndpoint {
   ///@}
  private:
   Aws::String m_vpcEndpointId;
-  bool m_vpcEndpointIdHasBeenSet = false;
 
   VpcEndpointType m_vpcEndpointType{VpcEndpointType::NOT_SET};
+  bool m_vpcEndpointIdHasBeenSet = false;
   bool m_vpcEndpointTypeHasBeenSet = false;
 };
 

@@ -302,33 +302,33 @@ class ProjectSource {
   ///@}
  private:
   SourceType m_type{SourceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   int m_gitCloneDepth{0};
-  bool m_gitCloneDepthHasBeenSet = false;
 
   GitSubmodulesConfig m_gitSubmodulesConfig;
-  bool m_gitSubmodulesConfigHasBeenSet = false;
 
   Aws::String m_buildspec;
-  bool m_buildspecHasBeenSet = false;
 
   SourceAuth m_auth;
-  bool m_authHasBeenSet = false;
 
   bool m_reportBuildStatus{false};
-  bool m_reportBuildStatusHasBeenSet = false;
 
   BuildStatusConfig m_buildStatusConfig;
-  bool m_buildStatusConfigHasBeenSet = false;
 
   bool m_insecureSsl{false};
-  bool m_insecureSslHasBeenSet = false;
 
   Aws::String m_sourceIdentifier;
+  bool m_typeHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_gitCloneDepthHasBeenSet = false;
+  bool m_gitSubmodulesConfigHasBeenSet = false;
+  bool m_buildspecHasBeenSet = false;
+  bool m_authHasBeenSet = false;
+  bool m_reportBuildStatusHasBeenSet = false;
+  bool m_buildStatusConfigHasBeenSet = false;
+  bool m_insecureSslHasBeenSet = false;
   bool m_sourceIdentifierHasBeenSet = false;
 };
 

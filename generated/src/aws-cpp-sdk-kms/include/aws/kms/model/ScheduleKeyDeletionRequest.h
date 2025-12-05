@@ -79,9 +79,9 @@ class ScheduleKeyDeletionRequest : public KMSRequest {
   ///@}
  private:
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   int m_pendingWindowInDays{0};
+  bool m_keyIdHasBeenSet = false;
   bool m_pendingWindowInDaysHasBeenSet = false;
 };
 

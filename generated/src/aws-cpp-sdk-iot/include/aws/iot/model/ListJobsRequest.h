@@ -173,24 +173,24 @@ class ListJobsRequest : public IoTRequest {
   ///@}
  private:
   JobStatus m_status{JobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   TargetSelection m_targetSelection{TargetSelection::NOT_SET};
-  bool m_targetSelectionHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_thingGroupName;
-  bool m_thingGroupNameHasBeenSet = false;
 
   Aws::String m_thingGroupId;
-  bool m_thingGroupIdHasBeenSet = false;
 
   Aws::String m_namespaceId;
+  bool m_statusHasBeenSet = false;
+  bool m_targetSelectionHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_thingGroupNameHasBeenSet = false;
+  bool m_thingGroupIdHasBeenSet = false;
   bool m_namespaceIdHasBeenSet = false;
 };
 

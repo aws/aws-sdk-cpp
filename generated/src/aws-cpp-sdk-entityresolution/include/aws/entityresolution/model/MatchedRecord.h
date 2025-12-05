@@ -68,9 +68,9 @@ class MatchedRecord {
   ///@}
  private:
   Aws::String m_inputSourceARN;
-  bool m_inputSourceARNHasBeenSet = false;
 
   Aws::String m_recordId;
+  bool m_inputSourceARNHasBeenSet = false;
   bool m_recordIdHasBeenSet = false;
 };
 

@@ -157,21 +157,21 @@ class GetDeliverabilityDashboardOptionsResult {
   ///@}
  private:
   bool m_dashboardEnabled{false};
-  bool m_dashboardEnabledHasBeenSet = false;
 
   Aws::Utils::DateTime m_subscriptionExpiryDate{};
-  bool m_subscriptionExpiryDateHasBeenSet = false;
 
   DeliverabilityDashboardAccountStatus m_accountStatus{DeliverabilityDashboardAccountStatus::NOT_SET};
-  bool m_accountStatusHasBeenSet = false;
 
   Aws::Vector<DomainDeliverabilityTrackingOption> m_activeSubscribedDomains;
-  bool m_activeSubscribedDomainsHasBeenSet = false;
 
   Aws::Vector<DomainDeliverabilityTrackingOption> m_pendingExpirationSubscribedDomains;
-  bool m_pendingExpirationSubscribedDomainsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dashboardEnabledHasBeenSet = false;
+  bool m_subscriptionExpiryDateHasBeenSet = false;
+  bool m_accountStatusHasBeenSet = false;
+  bool m_activeSubscribedDomainsHasBeenSet = false;
+  bool m_pendingExpirationSubscribedDomainsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

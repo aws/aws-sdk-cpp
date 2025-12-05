@@ -341,57 +341,57 @@ class GetDataSourceResult {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_indexId;
-  bool m_indexIdHasBeenSet = false;
 
   Aws::String m_dataSourceId;
-  bool m_dataSourceIdHasBeenSet = false;
 
   Aws::String m_dataSourceArn;
-  bool m_dataSourceArnHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::Utils::Document m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   DataSourceVpcConfiguration m_vpcConfiguration;
-  bool m_vpcConfigurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   DataSourceStatus m_status{DataSourceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_syncSchedule;
-  bool m_syncScheduleHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   ErrorDetail m_error;
-  bool m_errorHasBeenSet = false;
 
   DocumentEnrichmentConfiguration m_documentEnrichmentConfiguration;
-  bool m_documentEnrichmentConfigurationHasBeenSet = false;
 
   MediaExtractionConfiguration m_mediaExtractionConfiguration;
-  bool m_mediaExtractionConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_indexIdHasBeenSet = false;
+  bool m_dataSourceIdHasBeenSet = false;
+  bool m_dataSourceArnHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_vpcConfigurationHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_syncScheduleHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
+  bool m_documentEnrichmentConfigurationHasBeenSet = false;
+  bool m_mediaExtractionConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

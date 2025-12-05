@@ -124,18 +124,18 @@ class EventContextDataType {
   ///@}
  private:
   Aws::String m_ipAddress;
-  bool m_ipAddressHasBeenSet = false;
 
   Aws::String m_deviceName;
-  bool m_deviceNameHasBeenSet = false;
 
   Aws::String m_timezone;
-  bool m_timezoneHasBeenSet = false;
 
   Aws::String m_city;
-  bool m_cityHasBeenSet = false;
 
   Aws::String m_country;
+  bool m_ipAddressHasBeenSet = false;
+  bool m_deviceNameHasBeenSet = false;
+  bool m_timezoneHasBeenSet = false;
+  bool m_cityHasBeenSet = false;
   bool m_countryHasBeenSet = false;
 };
 

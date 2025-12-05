@@ -84,12 +84,12 @@ class GetRateBasedRuleManagedKeysResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_managedKeys;
-  bool m_managedKeysHasBeenSet = false;
 
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_managedKeysHasBeenSet = false;
+  bool m_nextMarkerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

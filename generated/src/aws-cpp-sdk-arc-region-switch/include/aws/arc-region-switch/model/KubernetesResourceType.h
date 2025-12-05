@@ -69,9 +69,9 @@ class KubernetesResourceType {
   ///@}
  private:
   Aws::String m_apiVersion;
-  bool m_apiVersionHasBeenSet = false;
 
   Aws::String m_kind;
+  bool m_apiVersionHasBeenSet = false;
   bool m_kindHasBeenSet = false;
 };
 

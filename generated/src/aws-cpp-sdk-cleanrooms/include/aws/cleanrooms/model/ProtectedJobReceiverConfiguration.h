@@ -67,9 +67,9 @@ class ProtectedJobReceiverConfiguration {
   ///@}
  private:
   ProtectedJobAnalysisType m_analysisType{ProtectedJobAnalysisType::NOT_SET};
-  bool m_analysisTypeHasBeenSet = false;
 
   ProtectedJobConfigurationDetails m_configurationDetails;
+  bool m_analysisTypeHasBeenSet = false;
   bool m_configurationDetailsHasBeenSet = false;
 };
 

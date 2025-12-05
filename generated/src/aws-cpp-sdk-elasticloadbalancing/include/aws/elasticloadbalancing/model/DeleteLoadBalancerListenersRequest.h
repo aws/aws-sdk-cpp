@@ -79,9 +79,9 @@ class DeleteLoadBalancerListenersRequest : public ElasticLoadBalancingRequest {
   ///@}
  private:
   Aws::String m_loadBalancerName;
-  bool m_loadBalancerNameHasBeenSet = false;
 
   Aws::Vector<int> m_loadBalancerPorts;
+  bool m_loadBalancerNameHasBeenSet = false;
   bool m_loadBalancerPortsHasBeenSet = false;
 };
 

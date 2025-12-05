@@ -69,9 +69,9 @@ class AwsDynamoDbTableAttributeDefinition {
   ///@}
  private:
   Aws::String m_attributeName;
-  bool m_attributeNameHasBeenSet = false;
 
   Aws::String m_attributeType;
+  bool m_attributeNameHasBeenSet = false;
   bool m_attributeTypeHasBeenSet = false;
 };
 

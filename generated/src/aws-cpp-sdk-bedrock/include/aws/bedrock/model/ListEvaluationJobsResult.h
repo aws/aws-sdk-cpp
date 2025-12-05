@@ -85,12 +85,12 @@ class ListEvaluationJobsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<EvaluationSummary> m_jobSummaries;
-  bool m_jobSummariesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_jobSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

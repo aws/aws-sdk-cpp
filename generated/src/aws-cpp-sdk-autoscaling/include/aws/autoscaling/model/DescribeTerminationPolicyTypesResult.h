@@ -72,9 +72,9 @@ class DescribeTerminationPolicyTypesResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_terminationPolicyTypes;
-  bool m_terminationPolicyTypesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_terminationPolicyTypesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

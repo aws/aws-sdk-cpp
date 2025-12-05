@@ -125,9 +125,9 @@ class InvalidInputException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   InvalidInputExceptionReason m_reason{InvalidInputExceptionReason::NOT_SET};
+  bool m_messageHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

@@ -97,12 +97,12 @@ class CreateVpcEncryptionControlRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
+  bool m_dryRunHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
   bool m_tagSpecificationsHasBeenSet = false;
 };
 

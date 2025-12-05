@@ -108,15 +108,15 @@ class BatchGetApplicationRevisionsResult {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::Vector<RevisionInfo> m_revisions;
-  bool m_revisionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationNameHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_revisionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class AssociateApplicationFleetRequest : public AppStreamRequest {
   ///@}
  private:
   Aws::String m_fleetName;
-  bool m_fleetNameHasBeenSet = false;
 
   Aws::String m_applicationArn;
+  bool m_fleetNameHasBeenSet = false;
   bool m_applicationArnHasBeenSet = false;
 };
 

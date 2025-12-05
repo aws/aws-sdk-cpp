@@ -105,15 +105,15 @@ class SendSSHPublicKeyRequest : public EC2InstanceConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_instanceOSUser;
-  bool m_instanceOSUserHasBeenSet = false;
 
   Aws::String m_sSHPublicKey;
-  bool m_sSHPublicKeyHasBeenSet = false;
 
   Aws::String m_availabilityZone;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_instanceOSUserHasBeenSet = false;
+  bool m_sSHPublicKeyHasBeenSet = false;
   bool m_availabilityZoneHasBeenSet = false;
 };
 

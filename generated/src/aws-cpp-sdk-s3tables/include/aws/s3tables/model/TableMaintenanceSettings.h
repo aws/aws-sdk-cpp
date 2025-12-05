@@ -71,9 +71,9 @@ class TableMaintenanceSettings {
   ///@}
  private:
   IcebergCompactionSettings m_icebergCompaction;
-  bool m_icebergCompactionHasBeenSet = false;
 
   IcebergSnapshotManagementSettings m_icebergSnapshotManagement;
+  bool m_icebergCompactionHasBeenSet = false;
   bool m_icebergSnapshotManagementHasBeenSet = false;
 };
 

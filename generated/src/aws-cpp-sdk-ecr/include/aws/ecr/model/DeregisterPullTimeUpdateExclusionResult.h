@@ -60,9 +60,9 @@ class DeregisterPullTimeUpdateExclusionResult {
   ///@}
  private:
   Aws::String m_principalArn;
-  bool m_principalArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_principalArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

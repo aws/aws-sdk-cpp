@@ -60,9 +60,9 @@ class GetInvocationStepResult {
   ///@}
  private:
   InvocationStep m_invocationStep;
-  bool m_invocationStepHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_invocationStepHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

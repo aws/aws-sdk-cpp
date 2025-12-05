@@ -76,12 +76,12 @@ class CreateSecurityProfileResult {
   ///@}
  private:
   Aws::String m_securityProfileName;
-  bool m_securityProfileNameHasBeenSet = false;
 
   Aws::String m_securityProfileArn;
-  bool m_securityProfileArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_securityProfileNameHasBeenSet = false;
+  bool m_securityProfileArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

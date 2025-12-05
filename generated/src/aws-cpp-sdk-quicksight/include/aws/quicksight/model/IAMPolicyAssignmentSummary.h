@@ -67,9 +67,9 @@ class IAMPolicyAssignmentSummary {
   ///@}
  private:
   Aws::String m_assignmentName;
-  bool m_assignmentNameHasBeenSet = false;
 
   AssignmentStatus m_assignmentStatus{AssignmentStatus::NOT_SET};
+  bool m_assignmentNameHasBeenSet = false;
   bool m_assignmentStatusHasBeenSet = false;
 };
 

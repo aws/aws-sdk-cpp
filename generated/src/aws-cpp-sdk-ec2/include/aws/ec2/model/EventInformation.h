@@ -147,12 +147,12 @@ class EventInformation {
   ///@}
  private:
   Aws::String m_eventDescription;
-  bool m_eventDescriptionHasBeenSet = false;
 
   Aws::String m_eventSubType;
-  bool m_eventSubTypeHasBeenSet = false;
 
   Aws::String m_instanceId;
+  bool m_eventDescriptionHasBeenSet = false;
+  bool m_eventSubTypeHasBeenSet = false;
   bool m_instanceIdHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class ConnectionState {
   ///@}
  private:
   ConnectionStatus m_status{ConnectionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
+  bool m_statusHasBeenSet = false;
   bool m_lastUpdatedAtHasBeenSet = false;
 };
 

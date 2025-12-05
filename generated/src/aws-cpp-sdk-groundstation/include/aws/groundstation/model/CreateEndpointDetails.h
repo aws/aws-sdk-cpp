@@ -74,9 +74,9 @@ class CreateEndpointDetails {
   ///@}
  private:
   UplinkAwsGroundStationAgentEndpoint m_uplinkAwsGroundStationAgentEndpoint;
-  bool m_uplinkAwsGroundStationAgentEndpointHasBeenSet = false;
 
   DownlinkAwsGroundStationAgentEndpoint m_downlinkAwsGroundStationAgentEndpoint;
+  bool m_uplinkAwsGroundStationAgentEndpointHasBeenSet = false;
   bool m_downlinkAwsGroundStationAgentEndpointHasBeenSet = false;
 };
 

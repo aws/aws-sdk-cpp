@@ -133,18 +133,18 @@ class CreateTrustAnchorRequest : public RolesAnywhereRequest {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<NotificationSetting> m_notificationSettings;
-  bool m_notificationSettingsHasBeenSet = false;
 
   Source m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_enabledHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_notificationSettingsHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

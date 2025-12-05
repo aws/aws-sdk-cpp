@@ -83,9 +83,9 @@ class Urls {
   ///@}
  private:
   SeedUrlConfiguration m_seedUrlConfiguration;
-  bool m_seedUrlConfigurationHasBeenSet = false;
 
   SiteMapsConfiguration m_siteMapsConfiguration;
+  bool m_seedUrlConfigurationHasBeenSet = false;
   bool m_siteMapsConfigurationHasBeenSet = false;
 };
 

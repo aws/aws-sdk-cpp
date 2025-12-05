@@ -73,9 +73,9 @@ class DetectLabelsSettings {
   ///@}
  private:
   GeneralLabelsSettings m_generalLabels;
-  bool m_generalLabelsHasBeenSet = false;
 
   DetectLabelsImagePropertiesSettings m_imageProperties;
+  bool m_generalLabelsHasBeenSet = false;
   bool m_imagePropertiesHasBeenSet = false;
 };
 

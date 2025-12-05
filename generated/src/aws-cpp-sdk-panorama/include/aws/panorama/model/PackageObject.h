@@ -86,12 +86,12 @@ class PackageObject {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_packageVersion;
-  bool m_packageVersionHasBeenSet = false;
 
   Aws::String m_patchVersion;
+  bool m_nameHasBeenSet = false;
+  bool m_packageVersionHasBeenSet = false;
   bool m_patchVersionHasBeenSet = false;
 };
 

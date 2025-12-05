@@ -76,9 +76,9 @@ class ConfigParameter {
   ///@}
  private:
   Aws::String m_parameterKey;
-  bool m_parameterKeyHasBeenSet = false;
 
   Aws::String m_parameterValue;
+  bool m_parameterKeyHasBeenSet = false;
   bool m_parameterValueHasBeenSet = false;
 };
 

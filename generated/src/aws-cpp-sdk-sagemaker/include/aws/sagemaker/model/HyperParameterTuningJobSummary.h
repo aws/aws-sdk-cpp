@@ -225,33 +225,33 @@ class HyperParameterTuningJobSummary {
   ///@}
  private:
   Aws::String m_hyperParameterTuningJobName;
-  bool m_hyperParameterTuningJobNameHasBeenSet = false;
 
   Aws::String m_hyperParameterTuningJobArn;
-  bool m_hyperParameterTuningJobArnHasBeenSet = false;
 
   HyperParameterTuningJobStatus m_hyperParameterTuningJobStatus{HyperParameterTuningJobStatus::NOT_SET};
-  bool m_hyperParameterTuningJobStatusHasBeenSet = false;
 
   HyperParameterTuningJobStrategyType m_strategy{HyperParameterTuningJobStrategyType::NOT_SET};
-  bool m_strategyHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_hyperParameterTuningEndTime{};
-  bool m_hyperParameterTuningEndTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   TrainingJobStatusCounters m_trainingJobStatusCounters;
-  bool m_trainingJobStatusCountersHasBeenSet = false;
 
   ObjectiveStatusCounters m_objectiveStatusCounters;
-  bool m_objectiveStatusCountersHasBeenSet = false;
 
   ResourceLimits m_resourceLimits;
+  bool m_hyperParameterTuningJobNameHasBeenSet = false;
+  bool m_hyperParameterTuningJobArnHasBeenSet = false;
+  bool m_hyperParameterTuningJobStatusHasBeenSet = false;
+  bool m_strategyHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_hyperParameterTuningEndTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_trainingJobStatusCountersHasBeenSet = false;
+  bool m_objectiveStatusCountersHasBeenSet = false;
   bool m_resourceLimitsHasBeenSet = false;
 };
 

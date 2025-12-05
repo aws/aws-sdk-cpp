@@ -75,9 +75,9 @@ class VirtualGateway {
   ///@}
  private:
   Aws::String m_virtualGatewayId;
-  bool m_virtualGatewayIdHasBeenSet = false;
 
   Aws::String m_virtualGatewayState;
+  bool m_virtualGatewayIdHasBeenSet = false;
   bool m_virtualGatewayStateHasBeenSet = false;
 };
 

@@ -76,9 +76,9 @@ class ScopeDetails {
   ///@}
  private:
   Aws::String m_scope;
-  bool m_scopeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_authorizedTargets;
+  bool m_scopeHasBeenSet = false;
   bool m_authorizedTargetsHasBeenSet = false;
 };
 

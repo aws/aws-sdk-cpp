@@ -177,27 +177,27 @@ class UpdateRouterInputRequest : public MediaConnectRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   RouterInputConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   long long m_maximumBitrate{0};
-  bool m_maximumBitrateHasBeenSet = false;
 
   RoutingScope m_routingScope{RoutingScope::NOT_SET};
-  bool m_routingScopeHasBeenSet = false;
 
   RouterInputTier m_tier{RouterInputTier::NOT_SET};
-  bool m_tierHasBeenSet = false;
 
   RouterInputTransitEncryption m_transitEncryption;
-  bool m_transitEncryptionHasBeenSet = false;
 
   MaintenanceConfiguration m_maintenanceConfiguration;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_maximumBitrateHasBeenSet = false;
+  bool m_routingScopeHasBeenSet = false;
+  bool m_tierHasBeenSet = false;
+  bool m_transitEncryptionHasBeenSet = false;
   bool m_maintenanceConfigurationHasBeenSet = false;
 };
 

@@ -474,57 +474,57 @@ class UploadPartRequest : public StreamingS3Request {
   ///@}
  private:
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   long long m_contentLength{0};
-  bool m_contentLengthHasBeenSet = false;
 
   Aws::String m_contentMD5;
-  bool m_contentMD5HasBeenSet = false;
 
   ChecksumAlgorithm m_checksumAlgorithm{ChecksumAlgorithm::NOT_SET};
-  bool m_checksumAlgorithmHasBeenSet = false;
 
   Aws::String m_checksumCRC32;
-  bool m_checksumCRC32HasBeenSet = false;
 
   Aws::String m_checksumCRC32C;
-  bool m_checksumCRC32CHasBeenSet = false;
 
   Aws::String m_checksumCRC64NVME;
-  bool m_checksumCRC64NVMEHasBeenSet = false;
 
   Aws::String m_checksumSHA1;
-  bool m_checksumSHA1HasBeenSet = false;
 
   Aws::String m_checksumSHA256;
-  bool m_checksumSHA256HasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   int m_partNumber{0};
-  bool m_partNumberHasBeenSet = false;
 
   Aws::String m_uploadId;
-  bool m_uploadIdHasBeenSet = false;
 
   Aws::String m_sSECustomerAlgorithm;
-  bool m_sSECustomerAlgorithmHasBeenSet = false;
 
   Aws::String m_sSECustomerKey;
-  bool m_sSECustomerKeyHasBeenSet = false;
 
   Aws::String m_sSECustomerKeyMD5;
-  bool m_sSECustomerKeyMD5HasBeenSet = false;
 
   RequestPayer m_requestPayer{RequestPayer::NOT_SET};
-  bool m_requestPayerHasBeenSet = false;
 
   Aws::String m_expectedBucketOwner;
-  bool m_expectedBucketOwnerHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
+  bool m_bucketHasBeenSet = false;
+  bool m_contentLengthHasBeenSet = false;
+  bool m_contentMD5HasBeenSet = false;
+  bool m_checksumAlgorithmHasBeenSet = false;
+  bool m_checksumCRC32HasBeenSet = false;
+  bool m_checksumCRC32CHasBeenSet = false;
+  bool m_checksumCRC64NVMEHasBeenSet = false;
+  bool m_checksumSHA1HasBeenSet = false;
+  bool m_checksumSHA256HasBeenSet = false;
+  bool m_keyHasBeenSet = false;
+  bool m_partNumberHasBeenSet = false;
+  bool m_uploadIdHasBeenSet = false;
+  bool m_sSECustomerAlgorithmHasBeenSet = false;
+  bool m_sSECustomerKeyHasBeenSet = false;
+  bool m_sSECustomerKeyMD5HasBeenSet = false;
+  bool m_requestPayerHasBeenSet = false;
+  bool m_expectedBucketOwnerHasBeenSet = false;
   bool m_customizedAccessLogTagHasBeenSet = false;
 };
 

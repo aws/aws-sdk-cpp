@@ -85,12 +85,12 @@ class ListPermissionsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<PermissionEntry> m_permissions;
-  bool m_permissionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_permissionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -77,9 +77,9 @@ class ApplicationLayerAutomaticResponseConfiguration {
   ///@}
  private:
   ApplicationLayerAutomaticResponseStatus m_status{ApplicationLayerAutomaticResponseStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ResponseAction m_action;
+  bool m_statusHasBeenSet = false;
   bool m_actionHasBeenSet = false;
 };
 

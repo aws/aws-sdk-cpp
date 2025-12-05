@@ -70,9 +70,9 @@ class DeleteRouteServerPeerRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_routeServerPeerId;
-  bool m_routeServerPeerIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_routeServerPeerIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

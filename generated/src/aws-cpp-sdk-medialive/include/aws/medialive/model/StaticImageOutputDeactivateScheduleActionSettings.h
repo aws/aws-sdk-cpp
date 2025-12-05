@@ -90,12 +90,12 @@ class StaticImageOutputDeactivateScheduleActionSettings {
   ///@}
  private:
   int m_fadeOut{0};
-  bool m_fadeOutHasBeenSet = false;
 
   int m_layer{0};
-  bool m_layerHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_outputNames;
+  bool m_fadeOutHasBeenSet = false;
+  bool m_layerHasBeenSet = false;
   bool m_outputNamesHasBeenSet = false;
 };
 

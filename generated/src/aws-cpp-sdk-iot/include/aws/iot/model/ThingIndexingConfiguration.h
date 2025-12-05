@@ -206,24 +206,24 @@ class ThingIndexingConfiguration {
   ///@}
  private:
   ThingIndexingMode m_thingIndexingMode{ThingIndexingMode::NOT_SET};
-  bool m_thingIndexingModeHasBeenSet = false;
 
   ThingConnectivityIndexingMode m_thingConnectivityIndexingMode{ThingConnectivityIndexingMode::NOT_SET};
-  bool m_thingConnectivityIndexingModeHasBeenSet = false;
 
   DeviceDefenderIndexingMode m_deviceDefenderIndexingMode{DeviceDefenderIndexingMode::NOT_SET};
-  bool m_deviceDefenderIndexingModeHasBeenSet = false;
 
   NamedShadowIndexingMode m_namedShadowIndexingMode{NamedShadowIndexingMode::NOT_SET};
-  bool m_namedShadowIndexingModeHasBeenSet = false;
 
   Aws::Vector<Field> m_managedFields;
-  bool m_managedFieldsHasBeenSet = false;
 
   Aws::Vector<Field> m_customFields;
-  bool m_customFieldsHasBeenSet = false;
 
   IndexingFilter m_filter;
+  bool m_thingIndexingModeHasBeenSet = false;
+  bool m_thingConnectivityIndexingModeHasBeenSet = false;
+  bool m_deviceDefenderIndexingModeHasBeenSet = false;
+  bool m_namedShadowIndexingModeHasBeenSet = false;
+  bool m_managedFieldsHasBeenSet = false;
+  bool m_customFieldsHasBeenSet = false;
   bool m_filterHasBeenSet = false;
 };
 

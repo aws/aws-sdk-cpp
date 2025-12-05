@@ -59,9 +59,9 @@ class DescribeOrganizationConfigurationResult {
   ///@}
  private:
   bool m_autoEnable{false};
-  bool m_autoEnableHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_autoEnableHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

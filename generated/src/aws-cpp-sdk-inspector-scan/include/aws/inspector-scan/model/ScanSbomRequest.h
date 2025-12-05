@@ -65,9 +65,9 @@ class ScanSbomRequest : public InspectorscanRequest {
   ///@}
  private:
   Aws::Utils::Document m_sbom;
-  bool m_sbomHasBeenSet = false;
 
   OutputFormat m_outputFormat{OutputFormat::NOT_SET};
+  bool m_sbomHasBeenSet = false;
   bool m_outputFormatHasBeenSet = false;
 };
 

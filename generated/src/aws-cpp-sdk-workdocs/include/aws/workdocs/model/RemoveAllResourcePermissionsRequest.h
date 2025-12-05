@@ -68,9 +68,9 @@ class RemoveAllResourcePermissionsRequest : public WorkDocsRequest {
   ///@}
  private:
   Aws::String m_authenticationToken;
-  bool m_authenticationTokenHasBeenSet = false;
 
   Aws::String m_resourceId;
+  bool m_authenticationTokenHasBeenSet = false;
   bool m_resourceIdHasBeenSet = false;
 };
 

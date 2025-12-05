@@ -237,36 +237,36 @@ class KubernetesApiCallAction {
   ///@}
  private:
   Aws::String m_requestUri;
-  bool m_requestUriHasBeenSet = false;
 
   Aws::String m_verb;
-  bool m_verbHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sourceIps;
-  bool m_sourceIpsHasBeenSet = false;
 
   Aws::String m_userAgent;
-  bool m_userAgentHasBeenSet = false;
 
   RemoteIpDetails m_remoteIpDetails;
-  bool m_remoteIpDetailsHasBeenSet = false;
 
   int m_statusCode{0};
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::String m_resource;
-  bool m_resourceHasBeenSet = false;
 
   Aws::String m_subresource;
-  bool m_subresourceHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_resourceName;
+  bool m_requestUriHasBeenSet = false;
+  bool m_verbHasBeenSet = false;
+  bool m_sourceIpsHasBeenSet = false;
+  bool m_userAgentHasBeenSet = false;
+  bool m_remoteIpDetailsHasBeenSet = false;
+  bool m_statusCodeHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_resourceHasBeenSet = false;
+  bool m_subresourceHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
   bool m_resourceNameHasBeenSet = false;
 };
 

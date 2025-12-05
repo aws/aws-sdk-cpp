@@ -88,12 +88,12 @@ class DisableRouteServerPropagationRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_routeServerId;
-  bool m_routeServerIdHasBeenSet = false;
 
   Aws::String m_routeTableId;
-  bool m_routeTableIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_routeServerIdHasBeenSet = false;
+  bool m_routeTableIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

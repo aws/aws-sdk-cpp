@@ -91,12 +91,12 @@ class UpdateVodSourceRequest : public MediaTailorRequest {
   ///@}
  private:
   Aws::Vector<HttpPackageConfiguration> m_httpPackageConfigurations;
-  bool m_httpPackageConfigurationsHasBeenSet = false;
 
   Aws::String m_sourceLocationName;
-  bool m_sourceLocationNameHasBeenSet = false;
 
   Aws::String m_vodSourceName;
+  bool m_httpPackageConfigurationsHasBeenSet = false;
+  bool m_sourceLocationNameHasBeenSet = false;
   bool m_vodSourceNameHasBeenSet = false;
 };
 

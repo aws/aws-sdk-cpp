@@ -94,12 +94,12 @@ class DeploymentCanarySettings {
   ///@}
  private:
   double m_percentTraffic{0.0};
-  bool m_percentTrafficHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_stageVariableOverrides;
-  bool m_stageVariableOverridesHasBeenSet = false;
 
   bool m_useStageCache{false};
+  bool m_percentTrafficHasBeenSet = false;
+  bool m_stageVariableOverridesHasBeenSet = false;
   bool m_useStageCacheHasBeenSet = false;
 };
 

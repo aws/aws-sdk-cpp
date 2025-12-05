@@ -93,12 +93,12 @@ class CreateRevisionRequest : public DataExchangeRequest {
   ///@}
  private:
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   Aws::String m_dataSetId;
-  bool m_dataSetIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_commentHasBeenSet = false;
+  bool m_dataSetIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -62,9 +62,9 @@ class CharacterOffsets {
   ///@}
  private:
   int m_beginOffsetChar{0};
-  bool m_beginOffsetCharHasBeenSet = false;
 
   int m_endOffsetChar{0};
+  bool m_beginOffsetCharHasBeenSet = false;
   bool m_endOffsetCharHasBeenSet = false;
 };
 

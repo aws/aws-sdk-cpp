@@ -86,12 +86,12 @@ class CreateNotificationConfigurationRequest : public IoTManagedIntegrationsRequ
   ///@}
  private:
   EventType m_eventType{EventType::NOT_SET};
-  bool m_eventTypeHasBeenSet = false;
 
   Aws::String m_destinationName;
-  bool m_destinationNameHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_eventTypeHasBeenSet = false;
+  bool m_destinationNameHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

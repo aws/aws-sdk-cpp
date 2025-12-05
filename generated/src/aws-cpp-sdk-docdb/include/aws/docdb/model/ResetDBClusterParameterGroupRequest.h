@@ -102,12 +102,12 @@ class ResetDBClusterParameterGroupRequest : public DocDBRequest {
   ///@}
  private:
   Aws::String m_dBClusterParameterGroupName;
-  bool m_dBClusterParameterGroupNameHasBeenSet = false;
 
   bool m_resetAllParameters{false};
-  bool m_resetAllParametersHasBeenSet = false;
 
   Aws::Vector<Parameter> m_parameters;
+  bool m_dBClusterParameterGroupNameHasBeenSet = false;
+  bool m_resetAllParametersHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

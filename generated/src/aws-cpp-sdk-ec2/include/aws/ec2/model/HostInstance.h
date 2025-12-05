@@ -89,12 +89,12 @@ class HostInstance {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_ownerId;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
   bool m_ownerIdHasBeenSet = false;
 };
 

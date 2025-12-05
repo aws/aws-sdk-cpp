@@ -377,51 +377,51 @@ class Target {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_input;
-  bool m_inputHasBeenSet = false;
 
   Aws::String m_inputPath;
-  bool m_inputPathHasBeenSet = false;
 
   InputTransformer m_inputTransformer;
-  bool m_inputTransformerHasBeenSet = false;
 
   KinesisParameters m_kinesisParameters;
-  bool m_kinesisParametersHasBeenSet = false;
 
   RunCommandParameters m_runCommandParameters;
-  bool m_runCommandParametersHasBeenSet = false;
 
   EcsParameters m_ecsParameters;
-  bool m_ecsParametersHasBeenSet = false;
 
   BatchParameters m_batchParameters;
-  bool m_batchParametersHasBeenSet = false;
 
   SqsParameters m_sqsParameters;
-  bool m_sqsParametersHasBeenSet = false;
 
   HttpParameters m_httpParameters;
-  bool m_httpParametersHasBeenSet = false;
 
   RedshiftDataParameters m_redshiftDataParameters;
-  bool m_redshiftDataParametersHasBeenSet = false;
 
   SageMakerPipelineParameters m_sageMakerPipelineParameters;
-  bool m_sageMakerPipelineParametersHasBeenSet = false;
 
   DeadLetterConfig m_deadLetterConfig;
-  bool m_deadLetterConfigHasBeenSet = false;
 
   RetryPolicy m_retryPolicy;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_inputHasBeenSet = false;
+  bool m_inputPathHasBeenSet = false;
+  bool m_inputTransformerHasBeenSet = false;
+  bool m_kinesisParametersHasBeenSet = false;
+  bool m_runCommandParametersHasBeenSet = false;
+  bool m_ecsParametersHasBeenSet = false;
+  bool m_batchParametersHasBeenSet = false;
+  bool m_sqsParametersHasBeenSet = false;
+  bool m_httpParametersHasBeenSet = false;
+  bool m_redshiftDataParametersHasBeenSet = false;
+  bool m_sageMakerPipelineParametersHasBeenSet = false;
+  bool m_deadLetterConfigHasBeenSet = false;
   bool m_retryPolicyHasBeenSet = false;
 };
 

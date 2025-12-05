@@ -78,9 +78,9 @@ class MonitoringOutputConfig {
   ///@}
  private:
   Aws::Vector<MonitoringOutput> m_monitoringOutputs;
-  bool m_monitoringOutputsHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
+  bool m_monitoringOutputsHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
 };
 

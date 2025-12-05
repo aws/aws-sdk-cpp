@@ -152,21 +152,21 @@ class Property {
   ///@}
  private:
   EoCloudCoverInput m_eoCloudCover;
-  bool m_eoCloudCoverHasBeenSet = false;
 
   LandsatCloudCoverLandInput m_landsatCloudCoverLand;
-  bool m_landsatCloudCoverLandHasBeenSet = false;
 
   PlatformInput m_platform;
-  bool m_platformHasBeenSet = false;
 
   ViewOffNadirInput m_viewOffNadir;
-  bool m_viewOffNadirHasBeenSet = false;
 
   ViewSunAzimuthInput m_viewSunAzimuth;
-  bool m_viewSunAzimuthHasBeenSet = false;
 
   ViewSunElevationInput m_viewSunElevation;
+  bool m_eoCloudCoverHasBeenSet = false;
+  bool m_landsatCloudCoverLandHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_viewOffNadirHasBeenSet = false;
+  bool m_viewSunAzimuthHasBeenSet = false;
   bool m_viewSunElevationHasBeenSet = false;
 };
 

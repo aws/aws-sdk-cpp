@@ -75,9 +75,9 @@ class FragmentSelector {
   ///@}
  private:
   FragmentSelectorType m_fragmentSelectorType{FragmentSelectorType::NOT_SET};
-  bool m_fragmentSelectorTypeHasBeenSet = false;
 
   TimestampRange m_timestampRange;
+  bool m_fragmentSelectorTypeHasBeenSet = false;
   bool m_timestampRangeHasBeenSet = false;
 };
 

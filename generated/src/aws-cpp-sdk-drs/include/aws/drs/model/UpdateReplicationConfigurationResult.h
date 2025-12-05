@@ -354,58 +354,58 @@ class UpdateReplicationConfigurationResult {
   ///@}
  private:
   bool m_associateDefaultSecurityGroup{false};
-  bool m_associateDefaultSecurityGroupHasBeenSet = false;
 
   bool m_autoReplicateNewDisks{false};
-  bool m_autoReplicateNewDisksHasBeenSet = false;
 
   long long m_bandwidthThrottling{0};
-  bool m_bandwidthThrottlingHasBeenSet = false;
 
   bool m_createPublicIP{false};
-  bool m_createPublicIPHasBeenSet = false;
 
   ReplicationConfigurationDataPlaneRouting m_dataPlaneRouting{ReplicationConfigurationDataPlaneRouting::NOT_SET};
-  bool m_dataPlaneRoutingHasBeenSet = false;
 
   ReplicationConfigurationDefaultLargeStagingDiskType m_defaultLargeStagingDiskType{
       ReplicationConfigurationDefaultLargeStagingDiskType::NOT_SET};
-  bool m_defaultLargeStagingDiskTypeHasBeenSet = false;
 
   ReplicationConfigurationEbsEncryption m_ebsEncryption{ReplicationConfigurationEbsEncryption::NOT_SET};
-  bool m_ebsEncryptionHasBeenSet = false;
 
   Aws::String m_ebsEncryptionKeyArn;
-  bool m_ebsEncryptionKeyArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<PITPolicyRule> m_pitPolicy;
-  bool m_pitPolicyHasBeenSet = false;
 
   Aws::Vector<ReplicationConfigurationReplicatedDisk> m_replicatedDisks;
-  bool m_replicatedDisksHasBeenSet = false;
 
   Aws::String m_replicationServerInstanceType;
-  bool m_replicationServerInstanceTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_replicationServersSecurityGroupsIDs;
-  bool m_replicationServersSecurityGroupsIDsHasBeenSet = false;
 
   Aws::String m_sourceServerID;
-  bool m_sourceServerIDHasBeenSet = false;
 
   Aws::String m_stagingAreaSubnetId;
-  bool m_stagingAreaSubnetIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_stagingAreaTags;
-  bool m_stagingAreaTagsHasBeenSet = false;
 
   bool m_useDedicatedReplicationServer{false};
-  bool m_useDedicatedReplicationServerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_associateDefaultSecurityGroupHasBeenSet = false;
+  bool m_autoReplicateNewDisksHasBeenSet = false;
+  bool m_bandwidthThrottlingHasBeenSet = false;
+  bool m_createPublicIPHasBeenSet = false;
+  bool m_dataPlaneRoutingHasBeenSet = false;
+  bool m_defaultLargeStagingDiskTypeHasBeenSet = false;
+  bool m_ebsEncryptionHasBeenSet = false;
+  bool m_ebsEncryptionKeyArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_pitPolicyHasBeenSet = false;
+  bool m_replicatedDisksHasBeenSet = false;
+  bool m_replicationServerInstanceTypeHasBeenSet = false;
+  bool m_replicationServersSecurityGroupsIDsHasBeenSet = false;
+  bool m_sourceServerIDHasBeenSet = false;
+  bool m_stagingAreaSubnetIdHasBeenSet = false;
+  bool m_stagingAreaTagsHasBeenSet = false;
+  bool m_useDedicatedReplicationServerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

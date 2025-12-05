@@ -69,9 +69,9 @@ class CostDifference {
   ///@}
  private:
   CostAmount m_historicalCost;
-  bool m_historicalCostHasBeenSet = false;
 
   CostAmount m_estimatedCost;
+  bool m_historicalCostHasBeenSet = false;
   bool m_estimatedCostHasBeenSet = false;
 };
 

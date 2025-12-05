@@ -330,51 +330,51 @@ class Problem {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_shortName;
-  bool m_shortNameHasBeenSet = false;
 
   Aws::String m_insights;
-  bool m_insightsHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_affectedResource;
-  bool m_affectedResourceHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   SeverityLevel m_severityLevel{SeverityLevel::NOT_SET};
-  bool m_severityLevelHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_resourceGroupName;
-  bool m_resourceGroupNameHasBeenSet = false;
 
   Aws::Map<FeedbackKey, FeedbackValue> m_feedback;
-  bool m_feedbackHasBeenSet = false;
 
   long long m_recurringCount{0};
-  bool m_recurringCountHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastRecurrenceTime{};
-  bool m_lastRecurrenceTimeHasBeenSet = false;
 
   Visibility m_visibility{Visibility::NOT_SET};
-  bool m_visibilityHasBeenSet = false;
 
   ResolutionMethod m_resolutionMethod{ResolutionMethod::NOT_SET};
+  bool m_idHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_shortNameHasBeenSet = false;
+  bool m_insightsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_affectedResourceHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_severityLevelHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_resourceGroupNameHasBeenSet = false;
+  bool m_feedbackHasBeenSet = false;
+  bool m_recurringCountHasBeenSet = false;
+  bool m_lastRecurrenceTimeHasBeenSet = false;
+  bool m_visibilityHasBeenSet = false;
   bool m_resolutionMethodHasBeenSet = false;
 };
 

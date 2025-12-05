@@ -88,12 +88,12 @@ class ListTrailsResult {
   ///@}
  private:
   Aws::Vector<TrailInfo> m_trails;
-  bool m_trailsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trailsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

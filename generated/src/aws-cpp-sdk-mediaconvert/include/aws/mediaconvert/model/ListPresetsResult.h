@@ -84,12 +84,12 @@ class ListPresetsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Preset> m_presets;
-  bool m_presetsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_presetsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

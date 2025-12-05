@@ -77,9 +77,9 @@ class IotTwinMakerSourceConfiguration {
   ///@}
  private:
   Aws::String m_workspace;
-  bool m_workspaceHasBeenSet = false;
 
   Aws::Vector<IotTwinMakerSourceConfigurationFilter> m_filters;
+  bool m_workspaceHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

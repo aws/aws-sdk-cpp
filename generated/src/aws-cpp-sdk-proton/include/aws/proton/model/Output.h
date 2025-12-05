@@ -68,9 +68,9 @@ class Output {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_valueString;
+  bool m_keyHasBeenSet = false;
   bool m_valueStringHasBeenSet = false;
 };
 

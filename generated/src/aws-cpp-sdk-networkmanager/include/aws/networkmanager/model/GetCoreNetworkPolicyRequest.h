@@ -85,12 +85,12 @@ class GetCoreNetworkPolicyRequest : public NetworkManagerRequest {
   ///@}
  private:
   Aws::String m_coreNetworkId;
-  bool m_coreNetworkIdHasBeenSet = false;
 
   int m_policyVersionId{0};
-  bool m_policyVersionIdHasBeenSet = false;
 
   CoreNetworkPolicyAlias m_alias{CoreNetworkPolicyAlias::NOT_SET};
+  bool m_coreNetworkIdHasBeenSet = false;
+  bool m_policyVersionIdHasBeenSet = false;
   bool m_aliasHasBeenSet = false;
 };
 

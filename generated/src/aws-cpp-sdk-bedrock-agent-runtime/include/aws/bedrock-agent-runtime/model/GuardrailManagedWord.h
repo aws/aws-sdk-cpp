@@ -85,12 +85,12 @@ class GuardrailManagedWord {
   ///@}
  private:
   GuardrailWordPolicyAction m_action{GuardrailWordPolicyAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_match;
-  bool m_matchHasBeenSet = false;
 
   GuardrailManagedWordType m_type{GuardrailManagedWordType::NOT_SET};
+  bool m_actionHasBeenSet = false;
+  bool m_matchHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

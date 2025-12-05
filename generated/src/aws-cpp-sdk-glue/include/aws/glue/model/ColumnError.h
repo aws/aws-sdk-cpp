@@ -70,9 +70,9 @@ class ColumnError {
   ///@}
  private:
   Aws::String m_columnName;
-  bool m_columnNameHasBeenSet = false;
 
   ErrorDetail m_error;
+  bool m_columnNameHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

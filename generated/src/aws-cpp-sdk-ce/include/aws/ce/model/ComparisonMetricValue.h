@@ -108,15 +108,15 @@ class ComparisonMetricValue {
   ///@}
  private:
   Aws::String m_baselineTimePeriodAmount;
-  bool m_baselineTimePeriodAmountHasBeenSet = false;
 
   Aws::String m_comparisonTimePeriodAmount;
-  bool m_comparisonTimePeriodAmountHasBeenSet = false;
 
   Aws::String m_difference;
-  bool m_differenceHasBeenSet = false;
 
   Aws::String m_unit;
+  bool m_baselineTimePeriodAmountHasBeenSet = false;
+  bool m_comparisonTimePeriodAmountHasBeenSet = false;
+  bool m_differenceHasBeenSet = false;
   bool m_unitHasBeenSet = false;
 };
 

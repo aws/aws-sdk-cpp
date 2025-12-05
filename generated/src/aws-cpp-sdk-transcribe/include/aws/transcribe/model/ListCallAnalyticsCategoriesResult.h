@@ -90,12 +90,12 @@ class ListCallAnalyticsCategoriesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<CategoryProperties> m_categories;
-  bool m_categoriesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_categoriesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

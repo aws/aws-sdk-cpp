@@ -68,9 +68,9 @@ class EndpointAttributes {
   ///@}
  private:
   Aws::String m_deviceToken;
-  bool m_deviceTokenHasBeenSet = false;
 
   Aws::String m_voipDeviceToken;
+  bool m_deviceTokenHasBeenSet = false;
   bool m_voipDeviceTokenHasBeenSet = false;
 };
 

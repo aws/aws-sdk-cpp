@@ -103,12 +103,12 @@ class CodeInterpreterResult {
   ///@}
  private:
   Aws::Vector<ContentBlock> m_content;
-  bool m_contentHasBeenSet = false;
 
   ToolResultStructuredContent m_structuredContent;
-  bool m_structuredContentHasBeenSet = false;
 
   bool m_isError{false};
+  bool m_contentHasBeenSet = false;
+  bool m_structuredContentHasBeenSet = false;
   bool m_isErrorHasBeenSet = false;
 };
 

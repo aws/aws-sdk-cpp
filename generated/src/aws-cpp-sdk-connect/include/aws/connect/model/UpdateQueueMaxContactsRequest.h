@@ -84,12 +84,12 @@ class UpdateQueueMaxContactsRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_queueId;
-  bool m_queueIdHasBeenSet = false;
 
   int m_maxContacts{0};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_queueIdHasBeenSet = false;
   bool m_maxContactsHasBeenSet = false;
 };
 

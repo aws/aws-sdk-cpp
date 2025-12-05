@@ -100,15 +100,15 @@ class SearchEmailAddressesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<EmailAddressMetadata> m_emailAddresses;
-  bool m_emailAddressesHasBeenSet = false;
 
   long long m_approximateTotalCount{0};
-  bool m_approximateTotalCountHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_emailAddressesHasBeenSet = false;
+  bool m_approximateTotalCountHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

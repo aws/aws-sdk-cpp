@@ -125,18 +125,18 @@ class GetSessionResponseApproverResponse {
   ///@}
  private:
   Aws::String m_approverId;
-  bool m_approverIdHasBeenSet = false;
 
   Aws::String m_identitySourceArn;
-  bool m_identitySourceArnHasBeenSet = false;
 
   Aws::String m_identityId;
-  bool m_identityIdHasBeenSet = false;
 
   SessionResponse m_response{SessionResponse::NOT_SET};
-  bool m_responseHasBeenSet = false;
 
   Aws::Utils::DateTime m_responseTime{};
+  bool m_approverIdHasBeenSet = false;
+  bool m_identitySourceArnHasBeenSet = false;
+  bool m_identityIdHasBeenSet = false;
+  bool m_responseHasBeenSet = false;
   bool m_responseTimeHasBeenSet = false;
 };
 

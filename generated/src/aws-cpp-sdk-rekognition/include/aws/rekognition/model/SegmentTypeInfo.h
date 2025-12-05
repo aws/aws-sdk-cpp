@@ -70,9 +70,9 @@ class SegmentTypeInfo {
   ///@}
  private:
   SegmentType m_type{SegmentType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_modelVersion;
+  bool m_typeHasBeenSet = false;
   bool m_modelVersionHasBeenSet = false;
 };
 

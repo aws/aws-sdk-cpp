@@ -132,21 +132,21 @@ class ImportJobSummary {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   ImportDestination m_importDestination;
-  bool m_importDestinationHasBeenSet = false;
 
   JobStatus m_jobStatus{JobStatus::NOT_SET};
-  bool m_jobStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   int m_processedRecordsCount{0};
-  bool m_processedRecordsCountHasBeenSet = false;
 
   int m_failedRecordsCount{0};
+  bool m_jobIdHasBeenSet = false;
+  bool m_importDestinationHasBeenSet = false;
+  bool m_jobStatusHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_processedRecordsCountHasBeenSet = false;
   bool m_failedRecordsCountHasBeenSet = false;
 };
 

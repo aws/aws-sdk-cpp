@@ -257,39 +257,39 @@ class ProtectedQuery {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_membershipId;
-  bool m_membershipIdHasBeenSet = false;
 
   Aws::String m_membershipArn;
-  bool m_membershipArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   ProtectedQuerySQLParameters m_sqlParameters;
-  bool m_sqlParametersHasBeenSet = false;
 
   ProtectedQueryStatus m_status{ProtectedQueryStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ProtectedQueryResultConfiguration m_resultConfiguration;
-  bool m_resultConfigurationHasBeenSet = false;
 
   ProtectedQueryStatistics m_statistics;
-  bool m_statisticsHasBeenSet = false;
 
   ProtectedQueryResult m_result;
-  bool m_resultHasBeenSet = false;
 
   ProtectedQueryError m_error;
-  bool m_errorHasBeenSet = false;
 
   DifferentialPrivacyParameters m_differentialPrivacy;
-  bool m_differentialPrivacyHasBeenSet = false;
 
   ComputeConfiguration m_computeConfiguration;
+  bool m_idHasBeenSet = false;
+  bool m_membershipIdHasBeenSet = false;
+  bool m_membershipArnHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_sqlParametersHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_resultConfigurationHasBeenSet = false;
+  bool m_statisticsHasBeenSet = false;
+  bool m_resultHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
+  bool m_differentialPrivacyHasBeenSet = false;
   bool m_computeConfigurationHasBeenSet = false;
 };
 

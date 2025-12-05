@@ -107,15 +107,15 @@ class PublicAccessConfiguration {
   ///@}
  private:
   PublicAccessStatus m_publicAclAccess{PublicAccessStatus::NOT_SET};
-  bool m_publicAclAccessHasBeenSet = false;
 
   PublicAccessStatus m_publicPolicyAccess{PublicAccessStatus::NOT_SET};
-  bool m_publicPolicyAccessHasBeenSet = false;
 
   PublicAclIgnoreBehavior m_publicAclIgnoreBehavior{PublicAclIgnoreBehavior::NOT_SET};
-  bool m_publicAclIgnoreBehaviorHasBeenSet = false;
 
   PublicBucketRestrictBehavior m_publicBucketRestrictBehavior{PublicBucketRestrictBehavior::NOT_SET};
+  bool m_publicAclAccessHasBeenSet = false;
+  bool m_publicPolicyAccessHasBeenSet = false;
+  bool m_publicAclIgnoreBehaviorHasBeenSet = false;
   bool m_publicBucketRestrictBehaviorHasBeenSet = false;
 };
 

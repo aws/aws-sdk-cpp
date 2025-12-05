@@ -69,9 +69,9 @@ class DICOMUpdates {
   ///@}
  private:
   Aws::Utils::CryptoBuffer m_removableAttributes{};
-  bool m_removableAttributesHasBeenSet = false;
 
   Aws::Utils::CryptoBuffer m_updatableAttributes{};
+  bool m_removableAttributesHasBeenSet = false;
   bool m_updatableAttributesHasBeenSet = false;
 };
 

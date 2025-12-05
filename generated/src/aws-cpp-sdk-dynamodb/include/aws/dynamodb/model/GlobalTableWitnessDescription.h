@@ -69,9 +69,9 @@ class GlobalTableWitnessDescription {
   ///@}
  private:
   Aws::String m_regionName;
-  bool m_regionNameHasBeenSet = false;
 
   WitnessStatus m_witnessStatus{WitnessStatus::NOT_SET};
+  bool m_regionNameHasBeenSet = false;
   bool m_witnessStatusHasBeenSet = false;
 };
 

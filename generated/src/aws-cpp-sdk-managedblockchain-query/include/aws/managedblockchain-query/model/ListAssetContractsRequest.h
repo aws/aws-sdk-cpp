@@ -87,12 +87,12 @@ class ListAssetContractsRequest : public ManagedBlockchainQueryRequest {
   ///@}
  private:
   ContractFilter m_contractFilter;
-  bool m_contractFilterHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_contractFilterHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class GetDisksResult {
   ///@}
  private:
   Aws::Vector<Disk> m_disks;
-  bool m_disksHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_disksHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

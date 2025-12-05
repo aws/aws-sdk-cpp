@@ -85,12 +85,12 @@ class ListParallelDataResult {
   ///@}
  private:
   Aws::Vector<ParallelDataProperties> m_parallelDataPropertiesList;
-  bool m_parallelDataPropertiesListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_parallelDataPropertiesListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

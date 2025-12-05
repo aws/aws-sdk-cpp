@@ -89,12 +89,12 @@ class Change {
   ///@}
  private:
   ChangeType m_type{ChangeType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   int m_hookInvocationCount{0};
-  bool m_hookInvocationCountHasBeenSet = false;
 
   ResourceChange m_resourceChange;
+  bool m_typeHasBeenSet = false;
+  bool m_hookInvocationCountHasBeenSet = false;
   bool m_resourceChangeHasBeenSet = false;
 };
 

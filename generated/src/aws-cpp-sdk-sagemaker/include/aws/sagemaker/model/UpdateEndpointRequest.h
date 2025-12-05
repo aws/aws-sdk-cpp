@@ -160,21 +160,21 @@ class UpdateEndpointRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_endpointName;
-  bool m_endpointNameHasBeenSet = false;
 
   Aws::String m_endpointConfigName;
-  bool m_endpointConfigNameHasBeenSet = false;
 
   bool m_retainAllVariantProperties{false};
-  bool m_retainAllVariantPropertiesHasBeenSet = false;
 
   Aws::Vector<VariantProperty> m_excludeRetainedVariantProperties;
-  bool m_excludeRetainedVariantPropertiesHasBeenSet = false;
 
   DeploymentConfig m_deploymentConfig;
-  bool m_deploymentConfigHasBeenSet = false;
 
   bool m_retainDeploymentConfig{false};
+  bool m_endpointNameHasBeenSet = false;
+  bool m_endpointConfigNameHasBeenSet = false;
+  bool m_retainAllVariantPropertiesHasBeenSet = false;
+  bool m_excludeRetainedVariantPropertiesHasBeenSet = false;
+  bool m_deploymentConfigHasBeenSet = false;
   bool m_retainDeploymentConfigHasBeenSet = false;
 };
 

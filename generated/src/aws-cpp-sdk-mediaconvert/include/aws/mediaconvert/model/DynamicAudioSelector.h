@@ -149,18 +149,18 @@ To specify an offset:
   ///@}
  private:
   AudioDurationCorrection m_audioDurationCorrection{AudioDurationCorrection::NOT_SET};
-  bool m_audioDurationCorrectionHasBeenSet = false;
 
   Aws::String m_externalAudioFileInput;
-  bool m_externalAudioFileInputHasBeenSet = false;
 
   LanguageCode m_languageCode{LanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   int m_offset{0};
-  bool m_offsetHasBeenSet = false;
 
   DynamicAudioSelectorType m_selectorType{DynamicAudioSelectorType::NOT_SET};
+  bool m_audioDurationCorrectionHasBeenSet = false;
+  bool m_externalAudioFileInputHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
+  bool m_offsetHasBeenSet = false;
   bool m_selectorTypeHasBeenSet = false;
 };
 

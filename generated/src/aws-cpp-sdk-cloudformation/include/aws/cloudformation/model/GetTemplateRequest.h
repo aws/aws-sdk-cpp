@@ -99,12 +99,12 @@ class GetTemplateRequest : public CloudFormationRequest {
   ///@}
  private:
   Aws::String m_stackName;
-  bool m_stackNameHasBeenSet = false;
 
   Aws::String m_changeSetName;
-  bool m_changeSetNameHasBeenSet = false;
 
   TemplateStage m_templateStage{TemplateStage::NOT_SET};
+  bool m_stackNameHasBeenSet = false;
+  bool m_changeSetNameHasBeenSet = false;
   bool m_templateStageHasBeenSet = false;
 };
 

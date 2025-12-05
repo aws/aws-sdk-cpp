@@ -68,9 +68,9 @@ class LifecyclePolicyDetailAction {
   ///@}
  private:
   LifecyclePolicyDetailActionType m_type{LifecyclePolicyDetailActionType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   LifecyclePolicyDetailActionIncludeResources m_includeResources;
+  bool m_typeHasBeenSet = false;
   bool m_includeResourcesHasBeenSet = false;
 };
 

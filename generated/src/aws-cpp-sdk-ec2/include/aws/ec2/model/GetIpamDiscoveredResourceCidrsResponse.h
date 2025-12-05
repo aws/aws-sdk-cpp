@@ -86,12 +86,12 @@ class GetIpamDiscoveredResourceCidrsResponse {
   ///@}
  private:
   Aws::Vector<IpamDiscoveredResourceCidr> m_ipamDiscoveredResourceCidrs;
-  bool m_ipamDiscoveredResourceCidrsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_ipamDiscoveredResourceCidrsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

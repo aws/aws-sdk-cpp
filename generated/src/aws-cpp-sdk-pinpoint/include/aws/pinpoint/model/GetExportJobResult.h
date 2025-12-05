@@ -58,9 +58,9 @@ class GetExportJobResult {
   ///@}
  private:
   ExportJobResponse m_exportJobResponse;
-  bool m_exportJobResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_exportJobResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

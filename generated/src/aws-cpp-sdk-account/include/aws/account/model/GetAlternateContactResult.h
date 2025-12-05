@@ -61,9 +61,9 @@ class GetAlternateContactResult {
   ///@}
  private:
   AlternateContact m_alternateContact;
-  bool m_alternateContactHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_alternateContactHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

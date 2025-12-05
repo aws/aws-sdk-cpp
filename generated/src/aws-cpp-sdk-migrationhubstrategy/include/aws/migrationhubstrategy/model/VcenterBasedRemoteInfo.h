@@ -67,9 +67,9 @@ class VcenterBasedRemoteInfo {
   ///@}
  private:
   OSType m_osType{OSType::NOT_SET};
-  bool m_osTypeHasBeenSet = false;
 
   Aws::String m_vcenterConfigurationTimeStamp;
+  bool m_osTypeHasBeenSet = false;
   bool m_vcenterConfigurationTimeStampHasBeenSet = false;
 };
 

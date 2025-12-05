@@ -70,9 +70,9 @@ class SrtCallerDecryptionRequest {
   ///@}
  private:
   Algorithm m_algorithm{Algorithm::NOT_SET};
-  bool m_algorithmHasBeenSet = false;
 
   Aws::String m_passphraseSecretArn;
+  bool m_algorithmHasBeenSet = false;
   bool m_passphraseSecretArnHasBeenSet = false;
 };
 

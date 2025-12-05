@@ -110,15 +110,15 @@ class UpdateDataRepositoryAssociationRequest : public FSxRequest {
   ///@}
  private:
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   int m_importedFileChunkSize{0};
-  bool m_importedFileChunkSizeHasBeenSet = false;
 
   S3DataRepositoryConfiguration m_s3;
+  bool m_associationIdHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_importedFileChunkSizeHasBeenSet = false;
   bool m_s3HasBeenSet = false;
 };
 

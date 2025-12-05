@@ -75,9 +75,9 @@ class ModelDeployConfig {
   ///@}
  private:
   bool m_autoGenerateEndpointName{false};
-  bool m_autoGenerateEndpointNameHasBeenSet = false;
 
   Aws::String m_endpointName;
+  bool m_autoGenerateEndpointNameHasBeenSet = false;
   bool m_endpointNameHasBeenSet = false;
 };
 

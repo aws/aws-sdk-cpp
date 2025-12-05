@@ -213,30 +213,30 @@ class UpdateFormData {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   FormDataTypeConfig m_dataType;
-  bool m_dataTypeHasBeenSet = false;
 
   FormActionType m_formActionType{FormActionType::NOT_SET};
-  bool m_formActionTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, FieldConfig> m_fields;
-  bool m_fieldsHasBeenSet = false;
 
   FormStyle m_style;
-  bool m_styleHasBeenSet = false;
 
   Aws::Map<Aws::String, SectionalElement> m_sectionalElements;
-  bool m_sectionalElementsHasBeenSet = false;
 
   Aws::String m_schemaVersion;
-  bool m_schemaVersionHasBeenSet = false;
 
   FormCTA m_cta;
-  bool m_ctaHasBeenSet = false;
 
   LabelDecorator m_labelDecorator{LabelDecorator::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_dataTypeHasBeenSet = false;
+  bool m_formActionTypeHasBeenSet = false;
+  bool m_fieldsHasBeenSet = false;
+  bool m_styleHasBeenSet = false;
+  bool m_sectionalElementsHasBeenSet = false;
+  bool m_schemaVersionHasBeenSet = false;
+  bool m_ctaHasBeenSet = false;
   bool m_labelDecoratorHasBeenSet = false;
 };
 

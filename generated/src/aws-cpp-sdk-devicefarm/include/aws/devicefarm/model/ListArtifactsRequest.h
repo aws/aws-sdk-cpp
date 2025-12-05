@@ -90,12 +90,12 @@ class ListArtifactsRequest : public DeviceFarmRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   ArtifactCategory m_type{ArtifactCategory::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_arnHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

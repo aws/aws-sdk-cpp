@@ -108,15 +108,15 @@ class CreateCodeSecurityIntegrationRequest : public Inspector2Request {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   IntegrationType m_type{IntegrationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   CreateIntegrationDetail m_details;
-  bool m_detailsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_detailsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

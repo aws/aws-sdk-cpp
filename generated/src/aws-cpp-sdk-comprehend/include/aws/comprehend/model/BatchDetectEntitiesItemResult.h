@@ -76,9 +76,9 @@ class BatchDetectEntitiesItemResult {
   ///@}
  private:
   int m_index{0};
-  bool m_indexHasBeenSet = false;
 
   Aws::Vector<Entity> m_entities;
+  bool m_indexHasBeenSet = false;
   bool m_entitiesHasBeenSet = false;
 };
 

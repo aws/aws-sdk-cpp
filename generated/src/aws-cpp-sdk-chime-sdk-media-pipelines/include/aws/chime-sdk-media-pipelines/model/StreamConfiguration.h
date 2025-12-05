@@ -87,12 +87,12 @@ class StreamConfiguration {
   ///@}
  private:
   Aws::String m_streamArn;
-  bool m_streamArnHasBeenSet = false;
 
   Aws::String m_fragmentNumber;
-  bool m_fragmentNumberHasBeenSet = false;
 
   StreamChannelDefinition m_streamChannelDefinition;
+  bool m_streamArnHasBeenSet = false;
+  bool m_fragmentNumberHasBeenSet = false;
   bool m_streamChannelDefinitionHasBeenSet = false;
 };
 

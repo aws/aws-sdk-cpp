@@ -131,15 +131,15 @@ class DnsOptionsSpecification {
   ///@}
  private:
   DnsRecordIpType m_dnsRecordIpType{DnsRecordIpType::NOT_SET};
-  bool m_dnsRecordIpTypeHasBeenSet = false;
 
   bool m_privateDnsOnlyForInboundResolverEndpoint{false};
-  bool m_privateDnsOnlyForInboundResolverEndpointHasBeenSet = false;
 
   Aws::String m_privateDnsPreference;
-  bool m_privateDnsPreferenceHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_privateDnsSpecifiedDomains;
+  bool m_dnsRecordIpTypeHasBeenSet = false;
+  bool m_privateDnsOnlyForInboundResolverEndpointHasBeenSet = false;
+  bool m_privateDnsPreferenceHasBeenSet = false;
   bool m_privateDnsSpecifiedDomainsHasBeenSet = false;
 };
 

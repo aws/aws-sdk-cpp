@@ -103,12 +103,12 @@ class AssetPropertyValue {
   ///@}
  private:
   AssetPropertyVariant m_value;
-  bool m_valueHasBeenSet = false;
 
   AssetPropertyTimestamp m_timestamp;
-  bool m_timestampHasBeenSet = false;
 
   Aws::String m_quality;
+  bool m_valueHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
   bool m_qualityHasBeenSet = false;
 };
 

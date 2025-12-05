@@ -69,9 +69,9 @@ class AddRegionAction {
   ///@}
  private:
   Aws::String m_regionName;
-  bool m_regionNameHasBeenSet = false;
 
   Aws::String m_sseKmsKeyId;
+  bool m_regionNameHasBeenSet = false;
   bool m_sseKmsKeyIdHasBeenSet = false;
 };
 

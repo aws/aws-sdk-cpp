@@ -146,21 +146,21 @@ class DeleteAccountAssignmentRequest : public SSOAdminRequest {
   ///@}
  private:
   Aws::String m_instanceArn;
-  bool m_instanceArnHasBeenSet = false;
 
   Aws::String m_targetId;
-  bool m_targetIdHasBeenSet = false;
 
   TargetType m_targetType{TargetType::NOT_SET};
-  bool m_targetTypeHasBeenSet = false;
 
   Aws::String m_permissionSetArn;
-  bool m_permissionSetArnHasBeenSet = false;
 
   PrincipalType m_principalType{PrincipalType::NOT_SET};
-  bool m_principalTypeHasBeenSet = false;
 
   Aws::String m_principalId;
+  bool m_instanceArnHasBeenSet = false;
+  bool m_targetIdHasBeenSet = false;
+  bool m_targetTypeHasBeenSet = false;
+  bool m_permissionSetArnHasBeenSet = false;
+  bool m_principalTypeHasBeenSet = false;
   bool m_principalIdHasBeenSet = false;
 };
 

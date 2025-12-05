@@ -158,21 +158,21 @@ class DatasetSummary {
   ///@}
  private:
   Aws::String m_datasetName;
-  bool m_datasetNameHasBeenSet = false;
 
   DatasetStatus m_status{DatasetStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateTime{};
-  bool m_lastUpdateTimeHasBeenSet = false;
 
   Aws::Vector<DatasetTrigger> m_triggers;
-  bool m_triggersHasBeenSet = false;
 
   Aws::Vector<DatasetActionSummary> m_actions;
+  bool m_datasetNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastUpdateTimeHasBeenSet = false;
+  bool m_triggersHasBeenSet = false;
   bool m_actionsHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class DeleteSceneRequest : public IoTTwinMakerRequest {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Aws::String m_sceneId;
+  bool m_workspaceIdHasBeenSet = false;
   bool m_sceneIdHasBeenSet = false;
 };
 

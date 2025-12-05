@@ -206,30 +206,30 @@ class CreateDeploymentRequest : public APIGatewayRequest {
   ///@}
  private:
   Aws::String m_restApiId;
-  bool m_restApiIdHasBeenSet = false;
 
   Aws::String m_stageName;
-  bool m_stageNameHasBeenSet = false;
 
   Aws::String m_stageDescription;
-  bool m_stageDescriptionHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_cacheClusterEnabled{false};
-  bool m_cacheClusterEnabledHasBeenSet = false;
 
   CacheClusterSize m_cacheClusterSize{CacheClusterSize::NOT_SET};
-  bool m_cacheClusterSizeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_variables;
-  bool m_variablesHasBeenSet = false;
 
   DeploymentCanarySettings m_canarySettings;
-  bool m_canarySettingsHasBeenSet = false;
 
   bool m_tracingEnabled{false};
+  bool m_restApiIdHasBeenSet = false;
+  bool m_stageNameHasBeenSet = false;
+  bool m_stageDescriptionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_cacheClusterEnabledHasBeenSet = false;
+  bool m_cacheClusterSizeHasBeenSet = false;
+  bool m_variablesHasBeenSet = false;
+  bool m_canarySettingsHasBeenSet = false;
   bool m_tracingEnabledHasBeenSet = false;
 };
 

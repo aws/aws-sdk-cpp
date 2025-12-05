@@ -342,54 +342,54 @@ class RdsReservedInstancesConfiguration {
   ///@}
  private:
   Aws::String m_accountScope;
-  bool m_accountScopeHasBeenSet = false;
 
   Aws::String m_service;
-  bool m_serviceHasBeenSet = false;
 
   Aws::String m_term;
-  bool m_termHasBeenSet = false;
 
   Aws::String m_paymentOption;
-  bool m_paymentOptionHasBeenSet = false;
 
   Aws::String m_reservedInstancesRegion;
-  bool m_reservedInstancesRegionHasBeenSet = false;
 
   Aws::String m_upfrontCost;
-  bool m_upfrontCostHasBeenSet = false;
 
   Aws::String m_monthlyRecurringCost;
-  bool m_monthlyRecurringCostHasBeenSet = false;
 
   Aws::String m_normalizedUnitsToPurchase;
-  bool m_normalizedUnitsToPurchaseHasBeenSet = false;
 
   Aws::String m_numberOfInstancesToPurchase;
-  bool m_numberOfInstancesToPurchaseHasBeenSet = false;
 
   Aws::String m_instanceFamily;
-  bool m_instanceFamilyHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   bool m_sizeFlexEligible{false};
-  bool m_sizeFlexEligibleHasBeenSet = false;
 
   Aws::String m_currentGeneration;
-  bool m_currentGenerationHasBeenSet = false;
 
   Aws::String m_licenseModel;
-  bool m_licenseModelHasBeenSet = false;
 
   Aws::String m_databaseEdition;
-  bool m_databaseEditionHasBeenSet = false;
 
   Aws::String m_databaseEngine;
-  bool m_databaseEngineHasBeenSet = false;
 
   Aws::String m_deploymentOption;
+  bool m_accountScopeHasBeenSet = false;
+  bool m_serviceHasBeenSet = false;
+  bool m_termHasBeenSet = false;
+  bool m_paymentOptionHasBeenSet = false;
+  bool m_reservedInstancesRegionHasBeenSet = false;
+  bool m_upfrontCostHasBeenSet = false;
+  bool m_monthlyRecurringCostHasBeenSet = false;
+  bool m_normalizedUnitsToPurchaseHasBeenSet = false;
+  bool m_numberOfInstancesToPurchaseHasBeenSet = false;
+  bool m_instanceFamilyHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_sizeFlexEligibleHasBeenSet = false;
+  bool m_currentGenerationHasBeenSet = false;
+  bool m_licenseModelHasBeenSet = false;
+  bool m_databaseEditionHasBeenSet = false;
+  bool m_databaseEngineHasBeenSet = false;
   bool m_deploymentOptionHasBeenSet = false;
 };
 

@@ -76,12 +76,12 @@ class CreateCliTokenResult {
   ///@}
  private:
   Aws::String m_cliToken;
-  bool m_cliTokenHasBeenSet = false;
 
   Aws::String m_webServerHostname;
-  bool m_webServerHostnameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_cliTokenHasBeenSet = false;
+  bool m_webServerHostnameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

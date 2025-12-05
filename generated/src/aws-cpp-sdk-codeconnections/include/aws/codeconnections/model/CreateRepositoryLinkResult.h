@@ -60,9 +60,9 @@ class CreateRepositoryLinkResult {
   ///@}
  private:
   RepositoryLinkInfo m_repositoryLinkInfo;
-  bool m_repositoryLinkInfoHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_repositoryLinkInfoHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

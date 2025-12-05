@@ -105,15 +105,15 @@ class CapacityReservationInfo {
   ///@}
  private:
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   CapacityReservationTenancy m_tenancy{CapacityReservationTenancy::NOT_SET};
-  bool m_tenancyHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_tenancyHasBeenSet = false;
   bool m_availabilityZoneIdHasBeenSet = false;
 };
 

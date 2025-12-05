@@ -183,27 +183,27 @@ class ConnectionPropertiesPatch {
   ///@}
  private:
   AmazonQPropertiesPatch m_amazonQProperties;
-  bool m_amazonQPropertiesHasBeenSet = false;
 
   AthenaPropertiesPatch m_athenaProperties;
-  bool m_athenaPropertiesHasBeenSet = false;
 
   GluePropertiesPatch m_glueProperties;
-  bool m_gluePropertiesHasBeenSet = false;
 
   IamPropertiesPatch m_iamProperties;
-  bool m_iamPropertiesHasBeenSet = false;
 
   MlflowPropertiesPatch m_mlflowProperties;
-  bool m_mlflowPropertiesHasBeenSet = false;
 
   RedshiftPropertiesPatch m_redshiftProperties;
-  bool m_redshiftPropertiesHasBeenSet = false;
 
   S3PropertiesPatch m_s3Properties;
-  bool m_s3PropertiesHasBeenSet = false;
 
   SparkEmrPropertiesPatch m_sparkEmrProperties;
+  bool m_amazonQPropertiesHasBeenSet = false;
+  bool m_athenaPropertiesHasBeenSet = false;
+  bool m_gluePropertiesHasBeenSet = false;
+  bool m_iamPropertiesHasBeenSet = false;
+  bool m_mlflowPropertiesHasBeenSet = false;
+  bool m_redshiftPropertiesHasBeenSet = false;
+  bool m_s3PropertiesHasBeenSet = false;
   bool m_sparkEmrPropertiesHasBeenSet = false;
 };
 

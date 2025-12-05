@@ -91,12 +91,12 @@ class BucketLevelPermissions {
   ///@}
  private:
   AccessControlList m_accessControlList;
-  bool m_accessControlListHasBeenSet = false;
 
   BucketPolicy m_bucketPolicy;
-  bool m_bucketPolicyHasBeenSet = false;
 
   BlockPublicAccess m_blockPublicAccess;
+  bool m_accessControlListHasBeenSet = false;
+  bool m_bucketPolicyHasBeenSet = false;
   bool m_blockPublicAccessHasBeenSet = false;
 };
 

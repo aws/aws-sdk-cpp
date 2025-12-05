@@ -218,27 +218,27 @@ class CreateMonitorRequest : public InternetMonitorRequest {
   ///@}
  private:
   Aws::String m_monitorName;
-  bool m_monitorNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   int m_maxCityNetworksToMonitor{0};
-  bool m_maxCityNetworksToMonitorHasBeenSet = false;
 
   InternetMeasurementsLogDelivery m_internetMeasurementsLogDelivery;
-  bool m_internetMeasurementsLogDeliveryHasBeenSet = false;
 
   int m_trafficPercentageToMonitor{0};
-  bool m_trafficPercentageToMonitorHasBeenSet = false;
 
   HealthEventsConfig m_healthEventsConfig;
+  bool m_monitorNameHasBeenSet = false;
+  bool m_resourcesHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_tagsHasBeenSet = false;
+  bool m_maxCityNetworksToMonitorHasBeenSet = false;
+  bool m_internetMeasurementsLogDeliveryHasBeenSet = false;
+  bool m_trafficPercentageToMonitorHasBeenSet = false;
   bool m_healthEventsConfigHasBeenSet = false;
 };
 

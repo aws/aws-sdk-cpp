@@ -102,12 +102,12 @@ class CreateDhcpOptionsRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<NewDhcpConfiguration> m_dhcpConfigurations;
-  bool m_dhcpConfigurationsHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_dhcpConfigurationsHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

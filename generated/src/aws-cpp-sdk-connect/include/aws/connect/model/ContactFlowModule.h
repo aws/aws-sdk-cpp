@@ -274,42 +274,42 @@ class ContactFlowModule {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ContactFlowModuleState m_state{ContactFlowModuleState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   ContactFlowModuleStatus m_status{ContactFlowModuleStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_flowModuleContentSha256;
-  bool m_flowModuleContentSha256HasBeenSet = false;
 
   long long m_version{0};
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_versionDescription;
-  bool m_versionDescriptionHasBeenSet = false;
 
   Aws::String m_settings;
-  bool m_settingsHasBeenSet = false;
 
   ExternalInvocationConfiguration m_externalInvocationConfiguration;
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_flowModuleContentSha256HasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_versionDescriptionHasBeenSet = false;
+  bool m_settingsHasBeenSet = false;
   bool m_externalInvocationConfigurationHasBeenSet = false;
 };
 

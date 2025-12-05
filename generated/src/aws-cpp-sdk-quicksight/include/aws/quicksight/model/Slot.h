@@ -68,9 +68,9 @@ class Slot {
   ///@}
  private:
   Aws::String m_slotId;
-  bool m_slotIdHasBeenSet = false;
 
   Aws::String m_visualId;
+  bool m_slotIdHasBeenSet = false;
   bool m_visualIdHasBeenSet = false;
 };
 

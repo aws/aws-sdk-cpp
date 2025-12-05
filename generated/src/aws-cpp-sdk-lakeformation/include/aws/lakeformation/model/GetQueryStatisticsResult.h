@@ -98,15 +98,15 @@ class GetQueryStatisticsResult {
   ///@}
  private:
   ExecutionStatistics m_executionStatistics;
-  bool m_executionStatisticsHasBeenSet = false;
 
   PlanningStatistics m_planningStatistics;
-  bool m_planningStatisticsHasBeenSet = false;
 
   Aws::Utils::DateTime m_querySubmissionTime{};
-  bool m_querySubmissionTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_executionStatisticsHasBeenSet = false;
+  bool m_planningStatisticsHasBeenSet = false;
+  bool m_querySubmissionTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

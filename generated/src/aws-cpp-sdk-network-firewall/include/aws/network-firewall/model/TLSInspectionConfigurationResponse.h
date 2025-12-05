@@ -255,36 +255,36 @@ class TLSInspectionConfigurationResponse {
   ///@}
  private:
   Aws::String m_tLSInspectionConfigurationArn;
-  bool m_tLSInspectionConfigurationArnHasBeenSet = false;
 
   Aws::String m_tLSInspectionConfigurationName;
-  bool m_tLSInspectionConfigurationNameHasBeenSet = false;
 
   Aws::String m_tLSInspectionConfigurationId;
-  bool m_tLSInspectionConfigurationIdHasBeenSet = false;
 
   ResourceStatus m_tLSInspectionConfigurationStatus{ResourceStatus::NOT_SET};
-  bool m_tLSInspectionConfigurationStatusHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   int m_numberOfAssociations{0};
-  bool m_numberOfAssociationsHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
-  bool m_encryptionConfigurationHasBeenSet = false;
 
   Aws::Vector<TlsCertificateData> m_certificates;
-  bool m_certificatesHasBeenSet = false;
 
   TlsCertificateData m_certificateAuthority;
+  bool m_tLSInspectionConfigurationArnHasBeenSet = false;
+  bool m_tLSInspectionConfigurationNameHasBeenSet = false;
+  bool m_tLSInspectionConfigurationIdHasBeenSet = false;
+  bool m_tLSInspectionConfigurationStatusHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_numberOfAssociationsHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
+  bool m_certificatesHasBeenSet = false;
   bool m_certificateAuthorityHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class ModelSummary {
   ///@}
  private:
   Aws::String m_modelId;
-  bool m_modelIdHasBeenSet = false;
 
   ModelLifecycle m_modelLifecycle;
-  bool m_modelLifecycleHasBeenSet = false;
 
   int m_minimumCompatibilityVersion{0};
+  bool m_modelIdHasBeenSet = false;
+  bool m_modelLifecycleHasBeenSet = false;
   bool m_minimumCompatibilityVersionHasBeenSet = false;
 };
 

@@ -246,39 +246,39 @@ class CisScanResultDetails {
   ///@}
  private:
   Aws::String m_scanArn;
-  bool m_scanArnHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_targetResourceId;
-  bool m_targetResourceIdHasBeenSet = false;
 
   Aws::String m_platform;
-  bool m_platformHasBeenSet = false;
 
   CisFindingStatus m_status{CisFindingStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::String m_checkId;
-  bool m_checkIdHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_checkDescription;
-  bool m_checkDescriptionHasBeenSet = false;
 
   Aws::String m_remediation;
-  bool m_remediationHasBeenSet = false;
 
   CisSecurityLevel m_level{CisSecurityLevel::NOT_SET};
-  bool m_levelHasBeenSet = false;
 
   Aws::String m_findingArn;
+  bool m_scanArnHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_targetResourceIdHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_checkIdHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_checkDescriptionHasBeenSet = false;
+  bool m_remediationHasBeenSet = false;
+  bool m_levelHasBeenSet = false;
   bool m_findingArnHasBeenSet = false;
 };
 

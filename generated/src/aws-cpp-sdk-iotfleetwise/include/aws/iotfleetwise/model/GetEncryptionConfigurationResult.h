@@ -149,24 +149,24 @@ class GetEncryptionConfigurationResult {
   ///@}
  private:
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   EncryptionStatus m_encryptionStatus{EncryptionStatus::NOT_SET};
-  bool m_encryptionStatusHasBeenSet = false;
 
   EncryptionType m_encryptionType{EncryptionType::NOT_SET};
-  bool m_encryptionTypeHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModificationTime{};
-  bool m_lastModificationTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_encryptionStatusHasBeenSet = false;
+  bool m_encryptionTypeHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModificationTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

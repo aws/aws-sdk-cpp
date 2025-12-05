@@ -65,9 +65,9 @@ class DeleteNotificationSubscriptionRequest : public WorkDocsRequest {
   ///@}
  private:
   Aws::String m_subscriptionId;
-  bool m_subscriptionIdHasBeenSet = false;
 
   Aws::String m_organizationId;
+  bool m_subscriptionIdHasBeenSet = false;
   bool m_organizationIdHasBeenSet = false;
 };
 

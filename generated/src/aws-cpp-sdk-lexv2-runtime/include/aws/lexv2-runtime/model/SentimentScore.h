@@ -98,15 +98,15 @@ class SentimentScore {
   ///@}
  private:
   double m_positive{0.0};
-  bool m_positiveHasBeenSet = false;
 
   double m_negative{0.0};
-  bool m_negativeHasBeenSet = false;
 
   double m_neutral{0.0};
-  bool m_neutralHasBeenSet = false;
 
   double m_mixed{0.0};
+  bool m_positiveHasBeenSet = false;
+  bool m_negativeHasBeenSet = false;
+  bool m_neutralHasBeenSet = false;
   bool m_mixedHasBeenSet = false;
 };
 

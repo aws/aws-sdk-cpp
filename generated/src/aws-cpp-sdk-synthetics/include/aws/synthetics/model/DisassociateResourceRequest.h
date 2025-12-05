@@ -66,9 +66,9 @@ class DisassociateResourceRequest : public SyntheticsRequest {
   ///@}
  private:
   Aws::String m_groupIdentifier;
-  bool m_groupIdentifierHasBeenSet = false;
 
   Aws::String m_resourceArn;
+  bool m_groupIdentifierHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
 };
 

@@ -96,12 +96,12 @@ class UpdateUserRequest : public IdentityStoreRequest {
   ///@}
  private:
   Aws::String m_identityStoreId;
-  bool m_identityStoreIdHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::Vector<AttributeOperation> m_operations;
+  bool m_identityStoreIdHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
   bool m_operationsHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class CreatePolicyVersionResult {
   ///@}
  private:
   PolicyVersion m_policyVersion;
-  bool m_policyVersionHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_policyVersionHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class DeleteResourcePolicyRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_policyId;
-  bool m_policyIdHasBeenSet = false;
 
   Aws::String m_policyHash;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_policyIdHasBeenSet = false;
   bool m_policyHashHasBeenSet = false;
 };
 

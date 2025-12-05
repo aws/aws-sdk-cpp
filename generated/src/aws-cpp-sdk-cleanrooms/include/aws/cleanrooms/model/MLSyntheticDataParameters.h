@@ -89,12 +89,12 @@ class MLSyntheticDataParameters {
   ///@}
  private:
   double m_epsilon{0.0};
-  bool m_epsilonHasBeenSet = false;
 
   double m_maxMembershipInferenceAttackScore{0.0};
-  bool m_maxMembershipInferenceAttackScoreHasBeenSet = false;
 
   ColumnClassificationDetails m_columnClassification;
+  bool m_epsilonHasBeenSet = false;
+  bool m_maxMembershipInferenceAttackScoreHasBeenSet = false;
   bool m_columnClassificationHasBeenSet = false;
 };
 

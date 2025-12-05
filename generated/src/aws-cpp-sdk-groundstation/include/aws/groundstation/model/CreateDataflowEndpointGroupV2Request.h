@@ -118,15 +118,15 @@ class CreateDataflowEndpointGroupV2Request : public GroundStationRequest {
   ///@}
  private:
   Aws::Vector<CreateEndpointDetails> m_endpoints;
-  bool m_endpointsHasBeenSet = false;
 
   int m_contactPrePassDurationSeconds{0};
-  bool m_contactPrePassDurationSecondsHasBeenSet = false;
 
   int m_contactPostPassDurationSeconds{0};
-  bool m_contactPostPassDurationSecondsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_endpointsHasBeenSet = false;
+  bool m_contactPrePassDurationSecondsHasBeenSet = false;
+  bool m_contactPostPassDurationSecondsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -138,18 +138,18 @@ class ConversationLevelTestResultItem {
   ///@}
  private:
   Aws::String m_conversationId;
-  bool m_conversationIdHasBeenSet = false;
 
   TestResultMatchStatus m_endToEndResult{TestResultMatchStatus::NOT_SET};
-  bool m_endToEndResultHasBeenSet = false;
 
   TestResultMatchStatus m_speechTranscriptionResult{TestResultMatchStatus::NOT_SET};
-  bool m_speechTranscriptionResultHasBeenSet = false;
 
   Aws::Vector<ConversationLevelIntentClassificationResultItem> m_intentClassificationResults;
-  bool m_intentClassificationResultsHasBeenSet = false;
 
   Aws::Vector<ConversationLevelSlotResolutionResultItem> m_slotResolutionResults;
+  bool m_conversationIdHasBeenSet = false;
+  bool m_endToEndResultHasBeenSet = false;
+  bool m_speechTranscriptionResultHasBeenSet = false;
+  bool m_intentClassificationResultsHasBeenSet = false;
   bool m_slotResolutionResultsHasBeenSet = false;
 };
 

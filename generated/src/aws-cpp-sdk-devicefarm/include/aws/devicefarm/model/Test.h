@@ -244,36 +244,36 @@ class Test {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   TestType m_type{TestType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Utils::DateTime m_created{};
-  bool m_createdHasBeenSet = false;
 
   ExecutionStatus m_status{ExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ExecutionResult m_result{ExecutionResult::NOT_SET};
-  bool m_resultHasBeenSet = false;
 
   Aws::Utils::DateTime m_started{};
-  bool m_startedHasBeenSet = false;
 
   Aws::Utils::DateTime m_stopped{};
-  bool m_stoppedHasBeenSet = false;
 
   Counters m_counters;
-  bool m_countersHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   DeviceMinutes m_deviceMinutes;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_createdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_resultHasBeenSet = false;
+  bool m_startedHasBeenSet = false;
+  bool m_stoppedHasBeenSet = false;
+  bool m_countersHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_deviceMinutesHasBeenSet = false;
 };
 

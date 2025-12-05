@@ -73,9 +73,9 @@ class AddFlowMediaStreamsRequest : public MediaConnectRequest {
   ///@}
  private:
   Aws::String m_flowArn;
-  bool m_flowArnHasBeenSet = false;
 
   Aws::Vector<AddMediaStreamRequest> m_mediaStreams;
+  bool m_flowArnHasBeenSet = false;
   bool m_mediaStreamsHasBeenSet = false;
 };
 

@@ -127,21 +127,21 @@ class PhoneNumberCapabilities {
   ///@}
  private:
   bool m_inboundCall{false};
-  bool m_inboundCallHasBeenSet = false;
 
   bool m_outboundCall{false};
-  bool m_outboundCallHasBeenSet = false;
 
   bool m_inboundSMS{false};
-  bool m_inboundSMSHasBeenSet = false;
 
   bool m_outboundSMS{false};
-  bool m_outboundSMSHasBeenSet = false;
 
   bool m_inboundMMS{false};
-  bool m_inboundMMSHasBeenSet = false;
 
   bool m_outboundMMS{false};
+  bool m_inboundCallHasBeenSet = false;
+  bool m_outboundCallHasBeenSet = false;
+  bool m_inboundSMSHasBeenSet = false;
+  bool m_outboundSMSHasBeenSet = false;
+  bool m_inboundMMSHasBeenSet = false;
   bool m_outboundMMSHasBeenSet = false;
 };
 

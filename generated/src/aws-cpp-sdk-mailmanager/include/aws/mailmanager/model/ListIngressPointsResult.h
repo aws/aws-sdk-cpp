@@ -86,12 +86,12 @@ class ListIngressPointsResult {
   ///@}
  private:
   Aws::Vector<IngressPoint> m_ingressPoints;
-  bool m_ingressPointsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ingressPointsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -187,24 +187,24 @@ class CreateAppAuthorizationRequest : public AppFabricRequest {
   ///@}
  private:
   Aws::String m_appBundleIdentifier;
-  bool m_appBundleIdentifierHasBeenSet = false;
 
   Aws::String m_app;
-  bool m_appHasBeenSet = false;
 
   Credential m_credential;
-  bool m_credentialHasBeenSet = false;
 
   Tenant m_tenant;
-  bool m_tenantHasBeenSet = false;
 
   AuthType m_authType{AuthType::NOT_SET};
-  bool m_authTypeHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Vector<Tag> m_tags;
+  bool m_appBundleIdentifierHasBeenSet = false;
+  bool m_appHasBeenSet = false;
+  bool m_credentialHasBeenSet = false;
+  bool m_tenantHasBeenSet = false;
+  bool m_authTypeHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

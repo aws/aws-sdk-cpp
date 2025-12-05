@@ -122,18 +122,18 @@ class CreateAccessPolicyRequest : public OpenSearchServerlessRequest {
   ///@}
  private:
   AccessPolicyType m_type{AccessPolicyType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_policy;
-  bool m_policyHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_typeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_policyHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

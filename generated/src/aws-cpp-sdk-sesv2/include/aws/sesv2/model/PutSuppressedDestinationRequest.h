@@ -70,9 +70,9 @@ class PutSuppressedDestinationRequest : public SESV2Request {
   ///@}
  private:
   Aws::String m_emailAddress;
-  bool m_emailAddressHasBeenSet = false;
 
   SuppressionListReason m_reason{SuppressionListReason::NOT_SET};
+  bool m_emailAddressHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

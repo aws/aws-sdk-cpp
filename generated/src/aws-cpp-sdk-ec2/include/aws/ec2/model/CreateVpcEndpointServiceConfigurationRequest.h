@@ -232,30 +232,30 @@ class CreateVpcEndpointServiceConfigurationRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   bool m_acceptanceRequired{false};
-  bool m_acceptanceRequiredHasBeenSet = false;
 
   Aws::String m_privateDnsName;
-  bool m_privateDnsNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_networkLoadBalancerArns;
-  bool m_networkLoadBalancerArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_gatewayLoadBalancerArns;
-  bool m_gatewayLoadBalancerArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supportedIpAddressTypes;
-  bool m_supportedIpAddressTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supportedRegions;
-  bool m_supportedRegionsHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
+  bool m_dryRunHasBeenSet = false;
+  bool m_acceptanceRequiredHasBeenSet = false;
+  bool m_privateDnsNameHasBeenSet = false;
+  bool m_networkLoadBalancerArnsHasBeenSet = false;
+  bool m_gatewayLoadBalancerArnsHasBeenSet = false;
+  bool m_supportedIpAddressTypesHasBeenSet = false;
+  bool m_supportedRegionsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
   bool m_tagSpecificationsHasBeenSet = false;
 };
 

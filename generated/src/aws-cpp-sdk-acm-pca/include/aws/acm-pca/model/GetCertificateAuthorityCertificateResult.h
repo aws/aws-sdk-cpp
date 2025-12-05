@@ -80,12 +80,12 @@ class GetCertificateAuthorityCertificateResult {
   ///@}
  private:
   Aws::String m_certificate;
-  bool m_certificateHasBeenSet = false;
 
   Aws::String m_certificateChain;
-  bool m_certificateChainHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_certificateHasBeenSet = false;
+  bool m_certificateChainHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

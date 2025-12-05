@@ -123,18 +123,18 @@ class ListAuditMitigationActionsExecutionsRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   AuditMitigationActionsExecutionStatus m_actionStatus{AuditMitigationActionsExecutionStatus::NOT_SET};
-  bool m_actionStatusHasBeenSet = false;
 
   Aws::String m_findingId;
-  bool m_findingIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_taskIdHasBeenSet = false;
+  bool m_actionStatusHasBeenSet = false;
+  bool m_findingIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

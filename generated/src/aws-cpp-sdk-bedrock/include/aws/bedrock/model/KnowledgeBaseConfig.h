@@ -72,9 +72,9 @@ class KnowledgeBaseConfig {
   ///@}
  private:
   RetrieveConfig m_retrieveConfig;
-  bool m_retrieveConfigHasBeenSet = false;
 
   RetrieveAndGenerateConfiguration m_retrieveAndGenerateConfig;
+  bool m_retrieveConfigHasBeenSet = false;
   bool m_retrieveAndGenerateConfigHasBeenSet = false;
 };
 

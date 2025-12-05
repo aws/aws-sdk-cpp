@@ -66,9 +66,9 @@ class DeleteTLSInspectionConfigurationResult {
   ///@}
  private:
   TLSInspectionConfigurationResponse m_tLSInspectionConfigurationResponse;
-  bool m_tLSInspectionConfigurationResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tLSInspectionConfigurationResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

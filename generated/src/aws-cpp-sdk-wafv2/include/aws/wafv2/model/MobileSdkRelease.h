@@ -119,15 +119,15 @@ class MobileSdkRelease {
   ///@}
  private:
   Aws::String m_releaseVersion;
-  bool m_releaseVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   Aws::String m_releaseNotes;
-  bool m_releaseNotesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_releaseVersionHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
+  bool m_releaseNotesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

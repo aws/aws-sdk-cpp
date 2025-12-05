@@ -60,9 +60,9 @@ class ModifyTrafficMirrorSessionResponse {
   ///@}
  private:
   TrafficMirrorSession m_trafficMirrorSession;
-  bool m_trafficMirrorSessionHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_trafficMirrorSessionHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

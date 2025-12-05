@@ -80,12 +80,12 @@ class DeleteVpcConnectionResult {
   ///@}
  private:
   Aws::String m_vpcConnectionArn;
-  bool m_vpcConnectionArnHasBeenSet = false;
 
   VpcConnectionState m_state{VpcConnectionState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_vpcConnectionArnHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

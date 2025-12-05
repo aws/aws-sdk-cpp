@@ -85,12 +85,12 @@ class GetPartitionIndexesResult {
   ///@}
  private:
   Aws::Vector<PartitionIndexDescriptor> m_partitionIndexDescriptorList;
-  bool m_partitionIndexDescriptorListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_partitionIndexDescriptorListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

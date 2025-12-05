@@ -267,42 +267,42 @@ class UpdateScheduledQueryRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   QueryLanguage m_queryLanguage{QueryLanguage::NOT_SET};
-  bool m_queryLanguageHasBeenSet = false;
 
   Aws::String m_queryString;
-  bool m_queryStringHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_logGroupIdentifiers;
-  bool m_logGroupIdentifiersHasBeenSet = false;
 
   Aws::String m_scheduleExpression;
-  bool m_scheduleExpressionHasBeenSet = false;
 
   Aws::String m_timezone;
-  bool m_timezoneHasBeenSet = false;
 
   long long m_startTimeOffset{0};
-  bool m_startTimeOffsetHasBeenSet = false;
 
   DestinationConfiguration m_destinationConfiguration;
-  bool m_destinationConfigurationHasBeenSet = false;
 
   long long m_scheduleStartTime{0};
-  bool m_scheduleStartTimeHasBeenSet = false;
 
   long long m_scheduleEndTime{0};
-  bool m_scheduleEndTimeHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   ScheduledQueryState m_state{ScheduledQueryState::NOT_SET};
+  bool m_identifierHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_queryLanguageHasBeenSet = false;
+  bool m_queryStringHasBeenSet = false;
+  bool m_logGroupIdentifiersHasBeenSet = false;
+  bool m_scheduleExpressionHasBeenSet = false;
+  bool m_timezoneHasBeenSet = false;
+  bool m_startTimeOffsetHasBeenSet = false;
+  bool m_destinationConfigurationHasBeenSet = false;
+  bool m_scheduleStartTimeHasBeenSet = false;
+  bool m_scheduleEndTimeHasBeenSet = false;
+  bool m_executionRoleArnHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

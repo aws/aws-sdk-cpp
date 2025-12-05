@@ -347,48 +347,48 @@ class EndpointResponse {
   ///@}
  private:
   Aws::String m_address;
-  bool m_addressHasBeenSet = false;
 
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   ChannelType m_channelType{ChannelType::NOT_SET};
-  bool m_channelTypeHasBeenSet = false;
 
   Aws::String m_cohortId;
-  bool m_cohortIdHasBeenSet = false;
 
   Aws::String m_creationDate;
-  bool m_creationDateHasBeenSet = false;
 
   EndpointDemographic m_demographic;
-  bool m_demographicHasBeenSet = false;
 
   Aws::String m_effectiveDate;
-  bool m_effectiveDateHasBeenSet = false;
 
   Aws::String m_endpointStatus;
-  bool m_endpointStatusHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   EndpointLocation m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::Map<Aws::String, double> m_metrics;
-  bool m_metricsHasBeenSet = false;
 
   Aws::String m_optOut;
-  bool m_optOutHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   EndpointUser m_user;
+  bool m_addressHasBeenSet = false;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_channelTypeHasBeenSet = false;
+  bool m_cohortIdHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_demographicHasBeenSet = false;
+  bool m_effectiveDateHasBeenSet = false;
+  bool m_endpointStatusHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_metricsHasBeenSet = false;
+  bool m_optOutHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_userHasBeenSet = false;
 };
 

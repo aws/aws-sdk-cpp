@@ -347,57 +347,57 @@ class AssessmentEvidenceFolder {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_date{};
-  bool m_dateHasBeenSet = false;
 
   Aws::String m_assessmentId;
-  bool m_assessmentIdHasBeenSet = false;
 
   Aws::String m_controlSetId;
-  bool m_controlSetIdHasBeenSet = false;
 
   Aws::String m_controlId;
-  bool m_controlIdHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_dataSource;
-  bool m_dataSourceHasBeenSet = false;
 
   Aws::String m_author;
-  bool m_authorHasBeenSet = false;
 
   int m_totalEvidence{0};
-  bool m_totalEvidenceHasBeenSet = false;
 
   int m_assessmentReportSelectionCount{0};
-  bool m_assessmentReportSelectionCountHasBeenSet = false;
 
   Aws::String m_controlName;
-  bool m_controlNameHasBeenSet = false;
 
   int m_evidenceResourcesIncludedCount{0};
-  bool m_evidenceResourcesIncludedCountHasBeenSet = false;
 
   int m_evidenceByTypeConfigurationDataCount{0};
-  bool m_evidenceByTypeConfigurationDataCountHasBeenSet = false;
 
   int m_evidenceByTypeManualCount{0};
-  bool m_evidenceByTypeManualCountHasBeenSet = false;
 
   int m_evidenceByTypeComplianceCheckCount{0};
-  bool m_evidenceByTypeComplianceCheckCountHasBeenSet = false;
 
   int m_evidenceByTypeComplianceCheckIssuesCount{0};
-  bool m_evidenceByTypeComplianceCheckIssuesCountHasBeenSet = false;
 
   int m_evidenceByTypeUserActivityCount{0};
-  bool m_evidenceByTypeUserActivityCountHasBeenSet = false;
 
   int m_evidenceAwsServiceSourceCount{0};
+  bool m_nameHasBeenSet = false;
+  bool m_dateHasBeenSet = false;
+  bool m_assessmentIdHasBeenSet = false;
+  bool m_controlSetIdHasBeenSet = false;
+  bool m_controlIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_dataSourceHasBeenSet = false;
+  bool m_authorHasBeenSet = false;
+  bool m_totalEvidenceHasBeenSet = false;
+  bool m_assessmentReportSelectionCountHasBeenSet = false;
+  bool m_controlNameHasBeenSet = false;
+  bool m_evidenceResourcesIncludedCountHasBeenSet = false;
+  bool m_evidenceByTypeConfigurationDataCountHasBeenSet = false;
+  bool m_evidenceByTypeManualCountHasBeenSet = false;
+  bool m_evidenceByTypeComplianceCheckCountHasBeenSet = false;
+  bool m_evidenceByTypeComplianceCheckIssuesCountHasBeenSet = false;
+  bool m_evidenceByTypeUserActivityCountHasBeenSet = false;
   bool m_evidenceAwsServiceSourceCountHasBeenSet = false;
 };
 

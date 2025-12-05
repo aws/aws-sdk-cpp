@@ -115,15 +115,15 @@ class CategoryFilter {
   ///@}
  private:
   Aws::String m_filterId;
-  bool m_filterIdHasBeenSet = false;
 
   ColumnIdentifier m_column;
-  bool m_columnHasBeenSet = false;
 
   CategoryFilterConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   DefaultFilterControlConfiguration m_defaultFilterControlConfiguration;
+  bool m_filterIdHasBeenSet = false;
+  bool m_columnHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
   bool m_defaultFilterControlConfigurationHasBeenSet = false;
 };
 

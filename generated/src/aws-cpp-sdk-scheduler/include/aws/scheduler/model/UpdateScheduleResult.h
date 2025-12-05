@@ -59,9 +59,9 @@ class UpdateScheduleResult {
   ///@}
  private:
   Aws::String m_scheduleArn;
-  bool m_scheduleArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_scheduleArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

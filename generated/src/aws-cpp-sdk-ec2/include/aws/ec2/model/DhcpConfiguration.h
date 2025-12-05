@@ -78,9 +78,9 @@ class DhcpConfiguration {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::Vector<AttributeValue> m_values;
+  bool m_keyHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

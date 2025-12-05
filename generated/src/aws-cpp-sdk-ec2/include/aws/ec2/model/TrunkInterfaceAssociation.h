@@ -165,24 +165,24 @@ class TrunkInterfaceAssociation {
   ///@}
  private:
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   Aws::String m_branchInterfaceId;
-  bool m_branchInterfaceIdHasBeenSet = false;
 
   Aws::String m_trunkInterfaceId;
-  bool m_trunkInterfaceIdHasBeenSet = false;
 
   InterfaceProtocolType m_interfaceProtocol{InterfaceProtocolType::NOT_SET};
-  bool m_interfaceProtocolHasBeenSet = false;
 
   int m_vlanId{0};
-  bool m_vlanIdHasBeenSet = false;
 
   int m_greKey{0};
-  bool m_greKeyHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_associationIdHasBeenSet = false;
+  bool m_branchInterfaceIdHasBeenSet = false;
+  bool m_trunkInterfaceIdHasBeenSet = false;
+  bool m_interfaceProtocolHasBeenSet = false;
+  bool m_vlanIdHasBeenSet = false;
+  bool m_greKeyHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

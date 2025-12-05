@@ -167,24 +167,24 @@ class TemplateVersionResponse {
   ///@}
  private:
   Aws::String m_creationDate;
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_defaultSubstitutions;
-  bool m_defaultSubstitutionsHasBeenSet = false;
 
   Aws::String m_lastModifiedDate;
-  bool m_lastModifiedDateHasBeenSet = false;
 
   Aws::String m_templateDescription;
-  bool m_templateDescriptionHasBeenSet = false;
 
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   Aws::String m_templateType;
-  bool m_templateTypeHasBeenSet = false;
 
   Aws::String m_version;
+  bool m_creationDateHasBeenSet = false;
+  bool m_defaultSubstitutionsHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_templateDescriptionHasBeenSet = false;
+  bool m_templateNameHasBeenSet = false;
+  bool m_templateTypeHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

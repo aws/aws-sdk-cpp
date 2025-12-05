@@ -142,24 +142,24 @@ class GetSegmentEstimateResult {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_estimateId;
-  bool m_estimateIdHasBeenSet = false;
 
   EstimateStatus m_status{EstimateStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_estimate;
-  bool m_estimateHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   int m_statusCode{0};
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainNameHasBeenSet = false;
+  bool m_estimateIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_estimateHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_statusCodeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

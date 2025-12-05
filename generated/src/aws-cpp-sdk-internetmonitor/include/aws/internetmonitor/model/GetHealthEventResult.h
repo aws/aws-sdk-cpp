@@ -239,39 +239,39 @@ class GetHealthEventResult {
   ///@}
  private:
   Aws::String m_eventArn;
-  bool m_eventArnHasBeenSet = false;
 
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_endedAt{};
-  bool m_endedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::Vector<ImpactedLocation> m_impactedLocations;
-  bool m_impactedLocationsHasBeenSet = false;
 
   HealthEventStatus m_status{HealthEventStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   double m_percentOfTotalTrafficImpacted{0.0};
-  bool m_percentOfTotalTrafficImpactedHasBeenSet = false;
 
   HealthEventImpactType m_impactType{HealthEventImpactType::NOT_SET};
-  bool m_impactTypeHasBeenSet = false;
 
   double m_healthScoreThreshold{0.0};
-  bool m_healthScoreThresholdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventArnHasBeenSet = false;
+  bool m_eventIdHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_endedAtHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_impactedLocationsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_percentOfTotalTrafficImpactedHasBeenSet = false;
+  bool m_impactTypeHasBeenSet = false;
+  bool m_healthScoreThresholdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

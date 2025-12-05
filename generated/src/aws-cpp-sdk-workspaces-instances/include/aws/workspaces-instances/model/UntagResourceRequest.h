@@ -78,9 +78,9 @@ class UntagResourceRequest : public WorkspacesInstancesRequest {
   ///@}
  private:
   Aws::String m_workspaceInstanceId;
-  bool m_workspaceInstanceIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagKeys;
+  bool m_workspaceInstanceIdHasBeenSet = false;
   bool m_tagKeysHasBeenSet = false;
 };
 

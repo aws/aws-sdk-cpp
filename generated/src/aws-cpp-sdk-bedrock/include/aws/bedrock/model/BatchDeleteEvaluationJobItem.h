@@ -68,9 +68,9 @@ class BatchDeleteEvaluationJobItem {
   ///@}
  private:
   Aws::String m_jobIdentifier;
-  bool m_jobIdentifierHasBeenSet = false;
 
   EvaluationJobStatus m_jobStatus{EvaluationJobStatus::NOT_SET};
+  bool m_jobIdentifierHasBeenSet = false;
   bool m_jobStatusHasBeenSet = false;
 };
 

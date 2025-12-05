@@ -84,12 +84,12 @@ class GetContentAssociationRequest : public QConnectRequest {
   ///@}
  private:
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::String m_contentId;
-  bool m_contentIdHasBeenSet = false;
 
   Aws::String m_contentAssociationId;
+  bool m_knowledgeBaseIdHasBeenSet = false;
+  bool m_contentIdHasBeenSet = false;
   bool m_contentAssociationIdHasBeenSet = false;
 };
 

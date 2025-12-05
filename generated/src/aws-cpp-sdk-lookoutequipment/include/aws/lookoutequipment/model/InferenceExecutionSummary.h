@@ -298,45 +298,45 @@ class InferenceExecutionSummary {
   ///@}
  private:
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   Aws::String m_modelArn;
-  bool m_modelArnHasBeenSet = false;
 
   Aws::String m_inferenceSchedulerName;
-  bool m_inferenceSchedulerNameHasBeenSet = false;
 
   Aws::String m_inferenceSchedulerArn;
-  bool m_inferenceSchedulerArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_scheduledStartTime{};
-  bool m_scheduledStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_dataStartTime{};
-  bool m_dataStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_dataEndTime{};
-  bool m_dataEndTimeHasBeenSet = false;
 
   InferenceInputConfiguration m_dataInputConfiguration;
-  bool m_dataInputConfigurationHasBeenSet = false;
 
   InferenceOutputConfiguration m_dataOutputConfiguration;
-  bool m_dataOutputConfigurationHasBeenSet = false;
 
   S3Object m_customerResultObject;
-  bool m_customerResultObjectHasBeenSet = false;
 
   InferenceExecutionStatus m_status{InferenceExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_failedReason;
-  bool m_failedReasonHasBeenSet = false;
 
   long long m_modelVersion{0};
-  bool m_modelVersionHasBeenSet = false;
 
   Aws::String m_modelVersionArn;
+  bool m_modelNameHasBeenSet = false;
+  bool m_modelArnHasBeenSet = false;
+  bool m_inferenceSchedulerNameHasBeenSet = false;
+  bool m_inferenceSchedulerArnHasBeenSet = false;
+  bool m_scheduledStartTimeHasBeenSet = false;
+  bool m_dataStartTimeHasBeenSet = false;
+  bool m_dataEndTimeHasBeenSet = false;
+  bool m_dataInputConfigurationHasBeenSet = false;
+  bool m_dataOutputConfigurationHasBeenSet = false;
+  bool m_customerResultObjectHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_failedReasonHasBeenSet = false;
+  bool m_modelVersionHasBeenSet = false;
   bool m_modelVersionArnHasBeenSet = false;
 };
 

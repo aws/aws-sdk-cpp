@@ -79,9 +79,9 @@ class SampleDocuments {
   ///@}
  private:
   Aws::String m_bucketName;
-  bool m_bucketNameHasBeenSet = false;
 
   Aws::Vector<SampleDocumentKeys> m_keys;
+  bool m_bucketNameHasBeenSet = false;
   bool m_keysHasBeenSet = false;
 };
 

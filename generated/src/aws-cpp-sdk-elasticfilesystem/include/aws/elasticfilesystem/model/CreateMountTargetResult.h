@@ -243,39 +243,39 @@ class CreateMountTargetResult {
   ///@}
  private:
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_mountTargetId;
-  bool m_mountTargetIdHasBeenSet = false;
 
   Aws::String m_fileSystemId;
-  bool m_fileSystemIdHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   LifeCycleState m_lifeCycleState{LifeCycleState::NOT_SET};
-  bool m_lifeCycleStateHasBeenSet = false;
 
   Aws::String m_ipAddress;
-  bool m_ipAddressHasBeenSet = false;
 
   Aws::String m_ipv6Address;
-  bool m_ipv6AddressHasBeenSet = false;
 
   Aws::String m_networkInterfaceId;
-  bool m_networkInterfaceIdHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   Aws::String m_availabilityZoneName;
-  bool m_availabilityZoneNameHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_mountTargetIdHasBeenSet = false;
+  bool m_fileSystemIdHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_lifeCycleStateHasBeenSet = false;
+  bool m_ipAddressHasBeenSet = false;
+  bool m_ipv6AddressHasBeenSet = false;
+  bool m_networkInterfaceIdHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_availabilityZoneNameHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

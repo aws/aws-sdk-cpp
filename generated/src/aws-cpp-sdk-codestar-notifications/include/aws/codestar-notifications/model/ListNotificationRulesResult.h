@@ -87,12 +87,12 @@ class ListNotificationRulesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<NotificationRuleSummary> m_notificationRules;
-  bool m_notificationRulesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_notificationRulesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

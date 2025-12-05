@@ -97,12 +97,12 @@ class InstanceSnapshotInfo {
   ///@}
  private:
   Aws::String m_fromBundleId;
-  bool m_fromBundleIdHasBeenSet = false;
 
   Aws::String m_fromBlueprintId;
-  bool m_fromBlueprintIdHasBeenSet = false;
 
   Aws::Vector<DiskInfo> m_fromDiskInfo;
+  bool m_fromBundleIdHasBeenSet = false;
+  bool m_fromBlueprintIdHasBeenSet = false;
   bool m_fromDiskInfoHasBeenSet = false;
 };
 

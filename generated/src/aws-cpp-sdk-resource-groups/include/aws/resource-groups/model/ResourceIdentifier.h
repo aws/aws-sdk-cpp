@@ -69,9 +69,9 @@ class ResourceIdentifier {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_resourceType;
+  bool m_resourceArnHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
 };
 

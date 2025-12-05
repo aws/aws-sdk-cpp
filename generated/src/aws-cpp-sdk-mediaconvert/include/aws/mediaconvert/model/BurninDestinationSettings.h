@@ -555,81 +555,81 @@ When you do, you must also separately
   ///@}
  private:
   BurninSubtitleAlignment m_alignment{BurninSubtitleAlignment::NOT_SET};
-  bool m_alignmentHasBeenSet = false;
 
   BurninSubtitleApplyFontColor m_applyFontColor{BurninSubtitleApplyFontColor::NOT_SET};
-  bool m_applyFontColorHasBeenSet = false;
 
   BurninSubtitleBackgroundColor m_backgroundColor{BurninSubtitleBackgroundColor::NOT_SET};
-  bool m_backgroundColorHasBeenSet = false;
 
   int m_backgroundOpacity{0};
-  bool m_backgroundOpacityHasBeenSet = false;
 
   BurninSubtitleFallbackFont m_fallbackFont{BurninSubtitleFallbackFont::NOT_SET};
-  bool m_fallbackFontHasBeenSet = false;
 
   BurninSubtitleFontColor m_fontColor{BurninSubtitleFontColor::NOT_SET};
-  bool m_fontColorHasBeenSet = false;
 
   Aws::String m_fontFileBold;
-  bool m_fontFileBoldHasBeenSet = false;
 
   Aws::String m_fontFileBoldItalic;
-  bool m_fontFileBoldItalicHasBeenSet = false;
 
   Aws::String m_fontFileItalic;
-  bool m_fontFileItalicHasBeenSet = false;
 
   Aws::String m_fontFileRegular;
-  bool m_fontFileRegularHasBeenSet = false;
 
   int m_fontOpacity{0};
-  bool m_fontOpacityHasBeenSet = false;
 
   int m_fontResolution{0};
-  bool m_fontResolutionHasBeenSet = false;
 
   FontScript m_fontScript{FontScript::NOT_SET};
-  bool m_fontScriptHasBeenSet = false;
 
   int m_fontSize{0};
-  bool m_fontSizeHasBeenSet = false;
 
   Aws::String m_hexFontColor;
-  bool m_hexFontColorHasBeenSet = false;
 
   BurninSubtitleOutlineColor m_outlineColor{BurninSubtitleOutlineColor::NOT_SET};
-  bool m_outlineColorHasBeenSet = false;
 
   int m_outlineSize{0};
-  bool m_outlineSizeHasBeenSet = false;
 
   RemoveRubyReserveAttributes m_removeRubyReserveAttributes{RemoveRubyReserveAttributes::NOT_SET};
-  bool m_removeRubyReserveAttributesHasBeenSet = false;
 
   BurninSubtitleShadowColor m_shadowColor{BurninSubtitleShadowColor::NOT_SET};
-  bool m_shadowColorHasBeenSet = false;
 
   int m_shadowOpacity{0};
-  bool m_shadowOpacityHasBeenSet = false;
 
   int m_shadowXOffset{0};
-  bool m_shadowXOffsetHasBeenSet = false;
 
   int m_shadowYOffset{0};
-  bool m_shadowYOffsetHasBeenSet = false;
 
   BurnInSubtitleStylePassthrough m_stylePassthrough{BurnInSubtitleStylePassthrough::NOT_SET};
-  bool m_stylePassthroughHasBeenSet = false;
 
   BurninSubtitleTeletextSpacing m_teletextSpacing{BurninSubtitleTeletextSpacing::NOT_SET};
-  bool m_teletextSpacingHasBeenSet = false;
 
   int m_xPosition{0};
-  bool m_xPositionHasBeenSet = false;
 
   int m_yPosition{0};
+  bool m_alignmentHasBeenSet = false;
+  bool m_applyFontColorHasBeenSet = false;
+  bool m_backgroundColorHasBeenSet = false;
+  bool m_backgroundOpacityHasBeenSet = false;
+  bool m_fallbackFontHasBeenSet = false;
+  bool m_fontColorHasBeenSet = false;
+  bool m_fontFileBoldHasBeenSet = false;
+  bool m_fontFileBoldItalicHasBeenSet = false;
+  bool m_fontFileItalicHasBeenSet = false;
+  bool m_fontFileRegularHasBeenSet = false;
+  bool m_fontOpacityHasBeenSet = false;
+  bool m_fontResolutionHasBeenSet = false;
+  bool m_fontScriptHasBeenSet = false;
+  bool m_fontSizeHasBeenSet = false;
+  bool m_hexFontColorHasBeenSet = false;
+  bool m_outlineColorHasBeenSet = false;
+  bool m_outlineSizeHasBeenSet = false;
+  bool m_removeRubyReserveAttributesHasBeenSet = false;
+  bool m_shadowColorHasBeenSet = false;
+  bool m_shadowOpacityHasBeenSet = false;
+  bool m_shadowXOffsetHasBeenSet = false;
+  bool m_shadowYOffsetHasBeenSet = false;
+  bool m_stylePassthroughHasBeenSet = false;
+  bool m_teletextSpacingHasBeenSet = false;
+  bool m_xPositionHasBeenSet = false;
   bool m_yPositionHasBeenSet = false;
 };
 

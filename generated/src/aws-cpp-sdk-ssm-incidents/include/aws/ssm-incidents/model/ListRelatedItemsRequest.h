@@ -83,12 +83,12 @@ class ListRelatedItemsRequest : public SSMIncidentsRequest {
   ///@}
  private:
   Aws::String m_incidentRecordArn;
-  bool m_incidentRecordArnHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_incidentRecordArnHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

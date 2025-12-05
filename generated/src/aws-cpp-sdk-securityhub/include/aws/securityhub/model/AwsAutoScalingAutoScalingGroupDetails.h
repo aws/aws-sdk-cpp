@@ -215,30 +215,30 @@ class AwsAutoScalingAutoScalingGroupDetails {
   ///@}
  private:
   Aws::String m_launchConfigurationName;
-  bool m_launchConfigurationNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_loadBalancerNames;
-  bool m_loadBalancerNamesHasBeenSet = false;
 
   Aws::String m_healthCheckType;
-  bool m_healthCheckTypeHasBeenSet = false;
 
   int m_healthCheckGracePeriod{0};
-  bool m_healthCheckGracePeriodHasBeenSet = false;
 
   Aws::String m_createdTime;
-  bool m_createdTimeHasBeenSet = false;
 
   AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails m_mixedInstancesPolicy;
-  bool m_mixedInstancesPolicyHasBeenSet = false;
 
   Aws::Vector<AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails> m_availabilityZones;
-  bool m_availabilityZonesHasBeenSet = false;
 
   AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification m_launchTemplate;
-  bool m_launchTemplateHasBeenSet = false;
 
   bool m_capacityRebalance{false};
+  bool m_launchConfigurationNameHasBeenSet = false;
+  bool m_loadBalancerNamesHasBeenSet = false;
+  bool m_healthCheckTypeHasBeenSet = false;
+  bool m_healthCheckGracePeriodHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_mixedInstancesPolicyHasBeenSet = false;
+  bool m_availabilityZonesHasBeenSet = false;
+  bool m_launchTemplateHasBeenSet = false;
   bool m_capacityRebalanceHasBeenSet = false;
 };
 

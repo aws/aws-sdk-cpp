@@ -90,12 +90,12 @@ class ListApplicationAuthenticationMethodsResult {
   ///@}
  private:
   Aws::Vector<AuthenticationMethodItem> m_authenticationMethods;
-  bool m_authenticationMethodsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_authenticationMethodsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

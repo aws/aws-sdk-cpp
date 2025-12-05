@@ -119,18 +119,18 @@ class UpdateFindingAggregatorResult {
   ///@}
  private:
   Aws::String m_findingAggregatorArn;
-  bool m_findingAggregatorArnHasBeenSet = false;
 
   Aws::String m_findingAggregationRegion;
-  bool m_findingAggregationRegionHasBeenSet = false;
 
   Aws::String m_regionLinkingMode;
-  bool m_regionLinkingModeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_regions;
-  bool m_regionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_findingAggregatorArnHasBeenSet = false;
+  bool m_findingAggregationRegionHasBeenSet = false;
+  bool m_regionLinkingModeHasBeenSet = false;
+  bool m_regionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

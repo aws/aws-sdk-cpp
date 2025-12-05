@@ -68,9 +68,9 @@ class DisassociateMembersResult {
   ///@}
  private:
   Aws::Vector<UnprocessedAccount> m_unprocessedAccounts;
-  bool m_unprocessedAccountsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_unprocessedAccountsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

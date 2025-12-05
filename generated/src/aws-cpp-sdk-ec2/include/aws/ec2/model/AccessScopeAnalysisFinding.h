@@ -114,15 +114,15 @@ class AccessScopeAnalysisFinding {
   ///@}
  private:
   Aws::String m_networkInsightsAccessScopeAnalysisId;
-  bool m_networkInsightsAccessScopeAnalysisIdHasBeenSet = false;
 
   Aws::String m_networkInsightsAccessScopeId;
-  bool m_networkInsightsAccessScopeIdHasBeenSet = false;
 
   Aws::String m_findingId;
-  bool m_findingIdHasBeenSet = false;
 
   Aws::Vector<PathComponent> m_findingComponents;
+  bool m_networkInsightsAccessScopeAnalysisIdHasBeenSet = false;
+  bool m_networkInsightsAccessScopeIdHasBeenSet = false;
+  bool m_findingIdHasBeenSet = false;
   bool m_findingComponentsHasBeenSet = false;
 };
 

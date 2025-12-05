@@ -70,9 +70,9 @@ class GetOperationRequest : public ServiceDiscoveryRequest {
   ///@}
  private:
   Aws::String m_operationId;
-  bool m_operationIdHasBeenSet = false;
 
   Aws::String m_ownerAccount;
+  bool m_operationIdHasBeenSet = false;
   bool m_ownerAccountHasBeenSet = false;
 };
 

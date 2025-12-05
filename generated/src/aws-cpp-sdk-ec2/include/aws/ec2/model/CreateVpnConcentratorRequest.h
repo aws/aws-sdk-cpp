@@ -113,15 +113,15 @@ class CreateVpnConcentratorRequest : public EC2Request {
   ///@}
  private:
   VpnConcentratorType m_type{VpnConcentratorType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_transitGatewayId;
-  bool m_transitGatewayIdHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_typeHasBeenSet = false;
+  bool m_transitGatewayIdHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

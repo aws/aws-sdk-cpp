@@ -185,27 +185,27 @@ class AutocompleteResultItem {
   ///@}
  private:
   Aws::String m_placeId;
-  bool m_placeIdHasBeenSet = false;
 
   PlaceType m_placeType{PlaceType::NOT_SET};
-  bool m_placeTypeHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Address m_address;
-  bool m_addressHasBeenSet = false;
 
   long long m_distance{0};
-  bool m_distanceHasBeenSet = false;
 
   Aws::String m_language;
-  bool m_languageHasBeenSet = false;
 
   Aws::String m_politicalView;
-  bool m_politicalViewHasBeenSet = false;
 
   AutocompleteHighlights m_highlights;
+  bool m_placeIdHasBeenSet = false;
+  bool m_placeTypeHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_addressHasBeenSet = false;
+  bool m_distanceHasBeenSet = false;
+  bool m_languageHasBeenSet = false;
+  bool m_politicalViewHasBeenSet = false;
   bool m_highlightsHasBeenSet = false;
 };
 

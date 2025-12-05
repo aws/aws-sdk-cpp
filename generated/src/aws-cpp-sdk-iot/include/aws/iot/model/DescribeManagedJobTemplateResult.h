@@ -179,27 +179,27 @@ class DescribeManagedJobTemplateResult {
   ///@}
  private:
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   Aws::String m_templateArn;
-  bool m_templateArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_templateVersion;
-  bool m_templateVersionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_environments;
-  bool m_environmentsHasBeenSet = false;
 
   Aws::Vector<DocumentParameter> m_documentParameters;
-  bool m_documentParametersHasBeenSet = false;
 
   Aws::String m_document;
-  bool m_documentHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_templateNameHasBeenSet = false;
+  bool m_templateArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_templateVersionHasBeenSet = false;
+  bool m_environmentsHasBeenSet = false;
+  bool m_documentParametersHasBeenSet = false;
+  bool m_documentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

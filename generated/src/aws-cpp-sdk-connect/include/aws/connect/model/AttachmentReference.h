@@ -104,15 +104,15 @@ class AttachmentReference {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   ReferenceStatus m_status{ReferenceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_arn;
+  bool m_nameHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_arnHasBeenSet = false;
 };
 

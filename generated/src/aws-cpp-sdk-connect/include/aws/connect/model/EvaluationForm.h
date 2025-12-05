@@ -358,54 +358,54 @@ class EvaluationForm {
   ///@}
  private:
   Aws::String m_evaluationFormId;
-  bool m_evaluationFormIdHasBeenSet = false;
 
   int m_evaluationFormVersion{0};
-  bool m_evaluationFormVersionHasBeenSet = false;
 
   bool m_locked{false};
-  bool m_lockedHasBeenSet = false;
 
   Aws::String m_evaluationFormArn;
-  bool m_evaluationFormArnHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   EvaluationFormVersionStatus m_status{EvaluationFormVersionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<EvaluationFormItem> m_items;
-  bool m_itemsHasBeenSet = false;
 
   EvaluationFormScoringStrategy m_scoringStrategy;
-  bool m_scoringStrategyHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_lastModifiedBy;
-  bool m_lastModifiedByHasBeenSet = false;
 
   EvaluationFormAutoEvaluationConfiguration m_autoEvaluationConfiguration;
-  bool m_autoEvaluationConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   EvaluationFormTargetConfiguration m_targetConfiguration;
-  bool m_targetConfigurationHasBeenSet = false;
 
   EvaluationFormLanguageConfiguration m_languageConfiguration;
+  bool m_evaluationFormIdHasBeenSet = false;
+  bool m_evaluationFormVersionHasBeenSet = false;
+  bool m_lockedHasBeenSet = false;
+  bool m_evaluationFormArnHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_itemsHasBeenSet = false;
+  bool m_scoringStrategyHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_lastModifiedByHasBeenSet = false;
+  bool m_autoEvaluationConfigurationHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_targetConfigurationHasBeenSet = false;
   bool m_languageConfigurationHasBeenSet = false;
 };
 

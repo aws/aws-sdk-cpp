@@ -85,12 +85,12 @@ class ModifyWorkspacePropertiesRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   WorkspaceProperties m_workspaceProperties;
-  bool m_workspacePropertiesHasBeenSet = false;
 
   DataReplication m_dataReplication{DataReplication::NOT_SET};
+  bool m_workspaceIdHasBeenSet = false;
+  bool m_workspacePropertiesHasBeenSet = false;
   bool m_dataReplicationHasBeenSet = false;
 };
 

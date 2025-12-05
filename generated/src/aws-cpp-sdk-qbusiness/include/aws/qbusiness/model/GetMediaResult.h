@@ -77,12 +77,12 @@ class GetMediaResult {
   ///@}
  private:
   Aws::Utils::ByteBuffer m_mediaBytes{};
-  bool m_mediaBytesHasBeenSet = false;
 
   Aws::String m_mediaMimeType;
-  bool m_mediaMimeTypeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_mediaBytesHasBeenSet = false;
+  bool m_mediaMimeTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class InvalidCrossAccountRoleException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   InvalidCrossAccountRoleErrorCode m_errorCode{InvalidCrossAccountRoleErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   bool m_canRetry{false};
+  bool m_messageHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_canRetryHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class UpdateBranchResult {
   ///@}
  private:
   Branch m_branch;
-  bool m_branchHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_branchHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

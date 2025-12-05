@@ -86,9 +86,9 @@ class UntagResourcesRequest : public ResourceGroupsTaggingAPIRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_resourceARNList;
-  bool m_resourceARNListHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagKeys;
+  bool m_resourceARNListHasBeenSet = false;
   bool m_tagKeysHasBeenSet = false;
 };
 

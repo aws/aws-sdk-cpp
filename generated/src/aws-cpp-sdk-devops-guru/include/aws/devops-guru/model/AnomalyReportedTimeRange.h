@@ -71,9 +71,9 @@ class AnomalyReportedTimeRange {
   ///@}
  private:
   Aws::Utils::DateTime m_openTime{};
-  bool m_openTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_closeTime{};
+  bool m_openTimeHasBeenSet = false;
   bool m_closeTimeHasBeenSet = false;
 };
 

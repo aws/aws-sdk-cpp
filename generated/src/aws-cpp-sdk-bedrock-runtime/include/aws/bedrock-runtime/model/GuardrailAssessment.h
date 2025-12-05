@@ -183,27 +183,27 @@ class GuardrailAssessment {
   ///@}
  private:
   GuardrailTopicPolicyAssessment m_topicPolicy;
-  bool m_topicPolicyHasBeenSet = false;
 
   GuardrailContentPolicyAssessment m_contentPolicy;
-  bool m_contentPolicyHasBeenSet = false;
 
   GuardrailWordPolicyAssessment m_wordPolicy;
-  bool m_wordPolicyHasBeenSet = false;
 
   GuardrailSensitiveInformationPolicyAssessment m_sensitiveInformationPolicy;
-  bool m_sensitiveInformationPolicyHasBeenSet = false;
 
   GuardrailContextualGroundingPolicyAssessment m_contextualGroundingPolicy;
-  bool m_contextualGroundingPolicyHasBeenSet = false;
 
   GuardrailAutomatedReasoningPolicyAssessment m_automatedReasoningPolicy;
-  bool m_automatedReasoningPolicyHasBeenSet = false;
 
   GuardrailInvocationMetrics m_invocationMetrics;
-  bool m_invocationMetricsHasBeenSet = false;
 
   AppliedGuardrailDetails m_appliedGuardrailDetails;
+  bool m_topicPolicyHasBeenSet = false;
+  bool m_contentPolicyHasBeenSet = false;
+  bool m_wordPolicyHasBeenSet = false;
+  bool m_sensitiveInformationPolicyHasBeenSet = false;
+  bool m_contextualGroundingPolicyHasBeenSet = false;
+  bool m_automatedReasoningPolicyHasBeenSet = false;
+  bool m_invocationMetricsHasBeenSet = false;
   bool m_appliedGuardrailDetailsHasBeenSet = false;
 };
 

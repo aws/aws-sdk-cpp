@@ -60,9 +60,9 @@ class ModifyAddressAttributeResponse {
   ///@}
  private:
   AddressAttribute m_address;
-  bool m_addressHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_addressHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

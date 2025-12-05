@@ -86,12 +86,12 @@ class VerifyOTPMessageRequestParameters {
   ///@}
  private:
   Aws::String m_destinationIdentity;
-  bool m_destinationIdentityHasBeenSet = false;
 
   Aws::String m_otp;
-  bool m_otpHasBeenSet = false;
 
   Aws::String m_referenceId;
+  bool m_destinationIdentityHasBeenSet = false;
+  bool m_otpHasBeenSet = false;
   bool m_referenceIdHasBeenSet = false;
 };
 

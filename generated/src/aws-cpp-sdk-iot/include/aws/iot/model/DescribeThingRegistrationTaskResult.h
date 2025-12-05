@@ -240,42 +240,42 @@ class DescribeThingRegistrationTaskResult {
   ///@}
  private:
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
-  bool m_lastModifiedDateHasBeenSet = false;
 
   Aws::String m_templateBody;
-  bool m_templateBodyHasBeenSet = false;
 
   Aws::String m_inputFileBucket;
-  bool m_inputFileBucketHasBeenSet = false;
 
   Aws::String m_inputFileKey;
-  bool m_inputFileKeyHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   int m_successCount{0};
-  bool m_successCountHasBeenSet = false;
 
   int m_failureCount{0};
-  bool m_failureCountHasBeenSet = false;
 
   int m_percentageProgress{0};
-  bool m_percentageProgressHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_taskIdHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_templateBodyHasBeenSet = false;
+  bool m_inputFileBucketHasBeenSet = false;
+  bool m_inputFileKeyHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_successCountHasBeenSet = false;
+  bool m_failureCountHasBeenSet = false;
+  bool m_percentageProgressHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

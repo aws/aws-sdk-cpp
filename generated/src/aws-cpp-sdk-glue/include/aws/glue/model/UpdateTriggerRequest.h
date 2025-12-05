@@ -68,9 +68,9 @@ class UpdateTriggerRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   TriggerUpdate m_triggerUpdate;
+  bool m_nameHasBeenSet = false;
   bool m_triggerUpdateHasBeenSet = false;
 };
 

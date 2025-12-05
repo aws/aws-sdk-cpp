@@ -138,21 +138,21 @@ class NewBGPPeer {
   ///@}
  private:
   int m_asn{0};
-  bool m_asnHasBeenSet = false;
 
   long long m_asnLong{0};
-  bool m_asnLongHasBeenSet = false;
 
   Aws::String m_authKey;
-  bool m_authKeyHasBeenSet = false;
 
   AddressFamily m_addressFamily{AddressFamily::NOT_SET};
-  bool m_addressFamilyHasBeenSet = false;
 
   Aws::String m_amazonAddress;
-  bool m_amazonAddressHasBeenSet = false;
 
   Aws::String m_customerAddress;
+  bool m_asnHasBeenSet = false;
+  bool m_asnLongHasBeenSet = false;
+  bool m_authKeyHasBeenSet = false;
+  bool m_addressFamilyHasBeenSet = false;
+  bool m_amazonAddressHasBeenSet = false;
   bool m_customerAddressHasBeenSet = false;
 };
 

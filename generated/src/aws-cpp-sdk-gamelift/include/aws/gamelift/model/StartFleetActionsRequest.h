@@ -94,12 +94,12 @@ class StartFleetActionsRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::Vector<FleetAction> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   Aws::String m_location;
+  bool m_fleetIdHasBeenSet = false;
+  bool m_actionsHasBeenSet = false;
   bool m_locationHasBeenSet = false;
 };
 

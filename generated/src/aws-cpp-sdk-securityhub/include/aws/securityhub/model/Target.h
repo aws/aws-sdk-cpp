@@ -88,12 +88,12 @@ class Target {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_organizationalUnitId;
-  bool m_organizationalUnitIdHasBeenSet = false;
 
   Aws::String m_rootId;
+  bool m_accountIdHasBeenSet = false;
+  bool m_organizationalUnitIdHasBeenSet = false;
   bool m_rootIdHasBeenSet = false;
 };
 

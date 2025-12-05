@@ -113,15 +113,15 @@ class ListAliasesRequest : public GameLiftRequest {
   ///@}
  private:
   RoutingStrategyType m_routingStrategyType{RoutingStrategyType::NOT_SET};
-  bool m_routingStrategyTypeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_routingStrategyTypeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

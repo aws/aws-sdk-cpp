@@ -66,9 +66,9 @@ class DomainUnitTarget {
   ///@}
  private:
   Aws::String m_domainUnitId;
-  bool m_domainUnitIdHasBeenSet = false;
 
   bool m_includeChildDomainUnits{false};
+  bool m_domainUnitIdHasBeenSet = false;
   bool m_includeChildDomainUnitsHasBeenSet = false;
 };
 

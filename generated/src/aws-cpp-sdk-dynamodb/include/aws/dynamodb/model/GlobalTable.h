@@ -76,9 +76,9 @@ class GlobalTable {
   ///@}
  private:
   Aws::String m_globalTableName;
-  bool m_globalTableNameHasBeenSet = false;
 
   Aws::Vector<Replica> m_replicationGroup;
+  bool m_globalTableNameHasBeenSet = false;
   bool m_replicationGroupHasBeenSet = false;
 };
 

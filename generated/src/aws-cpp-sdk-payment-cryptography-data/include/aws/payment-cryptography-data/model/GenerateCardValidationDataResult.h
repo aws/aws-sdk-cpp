@@ -99,15 +99,15 @@ class GenerateCardValidationDataResult {
   ///@}
  private:
   Aws::String m_keyArn;
-  bool m_keyArnHasBeenSet = false;
 
   Aws::String m_keyCheckValue;
-  bool m_keyCheckValueHasBeenSet = false;
 
   Aws::String m_validationData;
-  bool m_validationDataHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_keyArnHasBeenSet = false;
+  bool m_keyCheckValueHasBeenSet = false;
+  bool m_validationDataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

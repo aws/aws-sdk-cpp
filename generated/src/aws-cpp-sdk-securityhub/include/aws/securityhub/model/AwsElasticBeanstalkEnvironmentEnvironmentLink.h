@@ -69,9 +69,9 @@ class AwsElasticBeanstalkEnvironmentEnvironmentLink {
   ///@}
  private:
   Aws::String m_environmentName;
-  bool m_environmentNameHasBeenSet = false;
 
   Aws::String m_linkName;
+  bool m_environmentNameHasBeenSet = false;
   bool m_linkNameHasBeenSet = false;
 };
 

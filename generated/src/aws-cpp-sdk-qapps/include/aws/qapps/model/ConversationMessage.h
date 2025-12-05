@@ -68,9 +68,9 @@ class ConversationMessage {
   ///@}
  private:
   Aws::String m_body;
-  bool m_bodyHasBeenSet = false;
 
   Sender m_type{Sender::NOT_SET};
+  bool m_bodyHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

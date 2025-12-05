@@ -77,9 +77,9 @@ class UpdateFPorts {
   ///@}
  private:
   Positioning m_positioning;
-  bool m_positioningHasBeenSet = false;
 
   Aws::Vector<ApplicationConfig> m_applications;
+  bool m_positioningHasBeenSet = false;
   bool m_applicationsHasBeenSet = false;
 };
 

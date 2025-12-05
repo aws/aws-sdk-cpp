@@ -188,27 +188,27 @@ class CreateRuleRequest : public VPCLatticeRequest {
   ///@}
  private:
   Aws::String m_serviceIdentifier;
-  bool m_serviceIdentifierHasBeenSet = false;
 
   Aws::String m_listenerIdentifier;
-  bool m_listenerIdentifierHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   RuleMatch m_match;
-  bool m_matchHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   RuleAction m_action;
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_serviceIdentifierHasBeenSet = false;
+  bool m_listenerIdentifierHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_matchHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

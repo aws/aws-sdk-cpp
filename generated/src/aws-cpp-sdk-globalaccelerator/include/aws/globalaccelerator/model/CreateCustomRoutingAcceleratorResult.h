@@ -61,9 +61,9 @@ class CreateCustomRoutingAcceleratorResult {
   ///@}
  private:
   CustomRoutingAccelerator m_accelerator;
-  bool m_acceleratorHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_acceleratorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

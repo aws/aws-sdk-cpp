@@ -75,9 +75,9 @@ class AutomationStream {
   ///@}
  private:
   Aws::String m_streamEndpoint;
-  bool m_streamEndpointHasBeenSet = false;
 
   AutomationStreamStatus m_streamStatus{AutomationStreamStatus::NOT_SET};
+  bool m_streamEndpointHasBeenSet = false;
   bool m_streamStatusHasBeenSet = false;
 };
 

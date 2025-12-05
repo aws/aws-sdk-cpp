@@ -190,27 +190,27 @@ class TaskDetails {
   ///@}
  private:
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_websiteUrl;
-  bool m_websiteUrlHasBeenSet = false;
 
   Aws::String m_logoUrl;
-  bool m_logoUrlHasBeenSet = false;
 
   PrimarySolutionType m_primarySolutionType{PrimarySolutionType::NOT_SET};
-  bool m_primarySolutionTypeHasBeenSet = false;
 
   Aws::Vector<IndustrySegment> m_industrySegments;
-  bool m_industrySegmentsHasBeenSet = false;
 
   Aws::String m_translationSourceLocale;
-  bool m_translationSourceLocaleHasBeenSet = false;
 
   Aws::Vector<LocalizedContent> m_localizedContents;
+  bool m_displayNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_websiteUrlHasBeenSet = false;
+  bool m_logoUrlHasBeenSet = false;
+  bool m_primarySolutionTypeHasBeenSet = false;
+  bool m_industrySegmentsHasBeenSet = false;
+  bool m_translationSourceLocaleHasBeenSet = false;
   bool m_localizedContentsHasBeenSet = false;
 };
 

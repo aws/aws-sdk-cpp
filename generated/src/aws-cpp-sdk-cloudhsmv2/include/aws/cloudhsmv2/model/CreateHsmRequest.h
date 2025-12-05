@@ -90,12 +90,12 @@ class CreateHsmRequest : public CloudHSMV2Request {
   ///@}
  private:
   Aws::String m_clusterId;
-  bool m_clusterIdHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_ipAddress;
+  bool m_clusterIdHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
   bool m_ipAddressHasBeenSet = false;
 };
 

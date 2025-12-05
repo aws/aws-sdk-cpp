@@ -459,63 +459,63 @@ class ConfigurationItem {
   ///@}
  private:
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_configurationItemCaptureTime{};
-  bool m_configurationItemCaptureTimeHasBeenSet = false;
 
   ConfigurationItemStatus m_configurationItemStatus{ConfigurationItemStatus::NOT_SET};
-  bool m_configurationItemStatusHasBeenSet = false;
 
   Aws::String m_configurationStateId;
-  bool m_configurationStateIdHasBeenSet = false;
 
   Aws::String m_configurationItemMD5Hash;
-  bool m_configurationItemMD5HashHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_resourceName;
-  bool m_resourceNameHasBeenSet = false;
 
   Aws::String m_awsRegion;
-  bool m_awsRegionHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::Utils::DateTime m_resourceCreationTime{};
-  bool m_resourceCreationTimeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_relatedEvents;
-  bool m_relatedEventsHasBeenSet = false;
 
   Aws::Vector<Relationship> m_relationships;
-  bool m_relationshipsHasBeenSet = false;
 
   Aws::String m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_supplementaryConfiguration;
-  bool m_supplementaryConfigurationHasBeenSet = false;
 
   RecordingFrequency m_recordingFrequency{RecordingFrequency::NOT_SET};
-  bool m_recordingFrequencyHasBeenSet = false;
 
   Aws::Utils::DateTime m_configurationItemDeliveryTime{};
+  bool m_versionHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_configurationItemCaptureTimeHasBeenSet = false;
+  bool m_configurationItemStatusHasBeenSet = false;
+  bool m_configurationStateIdHasBeenSet = false;
+  bool m_configurationItemMD5HashHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_resourceNameHasBeenSet = false;
+  bool m_awsRegionHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_resourceCreationTimeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_relatedEventsHasBeenSet = false;
+  bool m_relationshipsHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_supplementaryConfigurationHasBeenSet = false;
+  bool m_recordingFrequencyHasBeenSet = false;
   bool m_configurationItemDeliveryTimeHasBeenSet = false;
 };
 

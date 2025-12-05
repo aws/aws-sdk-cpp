@@ -166,27 +166,27 @@ class DescribeDiscovererResult {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_discovererArn;
-  bool m_discovererArnHasBeenSet = false;
 
   Aws::String m_discovererId;
-  bool m_discovererIdHasBeenSet = false;
 
   Aws::String m_sourceArn;
-  bool m_sourceArnHasBeenSet = false;
 
   DiscovererState m_state{DiscovererState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   bool m_crossAccount{false};
-  bool m_crossAccountHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_descriptionHasBeenSet = false;
+  bool m_discovererArnHasBeenSet = false;
+  bool m_discovererIdHasBeenSet = false;
+  bool m_sourceArnHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_crossAccountHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -157,24 +157,24 @@ class VirtualGatewayHealthCheckPolicy {
   ///@}
  private:
   int m_healthyThreshold{0};
-  bool m_healthyThresholdHasBeenSet = false;
 
   long long m_intervalMillis{0};
-  bool m_intervalMillisHasBeenSet = false;
 
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   VirtualGatewayPortProtocol m_protocol{VirtualGatewayPortProtocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   long long m_timeoutMillis{0};
-  bool m_timeoutMillisHasBeenSet = false;
 
   int m_unhealthyThreshold{0};
+  bool m_healthyThresholdHasBeenSet = false;
+  bool m_intervalMillisHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_timeoutMillisHasBeenSet = false;
   bool m_unhealthyThresholdHasBeenSet = false;
 };
 

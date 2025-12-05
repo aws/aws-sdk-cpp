@@ -125,18 +125,18 @@ class CreateEndpointRequest : public S3OutpostsRequest {
   ///@}
  private:
   Aws::String m_outpostId;
-  bool m_outpostIdHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_securityGroupId;
-  bool m_securityGroupIdHasBeenSet = false;
 
   EndpointAccessType m_accessType{EndpointAccessType::NOT_SET};
-  bool m_accessTypeHasBeenSet = false;
 
   Aws::String m_customerOwnedIpv4Pool;
+  bool m_outpostIdHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_securityGroupIdHasBeenSet = false;
+  bool m_accessTypeHasBeenSet = false;
   bool m_customerOwnedIpv4PoolHasBeenSet = false;
 };
 

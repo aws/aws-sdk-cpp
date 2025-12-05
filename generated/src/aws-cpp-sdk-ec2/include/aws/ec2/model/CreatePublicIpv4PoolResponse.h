@@ -60,9 +60,9 @@ class CreatePublicIpv4PoolResponse {
   ///@}
  private:
   Aws::String m_poolId;
-  bool m_poolIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_poolIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

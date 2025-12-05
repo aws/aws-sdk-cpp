@@ -212,33 +212,33 @@ class GetMetadataGenerationRunResult {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_owningProjectId;
-  bool m_owningProjectIdHasBeenSet = false;
 
   MetadataGenerationRunStatus m_status{MetadataGenerationRunStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   MetadataGenerationRunTarget m_target;
-  bool m_targetHasBeenSet = false;
 
   Aws::Vector<MetadataGenerationRunTypeStat> m_typeStats;
-  bool m_typeStatsHasBeenSet = false;
 
   Aws::Vector<MetadataGenerationRunType> m_types;
-  bool m_typesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_owningProjectIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
+  bool m_typeStatsHasBeenSet = false;
+  bool m_typesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

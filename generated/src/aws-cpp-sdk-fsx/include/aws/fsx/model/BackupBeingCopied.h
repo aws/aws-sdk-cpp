@@ -65,9 +65,9 @@ class BackupBeingCopied {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_backupId;
+  bool m_messageHasBeenSet = false;
   bool m_backupIdHasBeenSet = false;
 };
 

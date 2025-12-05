@@ -63,9 +63,9 @@ class Gpu {
   ///@}
  private:
   int m_gpuCount{0};
-  bool m_gpuCountHasBeenSet = false;
 
   int m_gpuMemorySizeInMiB{0};
+  bool m_gpuCountHasBeenSet = false;
   bool m_gpuMemorySizeInMiBHasBeenSet = false;
 };
 

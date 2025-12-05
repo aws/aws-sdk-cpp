@@ -72,9 +72,9 @@ class GetScanRequest : public CodeGuruSecurityRequest {
   ///@}
  private:
   Aws::String m_scanName;
-  bool m_scanNameHasBeenSet = false;
 
   Aws::String m_runId;
+  bool m_scanNameHasBeenSet = false;
   bool m_runIdHasBeenSet = false;
 };
 

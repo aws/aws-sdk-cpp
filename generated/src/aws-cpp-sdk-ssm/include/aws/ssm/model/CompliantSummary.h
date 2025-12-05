@@ -67,9 +67,9 @@ class CompliantSummary {
   ///@}
  private:
   int m_compliantCount{0};
-  bool m_compliantCountHasBeenSet = false;
 
   SeveritySummary m_severitySummary;
+  bool m_compliantCountHasBeenSet = false;
   bool m_severitySummaryHasBeenSet = false;
 };
 

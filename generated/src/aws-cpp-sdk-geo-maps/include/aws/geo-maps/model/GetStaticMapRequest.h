@@ -470,63 +470,63 @@ class GetStaticMapRequest : public GeoMapsRequest {
   ///@}
  private:
   Aws::String m_boundingBox;
-  bool m_boundingBoxHasBeenSet = false;
 
   Aws::String m_boundedPositions;
-  bool m_boundedPositionsHasBeenSet = false;
 
   Aws::String m_center;
-  bool m_centerHasBeenSet = false;
 
   ColorScheme m_colorScheme{ColorScheme::NOT_SET};
-  bool m_colorSchemeHasBeenSet = false;
 
   Aws::String m_compactOverlay;
-  bool m_compactOverlayHasBeenSet = false;
 
   bool m_cropLabels{false};
-  bool m_cropLabelsHasBeenSet = false;
 
   Aws::String m_geoJsonOverlay;
-  bool m_geoJsonOverlayHasBeenSet = false;
 
   int m_height{0};
-  bool m_heightHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   LabelSize m_labelSize{LabelSize::NOT_SET};
-  bool m_labelSizeHasBeenSet = false;
 
   Aws::String m_language;
-  bool m_languageHasBeenSet = false;
 
   int m_padding{0};
-  bool m_paddingHasBeenSet = false;
 
   Aws::String m_politicalView;
-  bool m_politicalViewHasBeenSet = false;
 
   MapFeatureMode m_pointsOfInterests{MapFeatureMode::NOT_SET};
-  bool m_pointsOfInterestsHasBeenSet = false;
 
   long long m_radius{0};
-  bool m_radiusHasBeenSet = false;
 
   Aws::String m_fileName;
-  bool m_fileNameHasBeenSet = false;
 
   ScaleBarUnit m_scaleBarUnit{ScaleBarUnit::NOT_SET};
-  bool m_scaleBarUnitHasBeenSet = false;
 
   StaticMapStyle m_style{StaticMapStyle::NOT_SET};
-  bool m_styleHasBeenSet = false;
 
   int m_width{0};
-  bool m_widthHasBeenSet = false;
 
   double m_zoom{0.0};
+  bool m_boundingBoxHasBeenSet = false;
+  bool m_boundedPositionsHasBeenSet = false;
+  bool m_centerHasBeenSet = false;
+  bool m_colorSchemeHasBeenSet = false;
+  bool m_compactOverlayHasBeenSet = false;
+  bool m_cropLabelsHasBeenSet = false;
+  bool m_geoJsonOverlayHasBeenSet = false;
+  bool m_heightHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
+  bool m_labelSizeHasBeenSet = false;
+  bool m_languageHasBeenSet = false;
+  bool m_paddingHasBeenSet = false;
+  bool m_politicalViewHasBeenSet = false;
+  bool m_pointsOfInterestsHasBeenSet = false;
+  bool m_radiusHasBeenSet = false;
+  bool m_fileNameHasBeenSet = false;
+  bool m_scaleBarUnitHasBeenSet = false;
+  bool m_styleHasBeenSet = false;
+  bool m_widthHasBeenSet = false;
   bool m_zoomHasBeenSet = false;
 };
 

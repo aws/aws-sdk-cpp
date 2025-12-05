@@ -80,9 +80,9 @@ class Change {
   ///@}
  private:
   ChangeAction m_action{ChangeAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   ResourceRecordSet m_resourceRecordSet;
+  bool m_actionHasBeenSet = false;
   bool m_resourceRecordSetHasBeenSet = false;
 };
 

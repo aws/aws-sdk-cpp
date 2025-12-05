@@ -256,36 +256,36 @@ class WorkflowExecutionContinuedAsNewEventAttributes {
   ///@}
  private:
   Aws::String m_input;
-  bool m_inputHasBeenSet = false;
 
   long long m_decisionTaskCompletedEventId{0};
-  bool m_decisionTaskCompletedEventIdHasBeenSet = false;
 
   Aws::String m_newExecutionRunId;
-  bool m_newExecutionRunIdHasBeenSet = false;
 
   Aws::String m_executionStartToCloseTimeout;
-  bool m_executionStartToCloseTimeoutHasBeenSet = false;
 
   TaskList m_taskList;
-  bool m_taskListHasBeenSet = false;
 
   Aws::String m_taskPriority;
-  bool m_taskPriorityHasBeenSet = false;
 
   Aws::String m_taskStartToCloseTimeout;
-  bool m_taskStartToCloseTimeoutHasBeenSet = false;
 
   ChildPolicy m_childPolicy{ChildPolicy::NOT_SET};
-  bool m_childPolicyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagList;
-  bool m_tagListHasBeenSet = false;
 
   WorkflowType m_workflowType;
-  bool m_workflowTypeHasBeenSet = false;
 
   Aws::String m_lambdaRole;
+  bool m_inputHasBeenSet = false;
+  bool m_decisionTaskCompletedEventIdHasBeenSet = false;
+  bool m_newExecutionRunIdHasBeenSet = false;
+  bool m_executionStartToCloseTimeoutHasBeenSet = false;
+  bool m_taskListHasBeenSet = false;
+  bool m_taskPriorityHasBeenSet = false;
+  bool m_taskStartToCloseTimeoutHasBeenSet = false;
+  bool m_childPolicyHasBeenSet = false;
+  bool m_tagListHasBeenSet = false;
+  bool m_workflowTypeHasBeenSet = false;
   bool m_lambdaRoleHasBeenSet = false;
 };
 

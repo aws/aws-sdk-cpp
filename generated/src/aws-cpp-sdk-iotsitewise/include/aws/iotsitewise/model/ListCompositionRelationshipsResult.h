@@ -87,12 +87,12 @@ class ListCompositionRelationshipsResult {
   ///@}
  private:
   Aws::Vector<CompositionRelationshipSummary> m_compositionRelationshipSummaries;
-  bool m_compositionRelationshipSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_compositionRelationshipSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

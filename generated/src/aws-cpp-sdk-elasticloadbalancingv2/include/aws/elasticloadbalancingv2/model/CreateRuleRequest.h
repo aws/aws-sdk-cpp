@@ -170,21 +170,21 @@ class CreateRuleRequest : public ElasticLoadBalancingv2Request {
   ///@}
  private:
   Aws::String m_listenerArn;
-  bool m_listenerArnHasBeenSet = false;
 
   Aws::Vector<RuleCondition> m_conditions;
-  bool m_conditionsHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   Aws::Vector<Action> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<RuleTransform> m_transforms;
+  bool m_listenerArnHasBeenSet = false;
+  bool m_conditionsHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_actionsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_transformsHasBeenSet = false;
 };
 

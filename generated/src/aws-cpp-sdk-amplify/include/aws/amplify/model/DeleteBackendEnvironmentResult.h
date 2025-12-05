@@ -66,9 +66,9 @@ class DeleteBackendEnvironmentResult {
   ///@}
  private:
   BackendEnvironment m_backendEnvironment;
-  bool m_backendEnvironmentHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_backendEnvironmentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

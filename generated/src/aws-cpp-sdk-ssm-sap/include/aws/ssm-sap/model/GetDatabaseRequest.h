@@ -101,15 +101,15 @@ class GetDatabaseRequest : public SsmSapRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_componentId;
-  bool m_componentIdHasBeenSet = false;
 
   Aws::String m_databaseId;
-  bool m_databaseIdHasBeenSet = false;
 
   Aws::String m_databaseArn;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_componentIdHasBeenSet = false;
+  bool m_databaseIdHasBeenSet = false;
   bool m_databaseArnHasBeenSet = false;
 };
 

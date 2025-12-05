@@ -68,9 +68,9 @@ class CreateAwsLogSourceResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_failed;
-  bool m_failedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_failedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

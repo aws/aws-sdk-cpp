@@ -60,9 +60,9 @@ class GetCustomActionResult {
   ///@}
  private:
   CustomAction m_customAction;
-  bool m_customActionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_customActionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

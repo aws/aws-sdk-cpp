@@ -111,15 +111,15 @@ class UnsuccessfulFaceAssociation {
   ///@}
  private:
   Aws::String m_faceId;
-  bool m_faceIdHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   double m_confidence{0.0};
-  bool m_confidenceHasBeenSet = false;
 
   Aws::Vector<UnsuccessfulFaceAssociationReason> m_reasons;
+  bool m_faceIdHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_confidenceHasBeenSet = false;
   bool m_reasonsHasBeenSet = false;
 };
 

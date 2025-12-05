@@ -138,21 +138,21 @@ class Item {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ItemType m_type{ItemType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModified{};
-  bool m_lastModifiedHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   long long m_contentLength{0};
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
+  bool m_lastModifiedHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
   bool m_contentLengthHasBeenSet = false;
 };
 

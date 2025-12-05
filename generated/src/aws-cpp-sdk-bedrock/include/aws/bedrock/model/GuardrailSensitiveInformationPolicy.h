@@ -83,9 +83,9 @@ class GuardrailSensitiveInformationPolicy {
   ///@}
  private:
   Aws::Vector<GuardrailPiiEntity> m_piiEntities;
-  bool m_piiEntitiesHasBeenSet = false;
 
   Aws::Vector<GuardrailRegex> m_regexes;
+  bool m_piiEntitiesHasBeenSet = false;
   bool m_regexesHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class GetNamedQueryResult {
   ///@}
  private:
   NamedQuery m_namedQuery;
-  bool m_namedQueryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_namedQueryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

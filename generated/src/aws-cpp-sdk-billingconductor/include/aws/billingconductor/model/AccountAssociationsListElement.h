@@ -104,15 +104,15 @@ class AccountAssociationsListElement {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_billingGroupArn;
-  bool m_billingGroupArnHasBeenSet = false;
 
   Aws::String m_accountName;
-  bool m_accountNameHasBeenSet = false;
 
   Aws::String m_accountEmail;
+  bool m_accountIdHasBeenSet = false;
+  bool m_billingGroupArnHasBeenSet = false;
+  bool m_accountNameHasBeenSet = false;
   bool m_accountEmailHasBeenSet = false;
 };
 

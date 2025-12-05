@@ -156,21 +156,21 @@ class UpdateGameSessionRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_gameSessionId;
-  bool m_gameSessionIdHasBeenSet = false;
 
   int m_maximumPlayerSessionCount{0};
-  bool m_maximumPlayerSessionCountHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   PlayerSessionCreationPolicy m_playerSessionCreationPolicy{PlayerSessionCreationPolicy::NOT_SET};
-  bool m_playerSessionCreationPolicyHasBeenSet = false;
 
   ProtectionPolicy m_protectionPolicy{ProtectionPolicy::NOT_SET};
-  bool m_protectionPolicyHasBeenSet = false;
 
   Aws::Vector<GameProperty> m_gameProperties;
+  bool m_gameSessionIdHasBeenSet = false;
+  bool m_maximumPlayerSessionCountHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_playerSessionCreationPolicyHasBeenSet = false;
+  bool m_protectionPolicyHasBeenSet = false;
   bool m_gamePropertiesHasBeenSet = false;
 };
 

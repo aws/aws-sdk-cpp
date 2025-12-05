@@ -94,9 +94,9 @@ class AnalysisRuleCriteria {
   ///@}
  private:
   Aws::Vector<Aws::String> m_accountIds;
-  bool m_accountIdsHasBeenSet = false;
 
   Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_resourceTags;
+  bool m_accountIdsHasBeenSet = false;
   bool m_resourceTagsHasBeenSet = false;
 };
 

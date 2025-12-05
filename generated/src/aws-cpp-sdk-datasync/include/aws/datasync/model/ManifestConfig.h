@@ -96,12 +96,12 @@ class ManifestConfig {
   ///@}
  private:
   ManifestAction m_action{ManifestAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   ManifestFormat m_format{ManifestFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   SourceManifestConfig m_source;
+  bool m_actionHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
   bool m_sourceHasBeenSet = false;
 };
 

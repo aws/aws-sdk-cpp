@@ -84,12 +84,12 @@ class GetImageBlockPublicAccessStateResponse {
   ///@}
  private:
   Aws::String m_imageBlockPublicAccessState;
-  bool m_imageBlockPublicAccessStateHasBeenSet = false;
 
   ManagedBy m_managedBy{ManagedBy::NOT_SET};
-  bool m_managedByHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_imageBlockPublicAccessStateHasBeenSet = false;
+  bool m_managedByHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

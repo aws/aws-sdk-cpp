@@ -68,9 +68,9 @@ class ResourceKey {
   ///@}
  private:
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resourceId;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_resourceIdHasBeenSet = false;
 };
 

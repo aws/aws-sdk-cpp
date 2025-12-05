@@ -154,24 +154,24 @@ class DescribeStateMachineAliasResult {
   ///@}
  private:
   Aws::String m_stateMachineAliasArn;
-  bool m_stateMachineAliasArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<RoutingConfigurationListItem> m_routingConfiguration;
-  bool m_routingConfigurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateDate{};
-  bool m_updateDateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_stateMachineAliasArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_routingConfigurationHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_updateDateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

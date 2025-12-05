@@ -68,9 +68,9 @@ class DataProductSummary {
   ///@}
  private:
   Aws::String m_productTitle;
-  bool m_productTitleHasBeenSet = false;
 
   DataProductVisibilityString m_visibility{DataProductVisibilityString::NOT_SET};
+  bool m_productTitleHasBeenSet = false;
   bool m_visibilityHasBeenSet = false;
 };
 

@@ -147,21 +147,21 @@ class ListThingsRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_attributeName;
-  bool m_attributeNameHasBeenSet = false;
 
   Aws::String m_attributeValue;
-  bool m_attributeValueHasBeenSet = false;
 
   Aws::String m_thingTypeName;
-  bool m_thingTypeNameHasBeenSet = false;
 
   bool m_usePrefixAttributeValue{false};
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_attributeNameHasBeenSet = false;
+  bool m_attributeValueHasBeenSet = false;
+  bool m_thingTypeNameHasBeenSet = false;
   bool m_usePrefixAttributeValueHasBeenSet = false;
 };
 

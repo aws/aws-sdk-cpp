@@ -139,18 +139,18 @@ class InsightEvent {
   ///@}
  private:
   Aws::String m_summary;
-  bool m_summaryHasBeenSet = false;
 
   Aws::Utils::DateTime m_eventTime{};
-  bool m_eventTimeHasBeenSet = false;
 
   RequestImpactStatistics m_clientRequestImpactStatistics;
-  bool m_clientRequestImpactStatisticsHasBeenSet = false;
 
   RequestImpactStatistics m_rootCauseServiceRequestImpactStatistics;
-  bool m_rootCauseServiceRequestImpactStatisticsHasBeenSet = false;
 
   Aws::Vector<AnomalousService> m_topAnomalousServices;
+  bool m_summaryHasBeenSet = false;
+  bool m_eventTimeHasBeenSet = false;
+  bool m_clientRequestImpactStatisticsHasBeenSet = false;
+  bool m_rootCauseServiceRequestImpactStatisticsHasBeenSet = false;
   bool m_topAnomalousServicesHasBeenSet = false;
 };
 

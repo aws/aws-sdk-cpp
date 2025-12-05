@@ -67,9 +67,9 @@ class ProxyRulePriority {
   ///@}
  private:
   Aws::String m_proxyRuleName;
-  bool m_proxyRuleNameHasBeenSet = false;
 
   int m_newPosition{0};
+  bool m_proxyRuleNameHasBeenSet = false;
   bool m_newPositionHasBeenSet = false;
 };
 

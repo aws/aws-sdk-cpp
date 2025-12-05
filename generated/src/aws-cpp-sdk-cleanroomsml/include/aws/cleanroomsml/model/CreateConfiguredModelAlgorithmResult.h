@@ -60,9 +60,9 @@ class CreateConfiguredModelAlgorithmResult {
   ///@}
  private:
   Aws::String m_configuredModelAlgorithmArn;
-  bool m_configuredModelAlgorithmArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_configuredModelAlgorithmArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class GetInvalidationForDistributionTenant2020_05_31Request : public CloudFrontR
   ///@}
  private:
   Aws::String m_distributionTenantId;
-  bool m_distributionTenantIdHasBeenSet = false;
 
   Aws::String m_id;
+  bool m_distributionTenantIdHasBeenSet = false;
   bool m_idHasBeenSet = false;
 };
 

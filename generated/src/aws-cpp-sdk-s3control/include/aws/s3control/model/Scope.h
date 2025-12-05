@@ -86,9 +86,9 @@ class Scope {
   ///@}
  private:
   Aws::Vector<Aws::String> m_prefixes;
-  bool m_prefixesHasBeenSet = false;
 
   Aws::Vector<ScopePermission> m_permissions;
+  bool m_prefixesHasBeenSet = false;
   bool m_permissionsHasBeenSet = false;
 };
 

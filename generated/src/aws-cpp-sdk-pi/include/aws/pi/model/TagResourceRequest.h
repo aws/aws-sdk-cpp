@@ -98,12 +98,12 @@ class TagResourceRequest : public PIRequest {
   ///@}
  private:
   ServiceType m_serviceType{ServiceType::NOT_SET};
-  bool m_serviceTypeHasBeenSet = false;
 
   Aws::String m_resourceARN;
-  bool m_resourceARNHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_serviceTypeHasBeenSet = false;
+  bool m_resourceARNHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class TemporalFilterSettings {
   ///@}
  private:
   TemporalFilterPostFilterSharpening m_postFilterSharpening{TemporalFilterPostFilterSharpening::NOT_SET};
-  bool m_postFilterSharpeningHasBeenSet = false;
 
   TemporalFilterStrength m_strength{TemporalFilterStrength::NOT_SET};
+  bool m_postFilterSharpeningHasBeenSet = false;
   bool m_strengthHasBeenSet = false;
 };
 

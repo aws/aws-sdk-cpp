@@ -87,12 +87,12 @@ class GeocodeResult {
   ///@}
  private:
   Aws::String m_pricingBucket;
-  bool m_pricingBucketHasBeenSet = false;
 
   Aws::Vector<GeocodeResultItem> m_resultItems;
-  bool m_resultItemsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_pricingBucketHasBeenSet = false;
+  bool m_resultItemsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -104,12 +104,12 @@ class DocumentAttributeCondition {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   DocumentEnrichmentConditionOperator m_operator{DocumentEnrichmentConditionOperator::NOT_SET};
-  bool m_operatorHasBeenSet = false;
 
   DocumentAttributeValue m_value;
+  bool m_keyHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

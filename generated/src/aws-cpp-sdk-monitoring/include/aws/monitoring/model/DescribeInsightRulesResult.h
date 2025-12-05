@@ -86,12 +86,12 @@ class DescribeInsightRulesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<InsightRule> m_insightRules;
-  bool m_insightRulesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_insightRulesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

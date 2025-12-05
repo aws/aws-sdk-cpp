@@ -329,42 +329,42 @@ class CreateNatGatewayRequest : public EC2Request {
   ///@}
  private:
   AvailabilityMode m_availabilityMode{AvailabilityMode::NOT_SET};
-  bool m_availabilityModeHasBeenSet = false;
 
   Aws::String m_allocationId;
-  bool m_allocationIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Vector<AvailabilityZoneAddress> m_availabilityZoneAddresses;
-  bool m_availabilityZoneAddressesHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   ConnectivityType m_connectivityType{ConnectivityType::NOT_SET};
-  bool m_connectivityTypeHasBeenSet = false;
 
   Aws::String m_privateIpAddress;
-  bool m_privateIpAddressHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_secondaryAllocationIds;
-  bool m_secondaryAllocationIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_secondaryPrivateIpAddresses;
-  bool m_secondaryPrivateIpAddressesHasBeenSet = false;
 
   int m_secondaryPrivateIpAddressCount{0};
+  bool m_availabilityModeHasBeenSet = false;
+  bool m_allocationIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_dryRunHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_availabilityZoneAddressesHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_connectivityTypeHasBeenSet = false;
+  bool m_privateIpAddressHasBeenSet = false;
+  bool m_secondaryAllocationIdsHasBeenSet = false;
+  bool m_secondaryPrivateIpAddressesHasBeenSet = false;
   bool m_secondaryPrivateIpAddressCountHasBeenSet = false;
 };
 

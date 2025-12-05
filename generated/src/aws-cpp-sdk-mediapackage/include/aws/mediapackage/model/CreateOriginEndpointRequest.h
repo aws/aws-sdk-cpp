@@ -308,45 +308,45 @@ If not
   ///@}
  private:
   Authorization m_authorization;
-  bool m_authorizationHasBeenSet = false;
 
   Aws::String m_channelId;
-  bool m_channelIdHasBeenSet = false;
 
   CmafPackageCreateOrUpdateParameters m_cmafPackage;
-  bool m_cmafPackageHasBeenSet = false;
 
   DashPackage m_dashPackage;
-  bool m_dashPackageHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   HlsPackage m_hlsPackage;
-  bool m_hlsPackageHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_manifestName;
-  bool m_manifestNameHasBeenSet = false;
 
   MssPackage m_mssPackage;
-  bool m_mssPackageHasBeenSet = false;
 
   Origination m_origination{Origination::NOT_SET};
-  bool m_originationHasBeenSet = false;
 
   int m_startoverWindowSeconds{0};
-  bool m_startoverWindowSecondsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   int m_timeDelaySeconds{0};
-  bool m_timeDelaySecondsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_whitelist;
+  bool m_authorizationHasBeenSet = false;
+  bool m_channelIdHasBeenSet = false;
+  bool m_cmafPackageHasBeenSet = false;
+  bool m_dashPackageHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_hlsPackageHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_manifestNameHasBeenSet = false;
+  bool m_mssPackageHasBeenSet = false;
+  bool m_originationHasBeenSet = false;
+  bool m_startoverWindowSecondsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_timeDelaySecondsHasBeenSet = false;
   bool m_whitelistHasBeenSet = false;
 };
 

@@ -66,9 +66,9 @@ class InitialCapacityConfig {
   ///@}
  private:
   long long m_workerCount{0};
-  bool m_workerCountHasBeenSet = false;
 
   WorkerResourceConfig m_workerConfiguration;
+  bool m_workerCountHasBeenSet = false;
   bool m_workerConfigurationHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class S3Encryption {
   ///@}
  private:
   S3EncryptionMode m_s3EncryptionMode{S3EncryptionMode::NOT_SET};
-  bool m_s3EncryptionModeHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
+  bool m_s3EncryptionModeHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
 };
 

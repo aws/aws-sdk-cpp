@@ -93,12 +93,12 @@ class BatchGetAutomationRulesResult {
   ///@}
  private:
   Aws::Vector<AutomationRulesConfig> m_rules;
-  bool m_rulesHasBeenSet = false;
 
   Aws::Vector<UnprocessedAutomationRule> m_unprocessedAutomationRules;
-  bool m_unprocessedAutomationRulesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_rulesHasBeenSet = false;
+  bool m_unprocessedAutomationRulesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

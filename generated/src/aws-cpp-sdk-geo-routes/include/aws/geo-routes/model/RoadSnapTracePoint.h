@@ -108,15 +108,15 @@ class RoadSnapTracePoint {
   ///@}
  private:
   double m_heading{0.0};
-  bool m_headingHasBeenSet = false;
 
   Aws::Vector<double> m_position;
-  bool m_positionHasBeenSet = false;
 
   double m_speed{0.0};
-  bool m_speedHasBeenSet = false;
 
   Aws::String m_timestamp;
+  bool m_headingHasBeenSet = false;
+  bool m_positionHasBeenSet = false;
+  bool m_speedHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
 };
 

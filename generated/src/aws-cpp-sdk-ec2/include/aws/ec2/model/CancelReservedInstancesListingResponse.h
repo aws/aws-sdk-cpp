@@ -73,9 +73,9 @@ class CancelReservedInstancesListingResponse {
   ///@}
  private:
   Aws::Vector<ReservedInstancesListing> m_reservedInstancesListings;
-  bool m_reservedInstancesListingsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_reservedInstancesListingsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

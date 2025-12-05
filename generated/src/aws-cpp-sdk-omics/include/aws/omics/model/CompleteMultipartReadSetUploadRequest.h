@@ -91,12 +91,12 @@ class CompleteMultipartReadSetUploadRequest : public OmicsRequest {
   ///@}
  private:
   Aws::String m_sequenceStoreId;
-  bool m_sequenceStoreIdHasBeenSet = false;
 
   Aws::String m_uploadId;
-  bool m_uploadIdHasBeenSet = false;
 
   Aws::Vector<CompleteReadSetUploadPartListItem> m_parts;
+  bool m_sequenceStoreIdHasBeenSet = false;
+  bool m_uploadIdHasBeenSet = false;
   bool m_partsHasBeenSet = false;
 };
 

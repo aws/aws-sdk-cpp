@@ -70,9 +70,9 @@ class DescribeLoggingConfigurationRequest : public NetworkFirewallRequest {
   ///@}
  private:
   Aws::String m_firewallArn;
-  bool m_firewallArnHasBeenSet = false;
 
   Aws::String m_firewallName;
+  bool m_firewallArnHasBeenSet = false;
   bool m_firewallNameHasBeenSet = false;
 };
 

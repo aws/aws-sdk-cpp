@@ -107,15 +107,15 @@ class FunctionSummary {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   FunctionConfig m_functionConfig;
-  bool m_functionConfigHasBeenSet = false;
 
   FunctionMetadata m_functionMetadata;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_functionConfigHasBeenSet = false;
   bool m_functionMetadataHasBeenSet = false;
 };
 

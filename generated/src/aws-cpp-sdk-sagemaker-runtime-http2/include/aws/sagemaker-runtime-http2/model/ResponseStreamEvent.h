@@ -87,12 +87,12 @@ class ResponseStreamEvent {
   ///@}
  private:
   ResponsePayloadPart m_payloadPart;
-  bool m_payloadPartHasBeenSet = false;
 
   ModelStreamError m_modelStreamError;
-  bool m_modelStreamErrorHasBeenSet = false;
 
   SageMakerRuntimeHTTP2Error m_internalStreamFailure;
+  bool m_payloadPartHasBeenSet = false;
+  bool m_modelStreamErrorHasBeenSet = false;
   bool m_internalStreamFailureHasBeenSet = false;
 };
 

@@ -216,30 +216,30 @@ class UpdateDistributionRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_distributionName;
-  bool m_distributionNameHasBeenSet = false;
 
   InputOrigin m_origin;
-  bool m_originHasBeenSet = false;
 
   CacheBehavior m_defaultCacheBehavior;
-  bool m_defaultCacheBehaviorHasBeenSet = false;
 
   CacheSettings m_cacheBehaviorSettings;
-  bool m_cacheBehaviorSettingsHasBeenSet = false;
 
   Aws::Vector<CacheBehaviorPerPath> m_cacheBehaviors;
-  bool m_cacheBehaviorsHasBeenSet = false;
 
   bool m_isEnabled{false};
-  bool m_isEnabledHasBeenSet = false;
 
   ViewerMinimumTlsProtocolVersionEnum m_viewerMinimumTlsProtocolVersion{ViewerMinimumTlsProtocolVersionEnum::NOT_SET};
-  bool m_viewerMinimumTlsProtocolVersionHasBeenSet = false;
 
   Aws::String m_certificateName;
-  bool m_certificateNameHasBeenSet = false;
 
   bool m_useDefaultCertificate{false};
+  bool m_distributionNameHasBeenSet = false;
+  bool m_originHasBeenSet = false;
+  bool m_defaultCacheBehaviorHasBeenSet = false;
+  bool m_cacheBehaviorSettingsHasBeenSet = false;
+  bool m_cacheBehaviorsHasBeenSet = false;
+  bool m_isEnabledHasBeenSet = false;
+  bool m_viewerMinimumTlsProtocolVersionHasBeenSet = false;
+  bool m_certificateNameHasBeenSet = false;
   bool m_useDefaultCertificateHasBeenSet = false;
 };
 

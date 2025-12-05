@@ -70,9 +70,9 @@ class Encryption {
   ///@}
  private:
   SSEAlgorithm m_sseAlgorithm{SSEAlgorithm::NOT_SET};
-  bool m_sseAlgorithmHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
+  bool m_sseAlgorithmHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
 };
 

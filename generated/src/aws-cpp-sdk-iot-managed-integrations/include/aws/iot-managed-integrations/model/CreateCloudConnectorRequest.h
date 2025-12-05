@@ -124,18 +124,18 @@ class CreateCloudConnectorRequest : public IoTManagedIntegrationsRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   EndpointConfig m_endpointConfig;
-  bool m_endpointConfigHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   EndpointType m_endpointType{EndpointType::NOT_SET};
-  bool m_endpointTypeHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_nameHasBeenSet = false;
+  bool m_endpointConfigHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_endpointTypeHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

@@ -59,9 +59,9 @@ class CreateForecastExportJobResult {
   ///@}
  private:
   Aws::String m_forecastExportJobArn;
-  bool m_forecastExportJobArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_forecastExportJobArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

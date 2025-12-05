@@ -71,9 +71,9 @@ class DocLink {
   ///@}
  private:
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   Aws::String m_url;
+  bool m_textHasBeenSet = false;
   bool m_urlHasBeenSet = false;
 };
 

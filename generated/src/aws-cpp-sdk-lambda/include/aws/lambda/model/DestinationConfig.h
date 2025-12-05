@@ -74,9 +74,9 @@ class DestinationConfig {
   ///@}
  private:
   OnSuccess m_onSuccess;
-  bool m_onSuccessHasBeenSet = false;
 
   OnFailure m_onFailure;
+  bool m_onSuccessHasBeenSet = false;
   bool m_onFailureHasBeenSet = false;
 };
 

@@ -126,18 +126,18 @@ class AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails {
   ///@}
  private:
   Aws::Vector<Aws::String> m_command;
-  bool m_commandHasBeenSet = false;
 
   int m_interval{0};
-  bool m_intervalHasBeenSet = false;
 
   int m_retries{0};
-  bool m_retriesHasBeenSet = false;
 
   int m_startPeriod{0};
-  bool m_startPeriodHasBeenSet = false;
 
   int m_timeout{0};
+  bool m_commandHasBeenSet = false;
+  bool m_intervalHasBeenSet = false;
+  bool m_retriesHasBeenSet = false;
+  bool m_startPeriodHasBeenSet = false;
   bool m_timeoutHasBeenSet = false;
 };
 

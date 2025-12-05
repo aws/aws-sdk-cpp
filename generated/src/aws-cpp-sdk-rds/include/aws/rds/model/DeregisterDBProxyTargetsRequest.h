@@ -119,15 +119,15 @@ class DeregisterDBProxyTargetsRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_dBProxyName;
-  bool m_dBProxyNameHasBeenSet = false;
 
   Aws::String m_targetGroupName;
-  bool m_targetGroupNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dBInstanceIdentifiers;
-  bool m_dBInstanceIdentifiersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dBClusterIdentifiers;
+  bool m_dBProxyNameHasBeenSet = false;
+  bool m_targetGroupNameHasBeenSet = false;
+  bool m_dBInstanceIdentifiersHasBeenSet = false;
   bool m_dBClusterIdentifiersHasBeenSet = false;
 };
 

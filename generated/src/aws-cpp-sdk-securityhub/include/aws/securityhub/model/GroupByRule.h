@@ -69,9 +69,9 @@ class GroupByRule {
   ///@}
  private:
   OcsfFindingFilters m_filters;
-  bool m_filtersHasBeenSet = false;
 
   GroupByField m_groupByField{GroupByField::NOT_SET};
+  bool m_filtersHasBeenSet = false;
   bool m_groupByFieldHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class CapacityDescription {
   ///@}
  private:
   AutoScalingDescription m_autoScaling;
-  bool m_autoScalingHasBeenSet = false;
 
   ProvisionedCapacityDescription m_provisionedCapacity;
+  bool m_autoScalingHasBeenSet = false;
   bool m_provisionedCapacityHasBeenSet = false;
 };
 

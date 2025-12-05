@@ -100,12 +100,12 @@ class UnassignIpv6AddressesRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_ipv6Prefixes;
-  bool m_ipv6PrefixesHasBeenSet = false;
 
   Aws::String m_networkInterfaceId;
-  bool m_networkInterfaceIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ipv6Addresses;
+  bool m_ipv6PrefixesHasBeenSet = false;
+  bool m_networkInterfaceIdHasBeenSet = false;
   bool m_ipv6AddressesHasBeenSet = false;
 };
 

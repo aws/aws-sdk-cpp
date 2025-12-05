@@ -105,15 +105,15 @@ class SourceConfiguration {
   ///@}
  private:
   SourceType m_type{SourceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   S3SourceConfiguration m_s3Configuration;
-  bool m_s3ConfigurationHasBeenSet = false;
 
   IotSiteWiseSourceConfiguration m_iotSiteWiseConfiguration;
-  bool m_iotSiteWiseConfigurationHasBeenSet = false;
 
   IotTwinMakerSourceConfiguration m_iotTwinMakerConfiguration;
+  bool m_typeHasBeenSet = false;
+  bool m_s3ConfigurationHasBeenSet = false;
+  bool m_iotSiteWiseConfigurationHasBeenSet = false;
   bool m_iotTwinMakerConfigurationHasBeenSet = false;
 };
 

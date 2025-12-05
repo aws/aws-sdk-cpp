@@ -60,9 +60,9 @@ class ListAnycastIpLists2020_05_31Result {
   ///@}
  private:
   AnycastIpListCollection m_anycastIpLists;
-  bool m_anycastIpListsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_anycastIpListsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

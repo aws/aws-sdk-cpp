@@ -106,15 +106,15 @@ class GetOrganizationConfigRuleDetailedStatusRequest : public ConfigServiceReque
   ///@}
  private:
   Aws::String m_organizationConfigRuleName;
-  bool m_organizationConfigRuleNameHasBeenSet = false;
 
   StatusDetailFilters m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_organizationConfigRuleNameHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

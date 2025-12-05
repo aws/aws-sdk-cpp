@@ -69,9 +69,9 @@ class S3Bucket {
   ///@}
  private:
   Aws::String m_bucketName;
-  bool m_bucketNameHasBeenSet = false;
 
   Aws::String m_bucketOwner;
+  bool m_bucketNameHasBeenSet = false;
   bool m_bucketOwnerHasBeenSet = false;
 };
 

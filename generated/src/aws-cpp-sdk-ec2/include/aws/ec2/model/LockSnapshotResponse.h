@@ -191,30 +191,30 @@ class LockSnapshotResponse {
   ///@}
  private:
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   LockState m_lockState{LockState::NOT_SET};
-  bool m_lockStateHasBeenSet = false;
 
   int m_lockDuration{0};
-  bool m_lockDurationHasBeenSet = false;
 
   int m_coolOffPeriod{0};
-  bool m_coolOffPeriodHasBeenSet = false;
 
   Aws::Utils::DateTime m_coolOffPeriodExpiresOn{};
-  bool m_coolOffPeriodExpiresOnHasBeenSet = false;
 
   Aws::Utils::DateTime m_lockCreatedOn{};
-  bool m_lockCreatedOnHasBeenSet = false;
 
   Aws::Utils::DateTime m_lockExpiresOn{};
-  bool m_lockExpiresOnHasBeenSet = false;
 
   Aws::Utils::DateTime m_lockDurationStartTime{};
-  bool m_lockDurationStartTimeHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_snapshotIdHasBeenSet = false;
+  bool m_lockStateHasBeenSet = false;
+  bool m_lockDurationHasBeenSet = false;
+  bool m_coolOffPeriodHasBeenSet = false;
+  bool m_coolOffPeriodExpiresOnHasBeenSet = false;
+  bool m_lockCreatedOnHasBeenSet = false;
+  bool m_lockExpiresOnHasBeenSet = false;
+  bool m_lockDurationStartTimeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

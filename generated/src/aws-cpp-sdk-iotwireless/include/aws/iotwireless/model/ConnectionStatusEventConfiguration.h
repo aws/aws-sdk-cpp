@@ -70,9 +70,9 @@ class ConnectionStatusEventConfiguration {
   ///@}
  private:
   LoRaWANConnectionStatusEventNotificationConfigurations m_loRaWAN;
-  bool m_loRaWANHasBeenSet = false;
 
   EventNotificationTopicStatus m_wirelessGatewayIdEventTopic{EventNotificationTopicStatus::NOT_SET};
+  bool m_loRaWANHasBeenSet = false;
   bool m_wirelessGatewayIdEventTopicHasBeenSet = false;
 };
 

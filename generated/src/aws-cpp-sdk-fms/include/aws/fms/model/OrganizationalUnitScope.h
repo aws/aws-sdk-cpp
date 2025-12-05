@@ -116,12 +116,12 @@ class OrganizationalUnitScope {
   ///@}
  private:
   Aws::Vector<Aws::String> m_organizationalUnits;
-  bool m_organizationalUnitsHasBeenSet = false;
 
   bool m_allOrganizationalUnitsEnabled{false};
-  bool m_allOrganizationalUnitsEnabledHasBeenSet = false;
 
   bool m_excludeSpecifiedOrganizationalUnits{false};
+  bool m_organizationalUnitsHasBeenSet = false;
+  bool m_allOrganizationalUnitsEnabledHasBeenSet = false;
   bool m_excludeSpecifiedOrganizationalUnitsHasBeenSet = false;
 };
 

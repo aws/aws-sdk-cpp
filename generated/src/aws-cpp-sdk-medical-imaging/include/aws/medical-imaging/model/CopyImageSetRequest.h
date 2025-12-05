@@ -127,18 +127,18 @@ class CopyImageSetRequest : public MedicalImagingRequest {
   ///@}
  private:
   Aws::String m_datastoreId;
-  bool m_datastoreIdHasBeenSet = false;
 
   Aws::String m_sourceImageSetId;
-  bool m_sourceImageSetIdHasBeenSet = false;
 
   CopyImageSetInformation m_copyImageSetInformation;
-  bool m_copyImageSetInformationHasBeenSet = false;
 
   bool m_force{false};
-  bool m_forceHasBeenSet = false;
 
   bool m_promoteToPrimary{false};
+  bool m_datastoreIdHasBeenSet = false;
+  bool m_sourceImageSetIdHasBeenSet = false;
+  bool m_copyImageSetInformationHasBeenSet = false;
+  bool m_forceHasBeenSet = false;
   bool m_promoteToPrimaryHasBeenSet = false;
 };
 

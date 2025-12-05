@@ -106,15 +106,15 @@ class IsolineMatchingOptions {
   ///@}
  private:
   Aws::String m_nameHint;
-  bool m_nameHintHasBeenSet = false;
 
   long long m_onRoadThreshold{0};
-  bool m_onRoadThresholdHasBeenSet = false;
 
   long long m_radius{0};
-  bool m_radiusHasBeenSet = false;
 
   MatchingStrategy m_strategy{MatchingStrategy::NOT_SET};
+  bool m_nameHintHasBeenSet = false;
+  bool m_onRoadThresholdHasBeenSet = false;
+  bool m_radiusHasBeenSet = false;
   bool m_strategyHasBeenSet = false;
 };
 

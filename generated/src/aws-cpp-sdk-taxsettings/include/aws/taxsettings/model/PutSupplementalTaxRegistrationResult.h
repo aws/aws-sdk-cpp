@@ -80,12 +80,12 @@ class PutSupplementalTaxRegistrationResult {
   ///@}
  private:
   Aws::String m_authorityId;
-  bool m_authorityIdHasBeenSet = false;
 
   TaxRegistrationStatus m_status{TaxRegistrationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_authorityIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

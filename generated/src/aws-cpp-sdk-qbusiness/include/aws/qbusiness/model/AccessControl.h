@@ -78,9 +78,9 @@ class AccessControl {
   ///@}
  private:
   Aws::Vector<Principal> m_principals;
-  bool m_principalsHasBeenSet = false;
 
   MemberRelation m_memberRelation{MemberRelation::NOT_SET};
+  bool m_principalsHasBeenSet = false;
   bool m_memberRelationHasBeenSet = false;
 };
 

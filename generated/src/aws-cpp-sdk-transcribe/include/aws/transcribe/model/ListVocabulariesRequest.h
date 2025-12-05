@@ -110,15 +110,15 @@ class ListVocabulariesRequest : public TranscribeServiceRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   VocabularyState m_stateEquals{VocabularyState::NOT_SET};
-  bool m_stateEqualsHasBeenSet = false;
 
   Aws::String m_nameContains;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_stateEqualsHasBeenSet = false;
   bool m_nameContainsHasBeenSet = false;
 };
 

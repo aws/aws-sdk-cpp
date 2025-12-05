@@ -363,45 +363,45 @@ class CreateOpportunityRequest : public PartnerCentralSellingRequest {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::Vector<PrimaryNeedFromAws> m_primaryNeedsFromAws;
-  bool m_primaryNeedsFromAwsHasBeenSet = false;
 
   NationalSecurity m_nationalSecurity{NationalSecurity::NOT_SET};
-  bool m_nationalSecurityHasBeenSet = false;
 
   Aws::String m_partnerOpportunityIdentifier;
-  bool m_partnerOpportunityIdentifierHasBeenSet = false;
 
   Customer m_customer;
-  bool m_customerHasBeenSet = false;
 
   Project m_project;
-  bool m_projectHasBeenSet = false;
 
   OpportunityType m_opportunityType{OpportunityType::NOT_SET};
-  bool m_opportunityTypeHasBeenSet = false;
 
   Marketing m_marketing;
-  bool m_marketingHasBeenSet = false;
 
   SoftwareRevenue m_softwareRevenue;
-  bool m_softwareRevenueHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   LifeCycle m_lifeCycle;
-  bool m_lifeCycleHasBeenSet = false;
 
   OpportunityOrigin m_origin{OpportunityOrigin::NOT_SET};
-  bool m_originHasBeenSet = false;
 
   Aws::Vector<Contact> m_opportunityTeam;
-  bool m_opportunityTeamHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_catalogHasBeenSet = false;
+  bool m_primaryNeedsFromAwsHasBeenSet = false;
+  bool m_nationalSecurityHasBeenSet = false;
+  bool m_partnerOpportunityIdentifierHasBeenSet = false;
+  bool m_customerHasBeenSet = false;
+  bool m_projectHasBeenSet = false;
+  bool m_opportunityTypeHasBeenSet = false;
+  bool m_marketingHasBeenSet = false;
+  bool m_softwareRevenueHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_lifeCycleHasBeenSet = false;
+  bool m_originHasBeenSet = false;
+  bool m_opportunityTeamHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

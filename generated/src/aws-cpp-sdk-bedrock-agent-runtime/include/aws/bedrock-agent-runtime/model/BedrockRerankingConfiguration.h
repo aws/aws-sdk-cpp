@@ -67,9 +67,9 @@ class BedrockRerankingConfiguration {
   ///@}
  private:
   BedrockRerankingModelConfiguration m_modelConfiguration;
-  bool m_modelConfigurationHasBeenSet = false;
 
   int m_numberOfResults{0};
+  bool m_modelConfigurationHasBeenSet = false;
   bool m_numberOfResultsHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class MonitoringDatasetFormat {
   ///@}
  private:
   MonitoringCsvDatasetFormat m_csv;
-  bool m_csvHasBeenSet = false;
 
   MonitoringJsonDatasetFormat m_json;
-  bool m_jsonHasBeenSet = false;
 
   MonitoringParquetDatasetFormat m_parquet;
+  bool m_csvHasBeenSet = false;
+  bool m_jsonHasBeenSet = false;
   bool m_parquetHasBeenSet = false;
 };
 

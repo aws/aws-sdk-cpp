@@ -92,12 +92,12 @@ class NotifyRecommendationsReceivedRequest : public ConnectWisdomServiceRequest 
   ///@}
  private:
   Aws::String m_assistantId;
-  bool m_assistantIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_recommendationIds;
-  bool m_recommendationIdsHasBeenSet = false;
 
   Aws::String m_sessionId;
+  bool m_assistantIdHasBeenSet = false;
+  bool m_recommendationIdsHasBeenSet = false;
   bool m_sessionIdHasBeenSet = false;
 };
 

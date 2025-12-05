@@ -185,24 +185,24 @@ rounded to the
   ///@}
  private:
   Aws::Vector<DashManifest> m_dashManifests;
-  bool m_dashManifestsHasBeenSet = false;
 
   DashEncryption m_encryption;
-  bool m_encryptionHasBeenSet = false;
 
   bool m_includeEncoderConfigurationInSegments{false};
-  bool m_includeEncoderConfigurationInSegmentsHasBeenSet = false;
 
   bool m_includeIframeOnlyStream{false};
-  bool m_includeIframeOnlyStreamHasBeenSet = false;
 
   Aws::Vector<__PeriodTriggersElement> m_periodTriggers;
-  bool m_periodTriggersHasBeenSet = false;
 
   int m_segmentDurationSeconds{0};
-  bool m_segmentDurationSecondsHasBeenSet = false;
 
   SegmentTemplateFormat m_segmentTemplateFormat{SegmentTemplateFormat::NOT_SET};
+  bool m_dashManifestsHasBeenSet = false;
+  bool m_encryptionHasBeenSet = false;
+  bool m_includeEncoderConfigurationInSegmentsHasBeenSet = false;
+  bool m_includeIframeOnlyStreamHasBeenSet = false;
+  bool m_periodTriggersHasBeenSet = false;
+  bool m_segmentDurationSecondsHasBeenSet = false;
   bool m_segmentTemplateFormatHasBeenSet = false;
 };
 

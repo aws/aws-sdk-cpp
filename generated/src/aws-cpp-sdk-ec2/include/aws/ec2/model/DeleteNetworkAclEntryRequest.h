@@ -102,15 +102,15 @@ class DeleteNetworkAclEntryRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_networkAclId;
-  bool m_networkAclIdHasBeenSet = false;
 
   int m_ruleNumber{0};
-  bool m_ruleNumberHasBeenSet = false;
 
   bool m_egress{false};
+  bool m_dryRunHasBeenSet = false;
+  bool m_networkAclIdHasBeenSet = false;
+  bool m_ruleNumberHasBeenSet = false;
   bool m_egressHasBeenSet = false;
 };
 

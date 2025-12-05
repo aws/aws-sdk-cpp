@@ -60,9 +60,9 @@ class GetUseCaseForModelAccessResult {
   ///@}
  private:
   Aws::Utils::ByteBuffer m_formData{};
-  bool m_formDataHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_formDataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

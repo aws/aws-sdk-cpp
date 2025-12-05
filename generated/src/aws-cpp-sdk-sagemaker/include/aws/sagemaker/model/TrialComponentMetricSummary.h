@@ -183,30 +183,30 @@ class TrialComponentMetricSummary {
   ///@}
  private:
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::String m_sourceArn;
-  bool m_sourceArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_timeStamp{};
-  bool m_timeStampHasBeenSet = false;
 
   double m_max{0.0};
-  bool m_maxHasBeenSet = false;
 
   double m_min{0.0};
-  bool m_minHasBeenSet = false;
 
   double m_last{0.0};
-  bool m_lastHasBeenSet = false;
 
   int m_count{0};
-  bool m_countHasBeenSet = false;
 
   double m_avg{0.0};
-  bool m_avgHasBeenSet = false;
 
   double m_stdDev{0.0};
+  bool m_metricNameHasBeenSet = false;
+  bool m_sourceArnHasBeenSet = false;
+  bool m_timeStampHasBeenSet = false;
+  bool m_maxHasBeenSet = false;
+  bool m_minHasBeenSet = false;
+  bool m_lastHasBeenSet = false;
+  bool m_countHasBeenSet = false;
+  bool m_avgHasBeenSet = false;
   bool m_stdDevHasBeenSet = false;
 };
 

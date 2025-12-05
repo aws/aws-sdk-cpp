@@ -84,9 +84,9 @@ class AddDraftAppVersionResourceMappingsRequest : public ResilienceHubRequest {
   ///@}
  private:
   Aws::String m_appArn;
-  bool m_appArnHasBeenSet = false;
 
   Aws::Vector<ResourceMapping> m_resourceMappings;
+  bool m_appArnHasBeenSet = false;
   bool m_resourceMappingsHasBeenSet = false;
 };
 

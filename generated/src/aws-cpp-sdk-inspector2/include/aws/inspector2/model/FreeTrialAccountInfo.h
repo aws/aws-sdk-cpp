@@ -78,9 +78,9 @@ class FreeTrialAccountInfo {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::Vector<FreeTrialInfo> m_freeTrialInfo;
+  bool m_accountIdHasBeenSet = false;
   bool m_freeTrialInfoHasBeenSet = false;
 };
 

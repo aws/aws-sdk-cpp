@@ -202,30 +202,30 @@ class ListContactsRequest : public GroundStationRequest {
   ///@}
  private:
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ContactStatus> m_statusList;
-  bool m_statusListHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_groundStation;
-  bool m_groundStationHasBeenSet = false;
 
   Aws::String m_satelliteArn;
-  bool m_satelliteArnHasBeenSet = false;
 
   Aws::String m_missionProfileArn;
-  bool m_missionProfileArnHasBeenSet = false;
 
   EphemerisFilter m_ephemeris;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_statusListHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_groundStationHasBeenSet = false;
+  bool m_satelliteArnHasBeenSet = false;
+  bool m_missionProfileArnHasBeenSet = false;
   bool m_ephemerisHasBeenSet = false;
 };
 

@@ -126,18 +126,18 @@ class AccessPreviewSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_analyzerArn;
-  bool m_analyzerArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   AccessPreviewStatus m_status{AccessPreviewStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   AccessPreviewStatusReason m_statusReason;
+  bool m_idHasBeenSet = false;
+  bool m_analyzerArnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
 };
 

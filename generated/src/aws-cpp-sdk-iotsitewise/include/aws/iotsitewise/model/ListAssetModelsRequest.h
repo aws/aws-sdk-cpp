@@ -124,15 +124,15 @@ class ListAssetModelsRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   Aws::Vector<AssetModelType> m_assetModelTypes;
-  bool m_assetModelTypesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_assetModelVersion;
+  bool m_assetModelTypesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_assetModelVersionHasBeenSet = false;
 };
 

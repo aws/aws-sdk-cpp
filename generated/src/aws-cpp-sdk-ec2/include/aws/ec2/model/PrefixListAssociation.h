@@ -71,9 +71,9 @@ class PrefixListAssociation {
   ///@}
  private:
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_resourceOwner;
+  bool m_resourceIdHasBeenSet = false;
   bool m_resourceOwnerHasBeenSet = false;
 };
 

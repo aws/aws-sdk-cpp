@@ -68,9 +68,9 @@ class DataAggregation {
   ///@}
  private:
   TopicTimeGranularity m_datasetRowDateGranularity{TopicTimeGranularity::NOT_SET};
-  bool m_datasetRowDateGranularityHasBeenSet = false;
 
   Aws::String m_defaultDateColumnName;
+  bool m_datasetRowDateGranularityHasBeenSet = false;
   bool m_defaultDateColumnNameHasBeenSet = false;
 };
 

@@ -81,9 +81,9 @@ class FSxWindowsFileServerAuthorizationConfig {
   ///@}
  private:
   Aws::String m_credentialsParameter;
-  bool m_credentialsParameterHasBeenSet = false;
 
   Aws::String m_domain;
+  bool m_credentialsParameterHasBeenSet = false;
   bool m_domainHasBeenSet = false;
 };
 

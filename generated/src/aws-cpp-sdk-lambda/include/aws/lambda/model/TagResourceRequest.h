@@ -72,9 +72,9 @@ class TagResourceRequest : public LambdaRequest {
   ///@}
  private:
   Aws::String m_resource;
-  bool m_resourceHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_resourceHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

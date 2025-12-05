@@ -85,12 +85,12 @@ class AvailableNumberSummary {
   ///@}
  private:
   Aws::String m_phoneNumber;
-  bool m_phoneNumberHasBeenSet = false;
 
   PhoneNumberCountryCode m_phoneNumberCountryCode{PhoneNumberCountryCode::NOT_SET};
-  bool m_phoneNumberCountryCodeHasBeenSet = false;
 
   PhoneNumberType m_phoneNumberType{PhoneNumberType::NOT_SET};
+  bool m_phoneNumberHasBeenSet = false;
+  bool m_phoneNumberCountryCodeHasBeenSet = false;
   bool m_phoneNumberTypeHasBeenSet = false;
 };
 

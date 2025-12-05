@@ -113,12 +113,12 @@ class CreateApprovalRuleTemplateRequest : public CodeCommitRequest {
   ///@}
  private:
   Aws::String m_approvalRuleTemplateName;
-  bool m_approvalRuleTemplateNameHasBeenSet = false;
 
   Aws::String m_approvalRuleTemplateContent;
-  bool m_approvalRuleTemplateContentHasBeenSet = false;
 
   Aws::String m_approvalRuleTemplateDescription;
+  bool m_approvalRuleTemplateNameHasBeenSet = false;
+  bool m_approvalRuleTemplateContentHasBeenSet = false;
   bool m_approvalRuleTemplateDescriptionHasBeenSet = false;
 };
 

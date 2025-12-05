@@ -183,27 +183,27 @@ class AwsStepFunctionStateMachineDetails {
   ///@}
  private:
   Aws::String m_label;
-  bool m_labelHasBeenSet = false;
 
   AwsStepFunctionStateMachineLoggingConfigurationDetails m_loggingConfiguration;
-  bool m_loggingConfigurationHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_stateMachineArn;
-  bool m_stateMachineArnHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   AwsStepFunctionStateMachineTracingConfigurationDetails m_tracingConfiguration;
-  bool m_tracingConfigurationHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_labelHasBeenSet = false;
+  bool m_loggingConfigurationHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_stateMachineArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_tracingConfigurationHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

@@ -93,12 +93,12 @@ class UnlabelParameterVersionRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   long long m_parameterVersion{0};
-  bool m_parameterVersionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_labels;
+  bool m_nameHasBeenSet = false;
+  bool m_parameterVersionHasBeenSet = false;
   bool m_labelsHasBeenSet = false;
 };
 

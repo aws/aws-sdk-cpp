@@ -197,30 +197,30 @@ class DescribeThingResult {
   ///@}
  private:
   Aws::String m_defaultClientId;
-  bool m_defaultClientIdHasBeenSet = false;
 
   Aws::String m_thingName;
-  bool m_thingNameHasBeenSet = false;
 
   Aws::String m_thingId;
-  bool m_thingIdHasBeenSet = false;
 
   Aws::String m_thingArn;
-  bool m_thingArnHasBeenSet = false;
 
   Aws::String m_thingTypeName;
-  bool m_thingTypeNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   long long m_version{0};
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_billingGroupName;
-  bool m_billingGroupNameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_defaultClientIdHasBeenSet = false;
+  bool m_thingNameHasBeenSet = false;
+  bool m_thingIdHasBeenSet = false;
+  bool m_thingArnHasBeenSet = false;
+  bool m_thingTypeNameHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_billingGroupNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

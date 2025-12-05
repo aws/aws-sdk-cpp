@@ -474,66 +474,66 @@ class DataSet {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_dataSetId;
-  bool m_dataSetIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::Map<Aws::String, PhysicalTable> m_physicalTableMap;
-  bool m_physicalTableMapHasBeenSet = false;
 
   Aws::Map<Aws::String, LogicalTable> m_logicalTableMap;
-  bool m_logicalTableMapHasBeenSet = false;
 
   Aws::Vector<OutputColumn> m_outputColumns;
-  bool m_outputColumnsHasBeenSet = false;
 
   DataSetImportMode m_importMode{DataSetImportMode::NOT_SET};
-  bool m_importModeHasBeenSet = false;
 
   long long m_consumedSpiceCapacityInBytes{0};
-  bool m_consumedSpiceCapacityInBytesHasBeenSet = false;
 
   Aws::Vector<ColumnGroup> m_columnGroups;
-  bool m_columnGroupsHasBeenSet = false;
 
   Aws::Map<Aws::String, FieldFolder> m_fieldFolders;
-  bool m_fieldFoldersHasBeenSet = false;
 
   RowLevelPermissionDataSet m_rowLevelPermissionDataSet;
-  bool m_rowLevelPermissionDataSetHasBeenSet = false;
 
   RowLevelPermissionTagConfiguration m_rowLevelPermissionTagConfiguration;
-  bool m_rowLevelPermissionTagConfigurationHasBeenSet = false;
 
   Aws::Vector<ColumnLevelPermissionRule> m_columnLevelPermissionRules;
-  bool m_columnLevelPermissionRulesHasBeenSet = false;
 
   DataSetUsageConfiguration m_dataSetUsageConfiguration;
-  bool m_dataSetUsageConfigurationHasBeenSet = false;
 
   Aws::Vector<DatasetParameter> m_datasetParameters;
-  bool m_datasetParametersHasBeenSet = false;
 
   PerformanceConfiguration m_performanceConfiguration;
-  bool m_performanceConfigurationHasBeenSet = false;
 
   DataSetUseAs m_useAs{DataSetUseAs::NOT_SET};
-  bool m_useAsHasBeenSet = false;
 
   DataPrepConfiguration m_dataPrepConfiguration;
-  bool m_dataPrepConfigurationHasBeenSet = false;
 
   SemanticModelConfiguration m_semanticModelConfiguration;
+  bool m_arnHasBeenSet = false;
+  bool m_dataSetIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_physicalTableMapHasBeenSet = false;
+  bool m_logicalTableMapHasBeenSet = false;
+  bool m_outputColumnsHasBeenSet = false;
+  bool m_importModeHasBeenSet = false;
+  bool m_consumedSpiceCapacityInBytesHasBeenSet = false;
+  bool m_columnGroupsHasBeenSet = false;
+  bool m_fieldFoldersHasBeenSet = false;
+  bool m_rowLevelPermissionDataSetHasBeenSet = false;
+  bool m_rowLevelPermissionTagConfigurationHasBeenSet = false;
+  bool m_columnLevelPermissionRulesHasBeenSet = false;
+  bool m_dataSetUsageConfigurationHasBeenSet = false;
+  bool m_datasetParametersHasBeenSet = false;
+  bool m_performanceConfigurationHasBeenSet = false;
+  bool m_useAsHasBeenSet = false;
+  bool m_dataPrepConfigurationHasBeenSet = false;
   bool m_semanticModelConfigurationHasBeenSet = false;
 };
 

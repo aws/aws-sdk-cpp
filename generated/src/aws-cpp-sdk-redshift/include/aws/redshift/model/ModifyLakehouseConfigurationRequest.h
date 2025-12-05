@@ -151,21 +151,21 @@ class ModifyLakehouseConfigurationRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   LakehouseRegistration m_lakehouseRegistration{LakehouseRegistration::NOT_SET};
-  bool m_lakehouseRegistrationHasBeenSet = false;
 
   Aws::String m_catalogName;
-  bool m_catalogNameHasBeenSet = false;
 
   LakehouseIdcRegistration m_lakehouseIdcRegistration{LakehouseIdcRegistration::NOT_SET};
-  bool m_lakehouseIdcRegistrationHasBeenSet = false;
 
   Aws::String m_lakehouseIdcApplicationArn;
-  bool m_lakehouseIdcApplicationArnHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_clusterIdentifierHasBeenSet = false;
+  bool m_lakehouseRegistrationHasBeenSet = false;
+  bool m_catalogNameHasBeenSet = false;
+  bool m_lakehouseIdcRegistrationHasBeenSet = false;
+  bool m_lakehouseIdcApplicationArnHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

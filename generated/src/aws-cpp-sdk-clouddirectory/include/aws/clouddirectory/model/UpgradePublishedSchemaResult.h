@@ -59,9 +59,9 @@ class UpgradePublishedSchemaResult {
   ///@}
  private:
   Aws::String m_upgradedSchemaArn;
-  bool m_upgradedSchemaArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_upgradedSchemaArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

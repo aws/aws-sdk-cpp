@@ -77,12 +77,12 @@ class GetSigningConfigurationResult {
   ///@}
  private:
   Aws::String m_registryId;
-  bool m_registryIdHasBeenSet = false;
 
   SigningConfiguration m_signingConfiguration;
-  bool m_signingConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_registryIdHasBeenSet = false;
+  bool m_signingConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

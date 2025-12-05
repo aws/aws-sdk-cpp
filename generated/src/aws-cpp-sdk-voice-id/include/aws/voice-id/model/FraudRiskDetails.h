@@ -71,9 +71,9 @@ class FraudRiskDetails {
   ///@}
  private:
   KnownFraudsterRisk m_knownFraudsterRisk;
-  bool m_knownFraudsterRiskHasBeenSet = false;
 
   VoiceSpoofingRisk m_voiceSpoofingRisk;
+  bool m_knownFraudsterRiskHasBeenSet = false;
   bool m_voiceSpoofingRiskHasBeenSet = false;
 };
 

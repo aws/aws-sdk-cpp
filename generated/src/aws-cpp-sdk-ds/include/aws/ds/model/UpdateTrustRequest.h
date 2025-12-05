@@ -66,9 +66,9 @@ class UpdateTrustRequest : public DirectoryServiceRequest {
   ///@}
  private:
   Aws::String m_trustId;
-  bool m_trustIdHasBeenSet = false;
 
   SelectiveAuth m_selectiveAuth{SelectiveAuth::NOT_SET};
+  bool m_trustIdHasBeenSet = false;
   bool m_selectiveAuthHasBeenSet = false;
 };
 

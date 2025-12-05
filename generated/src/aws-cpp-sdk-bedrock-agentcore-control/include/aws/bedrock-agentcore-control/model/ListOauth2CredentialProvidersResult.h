@@ -86,12 +86,12 @@ class ListOauth2CredentialProvidersResult {
   ///@}
  private:
   Aws::Vector<Oauth2CredentialProviderItem> m_credentialProviders;
-  bool m_credentialProvidersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_credentialProvidersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

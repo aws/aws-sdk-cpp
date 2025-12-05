@@ -114,12 +114,12 @@ class KeyNameConstraint {
   ///@}
  private:
   Aws::Vector<Aws::String> m_matchAnyPrefix;
-  bool m_matchAnyPrefixHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_matchAnySuffix;
-  bool m_matchAnySuffixHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_matchAnySubstring;
+  bool m_matchAnyPrefixHasBeenSet = false;
+  bool m_matchAnySuffixHasBeenSet = false;
   bool m_matchAnySubstringHasBeenSet = false;
 };
 

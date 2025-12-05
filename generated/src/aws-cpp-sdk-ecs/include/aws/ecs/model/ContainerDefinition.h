@@ -1326,129 +1326,129 @@ class ContainerDefinition {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_image;
-  bool m_imageHasBeenSet = false;
 
   RepositoryCredentials m_repositoryCredentials;
-  bool m_repositoryCredentialsHasBeenSet = false;
 
   int m_cpu{0};
-  bool m_cpuHasBeenSet = false;
 
   int m_memory{0};
-  bool m_memoryHasBeenSet = false;
 
   int m_memoryReservation{0};
-  bool m_memoryReservationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_links;
-  bool m_linksHasBeenSet = false;
 
   Aws::Vector<PortMapping> m_portMappings;
-  bool m_portMappingsHasBeenSet = false;
 
   bool m_essential{false};
-  bool m_essentialHasBeenSet = false;
 
   ContainerRestartPolicy m_restartPolicy;
-  bool m_restartPolicyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_entryPoint;
-  bool m_entryPointHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_command;
-  bool m_commandHasBeenSet = false;
 
   Aws::Vector<KeyValuePair> m_environment;
-  bool m_environmentHasBeenSet = false;
 
   Aws::Vector<EnvironmentFile> m_environmentFiles;
-  bool m_environmentFilesHasBeenSet = false;
 
   Aws::Vector<MountPoint> m_mountPoints;
-  bool m_mountPointsHasBeenSet = false;
 
   Aws::Vector<VolumeFrom> m_volumesFrom;
-  bool m_volumesFromHasBeenSet = false;
 
   LinuxParameters m_linuxParameters;
-  bool m_linuxParametersHasBeenSet = false;
 
   Aws::Vector<Secret> m_secrets;
-  bool m_secretsHasBeenSet = false;
 
   Aws::Vector<ContainerDependency> m_dependsOn;
-  bool m_dependsOnHasBeenSet = false;
 
   int m_startTimeout{0};
-  bool m_startTimeoutHasBeenSet = false;
 
   int m_stopTimeout{0};
-  bool m_stopTimeoutHasBeenSet = false;
 
   VersionConsistency m_versionConsistency{VersionConsistency::NOT_SET};
-  bool m_versionConsistencyHasBeenSet = false;
 
   Aws::String m_hostname;
-  bool m_hostnameHasBeenSet = false;
 
   Aws::String m_user;
-  bool m_userHasBeenSet = false;
 
   Aws::String m_workingDirectory;
-  bool m_workingDirectoryHasBeenSet = false;
 
   bool m_disableNetworking{false};
-  bool m_disableNetworkingHasBeenSet = false;
 
   bool m_privileged{false};
-  bool m_privilegedHasBeenSet = false;
 
   bool m_readonlyRootFilesystem{false};
-  bool m_readonlyRootFilesystemHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dnsServers;
-  bool m_dnsServersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dnsSearchDomains;
-  bool m_dnsSearchDomainsHasBeenSet = false;
 
   Aws::Vector<HostEntry> m_extraHosts;
-  bool m_extraHostsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dockerSecurityOptions;
-  bool m_dockerSecurityOptionsHasBeenSet = false;
 
   bool m_interactive{false};
-  bool m_interactiveHasBeenSet = false;
 
   bool m_pseudoTerminal{false};
-  bool m_pseudoTerminalHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_dockerLabels;
-  bool m_dockerLabelsHasBeenSet = false;
 
   Aws::Vector<Ulimit> m_ulimits;
-  bool m_ulimitsHasBeenSet = false;
 
   LogConfiguration m_logConfiguration;
-  bool m_logConfigurationHasBeenSet = false;
 
   HealthCheck m_healthCheck;
-  bool m_healthCheckHasBeenSet = false;
 
   Aws::Vector<SystemControl> m_systemControls;
-  bool m_systemControlsHasBeenSet = false;
 
   Aws::Vector<ResourceRequirement> m_resourceRequirements;
-  bool m_resourceRequirementsHasBeenSet = false;
 
   FirelensConfiguration m_firelensConfiguration;
-  bool m_firelensConfigurationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_credentialSpecs;
+  bool m_nameHasBeenSet = false;
+  bool m_imageHasBeenSet = false;
+  bool m_repositoryCredentialsHasBeenSet = false;
+  bool m_cpuHasBeenSet = false;
+  bool m_memoryHasBeenSet = false;
+  bool m_memoryReservationHasBeenSet = false;
+  bool m_linksHasBeenSet = false;
+  bool m_portMappingsHasBeenSet = false;
+  bool m_essentialHasBeenSet = false;
+  bool m_restartPolicyHasBeenSet = false;
+  bool m_entryPointHasBeenSet = false;
+  bool m_commandHasBeenSet = false;
+  bool m_environmentHasBeenSet = false;
+  bool m_environmentFilesHasBeenSet = false;
+  bool m_mountPointsHasBeenSet = false;
+  bool m_volumesFromHasBeenSet = false;
+  bool m_linuxParametersHasBeenSet = false;
+  bool m_secretsHasBeenSet = false;
+  bool m_dependsOnHasBeenSet = false;
+  bool m_startTimeoutHasBeenSet = false;
+  bool m_stopTimeoutHasBeenSet = false;
+  bool m_versionConsistencyHasBeenSet = false;
+  bool m_hostnameHasBeenSet = false;
+  bool m_userHasBeenSet = false;
+  bool m_workingDirectoryHasBeenSet = false;
+  bool m_disableNetworkingHasBeenSet = false;
+  bool m_privilegedHasBeenSet = false;
+  bool m_readonlyRootFilesystemHasBeenSet = false;
+  bool m_dnsServersHasBeenSet = false;
+  bool m_dnsSearchDomainsHasBeenSet = false;
+  bool m_extraHostsHasBeenSet = false;
+  bool m_dockerSecurityOptionsHasBeenSet = false;
+  bool m_interactiveHasBeenSet = false;
+  bool m_pseudoTerminalHasBeenSet = false;
+  bool m_dockerLabelsHasBeenSet = false;
+  bool m_ulimitsHasBeenSet = false;
+  bool m_logConfigurationHasBeenSet = false;
+  bool m_healthCheckHasBeenSet = false;
+  bool m_systemControlsHasBeenSet = false;
+  bool m_resourceRequirementsHasBeenSet = false;
+  bool m_firelensConfigurationHasBeenSet = false;
   bool m_credentialSpecsHasBeenSet = false;
 };
 

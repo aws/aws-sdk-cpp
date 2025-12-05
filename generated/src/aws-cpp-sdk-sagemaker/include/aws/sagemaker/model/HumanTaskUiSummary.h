@@ -88,12 +88,12 @@ class HumanTaskUiSummary {
   ///@}
  private:
   Aws::String m_humanTaskUiName;
-  bool m_humanTaskUiNameHasBeenSet = false;
 
   Aws::String m_humanTaskUiArn;
-  bool m_humanTaskUiArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
+  bool m_humanTaskUiNameHasBeenSet = false;
+  bool m_humanTaskUiArnHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
 };
 

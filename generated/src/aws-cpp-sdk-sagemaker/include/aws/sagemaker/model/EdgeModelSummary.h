@@ -68,9 +68,9 @@ class EdgeModelSummary {
   ///@}
  private:
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   Aws::String m_modelVersion;
+  bool m_modelNameHasBeenSet = false;
   bool m_modelVersionHasBeenSet = false;
 };
 

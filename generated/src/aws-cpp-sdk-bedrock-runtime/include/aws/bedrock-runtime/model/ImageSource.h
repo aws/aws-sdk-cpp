@@ -73,9 +73,9 @@ class ImageSource {
   ///@}
  private:
   Aws::Utils::ByteBuffer m_bytes{};
-  bool m_bytesHasBeenSet = false;
 
   S3Location m_s3Location;
+  bool m_bytesHasBeenSet = false;
   bool m_s3LocationHasBeenSet = false;
 };
 

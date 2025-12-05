@@ -76,9 +76,9 @@ class Circle {
   ///@}
  private:
   Aws::Vector<double> m_center;
-  bool m_centerHasBeenSet = false;
 
   double m_radius{0.0};
+  bool m_centerHasBeenSet = false;
   bool m_radiusHasBeenSet = false;
 };
 

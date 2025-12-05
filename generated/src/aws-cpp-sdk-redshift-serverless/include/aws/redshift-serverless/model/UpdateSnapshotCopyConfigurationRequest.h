@@ -66,9 +66,9 @@ class UpdateSnapshotCopyConfigurationRequest : public RedshiftServerlessRequest 
   ///@}
  private:
   Aws::String m_snapshotCopyConfigurationId;
-  bool m_snapshotCopyConfigurationIdHasBeenSet = false;
 
   int m_snapshotRetentionPeriod{0};
+  bool m_snapshotCopyConfigurationIdHasBeenSet = false;
   bool m_snapshotRetentionPeriodHasBeenSet = false;
 };
 

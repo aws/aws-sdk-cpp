@@ -107,15 +107,15 @@ class CancelDomainConfigChangeResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_cancelledChangeIds;
-  bool m_cancelledChangeIdsHasBeenSet = false;
 
   Aws::Vector<CancelledChangeProperty> m_cancelledChangeProperties;
-  bool m_cancelledChangePropertiesHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_cancelledChangeIdsHasBeenSet = false;
+  bool m_cancelledChangePropertiesHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

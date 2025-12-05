@@ -99,12 +99,12 @@ class PutJobTaggingRequest : public S3ControlRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::Vector<S3Tag> m_tags;
+  bool m_accountIdHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

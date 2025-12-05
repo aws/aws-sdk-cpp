@@ -78,9 +78,9 @@ class DnsServersOptionsModifyStructure {
   ///@}
  private:
   Aws::Vector<Aws::String> m_customDnsServers;
-  bool m_customDnsServersHasBeenSet = false;
 
   bool m_enabled{false};
+  bool m_customDnsServersHasBeenSet = false;
   bool m_enabledHasBeenSet = false;
 };
 

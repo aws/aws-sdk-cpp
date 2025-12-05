@@ -74,9 +74,9 @@ class ExportAttributes {
   ///@}
  private:
   ExportDukptInitialKey m_exportDukptInitialKey;
-  bool m_exportDukptInitialKeyHasBeenSet = false;
 
   KeyCheckValueAlgorithm m_keyCheckValueAlgorithm{KeyCheckValueAlgorithm::NOT_SET};
+  bool m_exportDukptInitialKeyHasBeenSet = false;
   bool m_keyCheckValueAlgorithmHasBeenSet = false;
 };
 

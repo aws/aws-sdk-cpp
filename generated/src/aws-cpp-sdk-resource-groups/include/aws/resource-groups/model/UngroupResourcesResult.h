@@ -120,15 +120,15 @@ class UngroupResourcesResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_succeeded;
-  bool m_succeededHasBeenSet = false;
 
   Aws::Vector<FailedResource> m_failed;
-  bool m_failedHasBeenSet = false;
 
   Aws::Vector<PendingResource> m_pending;
-  bool m_pendingHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_succeededHasBeenSet = false;
+  bool m_failedHasBeenSet = false;
+  bool m_pendingHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

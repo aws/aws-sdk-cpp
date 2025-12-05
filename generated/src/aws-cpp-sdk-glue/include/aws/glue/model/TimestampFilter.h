@@ -68,9 +68,9 @@ class TimestampFilter {
   ///@}
  private:
   Aws::Utils::DateTime m_recordedBefore{};
-  bool m_recordedBeforeHasBeenSet = false;
 
   Aws::Utils::DateTime m_recordedAfter{};
+  bool m_recordedBeforeHasBeenSet = false;
   bool m_recordedAfterHasBeenSet = false;
 };
 

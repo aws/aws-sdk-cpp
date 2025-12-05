@@ -67,9 +67,9 @@ class DescribeRuleGroupsNamespaceResult {
   ///@}
  private:
   RuleGroupsNamespaceDescription m_ruleGroupsNamespace;
-  bool m_ruleGroupsNamespaceHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ruleGroupsNamespaceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

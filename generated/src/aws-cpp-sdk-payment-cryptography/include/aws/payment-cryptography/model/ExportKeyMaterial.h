@@ -113,15 +113,15 @@ class ExportKeyMaterial {
   ///@}
  private:
   ExportTr31KeyBlock m_tr31KeyBlock;
-  bool m_tr31KeyBlockHasBeenSet = false;
 
   ExportTr34KeyBlock m_tr34KeyBlock;
-  bool m_tr34KeyBlockHasBeenSet = false;
 
   ExportKeyCryptogram m_keyCryptogram;
-  bool m_keyCryptogramHasBeenSet = false;
 
   ExportDiffieHellmanTr31KeyBlock m_diffieHellmanTr31KeyBlock;
+  bool m_tr31KeyBlockHasBeenSet = false;
+  bool m_tr34KeyBlockHasBeenSet = false;
+  bool m_keyCryptogramHasBeenSet = false;
   bool m_diffieHellmanTr31KeyBlockHasBeenSet = false;
 };
 

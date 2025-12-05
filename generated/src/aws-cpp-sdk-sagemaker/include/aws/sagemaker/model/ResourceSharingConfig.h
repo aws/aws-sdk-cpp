@@ -72,9 +72,9 @@ class ResourceSharingConfig {
   ///@}
  private:
   ResourceSharingStrategy m_strategy{ResourceSharingStrategy::NOT_SET};
-  bool m_strategyHasBeenSet = false;
 
   int m_borrowLimit{0};
+  bool m_strategyHasBeenSet = false;
   bool m_borrowLimitHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class GetScalingPlanResourceForecastDataResult {
   ///@}
  private:
   Aws::Vector<Datapoint> m_datapoints;
-  bool m_datapointsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_datapointsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

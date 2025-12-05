@@ -77,12 +77,12 @@ class CreateTrustStore2020_05_31Result {
   ///@}
  private:
   TrustStore m_trustStore;
-  bool m_trustStoreHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trustStoreHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

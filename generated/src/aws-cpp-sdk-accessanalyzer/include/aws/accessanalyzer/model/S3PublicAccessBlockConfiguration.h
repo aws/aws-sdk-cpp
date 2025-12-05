@@ -72,9 +72,9 @@ class S3PublicAccessBlockConfiguration {
   ///@}
  private:
   bool m_ignorePublicAcls{false};
-  bool m_ignorePublicAclsHasBeenSet = false;
 
   bool m_restrictPublicBuckets{false};
+  bool m_ignorePublicAclsHasBeenSet = false;
   bool m_restrictPublicBucketsHasBeenSet = false;
 };
 

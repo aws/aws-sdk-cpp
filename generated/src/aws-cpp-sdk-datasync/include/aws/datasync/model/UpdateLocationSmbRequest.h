@@ -320,42 +320,42 @@ class UpdateLocationSmbRequest : public DataSyncRequest {
   ///@}
  private:
   Aws::String m_locationArn;
-  bool m_locationArnHasBeenSet = false;
 
   Aws::String m_subdirectory;
-  bool m_subdirectoryHasBeenSet = false;
 
   Aws::String m_serverHostname;
-  bool m_serverHostnameHasBeenSet = false;
 
   Aws::String m_user;
-  bool m_userHasBeenSet = false;
 
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_password;
-  bool m_passwordHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_agentArns;
-  bool m_agentArnsHasBeenSet = false;
 
   SmbMountOptions m_mountOptions;
-  bool m_mountOptionsHasBeenSet = false;
 
   SmbAuthenticationType m_authenticationType{SmbAuthenticationType::NOT_SET};
-  bool m_authenticationTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dnsIpAddresses;
-  bool m_dnsIpAddressesHasBeenSet = false;
 
   Aws::String m_kerberosPrincipal;
-  bool m_kerberosPrincipalHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_kerberosKeytab{};
-  bool m_kerberosKeytabHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_kerberosKrb5Conf{};
+  bool m_locationArnHasBeenSet = false;
+  bool m_subdirectoryHasBeenSet = false;
+  bool m_serverHostnameHasBeenSet = false;
+  bool m_userHasBeenSet = false;
+  bool m_domainHasBeenSet = false;
+  bool m_passwordHasBeenSet = false;
+  bool m_agentArnsHasBeenSet = false;
+  bool m_mountOptionsHasBeenSet = false;
+  bool m_authenticationTypeHasBeenSet = false;
+  bool m_dnsIpAddressesHasBeenSet = false;
+  bool m_kerberosPrincipalHasBeenSet = false;
+  bool m_kerberosKeytabHasBeenSet = false;
   bool m_kerberosKrb5ConfHasBeenSet = false;
 };
 

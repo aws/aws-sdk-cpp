@@ -70,9 +70,9 @@ class CapacityReservationStatus {
   ///@}
  private:
   CapacityReservationStateEnum m_code{CapacityReservationStateEnum::NOT_SET};
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_reason;
+  bool m_codeHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

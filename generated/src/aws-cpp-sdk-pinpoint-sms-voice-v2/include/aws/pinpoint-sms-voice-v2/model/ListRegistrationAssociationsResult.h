@@ -138,21 +138,21 @@ class ListRegistrationAssociationsResult {
   ///@}
  private:
   Aws::String m_registrationArn;
-  bool m_registrationArnHasBeenSet = false;
 
   Aws::String m_registrationId;
-  bool m_registrationIdHasBeenSet = false;
 
   Aws::String m_registrationType;
-  bool m_registrationTypeHasBeenSet = false;
 
   Aws::Vector<RegistrationAssociationMetadata> m_registrationAssociations;
-  bool m_registrationAssociationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_registrationArnHasBeenSet = false;
+  bool m_registrationIdHasBeenSet = false;
+  bool m_registrationTypeHasBeenSet = false;
+  bool m_registrationAssociationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

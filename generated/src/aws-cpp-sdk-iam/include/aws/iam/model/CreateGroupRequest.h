@@ -81,9 +81,9 @@ class CreateGroupRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   Aws::String m_groupName;
+  bool m_pathHasBeenSet = false;
   bool m_groupNameHasBeenSet = false;
 };
 

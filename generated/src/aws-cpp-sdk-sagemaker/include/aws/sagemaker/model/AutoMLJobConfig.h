@@ -149,18 +149,18 @@ class AutoMLJobConfig {
   ///@}
  private:
   AutoMLJobCompletionCriteria m_completionCriteria;
-  bool m_completionCriteriaHasBeenSet = false;
 
   AutoMLSecurityConfig m_securityConfig;
-  bool m_securityConfigHasBeenSet = false;
 
   AutoMLCandidateGenerationConfig m_candidateGenerationConfig;
-  bool m_candidateGenerationConfigHasBeenSet = false;
 
   AutoMLDataSplitConfig m_dataSplitConfig;
-  bool m_dataSplitConfigHasBeenSet = false;
 
   AutoMLMode m_mode{AutoMLMode::NOT_SET};
+  bool m_completionCriteriaHasBeenSet = false;
+  bool m_securityConfigHasBeenSet = false;
+  bool m_candidateGenerationConfigHasBeenSet = false;
+  bool m_dataSplitConfigHasBeenSet = false;
   bool m_modeHasBeenSet = false;
 };
 

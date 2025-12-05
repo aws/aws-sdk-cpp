@@ -127,21 +127,21 @@ class GetMinuteUsageResult {
   ///@}
  private:
   bool m_isReservedMinutesCustomer{false};
-  bool m_isReservedMinutesCustomerHasBeenSet = false;
 
   int m_totalReservedMinuteAllocation{0};
-  bool m_totalReservedMinuteAllocationHasBeenSet = false;
 
   int m_upcomingMinutesScheduled{0};
-  bool m_upcomingMinutesScheduledHasBeenSet = false;
 
   int m_totalScheduledMinutes{0};
-  bool m_totalScheduledMinutesHasBeenSet = false;
 
   int m_estimatedMinutesRemaining{0};
-  bool m_estimatedMinutesRemainingHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_isReservedMinutesCustomerHasBeenSet = false;
+  bool m_totalReservedMinuteAllocationHasBeenSet = false;
+  bool m_upcomingMinutesScheduledHasBeenSet = false;
+  bool m_totalScheduledMinutesHasBeenSet = false;
+  bool m_estimatedMinutesRemainingHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

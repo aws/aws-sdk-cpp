@@ -88,12 +88,12 @@ class DescribeClusterTracksResult {
   ///@}
  private:
   Aws::Vector<MaintenanceTrack> m_maintenanceTracks;
-  bool m_maintenanceTracksHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_maintenanceTracksHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

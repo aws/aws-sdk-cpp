@@ -68,9 +68,9 @@ class DashboardDetail {
   ///@}
  private:
   Aws::String m_dashboardArn;
-  bool m_dashboardArnHasBeenSet = false;
 
   DashboardType m_type{DashboardType::NOT_SET};
+  bool m_dashboardArnHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

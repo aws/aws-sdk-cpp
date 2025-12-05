@@ -96,12 +96,12 @@ class UserTurnOutputSpecification {
   ///@}
  private:
   UserTurnIntentOutput m_intent;
-  bool m_intentHasBeenSet = false;
 
   Aws::Vector<ActiveContext> m_activeContexts;
-  bool m_activeContextsHasBeenSet = false;
 
   Aws::String m_transcript;
+  bool m_intentHasBeenSet = false;
+  bool m_activeContextsHasBeenSet = false;
   bool m_transcriptHasBeenSet = false;
 };
 

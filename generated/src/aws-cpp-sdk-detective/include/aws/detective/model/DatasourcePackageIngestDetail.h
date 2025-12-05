@@ -76,9 +76,9 @@ class DatasourcePackageIngestDetail {
   ///@}
  private:
   DatasourcePackageIngestState m_datasourcePackageIngestState{DatasourcePackageIngestState::NOT_SET};
-  bool m_datasourcePackageIngestStateHasBeenSet = false;
 
   Aws::Map<DatasourcePackageIngestState, TimestampForCollection> m_lastIngestStateChange;
+  bool m_datasourcePackageIngestStateHasBeenSet = false;
   bool m_lastIngestStateChangeHasBeenSet = false;
 };
 

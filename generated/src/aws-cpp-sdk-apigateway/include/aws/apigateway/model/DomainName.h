@@ -508,75 +508,75 @@ class DomainName {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_domainNameId;
-  bool m_domainNameIdHasBeenSet = false;
 
   Aws::String m_domainNameArn;
-  bool m_domainNameArnHasBeenSet = false;
 
   Aws::String m_certificateName;
-  bool m_certificateNameHasBeenSet = false;
 
   Aws::String m_certificateArn;
-  bool m_certificateArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_certificateUploadDate{};
-  bool m_certificateUploadDateHasBeenSet = false;
 
   Aws::String m_regionalDomainName;
-  bool m_regionalDomainNameHasBeenSet = false;
 
   Aws::String m_regionalHostedZoneId;
-  bool m_regionalHostedZoneIdHasBeenSet = false;
 
   Aws::String m_regionalCertificateName;
-  bool m_regionalCertificateNameHasBeenSet = false;
 
   Aws::String m_regionalCertificateArn;
-  bool m_regionalCertificateArnHasBeenSet = false;
 
   Aws::String m_distributionDomainName;
-  bool m_distributionDomainNameHasBeenSet = false;
 
   Aws::String m_distributionHostedZoneId;
-  bool m_distributionHostedZoneIdHasBeenSet = false;
 
   EndpointConfiguration m_endpointConfiguration;
-  bool m_endpointConfigurationHasBeenSet = false;
 
   DomainNameStatus m_domainNameStatus{DomainNameStatus::NOT_SET};
-  bool m_domainNameStatusHasBeenSet = false;
 
   Aws::String m_domainNameStatusMessage;
-  bool m_domainNameStatusMessageHasBeenSet = false;
 
   SecurityPolicy m_securityPolicy{SecurityPolicy::NOT_SET};
-  bool m_securityPolicyHasBeenSet = false;
 
   EndpointAccessMode m_endpointAccessMode{EndpointAccessMode::NOT_SET};
-  bool m_endpointAccessModeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   MutualTlsAuthentication m_mutualTlsAuthentication;
-  bool m_mutualTlsAuthenticationHasBeenSet = false;
 
   Aws::String m_ownershipVerificationCertificateArn;
-  bool m_ownershipVerificationCertificateArnHasBeenSet = false;
 
   Aws::String m_managementPolicy;
-  bool m_managementPolicyHasBeenSet = false;
 
   Aws::String m_policy;
-  bool m_policyHasBeenSet = false;
 
   RoutingMode m_routingMode{RoutingMode::NOT_SET};
-  bool m_routingModeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainNameHasBeenSet = false;
+  bool m_domainNameIdHasBeenSet = false;
+  bool m_domainNameArnHasBeenSet = false;
+  bool m_certificateNameHasBeenSet = false;
+  bool m_certificateArnHasBeenSet = false;
+  bool m_certificateUploadDateHasBeenSet = false;
+  bool m_regionalDomainNameHasBeenSet = false;
+  bool m_regionalHostedZoneIdHasBeenSet = false;
+  bool m_regionalCertificateNameHasBeenSet = false;
+  bool m_regionalCertificateArnHasBeenSet = false;
+  bool m_distributionDomainNameHasBeenSet = false;
+  bool m_distributionHostedZoneIdHasBeenSet = false;
+  bool m_endpointConfigurationHasBeenSet = false;
+  bool m_domainNameStatusHasBeenSet = false;
+  bool m_domainNameStatusMessageHasBeenSet = false;
+  bool m_securityPolicyHasBeenSet = false;
+  bool m_endpointAccessModeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_mutualTlsAuthenticationHasBeenSet = false;
+  bool m_ownershipVerificationCertificateArnHasBeenSet = false;
+  bool m_managementPolicyHasBeenSet = false;
+  bool m_policyHasBeenSet = false;
+  bool m_routingModeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

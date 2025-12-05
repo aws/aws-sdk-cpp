@@ -88,12 +88,12 @@ class GetAlarmsResult {
   ///@}
  private:
   Aws::Vector<Alarm> m_alarms;
-  bool m_alarmsHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_alarmsHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

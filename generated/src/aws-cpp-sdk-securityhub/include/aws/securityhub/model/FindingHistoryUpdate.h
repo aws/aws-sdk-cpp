@@ -92,12 +92,12 @@ class FindingHistoryUpdate {
   ///@}
  private:
   Aws::String m_updatedField;
-  bool m_updatedFieldHasBeenSet = false;
 
   Aws::String m_oldValue;
-  bool m_oldValueHasBeenSet = false;
 
   Aws::String m_newValue;
+  bool m_updatedFieldHasBeenSet = false;
+  bool m_oldValueHasBeenSet = false;
   bool m_newValueHasBeenSet = false;
 };
 

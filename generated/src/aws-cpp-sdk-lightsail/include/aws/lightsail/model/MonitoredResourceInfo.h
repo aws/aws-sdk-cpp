@@ -90,12 +90,12 @@ class MonitoredResourceInfo {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
 };
 

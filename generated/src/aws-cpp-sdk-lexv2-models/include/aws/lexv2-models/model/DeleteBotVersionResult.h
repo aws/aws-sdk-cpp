@@ -92,15 +92,15 @@ class DeleteBotVersionResult {
   ///@}
  private:
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   Aws::String m_botVersion;
-  bool m_botVersionHasBeenSet = false;
 
   BotStatus m_botStatus{BotStatus::NOT_SET};
-  bool m_botStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_botIdHasBeenSet = false;
+  bool m_botVersionHasBeenSet = false;
+  bool m_botStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

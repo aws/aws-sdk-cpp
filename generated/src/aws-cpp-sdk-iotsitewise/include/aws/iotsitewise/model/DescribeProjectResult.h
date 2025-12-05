@@ -166,27 +166,27 @@ class DescribeProjectResult {
   ///@}
  private:
   Aws::String m_projectId;
-  bool m_projectIdHasBeenSet = false;
 
   Aws::String m_projectArn;
-  bool m_projectArnHasBeenSet = false;
 
   Aws::String m_projectName;
-  bool m_projectNameHasBeenSet = false;
 
   Aws::String m_portalId;
-  bool m_portalIdHasBeenSet = false;
 
   Aws::String m_projectDescription;
-  bool m_projectDescriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_projectCreationDate{};
-  bool m_projectCreationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_projectLastUpdateDate{};
-  bool m_projectLastUpdateDateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_projectIdHasBeenSet = false;
+  bool m_projectArnHasBeenSet = false;
+  bool m_projectNameHasBeenSet = false;
+  bool m_portalIdHasBeenSet = false;
+  bool m_projectDescriptionHasBeenSet = false;
+  bool m_projectCreationDateHasBeenSet = false;
+  bool m_projectLastUpdateDateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

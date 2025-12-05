@@ -161,21 +161,21 @@ class DescribeConfigurationTemplatesRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::String m_service;
-  bool m_serviceHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_logTypes;
-  bool m_logTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceTypes;
-  bool m_resourceTypesHasBeenSet = false;
 
   Aws::Vector<DeliveryDestinationType> m_deliveryDestinationTypes;
-  bool m_deliveryDestinationTypesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_limit{0};
+  bool m_serviceHasBeenSet = false;
+  bool m_logTypesHasBeenSet = false;
+  bool m_resourceTypesHasBeenSet = false;
+  bool m_deliveryDestinationTypesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_limitHasBeenSet = false;
 };
 

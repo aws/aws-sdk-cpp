@@ -117,15 +117,15 @@ class UpgradeHistory {
   ///@}
  private:
   Aws::String m_upgradeName;
-  bool m_upgradeNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTimestamp{};
-  bool m_startTimestampHasBeenSet = false;
 
   UpgradeStatus m_upgradeStatus{UpgradeStatus::NOT_SET};
-  bool m_upgradeStatusHasBeenSet = false;
 
   Aws::Vector<UpgradeStepItem> m_stepsList;
+  bool m_upgradeNameHasBeenSet = false;
+  bool m_startTimestampHasBeenSet = false;
+  bool m_upgradeStatusHasBeenSet = false;
   bool m_stepsListHasBeenSet = false;
 };
 

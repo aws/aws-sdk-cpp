@@ -82,12 +82,12 @@ class GetFieldLevelEncryptionProfileConfig2020_05_31Result {
   ///@}
  private:
   FieldLevelEncryptionProfileConfig m_fieldLevelEncryptionProfileConfig;
-  bool m_fieldLevelEncryptionProfileConfigHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fieldLevelEncryptionProfileConfigHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

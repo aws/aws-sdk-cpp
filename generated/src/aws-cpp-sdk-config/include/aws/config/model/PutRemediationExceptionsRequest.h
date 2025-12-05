@@ -115,15 +115,15 @@ class PutRemediationExceptionsRequest : public ConfigServiceRequest {
   ///@}
  private:
   Aws::String m_configRuleName;
-  bool m_configRuleNameHasBeenSet = false;
 
   Aws::Vector<RemediationExceptionResourceKey> m_resourceKeys;
-  bool m_resourceKeysHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Utils::DateTime m_expirationTime{};
+  bool m_configRuleNameHasBeenSet = false;
+  bool m_resourceKeysHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_expirationTimeHasBeenSet = false;
 };
 

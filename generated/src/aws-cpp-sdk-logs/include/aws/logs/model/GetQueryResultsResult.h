@@ -151,21 +151,21 @@ class GetQueryResultsResult {
   ///@}
  private:
   QueryLanguage m_queryLanguage{QueryLanguage::NOT_SET};
-  bool m_queryLanguageHasBeenSet = false;
 
   Aws::Vector<Aws::Vector<ResultField>> m_results;
-  bool m_resultsHasBeenSet = false;
 
   QueryStatistics m_statistics;
-  bool m_statisticsHasBeenSet = false;
 
   QueryStatus m_status{QueryStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_encryptionKey;
-  bool m_encryptionKeyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_queryLanguageHasBeenSet = false;
+  bool m_resultsHasBeenSet = false;
+  bool m_statisticsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_encryptionKeyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

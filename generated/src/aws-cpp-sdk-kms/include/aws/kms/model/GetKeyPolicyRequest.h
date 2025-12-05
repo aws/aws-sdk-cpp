@@ -75,9 +75,9 @@ class GetKeyPolicyRequest : public KMSRequest {
   ///@}
  private:
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   Aws::String m_policyName;
+  bool m_keyIdHasBeenSet = false;
   bool m_policyNameHasBeenSet = false;
 };
 

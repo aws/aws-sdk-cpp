@@ -88,12 +88,12 @@ class ListRepositoriesRequest : public CodeArtifactRequest {
   ///@}
  private:
   Aws::String m_repositoryPrefix;
-  bool m_repositoryPrefixHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_repositoryPrefixHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

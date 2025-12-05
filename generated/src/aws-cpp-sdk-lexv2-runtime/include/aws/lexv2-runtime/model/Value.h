@@ -99,12 +99,12 @@ class Value {
   ///@}
  private:
   Aws::String m_originalValue;
-  bool m_originalValueHasBeenSet = false;
 
   Aws::String m_interpretedValue;
-  bool m_interpretedValueHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resolvedValues;
+  bool m_originalValueHasBeenSet = false;
+  bool m_interpretedValueHasBeenSet = false;
   bool m_resolvedValuesHasBeenSet = false;
 };
 

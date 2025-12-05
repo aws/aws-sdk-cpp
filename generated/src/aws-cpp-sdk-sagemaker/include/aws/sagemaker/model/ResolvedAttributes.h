@@ -82,12 +82,12 @@ class ResolvedAttributes {
   ///@}
  private:
   AutoMLJobObjective m_autoMLJobObjective;
-  bool m_autoMLJobObjectiveHasBeenSet = false;
 
   ProblemType m_problemType{ProblemType::NOT_SET};
-  bool m_problemTypeHasBeenSet = false;
 
   AutoMLJobCompletionCriteria m_completionCriteria;
+  bool m_autoMLJobObjectiveHasBeenSet = false;
+  bool m_problemTypeHasBeenSet = false;
   bool m_completionCriteriaHasBeenSet = false;
 };
 

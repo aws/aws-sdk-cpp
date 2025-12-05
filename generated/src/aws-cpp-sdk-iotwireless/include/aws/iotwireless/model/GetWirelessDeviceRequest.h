@@ -69,9 +69,9 @@ class GetWirelessDeviceRequest : public IoTWirelessRequest {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   WirelessDeviceIdType m_identifierType{WirelessDeviceIdType::NOT_SET};
+  bool m_identifierHasBeenSet = false;
   bool m_identifierTypeHasBeenSet = false;
 };
 

@@ -128,18 +128,18 @@ class CopyDistribution2020_05_31Request : public CloudFrontRequest {
   ///@}
  private:
   Aws::String m_primaryDistributionId;
-  bool m_primaryDistributionIdHasBeenSet = false;
 
   bool m_staging{false};
-  bool m_stagingHasBeenSet = false;
 
   Aws::String m_ifMatch;
-  bool m_ifMatchHasBeenSet = false;
 
   Aws::String m_callerReference;
-  bool m_callerReferenceHasBeenSet = false;
 
   bool m_enabled{false};
+  bool m_primaryDistributionIdHasBeenSet = false;
+  bool m_stagingHasBeenSet = false;
+  bool m_ifMatchHasBeenSet = false;
+  bool m_callerReferenceHasBeenSet = false;
   bool m_enabledHasBeenSet = false;
 };
 

@@ -118,18 +118,18 @@ class SignPayloadResult {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_jobOwner;
-  bool m_jobOwnerHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_signature{};
-  bool m_signatureHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobIdHasBeenSet = false;
+  bool m_jobOwnerHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_signatureHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

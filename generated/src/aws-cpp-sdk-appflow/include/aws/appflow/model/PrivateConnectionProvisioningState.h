@@ -85,12 +85,12 @@ class PrivateConnectionProvisioningState {
   ///@}
  private:
   PrivateConnectionProvisioningStatus m_status{PrivateConnectionProvisioningStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_failureMessage;
-  bool m_failureMessageHasBeenSet = false;
 
   PrivateConnectionProvisioningFailureCause m_failureCause{PrivateConnectionProvisioningFailureCause::NOT_SET};
+  bool m_statusHasBeenSet = false;
+  bool m_failureMessageHasBeenSet = false;
   bool m_failureCauseHasBeenSet = false;
 };
 

@@ -109,15 +109,15 @@ class DescribeStreamRequest : public DynamoDBStreamsRequest {
   ///@}
  private:
   Aws::String m_streamArn;
-  bool m_streamArnHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_exclusiveStartShardId;
-  bool m_exclusiveStartShardIdHasBeenSet = false;
 
   ShardFilter m_shardFilter;
+  bool m_streamArnHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
+  bool m_exclusiveStartShardIdHasBeenSet = false;
   bool m_shardFilterHasBeenSet = false;
 };
 

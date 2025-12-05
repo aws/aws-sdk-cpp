@@ -104,15 +104,15 @@ class ListDiscoveredResourcesRequest : public MigrationHubRequest {
   ///@}
  private:
   Aws::String m_progressUpdateStream;
-  bool m_progressUpdateStreamHasBeenSet = false;
 
   Aws::String m_migrationTaskName;
-  bool m_migrationTaskNameHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_progressUpdateStreamHasBeenSet = false;
+  bool m_migrationTaskNameHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

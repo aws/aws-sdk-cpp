@@ -207,33 +207,33 @@ class MethodSetting {
   ///@}
  private:
   bool m_metricsEnabled{false};
-  bool m_metricsEnabledHasBeenSet = false;
 
   Aws::String m_loggingLevel;
-  bool m_loggingLevelHasBeenSet = false;
 
   bool m_dataTraceEnabled{false};
-  bool m_dataTraceEnabledHasBeenSet = false;
 
   int m_throttlingBurstLimit{0};
-  bool m_throttlingBurstLimitHasBeenSet = false;
 
   double m_throttlingRateLimit{0.0};
-  bool m_throttlingRateLimitHasBeenSet = false;
 
   bool m_cachingEnabled{false};
-  bool m_cachingEnabledHasBeenSet = false;
 
   int m_cacheTtlInSeconds{0};
-  bool m_cacheTtlInSecondsHasBeenSet = false;
 
   bool m_cacheDataEncrypted{false};
-  bool m_cacheDataEncryptedHasBeenSet = false;
 
   bool m_requireAuthorizationForCacheControl{false};
-  bool m_requireAuthorizationForCacheControlHasBeenSet = false;
 
   UnauthorizedCacheControlHeaderStrategy m_unauthorizedCacheControlHeaderStrategy{UnauthorizedCacheControlHeaderStrategy::NOT_SET};
+  bool m_metricsEnabledHasBeenSet = false;
+  bool m_loggingLevelHasBeenSet = false;
+  bool m_dataTraceEnabledHasBeenSet = false;
+  bool m_throttlingBurstLimitHasBeenSet = false;
+  bool m_throttlingRateLimitHasBeenSet = false;
+  bool m_cachingEnabledHasBeenSet = false;
+  bool m_cacheTtlInSecondsHasBeenSet = false;
+  bool m_cacheDataEncryptedHasBeenSet = false;
+  bool m_requireAuthorizationForCacheControlHasBeenSet = false;
   bool m_unauthorizedCacheControlHeaderStrategyHasBeenSet = false;
 };
 

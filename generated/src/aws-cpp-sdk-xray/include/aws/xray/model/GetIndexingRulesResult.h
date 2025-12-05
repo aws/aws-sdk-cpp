@@ -85,12 +85,12 @@ class GetIndexingRulesResult {
   ///@}
  private:
   Aws::Vector<IndexingRule> m_indexingRules;
-  bool m_indexingRulesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_indexingRulesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

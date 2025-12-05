@@ -83,12 +83,12 @@ class DescribeStorageVirtualMachinesResult {
   ///@}
  private:
   Aws::Vector<StorageVirtualMachine> m_storageVirtualMachines;
-  bool m_storageVirtualMachinesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_storageVirtualMachinesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class CustomDNSServer {
   ///@}
  private:
   Aws::String m_customDNSServerName;
-  bool m_customDNSServerNameHasBeenSet = false;
 
   Aws::String m_customDNSServerIP;
+  bool m_customDNSServerNameHasBeenSet = false;
   bool m_customDNSServerIPHasBeenSet = false;
 };
 

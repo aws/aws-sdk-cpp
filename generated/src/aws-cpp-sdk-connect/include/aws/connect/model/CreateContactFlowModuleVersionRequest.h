@@ -103,15 +103,15 @@ class CreateContactFlowModuleVersionRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_contactFlowModuleId;
-  bool m_contactFlowModuleIdHasBeenSet = false;
 
   Aws::String m_flowModuleContentSha256;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_contactFlowModuleIdHasBeenSet = false;
   bool m_flowModuleContentSha256HasBeenSet = false;
 };
 

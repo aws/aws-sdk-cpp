@@ -80,9 +80,9 @@ class StackSetAutoDeploymentTargetSummary {
   ///@}
  private:
   Aws::String m_organizationalUnitId;
-  bool m_organizationalUnitIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_regions;
+  bool m_organizationalUnitIdHasBeenSet = false;
   bool m_regionsHasBeenSet = false;
 };
 

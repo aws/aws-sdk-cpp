@@ -178,24 +178,24 @@ class ReplicationSubnetGroup {
   ///@}
  private:
   Aws::String m_replicationSubnetGroupIdentifier;
-  bool m_replicationSubnetGroupIdentifierHasBeenSet = false;
 
   Aws::String m_replicationSubnetGroupDescription;
-  bool m_replicationSubnetGroupDescriptionHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_subnetGroupStatus;
-  bool m_subnetGroupStatusHasBeenSet = false;
 
   Aws::Vector<Subnet> m_subnets;
-  bool m_subnetsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supportedNetworkTypes;
-  bool m_supportedNetworkTypesHasBeenSet = false;
 
   bool m_isReadOnly{false};
+  bool m_replicationSubnetGroupIdentifierHasBeenSet = false;
+  bool m_replicationSubnetGroupDescriptionHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_subnetGroupStatusHasBeenSet = false;
+  bool m_subnetsHasBeenSet = false;
+  bool m_supportedNetworkTypesHasBeenSet = false;
   bool m_isReadOnlyHasBeenSet = false;
 };
 

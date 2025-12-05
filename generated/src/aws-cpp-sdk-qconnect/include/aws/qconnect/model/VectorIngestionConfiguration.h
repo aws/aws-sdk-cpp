@@ -72,9 +72,9 @@ class VectorIngestionConfiguration {
   ///@}
  private:
   ChunkingConfiguration m_chunkingConfiguration;
-  bool m_chunkingConfigurationHasBeenSet = false;
 
   ParsingConfiguration m_parsingConfiguration;
+  bool m_chunkingConfigurationHasBeenSet = false;
   bool m_parsingConfigurationHasBeenSet = false;
 };
 

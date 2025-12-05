@@ -70,9 +70,9 @@ class DataSetExportItem {
   ///@}
  private:
   Aws::String m_datasetName;
-  bool m_datasetNameHasBeenSet = false;
 
   ExternalLocation m_externalLocation;
+  bool m_datasetNameHasBeenSet = false;
   bool m_externalLocationHasBeenSet = false;
 };
 

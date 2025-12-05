@@ -226,33 +226,33 @@ class InstanceImageMetadata {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   InstanceType m_instanceType{InstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_launchTime{};
-  bool m_launchTimeHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_zoneId;
-  bool m_zoneIdHasBeenSet = false;
 
   InstanceState m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ImageMetadata m_imageMetadata;
-  bool m_imageMetadataHasBeenSet = false;
 
   OperatorResponse m_operator;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_launchTimeHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_zoneIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_imageMetadataHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
 };
 

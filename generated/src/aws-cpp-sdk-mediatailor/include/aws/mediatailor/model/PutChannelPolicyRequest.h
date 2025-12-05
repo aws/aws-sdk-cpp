@@ -65,9 +65,9 @@ class PutChannelPolicyRequest : public MediaTailorRequest {
   ///@}
  private:
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   Aws::String m_policy;
+  bool m_channelNameHasBeenSet = false;
   bool m_policyHasBeenSet = false;
 };
 

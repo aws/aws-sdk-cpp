@@ -88,12 +88,12 @@ class ListRoute53HealthChecksResult {
   ///@}
  private:
   Aws::Vector<Route53HealthCheck> m_healthChecks;
-  bool m_healthChecksHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_healthChecksHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

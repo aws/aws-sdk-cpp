@@ -91,12 +91,12 @@ class DescribeRouteTablesResponse {
   ///@}
  private:
   Aws::Vector<RouteTable> m_routeTables;
-  bool m_routeTablesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_routeTablesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

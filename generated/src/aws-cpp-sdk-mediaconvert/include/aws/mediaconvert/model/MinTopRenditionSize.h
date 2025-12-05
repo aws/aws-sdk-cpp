@@ -67,9 +67,9 @@ class MinTopRenditionSize {
   ///@}
  private:
   int m_height{0};
-  bool m_heightHasBeenSet = false;
 
   int m_width{0};
+  bool m_heightHasBeenSet = false;
   bool m_widthHasBeenSet = false;
 };
 

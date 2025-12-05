@@ -105,15 +105,15 @@ class IcebergSortField {
   ///@}
  private:
   int m_sourceId{0};
-  bool m_sourceIdHasBeenSet = false;
 
   Aws::String m_transform;
-  bool m_transformHasBeenSet = false;
 
   IcebergSortDirection m_direction{IcebergSortDirection::NOT_SET};
-  bool m_directionHasBeenSet = false;
 
   IcebergNullOrder m_nullOrder{IcebergNullOrder::NOT_SET};
+  bool m_sourceIdHasBeenSet = false;
+  bool m_transformHasBeenSet = false;
+  bool m_directionHasBeenSet = false;
   bool m_nullOrderHasBeenSet = false;
 };
 

@@ -339,54 +339,54 @@ class EvaluationFormSearchSummary {
   ///@}
  private:
   Aws::String m_evaluationFormId;
-  bool m_evaluationFormIdHasBeenSet = false;
 
   Aws::String m_evaluationFormArn;
-  bool m_evaluationFormArnHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   EvaluationFormVersionStatus m_status{EvaluationFormVersionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_lastModifiedBy;
-  bool m_lastModifiedByHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastActivatedTime{};
-  bool m_lastActivatedTimeHasBeenSet = false;
 
   Aws::String m_lastActivatedBy;
-  bool m_lastActivatedByHasBeenSet = false;
 
   int m_latestVersion{0};
-  bool m_latestVersionHasBeenSet = false;
 
   int m_activeVersion{0};
-  bool m_activeVersionHasBeenSet = false;
 
   bool m_autoEvaluationEnabled{false};
-  bool m_autoEvaluationEnabledHasBeenSet = false;
 
   EvaluationFormLanguageCode m_evaluationFormLanguage{EvaluationFormLanguageCode::NOT_SET};
-  bool m_evaluationFormLanguageHasBeenSet = false;
 
   ContactInteractionType m_contactInteractionType{ContactInteractionType::NOT_SET};
-  bool m_contactInteractionTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_evaluationFormIdHasBeenSet = false;
+  bool m_evaluationFormArnHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_lastModifiedByHasBeenSet = false;
+  bool m_lastActivatedTimeHasBeenSet = false;
+  bool m_lastActivatedByHasBeenSet = false;
+  bool m_latestVersionHasBeenSet = false;
+  bool m_activeVersionHasBeenSet = false;
+  bool m_autoEvaluationEnabledHasBeenSet = false;
+  bool m_evaluationFormLanguageHasBeenSet = false;
+  bool m_contactInteractionTypeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

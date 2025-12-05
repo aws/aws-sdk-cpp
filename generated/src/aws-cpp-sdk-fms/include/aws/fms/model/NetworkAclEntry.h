@@ -169,24 +169,24 @@ class NetworkAclEntry {
   ///@}
  private:
   NetworkAclIcmpTypeCode m_icmpTypeCode;
-  bool m_icmpTypeCodeHasBeenSet = false;
 
   Aws::String m_protocol;
-  bool m_protocolHasBeenSet = false;
 
   NetworkAclPortRange m_portRange;
-  bool m_portRangeHasBeenSet = false;
 
   Aws::String m_cidrBlock;
-  bool m_cidrBlockHasBeenSet = false;
 
   Aws::String m_ipv6CidrBlock;
-  bool m_ipv6CidrBlockHasBeenSet = false;
 
   NetworkAclRuleAction m_ruleAction{NetworkAclRuleAction::NOT_SET};
-  bool m_ruleActionHasBeenSet = false;
 
   bool m_egress{false};
+  bool m_icmpTypeCodeHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_portRangeHasBeenSet = false;
+  bool m_cidrBlockHasBeenSet = false;
+  bool m_ipv6CidrBlockHasBeenSet = false;
+  bool m_ruleActionHasBeenSet = false;
   bool m_egressHasBeenSet = false;
 };
 

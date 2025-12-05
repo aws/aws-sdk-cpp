@@ -109,12 +109,12 @@ class SalesforceKnowledgeArticleConfiguration {
   ///@}
  private:
   Aws::Vector<SalesforceKnowledgeArticleState> m_includedStates;
-  bool m_includedStatesHasBeenSet = false;
 
   SalesforceStandardKnowledgeArticleTypeConfiguration m_standardKnowledgeArticleTypeConfiguration;
-  bool m_standardKnowledgeArticleTypeConfigurationHasBeenSet = false;
 
   Aws::Vector<SalesforceCustomKnowledgeArticleTypeConfiguration> m_customKnowledgeArticleTypeConfigurations;
+  bool m_includedStatesHasBeenSet = false;
+  bool m_standardKnowledgeArticleTypeConfigurationHasBeenSet = false;
   bool m_customKnowledgeArticleTypeConfigurationsHasBeenSet = false;
 };
 

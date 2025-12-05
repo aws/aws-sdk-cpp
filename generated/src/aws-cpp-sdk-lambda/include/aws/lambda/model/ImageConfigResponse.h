@@ -70,9 +70,9 @@ class ImageConfigResponse {
   ///@}
  private:
   ImageConfig m_imageConfig;
-  bool m_imageConfigHasBeenSet = false;
 
   ImageConfigError m_error;
+  bool m_imageConfigHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

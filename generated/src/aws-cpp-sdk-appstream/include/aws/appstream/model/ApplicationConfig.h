@@ -178,24 +178,24 @@ class ApplicationConfig {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_absoluteAppPath;
-  bool m_absoluteAppPathHasBeenSet = false;
 
   Aws::String m_absoluteIconPath;
-  bool m_absoluteIconPathHasBeenSet = false;
 
   Aws::String m_absoluteManifestPath;
-  bool m_absoluteManifestPathHasBeenSet = false;
 
   Aws::String m_workingDirectory;
-  bool m_workingDirectoryHasBeenSet = false;
 
   Aws::String m_launchParameters;
+  bool m_nameHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_absoluteAppPathHasBeenSet = false;
+  bool m_absoluteIconPathHasBeenSet = false;
+  bool m_absoluteManifestPathHasBeenSet = false;
+  bool m_workingDirectoryHasBeenSet = false;
   bool m_launchParametersHasBeenSet = false;
 };
 

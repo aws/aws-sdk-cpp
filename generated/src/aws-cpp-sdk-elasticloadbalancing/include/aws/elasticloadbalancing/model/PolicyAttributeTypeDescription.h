@@ -130,18 +130,18 @@ class PolicyAttributeTypeDescription {
   ///@}
  private:
   Aws::String m_attributeName;
-  bool m_attributeNameHasBeenSet = false;
 
   Aws::String m_attributeType;
-  bool m_attributeTypeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_defaultValue;
-  bool m_defaultValueHasBeenSet = false;
 
   Aws::String m_cardinality;
+  bool m_attributeNameHasBeenSet = false;
+  bool m_attributeTypeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_defaultValueHasBeenSet = false;
   bool m_cardinalityHasBeenSet = false;
 };
 

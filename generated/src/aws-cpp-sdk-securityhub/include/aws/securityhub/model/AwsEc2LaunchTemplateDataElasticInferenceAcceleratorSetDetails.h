@@ -67,9 +67,9 @@ class AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails {
   ///@}
  private:
   int m_count{0};
-  bool m_countHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_countHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

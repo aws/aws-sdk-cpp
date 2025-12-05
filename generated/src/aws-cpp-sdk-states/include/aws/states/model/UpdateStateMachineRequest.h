@@ -183,27 +183,27 @@ class UpdateStateMachineRequest : public SFNRequest {
   ///@}
  private:
   Aws::String m_stateMachineArn;
-  bool m_stateMachineArnHasBeenSet = false;
 
   Aws::String m_definition;
-  bool m_definitionHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   LoggingConfiguration m_loggingConfiguration;
-  bool m_loggingConfigurationHasBeenSet = false;
 
   TracingConfiguration m_tracingConfiguration;
-  bool m_tracingConfigurationHasBeenSet = false;
 
   bool m_publish{false};
-  bool m_publishHasBeenSet = false;
 
   Aws::String m_versionDescription;
-  bool m_versionDescriptionHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
+  bool m_stateMachineArnHasBeenSet = false;
+  bool m_definitionHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_loggingConfigurationHasBeenSet = false;
+  bool m_tracingConfigurationHasBeenSet = false;
+  bool m_publishHasBeenSet = false;
+  bool m_versionDescriptionHasBeenSet = false;
   bool m_encryptionConfigurationHasBeenSet = false;
 };
 

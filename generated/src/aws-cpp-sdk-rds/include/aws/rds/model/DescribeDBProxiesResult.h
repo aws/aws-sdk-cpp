@@ -88,12 +88,12 @@ class DescribeDBProxiesResult {
   ///@}
  private:
   Aws::Vector<DBProxy> m_dBProxies;
-  bool m_dBProxiesHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_dBProxiesHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

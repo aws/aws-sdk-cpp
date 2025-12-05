@@ -94,12 +94,12 @@ class IntentDisambiguationSettings {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   int m_maxDisambiguationIntents{0};
-  bool m_maxDisambiguationIntentsHasBeenSet = false;
 
   Aws::String m_customDisambiguationMessage;
+  bool m_enabledHasBeenSet = false;
+  bool m_maxDisambiguationIntentsHasBeenSet = false;
   bool m_customDisambiguationMessageHasBeenSet = false;
 };
 

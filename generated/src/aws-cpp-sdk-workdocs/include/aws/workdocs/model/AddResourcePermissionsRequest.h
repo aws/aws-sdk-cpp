@@ -113,15 +113,15 @@ class AddResourcePermissionsRequest : public WorkDocsRequest {
   ///@}
  private:
   Aws::String m_authenticationToken;
-  bool m_authenticationTokenHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::Vector<SharePrincipal> m_principals;
-  bool m_principalsHasBeenSet = false;
 
   NotificationOptions m_notificationOptions;
+  bool m_authenticationTokenHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_principalsHasBeenSet = false;
   bool m_notificationOptionsHasBeenSet = false;
 };
 

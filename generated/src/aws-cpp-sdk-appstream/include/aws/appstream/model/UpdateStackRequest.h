@@ -292,39 +292,39 @@ class UpdateStackRequest : public AppStreamRequest {
   ///@}
  private:
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<StorageConnector> m_storageConnectors;
-  bool m_storageConnectorsHasBeenSet = false;
 
   Aws::String m_redirectURL;
-  bool m_redirectURLHasBeenSet = false;
 
   Aws::String m_feedbackURL;
-  bool m_feedbackURLHasBeenSet = false;
 
   Aws::Vector<StackAttribute> m_attributesToDelete;
-  bool m_attributesToDeleteHasBeenSet = false;
 
   Aws::Vector<UserSetting> m_userSettings;
-  bool m_userSettingsHasBeenSet = false;
 
   ApplicationSettings m_applicationSettings;
-  bool m_applicationSettingsHasBeenSet = false;
 
   Aws::Vector<AccessEndpoint> m_accessEndpoints;
-  bool m_accessEndpointsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_embedHostDomains;
-  bool m_embedHostDomainsHasBeenSet = false;
 
   StreamingExperienceSettings m_streamingExperienceSettings;
+  bool m_displayNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_storageConnectorsHasBeenSet = false;
+  bool m_redirectURLHasBeenSet = false;
+  bool m_feedbackURLHasBeenSet = false;
+  bool m_attributesToDeleteHasBeenSet = false;
+  bool m_userSettingsHasBeenSet = false;
+  bool m_applicationSettingsHasBeenSet = false;
+  bool m_accessEndpointsHasBeenSet = false;
+  bool m_embedHostDomainsHasBeenSet = false;
   bool m_streamingExperienceSettingsHasBeenSet = false;
 };
 

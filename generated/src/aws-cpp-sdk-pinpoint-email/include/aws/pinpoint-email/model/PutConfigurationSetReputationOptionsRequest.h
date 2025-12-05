@@ -70,9 +70,9 @@ class PutConfigurationSetReputationOptionsRequest : public PinpointEmailRequest 
   ///@}
  private:
   Aws::String m_configurationSetName;
-  bool m_configurationSetNameHasBeenSet = false;
 
   bool m_reputationMetricsEnabled{false};
+  bool m_configurationSetNameHasBeenSet = false;
   bool m_reputationMetricsEnabledHasBeenSet = false;
 };
 

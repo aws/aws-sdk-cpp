@@ -69,9 +69,9 @@ class TimePeriod {
   ///@}
  private:
   Aws::Utils::DateTime m_startAt{};
-  bool m_startAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_endAt{};
+  bool m_startAtHasBeenSet = false;
   bool m_endAtHasBeenSet = false;
 };
 

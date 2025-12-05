@@ -85,12 +85,12 @@ class ListDeviceProfilesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<DeviceProfile> m_deviceProfileList;
-  bool m_deviceProfileListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_deviceProfileListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

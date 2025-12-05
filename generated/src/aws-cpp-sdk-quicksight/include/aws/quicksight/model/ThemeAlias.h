@@ -84,12 +84,12 @@ class ThemeAlias {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_aliasName;
-  bool m_aliasNameHasBeenSet = false;
 
   long long m_themeVersionNumber{0};
+  bool m_arnHasBeenSet = false;
+  bool m_aliasNameHasBeenSet = false;
   bool m_themeVersionNumberHasBeenSet = false;
 };
 

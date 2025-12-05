@@ -156,18 +156,18 @@ class ScatterPlotUnaggregatedFieldWells {
   ///@}
  private:
   Aws::Vector<DimensionField> m_xAxis;
-  bool m_xAxisHasBeenSet = false;
 
   Aws::Vector<DimensionField> m_yAxis;
-  bool m_yAxisHasBeenSet = false;
 
   Aws::Vector<MeasureField> m_size;
-  bool m_sizeHasBeenSet = false;
 
   Aws::Vector<DimensionField> m_category;
-  bool m_categoryHasBeenSet = false;
 
   Aws::Vector<DimensionField> m_label;
+  bool m_xAxisHasBeenSet = false;
+  bool m_yAxisHasBeenSet = false;
+  bool m_sizeHasBeenSet = false;
+  bool m_categoryHasBeenSet = false;
   bool m_labelHasBeenSet = false;
 };
 

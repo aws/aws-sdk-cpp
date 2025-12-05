@@ -84,12 +84,12 @@ class ListFacetAttributesResult {
   ///@}
  private:
   Aws::Vector<FacetAttribute> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_attributesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

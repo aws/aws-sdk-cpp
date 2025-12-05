@@ -179,27 +179,27 @@ class ListTransactionsRequest : public ManagedBlockchainQueryRequest {
   ///@}
  private:
   Aws::String m_address;
-  bool m_addressHasBeenSet = false;
 
   QueryNetwork m_network{QueryNetwork::NOT_SET};
-  bool m_networkHasBeenSet = false;
 
   BlockchainInstant m_fromBlockchainInstant;
-  bool m_fromBlockchainInstantHasBeenSet = false;
 
   BlockchainInstant m_toBlockchainInstant;
-  bool m_toBlockchainInstantHasBeenSet = false;
 
   ListTransactionsSort m_sort;
-  bool m_sortHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   ConfirmationStatusFilter m_confirmationStatusFilter;
+  bool m_addressHasBeenSet = false;
+  bool m_networkHasBeenSet = false;
+  bool m_fromBlockchainInstantHasBeenSet = false;
+  bool m_toBlockchainInstantHasBeenSet = false;
+  bool m_sortHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_confirmationStatusFilterHasBeenSet = false;
 };
 

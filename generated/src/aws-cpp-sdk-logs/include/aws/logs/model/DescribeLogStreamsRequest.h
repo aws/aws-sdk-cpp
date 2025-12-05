@@ -173,24 +173,24 @@ class DescribeLogStreamsRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::String m_logGroupName;
-  bool m_logGroupNameHasBeenSet = false;
 
   Aws::String m_logGroupIdentifier;
-  bool m_logGroupIdentifierHasBeenSet = false;
 
   Aws::String m_logStreamNamePrefix;
-  bool m_logStreamNamePrefixHasBeenSet = false;
 
   OrderBy m_orderBy{OrderBy::NOT_SET};
-  bool m_orderByHasBeenSet = false;
 
   bool m_descending{false};
-  bool m_descendingHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_limit{0};
+  bool m_logGroupNameHasBeenSet = false;
+  bool m_logGroupIdentifierHasBeenSet = false;
+  bool m_logStreamNamePrefixHasBeenSet = false;
+  bool m_orderByHasBeenSet = false;
+  bool m_descendingHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_limitHasBeenSet = false;
 };
 

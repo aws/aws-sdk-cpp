@@ -125,15 +125,15 @@ class Function {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, ParameterDetail> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   RequireConfirmation m_requireConfirmation{RequireConfirmation::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
   bool m_requireConfirmationHasBeenSet = false;
 };
 

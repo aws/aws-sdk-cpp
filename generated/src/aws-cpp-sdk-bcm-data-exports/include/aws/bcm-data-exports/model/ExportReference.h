@@ -87,12 +87,12 @@ class ExportReference {
   ///@}
  private:
   Aws::String m_exportArn;
-  bool m_exportArnHasBeenSet = false;
 
   Aws::String m_exportName;
-  bool m_exportNameHasBeenSet = false;
 
   ExportStatus m_exportStatus;
+  bool m_exportArnHasBeenSet = false;
+  bool m_exportNameHasBeenSet = false;
   bool m_exportStatusHasBeenSet = false;
 };
 

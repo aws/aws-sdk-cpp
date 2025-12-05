@@ -60,9 +60,9 @@ class QueryForecastResult {
   ///@}
  private:
   Forecast m_forecast;
-  bool m_forecastHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_forecastHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

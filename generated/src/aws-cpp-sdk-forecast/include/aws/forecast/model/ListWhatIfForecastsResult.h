@@ -87,12 +87,12 @@ class ListWhatIfForecastsResult {
   ///@}
  private:
   Aws::Vector<WhatIfForecastSummary> m_whatIfForecasts;
-  bool m_whatIfForecastsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_whatIfForecastsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

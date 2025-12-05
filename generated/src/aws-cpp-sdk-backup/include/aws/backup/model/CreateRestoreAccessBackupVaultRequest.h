@@ -130,18 +130,18 @@ class CreateRestoreAccessBackupVaultRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_sourceBackupVaultArn;
-  bool m_sourceBackupVaultArnHasBeenSet = false;
 
   Aws::String m_backupVaultName;
-  bool m_backupVaultNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_backupVaultTags;
-  bool m_backupVaultTagsHasBeenSet = false;
 
   Aws::String m_creatorRequestId{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_creatorRequestIdHasBeenSet = true;
 
   Aws::String m_requesterComment;
+  bool m_sourceBackupVaultArnHasBeenSet = false;
+  bool m_backupVaultNameHasBeenSet = false;
+  bool m_backupVaultTagsHasBeenSet = false;
+  bool m_creatorRequestIdHasBeenSet = true;
   bool m_requesterCommentHasBeenSet = false;
 };
 

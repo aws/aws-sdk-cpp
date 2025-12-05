@@ -73,9 +73,9 @@ class IamFederationConfigOptions {
   ///@}
  private:
   Aws::String m_groupAttribute;
-  bool m_groupAttributeHasBeenSet = false;
 
   Aws::String m_userAttribute;
+  bool m_groupAttributeHasBeenSet = false;
   bool m_userAttributeHasBeenSet = false;
 };
 

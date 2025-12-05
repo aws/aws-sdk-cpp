@@ -69,9 +69,9 @@ class AwsIamPermissionsBoundary {
   ///@}
  private:
   Aws::String m_permissionsBoundaryArn;
-  bool m_permissionsBoundaryArnHasBeenSet = false;
 
   Aws::String m_permissionsBoundaryType;
+  bool m_permissionsBoundaryArnHasBeenSet = false;
   bool m_permissionsBoundaryTypeHasBeenSet = false;
 };
 

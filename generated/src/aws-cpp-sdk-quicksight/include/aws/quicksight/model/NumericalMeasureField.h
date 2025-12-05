@@ -108,15 +108,15 @@ class NumericalMeasureField {
   ///@}
  private:
   Aws::String m_fieldId;
-  bool m_fieldIdHasBeenSet = false;
 
   ColumnIdentifier m_column;
-  bool m_columnHasBeenSet = false;
 
   NumericalAggregationFunction m_aggregationFunction;
-  bool m_aggregationFunctionHasBeenSet = false;
 
   NumberFormatConfiguration m_formatConfiguration;
+  bool m_fieldIdHasBeenSet = false;
+  bool m_columnHasBeenSet = false;
+  bool m_aggregationFunctionHasBeenSet = false;
   bool m_formatConfigurationHasBeenSet = false;
 };
 

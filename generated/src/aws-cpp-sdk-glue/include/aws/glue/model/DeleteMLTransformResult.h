@@ -59,9 +59,9 @@ class DeleteMLTransformResult {
   ///@}
  private:
   Aws::String m_transformId;
-  bool m_transformIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_transformIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

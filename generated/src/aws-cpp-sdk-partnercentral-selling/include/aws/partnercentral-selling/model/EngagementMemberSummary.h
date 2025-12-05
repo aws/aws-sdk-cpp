@@ -74,9 +74,9 @@ class EngagementMemberSummary {
   ///@}
  private:
   Aws::String m_companyName;
-  bool m_companyNameHasBeenSet = false;
 
   Aws::String m_websiteUrl;
+  bool m_companyNameHasBeenSet = false;
   bool m_websiteUrlHasBeenSet = false;
 };
 

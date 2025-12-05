@@ -751,120 +751,120 @@ class OrderableDBInstanceOption {
   ///@}
  private:
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_dBInstanceClass;
-  bool m_dBInstanceClassHasBeenSet = false;
 
   Aws::String m_licenseModel;
-  bool m_licenseModelHasBeenSet = false;
 
   Aws::String m_availabilityZoneGroup;
-  bool m_availabilityZoneGroupHasBeenSet = false;
 
   Aws::Vector<AvailabilityZone> m_availabilityZones;
-  bool m_availabilityZonesHasBeenSet = false;
 
   bool m_multiAZCapable{false};
-  bool m_multiAZCapableHasBeenSet = false;
 
   bool m_readReplicaCapable{false};
-  bool m_readReplicaCapableHasBeenSet = false;
 
   bool m_vpc{false};
-  bool m_vpcHasBeenSet = false;
 
   bool m_supportsStorageEncryption{false};
-  bool m_supportsStorageEncryptionHasBeenSet = false;
 
   Aws::String m_storageType;
-  bool m_storageTypeHasBeenSet = false;
 
   bool m_supportsIops{false};
-  bool m_supportsIopsHasBeenSet = false;
 
   bool m_supportsStorageThroughput{false};
-  bool m_supportsStorageThroughputHasBeenSet = false;
 
   bool m_supportsEnhancedMonitoring{false};
-  bool m_supportsEnhancedMonitoringHasBeenSet = false;
 
   bool m_supportsIAMDatabaseAuthentication{false};
-  bool m_supportsIAMDatabaseAuthenticationHasBeenSet = false;
 
   bool m_supportsPerformanceInsights{false};
-  bool m_supportsPerformanceInsightsHasBeenSet = false;
 
   int m_minStorageSize{0};
-  bool m_minStorageSizeHasBeenSet = false;
 
   int m_maxStorageSize{0};
-  bool m_maxStorageSizeHasBeenSet = false;
 
   int m_minIopsPerDbInstance{0};
-  bool m_minIopsPerDbInstanceHasBeenSet = false;
 
   int m_maxIopsPerDbInstance{0};
-  bool m_maxIopsPerDbInstanceHasBeenSet = false;
 
   double m_minIopsPerGib{0.0};
-  bool m_minIopsPerGibHasBeenSet = false;
 
   double m_maxIopsPerGib{0.0};
-  bool m_maxIopsPerGibHasBeenSet = false;
 
   int m_minStorageThroughputPerDbInstance{0};
-  bool m_minStorageThroughputPerDbInstanceHasBeenSet = false;
 
   int m_maxStorageThroughputPerDbInstance{0};
-  bool m_maxStorageThroughputPerDbInstanceHasBeenSet = false;
 
   double m_minStorageThroughputPerIops{0.0};
-  bool m_minStorageThroughputPerIopsHasBeenSet = false;
 
   double m_maxStorageThroughputPerIops{0.0};
-  bool m_maxStorageThroughputPerIopsHasBeenSet = false;
 
   Aws::Vector<AvailableProcessorFeature> m_availableProcessorFeatures;
-  bool m_availableProcessorFeaturesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supportedEngineModes;
-  bool m_supportedEngineModesHasBeenSet = false;
 
   bool m_supportsStorageAutoscaling{false};
-  bool m_supportsStorageAutoscalingHasBeenSet = false;
 
   bool m_supportsKerberosAuthentication{false};
-  bool m_supportsKerberosAuthenticationHasBeenSet = false;
 
   bool m_outpostCapable{false};
-  bool m_outpostCapableHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supportedActivityStreamModes;
-  bool m_supportedActivityStreamModesHasBeenSet = false;
 
   bool m_supportsGlobalDatabases{false};
-  bool m_supportsGlobalDatabasesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supportedNetworkTypes;
-  bool m_supportedNetworkTypesHasBeenSet = false;
 
   bool m_supportsClusters{false};
-  bool m_supportsClustersHasBeenSet = false;
 
   bool m_supportsDedicatedLogVolume{false};
-  bool m_supportsDedicatedLogVolumeHasBeenSet = false;
 
   bool m_supportsHttpEndpoint{false};
-  bool m_supportsHttpEndpointHasBeenSet = false;
 
   bool m_supportsAdditionalStorageVolumes{false};
-  bool m_supportsAdditionalStorageVolumesHasBeenSet = false;
 
   Aws::Vector<AvailableAdditionalStorageVolumesOption> m_availableAdditionalStorageVolumesOptions;
+  bool m_engineHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_dBInstanceClassHasBeenSet = false;
+  bool m_licenseModelHasBeenSet = false;
+  bool m_availabilityZoneGroupHasBeenSet = false;
+  bool m_availabilityZonesHasBeenSet = false;
+  bool m_multiAZCapableHasBeenSet = false;
+  bool m_readReplicaCapableHasBeenSet = false;
+  bool m_vpcHasBeenSet = false;
+  bool m_supportsStorageEncryptionHasBeenSet = false;
+  bool m_storageTypeHasBeenSet = false;
+  bool m_supportsIopsHasBeenSet = false;
+  bool m_supportsStorageThroughputHasBeenSet = false;
+  bool m_supportsEnhancedMonitoringHasBeenSet = false;
+  bool m_supportsIAMDatabaseAuthenticationHasBeenSet = false;
+  bool m_supportsPerformanceInsightsHasBeenSet = false;
+  bool m_minStorageSizeHasBeenSet = false;
+  bool m_maxStorageSizeHasBeenSet = false;
+  bool m_minIopsPerDbInstanceHasBeenSet = false;
+  bool m_maxIopsPerDbInstanceHasBeenSet = false;
+  bool m_minIopsPerGibHasBeenSet = false;
+  bool m_maxIopsPerGibHasBeenSet = false;
+  bool m_minStorageThroughputPerDbInstanceHasBeenSet = false;
+  bool m_maxStorageThroughputPerDbInstanceHasBeenSet = false;
+  bool m_minStorageThroughputPerIopsHasBeenSet = false;
+  bool m_maxStorageThroughputPerIopsHasBeenSet = false;
+  bool m_availableProcessorFeaturesHasBeenSet = false;
+  bool m_supportedEngineModesHasBeenSet = false;
+  bool m_supportsStorageAutoscalingHasBeenSet = false;
+  bool m_supportsKerberosAuthenticationHasBeenSet = false;
+  bool m_outpostCapableHasBeenSet = false;
+  bool m_supportedActivityStreamModesHasBeenSet = false;
+  bool m_supportsGlobalDatabasesHasBeenSet = false;
+  bool m_supportedNetworkTypesHasBeenSet = false;
+  bool m_supportsClustersHasBeenSet = false;
+  bool m_supportsDedicatedLogVolumeHasBeenSet = false;
+  bool m_supportsHttpEndpointHasBeenSet = false;
+  bool m_supportsAdditionalStorageVolumesHasBeenSet = false;
   bool m_availableAdditionalStorageVolumesOptionsHasBeenSet = false;
 };
 

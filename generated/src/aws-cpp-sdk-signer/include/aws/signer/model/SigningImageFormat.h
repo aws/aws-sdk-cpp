@@ -73,9 +73,9 @@ class SigningImageFormat {
   ///@}
  private:
   Aws::Vector<ImageFormat> m_supportedFormats;
-  bool m_supportedFormatsHasBeenSet = false;
 
   ImageFormat m_defaultFormat{ImageFormat::NOT_SET};
+  bool m_supportedFormatsHasBeenSet = false;
   bool m_defaultFormatHasBeenSet = false;
 };
 

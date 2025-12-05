@@ -61,9 +61,9 @@ class GetMinuteUsageRequest : public GroundStationRequest {
   ///@}
  private:
   int m_month{0};
-  bool m_monthHasBeenSet = false;
 
   int m_year{0};
+  bool m_monthHasBeenSet = false;
   bool m_yearHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class StepFailedDetails {
   ///@}
  private:
   EventError m_error;
-  bool m_errorHasBeenSet = false;
 
   RetryDetails m_retryDetails;
+  bool m_errorHasBeenSet = false;
   bool m_retryDetailsHasBeenSet = false;
 };
 

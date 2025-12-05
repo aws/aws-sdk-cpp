@@ -77,9 +77,9 @@ class RenewalTerm {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   RenewalTermConfiguration m_configuration;
+  bool m_typeHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
 };
 

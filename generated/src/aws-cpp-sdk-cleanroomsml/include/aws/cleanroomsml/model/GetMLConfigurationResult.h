@@ -113,18 +113,18 @@ class GetMLConfigurationResult {
   ///@}
  private:
   Aws::String m_membershipIdentifier;
-  bool m_membershipIdentifierHasBeenSet = false;
 
   MLOutputConfiguration m_defaultOutputLocation;
-  bool m_defaultOutputLocationHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_membershipIdentifierHasBeenSet = false;
+  bool m_defaultOutputLocationHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

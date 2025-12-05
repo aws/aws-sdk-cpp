@@ -182,15 +182,15 @@ class GeofenceGeometry {
   ///@}
  private:
   Aws::Vector<Aws::Vector<Aws::Vector<double>>> m_polygon;
-  bool m_polygonHasBeenSet = false;
 
   Circle m_circle;
-  bool m_circleHasBeenSet = false;
 
   Aws::Utils::CryptoBuffer m_geobuf{};
-  bool m_geobufHasBeenSet = false;
 
   Aws::Vector<Aws::Vector<Aws::Vector<Aws::Vector<double>>>> m_multiPolygon;
+  bool m_polygonHasBeenSet = false;
+  bool m_circleHasBeenSet = false;
+  bool m_geobufHasBeenSet = false;
   bool m_multiPolygonHasBeenSet = false;
 };
 

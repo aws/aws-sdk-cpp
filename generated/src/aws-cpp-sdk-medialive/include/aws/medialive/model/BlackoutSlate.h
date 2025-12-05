@@ -130,18 +130,18 @@ class BlackoutSlate {
   ///@}
  private:
   InputLocation m_blackoutSlateImage;
-  bool m_blackoutSlateImageHasBeenSet = false;
 
   BlackoutSlateNetworkEndBlackout m_networkEndBlackout{BlackoutSlateNetworkEndBlackout::NOT_SET};
-  bool m_networkEndBlackoutHasBeenSet = false;
 
   InputLocation m_networkEndBlackoutImage;
-  bool m_networkEndBlackoutImageHasBeenSet = false;
 
   Aws::String m_networkId;
-  bool m_networkIdHasBeenSet = false;
 
   BlackoutSlateState m_state{BlackoutSlateState::NOT_SET};
+  bool m_blackoutSlateImageHasBeenSet = false;
+  bool m_networkEndBlackoutHasBeenSet = false;
+  bool m_networkEndBlackoutImageHasBeenSet = false;
+  bool m_networkIdHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

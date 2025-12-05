@@ -75,9 +75,9 @@ class ListSAMLProvidersResult {
   ///@}
  private:
   Aws::Vector<SAMLProviderListEntry> m_sAMLProviderList;
-  bool m_sAMLProviderListHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_sAMLProviderListHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -242,33 +242,33 @@ class MediaInsightsPipelineConfigurationElement {
   ///@}
  private:
   MediaInsightsPipelineConfigurationElementType m_type{MediaInsightsPipelineConfigurationElementType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   AmazonTranscribeCallAnalyticsProcessorConfiguration m_amazonTranscribeCallAnalyticsProcessorConfiguration;
-  bool m_amazonTranscribeCallAnalyticsProcessorConfigurationHasBeenSet = false;
 
   AmazonTranscribeProcessorConfiguration m_amazonTranscribeProcessorConfiguration;
-  bool m_amazonTranscribeProcessorConfigurationHasBeenSet = false;
 
   KinesisDataStreamSinkConfiguration m_kinesisDataStreamSinkConfiguration;
-  bool m_kinesisDataStreamSinkConfigurationHasBeenSet = false;
 
   S3RecordingSinkConfiguration m_s3RecordingSinkConfiguration;
-  bool m_s3RecordingSinkConfigurationHasBeenSet = false;
 
   VoiceAnalyticsProcessorConfiguration m_voiceAnalyticsProcessorConfiguration;
-  bool m_voiceAnalyticsProcessorConfigurationHasBeenSet = false;
 
   LambdaFunctionSinkConfiguration m_lambdaFunctionSinkConfiguration;
-  bool m_lambdaFunctionSinkConfigurationHasBeenSet = false;
 
   SqsQueueSinkConfiguration m_sqsQueueSinkConfiguration;
-  bool m_sqsQueueSinkConfigurationHasBeenSet = false;
 
   SnsTopicSinkConfiguration m_snsTopicSinkConfiguration;
-  bool m_snsTopicSinkConfigurationHasBeenSet = false;
 
   VoiceEnhancementSinkConfiguration m_voiceEnhancementSinkConfiguration;
+  bool m_typeHasBeenSet = false;
+  bool m_amazonTranscribeCallAnalyticsProcessorConfigurationHasBeenSet = false;
+  bool m_amazonTranscribeProcessorConfigurationHasBeenSet = false;
+  bool m_kinesisDataStreamSinkConfigurationHasBeenSet = false;
+  bool m_s3RecordingSinkConfigurationHasBeenSet = false;
+  bool m_voiceAnalyticsProcessorConfigurationHasBeenSet = false;
+  bool m_lambdaFunctionSinkConfigurationHasBeenSet = false;
+  bool m_sqsQueueSinkConfigurationHasBeenSet = false;
+  bool m_snsTopicSinkConfigurationHasBeenSet = false;
   bool m_voiceEnhancementSinkConfigurationHasBeenSet = false;
 };
 

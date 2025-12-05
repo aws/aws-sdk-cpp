@@ -137,18 +137,18 @@ class CreateCertificateProviderRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_certificateProviderName;
-  bool m_certificateProviderNameHasBeenSet = false;
 
   Aws::String m_lambdaFunctionArn;
-  bool m_lambdaFunctionArnHasBeenSet = false;
 
   Aws::Vector<CertificateProviderOperation> m_accountDefaultForOperations;
-  bool m_accountDefaultForOperationsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Vector<Tag> m_tags;
+  bool m_certificateProviderNameHasBeenSet = false;
+  bool m_lambdaFunctionArnHasBeenSet = false;
+  bool m_accountDefaultForOperationsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

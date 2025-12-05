@@ -70,9 +70,9 @@ class ServiceLevelObjectiveEntity {
   ///@}
  private:
   Aws::String m_sloName;
-  bool m_sloNameHasBeenSet = false;
 
   Aws::String m_sloArn;
+  bool m_sloNameHasBeenSet = false;
   bool m_sloArnHasBeenSet = false;
 };
 

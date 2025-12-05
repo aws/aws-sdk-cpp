@@ -59,9 +59,9 @@ class CreateProcessingJobResult {
   ///@}
  private:
   Aws::String m_processingJobArn;
-  bool m_processingJobArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_processingJobArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

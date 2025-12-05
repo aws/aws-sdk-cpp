@@ -121,18 +121,18 @@ class ListWorkloadsRequest : public ApplicationInsightsRequest {
   ///@}
  private:
   Aws::String m_resourceGroupName;
-  bool m_resourceGroupNameHasBeenSet = false;
 
   Aws::String m_componentName;
-  bool m_componentNameHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_accountId;
+  bool m_resourceGroupNameHasBeenSet = false;
+  bool m_componentNameHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;
 };
 

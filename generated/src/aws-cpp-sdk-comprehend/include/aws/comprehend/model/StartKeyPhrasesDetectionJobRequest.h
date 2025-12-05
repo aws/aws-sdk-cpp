@@ -224,30 +224,30 @@ class StartKeyPhrasesDetectionJobRequest : public ComprehendRequest {
   ///@}
  private:
   InputDataConfig m_inputDataConfig;
-  bool m_inputDataConfigHasBeenSet = false;
 
   OutputDataConfig m_outputDataConfig;
-  bool m_outputDataConfigHasBeenSet = false;
 
   Aws::String m_dataAccessRoleArn;
-  bool m_dataAccessRoleArnHasBeenSet = false;
 
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   LanguageCode m_languageCode{LanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::String m_volumeKmsKeyId;
-  bool m_volumeKmsKeyIdHasBeenSet = false;
 
   VpcConfig m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_inputDataConfigHasBeenSet = false;
+  bool m_outputDataConfigHasBeenSet = false;
+  bool m_dataAccessRoleArnHasBeenSet = false;
+  bool m_jobNameHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_volumeKmsKeyIdHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

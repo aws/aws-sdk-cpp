@@ -170,21 +170,21 @@ class RecurrenceSettings {
   ///@}
  private:
   Aws::Vector<MonthlySetting> m_monthlySettings;
-  bool m_monthlySettingsHasBeenSet = false;
 
   Aws::Vector<WeeklySetting> m_weeklySettings;
-  bool m_weeklySettingsHasBeenSet = false;
 
   Aws::Vector<HandOffTime> m_dailySettings;
-  bool m_dailySettingsHasBeenSet = false;
 
   int m_numberOfOnCalls{0};
-  bool m_numberOfOnCallsHasBeenSet = false;
 
   Aws::Map<DayOfWeek, Aws::Vector<CoverageTime>> m_shiftCoverages;
-  bool m_shiftCoveragesHasBeenSet = false;
 
   int m_recurrenceMultiplier{0};
+  bool m_monthlySettingsHasBeenSet = false;
+  bool m_weeklySettingsHasBeenSet = false;
+  bool m_dailySettingsHasBeenSet = false;
+  bool m_numberOfOnCallsHasBeenSet = false;
+  bool m_shiftCoveragesHasBeenSet = false;
   bool m_recurrenceMultiplierHasBeenSet = false;
 };
 

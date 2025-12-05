@@ -82,9 +82,9 @@ class ReplicationStatusType {
   ///@}
  private:
   KeyReplicationState m_status{KeyReplicationState::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
+  bool m_statusHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
 };
 

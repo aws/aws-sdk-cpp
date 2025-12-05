@@ -93,15 +93,15 @@ class DeleteSparqlStatisticsResult {
   ///@}
  private:
   int m_statusCode{0};
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   DeleteStatisticsValueMap m_payload;
-  bool m_payloadHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusCodeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_payloadHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

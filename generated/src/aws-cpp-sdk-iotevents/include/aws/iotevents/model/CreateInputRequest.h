@@ -110,15 +110,15 @@ class CreateInputRequest : public IoTEventsRequest {
   ///@}
  private:
   Aws::String m_inputName;
-  bool m_inputNameHasBeenSet = false;
 
   Aws::String m_inputDescription;
-  bool m_inputDescriptionHasBeenSet = false;
 
   InputDefinition m_inputDefinition;
-  bool m_inputDefinitionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_inputNameHasBeenSet = false;
+  bool m_inputDescriptionHasBeenSet = false;
+  bool m_inputDefinitionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

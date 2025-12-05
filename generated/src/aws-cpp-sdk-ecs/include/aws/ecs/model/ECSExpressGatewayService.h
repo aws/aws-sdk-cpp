@@ -238,33 +238,33 @@ class ECSExpressGatewayService {
   ///@}
  private:
   Aws::String m_cluster;
-  bool m_clusterHasBeenSet = false;
 
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   Aws::String m_serviceArn;
-  bool m_serviceArnHasBeenSet = false;
 
   Aws::String m_infrastructureRoleArn;
-  bool m_infrastructureRoleArnHasBeenSet = false;
 
   ExpressGatewayServiceStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_currentDeployment;
-  bool m_currentDeploymentHasBeenSet = false;
 
   Aws::Vector<ExpressGatewayServiceConfiguration> m_activeConfigurations;
-  bool m_activeConfigurationsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_clusterHasBeenSet = false;
+  bool m_serviceNameHasBeenSet = false;
+  bool m_serviceArnHasBeenSet = false;
+  bool m_infrastructureRoleArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_currentDeploymentHasBeenSet = false;
+  bool m_activeConfigurationsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

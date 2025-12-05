@@ -70,9 +70,9 @@ class DBClusterOptionGroupStatus {
   ///@}
  private:
   Aws::String m_dBClusterOptionGroupName;
-  bool m_dBClusterOptionGroupNameHasBeenSet = false;
 
   Aws::String m_status;
+  bool m_dBClusterOptionGroupNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

@@ -144,21 +144,21 @@ class ConnectorSummary {
   ///@}
  private:
   Aws::String m_connectorArn;
-  bool m_connectorArnHasBeenSet = false;
 
   Aws::String m_connectorId;
-  bool m_connectorIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ProviderSummary m_providerSummary;
-  bool m_providerSummaryHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
+  bool m_connectorArnHasBeenSet = false;
+  bool m_connectorIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_providerSummaryHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
 };
 

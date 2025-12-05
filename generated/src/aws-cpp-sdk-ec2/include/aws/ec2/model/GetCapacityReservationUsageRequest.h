@@ -107,15 +107,15 @@ class GetCapacityReservationUsageRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_capacityReservationId;
-  bool m_capacityReservationIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_capacityReservationIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

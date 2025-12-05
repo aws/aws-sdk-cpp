@@ -145,21 +145,21 @@ class ImageUsageReportEntry {
   ///@}
  private:
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_reportId;
-  bool m_reportIdHasBeenSet = false;
 
   long long m_usageCount{0};
-  bool m_usageCountHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_reportCreationTime{};
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_reportIdHasBeenSet = false;
+  bool m_usageCountHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_imageIdHasBeenSet = false;
   bool m_reportCreationTimeHasBeenSet = false;
 };
 

@@ -115,15 +115,15 @@ class CertificateAuthorityConfiguration {
   ///@}
  private:
   KeyAlgorithm m_keyAlgorithm{KeyAlgorithm::NOT_SET};
-  bool m_keyAlgorithmHasBeenSet = false;
 
   SigningAlgorithm m_signingAlgorithm{SigningAlgorithm::NOT_SET};
-  bool m_signingAlgorithmHasBeenSet = false;
 
   ASN1Subject m_subject;
-  bool m_subjectHasBeenSet = false;
 
   CsrExtensions m_csrExtensions;
+  bool m_keyAlgorithmHasBeenSet = false;
+  bool m_signingAlgorithmHasBeenSet = false;
+  bool m_subjectHasBeenSet = false;
   bool m_csrExtensionsHasBeenSet = false;
 };
 

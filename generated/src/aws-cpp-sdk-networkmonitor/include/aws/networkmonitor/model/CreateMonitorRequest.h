@@ -137,18 +137,18 @@ class CreateMonitorRequest : public NetworkMonitorRequest {
   ///@}
  private:
   Aws::String m_monitorName;
-  bool m_monitorNameHasBeenSet = false;
 
   Aws::Vector<CreateMonitorProbeInput> m_probes;
-  bool m_probesHasBeenSet = false;
 
   long long m_aggregationPeriod{0};
-  bool m_aggregationPeriodHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_monitorNameHasBeenSet = false;
+  bool m_probesHasBeenSet = false;
+  bool m_aggregationPeriodHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class ListSubscribersResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<SubscriberResource> m_subscribers;
-  bool m_subscribersHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_subscribersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -66,9 +66,9 @@ class DeleteRestoreTestingSelectionRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_restoreTestingPlanName;
-  bool m_restoreTestingPlanNameHasBeenSet = false;
 
   Aws::String m_restoreTestingSelectionName;
+  bool m_restoreTestingPlanNameHasBeenSet = false;
   bool m_restoreTestingSelectionNameHasBeenSet = false;
 };
 

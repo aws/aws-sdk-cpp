@@ -70,9 +70,9 @@ class DefaultFormatting {
   ///@}
  private:
   DisplayFormat m_displayFormat{DisplayFormat::NOT_SET};
-  bool m_displayFormatHasBeenSet = false;
 
   DisplayFormatOptions m_displayFormatOptions;
+  bool m_displayFormatHasBeenSet = false;
   bool m_displayFormatOptionsHasBeenSet = false;
 };
 

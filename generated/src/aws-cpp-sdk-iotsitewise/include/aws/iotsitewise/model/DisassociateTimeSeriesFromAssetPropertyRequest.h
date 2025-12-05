@@ -117,15 +117,15 @@ class DisassociateTimeSeriesFromAssetPropertyRequest : public IoTSiteWiseRequest
   ///@}
  private:
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   Aws::String m_assetId;
-  bool m_assetIdHasBeenSet = false;
 
   Aws::String m_propertyId;
-  bool m_propertyIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_aliasHasBeenSet = false;
+  bool m_assetIdHasBeenSet = false;
+  bool m_propertyIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

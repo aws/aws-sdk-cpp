@@ -87,12 +87,12 @@ class DiscoverDynamicCardVerificationCode {
   ///@}
  private:
   Aws::String m_cardExpiryDate;
-  bool m_cardExpiryDateHasBeenSet = false;
 
   Aws::String m_unpredictableNumber;
-  bool m_unpredictableNumberHasBeenSet = false;
 
   Aws::String m_applicationTransactionCounter;
+  bool m_cardExpiryDateHasBeenSet = false;
+  bool m_unpredictableNumberHasBeenSet = false;
   bool m_applicationTransactionCounterHasBeenSet = false;
 };
 

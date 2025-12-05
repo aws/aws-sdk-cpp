@@ -293,36 +293,36 @@ class ConfigRule {
   ///@}
  private:
   Aws::String m_configRuleName;
-  bool m_configRuleNameHasBeenSet = false;
 
   Aws::String m_configRuleArn;
-  bool m_configRuleArnHasBeenSet = false;
 
   Aws::String m_configRuleId;
-  bool m_configRuleIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Scope m_scope;
-  bool m_scopeHasBeenSet = false;
 
   Source m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_inputParameters;
-  bool m_inputParametersHasBeenSet = false;
 
   MaximumExecutionFrequency m_maximumExecutionFrequency{MaximumExecutionFrequency::NOT_SET};
-  bool m_maximumExecutionFrequencyHasBeenSet = false;
 
   ConfigRuleState m_configRuleState{ConfigRuleState::NOT_SET};
-  bool m_configRuleStateHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Vector<EvaluationModeConfiguration> m_evaluationModes;
+  bool m_configRuleNameHasBeenSet = false;
+  bool m_configRuleArnHasBeenSet = false;
+  bool m_configRuleIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_inputParametersHasBeenSet = false;
+  bool m_maximumExecutionFrequencyHasBeenSet = false;
+  bool m_configRuleStateHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
   bool m_evaluationModesHasBeenSet = false;
 };
 

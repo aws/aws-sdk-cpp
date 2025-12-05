@@ -149,21 +149,21 @@ class UpdateReviewTemplateRequest : public WellArchitectedRequest {
   ///@}
  private:
   Aws::String m_templateArn;
-  bool m_templateArnHasBeenSet = false;
 
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_notes;
-  bool m_notesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_lensesToAssociate;
-  bool m_lensesToAssociateHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_lensesToDisassociate;
+  bool m_templateArnHasBeenSet = false;
+  bool m_templateNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_notesHasBeenSet = false;
+  bool m_lensesToAssociateHasBeenSet = false;
   bool m_lensesToDisassociateHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class AgentConfigurationStatus {
   ///@}
  private:
   Aws::String m_agentId;
-  bool m_agentIdHasBeenSet = false;
 
   bool m_operationSucceeded{false};
-  bool m_operationSucceededHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_agentIdHasBeenSet = false;
+  bool m_operationSucceededHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

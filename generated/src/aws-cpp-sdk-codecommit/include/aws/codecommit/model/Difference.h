@@ -89,12 +89,12 @@ class Difference {
   ///@}
  private:
   BlobMetadata m_beforeBlob;
-  bool m_beforeBlobHasBeenSet = false;
 
   BlobMetadata m_afterBlob;
-  bool m_afterBlobHasBeenSet = false;
 
   ChangeTypeEnum m_changeType{ChangeTypeEnum::NOT_SET};
+  bool m_beforeBlobHasBeenSet = false;
+  bool m_afterBlobHasBeenSet = false;
   bool m_changeTypeHasBeenSet = false;
 };
 

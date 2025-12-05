@@ -122,15 +122,15 @@ class S3Config {
   ///@}
  private:
   Aws::String m_bucketArn;
-  bool m_bucketArnHasBeenSet = false;
 
   DataFormat m_dataFormat{DataFormat::NOT_SET};
-  bool m_dataFormatHasBeenSet = false;
 
   StorageCompressionFormat m_storageCompressionFormat{StorageCompressionFormat::NOT_SET};
-  bool m_storageCompressionFormatHasBeenSet = false;
 
   Aws::String m_prefix;
+  bool m_bucketArnHasBeenSet = false;
+  bool m_dataFormatHasBeenSet = false;
+  bool m_storageCompressionFormatHasBeenSet = false;
   bool m_prefixHasBeenSet = false;
 };
 

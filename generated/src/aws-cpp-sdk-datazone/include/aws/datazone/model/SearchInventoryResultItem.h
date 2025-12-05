@@ -107,15 +107,15 @@ class SearchInventoryResultItem {
   ///@}
  private:
   AssetItem m_assetItem;
-  bool m_assetItemHasBeenSet = false;
 
   DataProductResultItem m_dataProductItem;
-  bool m_dataProductItemHasBeenSet = false;
 
   GlossaryItem m_glossaryItem;
-  bool m_glossaryItemHasBeenSet = false;
 
   GlossaryTermItem m_glossaryTermItem;
+  bool m_assetItemHasBeenSet = false;
+  bool m_dataProductItemHasBeenSet = false;
+  bool m_glossaryItemHasBeenSet = false;
   bool m_glossaryTermItemHasBeenSet = false;
 };
 

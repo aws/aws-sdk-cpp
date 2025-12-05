@@ -77,12 +77,12 @@ class GetKeyGroupConfig2020_05_31Result {
   ///@}
  private:
   KeyGroupConfig m_keyGroupConfig;
-  bool m_keyGroupConfigHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_keyGroupConfigHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

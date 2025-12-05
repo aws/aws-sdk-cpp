@@ -119,15 +119,15 @@ class ListPermissionsRequest : public RAMRequest {
   ///@}
  private:
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   PermissionTypeFilter m_permissionType{PermissionTypeFilter::NOT_SET};
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_permissionTypeHasBeenSet = false;
 };
 

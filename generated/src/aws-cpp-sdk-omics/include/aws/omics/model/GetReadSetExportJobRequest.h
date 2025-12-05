@@ -65,9 +65,9 @@ class GetReadSetExportJobRequest : public OmicsRequest {
   ///@}
  private:
   Aws::String m_sequenceStoreId;
-  bool m_sequenceStoreIdHasBeenSet = false;
 
   Aws::String m_id;
+  bool m_sequenceStoreIdHasBeenSet = false;
   bool m_idHasBeenSet = false;
 };
 

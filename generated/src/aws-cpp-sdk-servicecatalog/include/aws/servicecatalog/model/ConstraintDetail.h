@@ -146,21 +146,21 @@ class ConstraintDetail {
   ///@}
  private:
   Aws::String m_constraintId;
-  bool m_constraintIdHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::String m_productId;
-  bool m_productIdHasBeenSet = false;
 
   Aws::String m_portfolioId;
+  bool m_constraintIdHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_productIdHasBeenSet = false;
   bool m_portfolioIdHasBeenSet = false;
 };
 

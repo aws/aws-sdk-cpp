@@ -105,15 +105,15 @@ class GluePolicy {
   ///@}
  private:
   Aws::String m_policyInJson;
-  bool m_policyInJsonHasBeenSet = false;
 
   Aws::String m_policyHash;
-  bool m_policyHashHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
+  bool m_policyInJsonHasBeenSet = false;
+  bool m_policyHashHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
   bool m_updateTimeHasBeenSet = false;
 };
 

@@ -214,33 +214,33 @@ class RecoveryInstanceFailback {
   ///@}
  private:
   Aws::String m_agentLastSeenByServiceDateTime;
-  bool m_agentLastSeenByServiceDateTimeHasBeenSet = false;
 
   Aws::String m_elapsedReplicationDuration;
-  bool m_elapsedReplicationDurationHasBeenSet = false;
 
   Aws::String m_failbackClientID;
-  bool m_failbackClientIDHasBeenSet = false;
 
   Aws::String m_failbackClientLastSeenByServiceDateTime;
-  bool m_failbackClientLastSeenByServiceDateTimeHasBeenSet = false;
 
   Aws::String m_failbackInitiationTime;
-  bool m_failbackInitiationTimeHasBeenSet = false;
 
   Aws::String m_failbackJobID;
-  bool m_failbackJobIDHasBeenSet = false;
 
   FailbackLaunchType m_failbackLaunchType{FailbackLaunchType::NOT_SET};
-  bool m_failbackLaunchTypeHasBeenSet = false;
 
   bool m_failbackToOriginalServer{false};
-  bool m_failbackToOriginalServerHasBeenSet = false;
 
   Aws::String m_firstByteDateTime;
-  bool m_firstByteDateTimeHasBeenSet = false;
 
   FailbackState m_state{FailbackState::NOT_SET};
+  bool m_agentLastSeenByServiceDateTimeHasBeenSet = false;
+  bool m_elapsedReplicationDurationHasBeenSet = false;
+  bool m_failbackClientIDHasBeenSet = false;
+  bool m_failbackClientLastSeenByServiceDateTimeHasBeenSet = false;
+  bool m_failbackInitiationTimeHasBeenSet = false;
+  bool m_failbackJobIDHasBeenSet = false;
+  bool m_failbackLaunchTypeHasBeenSet = false;
+  bool m_failbackToOriginalServerHasBeenSet = false;
+  bool m_firstByteDateTimeHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class UpdateDomainAssociation2020_05_31Request : public CloudFrontRequest {
   ///@}
  private:
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   DistributionResourceId m_targetResource;
-  bool m_targetResourceHasBeenSet = false;
 
   Aws::String m_ifMatch;
+  bool m_domainHasBeenSet = false;
+  bool m_targetResourceHasBeenSet = false;
   bool m_ifMatchHasBeenSet = false;
 };
 

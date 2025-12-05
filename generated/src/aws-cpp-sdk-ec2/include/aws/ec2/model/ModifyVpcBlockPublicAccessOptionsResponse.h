@@ -60,9 +60,9 @@ class ModifyVpcBlockPublicAccessOptionsResponse {
   ///@}
  private:
   VpcBlockPublicAccessOptions m_vpcBlockPublicAccessOptions;
-  bool m_vpcBlockPublicAccessOptionsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_vpcBlockPublicAccessOptionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

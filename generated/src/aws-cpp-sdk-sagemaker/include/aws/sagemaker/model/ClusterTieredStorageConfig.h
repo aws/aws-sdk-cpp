@@ -73,9 +73,9 @@ class ClusterTieredStorageConfig {
   ///@}
  private:
   ClusterConfigMode m_mode{ClusterConfigMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   int m_instanceMemoryAllocationPercentage{0};
+  bool m_modeHasBeenSet = false;
   bool m_instanceMemoryAllocationPercentageHasBeenSet = false;
 };
 

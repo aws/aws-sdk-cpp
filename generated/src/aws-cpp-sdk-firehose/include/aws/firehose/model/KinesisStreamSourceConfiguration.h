@@ -74,9 +74,9 @@ class KinesisStreamSourceConfiguration {
   ///@}
  private:
   Aws::String m_kinesisStreamARN;
-  bool m_kinesisStreamARNHasBeenSet = false;
 
   Aws::String m_roleARN;
+  bool m_kinesisStreamARNHasBeenSet = false;
   bool m_roleARNHasBeenSet = false;
 };
 

@@ -119,18 +119,18 @@ class ListUsersResult {
   ///@}
  private:
   Aws::String m_brokerId;
-  bool m_brokerIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<UserSummary> m_users;
-  bool m_usersHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_brokerIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_usersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

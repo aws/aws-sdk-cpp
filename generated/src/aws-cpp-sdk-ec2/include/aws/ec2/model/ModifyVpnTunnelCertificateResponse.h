@@ -60,9 +60,9 @@ class ModifyVpnTunnelCertificateResponse {
   ///@}
  private:
   VpnConnection m_vpnConnection;
-  bool m_vpnConnectionHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_vpnConnectionHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

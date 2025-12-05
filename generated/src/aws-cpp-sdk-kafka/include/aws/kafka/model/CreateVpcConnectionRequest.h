@@ -170,21 +170,21 @@ class CreateVpcConnectionRequest : public KafkaRequest {
   ///@}
  private:
   Aws::String m_targetClusterArn;
-  bool m_targetClusterArnHasBeenSet = false;
 
   Aws::String m_authentication;
-  bool m_authenticationHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_clientSubnets;
-  bool m_clientSubnetsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroups;
-  bool m_securityGroupsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_targetClusterArnHasBeenSet = false;
+  bool m_authenticationHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_clientSubnetsHasBeenSet = false;
+  bool m_securityGroupsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

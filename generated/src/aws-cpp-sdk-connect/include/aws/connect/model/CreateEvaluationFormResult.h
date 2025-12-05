@@ -76,12 +76,12 @@ class CreateEvaluationFormResult {
   ///@}
  private:
   Aws::String m_evaluationFormId;
-  bool m_evaluationFormIdHasBeenSet = false;
 
   Aws::String m_evaluationFormArn;
-  bool m_evaluationFormArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_evaluationFormIdHasBeenSet = false;
+  bool m_evaluationFormArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

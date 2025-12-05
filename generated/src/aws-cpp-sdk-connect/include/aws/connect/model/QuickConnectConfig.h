@@ -130,18 +130,18 @@ class QuickConnectConfig {
   ///@}
  private:
   QuickConnectType m_quickConnectType{QuickConnectType::NOT_SET};
-  bool m_quickConnectTypeHasBeenSet = false;
 
   UserQuickConnectConfig m_userConfig;
-  bool m_userConfigHasBeenSet = false;
 
   QueueQuickConnectConfig m_queueConfig;
-  bool m_queueConfigHasBeenSet = false;
 
   PhoneNumberQuickConnectConfig m_phoneConfig;
-  bool m_phoneConfigHasBeenSet = false;
 
   FlowQuickConnectConfig m_flowConfig;
+  bool m_quickConnectTypeHasBeenSet = false;
+  bool m_userConfigHasBeenSet = false;
+  bool m_queueConfigHasBeenSet = false;
+  bool m_phoneConfigHasBeenSet = false;
   bool m_flowConfigHasBeenSet = false;
 };
 

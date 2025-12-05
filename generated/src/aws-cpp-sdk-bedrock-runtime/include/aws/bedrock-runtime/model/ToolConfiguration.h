@@ -80,9 +80,9 @@ class ToolConfiguration {
   ///@}
  private:
   Aws::Vector<Tool> m_tools;
-  bool m_toolsHasBeenSet = false;
 
   ToolChoice m_toolChoice;
+  bool m_toolsHasBeenSet = false;
   bool m_toolChoiceHasBeenSet = false;
 };
 

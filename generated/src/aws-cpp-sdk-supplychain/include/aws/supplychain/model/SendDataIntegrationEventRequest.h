@@ -208,24 +208,24 @@ class SendDataIntegrationEventRequest : public SupplyChainRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   DataIntegrationEventType m_eventType{DataIntegrationEventType::NOT_SET};
-  bool m_eventTypeHasBeenSet = false;
 
   Aws::String m_data;
-  bool m_dataHasBeenSet = false;
 
   Aws::String m_eventGroupId;
-  bool m_eventGroupIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_eventTimestamp{};
-  bool m_eventTimestampHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   DataIntegrationEventDatasetTargetConfiguration m_datasetTarget;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_eventTypeHasBeenSet = false;
+  bool m_dataHasBeenSet = false;
+  bool m_eventGroupIdHasBeenSet = false;
+  bool m_eventTimestampHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_datasetTargetHasBeenSet = false;
 };
 

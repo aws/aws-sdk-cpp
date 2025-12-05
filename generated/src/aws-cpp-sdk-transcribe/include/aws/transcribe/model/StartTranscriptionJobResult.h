@@ -61,9 +61,9 @@ class StartTranscriptionJobResult {
   ///@}
  private:
   TranscriptionJob m_transcriptionJob;
-  bool m_transcriptionJobHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_transcriptionJobHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

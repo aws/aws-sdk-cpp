@@ -60,9 +60,9 @@ class CreateReportGroupResult {
   ///@}
  private:
   ReportGroup m_reportGroup;
-  bool m_reportGroupHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_reportGroupHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

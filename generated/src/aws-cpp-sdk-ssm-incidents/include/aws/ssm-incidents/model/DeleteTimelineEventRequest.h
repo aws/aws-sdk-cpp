@@ -67,9 +67,9 @@ class DeleteTimelineEventRequest : public SSMIncidentsRequest {
   ///@}
  private:
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   Aws::String m_incidentRecordArn;
+  bool m_eventIdHasBeenSet = false;
   bool m_incidentRecordArnHasBeenSet = false;
 };
 

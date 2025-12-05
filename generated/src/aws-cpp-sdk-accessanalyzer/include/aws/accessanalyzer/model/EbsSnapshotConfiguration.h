@@ -128,12 +128,12 @@ class EbsSnapshotConfiguration {
   ///@}
  private:
   Aws::Vector<Aws::String> m_userIds;
-  bool m_userIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_groups;
-  bool m_groupsHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
+  bool m_userIdsHasBeenSet = false;
+  bool m_groupsHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
 };
 

@@ -99,12 +99,12 @@ class InputSchemaUpdate {
   ///@}
  private:
   RecordFormat m_recordFormatUpdate;
-  bool m_recordFormatUpdateHasBeenSet = false;
 
   Aws::String m_recordEncodingUpdate;
-  bool m_recordEncodingUpdateHasBeenSet = false;
 
   Aws::Vector<RecordColumn> m_recordColumnUpdates;
+  bool m_recordFormatUpdateHasBeenSet = false;
+  bool m_recordEncodingUpdateHasBeenSet = false;
   bool m_recordColumnUpdatesHasBeenSet = false;
 };
 

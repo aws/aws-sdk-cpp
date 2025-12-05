@@ -125,18 +125,18 @@ class ImageLayerAggregationResponse {
   ///@}
  private:
   Aws::String m_repository;
-  bool m_repositoryHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_layerHash;
-  bool m_layerHashHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   SeverityCounts m_severityCounts;
+  bool m_repositoryHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_layerHashHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
   bool m_severityCountsHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class PutSchemaFromJsonRequest : public CloudDirectoryRequest {
   ///@}
  private:
   Aws::String m_schemaArn;
-  bool m_schemaArnHasBeenSet = false;
 
   Aws::String m_document;
+  bool m_schemaArnHasBeenSet = false;
   bool m_documentHasBeenSet = false;
 };
 

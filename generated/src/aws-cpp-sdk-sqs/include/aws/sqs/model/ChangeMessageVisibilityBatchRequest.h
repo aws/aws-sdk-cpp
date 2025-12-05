@@ -80,9 +80,9 @@ class ChangeMessageVisibilityBatchRequest : public SQSRequest {
   ///@}
  private:
   Aws::String m_queueUrl;
-  bool m_queueUrlHasBeenSet = false;
 
   Aws::Vector<ChangeMessageVisibilityBatchRequestEntry> m_entries;
+  bool m_queueUrlHasBeenSet = false;
   bool m_entriesHasBeenSet = false;
 };
 

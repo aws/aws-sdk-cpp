@@ -190,30 +190,30 @@ class CanSignal {
   ///@}
  private:
   int m_messageId{0};
-  bool m_messageIdHasBeenSet = false;
 
   bool m_isBigEndian{false};
-  bool m_isBigEndianHasBeenSet = false;
 
   bool m_isSigned{false};
-  bool m_isSignedHasBeenSet = false;
 
   int m_startBit{0};
-  bool m_startBitHasBeenSet = false;
 
   double m_offset{0.0};
-  bool m_offsetHasBeenSet = false;
 
   double m_factor{0.0};
-  bool m_factorHasBeenSet = false;
 
   int m_length{0};
-  bool m_lengthHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   SignalValueType m_signalValueType{SignalValueType::NOT_SET};
+  bool m_messageIdHasBeenSet = false;
+  bool m_isBigEndianHasBeenSet = false;
+  bool m_isSignedHasBeenSet = false;
+  bool m_startBitHasBeenSet = false;
+  bool m_offsetHasBeenSet = false;
+  bool m_factorHasBeenSet = false;
+  bool m_lengthHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_signalValueTypeHasBeenSet = false;
 };
 

@@ -58,9 +58,9 @@ class CreateHsmClientCertificateResult {
   ///@}
  private:
   HsmClientCertificate m_hsmClientCertificate;
-  bool m_hsmClientCertificateHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_hsmClientCertificateHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

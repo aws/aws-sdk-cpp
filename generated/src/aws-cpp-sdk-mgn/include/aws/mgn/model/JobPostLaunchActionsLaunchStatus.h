@@ -122,18 +122,18 @@ class JobPostLaunchActionsLaunchStatus {
   ///@}
  private:
   Aws::String m_executionID;
-  bool m_executionIDHasBeenSet = false;
 
   PostLaunchActionExecutionStatus m_executionStatus{PostLaunchActionExecutionStatus::NOT_SET};
-  bool m_executionStatusHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   SsmDocument m_ssmDocument;
-  bool m_ssmDocumentHasBeenSet = false;
 
   SsmDocumentType m_ssmDocumentType{SsmDocumentType::NOT_SET};
+  bool m_executionIDHasBeenSet = false;
+  bool m_executionStatusHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_ssmDocumentHasBeenSet = false;
   bool m_ssmDocumentTypeHasBeenSet = false;
 };
 

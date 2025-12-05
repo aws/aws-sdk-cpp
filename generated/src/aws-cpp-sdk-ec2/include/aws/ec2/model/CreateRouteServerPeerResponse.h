@@ -60,9 +60,9 @@ class CreateRouteServerPeerResponse {
   ///@}
  private:
   RouteServerPeer m_routeServerPeer;
-  bool m_routeServerPeerHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_routeServerPeerHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

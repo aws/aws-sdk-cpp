@@ -109,15 +109,15 @@ class UpdateDetectorRequest {
   ///@}
  private:
   Aws::String m_messageId;
-  bool m_messageIdHasBeenSet = false;
 
   Aws::String m_detectorModelName;
-  bool m_detectorModelNameHasBeenSet = false;
 
   Aws::String m_keyValue;
-  bool m_keyValueHasBeenSet = false;
 
   DetectorStateDefinition m_state;
+  bool m_messageIdHasBeenSet = false;
+  bool m_detectorModelNameHasBeenSet = false;
+  bool m_keyValueHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

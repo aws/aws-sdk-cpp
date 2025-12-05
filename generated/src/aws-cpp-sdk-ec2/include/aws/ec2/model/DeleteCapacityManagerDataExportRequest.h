@@ -70,9 +70,9 @@ class DeleteCapacityManagerDataExportRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_capacityManagerDataExportId;
-  bool m_capacityManagerDataExportIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_capacityManagerDataExportIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

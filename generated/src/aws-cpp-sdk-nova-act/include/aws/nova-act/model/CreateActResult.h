@@ -75,12 +75,12 @@ class CreateActResult {
   ///@}
  private:
   Aws::String m_actId;
-  bool m_actIdHasBeenSet = false;
 
   ActStatus m_status{ActStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_actIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

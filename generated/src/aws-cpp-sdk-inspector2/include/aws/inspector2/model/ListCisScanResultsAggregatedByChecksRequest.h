@@ -136,21 +136,21 @@ class ListCisScanResultsAggregatedByChecksRequest : public Inspector2Request {
   ///@}
  private:
   Aws::String m_scanArn;
-  bool m_scanArnHasBeenSet = false;
 
   CisScanResultsAggregatedByChecksFilterCriteria m_filterCriteria;
-  bool m_filterCriteriaHasBeenSet = false;
 
   CisScanResultsAggregatedByChecksSortBy m_sortBy{CisScanResultsAggregatedByChecksSortBy::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   CisSortOrder m_sortOrder{CisSortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_scanArnHasBeenSet = false;
+  bool m_filterCriteriaHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

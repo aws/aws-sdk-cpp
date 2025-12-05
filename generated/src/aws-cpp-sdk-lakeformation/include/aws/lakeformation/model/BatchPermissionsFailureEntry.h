@@ -70,9 +70,9 @@ class BatchPermissionsFailureEntry {
   ///@}
  private:
   BatchPermissionsRequestEntry m_requestEntry;
-  bool m_requestEntryHasBeenSet = false;
 
   ErrorDetail m_error;
+  bool m_requestEntryHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

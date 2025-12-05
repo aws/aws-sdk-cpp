@@ -109,15 +109,15 @@ class AutoMerging {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Consolidation m_consolidation;
-  bool m_consolidationHasBeenSet = false;
 
   ConflictResolution m_conflictResolution;
-  bool m_conflictResolutionHasBeenSet = false;
 
   double m_minAllowedConfidenceScoreForMerging{0.0};
+  bool m_enabledHasBeenSet = false;
+  bool m_consolidationHasBeenSet = false;
+  bool m_conflictResolutionHasBeenSet = false;
   bool m_minAllowedConfidenceScoreForMergingHasBeenSet = false;
 };
 

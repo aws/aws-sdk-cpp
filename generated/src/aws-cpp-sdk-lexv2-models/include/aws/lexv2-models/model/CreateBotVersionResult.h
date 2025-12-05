@@ -160,24 +160,24 @@ class CreateBotVersionResult {
   ///@}
  private:
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_botVersion;
-  bool m_botVersionHasBeenSet = false;
 
   Aws::Map<Aws::String, BotVersionLocaleDetails> m_botVersionLocaleSpecification;
-  bool m_botVersionLocaleSpecificationHasBeenSet = false;
 
   BotStatus m_botStatus{BotStatus::NOT_SET};
-  bool m_botStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_botIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_botVersionHasBeenSet = false;
+  bool m_botVersionLocaleSpecificationHasBeenSet = false;
+  bool m_botStatusHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

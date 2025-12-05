@@ -222,33 +222,33 @@ class Parameter {
   ///@}
  private:
   Aws::String m_parameterName;
-  bool m_parameterNameHasBeenSet = false;
 
   ParameterType m_parameterType{ParameterType::NOT_SET};
-  bool m_parameterTypeHasBeenSet = false;
 
   Aws::String m_parameterValue;
-  bool m_parameterValueHasBeenSet = false;
 
   Aws::Vector<NodeTypeSpecificValue> m_nodeTypeSpecificValues;
-  bool m_nodeTypeSpecificValuesHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_dataType;
-  bool m_dataTypeHasBeenSet = false;
 
   Aws::String m_allowedValues;
-  bool m_allowedValuesHasBeenSet = false;
 
   IsModifiable m_isModifiable{IsModifiable::NOT_SET};
-  bool m_isModifiableHasBeenSet = false;
 
   ChangeType m_changeType{ChangeType::NOT_SET};
+  bool m_parameterNameHasBeenSet = false;
+  bool m_parameterTypeHasBeenSet = false;
+  bool m_parameterValueHasBeenSet = false;
+  bool m_nodeTypeSpecificValuesHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_dataTypeHasBeenSet = false;
+  bool m_allowedValuesHasBeenSet = false;
+  bool m_isModifiableHasBeenSet = false;
   bool m_changeTypeHasBeenSet = false;
 };
 

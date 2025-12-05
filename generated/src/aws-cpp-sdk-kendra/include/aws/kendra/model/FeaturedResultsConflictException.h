@@ -80,9 +80,9 @@ class FeaturedResultsConflictException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Vector<ConflictingItem> m_conflictingItems;
+  bool m_messageHasBeenSet = false;
   bool m_conflictingItemsHasBeenSet = false;
 };
 

@@ -123,18 +123,18 @@ class RevokeServicePeriodHandshakeDetail {
   ///@}
  private:
   Aws::String m_note;
-  bool m_noteHasBeenSet = false;
 
   ServicePeriodType m_servicePeriodType{ServicePeriodType::NOT_SET};
-  bool m_servicePeriodTypeHasBeenSet = false;
 
   Aws::String m_minimumNoticeDays;
-  bool m_minimumNoticeDaysHasBeenSet = false;
 
   Aws::Utils::DateTime m_startDate{};
-  bool m_startDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_endDate{};
+  bool m_noteHasBeenSet = false;
+  bool m_servicePeriodTypeHasBeenSet = false;
+  bool m_minimumNoticeDaysHasBeenSet = false;
+  bool m_startDateHasBeenSet = false;
   bool m_endDateHasBeenSet = false;
 };
 

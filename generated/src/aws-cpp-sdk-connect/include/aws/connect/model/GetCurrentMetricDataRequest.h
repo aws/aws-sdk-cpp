@@ -270,24 +270,24 @@ class GetCurrentMetricDataRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Filters m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::Vector<Grouping> m_groupings;
-  bool m_groupingsHasBeenSet = false;
 
   Aws::Vector<CurrentMetric> m_currentMetrics;
-  bool m_currentMetricsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Vector<CurrentMetricSortCriteria> m_sortCriteria;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_groupingsHasBeenSet = false;
+  bool m_currentMetricsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_sortCriteriaHasBeenSet = false;
 };
 

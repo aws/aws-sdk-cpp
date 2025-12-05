@@ -151,21 +151,21 @@ class PropertygraphData {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::Utils::Document m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_from;
-  bool m_fromHasBeenSet = false;
 
   Aws::String m_to;
+  bool m_idHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_fromHasBeenSet = false;
   bool m_toHasBeenSet = false;
 };
 

@@ -76,9 +76,9 @@ class UpdateEnrollmentStatusRequest : public ComputeOptimizerRequest {
   ///@}
  private:
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   bool m_includeMemberAccounts{false};
+  bool m_statusHasBeenSet = false;
   bool m_includeMemberAccountsHasBeenSet = false;
 };
 

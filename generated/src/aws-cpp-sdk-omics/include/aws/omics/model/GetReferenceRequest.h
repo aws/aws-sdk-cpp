@@ -123,18 +123,18 @@ class GetReferenceRequest : public OmicsRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_referenceStoreId;
-  bool m_referenceStoreIdHasBeenSet = false;
 
   Aws::String m_range;
-  bool m_rangeHasBeenSet = false;
 
   int m_partNumber{0};
-  bool m_partNumberHasBeenSet = false;
 
   ReferenceFile m_file{ReferenceFile::NOT_SET};
+  bool m_idHasBeenSet = false;
+  bool m_referenceStoreIdHasBeenSet = false;
+  bool m_rangeHasBeenSet = false;
+  bool m_partNumberHasBeenSet = false;
   bool m_fileHasBeenSet = false;
 };
 

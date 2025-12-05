@@ -111,15 +111,15 @@ class UpdateSensitivityInspectionTemplateRequest : public Macie2Request {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   SensitivityInspectionTemplateExcludes m_excludes;
-  bool m_excludesHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   SensitivityInspectionTemplateIncludes m_includes;
+  bool m_descriptionHasBeenSet = false;
+  bool m_excludesHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_includesHasBeenSet = false;
 };
 

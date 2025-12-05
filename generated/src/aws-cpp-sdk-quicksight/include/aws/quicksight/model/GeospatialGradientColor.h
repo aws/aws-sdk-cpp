@@ -109,15 +109,15 @@ class GeospatialGradientColor {
   ///@}
  private:
   Aws::Vector<GeospatialGradientStepColor> m_stepColors;
-  bool m_stepColorsHasBeenSet = false;
 
   Visibility m_nullDataVisibility{Visibility::NOT_SET};
-  bool m_nullDataVisibilityHasBeenSet = false;
 
   GeospatialNullDataSettings m_nullDataSettings;
-  bool m_nullDataSettingsHasBeenSet = false;
 
   double m_defaultOpacity{0.0};
+  bool m_stepColorsHasBeenSet = false;
+  bool m_nullDataVisibilityHasBeenSet = false;
+  bool m_nullDataSettingsHasBeenSet = false;
   bool m_defaultOpacityHasBeenSet = false;
 };
 

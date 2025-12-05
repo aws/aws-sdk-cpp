@@ -118,18 +118,18 @@ class ListTemplateSharesRequest : public WellArchitectedRequest {
   ///@}
  private:
   Aws::String m_templateArn;
-  bool m_templateArnHasBeenSet = false;
 
   Aws::String m_sharedWithPrefix;
-  bool m_sharedWithPrefixHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   ShareStatus m_status{ShareStatus::NOT_SET};
+  bool m_templateArnHasBeenSet = false;
+  bool m_sharedWithPrefixHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

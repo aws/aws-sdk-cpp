@@ -102,15 +102,15 @@ class UpdateClusterVersionRequest : public EKSRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   bool m_force{false};
+  bool m_nameHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
   bool m_forceHasBeenSet = false;
 };
 

@@ -192,27 +192,27 @@ class IndicatorDetail {
   ///@}
  private:
   TTPsObservedDetail m_tTPsObservedDetail;
-  bool m_tTPsObservedDetailHasBeenSet = false;
 
   ImpossibleTravelDetail m_impossibleTravelDetail;
-  bool m_impossibleTravelDetailHasBeenSet = false;
 
   FlaggedIpAddressDetail m_flaggedIpAddressDetail;
-  bool m_flaggedIpAddressDetailHasBeenSet = false;
 
   NewGeolocationDetail m_newGeolocationDetail;
-  bool m_newGeolocationDetailHasBeenSet = false;
 
   NewAsoDetail m_newAsoDetail;
-  bool m_newAsoDetailHasBeenSet = false;
 
   NewUserAgentDetail m_newUserAgentDetail;
-  bool m_newUserAgentDetailHasBeenSet = false;
 
   RelatedFindingDetail m_relatedFindingDetail;
-  bool m_relatedFindingDetailHasBeenSet = false;
 
   RelatedFindingGroupDetail m_relatedFindingGroupDetail;
+  bool m_tTPsObservedDetailHasBeenSet = false;
+  bool m_impossibleTravelDetailHasBeenSet = false;
+  bool m_flaggedIpAddressDetailHasBeenSet = false;
+  bool m_newGeolocationDetailHasBeenSet = false;
+  bool m_newAsoDetailHasBeenSet = false;
+  bool m_newUserAgentDetailHasBeenSet = false;
+  bool m_relatedFindingDetailHasBeenSet = false;
   bool m_relatedFindingGroupDetailHasBeenSet = false;
 };
 

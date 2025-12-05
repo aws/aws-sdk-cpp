@@ -70,9 +70,9 @@ class MediaLiveTransitEncryption {
   ///@}
  private:
   MediaLiveTransitEncryptionKeyType m_encryptionKeyType{MediaLiveTransitEncryptionKeyType::NOT_SET};
-  bool m_encryptionKeyTypeHasBeenSet = false;
 
   MediaLiveTransitEncryptionKeyConfiguration m_encryptionKeyConfiguration;
+  bool m_encryptionKeyTypeHasBeenSet = false;
   bool m_encryptionKeyConfigurationHasBeenSet = false;
 };
 

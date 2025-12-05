@@ -68,9 +68,9 @@ class DeleteEdgeDeploymentStageRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_edgeDeploymentPlanName;
-  bool m_edgeDeploymentPlanNameHasBeenSet = false;
 
   Aws::String m_stageName;
+  bool m_edgeDeploymentPlanNameHasBeenSet = false;
   bool m_stageNameHasBeenSet = false;
 };
 

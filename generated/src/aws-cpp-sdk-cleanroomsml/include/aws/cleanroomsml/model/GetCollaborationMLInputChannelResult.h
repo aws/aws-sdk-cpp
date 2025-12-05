@@ -308,51 +308,51 @@ class GetCollaborationMLInputChannelResult {
   ///@}
  private:
   Aws::String m_membershipIdentifier;
-  bool m_membershipIdentifierHasBeenSet = false;
 
   Aws::String m_collaborationIdentifier;
-  bool m_collaborationIdentifierHasBeenSet = false;
 
   Aws::String m_mlInputChannelArn;
-  bool m_mlInputChannelArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_configuredModelAlgorithmAssociations;
-  bool m_configuredModelAlgorithmAssociationsHasBeenSet = false;
 
   MLInputChannelStatus m_status{MLInputChannelStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   StatusDetails m_statusDetails;
-  bool m_statusDetailsHasBeenSet = false;
 
   int m_retentionInDays{0};
-  bool m_retentionInDaysHasBeenSet = false;
 
   long long m_numberOfRecords{0};
-  bool m_numberOfRecordsHasBeenSet = false;
 
   PrivacyBudgets m_privacyBudgets;
-  bool m_privacyBudgetsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   SyntheticDataConfiguration m_syntheticDataConfiguration;
-  bool m_syntheticDataConfigurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   Aws::String m_creatorAccountId;
-  bool m_creatorAccountIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_membershipIdentifierHasBeenSet = false;
+  bool m_collaborationIdentifierHasBeenSet = false;
+  bool m_mlInputChannelArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_configuredModelAlgorithmAssociationsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusDetailsHasBeenSet = false;
+  bool m_retentionInDaysHasBeenSet = false;
+  bool m_numberOfRecordsHasBeenSet = false;
+  bool m_privacyBudgetsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_syntheticDataConfigurationHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_creatorAccountIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

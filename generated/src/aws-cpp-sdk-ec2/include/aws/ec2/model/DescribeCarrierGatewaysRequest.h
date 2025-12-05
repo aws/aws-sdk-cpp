@@ -152,18 +152,18 @@ class DescribeCarrierGatewaysRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_carrierGatewayIds;
-  bool m_carrierGatewayIdsHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_carrierGatewayIdsHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

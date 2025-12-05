@@ -69,9 +69,9 @@ class DescribeServiceActionExecutionParametersResult {
   ///@}
  private:
   Aws::Vector<ExecutionParameter> m_serviceActionParameters;
-  bool m_serviceActionParametersHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_serviceActionParametersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

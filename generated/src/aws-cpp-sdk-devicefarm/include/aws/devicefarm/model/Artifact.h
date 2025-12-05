@@ -134,18 +134,18 @@ class Artifact {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ArtifactType m_type{ArtifactType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_extension;
-  bool m_extensionHasBeenSet = false;
 
   Aws::String m_url;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_extensionHasBeenSet = false;
   bool m_urlHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class ImpersonationMatchedRule {
   ///@}
  private:
   Aws::String m_impersonationRuleId;
-  bool m_impersonationRuleIdHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_impersonationRuleIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

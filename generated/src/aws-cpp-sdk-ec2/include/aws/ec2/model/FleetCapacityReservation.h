@@ -236,36 +236,36 @@ class FleetCapacityReservation {
   ///@}
  private:
   Aws::String m_capacityReservationId;
-  bool m_capacityReservationIdHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   InstanceType m_instanceType{InstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   CapacityReservationInstancePlatform m_instancePlatform{CapacityReservationInstancePlatform::NOT_SET};
-  bool m_instancePlatformHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   int m_totalInstanceCount{0};
-  bool m_totalInstanceCountHasBeenSet = false;
 
   double m_fulfilledCapacity{0.0};
-  bool m_fulfilledCapacityHasBeenSet = false;
 
   bool m_ebsOptimized{false};
-  bool m_ebsOptimizedHasBeenSet = false;
 
   Aws::Utils::DateTime m_createDate{};
-  bool m_createDateHasBeenSet = false;
 
   double m_weight{0.0};
-  bool m_weightHasBeenSet = false;
 
   int m_priority{0};
+  bool m_capacityReservationIdHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_instancePlatformHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_totalInstanceCountHasBeenSet = false;
+  bool m_fulfilledCapacityHasBeenSet = false;
+  bool m_ebsOptimizedHasBeenSet = false;
+  bool m_createDateHasBeenSet = false;
+  bool m_weightHasBeenSet = false;
   bool m_priorityHasBeenSet = false;
 };
 

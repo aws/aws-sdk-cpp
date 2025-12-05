@@ -80,9 +80,9 @@ class UpdateVpcLinkRequest : public APIGatewayRequest {
   ///@}
  private:
   Aws::String m_vpcLinkId;
-  bool m_vpcLinkIdHasBeenSet = false;
 
   Aws::Vector<PatchOperation> m_patchOperations;
+  bool m_vpcLinkIdHasBeenSet = false;
   bool m_patchOperationsHasBeenSet = false;
 };
 

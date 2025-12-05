@@ -199,24 +199,24 @@ class GenerateEmbedUrlForAnonymousUserRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   long long m_sessionLifetimeInMinutes{0};
-  bool m_sessionLifetimeInMinutesHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::Vector<SessionTag> m_sessionTags;
-  bool m_sessionTagsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_authorizedResourceArns;
-  bool m_authorizedResourceArnsHasBeenSet = false;
 
   AnonymousUserEmbeddingExperienceConfiguration m_experienceConfiguration;
-  bool m_experienceConfigurationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowedDomains;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_sessionLifetimeInMinutesHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_sessionTagsHasBeenSet = false;
+  bool m_authorizedResourceArnsHasBeenSet = false;
+  bool m_experienceConfigurationHasBeenSet = false;
   bool m_allowedDomainsHasBeenSet = false;
 };
 

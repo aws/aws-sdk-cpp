@@ -87,12 +87,12 @@ class InvocationLogsConfig {
   ///@}
  private:
   bool m_usePromptResponse{false};
-  bool m_usePromptResponseHasBeenSet = false;
 
   InvocationLogSource m_invocationLogSource;
-  bool m_invocationLogSourceHasBeenSet = false;
 
   RequestMetadataFilters m_requestMetadataFilters;
+  bool m_usePromptResponseHasBeenSet = false;
+  bool m_invocationLogSourceHasBeenSet = false;
   bool m_requestMetadataFiltersHasBeenSet = false;
 };
 

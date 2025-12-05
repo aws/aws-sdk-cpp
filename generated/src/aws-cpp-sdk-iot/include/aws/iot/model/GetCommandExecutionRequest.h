@@ -91,12 +91,12 @@ class GetCommandExecutionRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_executionId;
-  bool m_executionIdHasBeenSet = false;
 
   Aws::String m_targetArn;
-  bool m_targetArnHasBeenSet = false;
 
   bool m_includeResult{false};
+  bool m_executionIdHasBeenSet = false;
+  bool m_targetArnHasBeenSet = false;
   bool m_includeResultHasBeenSet = false;
 };
 

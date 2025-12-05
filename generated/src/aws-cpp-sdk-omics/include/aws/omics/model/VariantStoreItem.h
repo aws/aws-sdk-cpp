@@ -230,36 +230,36 @@ class VariantStoreItem {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   ReferenceItem m_reference;
-  bool m_referenceHasBeenSet = false;
 
   StoreStatus m_status{StoreStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_storeArn;
-  bool m_storeArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   SseConfig m_sseConfig;
-  bool m_sseConfigHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   long long m_storeSizeBytes{0};
+  bool m_idHasBeenSet = false;
+  bool m_referenceHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_storeArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_sseConfigHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
   bool m_storeSizeBytesHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class RoutePedestrianSummary {
   ///@}
  private:
   RoutePedestrianOverviewSummary m_overview;
-  bool m_overviewHasBeenSet = false;
 
   RoutePedestrianTravelOnlySummary m_travelOnly;
+  bool m_overviewHasBeenSet = false;
   bool m_travelOnlyHasBeenSet = false;
 };
 

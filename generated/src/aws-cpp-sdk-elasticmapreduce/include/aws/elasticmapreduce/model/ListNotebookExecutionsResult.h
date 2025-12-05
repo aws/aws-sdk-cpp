@@ -85,12 +85,12 @@ class ListNotebookExecutionsResult {
   ///@}
  private:
   Aws::Vector<NotebookExecutionSummary> m_notebookExecutions;
-  bool m_notebookExecutionsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_notebookExecutionsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

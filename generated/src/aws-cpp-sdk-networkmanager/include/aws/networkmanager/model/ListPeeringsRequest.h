@@ -138,21 +138,21 @@ class ListPeeringsRequest : public NetworkManagerRequest {
   ///@}
  private:
   Aws::String m_coreNetworkId;
-  bool m_coreNetworkIdHasBeenSet = false;
 
   PeeringType m_peeringType{PeeringType::NOT_SET};
-  bool m_peeringTypeHasBeenSet = false;
 
   Aws::String m_edgeLocation;
-  bool m_edgeLocationHasBeenSet = false;
 
   PeeringState m_state{PeeringState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_coreNetworkIdHasBeenSet = false;
+  bool m_peeringTypeHasBeenSet = false;
+  bool m_edgeLocationHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

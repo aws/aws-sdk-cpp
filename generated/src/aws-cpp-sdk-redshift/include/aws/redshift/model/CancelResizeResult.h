@@ -349,54 +349,54 @@ class CancelResizeResult {
   ///@}
  private:
   Aws::String m_targetNodeType;
-  bool m_targetNodeTypeHasBeenSet = false;
 
   int m_targetNumberOfNodes{0};
-  bool m_targetNumberOfNodesHasBeenSet = false;
 
   Aws::String m_targetClusterType;
-  bool m_targetClusterTypeHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_importTablesCompleted;
-  bool m_importTablesCompletedHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_importTablesInProgress;
-  bool m_importTablesInProgressHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_importTablesNotStarted;
-  bool m_importTablesNotStartedHasBeenSet = false;
 
   double m_avgResizeRateInMegaBytesPerSecond{0.0};
-  bool m_avgResizeRateInMegaBytesPerSecondHasBeenSet = false;
 
   long long m_totalResizeDataInMegaBytes{0};
-  bool m_totalResizeDataInMegaBytesHasBeenSet = false;
 
   long long m_progressInMegaBytes{0};
-  bool m_progressInMegaBytesHasBeenSet = false;
 
   long long m_elapsedTimeInSeconds{0};
-  bool m_elapsedTimeInSecondsHasBeenSet = false;
 
   long long m_estimatedTimeToCompletionInSeconds{0};
-  bool m_estimatedTimeToCompletionInSecondsHasBeenSet = false;
 
   Aws::String m_resizeType;
-  bool m_resizeTypeHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_targetEncryptionType;
-  bool m_targetEncryptionTypeHasBeenSet = false;
 
   double m_dataTransferProgressPercent{0.0};
-  bool m_dataTransferProgressPercentHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_targetNodeTypeHasBeenSet = false;
+  bool m_targetNumberOfNodesHasBeenSet = false;
+  bool m_targetClusterTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_importTablesCompletedHasBeenSet = false;
+  bool m_importTablesInProgressHasBeenSet = false;
+  bool m_importTablesNotStartedHasBeenSet = false;
+  bool m_avgResizeRateInMegaBytesPerSecondHasBeenSet = false;
+  bool m_totalResizeDataInMegaBytesHasBeenSet = false;
+  bool m_progressInMegaBytesHasBeenSet = false;
+  bool m_elapsedTimeInSecondsHasBeenSet = false;
+  bool m_estimatedTimeToCompletionInSecondsHasBeenSet = false;
+  bool m_resizeTypeHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_targetEncryptionTypeHasBeenSet = false;
+  bool m_dataTransferProgressPercentHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

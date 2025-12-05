@@ -69,9 +69,9 @@ class DeleteWebACLRequest : public WAFRequest {
   ///@}
  private:
   Aws::String m_webACLId;
-  bool m_webACLIdHasBeenSet = false;
 
   Aws::String m_changeToken;
+  bool m_webACLIdHasBeenSet = false;
   bool m_changeTokenHasBeenSet = false;
 };
 

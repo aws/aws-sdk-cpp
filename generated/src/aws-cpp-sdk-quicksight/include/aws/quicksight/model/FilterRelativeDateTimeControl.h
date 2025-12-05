@@ -124,18 +124,18 @@ class FilterRelativeDateTimeControl {
   ///@}
  private:
   Aws::String m_filterControlId;
-  bool m_filterControlIdHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_sourceFilterId;
-  bool m_sourceFilterIdHasBeenSet = false;
 
   RelativeDateTimeControlDisplayOptions m_displayOptions;
-  bool m_displayOptionsHasBeenSet = false;
 
   CommitMode m_commitMode{CommitMode::NOT_SET};
+  bool m_filterControlIdHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_sourceFilterIdHasBeenSet = false;
+  bool m_displayOptionsHasBeenSet = false;
   bool m_commitModeHasBeenSet = false;
 };
 

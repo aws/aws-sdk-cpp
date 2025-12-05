@@ -142,18 +142,18 @@ class EndpointDescription {
   ///@}
  private:
   Aws::String m_endpointId;
-  bool m_endpointIdHasBeenSet = false;
 
   int m_weight{0};
-  bool m_weightHasBeenSet = false;
 
   HealthState m_healthState{HealthState::NOT_SET};
-  bool m_healthStateHasBeenSet = false;
 
   Aws::String m_healthReason;
-  bool m_healthReasonHasBeenSet = false;
 
   bool m_clientIPPreservationEnabled{false};
+  bool m_endpointIdHasBeenSet = false;
+  bool m_weightHasBeenSet = false;
+  bool m_healthStateHasBeenSet = false;
+  bool m_healthReasonHasBeenSet = false;
   bool m_clientIPPreservationEnabledHasBeenSet = false;
 };
 

@@ -154,24 +154,24 @@ class GetWorkflowRunResult {
   ///@}
  private:
   Aws::String m_workflowArn;
-  bool m_workflowArnHasBeenSet = false;
 
   Aws::String m_workflowVersion;
-  bool m_workflowVersionHasBeenSet = false;
 
   Aws::String m_runId;
-  bool m_runIdHasBeenSet = false;
 
   RunType m_runType{RunType::NOT_SET};
-  bool m_runTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Utils::Document> m_overrideParameters;
-  bool m_overrideParametersHasBeenSet = false;
 
   WorkflowRunDetail m_runDetail;
-  bool m_runDetailHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workflowArnHasBeenSet = false;
+  bool m_workflowVersionHasBeenSet = false;
+  bool m_runIdHasBeenSet = false;
+  bool m_runTypeHasBeenSet = false;
+  bool m_overrideParametersHasBeenSet = false;
+  bool m_runDetailHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

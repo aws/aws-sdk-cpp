@@ -109,15 +109,15 @@ class InvalidRequestRegionException {
   ///@}
  private:
   Aws::String m_error;
-  bool m_errorHasBeenSet = false;
 
   Aws::String m_error_description;
-  bool m_error_descriptionHasBeenSet = false;
 
   Aws::String m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   Aws::String m_region;
+  bool m_errorHasBeenSet = false;
+  bool m_error_descriptionHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
   bool m_regionHasBeenSet = false;
 };
 

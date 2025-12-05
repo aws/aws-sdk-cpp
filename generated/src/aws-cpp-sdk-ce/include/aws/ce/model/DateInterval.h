@@ -75,9 +75,9 @@ class DateInterval {
   ///@}
  private:
   Aws::String m_start;
-  bool m_startHasBeenSet = false;
 
   Aws::String m_end;
+  bool m_startHasBeenSet = false;
   bool m_endHasBeenSet = false;
 };
 

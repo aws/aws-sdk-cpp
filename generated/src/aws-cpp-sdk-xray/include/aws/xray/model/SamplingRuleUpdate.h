@@ -279,42 +279,42 @@ class SamplingRuleUpdate {
   ///@}
  private:
   Aws::String m_ruleName;
-  bool m_ruleNameHasBeenSet = false;
 
   Aws::String m_ruleARN;
-  bool m_ruleARNHasBeenSet = false;
 
   Aws::String m_resourceARN;
-  bool m_resourceARNHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   double m_fixedRate{0.0};
-  bool m_fixedRateHasBeenSet = false;
 
   int m_reservoirSize{0};
-  bool m_reservoirSizeHasBeenSet = false;
 
   Aws::String m_host;
-  bool m_hostHasBeenSet = false;
 
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   Aws::String m_serviceType;
-  bool m_serviceTypeHasBeenSet = false;
 
   Aws::String m_hTTPMethod;
-  bool m_hTTPMethodHasBeenSet = false;
 
   Aws::String m_uRLPath;
-  bool m_uRLPathHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   SamplingRateBoost m_samplingRateBoost;
+  bool m_ruleNameHasBeenSet = false;
+  bool m_ruleARNHasBeenSet = false;
+  bool m_resourceARNHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_fixedRateHasBeenSet = false;
+  bool m_reservoirSizeHasBeenSet = false;
+  bool m_hostHasBeenSet = false;
+  bool m_serviceNameHasBeenSet = false;
+  bool m_serviceTypeHasBeenSet = false;
+  bool m_hTTPMethodHasBeenSet = false;
+  bool m_uRLPathHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
   bool m_samplingRateBoostHasBeenSet = false;
 };
 

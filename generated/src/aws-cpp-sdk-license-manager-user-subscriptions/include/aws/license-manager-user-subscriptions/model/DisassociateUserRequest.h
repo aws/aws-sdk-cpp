@@ -123,18 +123,18 @@ class DisassociateUserRequest : public LicenseManagerUserSubscriptionsRequest {
   ///@}
  private:
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   IdentityProvider m_identityProvider;
-  bool m_identityProviderHasBeenSet = false;
 
   Aws::String m_instanceUserArn;
-  bool m_instanceUserArnHasBeenSet = false;
 
   Aws::String m_domain;
+  bool m_usernameHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_identityProviderHasBeenSet = false;
+  bool m_instanceUserArnHasBeenSet = false;
   bool m_domainHasBeenSet = false;
 };
 

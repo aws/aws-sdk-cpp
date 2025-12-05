@@ -83,9 +83,9 @@ class ModelPackageStatusDetails {
   ///@}
  private:
   Aws::Vector<ModelPackageStatusItem> m_validationStatuses;
-  bool m_validationStatusesHasBeenSet = false;
 
   Aws::Vector<ModelPackageStatusItem> m_imageScanStatuses;
+  bool m_validationStatusesHasBeenSet = false;
   bool m_imageScanStatusesHasBeenSet = false;
 };
 

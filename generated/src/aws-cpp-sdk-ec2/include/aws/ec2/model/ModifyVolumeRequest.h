@@ -183,24 +183,24 @@ class ModifyVolumeRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_volumeId;
-  bool m_volumeIdHasBeenSet = false;
 
   int m_size{0};
-  bool m_sizeHasBeenSet = false;
 
   VolumeType m_volumeType{VolumeType::NOT_SET};
-  bool m_volumeTypeHasBeenSet = false;
 
   int m_iops{0};
-  bool m_iopsHasBeenSet = false;
 
   int m_throughput{0};
-  bool m_throughputHasBeenSet = false;
 
   bool m_multiAttachEnabled{false};
+  bool m_dryRunHasBeenSet = false;
+  bool m_volumeIdHasBeenSet = false;
+  bool m_sizeHasBeenSet = false;
+  bool m_volumeTypeHasBeenSet = false;
+  bool m_iopsHasBeenSet = false;
+  bool m_throughputHasBeenSet = false;
   bool m_multiAttachEnabledHasBeenSet = false;
 };
 

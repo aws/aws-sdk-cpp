@@ -141,21 +141,21 @@ class TransitGatewayPropagation {
   ///@}
  private:
   Aws::String m_transitGatewayAttachmentId;
-  bool m_transitGatewayAttachmentIdHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   TransitGatewayAttachmentResourceType m_resourceType{TransitGatewayAttachmentResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_transitGatewayRouteTableId;
-  bool m_transitGatewayRouteTableIdHasBeenSet = false;
 
   TransitGatewayPropagationState m_state{TransitGatewayPropagationState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_transitGatewayRouteTableAnnouncementId;
+  bool m_transitGatewayAttachmentIdHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_transitGatewayRouteTableIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_transitGatewayRouteTableAnnouncementIdHasBeenSet = false;
 };
 

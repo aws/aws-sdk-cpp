@@ -156,18 +156,18 @@ class DocumentationPartLocation {
   ///@}
  private:
   DocumentationPartType m_type{DocumentationPartType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   Aws::String m_method;
-  bool m_methodHasBeenSet = false;
 
   Aws::String m_statusCode;
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_typeHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
+  bool m_methodHasBeenSet = false;
+  bool m_statusCodeHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

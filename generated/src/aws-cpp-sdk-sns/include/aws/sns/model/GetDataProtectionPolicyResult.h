@@ -60,9 +60,9 @@ class GetDataProtectionPolicyResult {
   ///@}
  private:
   Aws::String m_dataProtectionPolicy;
-  bool m_dataProtectionPolicyHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_dataProtectionPolicyHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

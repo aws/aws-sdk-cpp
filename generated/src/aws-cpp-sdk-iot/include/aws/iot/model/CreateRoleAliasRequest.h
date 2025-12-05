@@ -114,15 +114,15 @@ class CreateRoleAliasRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_roleAlias;
-  bool m_roleAliasHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   int m_credentialDurationSeconds{0};
-  bool m_credentialDurationSecondsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_roleAliasHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_credentialDurationSecondsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

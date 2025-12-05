@@ -273,36 +273,36 @@ class CreateAuthorizerResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   AuthorizerType m_type{AuthorizerType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_providerARNs;
-  bool m_providerARNsHasBeenSet = false;
 
   Aws::String m_authType;
-  bool m_authTypeHasBeenSet = false;
 
   Aws::String m_authorizerUri;
-  bool m_authorizerUriHasBeenSet = false;
 
   Aws::String m_authorizerCredentials;
-  bool m_authorizerCredentialsHasBeenSet = false;
 
   Aws::String m_identitySource;
-  bool m_identitySourceHasBeenSet = false;
 
   Aws::String m_identityValidationExpression;
-  bool m_identityValidationExpressionHasBeenSet = false;
 
   int m_authorizerResultTtlInSeconds{0};
-  bool m_authorizerResultTtlInSecondsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_providerARNsHasBeenSet = false;
+  bool m_authTypeHasBeenSet = false;
+  bool m_authorizerUriHasBeenSet = false;
+  bool m_authorizerCredentialsHasBeenSet = false;
+  bool m_identitySourceHasBeenSet = false;
+  bool m_identityValidationExpressionHasBeenSet = false;
+  bool m_authorizerResultTtlInSecondsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -135,18 +135,18 @@ class ListFindingAggregationsRequest : public Inspector2Request {
   ///@}
  private:
   AggregationType m_aggregationType{AggregationType::NOT_SET};
-  bool m_aggregationTypeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_accountIds;
-  bool m_accountIdsHasBeenSet = false;
 
   AggregationRequest m_aggregationRequest;
+  bool m_aggregationTypeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_accountIdsHasBeenSet = false;
   bool m_aggregationRequestHasBeenSet = false;
 };
 

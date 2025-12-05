@@ -81,9 +81,9 @@ class IPSetReferenceStatement {
   ///@}
  private:
   Aws::String m_aRN;
-  bool m_aRNHasBeenSet = false;
 
   IPSetForwardedIPConfig m_iPSetForwardedIPConfig;
+  bool m_aRNHasBeenSet = false;
   bool m_iPSetForwardedIPConfigHasBeenSet = false;
 };
 

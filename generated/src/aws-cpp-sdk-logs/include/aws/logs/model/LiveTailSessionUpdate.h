@@ -81,9 +81,9 @@ class LiveTailSessionUpdate {
   ///@}
  private:
   LiveTailSessionMetadata m_sessionMetadata;
-  bool m_sessionMetadataHasBeenSet = false;
 
   Aws::Vector<LiveTailSessionLogEvent> m_sessionResults;
+  bool m_sessionMetadataHasBeenSet = false;
   bool m_sessionResultsHasBeenSet = false;
 };
 

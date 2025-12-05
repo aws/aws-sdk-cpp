@@ -261,36 +261,36 @@ class GameServer {
   ///@}
  private:
   Aws::String m_gameServerGroupName;
-  bool m_gameServerGroupNameHasBeenSet = false;
 
   Aws::String m_gameServerGroupArn;
-  bool m_gameServerGroupArnHasBeenSet = false;
 
   Aws::String m_gameServerId;
-  bool m_gameServerIdHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_connectionInfo;
-  bool m_connectionInfoHasBeenSet = false;
 
   Aws::String m_gameServerData;
-  bool m_gameServerDataHasBeenSet = false;
 
   GameServerClaimStatus m_claimStatus{GameServerClaimStatus::NOT_SET};
-  bool m_claimStatusHasBeenSet = false;
 
   GameServerUtilizationStatus m_utilizationStatus{GameServerUtilizationStatus::NOT_SET};
-  bool m_utilizationStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_registrationTime{};
-  bool m_registrationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastClaimTime{};
-  bool m_lastClaimTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastHealthCheckTime{};
+  bool m_gameServerGroupNameHasBeenSet = false;
+  bool m_gameServerGroupArnHasBeenSet = false;
+  bool m_gameServerIdHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_connectionInfoHasBeenSet = false;
+  bool m_gameServerDataHasBeenSet = false;
+  bool m_claimStatusHasBeenSet = false;
+  bool m_utilizationStatusHasBeenSet = false;
+  bool m_registrationTimeHasBeenSet = false;
+  bool m_lastClaimTimeHasBeenSet = false;
   bool m_lastHealthCheckTimeHasBeenSet = false;
 };
 

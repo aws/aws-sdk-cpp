@@ -88,12 +88,12 @@ class DescribeReplicationInstanceTaskLogsRequest : public DatabaseMigrationServi
   ///@}
  private:
   Aws::String m_replicationInstanceArn;
-  bool m_replicationInstanceArnHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   Aws::String m_marker;
+  bool m_replicationInstanceArnHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
   bool m_markerHasBeenSet = false;
 };
 

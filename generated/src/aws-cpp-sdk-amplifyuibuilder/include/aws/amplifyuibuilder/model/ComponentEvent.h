@@ -91,12 +91,12 @@ class ComponentEvent {
   ///@}
  private:
   Aws::String m_action;
-  bool m_actionHasBeenSet = false;
 
   ActionParameters m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::String m_bindingEvent;
+  bool m_actionHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
   bool m_bindingEventHasBeenSet = false;
 };
 

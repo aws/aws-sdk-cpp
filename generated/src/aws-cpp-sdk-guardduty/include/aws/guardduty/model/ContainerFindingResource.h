@@ -71,9 +71,9 @@ class ContainerFindingResource {
   ///@}
  private:
   Aws::String m_image;
-  bool m_imageHasBeenSet = false;
 
   Aws::String m_imageUid;
+  bool m_imageHasBeenSet = false;
   bool m_imageUidHasBeenSet = false;
 };
 

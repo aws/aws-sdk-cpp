@@ -79,9 +79,9 @@ class InstanceMaintenanceOptions {
   ///@}
  private:
   InstanceAutoRecoveryState m_autoRecovery{InstanceAutoRecoveryState::NOT_SET};
-  bool m_autoRecoveryHasBeenSet = false;
 
   InstanceRebootMigrationState m_rebootMigration{InstanceRebootMigrationState::NOT_SET};
+  bool m_autoRecoveryHasBeenSet = false;
   bool m_rebootMigrationHasBeenSet = false;
 };
 

@@ -74,9 +74,9 @@ class AttachLoadBalancerToSubnetsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_subnets;
-  bool m_subnetsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_subnetsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

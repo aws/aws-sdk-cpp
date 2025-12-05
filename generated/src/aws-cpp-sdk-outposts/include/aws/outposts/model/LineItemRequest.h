@@ -66,9 +66,9 @@ class LineItemRequest {
   ///@}
  private:
   Aws::String m_catalogItemId;
-  bool m_catalogItemIdHasBeenSet = false;
 
   int m_quantity{0};
+  bool m_catalogItemIdHasBeenSet = false;
   bool m_quantityHasBeenSet = false;
 };
 

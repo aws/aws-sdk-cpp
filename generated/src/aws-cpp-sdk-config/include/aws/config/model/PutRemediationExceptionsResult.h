@@ -68,9 +68,9 @@ class PutRemediationExceptionsResult {
   ///@}
  private:
   Aws::Vector<FailedRemediationExceptionBatch> m_failedBatches;
-  bool m_failedBatchesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_failedBatchesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

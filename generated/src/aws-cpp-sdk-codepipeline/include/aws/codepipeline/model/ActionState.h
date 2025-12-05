@@ -127,18 +127,18 @@ class ActionState {
   ///@}
  private:
   Aws::String m_actionName;
-  bool m_actionNameHasBeenSet = false;
 
   ActionRevision m_currentRevision;
-  bool m_currentRevisionHasBeenSet = false;
 
   ActionExecution m_latestExecution;
-  bool m_latestExecutionHasBeenSet = false;
 
   Aws::String m_entityUrl;
-  bool m_entityUrlHasBeenSet = false;
 
   Aws::String m_revisionUrl;
+  bool m_actionNameHasBeenSet = false;
+  bool m_currentRevisionHasBeenSet = false;
+  bool m_latestExecutionHasBeenSet = false;
+  bool m_entityUrlHasBeenSet = false;
   bool m_revisionUrlHasBeenSet = false;
 };
 

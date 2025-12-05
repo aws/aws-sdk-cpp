@@ -92,12 +92,12 @@ class S3ReferenceDataSourceDescription {
   ///@}
  private:
   Aws::String m_bucketARN;
-  bool m_bucketARNHasBeenSet = false;
 
   Aws::String m_fileKey;
-  bool m_fileKeyHasBeenSet = false;
 
   Aws::String m_referenceRoleARN;
+  bool m_bucketARNHasBeenSet = false;
+  bool m_fileKeyHasBeenSet = false;
   bool m_referenceRoleARNHasBeenSet = false;
 };
 

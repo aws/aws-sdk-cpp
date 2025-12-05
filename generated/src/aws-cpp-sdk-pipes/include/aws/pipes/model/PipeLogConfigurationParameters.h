@@ -156,18 +156,18 @@ class PipeLogConfigurationParameters {
   ///@}
  private:
   S3LogDestinationParameters m_s3LogDestination;
-  bool m_s3LogDestinationHasBeenSet = false;
 
   FirehoseLogDestinationParameters m_firehoseLogDestination;
-  bool m_firehoseLogDestinationHasBeenSet = false;
 
   CloudwatchLogsLogDestinationParameters m_cloudwatchLogsLogDestination;
-  bool m_cloudwatchLogsLogDestinationHasBeenSet = false;
 
   LogLevel m_level{LogLevel::NOT_SET};
-  bool m_levelHasBeenSet = false;
 
   Aws::Vector<IncludeExecutionDataOption> m_includeExecutionData;
+  bool m_s3LogDestinationHasBeenSet = false;
+  bool m_firehoseLogDestinationHasBeenSet = false;
+  bool m_cloudwatchLogsLogDestinationHasBeenSet = false;
+  bool m_levelHasBeenSet = false;
   bool m_includeExecutionDataHasBeenSet = false;
 };
 

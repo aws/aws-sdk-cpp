@@ -67,9 +67,9 @@ class DescribeContactFlowModuleRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_contactFlowModuleId;
+  bool m_instanceIdHasBeenSet = false;
   bool m_contactFlowModuleIdHasBeenSet = false;
 };
 

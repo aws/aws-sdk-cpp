@@ -215,30 +215,30 @@ class ListAggregatedUtterancesRequest : public LexModelsV2Request {
   ///@}
  private:
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   Aws::String m_botAliasId;
-  bool m_botAliasIdHasBeenSet = false;
 
   Aws::String m_botVersion;
-  bool m_botVersionHasBeenSet = false;
 
   Aws::String m_localeId;
-  bool m_localeIdHasBeenSet = false;
 
   UtteranceAggregationDuration m_aggregationDuration;
-  bool m_aggregationDurationHasBeenSet = false;
 
   AggregatedUtterancesSortBy m_sortBy;
-  bool m_sortByHasBeenSet = false;
 
   Aws::Vector<AggregatedUtterancesFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_botIdHasBeenSet = false;
+  bool m_botAliasIdHasBeenSet = false;
+  bool m_botVersionHasBeenSet = false;
+  bool m_localeIdHasBeenSet = false;
+  bool m_aggregationDurationHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

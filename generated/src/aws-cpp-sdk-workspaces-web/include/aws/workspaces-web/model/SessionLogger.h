@@ -194,27 +194,27 @@ class SessionLogger {
   ///@}
  private:
   Aws::String m_sessionLoggerArn;
-  bool m_sessionLoggerArnHasBeenSet = false;
 
   EventFilter m_eventFilter;
-  bool m_eventFilterHasBeenSet = false;
 
   LogConfiguration m_logConfiguration;
-  bool m_logConfigurationHasBeenSet = false;
 
   Aws::String m_customerManagedKey;
-  bool m_customerManagedKeyHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_additionalEncryptionContext;
-  bool m_additionalEncryptionContextHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_associatedPortalArns;
-  bool m_associatedPortalArnsHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
+  bool m_sessionLoggerArnHasBeenSet = false;
+  bool m_eventFilterHasBeenSet = false;
+  bool m_logConfigurationHasBeenSet = false;
+  bool m_customerManagedKeyHasBeenSet = false;
+  bool m_additionalEncryptionContextHasBeenSet = false;
+  bool m_associatedPortalArnsHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;
 };
 

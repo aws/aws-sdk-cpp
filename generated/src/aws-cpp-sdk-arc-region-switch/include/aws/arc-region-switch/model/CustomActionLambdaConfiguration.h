@@ -126,18 +126,18 @@ class CustomActionLambdaConfiguration {
   ///@}
  private:
   int m_timeoutMinutes{0};
-  bool m_timeoutMinutesHasBeenSet = false;
 
   Aws::Vector<Lambdas> m_lambdas;
-  bool m_lambdasHasBeenSet = false;
 
   double m_retryIntervalMinutes{0.0};
-  bool m_retryIntervalMinutesHasBeenSet = false;
 
   RegionToRunIn m_regionToRun{RegionToRunIn::NOT_SET};
-  bool m_regionToRunHasBeenSet = false;
 
   LambdaUngraceful m_ungraceful;
+  bool m_timeoutMinutesHasBeenSet = false;
+  bool m_lambdasHasBeenSet = false;
+  bool m_retryIntervalMinutesHasBeenSet = false;
+  bool m_regionToRunHasBeenSet = false;
   bool m_ungracefulHasBeenSet = false;
 };
 

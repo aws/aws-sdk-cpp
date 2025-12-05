@@ -61,9 +61,9 @@ class DescribeServerResult {
   ///@}
  private:
   DescribedServer m_server;
-  bool m_serverHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_serverHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

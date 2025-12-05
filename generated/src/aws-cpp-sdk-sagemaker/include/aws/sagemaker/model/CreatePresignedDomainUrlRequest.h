@@ -149,21 +149,21 @@ class CreatePresignedDomainUrlRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_userProfileName;
-  bool m_userProfileNameHasBeenSet = false;
 
   int m_sessionExpirationDurationInSeconds{0};
-  bool m_sessionExpirationDurationInSecondsHasBeenSet = false;
 
   int m_expiresInSeconds{0};
-  bool m_expiresInSecondsHasBeenSet = false;
 
   Aws::String m_spaceName;
-  bool m_spaceNameHasBeenSet = false;
 
   Aws::String m_landingUri;
+  bool m_domainIdHasBeenSet = false;
+  bool m_userProfileNameHasBeenSet = false;
+  bool m_sessionExpirationDurationInSecondsHasBeenSet = false;
+  bool m_expiresInSecondsHasBeenSet = false;
+  bool m_spaceNameHasBeenSet = false;
   bool m_landingUriHasBeenSet = false;
 };
 

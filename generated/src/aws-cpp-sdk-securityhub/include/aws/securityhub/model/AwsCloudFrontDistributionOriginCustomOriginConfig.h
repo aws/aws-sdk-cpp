@@ -141,21 +141,21 @@ class AwsCloudFrontDistributionOriginCustomOriginConfig {
   ///@}
  private:
   int m_httpPort{0};
-  bool m_httpPortHasBeenSet = false;
 
   int m_httpsPort{0};
-  bool m_httpsPortHasBeenSet = false;
 
   int m_originKeepaliveTimeout{0};
-  bool m_originKeepaliveTimeoutHasBeenSet = false;
 
   Aws::String m_originProtocolPolicy;
-  bool m_originProtocolPolicyHasBeenSet = false;
 
   int m_originReadTimeout{0};
-  bool m_originReadTimeoutHasBeenSet = false;
 
   AwsCloudFrontDistributionOriginSslProtocols m_originSslProtocols;
+  bool m_httpPortHasBeenSet = false;
+  bool m_httpsPortHasBeenSet = false;
+  bool m_originKeepaliveTimeoutHasBeenSet = false;
+  bool m_originProtocolPolicyHasBeenSet = false;
+  bool m_originReadTimeoutHasBeenSet = false;
   bool m_originSslProtocolsHasBeenSet = false;
 };
 

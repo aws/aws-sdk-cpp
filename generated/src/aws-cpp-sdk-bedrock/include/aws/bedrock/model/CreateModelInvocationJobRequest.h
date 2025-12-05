@@ -217,30 +217,30 @@ class CreateModelInvocationJobRequest : public BedrockRequest {
   ///@}
  private:
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::String m_modelId;
-  bool m_modelIdHasBeenSet = false;
 
   ModelInvocationJobInputDataConfig m_inputDataConfig;
-  bool m_inputDataConfigHasBeenSet = false;
 
   ModelInvocationJobOutputDataConfig m_outputDataConfig;
-  bool m_outputDataConfigHasBeenSet = false;
 
   VpcConfig m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   int m_timeoutDurationInHours{0};
-  bool m_timeoutDurationInHoursHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_jobNameHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_modelIdHasBeenSet = false;
+  bool m_inputDataConfigHasBeenSet = false;
+  bool m_outputDataConfigHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
+  bool m_timeoutDurationInHoursHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

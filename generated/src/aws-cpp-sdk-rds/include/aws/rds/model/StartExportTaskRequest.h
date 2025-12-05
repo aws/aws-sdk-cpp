@@ -195,24 +195,24 @@ class StartExportTaskRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_exportTaskIdentifier;
-  bool m_exportTaskIdentifierHasBeenSet = false;
 
   Aws::String m_sourceArn;
-  bool m_sourceArnHasBeenSet = false;
 
   Aws::String m_s3BucketName;
-  bool m_s3BucketNameHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_s3Prefix;
-  bool m_s3PrefixHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_exportOnly;
+  bool m_exportTaskIdentifierHasBeenSet = false;
+  bool m_sourceArnHasBeenSet = false;
+  bool m_s3BucketNameHasBeenSet = false;
+  bool m_iamRoleArnHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_s3PrefixHasBeenSet = false;
   bool m_exportOnlyHasBeenSet = false;
 };
 

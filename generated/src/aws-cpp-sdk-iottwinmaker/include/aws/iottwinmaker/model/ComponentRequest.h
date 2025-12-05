@@ -121,15 +121,15 @@ class ComponentRequest {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_componentTypeId;
-  bool m_componentTypeIdHasBeenSet = false;
 
   Aws::Map<Aws::String, PropertyRequest> m_properties;
-  bool m_propertiesHasBeenSet = false;
 
   Aws::Map<Aws::String, ComponentPropertyGroupRequest> m_propertyGroups;
+  bool m_descriptionHasBeenSet = false;
+  bool m_componentTypeIdHasBeenSet = false;
+  bool m_propertiesHasBeenSet = false;
   bool m_propertyGroupsHasBeenSet = false;
 };
 

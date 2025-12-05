@@ -88,12 +88,12 @@ class ListHypervisorsResult {
   ///@}
  private:
   Aws::Vector<Hypervisor> m_hypervisors;
-  bool m_hypervisorsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_hypervisorsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

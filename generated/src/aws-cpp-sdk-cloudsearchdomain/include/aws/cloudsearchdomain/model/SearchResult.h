@@ -134,18 +134,18 @@ class SearchResult {
   ///@}
  private:
   SearchStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   Hits m_hits;
-  bool m_hitsHasBeenSet = false;
 
   Aws::Map<Aws::String, BucketInfo> m_facets;
-  bool m_facetsHasBeenSet = false;
 
   Aws::Map<Aws::String, FieldStats> m_stats;
-  bool m_statsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_hitsHasBeenSet = false;
+  bool m_facetsHasBeenSet = false;
+  bool m_statsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

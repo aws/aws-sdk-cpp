@@ -263,42 +263,42 @@ class GetRequesterGatewayResult {
   ///@}
  private:
   RequesterGatewayStatus m_status{RequesterGatewayStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::String m_gatewayId;
-  bool m_gatewayIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   int m_activeLinksCount{0};
-  bool m_activeLinksCountHasBeenSet = false;
 
   int m_totalLinksCount{0};
-  bool m_totalLinksCountHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_gatewayIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_activeLinksCountHasBeenSet = false;
+  bool m_totalLinksCountHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -82,9 +82,9 @@ class LandingZoneOperationFilter {
   ///@}
  private:
   Aws::Vector<LandingZoneOperationType> m_types;
-  bool m_typesHasBeenSet = false;
 
   Aws::Vector<LandingZoneOperationStatus> m_statuses;
+  bool m_typesHasBeenSet = false;
   bool m_statusesHasBeenSet = false;
 };
 

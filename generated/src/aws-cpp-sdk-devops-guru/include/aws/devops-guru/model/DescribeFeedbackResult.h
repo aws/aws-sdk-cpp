@@ -58,9 +58,9 @@ class DescribeFeedbackResult {
   ///@}
  private:
   InsightFeedback m_insightFeedback;
-  bool m_insightFeedbackHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_insightFeedbackHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

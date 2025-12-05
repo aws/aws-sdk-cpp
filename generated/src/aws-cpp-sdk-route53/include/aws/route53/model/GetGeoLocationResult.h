@@ -67,9 +67,9 @@ class GetGeoLocationResult {
   ///@}
  private:
   GeoLocationDetails m_geoLocationDetails;
-  bool m_geoLocationDetailsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_geoLocationDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

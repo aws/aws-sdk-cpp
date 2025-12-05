@@ -95,12 +95,12 @@ class EmailConfiguration {
   ///@}
  private:
   Aws::String m_from;
-  bool m_fromHasBeenSet = false;
 
   EmailContent m_content;
-  bool m_contentHasBeenSet = false;
 
   EmailRecipients m_recipients;
+  bool m_fromHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
   bool m_recipientsHasBeenSet = false;
 };
 

@@ -102,12 +102,12 @@ class CreatePolicyRequest : public VerifiedPermissionsRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_policyStoreId;
-  bool m_policyStoreIdHasBeenSet = false;
 
   PolicyDefinition m_definition;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_policyStoreIdHasBeenSet = false;
   bool m_definitionHasBeenSet = false;
 };
 

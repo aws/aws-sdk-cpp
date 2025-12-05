@@ -119,15 +119,15 @@ class CreateSignalCatalogRequest : public IoTFleetWiseRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Node> m_nodes;
-  bool m_nodesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_nodesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

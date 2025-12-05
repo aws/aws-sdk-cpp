@@ -86,12 +86,12 @@ class WebRTCMeeting {
   ///@}
  private:
   WebRTCMediaPlacement m_mediaPlacement;
-  bool m_mediaPlacementHasBeenSet = false;
 
   MeetingFeaturesConfiguration m_meetingFeatures;
-  bool m_meetingFeaturesHasBeenSet = false;
 
   Aws::String m_meetingId;
+  bool m_mediaPlacementHasBeenSet = false;
+  bool m_meetingFeaturesHasBeenSet = false;
   bool m_meetingIdHasBeenSet = false;
 };
 

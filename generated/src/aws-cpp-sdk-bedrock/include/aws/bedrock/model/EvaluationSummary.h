@@ -236,33 +236,33 @@ class EvaluationSummary {
   ///@}
  private:
   Aws::String m_jobArn;
-  bool m_jobArnHasBeenSet = false;
 
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   EvaluationJobStatus m_status{EvaluationJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   EvaluationJobType m_jobType{EvaluationJobType::NOT_SET};
-  bool m_jobTypeHasBeenSet = false;
 
   Aws::Vector<EvaluationTaskType> m_evaluationTaskTypes;
-  bool m_evaluationTaskTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_evaluatorModelIdentifiers;
-  bool m_evaluatorModelIdentifiersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_customMetricsEvaluatorModelIdentifiers;
-  bool m_customMetricsEvaluatorModelIdentifiersHasBeenSet = false;
 
   EvaluationInferenceConfigSummary m_inferenceConfigSummary;
-  bool m_inferenceConfigSummaryHasBeenSet = false;
 
   ApplicationType m_applicationType{ApplicationType::NOT_SET};
+  bool m_jobArnHasBeenSet = false;
+  bool m_jobNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_jobTypeHasBeenSet = false;
+  bool m_evaluationTaskTypesHasBeenSet = false;
+  bool m_evaluatorModelIdentifiersHasBeenSet = false;
+  bool m_customMetricsEvaluatorModelIdentifiersHasBeenSet = false;
+  bool m_inferenceConfigSummaryHasBeenSet = false;
   bool m_applicationTypeHasBeenSet = false;
 };
 

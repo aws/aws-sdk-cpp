@@ -65,9 +65,9 @@ class CancelBundleTaskResponse {
   ///@}
  private:
   BundleTask m_bundleTask;
-  bool m_bundleTaskHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_bundleTaskHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class DeleteRegistrationFieldValueRequest : public PinpointSMSVoiceV2Request {
   ///@}
  private:
   Aws::String m_registrationId;
-  bool m_registrationIdHasBeenSet = false;
 
   Aws::String m_fieldPath;
+  bool m_registrationIdHasBeenSet = false;
   bool m_fieldPathHasBeenSet = false;
 };
 

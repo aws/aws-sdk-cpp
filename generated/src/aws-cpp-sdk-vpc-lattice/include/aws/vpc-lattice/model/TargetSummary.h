@@ -113,15 +113,15 @@ class TargetSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   TargetStatus m_status{TargetStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_reasonCode;
+  bool m_idHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_reasonCodeHasBeenSet = false;
 };
 

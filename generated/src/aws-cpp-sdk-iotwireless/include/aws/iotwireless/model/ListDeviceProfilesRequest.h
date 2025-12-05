@@ -88,12 +88,12 @@ class ListDeviceProfilesRequest : public IoTWirelessRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   DeviceProfileType m_deviceProfileType{DeviceProfileType::NOT_SET};
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_deviceProfileTypeHasBeenSet = false;
 };
 

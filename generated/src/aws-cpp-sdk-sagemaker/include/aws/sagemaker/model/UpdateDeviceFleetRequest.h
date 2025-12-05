@@ -124,18 +124,18 @@ class UpdateDeviceFleetRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_deviceFleetName;
-  bool m_deviceFleetNameHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   EdgeOutputConfig m_outputConfig;
-  bool m_outputConfigHasBeenSet = false;
 
   bool m_enableIotRoleAlias{false};
+  bool m_deviceFleetNameHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_outputConfigHasBeenSet = false;
   bool m_enableIotRoleAliasHasBeenSet = false;
 };
 

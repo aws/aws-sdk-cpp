@@ -94,12 +94,12 @@ class CreateHumanTaskUiRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_humanTaskUiName;
-  bool m_humanTaskUiNameHasBeenSet = false;
 
   UiTemplate m_uiTemplate;
-  bool m_uiTemplateHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_humanTaskUiNameHasBeenSet = false;
+  bool m_uiTemplateHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

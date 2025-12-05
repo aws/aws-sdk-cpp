@@ -86,9 +86,9 @@ class XssMatchStatement {
   ///@}
  private:
   FieldToMatch m_fieldToMatch;
-  bool m_fieldToMatchHasBeenSet = false;
 
   Aws::Vector<TextTransformation> m_textTransformations;
+  bool m_fieldToMatchHasBeenSet = false;
   bool m_textTransformationsHasBeenSet = false;
 };
 

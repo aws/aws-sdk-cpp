@@ -61,9 +61,9 @@ class GetColumnStatisticsTaskRunResult {
   ///@}
  private:
   ColumnStatisticsTaskRun m_columnStatisticsTaskRun;
-  bool m_columnStatisticsTaskRunHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_columnStatisticsTaskRunHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

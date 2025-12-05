@@ -70,9 +70,9 @@ class CuratedQuery {
   ///@}
  private:
   Aws::String m_naturalLanguage;
-  bool m_naturalLanguageHasBeenSet = false;
 
   Aws::String m_sql;
+  bool m_naturalLanguageHasBeenSet = false;
   bool m_sqlHasBeenSet = false;
 };
 

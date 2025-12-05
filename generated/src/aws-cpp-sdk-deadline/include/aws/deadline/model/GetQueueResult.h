@@ -334,54 +334,54 @@ class GetQueueResult {
   ///@}
  private:
   Aws::String m_queueId;
-  bool m_queueIdHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_farmId;
-  bool m_farmIdHasBeenSet = false;
 
   QueueStatus m_status{QueueStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   DefaultQueueBudgetAction m_defaultBudgetAction{DefaultQueueBudgetAction::NOT_SET};
-  bool m_defaultBudgetActionHasBeenSet = false;
 
   QueueBlockedReason m_blockedReason{QueueBlockedReason::NOT_SET};
-  bool m_blockedReasonHasBeenSet = false;
 
   JobAttachmentSettings m_jobAttachmentSettings;
-  bool m_jobAttachmentSettingsHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_requiredFileSystemLocationNames;
-  bool m_requiredFileSystemLocationNamesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowedStorageProfileIds;
-  bool m_allowedStorageProfileIdsHasBeenSet = false;
 
   JobRunAsUser m_jobRunAsUser;
-  bool m_jobRunAsUserHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_updatedBy;
-  bool m_updatedByHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_queueIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_farmIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_defaultBudgetActionHasBeenSet = false;
+  bool m_blockedReasonHasBeenSet = false;
+  bool m_jobAttachmentSettingsHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_requiredFileSystemLocationNamesHasBeenSet = false;
+  bool m_allowedStorageProfileIdsHasBeenSet = false;
+  bool m_jobRunAsUserHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_updatedByHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

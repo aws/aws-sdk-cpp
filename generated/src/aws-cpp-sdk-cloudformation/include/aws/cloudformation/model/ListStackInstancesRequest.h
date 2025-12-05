@@ -181,24 +181,24 @@ class ListStackInstancesRequest : public CloudFormationRequest {
   ///@}
  private:
   Aws::String m_stackSetName;
-  bool m_stackSetNameHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Vector<StackInstanceFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_stackInstanceAccount;
-  bool m_stackInstanceAccountHasBeenSet = false;
 
   Aws::String m_stackInstanceRegion;
-  bool m_stackInstanceRegionHasBeenSet = false;
 
   CallAs m_callAs{CallAs::NOT_SET};
+  bool m_stackSetNameHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_stackInstanceAccountHasBeenSet = false;
+  bool m_stackInstanceRegionHasBeenSet = false;
   bool m_callAsHasBeenSet = false;
 };
 

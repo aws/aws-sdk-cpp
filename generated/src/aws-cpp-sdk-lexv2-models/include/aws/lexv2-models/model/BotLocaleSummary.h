@@ -143,21 +143,21 @@ class BotLocaleSummary {
   ///@}
  private:
   Aws::String m_localeId;
-  bool m_localeIdHasBeenSet = false;
 
   Aws::String m_localeName;
-  bool m_localeNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   BotLocaleStatus m_botLocaleStatus{BotLocaleStatus::NOT_SET};
-  bool m_botLocaleStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
-  bool m_lastUpdatedDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastBuildSubmittedDateTime{};
+  bool m_localeIdHasBeenSet = false;
+  bool m_localeNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_botLocaleStatusHasBeenSet = false;
+  bool m_lastUpdatedDateTimeHasBeenSet = false;
   bool m_lastBuildSubmittedDateTimeHasBeenSet = false;
 };
 

@@ -91,12 +91,12 @@ class DescribeComplianceByConfigRuleResult {
   ///@}
  private:
   Aws::Vector<ComplianceByConfigRule> m_complianceByConfigRules;
-  bool m_complianceByConfigRulesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_complianceByConfigRulesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

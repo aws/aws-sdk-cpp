@@ -132,18 +132,18 @@ class GetChannelScheduleRequest : public MediaTailorRequest {
   ///@}
  private:
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   Aws::String m_durationMinutes;
-  bool m_durationMinutesHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_audience;
+  bool m_channelNameHasBeenSet = false;
+  bool m_durationMinutesHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_audienceHasBeenSet = false;
 };
 

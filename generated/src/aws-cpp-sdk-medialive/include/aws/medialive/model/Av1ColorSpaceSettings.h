@@ -99,15 +99,15 @@ class Av1ColorSpaceSettings {
   ///@}
  private:
   ColorSpacePassthroughSettings m_colorSpacePassthroughSettings;
-  bool m_colorSpacePassthroughSettingsHasBeenSet = false;
 
   Hdr10Settings m_hdr10Settings;
-  bool m_hdr10SettingsHasBeenSet = false;
 
   Rec601Settings m_rec601Settings;
-  bool m_rec601SettingsHasBeenSet = false;
 
   Rec709Settings m_rec709Settings;
+  bool m_colorSpacePassthroughSettingsHasBeenSet = false;
+  bool m_hdr10SettingsHasBeenSet = false;
+  bool m_rec601SettingsHasBeenSet = false;
   bool m_rec709SettingsHasBeenSet = false;
 };
 

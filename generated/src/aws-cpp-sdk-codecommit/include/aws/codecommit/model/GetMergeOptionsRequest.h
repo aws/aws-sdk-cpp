@@ -129,18 +129,18 @@ class GetMergeOptionsRequest : public CodeCommitRequest {
   ///@}
  private:
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   Aws::String m_sourceCommitSpecifier;
-  bool m_sourceCommitSpecifierHasBeenSet = false;
 
   Aws::String m_destinationCommitSpecifier;
-  bool m_destinationCommitSpecifierHasBeenSet = false;
 
   ConflictDetailLevelTypeEnum m_conflictDetailLevel{ConflictDetailLevelTypeEnum::NOT_SET};
-  bool m_conflictDetailLevelHasBeenSet = false;
 
   ConflictResolutionStrategyTypeEnum m_conflictResolutionStrategy{ConflictResolutionStrategyTypeEnum::NOT_SET};
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_sourceCommitSpecifierHasBeenSet = false;
+  bool m_destinationCommitSpecifierHasBeenSet = false;
+  bool m_conflictDetailLevelHasBeenSet = false;
   bool m_conflictResolutionStrategyHasBeenSet = false;
 };
 

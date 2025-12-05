@@ -76,9 +76,9 @@ class TreeMapSortConfiguration {
   ///@}
  private:
   Aws::Vector<FieldSortOptions> m_treeMapSort;
-  bool m_treeMapSortHasBeenSet = false;
 
   ItemsLimitConfiguration m_treeMapGroupItemsLimitConfiguration;
+  bool m_treeMapSortHasBeenSet = false;
   bool m_treeMapGroupItemsLimitConfigurationHasBeenSet = false;
 };
 

@@ -148,21 +148,21 @@ class InstanceProfile {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   bool m_packageCleanup{false};
-  bool m_packageCleanupHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_excludeAppPackagesFromCleanup;
-  bool m_excludeAppPackagesFromCleanupHasBeenSet = false;
 
   bool m_rebootAfterUse{false};
-  bool m_rebootAfterUseHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_arnHasBeenSet = false;
+  bool m_packageCleanupHasBeenSet = false;
+  bool m_excludeAppPackagesFromCleanupHasBeenSet = false;
+  bool m_rebootAfterUseHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

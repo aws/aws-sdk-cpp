@@ -59,9 +59,9 @@ class CreateExportResult {
   ///@}
  private:
   Aws::String m_exportArn;
-  bool m_exportArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_exportArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

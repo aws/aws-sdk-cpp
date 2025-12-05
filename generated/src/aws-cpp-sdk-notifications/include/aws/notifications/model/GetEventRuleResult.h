@@ -235,33 +235,33 @@ class GetEventRuleResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_notificationConfigurationArn;
-  bool m_notificationConfigurationArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_eventType;
-  bool m_eventTypeHasBeenSet = false;
 
   Aws::String m_eventPattern;
-  bool m_eventPatternHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_regions;
-  bool m_regionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_managedRules;
-  bool m_managedRulesHasBeenSet = false;
 
   Aws::Map<Aws::String, EventRuleStatusSummary> m_statusSummaryByRegion;
-  bool m_statusSummaryByRegionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_notificationConfigurationArnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_eventTypeHasBeenSet = false;
+  bool m_eventPatternHasBeenSet = false;
+  bool m_regionsHasBeenSet = false;
+  bool m_managedRulesHasBeenSet = false;
+  bool m_statusSummaryByRegionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

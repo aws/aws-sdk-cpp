@@ -97,12 +97,12 @@ class ReactionForComment {
   ///@}
  private:
   ReactionValueFormats m_reaction;
-  bool m_reactionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_reactionUsers;
-  bool m_reactionUsersHasBeenSet = false;
 
   int m_reactionsFromDeletedUsersCount{0};
+  bool m_reactionHasBeenSet = false;
+  bool m_reactionUsersHasBeenSet = false;
   bool m_reactionsFromDeletedUsersCountHasBeenSet = false;
 };
 

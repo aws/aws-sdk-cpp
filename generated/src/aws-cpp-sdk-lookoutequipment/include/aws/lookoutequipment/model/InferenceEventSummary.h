@@ -143,21 +143,21 @@ class InferenceEventSummary {
   ///@}
  private:
   Aws::String m_inferenceSchedulerArn;
-  bool m_inferenceSchedulerArnHasBeenSet = false;
 
   Aws::String m_inferenceSchedulerName;
-  bool m_inferenceSchedulerNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_eventStartTime{};
-  bool m_eventStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_eventEndTime{};
-  bool m_eventEndTimeHasBeenSet = false;
 
   Aws::String m_diagnostics;
-  bool m_diagnosticsHasBeenSet = false;
 
   long long m_eventDurationInSeconds{0};
+  bool m_inferenceSchedulerArnHasBeenSet = false;
+  bool m_inferenceSchedulerNameHasBeenSet = false;
+  bool m_eventStartTimeHasBeenSet = false;
+  bool m_eventEndTimeHasBeenSet = false;
+  bool m_diagnosticsHasBeenSet = false;
   bool m_eventDurationInSecondsHasBeenSet = false;
 };
 

@@ -145,21 +145,21 @@ class ResourceDataSyncS3Destination {
   ///@}
  private:
   Aws::String m_bucketName;
-  bool m_bucketNameHasBeenSet = false;
 
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   ResourceDataSyncS3Format m_syncFormat{ResourceDataSyncS3Format::NOT_SET};
-  bool m_syncFormatHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_aWSKMSKeyARN;
-  bool m_aWSKMSKeyARNHasBeenSet = false;
 
   ResourceDataSyncDestinationDataSharing m_destinationDataSharing;
+  bool m_bucketNameHasBeenSet = false;
+  bool m_prefixHasBeenSet = false;
+  bool m_syncFormatHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_aWSKMSKeyARNHasBeenSet = false;
   bool m_destinationDataSharingHasBeenSet = false;
 };
 

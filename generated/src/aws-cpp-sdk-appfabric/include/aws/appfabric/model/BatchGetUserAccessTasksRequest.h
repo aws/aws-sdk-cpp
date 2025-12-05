@@ -73,9 +73,9 @@ class BatchGetUserAccessTasksRequest : public AppFabricRequest {
   ///@}
  private:
   Aws::String m_appBundleIdentifier;
-  bool m_appBundleIdentifierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_taskIdList;
+  bool m_appBundleIdentifierHasBeenSet = false;
   bool m_taskIdListHasBeenSet = false;
 };
 

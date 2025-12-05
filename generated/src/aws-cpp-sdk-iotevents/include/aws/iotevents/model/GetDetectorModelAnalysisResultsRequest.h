@@ -86,12 +86,12 @@ class GetDetectorModelAnalysisResultsRequest : public IoTEventsRequest {
   ///@}
  private:
   Aws::String m_analysisId;
-  bool m_analysisIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_analysisIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

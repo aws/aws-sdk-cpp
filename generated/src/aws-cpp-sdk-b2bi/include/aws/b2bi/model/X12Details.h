@@ -72,9 +72,9 @@ class X12Details {
   ///@}
  private:
   X12TransactionSet m_transactionSet{X12TransactionSet::NOT_SET};
-  bool m_transactionSetHasBeenSet = false;
 
   X12Version m_version{X12Version::NOT_SET};
+  bool m_transactionSetHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

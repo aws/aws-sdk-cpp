@@ -110,15 +110,15 @@ class TopicPartitionInfo {
   ///@}
  private:
   int m_partition{0};
-  bool m_partitionHasBeenSet = false;
 
   int m_leader{0};
-  bool m_leaderHasBeenSet = false;
 
   Aws::Vector<int> m_replicas;
-  bool m_replicasHasBeenSet = false;
 
   Aws::Vector<int> m_isr;
+  bool m_partitionHasBeenSet = false;
+  bool m_leaderHasBeenSet = false;
+  bool m_replicasHasBeenSet = false;
   bool m_isrHasBeenSet = false;
 };
 

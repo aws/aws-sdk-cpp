@@ -101,15 +101,15 @@ class StartAssessmentFrameworkShareRequest : public AuditManagerRequest {
   ///@}
  private:
   Aws::String m_frameworkId;
-  bool m_frameworkIdHasBeenSet = false;
 
   Aws::String m_destinationAccount;
-  bool m_destinationAccountHasBeenSet = false;
 
   Aws::String m_destinationRegion;
-  bool m_destinationRegionHasBeenSet = false;
 
   Aws::String m_comment;
+  bool m_frameworkIdHasBeenSet = false;
+  bool m_destinationAccountHasBeenSet = false;
+  bool m_destinationRegionHasBeenSet = false;
   bool m_commentHasBeenSet = false;
 };
 

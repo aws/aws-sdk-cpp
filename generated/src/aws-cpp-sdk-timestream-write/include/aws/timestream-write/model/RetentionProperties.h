@@ -63,9 +63,9 @@ class RetentionProperties {
   ///@}
  private:
   long long m_memoryStoreRetentionPeriodInHours{0};
-  bool m_memoryStoreRetentionPeriodInHoursHasBeenSet = false;
 
   long long m_magneticStoreRetentionPeriodInDays{0};
+  bool m_memoryStoreRetentionPeriodInHoursHasBeenSet = false;
   bool m_magneticStoreRetentionPeriodInDaysHasBeenSet = false;
 };
 

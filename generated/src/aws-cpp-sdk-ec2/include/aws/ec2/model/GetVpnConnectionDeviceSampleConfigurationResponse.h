@@ -62,9 +62,9 @@ class GetVpnConnectionDeviceSampleConfigurationResponse {
   ///@}
  private:
   Aws::String m_vpnConnectionDeviceSampleConfiguration;
-  bool m_vpnConnectionDeviceSampleConfigurationHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_vpnConnectionDeviceSampleConfigurationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

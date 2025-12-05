@@ -105,12 +105,12 @@ class ListProfilingGroupsRequest : public CodeGuruProfilerRequest {
   ///@}
  private:
   bool m_includeDescription{false};
-  bool m_includeDescriptionHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_includeDescriptionHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

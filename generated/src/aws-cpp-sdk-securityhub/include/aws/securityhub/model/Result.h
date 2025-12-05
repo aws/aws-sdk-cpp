@@ -69,9 +69,9 @@ class Result {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_processingResult;
+  bool m_accountIdHasBeenSet = false;
   bool m_processingResultHasBeenSet = false;
 };
 

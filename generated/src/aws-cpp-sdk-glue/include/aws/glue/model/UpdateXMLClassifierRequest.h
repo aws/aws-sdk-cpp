@@ -91,12 +91,12 @@ class UpdateXMLClassifierRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_classification;
-  bool m_classificationHasBeenSet = false;
 
   Aws::String m_rowTag;
+  bool m_nameHasBeenSet = false;
+  bool m_classificationHasBeenSet = false;
   bool m_rowTagHasBeenSet = false;
 };
 

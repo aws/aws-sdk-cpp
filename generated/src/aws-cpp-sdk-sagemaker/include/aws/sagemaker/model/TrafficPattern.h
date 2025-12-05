@@ -94,12 +94,12 @@ class TrafficPattern {
   ///@}
  private:
   TrafficType m_trafficType{TrafficType::NOT_SET};
-  bool m_trafficTypeHasBeenSet = false;
 
   Aws::Vector<Phase> m_phases;
-  bool m_phasesHasBeenSet = false;
 
   Stairs m_stairs;
+  bool m_trafficTypeHasBeenSet = false;
+  bool m_phasesHasBeenSet = false;
   bool m_stairsHasBeenSet = false;
 };
 

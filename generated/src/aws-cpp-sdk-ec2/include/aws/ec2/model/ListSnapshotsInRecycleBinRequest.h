@@ -116,15 +116,15 @@ class ListSnapshotsInRecycleBinRequest : public EC2Request {
   ///@}
  private:
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_snapshotIds;
-  bool m_snapshotIdsHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_snapshotIdsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

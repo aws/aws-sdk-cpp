@@ -60,9 +60,9 @@ class ImportClientVpnClientCertificateRevocationListResponse {
   ///@}
  private:
   bool m_return{false};
-  bool m_returnHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_returnHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

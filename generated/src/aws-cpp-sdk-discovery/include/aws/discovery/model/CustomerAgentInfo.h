@@ -141,24 +141,24 @@ class CustomerAgentInfo {
   ///@}
  private:
   int m_activeAgents{0};
-  bool m_activeAgentsHasBeenSet = false;
 
   int m_healthyAgents{0};
-  bool m_healthyAgentsHasBeenSet = false;
 
   int m_blackListedAgents{0};
-  bool m_blackListedAgentsHasBeenSet = false;
 
   int m_shutdownAgents{0};
-  bool m_shutdownAgentsHasBeenSet = false;
 
   int m_unhealthyAgents{0};
-  bool m_unhealthyAgentsHasBeenSet = false;
 
   int m_totalAgents{0};
-  bool m_totalAgentsHasBeenSet = false;
 
   int m_unknownAgents{0};
+  bool m_activeAgentsHasBeenSet = false;
+  bool m_healthyAgentsHasBeenSet = false;
+  bool m_blackListedAgentsHasBeenSet = false;
+  bool m_shutdownAgentsHasBeenSet = false;
+  bool m_unhealthyAgentsHasBeenSet = false;
+  bool m_totalAgentsHasBeenSet = false;
   bool m_unknownAgentsHasBeenSet = false;
 };
 

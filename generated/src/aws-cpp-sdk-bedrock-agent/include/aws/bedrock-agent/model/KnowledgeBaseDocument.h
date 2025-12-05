@@ -70,9 +70,9 @@ class KnowledgeBaseDocument {
   ///@}
  private:
   DocumentMetadata m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   DocumentContent m_content;
+  bool m_metadataHasBeenSet = false;
   bool m_contentHasBeenSet = false;
 };
 

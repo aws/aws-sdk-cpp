@@ -84,12 +84,12 @@ class DescribeParametersResult {
   ///@}
  private:
   Aws::Vector<ParameterMetadata> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_parametersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

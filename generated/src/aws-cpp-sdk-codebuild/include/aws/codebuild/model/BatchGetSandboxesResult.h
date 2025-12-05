@@ -90,12 +90,12 @@ class BatchGetSandboxesResult {
   ///@}
  private:
   Aws::Vector<Sandbox> m_sandboxes;
-  bool m_sandboxesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sandboxesNotFound;
-  bool m_sandboxesNotFoundHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sandboxesHasBeenSet = false;
+  bool m_sandboxesNotFoundHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

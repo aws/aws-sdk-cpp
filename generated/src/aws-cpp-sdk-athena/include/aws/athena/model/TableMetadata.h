@@ -181,24 +181,24 @@ class TableMetadata {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastAccessTime{};
-  bool m_lastAccessTimeHasBeenSet = false;
 
   Aws::String m_tableType;
-  bool m_tableTypeHasBeenSet = false;
 
   Aws::Vector<Column> m_columns;
-  bool m_columnsHasBeenSet = false;
 
   Aws::Vector<Column> m_partitionKeys;
-  bool m_partitionKeysHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_parameters;
+  bool m_nameHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_lastAccessTimeHasBeenSet = false;
+  bool m_tableTypeHasBeenSet = false;
+  bool m_columnsHasBeenSet = false;
+  bool m_partitionKeysHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

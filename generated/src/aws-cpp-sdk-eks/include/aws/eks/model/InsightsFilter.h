@@ -111,12 +111,12 @@ class InsightsFilter {
   ///@}
  private:
   Aws::Vector<Category> m_categories;
-  bool m_categoriesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_kubernetesVersions;
-  bool m_kubernetesVersionsHasBeenSet = false;
 
   Aws::Vector<InsightStatusValue> m_statuses;
+  bool m_categoriesHasBeenSet = false;
+  bool m_kubernetesVersionsHasBeenSet = false;
   bool m_statusesHasBeenSet = false;
 };
 

@@ -83,12 +83,12 @@ class LimitsExceededException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   long long m_limit{0};
+  bool m_messageHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_limitHasBeenSet = false;
 };
 

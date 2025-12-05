@@ -363,36 +363,36 @@ class ScheduledAction {
   ///@}
  private:
   Aws::String m_scheduledActionName;
-  bool m_scheduledActionNameHasBeenSet = false;
 
   Aws::String m_scheduledActionARN;
-  bool m_scheduledActionARNHasBeenSet = false;
 
   ServiceNamespace m_serviceNamespace{ServiceNamespace::NOT_SET};
-  bool m_serviceNamespaceHasBeenSet = false;
 
   Aws::String m_schedule;
-  bool m_scheduleHasBeenSet = false;
 
   Aws::String m_timezone;
-  bool m_timezoneHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   ScalableDimension m_scalableDimension{ScalableDimension::NOT_SET};
-  bool m_scalableDimensionHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   ScalableTargetAction m_scalableTargetAction;
-  bool m_scalableTargetActionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
+  bool m_scheduledActionNameHasBeenSet = false;
+  bool m_scheduledActionARNHasBeenSet = false;
+  bool m_serviceNamespaceHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
+  bool m_timezoneHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_scalableDimensionHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_scalableTargetActionHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
 };
 

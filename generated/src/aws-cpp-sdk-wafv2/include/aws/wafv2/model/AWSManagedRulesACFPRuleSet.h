@@ -160,18 +160,18 @@ class AWSManagedRulesACFPRuleSet {
   ///@}
  private:
   Aws::String m_creationPath;
-  bool m_creationPathHasBeenSet = false;
 
   Aws::String m_registrationPagePath;
-  bool m_registrationPagePathHasBeenSet = false;
 
   RequestInspectionACFP m_requestInspection;
-  bool m_requestInspectionHasBeenSet = false;
 
   ResponseInspection m_responseInspection;
-  bool m_responseInspectionHasBeenSet = false;
 
   bool m_enableRegexInPath{false};
+  bool m_creationPathHasBeenSet = false;
+  bool m_registrationPagePathHasBeenSet = false;
+  bool m_requestInspectionHasBeenSet = false;
+  bool m_responseInspectionHasBeenSet = false;
   bool m_enableRegexInPathHasBeenSet = false;
 };
 

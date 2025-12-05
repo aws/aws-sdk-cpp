@@ -124,15 +124,15 @@ class Slot {
   ///@}
  private:
   Value m_value;
-  bool m_valueHasBeenSet = false;
 
   Shape m_shape{Shape::NOT_SET};
-  bool m_shapeHasBeenSet = false;
 
   Aws::Vector<Slot> m_values;
-  bool m_valuesHasBeenSet = false;
 
   Aws::Map<Aws::String, Slot> m_subSlots;
+  bool m_valueHasBeenSet = false;
+  bool m_shapeHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
   bool m_subSlotsHasBeenSet = false;
 };
 

@@ -78,12 +78,12 @@ class GetSerialConsoleAccessStatusResponse {
   ///@}
  private:
   bool m_serialConsoleAccessEnabled{false};
-  bool m_serialConsoleAccessEnabledHasBeenSet = false;
 
   ManagedBy m_managedBy{ManagedBy::NOT_SET};
-  bool m_managedByHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_serialConsoleAccessEnabledHasBeenSet = false;
+  bool m_managedByHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

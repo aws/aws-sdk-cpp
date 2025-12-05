@@ -197,27 +197,27 @@ class AwsEc2NetworkInterfaceDetails {
   ///@}
  private:
   AwsEc2NetworkInterfaceAttachment m_attachment;
-  bool m_attachmentHasBeenSet = false;
 
   Aws::String m_networkInterfaceId;
-  bool m_networkInterfaceIdHasBeenSet = false;
 
   Aws::Vector<AwsEc2NetworkInterfaceSecurityGroup> m_securityGroups;
-  bool m_securityGroupsHasBeenSet = false;
 
   bool m_sourceDestCheck{false};
-  bool m_sourceDestCheckHasBeenSet = false;
 
   Aws::Vector<AwsEc2NetworkInterfaceIpV6AddressDetail> m_ipV6Addresses;
-  bool m_ipV6AddressesHasBeenSet = false;
 
   Aws::Vector<AwsEc2NetworkInterfacePrivateIpAddressDetail> m_privateIpAddresses;
-  bool m_privateIpAddressesHasBeenSet = false;
 
   Aws::String m_publicDnsName;
-  bool m_publicDnsNameHasBeenSet = false;
 
   Aws::String m_publicIp;
+  bool m_attachmentHasBeenSet = false;
+  bool m_networkInterfaceIdHasBeenSet = false;
+  bool m_securityGroupsHasBeenSet = false;
+  bool m_sourceDestCheckHasBeenSet = false;
+  bool m_ipV6AddressesHasBeenSet = false;
+  bool m_privateIpAddressesHasBeenSet = false;
+  bool m_publicDnsNameHasBeenSet = false;
   bool m_publicIpHasBeenSet = false;
 };
 

@@ -279,39 +279,39 @@ class ScheduleRunConfiguration {
   ///@}
  private:
   Aws::String m_extraDataPackageArn;
-  bool m_extraDataPackageArnHasBeenSet = false;
 
   Aws::String m_networkProfileArn;
-  bool m_networkProfileArnHasBeenSet = false;
 
   Aws::String m_locale;
-  bool m_localeHasBeenSet = false;
 
   Location m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpceConfigurationArns;
-  bool m_vpceConfigurationArnsHasBeenSet = false;
 
   DeviceProxy m_deviceProxy;
-  bool m_deviceProxyHasBeenSet = false;
 
   CustomerArtifactPaths m_customerArtifactPaths;
-  bool m_customerArtifactPathsHasBeenSet = false;
 
   Radios m_radios;
-  bool m_radiosHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_auxiliaryApps;
-  bool m_auxiliaryAppsHasBeenSet = false;
 
   BillingMethod m_billingMethod{BillingMethod::NOT_SET};
-  bool m_billingMethodHasBeenSet = false;
 
   Aws::Vector<EnvironmentVariable> m_environmentVariables;
-  bool m_environmentVariablesHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
+  bool m_extraDataPackageArnHasBeenSet = false;
+  bool m_networkProfileArnHasBeenSet = false;
+  bool m_localeHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_vpceConfigurationArnsHasBeenSet = false;
+  bool m_deviceProxyHasBeenSet = false;
+  bool m_customerArtifactPathsHasBeenSet = false;
+  bool m_radiosHasBeenSet = false;
+  bool m_auxiliaryAppsHasBeenSet = false;
+  bool m_billingMethodHasBeenSet = false;
+  bool m_environmentVariablesHasBeenSet = false;
   bool m_executionRoleArnHasBeenSet = false;
 };
 

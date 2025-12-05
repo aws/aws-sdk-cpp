@@ -86,12 +86,12 @@ class ListGameServersResult {
   ///@}
  private:
   Aws::Vector<GameServer> m_gameServers;
-  bool m_gameServersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_gameServersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

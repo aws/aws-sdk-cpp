@@ -93,15 +93,15 @@ class Stats {
   ///@}
  private:
   double m_min{0.0};
-  bool m_minHasBeenSet = false;
 
   double m_max{0.0};
-  bool m_maxHasBeenSet = false;
 
   double m_avg{0.0};
-  bool m_avgHasBeenSet = false;
 
   double m_sum{0.0};
+  bool m_minHasBeenSet = false;
+  bool m_maxHasBeenSet = false;
+  bool m_avgHasBeenSet = false;
   bool m_sumHasBeenSet = false;
 };
 

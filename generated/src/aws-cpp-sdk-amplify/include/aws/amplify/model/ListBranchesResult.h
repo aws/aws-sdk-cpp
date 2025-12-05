@@ -91,12 +91,12 @@ class ListBranchesResult {
   ///@}
  private:
   Aws::Vector<Branch> m_branches;
-  bool m_branchesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_branchesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

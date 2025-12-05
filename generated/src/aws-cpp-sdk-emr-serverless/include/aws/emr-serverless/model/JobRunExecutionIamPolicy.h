@@ -77,9 +77,9 @@ class JobRunExecutionIamPolicy {
   ///@}
  private:
   Aws::String m_policy;
-  bool m_policyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_policyArns;
+  bool m_policyHasBeenSet = false;
   bool m_policyArnsHasBeenSet = false;
 };
 

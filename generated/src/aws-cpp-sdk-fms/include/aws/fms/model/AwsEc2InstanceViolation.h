@@ -78,9 +78,9 @@ class AwsEc2InstanceViolation {
   ///@}
  private:
   Aws::String m_violationTarget;
-  bool m_violationTargetHasBeenSet = false;
 
   Aws::Vector<AwsEc2NetworkInterfaceViolation> m_awsEc2NetworkInterfaceViolations;
+  bool m_violationTargetHasBeenSet = false;
   bool m_awsEc2NetworkInterfaceViolationsHasBeenSet = false;
 };
 

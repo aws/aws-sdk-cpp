@@ -211,33 +211,33 @@ class AmazonOpenSearchServerlessDestinationDescription {
   ///@}
  private:
   Aws::String m_roleARN;
-  bool m_roleARNHasBeenSet = false;
 
   Aws::String m_collectionEndpoint;
-  bool m_collectionEndpointHasBeenSet = false;
 
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   AmazonOpenSearchServerlessBufferingHints m_bufferingHints;
-  bool m_bufferingHintsHasBeenSet = false;
 
   AmazonOpenSearchServerlessRetryOptions m_retryOptions;
-  bool m_retryOptionsHasBeenSet = false;
 
   AmazonOpenSearchServerlessS3BackupMode m_s3BackupMode{AmazonOpenSearchServerlessS3BackupMode::NOT_SET};
-  bool m_s3BackupModeHasBeenSet = false;
 
   S3DestinationDescription m_s3DestinationDescription;
-  bool m_s3DestinationDescriptionHasBeenSet = false;
 
   ProcessingConfiguration m_processingConfiguration;
-  bool m_processingConfigurationHasBeenSet = false;
 
   CloudWatchLoggingOptions m_cloudWatchLoggingOptions;
-  bool m_cloudWatchLoggingOptionsHasBeenSet = false;
 
   VpcConfigurationDescription m_vpcConfigurationDescription;
+  bool m_roleARNHasBeenSet = false;
+  bool m_collectionEndpointHasBeenSet = false;
+  bool m_indexNameHasBeenSet = false;
+  bool m_bufferingHintsHasBeenSet = false;
+  bool m_retryOptionsHasBeenSet = false;
+  bool m_s3BackupModeHasBeenSet = false;
+  bool m_s3DestinationDescriptionHasBeenSet = false;
+  bool m_processingConfigurationHasBeenSet = false;
+  bool m_cloudWatchLoggingOptionsHasBeenSet = false;
   bool m_vpcConfigurationDescriptionHasBeenSet = false;
 };
 

@@ -127,15 +127,15 @@ class UpdateTypedLinkFacetRequest : public CloudDirectoryRequest {
   ///@}
  private:
   Aws::String m_schemaArn;
-  bool m_schemaArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<TypedLinkFacetAttributeUpdate> m_attributeUpdates;
-  bool m_attributeUpdatesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_identityAttributeOrder;
+  bool m_schemaArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_attributeUpdatesHasBeenSet = false;
   bool m_identityAttributeOrderHasBeenSet = false;
 };
 

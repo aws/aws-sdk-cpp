@@ -86,9 +86,9 @@ class ResultRow {
   ///@}
  private:
   Aws::Vector<ResultRowValue> m_groupedBys;
-  bool m_groupedBysHasBeenSet = false;
 
   Aws::Vector<ResultRowValue> m_values;
+  bool m_groupedBysHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

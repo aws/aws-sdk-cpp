@@ -88,12 +88,12 @@ class DeleteUserByPrincipalIdRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_principalId;
-  bool m_principalIdHasBeenSet = false;
 
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_namespace;
+  bool m_principalIdHasBeenSet = false;
+  bool m_awsAccountIdHasBeenSet = false;
   bool m_namespaceHasBeenSet = false;
 };
 

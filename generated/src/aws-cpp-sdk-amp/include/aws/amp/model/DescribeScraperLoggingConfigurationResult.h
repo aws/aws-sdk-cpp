@@ -140,21 +140,21 @@ class DescribeScraperLoggingConfigurationResult {
   ///@}
  private:
   ScraperLoggingConfigurationStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_scraperId;
-  bool m_scraperIdHasBeenSet = false;
 
   ScraperLoggingDestination m_loggingDestination;
-  bool m_loggingDestinationHasBeenSet = false;
 
   Aws::Vector<ScraperComponent> m_scraperComponents;
-  bool m_scraperComponentsHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
-  bool m_modifiedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_scraperIdHasBeenSet = false;
+  bool m_loggingDestinationHasBeenSet = false;
+  bool m_scraperComponentsHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

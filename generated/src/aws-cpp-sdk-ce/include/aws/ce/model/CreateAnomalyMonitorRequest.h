@@ -89,9 +89,9 @@ class CreateAnomalyMonitorRequest : public CostExplorerRequest {
   ///@}
  private:
   AnomalyMonitor m_anomalyMonitor;
-  bool m_anomalyMonitorHasBeenSet = false;
 
   Aws::Vector<ResourceTag> m_resourceTags;
+  bool m_anomalyMonitorHasBeenSet = false;
   bool m_resourceTagsHasBeenSet = false;
 };
 

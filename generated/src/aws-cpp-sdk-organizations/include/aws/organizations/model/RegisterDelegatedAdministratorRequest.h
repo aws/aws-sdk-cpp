@@ -69,9 +69,9 @@ class RegisterDelegatedAdministratorRequest : public OrganizationsRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_servicePrincipal;
+  bool m_accountIdHasBeenSet = false;
   bool m_servicePrincipalHasBeenSet = false;
 };
 

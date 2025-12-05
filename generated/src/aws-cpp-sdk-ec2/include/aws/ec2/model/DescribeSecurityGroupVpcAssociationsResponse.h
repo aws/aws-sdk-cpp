@@ -87,12 +87,12 @@ class DescribeSecurityGroupVpcAssociationsResponse {
   ///@}
  private:
   Aws::Vector<SecurityGroupVpcAssociation> m_securityGroupVpcAssociations;
-  bool m_securityGroupVpcAssociationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_securityGroupVpcAssociationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

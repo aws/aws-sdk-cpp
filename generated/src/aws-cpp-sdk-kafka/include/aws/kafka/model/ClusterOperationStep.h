@@ -76,9 +76,9 @@ class ClusterOperationStep {
   ///@}
  private:
   ClusterOperationStepInfo m_stepInfo;
-  bool m_stepInfoHasBeenSet = false;
 
   Aws::String m_stepName;
+  bool m_stepInfoHasBeenSet = false;
   bool m_stepNameHasBeenSet = false;
 };
 

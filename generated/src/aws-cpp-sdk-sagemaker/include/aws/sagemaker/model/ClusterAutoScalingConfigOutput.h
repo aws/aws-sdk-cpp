@@ -105,15 +105,15 @@ class ClusterAutoScalingConfigOutput {
   ///@}
  private:
   ClusterAutoScalingMode m_mode{ClusterAutoScalingMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   ClusterAutoScalerType m_autoScalerType{ClusterAutoScalerType::NOT_SET};
-  bool m_autoScalerTypeHasBeenSet = false;
 
   ClusterAutoScalingStatus m_status{ClusterAutoScalingStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_failureMessage;
+  bool m_modeHasBeenSet = false;
+  bool m_autoScalerTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_failureMessageHasBeenSet = false;
 };
 

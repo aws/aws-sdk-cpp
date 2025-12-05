@@ -109,15 +109,15 @@ class StartPipelineReprocessingRequest : public IoTAnalyticsRequest {
   ///@}
  private:
   Aws::String m_pipelineName;
-  bool m_pipelineNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   ChannelMessages m_channelMessages;
+  bool m_pipelineNameHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
   bool m_channelMessagesHasBeenSet = false;
 };
 

@@ -414,39 +414,39 @@ class SimulatePrincipalPolicyRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_policySourceArn;
-  bool m_policySourceArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_policyInputList;
-  bool m_policyInputListHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_permissionsBoundaryPolicyInputList;
-  bool m_permissionsBoundaryPolicyInputListHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_actionNames;
-  bool m_actionNamesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceArns;
-  bool m_resourceArnsHasBeenSet = false;
 
   Aws::String m_resourcePolicy;
-  bool m_resourcePolicyHasBeenSet = false;
 
   Aws::String m_resourceOwner;
-  bool m_resourceOwnerHasBeenSet = false;
 
   Aws::String m_callerArn;
-  bool m_callerArnHasBeenSet = false;
 
   Aws::Vector<ContextEntry> m_contextEntries;
-  bool m_contextEntriesHasBeenSet = false;
 
   Aws::String m_resourceHandlingOption;
-  bool m_resourceHandlingOptionHasBeenSet = false;
 
   int m_maxItems{0};
-  bool m_maxItemsHasBeenSet = false;
 
   Aws::String m_marker;
+  bool m_policySourceArnHasBeenSet = false;
+  bool m_policyInputListHasBeenSet = false;
+  bool m_permissionsBoundaryPolicyInputListHasBeenSet = false;
+  bool m_actionNamesHasBeenSet = false;
+  bool m_resourceArnsHasBeenSet = false;
+  bool m_resourcePolicyHasBeenSet = false;
+  bool m_resourceOwnerHasBeenSet = false;
+  bool m_callerArnHasBeenSet = false;
+  bool m_contextEntriesHasBeenSet = false;
+  bool m_resourceHandlingOptionHasBeenSet = false;
+  bool m_maxItemsHasBeenSet = false;
   bool m_markerHasBeenSet = false;
 };
 

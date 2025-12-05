@@ -141,21 +141,21 @@ class HealthCheckConfiguration {
   ///@}
  private:
   HealthCheckProtocol m_protocol{HealthCheckProtocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   int m_interval{0};
-  bool m_intervalHasBeenSet = false;
 
   int m_timeout{0};
-  bool m_timeoutHasBeenSet = false;
 
   int m_healthyThreshold{0};
-  bool m_healthyThresholdHasBeenSet = false;
 
   int m_unhealthyThreshold{0};
+  bool m_protocolHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
+  bool m_intervalHasBeenSet = false;
+  bool m_timeoutHasBeenSet = false;
+  bool m_healthyThresholdHasBeenSet = false;
   bool m_unhealthyThresholdHasBeenSet = false;
 };
 

@@ -176,27 +176,27 @@ class GeneratedAnswerResult {
   ///@}
  private:
   Aws::String m_questionText;
-  bool m_questionTextHasBeenSet = false;
 
   GeneratedAnswerStatus m_answerStatus{GeneratedAnswerStatus::NOT_SET};
-  bool m_answerStatusHasBeenSet = false;
 
   Aws::String m_topicId;
-  bool m_topicIdHasBeenSet = false;
 
   Aws::String m_topicName;
-  bool m_topicNameHasBeenSet = false;
 
   Aws::String m_restatement;
-  bool m_restatementHasBeenSet = false;
 
   Aws::String m_questionId;
-  bool m_questionIdHasBeenSet = false;
 
   Aws::String m_answerId;
-  bool m_answerIdHasBeenSet = false;
 
   Aws::String m_questionUrl;
+  bool m_questionTextHasBeenSet = false;
+  bool m_answerStatusHasBeenSet = false;
+  bool m_topicIdHasBeenSet = false;
+  bool m_topicNameHasBeenSet = false;
+  bool m_restatementHasBeenSet = false;
+  bool m_questionIdHasBeenSet = false;
+  bool m_answerIdHasBeenSet = false;
   bool m_questionUrlHasBeenSet = false;
 };
 

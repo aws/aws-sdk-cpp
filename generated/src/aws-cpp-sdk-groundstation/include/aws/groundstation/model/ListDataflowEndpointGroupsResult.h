@@ -91,12 +91,12 @@ class ListDataflowEndpointGroupsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<DataflowEndpointListItem> m_dataflowEndpointGroupList;
-  bool m_dataflowEndpointGroupListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_dataflowEndpointGroupListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -187,27 +187,27 @@ class StartScanJobRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_backupVaultName;
-  bool m_backupVaultNameHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   Aws::String m_idempotencyToken;
-  bool m_idempotencyTokenHasBeenSet = false;
 
   MalwareScanner m_malwareScanner{MalwareScanner::NOT_SET};
-  bool m_malwareScannerHasBeenSet = false;
 
   Aws::String m_recoveryPointArn;
-  bool m_recoveryPointArnHasBeenSet = false;
 
   Aws::String m_scanBaseRecoveryPointArn;
-  bool m_scanBaseRecoveryPointArnHasBeenSet = false;
 
   ScanMode m_scanMode{ScanMode::NOT_SET};
-  bool m_scanModeHasBeenSet = false;
 
   Aws::String m_scannerRoleArn;
+  bool m_backupVaultNameHasBeenSet = false;
+  bool m_iamRoleArnHasBeenSet = false;
+  bool m_idempotencyTokenHasBeenSet = false;
+  bool m_malwareScannerHasBeenSet = false;
+  bool m_recoveryPointArnHasBeenSet = false;
+  bool m_scanBaseRecoveryPointArnHasBeenSet = false;
+  bool m_scanModeHasBeenSet = false;
   bool m_scannerRoleArnHasBeenSet = false;
 };
 

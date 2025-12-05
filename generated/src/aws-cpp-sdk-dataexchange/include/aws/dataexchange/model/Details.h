@@ -78,9 +78,9 @@ class Details {
   ///@}
  private:
   ImportAssetFromSignedUrlJobErrorDetails m_importAssetFromSignedUrlJobErrorDetails;
-  bool m_importAssetFromSignedUrlJobErrorDetailsHasBeenSet = false;
 
   Aws::Vector<AssetSourceEntry> m_importAssetsFromS3JobErrorDetails;
+  bool m_importAssetFromSignedUrlJobErrorDetailsHasBeenSet = false;
   bool m_importAssetsFromS3JobErrorDetailsHasBeenSet = false;
 };
 

@@ -246,33 +246,33 @@ class ListCoreNetworkRoutingInformationRequest : public NetworkManagerRequest {
   ///@}
  private:
   Aws::String m_coreNetworkId;
-  bool m_coreNetworkIdHasBeenSet = false;
 
   Aws::String m_segmentName;
-  bool m_segmentNameHasBeenSet = false;
 
   Aws::String m_edgeLocation;
-  bool m_edgeLocationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_nextHopFilters;
-  bool m_nextHopFiltersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_localPreferenceMatches;
-  bool m_localPreferenceMatchesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_exactAsPathMatches;
-  bool m_exactAsPathMatchesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_medMatches;
-  bool m_medMatchesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_communityMatches;
-  bool m_communityMatchesHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_coreNetworkIdHasBeenSet = false;
+  bool m_segmentNameHasBeenSet = false;
+  bool m_edgeLocationHasBeenSet = false;
+  bool m_nextHopFiltersHasBeenSet = false;
+  bool m_localPreferenceMatchesHasBeenSet = false;
+  bool m_exactAsPathMatchesHasBeenSet = false;
+  bool m_medMatchesHasBeenSet = false;
+  bool m_communityMatchesHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

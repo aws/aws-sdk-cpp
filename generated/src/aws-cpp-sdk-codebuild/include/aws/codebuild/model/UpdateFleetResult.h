@@ -60,9 +60,9 @@ class UpdateFleetResult {
   ///@}
  private:
   Fleet m_fleet;
-  bool m_fleetHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fleetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

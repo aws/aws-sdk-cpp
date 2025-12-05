@@ -68,9 +68,9 @@ class UpdateEvaluationRequest : public MachineLearningRequest {
   ///@}
  private:
   Aws::String m_evaluationId;
-  bool m_evaluationIdHasBeenSet = false;
 
   Aws::String m_evaluationName;
+  bool m_evaluationIdHasBeenSet = false;
   bool m_evaluationNameHasBeenSet = false;
 };
 

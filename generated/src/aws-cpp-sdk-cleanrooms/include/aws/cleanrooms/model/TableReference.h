@@ -92,12 +92,12 @@ class TableReference {
   ///@}
  private:
   GlueTableReference m_glue;
-  bool m_glueHasBeenSet = false;
 
   SnowflakeTableReference m_snowflake;
-  bool m_snowflakeHasBeenSet = false;
 
   AthenaTableReference m_athena;
+  bool m_glueHasBeenSet = false;
+  bool m_snowflakeHasBeenSet = false;
   bool m_athenaHasBeenSet = false;
 };
 

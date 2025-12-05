@@ -136,18 +136,18 @@ class LineChartSortConfiguration {
   ///@}
  private:
   Aws::Vector<FieldSortOptions> m_categorySort;
-  bool m_categorySortHasBeenSet = false;
 
   ItemsLimitConfiguration m_categoryItemsLimitConfiguration;
-  bool m_categoryItemsLimitConfigurationHasBeenSet = false;
 
   ItemsLimitConfiguration m_colorItemsLimitConfiguration;
-  bool m_colorItemsLimitConfigurationHasBeenSet = false;
 
   Aws::Vector<FieldSortOptions> m_smallMultiplesSort;
-  bool m_smallMultiplesSortHasBeenSet = false;
 
   ItemsLimitConfiguration m_smallMultiplesLimitConfiguration;
+  bool m_categorySortHasBeenSet = false;
+  bool m_categoryItemsLimitConfigurationHasBeenSet = false;
+  bool m_colorItemsLimitConfigurationHasBeenSet = false;
+  bool m_smallMultiplesSortHasBeenSet = false;
   bool m_smallMultiplesLimitConfigurationHasBeenSet = false;
 };
 

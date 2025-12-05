@@ -155,21 +155,21 @@ class CustomerAction {
   ///@}
  private:
   CustomerActionName m_actionName{CustomerActionName::NOT_SET};
-  bool m_actionNameHasBeenSet = false;
 
   SnoozeActionConfiguration m_snoozeActionConfiguration;
-  bool m_snoozeActionConfigurationHasBeenSet = false;
 
   EnableActionConfiguration m_enableActionConfiguration;
-  bool m_enableActionConfigurationHasBeenSet = false;
 
   DisableActionConfiguration m_disableActionConfiguration;
-  bool m_disableActionConfigurationHasBeenSet = false;
 
   AcknowledgeActionConfiguration m_acknowledgeActionConfiguration;
-  bool m_acknowledgeActionConfigurationHasBeenSet = false;
 
   ResetActionConfiguration m_resetActionConfiguration;
+  bool m_actionNameHasBeenSet = false;
+  bool m_snoozeActionConfigurationHasBeenSet = false;
+  bool m_enableActionConfigurationHasBeenSet = false;
+  bool m_disableActionConfigurationHasBeenSet = false;
+  bool m_acknowledgeActionConfigurationHasBeenSet = false;
   bool m_resetActionConfigurationHasBeenSet = false;
 };
 

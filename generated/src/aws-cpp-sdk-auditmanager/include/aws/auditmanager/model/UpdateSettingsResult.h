@@ -60,9 +60,9 @@ class UpdateSettingsResult {
   ///@}
  private:
   Settings m_settings;
-  bool m_settingsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_settingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -209,30 +209,30 @@ class VpcIngressConnection {
   ///@}
  private:
   Aws::String m_vpcIngressConnectionArn;
-  bool m_vpcIngressConnectionArnHasBeenSet = false;
 
   Aws::String m_vpcIngressConnectionName;
-  bool m_vpcIngressConnectionNameHasBeenSet = false;
 
   Aws::String m_serviceArn;
-  bool m_serviceArnHasBeenSet = false;
 
   VpcIngressConnectionStatus m_status{VpcIngressConnectionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   IngressVpcConfiguration m_ingressVpcConfiguration;
-  bool m_ingressVpcConfigurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_deletedAt{};
+  bool m_vpcIngressConnectionArnHasBeenSet = false;
+  bool m_vpcIngressConnectionNameHasBeenSet = false;
+  bool m_serviceArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_ingressVpcConfigurationHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_deletedAtHasBeenSet = false;
 };
 

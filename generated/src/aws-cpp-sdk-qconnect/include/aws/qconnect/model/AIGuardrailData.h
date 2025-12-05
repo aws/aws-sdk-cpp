@@ -358,54 +358,54 @@ class AIGuardrailData {
   ///@}
  private:
   Aws::String m_assistantId;
-  bool m_assistantIdHasBeenSet = false;
 
   Aws::String m_assistantArn;
-  bool m_assistantArnHasBeenSet = false;
 
   Aws::String m_aiGuardrailArn;
-  bool m_aiGuardrailArnHasBeenSet = false;
 
   Aws::String m_aiGuardrailId;
-  bool m_aiGuardrailIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   VisibilityStatus m_visibilityStatus{VisibilityStatus::NOT_SET};
-  bool m_visibilityStatusHasBeenSet = false;
 
   Aws::String m_blockedInputMessaging;
-  bool m_blockedInputMessagingHasBeenSet = false;
 
   Aws::String m_blockedOutputsMessaging;
-  bool m_blockedOutputsMessagingHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   AIGuardrailTopicPolicyConfig m_topicPolicyConfig;
-  bool m_topicPolicyConfigHasBeenSet = false;
 
   AIGuardrailContentPolicyConfig m_contentPolicyConfig;
-  bool m_contentPolicyConfigHasBeenSet = false;
 
   AIGuardrailWordPolicyConfig m_wordPolicyConfig;
-  bool m_wordPolicyConfigHasBeenSet = false;
 
   AIGuardrailSensitiveInformationPolicyConfig m_sensitiveInformationPolicyConfig;
-  bool m_sensitiveInformationPolicyConfigHasBeenSet = false;
 
   AIGuardrailContextualGroundingPolicyConfig m_contextualGroundingPolicyConfig;
-  bool m_contextualGroundingPolicyConfigHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedTime{};
+  bool m_assistantIdHasBeenSet = false;
+  bool m_assistantArnHasBeenSet = false;
+  bool m_aiGuardrailArnHasBeenSet = false;
+  bool m_aiGuardrailIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_visibilityStatusHasBeenSet = false;
+  bool m_blockedInputMessagingHasBeenSet = false;
+  bool m_blockedOutputsMessagingHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_topicPolicyConfigHasBeenSet = false;
+  bool m_contentPolicyConfigHasBeenSet = false;
+  bool m_wordPolicyConfigHasBeenSet = false;
+  bool m_sensitiveInformationPolicyConfigHasBeenSet = false;
+  bool m_contextualGroundingPolicyConfigHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_modifiedTimeHasBeenSet = false;
 };
 

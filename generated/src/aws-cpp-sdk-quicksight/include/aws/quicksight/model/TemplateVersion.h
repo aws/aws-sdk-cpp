@@ -224,30 +224,30 @@ class TemplateVersion {
   ///@}
  private:
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Vector<TemplateError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   long long m_versionNumber{0};
-  bool m_versionNumberHasBeenSet = false;
 
   ResourceStatus m_status{ResourceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<DataSetConfiguration> m_dataSetConfigurations;
-  bool m_dataSetConfigurationsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_sourceEntityArn;
-  bool m_sourceEntityArnHasBeenSet = false;
 
   Aws::String m_themeArn;
-  bool m_themeArnHasBeenSet = false;
 
   Aws::Vector<Sheet> m_sheets;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
+  bool m_versionNumberHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_dataSetConfigurationsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_sourceEntityArnHasBeenSet = false;
+  bool m_themeArnHasBeenSet = false;
   bool m_sheetsHasBeenSet = false;
 };
 

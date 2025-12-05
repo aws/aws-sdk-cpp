@@ -77,9 +77,9 @@ class ConformancePackComplianceFilters {
   ///@}
  private:
   Aws::Vector<Aws::String> m_configRuleNames;
-  bool m_configRuleNamesHasBeenSet = false;
 
   ConformancePackComplianceType m_complianceType{ConformancePackComplianceType::NOT_SET};
+  bool m_configRuleNamesHasBeenSet = false;
   bool m_complianceTypeHasBeenSet = false;
 };
 

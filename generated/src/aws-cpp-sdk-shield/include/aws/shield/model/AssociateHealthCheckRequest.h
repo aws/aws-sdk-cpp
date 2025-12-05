@@ -69,9 +69,9 @@ class AssociateHealthCheckRequest : public ShieldRequest {
   ///@}
  private:
   Aws::String m_protectionId;
-  bool m_protectionIdHasBeenSet = false;
 
   Aws::String m_healthCheckArn;
+  bool m_protectionIdHasBeenSet = false;
   bool m_healthCheckArnHasBeenSet = false;
 };
 

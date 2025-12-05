@@ -124,15 +124,15 @@ class ValidDBInstanceModificationsMessage {
   ///@}
  private:
   Aws::Vector<ValidStorageOptions> m_storage;
-  bool m_storageHasBeenSet = false;
 
   Aws::Vector<AvailableProcessorFeature> m_validProcessorFeatures;
-  bool m_validProcessorFeaturesHasBeenSet = false;
 
   bool m_supportsDedicatedLogVolume{false};
-  bool m_supportsDedicatedLogVolumeHasBeenSet = false;
 
   ValidAdditionalStorageOptions m_additionalStorage;
+  bool m_storageHasBeenSet = false;
+  bool m_validProcessorFeaturesHasBeenSet = false;
+  bool m_supportsDedicatedLogVolumeHasBeenSet = false;
   bool m_additionalStorageHasBeenSet = false;
 };
 

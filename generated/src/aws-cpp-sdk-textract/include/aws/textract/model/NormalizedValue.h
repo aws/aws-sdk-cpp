@@ -68,9 +68,9 @@ class NormalizedValue {
   ///@}
  private:
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   ValueType m_valueType{ValueType::NOT_SET};
+  bool m_valueHasBeenSet = false;
   bool m_valueTypeHasBeenSet = false;
 };
 

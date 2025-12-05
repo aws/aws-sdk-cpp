@@ -122,18 +122,18 @@ class ListPolicyAttachmentsRequest : public CloudDirectoryRequest {
   ///@}
  private:
   Aws::String m_directoryArn;
-  bool m_directoryArnHasBeenSet = false;
 
   ObjectReference m_policyReference;
-  bool m_policyReferenceHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   ConsistencyLevel m_consistencyLevel{ConsistencyLevel::NOT_SET};
+  bool m_directoryArnHasBeenSet = false;
+  bool m_policyReferenceHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_consistencyLevelHasBeenSet = false;
 };
 

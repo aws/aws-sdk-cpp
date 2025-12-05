@@ -97,12 +97,12 @@ class ResponseCard {
   ///@}
  private:
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   ContentType m_contentType{ContentType::NOT_SET};
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::Vector<GenericAttachment> m_genericAttachments;
+  bool m_versionHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
   bool m_genericAttachmentsHasBeenSet = false;
 };
 

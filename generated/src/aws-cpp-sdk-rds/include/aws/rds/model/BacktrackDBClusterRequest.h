@@ -122,15 +122,15 @@ class BacktrackDBClusterRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_dBClusterIdentifier;
-  bool m_dBClusterIdentifierHasBeenSet = false;
 
   Aws::Utils::DateTime m_backtrackTo{};
-  bool m_backtrackToHasBeenSet = false;
 
   bool m_force{false};
-  bool m_forceHasBeenSet = false;
 
   bool m_useEarliestTimeOnPointInTimeUnavailable{false};
+  bool m_dBClusterIdentifierHasBeenSet = false;
+  bool m_backtrackToHasBeenSet = false;
+  bool m_forceHasBeenSet = false;
   bool m_useEarliestTimeOnPointInTimeUnavailableHasBeenSet = false;
 };
 

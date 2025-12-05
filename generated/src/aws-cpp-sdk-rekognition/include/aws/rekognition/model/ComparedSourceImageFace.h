@@ -70,9 +70,9 @@ class ComparedSourceImageFace {
   ///@}
  private:
   BoundingBox m_boundingBox;
-  bool m_boundingBoxHasBeenSet = false;
 
   double m_confidence{0.0};
+  bool m_boundingBoxHasBeenSet = false;
   bool m_confidenceHasBeenSet = false;
 };
 

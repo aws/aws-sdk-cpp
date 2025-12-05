@@ -84,12 +84,12 @@ class ListStageDevicesResult {
   ///@}
  private:
   Aws::Vector<DeviceDeploymentSummary> m_deviceDeploymentSummaries;
-  bool m_deviceDeploymentSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deviceDeploymentSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -101,15 +101,15 @@ class StartMetadataModelImportRequest : public DatabaseMigrationServiceRequest {
   ///@}
  private:
   Aws::String m_migrationProjectIdentifier;
-  bool m_migrationProjectIdentifierHasBeenSet = false;
 
   Aws::String m_selectionRules;
-  bool m_selectionRulesHasBeenSet = false;
 
   OriginTypeValue m_origin{OriginTypeValue::NOT_SET};
-  bool m_originHasBeenSet = false;
 
   bool m_refresh{false};
+  bool m_migrationProjectIdentifierHasBeenSet = false;
+  bool m_selectionRulesHasBeenSet = false;
+  bool m_originHasBeenSet = false;
   bool m_refreshHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class ListIpAccessSettingsResult {
   ///@}
  private:
   Aws::Vector<IpAccessSettingsSummary> m_ipAccessSettings;
-  bool m_ipAccessSettingsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ipAccessSettingsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

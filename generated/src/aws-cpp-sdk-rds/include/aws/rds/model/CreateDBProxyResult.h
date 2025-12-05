@@ -60,9 +60,9 @@ class CreateDBProxyResult {
   ///@}
  private:
   DBProxy m_dBProxy;
-  bool m_dBProxyHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_dBProxyHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -250,39 +250,39 @@ class DescribeForecastResult {
   ///@}
  private:
   Aws::String m_forecastArn;
-  bool m_forecastArnHasBeenSet = false;
 
   Aws::String m_forecastName;
-  bool m_forecastNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_forecastTypes;
-  bool m_forecastTypesHasBeenSet = false;
 
   Aws::String m_predictorArn;
-  bool m_predictorArnHasBeenSet = false;
 
   Aws::String m_datasetGroupArn;
-  bool m_datasetGroupArnHasBeenSet = false;
 
   long long m_estimatedTimeRemainingInMinutes{0};
-  bool m_estimatedTimeRemainingInMinutesHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModificationTime{};
-  bool m_lastModificationTimeHasBeenSet = false;
 
   TimeSeriesSelector m_timeSeriesSelector;
-  bool m_timeSeriesSelectorHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_forecastArnHasBeenSet = false;
+  bool m_forecastNameHasBeenSet = false;
+  bool m_forecastTypesHasBeenSet = false;
+  bool m_predictorArnHasBeenSet = false;
+  bool m_datasetGroupArnHasBeenSet = false;
+  bool m_estimatedTimeRemainingInMinutesHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModificationTimeHasBeenSet = false;
+  bool m_timeSeriesSelectorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

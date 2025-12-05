@@ -95,12 +95,12 @@ class ConditionExpression {
   ///@}
  private:
   Aws::String m_condition;
-  bool m_conditionHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_targetColumn;
+  bool m_conditionHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_targetColumnHasBeenSet = false;
 };
 

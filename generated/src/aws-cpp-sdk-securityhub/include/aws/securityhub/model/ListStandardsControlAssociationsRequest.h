@@ -96,12 +96,12 @@ class ListStandardsControlAssociationsRequest : public SecurityHubRequest {
   ///@}
  private:
   Aws::String m_securityControlId;
-  bool m_securityControlIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_securityControlIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

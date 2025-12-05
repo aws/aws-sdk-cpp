@@ -72,9 +72,9 @@ class DeleteTapeArchiveRequest : public StorageGatewayRequest {
   ///@}
  private:
   Aws::String m_tapeARN;
-  bool m_tapeARNHasBeenSet = false;
 
   bool m_bypassGovernanceRetention{false};
+  bool m_tapeARNHasBeenSet = false;
   bool m_bypassGovernanceRetentionHasBeenSet = false;
 };
 

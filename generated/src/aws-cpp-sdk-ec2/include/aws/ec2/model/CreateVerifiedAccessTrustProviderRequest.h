@@ -269,39 +269,39 @@ class CreateVerifiedAccessTrustProviderRequest : public EC2Request {
   ///@}
  private:
   TrustProviderType m_trustProviderType{TrustProviderType::NOT_SET};
-  bool m_trustProviderTypeHasBeenSet = false;
 
   UserTrustProviderType m_userTrustProviderType{UserTrustProviderType::NOT_SET};
-  bool m_userTrustProviderTypeHasBeenSet = false;
 
   DeviceTrustProviderType m_deviceTrustProviderType{DeviceTrustProviderType::NOT_SET};
-  bool m_deviceTrustProviderTypeHasBeenSet = false;
 
   CreateVerifiedAccessTrustProviderOidcOptions m_oidcOptions;
-  bool m_oidcOptionsHasBeenSet = false;
 
   CreateVerifiedAccessTrustProviderDeviceOptions m_deviceOptions;
-  bool m_deviceOptionsHasBeenSet = false;
 
   Aws::String m_policyReferenceName;
-  bool m_policyReferenceNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   VerifiedAccessSseSpecificationRequest m_sseSpecification;
-  bool m_sseSpecificationHasBeenSet = false;
 
   CreateVerifiedAccessNativeApplicationOidcOptions m_nativeApplicationOidcOptions;
+  bool m_trustProviderTypeHasBeenSet = false;
+  bool m_userTrustProviderTypeHasBeenSet = false;
+  bool m_deviceTrustProviderTypeHasBeenSet = false;
+  bool m_oidcOptionsHasBeenSet = false;
+  bool m_deviceOptionsHasBeenSet = false;
+  bool m_policyReferenceNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_dryRunHasBeenSet = false;
+  bool m_sseSpecificationHasBeenSet = false;
   bool m_nativeApplicationOidcOptionsHasBeenSet = false;
 };
 

@@ -77,9 +77,9 @@ class EvaluateCodeErrorDetail {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Vector<CodeError> m_codeErrors;
+  bool m_messageHasBeenSet = false;
   bool m_codeErrorsHasBeenSet = false;
 };
 

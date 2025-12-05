@@ -75,9 +75,9 @@ class NameCriteria {
   ///@}
  private:
   Aws::Vector<Aws::String> m_searchText;
-  bool m_searchTextHasBeenSet = false;
 
   SearchContactsMatchType m_matchType{SearchContactsMatchType::NOT_SET};
+  bool m_searchTextHasBeenSet = false;
   bool m_matchTypeHasBeenSet = false;
 };
 

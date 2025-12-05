@@ -95,12 +95,12 @@ class ThirdPartySourceRepository {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_connectionArn;
-  bool m_connectionArnHasBeenSet = false;
 
   Aws::String m_owner;
+  bool m_nameHasBeenSet = false;
+  bool m_connectionArnHasBeenSet = false;
   bool m_ownerHasBeenSet = false;
 };
 

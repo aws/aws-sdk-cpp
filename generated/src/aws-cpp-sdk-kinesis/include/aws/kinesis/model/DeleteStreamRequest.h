@@ -93,12 +93,12 @@ class DeleteStreamRequest : public KinesisRequest {
   ///@}
  private:
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   bool m_enforceConsumerDeletion{false};
-  bool m_enforceConsumerDeletionHasBeenSet = false;
 
   Aws::String m_streamARN;
+  bool m_streamNameHasBeenSet = false;
+  bool m_enforceConsumerDeletionHasBeenSet = false;
   bool m_streamARNHasBeenSet = false;
 };
 

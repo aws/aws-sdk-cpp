@@ -110,15 +110,15 @@ class UpdatePullThroughCacheRuleRequest : public ECRRequest {
   ///@}
  private:
   Aws::String m_registryId;
-  bool m_registryIdHasBeenSet = false;
 
   Aws::String m_ecrRepositoryPrefix;
-  bool m_ecrRepositoryPrefixHasBeenSet = false;
 
   Aws::String m_credentialArn;
-  bool m_credentialArnHasBeenSet = false;
 
   Aws::String m_customRoleArn;
+  bool m_registryIdHasBeenSet = false;
+  bool m_ecrRepositoryPrefixHasBeenSet = false;
+  bool m_credentialArnHasBeenSet = false;
   bool m_customRoleArnHasBeenSet = false;
 };
 

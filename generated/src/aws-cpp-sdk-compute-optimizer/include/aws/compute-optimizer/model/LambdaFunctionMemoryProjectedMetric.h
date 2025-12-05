@@ -82,12 +82,12 @@ class LambdaFunctionMemoryProjectedMetric {
   ///@}
  private:
   LambdaFunctionMemoryMetricName m_name{LambdaFunctionMemoryMetricName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   LambdaFunctionMemoryMetricStatistic m_statistic{LambdaFunctionMemoryMetricStatistic::NOT_SET};
-  bool m_statisticHasBeenSet = false;
 
   double m_value{0.0};
+  bool m_nameHasBeenSet = false;
+  bool m_statisticHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

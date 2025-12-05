@@ -109,12 +109,12 @@ class EksPodPropertiesOverride {
   ///@}
  private:
   Aws::Vector<EksContainerOverride> m_containers;
-  bool m_containersHasBeenSet = false;
 
   Aws::Vector<EksContainerOverride> m_initContainers;
-  bool m_initContainersHasBeenSet = false;
 
   EksMetadata m_metadata;
+  bool m_containersHasBeenSet = false;
+  bool m_initContainersHasBeenSet = false;
   bool m_metadataHasBeenSet = false;
 };
 

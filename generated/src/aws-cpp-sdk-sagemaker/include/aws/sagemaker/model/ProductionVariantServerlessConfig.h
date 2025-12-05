@@ -86,12 +86,12 @@ class ProductionVariantServerlessConfig {
   ///@}
  private:
   int m_memorySizeInMB{0};
-  bool m_memorySizeInMBHasBeenSet = false;
 
   int m_maxConcurrency{0};
-  bool m_maxConcurrencyHasBeenSet = false;
 
   int m_provisionedConcurrency{0};
+  bool m_memorySizeInMBHasBeenSet = false;
+  bool m_maxConcurrencyHasBeenSet = false;
   bool m_provisionedConcurrencyHasBeenSet = false;
 };
 

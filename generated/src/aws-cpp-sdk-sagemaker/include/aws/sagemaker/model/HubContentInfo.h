@@ -272,42 +272,42 @@ class HubContentInfo {
   ///@}
  private:
   Aws::String m_hubContentName;
-  bool m_hubContentNameHasBeenSet = false;
 
   Aws::String m_hubContentArn;
-  bool m_hubContentArnHasBeenSet = false;
 
   Aws::String m_sageMakerPublicHubContentArn;
-  bool m_sageMakerPublicHubContentArnHasBeenSet = false;
 
   Aws::String m_hubContentVersion;
-  bool m_hubContentVersionHasBeenSet = false;
 
   HubContentType m_hubContentType{HubContentType::NOT_SET};
-  bool m_hubContentTypeHasBeenSet = false;
 
   Aws::String m_documentSchemaVersion;
-  bool m_documentSchemaVersionHasBeenSet = false;
 
   Aws::String m_hubContentDisplayName;
-  bool m_hubContentDisplayNameHasBeenSet = false;
 
   Aws::String m_hubContentDescription;
-  bool m_hubContentDescriptionHasBeenSet = false;
 
   HubContentSupportStatus m_supportStatus{HubContentSupportStatus::NOT_SET};
-  bool m_supportStatusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_hubContentSearchKeywords;
-  bool m_hubContentSearchKeywordsHasBeenSet = false;
 
   HubContentStatus m_hubContentStatus{HubContentStatus::NOT_SET};
-  bool m_hubContentStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_originalCreationTime{};
+  bool m_hubContentNameHasBeenSet = false;
+  bool m_hubContentArnHasBeenSet = false;
+  bool m_sageMakerPublicHubContentArnHasBeenSet = false;
+  bool m_hubContentVersionHasBeenSet = false;
+  bool m_hubContentTypeHasBeenSet = false;
+  bool m_documentSchemaVersionHasBeenSet = false;
+  bool m_hubContentDisplayNameHasBeenSet = false;
+  bool m_hubContentDescriptionHasBeenSet = false;
+  bool m_supportStatusHasBeenSet = false;
+  bool m_hubContentSearchKeywordsHasBeenSet = false;
+  bool m_hubContentStatusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_originalCreationTimeHasBeenSet = false;
 };
 

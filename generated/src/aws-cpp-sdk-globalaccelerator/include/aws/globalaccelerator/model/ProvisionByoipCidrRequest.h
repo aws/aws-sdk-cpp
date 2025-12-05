@@ -74,9 +74,9 @@ class ProvisionByoipCidrRequest : public GlobalAcceleratorRequest {
   ///@}
  private:
   Aws::String m_cidr;
-  bool m_cidrHasBeenSet = false;
 
   CidrAuthorizationContext m_cidrAuthorizationContext;
+  bool m_cidrHasBeenSet = false;
   bool m_cidrAuthorizationContextHasBeenSet = false;
 };
 

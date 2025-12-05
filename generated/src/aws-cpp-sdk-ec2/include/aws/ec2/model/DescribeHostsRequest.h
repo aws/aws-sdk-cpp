@@ -137,15 +137,15 @@ class DescribeHostsRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_hostIds;
-  bool m_hostIdsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Vector<Filter> m_filter;
+  bool m_hostIdsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_filterHasBeenSet = false;
 };
 

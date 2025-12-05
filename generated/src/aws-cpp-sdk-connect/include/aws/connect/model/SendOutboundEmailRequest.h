@@ -184,27 +184,27 @@ class SendOutboundEmailRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   EmailAddressInfo m_fromEmailAddress;
-  bool m_fromEmailAddressHasBeenSet = false;
 
   EmailAddressInfo m_destinationEmailAddress;
-  bool m_destinationEmailAddressHasBeenSet = false;
 
   OutboundAdditionalRecipients m_additionalRecipients;
-  bool m_additionalRecipientsHasBeenSet = false;
 
   OutboundEmailContent m_emailMessage;
-  bool m_emailMessageHasBeenSet = false;
 
   TrafficType m_trafficType{TrafficType::NOT_SET};
-  bool m_trafficTypeHasBeenSet = false;
 
   SourceCampaign m_sourceCampaign;
-  bool m_sourceCampaignHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_fromEmailAddressHasBeenSet = false;
+  bool m_destinationEmailAddressHasBeenSet = false;
+  bool m_additionalRecipientsHasBeenSet = false;
+  bool m_emailMessageHasBeenSet = false;
+  bool m_trafficTypeHasBeenSet = false;
+  bool m_sourceCampaignHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

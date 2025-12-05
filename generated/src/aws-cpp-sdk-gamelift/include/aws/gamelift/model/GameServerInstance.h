@@ -113,15 +113,15 @@ class GameServerInstance {
   ///@}
  private:
   Aws::String m_gameServerGroupName;
-  bool m_gameServerGroupNameHasBeenSet = false;
 
   Aws::String m_gameServerGroupArn;
-  bool m_gameServerGroupArnHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   GameServerInstanceStatus m_instanceStatus{GameServerInstanceStatus::NOT_SET};
+  bool m_gameServerGroupNameHasBeenSet = false;
+  bool m_gameServerGroupArnHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
   bool m_instanceStatusHasBeenSet = false;
 };
 

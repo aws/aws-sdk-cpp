@@ -89,12 +89,12 @@ class DescribeClusterDbRevisionsResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<ClusterDbRevision> m_clusterDbRevisions;
-  bool m_clusterDbRevisionsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_clusterDbRevisionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -109,15 +109,15 @@ class UpdateStreamStorageConfigurationRequest : public KinesisVideoRequest {
   ///@}
  private:
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   Aws::String m_streamARN;
-  bool m_streamARNHasBeenSet = false;
 
   Aws::String m_currentVersion;
-  bool m_currentVersionHasBeenSet = false;
 
   StreamStorageConfiguration m_streamStorageConfiguration;
+  bool m_streamNameHasBeenSet = false;
+  bool m_streamARNHasBeenSet = false;
+  bool m_currentVersionHasBeenSet = false;
   bool m_streamStorageConfigurationHasBeenSet = false;
 };
 

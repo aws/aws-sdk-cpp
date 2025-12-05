@@ -84,12 +84,12 @@ class UpdatePlaceIndexRequest : public LocationServiceRequest {
   ///@}
  private:
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   DataSourceConfiguration m_dataSourceConfiguration;
+  bool m_indexNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_dataSourceConfigurationHasBeenSet = false;
 };
 

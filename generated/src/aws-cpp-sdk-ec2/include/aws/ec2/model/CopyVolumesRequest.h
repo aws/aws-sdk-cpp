@@ -223,30 +223,30 @@ class CopyVolumesRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_sourceVolumeId;
-  bool m_sourceVolumeIdHasBeenSet = false;
 
   int m_iops{0};
-  bool m_iopsHasBeenSet = false;
 
   int m_size{0};
-  bool m_sizeHasBeenSet = false;
 
   VolumeType m_volumeType{VolumeType::NOT_SET};
-  bool m_volumeTypeHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   bool m_multiAttachEnabled{false};
-  bool m_multiAttachEnabledHasBeenSet = false;
 
   int m_throughput{0};
-  bool m_throughputHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_sourceVolumeIdHasBeenSet = false;
+  bool m_iopsHasBeenSet = false;
+  bool m_sizeHasBeenSet = false;
+  bool m_volumeTypeHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_multiAttachEnabledHasBeenSet = false;
+  bool m_throughputHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

@@ -63,9 +63,9 @@ class DataAutomationProjectFilter {
   ///@}
  private:
   Aws::String m_projectArn;
-  bool m_projectArnHasBeenSet = false;
 
   DataAutomationProjectStage m_projectStage{DataAutomationProjectStage::NOT_SET};
+  bool m_projectArnHasBeenSet = false;
   bool m_projectStageHasBeenSet = false;
 };
 

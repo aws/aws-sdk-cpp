@@ -301,39 +301,39 @@ class PutAccessControlRuleRequest : public WorkMailRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   AccessControlRuleEffect m_effect{AccessControlRuleEffect::NOT_SET};
-  bool m_effectHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ipRanges;
-  bool m_ipRangesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_notIpRanges;
-  bool m_notIpRangesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_notActions;
-  bool m_notActionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_userIds;
-  bool m_userIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_notUserIds;
-  bool m_notUserIdsHasBeenSet = false;
 
   Aws::String m_organizationId;
-  bool m_organizationIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_impersonationRoleIds;
-  bool m_impersonationRoleIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_notImpersonationRoleIds;
+  bool m_nameHasBeenSet = false;
+  bool m_effectHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_ipRangesHasBeenSet = false;
+  bool m_notIpRangesHasBeenSet = false;
+  bool m_actionsHasBeenSet = false;
+  bool m_notActionsHasBeenSet = false;
+  bool m_userIdsHasBeenSet = false;
+  bool m_notUserIdsHasBeenSet = false;
+  bool m_organizationIdHasBeenSet = false;
+  bool m_impersonationRoleIdsHasBeenSet = false;
   bool m_notImpersonationRoleIdsHasBeenSet = false;
 };
 

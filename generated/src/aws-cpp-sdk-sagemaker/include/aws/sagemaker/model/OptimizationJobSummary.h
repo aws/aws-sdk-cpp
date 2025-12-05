@@ -218,33 +218,33 @@ class OptimizationJobSummary {
   ///@}
  private:
   Aws::String m_optimizationJobName;
-  bool m_optimizationJobNameHasBeenSet = false;
 
   Aws::String m_optimizationJobArn;
-  bool m_optimizationJobArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   OptimizationJobStatus m_optimizationJobStatus{OptimizationJobStatus::NOT_SET};
-  bool m_optimizationJobStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_optimizationStartTime{};
-  bool m_optimizationStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_optimizationEndTime{};
-  bool m_optimizationEndTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   OptimizationJobDeploymentInstanceType m_deploymentInstanceType{OptimizationJobDeploymentInstanceType::NOT_SET};
-  bool m_deploymentInstanceTypeHasBeenSet = false;
 
   int m_maxInstanceCount{0};
-  bool m_maxInstanceCountHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_optimizationTypes;
+  bool m_optimizationJobNameHasBeenSet = false;
+  bool m_optimizationJobArnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_optimizationJobStatusHasBeenSet = false;
+  bool m_optimizationStartTimeHasBeenSet = false;
+  bool m_optimizationEndTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_deploymentInstanceTypeHasBeenSet = false;
+  bool m_maxInstanceCountHasBeenSet = false;
   bool m_optimizationTypesHasBeenSet = false;
 };
 

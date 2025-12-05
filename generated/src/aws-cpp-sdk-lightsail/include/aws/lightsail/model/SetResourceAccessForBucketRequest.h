@@ -90,12 +90,12 @@ class SetResourceAccessForBucketRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_resourceName;
-  bool m_resourceNameHasBeenSet = false;
 
   Aws::String m_bucketName;
-  bool m_bucketNameHasBeenSet = false;
 
   ResourceBucketAccess m_access{ResourceBucketAccess::NOT_SET};
+  bool m_resourceNameHasBeenSet = false;
+  bool m_bucketNameHasBeenSet = false;
   bool m_accessHasBeenSet = false;
 };
 

@@ -291,33 +291,33 @@ class ListMultipartUploadsRequest : public S3CrtRequest {
   ///@}
  private:
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   Aws::String m_delimiter;
-  bool m_delimiterHasBeenSet = false;
 
   EncodingType m_encodingType{EncodingType::NOT_SET};
-  bool m_encodingTypeHasBeenSet = false;
 
   Aws::String m_keyMarker;
-  bool m_keyMarkerHasBeenSet = false;
 
   int m_maxUploads{0};
-  bool m_maxUploadsHasBeenSet = false;
 
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   Aws::String m_uploadIdMarker;
-  bool m_uploadIdMarkerHasBeenSet = false;
 
   Aws::String m_expectedBucketOwner;
-  bool m_expectedBucketOwnerHasBeenSet = false;
 
   RequestPayer m_requestPayer{RequestPayer::NOT_SET};
-  bool m_requestPayerHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
+  bool m_bucketHasBeenSet = false;
+  bool m_delimiterHasBeenSet = false;
+  bool m_encodingTypeHasBeenSet = false;
+  bool m_keyMarkerHasBeenSet = false;
+  bool m_maxUploadsHasBeenSet = false;
+  bool m_prefixHasBeenSet = false;
+  bool m_uploadIdMarkerHasBeenSet = false;
+  bool m_expectedBucketOwnerHasBeenSet = false;
+  bool m_requestPayerHasBeenSet = false;
   bool m_customizedAccessLogTagHasBeenSet = false;
 };
 

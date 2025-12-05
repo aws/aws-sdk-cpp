@@ -72,9 +72,9 @@ class GetUserIdRequest : public IdentityStoreRequest {
   ///@}
  private:
   Aws::String m_identityStoreId;
-  bool m_identityStoreIdHasBeenSet = false;
 
   AlternateIdentifier m_alternateIdentifier;
+  bool m_identityStoreIdHasBeenSet = false;
   bool m_alternateIdentifierHasBeenSet = false;
 };
 

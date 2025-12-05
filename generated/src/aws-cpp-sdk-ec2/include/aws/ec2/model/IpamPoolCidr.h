@@ -128,18 +128,18 @@ class IpamPoolCidr {
   ///@}
  private:
   Aws::String m_cidr;
-  bool m_cidrHasBeenSet = false;
 
   IpamPoolCidrState m_state{IpamPoolCidrState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   IpamPoolCidrFailureReason m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_ipamPoolCidrId;
-  bool m_ipamPoolCidrIdHasBeenSet = false;
 
   int m_netmaskLength{0};
+  bool m_cidrHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_ipamPoolCidrIdHasBeenSet = false;
   bool m_netmaskLengthHasBeenSet = false;
 };
 

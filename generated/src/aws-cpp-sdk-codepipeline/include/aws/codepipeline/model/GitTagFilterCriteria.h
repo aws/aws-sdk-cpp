@@ -84,9 +84,9 @@ class GitTagFilterCriteria {
   ///@}
  private:
   Aws::Vector<Aws::String> m_includes;
-  bool m_includesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_excludes;
+  bool m_includesHasBeenSet = false;
   bool m_excludesHasBeenSet = false;
 };
 

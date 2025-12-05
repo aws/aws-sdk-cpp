@@ -99,12 +99,12 @@ class UpdateCustomLineItemChargeDetails {
   ///@}
  private:
   UpdateCustomLineItemFlatChargeDetails m_flat;
-  bool m_flatHasBeenSet = false;
 
   UpdateCustomLineItemPercentageChargeDetails m_percentage;
-  bool m_percentageHasBeenSet = false;
 
   Aws::Vector<LineItemFilter> m_lineItemFilters;
+  bool m_flatHasBeenSet = false;
+  bool m_percentageHasBeenSet = false;
   bool m_lineItemFiltersHasBeenSet = false;
 };
 

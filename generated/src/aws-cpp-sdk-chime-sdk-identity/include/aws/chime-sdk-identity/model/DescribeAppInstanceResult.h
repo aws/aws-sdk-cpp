@@ -61,9 +61,9 @@ class DescribeAppInstanceResult {
   ///@}
  private:
   AppInstance m_appInstance;
-  bool m_appInstanceHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appInstanceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

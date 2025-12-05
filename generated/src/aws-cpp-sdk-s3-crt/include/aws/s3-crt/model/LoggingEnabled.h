@@ -128,15 +128,15 @@ class LoggingEnabled {
   ///@}
  private:
   Aws::String m_targetBucket;
-  bool m_targetBucketHasBeenSet = false;
 
   Aws::Vector<TargetGrant> m_targetGrants;
-  bool m_targetGrantsHasBeenSet = false;
 
   Aws::String m_targetPrefix;
-  bool m_targetPrefixHasBeenSet = false;
 
   TargetObjectKeyFormat m_targetObjectKeyFormat;
+  bool m_targetBucketHasBeenSet = false;
+  bool m_targetGrantsHasBeenSet = false;
+  bool m_targetPrefixHasBeenSet = false;
   bool m_targetObjectKeyFormatHasBeenSet = false;
 };
 

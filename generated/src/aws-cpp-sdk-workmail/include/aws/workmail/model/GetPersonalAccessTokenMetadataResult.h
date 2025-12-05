@@ -169,27 +169,27 @@ class GetPersonalAccessTokenMetadataResult {
   ///@}
  private:
   Aws::String m_personalAccessTokenId;
-  bool m_personalAccessTokenIdHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_dateCreated{};
-  bool m_dateCreatedHasBeenSet = false;
 
   Aws::Utils::DateTime m_dateLastUsed{};
-  bool m_dateLastUsedHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiresTime{};
-  bool m_expiresTimeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_scopes;
-  bool m_scopesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_personalAccessTokenIdHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_dateCreatedHasBeenSet = false;
+  bool m_dateLastUsedHasBeenSet = false;
+  bool m_expiresTimeHasBeenSet = false;
+  bool m_scopesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -223,33 +223,33 @@ class SourceTableDetails {
   ///@}
  private:
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::String m_tableId;
-  bool m_tableIdHasBeenSet = false;
 
   Aws::String m_tableArn;
-  bool m_tableArnHasBeenSet = false;
 
   long long m_tableSizeBytes{0};
-  bool m_tableSizeBytesHasBeenSet = false;
 
   Aws::Vector<KeySchemaElement> m_keySchema;
-  bool m_keySchemaHasBeenSet = false;
 
   Aws::Utils::DateTime m_tableCreationDateTime{};
-  bool m_tableCreationDateTimeHasBeenSet = false;
 
   ProvisionedThroughput m_provisionedThroughput;
-  bool m_provisionedThroughputHasBeenSet = false;
 
   OnDemandThroughput m_onDemandThroughput;
-  bool m_onDemandThroughputHasBeenSet = false;
 
   long long m_itemCount{0};
-  bool m_itemCountHasBeenSet = false;
 
   BillingMode m_billingMode{BillingMode::NOT_SET};
+  bool m_tableNameHasBeenSet = false;
+  bool m_tableIdHasBeenSet = false;
+  bool m_tableArnHasBeenSet = false;
+  bool m_tableSizeBytesHasBeenSet = false;
+  bool m_keySchemaHasBeenSet = false;
+  bool m_tableCreationDateTimeHasBeenSet = false;
+  bool m_provisionedThroughputHasBeenSet = false;
+  bool m_onDemandThroughputHasBeenSet = false;
+  bool m_itemCountHasBeenSet = false;
   bool m_billingModeHasBeenSet = false;
 };
 

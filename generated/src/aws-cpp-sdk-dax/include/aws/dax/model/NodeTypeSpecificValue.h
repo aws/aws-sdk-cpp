@@ -69,9 +69,9 @@ class NodeTypeSpecificValue {
   ///@}
  private:
   Aws::String m_nodeType;
-  bool m_nodeTypeHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_nodeTypeHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

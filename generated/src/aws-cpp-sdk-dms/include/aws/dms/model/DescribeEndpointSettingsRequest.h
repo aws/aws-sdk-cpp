@@ -88,12 +88,12 @@ class DescribeEndpointSettingsRequest : public DatabaseMigrationServiceRequest {
   ///@}
  private:
   Aws::String m_engineName;
-  bool m_engineNameHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   Aws::String m_marker;
+  bool m_engineNameHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
   bool m_markerHasBeenSet = false;
 };
 

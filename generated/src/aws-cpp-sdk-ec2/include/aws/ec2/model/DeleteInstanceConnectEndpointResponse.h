@@ -60,9 +60,9 @@ class DeleteInstanceConnectEndpointResponse {
   ///@}
  private:
   Ec2InstanceConnectEndpoint m_instanceConnectEndpoint;
-  bool m_instanceConnectEndpointHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_instanceConnectEndpointHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

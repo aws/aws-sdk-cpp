@@ -126,18 +126,18 @@ class AssetDetails {
   ///@}
  private:
   S3SnapshotAsset m_s3SnapshotAsset;
-  bool m_s3SnapshotAssetHasBeenSet = false;
 
   RedshiftDataShareAsset m_redshiftDataShareAsset;
-  bool m_redshiftDataShareAssetHasBeenSet = false;
 
   ApiGatewayApiAsset m_apiGatewayApiAsset;
-  bool m_apiGatewayApiAssetHasBeenSet = false;
 
   S3DataAccessAsset m_s3DataAccessAsset;
-  bool m_s3DataAccessAssetHasBeenSet = false;
 
   LakeFormationDataPermissionAsset m_lakeFormationDataPermissionAsset;
+  bool m_s3SnapshotAssetHasBeenSet = false;
+  bool m_redshiftDataShareAssetHasBeenSet = false;
+  bool m_apiGatewayApiAssetHasBeenSet = false;
+  bool m_s3DataAccessAssetHasBeenSet = false;
   bool m_lakeFormationDataPermissionAssetHasBeenSet = false;
 };
 

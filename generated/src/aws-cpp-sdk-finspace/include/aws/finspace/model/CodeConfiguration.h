@@ -88,12 +88,12 @@ class CodeConfiguration {
   ///@}
  private:
   Aws::String m_s3Bucket;
-  bool m_s3BucketHasBeenSet = false;
 
   Aws::String m_s3Key;
-  bool m_s3KeyHasBeenSet = false;
 
   Aws::String m_s3ObjectVersion;
+  bool m_s3BucketHasBeenSet = false;
+  bool m_s3KeyHasBeenSet = false;
   bool m_s3ObjectVersionHasBeenSet = false;
 };
 

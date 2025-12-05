@@ -72,9 +72,9 @@ class DeleteReportGroupRequest : public CodeBuildRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   bool m_deleteReports{false};
+  bool m_arnHasBeenSet = false;
   bool m_deleteReportsHasBeenSet = false;
 };
 

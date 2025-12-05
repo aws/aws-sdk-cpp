@@ -170,24 +170,24 @@ class DataSourceSyncJob {
   ///@}
  private:
   Aws::String m_executionId;
-  bool m_executionIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   DataSourceSyncJobStatus m_status{DataSourceSyncJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ErrorDetail m_error;
-  bool m_errorHasBeenSet = false;
 
   Aws::String m_dataSourceErrorCode;
-  bool m_dataSourceErrorCodeHasBeenSet = false;
 
   DataSourceSyncJobMetrics m_metrics;
+  bool m_executionIdHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
+  bool m_dataSourceErrorCodeHasBeenSet = false;
   bool m_metricsHasBeenSet = false;
 };
 

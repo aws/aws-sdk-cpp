@@ -143,18 +143,18 @@ class ConfigurationManagerSummary {
   ///@}
  private:
   Aws::Vector<ConfigurationDefinitionSummary> m_configurationDefinitionSummaries;
-  bool m_configurationDefinitionSummariesHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_managerArn;
-  bool m_managerArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<StatusSummary> m_statusSummaries;
+  bool m_configurationDefinitionSummariesHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_managerArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_statusSummariesHasBeenSet = false;
 };
 

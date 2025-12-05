@@ -94,12 +94,12 @@ class BatchPutAssetPropertyError {
   ///@}
  private:
   BatchPutAssetPropertyValueErrorCode m_errorCode{BatchPutAssetPropertyValueErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::Vector<TimeInNanos> m_timestamps;
+  bool m_errorCodeHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
   bool m_timestampsHasBeenSet = false;
 };
 

@@ -145,18 +145,18 @@ class DescribeSourceServersRequestFilters {
   ///@}
  private:
   Aws::Vector<Aws::String> m_applicationIDs;
-  bool m_applicationIDsHasBeenSet = false;
 
   bool m_isArchived{false};
-  bool m_isArchivedHasBeenSet = false;
 
   Aws::Vector<LifeCycleState> m_lifeCycleStates;
-  bool m_lifeCycleStatesHasBeenSet = false;
 
   Aws::Vector<ReplicationType> m_replicationTypes;
-  bool m_replicationTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sourceServerIDs;
+  bool m_applicationIDsHasBeenSet = false;
+  bool m_isArchivedHasBeenSet = false;
+  bool m_lifeCycleStatesHasBeenSet = false;
+  bool m_replicationTypesHasBeenSet = false;
   bool m_sourceServerIDsHasBeenSet = false;
 };
 

@@ -137,15 +137,15 @@ class UpdateItemResult {
   ///@}
  private:
   Aws::Map<Aws::String, AttributeValue> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   ConsumedCapacity m_consumedCapacity;
-  bool m_consumedCapacityHasBeenSet = false;
 
   ItemCollectionMetrics m_itemCollectionMetrics;
-  bool m_itemCollectionMetricsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_attributesHasBeenSet = false;
+  bool m_consumedCapacityHasBeenSet = false;
+  bool m_itemCollectionMetricsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

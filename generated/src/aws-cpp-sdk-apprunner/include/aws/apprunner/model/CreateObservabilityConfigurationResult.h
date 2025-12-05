@@ -62,9 +62,9 @@ class CreateObservabilityConfigurationResult {
   ///@}
  private:
   ObservabilityConfiguration m_observabilityConfiguration;
-  bool m_observabilityConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_observabilityConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

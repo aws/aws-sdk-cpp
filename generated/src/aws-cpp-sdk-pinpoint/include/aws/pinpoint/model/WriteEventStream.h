@@ -79,9 +79,9 @@ class WriteEventStream {
   ///@}
  private:
   Aws::String m_destinationStreamArn;
-  bool m_destinationStreamArnHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_destinationStreamArnHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

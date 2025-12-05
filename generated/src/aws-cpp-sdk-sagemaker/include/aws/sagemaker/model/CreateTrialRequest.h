@@ -133,18 +133,18 @@ class CreateTrialRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_trialName;
-  bool m_trialNameHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_experimentName;
-  bool m_experimentNameHasBeenSet = false;
 
   MetadataProperties m_metadataProperties;
-  bool m_metadataPropertiesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_trialNameHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_experimentNameHasBeenSet = false;
+  bool m_metadataPropertiesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

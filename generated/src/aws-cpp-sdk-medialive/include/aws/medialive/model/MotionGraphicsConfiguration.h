@@ -65,9 +65,9 @@ class MotionGraphicsConfiguration {
   ///@}
  private:
   MotionGraphicsInsertion m_motionGraphicsInsertion{MotionGraphicsInsertion::NOT_SET};
-  bool m_motionGraphicsInsertionHasBeenSet = false;
 
   MotionGraphicsSettings m_motionGraphicsSettings;
+  bool m_motionGraphicsInsertionHasBeenSet = false;
   bool m_motionGraphicsSettingsHasBeenSet = false;
 };
 

@@ -291,42 +291,42 @@ class InstanceDetails {
   ///@}
  private:
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   IamInstanceProfile m_iamInstanceProfile;
-  bool m_iamInstanceProfileHasBeenSet = false;
 
   Aws::String m_imageDescription;
-  bool m_imageDescriptionHasBeenSet = false;
 
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_instanceState;
-  bool m_instanceStateHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_outpostArn;
-  bool m_outpostArnHasBeenSet = false;
 
   Aws::String m_launchTime;
-  bool m_launchTimeHasBeenSet = false;
 
   Aws::Vector<NetworkInterface> m_networkInterfaces;
-  bool m_networkInterfacesHasBeenSet = false;
 
   Aws::String m_platform;
-  bool m_platformHasBeenSet = false;
 
   Aws::Vector<ProductCode> m_productCodes;
-  bool m_productCodesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_iamInstanceProfileHasBeenSet = false;
+  bool m_imageDescriptionHasBeenSet = false;
+  bool m_imageIdHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_instanceStateHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_outpostArnHasBeenSet = false;
+  bool m_launchTimeHasBeenSet = false;
+  bool m_networkInterfacesHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_productCodesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

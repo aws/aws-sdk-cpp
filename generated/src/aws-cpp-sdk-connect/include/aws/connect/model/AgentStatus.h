@@ -217,33 +217,33 @@ class AgentStatus {
   ///@}
  private:
   Aws::String m_agentStatusARN;
-  bool m_agentStatusARNHasBeenSet = false;
 
   Aws::String m_agentStatusId;
-  bool m_agentStatusIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   AgentStatusType m_type{AgentStatusType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   int m_displayOrder{0};
-  bool m_displayOrderHasBeenSet = false;
 
   AgentStatusState m_state{AgentStatusState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_lastModifiedRegion;
+  bool m_agentStatusARNHasBeenSet = false;
+  bool m_agentStatusIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_displayOrderHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_lastModifiedRegionHasBeenSet = false;
 };
 

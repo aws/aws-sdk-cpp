@@ -86,12 +86,12 @@ class UpdateCaseCommentRequest : public SecurityIRRequest {
   ///@}
  private:
   Aws::String m_caseId;
-  bool m_caseIdHasBeenSet = false;
 
   Aws::String m_commentId;
-  bool m_commentIdHasBeenSet = false;
 
   Aws::String m_requestBody;
+  bool m_caseIdHasBeenSet = false;
+  bool m_commentIdHasBeenSet = false;
   bool m_requestBodyHasBeenSet = false;
 };
 

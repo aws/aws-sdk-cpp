@@ -223,30 +223,30 @@ class ReplicaSettingsDescription {
   ///@}
  private:
   Aws::String m_regionName;
-  bool m_regionNameHasBeenSet = false;
 
   ReplicaStatus m_replicaStatus{ReplicaStatus::NOT_SET};
-  bool m_replicaStatusHasBeenSet = false;
 
   BillingModeSummary m_replicaBillingModeSummary;
-  bool m_replicaBillingModeSummaryHasBeenSet = false;
 
   long long m_replicaProvisionedReadCapacityUnits{0};
-  bool m_replicaProvisionedReadCapacityUnitsHasBeenSet = false;
 
   AutoScalingSettingsDescription m_replicaProvisionedReadCapacityAutoScalingSettings;
-  bool m_replicaProvisionedReadCapacityAutoScalingSettingsHasBeenSet = false;
 
   long long m_replicaProvisionedWriteCapacityUnits{0};
-  bool m_replicaProvisionedWriteCapacityUnitsHasBeenSet = false;
 
   AutoScalingSettingsDescription m_replicaProvisionedWriteCapacityAutoScalingSettings;
-  bool m_replicaProvisionedWriteCapacityAutoScalingSettingsHasBeenSet = false;
 
   Aws::Vector<ReplicaGlobalSecondaryIndexSettingsDescription> m_replicaGlobalSecondaryIndexSettings;
-  bool m_replicaGlobalSecondaryIndexSettingsHasBeenSet = false;
 
   TableClassSummary m_replicaTableClassSummary;
+  bool m_regionNameHasBeenSet = false;
+  bool m_replicaStatusHasBeenSet = false;
+  bool m_replicaBillingModeSummaryHasBeenSet = false;
+  bool m_replicaProvisionedReadCapacityUnitsHasBeenSet = false;
+  bool m_replicaProvisionedReadCapacityAutoScalingSettingsHasBeenSet = false;
+  bool m_replicaProvisionedWriteCapacityUnitsHasBeenSet = false;
+  bool m_replicaProvisionedWriteCapacityAutoScalingSettingsHasBeenSet = false;
+  bool m_replicaGlobalSecondaryIndexSettingsHasBeenSet = false;
   bool m_replicaTableClassSummaryHasBeenSet = false;
 };
 

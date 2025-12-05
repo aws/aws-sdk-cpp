@@ -121,12 +121,12 @@ class InstanceHealthSummary {
   ///@}
  private:
   Aws::String m_instanceName;
-  bool m_instanceNameHasBeenSet = false;
 
   InstanceHealthState m_instanceHealth{InstanceHealthState::NOT_SET};
-  bool m_instanceHealthHasBeenSet = false;
 
   InstanceHealthReason m_instanceHealthReason{InstanceHealthReason::NOT_SET};
+  bool m_instanceNameHasBeenSet = false;
+  bool m_instanceHealthHasBeenSet = false;
   bool m_instanceHealthReasonHasBeenSet = false;
 };
 

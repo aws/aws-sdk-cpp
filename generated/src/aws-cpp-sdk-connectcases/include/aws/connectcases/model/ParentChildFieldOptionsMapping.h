@@ -76,9 +76,9 @@ class ParentChildFieldOptionsMapping {
   ///@}
  private:
   Aws::String m_parentFieldOptionValue;
-  bool m_parentFieldOptionValueHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_childFieldOptionValues;
+  bool m_parentFieldOptionValueHasBeenSet = false;
   bool m_childFieldOptionValuesHasBeenSet = false;
 };
 

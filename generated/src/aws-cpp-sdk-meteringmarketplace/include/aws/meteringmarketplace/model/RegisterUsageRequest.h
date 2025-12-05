@@ -86,12 +86,12 @@ class RegisterUsageRequest : public MarketplaceMeteringRequest {
   ///@}
  private:
   Aws::String m_productCode;
-  bool m_productCodeHasBeenSet = false;
 
   int m_publicKeyVersion{0};
-  bool m_publicKeyVersionHasBeenSet = false;
 
   Aws::String m_nonce;
+  bool m_productCodeHasBeenSet = false;
+  bool m_publicKeyVersionHasBeenSet = false;
   bool m_nonceHasBeenSet = false;
 };
 

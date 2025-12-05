@@ -76,9 +76,9 @@ class OEMEphemeris {
   ///@}
  private:
   S3Object m_s3Object;
-  bool m_s3ObjectHasBeenSet = false;
 
   Aws::String m_oemData;
+  bool m_s3ObjectHasBeenSet = false;
   bool m_oemDataHasBeenSet = false;
 };
 

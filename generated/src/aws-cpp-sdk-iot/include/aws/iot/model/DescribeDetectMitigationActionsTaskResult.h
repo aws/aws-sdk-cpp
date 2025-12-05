@@ -60,9 +60,9 @@ class DescribeDetectMitigationActionsTaskResult {
   ///@}
  private:
   DetectMitigationActionsTaskSummary m_taskSummary;
-  bool m_taskSummaryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_taskSummaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

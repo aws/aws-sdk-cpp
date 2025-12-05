@@ -71,9 +71,9 @@ class Schedule {
   ///@}
  private:
   Aws::String m_scheduleExpression;
-  bool m_scheduleExpressionHasBeenSet = false;
 
   ScheduleState m_state{ScheduleState::NOT_SET};
+  bool m_scheduleExpressionHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

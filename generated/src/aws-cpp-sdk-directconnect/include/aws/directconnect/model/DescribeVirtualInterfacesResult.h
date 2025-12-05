@@ -85,12 +85,12 @@ class DescribeVirtualInterfacesResult {
   ///@}
  private:
   Aws::Vector<VirtualInterface> m_virtualInterfaces;
-  bool m_virtualInterfacesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_virtualInterfacesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class ListTelemetryRulesResult {
   ///@}
  private:
   Aws::Vector<TelemetryRuleSummary> m_telemetryRuleSummaries;
-  bool m_telemetryRuleSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_telemetryRuleSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

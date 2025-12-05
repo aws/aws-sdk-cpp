@@ -426,51 +426,51 @@ class Policy {
   ///@}
  private:
   Aws::String m_policyId;
-  bool m_policyIdHasBeenSet = false;
 
   Aws::String m_policyName;
-  bool m_policyNameHasBeenSet = false;
 
   Aws::String m_policyUpdateToken;
-  bool m_policyUpdateTokenHasBeenSet = false;
 
   SecurityServicePolicyData m_securityServicePolicyData;
-  bool m_securityServicePolicyDataHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceTypeList;
-  bool m_resourceTypeListHasBeenSet = false;
 
   Aws::Vector<ResourceTag> m_resourceTags;
-  bool m_resourceTagsHasBeenSet = false;
 
   bool m_excludeResourceTags{false};
-  bool m_excludeResourceTagsHasBeenSet = false;
 
   bool m_remediationEnabled{false};
-  bool m_remediationEnabledHasBeenSet = false;
 
   bool m_deleteUnusedFMManagedResources{false};
-  bool m_deleteUnusedFMManagedResourcesHasBeenSet = false;
 
   Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>> m_includeMap;
-  bool m_includeMapHasBeenSet = false;
 
   Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>> m_excludeMap;
-  bool m_excludeMapHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceSetIds;
-  bool m_resourceSetIdsHasBeenSet = false;
 
   Aws::String m_policyDescription;
-  bool m_policyDescriptionHasBeenSet = false;
 
   CustomerPolicyStatus m_policyStatus{CustomerPolicyStatus::NOT_SET};
-  bool m_policyStatusHasBeenSet = false;
 
   ResourceTagLogicalOperator m_resourceTagLogicalOperator{ResourceTagLogicalOperator::NOT_SET};
+  bool m_policyIdHasBeenSet = false;
+  bool m_policyNameHasBeenSet = false;
+  bool m_policyUpdateTokenHasBeenSet = false;
+  bool m_securityServicePolicyDataHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceTypeListHasBeenSet = false;
+  bool m_resourceTagsHasBeenSet = false;
+  bool m_excludeResourceTagsHasBeenSet = false;
+  bool m_remediationEnabledHasBeenSet = false;
+  bool m_deleteUnusedFMManagedResourcesHasBeenSet = false;
+  bool m_includeMapHasBeenSet = false;
+  bool m_excludeMapHasBeenSet = false;
+  bool m_resourceSetIdsHasBeenSet = false;
+  bool m_policyDescriptionHasBeenSet = false;
+  bool m_policyStatusHasBeenSet = false;
   bool m_resourceTagLogicalOperatorHasBeenSet = false;
 };
 

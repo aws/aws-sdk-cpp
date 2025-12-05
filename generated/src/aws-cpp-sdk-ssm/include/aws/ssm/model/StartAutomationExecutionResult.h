@@ -59,9 +59,9 @@ class StartAutomationExecutionResult {
   ///@}
  private:
   Aws::String m_automationExecutionId;
-  bool m_automationExecutionIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_automationExecutionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

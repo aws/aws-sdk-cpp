@@ -126,18 +126,18 @@ class StartActivityStreamRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   ActivityStreamMode m_mode{ActivityStreamMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   bool m_applyImmediately{false};
-  bool m_applyImmediatelyHasBeenSet = false;
 
   bool m_engineNativeAuditFieldsIncluded{false};
+  bool m_resourceArnHasBeenSet = false;
+  bool m_modeHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_applyImmediatelyHasBeenSet = false;
   bool m_engineNativeAuditFieldsIncludedHasBeenSet = false;
 };
 

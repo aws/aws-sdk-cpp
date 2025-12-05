@@ -102,12 +102,12 @@ class UserTurnSlotOutput {
   ///@}
  private:
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::Vector<UserTurnSlotOutput> m_values;
-  bool m_valuesHasBeenSet = false;
 
   Aws::Map<Aws::String, UserTurnSlotOutput> m_subSlots;
+  bool m_valueHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
   bool m_subSlotsHasBeenSet = false;
 };
 

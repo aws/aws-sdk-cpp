@@ -85,12 +85,12 @@ class ListDatastoresResult {
   ///@}
  private:
   Aws::Vector<DatastoreSummary> m_datastoreSummaries;
-  bool m_datastoreSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_datastoreSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

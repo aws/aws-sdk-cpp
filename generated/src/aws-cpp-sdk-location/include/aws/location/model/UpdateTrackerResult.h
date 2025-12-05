@@ -99,15 +99,15 @@ class UpdateTrackerResult {
   ///@}
  private:
   Aws::String m_trackerName;
-  bool m_trackerNameHasBeenSet = false;
 
   Aws::String m_trackerArn;
-  bool m_trackerArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trackerNameHasBeenSet = false;
+  bool m_trackerArnHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -76,9 +76,9 @@ class EnvironmentLanguage {
   ///@}
  private:
   LanguageType m_language{LanguageType::NOT_SET};
-  bool m_languageHasBeenSet = false;
 
   Aws::Vector<EnvironmentImage> m_images;
+  bool m_languageHasBeenSet = false;
   bool m_imagesHasBeenSet = false;
 };
 

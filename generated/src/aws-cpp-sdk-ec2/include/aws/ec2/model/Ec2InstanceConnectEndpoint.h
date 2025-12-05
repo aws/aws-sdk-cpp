@@ -387,57 +387,57 @@ class Ec2InstanceConnectEndpoint {
   ///@}
  private:
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_instanceConnectEndpointId;
-  bool m_instanceConnectEndpointIdHasBeenSet = false;
 
   Aws::String m_instanceConnectEndpointArn;
-  bool m_instanceConnectEndpointArnHasBeenSet = false;
 
   Ec2InstanceConnectEndpointState m_state{Ec2InstanceConnectEndpointState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_stateMessage;
-  bool m_stateMessageHasBeenSet = false;
 
   Aws::String m_dnsName;
-  bool m_dnsNameHasBeenSet = false;
 
   Aws::String m_fipsDnsName;
-  bool m_fipsDnsNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_networkInterfaceIds;
-  bool m_networkInterfaceIdsHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   bool m_preserveClientIp{false};
-  bool m_preserveClientIpHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
-  bool m_ipAddressTypeHasBeenSet = false;
 
   InstanceConnectEndpointPublicDnsNames m_publicDnsNames;
-  bool m_publicDnsNamesHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_instanceConnectEndpointIdHasBeenSet = false;
+  bool m_instanceConnectEndpointArnHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_stateMessageHasBeenSet = false;
+  bool m_dnsNameHasBeenSet = false;
+  bool m_fipsDnsNameHasBeenSet = false;
+  bool m_networkInterfaceIdsHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_preserveClientIpHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
+  bool m_publicDnsNamesHasBeenSet = false;
   bool m_availabilityZoneIdHasBeenSet = false;
 };
 

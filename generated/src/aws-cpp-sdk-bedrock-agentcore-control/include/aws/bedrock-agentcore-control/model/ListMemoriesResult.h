@@ -84,12 +84,12 @@ class ListMemoriesResult {
   ///@}
  private:
   Aws::Vector<MemorySummary> m_memories;
-  bool m_memoriesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_memoriesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

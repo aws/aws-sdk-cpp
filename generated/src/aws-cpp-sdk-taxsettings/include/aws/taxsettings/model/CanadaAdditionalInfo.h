@@ -120,15 +120,15 @@ class CanadaAdditionalInfo {
   ///@}
  private:
   Aws::String m_canadaQuebecSalesTaxNumber;
-  bool m_canadaQuebecSalesTaxNumberHasBeenSet = false;
 
   Aws::String m_canadaRetailSalesTaxNumber;
-  bool m_canadaRetailSalesTaxNumberHasBeenSet = false;
 
   bool m_isResellerAccount{false};
-  bool m_isResellerAccountHasBeenSet = false;
 
   Aws::String m_provincialSalesTaxId;
+  bool m_canadaQuebecSalesTaxNumberHasBeenSet = false;
+  bool m_canadaRetailSalesTaxNumberHasBeenSet = false;
+  bool m_isResellerAccountHasBeenSet = false;
   bool m_provincialSalesTaxIdHasBeenSet = false;
 };
 

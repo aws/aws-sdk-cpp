@@ -130,21 +130,21 @@ class GetPoliciesStatsResult {
   ///@}
  private:
   AccessPolicyStats m_accessPolicyStats;
-  bool m_accessPolicyStatsHasBeenSet = false;
 
   SecurityPolicyStats m_securityPolicyStats;
-  bool m_securityPolicyStatsHasBeenSet = false;
 
   SecurityConfigStats m_securityConfigStats;
-  bool m_securityConfigStatsHasBeenSet = false;
 
   LifecyclePolicyStats m_lifecyclePolicyStats;
-  bool m_lifecyclePolicyStatsHasBeenSet = false;
 
   long long m_totalPolicyCount{0};
-  bool m_totalPolicyCountHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accessPolicyStatsHasBeenSet = false;
+  bool m_securityPolicyStatsHasBeenSet = false;
+  bool m_securityConfigStatsHasBeenSet = false;
+  bool m_lifecyclePolicyStatsHasBeenSet = false;
+  bool m_totalPolicyCountHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

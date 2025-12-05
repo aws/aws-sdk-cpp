@@ -146,21 +146,21 @@ class ImportAsProvisionedProductRequest : public ServiceCatalogRequest {
   ///@}
  private:
   Aws::String m_acceptLanguage;
-  bool m_acceptLanguageHasBeenSet = false;
 
   Aws::String m_productId;
-  bool m_productIdHasBeenSet = false;
 
   Aws::String m_provisioningArtifactId;
-  bool m_provisioningArtifactIdHasBeenSet = false;
 
   Aws::String m_provisionedProductName;
-  bool m_provisionedProductNameHasBeenSet = false;
 
   Aws::String m_physicalId;
-  bool m_physicalIdHasBeenSet = false;
 
   Aws::String m_idempotencyToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_acceptLanguageHasBeenSet = false;
+  bool m_productIdHasBeenSet = false;
+  bool m_provisioningArtifactIdHasBeenSet = false;
+  bool m_provisionedProductNameHasBeenSet = false;
+  bool m_physicalIdHasBeenSet = false;
   bool m_idempotencyTokenHasBeenSet = true;
 };
 

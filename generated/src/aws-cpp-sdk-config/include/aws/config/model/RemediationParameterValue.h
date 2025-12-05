@@ -70,9 +70,9 @@ class RemediationParameterValue {
   ///@}
  private:
   ResourceValue m_resourceValue;
-  bool m_resourceValueHasBeenSet = false;
 
   StaticValue m_staticValue;
+  bool m_resourceValueHasBeenSet = false;
   bool m_staticValueHasBeenSet = false;
 };
 

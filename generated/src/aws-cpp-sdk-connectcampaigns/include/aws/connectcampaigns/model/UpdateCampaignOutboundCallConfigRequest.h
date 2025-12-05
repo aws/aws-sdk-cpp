@@ -97,15 +97,15 @@ class UpdateCampaignOutboundCallConfigRequest : public ConnectCampaignsRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_connectContactFlowId;
-  bool m_connectContactFlowIdHasBeenSet = false;
 
   Aws::String m_connectSourcePhoneNumber;
-  bool m_connectSourcePhoneNumberHasBeenSet = false;
 
   AnswerMachineDetectionConfig m_answerMachineDetectionConfig;
+  bool m_idHasBeenSet = false;
+  bool m_connectContactFlowIdHasBeenSet = false;
+  bool m_connectSourcePhoneNumberHasBeenSet = false;
   bool m_answerMachineDetectionConfigHasBeenSet = false;
 };
 

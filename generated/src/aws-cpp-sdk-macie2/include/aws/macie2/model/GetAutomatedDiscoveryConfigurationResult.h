@@ -178,27 +178,27 @@ class GetAutomatedDiscoveryConfigurationResult {
   ///@}
  private:
   AutoEnableMode m_autoEnableOrganizationMembers{AutoEnableMode::NOT_SET};
-  bool m_autoEnableOrganizationMembersHasBeenSet = false;
 
   Aws::String m_classificationScopeId;
-  bool m_classificationScopeIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_disabledAt{};
-  bool m_disabledAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_firstEnabledAt{};
-  bool m_firstEnabledAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_sensitivityInspectionTemplateId;
-  bool m_sensitivityInspectionTemplateIdHasBeenSet = false;
 
   AutomatedDiscoveryStatus m_status{AutomatedDiscoveryStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_autoEnableOrganizationMembersHasBeenSet = false;
+  bool m_classificationScopeIdHasBeenSet = false;
+  bool m_disabledAtHasBeenSet = false;
+  bool m_firstEnabledAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_sensitivityInspectionTemplateIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

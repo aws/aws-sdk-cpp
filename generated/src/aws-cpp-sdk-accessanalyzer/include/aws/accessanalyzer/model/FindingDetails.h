@@ -153,21 +153,21 @@ class FindingDetails {
   ///@}
  private:
   InternalAccessDetails m_internalAccessDetails;
-  bool m_internalAccessDetailsHasBeenSet = false;
 
   ExternalAccessDetails m_externalAccessDetails;
-  bool m_externalAccessDetailsHasBeenSet = false;
 
   UnusedPermissionDetails m_unusedPermissionDetails;
-  bool m_unusedPermissionDetailsHasBeenSet = false;
 
   UnusedIamUserAccessKeyDetails m_unusedIamUserAccessKeyDetails;
-  bool m_unusedIamUserAccessKeyDetailsHasBeenSet = false;
 
   UnusedIamRoleDetails m_unusedIamRoleDetails;
-  bool m_unusedIamRoleDetailsHasBeenSet = false;
 
   UnusedIamUserPasswordDetails m_unusedIamUserPasswordDetails;
+  bool m_internalAccessDetailsHasBeenSet = false;
+  bool m_externalAccessDetailsHasBeenSet = false;
+  bool m_unusedPermissionDetailsHasBeenSet = false;
+  bool m_unusedIamUserAccessKeyDetailsHasBeenSet = false;
+  bool m_unusedIamRoleDetailsHasBeenSet = false;
   bool m_unusedIamUserPasswordDetailsHasBeenSet = false;
 };
 

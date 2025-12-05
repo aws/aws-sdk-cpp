@@ -61,9 +61,9 @@ class GetHLSStreamingSessionURLResult {
   ///@}
  private:
   Aws::String m_hLSStreamingSessionURL;
-  bool m_hLSStreamingSessionURLHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_hLSStreamingSessionURLHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

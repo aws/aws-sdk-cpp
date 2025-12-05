@@ -69,9 +69,9 @@ class DisallowedFeature {
   ///@}
  private:
   Aws::String m_feature;
-  bool m_featureHasBeenSet = false;
 
   Aws::String m_requiredPricingPlan;
+  bool m_featureHasBeenSet = false;
   bool m_requiredPricingPlanHasBeenSet = false;
 };
 

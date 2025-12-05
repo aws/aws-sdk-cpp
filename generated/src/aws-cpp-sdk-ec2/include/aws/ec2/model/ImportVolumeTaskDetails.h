@@ -142,21 +142,21 @@ class ImportVolumeTaskDetails {
   ///@}
  private:
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   long long m_bytesConverted{0};
-  bool m_bytesConvertedHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   DiskImageDescription m_image;
-  bool m_imageHasBeenSet = false;
 
   DiskImageVolumeDescription m_volume;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_bytesConvertedHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_imageHasBeenSet = false;
   bool m_volumeHasBeenSet = false;
 };
 

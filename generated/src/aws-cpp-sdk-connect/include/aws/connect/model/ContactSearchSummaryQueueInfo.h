@@ -70,9 +70,9 @@ class ContactSearchSummaryQueueInfo {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_enqueueTimestamp{};
+  bool m_idHasBeenSet = false;
   bool m_enqueueTimestampHasBeenSet = false;
 };
 

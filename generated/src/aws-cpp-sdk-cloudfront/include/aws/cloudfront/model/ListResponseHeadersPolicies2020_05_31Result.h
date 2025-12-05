@@ -61,9 +61,9 @@ class ListResponseHeadersPolicies2020_05_31Result {
   ///@}
  private:
   ResponseHeadersPolicyList m_responseHeadersPolicyList;
-  bool m_responseHeadersPolicyListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_responseHeadersPolicyListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -90,12 +90,12 @@ class ListBackupVaultsResult {
   ///@}
  private:
   Aws::Vector<BackupVaultListMember> m_backupVaultList;
-  bool m_backupVaultListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_backupVaultListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

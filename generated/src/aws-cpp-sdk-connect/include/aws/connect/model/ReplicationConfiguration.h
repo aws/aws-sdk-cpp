@@ -111,12 +111,12 @@ class ReplicationConfiguration {
   ///@}
  private:
   Aws::Vector<ReplicationStatusSummary> m_replicationStatusSummaryList;
-  bool m_replicationStatusSummaryListHasBeenSet = false;
 
   Aws::String m_sourceRegion;
-  bool m_sourceRegionHasBeenSet = false;
 
   Aws::String m_globalSignInEndpoint;
+  bool m_replicationStatusSummaryListHasBeenSet = false;
+  bool m_sourceRegionHasBeenSet = false;
   bool m_globalSignInEndpointHasBeenSet = false;
 };
 

@@ -57,9 +57,9 @@ class CreateLensShareResult {
   ///@}
  private:
   Aws::String m_shareId;
-  bool m_shareIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_shareIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

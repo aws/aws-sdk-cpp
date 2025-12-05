@@ -244,18 +244,18 @@ class DescribeScalableTargetsRequest : public ApplicationAutoScalingRequest {
   ///@}
  private:
   ServiceNamespace m_serviceNamespace{ServiceNamespace::NOT_SET};
-  bool m_serviceNamespaceHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceIds;
-  bool m_resourceIdsHasBeenSet = false;
 
   ScalableDimension m_scalableDimension{ScalableDimension::NOT_SET};
-  bool m_scalableDimensionHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_serviceNamespaceHasBeenSet = false;
+  bool m_resourceIdsHasBeenSet = false;
+  bool m_scalableDimensionHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

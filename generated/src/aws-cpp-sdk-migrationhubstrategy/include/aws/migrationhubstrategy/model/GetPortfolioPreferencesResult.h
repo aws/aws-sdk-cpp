@@ -114,18 +114,18 @@ class GetPortfolioPreferencesResult {
   ///@}
  private:
   ApplicationMode m_applicationMode{ApplicationMode::NOT_SET};
-  bool m_applicationModeHasBeenSet = false;
 
   ApplicationPreferences m_applicationPreferences;
-  bool m_applicationPreferencesHasBeenSet = false;
 
   DatabasePreferences m_databasePreferences;
-  bool m_databasePreferencesHasBeenSet = false;
 
   PrioritizeBusinessGoals m_prioritizeBusinessGoals;
-  bool m_prioritizeBusinessGoalsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationModeHasBeenSet = false;
+  bool m_applicationPreferencesHasBeenSet = false;
+  bool m_databasePreferencesHasBeenSet = false;
+  bool m_prioritizeBusinessGoalsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

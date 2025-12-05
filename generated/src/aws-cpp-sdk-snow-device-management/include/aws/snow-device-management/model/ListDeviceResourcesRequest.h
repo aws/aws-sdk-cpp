@@ -104,15 +104,15 @@ class ListDeviceResourcesRequest : public SnowDeviceManagementRequest {
   ///@}
  private:
   Aws::String m_managedDeviceId;
-  bool m_managedDeviceIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_managedDeviceIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

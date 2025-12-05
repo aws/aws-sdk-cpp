@@ -71,9 +71,9 @@ class ComputationModelAnomalyDetectionConfiguration {
   ///@}
  private:
   Aws::String m_inputProperties;
-  bool m_inputPropertiesHasBeenSet = false;
 
   Aws::String m_resultProperty;
+  bool m_inputPropertiesHasBeenSet = false;
   bool m_resultPropertyHasBeenSet = false;
 };
 

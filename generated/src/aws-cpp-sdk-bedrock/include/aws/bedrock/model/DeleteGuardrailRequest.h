@@ -70,9 +70,9 @@ class DeleteGuardrailRequest : public BedrockRequest {
   ///@}
  private:
   Aws::String m_guardrailIdentifier;
-  bool m_guardrailIdentifierHasBeenSet = false;
 
   Aws::String m_guardrailVersion;
+  bool m_guardrailIdentifierHasBeenSet = false;
   bool m_guardrailVersionHasBeenSet = false;
 };
 

@@ -98,12 +98,12 @@ class Check {
   ///@}
  private:
   CheckType m_type{CheckType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   CheckResult m_result{CheckResult::NOT_SET};
-  bool m_resultHasBeenSet = false;
 
   Aws::Utils::DateTime m_impairedSince{};
+  bool m_typeHasBeenSet = false;
+  bool m_resultHasBeenSet = false;
   bool m_impairedSinceHasBeenSet = false;
 };
 

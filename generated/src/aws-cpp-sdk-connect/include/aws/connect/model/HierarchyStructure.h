@@ -123,18 +123,18 @@ class HierarchyStructure {
   ///@}
  private:
   HierarchyLevel m_levelOne;
-  bool m_levelOneHasBeenSet = false;
 
   HierarchyLevel m_levelTwo;
-  bool m_levelTwoHasBeenSet = false;
 
   HierarchyLevel m_levelThree;
-  bool m_levelThreeHasBeenSet = false;
 
   HierarchyLevel m_levelFour;
-  bool m_levelFourHasBeenSet = false;
 
   HierarchyLevel m_levelFive;
+  bool m_levelOneHasBeenSet = false;
+  bool m_levelTwoHasBeenSet = false;
+  bool m_levelThreeHasBeenSet = false;
+  bool m_levelFourHasBeenSet = false;
   bool m_levelFiveHasBeenSet = false;
 };
 

@@ -93,12 +93,12 @@ class BatchPutGeofenceResult {
   ///@}
  private:
   Aws::Vector<BatchPutGeofenceSuccess> m_successes;
-  bool m_successesHasBeenSet = false;
 
   Aws::Vector<BatchPutGeofenceError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_successesHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

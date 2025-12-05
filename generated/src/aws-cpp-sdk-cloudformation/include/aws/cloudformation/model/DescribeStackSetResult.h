@@ -60,9 +60,9 @@ class DescribeStackSetResult {
   ///@}
  private:
   StackSet m_stackSet;
-  bool m_stackSetHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_stackSetHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

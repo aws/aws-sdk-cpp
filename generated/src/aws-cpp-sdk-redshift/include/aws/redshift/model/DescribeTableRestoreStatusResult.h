@@ -91,12 +91,12 @@ class DescribeTableRestoreStatusResult {
   ///@}
  private:
   Aws::Vector<TableRestoreStatus> m_tableRestoreStatusDetails;
-  bool m_tableRestoreStatusDetailsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_tableRestoreStatusDetailsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

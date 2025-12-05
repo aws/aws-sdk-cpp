@@ -104,15 +104,15 @@ class GetExportRequest : public LexModelBuildingServiceRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   ExportType m_exportType{ExportType::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_exportTypeHasBeenSet = false;
 };
 

@@ -100,12 +100,12 @@ class GetSecretValueRequest : public SecretsManagerRequest {
   ///@}
  private:
   Aws::String m_secretId;
-  bool m_secretIdHasBeenSet = false;
 
   Aws::String m_versionId;
-  bool m_versionIdHasBeenSet = false;
 
   Aws::String m_versionStage;
+  bool m_secretIdHasBeenSet = false;
+  bool m_versionIdHasBeenSet = false;
   bool m_versionStageHasBeenSet = false;
 };
 

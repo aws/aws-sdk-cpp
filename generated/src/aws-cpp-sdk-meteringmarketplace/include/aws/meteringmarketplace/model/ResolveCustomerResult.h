@@ -106,15 +106,15 @@ class ResolveCustomerResult {
   ///@}
  private:
   Aws::String m_customerIdentifier;
-  bool m_customerIdentifierHasBeenSet = false;
 
   Aws::String m_productCode;
-  bool m_productCodeHasBeenSet = false;
 
   Aws::String m_customerAWSAccountId;
-  bool m_customerAWSAccountIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_customerIdentifierHasBeenSet = false;
+  bool m_productCodeHasBeenSet = false;
+  bool m_customerAWSAccountIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

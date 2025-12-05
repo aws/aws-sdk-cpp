@@ -87,12 +87,12 @@ class AnalyzeIDDetections {
   ///@}
  private:
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   NormalizedValue m_normalizedValue;
-  bool m_normalizedValueHasBeenSet = false;
 
   double m_confidence{0.0};
+  bool m_textHasBeenSet = false;
+  bool m_normalizedValueHasBeenSet = false;
   bool m_confidenceHasBeenSet = false;
 };
 

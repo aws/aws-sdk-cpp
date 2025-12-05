@@ -71,9 +71,9 @@ class DatastorePartition {
   ///@}
  private:
   Partition m_attributePartition;
-  bool m_attributePartitionHasBeenSet = false;
 
   TimestampPartition m_timestampPartition;
+  bool m_attributePartitionHasBeenSet = false;
   bool m_timestampPartitionHasBeenSet = false;
 };
 

@@ -75,12 +75,12 @@ class UpdateBridgeStateResult {
   ///@}
  private:
   Aws::String m_bridgeArn;
-  bool m_bridgeArnHasBeenSet = false;
 
   DesiredState m_desiredState{DesiredState::NOT_SET};
-  bool m_desiredStateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_bridgeArnHasBeenSet = false;
+  bool m_desiredStateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

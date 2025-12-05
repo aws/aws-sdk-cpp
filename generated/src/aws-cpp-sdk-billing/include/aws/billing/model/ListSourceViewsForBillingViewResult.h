@@ -85,12 +85,12 @@ class ListSourceViewsForBillingViewResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_sourceViews;
-  bool m_sourceViewsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sourceViewsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

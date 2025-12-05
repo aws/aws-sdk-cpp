@@ -77,9 +77,9 @@ class UrlEndpointSummary {
   ///@}
  private:
   Aws::String m_healthUrl;
-  bool m_healthUrlHasBeenSet = false;
 
   Aws::String m_url;
+  bool m_healthUrlHasBeenSet = false;
   bool m_urlHasBeenSet = false;
 };
 

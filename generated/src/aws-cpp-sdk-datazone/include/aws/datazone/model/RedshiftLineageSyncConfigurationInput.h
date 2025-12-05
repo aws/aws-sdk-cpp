@@ -67,9 +67,9 @@ class RedshiftLineageSyncConfigurationInput {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   LineageSyncSchedule m_schedule;
+  bool m_enabledHasBeenSet = false;
   bool m_scheduleHasBeenSet = false;
 };
 

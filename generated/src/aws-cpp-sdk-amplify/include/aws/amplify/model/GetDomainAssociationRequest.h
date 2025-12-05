@@ -69,9 +69,9 @@ class GetDomainAssociationRequest : public AmplifyRequest {
   ///@}
  private:
   Aws::String m_appId;
-  bool m_appIdHasBeenSet = false;
 
   Aws::String m_domainName;
+  bool m_appIdHasBeenSet = false;
   bool m_domainNameHasBeenSet = false;
 };
 

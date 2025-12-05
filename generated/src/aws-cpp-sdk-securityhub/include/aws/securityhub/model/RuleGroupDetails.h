@@ -72,9 +72,9 @@ class RuleGroupDetails {
   ///@}
  private:
   RuleGroupVariables m_ruleVariables;
-  bool m_ruleVariablesHasBeenSet = false;
 
   RuleGroupSource m_rulesSource;
+  bool m_ruleVariablesHasBeenSet = false;
   bool m_rulesSourceHasBeenSet = false;
 };
 

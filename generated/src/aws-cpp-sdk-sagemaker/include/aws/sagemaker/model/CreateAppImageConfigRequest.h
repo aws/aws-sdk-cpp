@@ -139,18 +139,18 @@ class CreateAppImageConfigRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_appImageConfigName;
-  bool m_appImageConfigNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   KernelGatewayImageConfig m_kernelGatewayImageConfig;
-  bool m_kernelGatewayImageConfigHasBeenSet = false;
 
   JupyterLabAppImageConfig m_jupyterLabAppImageConfig;
-  bool m_jupyterLabAppImageConfigHasBeenSet = false;
 
   CodeEditorAppImageConfig m_codeEditorAppImageConfig;
+  bool m_appImageConfigNameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_kernelGatewayImageConfigHasBeenSet = false;
+  bool m_jupyterLabAppImageConfigHasBeenSet = false;
   bool m_codeEditorAppImageConfigHasBeenSet = false;
 };
 

@@ -98,12 +98,12 @@ class RunConfiguration {
   ///@}
  private:
   FlinkRunConfiguration m_flinkRunConfiguration;
-  bool m_flinkRunConfigurationHasBeenSet = false;
 
   Aws::Vector<SqlRunConfiguration> m_sqlRunConfigurations;
-  bool m_sqlRunConfigurationsHasBeenSet = false;
 
   ApplicationRestoreConfiguration m_applicationRestoreConfiguration;
+  bool m_flinkRunConfigurationHasBeenSet = false;
+  bool m_sqlRunConfigurationsHasBeenSet = false;
   bool m_applicationRestoreConfigurationHasBeenSet = false;
 };
 

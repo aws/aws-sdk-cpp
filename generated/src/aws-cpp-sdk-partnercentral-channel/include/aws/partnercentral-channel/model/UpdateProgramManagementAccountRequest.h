@@ -103,15 +103,15 @@ class UpdateProgramManagementAccountRequest : public PartnerCentralChannelReques
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_revision;
-  bool m_revisionHasBeenSet = false;
 
   Aws::String m_displayName;
+  bool m_catalogHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
+  bool m_revisionHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
 };
 

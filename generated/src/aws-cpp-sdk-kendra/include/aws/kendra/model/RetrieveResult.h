@@ -87,12 +87,12 @@ class RetrieveResult {
   ///@}
  private:
   Aws::String m_queryId;
-  bool m_queryIdHasBeenSet = false;
 
   Aws::Vector<RetrieveResultItem> m_resultItems;
-  bool m_resultItemsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_queryIdHasBeenSet = false;
+  bool m_resultItemsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

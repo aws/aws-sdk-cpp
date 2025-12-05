@@ -75,9 +75,9 @@ class DeleteResourceExplorerSetupRequest : public ResourceExplorer2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_regionList;
-  bool m_regionListHasBeenSet = false;
 
   bool m_deleteInAllRegions{false};
+  bool m_regionListHasBeenSet = false;
   bool m_deleteInAllRegionsHasBeenSet = false;
 };
 

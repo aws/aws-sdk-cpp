@@ -90,9 +90,9 @@ class HyperbandStrategyConfig {
   ///@}
  private:
   int m_minResource{0};
-  bool m_minResourceHasBeenSet = false;
 
   int m_maxResource{0};
+  bool m_minResourceHasBeenSet = false;
   bool m_maxResourceHasBeenSet = false;
 };
 

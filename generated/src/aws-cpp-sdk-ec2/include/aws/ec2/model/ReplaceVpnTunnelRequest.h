@@ -104,15 +104,15 @@ class ReplaceVpnTunnelRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_vpnConnectionId;
-  bool m_vpnConnectionIdHasBeenSet = false;
 
   Aws::String m_vpnTunnelOutsideIpAddress;
-  bool m_vpnTunnelOutsideIpAddressHasBeenSet = false;
 
   bool m_applyPendingMaintenance{false};
-  bool m_applyPendingMaintenanceHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_vpnConnectionIdHasBeenSet = false;
+  bool m_vpnTunnelOutsideIpAddressHasBeenSet = false;
+  bool m_applyPendingMaintenanceHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

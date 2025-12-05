@@ -60,9 +60,9 @@ class GetPublicKeyResult {
   ///@}
  private:
   PublicKey m_publicKey;
-  bool m_publicKeyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_publicKeyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

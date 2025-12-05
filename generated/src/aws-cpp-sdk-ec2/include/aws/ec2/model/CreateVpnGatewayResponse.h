@@ -65,9 +65,9 @@ class CreateVpnGatewayResponse {
   ///@}
  private:
   VpnGateway m_vpnGateway;
-  bool m_vpnGatewayHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_vpnGatewayHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

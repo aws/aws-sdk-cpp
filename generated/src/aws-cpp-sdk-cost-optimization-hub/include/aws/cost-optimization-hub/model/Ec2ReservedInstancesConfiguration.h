@@ -325,51 +325,51 @@ class Ec2ReservedInstancesConfiguration {
   ///@}
  private:
   Aws::String m_accountScope;
-  bool m_accountScopeHasBeenSet = false;
 
   Aws::String m_service;
-  bool m_serviceHasBeenSet = false;
 
   Aws::String m_term;
-  bool m_termHasBeenSet = false;
 
   Aws::String m_paymentOption;
-  bool m_paymentOptionHasBeenSet = false;
 
   Aws::String m_reservedInstancesRegion;
-  bool m_reservedInstancesRegionHasBeenSet = false;
 
   Aws::String m_upfrontCost;
-  bool m_upfrontCostHasBeenSet = false;
 
   Aws::String m_monthlyRecurringCost;
-  bool m_monthlyRecurringCostHasBeenSet = false;
 
   Aws::String m_normalizedUnitsToPurchase;
-  bool m_normalizedUnitsToPurchaseHasBeenSet = false;
 
   Aws::String m_numberOfInstancesToPurchase;
-  bool m_numberOfInstancesToPurchaseHasBeenSet = false;
 
   Aws::String m_offeringClass;
-  bool m_offeringClassHasBeenSet = false;
 
   Aws::String m_instanceFamily;
-  bool m_instanceFamilyHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_currentGeneration;
-  bool m_currentGenerationHasBeenSet = false;
 
   Aws::String m_platform;
-  bool m_platformHasBeenSet = false;
 
   Aws::String m_tenancy;
-  bool m_tenancyHasBeenSet = false;
 
   bool m_sizeFlexEligible{false};
+  bool m_accountScopeHasBeenSet = false;
+  bool m_serviceHasBeenSet = false;
+  bool m_termHasBeenSet = false;
+  bool m_paymentOptionHasBeenSet = false;
+  bool m_reservedInstancesRegionHasBeenSet = false;
+  bool m_upfrontCostHasBeenSet = false;
+  bool m_monthlyRecurringCostHasBeenSet = false;
+  bool m_normalizedUnitsToPurchaseHasBeenSet = false;
+  bool m_numberOfInstancesToPurchaseHasBeenSet = false;
+  bool m_offeringClassHasBeenSet = false;
+  bool m_instanceFamilyHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_currentGenerationHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_tenancyHasBeenSet = false;
   bool m_sizeFlexEligibleHasBeenSet = false;
 };
 

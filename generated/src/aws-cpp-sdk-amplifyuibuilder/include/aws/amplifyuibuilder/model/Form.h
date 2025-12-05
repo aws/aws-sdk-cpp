@@ -292,42 +292,42 @@ class Form {
   ///@}
  private:
   Aws::String m_appId;
-  bool m_appIdHasBeenSet = false;
 
   Aws::String m_environmentName;
-  bool m_environmentNameHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   FormActionType m_formActionType{FormActionType::NOT_SET};
-  bool m_formActionTypeHasBeenSet = false;
 
   FormStyle m_style;
-  bool m_styleHasBeenSet = false;
 
   FormDataTypeConfig m_dataType;
-  bool m_dataTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, FieldConfig> m_fields;
-  bool m_fieldsHasBeenSet = false;
 
   Aws::Map<Aws::String, SectionalElement> m_sectionalElements;
-  bool m_sectionalElementsHasBeenSet = false;
 
   Aws::String m_schemaVersion;
-  bool m_schemaVersionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   FormCTA m_cta;
-  bool m_ctaHasBeenSet = false;
 
   LabelDecorator m_labelDecorator{LabelDecorator::NOT_SET};
+  bool m_appIdHasBeenSet = false;
+  bool m_environmentNameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_formActionTypeHasBeenSet = false;
+  bool m_styleHasBeenSet = false;
+  bool m_dataTypeHasBeenSet = false;
+  bool m_fieldsHasBeenSet = false;
+  bool m_sectionalElementsHasBeenSet = false;
+  bool m_schemaVersionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_ctaHasBeenSet = false;
   bool m_labelDecoratorHasBeenSet = false;
 };
 

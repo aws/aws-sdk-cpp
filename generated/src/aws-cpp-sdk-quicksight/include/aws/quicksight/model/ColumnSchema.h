@@ -86,12 +86,12 @@ class ColumnSchema {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_dataType;
-  bool m_dataTypeHasBeenSet = false;
 
   Aws::String m_geographicRole;
+  bool m_nameHasBeenSet = false;
+  bool m_dataTypeHasBeenSet = false;
   bool m_geographicRoleHasBeenSet = false;
 };
 

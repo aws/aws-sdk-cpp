@@ -207,36 +207,36 @@ class GetFlowMetadataResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_flowId;
-  bool m_flowIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   FlowPublishState m_publishState{FlowPublishState::NOT_SET};
-  bool m_publishStateHasBeenSet = false;
 
   int m_userCount{0};
-  bool m_userCountHasBeenSet = false;
 
   int m_runCount{0};
-  bool m_runCountHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   int m_status{0};
+  bool m_arnHasBeenSet = false;
+  bool m_flowIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_publishStateHasBeenSet = false;
+  bool m_userCountHasBeenSet = false;
+  bool m_runCountHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

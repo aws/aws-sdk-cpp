@@ -89,12 +89,12 @@ class ListAppBundlesResult {
   ///@}
  private:
   Aws::Vector<AppBundleSummary> m_appBundleSummaryList;
-  bool m_appBundleSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appBundleSummaryListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

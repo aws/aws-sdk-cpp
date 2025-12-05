@@ -189,27 +189,27 @@ class ProvisioningArtifactDetail {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ProvisioningArtifactType m_type{ProvisioningArtifactType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   bool m_active{false};
-  bool m_activeHasBeenSet = false;
 
   ProvisioningArtifactGuidance m_guidance{ProvisioningArtifactGuidance::NOT_SET};
-  bool m_guidanceHasBeenSet = false;
 
   Aws::String m_sourceRevision;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_activeHasBeenSet = false;
+  bool m_guidanceHasBeenSet = false;
   bool m_sourceRevisionHasBeenSet = false;
 };
 

@@ -83,12 +83,12 @@ class CreateBotRequest : public ChimeRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_domain;
+  bool m_accountIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
   bool m_domainHasBeenSet = false;
 };
 

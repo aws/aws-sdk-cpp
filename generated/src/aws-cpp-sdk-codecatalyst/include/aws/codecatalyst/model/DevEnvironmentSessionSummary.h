@@ -126,18 +126,18 @@ class DevEnvironmentSessionSummary {
   ///@}
  private:
   Aws::String m_spaceName;
-  bool m_spaceNameHasBeenSet = false;
 
   Aws::String m_projectName;
-  bool m_projectNameHasBeenSet = false;
 
   Aws::String m_devEnvironmentId;
-  bool m_devEnvironmentIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedTime{};
-  bool m_startedTimeHasBeenSet = false;
 
   Aws::String m_id;
+  bool m_spaceNameHasBeenSet = false;
+  bool m_projectNameHasBeenSet = false;
+  bool m_devEnvironmentIdHasBeenSet = false;
+  bool m_startedTimeHasBeenSet = false;
   bool m_idHasBeenSet = false;
 };
 

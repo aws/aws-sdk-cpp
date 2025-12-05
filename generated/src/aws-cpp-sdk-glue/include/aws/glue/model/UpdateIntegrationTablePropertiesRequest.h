@@ -105,15 +105,15 @@ class UpdateIntegrationTablePropertiesRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   SourceTableConfig m_sourceTableConfig;
-  bool m_sourceTableConfigHasBeenSet = false;
 
   TargetTableConfig m_targetTableConfig;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
+  bool m_sourceTableConfigHasBeenSet = false;
   bool m_targetTableConfigHasBeenSet = false;
 };
 

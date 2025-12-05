@@ -162,21 +162,21 @@ class CacheSubnetGroup {
   ///@}
  private:
   Aws::String m_cacheSubnetGroupName;
-  bool m_cacheSubnetGroupNameHasBeenSet = false;
 
   Aws::String m_cacheSubnetGroupDescription;
-  bool m_cacheSubnetGroupDescriptionHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Vector<Subnet> m_subnets;
-  bool m_subnetsHasBeenSet = false;
 
   Aws::String m_aRN;
-  bool m_aRNHasBeenSet = false;
 
   Aws::Vector<NetworkType> m_supportedNetworkTypes;
+  bool m_cacheSubnetGroupNameHasBeenSet = false;
+  bool m_cacheSubnetGroupDescriptionHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_subnetsHasBeenSet = false;
+  bool m_aRNHasBeenSet = false;
   bool m_supportedNetworkTypesHasBeenSet = false;
 };
 

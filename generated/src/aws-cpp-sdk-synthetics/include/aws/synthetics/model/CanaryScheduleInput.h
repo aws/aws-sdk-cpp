@@ -102,12 +102,12 @@ class CanaryScheduleInput {
   ///@}
  private:
   Aws::String m_expression;
-  bool m_expressionHasBeenSet = false;
 
   long long m_durationInSeconds{0};
-  bool m_durationInSecondsHasBeenSet = false;
 
   RetryConfigInput m_retryConfig;
+  bool m_expressionHasBeenSet = false;
+  bool m_durationInSecondsHasBeenSet = false;
   bool m_retryConfigHasBeenSet = false;
 };
 

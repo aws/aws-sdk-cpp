@@ -84,12 +84,12 @@ class ListOrganizationsFeaturesResult {
   ///@}
  private:
   Aws::String m_organizationId;
-  bool m_organizationIdHasBeenSet = false;
 
   Aws::Vector<FeatureType> m_enabledFeatures;
-  bool m_enabledFeaturesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_organizationIdHasBeenSet = false;
+  bool m_enabledFeaturesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

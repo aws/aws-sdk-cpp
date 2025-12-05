@@ -61,9 +61,9 @@ class CancelQueryResult {
   ///@}
  private:
   Aws::String m_cancellationMessage;
-  bool m_cancellationMessageHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_cancellationMessageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

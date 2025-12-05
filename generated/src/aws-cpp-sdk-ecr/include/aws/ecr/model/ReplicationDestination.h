@@ -71,9 +71,9 @@ class ReplicationDestination {
   ///@}
  private:
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_registryId;
+  bool m_regionHasBeenSet = false;
   bool m_registryIdHasBeenSet = false;
 };
 

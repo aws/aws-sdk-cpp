@@ -86,12 +86,12 @@ class ListLakeFormationOptInsResult {
   ///@}
  private:
   Aws::Vector<LakeFormationOptInsInfo> m_lakeFormationOptInsInfoList;
-  bool m_lakeFormationOptInsInfoListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_lakeFormationOptInsInfoListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

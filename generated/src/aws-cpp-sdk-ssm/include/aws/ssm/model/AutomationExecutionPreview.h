@@ -139,15 +139,15 @@ class AutomationExecutionPreview {
   ///@}
  private:
   Aws::Map<ImpactType, int> m_stepPreviews;
-  bool m_stepPreviewsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_regions;
-  bool m_regionsHasBeenSet = false;
 
   Aws::Vector<TargetPreview> m_targetPreviews;
-  bool m_targetPreviewsHasBeenSet = false;
 
   int m_totalAccounts{0};
+  bool m_stepPreviewsHasBeenSet = false;
+  bool m_regionsHasBeenSet = false;
+  bool m_targetPreviewsHasBeenSet = false;
   bool m_totalAccountsHasBeenSet = false;
 };
 

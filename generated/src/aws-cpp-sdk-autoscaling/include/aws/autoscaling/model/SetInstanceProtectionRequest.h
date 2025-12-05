@@ -93,12 +93,12 @@ class SetInstanceProtectionRequest : public AutoScalingRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_instanceIds;
-  bool m_instanceIdsHasBeenSet = false;
 
   Aws::String m_autoScalingGroupName;
-  bool m_autoScalingGroupNameHasBeenSet = false;
 
   bool m_protectedFromScaleIn{false};
+  bool m_instanceIdsHasBeenSet = false;
+  bool m_autoScalingGroupNameHasBeenSet = false;
   bool m_protectedFromScaleInHasBeenSet = false;
 };
 

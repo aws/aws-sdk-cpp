@@ -84,9 +84,9 @@ class AssessmentSummary {
   ///@}
  private:
   Aws::Vector<AssessmentRiskRecommendation> m_riskRecommendations;
-  bool m_riskRecommendationsHasBeenSet = false;
 
   Aws::String m_summary;
+  bool m_riskRecommendationsHasBeenSet = false;
   bool m_summaryHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class ListDetectorModelVersionsRequest : public IoTEventsRequest {
   ///@}
  private:
   Aws::String m_detectorModelName;
-  bool m_detectorModelNameHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_detectorModelNameHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

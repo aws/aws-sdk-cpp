@@ -117,18 +117,18 @@ class ListLensesRequest : public WellArchitectedRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   LensType m_lensType{LensType::NOT_SET};
-  bool m_lensTypeHasBeenSet = false;
 
   LensStatusType m_lensStatus{LensStatusType::NOT_SET};
-  bool m_lensStatusHasBeenSet = false;
 
   Aws::String m_lensName;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_lensTypeHasBeenSet = false;
+  bool m_lensStatusHasBeenSet = false;
   bool m_lensNameHasBeenSet = false;
 };
 

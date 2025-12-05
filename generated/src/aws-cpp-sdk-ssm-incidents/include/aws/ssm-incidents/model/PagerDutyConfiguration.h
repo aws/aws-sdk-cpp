@@ -90,12 +90,12 @@ class PagerDutyConfiguration {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   PagerDutyIncidentConfiguration m_pagerDutyIncidentConfiguration;
-  bool m_pagerDutyIncidentConfigurationHasBeenSet = false;
 
   Aws::String m_secretId;
+  bool m_nameHasBeenSet = false;
+  bool m_pagerDutyIncidentConfigurationHasBeenSet = false;
   bool m_secretIdHasBeenSet = false;
 };
 

@@ -131,15 +131,15 @@ class CreateRepositoryRequest : public CodeCommitRequest {
   ///@}
  private:
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   Aws::String m_repositoryDescription;
-  bool m_repositoryDescriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_repositoryDescriptionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
 };
 

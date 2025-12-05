@@ -66,9 +66,9 @@ class UpdateMacieSessionRequest : public Macie2Request {
   ///@}
  private:
   FindingPublishingFrequency m_findingPublishingFrequency{FindingPublishingFrequency::NOT_SET};
-  bool m_findingPublishingFrequencyHasBeenSet = false;
 
   MacieStatus m_status{MacieStatus::NOT_SET};
+  bool m_findingPublishingFrequencyHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

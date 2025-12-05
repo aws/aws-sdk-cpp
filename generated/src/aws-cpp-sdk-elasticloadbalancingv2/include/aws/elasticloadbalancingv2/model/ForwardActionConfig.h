@@ -79,9 +79,9 @@ class ForwardActionConfig {
   ///@}
  private:
   Aws::Vector<TargetGroupTuple> m_targetGroups;
-  bool m_targetGroupsHasBeenSet = false;
 
   TargetGroupStickinessConfig m_targetGroupStickinessConfig;
+  bool m_targetGroupsHasBeenSet = false;
   bool m_targetGroupStickinessConfigHasBeenSet = false;
 };
 

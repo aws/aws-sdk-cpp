@@ -100,12 +100,12 @@ class VideoOverlayTransition {
   ///@}
  private:
   VideoOverlayPosition m_endPosition;
-  bool m_endPositionHasBeenSet = false;
 
   Aws::String m_endTimecode;
-  bool m_endTimecodeHasBeenSet = false;
 
   Aws::String m_startTimecode;
+  bool m_endPositionHasBeenSet = false;
+  bool m_endTimecodeHasBeenSet = false;
   bool m_startTimecodeHasBeenSet = false;
 };
 

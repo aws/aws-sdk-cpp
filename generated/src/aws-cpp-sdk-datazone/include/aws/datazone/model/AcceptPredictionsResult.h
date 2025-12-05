@@ -93,15 +93,15 @@ class AcceptPredictionsResult {
   ///@}
  private:
   Aws::String m_assetId;
-  bool m_assetIdHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_revision;
-  bool m_revisionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assetIdHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_revisionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

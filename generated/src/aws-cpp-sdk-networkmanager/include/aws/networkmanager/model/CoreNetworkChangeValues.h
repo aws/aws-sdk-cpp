@@ -376,54 +376,54 @@ class CoreNetworkChangeValues {
   ///@}
  private:
   Aws::String m_segmentName;
-  bool m_segmentNameHasBeenSet = false;
 
   Aws::String m_networkFunctionGroupName;
-  bool m_networkFunctionGroupNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_edgeLocations;
-  bool m_edgeLocationsHasBeenSet = false;
 
   long long m_asn{0};
-  bool m_asnHasBeenSet = false;
 
   Aws::String m_cidr;
-  bool m_cidrHasBeenSet = false;
 
   Aws::String m_destinationIdentifier;
-  bool m_destinationIdentifierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_insideCidrBlocks;
-  bool m_insideCidrBlocksHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sharedSegments;
-  bool m_sharedSegmentsHasBeenSet = false;
 
   Aws::Vector<ServiceInsertionAction> m_serviceInsertionActions;
-  bool m_serviceInsertionActionsHasBeenSet = false;
 
   bool m_vpnEcmpSupport{false};
-  bool m_vpnEcmpSupportHasBeenSet = false;
 
   bool m_dnsSupport{false};
-  bool m_dnsSupportHasBeenSet = false;
 
   bool m_securityGroupReferencingSupport{false};
-  bool m_securityGroupReferencingSupportHasBeenSet = false;
 
   RoutingPolicyDirection m_routingPolicyDirection{RoutingPolicyDirection::NOT_SET};
-  bool m_routingPolicyDirectionHasBeenSet = false;
 
   Aws::String m_routingPolicy;
-  bool m_routingPolicyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_peerEdgeLocations;
-  bool m_peerEdgeLocationsHasBeenSet = false;
 
   Aws::String m_attachmentId;
-  bool m_attachmentIdHasBeenSet = false;
 
   Aws::Vector<RoutingPolicyAssociationDetail> m_routingPolicyAssociationDetails;
+  bool m_segmentNameHasBeenSet = false;
+  bool m_networkFunctionGroupNameHasBeenSet = false;
+  bool m_edgeLocationsHasBeenSet = false;
+  bool m_asnHasBeenSet = false;
+  bool m_cidrHasBeenSet = false;
+  bool m_destinationIdentifierHasBeenSet = false;
+  bool m_insideCidrBlocksHasBeenSet = false;
+  bool m_sharedSegmentsHasBeenSet = false;
+  bool m_serviceInsertionActionsHasBeenSet = false;
+  bool m_vpnEcmpSupportHasBeenSet = false;
+  bool m_dnsSupportHasBeenSet = false;
+  bool m_securityGroupReferencingSupportHasBeenSet = false;
+  bool m_routingPolicyDirectionHasBeenSet = false;
+  bool m_routingPolicyHasBeenSet = false;
+  bool m_peerEdgeLocationsHasBeenSet = false;
+  bool m_attachmentIdHasBeenSet = false;
   bool m_routingPolicyAssociationDetailsHasBeenSet = false;
 };
 

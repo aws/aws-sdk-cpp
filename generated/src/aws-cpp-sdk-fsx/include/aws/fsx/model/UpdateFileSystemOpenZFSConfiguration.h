@@ -258,36 +258,36 @@ class UpdateFileSystemOpenZFSConfiguration {
   ///@}
  private:
   int m_automaticBackupRetentionDays{0};
-  bool m_automaticBackupRetentionDaysHasBeenSet = false;
 
   bool m_copyTagsToBackups{false};
-  bool m_copyTagsToBackupsHasBeenSet = false;
 
   bool m_copyTagsToVolumes{false};
-  bool m_copyTagsToVolumesHasBeenSet = false;
 
   Aws::String m_dailyAutomaticBackupStartTime;
-  bool m_dailyAutomaticBackupStartTimeHasBeenSet = false;
 
   int m_throughputCapacity{0};
-  bool m_throughputCapacityHasBeenSet = false;
 
   Aws::String m_weeklyMaintenanceStartTime;
-  bool m_weeklyMaintenanceStartTimeHasBeenSet = false;
 
   DiskIopsConfiguration m_diskIopsConfiguration;
-  bool m_diskIopsConfigurationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_addRouteTableIds;
-  bool m_addRouteTableIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_removeRouteTableIds;
-  bool m_removeRouteTableIdsHasBeenSet = false;
 
   OpenZFSReadCacheConfiguration m_readCacheConfiguration;
-  bool m_readCacheConfigurationHasBeenSet = false;
 
   Aws::String m_endpointIpv6AddressRange;
+  bool m_automaticBackupRetentionDaysHasBeenSet = false;
+  bool m_copyTagsToBackupsHasBeenSet = false;
+  bool m_copyTagsToVolumesHasBeenSet = false;
+  bool m_dailyAutomaticBackupStartTimeHasBeenSet = false;
+  bool m_throughputCapacityHasBeenSet = false;
+  bool m_weeklyMaintenanceStartTimeHasBeenSet = false;
+  bool m_diskIopsConfigurationHasBeenSet = false;
+  bool m_addRouteTableIdsHasBeenSet = false;
+  bool m_removeRouteTableIdsHasBeenSet = false;
+  bool m_readCacheConfigurationHasBeenSet = false;
   bool m_endpointIpv6AddressRangeHasBeenSet = false;
 };
 

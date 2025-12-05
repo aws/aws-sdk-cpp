@@ -60,9 +60,9 @@ class DescribeContactFlowModuleAliasResult {
   ///@}
  private:
   ContactFlowModuleAliasInfo m_contactFlowModuleAlias;
-  bool m_contactFlowModuleAliasHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_contactFlowModuleAliasHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -74,9 +74,9 @@ class AccessDeniedException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_context;
+  bool m_messageHasBeenSet = false;
   bool m_contextHasBeenSet = false;
 };
 

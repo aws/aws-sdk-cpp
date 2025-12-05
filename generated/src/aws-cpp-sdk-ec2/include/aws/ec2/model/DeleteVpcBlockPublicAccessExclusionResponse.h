@@ -61,9 +61,9 @@ class DeleteVpcBlockPublicAccessExclusionResponse {
   ///@}
  private:
   VpcBlockPublicAccessExclusion m_vpcBlockPublicAccessExclusion;
-  bool m_vpcBlockPublicAccessExclusionHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_vpcBlockPublicAccessExclusionHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

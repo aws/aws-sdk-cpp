@@ -69,9 +69,9 @@ class DeleteDeploymentRequest : public APIGatewayRequest {
   ///@}
  private:
   Aws::String m_restApiId;
-  bool m_restApiIdHasBeenSet = false;
 
   Aws::String m_deploymentId;
+  bool m_restApiIdHasBeenSet = false;
   bool m_deploymentIdHasBeenSet = false;
 };
 

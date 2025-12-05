@@ -123,18 +123,18 @@ class DashProgramInformation {
   ///@}
  private:
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_copyright;
-  bool m_copyrightHasBeenSet = false;
 
   Aws::String m_languageCode;
-  bool m_languageCodeHasBeenSet = false;
 
   Aws::String m_moreInformationUrl;
+  bool m_titleHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_copyrightHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
   bool m_moreInformationUrlHasBeenSet = false;
 };
 

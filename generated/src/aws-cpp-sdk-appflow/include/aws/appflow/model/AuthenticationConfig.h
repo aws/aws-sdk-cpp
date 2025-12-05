@@ -141,21 +141,21 @@ class AuthenticationConfig {
   ///@}
  private:
   bool m_isBasicAuthSupported{false};
-  bool m_isBasicAuthSupportedHasBeenSet = false;
 
   bool m_isApiKeyAuthSupported{false};
-  bool m_isApiKeyAuthSupportedHasBeenSet = false;
 
   bool m_isOAuth2Supported{false};
-  bool m_isOAuth2SupportedHasBeenSet = false;
 
   bool m_isCustomAuthSupported{false};
-  bool m_isCustomAuthSupportedHasBeenSet = false;
 
   OAuth2Defaults m_oAuth2Defaults;
-  bool m_oAuth2DefaultsHasBeenSet = false;
 
   Aws::Vector<CustomAuthConfig> m_customAuthConfigs;
+  bool m_isBasicAuthSupportedHasBeenSet = false;
+  bool m_isApiKeyAuthSupportedHasBeenSet = false;
+  bool m_isOAuth2SupportedHasBeenSet = false;
+  bool m_isCustomAuthSupportedHasBeenSet = false;
+  bool m_oAuth2DefaultsHasBeenSet = false;
   bool m_customAuthConfigsHasBeenSet = false;
 };
 

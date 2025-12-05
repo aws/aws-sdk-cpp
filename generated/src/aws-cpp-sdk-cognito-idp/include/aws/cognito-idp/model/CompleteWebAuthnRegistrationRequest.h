@@ -72,9 +72,9 @@ class CompleteWebAuthnRegistrationRequest : public CognitoIdentityProviderReques
   ///@}
  private:
   Aws::String m_accessToken;
-  bool m_accessTokenHasBeenSet = false;
 
   Aws::Utils::Document m_credential;
+  bool m_accessTokenHasBeenSet = false;
   bool m_credentialHasBeenSet = false;
 };
 

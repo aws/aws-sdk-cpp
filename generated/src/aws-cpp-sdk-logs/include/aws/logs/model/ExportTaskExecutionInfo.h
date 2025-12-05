@@ -63,9 +63,9 @@ class ExportTaskExecutionInfo {
   ///@}
  private:
   long long m_creationTime{0};
-  bool m_creationTimeHasBeenSet = false;
 
   long long m_completionTime{0};
+  bool m_creationTimeHasBeenSet = false;
   bool m_completionTimeHasBeenSet = false;
 };
 

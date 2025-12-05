@@ -69,9 +69,9 @@ class PollForTaskResult {
   ///@}
  private:
   TaskObject m_taskObject;
-  bool m_taskObjectHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_taskObjectHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

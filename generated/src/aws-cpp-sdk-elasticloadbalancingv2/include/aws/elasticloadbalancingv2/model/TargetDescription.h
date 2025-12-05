@@ -135,15 +135,15 @@ class TargetDescription {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_quicServerId;
+  bool m_idHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
   bool m_quicServerIdHasBeenSet = false;
 };
 

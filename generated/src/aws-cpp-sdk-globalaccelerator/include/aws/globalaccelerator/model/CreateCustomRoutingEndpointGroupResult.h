@@ -62,9 +62,9 @@ class CreateCustomRoutingEndpointGroupResult {
   ///@}
  private:
   CustomRoutingEndpointGroup m_endpointGroup;
-  bool m_endpointGroupHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_endpointGroupHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

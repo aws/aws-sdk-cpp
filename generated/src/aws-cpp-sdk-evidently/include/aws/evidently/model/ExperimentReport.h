@@ -104,15 +104,15 @@ class ExperimentReport {
   ///@}
  private:
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   ExperimentReportName m_reportName{ExperimentReportName::NOT_SET};
-  bool m_reportNameHasBeenSet = false;
 
   Aws::String m_treatmentName;
+  bool m_contentHasBeenSet = false;
+  bool m_metricNameHasBeenSet = false;
+  bool m_reportNameHasBeenSet = false;
   bool m_treatmentNameHasBeenSet = false;
 };
 

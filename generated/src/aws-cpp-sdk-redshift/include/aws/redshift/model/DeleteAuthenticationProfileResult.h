@@ -60,9 +60,9 @@ class DeleteAuthenticationProfileResult {
   ///@}
  private:
   Aws::String m_authenticationProfileName;
-  bool m_authenticationProfileNameHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_authenticationProfileNameHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

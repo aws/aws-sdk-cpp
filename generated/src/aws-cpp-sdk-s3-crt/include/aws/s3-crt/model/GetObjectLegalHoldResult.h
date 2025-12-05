@@ -60,9 +60,9 @@ class GetObjectLegalHoldResult {
   ///@}
  private:
   ObjectLockLegalHold m_legalHold;
-  bool m_legalHoldHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_legalHoldHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -227,33 +227,33 @@ class PublishPackageVersionRequest : public StreamingCodeArtifactRequest {
   ///@}
  private:
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_domainOwner;
-  bool m_domainOwnerHasBeenSet = false;
 
   Aws::String m_repository;
-  bool m_repositoryHasBeenSet = false;
 
   PackageFormat m_format{PackageFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_package;
-  bool m_packageHasBeenSet = false;
 
   Aws::String m_packageVersion;
-  bool m_packageVersionHasBeenSet = false;
 
   Aws::String m_assetName;
-  bool m_assetNameHasBeenSet = false;
 
   Aws::String m_assetSHA256;
-  bool m_assetSHA256HasBeenSet = false;
 
   bool m_unfinished{false};
+  bool m_domainHasBeenSet = false;
+  bool m_domainOwnerHasBeenSet = false;
+  bool m_repositoryHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_packageHasBeenSet = false;
+  bool m_packageVersionHasBeenSet = false;
+  bool m_assetNameHasBeenSet = false;
+  bool m_assetSHA256HasBeenSet = false;
   bool m_unfinishedHasBeenSet = false;
 };
 

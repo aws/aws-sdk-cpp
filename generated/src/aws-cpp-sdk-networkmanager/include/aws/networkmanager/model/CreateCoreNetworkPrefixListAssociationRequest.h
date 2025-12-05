@@ -103,15 +103,15 @@ class CreateCoreNetworkPrefixListAssociationRequest : public NetworkManagerReque
   ///@}
  private:
   Aws::String m_coreNetworkId;
-  bool m_coreNetworkIdHasBeenSet = false;
 
   Aws::String m_prefixListArn;
-  bool m_prefixListArnHasBeenSet = false;
 
   Aws::String m_prefixListAlias;
-  bool m_prefixListAliasHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_coreNetworkIdHasBeenSet = false;
+  bool m_prefixListArnHasBeenSet = false;
+  bool m_prefixListAliasHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

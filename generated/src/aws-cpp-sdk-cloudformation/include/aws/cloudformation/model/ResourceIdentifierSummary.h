@@ -108,12 +108,12 @@ class ResourceIdentifierSummary {
   ///@}
  private:
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_logicalResourceIds;
-  bool m_logicalResourceIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceIdentifiers;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_logicalResourceIdsHasBeenSet = false;
   bool m_resourceIdentifiersHasBeenSet = false;
 };
 

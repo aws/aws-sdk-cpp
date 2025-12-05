@@ -153,24 +153,24 @@ class GetRuleSetResult {
   ///@}
  private:
   Aws::String m_ruleSetId;
-  bool m_ruleSetIdHasBeenSet = false;
 
   Aws::String m_ruleSetArn;
-  bool m_ruleSetArnHasBeenSet = false;
 
   Aws::String m_ruleSetName;
-  bool m_ruleSetNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
-  bool m_createdDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModificationDate{};
-  bool m_lastModificationDateHasBeenSet = false;
 
   Aws::Vector<Rule> m_rules;
-  bool m_rulesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ruleSetIdHasBeenSet = false;
+  bool m_ruleSetArnHasBeenSet = false;
+  bool m_ruleSetNameHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
+  bool m_lastModificationDateHasBeenSet = false;
+  bool m_rulesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

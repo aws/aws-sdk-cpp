@@ -125,21 +125,21 @@ class BackendConnectionErrors {
   ///@}
  private:
   int m_timeoutCount{0};
-  bool m_timeoutCountHasBeenSet = false;
 
   int m_connectionRefusedCount{0};
-  bool m_connectionRefusedCountHasBeenSet = false;
 
   int m_hTTPCode4XXCount{0};
-  bool m_hTTPCode4XXCountHasBeenSet = false;
 
   int m_hTTPCode5XXCount{0};
-  bool m_hTTPCode5XXCountHasBeenSet = false;
 
   int m_unknownHostCount{0};
-  bool m_unknownHostCountHasBeenSet = false;
 
   int m_otherCount{0};
+  bool m_timeoutCountHasBeenSet = false;
+  bool m_connectionRefusedCountHasBeenSet = false;
+  bool m_hTTPCode4XXCountHasBeenSet = false;
+  bool m_hTTPCode5XXCountHasBeenSet = false;
+  bool m_unknownHostCountHasBeenSet = false;
   bool m_otherCountHasBeenSet = false;
 };
 

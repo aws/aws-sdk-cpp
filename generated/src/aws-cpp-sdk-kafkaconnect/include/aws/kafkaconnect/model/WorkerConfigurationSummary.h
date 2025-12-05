@@ -141,21 +141,21 @@ class WorkerConfigurationSummary {
   ///@}
  private:
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   WorkerConfigurationRevisionSummary m_latestRevision;
-  bool m_latestRevisionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_workerConfigurationArn;
-  bool m_workerConfigurationArnHasBeenSet = false;
 
   WorkerConfigurationState m_workerConfigurationState{WorkerConfigurationState::NOT_SET};
+  bool m_creationTimeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_latestRevisionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_workerConfigurationArnHasBeenSet = false;
   bool m_workerConfigurationStateHasBeenSet = false;
 };
 

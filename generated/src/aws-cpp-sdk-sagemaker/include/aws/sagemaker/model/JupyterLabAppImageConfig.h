@@ -67,9 +67,9 @@ class JupyterLabAppImageConfig {
   ///@}
  private:
   FileSystemConfig m_fileSystemConfig;
-  bool m_fileSystemConfigHasBeenSet = false;
 
   ContainerConfig m_containerConfig;
+  bool m_fileSystemConfigHasBeenSet = false;
   bool m_containerConfigHasBeenSet = false;
 };
 

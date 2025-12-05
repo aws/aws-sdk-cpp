@@ -126,15 +126,15 @@ class EffectivePreferredResource {
   ///@}
  private:
   PreferredResourceName m_name{PreferredResourceName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_includeList;
-  bool m_includeListHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_effectiveIncludeList;
-  bool m_effectiveIncludeListHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_excludeList;
+  bool m_nameHasBeenSet = false;
+  bool m_includeListHasBeenSet = false;
+  bool m_effectiveIncludeListHasBeenSet = false;
   bool m_excludeListHasBeenSet = false;
 };
 

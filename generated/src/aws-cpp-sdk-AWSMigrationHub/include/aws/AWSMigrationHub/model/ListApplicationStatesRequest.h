@@ -93,12 +93,12 @@ class ListApplicationStatesRequest : public MigrationHubRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_applicationIds;
-  bool m_applicationIdsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_applicationIdsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

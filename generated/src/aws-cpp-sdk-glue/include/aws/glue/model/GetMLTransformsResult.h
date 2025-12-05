@@ -84,12 +84,12 @@ class GetMLTransformsResult {
   ///@}
  private:
   Aws::Vector<MLTransform> m_transforms;
-  bool m_transformsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_transformsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

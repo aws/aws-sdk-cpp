@@ -129,18 +129,18 @@ class SendChatIntegrationEventRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_sourceId;
-  bool m_sourceIdHasBeenSet = false;
 
   Aws::String m_destinationId;
-  bool m_destinationIdHasBeenSet = false;
 
   Aws::String m_subtype;
-  bool m_subtypeHasBeenSet = false;
 
   ChatEvent m_event;
-  bool m_eventHasBeenSet = false;
 
   NewSessionDetails m_newSessionDetails;
+  bool m_sourceIdHasBeenSet = false;
+  bool m_destinationIdHasBeenSet = false;
+  bool m_subtypeHasBeenSet = false;
+  bool m_eventHasBeenSet = false;
   bool m_newSessionDetailsHasBeenSet = false;
 };
 

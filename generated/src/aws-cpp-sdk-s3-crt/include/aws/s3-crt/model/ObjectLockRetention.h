@@ -67,9 +67,9 @@ class ObjectLockRetention {
   ///@}
  private:
   ObjectLockRetentionMode m_mode{ObjectLockRetentionMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   Aws::Utils::DateTime m_retainUntilDate{};
+  bool m_modeHasBeenSet = false;
   bool m_retainUntilDateHasBeenSet = false;
 };
 

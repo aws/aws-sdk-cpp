@@ -61,9 +61,9 @@ class GetMetricWidgetImageResult {
   ///@}
  private:
   Aws::Utils::ByteBuffer m_metricWidgetImage{};
-  bool m_metricWidgetImageHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_metricWidgetImageHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

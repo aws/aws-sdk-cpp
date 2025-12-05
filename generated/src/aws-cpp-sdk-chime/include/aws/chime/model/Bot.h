@@ -194,30 +194,30 @@ class Bot {
   ///@}
  private:
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   BotType m_botType{BotType::NOT_SET};
-  bool m_botTypeHasBeenSet = false;
 
   bool m_disabled{false};
-  bool m_disabledHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedTimestamp{};
-  bool m_updatedTimestampHasBeenSet = false;
 
   Aws::String m_botEmail;
-  bool m_botEmailHasBeenSet = false;
 
   Aws::String m_securityToken;
+  bool m_botIdHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_botTypeHasBeenSet = false;
+  bool m_disabledHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_updatedTimestampHasBeenSet = false;
+  bool m_botEmailHasBeenSet = false;
   bool m_securityTokenHasBeenSet = false;
 };
 

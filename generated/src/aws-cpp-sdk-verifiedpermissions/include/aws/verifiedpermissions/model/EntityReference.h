@@ -74,9 +74,9 @@ class EntityReference {
   ///@}
  private:
   bool m_unspecified{false};
-  bool m_unspecifiedHasBeenSet = false;
 
   EntityIdentifier m_identifier;
+  bool m_unspecifiedHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
 };
 

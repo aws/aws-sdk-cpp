@@ -207,33 +207,33 @@ class DescribeExplainabilityExportResult {
   ///@}
  private:
   Aws::String m_explainabilityExportArn;
-  bool m_explainabilityExportArnHasBeenSet = false;
 
   Aws::String m_explainabilityExportName;
-  bool m_explainabilityExportNameHasBeenSet = false;
 
   Aws::String m_explainabilityArn;
-  bool m_explainabilityArnHasBeenSet = false;
 
   DataDestination m_destination;
-  bool m_destinationHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModificationTime{};
-  bool m_lastModificationTimeHasBeenSet = false;
 
   Aws::String m_format;
-  bool m_formatHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_explainabilityExportArnHasBeenSet = false;
+  bool m_explainabilityExportNameHasBeenSet = false;
+  bool m_explainabilityArnHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModificationTimeHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

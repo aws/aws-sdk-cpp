@@ -157,24 +157,24 @@ class DeploymentSummary {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   int m_applicationVersion{0};
-  bool m_applicationVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_deploymentId;
-  bool m_deploymentIdHasBeenSet = false;
 
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   DeploymentLifecycle m_status{DeploymentLifecycle::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_applicationVersionHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_deploymentIdHasBeenSet = false;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
 };
 

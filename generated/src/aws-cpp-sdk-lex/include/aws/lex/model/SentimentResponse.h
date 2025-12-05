@@ -71,9 +71,9 @@ class SentimentResponse {
   ///@}
  private:
   Aws::String m_sentimentLabel;
-  bool m_sentimentLabelHasBeenSet = false;
 
   Aws::String m_sentimentScore;
+  bool m_sentimentLabelHasBeenSet = false;
   bool m_sentimentScoreHasBeenSet = false;
 };
 

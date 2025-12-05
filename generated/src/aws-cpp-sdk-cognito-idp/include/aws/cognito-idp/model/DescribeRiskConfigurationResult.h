@@ -61,9 +61,9 @@ class DescribeRiskConfigurationResult {
   ///@}
  private:
   RiskConfigurationType m_riskConfiguration;
-  bool m_riskConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_riskConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

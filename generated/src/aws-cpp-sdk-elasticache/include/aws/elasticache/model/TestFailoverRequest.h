@@ -72,9 +72,9 @@ class TestFailoverRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_replicationGroupId;
-  bool m_replicationGroupIdHasBeenSet = false;
 
   Aws::String m_nodeGroupId;
+  bool m_replicationGroupIdHasBeenSet = false;
   bool m_nodeGroupIdHasBeenSet = false;
 };
 

@@ -114,15 +114,15 @@ class FirewallConfig {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   FirewallFailOpenStatus m_firewallFailOpen{FirewallFailOpenStatus::NOT_SET};
+  bool m_idHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
   bool m_firewallFailOpenHasBeenSet = false;
 };
 

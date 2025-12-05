@@ -89,12 +89,12 @@ class OpenZFSPosixFileSystemUser {
   ///@}
  private:
   long long m_uid{0};
-  bool m_uidHasBeenSet = false;
 
   long long m_gid{0};
-  bool m_gidHasBeenSet = false;
 
   Aws::Vector<long long> m_secondaryGids;
+  bool m_uidHasBeenSet = false;
+  bool m_gidHasBeenSet = false;
   bool m_secondaryGidsHasBeenSet = false;
 };
 

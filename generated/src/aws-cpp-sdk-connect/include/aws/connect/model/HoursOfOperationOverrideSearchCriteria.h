@@ -119,15 +119,15 @@ class HoursOfOperationOverrideSearchCriteria {
   ///@}
  private:
   Aws::Vector<HoursOfOperationOverrideSearchCriteria> m_orConditions;
-  bool m_orConditionsHasBeenSet = false;
 
   Aws::Vector<HoursOfOperationOverrideSearchCriteria> m_andConditions;
-  bool m_andConditionsHasBeenSet = false;
 
   StringCondition m_stringCondition;
-  bool m_stringConditionHasBeenSet = false;
 
   DateCondition m_dateCondition;
+  bool m_orConditionsHasBeenSet = false;
+  bool m_andConditionsHasBeenSet = false;
+  bool m_stringConditionHasBeenSet = false;
   bool m_dateConditionHasBeenSet = false;
 };
 

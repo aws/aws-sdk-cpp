@@ -158,24 +158,24 @@ class ListFHIRImportJobsRequest : public HealthLakeRequest {
   ///@}
  private:
   Aws::String m_datastoreId;
-  bool m_datastoreIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   JobStatus m_jobStatus{JobStatus::NOT_SET};
-  bool m_jobStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_submittedBefore{};
-  bool m_submittedBeforeHasBeenSet = false;
 
   Aws::Utils::DateTime m_submittedAfter{};
+  bool m_datastoreIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_jobNameHasBeenSet = false;
+  bool m_jobStatusHasBeenSet = false;
+  bool m_submittedBeforeHasBeenSet = false;
   bool m_submittedAfterHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class GetFindingsStatisticsResult {
   ///@}
  private:
   Aws::Vector<FindingsStatistics> m_findingsStatistics;
-  bool m_findingsStatisticsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_findingsStatisticsHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

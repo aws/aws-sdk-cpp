@@ -179,27 +179,27 @@ class NetworkSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Framework m_framework{Framework::NOT_SET};
-  bool m_frameworkHasBeenSet = false;
 
   Aws::String m_frameworkVersion;
-  bool m_frameworkVersionHasBeenSet = false;
 
   NetworkStatus m_status{NetworkStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_arn;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_frameworkHasBeenSet = false;
+  bool m_frameworkVersionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
   bool m_arnHasBeenSet = false;
 };
 

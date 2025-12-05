@@ -218,30 +218,30 @@ class CreateFaqRequest : public KendraRequest {
   ///@}
  private:
   Aws::String m_indexId;
-  bool m_indexIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   S3Path m_s3Path;
-  bool m_s3PathHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   FaqFileFormat m_fileFormat{FaqFileFormat::NOT_SET};
-  bool m_fileFormatHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_languageCode;
+  bool m_indexIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_s3PathHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_fileFormatHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_languageCodeHasBeenSet = false;
 };
 

@@ -123,18 +123,18 @@ class ListExtensionAssociationsRequest : public AppConfigRequest {
   ///@}
  private:
   Aws::String m_resourceIdentifier;
-  bool m_resourceIdentifierHasBeenSet = false;
 
   Aws::String m_extensionIdentifier;
-  bool m_extensionIdentifierHasBeenSet = false;
 
   int m_extensionVersionNumber{0};
-  bool m_extensionVersionNumberHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_resourceIdentifierHasBeenSet = false;
+  bool m_extensionIdentifierHasBeenSet = false;
+  bool m_extensionVersionNumberHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

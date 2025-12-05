@@ -113,18 +113,18 @@ class LteNmrObj {
   ///@}
  private:
   int m_pci{0};
-  bool m_pciHasBeenSet = false;
 
   int m_earfcn{0};
-  bool m_earfcnHasBeenSet = false;
 
   int m_eutranCid{0};
-  bool m_eutranCidHasBeenSet = false;
 
   int m_rsrp{0};
-  bool m_rsrpHasBeenSet = false;
 
   double m_rsrq{0.0};
+  bool m_pciHasBeenSet = false;
+  bool m_earfcnHasBeenSet = false;
+  bool m_eutranCidHasBeenSet = false;
+  bool m_rsrpHasBeenSet = false;
   bool m_rsrqHasBeenSet = false;
 };
 

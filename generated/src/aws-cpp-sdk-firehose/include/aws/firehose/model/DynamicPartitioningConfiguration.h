@@ -71,9 +71,9 @@ class DynamicPartitioningConfiguration {
   ///@}
  private:
   RetryOptions m_retryOptions;
-  bool m_retryOptionsHasBeenSet = false;
 
   bool m_enabled{false};
+  bool m_retryOptionsHasBeenSet = false;
   bool m_enabledHasBeenSet = false;
 };
 

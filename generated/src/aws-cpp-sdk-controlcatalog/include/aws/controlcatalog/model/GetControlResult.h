@@ -263,39 +263,39 @@ class GetControlResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_aliases;
-  bool m_aliasesHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ControlBehavior m_behavior{ControlBehavior::NOT_SET};
-  bool m_behaviorHasBeenSet = false;
 
   ControlSeverity m_severity{ControlSeverity::NOT_SET};
-  bool m_severityHasBeenSet = false;
 
   RegionConfiguration m_regionConfiguration;
-  bool m_regionConfigurationHasBeenSet = false;
 
   ImplementationDetails m_implementation;
-  bool m_implementationHasBeenSet = false;
 
   Aws::Vector<ControlParameter> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_governedResources;
-  bool m_governedResourcesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_aliasesHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_behaviorHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
+  bool m_regionConfigurationHasBeenSet = false;
+  bool m_implementationHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_governedResourcesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

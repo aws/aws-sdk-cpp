@@ -63,9 +63,9 @@ class CreateIPSetResult {
   ///@}
  private:
   IPSetSummary m_summary;
-  bool m_summaryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_summaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -172,24 +172,24 @@ class UpdateProfileRequest : public RolesAnywhereRequest {
   ///@}
  private:
   bool m_acceptRoleSessionName{false};
-  bool m_acceptRoleSessionNameHasBeenSet = false;
 
   int m_durationSeconds{0};
-  bool m_durationSecondsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_managedPolicyArns;
-  bool m_managedPolicyArnsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_profileId;
-  bool m_profileIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_roleArns;
-  bool m_roleArnsHasBeenSet = false;
 
   Aws::String m_sessionPolicy;
+  bool m_acceptRoleSessionNameHasBeenSet = false;
+  bool m_durationSecondsHasBeenSet = false;
+  bool m_managedPolicyArnsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_profileIdHasBeenSet = false;
+  bool m_roleArnsHasBeenSet = false;
   bool m_sessionPolicyHasBeenSet = false;
 };
 

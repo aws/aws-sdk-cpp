@@ -179,24 +179,24 @@ class DomainValidation {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_validationEmails;
-  bool m_validationEmailsHasBeenSet = false;
 
   Aws::String m_validationDomain;
-  bool m_validationDomainHasBeenSet = false;
 
   DomainStatus m_validationStatus{DomainStatus::NOT_SET};
-  bool m_validationStatusHasBeenSet = false;
 
   ResourceRecord m_resourceRecord;
-  bool m_resourceRecordHasBeenSet = false;
 
   HttpRedirect m_httpRedirect;
-  bool m_httpRedirectHasBeenSet = false;
 
   ValidationMethod m_validationMethod{ValidationMethod::NOT_SET};
+  bool m_domainNameHasBeenSet = false;
+  bool m_validationEmailsHasBeenSet = false;
+  bool m_validationDomainHasBeenSet = false;
+  bool m_validationStatusHasBeenSet = false;
+  bool m_resourceRecordHasBeenSet = false;
+  bool m_httpRedirectHasBeenSet = false;
   bool m_validationMethodHasBeenSet = false;
 };
 

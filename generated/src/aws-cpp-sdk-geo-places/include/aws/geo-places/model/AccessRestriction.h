@@ -75,9 +75,9 @@ class AccessRestriction {
   ///@}
  private:
   bool m_restricted{false};
-  bool m_restrictedHasBeenSet = false;
 
   Aws::Vector<Category> m_categories;
+  bool m_restrictedHasBeenSet = false;
   bool m_categoriesHasBeenSet = false;
 };
 

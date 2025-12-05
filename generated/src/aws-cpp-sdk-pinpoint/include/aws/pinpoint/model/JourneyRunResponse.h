@@ -105,15 +105,15 @@ class JourneyRunResponse {
   ///@}
  private:
   Aws::String m_creationTime;
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_lastUpdateTime;
-  bool m_lastUpdateTimeHasBeenSet = false;
 
   Aws::String m_runId;
-  bool m_runIdHasBeenSet = false;
 
   JourneyRunStatus m_status{JourneyRunStatus::NOT_SET};
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastUpdateTimeHasBeenSet = false;
+  bool m_runIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

@@ -116,18 +116,18 @@ class TrainingJobStatusCounters {
   ///@}
  private:
   int m_completed{0};
-  bool m_completedHasBeenSet = false;
 
   int m_inProgress{0};
-  bool m_inProgressHasBeenSet = false;
 
   int m_retryableError{0};
-  bool m_retryableErrorHasBeenSet = false;
 
   int m_nonRetryableError{0};
-  bool m_nonRetryableErrorHasBeenSet = false;
 
   int m_stopped{0};
+  bool m_completedHasBeenSet = false;
+  bool m_inProgressHasBeenSet = false;
+  bool m_retryableErrorHasBeenSet = false;
+  bool m_nonRetryableErrorHasBeenSet = false;
   bool m_stoppedHasBeenSet = false;
 };
 

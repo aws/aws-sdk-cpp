@@ -85,12 +85,12 @@ class PathComponent {
   ///@}
  private:
   int m_sequence{0};
-  bool m_sequenceHasBeenSet = false;
 
   NetworkResourceSummary m_resource;
-  bool m_resourceHasBeenSet = false;
 
   Aws::String m_destinationCidrBlock;
+  bool m_sequenceHasBeenSet = false;
+  bool m_resourceHasBeenSet = false;
   bool m_destinationCidrBlockHasBeenSet = false;
 };
 

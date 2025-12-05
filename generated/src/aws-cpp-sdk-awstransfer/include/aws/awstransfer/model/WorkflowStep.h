@@ -162,21 +162,21 @@ class WorkflowStep {
   ///@}
  private:
   WorkflowStepType m_type{WorkflowStepType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   CopyStepDetails m_copyStepDetails;
-  bool m_copyStepDetailsHasBeenSet = false;
 
   CustomStepDetails m_customStepDetails;
-  bool m_customStepDetailsHasBeenSet = false;
 
   DeleteStepDetails m_deleteStepDetails;
-  bool m_deleteStepDetailsHasBeenSet = false;
 
   TagStepDetails m_tagStepDetails;
-  bool m_tagStepDetailsHasBeenSet = false;
 
   DecryptStepDetails m_decryptStepDetails;
+  bool m_typeHasBeenSet = false;
+  bool m_copyStepDetailsHasBeenSet = false;
+  bool m_customStepDetailsHasBeenSet = false;
+  bool m_deleteStepDetailsHasBeenSet = false;
+  bool m_tagStepDetailsHasBeenSet = false;
   bool m_decryptStepDetailsHasBeenSet = false;
 };
 

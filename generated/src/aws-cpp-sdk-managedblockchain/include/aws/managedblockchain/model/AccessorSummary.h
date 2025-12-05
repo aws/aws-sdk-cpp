@@ -143,21 +143,21 @@ class AccessorSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   AccessorType m_type{AccessorType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   AccessorStatus m_status{AccessorStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   AccessorNetworkType m_networkType{AccessorNetworkType::NOT_SET};
+  bool m_idHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
   bool m_networkTypeHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class GetAuthorizationTokenResult {
   ///@}
  private:
   AuthorizationData m_authorizationData;
-  bool m_authorizationDataHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_authorizationDataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

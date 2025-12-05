@@ -199,30 +199,30 @@ class ChatSyncResult {
   ///@}
  private:
   Aws::String m_conversationId;
-  bool m_conversationIdHasBeenSet = false;
 
   Aws::String m_systemMessage;
-  bool m_systemMessageHasBeenSet = false;
 
   Aws::String m_systemMessageId;
-  bool m_systemMessageIdHasBeenSet = false;
 
   Aws::String m_userMessageId;
-  bool m_userMessageIdHasBeenSet = false;
 
   ActionReview m_actionReview;
-  bool m_actionReviewHasBeenSet = false;
 
   AuthChallengeRequest m_authChallengeRequest;
-  bool m_authChallengeRequestHasBeenSet = false;
 
   Aws::Vector<SourceAttribution> m_sourceAttributions;
-  bool m_sourceAttributionsHasBeenSet = false;
 
   Aws::Vector<AttachmentOutput> m_failedAttachments;
-  bool m_failedAttachmentsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_conversationIdHasBeenSet = false;
+  bool m_systemMessageHasBeenSet = false;
+  bool m_systemMessageIdHasBeenSet = false;
+  bool m_userMessageIdHasBeenSet = false;
+  bool m_actionReviewHasBeenSet = false;
+  bool m_authChallengeRequestHasBeenSet = false;
+  bool m_sourceAttributionsHasBeenSet = false;
+  bool m_failedAttachmentsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

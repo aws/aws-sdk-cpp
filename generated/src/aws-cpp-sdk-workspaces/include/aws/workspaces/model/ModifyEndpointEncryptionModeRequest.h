@@ -67,9 +67,9 @@ class ModifyEndpointEncryptionModeRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   EndpointEncryptionMode m_endpointEncryptionMode{EndpointEncryptionMode::NOT_SET};
+  bool m_directoryIdHasBeenSet = false;
   bool m_endpointEncryptionModeHasBeenSet = false;
 };
 

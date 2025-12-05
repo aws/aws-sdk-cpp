@@ -88,12 +88,12 @@ class TcpRoute {
   ///@}
  private:
   TcpRouteAction m_action;
-  bool m_actionHasBeenSet = false;
 
   TcpRouteMatch m_match;
-  bool m_matchHasBeenSet = false;
 
   TcpTimeout m_timeout;
+  bool m_actionHasBeenSet = false;
+  bool m_matchHasBeenSet = false;
   bool m_timeoutHasBeenSet = false;
 };
 

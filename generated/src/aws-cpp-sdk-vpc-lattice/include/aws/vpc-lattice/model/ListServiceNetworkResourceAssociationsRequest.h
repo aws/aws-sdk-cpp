@@ -123,18 +123,18 @@ class ListServiceNetworkResourceAssociationsRequest : public VPCLatticeRequest {
   ///@}
  private:
   Aws::String m_serviceNetworkIdentifier;
-  bool m_serviceNetworkIdentifierHasBeenSet = false;
 
   Aws::String m_resourceConfigurationIdentifier;
-  bool m_resourceConfigurationIdentifierHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   bool m_includeChildren{false};
+  bool m_serviceNetworkIdentifierHasBeenSet = false;
+  bool m_resourceConfigurationIdentifierHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_includeChildrenHasBeenSet = false;
 };
 

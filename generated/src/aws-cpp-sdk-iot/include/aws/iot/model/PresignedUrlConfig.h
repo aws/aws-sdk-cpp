@@ -74,9 +74,9 @@ class PresignedUrlConfig {
   ///@}
  private:
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   long long m_expiresInSec{0};
+  bool m_roleArnHasBeenSet = false;
   bool m_expiresInSecHasBeenSet = false;
 };
 

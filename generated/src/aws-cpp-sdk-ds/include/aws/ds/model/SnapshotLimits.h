@@ -78,12 +78,12 @@ class SnapshotLimits {
   ///@}
  private:
   int m_manualSnapshotsLimit{0};
-  bool m_manualSnapshotsLimitHasBeenSet = false;
 
   int m_manualSnapshotsCurrentCount{0};
-  bool m_manualSnapshotsCurrentCountHasBeenSet = false;
 
   bool m_manualSnapshotsLimitReached{false};
+  bool m_manualSnapshotsLimitHasBeenSet = false;
+  bool m_manualSnapshotsCurrentCountHasBeenSet = false;
   bool m_manualSnapshotsLimitReachedHasBeenSet = false;
 };
 

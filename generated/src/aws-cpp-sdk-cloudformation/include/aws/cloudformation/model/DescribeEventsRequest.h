@@ -127,18 +127,18 @@ class DescribeEventsRequest : public CloudFormationRequest {
   ///@}
  private:
   Aws::String m_stackName;
-  bool m_stackNameHasBeenSet = false;
 
   Aws::String m_changeSetName;
-  bool m_changeSetNameHasBeenSet = false;
 
   Aws::String m_operationId;
-  bool m_operationIdHasBeenSet = false;
 
   EventFilter m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_stackNameHasBeenSet = false;
+  bool m_changeSetNameHasBeenSet = false;
+  bool m_operationIdHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

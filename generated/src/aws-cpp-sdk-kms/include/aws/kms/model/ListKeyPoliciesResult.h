@@ -102,15 +102,15 @@ class ListKeyPoliciesResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_policyNames;
-  bool m_policyNamesHasBeenSet = false;
 
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   bool m_truncated{false};
-  bool m_truncatedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyNamesHasBeenSet = false;
+  bool m_nextMarkerHasBeenSet = false;
+  bool m_truncatedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

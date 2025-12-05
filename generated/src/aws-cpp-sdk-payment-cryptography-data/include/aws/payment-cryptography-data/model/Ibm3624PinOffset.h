@@ -109,15 +109,15 @@ class Ibm3624PinOffset {
   ///@}
  private:
   Aws::String m_encryptedPinBlock;
-  bool m_encryptedPinBlockHasBeenSet = false;
 
   Aws::String m_decimalizationTable;
-  bool m_decimalizationTableHasBeenSet = false;
 
   Aws::String m_pinValidationDataPadCharacter;
-  bool m_pinValidationDataPadCharacterHasBeenSet = false;
 
   Aws::String m_pinValidationData;
+  bool m_encryptedPinBlockHasBeenSet = false;
+  bool m_decimalizationTableHasBeenSet = false;
+  bool m_pinValidationDataPadCharacterHasBeenSet = false;
   bool m_pinValidationDataHasBeenSet = false;
 };
 

@@ -255,36 +255,36 @@ class CreateChannelRequest : public IVSRequest {
   ///@}
  private:
   bool m_authorized{false};
-  bool m_authorizedHasBeenSet = false;
 
   ContainerFormat m_containerFormat{ContainerFormat::NOT_SET};
-  bool m_containerFormatHasBeenSet = false;
 
   bool m_insecureIngest{false};
-  bool m_insecureIngestHasBeenSet = false;
 
   ChannelLatencyMode m_latencyMode{ChannelLatencyMode::NOT_SET};
-  bool m_latencyModeHasBeenSet = false;
 
   MultitrackInputConfiguration m_multitrackInputConfiguration;
-  bool m_multitrackInputConfigurationHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_playbackRestrictionPolicyArn;
-  bool m_playbackRestrictionPolicyArnHasBeenSet = false;
 
   TranscodePreset m_preset{TranscodePreset::NOT_SET};
-  bool m_presetHasBeenSet = false;
 
   Aws::String m_recordingConfigurationArn;
-  bool m_recordingConfigurationArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ChannelType m_type{ChannelType::NOT_SET};
+  bool m_authorizedHasBeenSet = false;
+  bool m_containerFormatHasBeenSet = false;
+  bool m_insecureIngestHasBeenSet = false;
+  bool m_latencyModeHasBeenSet = false;
+  bool m_multitrackInputConfigurationHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_playbackRestrictionPolicyArnHasBeenSet = false;
+  bool m_presetHasBeenSet = false;
+  bool m_recordingConfigurationArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

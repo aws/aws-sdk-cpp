@@ -84,9 +84,9 @@ class FlowDefinition {
   ///@}
  private:
   Aws::Vector<FlowNode> m_nodes;
-  bool m_nodesHasBeenSet = false;
 
   Aws::Vector<FlowConnection> m_connections;
+  bool m_nodesHasBeenSet = false;
   bool m_connectionsHasBeenSet = false;
 };
 

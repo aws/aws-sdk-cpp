@@ -182,24 +182,24 @@ class CopyProductRequest : public ServiceCatalogRequest {
   ///@}
  private:
   Aws::String m_acceptLanguage;
-  bool m_acceptLanguageHasBeenSet = false;
 
   Aws::String m_sourceProductArn;
-  bool m_sourceProductArnHasBeenSet = false;
 
   Aws::String m_targetProductId;
-  bool m_targetProductIdHasBeenSet = false;
 
   Aws::String m_targetProductName;
-  bool m_targetProductNameHasBeenSet = false;
 
   Aws::Vector<Aws::Map<ProvisioningArtifactPropertyName, Aws::String>> m_sourceProvisioningArtifactIdentifiers;
-  bool m_sourceProvisioningArtifactIdentifiersHasBeenSet = false;
 
   Aws::Vector<CopyOption> m_copyOptions;
-  bool m_copyOptionsHasBeenSet = false;
 
   Aws::String m_idempotencyToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_acceptLanguageHasBeenSet = false;
+  bool m_sourceProductArnHasBeenSet = false;
+  bool m_targetProductIdHasBeenSet = false;
+  bool m_targetProductNameHasBeenSet = false;
+  bool m_sourceProvisioningArtifactIdentifiersHasBeenSet = false;
+  bool m_copyOptionsHasBeenSet = false;
   bool m_idempotencyTokenHasBeenSet = true;
 };
 

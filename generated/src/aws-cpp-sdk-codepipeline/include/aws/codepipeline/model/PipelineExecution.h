@@ -261,36 +261,36 @@ class PipelineExecution {
   ///@}
  private:
   Aws::String m_pipelineName;
-  bool m_pipelineNameHasBeenSet = false;
 
   int m_pipelineVersion{0};
-  bool m_pipelineVersionHasBeenSet = false;
 
   Aws::String m_pipelineExecutionId;
-  bool m_pipelineExecutionIdHasBeenSet = false;
 
   PipelineExecutionStatus m_status{PipelineExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusSummary;
-  bool m_statusSummaryHasBeenSet = false;
 
   Aws::Vector<ArtifactRevision> m_artifactRevisions;
-  bool m_artifactRevisionsHasBeenSet = false;
 
   Aws::Vector<ResolvedPipelineVariable> m_variables;
-  bool m_variablesHasBeenSet = false;
 
   ExecutionTrigger m_trigger;
-  bool m_triggerHasBeenSet = false;
 
   ExecutionMode m_executionMode{ExecutionMode::NOT_SET};
-  bool m_executionModeHasBeenSet = false;
 
   ExecutionType m_executionType{ExecutionType::NOT_SET};
-  bool m_executionTypeHasBeenSet = false;
 
   PipelineRollbackMetadata m_rollbackMetadata;
+  bool m_pipelineNameHasBeenSet = false;
+  bool m_pipelineVersionHasBeenSet = false;
+  bool m_pipelineExecutionIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusSummaryHasBeenSet = false;
+  bool m_artifactRevisionsHasBeenSet = false;
+  bool m_variablesHasBeenSet = false;
+  bool m_triggerHasBeenSet = false;
+  bool m_executionModeHasBeenSet = false;
+  bool m_executionTypeHasBeenSet = false;
   bool m_rollbackMetadataHasBeenSet = false;
 };
 

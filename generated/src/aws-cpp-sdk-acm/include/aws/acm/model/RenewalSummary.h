@@ -120,15 +120,15 @@ class RenewalSummary {
   ///@}
  private:
   RenewalStatus m_renewalStatus{RenewalStatus::NOT_SET};
-  bool m_renewalStatusHasBeenSet = false;
 
   Aws::Vector<DomainValidation> m_domainValidationOptions;
-  bool m_domainValidationOptionsHasBeenSet = false;
 
   FailureReason m_renewalStatusReason{FailureReason::NOT_SET};
-  bool m_renewalStatusReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_renewalStatusHasBeenSet = false;
+  bool m_domainValidationOptionsHasBeenSet = false;
+  bool m_renewalStatusReasonHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

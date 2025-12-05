@@ -79,9 +79,9 @@ class PutResolverRulePolicyRequest : public Route53ResolverRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_resolverRulePolicy;
+  bool m_arnHasBeenSet = false;
   bool m_resolverRulePolicyHasBeenSet = false;
 };
 

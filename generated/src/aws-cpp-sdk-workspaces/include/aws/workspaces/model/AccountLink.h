@@ -103,15 +103,15 @@ class AccountLink {
   ///@}
  private:
   Aws::String m_accountLinkId;
-  bool m_accountLinkIdHasBeenSet = false;
 
   AccountLinkStatusEnum m_accountLinkStatus{AccountLinkStatusEnum::NOT_SET};
-  bool m_accountLinkStatusHasBeenSet = false;
 
   Aws::String m_sourceAccountId;
-  bool m_sourceAccountIdHasBeenSet = false;
 
   Aws::String m_targetAccountId;
+  bool m_accountLinkIdHasBeenSet = false;
+  bool m_accountLinkStatusHasBeenSet = false;
+  bool m_sourceAccountIdHasBeenSet = false;
   bool m_targetAccountIdHasBeenSet = false;
 };
 

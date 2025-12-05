@@ -86,12 +86,12 @@ class UserPoolClientDescription {
   ///@}
  private:
   Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
 
   Aws::String m_userPoolId;
-  bool m_userPoolIdHasBeenSet = false;
 
   Aws::String m_clientName;
+  bool m_clientIdHasBeenSet = false;
+  bool m_userPoolIdHasBeenSet = false;
   bool m_clientNameHasBeenSet = false;
 };
 

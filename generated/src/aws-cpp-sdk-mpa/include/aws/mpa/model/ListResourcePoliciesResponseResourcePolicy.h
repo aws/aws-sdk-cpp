@@ -85,12 +85,12 @@ class ListResourcePoliciesResponseResourcePolicy {
   ///@}
  private:
   Aws::String m_policyArn;
-  bool m_policyArnHasBeenSet = false;
 
   PolicyType m_policyType{PolicyType::NOT_SET};
-  bool m_policyTypeHasBeenSet = false;
 
   Aws::String m_policyName;
+  bool m_policyArnHasBeenSet = false;
+  bool m_policyTypeHasBeenSet = false;
   bool m_policyNameHasBeenSet = false;
 };
 

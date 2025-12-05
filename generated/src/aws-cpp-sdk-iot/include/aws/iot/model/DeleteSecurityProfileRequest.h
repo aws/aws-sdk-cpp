@@ -71,9 +71,9 @@ class DeleteSecurityProfileRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_securityProfileName;
-  bool m_securityProfileNameHasBeenSet = false;
 
   long long m_expectedVersion{0};
+  bool m_securityProfileNameHasBeenSet = false;
   bool m_expectedVersionHasBeenSet = false;
 };
 

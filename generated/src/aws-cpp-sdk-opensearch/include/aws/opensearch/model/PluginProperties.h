@@ -120,18 +120,18 @@ class PluginProperties {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_className;
-  bool m_classNameHasBeenSet = false;
 
   long long m_uncompressedSizeInBytes{0};
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_classNameHasBeenSet = false;
   bool m_uncompressedSizeInBytesHasBeenSet = false;
 };
 

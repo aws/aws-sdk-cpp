@@ -140,21 +140,21 @@ class LicenseConfigurationUsage {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resourceStatus;
-  bool m_resourceStatusHasBeenSet = false;
 
   Aws::String m_resourceOwnerId;
-  bool m_resourceOwnerIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_associationTime{};
-  bool m_associationTimeHasBeenSet = false;
 
   long long m_consumedLicenses{0};
+  bool m_resourceArnHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceStatusHasBeenSet = false;
+  bool m_resourceOwnerIdHasBeenSet = false;
+  bool m_associationTimeHasBeenSet = false;
   bool m_consumedLicensesHasBeenSet = false;
 };
 

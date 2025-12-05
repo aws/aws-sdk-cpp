@@ -70,9 +70,9 @@ class CancelInstanceRefreshRequest : public AutoScalingRequest {
   ///@}
  private:
   Aws::String m_autoScalingGroupName;
-  bool m_autoScalingGroupNameHasBeenSet = false;
 
   bool m_waitForTransitioningInstances{false};
+  bool m_autoScalingGroupNameHasBeenSet = false;
   bool m_waitForTransitioningInstancesHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class StartSchemaMergeRequest : public AppSyncRequest {
   ///@}
  private:
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   Aws::String m_mergedApiIdentifier;
+  bool m_associationIdHasBeenSet = false;
   bool m_mergedApiIdentifierHasBeenSet = false;
 };
 

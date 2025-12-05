@@ -133,18 +133,18 @@ class CreateRotationOverrideRequest : public SSMContactsRequest {
   ///@}
  private:
   Aws::String m_rotationId;
-  bool m_rotationIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_newContactIds;
-  bool m_newContactIdsHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_idempotencyToken;
+  bool m_rotationIdHasBeenSet = false;
+  bool m_newContactIdsHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
   bool m_idempotencyTokenHasBeenSet = false;
 };
 

@@ -59,9 +59,9 @@ class DeleteTapePoolResult {
   ///@}
  private:
   Aws::String m_poolARN;
-  bool m_poolARNHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_poolARNHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

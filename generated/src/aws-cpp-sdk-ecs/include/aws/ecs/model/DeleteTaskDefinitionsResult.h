@@ -91,12 +91,12 @@ class DeleteTaskDefinitionsResult {
   ///@}
  private:
   Aws::Vector<TaskDefinition> m_taskDefinitions;
-  bool m_taskDefinitionsHasBeenSet = false;
 
   Aws::Vector<Failure> m_failures;
-  bool m_failuresHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_taskDefinitionsHasBeenSet = false;
+  bool m_failuresHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

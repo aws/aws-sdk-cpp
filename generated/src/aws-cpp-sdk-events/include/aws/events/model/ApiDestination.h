@@ -192,30 +192,30 @@ class ApiDestination {
   ///@}
  private:
   Aws::String m_apiDestinationArn;
-  bool m_apiDestinationArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ApiDestinationState m_apiDestinationState{ApiDestinationState::NOT_SET};
-  bool m_apiDestinationStateHasBeenSet = false;
 
   Aws::String m_connectionArn;
-  bool m_connectionArnHasBeenSet = false;
 
   Aws::String m_invocationEndpoint;
-  bool m_invocationEndpointHasBeenSet = false;
 
   ApiDestinationHttpMethod m_httpMethod{ApiDestinationHttpMethod::NOT_SET};
-  bool m_httpMethodHasBeenSet = false;
 
   int m_invocationRateLimitPerSecond{0};
-  bool m_invocationRateLimitPerSecondHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
+  bool m_apiDestinationArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_apiDestinationStateHasBeenSet = false;
+  bool m_connectionArnHasBeenSet = false;
+  bool m_invocationEndpointHasBeenSet = false;
+  bool m_httpMethodHasBeenSet = false;
+  bool m_invocationRateLimitPerSecondHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
 };
 

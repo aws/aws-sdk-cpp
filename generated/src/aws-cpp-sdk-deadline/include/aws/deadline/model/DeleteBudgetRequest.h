@@ -65,9 +65,9 @@ class DeleteBudgetRequest : public DeadlineRequest {
   ///@}
  private:
   Aws::String m_farmId;
-  bool m_farmIdHasBeenSet = false;
 
   Aws::String m_budgetId;
+  bool m_farmIdHasBeenSet = false;
   bool m_budgetIdHasBeenSet = false;
 };
 

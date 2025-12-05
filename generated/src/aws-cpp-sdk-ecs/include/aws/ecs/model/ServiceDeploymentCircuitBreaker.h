@@ -95,12 +95,12 @@ class ServiceDeploymentCircuitBreaker {
   ///@}
  private:
   ServiceDeploymentRollbackMonitorsStatus m_status{ServiceDeploymentRollbackMonitorsStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   int m_failureCount{0};
-  bool m_failureCountHasBeenSet = false;
 
   int m_threshold{0};
+  bool m_statusHasBeenSet = false;
+  bool m_failureCountHasBeenSet = false;
   bool m_thresholdHasBeenSet = false;
 };
 

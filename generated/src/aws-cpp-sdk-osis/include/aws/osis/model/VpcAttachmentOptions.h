@@ -67,9 +67,9 @@ class VpcAttachmentOptions {
   ///@}
  private:
   bool m_attachToVpc{false};
-  bool m_attachToVpcHasBeenSet = false;
 
   Aws::String m_cidrBlock;
+  bool m_attachToVpcHasBeenSet = false;
   bool m_cidrBlockHasBeenSet = false;
 };
 

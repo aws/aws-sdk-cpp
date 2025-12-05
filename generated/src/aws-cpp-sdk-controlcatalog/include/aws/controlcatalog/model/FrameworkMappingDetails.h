@@ -71,9 +71,9 @@ class FrameworkMappingDetails {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_item;
+  bool m_nameHasBeenSet = false;
   bool m_itemHasBeenSet = false;
 };
 

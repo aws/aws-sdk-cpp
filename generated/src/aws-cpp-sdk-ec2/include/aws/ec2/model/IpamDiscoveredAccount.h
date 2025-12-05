@@ -149,21 +149,21 @@ class IpamDiscoveredAccount {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_discoveryRegion;
-  bool m_discoveryRegionHasBeenSet = false;
 
   IpamDiscoveryFailureReason m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastAttemptedDiscoveryTime{};
-  bool m_lastAttemptedDiscoveryTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastSuccessfulDiscoveryTime{};
-  bool m_lastSuccessfulDiscoveryTimeHasBeenSet = false;
 
   Aws::String m_organizationalUnitId;
+  bool m_accountIdHasBeenSet = false;
+  bool m_discoveryRegionHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_lastAttemptedDiscoveryTimeHasBeenSet = false;
+  bool m_lastSuccessfulDiscoveryTimeHasBeenSet = false;
   bool m_organizationalUnitIdHasBeenSet = false;
 };
 

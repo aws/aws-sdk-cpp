@@ -122,18 +122,18 @@ class LayerVersionContentOutput {
   ///@}
  private:
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::String m_codeSha256;
-  bool m_codeSha256HasBeenSet = false;
 
   long long m_codeSize{0};
-  bool m_codeSizeHasBeenSet = false;
 
   Aws::String m_signingProfileVersionArn;
-  bool m_signingProfileVersionArnHasBeenSet = false;
 
   Aws::String m_signingJobArn;
+  bool m_locationHasBeenSet = false;
+  bool m_codeSha256HasBeenSet = false;
+  bool m_codeSizeHasBeenSet = false;
+  bool m_signingProfileVersionArnHasBeenSet = false;
   bool m_signingJobArnHasBeenSet = false;
 };
 

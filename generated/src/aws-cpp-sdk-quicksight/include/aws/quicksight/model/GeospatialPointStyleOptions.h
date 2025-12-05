@@ -86,12 +86,12 @@ class GeospatialPointStyleOptions {
   ///@}
  private:
   GeospatialSelectedPointStyle m_selectedPointStyle{GeospatialSelectedPointStyle::NOT_SET};
-  bool m_selectedPointStyleHasBeenSet = false;
 
   ClusterMarkerConfiguration m_clusterMarkerConfiguration;
-  bool m_clusterMarkerConfigurationHasBeenSet = false;
 
   GeospatialHeatmapConfiguration m_heatmapConfiguration;
+  bool m_selectedPointStyleHasBeenSet = false;
+  bool m_clusterMarkerConfigurationHasBeenSet = false;
   bool m_heatmapConfigurationHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class SageMakerSavingsPlans {
   ///@}
  private:
   SageMakerSavingsPlansConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   SavingsPlansCostCalculation m_costCalculation;
+  bool m_configurationHasBeenSet = false;
   bool m_costCalculationHasBeenSet = false;
 };
 

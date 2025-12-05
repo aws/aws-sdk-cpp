@@ -130,18 +130,18 @@ class PostLaunchActions {
   ///@}
  private:
   Aws::String m_cloudWatchLogGroupName;
-  bool m_cloudWatchLogGroupNameHasBeenSet = false;
 
   PostLaunchActionsDeploymentType m_deployment{PostLaunchActionsDeploymentType::NOT_SET};
-  bool m_deploymentHasBeenSet = false;
 
   Aws::String m_s3LogBucket;
-  bool m_s3LogBucketHasBeenSet = false;
 
   Aws::String m_s3OutputKeyPrefix;
-  bool m_s3OutputKeyPrefixHasBeenSet = false;
 
   Aws::Vector<SsmDocument> m_ssmDocuments;
+  bool m_cloudWatchLogGroupNameHasBeenSet = false;
+  bool m_deploymentHasBeenSet = false;
+  bool m_s3LogBucketHasBeenSet = false;
+  bool m_s3OutputKeyPrefixHasBeenSet = false;
   bool m_ssmDocumentsHasBeenSet = false;
 };
 

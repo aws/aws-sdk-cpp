@@ -224,30 +224,30 @@ class AssetListing {
   ///@}
  private:
   Aws::String m_assetId;
-  bool m_assetIdHasBeenSet = false;
 
   Aws::String m_assetRevision;
-  bool m_assetRevisionHasBeenSet = false;
 
   Aws::String m_assetType;
-  bool m_assetTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_forms;
-  bool m_formsHasBeenSet = false;
 
   Aws::Vector<DetailedGlossaryTerm> m_glossaryTerms;
-  bool m_glossaryTermsHasBeenSet = false;
 
   Aws::Vector<DetailedGlossaryTerm> m_governedGlossaryTerms;
-  bool m_governedGlossaryTermsHasBeenSet = false;
 
   Aws::Vector<TimeSeriesDataPointSummaryFormOutput> m_latestTimeSeriesDataPointForms;
-  bool m_latestTimeSeriesDataPointFormsHasBeenSet = false;
 
   Aws::String m_owningProjectId;
+  bool m_assetIdHasBeenSet = false;
+  bool m_assetRevisionHasBeenSet = false;
+  bool m_assetTypeHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_formsHasBeenSet = false;
+  bool m_glossaryTermsHasBeenSet = false;
+  bool m_governedGlossaryTermsHasBeenSet = false;
+  bool m_latestTimeSeriesDataPointFormsHasBeenSet = false;
   bool m_owningProjectIdHasBeenSet = false;
 };
 

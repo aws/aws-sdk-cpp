@@ -214,33 +214,33 @@ class ListSolFunctionPackageInfo {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   ListSolFunctionPackageMetadata m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   OnboardingState m_onboardingState{OnboardingState::NOT_SET};
-  bool m_onboardingStateHasBeenSet = false;
 
   OperationalState m_operationalState{OperationalState::NOT_SET};
-  bool m_operationalStateHasBeenSet = false;
 
   UsageState m_usageState{UsageState::NOT_SET};
-  bool m_usageStateHasBeenSet = false;
 
   Aws::String m_vnfProductName;
-  bool m_vnfProductNameHasBeenSet = false;
 
   Aws::String m_vnfProvider;
-  bool m_vnfProviderHasBeenSet = false;
 
   Aws::String m_vnfdId;
-  bool m_vnfdIdHasBeenSet = false;
 
   Aws::String m_vnfdVersion;
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_onboardingStateHasBeenSet = false;
+  bool m_operationalStateHasBeenSet = false;
+  bool m_usageStateHasBeenSet = false;
+  bool m_vnfProductNameHasBeenSet = false;
+  bool m_vnfProviderHasBeenSet = false;
+  bool m_vnfdIdHasBeenSet = false;
   bool m_vnfdVersionHasBeenSet = false;
 };
 

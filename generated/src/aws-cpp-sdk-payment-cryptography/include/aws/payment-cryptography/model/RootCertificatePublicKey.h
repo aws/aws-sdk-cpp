@@ -72,9 +72,9 @@ class RootCertificatePublicKey {
   ///@}
  private:
   KeyAttributes m_keyAttributes;
-  bool m_keyAttributesHasBeenSet = false;
 
   Aws::String m_publicKeyCertificate;
+  bool m_keyAttributesHasBeenSet = false;
   bool m_publicKeyCertificateHasBeenSet = false;
 };
 

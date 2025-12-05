@@ -83,12 +83,12 @@ class DescribeSubscriptionFiltersResult {
   ///@}
  private:
   Aws::Vector<SubscriptionFilter> m_subscriptionFilters;
-  bool m_subscriptionFiltersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_subscriptionFiltersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

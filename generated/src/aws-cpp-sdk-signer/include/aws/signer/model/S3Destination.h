@@ -70,9 +70,9 @@ class S3Destination {
   ///@}
  private:
   Aws::String m_bucketName;
-  bool m_bucketNameHasBeenSet = false;
 
   Aws::String m_prefix;
+  bool m_bucketNameHasBeenSet = false;
   bool m_prefixHasBeenSet = false;
 };
 

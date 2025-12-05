@@ -99,15 +99,15 @@ class UpdateGeofenceCollectionResult {
   ///@}
  private:
   Aws::String m_collectionName;
-  bool m_collectionNameHasBeenSet = false;
 
   Aws::String m_collectionArn;
-  bool m_collectionArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_collectionNameHasBeenSet = false;
+  bool m_collectionArnHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

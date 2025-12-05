@@ -213,33 +213,33 @@ class AgentCollaborator {
   ///@}
  private:
   Aws::String m_agentId;
-  bool m_agentIdHasBeenSet = false;
 
   Aws::String m_agentVersion;
-  bool m_agentVersionHasBeenSet = false;
 
   AgentDescriptor m_agentDescriptor;
-  bool m_agentDescriptorHasBeenSet = false;
 
   Aws::String m_collaboratorId;
-  bool m_collaboratorIdHasBeenSet = false;
 
   Aws::String m_collaborationInstruction;
-  bool m_collaborationInstructionHasBeenSet = false;
 
   Aws::String m_collaboratorName;
-  bool m_collaboratorNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   RelayConversationHistory m_relayConversationHistory{RelayConversationHistory::NOT_SET};
-  bool m_relayConversationHistoryHasBeenSet = false;
 
   Aws::String m_clientToken;
+  bool m_agentIdHasBeenSet = false;
+  bool m_agentVersionHasBeenSet = false;
+  bool m_agentDescriptorHasBeenSet = false;
+  bool m_collaboratorIdHasBeenSet = false;
+  bool m_collaborationInstructionHasBeenSet = false;
+  bool m_collaboratorNameHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_relayConversationHistoryHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
 };
 

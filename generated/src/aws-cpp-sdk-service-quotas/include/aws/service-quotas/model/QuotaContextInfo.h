@@ -103,12 +103,12 @@ class QuotaContextInfo {
   ///@}
  private:
   QuotaContextScope m_contextScope{QuotaContextScope::NOT_SET};
-  bool m_contextScopeHasBeenSet = false;
 
   Aws::String m_contextScopeType;
-  bool m_contextScopeTypeHasBeenSet = false;
 
   Aws::String m_contextId;
+  bool m_contextScopeHasBeenSet = false;
+  bool m_contextScopeTypeHasBeenSet = false;
   bool m_contextIdHasBeenSet = false;
 };
 

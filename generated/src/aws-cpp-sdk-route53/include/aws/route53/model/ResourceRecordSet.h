@@ -610,48 +610,48 @@ class ResourceRecordSet {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   RRType m_type{RRType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_setIdentifier;
-  bool m_setIdentifierHasBeenSet = false;
 
   long long m_weight{0};
-  bool m_weightHasBeenSet = false;
 
   ResourceRecordSetRegion m_region{ResourceRecordSetRegion::NOT_SET};
-  bool m_regionHasBeenSet = false;
 
   GeoLocation m_geoLocation;
-  bool m_geoLocationHasBeenSet = false;
 
   ResourceRecordSetFailover m_failover{ResourceRecordSetFailover::NOT_SET};
-  bool m_failoverHasBeenSet = false;
 
   bool m_multiValueAnswer{false};
-  bool m_multiValueAnswerHasBeenSet = false;
 
   long long m_tTL{0};
-  bool m_tTLHasBeenSet = false;
 
   Aws::Vector<ResourceRecord> m_resourceRecords;
-  bool m_resourceRecordsHasBeenSet = false;
 
   AliasTarget m_aliasTarget;
-  bool m_aliasTargetHasBeenSet = false;
 
   Aws::String m_healthCheckId;
-  bool m_healthCheckIdHasBeenSet = false;
 
   Aws::String m_trafficPolicyInstanceId;
-  bool m_trafficPolicyInstanceIdHasBeenSet = false;
 
   CidrRoutingConfig m_cidrRoutingConfig;
-  bool m_cidrRoutingConfigHasBeenSet = false;
 
   GeoProximityLocation m_geoProximityLocation;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_setIdentifierHasBeenSet = false;
+  bool m_weightHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_geoLocationHasBeenSet = false;
+  bool m_failoverHasBeenSet = false;
+  bool m_multiValueAnswerHasBeenSet = false;
+  bool m_tTLHasBeenSet = false;
+  bool m_resourceRecordsHasBeenSet = false;
+  bool m_aliasTargetHasBeenSet = false;
+  bool m_healthCheckIdHasBeenSet = false;
+  bool m_trafficPolicyInstanceIdHasBeenSet = false;
+  bool m_cidrRoutingConfigHasBeenSet = false;
   bool m_geoProximityLocationHasBeenSet = false;
 };
 

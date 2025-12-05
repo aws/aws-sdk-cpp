@@ -177,24 +177,24 @@ class ECSTarget {
   ///@}
  private:
   Aws::String m_deploymentId;
-  bool m_deploymentIdHasBeenSet = false;
 
   Aws::String m_targetId;
-  bool m_targetIdHasBeenSet = false;
 
   Aws::String m_targetArn;
-  bool m_targetArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::Vector<LifecycleEvent> m_lifecycleEvents;
-  bool m_lifecycleEventsHasBeenSet = false;
 
   TargetStatus m_status{TargetStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<ECSTaskSet> m_taskSetsInfo;
+  bool m_deploymentIdHasBeenSet = false;
+  bool m_targetIdHasBeenSet = false;
+  bool m_targetArnHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_lifecycleEventsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_taskSetsInfoHasBeenSet = false;
 };
 

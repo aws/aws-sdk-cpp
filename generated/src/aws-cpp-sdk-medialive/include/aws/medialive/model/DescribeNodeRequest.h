@@ -68,9 +68,9 @@ class DescribeNodeRequest : public MediaLiveRequest {
   ///@}
  private:
   Aws::String m_clusterId;
-  bool m_clusterIdHasBeenSet = false;
 
   Aws::String m_nodeId;
+  bool m_clusterIdHasBeenSet = false;
   bool m_nodeIdHasBeenSet = false;
 };
 

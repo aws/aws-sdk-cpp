@@ -69,9 +69,9 @@ class ListTagSyncTasksFilter {
   ///@}
  private:
   Aws::String m_groupArn;
-  bool m_groupArnHasBeenSet = false;
 
   Aws::String m_groupName;
+  bool m_groupArnHasBeenSet = false;
   bool m_groupNameHasBeenSet = false;
 };
 

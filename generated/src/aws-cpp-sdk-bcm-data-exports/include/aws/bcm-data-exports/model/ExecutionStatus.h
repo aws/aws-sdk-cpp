@@ -120,18 +120,18 @@ class ExecutionStatus {
   ///@}
  private:
   Aws::Utils::DateTime m_completedAt{};
-  bool m_completedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   ExecutionStatusCode m_statusCode{ExecutionStatusCode::NOT_SET};
-  bool m_statusCodeHasBeenSet = false;
 
   ExecutionStatusReason m_statusReason{ExecutionStatusReason::NOT_SET};
+  bool m_completedAtHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_statusCodeHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
 };
 

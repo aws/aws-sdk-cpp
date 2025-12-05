@@ -68,9 +68,9 @@ class StartFlywheelIterationRequest : public ComprehendRequest {
   ///@}
  private:
   Aws::String m_flywheelArn;
-  bool m_flywheelArnHasBeenSet = false;
 
   Aws::String m_clientRequestToken;
+  bool m_flywheelArnHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = false;
 };
 

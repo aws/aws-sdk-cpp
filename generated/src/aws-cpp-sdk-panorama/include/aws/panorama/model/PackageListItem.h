@@ -130,18 +130,18 @@ class PackageListItem {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_packageId;
-  bool m_packageIdHasBeenSet = false;
 
   Aws::String m_packageName;
-  bool m_packageNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_arnHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_packageIdHasBeenSet = false;
+  bool m_packageNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

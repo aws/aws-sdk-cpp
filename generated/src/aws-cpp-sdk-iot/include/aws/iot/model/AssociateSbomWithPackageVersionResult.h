@@ -110,18 +110,18 @@ class AssociateSbomWithPackageVersionResult {
   ///@}
  private:
   Aws::String m_packageName;
-  bool m_packageNameHasBeenSet = false;
 
   Aws::String m_versionName;
-  bool m_versionNameHasBeenSet = false;
 
   Sbom m_sbom;
-  bool m_sbomHasBeenSet = false;
 
   SbomValidationStatus m_sbomValidationStatus{SbomValidationStatus::NOT_SET};
-  bool m_sbomValidationStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_packageNameHasBeenSet = false;
+  bool m_versionNameHasBeenSet = false;
+  bool m_sbomHasBeenSet = false;
+  bool m_sbomValidationStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -123,18 +123,18 @@ class DescribeCapacityBlockExtensionOfferingsRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   int m_capacityBlockExtensionDurationHours{0};
-  bool m_capacityBlockExtensionDurationHoursHasBeenSet = false;
 
   Aws::String m_capacityReservationId;
-  bool m_capacityReservationIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_dryRunHasBeenSet = false;
+  bool m_capacityBlockExtensionDurationHoursHasBeenSet = false;
+  bool m_capacityReservationIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

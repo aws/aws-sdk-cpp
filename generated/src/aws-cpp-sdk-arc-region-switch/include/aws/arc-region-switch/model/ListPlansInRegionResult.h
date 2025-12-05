@@ -88,12 +88,12 @@ class ListPlansInRegionResult {
   ///@}
  private:
   Aws::Vector<AbbreviatedPlan> m_plans;
-  bool m_plansHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_plansHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

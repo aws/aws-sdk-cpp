@@ -69,9 +69,9 @@ class DuplicateRequest {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_requestIdHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

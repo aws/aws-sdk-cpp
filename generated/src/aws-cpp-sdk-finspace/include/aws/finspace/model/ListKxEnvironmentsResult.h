@@ -84,12 +84,12 @@ class ListKxEnvironmentsResult {
   ///@}
  private:
   Aws::Vector<KxEnvironment> m_environments;
-  bool m_environmentsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_environmentsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

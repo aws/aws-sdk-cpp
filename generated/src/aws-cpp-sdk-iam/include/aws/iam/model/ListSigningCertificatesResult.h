@@ -115,15 +115,15 @@ class ListSigningCertificatesResult {
   ///@}
  private:
   Aws::Vector<SigningCertificate> m_certificates;
-  bool m_certificatesHasBeenSet = false;
 
   bool m_isTruncated{false};
-  bool m_isTruncatedHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_certificatesHasBeenSet = false;
+  bool m_isTruncatedHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

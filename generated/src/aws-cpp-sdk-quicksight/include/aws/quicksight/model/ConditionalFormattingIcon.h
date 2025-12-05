@@ -69,9 +69,9 @@ class ConditionalFormattingIcon {
   ///@}
  private:
   ConditionalFormattingIconSet m_iconSet;
-  bool m_iconSetHasBeenSet = false;
 
   ConditionalFormattingCustomIconCondition m_customCondition;
+  bool m_iconSetHasBeenSet = false;
   bool m_customConditionHasBeenSet = false;
 };
 

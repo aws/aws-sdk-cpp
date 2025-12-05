@@ -83,9 +83,9 @@ class IpRange {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_cidrIp;
+  bool m_descriptionHasBeenSet = false;
   bool m_cidrIpHasBeenSet = false;
 };
 

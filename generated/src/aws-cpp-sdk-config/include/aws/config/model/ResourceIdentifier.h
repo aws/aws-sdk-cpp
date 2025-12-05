@@ -106,15 +106,15 @@ class ResourceIdentifier {
   ///@}
  private:
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_resourceName;
-  bool m_resourceNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_resourceDeletionTime{};
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_resourceNameHasBeenSet = false;
   bool m_resourceDeletionTimeHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class ListBridgesResult {
   ///@}
  private:
   Aws::Vector<ListedBridge> m_bridges;
-  bool m_bridgesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_bridgesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -154,18 +154,18 @@ class ApplicationUpdate {
   ///@}
  private:
   Aws::Vector<InputUpdate> m_inputUpdates;
-  bool m_inputUpdatesHasBeenSet = false;
 
   Aws::String m_applicationCodeUpdate;
-  bool m_applicationCodeUpdateHasBeenSet = false;
 
   Aws::Vector<OutputUpdate> m_outputUpdates;
-  bool m_outputUpdatesHasBeenSet = false;
 
   Aws::Vector<ReferenceDataSourceUpdate> m_referenceDataSourceUpdates;
-  bool m_referenceDataSourceUpdatesHasBeenSet = false;
 
   Aws::Vector<CloudWatchLoggingOptionUpdate> m_cloudWatchLoggingOptionUpdates;
+  bool m_inputUpdatesHasBeenSet = false;
+  bool m_applicationCodeUpdateHasBeenSet = false;
+  bool m_outputUpdatesHasBeenSet = false;
+  bool m_referenceDataSourceUpdatesHasBeenSet = false;
   bool m_cloudWatchLoggingOptionUpdatesHasBeenSet = false;
 };
 

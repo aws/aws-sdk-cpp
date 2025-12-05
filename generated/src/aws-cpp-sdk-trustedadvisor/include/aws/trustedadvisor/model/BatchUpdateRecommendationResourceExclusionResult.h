@@ -74,9 +74,9 @@ class BatchUpdateRecommendationResourceExclusionResult {
   ///@}
  private:
   Aws::Vector<UpdateRecommendationResourceExclusionError> m_batchUpdateRecommendationResourceExclusionErrors;
-  bool m_batchUpdateRecommendationResourceExclusionErrorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_batchUpdateRecommendationResourceExclusionErrorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

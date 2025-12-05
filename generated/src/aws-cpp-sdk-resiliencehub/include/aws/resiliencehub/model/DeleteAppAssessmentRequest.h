@@ -73,9 +73,9 @@ class DeleteAppAssessmentRequest : public ResilienceHubRequest {
   ///@}
  private:
   Aws::String m_assessmentArn;
-  bool m_assessmentArnHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_assessmentArnHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

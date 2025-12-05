@@ -87,12 +87,12 @@ class ListMicrosoftTeamsUserIdentitiesResult {
   ///@}
  private:
   Aws::Vector<TeamsUserIdentity> m_teamsUserIdentities;
-  bool m_teamsUserIdentitiesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_teamsUserIdentitiesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

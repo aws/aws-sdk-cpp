@@ -68,9 +68,9 @@ class InvalidSignal {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_reason;
+  bool m_nameHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

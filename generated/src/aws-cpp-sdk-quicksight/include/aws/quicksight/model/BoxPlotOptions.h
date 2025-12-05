@@ -83,12 +83,12 @@ class BoxPlotOptions {
   ///@}
  private:
   BoxPlotStyleOptions m_styleOptions;
-  bool m_styleOptionsHasBeenSet = false;
 
   Visibility m_outlierVisibility{Visibility::NOT_SET};
-  bool m_outlierVisibilityHasBeenSet = false;
 
   Visibility m_allDataPointsVisibility{Visibility::NOT_SET};
+  bool m_styleOptionsHasBeenSet = false;
+  bool m_outlierVisibilityHasBeenSet = false;
   bool m_allDataPointsVisibilityHasBeenSet = false;
 };
 

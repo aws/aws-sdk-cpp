@@ -86,12 +86,12 @@ class InputFile {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   FileSource m_source;
-  bool m_sourceHasBeenSet = false;
 
   FileUseCase m_useCase{FileUseCase::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
   bool m_useCaseHasBeenSet = false;
 };
 

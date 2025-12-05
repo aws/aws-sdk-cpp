@@ -73,9 +73,9 @@ class GetArchiveSearchResultsResult {
   ///@}
  private:
   Aws::Vector<Row> m_rows;
-  bool m_rowsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_rowsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

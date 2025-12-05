@@ -216,30 +216,30 @@ class ReplaceRootVolumeTask {
   ///@}
  private:
   Aws::String m_replaceRootVolumeTaskId;
-  bool m_replaceRootVolumeTaskIdHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   ReplaceRootVolumeTaskState m_taskState{ReplaceRootVolumeTaskState::NOT_SET};
-  bool m_taskStateHasBeenSet = false;
 
   Aws::String m_startTime;
-  bool m_startTimeHasBeenSet = false;
 
   Aws::String m_completeTime;
-  bool m_completeTimeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   bool m_deleteReplacedRootVolume{false};
+  bool m_replaceRootVolumeTaskIdHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_taskStateHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_completeTimeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_imageIdHasBeenSet = false;
+  bool m_snapshotIdHasBeenSet = false;
   bool m_deleteReplacedRootVolumeHasBeenSet = false;
 };
 

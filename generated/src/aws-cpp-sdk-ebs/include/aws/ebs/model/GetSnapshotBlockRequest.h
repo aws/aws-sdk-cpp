@@ -98,12 +98,12 @@ class GetSnapshotBlockRequest : public EBSRequest {
   ///@}
  private:
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   int m_blockIndex{0};
-  bool m_blockIndexHasBeenSet = false;
 
   Aws::String m_blockToken;
+  bool m_snapshotIdHasBeenSet = false;
+  bool m_blockIndexHasBeenSet = false;
   bool m_blockTokenHasBeenSet = false;
 };
 

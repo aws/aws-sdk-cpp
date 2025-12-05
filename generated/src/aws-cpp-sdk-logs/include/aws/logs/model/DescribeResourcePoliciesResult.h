@@ -82,12 +82,12 @@ class DescribeResourcePoliciesResult {
   ///@}
  private:
   Aws::Vector<ResourcePolicy> m_resourcePolicies;
-  bool m_resourcePoliciesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourcePoliciesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

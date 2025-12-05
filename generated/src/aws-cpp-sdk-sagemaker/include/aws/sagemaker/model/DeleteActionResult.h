@@ -59,9 +59,9 @@ class DeleteActionResult {
   ///@}
  private:
   Aws::String m_actionArn;
-  bool m_actionArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_actionArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

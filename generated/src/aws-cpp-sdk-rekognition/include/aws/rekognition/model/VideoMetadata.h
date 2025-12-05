@@ -152,24 +152,24 @@ class VideoMetadata {
   ///@}
  private:
   Aws::String m_codec;
-  bool m_codecHasBeenSet = false;
 
   long long m_durationMillis{0};
-  bool m_durationMillisHasBeenSet = false;
 
   Aws::String m_format;
-  bool m_formatHasBeenSet = false;
 
   double m_frameRate{0.0};
-  bool m_frameRateHasBeenSet = false;
 
   long long m_frameHeight{0};
-  bool m_frameHeightHasBeenSet = false;
 
   long long m_frameWidth{0};
-  bool m_frameWidthHasBeenSet = false;
 
   VideoColorRange m_colorRange{VideoColorRange::NOT_SET};
+  bool m_codecHasBeenSet = false;
+  bool m_durationMillisHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
+  bool m_frameRateHasBeenSet = false;
+  bool m_frameHeightHasBeenSet = false;
+  bool m_frameWidthHasBeenSet = false;
   bool m_colorRangeHasBeenSet = false;
 };
 

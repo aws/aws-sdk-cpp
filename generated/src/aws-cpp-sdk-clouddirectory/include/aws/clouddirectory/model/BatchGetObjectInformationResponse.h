@@ -77,9 +77,9 @@ class BatchGetObjectInformationResponse {
   ///@}
  private:
   Aws::Vector<SchemaFacet> m_schemaFacets;
-  bool m_schemaFacetsHasBeenSet = false;
 
   Aws::String m_objectIdentifier;
+  bool m_schemaFacetsHasBeenSet = false;
   bool m_objectIdentifierHasBeenSet = false;
 };
 

@@ -107,15 +107,15 @@ class Policy {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   int m_defaultVersion{0};
-  bool m_defaultVersionHasBeenSet = false;
 
   PolicyType m_policyType{PolicyType::NOT_SET};
-  bool m_policyTypeHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_arnHasBeenSet = false;
+  bool m_defaultVersionHasBeenSet = false;
+  bool m_policyTypeHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

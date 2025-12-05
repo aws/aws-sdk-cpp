@@ -72,9 +72,9 @@ class ListVolumeInitiatorsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_initiators;
-  bool m_initiatorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_initiatorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

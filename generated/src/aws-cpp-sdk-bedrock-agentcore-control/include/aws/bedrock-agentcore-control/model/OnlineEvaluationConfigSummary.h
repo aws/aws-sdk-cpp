@@ -197,30 +197,30 @@ class OnlineEvaluationConfigSummary {
   ///@}
  private:
   Aws::String m_onlineEvaluationConfigArn;
-  bool m_onlineEvaluationConfigArnHasBeenSet = false;
 
   Aws::String m_onlineEvaluationConfigId;
-  bool m_onlineEvaluationConfigIdHasBeenSet = false;
 
   Aws::String m_onlineEvaluationConfigName;
-  bool m_onlineEvaluationConfigNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   OnlineEvaluationConfigStatus m_status{OnlineEvaluationConfigStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   OnlineEvaluationExecutionStatus m_executionStatus{OnlineEvaluationExecutionStatus::NOT_SET};
-  bool m_executionStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_failureReason;
+  bool m_onlineEvaluationConfigArnHasBeenSet = false;
+  bool m_onlineEvaluationConfigIdHasBeenSet = false;
+  bool m_onlineEvaluationConfigNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_executionStatusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
 };
 

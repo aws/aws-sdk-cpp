@@ -125,18 +125,18 @@ class PackageVersionSummary {
   ///@}
  private:
   Aws::String m_packageName;
-  bool m_packageNameHasBeenSet = false;
 
   Aws::String m_versionName;
-  bool m_versionNameHasBeenSet = false;
 
   PackageVersionStatus m_status{PackageVersionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
+  bool m_packageNameHasBeenSet = false;
+  bool m_versionNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
   bool m_lastModifiedDateHasBeenSet = false;
 };
 

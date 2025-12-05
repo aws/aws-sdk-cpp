@@ -67,9 +67,9 @@ class CreateBlueprintVersionRequest : public BedrockDataAutomationRequest {
   ///@}
  private:
   Aws::String m_blueprintArn;
-  bool m_blueprintArnHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_blueprintArnHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

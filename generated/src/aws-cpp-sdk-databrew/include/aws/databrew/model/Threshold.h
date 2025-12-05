@@ -86,12 +86,12 @@ class Threshold {
   ///@}
  private:
   double m_value{0.0};
-  bool m_valueHasBeenSet = false;
 
   ThresholdType m_type{ThresholdType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   ThresholdUnit m_unit{ThresholdUnit::NOT_SET};
+  bool m_valueHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_unitHasBeenSet = false;
 };
 

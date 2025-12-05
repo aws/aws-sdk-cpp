@@ -190,24 +190,24 @@ class CreateInstanceConnectEndpointRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   bool m_preserveClientIp{false};
-  bool m_preserveClientIpHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
+  bool m_dryRunHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_preserveClientIpHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_tagSpecificationsHasBeenSet = false;
   bool m_ipAddressTypeHasBeenSet = false;
 };
 

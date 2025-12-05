@@ -90,12 +90,12 @@ class ListAllowedMultiRegionClusterUpdatesResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_scaleUpNodeTypes;
-  bool m_scaleUpNodeTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_scaleDownNodeTypes;
-  bool m_scaleDownNodeTypesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_scaleUpNodeTypesHasBeenSet = false;
+  bool m_scaleDownNodeTypesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

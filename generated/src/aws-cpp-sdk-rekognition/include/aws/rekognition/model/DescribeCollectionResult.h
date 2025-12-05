@@ -129,21 +129,21 @@ class DescribeCollectionResult {
   ///@}
  private:
   long long m_faceCount{0};
-  bool m_faceCountHasBeenSet = false;
 
   Aws::String m_faceModelVersion;
-  bool m_faceModelVersionHasBeenSet = false;
 
   Aws::String m_collectionARN;
-  bool m_collectionARNHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimestamp{};
-  bool m_creationTimestampHasBeenSet = false;
 
   long long m_userCount{0};
-  bool m_userCountHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_faceCountHasBeenSet = false;
+  bool m_faceModelVersionHasBeenSet = false;
+  bool m_collectionARNHasBeenSet = false;
+  bool m_creationTimestampHasBeenSet = false;
+  bool m_userCountHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

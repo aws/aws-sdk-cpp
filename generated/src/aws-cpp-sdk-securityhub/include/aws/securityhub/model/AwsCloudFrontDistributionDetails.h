@@ -264,39 +264,39 @@ class AwsCloudFrontDistributionDetails {
   ///@}
  private:
   AwsCloudFrontDistributionCacheBehaviors m_cacheBehaviors;
-  bool m_cacheBehaviorsHasBeenSet = false;
 
   AwsCloudFrontDistributionDefaultCacheBehavior m_defaultCacheBehavior;
-  bool m_defaultCacheBehaviorHasBeenSet = false;
 
   Aws::String m_defaultRootObject;
-  bool m_defaultRootObjectHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::String m_lastModifiedTime;
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   AwsCloudFrontDistributionLogging m_logging;
-  bool m_loggingHasBeenSet = false;
 
   AwsCloudFrontDistributionOrigins m_origins;
-  bool m_originsHasBeenSet = false;
 
   AwsCloudFrontDistributionOriginGroups m_originGroups;
-  bool m_originGroupsHasBeenSet = false;
 
   AwsCloudFrontDistributionViewerCertificate m_viewerCertificate;
-  bool m_viewerCertificateHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_webAclId;
+  bool m_cacheBehaviorsHasBeenSet = false;
+  bool m_defaultCacheBehaviorHasBeenSet = false;
+  bool m_defaultRootObjectHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_loggingHasBeenSet = false;
+  bool m_originsHasBeenSet = false;
+  bool m_originGroupsHasBeenSet = false;
+  bool m_viewerCertificateHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_webAclIdHasBeenSet = false;
 };
 

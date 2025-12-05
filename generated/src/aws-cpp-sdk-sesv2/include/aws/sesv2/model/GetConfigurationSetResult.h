@@ -223,33 +223,33 @@ class GetConfigurationSetResult {
   ///@}
  private:
   Aws::String m_configurationSetName;
-  bool m_configurationSetNameHasBeenSet = false;
 
   TrackingOptions m_trackingOptions;
-  bool m_trackingOptionsHasBeenSet = false;
 
   DeliveryOptions m_deliveryOptions;
-  bool m_deliveryOptionsHasBeenSet = false;
 
   ReputationOptions m_reputationOptions;
-  bool m_reputationOptionsHasBeenSet = false;
 
   SendingOptions m_sendingOptions;
-  bool m_sendingOptionsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   SuppressionOptions m_suppressionOptions;
-  bool m_suppressionOptionsHasBeenSet = false;
 
   VdmOptions m_vdmOptions;
-  bool m_vdmOptionsHasBeenSet = false;
 
   ArchivingOptions m_archivingOptions;
-  bool m_archivingOptionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_configurationSetNameHasBeenSet = false;
+  bool m_trackingOptionsHasBeenSet = false;
+  bool m_deliveryOptionsHasBeenSet = false;
+  bool m_reputationOptionsHasBeenSet = false;
+  bool m_sendingOptionsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_suppressionOptionsHasBeenSet = false;
+  bool m_vdmOptionsHasBeenSet = false;
+  bool m_archivingOptionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class BatchUpdatePhoneNumberResult {
   ///@}
  private:
   Aws::Vector<PhoneNumberError> m_phoneNumberErrors;
-  bool m_phoneNumberErrorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_phoneNumberErrorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

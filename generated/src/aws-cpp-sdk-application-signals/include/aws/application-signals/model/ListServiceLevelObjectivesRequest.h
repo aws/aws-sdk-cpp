@@ -215,27 +215,27 @@ class ListServiceLevelObjectivesRequest : public ApplicationSignalsRequest {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_keyAttributes;
-  bool m_keyAttributesHasBeenSet = false;
 
   Aws::String m_operationName;
-  bool m_operationNameHasBeenSet = false;
 
   DependencyConfig m_dependencyConfig;
-  bool m_dependencyConfigHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   bool m_includeLinkedAccounts{false};
-  bool m_includeLinkedAccountsHasBeenSet = false;
 
   Aws::String m_sloOwnerAwsAccountId;
-  bool m_sloOwnerAwsAccountIdHasBeenSet = false;
 
   Aws::Vector<MetricSourceType> m_metricSourceTypes;
+  bool m_keyAttributesHasBeenSet = false;
+  bool m_operationNameHasBeenSet = false;
+  bool m_dependencyConfigHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_includeLinkedAccountsHasBeenSet = false;
+  bool m_sloOwnerAwsAccountIdHasBeenSet = false;
   bool m_metricSourceTypesHasBeenSet = false;
 };
 

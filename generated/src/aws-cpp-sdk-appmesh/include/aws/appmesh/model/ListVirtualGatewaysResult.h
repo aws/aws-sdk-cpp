@@ -88,12 +88,12 @@ class ListVirtualGatewaysResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<VirtualGatewayRef> m_virtualGateways;
-  bool m_virtualGatewaysHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_virtualGatewaysHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -92,12 +92,12 @@ class DescribeWorkspaceSnapshotsResult {
   ///@}
  private:
   Aws::Vector<Snapshot> m_rebuildSnapshots;
-  bool m_rebuildSnapshotsHasBeenSet = false;
 
   Aws::Vector<Snapshot> m_restoreSnapshots;
-  bool m_restoreSnapshotsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_rebuildSnapshotsHasBeenSet = false;
+  bool m_restoreSnapshotsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

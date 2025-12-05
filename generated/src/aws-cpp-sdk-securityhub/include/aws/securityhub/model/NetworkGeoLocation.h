@@ -107,15 +107,15 @@ class NetworkGeoLocation {
   ///@}
  private:
   Aws::String m_city;
-  bool m_cityHasBeenSet = false;
 
   Aws::String m_country;
-  bool m_countryHasBeenSet = false;
 
   double m_lat{0.0};
-  bool m_latHasBeenSet = false;
 
   double m_lon{0.0};
+  bool m_cityHasBeenSet = false;
+  bool m_countryHasBeenSet = false;
+  bool m_latHasBeenSet = false;
   bool m_lonHasBeenSet = false;
 };
 

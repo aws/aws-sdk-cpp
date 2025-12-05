@@ -109,15 +109,15 @@ class ModerationLabel {
   ///@}
  private:
   double m_confidence{0.0};
-  bool m_confidenceHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_parentName;
-  bool m_parentNameHasBeenSet = false;
 
   int m_taxonomyLevel{0};
+  bool m_confidenceHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_parentNameHasBeenSet = false;
   bool m_taxonomyLevelHasBeenSet = false;
 };
 

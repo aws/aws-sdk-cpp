@@ -191,27 +191,27 @@ class ExportImageRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   DiskImageFormat m_diskImageFormat{DiskImageFormat::NOT_SET};
-  bool m_diskImageFormatHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   ExportTaskS3LocationRequest m_s3ExportLocation;
-  bool m_s3ExportLocationHasBeenSet = false;
 
   Aws::String m_roleName;
-  bool m_roleNameHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_descriptionHasBeenSet = false;
+  bool m_diskImageFormatHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_imageIdHasBeenSet = false;
+  bool m_s3ExportLocationHasBeenSet = false;
+  bool m_roleNameHasBeenSet = false;
   bool m_tagSpecificationsHasBeenSet = false;
 };
 

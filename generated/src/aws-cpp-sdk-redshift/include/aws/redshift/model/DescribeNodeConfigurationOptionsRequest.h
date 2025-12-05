@@ -201,27 +201,27 @@ class DescribeNodeConfigurationOptionsRequest : public RedshiftRequest {
   ///@}
  private:
   ActionType m_actionType{ActionType::NOT_SET};
-  bool m_actionTypeHasBeenSet = false;
 
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   Aws::String m_snapshotIdentifier;
-  bool m_snapshotIdentifierHasBeenSet = false;
 
   Aws::String m_snapshotArn;
-  bool m_snapshotArnHasBeenSet = false;
 
   Aws::String m_ownerAccount;
-  bool m_ownerAccountHasBeenSet = false;
 
   Aws::Vector<NodeConfigurationOptionsFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_maxRecords{0};
+  bool m_actionTypeHasBeenSet = false;
+  bool m_clusterIdentifierHasBeenSet = false;
+  bool m_snapshotIdentifierHasBeenSet = false;
+  bool m_snapshotArnHasBeenSet = false;
+  bool m_ownerAccountHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_maxRecordsHasBeenSet = false;
 };
 

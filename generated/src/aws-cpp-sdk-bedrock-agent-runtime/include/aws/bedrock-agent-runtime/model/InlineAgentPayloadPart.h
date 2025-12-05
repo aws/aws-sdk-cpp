@@ -70,9 +70,9 @@ class InlineAgentPayloadPart {
   ///@}
  private:
   Attribution m_attribution;
-  bool m_attributionHasBeenSet = false;
 
   Aws::Utils::CryptoBuffer m_bytes{};
+  bool m_attributionHasBeenSet = false;
   bool m_bytesHasBeenSet = false;
 };
 

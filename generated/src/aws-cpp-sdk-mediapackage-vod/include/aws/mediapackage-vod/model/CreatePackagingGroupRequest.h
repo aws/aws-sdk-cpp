@@ -108,15 +108,15 @@ class CreatePackagingGroupRequest : public MediaPackageVodRequest {
   ///@}
  private:
   Authorization m_authorization;
-  bool m_authorizationHasBeenSet = false;
 
   EgressAccessLogs m_egressAccessLogs;
-  bool m_egressAccessLogsHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_authorizationHasBeenSet = false;
+  bool m_egressAccessLogsHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

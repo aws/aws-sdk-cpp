@@ -103,15 +103,15 @@ class AssociateSubnetCidrBlockRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_ipv6IpamPoolId;
-  bool m_ipv6IpamPoolIdHasBeenSet = false;
 
   int m_ipv6NetmaskLength{0};
-  bool m_ipv6NetmaskLengthHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_ipv6CidrBlock;
+  bool m_ipv6IpamPoolIdHasBeenSet = false;
+  bool m_ipv6NetmaskLengthHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
   bool m_ipv6CidrBlockHasBeenSet = false;
 };
 

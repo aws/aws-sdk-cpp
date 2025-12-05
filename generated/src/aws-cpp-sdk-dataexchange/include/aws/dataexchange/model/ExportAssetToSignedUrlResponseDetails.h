@@ -125,18 +125,18 @@ class ExportAssetToSignedUrlResponseDetails {
   ///@}
  private:
   Aws::String m_assetId;
-  bool m_assetIdHasBeenSet = false;
 
   Aws::String m_dataSetId;
-  bool m_dataSetIdHasBeenSet = false;
 
   Aws::String m_revisionId;
-  bool m_revisionIdHasBeenSet = false;
 
   Aws::String m_signedUrl;
-  bool m_signedUrlHasBeenSet = false;
 
   Aws::Utils::DateTime m_signedUrlExpiresAt{};
+  bool m_assetIdHasBeenSet = false;
+  bool m_dataSetIdHasBeenSet = false;
+  bool m_revisionIdHasBeenSet = false;
+  bool m_signedUrlHasBeenSet = false;
   bool m_signedUrlExpiresAtHasBeenSet = false;
 };
 

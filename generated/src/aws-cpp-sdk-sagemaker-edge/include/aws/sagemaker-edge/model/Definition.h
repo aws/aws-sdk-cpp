@@ -104,15 +104,15 @@ class Definition {
   ///@}
  private:
   Aws::String m_modelHandle;
-  bool m_modelHandleHasBeenSet = false;
 
   Aws::String m_s3Url;
-  bool m_s3UrlHasBeenSet = false;
 
   Checksum m_checksum;
-  bool m_checksumHasBeenSet = false;
 
   ModelState m_state{ModelState::NOT_SET};
+  bool m_modelHandleHasBeenSet = false;
+  bool m_s3UrlHasBeenSet = false;
+  bool m_checksumHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

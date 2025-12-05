@@ -106,15 +106,15 @@ class ServiceEntity {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_environment;
-  bool m_environmentHasBeenSet = false;
 
   Aws::String m_awsAccountId;
+  bool m_typeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_environmentHasBeenSet = false;
   bool m_awsAccountIdHasBeenSet = false;
 };
 

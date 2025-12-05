@@ -76,12 +76,12 @@ class GetAdminAccountResult {
   ///@}
  private:
   Aws::String m_adminAccount;
-  bool m_adminAccountHasBeenSet = false;
 
   AccountRoleStatus m_roleStatus{AccountRoleStatus::NOT_SET};
-  bool m_roleStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_adminAccountHasBeenSet = false;
+  bool m_roleStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

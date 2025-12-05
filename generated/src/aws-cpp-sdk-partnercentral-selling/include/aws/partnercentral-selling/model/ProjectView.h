@@ -152,18 +152,18 @@ class ProjectView {
   ///@}
  private:
   Aws::Vector<DeliveryModel> m_deliveryModels;
-  bool m_deliveryModelsHasBeenSet = false;
 
   Aws::Vector<ExpectedCustomerSpend> m_expectedCustomerSpend;
-  bool m_expectedCustomerSpendHasBeenSet = false;
 
   Aws::String m_customerUseCase;
-  bool m_customerUseCaseHasBeenSet = false;
 
   Aws::Vector<SalesActivity> m_salesActivities;
-  bool m_salesActivitiesHasBeenSet = false;
 
   Aws::String m_otherSolutionDescription;
+  bool m_deliveryModelsHasBeenSet = false;
+  bool m_expectedCustomerSpendHasBeenSet = false;
+  bool m_customerUseCaseHasBeenSet = false;
+  bool m_salesActivitiesHasBeenSet = false;
   bool m_otherSolutionDescriptionHasBeenSet = false;
 };
 

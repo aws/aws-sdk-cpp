@@ -116,15 +116,15 @@ class CustomLineItemChargeDetails {
   ///@}
  private:
   CustomLineItemFlatChargeDetails m_flat;
-  bool m_flatHasBeenSet = false;
 
   CustomLineItemPercentageChargeDetails m_percentage;
-  bool m_percentageHasBeenSet = false;
 
   CustomLineItemType m_type{CustomLineItemType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<LineItemFilter> m_lineItemFilters;
+  bool m_flatHasBeenSet = false;
+  bool m_percentageHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_lineItemFiltersHasBeenSet = false;
 };
 

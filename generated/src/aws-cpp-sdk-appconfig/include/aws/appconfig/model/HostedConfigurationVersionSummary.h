@@ -160,24 +160,24 @@ class HostedConfigurationVersionSummary {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_configurationProfileId;
-  bool m_configurationProfileIdHasBeenSet = false;
 
   int m_versionNumber{0};
-  bool m_versionNumberHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::String m_versionLabel;
-  bool m_versionLabelHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_configurationProfileIdHasBeenSet = false;
+  bool m_versionNumberHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_versionLabelHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
 };
 

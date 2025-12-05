@@ -63,9 +63,9 @@ class SuggestionHighlight {
   ///@}
  private:
   int m_beginOffset{0};
-  bool m_beginOffsetHasBeenSet = false;
 
   int m_endOffset{0};
+  bool m_beginOffsetHasBeenSet = false;
   bool m_endOffsetHasBeenSet = false;
 };
 

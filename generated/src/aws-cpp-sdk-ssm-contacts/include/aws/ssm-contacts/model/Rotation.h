@@ -154,21 +154,21 @@ class Rotation {
   ///@}
  private:
   Aws::String m_rotationArn;
-  bool m_rotationArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_contactIds;
-  bool m_contactIdsHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::String m_timeZoneId;
-  bool m_timeZoneIdHasBeenSet = false;
 
   RecurrenceSettings m_recurrence;
+  bool m_rotationArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_contactIdsHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_timeZoneIdHasBeenSet = false;
   bool m_recurrenceHasBeenSet = false;
 };
 

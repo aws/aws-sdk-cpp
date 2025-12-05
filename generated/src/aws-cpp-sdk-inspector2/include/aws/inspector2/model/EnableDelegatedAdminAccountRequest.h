@@ -67,9 +67,9 @@ class EnableDelegatedAdminAccountRequest : public Inspector2Request {
   ///@}
  private:
   Aws::String m_delegatedAdminAccountId;
-  bool m_delegatedAdminAccountIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_delegatedAdminAccountIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

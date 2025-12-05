@@ -77,9 +77,9 @@ class RecurringConsumption {
   ///@}
  private:
   int m_retrievedAdExpirationSeconds{0};
-  bool m_retrievedAdExpirationSecondsHasBeenSet = false;
 
   Aws::Vector<AvailMatchingCriteria> m_availMatchingCriteria;
+  bool m_retrievedAdExpirationSecondsHasBeenSet = false;
   bool m_availMatchingCriteriaHasBeenSet = false;
 };
 

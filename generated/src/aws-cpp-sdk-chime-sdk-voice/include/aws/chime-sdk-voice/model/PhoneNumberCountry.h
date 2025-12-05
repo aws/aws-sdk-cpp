@@ -75,9 +75,9 @@ class PhoneNumberCountry {
   ///@}
  private:
   Aws::String m_countryCode;
-  bool m_countryCodeHasBeenSet = false;
 
   Aws::Vector<PhoneNumberType> m_supportedPhoneNumberTypes;
+  bool m_countryCodeHasBeenSet = false;
   bool m_supportedPhoneNumberTypesHasBeenSet = false;
 };
 

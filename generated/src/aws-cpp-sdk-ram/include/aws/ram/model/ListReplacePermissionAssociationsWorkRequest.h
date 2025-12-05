@@ -120,15 +120,15 @@ class ListReplacePermissionAssociationsWorkRequest : public RAMRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_workIds;
-  bool m_workIdsHasBeenSet = false;
 
   ReplacePermissionAssociationsWorkStatus m_status{ReplacePermissionAssociationsWorkStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_workIdsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

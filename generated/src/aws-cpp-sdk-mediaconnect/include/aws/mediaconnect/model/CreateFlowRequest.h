@@ -333,45 +333,45 @@ class CreateFlowRequest : public MediaConnectRequest {
   ///@}
  private:
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::Vector<GrantEntitlementRequest> m_entitlements;
-  bool m_entitlementsHasBeenSet = false;
 
   Aws::Vector<AddMediaStreamRequest> m_mediaStreams;
-  bool m_mediaStreamsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<AddOutputRequest> m_outputs;
-  bool m_outputsHasBeenSet = false;
 
   SetSourceRequest m_source;
-  bool m_sourceHasBeenSet = false;
 
   FailoverConfig m_sourceFailoverConfig;
-  bool m_sourceFailoverConfigHasBeenSet = false;
 
   Aws::Vector<SetSourceRequest> m_sources;
-  bool m_sourcesHasBeenSet = false;
 
   Aws::Vector<VpcInterfaceRequest> m_vpcInterfaces;
-  bool m_vpcInterfacesHasBeenSet = false;
 
   AddMaintenance m_maintenance;
-  bool m_maintenanceHasBeenSet = false;
 
   MonitoringConfig m_sourceMonitoringConfig;
-  bool m_sourceMonitoringConfigHasBeenSet = false;
 
   FlowSize m_flowSize{FlowSize::NOT_SET};
-  bool m_flowSizeHasBeenSet = false;
 
   NdiConfig m_ndiConfig;
-  bool m_ndiConfigHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_flowTags;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_entitlementsHasBeenSet = false;
+  bool m_mediaStreamsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_outputsHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_sourceFailoverConfigHasBeenSet = false;
+  bool m_sourcesHasBeenSet = false;
+  bool m_vpcInterfacesHasBeenSet = false;
+  bool m_maintenanceHasBeenSet = false;
+  bool m_sourceMonitoringConfigHasBeenSet = false;
+  bool m_flowSizeHasBeenSet = false;
+  bool m_ndiConfigHasBeenSet = false;
   bool m_flowTagsHasBeenSet = false;
 };
 

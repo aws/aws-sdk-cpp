@@ -151,21 +151,21 @@ class ListFirewallRuleGroupAssociationsRequest : public Route53ResolverRequest {
   ///@}
  private:
   Aws::String m_firewallRuleGroupId;
-  bool m_firewallRuleGroupIdHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   FirewallRuleGroupAssociationStatus m_status{FirewallRuleGroupAssociationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_firewallRuleGroupIdHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

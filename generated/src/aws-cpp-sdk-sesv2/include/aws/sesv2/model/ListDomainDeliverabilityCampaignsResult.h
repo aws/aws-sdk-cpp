@@ -97,12 +97,12 @@ class ListDomainDeliverabilityCampaignsResult {
   ///@}
  private:
   Aws::Vector<DomainDeliverabilityCampaign> m_domainDeliverabilityCampaigns;
-  bool m_domainDeliverabilityCampaignsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainDeliverabilityCampaignsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

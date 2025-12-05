@@ -60,9 +60,9 @@ class EnableIpamPolicyResponse {
   ///@}
  private:
   Aws::String m_ipamPolicyId;
-  bool m_ipamPolicyIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_ipamPolicyIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

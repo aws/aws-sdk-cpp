@@ -73,9 +73,9 @@ class GetApplicationRevisionRequest : public CodeDeployRequest {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   RevisionLocation m_revision;
+  bool m_applicationNameHasBeenSet = false;
   bool m_revisionHasBeenSet = false;
 };
 

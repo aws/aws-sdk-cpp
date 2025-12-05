@@ -113,15 +113,15 @@ class CreateCodeReviewRequest : public CodeGuruReviewerRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_repositoryAssociationArn;
-  bool m_repositoryAssociationArnHasBeenSet = false;
 
   CodeReviewType m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_nameHasBeenSet = false;
+  bool m_repositoryAssociationArnHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
 };
 

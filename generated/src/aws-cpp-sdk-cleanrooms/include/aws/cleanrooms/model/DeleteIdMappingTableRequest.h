@@ -66,9 +66,9 @@ class DeleteIdMappingTableRequest : public CleanRoomsRequest {
   ///@}
  private:
   Aws::String m_idMappingTableIdentifier;
-  bool m_idMappingTableIdentifierHasBeenSet = false;
 
   Aws::String m_membershipIdentifier;
+  bool m_idMappingTableIdentifierHasBeenSet = false;
   bool m_membershipIdentifierHasBeenSet = false;
 };
 

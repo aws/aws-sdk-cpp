@@ -95,12 +95,12 @@ class ActiveTrustedKeyGroups {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   int m_quantity{0};
-  bool m_quantityHasBeenSet = false;
 
   Aws::Vector<KGKeyPairIds> m_items;
+  bool m_enabledHasBeenSet = false;
+  bool m_quantityHasBeenSet = false;
   bool m_itemsHasBeenSet = false;
 };
 

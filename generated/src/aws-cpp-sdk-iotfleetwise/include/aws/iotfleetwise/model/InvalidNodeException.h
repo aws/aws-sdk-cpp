@@ -94,12 +94,12 @@ class InvalidNodeException {
   ///@}
  private:
   Aws::Vector<Node> m_invalidNodes;
-  bool m_invalidNodesHasBeenSet = false;
 
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_invalidNodesHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

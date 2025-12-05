@@ -86,9 +86,9 @@ class KinesisVideoStreamConfiguration {
   ///@}
  private:
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   int m_dataRetentionInHours{0};
+  bool m_regionHasBeenSet = false;
   bool m_dataRetentionInHoursHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class Threshold {
   ///@}
  private:
   Comparison m_comparison{Comparison::NOT_SET};
-  bool m_comparisonHasBeenSet = false;
 
   double m_thresholdValue{0.0};
+  bool m_comparisonHasBeenSet = false;
   bool m_thresholdValueHasBeenSet = false;
 };
 

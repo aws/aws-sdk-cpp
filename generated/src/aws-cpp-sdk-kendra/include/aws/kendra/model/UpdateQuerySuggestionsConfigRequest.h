@@ -174,24 +174,24 @@ class UpdateQuerySuggestionsConfigRequest : public KendraRequest {
   ///@}
  private:
   Aws::String m_indexId;
-  bool m_indexIdHasBeenSet = false;
 
   Mode m_mode{Mode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   int m_queryLogLookBackWindowInDays{0};
-  bool m_queryLogLookBackWindowInDaysHasBeenSet = false;
 
   bool m_includeQueriesWithoutUserInformation{false};
-  bool m_includeQueriesWithoutUserInformationHasBeenSet = false;
 
   int m_minimumNumberOfQueryingUsers{0};
-  bool m_minimumNumberOfQueryingUsersHasBeenSet = false;
 
   int m_minimumQueryCount{0};
-  bool m_minimumQueryCountHasBeenSet = false;
 
   AttributeSuggestionsUpdateConfig m_attributeSuggestionsConfig;
+  bool m_indexIdHasBeenSet = false;
+  bool m_modeHasBeenSet = false;
+  bool m_queryLogLookBackWindowInDaysHasBeenSet = false;
+  bool m_includeQueriesWithoutUserInformationHasBeenSet = false;
+  bool m_minimumNumberOfQueryingUsersHasBeenSet = false;
+  bool m_minimumQueryCountHasBeenSet = false;
   bool m_attributeSuggestionsConfigHasBeenSet = false;
 };
 

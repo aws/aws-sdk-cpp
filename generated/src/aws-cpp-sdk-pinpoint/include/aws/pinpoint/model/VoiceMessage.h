@@ -141,18 +141,18 @@ class VoiceMessage {
   ///@}
  private:
   Aws::String m_body;
-  bool m_bodyHasBeenSet = false;
 
   Aws::String m_languageCode;
-  bool m_languageCodeHasBeenSet = false;
 
   Aws::String m_originationNumber;
-  bool m_originationNumberHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_substitutions;
-  bool m_substitutionsHasBeenSet = false;
 
   Aws::String m_voiceId;
+  bool m_bodyHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
+  bool m_originationNumberHasBeenSet = false;
+  bool m_substitutionsHasBeenSet = false;
   bool m_voiceIdHasBeenSet = false;
 };
 

@@ -152,24 +152,24 @@ class CreateSolNetworkPackageResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   NsdOnboardingState m_nsdOnboardingState{NsdOnboardingState::NOT_SET};
-  bool m_nsdOnboardingStateHasBeenSet = false;
 
   NsdOperationalState m_nsdOperationalState{NsdOperationalState::NOT_SET};
-  bool m_nsdOperationalStateHasBeenSet = false;
 
   NsdUsageState m_nsdUsageState{NsdUsageState::NOT_SET};
-  bool m_nsdUsageStateHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nsdOnboardingStateHasBeenSet = false;
+  bool m_nsdOperationalStateHasBeenSet = false;
+  bool m_nsdUsageStateHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

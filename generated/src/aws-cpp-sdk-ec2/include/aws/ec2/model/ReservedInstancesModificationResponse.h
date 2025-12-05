@@ -74,9 +74,9 @@ class ReservedInstancesModificationResponse {
   ///@}
  private:
   Aws::String m_reservedInstancesId;
-  bool m_reservedInstancesIdHasBeenSet = false;
 
   ReservedInstancesConfiguration m_targetConfiguration;
+  bool m_reservedInstancesIdHasBeenSet = false;
   bool m_targetConfigurationHasBeenSet = false;
 };
 

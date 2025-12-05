@@ -62,9 +62,9 @@ class GetVoiceConnectorEmergencyCallingConfigurationResult {
   ///@}
  private:
   EmergencyCallingConfiguration m_emergencyCallingConfiguration;
-  bool m_emergencyCallingConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_emergencyCallingConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

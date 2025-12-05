@@ -66,9 +66,9 @@ class OTAJobConfig {
   ///@}
  private:
   bool m_allowMajorVersionUpdate{false};
-  bool m_allowMajorVersionUpdateHasBeenSet = false;
 
   Aws::String m_imageVersion;
+  bool m_allowMajorVersionUpdateHasBeenSet = false;
   bool m_imageVersionHasBeenSet = false;
 };
 

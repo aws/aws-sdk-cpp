@@ -87,12 +87,12 @@ class ListInferenceEventsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<InferenceEventSummary> m_inferenceEventSummaries;
-  bool m_inferenceEventSummariesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_inferenceEventSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

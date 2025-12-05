@@ -120,15 +120,15 @@ class ManualSearchAIAgentConfiguration {
   ///@}
  private:
   Aws::String m_answerGenerationAIPromptId;
-  bool m_answerGenerationAIPromptIdHasBeenSet = false;
 
   Aws::String m_answerGenerationAIGuardrailId;
-  bool m_answerGenerationAIGuardrailIdHasBeenSet = false;
 
   Aws::Vector<AssociationConfiguration> m_associationConfigurations;
-  bool m_associationConfigurationsHasBeenSet = false;
 
   Aws::String m_locale;
+  bool m_answerGenerationAIPromptIdHasBeenSet = false;
+  bool m_answerGenerationAIGuardrailIdHasBeenSet = false;
+  bool m_associationConfigurationsHasBeenSet = false;
   bool m_localeHasBeenSet = false;
 };
 

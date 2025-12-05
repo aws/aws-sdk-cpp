@@ -108,15 +108,15 @@ class ListCapacityTasksRequest : public OutpostsRequest {
   ///@}
  private:
   Aws::String m_outpostIdentifierFilter;
-  bool m_outpostIdentifierFilterHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<CapacityTaskStatus> m_capacityTaskStatusFilter;
+  bool m_outpostIdentifierFilterHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_capacityTaskStatusFilterHasBeenSet = false;
 };
 

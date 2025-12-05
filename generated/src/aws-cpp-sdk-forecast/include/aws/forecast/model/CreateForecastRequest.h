@@ -166,18 +166,18 @@ class CreateForecastRequest : public ForecastServiceRequest {
   ///@}
  private:
   Aws::String m_forecastName;
-  bool m_forecastNameHasBeenSet = false;
 
   Aws::String m_predictorArn;
-  bool m_predictorArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_forecastTypes;
-  bool m_forecastTypesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   TimeSeriesSelector m_timeSeriesSelector;
+  bool m_forecastNameHasBeenSet = false;
+  bool m_predictorArnHasBeenSet = false;
+  bool m_forecastTypesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_timeSeriesSelectorHasBeenSet = false;
 };
 

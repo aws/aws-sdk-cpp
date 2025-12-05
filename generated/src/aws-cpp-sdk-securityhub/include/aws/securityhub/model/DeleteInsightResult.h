@@ -59,9 +59,9 @@ class DeleteInsightResult {
   ///@}
  private:
   Aws::String m_insightArn;
-  bool m_insightArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_insightArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -152,24 +152,24 @@ class UpdateAdapterResult {
   ///@}
  private:
   Aws::String m_adapterId;
-  bool m_adapterIdHasBeenSet = false;
 
   Aws::String m_adapterName;
-  bool m_adapterNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<FeatureType> m_featureTypes;
-  bool m_featureTypesHasBeenSet = false;
 
   AutoUpdate m_autoUpdate{AutoUpdate::NOT_SET};
-  bool m_autoUpdateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_adapterIdHasBeenSet = false;
+  bool m_adapterNameHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_featureTypesHasBeenSet = false;
+  bool m_autoUpdateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

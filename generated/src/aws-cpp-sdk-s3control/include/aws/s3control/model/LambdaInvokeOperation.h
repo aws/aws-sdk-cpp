@@ -115,12 +115,12 @@ class LambdaInvokeOperation {
   ///@}
  private:
   Aws::String m_functionArn;
-  bool m_functionArnHasBeenSet = false;
 
   Aws::String m_invocationSchemaVersion;
-  bool m_invocationSchemaVersionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_userArguments;
+  bool m_functionArnHasBeenSet = false;
+  bool m_invocationSchemaVersionHasBeenSet = false;
   bool m_userArgumentsHasBeenSet = false;
 };
 

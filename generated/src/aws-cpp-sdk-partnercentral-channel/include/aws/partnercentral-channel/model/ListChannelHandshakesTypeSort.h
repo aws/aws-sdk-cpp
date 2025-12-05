@@ -89,12 +89,12 @@ class ListChannelHandshakesTypeSort {
   ///@}
  private:
   StartServicePeriodTypeSort m_startServicePeriodTypeSort;
-  bool m_startServicePeriodTypeSortHasBeenSet = false;
 
   RevokeServicePeriodTypeSort m_revokeServicePeriodTypeSort;
-  bool m_revokeServicePeriodTypeSortHasBeenSet = false;
 
   ProgramManagementAccountTypeSort m_programManagementAccountTypeSort;
+  bool m_startServicePeriodTypeSortHasBeenSet = false;
+  bool m_revokeServicePeriodTypeSortHasBeenSet = false;
   bool m_programManagementAccountTypeSortHasBeenSet = false;
 };
 

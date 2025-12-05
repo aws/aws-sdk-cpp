@@ -129,15 +129,15 @@ class BatchDeleteRequest : public MediaLiveRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_channelIds;
-  bool m_channelIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inputIds;
-  bool m_inputIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inputSecurityGroupIds;
-  bool m_inputSecurityGroupIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_multiplexIds;
+  bool m_channelIdsHasBeenSet = false;
+  bool m_inputIdsHasBeenSet = false;
+  bool m_inputSecurityGroupIdsHasBeenSet = false;
   bool m_multiplexIdsHasBeenSet = false;
 };
 

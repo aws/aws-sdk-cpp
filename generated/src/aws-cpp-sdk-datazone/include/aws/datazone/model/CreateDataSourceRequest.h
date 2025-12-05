@@ -301,45 +301,45 @@ class CreateDataSourceRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::Vector<FormInput> m_assetFormsInput;
-  bool m_assetFormsInputHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   DataSourceConfigurationInput m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::String m_connectionIdentifier;
-  bool m_connectionIdentifierHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   EnableSetting m_enableSetting{EnableSetting::NOT_SET};
-  bool m_enableSettingHasBeenSet = false;
 
   Aws::String m_environmentIdentifier;
-  bool m_environmentIdentifierHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_projectIdentifier;
-  bool m_projectIdentifierHasBeenSet = false;
 
   bool m_publishOnImport{false};
-  bool m_publishOnImportHasBeenSet = false;
 
   RecommendationConfiguration m_recommendation;
-  bool m_recommendationHasBeenSet = false;
 
   ScheduleConfiguration m_schedule;
-  bool m_scheduleHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_assetFormsInputHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_configurationHasBeenSet = false;
+  bool m_connectionIdentifierHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_enableSettingHasBeenSet = false;
+  bool m_environmentIdentifierHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_projectIdentifierHasBeenSet = false;
+  bool m_publishOnImportHasBeenSet = false;
+  bool m_recommendationHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

@@ -62,9 +62,9 @@ class IsolineTrailerOptions {
   ///@}
  private:
   int m_axleCount{0};
-  bool m_axleCountHasBeenSet = false;
 
   int m_trailerCount{0};
+  bool m_axleCountHasBeenSet = false;
   bool m_trailerCountHasBeenSet = false;
 };
 

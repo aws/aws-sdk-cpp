@@ -84,12 +84,12 @@ class GetResourceCollectionResult {
   ///@}
  private:
   ResourceCollectionFilter m_resourceCollection;
-  bool m_resourceCollectionHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceCollectionHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

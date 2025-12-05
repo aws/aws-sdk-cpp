@@ -548,81 +548,81 @@ class DistributionSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_aRN;
-  bool m_aRNHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aliases m_aliases;
-  bool m_aliasesHasBeenSet = false;
 
   Origins m_origins;
-  bool m_originsHasBeenSet = false;
 
   OriginGroups m_originGroups;
-  bool m_originGroupsHasBeenSet = false;
 
   DefaultCacheBehavior m_defaultCacheBehavior;
-  bool m_defaultCacheBehaviorHasBeenSet = false;
 
   CacheBehaviors m_cacheBehaviors;
-  bool m_cacheBehaviorsHasBeenSet = false;
 
   CustomErrorResponses m_customErrorResponses;
-  bool m_customErrorResponsesHasBeenSet = false;
 
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   PriceClass m_priceClass{PriceClass::NOT_SET};
-  bool m_priceClassHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   ViewerCertificate m_viewerCertificate;
-  bool m_viewerCertificateHasBeenSet = false;
 
   Restrictions m_restrictions;
-  bool m_restrictionsHasBeenSet = false;
 
   Aws::String m_webACLId;
-  bool m_webACLIdHasBeenSet = false;
 
   HttpVersion m_httpVersion{HttpVersion::NOT_SET};
-  bool m_httpVersionHasBeenSet = false;
 
   bool m_isIPV6Enabled{false};
-  bool m_isIPV6EnabledHasBeenSet = false;
 
   Aws::Vector<AliasICPRecordal> m_aliasICPRecordals;
-  bool m_aliasICPRecordalsHasBeenSet = false;
 
   bool m_staging{false};
-  bool m_stagingHasBeenSet = false;
 
   ConnectionMode m_connectionMode{ConnectionMode::NOT_SET};
-  bool m_connectionModeHasBeenSet = false;
 
   Aws::String m_anycastIpListId;
-  bool m_anycastIpListIdHasBeenSet = false;
 
   ViewerMtlsConfig m_viewerMtlsConfig;
-  bool m_viewerMtlsConfigHasBeenSet = false;
 
   ConnectionFunctionAssociation m_connectionFunctionAssociation;
+  bool m_idHasBeenSet = false;
+  bool m_aRNHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_aliasesHasBeenSet = false;
+  bool m_originsHasBeenSet = false;
+  bool m_originGroupsHasBeenSet = false;
+  bool m_defaultCacheBehaviorHasBeenSet = false;
+  bool m_cacheBehaviorsHasBeenSet = false;
+  bool m_customErrorResponsesHasBeenSet = false;
+  bool m_commentHasBeenSet = false;
+  bool m_priceClassHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
+  bool m_viewerCertificateHasBeenSet = false;
+  bool m_restrictionsHasBeenSet = false;
+  bool m_webACLIdHasBeenSet = false;
+  bool m_httpVersionHasBeenSet = false;
+  bool m_isIPV6EnabledHasBeenSet = false;
+  bool m_aliasICPRecordalsHasBeenSet = false;
+  bool m_stagingHasBeenSet = false;
+  bool m_connectionModeHasBeenSet = false;
+  bool m_anycastIpListIdHasBeenSet = false;
+  bool m_viewerMtlsConfigHasBeenSet = false;
   bool m_connectionFunctionAssociationHasBeenSet = false;
 };
 

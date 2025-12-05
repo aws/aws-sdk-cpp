@@ -92,12 +92,12 @@ class NetworkInputSettings {
   ///@}
  private:
   HlsInputSettings m_hlsInputSettings;
-  bool m_hlsInputSettingsHasBeenSet = false;
 
   NetworkInputServerValidation m_serverValidation{NetworkInputServerValidation::NOT_SET};
-  bool m_serverValidationHasBeenSet = false;
 
   MulticastInputSettings m_multicastInputSettings;
+  bool m_hlsInputSettingsHasBeenSet = false;
+  bool m_serverValidationHasBeenSet = false;
   bool m_multicastInputSettingsHasBeenSet = false;
 };
 

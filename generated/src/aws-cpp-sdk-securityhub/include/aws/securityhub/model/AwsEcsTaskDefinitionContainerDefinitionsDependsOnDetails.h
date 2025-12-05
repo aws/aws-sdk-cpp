@@ -73,9 +73,9 @@ class AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails {
   ///@}
  private:
   Aws::String m_condition;
-  bool m_conditionHasBeenSet = false;
 
   Aws::String m_containerName;
+  bool m_conditionHasBeenSet = false;
   bool m_containerNameHasBeenSet = false;
 };
 

@@ -182,21 +182,21 @@ class ModifyReplicationGroupShardConfigurationRequest : public ElastiCacheReques
   ///@}
  private:
   Aws::String m_replicationGroupId;
-  bool m_replicationGroupIdHasBeenSet = false;
 
   int m_nodeGroupCount{0};
-  bool m_nodeGroupCountHasBeenSet = false;
 
   bool m_applyImmediately{false};
-  bool m_applyImmediatelyHasBeenSet = false;
 
   Aws::Vector<ReshardingConfiguration> m_reshardingConfiguration;
-  bool m_reshardingConfigurationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_nodeGroupsToRemove;
-  bool m_nodeGroupsToRemoveHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_nodeGroupsToRetain;
+  bool m_replicationGroupIdHasBeenSet = false;
+  bool m_nodeGroupCountHasBeenSet = false;
+  bool m_applyImmediatelyHasBeenSet = false;
+  bool m_reshardingConfigurationHasBeenSet = false;
+  bool m_nodeGroupsToRemoveHasBeenSet = false;
   bool m_nodeGroupsToRetainHasBeenSet = false;
 };
 

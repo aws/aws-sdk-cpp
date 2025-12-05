@@ -94,15 +94,15 @@ class CancelImportTaskResponse {
   ///@}
  private:
   Aws::String m_importTaskId;
-  bool m_importTaskIdHasBeenSet = false;
 
   Aws::String m_previousState;
-  bool m_previousStateHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_importTaskIdHasBeenSet = false;
+  bool m_previousStateHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

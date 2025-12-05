@@ -70,9 +70,9 @@ class AuthenticationConfigurationPatch {
   ///@}
  private:
   BasicAuthenticationCredentials m_basicAuthenticationCredentials;
-  bool m_basicAuthenticationCredentialsHasBeenSet = false;
 
   Aws::String m_secretArn;
+  bool m_basicAuthenticationCredentialsHasBeenSet = false;
   bool m_secretArnHasBeenSet = false;
 };
 

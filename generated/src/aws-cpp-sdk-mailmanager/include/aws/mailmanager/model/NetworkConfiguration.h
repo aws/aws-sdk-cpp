@@ -70,9 +70,9 @@ class NetworkConfiguration {
   ///@}
  private:
   PublicNetworkConfiguration m_publicNetworkConfiguration;
-  bool m_publicNetworkConfigurationHasBeenSet = false;
 
   PrivateNetworkConfiguration m_privateNetworkConfiguration;
+  bool m_publicNetworkConfigurationHasBeenSet = false;
   bool m_privateNetworkConfigurationHasBeenSet = false;
 };
 

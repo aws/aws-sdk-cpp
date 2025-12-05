@@ -58,9 +58,9 @@ class DescribeAuditFindingResult {
   ///@}
  private:
   AuditFinding m_finding;
-  bool m_findingHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_findingHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

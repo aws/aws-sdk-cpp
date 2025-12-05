@@ -68,9 +68,9 @@ class StreamingConfiguration {
   ///@}
  private:
   MessagingDataType m_dataType{MessagingDataType::NOT_SET};
-  bool m_dataTypeHasBeenSet = false;
 
   Aws::String m_resourceArn;
+  bool m_dataTypeHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
 };
 

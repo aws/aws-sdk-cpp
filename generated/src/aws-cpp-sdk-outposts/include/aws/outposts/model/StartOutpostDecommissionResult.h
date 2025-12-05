@@ -83,12 +83,12 @@ class StartOutpostDecommissionResult {
   ///@}
  private:
   DecommissionRequestStatus m_status{DecommissionRequestStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<BlockingResourceType> m_blockingResourceTypes;
-  bool m_blockingResourceTypesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_blockingResourceTypesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

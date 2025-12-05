@@ -130,18 +130,18 @@ class UpdatePipeSourceSelfManagedKafkaParameters {
   ///@}
  private:
   int m_batchSize{0};
-  bool m_batchSizeHasBeenSet = false;
 
   int m_maximumBatchingWindowInSeconds{0};
-  bool m_maximumBatchingWindowInSecondsHasBeenSet = false;
 
   SelfManagedKafkaAccessConfigurationCredentials m_credentials;
-  bool m_credentialsHasBeenSet = false;
 
   Aws::String m_serverRootCaCertificate;
-  bool m_serverRootCaCertificateHasBeenSet = false;
 
   SelfManagedKafkaAccessConfigurationVpc m_vpc;
+  bool m_batchSizeHasBeenSet = false;
+  bool m_maximumBatchingWindowInSecondsHasBeenSet = false;
+  bool m_credentialsHasBeenSet = false;
+  bool m_serverRootCaCertificateHasBeenSet = false;
   bool m_vpcHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class RedactionPlaceHolder {
   ///@}
  private:
   RedactionPlaceHolderType m_redactionPlaceHolderType{RedactionPlaceHolderType::NOT_SET};
-  bool m_redactionPlaceHolderTypeHasBeenSet = false;
 
   Aws::String m_redactionPlaceHolderText;
+  bool m_redactionPlaceHolderTypeHasBeenSet = false;
   bool m_redactionPlaceHolderTextHasBeenSet = false;
 };
 

@@ -64,9 +64,9 @@ class RankingData {
   ///@}
  private:
   double m_relevanceScore{0.0};
-  bool m_relevanceScoreHasBeenSet = false;
 
   RelevanceLevel m_relevanceLevel{RelevanceLevel::NOT_SET};
+  bool m_relevanceScoreHasBeenSet = false;
   bool m_relevanceLevelHasBeenSet = false;
 };
 

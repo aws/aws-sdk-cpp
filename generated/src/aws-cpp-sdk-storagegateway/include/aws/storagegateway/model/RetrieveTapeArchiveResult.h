@@ -64,9 +64,9 @@ class RetrieveTapeArchiveResult {
   ///@}
  private:
   Aws::String m_tapeARN;
-  bool m_tapeARNHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tapeARNHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

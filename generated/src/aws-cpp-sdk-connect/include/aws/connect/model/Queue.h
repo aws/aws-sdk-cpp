@@ -257,39 +257,39 @@ class Queue {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_queueArn;
-  bool m_queueArnHasBeenSet = false;
 
   Aws::String m_queueId;
-  bool m_queueIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   OutboundCallerConfig m_outboundCallerConfig;
-  bool m_outboundCallerConfigHasBeenSet = false;
 
   OutboundEmailConfig m_outboundEmailConfig;
-  bool m_outboundEmailConfigHasBeenSet = false;
 
   Aws::String m_hoursOfOperationId;
-  bool m_hoursOfOperationIdHasBeenSet = false;
 
   int m_maxContacts{0};
-  bool m_maxContactsHasBeenSet = false;
 
   QueueStatus m_status{QueueStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_lastModifiedRegion;
+  bool m_nameHasBeenSet = false;
+  bool m_queueArnHasBeenSet = false;
+  bool m_queueIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_outboundCallerConfigHasBeenSet = false;
+  bool m_outboundEmailConfigHasBeenSet = false;
+  bool m_hoursOfOperationIdHasBeenSet = false;
+  bool m_maxContactsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_lastModifiedRegionHasBeenSet = false;
 };
 

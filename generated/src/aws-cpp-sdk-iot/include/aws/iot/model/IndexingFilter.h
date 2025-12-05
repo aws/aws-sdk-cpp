@@ -104,9 +104,9 @@ class IndexingFilter {
   ///@}
  private:
   Aws::Vector<Aws::String> m_namedShadowNames;
-  bool m_namedShadowNamesHasBeenSet = false;
 
   Aws::Vector<GeoLocationTarget> m_geoLocations;
+  bool m_namedShadowNamesHasBeenSet = false;
   bool m_geoLocationsHasBeenSet = false;
 };
 

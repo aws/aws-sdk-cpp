@@ -68,9 +68,9 @@ class ApprovalStateChangedEventMetadata {
   ///@}
  private:
   Aws::String m_revisionId;
-  bool m_revisionIdHasBeenSet = false;
 
   ApprovalState m_approvalStatus{ApprovalState::NOT_SET};
+  bool m_revisionIdHasBeenSet = false;
   bool m_approvalStatusHasBeenSet = false;
 };
 

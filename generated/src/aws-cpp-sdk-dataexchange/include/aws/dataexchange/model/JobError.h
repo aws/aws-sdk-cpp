@@ -154,24 +154,24 @@ class JobError {
   ///@}
  private:
   Code m_code{Code::NOT_SET};
-  bool m_codeHasBeenSet = false;
 
   Details m_details;
-  bool m_detailsHasBeenSet = false;
 
   JobErrorLimitName m_limitName{JobErrorLimitName::NOT_SET};
-  bool m_limitNameHasBeenSet = false;
 
   double m_limitValue{0.0};
-  bool m_limitValueHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   JobErrorResourceTypes m_resourceType{JobErrorResourceTypes::NOT_SET};
+  bool m_codeHasBeenSet = false;
+  bool m_detailsHasBeenSet = false;
+  bool m_limitNameHasBeenSet = false;
+  bool m_limitValueHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
 };
 

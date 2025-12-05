@@ -641,93 +641,93 @@ class DocumentDescription {
   ///@}
  private:
   Aws::String m_sha1;
-  bool m_sha1HasBeenSet = false;
 
   Aws::String m_hash;
-  bool m_hashHasBeenSet = false;
 
   DocumentHashType m_hashType{DocumentHashType::NOT_SET};
-  bool m_hashTypeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_versionName;
-  bool m_versionNameHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
-  bool m_createdDateHasBeenSet = false;
 
   DocumentStatus m_status{DocumentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusInformation;
-  bool m_statusInformationHasBeenSet = false;
 
   Aws::String m_documentVersion;
-  bool m_documentVersionHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<DocumentParameter> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::Vector<PlatformType> m_platformTypes;
-  bool m_platformTypesHasBeenSet = false;
 
   DocumentType m_documentType{DocumentType::NOT_SET};
-  bool m_documentTypeHasBeenSet = false;
 
   Aws::String m_schemaVersion;
-  bool m_schemaVersionHasBeenSet = false;
 
   Aws::String m_latestVersion;
-  bool m_latestVersionHasBeenSet = false;
 
   Aws::String m_defaultVersion;
-  bool m_defaultVersionHasBeenSet = false;
 
   DocumentFormat m_documentFormat{DocumentFormat::NOT_SET};
-  bool m_documentFormatHasBeenSet = false;
 
   Aws::String m_targetType;
-  bool m_targetTypeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<AttachmentInformation> m_attachmentsInformation;
-  bool m_attachmentsInformationHasBeenSet = false;
 
   Aws::Vector<DocumentRequires> m_requires;
-  bool m_requiresHasBeenSet = false;
 
   Aws::String m_author;
-  bool m_authorHasBeenSet = false;
 
   Aws::Vector<ReviewInformation> m_reviewInformation;
-  bool m_reviewInformationHasBeenSet = false;
 
   Aws::String m_approvedVersion;
-  bool m_approvedVersionHasBeenSet = false;
 
   Aws::String m_pendingReviewVersion;
-  bool m_pendingReviewVersionHasBeenSet = false;
 
   ReviewStatus m_reviewStatus{ReviewStatus::NOT_SET};
-  bool m_reviewStatusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_category;
-  bool m_categoryHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_categoryEnum;
+  bool m_sha1HasBeenSet = false;
+  bool m_hashHasBeenSet = false;
+  bool m_hashTypeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_versionNameHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusInformationHasBeenSet = false;
+  bool m_documentVersionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_platformTypesHasBeenSet = false;
+  bool m_documentTypeHasBeenSet = false;
+  bool m_schemaVersionHasBeenSet = false;
+  bool m_latestVersionHasBeenSet = false;
+  bool m_defaultVersionHasBeenSet = false;
+  bool m_documentFormatHasBeenSet = false;
+  bool m_targetTypeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_attachmentsInformationHasBeenSet = false;
+  bool m_requiresHasBeenSet = false;
+  bool m_authorHasBeenSet = false;
+  bool m_reviewInformationHasBeenSet = false;
+  bool m_approvedVersionHasBeenSet = false;
+  bool m_pendingReviewVersionHasBeenSet = false;
+  bool m_reviewStatusHasBeenSet = false;
+  bool m_categoryHasBeenSet = false;
   bool m_categoryEnumHasBeenSet = false;
 };
 

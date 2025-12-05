@@ -118,15 +118,15 @@ class DataFormatConversionConfiguration {
   ///@}
  private:
   SchemaConfiguration m_schemaConfiguration;
-  bool m_schemaConfigurationHasBeenSet = false;
 
   InputFormatConfiguration m_inputFormatConfiguration;
-  bool m_inputFormatConfigurationHasBeenSet = false;
 
   OutputFormatConfiguration m_outputFormatConfiguration;
-  bool m_outputFormatConfigurationHasBeenSet = false;
 
   bool m_enabled{false};
+  bool m_schemaConfigurationHasBeenSet = false;
+  bool m_inputFormatConfigurationHasBeenSet = false;
+  bool m_outputFormatConfigurationHasBeenSet = false;
   bool m_enabledHasBeenSet = false;
 };
 

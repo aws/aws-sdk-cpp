@@ -58,9 +58,9 @@ class GetSegmentsResult {
   ///@}
  private:
   SegmentsResponse m_segmentsResponse;
-  bool m_segmentsResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_segmentsResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

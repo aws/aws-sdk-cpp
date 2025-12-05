@@ -91,15 +91,15 @@ class StartMLModelTrainingJobResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   long long m_creationTimeInMillis{0};
-  bool m_creationTimeInMillisHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_creationTimeInMillisHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

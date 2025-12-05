@@ -86,12 +86,12 @@ class Location {
   ///@}
  private:
   Aws::String m_filePath;
-  bool m_filePathHasBeenSet = false;
 
   long long m_filePosition{0};
-  bool m_filePositionHasBeenSet = false;
 
   RelativeFileVersionEnum m_relativeFileVersion{RelativeFileVersionEnum::NOT_SET};
+  bool m_filePathHasBeenSet = false;
+  bool m_filePositionHasBeenSet = false;
   bool m_relativeFileVersionHasBeenSet = false;
 };
 

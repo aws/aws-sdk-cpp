@@ -196,27 +196,27 @@ class OrganizationManagedRuleMetadata {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_ruleIdentifier;
-  bool m_ruleIdentifierHasBeenSet = false;
 
   Aws::String m_inputParameters;
-  bool m_inputParametersHasBeenSet = false;
 
   MaximumExecutionFrequency m_maximumExecutionFrequency{MaximumExecutionFrequency::NOT_SET};
-  bool m_maximumExecutionFrequencyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceTypesScope;
-  bool m_resourceTypesScopeHasBeenSet = false;
 
   Aws::String m_resourceIdScope;
-  bool m_resourceIdScopeHasBeenSet = false;
 
   Aws::String m_tagKeyScope;
-  bool m_tagKeyScopeHasBeenSet = false;
 
   Aws::String m_tagValueScope;
+  bool m_descriptionHasBeenSet = false;
+  bool m_ruleIdentifierHasBeenSet = false;
+  bool m_inputParametersHasBeenSet = false;
+  bool m_maximumExecutionFrequencyHasBeenSet = false;
+  bool m_resourceTypesScopeHasBeenSet = false;
+  bool m_resourceIdScopeHasBeenSet = false;
+  bool m_tagKeyScopeHasBeenSet = false;
   bool m_tagValueScopeHasBeenSet = false;
 };
 

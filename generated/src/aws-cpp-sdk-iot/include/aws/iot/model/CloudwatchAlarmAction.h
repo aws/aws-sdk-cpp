@@ -106,15 +106,15 @@ class CloudwatchAlarmAction {
   ///@}
  private:
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_alarmName;
-  bool m_alarmNameHasBeenSet = false;
 
   Aws::String m_stateReason;
-  bool m_stateReasonHasBeenSet = false;
 
   Aws::String m_stateValue;
+  bool m_roleArnHasBeenSet = false;
+  bool m_alarmNameHasBeenSet = false;
+  bool m_stateReasonHasBeenSet = false;
   bool m_stateValueHasBeenSet = false;
 };
 

@@ -95,12 +95,12 @@ class GetDomainStatisticsReportResult {
   ///@}
  private:
   OverallVolume m_overallVolume;
-  bool m_overallVolumeHasBeenSet = false;
 
   Aws::Vector<DailyVolume> m_dailyVolumes;
-  bool m_dailyVolumesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_overallVolumeHasBeenSet = false;
+  bool m_dailyVolumesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

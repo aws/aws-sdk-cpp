@@ -85,9 +85,9 @@ class Configuration {
   ///@}
  private:
   CognitoUserPoolConfiguration m_cognitoUserPoolConfiguration;
-  bool m_cognitoUserPoolConfigurationHasBeenSet = false;
 
   OpenIdConnectConfiguration m_openIdConnectConfiguration;
+  bool m_cognitoUserPoolConfigurationHasBeenSet = false;
   bool m_openIdConnectConfigurationHasBeenSet = false;
 };
 

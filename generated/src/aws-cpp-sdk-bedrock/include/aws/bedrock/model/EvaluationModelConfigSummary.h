@@ -88,9 +88,9 @@ class EvaluationModelConfigSummary {
   ///@}
  private:
   Aws::Vector<Aws::String> m_bedrockModelIdentifiers;
-  bool m_bedrockModelIdentifiersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_precomputedInferenceSourceIdentifiers;
+  bool m_bedrockModelIdentifiersHasBeenSet = false;
   bool m_precomputedInferenceSourceIdentifiersHasBeenSet = false;
 };
 

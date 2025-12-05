@@ -145,21 +145,21 @@ class CreateProjectRequest : public GlueDataBrewRequest {
   ///@}
  private:
   Aws::String m_datasetName;
-  bool m_datasetNameHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_recipeName;
-  bool m_recipeNameHasBeenSet = false;
 
   Sample m_sample;
-  bool m_sampleHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_datasetNameHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_recipeNameHasBeenSet = false;
+  bool m_sampleHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

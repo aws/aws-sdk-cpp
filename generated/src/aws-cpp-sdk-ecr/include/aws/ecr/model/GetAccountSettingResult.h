@@ -79,12 +79,12 @@ class GetAccountSettingResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nameHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

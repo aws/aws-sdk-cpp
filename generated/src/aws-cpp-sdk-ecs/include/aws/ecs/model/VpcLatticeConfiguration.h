@@ -94,12 +94,12 @@ class VpcLatticeConfiguration {
   ///@}
  private:
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_targetGroupArn;
-  bool m_targetGroupArnHasBeenSet = false;
 
   Aws::String m_portName;
+  bool m_roleArnHasBeenSet = false;
+  bool m_targetGroupArnHasBeenSet = false;
   bool m_portNameHasBeenSet = false;
 };
 

@@ -90,12 +90,12 @@ class DescribeSnapshotSchedulesResult {
   ///@}
  private:
   Aws::Vector<SnapshotSchedule> m_snapshotSchedules;
-  bool m_snapshotSchedulesHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_snapshotSchedulesHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

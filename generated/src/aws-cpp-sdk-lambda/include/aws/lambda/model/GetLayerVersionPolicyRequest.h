@@ -63,9 +63,9 @@ class GetLayerVersionPolicyRequest : public LambdaRequest {
   ///@}
  private:
   Aws::String m_layerName;
-  bool m_layerNameHasBeenSet = false;
 
   long long m_versionNumber{0};
+  bool m_layerNameHasBeenSet = false;
   bool m_versionNumberHasBeenSet = false;
 };
 

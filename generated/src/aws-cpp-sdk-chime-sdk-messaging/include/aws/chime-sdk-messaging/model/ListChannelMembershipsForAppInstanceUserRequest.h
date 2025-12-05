@@ -108,15 +108,15 @@ class ListChannelMembershipsForAppInstanceUserRequest : public ChimeSDKMessaging
   ///@}
  private:
   Aws::String m_appInstanceUserArn;
-  bool m_appInstanceUserArnHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_chimeBearer;
+  bool m_appInstanceUserArnHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_chimeBearerHasBeenSet = false;
 };
 

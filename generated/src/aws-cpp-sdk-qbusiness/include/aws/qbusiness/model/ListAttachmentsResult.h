@@ -85,12 +85,12 @@ class ListAttachmentsResult {
   ///@}
  private:
   Aws::Vector<Attachment> m_attachments;
-  bool m_attachmentsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_attachmentsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

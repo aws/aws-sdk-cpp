@@ -70,9 +70,9 @@ class PrivateDnsNamespaceChange {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   PrivateDnsNamespacePropertiesChange m_properties;
+  bool m_descriptionHasBeenSet = false;
   bool m_propertiesHasBeenSet = false;
 };
 

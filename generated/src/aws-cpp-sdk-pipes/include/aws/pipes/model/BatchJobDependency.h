@@ -68,9 +68,9 @@ class BatchJobDependency {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   BatchJobDependencyType m_type{BatchJobDependencyType::NOT_SET};
+  bool m_jobIdHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

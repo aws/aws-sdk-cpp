@@ -113,12 +113,12 @@ class ListPoliciesRequest : public OrganizationsRequest {
   ///@}
  private:
   PolicyType m_filter{PolicyType::NOT_SET};
-  bool m_filterHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_filterHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

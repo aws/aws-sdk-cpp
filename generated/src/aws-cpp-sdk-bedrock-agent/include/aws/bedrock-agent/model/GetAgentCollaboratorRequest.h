@@ -83,12 +83,12 @@ class GetAgentCollaboratorRequest : public BedrockAgentRequest {
   ///@}
  private:
   Aws::String m_agentId;
-  bool m_agentIdHasBeenSet = false;
 
   Aws::String m_agentVersion;
-  bool m_agentVersionHasBeenSet = false;
 
   Aws::String m_collaboratorId;
+  bool m_agentIdHasBeenSet = false;
+  bool m_agentVersionHasBeenSet = false;
   bool m_collaboratorIdHasBeenSet = false;
 };
 

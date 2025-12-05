@@ -81,9 +81,9 @@ class CreateHsmClientCertificateRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_hsmClientCertificateIdentifier;
-  bool m_hsmClientCertificateIdentifierHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_hsmClientCertificateIdentifierHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

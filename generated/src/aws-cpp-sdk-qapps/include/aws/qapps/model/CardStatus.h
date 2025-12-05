@@ -94,12 +94,12 @@ class CardStatus {
   ///@}
  private:
   ExecutionStatus m_currentState{ExecutionStatus::NOT_SET};
-  bool m_currentStateHasBeenSet = false;
 
   Aws::String m_currentValue;
-  bool m_currentValueHasBeenSet = false;
 
   Aws::Vector<Submission> m_submissions;
+  bool m_currentStateHasBeenSet = false;
+  bool m_currentValueHasBeenSet = false;
   bool m_submissionsHasBeenSet = false;
 };
 

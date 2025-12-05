@@ -87,12 +87,12 @@ class CreateResourceRequest : public APIGatewayRequest {
   ///@}
  private:
   Aws::String m_restApiId;
-  bool m_restApiIdHasBeenSet = false;
 
   Aws::String m_parentId;
-  bool m_parentIdHasBeenSet = false;
 
   Aws::String m_pathPart;
+  bool m_restApiIdHasBeenSet = false;
+  bool m_parentIdHasBeenSet = false;
   bool m_pathPartHasBeenSet = false;
 };
 

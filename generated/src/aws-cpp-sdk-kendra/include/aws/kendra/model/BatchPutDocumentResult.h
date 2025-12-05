@@ -73,9 +73,9 @@ class BatchPutDocumentResult {
   ///@}
  private:
   Aws::Vector<BatchPutDocumentResponseFailedDocument> m_failedDocuments;
-  bool m_failedDocumentsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_failedDocumentsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

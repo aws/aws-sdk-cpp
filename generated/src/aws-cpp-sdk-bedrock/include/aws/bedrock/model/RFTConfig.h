@@ -72,9 +72,9 @@ class RFTConfig {
   ///@}
  private:
   GraderConfig m_graderConfig;
-  bool m_graderConfigHasBeenSet = false;
 
   RFTHyperParameters m_hyperParameters;
+  bool m_graderConfigHasBeenSet = false;
   bool m_hyperParametersHasBeenSet = false;
 };
 

@@ -158,24 +158,24 @@ class FmtpRequest {
   ///@}
  private:
   Aws::String m_channelOrder;
-  bool m_channelOrderHasBeenSet = false;
 
   Colorimetry m_colorimetry{Colorimetry::NOT_SET};
-  bool m_colorimetryHasBeenSet = false;
 
   Aws::String m_exactFramerate;
-  bool m_exactFramerateHasBeenSet = false;
 
   Aws::String m_par;
-  bool m_parHasBeenSet = false;
 
   Range m_range{Range::NOT_SET};
-  bool m_rangeHasBeenSet = false;
 
   ScanMode m_scanMode{ScanMode::NOT_SET};
-  bool m_scanModeHasBeenSet = false;
 
   Tcs m_tcs{Tcs::NOT_SET};
+  bool m_channelOrderHasBeenSet = false;
+  bool m_colorimetryHasBeenSet = false;
+  bool m_exactFramerateHasBeenSet = false;
+  bool m_parHasBeenSet = false;
+  bool m_rangeHasBeenSet = false;
+  bool m_scanModeHasBeenSet = false;
   bool m_tcsHasBeenSet = false;
 };
 

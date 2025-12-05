@@ -164,27 +164,27 @@ class GetSegmentSnapshotResult {
   ///@}
  private:
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   SegmentSnapshotStatus m_status{SegmentSnapshotStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   DataFormat m_dataFormat{DataFormat::NOT_SET};
-  bool m_dataFormatHasBeenSet = false;
 
   Aws::String m_encryptionKey;
-  bool m_encryptionKeyHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_destinationUri;
-  bool m_destinationUriHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_snapshotIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_dataFormatHasBeenSet = false;
+  bool m_encryptionKeyHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_destinationUriHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

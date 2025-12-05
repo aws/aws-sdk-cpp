@@ -61,9 +61,9 @@ class DescribeGameServerGroupResult {
   ///@}
  private:
   GameServerGroup m_gameServerGroup;
-  bool m_gameServerGroupHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_gameServerGroupHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

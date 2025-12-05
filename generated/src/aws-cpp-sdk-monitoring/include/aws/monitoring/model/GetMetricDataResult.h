@@ -117,15 +117,15 @@ class GetMetricDataResult {
   ///@}
  private:
   Aws::Vector<MetricDataResult> m_metricDataResults;
-  bool m_metricDataResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<MessageData> m_messages;
-  bool m_messagesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_metricDataResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_messagesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

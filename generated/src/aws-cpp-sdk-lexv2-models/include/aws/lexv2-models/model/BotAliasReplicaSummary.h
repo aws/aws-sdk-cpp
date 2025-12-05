@@ -148,21 +148,21 @@ class BotAliasReplicaSummary {
   ///@}
  private:
   Aws::String m_botAliasId;
-  bool m_botAliasIdHasBeenSet = false;
 
   BotAliasReplicationStatus m_botAliasReplicationStatus{BotAliasReplicationStatus::NOT_SET};
-  bool m_botAliasReplicationStatusHasBeenSet = false;
 
   Aws::String m_botVersion;
-  bool m_botVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
-  bool m_lastUpdatedDateTimeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_failureReasons;
+  bool m_botAliasIdHasBeenSet = false;
+  bool m_botAliasReplicationStatusHasBeenSet = false;
+  bool m_botVersionHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_lastUpdatedDateTimeHasBeenSet = false;
   bool m_failureReasonsHasBeenSet = false;
 };
 

@@ -76,9 +76,9 @@ class Job {
   ///@}
  private:
   JobSummary m_summary;
-  bool m_summaryHasBeenSet = false;
 
   Aws::Vector<Step> m_steps;
+  bool m_summaryHasBeenSet = false;
   bool m_stepsHasBeenSet = false;
 };
 

@@ -61,9 +61,9 @@ class CreateCrossAccountAuthorizationResult {
   ///@}
  private:
   Aws::String m_crossAccountAuthorization;
-  bool m_crossAccountAuthorizationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_crossAccountAuthorizationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

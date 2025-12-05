@@ -175,24 +175,24 @@ class CreateEndpointRequest : public ComprehendRequest {
   ///@}
  private:
   Aws::String m_endpointName;
-  bool m_endpointNameHasBeenSet = false;
 
   Aws::String m_modelArn;
-  bool m_modelArnHasBeenSet = false;
 
   int m_desiredInferenceUnits{0};
-  bool m_desiredInferenceUnitsHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_dataAccessRoleArn;
-  bool m_dataAccessRoleArnHasBeenSet = false;
 
   Aws::String m_flywheelArn;
+  bool m_endpointNameHasBeenSet = false;
+  bool m_modelArnHasBeenSet = false;
+  bool m_desiredInferenceUnitsHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_tagsHasBeenSet = false;
+  bool m_dataAccessRoleArnHasBeenSet = false;
   bool m_flywheelArnHasBeenSet = false;
 };
 

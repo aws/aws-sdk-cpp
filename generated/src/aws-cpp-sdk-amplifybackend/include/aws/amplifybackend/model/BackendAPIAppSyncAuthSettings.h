@@ -181,27 +181,27 @@ class BackendAPIAppSyncAuthSettings {
   ///@}
  private:
   Aws::String m_cognitoUserPoolId;
-  bool m_cognitoUserPoolIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   double m_expirationTime{0.0};
-  bool m_expirationTimeHasBeenSet = false;
 
   Aws::String m_openIDAuthTTL;
-  bool m_openIDAuthTTLHasBeenSet = false;
 
   Aws::String m_openIDClientId;
-  bool m_openIDClientIdHasBeenSet = false;
 
   Aws::String m_openIDIatTTL;
-  bool m_openIDIatTTLHasBeenSet = false;
 
   Aws::String m_openIDIssueURL;
-  bool m_openIDIssueURLHasBeenSet = false;
 
   Aws::String m_openIDProviderName;
+  bool m_cognitoUserPoolIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_expirationTimeHasBeenSet = false;
+  bool m_openIDAuthTTLHasBeenSet = false;
+  bool m_openIDClientIdHasBeenSet = false;
+  bool m_openIDIatTTLHasBeenSet = false;
+  bool m_openIDIssueURLHasBeenSet = false;
   bool m_openIDProviderNameHasBeenSet = false;
 };
 

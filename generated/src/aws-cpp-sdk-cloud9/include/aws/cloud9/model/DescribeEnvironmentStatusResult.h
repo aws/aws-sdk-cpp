@@ -82,12 +82,12 @@ class DescribeEnvironmentStatusResult {
   ///@}
  private:
   EnvironmentStatus m_status{EnvironmentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

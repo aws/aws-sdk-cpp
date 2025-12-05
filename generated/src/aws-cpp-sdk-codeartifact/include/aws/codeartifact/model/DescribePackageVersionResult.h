@@ -62,9 +62,9 @@ class DescribePackageVersionResult {
   ///@}
  private:
   PackageVersionDescription m_packageVersion;
-  bool m_packageVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_packageVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -128,18 +128,18 @@ class ListTimeSeriesRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_assetId;
-  bool m_assetIdHasBeenSet = false;
 
   Aws::String m_aliasPrefix;
-  bool m_aliasPrefixHasBeenSet = false;
 
   ListTimeSeriesType m_timeSeriesType{ListTimeSeriesType::NOT_SET};
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_assetIdHasBeenSet = false;
+  bool m_aliasPrefixHasBeenSet = false;
   bool m_timeSeriesTypeHasBeenSet = false;
 };
 

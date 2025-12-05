@@ -247,42 +247,42 @@ class DescribeMailboxExportJobResult {
   ///@}
  private:
   Aws::String m_entityId;
-  bool m_entityIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   Aws::String m_s3BucketName;
-  bool m_s3BucketNameHasBeenSet = false;
 
   Aws::String m_s3Prefix;
-  bool m_s3PrefixHasBeenSet = false;
 
   Aws::String m_s3Path;
-  bool m_s3PathHasBeenSet = false;
 
   int m_estimatedProgress{0};
-  bool m_estimatedProgressHasBeenSet = false;
 
   MailboxExportJobState m_state{MailboxExportJobState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_errorInfo;
-  bool m_errorInfoHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_entityIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
+  bool m_s3BucketNameHasBeenSet = false;
+  bool m_s3PrefixHasBeenSet = false;
+  bool m_s3PathHasBeenSet = false;
+  bool m_estimatedProgressHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_errorInfoHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

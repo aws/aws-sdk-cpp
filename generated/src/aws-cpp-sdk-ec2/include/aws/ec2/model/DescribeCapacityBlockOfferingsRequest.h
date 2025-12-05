@@ -215,33 +215,33 @@ class DescribeCapacityBlockOfferingsRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   Aws::Utils::DateTime m_startDateRange{};
-  bool m_startDateRangeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endDateRange{};
-  bool m_endDateRangeHasBeenSet = false;
 
   int m_capacityDurationHours{0};
-  bool m_capacityDurationHoursHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_ultraserverType;
-  bool m_ultraserverTypeHasBeenSet = false;
 
   int m_ultraserverCount{0};
+  bool m_dryRunHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_instanceCountHasBeenSet = false;
+  bool m_startDateRangeHasBeenSet = false;
+  bool m_endDateRangeHasBeenSet = false;
+  bool m_capacityDurationHoursHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_ultraserverTypeHasBeenSet = false;
   bool m_ultraserverCountHasBeenSet = false;
 };
 

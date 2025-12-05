@@ -68,9 +68,9 @@ class RenameColumnOperation {
   ///@}
  private:
   Aws::String m_columnName;
-  bool m_columnNameHasBeenSet = false;
 
   Aws::String m_newColumnName;
+  bool m_columnNameHasBeenSet = false;
   bool m_newColumnNameHasBeenSet = false;
 };
 

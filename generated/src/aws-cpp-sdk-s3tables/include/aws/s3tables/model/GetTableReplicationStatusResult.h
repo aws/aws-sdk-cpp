@@ -85,12 +85,12 @@ class GetTableReplicationStatusResult {
   ///@}
  private:
   Aws::String m_sourceTableArn;
-  bool m_sourceTableArnHasBeenSet = false;
 
   Aws::Vector<ReplicationDestinationStatusModel> m_destinations;
-  bool m_destinationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sourceTableArnHasBeenSet = false;
+  bool m_destinationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

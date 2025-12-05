@@ -67,9 +67,9 @@ class S3AccessControlPolicy {
   ///@}
  private:
   S3AccessControlList m_accessControlList;
-  bool m_accessControlListHasBeenSet = false;
 
   S3CannedAccessControlList m_cannedAccessControlList{S3CannedAccessControlList::NOT_SET};
+  bool m_accessControlListHasBeenSet = false;
   bool m_cannedAccessControlListHasBeenSet = false;
 };
 

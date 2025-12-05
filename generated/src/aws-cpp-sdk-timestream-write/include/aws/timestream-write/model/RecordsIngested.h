@@ -78,12 +78,12 @@ class RecordsIngested {
   ///@}
  private:
   int m_total{0};
-  bool m_totalHasBeenSet = false;
 
   int m_memoryStore{0};
-  bool m_memoryStoreHasBeenSet = false;
 
   int m_magneticStore{0};
+  bool m_totalHasBeenSet = false;
+  bool m_memoryStoreHasBeenSet = false;
   bool m_magneticStoreHasBeenSet = false;
 };
 

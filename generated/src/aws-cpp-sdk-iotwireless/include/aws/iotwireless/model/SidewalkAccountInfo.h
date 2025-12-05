@@ -68,9 +68,9 @@ class SidewalkAccountInfo {
   ///@}
  private:
   Aws::String m_amazonId;
-  bool m_amazonIdHasBeenSet = false;
 
   Aws::String m_appServerPrivateKey;
+  bool m_amazonIdHasBeenSet = false;
   bool m_appServerPrivateKeyHasBeenSet = false;
 };
 

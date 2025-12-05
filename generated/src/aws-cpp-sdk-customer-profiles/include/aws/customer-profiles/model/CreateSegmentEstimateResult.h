@@ -93,15 +93,15 @@ class CreateSegmentEstimateResult {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_estimateId;
-  bool m_estimateIdHasBeenSet = false;
 
   int m_statusCode{0};
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainNameHasBeenSet = false;
+  bool m_estimateIdHasBeenSet = false;
+  bool m_statusCodeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

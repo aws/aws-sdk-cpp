@@ -253,36 +253,36 @@ class InAppTemplateResponse {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Vector<InAppMessageContent> m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::String m_creationDate;
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customConfig;
-  bool m_customConfigHasBeenSet = false;
 
   Aws::String m_lastModifiedDate;
-  bool m_lastModifiedDateHasBeenSet = false;
 
   Layout m_layout{Layout::NOT_SET};
-  bool m_layoutHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_templateDescription;
-  bool m_templateDescriptionHasBeenSet = false;
 
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   TemplateType m_templateType{TemplateType::NOT_SET};
-  bool m_templateTypeHasBeenSet = false;
 
   Aws::String m_version;
+  bool m_arnHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_customConfigHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_layoutHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_templateDescriptionHasBeenSet = false;
+  bool m_templateNameHasBeenSet = false;
+  bool m_templateTypeHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

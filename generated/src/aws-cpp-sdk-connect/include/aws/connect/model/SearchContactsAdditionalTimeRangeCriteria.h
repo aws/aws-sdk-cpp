@@ -68,9 +68,9 @@ class SearchContactsAdditionalTimeRangeCriteria {
   ///@}
  private:
   SearchContactsTimeRange m_timeRange;
-  bool m_timeRangeHasBeenSet = false;
 
   SearchContactsTimestampCondition m_timestampCondition;
+  bool m_timeRangeHasBeenSet = false;
   bool m_timestampConditionHasBeenSet = false;
 };
 

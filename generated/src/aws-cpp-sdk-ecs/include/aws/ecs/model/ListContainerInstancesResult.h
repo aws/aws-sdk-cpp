@@ -88,12 +88,12 @@ class ListContainerInstancesResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_containerInstanceArns;
-  bool m_containerInstanceArnsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_containerInstanceArnsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

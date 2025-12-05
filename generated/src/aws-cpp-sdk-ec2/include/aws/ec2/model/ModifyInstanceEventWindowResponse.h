@@ -60,9 +60,9 @@ class ModifyInstanceEventWindowResponse {
   ///@}
  private:
   InstanceEventWindow m_instanceEventWindow;
-  bool m_instanceEventWindowHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_instanceEventWindowHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -268,42 +268,42 @@ class OperationUpdate {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_parentId;
-  bool m_parentIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   OperationType m_type{OperationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_subType;
-  bool m_subTypeHasBeenSet = false;
 
   OperationAction m_action{OperationAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_payload;
-  bool m_payloadHasBeenSet = false;
 
   ErrorObject m_error;
-  bool m_errorHasBeenSet = false;
 
   ContextOptions m_contextOptions;
-  bool m_contextOptionsHasBeenSet = false;
 
   StepOptions m_stepOptions;
-  bool m_stepOptionsHasBeenSet = false;
 
   WaitOptions m_waitOptions;
-  bool m_waitOptionsHasBeenSet = false;
 
   CallbackOptions m_callbackOptions;
-  bool m_callbackOptionsHasBeenSet = false;
 
   ChainedInvokeOptions m_chainedInvokeOptions;
+  bool m_idHasBeenSet = false;
+  bool m_parentIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_subTypeHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_payloadHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
+  bool m_contextOptionsHasBeenSet = false;
+  bool m_stepOptionsHasBeenSet = false;
+  bool m_waitOptionsHasBeenSet = false;
+  bool m_callbackOptionsHasBeenSet = false;
   bool m_chainedInvokeOptionsHasBeenSet = false;
 };
 

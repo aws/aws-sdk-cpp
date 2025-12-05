@@ -109,15 +109,15 @@ class DeleteLocalGatewayRouteRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_destinationCidrBlock;
-  bool m_destinationCidrBlockHasBeenSet = false;
 
   Aws::String m_localGatewayRouteTableId;
-  bool m_localGatewayRouteTableIdHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_destinationPrefixListId;
+  bool m_destinationCidrBlockHasBeenSet = false;
+  bool m_localGatewayRouteTableIdHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
   bool m_destinationPrefixListIdHasBeenSet = false;
 };
 

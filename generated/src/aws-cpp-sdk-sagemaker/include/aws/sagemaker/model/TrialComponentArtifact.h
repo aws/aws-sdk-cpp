@@ -78,9 +78,9 @@ class TrialComponentArtifact {
   ///@}
  private:
   Aws::String m_mediaType;
-  bool m_mediaTypeHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_mediaTypeHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

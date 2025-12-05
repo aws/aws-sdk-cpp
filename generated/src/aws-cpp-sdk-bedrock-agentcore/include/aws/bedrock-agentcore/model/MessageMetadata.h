@@ -68,9 +68,9 @@ class MessageMetadata {
   ///@}
  private:
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   int m_messageIndex{0};
+  bool m_eventIdHasBeenSet = false;
   bool m_messageIndexHasBeenSet = false;
 };
 

@@ -151,21 +151,21 @@ class TerminateWorkflowExecutionRequest : public SWFRequest {
   ///@}
  private:
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_workflowId;
-  bool m_workflowIdHasBeenSet = false;
 
   Aws::String m_runId;
-  bool m_runIdHasBeenSet = false;
 
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   Aws::String m_details;
-  bool m_detailsHasBeenSet = false;
 
   ChildPolicy m_childPolicy{ChildPolicy::NOT_SET};
+  bool m_domainHasBeenSet = false;
+  bool m_workflowIdHasBeenSet = false;
+  bool m_runIdHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
+  bool m_detailsHasBeenSet = false;
   bool m_childPolicyHasBeenSet = false;
 };
 

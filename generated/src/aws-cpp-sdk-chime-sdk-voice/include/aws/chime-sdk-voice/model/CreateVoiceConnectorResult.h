@@ -60,9 +60,9 @@ class CreateVoiceConnectorResult {
   ///@}
  private:
   VoiceConnector m_voiceConnector;
-  bool m_voiceConnectorHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_voiceConnectorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

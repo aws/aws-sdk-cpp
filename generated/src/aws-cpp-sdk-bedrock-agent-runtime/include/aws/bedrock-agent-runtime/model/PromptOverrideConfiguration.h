@@ -87,9 +87,9 @@ class PromptOverrideConfiguration {
   ///@}
  private:
   Aws::String m_overrideLambda;
-  bool m_overrideLambdaHasBeenSet = false;
 
   Aws::Vector<PromptConfiguration> m_promptConfigurations;
+  bool m_overrideLambdaHasBeenSet = false;
   bool m_promptConfigurationsHasBeenSet = false;
 };
 

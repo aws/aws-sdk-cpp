@@ -107,15 +107,15 @@ class ListenerTimeout {
   ///@}
  private:
   GrpcTimeout m_grpc;
-  bool m_grpcHasBeenSet = false;
 
   HttpTimeout m_http;
-  bool m_httpHasBeenSet = false;
 
   HttpTimeout m_http2;
-  bool m_http2HasBeenSet = false;
 
   TcpTimeout m_tcp;
+  bool m_grpcHasBeenSet = false;
+  bool m_httpHasBeenSet = false;
+  bool m_http2HasBeenSet = false;
   bool m_tcpHasBeenSet = false;
 };
 

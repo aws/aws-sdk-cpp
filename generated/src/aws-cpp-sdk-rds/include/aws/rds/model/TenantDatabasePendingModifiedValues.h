@@ -72,9 +72,9 @@ class TenantDatabasePendingModifiedValues {
   ///@}
  private:
   Aws::String m_masterUserPassword;
-  bool m_masterUserPasswordHasBeenSet = false;
 
   Aws::String m_tenantDBName;
+  bool m_masterUserPasswordHasBeenSet = false;
   bool m_tenantDBNameHasBeenSet = false;
 };
 

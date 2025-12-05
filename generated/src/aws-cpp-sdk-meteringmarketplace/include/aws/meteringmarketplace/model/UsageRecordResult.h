@@ -105,12 +105,12 @@ class UsageRecordResult {
   ///@}
  private:
   UsageRecord m_usageRecord;
-  bool m_usageRecordHasBeenSet = false;
 
   Aws::String m_meteringRecordId;
-  bool m_meteringRecordIdHasBeenSet = false;
 
   UsageRecordResultStatus m_status{UsageRecordResultStatus::NOT_SET};
+  bool m_usageRecordHasBeenSet = false;
+  bool m_meteringRecordIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

@@ -103,12 +103,12 @@ class CreateDBSecurityGroupRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_dBSecurityGroupName;
-  bool m_dBSecurityGroupNameHasBeenSet = false;
 
   Aws::String m_dBSecurityGroupDescription;
-  bool m_dBSecurityGroupDescriptionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_dBSecurityGroupNameHasBeenSet = false;
+  bool m_dBSecurityGroupDescriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -79,9 +79,9 @@ class ManagedAutoScaling {
   ///@}
  private:
   ManagedScalableTarget m_scalableTarget;
-  bool m_scalableTargetHasBeenSet = false;
 
   Aws::Vector<ManagedApplicationAutoScalingPolicy> m_applicationAutoScalingPolicies;
+  bool m_scalableTargetHasBeenSet = false;
   bool m_applicationAutoScalingPoliciesHasBeenSet = false;
 };
 

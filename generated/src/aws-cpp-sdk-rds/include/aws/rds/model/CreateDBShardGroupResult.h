@@ -252,39 +252,39 @@ class CreateDBShardGroupResult {
   ///@}
  private:
   Aws::String m_dBShardGroupResourceId;
-  bool m_dBShardGroupResourceIdHasBeenSet = false;
 
   Aws::String m_dBShardGroupIdentifier;
-  bool m_dBShardGroupIdentifierHasBeenSet = false;
 
   Aws::String m_dBClusterIdentifier;
-  bool m_dBClusterIdentifierHasBeenSet = false;
 
   double m_maxACU{0.0};
-  bool m_maxACUHasBeenSet = false;
 
   double m_minACU{0.0};
-  bool m_minACUHasBeenSet = false;
 
   int m_computeRedundancy{0};
-  bool m_computeRedundancyHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   bool m_publiclyAccessible{false};
-  bool m_publiclyAccessibleHasBeenSet = false;
 
   Aws::String m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   Aws::String m_dBShardGroupArn;
-  bool m_dBShardGroupArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tagList;
-  bool m_tagListHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_dBShardGroupResourceIdHasBeenSet = false;
+  bool m_dBShardGroupIdentifierHasBeenSet = false;
+  bool m_dBClusterIdentifierHasBeenSet = false;
+  bool m_maxACUHasBeenSet = false;
+  bool m_minACUHasBeenSet = false;
+  bool m_computeRedundancyHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_publiclyAccessibleHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
+  bool m_dBShardGroupArnHasBeenSet = false;
+  bool m_tagListHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class AssociateInstanceStorageConfigResult {
   ///@}
  private:
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_associationIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

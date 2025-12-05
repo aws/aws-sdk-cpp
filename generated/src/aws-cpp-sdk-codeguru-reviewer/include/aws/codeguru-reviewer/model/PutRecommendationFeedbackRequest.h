@@ -94,12 +94,12 @@ class PutRecommendationFeedbackRequest : public CodeGuruReviewerRequest {
   ///@}
  private:
   Aws::String m_codeReviewArn;
-  bool m_codeReviewArnHasBeenSet = false;
 
   Aws::String m_recommendationId;
-  bool m_recommendationIdHasBeenSet = false;
 
   Aws::Vector<Reaction> m_reactions;
+  bool m_codeReviewArnHasBeenSet = false;
+  bool m_recommendationIdHasBeenSet = false;
   bool m_reactionsHasBeenSet = false;
 };
 

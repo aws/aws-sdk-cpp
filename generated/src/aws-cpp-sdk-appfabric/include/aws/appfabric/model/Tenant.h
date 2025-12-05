@@ -68,9 +68,9 @@ class Tenant {
   ///@}
  private:
   Aws::String m_tenantIdentifier;
-  bool m_tenantIdentifierHasBeenSet = false;
 
   Aws::String m_tenantDisplayName;
+  bool m_tenantIdentifierHasBeenSet = false;
   bool m_tenantDisplayNameHasBeenSet = false;
 };
 

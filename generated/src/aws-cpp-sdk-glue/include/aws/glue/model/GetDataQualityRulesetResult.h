@@ -190,30 +190,30 @@ class GetDataQualityRulesetResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_ruleset;
-  bool m_rulesetHasBeenSet = false;
 
   DataQualityTargetTable m_targetTable;
-  bool m_targetTableHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdOn{};
-  bool m_createdOnHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedOn{};
-  bool m_lastModifiedOnHasBeenSet = false;
 
   Aws::String m_recommendationRunId;
-  bool m_recommendationRunIdHasBeenSet = false;
 
   Aws::String m_dataQualitySecurityConfiguration;
-  bool m_dataQualitySecurityConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_rulesetHasBeenSet = false;
+  bool m_targetTableHasBeenSet = false;
+  bool m_createdOnHasBeenSet = false;
+  bool m_lastModifiedOnHasBeenSet = false;
+  bool m_recommendationRunIdHasBeenSet = false;
+  bool m_dataQualitySecurityConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

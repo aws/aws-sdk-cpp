@@ -121,15 +121,15 @@ class CompareFacesRequest : public RekognitionRequest {
   ///@}
  private:
   Image m_sourceImage;
-  bool m_sourceImageHasBeenSet = false;
 
   Image m_targetImage;
-  bool m_targetImageHasBeenSet = false;
 
   double m_similarityThreshold{0.0};
-  bool m_similarityThresholdHasBeenSet = false;
 
   QualityFilter m_qualityFilter{QualityFilter::NOT_SET};
+  bool m_sourceImageHasBeenSet = false;
+  bool m_targetImageHasBeenSet = false;
+  bool m_similarityThresholdHasBeenSet = false;
   bool m_qualityFilterHasBeenSet = false;
 };
 

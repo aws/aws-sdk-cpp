@@ -108,15 +108,15 @@ class TimeSeriesReplacementsDataSource {
   ///@}
  private:
   S3Config m_s3Config;
-  bool m_s3ConfigHasBeenSet = false;
 
   Schema m_schema;
-  bool m_schemaHasBeenSet = false;
 
   Aws::String m_format;
-  bool m_formatHasBeenSet = false;
 
   Aws::String m_timestampFormat;
+  bool m_s3ConfigHasBeenSet = false;
+  bool m_schemaHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
   bool m_timestampFormatHasBeenSet = false;
 };
 

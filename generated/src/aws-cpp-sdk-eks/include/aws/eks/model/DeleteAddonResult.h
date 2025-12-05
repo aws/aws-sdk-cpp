@@ -58,9 +58,9 @@ class DeleteAddonResult {
   ///@}
  private:
   Addon m_addon;
-  bool m_addonHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_addonHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class PtrUpdateStatus {
   ///@}
  private:
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_reason;
+  bool m_valueHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

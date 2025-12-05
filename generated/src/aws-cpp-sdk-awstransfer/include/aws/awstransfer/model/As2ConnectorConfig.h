@@ -246,33 +246,33 @@ class As2ConnectorConfig {
   ///@}
  private:
   Aws::String m_localProfileId;
-  bool m_localProfileIdHasBeenSet = false;
 
   Aws::String m_partnerProfileId;
-  bool m_partnerProfileIdHasBeenSet = false;
 
   Aws::String m_messageSubject;
-  bool m_messageSubjectHasBeenSet = false;
 
   CompressionEnum m_compression{CompressionEnum::NOT_SET};
-  bool m_compressionHasBeenSet = false;
 
   EncryptionAlg m_encryptionAlgorithm{EncryptionAlg::NOT_SET};
-  bool m_encryptionAlgorithmHasBeenSet = false;
 
   SigningAlg m_signingAlgorithm{SigningAlg::NOT_SET};
-  bool m_signingAlgorithmHasBeenSet = false;
 
   MdnSigningAlg m_mdnSigningAlgorithm{MdnSigningAlg::NOT_SET};
-  bool m_mdnSigningAlgorithmHasBeenSet = false;
 
   MdnResponse m_mdnResponse{MdnResponse::NOT_SET};
-  bool m_mdnResponseHasBeenSet = false;
 
   Aws::String m_basicAuthSecretId;
-  bool m_basicAuthSecretIdHasBeenSet = false;
 
   PreserveContentType m_preserveContentType{PreserveContentType::NOT_SET};
+  bool m_localProfileIdHasBeenSet = false;
+  bool m_partnerProfileIdHasBeenSet = false;
+  bool m_messageSubjectHasBeenSet = false;
+  bool m_compressionHasBeenSet = false;
+  bool m_encryptionAlgorithmHasBeenSet = false;
+  bool m_signingAlgorithmHasBeenSet = false;
+  bool m_mdnSigningAlgorithmHasBeenSet = false;
+  bool m_mdnResponseHasBeenSet = false;
+  bool m_basicAuthSecretIdHasBeenSet = false;
   bool m_preserveContentTypeHasBeenSet = false;
 };
 

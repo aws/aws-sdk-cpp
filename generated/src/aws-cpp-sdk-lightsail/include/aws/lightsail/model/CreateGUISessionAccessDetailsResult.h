@@ -132,21 +132,21 @@ class CreateGUISessionAccessDetailsResult {
   ///@}
  private:
   Aws::String m_resourceName;
-  bool m_resourceNameHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   int m_percentageComplete{0};
-  bool m_percentageCompleteHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::Vector<Session> m_sessions;
-  bool m_sessionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_percentageCompleteHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_sessionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -153,24 +153,24 @@ class RejectDataShareResult {
   ///@}
  private:
   Aws::String m_dataShareArn;
-  bool m_dataShareArnHasBeenSet = false;
 
   Aws::String m_producerArn;
-  bool m_producerArnHasBeenSet = false;
 
   bool m_allowPubliclyAccessibleConsumers{false};
-  bool m_allowPubliclyAccessibleConsumersHasBeenSet = false;
 
   Aws::Vector<DataShareAssociation> m_dataShareAssociations;
-  bool m_dataShareAssociationsHasBeenSet = false;
 
   Aws::String m_managedBy;
-  bool m_managedByHasBeenSet = false;
 
   DataShareType m_dataShareType{DataShareType::NOT_SET};
-  bool m_dataShareTypeHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_dataShareArnHasBeenSet = false;
+  bool m_producerArnHasBeenSet = false;
+  bool m_allowPubliclyAccessibleConsumersHasBeenSet = false;
+  bool m_dataShareAssociationsHasBeenSet = false;
+  bool m_managedByHasBeenSet = false;
+  bool m_dataShareTypeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

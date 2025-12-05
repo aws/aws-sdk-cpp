@@ -77,9 +77,9 @@ class Container {
   ///@}
  private:
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_imageUris;
+  bool m_regionHasBeenSet = false;
   bool m_imageUrisHasBeenSet = false;
 };
 

@@ -186,30 +186,30 @@ class UploadPartCopyResult {
   ///@}
  private:
   Aws::String m_copySourceVersionId;
-  bool m_copySourceVersionIdHasBeenSet = false;
 
   CopyPartResult m_copyPartResult;
-  bool m_copyPartResultHasBeenSet = false;
 
   ServerSideEncryption m_serverSideEncryption{ServerSideEncryption::NOT_SET};
-  bool m_serverSideEncryptionHasBeenSet = false;
 
   Aws::String m_sSECustomerAlgorithm;
-  bool m_sSECustomerAlgorithmHasBeenSet = false;
 
   Aws::String m_sSECustomerKeyMD5;
-  bool m_sSECustomerKeyMD5HasBeenSet = false;
 
   Aws::String m_sSEKMSKeyId;
-  bool m_sSEKMSKeyIdHasBeenSet = false;
 
   bool m_bucketKeyEnabled{false};
-  bool m_bucketKeyEnabledHasBeenSet = false;
 
   RequestCharged m_requestCharged{RequestCharged::NOT_SET};
-  bool m_requestChargedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_copySourceVersionIdHasBeenSet = false;
+  bool m_copyPartResultHasBeenSet = false;
+  bool m_serverSideEncryptionHasBeenSet = false;
+  bool m_sSECustomerAlgorithmHasBeenSet = false;
+  bool m_sSECustomerKeyMD5HasBeenSet = false;
+  bool m_sSEKMSKeyIdHasBeenSet = false;
+  bool m_bucketKeyEnabledHasBeenSet = false;
+  bool m_requestChargedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

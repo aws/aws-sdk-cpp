@@ -94,12 +94,12 @@ class ArchiveStringExpression {
   ///@}
  private:
   ArchiveStringToEvaluate m_evaluate;
-  bool m_evaluateHasBeenSet = false;
 
   ArchiveStringOperator m_operator{ArchiveStringOperator::NOT_SET};
-  bool m_operatorHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_evaluateHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

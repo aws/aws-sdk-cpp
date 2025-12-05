@@ -105,15 +105,15 @@ class UpdateTrafficPolicyInstanceRequest : public Route53Request {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   long long m_tTL{0};
-  bool m_tTLHasBeenSet = false;
 
   Aws::String m_trafficPolicyId;
-  bool m_trafficPolicyIdHasBeenSet = false;
 
   int m_trafficPolicyVersion{0};
+  bool m_idHasBeenSet = false;
+  bool m_tTLHasBeenSet = false;
+  bool m_trafficPolicyIdHasBeenSet = false;
   bool m_trafficPolicyVersionHasBeenSet = false;
 };
 

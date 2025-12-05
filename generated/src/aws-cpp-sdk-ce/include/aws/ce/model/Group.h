@@ -83,9 +83,9 @@ class Group {
   ///@}
  private:
   Aws::Vector<Aws::String> m_keys;
-  bool m_keysHasBeenSet = false;
 
   Aws::Map<Aws::String, MetricValue> m_metrics;
+  bool m_keysHasBeenSet = false;
   bool m_metricsHasBeenSet = false;
 };
 

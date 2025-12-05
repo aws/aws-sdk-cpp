@@ -85,12 +85,12 @@ class MultiMeasureAttributeMapping {
   ///@}
  private:
   Aws::String m_sourceColumn;
-  bool m_sourceColumnHasBeenSet = false;
 
   Aws::String m_targetMultiMeasureAttributeName;
-  bool m_targetMultiMeasureAttributeNameHasBeenSet = false;
 
   ScalarMeasureValueType m_measureValueType{ScalarMeasureValueType::NOT_SET};
+  bool m_sourceColumnHasBeenSet = false;
+  bool m_targetMultiMeasureAttributeNameHasBeenSet = false;
   bool m_measureValueTypeHasBeenSet = false;
 };
 

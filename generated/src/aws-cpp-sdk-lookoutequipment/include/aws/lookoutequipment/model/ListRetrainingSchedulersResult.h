@@ -88,12 +88,12 @@ class ListRetrainingSchedulersResult {
   ///@}
  private:
   Aws::Vector<RetrainingSchedulerSummary> m_retrainingSchedulerSummaries;
-  bool m_retrainingSchedulerSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_retrainingSchedulerSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

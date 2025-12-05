@@ -136,18 +136,18 @@ class ModifyRouteServerRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_routeServerId;
-  bool m_routeServerIdHasBeenSet = false;
 
   RouteServerPersistRoutesAction m_persistRoutes{RouteServerPersistRoutesAction::NOT_SET};
-  bool m_persistRoutesHasBeenSet = false;
 
   long long m_persistRoutesDuration{0};
-  bool m_persistRoutesDurationHasBeenSet = false;
 
   bool m_snsNotificationsEnabled{false};
-  bool m_snsNotificationsEnabledHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_routeServerIdHasBeenSet = false;
+  bool m_persistRoutesHasBeenSet = false;
+  bool m_persistRoutesDurationHasBeenSet = false;
+  bool m_snsNotificationsEnabledHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

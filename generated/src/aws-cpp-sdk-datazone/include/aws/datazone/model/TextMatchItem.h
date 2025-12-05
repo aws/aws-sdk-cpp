@@ -95,12 +95,12 @@ class TextMatchItem {
   ///@}
  private:
   Aws::String m_attribute;
-  bool m_attributeHasBeenSet = false;
 
   Aws::Vector<MatchOffset> m_matchOffsets;
-  bool m_matchOffsetsHasBeenSet = false;
 
   Aws::String m_text;
+  bool m_attributeHasBeenSet = false;
+  bool m_matchOffsetsHasBeenSet = false;
   bool m_textHasBeenSet = false;
 };
 

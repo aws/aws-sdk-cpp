@@ -164,24 +164,24 @@ class ListTrainingPlansRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTimeAfter{};
-  bool m_startTimeAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTimeBefore{};
-  bool m_startTimeBeforeHasBeenSet = false;
 
   TrainingPlanSortBy m_sortBy{TrainingPlanSortBy::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   TrainingPlanSortOrder m_sortOrder{TrainingPlanSortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   Aws::Vector<TrainingPlanFilter> m_filters;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_startTimeAfterHasBeenSet = false;
+  bool m_startTimeBeforeHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

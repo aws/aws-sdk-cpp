@@ -60,9 +60,9 @@ class DescribeEntityRecognizerResult {
   ///@}
  private:
   EntityRecognizerProperties m_entityRecognizerProperties;
-  bool m_entityRecognizerPropertiesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_entityRecognizerPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

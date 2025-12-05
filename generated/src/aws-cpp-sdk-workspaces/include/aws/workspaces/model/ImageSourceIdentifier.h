@@ -87,12 +87,12 @@ class ImageSourceIdentifier {
   ///@}
  private:
   Aws::String m_ec2ImportTaskId;
-  bool m_ec2ImportTaskIdHasBeenSet = false;
 
   Aws::String m_imageBuildVersionArn;
-  bool m_imageBuildVersionArnHasBeenSet = false;
 
   Aws::String m_ec2ImageId;
+  bool m_ec2ImportTaskIdHasBeenSet = false;
+  bool m_imageBuildVersionArnHasBeenSet = false;
   bool m_ec2ImageIdHasBeenSet = false;
 };
 

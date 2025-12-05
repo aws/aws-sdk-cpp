@@ -139,18 +139,18 @@ class StartCommandExecutionRequest : public IoTJobsDataPlaneRequest {
   ///@}
  private:
   Aws::String m_targetArn;
-  bool m_targetArnHasBeenSet = false;
 
   Aws::String m_commandArn;
-  bool m_commandArnHasBeenSet = false;
 
   Aws::Map<Aws::String, CommandParameterValue> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   long long m_executionTimeoutSeconds{0};
-  bool m_executionTimeoutSecondsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_targetArnHasBeenSet = false;
+  bool m_commandArnHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_executionTimeoutSecondsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

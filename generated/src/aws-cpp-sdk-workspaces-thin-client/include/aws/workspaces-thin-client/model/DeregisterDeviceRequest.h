@@ -92,12 +92,12 @@ class DeregisterDeviceRequest : public WorkSpacesThinClientRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   TargetDeviceStatus m_targetDeviceStatus{TargetDeviceStatus::NOT_SET};
-  bool m_targetDeviceStatusHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_idHasBeenSet = false;
+  bool m_targetDeviceStatusHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

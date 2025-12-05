@@ -146,18 +146,18 @@ class CreateCampaignRequest : public PersonalizeRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_solutionVersionArn;
-  bool m_solutionVersionArnHasBeenSet = false;
 
   int m_minProvisionedTPS{0};
-  bool m_minProvisionedTPSHasBeenSet = false;
 
   CampaignConfig m_campaignConfig;
-  bool m_campaignConfigHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_solutionVersionArnHasBeenSet = false;
+  bool m_minProvisionedTPSHasBeenSet = false;
+  bool m_campaignConfigHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class DescribeClusterNodeRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_nodeId;
-  bool m_nodeIdHasBeenSet = false;
 
   Aws::String m_nodeLogicalId;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_nodeIdHasBeenSet = false;
   bool m_nodeLogicalIdHasBeenSet = false;
 };
 

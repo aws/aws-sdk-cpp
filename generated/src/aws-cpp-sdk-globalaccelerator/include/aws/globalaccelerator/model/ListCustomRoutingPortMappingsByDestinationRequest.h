@@ -104,15 +104,15 @@ class ListCustomRoutingPortMappingsByDestinationRequest : public GlobalAccelerat
   ///@}
  private:
   Aws::String m_endpointId;
-  bool m_endpointIdHasBeenSet = false;
 
   Aws::String m_destinationAddress;
-  bool m_destinationAddressHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_endpointIdHasBeenSet = false;
+  bool m_destinationAddressHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

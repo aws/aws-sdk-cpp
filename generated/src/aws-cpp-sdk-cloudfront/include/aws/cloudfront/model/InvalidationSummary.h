@@ -87,12 +87,12 @@ class InvalidationSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::String m_status;
+  bool m_idHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

@@ -61,9 +61,9 @@ class DisassociateTransitGatewayPolicyTableResponse {
   ///@}
  private:
   TransitGatewayPolicyTableAssociation m_association;
-  bool m_associationHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_associationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -273,42 +273,42 @@ class ReportDefinition {
   ///@}
  private:
   Aws::String m_reportName;
-  bool m_reportNameHasBeenSet = false;
 
   TimeUnit m_timeUnit{TimeUnit::NOT_SET};
-  bool m_timeUnitHasBeenSet = false;
 
   ReportFormat m_format{ReportFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   CompressionFormat m_compression{CompressionFormat::NOT_SET};
-  bool m_compressionHasBeenSet = false;
 
   Aws::Vector<SchemaElement> m_additionalSchemaElements;
-  bool m_additionalSchemaElementsHasBeenSet = false;
 
   Aws::String m_s3Bucket;
-  bool m_s3BucketHasBeenSet = false;
 
   Aws::String m_s3Prefix;
-  bool m_s3PrefixHasBeenSet = false;
 
   AWSRegion m_s3Region{AWSRegion::NOT_SET};
-  bool m_s3RegionHasBeenSet = false;
 
   Aws::Vector<AdditionalArtifact> m_additionalArtifacts;
-  bool m_additionalArtifactsHasBeenSet = false;
 
   bool m_refreshClosedReports{false};
-  bool m_refreshClosedReportsHasBeenSet = false;
 
   ReportVersioning m_reportVersioning{ReportVersioning::NOT_SET};
-  bool m_reportVersioningHasBeenSet = false;
 
   Aws::String m_billingViewArn;
-  bool m_billingViewArnHasBeenSet = false;
 
   ReportStatus m_reportStatus;
+  bool m_reportNameHasBeenSet = false;
+  bool m_timeUnitHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
+  bool m_compressionHasBeenSet = false;
+  bool m_additionalSchemaElementsHasBeenSet = false;
+  bool m_s3BucketHasBeenSet = false;
+  bool m_s3PrefixHasBeenSet = false;
+  bool m_s3RegionHasBeenSet = false;
+  bool m_additionalArtifactsHasBeenSet = false;
+  bool m_refreshClosedReportsHasBeenSet = false;
+  bool m_reportVersioningHasBeenSet = false;
+  bool m_billingViewArnHasBeenSet = false;
   bool m_reportStatusHasBeenSet = false;
 };
 

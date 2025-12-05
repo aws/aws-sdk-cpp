@@ -148,21 +148,21 @@ class SessionData {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   SessionIntegrationConfiguration m_integrationConfiguration;
-  bool m_integrationConfigurationHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_sessionArn;
-  bool m_sessionArnHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_descriptionHasBeenSet = false;
+  bool m_integrationConfigurationHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_sessionArnHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class ListPredictorBacktestExportJobsResult {
   ///@}
  private:
   Aws::Vector<PredictorBacktestExportJobSummary> m_predictorBacktestExportJobs;
-  bool m_predictorBacktestExportJobsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_predictorBacktestExportJobsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

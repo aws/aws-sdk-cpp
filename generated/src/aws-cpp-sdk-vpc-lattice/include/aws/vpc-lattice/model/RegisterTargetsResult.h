@@ -91,12 +91,12 @@ class RegisterTargetsResult {
   ///@}
  private:
   Aws::Vector<Target> m_successful;
-  bool m_successfulHasBeenSet = false;
 
   Aws::Vector<TargetFailure> m_unsuccessful;
-  bool m_unsuccessfulHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_successfulHasBeenSet = false;
+  bool m_unsuccessfulHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

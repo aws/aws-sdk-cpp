@@ -68,9 +68,9 @@ class SaaSProductSummary {
   ///@}
  private:
   Aws::String m_productTitle;
-  bool m_productTitleHasBeenSet = false;
 
   SaaSProductVisibilityString m_visibility{SaaSProductVisibilityString::NOT_SET};
+  bool m_productTitleHasBeenSet = false;
   bool m_visibilityHasBeenSet = false;
 };
 

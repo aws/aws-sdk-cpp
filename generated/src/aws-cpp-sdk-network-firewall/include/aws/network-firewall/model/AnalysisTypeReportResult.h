@@ -148,21 +148,21 @@ class AnalysisTypeReportResult {
   ///@}
  private:
   Aws::String m_protocol;
-  bool m_protocolHasBeenSet = false;
 
   Aws::Utils::DateTime m_firstAccessed{};
-  bool m_firstAccessedHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastAccessed{};
-  bool m_lastAccessedHasBeenSet = false;
 
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Hits m_hits;
-  bool m_hitsHasBeenSet = false;
 
   UniqueSources m_uniqueSources;
+  bool m_protocolHasBeenSet = false;
+  bool m_firstAccessedHasBeenSet = false;
+  bool m_lastAccessedHasBeenSet = false;
+  bool m_domainHasBeenSet = false;
+  bool m_hitsHasBeenSet = false;
   bool m_uniqueSourcesHasBeenSet = false;
 };
 

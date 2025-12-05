@@ -84,9 +84,9 @@ class LoadPermissionModifications {
   ///@}
  private:
   Aws::Vector<LoadPermissionRequest> m_add;
-  bool m_addHasBeenSet = false;
 
   Aws::Vector<LoadPermissionRequest> m_remove;
+  bool m_addHasBeenSet = false;
   bool m_removeHasBeenSet = false;
 };
 

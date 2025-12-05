@@ -81,9 +81,9 @@ class UpdateTopicRuleDestinationRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   TopicRuleDestinationStatus m_status{TopicRuleDestinationStatus::NOT_SET};
+  bool m_arnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

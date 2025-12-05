@@ -84,9 +84,9 @@ class DisassociateApplicationsRequest : public GameLiftStreamsRequest {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_applicationIdentifiers;
+  bool m_identifierHasBeenSet = false;
   bool m_applicationIdentifiersHasBeenSet = false;
 };
 

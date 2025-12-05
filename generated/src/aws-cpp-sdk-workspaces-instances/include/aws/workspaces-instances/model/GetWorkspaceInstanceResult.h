@@ -148,21 +148,21 @@ class GetWorkspaceInstanceResult {
   ///@}
  private:
   Aws::Vector<WorkspaceInstanceError> m_workspaceInstanceErrors;
-  bool m_workspaceInstanceErrorsHasBeenSet = false;
 
   Aws::Vector<EC2InstanceError> m_eC2InstanceErrors;
-  bool m_eC2InstanceErrorsHasBeenSet = false;
 
   ProvisionStateEnum m_provisionState{ProvisionStateEnum::NOT_SET};
-  bool m_provisionStateHasBeenSet = false;
 
   Aws::String m_workspaceInstanceId;
-  bool m_workspaceInstanceIdHasBeenSet = false;
 
   EC2ManagedInstance m_eC2ManagedInstance;
-  bool m_eC2ManagedInstanceHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workspaceInstanceErrorsHasBeenSet = false;
+  bool m_eC2InstanceErrorsHasBeenSet = false;
+  bool m_provisionStateHasBeenSet = false;
+  bool m_workspaceInstanceIdHasBeenSet = false;
+  bool m_eC2ManagedInstanceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

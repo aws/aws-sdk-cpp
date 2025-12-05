@@ -86,12 +86,12 @@ class ListServicesForAutoScalingConfigurationResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_serviceArnList;
-  bool m_serviceArnListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_serviceArnListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

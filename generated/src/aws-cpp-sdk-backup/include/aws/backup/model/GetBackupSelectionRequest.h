@@ -66,9 +66,9 @@ class GetBackupSelectionRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_backupPlanId;
-  bool m_backupPlanIdHasBeenSet = false;
 
   Aws::String m_selectionId;
+  bool m_backupPlanIdHasBeenSet = false;
   bool m_selectionIdHasBeenSet = false;
 };
 

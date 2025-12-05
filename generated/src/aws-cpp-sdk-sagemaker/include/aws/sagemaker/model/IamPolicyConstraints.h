@@ -77,9 +77,9 @@ class IamPolicyConstraints {
   ///@}
  private:
   EnabledOrDisabled m_sourceIp{EnabledOrDisabled::NOT_SET};
-  bool m_sourceIpHasBeenSet = false;
 
   EnabledOrDisabled m_vpcSourceIp{EnabledOrDisabled::NOT_SET};
+  bool m_sourceIpHasBeenSet = false;
   bool m_vpcSourceIpHasBeenSet = false;
 };
 

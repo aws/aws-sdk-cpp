@@ -62,9 +62,9 @@ class GetRegexMatchSetResult {
   ///@}
  private:
   RegexMatchSet m_regexMatchSet;
-  bool m_regexMatchSetHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_regexMatchSetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

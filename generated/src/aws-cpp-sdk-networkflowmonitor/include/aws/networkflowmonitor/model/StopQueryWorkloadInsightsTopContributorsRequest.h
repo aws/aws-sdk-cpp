@@ -68,9 +68,9 @@ class StopQueryWorkloadInsightsTopContributorsRequest : public NetworkFlowMonito
   ///@}
  private:
   Aws::String m_scopeId;
-  bool m_scopeIdHasBeenSet = false;
 
   Aws::String m_queryId;
+  bool m_scopeIdHasBeenSet = false;
   bool m_queryIdHasBeenSet = false;
 };
 

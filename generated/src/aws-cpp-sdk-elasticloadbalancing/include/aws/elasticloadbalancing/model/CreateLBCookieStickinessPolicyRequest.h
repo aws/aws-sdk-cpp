@@ -94,12 +94,12 @@ class CreateLBCookieStickinessPolicyRequest : public ElasticLoadBalancingRequest
   ///@}
  private:
   Aws::String m_loadBalancerName;
-  bool m_loadBalancerNameHasBeenSet = false;
 
   Aws::String m_policyName;
-  bool m_policyNameHasBeenSet = false;
 
   long long m_cookieExpirationPeriod{0};
+  bool m_loadBalancerNameHasBeenSet = false;
+  bool m_policyNameHasBeenSet = false;
   bool m_cookieExpirationPeriodHasBeenSet = false;
 };
 

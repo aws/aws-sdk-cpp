@@ -77,9 +77,9 @@ class MachineLearningProductTitleFilter {
   ///@}
  private:
   Aws::Vector<Aws::String> m_valueList;
-  bool m_valueListHasBeenSet = false;
 
   Aws::String m_wildCardValue;
+  bool m_valueListHasBeenSet = false;
   bool m_wildCardValueHasBeenSet = false;
 };
 

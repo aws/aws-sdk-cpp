@@ -94,12 +94,12 @@ class LoginProfile {
   ///@}
  private:
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createDate{};
-  bool m_createDateHasBeenSet = false;
 
   bool m_passwordResetRequired{false};
+  bool m_userNameHasBeenSet = false;
+  bool m_createDateHasBeenSet = false;
   bool m_passwordResetRequiredHasBeenSet = false;
 };
 

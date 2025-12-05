@@ -68,9 +68,9 @@ class InvoiceSummariesSelector {
   ///@}
  private:
   ListInvoiceSummariesResourceType m_resourceType{ListInvoiceSummariesResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

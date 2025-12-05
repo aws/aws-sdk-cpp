@@ -71,9 +71,9 @@ class DiscoverPollEndpointRequest : public ECSRequest {
   ///@}
  private:
   Aws::String m_containerInstance;
-  bool m_containerInstanceHasBeenSet = false;
 
   Aws::String m_cluster;
+  bool m_containerInstanceHasBeenSet = false;
   bool m_clusterHasBeenSet = false;
 };
 

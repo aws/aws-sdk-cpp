@@ -181,24 +181,24 @@ class SelfManagedActiveDirectoryConfigurationUpdates {
   ///@}
  private:
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_password;
-  bool m_passwordHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dnsIps;
-  bool m_dnsIpsHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_organizationalUnitDistinguishedName;
-  bool m_organizationalUnitDistinguishedNameHasBeenSet = false;
 
   Aws::String m_fileSystemAdministratorsGroup;
-  bool m_fileSystemAdministratorsGroupHasBeenSet = false;
 
   Aws::String m_domainJoinServiceAccountSecret;
+  bool m_userNameHasBeenSet = false;
+  bool m_passwordHasBeenSet = false;
+  bool m_dnsIpsHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_organizationalUnitDistinguishedNameHasBeenSet = false;
+  bool m_fileSystemAdministratorsGroupHasBeenSet = false;
   bool m_domainJoinServiceAccountSecretHasBeenSet = false;
 };
 

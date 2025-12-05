@@ -70,9 +70,9 @@ class GetAgentRuntimeRequest : public BedrockAgentCoreControlRequest {
   ///@}
  private:
   Aws::String m_agentRuntimeId;
-  bool m_agentRuntimeIdHasBeenSet = false;
 
   Aws::String m_agentRuntimeVersion;
+  bool m_agentRuntimeIdHasBeenSet = false;
   bool m_agentRuntimeVersionHasBeenSet = false;
 };
 

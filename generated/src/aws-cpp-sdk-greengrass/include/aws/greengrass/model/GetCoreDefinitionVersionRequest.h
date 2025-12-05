@@ -70,9 +70,9 @@ class GetCoreDefinitionVersionRequest : public GreengrassRequest {
   ///@}
  private:
   Aws::String m_coreDefinitionId;
-  bool m_coreDefinitionIdHasBeenSet = false;
 
   Aws::String m_coreDefinitionVersionId;
+  bool m_coreDefinitionIdHasBeenSet = false;
   bool m_coreDefinitionVersionIdHasBeenSet = false;
 };
 

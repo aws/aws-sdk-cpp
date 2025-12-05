@@ -67,9 +67,9 @@ class StackError {
   ///@}
  private:
   StackErrorCode m_errorCode{StackErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

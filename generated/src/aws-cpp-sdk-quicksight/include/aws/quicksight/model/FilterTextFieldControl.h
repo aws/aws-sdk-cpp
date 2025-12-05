@@ -106,15 +106,15 @@ class FilterTextFieldControl {
   ///@}
  private:
   Aws::String m_filterControlId;
-  bool m_filterControlIdHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_sourceFilterId;
-  bool m_sourceFilterIdHasBeenSet = false;
 
   TextFieldControlDisplayOptions m_displayOptions;
+  bool m_filterControlIdHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_sourceFilterIdHasBeenSet = false;
   bool m_displayOptionsHasBeenSet = false;
 };
 

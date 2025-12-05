@@ -116,15 +116,15 @@ class Metric {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<MetricReference> m_references;
-  bool m_referencesHasBeenSet = false;
 
   Aws::String m_statisticsDetails;
-  bool m_statisticsDetailsHasBeenSet = false;
 
   MetricQuery m_metricQuery;
+  bool m_nameHasBeenSet = false;
+  bool m_referencesHasBeenSet = false;
+  bool m_statisticsDetailsHasBeenSet = false;
   bool m_metricQueryHasBeenSet = false;
 };
 

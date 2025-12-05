@@ -246,42 +246,42 @@ class GetBrowserResult {
   ///@}
  private:
   Aws::String m_browserId;
-  bool m_browserIdHasBeenSet = false;
 
   Aws::String m_browserArn;
-  bool m_browserArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   BrowserNetworkConfiguration m_networkConfiguration;
-  bool m_networkConfigurationHasBeenSet = false;
 
   RecordingConfig m_recording;
-  bool m_recordingHasBeenSet = false;
 
   BrowserSigningConfigOutput m_browserSigning;
-  bool m_browserSigningHasBeenSet = false;
 
   BrowserStatus m_status{BrowserStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_browserIdHasBeenSet = false;
+  bool m_browserArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_executionRoleArnHasBeenSet = false;
+  bool m_networkConfigurationHasBeenSet = false;
+  bool m_recordingHasBeenSet = false;
+  bool m_browserSigningHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

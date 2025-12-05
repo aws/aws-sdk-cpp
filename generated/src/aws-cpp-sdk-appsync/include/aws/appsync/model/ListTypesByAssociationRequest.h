@@ -126,18 +126,18 @@ class ListTypesByAssociationRequest : public AppSyncRequest {
   ///@}
  private:
   Aws::String m_mergedApiIdentifier;
-  bool m_mergedApiIdentifierHasBeenSet = false;
 
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   TypeDefinitionFormat m_format{TypeDefinitionFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_mergedApiIdentifierHasBeenSet = false;
+  bool m_associationIdHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

@@ -251,42 +251,42 @@ class DescribeFaqResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_indexId;
-  bool m_indexIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   S3Path m_s3Path;
-  bool m_s3PathHasBeenSet = false;
 
   FaqStatus m_status{FaqStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   FaqFileFormat m_fileFormat{FaqFileFormat::NOT_SET};
-  bool m_fileFormatHasBeenSet = false;
 
   Aws::String m_languageCode;
-  bool m_languageCodeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_indexIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_s3PathHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_fileFormatHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

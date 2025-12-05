@@ -114,15 +114,15 @@ class ClipLimits {
   ///@}
  private:
   int m_maximumRGBTolerance{0};
-  bool m_maximumRGBToleranceHasBeenSet = false;
 
   int m_maximumYUV{0};
-  bool m_maximumYUVHasBeenSet = false;
 
   int m_minimumRGBTolerance{0};
-  bool m_minimumRGBToleranceHasBeenSet = false;
 
   int m_minimumYUV{0};
+  bool m_maximumRGBToleranceHasBeenSet = false;
+  bool m_maximumYUVHasBeenSet = false;
+  bool m_minimumRGBToleranceHasBeenSet = false;
   bool m_minimumYUVHasBeenSet = false;
 };
 

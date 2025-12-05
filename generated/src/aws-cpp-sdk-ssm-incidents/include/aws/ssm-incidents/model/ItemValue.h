@@ -107,15 +107,15 @@ class ItemValue {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_metricDefinition;
-  bool m_metricDefinitionHasBeenSet = false;
 
   PagerDutyIncidentDetail m_pagerDutyIncidentDetail;
-  bool m_pagerDutyIncidentDetailHasBeenSet = false;
 
   Aws::String m_url;
+  bool m_arnHasBeenSet = false;
+  bool m_metricDefinitionHasBeenSet = false;
+  bool m_pagerDutyIncidentDetailHasBeenSet = false;
   bool m_urlHasBeenSet = false;
 };
 

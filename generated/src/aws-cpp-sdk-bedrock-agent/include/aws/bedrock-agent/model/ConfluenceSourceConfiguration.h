@@ -109,15 +109,15 @@ class ConfluenceSourceConfiguration {
   ///@}
  private:
   Aws::String m_hostUrl;
-  bool m_hostUrlHasBeenSet = false;
 
   ConfluenceHostType m_hostType{ConfluenceHostType::NOT_SET};
-  bool m_hostTypeHasBeenSet = false;
 
   ConfluenceAuthType m_authType{ConfluenceAuthType::NOT_SET};
-  bool m_authTypeHasBeenSet = false;
 
   Aws::String m_credentialsSecretArn;
+  bool m_hostUrlHasBeenSet = false;
+  bool m_hostTypeHasBeenSet = false;
+  bool m_authTypeHasBeenSet = false;
   bool m_credentialsSecretArnHasBeenSet = false;
 };
 

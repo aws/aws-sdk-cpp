@@ -494,66 +494,66 @@ class AwsEc2LaunchTemplateDataInstanceRequirementsDetails {
   ///@}
  private:
   AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails m_acceleratorCount;
-  bool m_acceleratorCountHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_acceleratorManufacturers;
-  bool m_acceleratorManufacturersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_acceleratorNames;
-  bool m_acceleratorNamesHasBeenSet = false;
 
   AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails m_acceleratorTotalMemoryMiB;
-  bool m_acceleratorTotalMemoryMiBHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_acceleratorTypes;
-  bool m_acceleratorTypesHasBeenSet = false;
 
   Aws::String m_bareMetal;
-  bool m_bareMetalHasBeenSet = false;
 
   AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails m_baselineEbsBandwidthMbps;
-  bool m_baselineEbsBandwidthMbpsHasBeenSet = false;
 
   Aws::String m_burstablePerformance;
-  bool m_burstablePerformanceHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_cpuManufacturers;
-  bool m_cpuManufacturersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_excludedInstanceTypes;
-  bool m_excludedInstanceTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_instanceGenerations;
-  bool m_instanceGenerationsHasBeenSet = false;
 
   Aws::String m_localStorage;
-  bool m_localStorageHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_localStorageTypes;
-  bool m_localStorageTypesHasBeenSet = false;
 
   AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails m_memoryGiBPerVCpu;
-  bool m_memoryGiBPerVCpuHasBeenSet = false;
 
   AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails m_memoryMiB;
-  bool m_memoryMiBHasBeenSet = false;
 
   AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails m_networkInterfaceCount;
-  bool m_networkInterfaceCountHasBeenSet = false;
 
   int m_onDemandMaxPricePercentageOverLowestPrice{0};
-  bool m_onDemandMaxPricePercentageOverLowestPriceHasBeenSet = false;
 
   bool m_requireHibernateSupport{false};
-  bool m_requireHibernateSupportHasBeenSet = false;
 
   int m_spotMaxPricePercentageOverLowestPrice{0};
-  bool m_spotMaxPricePercentageOverLowestPriceHasBeenSet = false;
 
   AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGBDetails m_totalLocalStorageGB;
-  bool m_totalLocalStorageGBHasBeenSet = false;
 
   AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails m_vCpuCount;
+  bool m_acceleratorCountHasBeenSet = false;
+  bool m_acceleratorManufacturersHasBeenSet = false;
+  bool m_acceleratorNamesHasBeenSet = false;
+  bool m_acceleratorTotalMemoryMiBHasBeenSet = false;
+  bool m_acceleratorTypesHasBeenSet = false;
+  bool m_bareMetalHasBeenSet = false;
+  bool m_baselineEbsBandwidthMbpsHasBeenSet = false;
+  bool m_burstablePerformanceHasBeenSet = false;
+  bool m_cpuManufacturersHasBeenSet = false;
+  bool m_excludedInstanceTypesHasBeenSet = false;
+  bool m_instanceGenerationsHasBeenSet = false;
+  bool m_localStorageHasBeenSet = false;
+  bool m_localStorageTypesHasBeenSet = false;
+  bool m_memoryGiBPerVCpuHasBeenSet = false;
+  bool m_memoryMiBHasBeenSet = false;
+  bool m_networkInterfaceCountHasBeenSet = false;
+  bool m_onDemandMaxPricePercentageOverLowestPriceHasBeenSet = false;
+  bool m_requireHibernateSupportHasBeenSet = false;
+  bool m_spotMaxPricePercentageOverLowestPriceHasBeenSet = false;
+  bool m_totalLocalStorageGBHasBeenSet = false;
   bool m_vCpuCountHasBeenSet = false;
 };
 

@@ -82,12 +82,12 @@ class ListTagsForResourceResult {
   ///@}
  private:
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   TagInfoForResource m_tagInfoForResource;
-  bool m_tagInfoForResourceHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextMarkerHasBeenSet = false;
+  bool m_tagInfoForResourceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

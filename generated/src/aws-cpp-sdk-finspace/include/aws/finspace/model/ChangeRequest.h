@@ -89,12 +89,12 @@ class ChangeRequest {
   ///@}
  private:
   ChangeType m_changeType{ChangeType::NOT_SET};
-  bool m_changeTypeHasBeenSet = false;
 
   Aws::String m_s3Path;
-  bool m_s3PathHasBeenSet = false;
 
   Aws::String m_dbPath;
+  bool m_changeTypeHasBeenSet = false;
+  bool m_s3PathHasBeenSet = false;
   bool m_dbPathHasBeenSet = false;
 };
 

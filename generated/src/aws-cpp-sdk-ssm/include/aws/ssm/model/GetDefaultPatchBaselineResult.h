@@ -75,12 +75,12 @@ class GetDefaultPatchBaselineResult {
   ///@}
  private:
   Aws::String m_baselineId;
-  bool m_baselineIdHasBeenSet = false;
 
   OperatingSystem m_operatingSystem{OperatingSystem::NOT_SET};
-  bool m_operatingSystemHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_baselineIdHasBeenSet = false;
+  bool m_operatingSystemHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

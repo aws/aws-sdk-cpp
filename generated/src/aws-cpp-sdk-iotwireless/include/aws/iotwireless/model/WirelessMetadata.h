@@ -69,9 +69,9 @@ class WirelessMetadata {
   ///@}
  private:
   LoRaWANSendDataToDevice m_loRaWAN;
-  bool m_loRaWANHasBeenSet = false;
 
   SidewalkSendDataToDevice m_sidewalk;
+  bool m_loRaWANHasBeenSet = false;
   bool m_sidewalkHasBeenSet = false;
 };
 

@@ -100,15 +100,15 @@ class ConnectPeerBgpConfiguration {
   ///@}
  private:
   long long m_coreNetworkAsn{0};
-  bool m_coreNetworkAsnHasBeenSet = false;
 
   long long m_peerAsn{0};
-  bool m_peerAsnHasBeenSet = false;
 
   Aws::String m_coreNetworkAddress;
-  bool m_coreNetworkAddressHasBeenSet = false;
 
   Aws::String m_peerAddress;
+  bool m_coreNetworkAsnHasBeenSet = false;
+  bool m_peerAsnHasBeenSet = false;
+  bool m_coreNetworkAddressHasBeenSet = false;
   bool m_peerAddressHasBeenSet = false;
 };
 

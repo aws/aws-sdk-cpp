@@ -181,27 +181,27 @@ class ReviewActionDetail {
   ///@}
  private:
   Aws::String m_actionId;
-  bool m_actionIdHasBeenSet = false;
 
   Aws::String m_actionName;
-  bool m_actionNameHasBeenSet = false;
 
   Aws::String m_targetId;
-  bool m_targetIdHasBeenSet = false;
 
   Aws::String m_targetType;
-  bool m_targetTypeHasBeenSet = false;
 
   ReviewActionStatus m_status{ReviewActionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_completeTime{};
-  bool m_completeTimeHasBeenSet = false;
 
   Aws::String m_result;
-  bool m_resultHasBeenSet = false;
 
   Aws::String m_errorCode;
+  bool m_actionIdHasBeenSet = false;
+  bool m_actionNameHasBeenSet = false;
+  bool m_targetIdHasBeenSet = false;
+  bool m_targetTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_completeTimeHasBeenSet = false;
+  bool m_resultHasBeenSet = false;
   bool m_errorCodeHasBeenSet = false;
 };
 

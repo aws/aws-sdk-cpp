@@ -66,9 +66,9 @@ class MergeOperations {
   ///@}
  private:
   ChangeTypeEnum m_source{ChangeTypeEnum::NOT_SET};
-  bool m_sourceHasBeenSet = false;
 
   ChangeTypeEnum m_destination{ChangeTypeEnum::NOT_SET};
+  bool m_sourceHasBeenSet = false;
   bool m_destinationHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class SecurityGroupRuleDescription {
   ///@}
  private:
   Aws::String m_securityGroupRuleId;
-  bool m_securityGroupRuleIdHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_securityGroupRuleIdHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

@@ -116,15 +116,15 @@ class DescribeStreamRequest : public KinesisRequest {
   ///@}
  private:
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_exclusiveStartShardId;
-  bool m_exclusiveStartShardIdHasBeenSet = false;
 
   Aws::String m_streamARN;
+  bool m_streamNameHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
+  bool m_exclusiveStartShardIdHasBeenSet = false;
   bool m_streamARNHasBeenSet = false;
 };
 

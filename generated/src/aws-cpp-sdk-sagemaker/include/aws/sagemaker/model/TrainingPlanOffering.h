@@ -221,30 +221,30 @@ class TrainingPlanOffering {
   ///@}
  private:
   Aws::String m_trainingPlanOfferingId;
-  bool m_trainingPlanOfferingIdHasBeenSet = false;
 
   Aws::Vector<SageMakerResourceName> m_targetResources;
-  bool m_targetResourcesHasBeenSet = false;
 
   Aws::Utils::DateTime m_requestedStartTimeAfter{};
-  bool m_requestedStartTimeAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_requestedEndTimeBefore{};
-  bool m_requestedEndTimeBeforeHasBeenSet = false;
 
   long long m_durationHours{0};
-  bool m_durationHoursHasBeenSet = false;
 
   long long m_durationMinutes{0};
-  bool m_durationMinutesHasBeenSet = false;
 
   Aws::String m_upfrontFee;
-  bool m_upfrontFeeHasBeenSet = false;
 
   Aws::String m_currencyCode;
-  bool m_currencyCodeHasBeenSet = false;
 
   Aws::Vector<ReservedCapacityOffering> m_reservedCapacityOfferings;
+  bool m_trainingPlanOfferingIdHasBeenSet = false;
+  bool m_targetResourcesHasBeenSet = false;
+  bool m_requestedStartTimeAfterHasBeenSet = false;
+  bool m_requestedEndTimeBeforeHasBeenSet = false;
+  bool m_durationHoursHasBeenSet = false;
+  bool m_durationMinutesHasBeenSet = false;
+  bool m_upfrontFeeHasBeenSet = false;
+  bool m_currencyCodeHasBeenSet = false;
   bool m_reservedCapacityOfferingsHasBeenSet = false;
 };
 

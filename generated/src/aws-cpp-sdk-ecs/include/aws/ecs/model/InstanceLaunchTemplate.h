@@ -147,18 +147,18 @@ class InstanceLaunchTemplate {
   ///@}
  private:
   Aws::String m_ec2InstanceProfileArn;
-  bool m_ec2InstanceProfileArnHasBeenSet = false;
 
   ManagedInstancesNetworkConfiguration m_networkConfiguration;
-  bool m_networkConfigurationHasBeenSet = false;
 
   ManagedInstancesStorageConfiguration m_storageConfiguration;
-  bool m_storageConfigurationHasBeenSet = false;
 
   ManagedInstancesMonitoringOptions m_monitoring{ManagedInstancesMonitoringOptions::NOT_SET};
-  bool m_monitoringHasBeenSet = false;
 
   InstanceRequirementsRequest m_instanceRequirements;
+  bool m_ec2InstanceProfileArnHasBeenSet = false;
+  bool m_networkConfigurationHasBeenSet = false;
+  bool m_storageConfigurationHasBeenSet = false;
+  bool m_monitoringHasBeenSet = false;
   bool m_instanceRequirementsHasBeenSet = false;
 };
 

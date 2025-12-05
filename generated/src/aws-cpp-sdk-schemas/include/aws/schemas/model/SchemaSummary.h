@@ -128,18 +128,18 @@ class SchemaSummary {
   ///@}
  private:
   Aws::Utils::DateTime m_lastModified{};
-  bool m_lastModifiedHasBeenSet = false;
 
   Aws::String m_schemaArn;
-  bool m_schemaArnHasBeenSet = false;
 
   Aws::String m_schemaName;
-  bool m_schemaNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   long long m_versionCount{0};
+  bool m_lastModifiedHasBeenSet = false;
+  bool m_schemaArnHasBeenSet = false;
+  bool m_schemaNameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_versionCountHasBeenSet = false;
 };
 

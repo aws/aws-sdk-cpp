@@ -162,21 +162,21 @@ class StandardsSubscription {
   ///@}
  private:
   Aws::String m_standardsSubscriptionArn;
-  bool m_standardsSubscriptionArnHasBeenSet = false;
 
   Aws::String m_standardsArn;
-  bool m_standardsArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_standardsInput;
-  bool m_standardsInputHasBeenSet = false;
 
   StandardsStatus m_standardsStatus{StandardsStatus::NOT_SET};
-  bool m_standardsStatusHasBeenSet = false;
 
   StandardsControlsUpdatable m_standardsControlsUpdatable{StandardsControlsUpdatable::NOT_SET};
-  bool m_standardsControlsUpdatableHasBeenSet = false;
 
   StandardsStatusReason m_standardsStatusReason;
+  bool m_standardsSubscriptionArnHasBeenSet = false;
+  bool m_standardsArnHasBeenSet = false;
+  bool m_standardsInputHasBeenSet = false;
+  bool m_standardsStatusHasBeenSet = false;
+  bool m_standardsControlsUpdatableHasBeenSet = false;
   bool m_standardsStatusReasonHasBeenSet = false;
 };
 

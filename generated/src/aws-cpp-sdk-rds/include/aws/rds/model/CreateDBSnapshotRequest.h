@@ -102,12 +102,12 @@ class CreateDBSnapshotRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_dBSnapshotIdentifier;
-  bool m_dBSnapshotIdentifierHasBeenSet = false;
 
   Aws::String m_dBInstanceIdentifier;
-  bool m_dBInstanceIdentifierHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_dBSnapshotIdentifierHasBeenSet = false;
+  bool m_dBInstanceIdentifierHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

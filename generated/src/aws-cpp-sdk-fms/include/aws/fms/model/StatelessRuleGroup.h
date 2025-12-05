@@ -86,12 +86,12 @@ class StatelessRuleGroup {
   ///@}
  private:
   Aws::String m_ruleGroupName;
-  bool m_ruleGroupNameHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   int m_priority{0};
+  bool m_ruleGroupNameHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
   bool m_priorityHasBeenSet = false;
 };
 

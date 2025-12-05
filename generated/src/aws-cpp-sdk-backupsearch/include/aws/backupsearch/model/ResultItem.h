@@ -70,9 +70,9 @@ class ResultItem {
   ///@}
  private:
   S3ResultItem m_s3ResultItem;
-  bool m_s3ResultItemHasBeenSet = false;
 
   EBSResultItem m_eBSResultItem;
+  bool m_s3ResultItemHasBeenSet = false;
   bool m_eBSResultItemHasBeenSet = false;
 };
 

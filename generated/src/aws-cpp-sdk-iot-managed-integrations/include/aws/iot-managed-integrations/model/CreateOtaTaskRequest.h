@@ -260,39 +260,39 @@ class CreateOtaTaskRequest : public IoTManagedIntegrationsRequest {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_s3Url;
-  bool m_s3UrlHasBeenSet = false;
 
   OtaProtocol m_protocol{OtaProtocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_target;
-  bool m_targetHasBeenSet = false;
 
   Aws::String m_taskConfigurationId;
-  bool m_taskConfigurationIdHasBeenSet = false;
 
   OtaMechanism m_otaMechanism{OtaMechanism::NOT_SET};
-  bool m_otaMechanismHasBeenSet = false;
 
   OtaType m_otaType{OtaType::NOT_SET};
-  bool m_otaTypeHasBeenSet = false;
 
   Aws::String m_otaTargetQueryString;
-  bool m_otaTargetQueryStringHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   OtaTaskSchedulingConfig m_otaSchedulingConfig;
-  bool m_otaSchedulingConfigHasBeenSet = false;
 
   OtaTaskExecutionRetryConfig m_otaTaskExecutionRetryConfig;
-  bool m_otaTaskExecutionRetryConfigHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_descriptionHasBeenSet = false;
+  bool m_s3UrlHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
+  bool m_taskConfigurationIdHasBeenSet = false;
+  bool m_otaMechanismHasBeenSet = false;
+  bool m_otaTypeHasBeenSet = false;
+  bool m_otaTargetQueryStringHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_otaSchedulingConfigHasBeenSet = false;
+  bool m_otaTaskExecutionRetryConfigHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

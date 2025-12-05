@@ -63,9 +63,9 @@ class GetArchiveRuleResult {
   ///@}
  private:
   ArchiveRuleSummary m_archiveRule;
-  bool m_archiveRuleHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_archiveRuleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

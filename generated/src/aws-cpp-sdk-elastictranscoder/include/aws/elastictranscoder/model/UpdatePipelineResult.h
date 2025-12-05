@@ -94,12 +94,12 @@ class UpdatePipelineResult {
   ///@}
  private:
   Pipeline m_pipeline;
-  bool m_pipelineHasBeenSet = false;
 
   Aws::Vector<Warning> m_warnings;
-  bool m_warningsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_pipelineHasBeenSet = false;
+  bool m_warningsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

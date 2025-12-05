@@ -61,9 +61,9 @@ class LongRangeType {
   ///@}
  private:
   long long m_startValue{0};
-  bool m_startValueHasBeenSet = false;
 
   long long m_endValue{0};
+  bool m_startValueHasBeenSet = false;
   bool m_endValueHasBeenSet = false;
 };
 

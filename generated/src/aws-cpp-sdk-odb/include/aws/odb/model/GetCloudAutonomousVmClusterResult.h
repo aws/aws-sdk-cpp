@@ -60,9 +60,9 @@ class GetCloudAutonomousVmClusterResult {
   ///@}
  private:
   CloudAutonomousVmCluster m_cloudAutonomousVmCluster;
-  bool m_cloudAutonomousVmClusterHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_cloudAutonomousVmClusterHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

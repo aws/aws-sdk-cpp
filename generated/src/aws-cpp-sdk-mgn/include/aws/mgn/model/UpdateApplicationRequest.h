@@ -101,15 +101,15 @@ class UpdateApplicationRequest : public MgnRequest {
   ///@}
  private:
   Aws::String m_accountID;
-  bool m_accountIDHasBeenSet = false;
 
   Aws::String m_applicationID;
-  bool m_applicationIDHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_accountIDHasBeenSet = false;
+  bool m_applicationIDHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

@@ -63,9 +63,9 @@ class ProbabilisticRuleValue {
   ///@}
  private:
   double m_desiredSamplingPercentage{0.0};
-  bool m_desiredSamplingPercentageHasBeenSet = false;
 
   double m_actualSamplingPercentage{0.0};
+  bool m_desiredSamplingPercentageHasBeenSet = false;
   bool m_actualSamplingPercentageHasBeenSet = false;
 };
 

@@ -62,9 +62,9 @@ class ImportKeyPairResult {
   ///@}
  private:
   Operation m_operation;
-  bool m_operationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_operationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

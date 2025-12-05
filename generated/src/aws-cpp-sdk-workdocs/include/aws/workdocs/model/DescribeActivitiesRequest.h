@@ -223,33 +223,33 @@ class DescribeActivitiesRequest : public WorkDocsRequest {
   ///@}
  private:
   Aws::String m_authenticationToken;
-  bool m_authenticationTokenHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_organizationId;
-  bool m_organizationIdHasBeenSet = false;
 
   Aws::String m_activityTypes;
-  bool m_activityTypesHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   bool m_includeIndirectActivities{false};
-  bool m_includeIndirectActivitiesHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_marker;
+  bool m_authenticationTokenHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_organizationIdHasBeenSet = false;
+  bool m_activityTypesHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_includeIndirectActivitiesHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_markerHasBeenSet = false;
 };
 

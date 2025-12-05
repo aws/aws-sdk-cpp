@@ -66,9 +66,9 @@ class UpdateGlobalSettingsRequest : public ChimeRequest {
   ///@}
  private:
   BusinessCallingSettings m_businessCalling;
-  bool m_businessCallingHasBeenSet = false;
 
   VoiceConnectorSettings m_voiceConnector;
+  bool m_businessCallingHasBeenSet = false;
   bool m_voiceConnectorHasBeenSet = false;
 };
 

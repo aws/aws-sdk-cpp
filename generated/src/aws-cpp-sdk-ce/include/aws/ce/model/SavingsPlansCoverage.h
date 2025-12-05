@@ -96,12 +96,12 @@ class SavingsPlansCoverage {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   SavingsPlansCoverageData m_coverage;
-  bool m_coverageHasBeenSet = false;
 
   DateInterval m_timePeriod;
+  bool m_attributesHasBeenSet = false;
+  bool m_coverageHasBeenSet = false;
   bool m_timePeriodHasBeenSet = false;
 };
 

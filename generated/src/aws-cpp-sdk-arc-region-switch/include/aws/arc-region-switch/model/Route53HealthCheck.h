@@ -104,15 +104,15 @@ class Route53HealthCheck {
   ///@}
  private:
   Aws::String m_hostedZoneId;
-  bool m_hostedZoneIdHasBeenSet = false;
 
   Aws::String m_recordName;
-  bool m_recordNameHasBeenSet = false;
 
   Aws::String m_healthCheckId;
-  bool m_healthCheckIdHasBeenSet = false;
 
   Aws::String m_region;
+  bool m_hostedZoneIdHasBeenSet = false;
+  bool m_recordNameHasBeenSet = false;
+  bool m_healthCheckIdHasBeenSet = false;
   bool m_regionHasBeenSet = false;
 };
 

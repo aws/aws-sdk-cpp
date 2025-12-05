@@ -82,12 +82,12 @@ class ChildBlock {
   ///@}
  private:
   Aws::String m_childBlockId;
-  bool m_childBlockIdHasBeenSet = false;
 
   int m_beginOffset{0};
-  bool m_beginOffsetHasBeenSet = false;
 
   int m_endOffset{0};
+  bool m_childBlockIdHasBeenSet = false;
+  bool m_beginOffsetHasBeenSet = false;
   bool m_endOffsetHasBeenSet = false;
 };
 

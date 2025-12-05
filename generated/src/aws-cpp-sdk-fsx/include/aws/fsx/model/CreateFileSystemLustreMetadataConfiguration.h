@@ -88,9 +88,9 @@ class CreateFileSystemLustreMetadataConfiguration {
   ///@}
  private:
   int m_iops{0};
-  bool m_iopsHasBeenSet = false;
 
   MetadataConfigurationMode m_mode{MetadataConfigurationMode::NOT_SET};
+  bool m_iopsHasBeenSet = false;
   bool m_modeHasBeenSet = false;
 };
 

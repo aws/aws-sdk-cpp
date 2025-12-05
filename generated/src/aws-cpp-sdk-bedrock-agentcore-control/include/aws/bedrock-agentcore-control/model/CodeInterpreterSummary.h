@@ -159,24 +159,24 @@ class CodeInterpreterSummary {
   ///@}
  private:
   Aws::String m_codeInterpreterId;
-  bool m_codeInterpreterIdHasBeenSet = false;
 
   Aws::String m_codeInterpreterArn;
-  bool m_codeInterpreterArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   CodeInterpreterStatus m_status{CodeInterpreterStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
+  bool m_codeInterpreterIdHasBeenSet = false;
+  bool m_codeInterpreterArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_lastUpdatedAtHasBeenSet = false;
 };
 

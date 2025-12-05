@@ -137,18 +137,18 @@ class KnowledgeBaseRetrieveAndGenerateConfiguration {
   ///@}
  private:
   GenerationConfiguration m_generationConfiguration;
-  bool m_generationConfigurationHasBeenSet = false;
 
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::String m_modelArn;
-  bool m_modelArnHasBeenSet = false;
 
   OrchestrationConfiguration m_orchestrationConfiguration;
-  bool m_orchestrationConfigurationHasBeenSet = false;
 
   KnowledgeBaseRetrievalConfiguration m_retrievalConfiguration;
+  bool m_generationConfigurationHasBeenSet = false;
+  bool m_knowledgeBaseIdHasBeenSet = false;
+  bool m_modelArnHasBeenSet = false;
+  bool m_orchestrationConfigurationHasBeenSet = false;
   bool m_retrievalConfigurationHasBeenSet = false;
 };
 

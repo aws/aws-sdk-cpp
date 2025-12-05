@@ -87,12 +87,12 @@ class ListImportFileTaskResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ImportFileTaskInformation> m_taskInfos;
-  bool m_taskInfosHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_taskInfosHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

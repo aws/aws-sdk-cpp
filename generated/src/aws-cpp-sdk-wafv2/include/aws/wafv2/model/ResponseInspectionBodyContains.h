@@ -97,9 +97,9 @@ class ResponseInspectionBodyContains {
   ///@}
  private:
   Aws::Vector<Aws::String> m_successStrings;
-  bool m_successStringsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_failureStrings;
+  bool m_successStringsHasBeenSet = false;
   bool m_failureStringsHasBeenSet = false;
 };
 

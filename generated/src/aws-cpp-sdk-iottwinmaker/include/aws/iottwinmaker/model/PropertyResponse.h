@@ -88,12 +88,12 @@ class PropertyResponse {
   ///@}
  private:
   PropertyDefinitionResponse m_definition;
-  bool m_definitionHasBeenSet = false;
 
   DataValue m_value;
-  bool m_valueHasBeenSet = false;
 
   bool m_areAllPropertyValuesReturned{false};
+  bool m_definitionHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_areAllPropertyValuesReturnedHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class AssociateBackupVaultMpaApprovalTeamRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_backupVaultName;
-  bool m_backupVaultNameHasBeenSet = false;
 
   Aws::String m_mpaApprovalTeamArn;
-  bool m_mpaApprovalTeamArnHasBeenSet = false;
 
   Aws::String m_requesterComment;
+  bool m_backupVaultNameHasBeenSet = false;
+  bool m_mpaApprovalTeamArnHasBeenSet = false;
   bool m_requesterCommentHasBeenSet = false;
 };
 

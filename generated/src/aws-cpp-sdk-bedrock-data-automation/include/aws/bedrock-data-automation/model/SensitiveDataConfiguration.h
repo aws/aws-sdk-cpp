@@ -93,12 +93,12 @@ class SensitiveDataConfiguration {
   ///@}
  private:
   SensitiveDataDetectionMode m_detectionMode{SensitiveDataDetectionMode::NOT_SET};
-  bool m_detectionModeHasBeenSet = false;
 
   Aws::Vector<SensitiveDataDetectionScopeType> m_detectionScope;
-  bool m_detectionScopeHasBeenSet = false;
 
   PIIEntitiesConfiguration m_piiEntitiesConfiguration;
+  bool m_detectionModeHasBeenSet = false;
+  bool m_detectionScopeHasBeenSet = false;
   bool m_piiEntitiesConfigurationHasBeenSet = false;
 };
 

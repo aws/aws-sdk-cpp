@@ -81,9 +81,9 @@ class TagResourceRequest : public MediaStoreRequest {
   ///@}
  private:
   Aws::String m_resource;
-  bool m_resourceHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_resourceHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

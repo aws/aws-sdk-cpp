@@ -170,21 +170,21 @@ class CreateCustomModelRequest : public BedrockRequest {
   ///@}
  private:
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   ModelDataSource m_modelSourceConfig;
-  bool m_modelSourceConfigHasBeenSet = false;
 
   Aws::String m_modelKmsKeyArn;
-  bool m_modelKmsKeyArnHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_modelTags;
-  bool m_modelTagsHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_modelNameHasBeenSet = false;
+  bool m_modelSourceConfigHasBeenSet = false;
+  bool m_modelKmsKeyArnHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_modelTagsHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
 };
 

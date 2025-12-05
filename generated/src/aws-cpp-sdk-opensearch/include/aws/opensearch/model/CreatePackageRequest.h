@@ -183,27 +183,27 @@ class CreatePackageRequest : public OpenSearchServiceRequest {
   ///@}
  private:
   Aws::String m_packageName;
-  bool m_packageNameHasBeenSet = false;
 
   PackageType m_packageType{PackageType::NOT_SET};
-  bool m_packageTypeHasBeenSet = false;
 
   Aws::String m_packageDescription;
-  bool m_packageDescriptionHasBeenSet = false;
 
   PackageSource m_packageSource;
-  bool m_packageSourceHasBeenSet = false;
 
   PackageConfiguration m_packageConfiguration;
-  bool m_packageConfigurationHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   PackageVendingOptions m_packageVendingOptions;
-  bool m_packageVendingOptionsHasBeenSet = false;
 
   PackageEncryptionOptions m_packageEncryptionOptions;
+  bool m_packageNameHasBeenSet = false;
+  bool m_packageTypeHasBeenSet = false;
+  bool m_packageDescriptionHasBeenSet = false;
+  bool m_packageSourceHasBeenSet = false;
+  bool m_packageConfigurationHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_packageVendingOptionsHasBeenSet = false;
   bool m_packageEncryptionOptionsHasBeenSet = false;
 };
 

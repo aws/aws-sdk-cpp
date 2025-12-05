@@ -90,9 +90,9 @@ class AdvancedEventSelector {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<AdvancedFieldSelector> m_fieldSelectors;
+  bool m_nameHasBeenSet = false;
   bool m_fieldSelectorsHasBeenSet = false;
 };
 

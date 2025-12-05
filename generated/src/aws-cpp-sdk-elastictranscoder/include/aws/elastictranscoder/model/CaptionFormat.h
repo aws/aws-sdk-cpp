@@ -112,12 +112,12 @@ class CaptionFormat {
   ///@}
  private:
   Aws::String m_format;
-  bool m_formatHasBeenSet = false;
 
   Aws::String m_pattern;
-  bool m_patternHasBeenSet = false;
 
   Encryption m_encryption;
+  bool m_formatHasBeenSet = false;
+  bool m_patternHasBeenSet = false;
   bool m_encryptionHasBeenSet = false;
 };
 

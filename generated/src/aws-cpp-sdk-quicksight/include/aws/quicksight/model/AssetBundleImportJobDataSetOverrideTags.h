@@ -84,9 +84,9 @@ class AssetBundleImportJobDataSetOverrideTags {
   ///@}
  private:
   Aws::Vector<Aws::String> m_dataSetIds;
-  bool m_dataSetIdsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_dataSetIdsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

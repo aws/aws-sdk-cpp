@@ -180,27 +180,27 @@ class Offering {
   ///@}
  private:
   Aws::String m_currencyCode;
-  bool m_currencyCodeHasBeenSet = false;
 
   int m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   DurationUnits m_durationUnits{DurationUnits::NOT_SET};
-  bool m_durationUnitsHasBeenSet = false;
 
   Aws::String m_offeringArn;
-  bool m_offeringArnHasBeenSet = false;
 
   Aws::String m_offeringDescription;
-  bool m_offeringDescriptionHasBeenSet = false;
 
   Aws::String m_pricePerUnit;
-  bool m_pricePerUnitHasBeenSet = false;
 
   PriceUnits m_priceUnits{PriceUnits::NOT_SET};
-  bool m_priceUnitsHasBeenSet = false;
 
   ResourceSpecification m_resourceSpecification;
+  bool m_currencyCodeHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
+  bool m_durationUnitsHasBeenSet = false;
+  bool m_offeringArnHasBeenSet = false;
+  bool m_offeringDescriptionHasBeenSet = false;
+  bool m_pricePerUnitHasBeenSet = false;
+  bool m_priceUnitsHasBeenSet = false;
   bool m_resourceSpecificationHasBeenSet = false;
 };
 

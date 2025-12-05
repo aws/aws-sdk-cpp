@@ -93,12 +93,12 @@ class DescribeReceiptRuleSetResult {
   ///@}
  private:
   ReceiptRuleSetMetadata m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::Vector<ReceiptRule> m_rules;
-  bool m_rulesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_metadataHasBeenSet = false;
+  bool m_rulesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

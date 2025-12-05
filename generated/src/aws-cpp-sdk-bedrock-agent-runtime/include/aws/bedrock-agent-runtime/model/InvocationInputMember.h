@@ -75,9 +75,9 @@ class InvocationInputMember {
   ///@}
  private:
   ApiInvocationInput m_apiInvocationInput;
-  bool m_apiInvocationInputHasBeenSet = false;
 
   FunctionInvocationInput m_functionInvocationInput;
+  bool m_apiInvocationInputHasBeenSet = false;
   bool m_functionInvocationInputHasBeenSet = false;
 };
 

@@ -91,9 +91,9 @@ class WorkmailAction {
   ///@}
  private:
   Aws::String m_topicArn;
-  bool m_topicArnHasBeenSet = false;
 
   Aws::String m_organizationArn;
+  bool m_topicArnHasBeenSet = false;
   bool m_organizationArnHasBeenSet = false;
 };
 

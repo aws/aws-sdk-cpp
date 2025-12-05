@@ -72,9 +72,9 @@ class PutDialRequestBatchRequest : public ConnectCampaignsRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Vector<DialRequest> m_dialRequests;
+  bool m_idHasBeenSet = false;
   bool m_dialRequestsHasBeenSet = false;
 };
 

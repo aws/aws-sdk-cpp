@@ -61,9 +61,9 @@ class GlobalIdentity {
   ///@}
  private:
   int m_lac{0};
-  bool m_lacHasBeenSet = false;
 
   int m_geranCid{0};
+  bool m_lacHasBeenSet = false;
   bool m_geranCidHasBeenSet = false;
 };
 

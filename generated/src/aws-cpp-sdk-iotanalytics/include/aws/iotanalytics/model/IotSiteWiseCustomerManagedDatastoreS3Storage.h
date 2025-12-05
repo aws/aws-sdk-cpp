@@ -73,9 +73,9 @@ class IotSiteWiseCustomerManagedDatastoreS3Storage {
   ///@}
  private:
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   Aws::String m_keyPrefix;
+  bool m_bucketHasBeenSet = false;
   bool m_keyPrefixHasBeenSet = false;
 };
 

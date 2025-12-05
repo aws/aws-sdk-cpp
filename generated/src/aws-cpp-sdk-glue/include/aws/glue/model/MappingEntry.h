@@ -140,21 +140,21 @@ class MappingEntry {
   ///@}
  private:
   Aws::String m_sourceTable;
-  bool m_sourceTableHasBeenSet = false;
 
   Aws::String m_sourcePath;
-  bool m_sourcePathHasBeenSet = false;
 
   Aws::String m_sourceType;
-  bool m_sourceTypeHasBeenSet = false;
 
   Aws::String m_targetTable;
-  bool m_targetTableHasBeenSet = false;
 
   Aws::String m_targetPath;
-  bool m_targetPathHasBeenSet = false;
 
   Aws::String m_targetType;
+  bool m_sourceTableHasBeenSet = false;
+  bool m_sourcePathHasBeenSet = false;
+  bool m_sourceTypeHasBeenSet = false;
+  bool m_targetTableHasBeenSet = false;
+  bool m_targetPathHasBeenSet = false;
   bool m_targetTypeHasBeenSet = false;
 };
 

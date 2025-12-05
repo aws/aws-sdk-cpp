@@ -77,9 +77,9 @@ class OFITrainingMetricsValue {
   ///@}
  private:
   Aws::Vector<OFIMetricDataPoint> m_metricDataPoints;
-  bool m_metricDataPointsHasBeenSet = false;
 
   OFIModelPerformance m_modelPerformance;
+  bool m_metricDataPointsHasBeenSet = false;
   bool m_modelPerformanceHasBeenSet = false;
 };
 

@@ -154,12 +154,12 @@ class EnhancedMetricsConfig {
   ///@}
  private:
   ResolverLevelMetricsBehavior m_resolverLevelMetricsBehavior{ResolverLevelMetricsBehavior::NOT_SET};
-  bool m_resolverLevelMetricsBehaviorHasBeenSet = false;
 
   DataSourceLevelMetricsBehavior m_dataSourceLevelMetricsBehavior{DataSourceLevelMetricsBehavior::NOT_SET};
-  bool m_dataSourceLevelMetricsBehaviorHasBeenSet = false;
 
   OperationLevelMetricsConfig m_operationLevelMetricsConfig{OperationLevelMetricsConfig::NOT_SET};
+  bool m_resolverLevelMetricsBehaviorHasBeenSet = false;
+  bool m_dataSourceLevelMetricsBehaviorHasBeenSet = false;
   bool m_operationLevelMetricsConfigHasBeenSet = false;
 };
 

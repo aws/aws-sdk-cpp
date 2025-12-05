@@ -229,27 +229,27 @@ class ResourceFilterCriteria {
   ///@}
  private:
   Aws::Vector<ResourceStringFilter> m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::Vector<ResourceStringFilter> m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::Vector<ResourceStringFilter> m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<ResourceStringFilter> m_ecrRepositoryName;
-  bool m_ecrRepositoryNameHasBeenSet = false;
 
   Aws::Vector<ResourceStringFilter> m_lambdaFunctionName;
-  bool m_lambdaFunctionNameHasBeenSet = false;
 
   Aws::Vector<ResourceStringFilter> m_ecrImageTags;
-  bool m_ecrImageTagsHasBeenSet = false;
 
   Aws::Vector<ResourceMapFilter> m_ec2InstanceTags;
-  bool m_ec2InstanceTagsHasBeenSet = false;
 
   Aws::Vector<ResourceMapFilter> m_lambdaFunctionTags;
+  bool m_accountIdHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_ecrRepositoryNameHasBeenSet = false;
+  bool m_lambdaFunctionNameHasBeenSet = false;
+  bool m_ecrImageTagsHasBeenSet = false;
+  bool m_ec2InstanceTagsHasBeenSet = false;
   bool m_lambdaFunctionTagsHasBeenSet = false;
 };
 

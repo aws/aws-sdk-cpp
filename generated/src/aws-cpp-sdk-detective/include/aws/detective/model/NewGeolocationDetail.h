@@ -86,12 +86,12 @@ class NewGeolocationDetail {
   ///@}
  private:
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::String m_ipAddress;
-  bool m_ipAddressHasBeenSet = false;
 
   bool m_isNewForEntireAccount{false};
+  bool m_locationHasBeenSet = false;
+  bool m_ipAddressHasBeenSet = false;
   bool m_isNewForEntireAccountHasBeenSet = false;
 };
 

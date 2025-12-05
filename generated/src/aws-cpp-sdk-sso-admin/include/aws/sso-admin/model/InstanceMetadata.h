@@ -169,24 +169,24 @@ class InstanceMetadata {
   ///@}
  private:
   Aws::String m_instanceArn;
-  bool m_instanceArnHasBeenSet = false;
 
   Aws::String m_identityStoreId;
-  bool m_identityStoreIdHasBeenSet = false;
 
   Aws::String m_ownerAccountId;
-  bool m_ownerAccountIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
-  bool m_createdDateHasBeenSet = false;
 
   InstanceStatus m_status{InstanceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
+  bool m_instanceArnHasBeenSet = false;
+  bool m_identityStoreIdHasBeenSet = false;
+  bool m_ownerAccountIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
 };
 

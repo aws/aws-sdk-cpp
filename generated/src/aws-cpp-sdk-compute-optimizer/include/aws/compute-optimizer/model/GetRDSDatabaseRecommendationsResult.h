@@ -111,15 +111,15 @@ class GetRDSDatabaseRecommendationsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<RDSDBRecommendation> m_rdsDBRecommendations;
-  bool m_rdsDBRecommendationsHasBeenSet = false;
 
   Aws::Vector<GetRecommendationError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_rdsDBRecommendationsHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

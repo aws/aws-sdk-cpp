@@ -94,12 +94,12 @@ class ListApplicationsRequest : public EMRServerlessRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Vector<ApplicationState> m_states;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_statesHasBeenSet = false;
 };
 

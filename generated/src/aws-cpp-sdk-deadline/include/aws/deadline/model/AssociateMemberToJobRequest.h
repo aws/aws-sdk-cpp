@@ -153,24 +153,24 @@ class AssociateMemberToJobRequest : public DeadlineRequest {
   ///@}
  private:
   Aws::String m_farmId;
-  bool m_farmIdHasBeenSet = false;
 
   Aws::String m_queueId;
-  bool m_queueIdHasBeenSet = false;
 
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_principalId;
-  bool m_principalIdHasBeenSet = false;
 
   PrincipalType m_principalType{PrincipalType::NOT_SET};
-  bool m_principalTypeHasBeenSet = false;
 
   Aws::String m_identityStoreId;
-  bool m_identityStoreIdHasBeenSet = false;
 
   MembershipLevel m_membershipLevel{MembershipLevel::NOT_SET};
+  bool m_farmIdHasBeenSet = false;
+  bool m_queueIdHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
+  bool m_principalIdHasBeenSet = false;
+  bool m_principalTypeHasBeenSet = false;
+  bool m_identityStoreIdHasBeenSet = false;
   bool m_membershipLevelHasBeenSet = false;
 };
 

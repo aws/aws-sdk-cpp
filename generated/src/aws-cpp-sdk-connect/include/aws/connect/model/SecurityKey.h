@@ -88,12 +88,12 @@ class SecurityKey {
   ///@}
  private:
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
+  bool m_associationIdHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
 };
 

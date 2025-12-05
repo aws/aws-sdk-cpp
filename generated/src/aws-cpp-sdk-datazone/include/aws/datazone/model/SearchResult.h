@@ -104,15 +104,15 @@ class SearchResult {
   ///@}
  private:
   Aws::Vector<SearchInventoryResultItem> m_items;
-  bool m_itemsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_totalMatchCount{0};
-  bool m_totalMatchCountHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_itemsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_totalMatchCountHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

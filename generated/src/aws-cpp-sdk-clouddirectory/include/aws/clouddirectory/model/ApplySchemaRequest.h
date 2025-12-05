@@ -69,9 +69,9 @@ class ApplySchemaRequest : public CloudDirectoryRequest {
   ///@}
  private:
   Aws::String m_publishedSchemaArn;
-  bool m_publishedSchemaArnHasBeenSet = false;
 
   Aws::String m_directoryArn;
+  bool m_publishedSchemaArnHasBeenSet = false;
   bool m_directoryArnHasBeenSet = false;
 };
 

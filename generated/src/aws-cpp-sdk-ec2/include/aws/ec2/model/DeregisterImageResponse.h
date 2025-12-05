@@ -84,12 +84,12 @@ class DeregisterImageResponse {
   ///@}
  private:
   bool m_return{false};
-  bool m_returnHasBeenSet = false;
 
   Aws::Vector<DeleteSnapshotReturnCode> m_deleteSnapshotResults;
-  bool m_deleteSnapshotResultsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_returnHasBeenSet = false;
+  bool m_deleteSnapshotResultsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

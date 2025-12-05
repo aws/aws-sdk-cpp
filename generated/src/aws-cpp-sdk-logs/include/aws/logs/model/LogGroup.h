@@ -280,39 +280,39 @@ class LogGroup {
   ///@}
  private:
   Aws::String m_logGroupName;
-  bool m_logGroupNameHasBeenSet = false;
 
   long long m_creationTime{0};
-  bool m_creationTimeHasBeenSet = false;
 
   int m_retentionInDays{0};
-  bool m_retentionInDaysHasBeenSet = false;
 
   int m_metricFilterCount{0};
-  bool m_metricFilterCountHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   long long m_storedBytes{0};
-  bool m_storedBytesHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   DataProtectionStatus m_dataProtectionStatus{DataProtectionStatus::NOT_SET};
-  bool m_dataProtectionStatusHasBeenSet = false;
 
   Aws::Vector<InheritedProperty> m_inheritedProperties;
-  bool m_inheritedPropertiesHasBeenSet = false;
 
   LogGroupClass m_logGroupClass{LogGroupClass::NOT_SET};
-  bool m_logGroupClassHasBeenSet = false;
 
   Aws::String m_logGroupArn;
-  bool m_logGroupArnHasBeenSet = false;
 
   bool m_deletionProtectionEnabled{false};
+  bool m_logGroupNameHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_retentionInDaysHasBeenSet = false;
+  bool m_metricFilterCountHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_storedBytesHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_dataProtectionStatusHasBeenSet = false;
+  bool m_inheritedPropertiesHasBeenSet = false;
+  bool m_logGroupClassHasBeenSet = false;
+  bool m_logGroupArnHasBeenSet = false;
   bool m_deletionProtectionEnabledHasBeenSet = false;
 };
 

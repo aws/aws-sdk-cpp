@@ -66,9 +66,9 @@ class ListProgramManagementAccountsSortBase {
   ///@}
  private:
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   ListProgramManagementAccountsSortName m_sortBy{ListProgramManagementAccountsSortName::NOT_SET};
+  bool m_sortOrderHasBeenSet = false;
   bool m_sortByHasBeenSet = false;
 };
 

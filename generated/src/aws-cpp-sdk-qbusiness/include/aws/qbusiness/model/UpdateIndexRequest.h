@@ -155,21 +155,21 @@ class UpdateIndexRequest : public QBusinessRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_indexId;
-  bool m_indexIdHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   IndexCapacityConfiguration m_capacityConfiguration;
-  bool m_capacityConfigurationHasBeenSet = false;
 
   Aws::Vector<DocumentAttributeConfiguration> m_documentAttributeConfigurations;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_indexIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_capacityConfigurationHasBeenSet = false;
   bool m_documentAttributeConfigurationsHasBeenSet = false;
 };
 

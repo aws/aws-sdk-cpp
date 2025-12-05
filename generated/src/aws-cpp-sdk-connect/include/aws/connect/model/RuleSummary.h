@@ -184,27 +184,27 @@ class RuleSummary {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_ruleId;
-  bool m_ruleIdHasBeenSet = false;
 
   Aws::String m_ruleArn;
-  bool m_ruleArnHasBeenSet = false;
 
   EventSourceName m_eventSourceName{EventSourceName::NOT_SET};
-  bool m_eventSourceNameHasBeenSet = false;
 
   RulePublishStatus m_publishStatus{RulePublishStatus::NOT_SET};
-  bool m_publishStatusHasBeenSet = false;
 
   Aws::Vector<ActionSummary> m_actionSummaries;
-  bool m_actionSummariesHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
+  bool m_nameHasBeenSet = false;
+  bool m_ruleIdHasBeenSet = false;
+  bool m_ruleArnHasBeenSet = false;
+  bool m_eventSourceNameHasBeenSet = false;
+  bool m_publishStatusHasBeenSet = false;
+  bool m_actionSummariesHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
   bool m_lastUpdatedTimeHasBeenSet = false;
 };
 

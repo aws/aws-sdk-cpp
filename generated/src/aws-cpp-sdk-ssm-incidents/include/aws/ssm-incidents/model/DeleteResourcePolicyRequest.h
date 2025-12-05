@@ -66,9 +66,9 @@ class DeleteResourcePolicyRequest : public SSMIncidentsRequest {
   ///@}
  private:
   Aws::String m_policyId;
-  bool m_policyIdHasBeenSet = false;
 
   Aws::String m_resourceArn;
+  bool m_policyIdHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
 };
 

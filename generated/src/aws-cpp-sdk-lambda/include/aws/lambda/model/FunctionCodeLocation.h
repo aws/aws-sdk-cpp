@@ -126,18 +126,18 @@ class FunctionCodeLocation {
   ///@}
  private:
   Aws::String m_repositoryType;
-  bool m_repositoryTypeHasBeenSet = false;
 
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::String m_imageUri;
-  bool m_imageUriHasBeenSet = false;
 
   Aws::String m_resolvedImageUri;
-  bool m_resolvedImageUriHasBeenSet = false;
 
   Aws::String m_sourceKMSKeyArn;
+  bool m_repositoryTypeHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_imageUriHasBeenSet = false;
+  bool m_resolvedImageUriHasBeenSet = false;
   bool m_sourceKMSKeyArnHasBeenSet = false;
 };
 

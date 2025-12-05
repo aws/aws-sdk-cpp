@@ -94,12 +94,12 @@ class BatchAssociateAnalyticsDataSetResult {
   ///@}
  private:
   Aws::Vector<AnalyticsDataAssociationResult> m_created;
-  bool m_createdHasBeenSet = false;
 
   Aws::Vector<ErrorResult> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_createdHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class FlowTraceNodeInputExecutionChainItem {
   ///@}
  private:
   int m_index{0};
-  bool m_indexHasBeenSet = false;
 
   Aws::String m_nodeName;
-  bool m_nodeNameHasBeenSet = false;
 
   FlowControlNodeType m_type{FlowControlNodeType::NOT_SET};
+  bool m_indexHasBeenSet = false;
+  bool m_nodeNameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

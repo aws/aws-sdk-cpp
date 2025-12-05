@@ -151,24 +151,24 @@ class ComponentStatusData {
   ///@}
  private:
   Aws::String m_componentType;
-  bool m_componentTypeHasBeenSet = false;
 
   Aws::String m_capabilityArn;
-  bool m_capabilityArnHasBeenSet = false;
 
   AgentStatus m_status{AgentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   long long m_bytesSent{0};
-  bool m_bytesSentHasBeenSet = false;
 
   long long m_bytesReceived{0};
-  bool m_bytesReceivedHasBeenSet = false;
 
   long long m_packetsDropped{0};
-  bool m_packetsDroppedHasBeenSet = false;
 
   Aws::String m_dataflowId;
+  bool m_componentTypeHasBeenSet = false;
+  bool m_capabilityArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_bytesSentHasBeenSet = false;
+  bool m_bytesReceivedHasBeenSet = false;
+  bool m_packetsDroppedHasBeenSet = false;
   bool m_dataflowIdHasBeenSet = false;
 };
 

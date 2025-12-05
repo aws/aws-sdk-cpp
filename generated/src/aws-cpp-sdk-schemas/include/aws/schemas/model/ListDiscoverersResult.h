@@ -86,12 +86,12 @@ class ListDiscoverersResult {
   ///@}
  private:
   Aws::Vector<DiscovererSummary> m_discoverers;
-  bool m_discoverersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_discoverersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

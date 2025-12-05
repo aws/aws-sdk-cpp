@@ -339,45 +339,45 @@ class LambdaConfigType {
   ///@}
  private:
   Aws::String m_preSignUp;
-  bool m_preSignUpHasBeenSet = false;
 
   Aws::String m_customMessage;
-  bool m_customMessageHasBeenSet = false;
 
   Aws::String m_postConfirmation;
-  bool m_postConfirmationHasBeenSet = false;
 
   Aws::String m_preAuthentication;
-  bool m_preAuthenticationHasBeenSet = false;
 
   Aws::String m_postAuthentication;
-  bool m_postAuthenticationHasBeenSet = false;
 
   Aws::String m_defineAuthChallenge;
-  bool m_defineAuthChallengeHasBeenSet = false;
 
   Aws::String m_createAuthChallenge;
-  bool m_createAuthChallengeHasBeenSet = false;
 
   Aws::String m_verifyAuthChallengeResponse;
-  bool m_verifyAuthChallengeResponseHasBeenSet = false;
 
   Aws::String m_preTokenGeneration;
-  bool m_preTokenGenerationHasBeenSet = false;
 
   Aws::String m_userMigration;
-  bool m_userMigrationHasBeenSet = false;
 
   PreTokenGenerationVersionConfigType m_preTokenGenerationConfig;
-  bool m_preTokenGenerationConfigHasBeenSet = false;
 
   CustomSMSLambdaVersionConfigType m_customSMSSender;
-  bool m_customSMSSenderHasBeenSet = false;
 
   CustomEmailLambdaVersionConfigType m_customEmailSender;
-  bool m_customEmailSenderHasBeenSet = false;
 
   Aws::String m_kMSKeyID;
+  bool m_preSignUpHasBeenSet = false;
+  bool m_customMessageHasBeenSet = false;
+  bool m_postConfirmationHasBeenSet = false;
+  bool m_preAuthenticationHasBeenSet = false;
+  bool m_postAuthenticationHasBeenSet = false;
+  bool m_defineAuthChallengeHasBeenSet = false;
+  bool m_createAuthChallengeHasBeenSet = false;
+  bool m_verifyAuthChallengeResponseHasBeenSet = false;
+  bool m_preTokenGenerationHasBeenSet = false;
+  bool m_userMigrationHasBeenSet = false;
+  bool m_preTokenGenerationConfigHasBeenSet = false;
+  bool m_customSMSSenderHasBeenSet = false;
+  bool m_customEmailSenderHasBeenSet = false;
   bool m_kMSKeyIDHasBeenSet = false;
 };
 

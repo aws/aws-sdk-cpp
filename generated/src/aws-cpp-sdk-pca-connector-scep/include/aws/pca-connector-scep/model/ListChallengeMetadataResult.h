@@ -89,12 +89,12 @@ class ListChallengeMetadataResult {
   ///@}
  private:
   Aws::Vector<ChallengeMetadataSummary> m_challenges;
-  bool m_challengesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_challengesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

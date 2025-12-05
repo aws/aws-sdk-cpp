@@ -79,9 +79,9 @@ class ModelPackageValidationSpecification {
   ///@}
  private:
   Aws::String m_validationRole;
-  bool m_validationRoleHasBeenSet = false;
 
   Aws::Vector<ModelPackageValidationProfile> m_validationProfiles;
+  bool m_validationRoleHasBeenSet = false;
   bool m_validationProfilesHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class DescribeAuthenticationProfilesResult {
   ///@}
  private:
   Aws::Vector<AuthenticationProfile> m_authenticationProfiles;
-  bool m_authenticationProfilesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_authenticationProfilesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

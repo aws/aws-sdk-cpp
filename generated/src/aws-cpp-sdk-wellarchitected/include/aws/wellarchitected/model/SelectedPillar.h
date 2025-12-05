@@ -73,9 +73,9 @@ class SelectedPillar {
   ///@}
  private:
   Aws::String m_pillarId;
-  bool m_pillarIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_selectedQuestionIds;
+  bool m_pillarIdHasBeenSet = false;
   bool m_selectedQuestionIdsHasBeenSet = false;
 };
 

@@ -150,21 +150,21 @@ class GetDevicePositionHistoryRequest : public LocationServiceRequest {
   ///@}
  private:
   Aws::String m_trackerName;
-  bool m_trackerNameHasBeenSet = false;
 
   Aws::String m_deviceId;
-  bool m_deviceIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTimeInclusive{};
-  bool m_startTimeInclusiveHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTimeExclusive{};
-  bool m_endTimeExclusiveHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_trackerNameHasBeenSet = false;
+  bool m_deviceIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_startTimeInclusiveHasBeenSet = false;
+  bool m_endTimeExclusiveHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

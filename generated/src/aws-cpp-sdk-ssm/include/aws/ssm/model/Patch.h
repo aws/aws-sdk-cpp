@@ -488,72 +488,72 @@ class Patch {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_releaseDate{};
-  bool m_releaseDateHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_contentUrl;
-  bool m_contentUrlHasBeenSet = false;
 
   Aws::String m_vendor;
-  bool m_vendorHasBeenSet = false;
 
   Aws::String m_productFamily;
-  bool m_productFamilyHasBeenSet = false;
 
   Aws::String m_product;
-  bool m_productHasBeenSet = false;
 
   Aws::String m_classification;
-  bool m_classificationHasBeenSet = false;
 
   Aws::String m_msrcSeverity;
-  bool m_msrcSeverityHasBeenSet = false;
 
   Aws::String m_kbNumber;
-  bool m_kbNumberHasBeenSet = false;
 
   Aws::String m_msrcNumber;
-  bool m_msrcNumberHasBeenSet = false;
 
   Aws::String m_language;
-  bool m_languageHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_advisoryIds;
-  bool m_advisoryIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_bugzillaIds;
-  bool m_bugzillaIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_cVEIds;
-  bool m_cVEIdsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_epoch{0};
-  bool m_epochHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_release;
-  bool m_releaseHasBeenSet = false;
 
   Aws::String m_arch;
-  bool m_archHasBeenSet = false;
 
   Aws::String m_severity;
-  bool m_severityHasBeenSet = false;
 
   Aws::String m_repository;
+  bool m_idHasBeenSet = false;
+  bool m_releaseDateHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_contentUrlHasBeenSet = false;
+  bool m_vendorHasBeenSet = false;
+  bool m_productFamilyHasBeenSet = false;
+  bool m_productHasBeenSet = false;
+  bool m_classificationHasBeenSet = false;
+  bool m_msrcSeverityHasBeenSet = false;
+  bool m_kbNumberHasBeenSet = false;
+  bool m_msrcNumberHasBeenSet = false;
+  bool m_languageHasBeenSet = false;
+  bool m_advisoryIdsHasBeenSet = false;
+  bool m_bugzillaIdsHasBeenSet = false;
+  bool m_cVEIdsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_epochHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_releaseHasBeenSet = false;
+  bool m_archHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
   bool m_repositoryHasBeenSet = false;
 };
 

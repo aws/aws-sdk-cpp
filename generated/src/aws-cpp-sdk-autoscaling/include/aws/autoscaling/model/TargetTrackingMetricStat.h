@@ -122,15 +122,15 @@ class TargetTrackingMetricStat {
   ///@}
  private:
   Metric m_metric;
-  bool m_metricHasBeenSet = false;
 
   Aws::String m_stat;
-  bool m_statHasBeenSet = false;
 
   Aws::String m_unit;
-  bool m_unitHasBeenSet = false;
 
   int m_period{0};
+  bool m_metricHasBeenSet = false;
+  bool m_statHasBeenSet = false;
+  bool m_unitHasBeenSet = false;
   bool m_periodHasBeenSet = false;
 };
 

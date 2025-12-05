@@ -65,9 +65,9 @@ class DeleteConnectionRequest : public NetworkManagerRequest {
   ///@}
  private:
   Aws::String m_globalNetworkId;
-  bool m_globalNetworkIdHasBeenSet = false;
 
   Aws::String m_connectionId;
+  bool m_globalNetworkIdHasBeenSet = false;
   bool m_connectionIdHasBeenSet = false;
 };
 

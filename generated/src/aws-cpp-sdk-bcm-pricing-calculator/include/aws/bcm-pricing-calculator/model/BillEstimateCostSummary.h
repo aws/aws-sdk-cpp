@@ -78,9 +78,9 @@ class BillEstimateCostSummary {
   ///@}
  private:
   CostDifference m_totalCostDifference;
-  bool m_totalCostDifferenceHasBeenSet = false;
 
   Aws::Map<Aws::String, CostDifference> m_serviceCostDifferences;
+  bool m_totalCostDifferenceHasBeenSet = false;
   bool m_serviceCostDifferencesHasBeenSet = false;
 };
 

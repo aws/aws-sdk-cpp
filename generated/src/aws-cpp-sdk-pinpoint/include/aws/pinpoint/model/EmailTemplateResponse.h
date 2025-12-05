@@ -315,45 +315,45 @@ class EmailTemplateResponse {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_creationDate;
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_defaultSubstitutions;
-  bool m_defaultSubstitutionsHasBeenSet = false;
 
   Aws::String m_htmlPart;
-  bool m_htmlPartHasBeenSet = false;
 
   Aws::String m_lastModifiedDate;
-  bool m_lastModifiedDateHasBeenSet = false;
 
   Aws::String m_recommenderId;
-  bool m_recommenderIdHasBeenSet = false;
 
   Aws::String m_subject;
-  bool m_subjectHasBeenSet = false;
 
   Aws::Vector<MessageHeader> m_headers;
-  bool m_headersHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_templateDescription;
-  bool m_templateDescriptionHasBeenSet = false;
 
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   TemplateType m_templateType{TemplateType::NOT_SET};
-  bool m_templateTypeHasBeenSet = false;
 
   Aws::String m_textPart;
-  bool m_textPartHasBeenSet = false;
 
   Aws::String m_version;
+  bool m_arnHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_defaultSubstitutionsHasBeenSet = false;
+  bool m_htmlPartHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_recommenderIdHasBeenSet = false;
+  bool m_subjectHasBeenSet = false;
+  bool m_headersHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_templateDescriptionHasBeenSet = false;
+  bool m_templateNameHasBeenSet = false;
+  bool m_templateTypeHasBeenSet = false;
+  bool m_textPartHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

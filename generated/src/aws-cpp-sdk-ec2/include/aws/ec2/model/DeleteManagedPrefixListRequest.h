@@ -70,9 +70,9 @@ class DeleteManagedPrefixListRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_prefixListId;
+  bool m_dryRunHasBeenSet = false;
   bool m_prefixListIdHasBeenSet = false;
 };
 

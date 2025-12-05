@@ -111,15 +111,15 @@ class EnvironmentInfoDescription {
   ///@}
  private:
   EnvironmentInfoType m_infoType{EnvironmentInfoType::NOT_SET};
-  bool m_infoTypeHasBeenSet = false;
 
   Aws::String m_ec2InstanceId;
-  bool m_ec2InstanceIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_sampleTimestamp{};
-  bool m_sampleTimestampHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_infoTypeHasBeenSet = false;
+  bool m_ec2InstanceIdHasBeenSet = false;
+  bool m_sampleTimestampHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

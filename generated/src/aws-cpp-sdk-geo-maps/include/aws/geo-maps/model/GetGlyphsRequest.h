@@ -116,9 +116,9 @@ class GetGlyphsRequest : public GeoMapsRequest {
   ///@}
  private:
   Aws::String m_fontStack;
-  bool m_fontStackHasBeenSet = false;
 
   Aws::String m_fontUnicodeRange;
+  bool m_fontStackHasBeenSet = false;
   bool m_fontUnicodeRangeHasBeenSet = false;
 };
 

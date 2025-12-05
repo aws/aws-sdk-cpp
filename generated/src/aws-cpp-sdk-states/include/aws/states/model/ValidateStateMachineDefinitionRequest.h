@@ -110,15 +110,15 @@ class ValidateStateMachineDefinitionRequest : public SFNRequest {
   ///@}
  private:
   Aws::String m_definition;
-  bool m_definitionHasBeenSet = false;
 
   StateMachineType m_type{StateMachineType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   ValidateStateMachineDefinitionSeverity m_severity{ValidateStateMachineDefinitionSeverity::NOT_SET};
-  bool m_severityHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_definitionHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

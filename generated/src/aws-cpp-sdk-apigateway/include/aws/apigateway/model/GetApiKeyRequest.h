@@ -73,9 +73,9 @@ class GetApiKeyRequest : public APIGatewayRequest {
   ///@}
  private:
   Aws::String m_apiKey;
-  bool m_apiKeyHasBeenSet = false;
 
   bool m_includeValue{false};
+  bool m_apiKeyHasBeenSet = false;
   bool m_includeValueHasBeenSet = false;
 };
 

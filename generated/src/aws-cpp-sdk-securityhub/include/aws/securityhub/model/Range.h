@@ -81,12 +81,12 @@ class Range {
   ///@}
  private:
   long long m_start{0};
-  bool m_startHasBeenSet = false;
 
   long long m_end{0};
-  bool m_endHasBeenSet = false;
 
   long long m_startColumn{0};
+  bool m_startHasBeenSet = false;
+  bool m_endHasBeenSet = false;
   bool m_startColumnHasBeenSet = false;
 };
 

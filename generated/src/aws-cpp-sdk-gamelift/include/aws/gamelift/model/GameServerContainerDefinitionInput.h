@@ -228,24 +228,24 @@ class GameServerContainerDefinitionInput {
   ///@}
  private:
   Aws::String m_containerName;
-  bool m_containerNameHasBeenSet = false;
 
   Aws::Vector<ContainerDependency> m_dependsOn;
-  bool m_dependsOnHasBeenSet = false;
 
   Aws::Vector<ContainerMountPoint> m_mountPoints;
-  bool m_mountPointsHasBeenSet = false;
 
   Aws::Vector<ContainerEnvironment> m_environmentOverride;
-  bool m_environmentOverrideHasBeenSet = false;
 
   Aws::String m_imageUri;
-  bool m_imageUriHasBeenSet = false;
 
   ContainerPortConfiguration m_portConfiguration;
-  bool m_portConfigurationHasBeenSet = false;
 
   Aws::String m_serverSdkVersion;
+  bool m_containerNameHasBeenSet = false;
+  bool m_dependsOnHasBeenSet = false;
+  bool m_mountPointsHasBeenSet = false;
+  bool m_environmentOverrideHasBeenSet = false;
+  bool m_imageUriHasBeenSet = false;
+  bool m_portConfigurationHasBeenSet = false;
   bool m_serverSdkVersionHasBeenSet = false;
 };
 

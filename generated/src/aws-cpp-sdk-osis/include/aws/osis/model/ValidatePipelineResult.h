@@ -82,12 +82,12 @@ class ValidatePipelineResult {
   ///@}
  private:
   bool m_isValid{false};
-  bool m_isValidHasBeenSet = false;
 
   Aws::Vector<ValidationMessage> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_isValidHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -90,12 +90,12 @@ class ListCollaborationTrainedModelInferenceJobsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<CollaborationTrainedModelInferenceJobSummary> m_collaborationTrainedModelInferenceJobs;
-  bool m_collaborationTrainedModelInferenceJobsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_collaborationTrainedModelInferenceJobsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -92,12 +92,12 @@ class Artifact {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_revision;
-  bool m_revisionHasBeenSet = false;
 
   ArtifactLocation m_location;
+  bool m_nameHasBeenSet = false;
+  bool m_revisionHasBeenSet = false;
   bool m_locationHasBeenSet = false;
 };
 

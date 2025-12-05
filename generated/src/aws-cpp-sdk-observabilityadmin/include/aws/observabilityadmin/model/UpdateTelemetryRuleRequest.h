@@ -66,9 +66,9 @@ class UpdateTelemetryRuleRequest : public ObservabilityAdminRequest {
   ///@}
  private:
   Aws::String m_ruleIdentifier;
-  bool m_ruleIdentifierHasBeenSet = false;
 
   TelemetryRule m_rule;
+  bool m_ruleIdentifierHasBeenSet = false;
   bool m_ruleHasBeenSet = false;
 };
 

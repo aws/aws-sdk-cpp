@@ -204,27 +204,27 @@ class CreateMlflowTrackingServerRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_trackingServerName;
-  bool m_trackingServerNameHasBeenSet = false;
 
   Aws::String m_artifactStoreUri;
-  bool m_artifactStoreUriHasBeenSet = false;
 
   TrackingServerSize m_trackingServerSize{TrackingServerSize::NOT_SET};
-  bool m_trackingServerSizeHasBeenSet = false;
 
   Aws::String m_mlflowVersion;
-  bool m_mlflowVersionHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   bool m_automaticModelRegistration{false};
-  bool m_automaticModelRegistrationHasBeenSet = false;
 
   Aws::String m_weeklyMaintenanceWindowStart;
-  bool m_weeklyMaintenanceWindowStartHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_trackingServerNameHasBeenSet = false;
+  bool m_artifactStoreUriHasBeenSet = false;
+  bool m_trackingServerSizeHasBeenSet = false;
+  bool m_mlflowVersionHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_automaticModelRegistrationHasBeenSet = false;
+  bool m_weeklyMaintenanceWindowStartHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

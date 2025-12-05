@@ -144,18 +144,18 @@ class DescribeFastLaunchImagesRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_imageIds;
-  bool m_imageIdsHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_imageIdsHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

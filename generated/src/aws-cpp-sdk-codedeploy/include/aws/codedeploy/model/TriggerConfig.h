@@ -96,12 +96,12 @@ class TriggerConfig {
   ///@}
  private:
   Aws::String m_triggerName;
-  bool m_triggerNameHasBeenSet = false;
 
   Aws::String m_triggerTargetArn;
-  bool m_triggerTargetArnHasBeenSet = false;
 
   Aws::Vector<TriggerEventType> m_triggerEvents;
+  bool m_triggerNameHasBeenSet = false;
+  bool m_triggerTargetArnHasBeenSet = false;
   bool m_triggerEventsHasBeenSet = false;
 };
 

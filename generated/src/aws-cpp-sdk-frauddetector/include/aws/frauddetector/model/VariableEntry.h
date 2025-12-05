@@ -150,21 +150,21 @@ class VariableEntry {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_dataType;
-  bool m_dataTypeHasBeenSet = false;
 
   Aws::String m_dataSource;
-  bool m_dataSourceHasBeenSet = false;
 
   Aws::String m_defaultValue;
-  bool m_defaultValueHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_variableType;
+  bool m_nameHasBeenSet = false;
+  bool m_dataTypeHasBeenSet = false;
+  bool m_dataSourceHasBeenSet = false;
+  bool m_defaultValueHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_variableTypeHasBeenSet = false;
 };
 

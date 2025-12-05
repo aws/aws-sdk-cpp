@@ -99,12 +99,12 @@ class AwsWafv2CustomResponseDetails {
   ///@}
  private:
   Aws::String m_customResponseBodyKey;
-  bool m_customResponseBodyKeyHasBeenSet = false;
 
   int m_responseCode{0};
-  bool m_responseCodeHasBeenSet = false;
 
   Aws::Vector<AwsWafv2CustomHttpHeader> m_responseHeaders;
+  bool m_customResponseBodyKeyHasBeenSet = false;
+  bool m_responseCodeHasBeenSet = false;
   bool m_responseHeadersHasBeenSet = false;
 };
 

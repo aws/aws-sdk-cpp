@@ -85,12 +85,12 @@ class StopExecutionRequest : public SFNRequest {
   ///@}
  private:
   Aws::String m_executionArn;
-  bool m_executionArnHasBeenSet = false;
 
   Aws::String m_error;
-  bool m_errorHasBeenSet = false;
 
   Aws::String m_cause;
+  bool m_executionArnHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
   bool m_causeHasBeenSet = false;
 };
 

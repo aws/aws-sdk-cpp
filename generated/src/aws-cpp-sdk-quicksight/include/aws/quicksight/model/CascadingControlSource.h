@@ -71,9 +71,9 @@ class CascadingControlSource {
   ///@}
  private:
   Aws::String m_sourceSheetControlId;
-  bool m_sourceSheetControlIdHasBeenSet = false;
 
   ColumnIdentifier m_columnToMatch;
+  bool m_sourceSheetControlIdHasBeenSet = false;
   bool m_columnToMatchHasBeenSet = false;
 };
 

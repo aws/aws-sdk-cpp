@@ -220,33 +220,33 @@ class TagSyncTaskItem {
   ///@}
  private:
   Aws::String m_groupArn;
-  bool m_groupArnHasBeenSet = false;
 
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_taskArn;
-  bool m_taskArnHasBeenSet = false;
 
   Aws::String m_tagKey;
-  bool m_tagKeyHasBeenSet = false;
 
   Aws::String m_tagValue;
-  bool m_tagValueHasBeenSet = false;
 
   ResourceQuery m_resourceQuery;
-  bool m_resourceQueryHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   TagSyncTaskStatus m_status{TagSyncTaskStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
+  bool m_groupArnHasBeenSet = false;
+  bool m_groupNameHasBeenSet = false;
+  bool m_taskArnHasBeenSet = false;
+  bool m_tagKeyHasBeenSet = false;
+  bool m_tagValueHasBeenSet = false;
+  bool m_resourceQueryHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
 };
 

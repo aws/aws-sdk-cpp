@@ -65,9 +65,9 @@ class DocumentStandardExtraction {
   ///@}
  private:
   DocumentExtractionGranularity m_granularity;
-  bool m_granularityHasBeenSet = false;
 
   DocumentBoundingBox m_boundingBox;
+  bool m_granularityHasBeenSet = false;
   bool m_boundingBoxHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class ListIndexedRecoveryPointsResult {
   ///@}
  private:
   Aws::Vector<IndexedRecoveryPoint> m_indexedRecoveryPoints;
-  bool m_indexedRecoveryPointsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_indexedRecoveryPointsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

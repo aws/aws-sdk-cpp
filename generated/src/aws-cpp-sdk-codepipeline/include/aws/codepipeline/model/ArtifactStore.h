@@ -96,12 +96,12 @@ class ArtifactStore {
   ///@}
  private:
   ArtifactStoreType m_type{ArtifactStoreType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   EncryptionKey m_encryptionKey;
+  bool m_typeHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
   bool m_encryptionKeyHasBeenSet = false;
 };
 

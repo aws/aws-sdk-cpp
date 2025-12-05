@@ -99,12 +99,12 @@ class UpdateOrganizationConfigurationRequest : public SecurityHubRequest {
   ///@}
  private:
   bool m_autoEnable{false};
-  bool m_autoEnableHasBeenSet = false;
 
   AutoEnableStandards m_autoEnableStandards{AutoEnableStandards::NOT_SET};
-  bool m_autoEnableStandardsHasBeenSet = false;
 
   OrganizationConfiguration m_organizationConfiguration;
+  bool m_autoEnableHasBeenSet = false;
+  bool m_autoEnableStandardsHasBeenSet = false;
   bool m_organizationConfigurationHasBeenSet = false;
 };
 

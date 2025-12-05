@@ -113,15 +113,15 @@ class StringListConfigurationOptions {
   ///@}
  private:
   Aws::Vector<Aws::String> m_defaultValue;
-  bool m_defaultValueHasBeenSet = false;
 
   Aws::String m_re2Expression;
-  bool m_re2ExpressionHasBeenSet = false;
 
   int m_maxItems{0};
-  bool m_maxItemsHasBeenSet = false;
 
   Aws::String m_expressionDescription;
+  bool m_defaultValueHasBeenSet = false;
+  bool m_re2ExpressionHasBeenSet = false;
+  bool m_maxItemsHasBeenSet = false;
   bool m_expressionDescriptionHasBeenSet = false;
 };
 

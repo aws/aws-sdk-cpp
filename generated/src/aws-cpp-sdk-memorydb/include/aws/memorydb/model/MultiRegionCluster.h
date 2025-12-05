@@ -234,36 +234,36 @@ class MultiRegionCluster {
   ///@}
  private:
   Aws::String m_multiRegionClusterName;
-  bool m_multiRegionClusterNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_nodeType;
-  bool m_nodeTypeHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   int m_numberOfShards{0};
-  bool m_numberOfShardsHasBeenSet = false;
 
   Aws::Vector<RegionalCluster> m_clusters;
-  bool m_clustersHasBeenSet = false;
 
   Aws::String m_multiRegionParameterGroupName;
-  bool m_multiRegionParameterGroupNameHasBeenSet = false;
 
   bool m_tLSEnabled{false};
-  bool m_tLSEnabledHasBeenSet = false;
 
   Aws::String m_aRN;
+  bool m_multiRegionClusterNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_nodeTypeHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_numberOfShardsHasBeenSet = false;
+  bool m_clustersHasBeenSet = false;
+  bool m_multiRegionParameterGroupNameHasBeenSet = false;
+  bool m_tLSEnabledHasBeenSet = false;
   bool m_aRNHasBeenSet = false;
 };
 

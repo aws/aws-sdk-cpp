@@ -136,21 +136,21 @@ class GetDeploymentStatusResult {
   ///@}
  private:
   Aws::String m_deploymentStatus;
-  bool m_deploymentStatusHasBeenSet = false;
 
   DeploymentType m_deploymentType{DeploymentType::NOT_SET};
-  bool m_deploymentTypeHasBeenSet = false;
 
   Aws::Vector<ErrorDetail> m_errorDetails;
-  bool m_errorDetailsHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_updatedAt;
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deploymentStatusHasBeenSet = false;
+  bool m_deploymentTypeHasBeenSet = false;
+  bool m_errorDetailsHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

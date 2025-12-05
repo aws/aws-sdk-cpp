@@ -160,24 +160,24 @@ class ConnectionTypeDetail {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_inviterEmail;
-  bool m_inviterEmailHasBeenSet = false;
 
   Aws::String m_inviterName;
-  bool m_inviterNameHasBeenSet = false;
 
   ConnectionTypeStatus m_status{ConnectionTypeStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_canceledAt{};
-  bool m_canceledAtHasBeenSet = false;
 
   Aws::String m_canceledBy;
-  bool m_canceledByHasBeenSet = false;
 
   Participant m_otherParticipant;
+  bool m_createdAtHasBeenSet = false;
+  bool m_inviterEmailHasBeenSet = false;
+  bool m_inviterNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_canceledAtHasBeenSet = false;
+  bool m_canceledByHasBeenSet = false;
   bool m_otherParticipantHasBeenSet = false;
 };
 

@@ -76,9 +76,9 @@ class Stage {
   ///@}
  private:
   int m_durationInMinutes{0};
-  bool m_durationInMinutesHasBeenSet = false;
 
   Aws::Vector<Target> m_targets;
+  bool m_durationInMinutesHasBeenSet = false;
   bool m_targetsHasBeenSet = false;
 };
 

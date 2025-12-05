@@ -69,9 +69,9 @@ class QueryTemporalRangeMax {
   ///@}
  private:
   long long m_value{0};
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_tableArn;
+  bool m_valueHasBeenSet = false;
   bool m_tableArnHasBeenSet = false;
 };
 

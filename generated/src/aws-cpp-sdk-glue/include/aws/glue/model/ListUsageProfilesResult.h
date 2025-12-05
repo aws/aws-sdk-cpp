@@ -85,12 +85,12 @@ class ListUsageProfilesResult {
   ///@}
  private:
   Aws::Vector<UsageProfileDefinition> m_profiles;
-  bool m_profilesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_profilesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

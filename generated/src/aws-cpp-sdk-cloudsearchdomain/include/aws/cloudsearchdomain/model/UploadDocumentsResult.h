@@ -121,18 +121,18 @@ class UploadDocumentsResult {
   ///@}
  private:
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   long long m_adds{0};
-  bool m_addsHasBeenSet = false;
 
   long long m_deletes{0};
-  bool m_deletesHasBeenSet = false;
 
   Aws::Vector<DocumentServiceWarning> m_warnings;
-  bool m_warningsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_addsHasBeenSet = false;
+  bool m_deletesHasBeenSet = false;
+  bool m_warningsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

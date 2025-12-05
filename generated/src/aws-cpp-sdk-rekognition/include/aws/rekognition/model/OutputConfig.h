@@ -69,9 +69,9 @@ class OutputConfig {
   ///@}
  private:
   Aws::String m_s3Bucket;
-  bool m_s3BucketHasBeenSet = false;
 
   Aws::String m_s3KeyPrefix;
+  bool m_s3BucketHasBeenSet = false;
   bool m_s3KeyPrefixHasBeenSet = false;
 };
 

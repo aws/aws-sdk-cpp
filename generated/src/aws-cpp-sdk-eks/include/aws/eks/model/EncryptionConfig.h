@@ -78,9 +78,9 @@ class EncryptionConfig {
   ///@}
  private:
   Aws::Vector<Aws::String> m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   Provider m_provider;
+  bool m_resourcesHasBeenSet = false;
   bool m_providerHasBeenSet = false;
 };
 

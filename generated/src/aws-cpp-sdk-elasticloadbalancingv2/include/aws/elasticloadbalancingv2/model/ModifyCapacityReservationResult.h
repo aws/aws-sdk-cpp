@@ -119,18 +119,18 @@ class ModifyCapacityReservationResult {
   ///@}
  private:
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   int m_decreaseRequestsRemaining{0};
-  bool m_decreaseRequestsRemainingHasBeenSet = false;
 
   MinimumLoadBalancerCapacity m_minimumLoadBalancerCapacity;
-  bool m_minimumLoadBalancerCapacityHasBeenSet = false;
 
   Aws::Vector<ZonalCapacityReservationState> m_capacityReservationState;
-  bool m_capacityReservationStateHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_decreaseRequestsRemainingHasBeenSet = false;
+  bool m_minimumLoadBalancerCapacityHasBeenSet = false;
+  bool m_capacityReservationStateHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

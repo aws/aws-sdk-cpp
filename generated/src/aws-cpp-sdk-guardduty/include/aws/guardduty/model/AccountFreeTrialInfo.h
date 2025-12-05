@@ -77,9 +77,9 @@ class AccountFreeTrialInfo {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::Vector<FreeTrialFeatureConfigurationResult> m_features;
+  bool m_accountIdHasBeenSet = false;
   bool m_featuresHasBeenSet = false;
 };
 

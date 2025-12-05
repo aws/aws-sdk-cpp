@@ -219,27 +219,27 @@ class Record {
   ///@}
  private:
   Aws::Vector<Dimension> m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
 
   Aws::String m_measureName;
-  bool m_measureNameHasBeenSet = false;
 
   Aws::String m_measureValue;
-  bool m_measureValueHasBeenSet = false;
 
   MeasureValueType m_measureValueType{MeasureValueType::NOT_SET};
-  bool m_measureValueTypeHasBeenSet = false;
 
   Aws::String m_time;
-  bool m_timeHasBeenSet = false;
 
   TimeUnit m_timeUnit{TimeUnit::NOT_SET};
-  bool m_timeUnitHasBeenSet = false;
 
   long long m_version{0};
-  bool m_versionHasBeenSet = false;
 
   Aws::Vector<MeasureValue> m_measureValues;
+  bool m_dimensionsHasBeenSet = false;
+  bool m_measureNameHasBeenSet = false;
+  bool m_measureValueHasBeenSet = false;
+  bool m_measureValueTypeHasBeenSet = false;
+  bool m_timeHasBeenSet = false;
+  bool m_timeUnitHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
   bool m_measureValuesHasBeenSet = false;
 };
 

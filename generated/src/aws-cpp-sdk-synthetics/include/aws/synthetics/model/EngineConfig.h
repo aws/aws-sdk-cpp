@@ -69,9 +69,9 @@ class EngineConfig {
   ///@}
  private:
   Aws::String m_engineArn;
-  bool m_engineArnHasBeenSet = false;
 
   BrowserType m_browserType{BrowserType::NOT_SET};
+  bool m_engineArnHasBeenSet = false;
   bool m_browserTypeHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class AlternatePathHint {
   ///@}
  private:
   Aws::String m_componentId;
-  bool m_componentIdHasBeenSet = false;
 
   Aws::String m_componentArn;
+  bool m_componentIdHasBeenSet = false;
   bool m_componentArnHasBeenSet = false;
 };
 

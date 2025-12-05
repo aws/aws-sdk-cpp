@@ -87,12 +87,12 @@ class AudioAndDTMFInputSpecification {
   ///@}
  private:
   int m_startTimeoutMs{0};
-  bool m_startTimeoutMsHasBeenSet = false;
 
   AudioSpecification m_audioSpecification;
-  bool m_audioSpecificationHasBeenSet = false;
 
   DTMFSpecification m_dtmfSpecification;
+  bool m_startTimeoutMsHasBeenSet = false;
+  bool m_audioSpecificationHasBeenSet = false;
   bool m_dtmfSpecificationHasBeenSet = false;
 };
 

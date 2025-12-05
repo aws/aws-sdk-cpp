@@ -133,15 +133,15 @@ class CanaryCodeOutput {
   ///@}
  private:
   Aws::String m_sourceLocationArn;
-  bool m_sourceLocationArnHasBeenSet = false;
 
   Aws::String m_handler;
-  bool m_handlerHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_blueprintTypes;
-  bool m_blueprintTypesHasBeenSet = false;
 
   Aws::Vector<Dependency> m_dependencies;
+  bool m_sourceLocationArnHasBeenSet = false;
+  bool m_handlerHasBeenSet = false;
+  bool m_blueprintTypesHasBeenSet = false;
   bool m_dependenciesHasBeenSet = false;
 };
 

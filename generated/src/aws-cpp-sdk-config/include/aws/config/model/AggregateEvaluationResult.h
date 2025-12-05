@@ -166,24 +166,24 @@ class AggregateEvaluationResult {
   ///@}
  private:
   EvaluationResultIdentifier m_evaluationResultIdentifier;
-  bool m_evaluationResultIdentifierHasBeenSet = false;
 
   ComplianceType m_complianceType{ComplianceType::NOT_SET};
-  bool m_complianceTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_resultRecordedTime{};
-  bool m_resultRecordedTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_configRuleInvokedTime{};
-  bool m_configRuleInvokedTimeHasBeenSet = false;
 
   Aws::String m_annotation;
-  bool m_annotationHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_awsRegion;
+  bool m_evaluationResultIdentifierHasBeenSet = false;
+  bool m_complianceTypeHasBeenSet = false;
+  bool m_resultRecordedTimeHasBeenSet = false;
+  bool m_configRuleInvokedTimeHasBeenSet = false;
+  bool m_annotationHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
   bool m_awsRegionHasBeenSet = false;
 };
 

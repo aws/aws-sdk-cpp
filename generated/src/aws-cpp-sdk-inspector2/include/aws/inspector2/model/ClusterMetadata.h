@@ -69,9 +69,9 @@ class ClusterMetadata {
   ///@}
  private:
   AwsEcsMetadataDetails m_awsEcsMetadataDetails;
-  bool m_awsEcsMetadataDetailsHasBeenSet = false;
 
   AwsEksMetadataDetails m_awsEksMetadataDetails;
+  bool m_awsEcsMetadataDetailsHasBeenSet = false;
   bool m_awsEksMetadataDetailsHasBeenSet = false;
 };
 

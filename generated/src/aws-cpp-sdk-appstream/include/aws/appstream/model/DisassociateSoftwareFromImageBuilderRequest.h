@@ -99,9 +99,9 @@ class DisassociateSoftwareFromImageBuilderRequest : public AppStreamRequest {
   ///@}
  private:
   Aws::String m_imageBuilderName;
-  bool m_imageBuilderNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_softwareNames;
+  bool m_imageBuilderNameHasBeenSet = false;
   bool m_softwareNamesHasBeenSet = false;
 };
 

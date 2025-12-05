@@ -145,21 +145,21 @@ class InferenceRecommendation {
   ///@}
  private:
   Aws::String m_recommendationId;
-  bool m_recommendationIdHasBeenSet = false;
 
   RecommendationMetrics m_metrics;
-  bool m_metricsHasBeenSet = false;
 
   EndpointOutputConfiguration m_endpointConfiguration;
-  bool m_endpointConfigurationHasBeenSet = false;
 
   ModelConfiguration m_modelConfiguration;
-  bool m_modelConfigurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_invocationEndTime{};
-  bool m_invocationEndTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_invocationStartTime{};
+  bool m_recommendationIdHasBeenSet = false;
+  bool m_metricsHasBeenSet = false;
+  bool m_endpointConfigurationHasBeenSet = false;
+  bool m_modelConfigurationHasBeenSet = false;
+  bool m_invocationEndTimeHasBeenSet = false;
   bool m_invocationStartTimeHasBeenSet = false;
 };
 

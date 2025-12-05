@@ -106,15 +106,15 @@ class SpendLimit {
   ///@}
  private:
   SpendLimitName m_name{SpendLimitName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   long long m_enforcedLimit{0};
-  bool m_enforcedLimitHasBeenSet = false;
 
   long long m_maxLimit{0};
-  bool m_maxLimitHasBeenSet = false;
 
   bool m_overridden{false};
+  bool m_nameHasBeenSet = false;
+  bool m_enforcedLimitHasBeenSet = false;
+  bool m_maxLimitHasBeenSet = false;
   bool m_overriddenHasBeenSet = false;
 };
 

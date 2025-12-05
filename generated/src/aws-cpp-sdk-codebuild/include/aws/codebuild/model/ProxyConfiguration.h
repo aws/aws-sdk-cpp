@@ -76,9 +76,9 @@ class ProxyConfiguration {
   ///@}
  private:
   FleetProxyRuleBehavior m_defaultBehavior{FleetProxyRuleBehavior::NOT_SET};
-  bool m_defaultBehaviorHasBeenSet = false;
 
   Aws::Vector<FleetProxyRule> m_orderedProxyRules;
+  bool m_defaultBehaviorHasBeenSet = false;
   bool m_orderedProxyRulesHasBeenSet = false;
 };
 

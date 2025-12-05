@@ -65,9 +65,9 @@ class RecommendedActionTotal {
   ///@}
  private:
   int m_recommendedActionCount{0};
-  bool m_recommendedActionCountHasBeenSet = false;
 
   EstimatedMonthlySavings m_estimatedMonthlySavings;
+  bool m_recommendedActionCountHasBeenSet = false;
   bool m_estimatedMonthlySavingsHasBeenSet = false;
 };
 

@@ -175,24 +175,24 @@ class StartFraudsterRegistrationJobRequest : public VoiceIDRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_dataAccessRoleArn;
-  bool m_dataAccessRoleArnHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   InputDataConfig m_inputDataConfig;
-  bool m_inputDataConfigHasBeenSet = false;
 
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   OutputDataConfig m_outputDataConfig;
-  bool m_outputDataConfigHasBeenSet = false;
 
   RegistrationConfig m_registrationConfig;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_dataAccessRoleArnHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_inputDataConfigHasBeenSet = false;
+  bool m_jobNameHasBeenSet = false;
+  bool m_outputDataConfigHasBeenSet = false;
   bool m_registrationConfigHasBeenSet = false;
 };
 

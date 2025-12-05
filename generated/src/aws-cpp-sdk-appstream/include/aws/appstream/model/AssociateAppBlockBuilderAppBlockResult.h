@@ -63,9 +63,9 @@ class AssociateAppBlockBuilderAppBlockResult {
   ///@}
  private:
   AppBlockBuilderAppBlockAssociation m_appBlockBuilderAppBlockAssociation;
-  bool m_appBlockBuilderAppBlockAssociationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appBlockBuilderAppBlockAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

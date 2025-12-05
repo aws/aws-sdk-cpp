@@ -89,12 +89,12 @@ class GetRelationalDatabaseEventsRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_relationalDatabaseName;
-  bool m_relationalDatabaseNameHasBeenSet = false;
 
   int m_durationInMinutes{0};
-  bool m_durationInMinutesHasBeenSet = false;
 
   Aws::String m_pageToken;
+  bool m_relationalDatabaseNameHasBeenSet = false;
+  bool m_durationInMinutesHasBeenSet = false;
   bool m_pageTokenHasBeenSet = false;
 };
 

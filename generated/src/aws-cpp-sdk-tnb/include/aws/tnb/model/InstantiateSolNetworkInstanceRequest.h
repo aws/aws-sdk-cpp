@@ -119,15 +119,15 @@ class InstantiateSolNetworkInstanceRequest : public TnbRequest {
   ///@}
  private:
   Aws::Utils::Document m_additionalParamsForNs;
-  bool m_additionalParamsForNsHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_nsInstanceId;
-  bool m_nsInstanceIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_additionalParamsForNsHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_nsInstanceIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

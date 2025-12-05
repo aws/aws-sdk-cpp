@@ -93,12 +93,12 @@ class DescribeReservedCacheNodesOfferingsResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<ReservedCacheNodesOffering> m_reservedCacheNodesOfferings;
-  bool m_reservedCacheNodesOfferingsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_reservedCacheNodesOfferingsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -61,9 +61,9 @@ class VideoDetail {
   ///@}
  private:
   int m_heightInPx{0};
-  bool m_heightInPxHasBeenSet = false;
 
   int m_widthInPx{0};
+  bool m_heightInPxHasBeenSet = false;
   bool m_widthInPxHasBeenSet = false;
 };
 

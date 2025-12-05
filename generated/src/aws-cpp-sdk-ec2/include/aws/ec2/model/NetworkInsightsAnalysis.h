@@ -401,54 +401,54 @@ class NetworkInsightsAnalysis {
   ///@}
  private:
   Aws::String m_networkInsightsAnalysisId;
-  bool m_networkInsightsAnalysisIdHasBeenSet = false;
 
   Aws::String m_networkInsightsAnalysisArn;
-  bool m_networkInsightsAnalysisArnHasBeenSet = false;
 
   Aws::String m_networkInsightsPathId;
-  bool m_networkInsightsPathIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_additionalAccounts;
-  bool m_additionalAccountsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_filterInArns;
-  bool m_filterInArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_filterOutArns;
-  bool m_filterOutArnsHasBeenSet = false;
 
   Aws::Utils::DateTime m_startDate{};
-  bool m_startDateHasBeenSet = false;
 
   AnalysisStatus m_status{AnalysisStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_warningMessage;
-  bool m_warningMessageHasBeenSet = false;
 
   bool m_networkPathFound{false};
-  bool m_networkPathFoundHasBeenSet = false;
 
   Aws::Vector<PathComponent> m_forwardPathComponents;
-  bool m_forwardPathComponentsHasBeenSet = false;
 
   Aws::Vector<PathComponent> m_returnPathComponents;
-  bool m_returnPathComponentsHasBeenSet = false;
 
   Aws::Vector<Explanation> m_explanations;
-  bool m_explanationsHasBeenSet = false;
 
   Aws::Vector<AlternatePathHint> m_alternatePathHints;
-  bool m_alternatePathHintsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_suggestedAccounts;
-  bool m_suggestedAccountsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_networkInsightsAnalysisIdHasBeenSet = false;
+  bool m_networkInsightsAnalysisArnHasBeenSet = false;
+  bool m_networkInsightsPathIdHasBeenSet = false;
+  bool m_additionalAccountsHasBeenSet = false;
+  bool m_filterInArnsHasBeenSet = false;
+  bool m_filterOutArnsHasBeenSet = false;
+  bool m_startDateHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_warningMessageHasBeenSet = false;
+  bool m_networkPathFoundHasBeenSet = false;
+  bool m_forwardPathComponentsHasBeenSet = false;
+  bool m_returnPathComponentsHasBeenSet = false;
+  bool m_explanationsHasBeenSet = false;
+  bool m_alternatePathHintsHasBeenSet = false;
+  bool m_suggestedAccountsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

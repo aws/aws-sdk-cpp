@@ -87,12 +87,12 @@ class UdpGroupSettings {
   ///@}
  private:
   InputLossActionForUdpOut m_inputLossAction{InputLossActionForUdpOut::NOT_SET};
-  bool m_inputLossActionHasBeenSet = false;
 
   UdpTimedMetadataId3Frame m_timedMetadataId3Frame{UdpTimedMetadataId3Frame::NOT_SET};
-  bool m_timedMetadataId3FrameHasBeenSet = false;
 
   int m_timedMetadataId3Period{0};
+  bool m_inputLossActionHasBeenSet = false;
+  bool m_timedMetadataId3FrameHasBeenSet = false;
   bool m_timedMetadataId3PeriodHasBeenSet = false;
 };
 

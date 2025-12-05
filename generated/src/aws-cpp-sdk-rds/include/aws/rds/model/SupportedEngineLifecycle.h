@@ -111,12 +111,12 @@ class SupportedEngineLifecycle {
   ///@}
  private:
   LifecycleSupportName m_lifecycleSupportName{LifecycleSupportName::NOT_SET};
-  bool m_lifecycleSupportNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_lifecycleSupportStartDate{};
-  bool m_lifecycleSupportStartDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lifecycleSupportEndDate{};
+  bool m_lifecycleSupportNameHasBeenSet = false;
+  bool m_lifecycleSupportStartDateHasBeenSet = false;
   bool m_lifecycleSupportEndDateHasBeenSet = false;
 };
 

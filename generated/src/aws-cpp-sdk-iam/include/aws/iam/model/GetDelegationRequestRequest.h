@@ -73,9 +73,9 @@ class GetDelegationRequestRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_delegationRequestId;
-  bool m_delegationRequestIdHasBeenSet = false;
 
   bool m_delegationPermissionCheck{false};
+  bool m_delegationRequestIdHasBeenSet = false;
   bool m_delegationPermissionCheckHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class ListDelegatedAdminAccountsResult {
   ///@}
  private:
   Aws::Vector<DelegatedAdminAccount> m_delegatedAdminAccounts;
-  bool m_delegatedAdminAccountsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_delegatedAdminAccountsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

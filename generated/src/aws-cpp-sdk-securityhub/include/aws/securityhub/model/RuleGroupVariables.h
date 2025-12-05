@@ -70,9 +70,9 @@ class RuleGroupVariables {
   ///@}
  private:
   RuleGroupVariablesIpSetsDetails m_ipSets;
-  bool m_ipSetsHasBeenSet = false;
 
   RuleGroupVariablesPortSetsDetails m_portSets;
+  bool m_ipSetsHasBeenSet = false;
   bool m_portSetsHasBeenSet = false;
 };
 

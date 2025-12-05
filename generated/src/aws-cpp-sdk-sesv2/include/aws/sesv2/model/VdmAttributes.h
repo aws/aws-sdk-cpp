@@ -92,12 +92,12 @@ class VdmAttributes {
   ///@}
  private:
   FeatureStatus m_vdmEnabled{FeatureStatus::NOT_SET};
-  bool m_vdmEnabledHasBeenSet = false;
 
   DashboardAttributes m_dashboardAttributes;
-  bool m_dashboardAttributesHasBeenSet = false;
 
   GuardianAttributes m_guardianAttributes;
+  bool m_vdmEnabledHasBeenSet = false;
+  bool m_dashboardAttributesHasBeenSet = false;
   bool m_guardianAttributesHasBeenSet = false;
 };
 

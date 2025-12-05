@@ -188,24 +188,24 @@ class ConsolidatedPolicyCustom {
   ///@}
  private:
   Aws::Vector<Aws::String> m_allowedAnalyses;
-  bool m_allowedAnalysesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowedAnalysisProviders;
-  bool m_allowedAnalysisProvidersHasBeenSet = false;
 
   AdditionalAnalyses m_additionalAnalyses{AdditionalAnalyses::NOT_SET};
-  bool m_additionalAnalysesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_disallowedOutputColumns;
-  bool m_disallowedOutputColumnsHasBeenSet = false;
 
   DifferentialPrivacyConfiguration m_differentialPrivacy;
-  bool m_differentialPrivacyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowedResultReceivers;
-  bool m_allowedResultReceiversHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowedAdditionalAnalyses;
+  bool m_allowedAnalysesHasBeenSet = false;
+  bool m_allowedAnalysisProvidersHasBeenSet = false;
+  bool m_additionalAnalysesHasBeenSet = false;
+  bool m_disallowedOutputColumnsHasBeenSet = false;
+  bool m_differentialPrivacyHasBeenSet = false;
+  bool m_allowedResultReceiversHasBeenSet = false;
   bool m_allowedAdditionalAnalysesHasBeenSet = false;
 };
 

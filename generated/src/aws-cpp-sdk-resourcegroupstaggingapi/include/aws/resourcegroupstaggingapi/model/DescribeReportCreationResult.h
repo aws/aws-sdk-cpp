@@ -101,15 +101,15 @@ class DescribeReportCreationResult {
   ///@}
  private:
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_s3Location;
-  bool m_s3LocationHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_s3LocationHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

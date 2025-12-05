@@ -103,15 +103,15 @@ class EntitlementValue {
   ///@}
  private:
   int m_integerValue{0};
-  bool m_integerValueHasBeenSet = false;
 
   double m_doubleValue{0.0};
-  bool m_doubleValueHasBeenSet = false;
 
   bool m_booleanValue{false};
-  bool m_booleanValueHasBeenSet = false;
 
   Aws::String m_stringValue;
+  bool m_integerValueHasBeenSet = false;
+  bool m_doubleValueHasBeenSet = false;
+  bool m_booleanValueHasBeenSet = false;
   bool m_stringValueHasBeenSet = false;
 };
 

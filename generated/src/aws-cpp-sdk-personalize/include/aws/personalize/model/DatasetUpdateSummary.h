@@ -124,18 +124,18 @@ class DatasetUpdateSummary {
   ///@}
  private:
   Aws::String m_schemaArn;
-  bool m_schemaArnHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
+  bool m_schemaArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
   bool m_lastUpdatedDateTimeHasBeenSet = false;
 };
 

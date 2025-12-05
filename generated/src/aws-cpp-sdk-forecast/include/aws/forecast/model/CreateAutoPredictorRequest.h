@@ -344,42 +344,42 @@ class CreateAutoPredictorRequest : public ForecastServiceRequest {
   ///@}
  private:
   Aws::String m_predictorName;
-  bool m_predictorNameHasBeenSet = false;
 
   int m_forecastHorizon{0};
-  bool m_forecastHorizonHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_forecastTypes;
-  bool m_forecastTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_forecastDimensions;
-  bool m_forecastDimensionsHasBeenSet = false;
 
   Aws::String m_forecastFrequency;
-  bool m_forecastFrequencyHasBeenSet = false;
 
   DataConfig m_dataConfig;
-  bool m_dataConfigHasBeenSet = false;
 
   EncryptionConfig m_encryptionConfig;
-  bool m_encryptionConfigHasBeenSet = false;
 
   Aws::String m_referencePredictorArn;
-  bool m_referencePredictorArnHasBeenSet = false;
 
   OptimizationMetric m_optimizationMetric{OptimizationMetric::NOT_SET};
-  bool m_optimizationMetricHasBeenSet = false;
 
   bool m_explainPredictor{false};
-  bool m_explainPredictorHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   MonitorConfig m_monitorConfig;
-  bool m_monitorConfigHasBeenSet = false;
 
   TimeAlignmentBoundary m_timeAlignmentBoundary;
+  bool m_predictorNameHasBeenSet = false;
+  bool m_forecastHorizonHasBeenSet = false;
+  bool m_forecastTypesHasBeenSet = false;
+  bool m_forecastDimensionsHasBeenSet = false;
+  bool m_forecastFrequencyHasBeenSet = false;
+  bool m_dataConfigHasBeenSet = false;
+  bool m_encryptionConfigHasBeenSet = false;
+  bool m_referencePredictorArnHasBeenSet = false;
+  bool m_optimizationMetricHasBeenSet = false;
+  bool m_explainPredictorHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_monitorConfigHasBeenSet = false;
   bool m_timeAlignmentBoundaryHasBeenSet = false;
 };
 

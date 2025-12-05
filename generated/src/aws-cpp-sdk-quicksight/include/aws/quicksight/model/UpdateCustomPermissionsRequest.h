@@ -85,12 +85,12 @@ class UpdateCustomPermissionsRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_customPermissionsName;
-  bool m_customPermissionsNameHasBeenSet = false;
 
   Capabilities m_capabilities;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_customPermissionsNameHasBeenSet = false;
   bool m_capabilitiesHasBeenSet = false;
 };
 

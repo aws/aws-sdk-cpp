@@ -79,9 +79,9 @@ class CompromisedCredentialsRiskConfigurationType {
   ///@}
  private:
   Aws::Vector<EventFilterType> m_eventFilter;
-  bool m_eventFilterHasBeenSet = false;
 
   CompromisedCredentialsActionsType m_actions;
+  bool m_eventFilterHasBeenSet = false;
   bool m_actionsHasBeenSet = false;
 };
 

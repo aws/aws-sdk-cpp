@@ -110,15 +110,15 @@ class GetBucketsResult {
   ///@}
  private:
   Aws::Vector<Bucket> m_buckets;
-  bool m_bucketsHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   AccountLevelBpaSync m_accountLevelBpaSync;
-  bool m_accountLevelBpaSyncHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_bucketsHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
+  bool m_accountLevelBpaSyncHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -90,12 +90,12 @@ class ListComputationModelDataBindingUsagesResult {
   ///@}
  private:
   Aws::Vector<ComputationModelDataBindingUsageSummary> m_dataBindingUsageSummaries;
-  bool m_dataBindingUsageSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dataBindingUsageSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

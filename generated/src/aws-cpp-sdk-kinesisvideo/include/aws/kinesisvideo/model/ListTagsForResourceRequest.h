@@ -68,9 +68,9 @@ class ListTagsForResourceRequest : public KinesisVideoRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_resourceARN;
+  bool m_nextTokenHasBeenSet = false;
   bool m_resourceARNHasBeenSet = false;
 };
 

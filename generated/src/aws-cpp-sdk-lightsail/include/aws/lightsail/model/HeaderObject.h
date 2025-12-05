@@ -87,9 +87,9 @@ class HeaderObject {
   ///@}
  private:
   ForwardValues m_option{ForwardValues::NOT_SET};
-  bool m_optionHasBeenSet = false;
 
   Aws::Vector<HeaderEnum> m_headersAllowList;
+  bool m_optionHasBeenSet = false;
   bool m_headersAllowListHasBeenSet = false;
 };
 

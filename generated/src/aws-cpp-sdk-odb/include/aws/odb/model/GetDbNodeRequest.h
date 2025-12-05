@@ -67,9 +67,9 @@ class GetDbNodeRequest : public OdbRequest {
   ///@}
  private:
   Aws::String m_cloudVmClusterId;
-  bool m_cloudVmClusterIdHasBeenSet = false;
 
   Aws::String m_dbNodeId;
+  bool m_cloudVmClusterIdHasBeenSet = false;
   bool m_dbNodeIdHasBeenSet = false;
 };
 

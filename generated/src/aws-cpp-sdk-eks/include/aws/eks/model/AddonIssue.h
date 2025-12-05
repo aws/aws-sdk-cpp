@@ -92,12 +92,12 @@ class AddonIssue {
   ///@}
  private:
   AddonIssueCode m_code{AddonIssueCode::NOT_SET};
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceIds;
+  bool m_codeHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_resourceIdsHasBeenSet = false;
 };
 

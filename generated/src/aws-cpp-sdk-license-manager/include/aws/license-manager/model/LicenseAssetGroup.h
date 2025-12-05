@@ -235,33 +235,33 @@ class LicenseAssetGroup {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<LicenseAssetGroupConfiguration> m_licenseAssetGroupConfigurations;
-  bool m_licenseAssetGroupConfigurationsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_associatedLicenseAssetRulesetARNs;
-  bool m_associatedLicenseAssetRulesetARNsHasBeenSet = false;
 
   Aws::Vector<LicenseAssetGroupProperty> m_properties;
-  bool m_propertiesHasBeenSet = false;
 
   Aws::String m_licenseAssetGroupArn;
-  bool m_licenseAssetGroupArnHasBeenSet = false;
 
   LicenseAssetGroupStatus m_status{LicenseAssetGroupStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_latestUsageAnalysisTime{};
-  bool m_latestUsageAnalysisTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_latestResourceDiscoveryTime{};
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_licenseAssetGroupConfigurationsHasBeenSet = false;
+  bool m_associatedLicenseAssetRulesetARNsHasBeenSet = false;
+  bool m_propertiesHasBeenSet = false;
+  bool m_licenseAssetGroupArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_latestUsageAnalysisTimeHasBeenSet = false;
   bool m_latestResourceDiscoveryTimeHasBeenSet = false;
 };
 

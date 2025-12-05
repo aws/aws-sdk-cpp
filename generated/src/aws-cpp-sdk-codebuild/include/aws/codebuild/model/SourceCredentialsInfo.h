@@ -106,15 +106,15 @@ class SourceCredentialsInfo {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   ServerType m_serverType{ServerType::NOT_SET};
-  bool m_serverTypeHasBeenSet = false;
 
   AuthType m_authType{AuthType::NOT_SET};
-  bool m_authTypeHasBeenSet = false;
 
   Aws::String m_resource;
+  bool m_arnHasBeenSet = false;
+  bool m_serverTypeHasBeenSet = false;
+  bool m_authTypeHasBeenSet = false;
   bool m_resourceHasBeenSet = false;
 };
 

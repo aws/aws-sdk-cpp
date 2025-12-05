@@ -68,9 +68,9 @@ class FaceMatch {
   ///@}
  private:
   double m_similarity{0.0};
-  bool m_similarityHasBeenSet = false;
 
   Face m_face;
+  bool m_similarityHasBeenSet = false;
   bool m_faceHasBeenSet = false;
 };
 

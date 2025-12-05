@@ -137,21 +137,21 @@ class GetQueryResultsResult {
   ///@}
  private:
   QueryStatus m_queryStatus{QueryStatus::NOT_SET};
-  bool m_queryStatusHasBeenSet = false;
 
   QueryStatistics m_queryStatistics;
-  bool m_queryStatisticsHasBeenSet = false;
 
   Aws::Vector<Aws::Vector<Aws::Map<Aws::String, Aws::String>>> m_queryResultRows;
-  bool m_queryResultRowsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_queryStatusHasBeenSet = false;
+  bool m_queryStatisticsHasBeenSet = false;
+  bool m_queryResultRowsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

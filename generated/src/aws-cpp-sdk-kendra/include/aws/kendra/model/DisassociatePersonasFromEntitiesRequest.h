@@ -93,12 +93,12 @@ class DisassociatePersonasFromEntitiesRequest : public KendraRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_indexId;
-  bool m_indexIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_entityIds;
+  bool m_idHasBeenSet = false;
+  bool m_indexIdHasBeenSet = false;
   bool m_entityIdsHasBeenSet = false;
 };
 

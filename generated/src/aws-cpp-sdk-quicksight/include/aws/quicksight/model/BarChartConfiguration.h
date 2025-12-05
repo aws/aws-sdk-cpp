@@ -373,54 +373,54 @@ class BarChartConfiguration {
   ///@}
  private:
   BarChartFieldWells m_fieldWells;
-  bool m_fieldWellsHasBeenSet = false;
 
   BarChartSortConfiguration m_sortConfiguration;
-  bool m_sortConfigurationHasBeenSet = false;
 
   BarChartOrientation m_orientation{BarChartOrientation::NOT_SET};
-  bool m_orientationHasBeenSet = false;
 
   BarsArrangement m_barsArrangement{BarsArrangement::NOT_SET};
-  bool m_barsArrangementHasBeenSet = false;
 
   VisualPalette m_visualPalette;
-  bool m_visualPaletteHasBeenSet = false;
 
   SmallMultiplesOptions m_smallMultiplesOptions;
-  bool m_smallMultiplesOptionsHasBeenSet = false;
 
   AxisDisplayOptions m_categoryAxis;
-  bool m_categoryAxisHasBeenSet = false;
 
   ChartAxisLabelOptions m_categoryLabelOptions;
-  bool m_categoryLabelOptionsHasBeenSet = false;
 
   AxisDisplayOptions m_valueAxis;
-  bool m_valueAxisHasBeenSet = false;
 
   ChartAxisLabelOptions m_valueLabelOptions;
-  bool m_valueLabelOptionsHasBeenSet = false;
 
   ChartAxisLabelOptions m_colorLabelOptions;
-  bool m_colorLabelOptionsHasBeenSet = false;
 
   LegendOptions m_legend;
-  bool m_legendHasBeenSet = false;
 
   DataLabelOptions m_dataLabels;
-  bool m_dataLabelsHasBeenSet = false;
 
   TooltipOptions m_tooltip;
-  bool m_tooltipHasBeenSet = false;
 
   Aws::Vector<ReferenceLine> m_referenceLines;
-  bool m_referenceLinesHasBeenSet = false;
 
   Aws::Vector<ContributionAnalysisDefault> m_contributionAnalysisDefaults;
-  bool m_contributionAnalysisDefaultsHasBeenSet = false;
 
   VisualInteractionOptions m_interactions;
+  bool m_fieldWellsHasBeenSet = false;
+  bool m_sortConfigurationHasBeenSet = false;
+  bool m_orientationHasBeenSet = false;
+  bool m_barsArrangementHasBeenSet = false;
+  bool m_visualPaletteHasBeenSet = false;
+  bool m_smallMultiplesOptionsHasBeenSet = false;
+  bool m_categoryAxisHasBeenSet = false;
+  bool m_categoryLabelOptionsHasBeenSet = false;
+  bool m_valueAxisHasBeenSet = false;
+  bool m_valueLabelOptionsHasBeenSet = false;
+  bool m_colorLabelOptionsHasBeenSet = false;
+  bool m_legendHasBeenSet = false;
+  bool m_dataLabelsHasBeenSet = false;
+  bool m_tooltipHasBeenSet = false;
+  bool m_referenceLinesHasBeenSet = false;
+  bool m_contributionAnalysisDefaultsHasBeenSet = false;
   bool m_interactionsHasBeenSet = false;
 };
 

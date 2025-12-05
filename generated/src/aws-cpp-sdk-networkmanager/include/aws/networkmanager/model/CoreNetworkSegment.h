@@ -101,12 +101,12 @@ class CoreNetworkSegment {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_edgeLocations;
-  bool m_edgeLocationsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sharedSegments;
+  bool m_nameHasBeenSet = false;
+  bool m_edgeLocationsHasBeenSet = false;
   bool m_sharedSegmentsHasBeenSet = false;
 };
 

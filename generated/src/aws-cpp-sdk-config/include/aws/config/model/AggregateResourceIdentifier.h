@@ -123,18 +123,18 @@ class AggregateResourceIdentifier {
   ///@}
  private:
   Aws::String m_sourceAccountId;
-  bool m_sourceAccountIdHasBeenSet = false;
 
   Aws::String m_sourceRegion;
-  bool m_sourceRegionHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resourceName;
+  bool m_sourceAccountIdHasBeenSet = false;
+  bool m_sourceRegionHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_resourceNameHasBeenSet = false;
 };
 

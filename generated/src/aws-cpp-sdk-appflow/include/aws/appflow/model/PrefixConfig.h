@@ -100,12 +100,12 @@ class PrefixConfig {
   ///@}
  private:
   PrefixType m_prefixType{PrefixType::NOT_SET};
-  bool m_prefixTypeHasBeenSet = false;
 
   PrefixFormat m_prefixFormat{PrefixFormat::NOT_SET};
-  bool m_prefixFormatHasBeenSet = false;
 
   Aws::Vector<PathPrefix> m_pathPrefixHierarchy;
+  bool m_prefixTypeHasBeenSet = false;
+  bool m_prefixFormatHasBeenSet = false;
   bool m_pathPrefixHierarchyHasBeenSet = false;
 };
 

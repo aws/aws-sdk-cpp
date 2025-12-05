@@ -157,21 +157,21 @@ class Threat {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::Vector<ItemPath> m_itemPaths;
-  bool m_itemPathsHasBeenSet = false;
 
   long long m_count{0};
-  bool m_countHasBeenSet = false;
 
   Aws::String m_hash;
-  bool m_hashHasBeenSet = false;
 
   Aws::Vector<ItemDetails> m_itemDetails;
+  bool m_nameHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_itemPathsHasBeenSet = false;
+  bool m_countHasBeenSet = false;
+  bool m_hashHasBeenSet = false;
   bool m_itemDetailsHasBeenSet = false;
 };
 

@@ -81,12 +81,12 @@ class RangeOverride {
   ///@}
  private:
   int m_start{0};
-  bool m_startHasBeenSet = false;
 
   int m_end{0};
-  bool m_endHasBeenSet = false;
 
   RangeUnit m_unit{RangeUnit::NOT_SET};
+  bool m_startHasBeenSet = false;
+  bool m_endHasBeenSet = false;
   bool m_unitHasBeenSet = false;
 };
 

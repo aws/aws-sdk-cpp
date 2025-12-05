@@ -67,9 +67,9 @@ class DescribePendingAggregationRequestsRequest : public ConfigServiceRequest {
   ///@}
  private:
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_limitHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

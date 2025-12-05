@@ -87,12 +87,12 @@ class DescribeVpcAttributeRequest : public EC2Request {
   ///@}
  private:
   VpcAttributeName m_attribute{VpcAttributeName::NOT_SET};
-  bool m_attributeHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_attributeHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

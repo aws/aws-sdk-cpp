@@ -114,18 +114,18 @@ class NumberFilter {
   ///@}
  private:
   double m_gte{0.0};
-  bool m_gteHasBeenSet = false;
 
   double m_lte{0.0};
-  bool m_lteHasBeenSet = false;
 
   double m_eq{0.0};
-  bool m_eqHasBeenSet = false;
 
   double m_gt{0.0};
-  bool m_gtHasBeenSet = false;
 
   double m_lt{0.0};
+  bool m_gteHasBeenSet = false;
+  bool m_lteHasBeenSet = false;
+  bool m_eqHasBeenSet = false;
+  bool m_gtHasBeenSet = false;
   bool m_ltHasBeenSet = false;
 };
 

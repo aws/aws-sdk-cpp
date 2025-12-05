@@ -218,30 +218,30 @@ class InstanceTypeSpecification {
   ///@}
  private:
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   int m_weightedCapacity{0};
-  bool m_weightedCapacityHasBeenSet = false;
 
   Aws::String m_bidPrice;
-  bool m_bidPriceHasBeenSet = false;
 
   double m_bidPriceAsPercentageOfOnDemandPrice{0.0};
-  bool m_bidPriceAsPercentageOfOnDemandPriceHasBeenSet = false;
 
   Aws::Vector<Configuration> m_configurations;
-  bool m_configurationsHasBeenSet = false;
 
   Aws::Vector<EbsBlockDevice> m_ebsBlockDevices;
-  bool m_ebsBlockDevicesHasBeenSet = false;
 
   bool m_ebsOptimized{false};
-  bool m_ebsOptimizedHasBeenSet = false;
 
   Aws::String m_customAmiId;
-  bool m_customAmiIdHasBeenSet = false;
 
   double m_priority{0.0};
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_weightedCapacityHasBeenSet = false;
+  bool m_bidPriceHasBeenSet = false;
+  bool m_bidPriceAsPercentageOfOnDemandPriceHasBeenSet = false;
+  bool m_configurationsHasBeenSet = false;
+  bool m_ebsBlockDevicesHasBeenSet = false;
+  bool m_ebsOptimizedHasBeenSet = false;
+  bool m_customAmiIdHasBeenSet = false;
   bool m_priorityHasBeenSet = false;
 };
 

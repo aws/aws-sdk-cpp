@@ -80,12 +80,12 @@ class GetClusterPolicyResult {
   ///@}
  private:
   Aws::String m_currentVersion;
-  bool m_currentVersionHasBeenSet = false;
 
   Aws::String m_policy;
-  bool m_policyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_currentVersionHasBeenSet = false;
+  bool m_policyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

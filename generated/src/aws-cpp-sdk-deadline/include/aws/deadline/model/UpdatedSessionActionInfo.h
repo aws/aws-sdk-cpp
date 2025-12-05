@@ -183,27 +183,27 @@ class UpdatedSessionActionInfo {
   ///@}
  private:
   CompletedStatus m_completedStatus{CompletedStatus::NOT_SET};
-  bool m_completedStatusHasBeenSet = false;
 
   int m_processExitCode{0};
-  bool m_processExitCodeHasBeenSet = false;
 
   Aws::String m_progressMessage;
-  bool m_progressMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_endedAt{};
-  bool m_endedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   double m_progressPercent{0.0};
-  bool m_progressPercentHasBeenSet = false;
 
   Aws::Vector<TaskRunManifestPropertiesRequest> m_manifests;
+  bool m_completedStatusHasBeenSet = false;
+  bool m_processExitCodeHasBeenSet = false;
+  bool m_progressMessageHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_endedAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_progressPercentHasBeenSet = false;
   bool m_manifestsHasBeenSet = false;
 };
 

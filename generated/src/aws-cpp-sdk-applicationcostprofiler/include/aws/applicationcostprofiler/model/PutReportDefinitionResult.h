@@ -60,9 +60,9 @@ class PutReportDefinitionResult {
   ///@}
  private:
   Aws::String m_reportId;
-  bool m_reportIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_reportIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

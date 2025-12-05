@@ -94,12 +94,12 @@ class FindingActor {
   ///@}
  private:
   DomainDetails m_domainDetails;
-  bool m_domainDetailsHasBeenSet = false;
 
   IpAddressDetails m_ipAddressDetails;
-  bool m_ipAddressDetailsHasBeenSet = false;
 
   UserIdentity m_userIdentity;
+  bool m_domainDetailsHasBeenSet = false;
+  bool m_ipAddressDetailsHasBeenSet = false;
   bool m_userIdentityHasBeenSet = false;
 };
 

@@ -107,15 +107,15 @@ class GrpcRoute {
   ///@}
  private:
   GrpcRouteAction m_action;
-  bool m_actionHasBeenSet = false;
 
   GrpcRouteMatch m_match;
-  bool m_matchHasBeenSet = false;
 
   GrpcRetryPolicy m_retryPolicy;
-  bool m_retryPolicyHasBeenSet = false;
 
   GrpcTimeout m_timeout;
+  bool m_actionHasBeenSet = false;
+  bool m_matchHasBeenSet = false;
+  bool m_retryPolicyHasBeenSet = false;
   bool m_timeoutHasBeenSet = false;
 };
 

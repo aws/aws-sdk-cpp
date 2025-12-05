@@ -92,12 +92,12 @@ class BatchDeleteTopicReviewedAnswerRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_topicId;
-  bool m_topicIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_answerIds;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_topicIdHasBeenSet = false;
   bool m_answerIdsHasBeenSet = false;
 };
 

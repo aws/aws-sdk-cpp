@@ -88,12 +88,12 @@ class NotificationsConfiguration {
   ///@}
  private:
   Aws::String m_lambdaFunctionArn;
-  bool m_lambdaFunctionArnHasBeenSet = false;
 
   Aws::String m_snsTopicArn;
-  bool m_snsTopicArnHasBeenSet = false;
 
   Aws::String m_sqsQueueArn;
+  bool m_lambdaFunctionArnHasBeenSet = false;
+  bool m_snsTopicArnHasBeenSet = false;
   bool m_sqsQueueArnHasBeenSet = false;
 };
 

@@ -84,9 +84,9 @@ class PlacementStrategy {
   ///@}
  private:
   PlacementStrategyType m_type{PlacementStrategyType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_field;
+  bool m_typeHasBeenSet = false;
   bool m_fieldHasBeenSet = false;
 };
 

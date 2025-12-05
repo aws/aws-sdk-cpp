@@ -68,9 +68,9 @@ class ImportSource {
   ///@}
  private:
   ImportSourceType m_sourceType{ImportSourceType::NOT_SET};
-  bool m_sourceTypeHasBeenSet = false;
 
   Aws::String m_sourceARN;
+  bool m_sourceTypeHasBeenSet = false;
   bool m_sourceARNHasBeenSet = false;
 };
 

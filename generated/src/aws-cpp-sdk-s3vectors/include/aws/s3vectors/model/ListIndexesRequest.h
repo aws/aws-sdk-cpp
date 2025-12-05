@@ -118,18 +118,18 @@ class ListIndexesRequest : public S3VectorsRequest {
   ///@}
  private:
   Aws::String m_vectorBucketName;
-  bool m_vectorBucketNameHasBeenSet = false;
 
   Aws::String m_vectorBucketArn;
-  bool m_vectorBucketArnHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_prefix;
+  bool m_vectorBucketNameHasBeenSet = false;
+  bool m_vectorBucketArnHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_prefixHasBeenSet = false;
 };
 

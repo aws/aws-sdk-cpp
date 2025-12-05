@@ -264,45 +264,45 @@ class DescribeThesaurusResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_indexId;
-  bool m_indexIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ThesaurusStatus m_status{ThesaurusStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   S3Path m_sourceS3Path;
-  bool m_sourceS3PathHasBeenSet = false;
 
   long long m_fileSizeBytes{0};
-  bool m_fileSizeBytesHasBeenSet = false;
 
   long long m_termCount{0};
-  bool m_termCountHasBeenSet = false;
 
   long long m_synonymRuleCount{0};
-  bool m_synonymRuleCountHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_indexIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_sourceS3PathHasBeenSet = false;
+  bool m_fileSizeBytesHasBeenSet = false;
+  bool m_termCountHasBeenSet = false;
+  bool m_synonymRuleCountHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

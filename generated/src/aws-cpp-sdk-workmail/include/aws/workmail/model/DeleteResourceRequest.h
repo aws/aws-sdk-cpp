@@ -72,9 +72,9 @@ class DeleteResourceRequest : public WorkMailRequest {
   ///@}
  private:
   Aws::String m_organizationId;
-  bool m_organizationIdHasBeenSet = false;
 
   Aws::String m_resourceId;
+  bool m_organizationIdHasBeenSet = false;
   bool m_resourceIdHasBeenSet = false;
 };
 

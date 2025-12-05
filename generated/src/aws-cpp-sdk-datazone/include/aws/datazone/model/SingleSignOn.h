@@ -84,12 +84,12 @@ class SingleSignOn {
   ///@}
  private:
   Aws::String m_idcInstanceArn;
-  bool m_idcInstanceArnHasBeenSet = false;
 
   AuthType m_type{AuthType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   UserAssignment m_userAssignment{UserAssignment::NOT_SET};
+  bool m_idcInstanceArnHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_userAssignmentHasBeenSet = false;
 };
 

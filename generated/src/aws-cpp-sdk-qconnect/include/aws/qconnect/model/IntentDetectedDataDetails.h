@@ -85,12 +85,12 @@ class IntentDetectedDataDetails {
   ///@}
  private:
   Aws::String m_intent;
-  bool m_intentHasBeenSet = false;
 
   Aws::String m_intentId;
-  bool m_intentIdHasBeenSet = false;
 
   RelevanceLevel m_relevanceLevel{RelevanceLevel::NOT_SET};
+  bool m_intentHasBeenSet = false;
+  bool m_intentIdHasBeenSet = false;
   bool m_relevanceLevelHasBeenSet = false;
 };
 

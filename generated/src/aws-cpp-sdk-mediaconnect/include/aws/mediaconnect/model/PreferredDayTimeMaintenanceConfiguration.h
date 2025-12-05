@@ -68,9 +68,9 @@ class PreferredDayTimeMaintenanceConfiguration {
   ///@}
  private:
   Day m_day{Day::NOT_SET};
-  bool m_dayHasBeenSet = false;
 
   Aws::String m_time;
+  bool m_dayHasBeenSet = false;
   bool m_timeHasBeenSet = false;
 };
 

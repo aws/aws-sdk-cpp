@@ -96,12 +96,12 @@ class ListLocationsRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::Vector<LocationFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_filtersHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

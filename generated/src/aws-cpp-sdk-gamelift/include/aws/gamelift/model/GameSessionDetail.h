@@ -72,9 +72,9 @@ class GameSessionDetail {
   ///@}
  private:
   GameSession m_gameSession;
-  bool m_gameSessionHasBeenSet = false;
 
   ProtectionPolicy m_protectionPolicy{ProtectionPolicy::NOT_SET};
+  bool m_gameSessionHasBeenSet = false;
   bool m_protectionPolicyHasBeenSet = false;
 };
 

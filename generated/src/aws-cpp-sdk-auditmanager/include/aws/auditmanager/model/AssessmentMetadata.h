@@ -250,36 +250,36 @@ class AssessmentMetadata {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_complianceType;
-  bool m_complianceTypeHasBeenSet = false;
 
   AssessmentStatus m_status{AssessmentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   AssessmentReportsDestination m_assessmentReportsDestination;
-  bool m_assessmentReportsDestinationHasBeenSet = false;
 
   Scope m_scope;
-  bool m_scopeHasBeenSet = false;
 
   Aws::Vector<Role> m_roles;
-  bool m_rolesHasBeenSet = false;
 
   Aws::Vector<Delegation> m_delegations;
-  bool m_delegationsHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdated{};
+  bool m_nameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_complianceTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_assessmentReportsDestinationHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
+  bool m_rolesHasBeenSet = false;
+  bool m_delegationsHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_lastUpdatedHasBeenSet = false;
 };
 

@@ -99,12 +99,12 @@ class UpdateLicenseSpecificationsForResourceRequest : public LicenseManagerReque
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::Vector<LicenseSpecification> m_addLicenseSpecifications;
-  bool m_addLicenseSpecificationsHasBeenSet = false;
 
   Aws::Vector<LicenseSpecification> m_removeLicenseSpecifications;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_addLicenseSpecificationsHasBeenSet = false;
   bool m_removeLicenseSpecificationsHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class DescribeLoadBalancerTargetGroupsRequest : public AutoScalingRequest {
   ///@}
  private:
   Aws::String m_autoScalingGroupName;
-  bool m_autoScalingGroupNameHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxRecords{0};
+  bool m_autoScalingGroupNameHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxRecordsHasBeenSet = false;
 };
 

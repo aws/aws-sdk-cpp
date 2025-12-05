@@ -87,12 +87,12 @@ class ModelAlias {
   ///@}
  private:
   Aws::String m_aliasName;
-  bool m_aliasNameHasBeenSet = false;
 
   Aws::String m_latestModelId;
-  bool m_latestModelIdHasBeenSet = false;
 
   Aws::String m_resolvedModelId;
+  bool m_aliasNameHasBeenSet = false;
+  bool m_latestModelIdHasBeenSet = false;
   bool m_resolvedModelIdHasBeenSet = false;
 };
 

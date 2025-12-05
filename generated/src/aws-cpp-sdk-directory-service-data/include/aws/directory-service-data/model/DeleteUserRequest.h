@@ -98,12 +98,12 @@ class DeleteUserRequest : public DirectoryServiceDataRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::String m_sAMAccountName;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_directoryIdHasBeenSet = false;
   bool m_sAMAccountNameHasBeenSet = false;
 };
 

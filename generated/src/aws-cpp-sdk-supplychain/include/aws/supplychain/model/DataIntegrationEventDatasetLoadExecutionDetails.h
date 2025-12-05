@@ -67,9 +67,9 @@ class DataIntegrationEventDatasetLoadExecutionDetails {
   ///@}
  private:
   DataIntegrationEventDatasetLoadStatus m_status{DataIntegrationEventDatasetLoadStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_statusHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

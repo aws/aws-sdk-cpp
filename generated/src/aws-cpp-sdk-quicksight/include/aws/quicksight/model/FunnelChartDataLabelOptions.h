@@ -156,24 +156,24 @@ class FunnelChartDataLabelOptions {
   ///@}
  private:
   Visibility m_visibility{Visibility::NOT_SET};
-  bool m_visibilityHasBeenSet = false;
 
   Visibility m_categoryLabelVisibility{Visibility::NOT_SET};
-  bool m_categoryLabelVisibilityHasBeenSet = false;
 
   Visibility m_measureLabelVisibility{Visibility::NOT_SET};
-  bool m_measureLabelVisibilityHasBeenSet = false;
 
   DataLabelPosition m_position{DataLabelPosition::NOT_SET};
-  bool m_positionHasBeenSet = false;
 
   FontConfiguration m_labelFontConfiguration;
-  bool m_labelFontConfigurationHasBeenSet = false;
 
   Aws::String m_labelColor;
-  bool m_labelColorHasBeenSet = false;
 
   FunnelChartMeasureDataLabelStyle m_measureDataLabelStyle{FunnelChartMeasureDataLabelStyle::NOT_SET};
+  bool m_visibilityHasBeenSet = false;
+  bool m_categoryLabelVisibilityHasBeenSet = false;
+  bool m_measureLabelVisibilityHasBeenSet = false;
+  bool m_positionHasBeenSet = false;
+  bool m_labelFontConfigurationHasBeenSet = false;
+  bool m_labelColorHasBeenSet = false;
   bool m_measureDataLabelStyleHasBeenSet = false;
 };
 

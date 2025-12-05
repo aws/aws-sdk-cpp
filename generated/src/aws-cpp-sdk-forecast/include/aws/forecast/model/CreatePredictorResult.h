@@ -59,9 +59,9 @@ class CreatePredictorResult {
   ///@}
  private:
   Aws::String m_predictorArn;
-  bool m_predictorArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_predictorArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

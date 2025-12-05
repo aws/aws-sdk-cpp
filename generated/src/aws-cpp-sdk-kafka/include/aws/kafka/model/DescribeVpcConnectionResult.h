@@ -235,33 +235,33 @@ class DescribeVpcConnectionResult {
   ///@}
  private:
   Aws::String m_vpcConnectionArn;
-  bool m_vpcConnectionArnHasBeenSet = false;
 
   Aws::String m_targetClusterArn;
-  bool m_targetClusterArnHasBeenSet = false;
 
   VpcConnectionState m_state{VpcConnectionState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_authentication;
-  bool m_authenticationHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnets;
-  bool m_subnetsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroups;
-  bool m_securityGroupsHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_vpcConnectionArnHasBeenSet = false;
+  bool m_targetClusterArnHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_authenticationHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_subnetsHasBeenSet = false;
+  bool m_securityGroupsHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class LimitlessDatabase {
   ///@}
  private:
   LimitlessDatabaseStatus m_status{LimitlessDatabaseStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   double m_minRequiredACU{0.0};
+  bool m_statusHasBeenSet = false;
   bool m_minRequiredACUHasBeenSet = false;
 };
 

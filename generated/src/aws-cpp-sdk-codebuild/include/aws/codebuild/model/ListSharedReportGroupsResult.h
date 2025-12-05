@@ -90,12 +90,12 @@ class ListSharedReportGroupsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_reportGroups;
-  bool m_reportGroupsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_reportGroupsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

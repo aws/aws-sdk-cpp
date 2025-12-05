@@ -96,15 +96,15 @@ class DomainStats {
   ///@}
  private:
   long long m_profileCount{0};
-  bool m_profileCountHasBeenSet = false;
 
   long long m_meteringProfileCount{0};
-  bool m_meteringProfileCountHasBeenSet = false;
 
   long long m_objectCount{0};
-  bool m_objectCountHasBeenSet = false;
 
   long long m_totalSize{0};
+  bool m_profileCountHasBeenSet = false;
+  bool m_meteringProfileCountHasBeenSet = false;
+  bool m_objectCountHasBeenSet = false;
   bool m_totalSizeHasBeenSet = false;
 };
 

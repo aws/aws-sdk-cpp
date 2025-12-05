@@ -94,12 +94,12 @@ class ModifyCertificateBasedAuthPropertiesRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   CertificateBasedAuthProperties m_certificateBasedAuthProperties;
-  bool m_certificateBasedAuthPropertiesHasBeenSet = false;
 
   Aws::Vector<DeletableCertificateBasedAuthProperty> m_propertiesToDelete;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_certificateBasedAuthPropertiesHasBeenSet = false;
   bool m_propertiesToDeleteHasBeenSet = false;
 };
 

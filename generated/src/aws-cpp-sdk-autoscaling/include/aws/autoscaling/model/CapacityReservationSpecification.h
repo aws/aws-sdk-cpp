@@ -84,9 +84,9 @@ class CapacityReservationSpecification {
   ///@}
  private:
   CapacityReservationPreference m_capacityReservationPreference{CapacityReservationPreference::NOT_SET};
-  bool m_capacityReservationPreferenceHasBeenSet = false;
 
   CapacityReservationTarget m_capacityReservationTarget;
+  bool m_capacityReservationPreferenceHasBeenSet = false;
   bool m_capacityReservationTargetHasBeenSet = false;
 };
 

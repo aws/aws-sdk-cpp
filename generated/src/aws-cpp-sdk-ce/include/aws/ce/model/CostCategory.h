@@ -214,30 +214,30 @@ class CostCategory {
   ///@}
  private:
   Aws::String m_costCategoryArn;
-  bool m_costCategoryArnHasBeenSet = false;
 
   Aws::String m_effectiveStart;
-  bool m_effectiveStartHasBeenSet = false;
 
   Aws::String m_effectiveEnd;
-  bool m_effectiveEndHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   CostCategoryRuleVersion m_ruleVersion{CostCategoryRuleVersion::NOT_SET};
-  bool m_ruleVersionHasBeenSet = false;
 
   Aws::Vector<CostCategoryRule> m_rules;
-  bool m_rulesHasBeenSet = false;
 
   Aws::Vector<CostCategorySplitChargeRule> m_splitChargeRules;
-  bool m_splitChargeRulesHasBeenSet = false;
 
   Aws::Vector<CostCategoryProcessingStatus> m_processingStatus;
-  bool m_processingStatusHasBeenSet = false;
 
   Aws::String m_defaultValue;
+  bool m_costCategoryArnHasBeenSet = false;
+  bool m_effectiveStartHasBeenSet = false;
+  bool m_effectiveEndHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_ruleVersionHasBeenSet = false;
+  bool m_rulesHasBeenSet = false;
+  bool m_splitChargeRulesHasBeenSet = false;
+  bool m_processingStatusHasBeenSet = false;
   bool m_defaultValueHasBeenSet = false;
 };
 

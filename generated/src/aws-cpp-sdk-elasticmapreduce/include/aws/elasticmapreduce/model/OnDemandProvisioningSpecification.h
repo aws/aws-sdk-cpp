@@ -77,9 +77,9 @@ class OnDemandProvisioningSpecification {
   ///@}
  private:
   OnDemandProvisioningAllocationStrategy m_allocationStrategy{OnDemandProvisioningAllocationStrategy::NOT_SET};
-  bool m_allocationStrategyHasBeenSet = false;
 
   OnDemandCapacityReservationOptions m_capacityReservationOptions;
+  bool m_allocationStrategyHasBeenSet = false;
   bool m_capacityReservationOptionsHasBeenSet = false;
 };
 

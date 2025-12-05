@@ -72,9 +72,9 @@ class AppSyncRuntime {
   ///@}
  private:
   RuntimeName m_name{RuntimeName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_runtimeVersion;
+  bool m_nameHasBeenSet = false;
   bool m_runtimeVersionHasBeenSet = false;
 };
 

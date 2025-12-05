@@ -121,18 +121,18 @@ class S3TableIntegrationSource {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   DataSource m_dataSource;
-  bool m_dataSourceHasBeenSet = false;
 
   S3TableIntegrationSourceStatus m_status{S3TableIntegrationSourceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   long long m_createdTimeStamp{0};
+  bool m_identifierHasBeenSet = false;
+  bool m_dataSourceHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
   bool m_createdTimeStampHasBeenSet = false;
 };
 

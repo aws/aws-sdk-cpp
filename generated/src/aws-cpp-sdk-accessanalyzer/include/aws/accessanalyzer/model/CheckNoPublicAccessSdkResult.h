@@ -105,15 +105,15 @@ class CheckNoPublicAccessSdkResult {
   ///@}
  private:
   CheckNoPublicAccessResult m_result{CheckNoPublicAccessResult::NOT_SET};
-  bool m_resultHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Vector<ReasonSummary> m_reasons;
-  bool m_reasonsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resultHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_reasonsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

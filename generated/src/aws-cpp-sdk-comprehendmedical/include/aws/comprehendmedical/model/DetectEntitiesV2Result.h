@@ -133,18 +133,18 @@ class DetectEntitiesV2Result {
   ///@}
  private:
   Aws::Vector<Entity> m_entities;
-  bool m_entitiesHasBeenSet = false;
 
   Aws::Vector<UnmappedAttribute> m_unmappedAttributes;
-  bool m_unmappedAttributesHasBeenSet = false;
 
   Aws::String m_paginationToken;
-  bool m_paginationTokenHasBeenSet = false;
 
   Aws::String m_modelVersion;
-  bool m_modelVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_entitiesHasBeenSet = false;
+  bool m_unmappedAttributesHasBeenSet = false;
+  bool m_paginationTokenHasBeenSet = false;
+  bool m_modelVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

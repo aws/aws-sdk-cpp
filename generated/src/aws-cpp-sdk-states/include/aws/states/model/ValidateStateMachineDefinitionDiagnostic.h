@@ -141,15 +141,15 @@ class ValidateStateMachineDefinitionDiagnostic {
   ///@}
  private:
   ValidateStateMachineDefinitionSeverity m_severity{ValidateStateMachineDefinitionSeverity::NOT_SET};
-  bool m_severityHasBeenSet = false;
 
   Aws::String m_code;
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_location;
+  bool m_severityHasBeenSet = false;
+  bool m_codeHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_locationHasBeenSet = false;
 };
 

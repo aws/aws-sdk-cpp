@@ -73,9 +73,9 @@ class DescribeJobRequest : public S3ControlRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_jobId;
+  bool m_accountIdHasBeenSet = false;
   bool m_jobIdHasBeenSet = false;
 };
 

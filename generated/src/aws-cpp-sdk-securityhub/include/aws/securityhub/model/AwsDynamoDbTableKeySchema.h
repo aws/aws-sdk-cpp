@@ -70,9 +70,9 @@ class AwsDynamoDbTableKeySchema {
   ///@}
  private:
   Aws::String m_attributeName;
-  bool m_attributeNameHasBeenSet = false;
 
   Aws::String m_keyType;
+  bool m_attributeNameHasBeenSet = false;
   bool m_keyTypeHasBeenSet = false;
 };
 

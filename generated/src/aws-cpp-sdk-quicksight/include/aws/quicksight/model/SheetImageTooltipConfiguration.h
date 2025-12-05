@@ -67,9 +67,9 @@ class SheetImageTooltipConfiguration {
   ///@}
  private:
   SheetImageTooltipText m_tooltipText;
-  bool m_tooltipTextHasBeenSet = false;
 
   Visibility m_visibility{Visibility::NOT_SET};
+  bool m_tooltipTextHasBeenSet = false;
   bool m_visibilityHasBeenSet = false;
 };
 

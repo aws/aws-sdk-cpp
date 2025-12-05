@@ -69,9 +69,9 @@ class ExemptionCertificate {
   ///@}
  private:
   Aws::Utils::ByteBuffer m_documentFile{};
-  bool m_documentFileHasBeenSet = false;
 
   Aws::String m_documentName;
+  bool m_documentFileHasBeenSet = false;
   bool m_documentNameHasBeenSet = false;
 };
 

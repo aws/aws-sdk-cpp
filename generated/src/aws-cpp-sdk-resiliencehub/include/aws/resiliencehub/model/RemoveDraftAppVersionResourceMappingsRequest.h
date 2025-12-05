@@ -204,24 +204,24 @@ class RemoveDraftAppVersionResourceMappingsRequest : public ResilienceHubRequest
   ///@}
  private:
   Aws::String m_appArn;
-  bool m_appArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_appRegistryAppNames;
-  bool m_appRegistryAppNamesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_eksSourceNames;
-  bool m_eksSourceNamesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_logicalStackNames;
-  bool m_logicalStackNamesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceGroupNames;
-  bool m_resourceGroupNamesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceNames;
-  bool m_resourceNamesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_terraformSourceNames;
+  bool m_appArnHasBeenSet = false;
+  bool m_appRegistryAppNamesHasBeenSet = false;
+  bool m_eksSourceNamesHasBeenSet = false;
+  bool m_logicalStackNamesHasBeenSet = false;
+  bool m_resourceGroupNamesHasBeenSet = false;
+  bool m_resourceNamesHasBeenSet = false;
   bool m_terraformSourceNamesHasBeenSet = false;
 };
 

@@ -124,15 +124,15 @@ class EdgeOutputConfig {
   ///@}
  private:
   Aws::String m_s3OutputLocation;
-  bool m_s3OutputLocationHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   EdgePresetDeploymentType m_presetDeploymentType{EdgePresetDeploymentType::NOT_SET};
-  bool m_presetDeploymentTypeHasBeenSet = false;
 
   Aws::String m_presetDeploymentConfig;
+  bool m_s3OutputLocationHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_presetDeploymentTypeHasBeenSet = false;
   bool m_presetDeploymentConfigHasBeenSet = false;
 };
 

@@ -100,12 +100,12 @@ class RegisterDevicesRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_deviceFleetName;
-  bool m_deviceFleetNameHasBeenSet = false;
 
   Aws::Vector<Device> m_devices;
-  bool m_devicesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_deviceFleetNameHasBeenSet = false;
+  bool m_devicesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

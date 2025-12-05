@@ -60,9 +60,9 @@ class DeleteClientVpnEndpointResponse {
   ///@}
  private:
   ClientVpnEndpointStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_statusHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

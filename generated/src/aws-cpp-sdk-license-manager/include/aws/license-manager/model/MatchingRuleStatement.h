@@ -134,12 +134,12 @@ class MatchingRuleStatement {
   ///@}
  private:
   Aws::String m_keyToMatch;
-  bool m_keyToMatchHasBeenSet = false;
 
   Aws::String m_constraint;
-  bool m_constraintHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_valueToMatch;
+  bool m_keyToMatchHasBeenSet = false;
+  bool m_constraintHasBeenSet = false;
   bool m_valueToMatchHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class AcceptSharedDirectoryResult {
   ///@}
  private:
   SharedDirectory m_sharedDirectory;
-  bool m_sharedDirectoryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sharedDirectoryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

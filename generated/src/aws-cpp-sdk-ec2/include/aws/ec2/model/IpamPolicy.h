@@ -192,27 +192,27 @@ class IpamPolicy {
   ///@}
  private:
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_ipamPolicyId;
-  bool m_ipamPolicyIdHasBeenSet = false;
 
   Aws::String m_ipamPolicyArn;
-  bool m_ipamPolicyArnHasBeenSet = false;
 
   Aws::String m_ipamPolicyRegion;
-  bool m_ipamPolicyRegionHasBeenSet = false;
 
   IpamPolicyState m_state{IpamPolicyState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_stateMessage;
-  bool m_stateMessageHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_ipamId;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_ipamPolicyIdHasBeenSet = false;
+  bool m_ipamPolicyArnHasBeenSet = false;
+  bool m_ipamPolicyRegionHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_stateMessageHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_ipamIdHasBeenSet = false;
 };
 

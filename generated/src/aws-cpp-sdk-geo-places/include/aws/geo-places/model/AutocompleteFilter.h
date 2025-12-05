@@ -127,15 +127,15 @@ class AutocompleteFilter {
   ///@}
  private:
   Aws::Vector<double> m_boundingBox;
-  bool m_boundingBoxHasBeenSet = false;
 
   FilterCircle m_circle;
-  bool m_circleHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_includeCountries;
-  bool m_includeCountriesHasBeenSet = false;
 
   Aws::Vector<AutocompleteFilterPlaceType> m_includePlaceTypes;
+  bool m_boundingBoxHasBeenSet = false;
+  bool m_circleHasBeenSet = false;
+  bool m_includeCountriesHasBeenSet = false;
   bool m_includePlaceTypesHasBeenSet = false;
 };
 

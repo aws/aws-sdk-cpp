@@ -72,9 +72,9 @@ class WeightedTargetGroup {
   ///@}
  private:
   Aws::String m_targetGroupIdentifier;
-  bool m_targetGroupIdentifierHasBeenSet = false;
 
   int m_weight{0};
+  bool m_targetGroupIdentifierHasBeenSet = false;
   bool m_weightHasBeenSet = false;
 };
 

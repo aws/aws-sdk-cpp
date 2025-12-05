@@ -93,12 +93,12 @@ class DatasetAction {
   ///@}
  private:
   Aws::String m_actionName;
-  bool m_actionNameHasBeenSet = false;
 
   SqlQueryDatasetAction m_queryAction;
-  bool m_queryActionHasBeenSet = false;
 
   ContainerDatasetAction m_containerAction;
+  bool m_actionNameHasBeenSet = false;
+  bool m_queryActionHasBeenSet = false;
   bool m_containerActionHasBeenSet = false;
 };
 

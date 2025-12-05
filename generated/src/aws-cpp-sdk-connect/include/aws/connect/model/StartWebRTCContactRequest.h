@@ -230,30 +230,30 @@ class StartWebRTCContactRequest : public ConnectRequest {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_contactFlowId;
-  bool m_contactFlowIdHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   AllowedCapabilities m_allowedCapabilities;
-  bool m_allowedCapabilitiesHasBeenSet = false;
 
   ParticipantDetails m_participantDetails;
-  bool m_participantDetailsHasBeenSet = false;
 
   Aws::String m_relatedContactId;
-  bool m_relatedContactIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Reference> m_references;
-  bool m_referencesHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_attributesHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_contactFlowIdHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_allowedCapabilitiesHasBeenSet = false;
+  bool m_participantDetailsHasBeenSet = false;
+  bool m_relatedContactIdHasBeenSet = false;
+  bool m_referencesHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

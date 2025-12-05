@@ -87,12 +87,12 @@ class S3OutputLocation {
   ///@}
  private:
   Aws::String m_outputS3Region;
-  bool m_outputS3RegionHasBeenSet = false;
 
   Aws::String m_outputS3BucketName;
-  bool m_outputS3BucketNameHasBeenSet = false;
 
   Aws::String m_outputS3KeyPrefix;
+  bool m_outputS3RegionHasBeenSet = false;
+  bool m_outputS3BucketNameHasBeenSet = false;
   bool m_outputS3KeyPrefixHasBeenSet = false;
 };
 

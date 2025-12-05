@@ -67,9 +67,9 @@ class ListQuickSetupTypesResult {
   ///@}
  private:
   Aws::Vector<QuickSetupTypeOutput> m_quickSetupTypeList;
-  bool m_quickSetupTypeListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_quickSetupTypeListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

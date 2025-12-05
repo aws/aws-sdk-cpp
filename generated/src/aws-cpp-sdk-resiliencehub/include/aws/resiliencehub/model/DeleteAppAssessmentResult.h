@@ -80,12 +80,12 @@ class DeleteAppAssessmentResult {
   ///@}
  private:
   Aws::String m_assessmentArn;
-  bool m_assessmentArnHasBeenSet = false;
 
   AssessmentStatus m_assessmentStatus{AssessmentStatus::NOT_SET};
-  bool m_assessmentStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assessmentArnHasBeenSet = false;
+  bool m_assessmentStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

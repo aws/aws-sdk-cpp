@@ -182,27 +182,27 @@ class TapeInfo {
   ///@}
  private:
   Aws::String m_tapeARN;
-  bool m_tapeARNHasBeenSet = false;
 
   Aws::String m_tapeBarcode;
-  bool m_tapeBarcodeHasBeenSet = false;
 
   long long m_tapeSizeInBytes{0};
-  bool m_tapeSizeInBytesHasBeenSet = false;
 
   Aws::String m_tapeStatus;
-  bool m_tapeStatusHasBeenSet = false;
 
   Aws::String m_gatewayARN;
-  bool m_gatewayARNHasBeenSet = false;
 
   Aws::String m_poolId;
-  bool m_poolIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_retentionStartDate{};
-  bool m_retentionStartDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_poolEntryDate{};
+  bool m_tapeARNHasBeenSet = false;
+  bool m_tapeBarcodeHasBeenSet = false;
+  bool m_tapeSizeInBytesHasBeenSet = false;
+  bool m_tapeStatusHasBeenSet = false;
+  bool m_gatewayARNHasBeenSet = false;
+  bool m_poolIdHasBeenSet = false;
+  bool m_retentionStartDateHasBeenSet = false;
   bool m_poolEntryDateHasBeenSet = false;
 };
 

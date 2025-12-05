@@ -90,12 +90,12 @@ class UpdateLoggingConfigurationRequest : public PrometheusServiceRequest {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Aws::String m_logGroupArn;
-  bool m_logGroupArnHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_workspaceIdHasBeenSet = false;
+  bool m_logGroupArnHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

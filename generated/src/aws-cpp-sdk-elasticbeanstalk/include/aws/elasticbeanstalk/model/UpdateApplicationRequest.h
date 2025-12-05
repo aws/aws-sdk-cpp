@@ -75,9 +75,9 @@ class UpdateApplicationRequest : public ElasticBeanstalkRequest {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_applicationNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

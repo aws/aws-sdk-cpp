@@ -67,9 +67,9 @@ class ScanNameWithFindingNum {
   ///@}
  private:
   Aws::String m_scanName;
-  bool m_scanNameHasBeenSet = false;
 
   int m_findingNumber{0};
+  bool m_scanNameHasBeenSet = false;
   bool m_findingNumberHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class StopDataSourceSyncJobRequest : public QBusinessRequest {
   ///@}
  private:
   Aws::String m_dataSourceId;
-  bool m_dataSourceIdHasBeenSet = false;
 
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_indexId;
+  bool m_dataSourceIdHasBeenSet = false;
+  bool m_applicationIdHasBeenSet = false;
   bool m_indexIdHasBeenSet = false;
 };
 

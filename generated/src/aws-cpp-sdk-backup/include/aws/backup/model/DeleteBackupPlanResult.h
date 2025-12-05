@@ -117,18 +117,18 @@ class DeleteBackupPlanResult {
   ///@}
  private:
   Aws::String m_backupPlanId;
-  bool m_backupPlanIdHasBeenSet = false;
 
   Aws::String m_backupPlanArn;
-  bool m_backupPlanArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_deletionDate{};
-  bool m_deletionDateHasBeenSet = false;
 
   Aws::String m_versionId;
-  bool m_versionIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_backupPlanIdHasBeenSet = false;
+  bool m_backupPlanArnHasBeenSet = false;
+  bool m_deletionDateHasBeenSet = false;
+  bool m_versionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

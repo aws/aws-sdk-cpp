@@ -96,12 +96,12 @@ class IPRange {
   ///@}
  private:
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_cIDRIP;
-  bool m_cIDRIPHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_statusHasBeenSet = false;
+  bool m_cIDRIPHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

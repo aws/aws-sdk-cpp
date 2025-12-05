@@ -128,18 +128,18 @@ class SourceFlowConfig {
   ///@}
  private:
   ConnectorType m_connectorType{ConnectorType::NOT_SET};
-  bool m_connectorTypeHasBeenSet = false;
 
   Aws::String m_apiVersion;
-  bool m_apiVersionHasBeenSet = false;
 
   Aws::String m_connectorProfileName;
-  bool m_connectorProfileNameHasBeenSet = false;
 
   SourceConnectorProperties m_sourceConnectorProperties;
-  bool m_sourceConnectorPropertiesHasBeenSet = false;
 
   IncrementalPullConfig m_incrementalPullConfig;
+  bool m_connectorTypeHasBeenSet = false;
+  bool m_apiVersionHasBeenSet = false;
+  bool m_connectorProfileNameHasBeenSet = false;
+  bool m_sourceConnectorPropertiesHasBeenSet = false;
   bool m_incrementalPullConfigHasBeenSet = false;
 };
 

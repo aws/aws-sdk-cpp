@@ -106,12 +106,13 @@ class InvokeModelWithBidirectionalStreamRequest : public BedrockRuntimeRequest {
   ///@}
  private:
   Aws::String m_modelId;
-  bool m_modelIdHasBeenSet = false;
 
   std::shared_ptr<InvokeModelWithBidirectionalStreamInput> m_body;
-  bool m_bodyHasBeenSet = false;
   InvokeModelWithBidirectionalStreamHandler m_handler;
   Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
+
+  bool m_modelIdHasBeenSet = false;
+  bool m_bodyHasBeenSet = false;
 };
 
 }  // namespace Model

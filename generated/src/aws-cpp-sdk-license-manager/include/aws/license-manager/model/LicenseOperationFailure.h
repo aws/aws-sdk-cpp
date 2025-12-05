@@ -184,27 +184,27 @@ class LicenseOperationFailure {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_failureTime{};
-  bool m_failureTimeHasBeenSet = false;
 
   Aws::String m_operationName;
-  bool m_operationNameHasBeenSet = false;
 
   Aws::String m_resourceOwnerId;
-  bool m_resourceOwnerIdHasBeenSet = false;
 
   Aws::String m_operationRequestedBy;
-  bool m_operationRequestedByHasBeenSet = false;
 
   Aws::Vector<Metadata> m_metadataList;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_failureTimeHasBeenSet = false;
+  bool m_operationNameHasBeenSet = false;
+  bool m_resourceOwnerIdHasBeenSet = false;
+  bool m_operationRequestedByHasBeenSet = false;
   bool m_metadataListHasBeenSet = false;
 };
 

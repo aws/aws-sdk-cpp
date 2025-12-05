@@ -188,27 +188,27 @@ class UpdateDevEnvironmentRequest : public CodeCatalystRequest {
   ///@}
  private:
   Aws::String m_spaceName;
-  bool m_spaceNameHasBeenSet = false;
 
   Aws::String m_projectName;
-  bool m_projectNameHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   Aws::Vector<IdeConfiguration> m_ides;
-  bool m_idesHasBeenSet = false;
 
   InstanceType m_instanceType{InstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   int m_inactivityTimeoutMinutes{0};
-  bool m_inactivityTimeoutMinutesHasBeenSet = false;
 
   Aws::String m_clientToken;
+  bool m_spaceNameHasBeenSet = false;
+  bool m_projectNameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_aliasHasBeenSet = false;
+  bool m_idesHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_inactivityTimeoutMinutesHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
 };
 

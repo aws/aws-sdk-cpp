@@ -145,21 +145,21 @@ class DecryptResult {
   ///@}
  private:
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   Aws::Utils::CryptoBuffer m_plaintext{};
-  bool m_plaintextHasBeenSet = false;
 
   EncryptionAlgorithmSpec m_encryptionAlgorithm{EncryptionAlgorithmSpec::NOT_SET};
-  bool m_encryptionAlgorithmHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_ciphertextForRecipient{};
-  bool m_ciphertextForRecipientHasBeenSet = false;
 
   Aws::String m_keyMaterialId;
-  bool m_keyMaterialIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_keyIdHasBeenSet = false;
+  bool m_plaintextHasBeenSet = false;
+  bool m_encryptionAlgorithmHasBeenSet = false;
+  bool m_ciphertextForRecipientHasBeenSet = false;
+  bool m_keyMaterialIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

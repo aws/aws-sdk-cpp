@@ -88,12 +88,12 @@ class DescribeJobDefinitionsResult {
   ///@}
  private:
   Aws::Vector<JobDefinition> m_jobDefinitions;
-  bool m_jobDefinitionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobDefinitionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

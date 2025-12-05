@@ -182,27 +182,27 @@ class AmazonOpenSearchServerlessDestinationUpdate {
   ///@}
  private:
   Aws::String m_roleARN;
-  bool m_roleARNHasBeenSet = false;
 
   Aws::String m_collectionEndpoint;
-  bool m_collectionEndpointHasBeenSet = false;
 
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   AmazonOpenSearchServerlessBufferingHints m_bufferingHints;
-  bool m_bufferingHintsHasBeenSet = false;
 
   AmazonOpenSearchServerlessRetryOptions m_retryOptions;
-  bool m_retryOptionsHasBeenSet = false;
 
   S3DestinationUpdate m_s3Update;
-  bool m_s3UpdateHasBeenSet = false;
 
   ProcessingConfiguration m_processingConfiguration;
-  bool m_processingConfigurationHasBeenSet = false;
 
   CloudWatchLoggingOptions m_cloudWatchLoggingOptions;
+  bool m_roleARNHasBeenSet = false;
+  bool m_collectionEndpointHasBeenSet = false;
+  bool m_indexNameHasBeenSet = false;
+  bool m_bufferingHintsHasBeenSet = false;
+  bool m_retryOptionsHasBeenSet = false;
+  bool m_s3UpdateHasBeenSet = false;
+  bool m_processingConfigurationHasBeenSet = false;
   bool m_cloudWatchLoggingOptionsHasBeenSet = false;
 };
 

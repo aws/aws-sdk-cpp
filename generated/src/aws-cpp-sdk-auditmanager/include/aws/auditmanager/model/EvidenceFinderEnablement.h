@@ -129,15 +129,15 @@ class EvidenceFinderEnablement {
   ///@}
  private:
   Aws::String m_eventDataStoreArn;
-  bool m_eventDataStoreArnHasBeenSet = false;
 
   EvidenceFinderEnablementStatus m_enablementStatus{EvidenceFinderEnablementStatus::NOT_SET};
-  bool m_enablementStatusHasBeenSet = false;
 
   EvidenceFinderBackfillStatus m_backfillStatus{EvidenceFinderBackfillStatus::NOT_SET};
-  bool m_backfillStatusHasBeenSet = false;
 
   Aws::String m_error;
+  bool m_eventDataStoreArnHasBeenSet = false;
+  bool m_enablementStatusHasBeenSet = false;
+  bool m_backfillStatusHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

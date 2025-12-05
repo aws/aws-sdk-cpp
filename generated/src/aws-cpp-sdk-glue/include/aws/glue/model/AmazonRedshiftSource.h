@@ -69,9 +69,9 @@ class AmazonRedshiftSource {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   AmazonRedshiftNodeData m_data;
+  bool m_nameHasBeenSet = false;
   bool m_dataHasBeenSet = false;
 };
 

@@ -90,12 +90,12 @@ class GroupSearchFilter {
   ///@}
  private:
   GroupFilterOperator m_operator{GroupFilterOperator::NOT_SET};
-  bool m_operatorHasBeenSet = false;
 
   GroupFilterAttribute m_name{GroupFilterAttribute::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_operatorHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

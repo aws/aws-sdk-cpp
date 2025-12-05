@@ -85,12 +85,12 @@ class ListForecastsResult {
   ///@}
  private:
   Aws::Vector<ForecastSummary> m_forecasts;
-  bool m_forecastsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_forecastsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

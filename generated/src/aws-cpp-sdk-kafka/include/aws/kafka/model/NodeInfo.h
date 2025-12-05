@@ -176,24 +176,24 @@ class NodeInfo {
   ///@}
  private:
   Aws::String m_addedToClusterTime;
-  bool m_addedToClusterTimeHasBeenSet = false;
 
   BrokerNodeInfo m_brokerNodeInfo;
-  bool m_brokerNodeInfoHasBeenSet = false;
 
   ControllerNodeInfo m_controllerNodeInfo;
-  bool m_controllerNodeInfoHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_nodeARN;
-  bool m_nodeARNHasBeenSet = false;
 
   NodeType m_nodeType{NodeType::NOT_SET};
-  bool m_nodeTypeHasBeenSet = false;
 
   ZookeeperNodeInfo m_zookeeperNodeInfo;
+  bool m_addedToClusterTimeHasBeenSet = false;
+  bool m_brokerNodeInfoHasBeenSet = false;
+  bool m_controllerNodeInfoHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_nodeARNHasBeenSet = false;
+  bool m_nodeTypeHasBeenSet = false;
   bool m_zookeeperNodeInfoHasBeenSet = false;
 };
 

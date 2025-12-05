@@ -136,18 +136,18 @@ class DeleteAppInputSourceRequest : public ResilienceHubRequest {
   ///@}
  private:
   Aws::String m_appArn;
-  bool m_appArnHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   EksSourceClusterNamespace m_eksSourceClusterNamespace;
-  bool m_eksSourceClusterNamespaceHasBeenSet = false;
 
   Aws::String m_sourceArn;
-  bool m_sourceArnHasBeenSet = false;
 
   TerraformSource m_terraformSource;
+  bool m_appArnHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_eksSourceClusterNamespaceHasBeenSet = false;
+  bool m_sourceArnHasBeenSet = false;
   bool m_terraformSourceHasBeenSet = false;
 };
 

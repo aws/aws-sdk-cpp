@@ -79,9 +79,9 @@ class BatchPutAssetPropertyErrorEntry {
   ///@}
  private:
   Aws::String m_entryId;
-  bool m_entryIdHasBeenSet = false;
 
   Aws::Vector<BatchPutAssetPropertyError> m_errors;
+  bool m_entryIdHasBeenSet = false;
   bool m_errorsHasBeenSet = false;
 };
 

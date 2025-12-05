@@ -69,9 +69,9 @@ class Image {
   ///@}
  private:
   ImageSource m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_generatedImageUrl;
+  bool m_sourceHasBeenSet = false;
   bool m_generatedImageUrlHasBeenSet = false;
 };
 

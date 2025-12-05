@@ -100,15 +100,15 @@ class AudioMetadata {
   ///@}
  private:
   Aws::String m_codec;
-  bool m_codecHasBeenSet = false;
 
   long long m_durationMillis{0};
-  bool m_durationMillisHasBeenSet = false;
 
   long long m_sampleRate{0};
-  bool m_sampleRateHasBeenSet = false;
 
   long long m_numberOfChannels{0};
+  bool m_codecHasBeenSet = false;
+  bool m_durationMillisHasBeenSet = false;
+  bool m_sampleRateHasBeenSet = false;
   bool m_numberOfChannelsHasBeenSet = false;
 };
 

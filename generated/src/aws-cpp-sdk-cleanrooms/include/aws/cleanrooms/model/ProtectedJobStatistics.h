@@ -68,9 +68,9 @@ class ProtectedJobStatistics {
   ///@}
  private:
   long long m_totalDurationInMillis{0};
-  bool m_totalDurationInMillisHasBeenSet = false;
 
   BilledJobResourceUtilization m_billedResourceUtilization;
+  bool m_totalDurationInMillisHasBeenSet = false;
   bool m_billedResourceUtilizationHasBeenSet = false;
 };
 

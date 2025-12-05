@@ -130,18 +130,18 @@ class CreateUploadJobRequest : public CustomerProfilesRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::Map<Aws::String, ObjectTypeField> m_fields;
-  bool m_fieldsHasBeenSet = false;
 
   Aws::String m_uniqueKey;
-  bool m_uniqueKeyHasBeenSet = false;
 
   int m_dataExpiry{0};
+  bool m_domainNameHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_fieldsHasBeenSet = false;
+  bool m_uniqueKeyHasBeenSet = false;
   bool m_dataExpiryHasBeenSet = false;
 };
 

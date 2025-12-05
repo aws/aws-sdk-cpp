@@ -102,12 +102,12 @@ class NotificationConfig {
   ///@}
  private:
   Aws::String m_notificationArn;
-  bool m_notificationArnHasBeenSet = false;
 
   Aws::Vector<NotificationEvent> m_notificationEvents;
-  bool m_notificationEventsHasBeenSet = false;
 
   NotificationType m_notificationType{NotificationType::NOT_SET};
+  bool m_notificationArnHasBeenSet = false;
+  bool m_notificationEventsHasBeenSet = false;
   bool m_notificationTypeHasBeenSet = false;
 };
 

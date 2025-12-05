@@ -109,15 +109,15 @@ class PutResourcePolicyRequest : public PrometheusServiceRequest {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Aws::String m_policyDocument;
-  bool m_policyDocumentHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_revisionId;
+  bool m_workspaceIdHasBeenSet = false;
+  bool m_policyDocumentHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_revisionIdHasBeenSet = false;
 };
 

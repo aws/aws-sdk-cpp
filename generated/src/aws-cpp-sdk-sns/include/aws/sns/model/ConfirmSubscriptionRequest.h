@@ -95,12 +95,12 @@ class ConfirmSubscriptionRequest : public SNSRequest {
   ///@}
  private:
   Aws::String m_topicArn;
-  bool m_topicArnHasBeenSet = false;
 
   Aws::String m_token;
-  bool m_tokenHasBeenSet = false;
 
   Aws::String m_authenticateOnUnsubscribe;
+  bool m_topicArnHasBeenSet = false;
+  bool m_tokenHasBeenSet = false;
   bool m_authenticateOnUnsubscribeHasBeenSet = false;
 };
 

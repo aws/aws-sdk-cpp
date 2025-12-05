@@ -85,12 +85,12 @@ class ListOpsMetadataResult {
   ///@}
  private:
   Aws::Vector<OpsMetadata> m_opsMetadataList;
-  bool m_opsMetadataListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_opsMetadataListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

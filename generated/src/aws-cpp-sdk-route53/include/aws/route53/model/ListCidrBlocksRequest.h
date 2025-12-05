@@ -107,15 +107,15 @@ class ListCidrBlocksRequest : public Route53Request {
   ///@}
  private:
   Aws::String m_collectionId;
-  bool m_collectionIdHasBeenSet = false;
 
   Aws::String m_locationName;
-  bool m_locationNameHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_maxResults;
+  bool m_collectionIdHasBeenSet = false;
+  bool m_locationNameHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

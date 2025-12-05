@@ -206,27 +206,27 @@ class AssociatedPermission {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_permissionVersion;
-  bool m_permissionVersionHasBeenSet = false;
 
   bool m_defaultVersion{false};
-  bool m_defaultVersionHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   PermissionFeatureSet m_featureSet{PermissionFeatureSet::NOT_SET};
-  bool m_featureSetHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::String m_resourceShareArn;
+  bool m_arnHasBeenSet = false;
+  bool m_permissionVersionHasBeenSet = false;
+  bool m_defaultVersionHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_featureSetHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
   bool m_resourceShareArnHasBeenSet = false;
 };
 

@@ -119,18 +119,18 @@ class ListHookResultsResult {
   ///@}
  private:
   ListHookResultsTargetType m_targetType{ListHookResultsTargetType::NOT_SET};
-  bool m_targetTypeHasBeenSet = false;
 
   Aws::String m_targetId;
-  bool m_targetIdHasBeenSet = false;
 
   Aws::Vector<HookResultSummary> m_hookResults;
-  bool m_hookResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_targetTypeHasBeenSet = false;
+  bool m_targetIdHasBeenSet = false;
+  bool m_hookResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class DeleteLocalGatewayVirtualInterfaceRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_localGatewayVirtualInterfaceId;
-  bool m_localGatewayVirtualInterfaceIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_localGatewayVirtualInterfaceIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

@@ -1021,138 +1021,138 @@ class H265Settings {
   ///@}
  private:
   H265AdaptiveQuantization m_adaptiveQuantization{H265AdaptiveQuantization::NOT_SET};
-  bool m_adaptiveQuantizationHasBeenSet = false;
 
   H265AlternateTransferFunctionSei m_alternateTransferFunctionSei{H265AlternateTransferFunctionSei::NOT_SET};
-  bool m_alternateTransferFunctionSeiHasBeenSet = false;
 
   BandwidthReductionFilter m_bandwidthReductionFilter;
-  bool m_bandwidthReductionFilterHasBeenSet = false;
 
   int m_bitrate{0};
-  bool m_bitrateHasBeenSet = false;
 
   H265CodecLevel m_codecLevel{H265CodecLevel::NOT_SET};
-  bool m_codecLevelHasBeenSet = false;
 
   H265CodecProfile m_codecProfile{H265CodecProfile::NOT_SET};
-  bool m_codecProfileHasBeenSet = false;
 
   H265Deblocking m_deblocking{H265Deblocking::NOT_SET};
-  bool m_deblockingHasBeenSet = false;
 
   H265DynamicSubGop m_dynamicSubGop{H265DynamicSubGop::NOT_SET};
-  bool m_dynamicSubGopHasBeenSet = false;
 
   H265EndOfStreamMarkers m_endOfStreamMarkers{H265EndOfStreamMarkers::NOT_SET};
-  bool m_endOfStreamMarkersHasBeenSet = false;
 
   H265FlickerAdaptiveQuantization m_flickerAdaptiveQuantization{H265FlickerAdaptiveQuantization::NOT_SET};
-  bool m_flickerAdaptiveQuantizationHasBeenSet = false;
 
   H265FramerateControl m_framerateControl{H265FramerateControl::NOT_SET};
-  bool m_framerateControlHasBeenSet = false;
 
   H265FramerateConversionAlgorithm m_framerateConversionAlgorithm{H265FramerateConversionAlgorithm::NOT_SET};
-  bool m_framerateConversionAlgorithmHasBeenSet = false;
 
   int m_framerateDenominator{0};
-  bool m_framerateDenominatorHasBeenSet = false;
 
   int m_framerateNumerator{0};
-  bool m_framerateNumeratorHasBeenSet = false;
 
   H265GopBReference m_gopBReference{H265GopBReference::NOT_SET};
-  bool m_gopBReferenceHasBeenSet = false;
 
   int m_gopClosedCadence{0};
-  bool m_gopClosedCadenceHasBeenSet = false;
 
   double m_gopSize{0.0};
-  bool m_gopSizeHasBeenSet = false;
 
   H265GopSizeUnits m_gopSizeUnits{H265GopSizeUnits::NOT_SET};
-  bool m_gopSizeUnitsHasBeenSet = false;
 
   int m_hrdBufferFinalFillPercentage{0};
-  bool m_hrdBufferFinalFillPercentageHasBeenSet = false;
 
   int m_hrdBufferInitialFillPercentage{0};
-  bool m_hrdBufferInitialFillPercentageHasBeenSet = false;
 
   int m_hrdBufferSize{0};
-  bool m_hrdBufferSizeHasBeenSet = false;
 
   H265InterlaceMode m_interlaceMode{H265InterlaceMode::NOT_SET};
-  bool m_interlaceModeHasBeenSet = false;
 
   int m_maxBitrate{0};
-  bool m_maxBitrateHasBeenSet = false;
 
   int m_minIInterval{0};
-  bool m_minIIntervalHasBeenSet = false;
 
   int m_numberBFramesBetweenReferenceFrames{0};
-  bool m_numberBFramesBetweenReferenceFramesHasBeenSet = false;
 
   int m_numberReferenceFrames{0};
-  bool m_numberReferenceFramesHasBeenSet = false;
 
   H265ParControl m_parControl{H265ParControl::NOT_SET};
-  bool m_parControlHasBeenSet = false;
 
   int m_parDenominator{0};
-  bool m_parDenominatorHasBeenSet = false;
 
   int m_parNumerator{0};
-  bool m_parNumeratorHasBeenSet = false;
 
   Aws::Vector<FrameMetricType> m_perFrameMetrics;
-  bool m_perFrameMetricsHasBeenSet = false;
 
   H265QualityTuningLevel m_qualityTuningLevel{H265QualityTuningLevel::NOT_SET};
-  bool m_qualityTuningLevelHasBeenSet = false;
 
   H265QvbrSettings m_qvbrSettings;
-  bool m_qvbrSettingsHasBeenSet = false;
 
   H265RateControlMode m_rateControlMode{H265RateControlMode::NOT_SET};
-  bool m_rateControlModeHasBeenSet = false;
 
   H265SampleAdaptiveOffsetFilterMode m_sampleAdaptiveOffsetFilterMode{H265SampleAdaptiveOffsetFilterMode::NOT_SET};
-  bool m_sampleAdaptiveOffsetFilterModeHasBeenSet = false;
 
   H265ScanTypeConversionMode m_scanTypeConversionMode{H265ScanTypeConversionMode::NOT_SET};
-  bool m_scanTypeConversionModeHasBeenSet = false;
 
   H265SceneChangeDetect m_sceneChangeDetect{H265SceneChangeDetect::NOT_SET};
-  bool m_sceneChangeDetectHasBeenSet = false;
 
   int m_slices{0};
-  bool m_slicesHasBeenSet = false;
 
   H265SlowPal m_slowPal{H265SlowPal::NOT_SET};
-  bool m_slowPalHasBeenSet = false;
 
   H265SpatialAdaptiveQuantization m_spatialAdaptiveQuantization{H265SpatialAdaptiveQuantization::NOT_SET};
-  bool m_spatialAdaptiveQuantizationHasBeenSet = false;
 
   H265Telecine m_telecine{H265Telecine::NOT_SET};
-  bool m_telecineHasBeenSet = false;
 
   H265TemporalAdaptiveQuantization m_temporalAdaptiveQuantization{H265TemporalAdaptiveQuantization::NOT_SET};
-  bool m_temporalAdaptiveQuantizationHasBeenSet = false;
 
   H265TemporalIds m_temporalIds{H265TemporalIds::NOT_SET};
-  bool m_temporalIdsHasBeenSet = false;
 
   H265Tiles m_tiles{H265Tiles::NOT_SET};
-  bool m_tilesHasBeenSet = false;
 
   H265UnregisteredSeiTimecode m_unregisteredSeiTimecode{H265UnregisteredSeiTimecode::NOT_SET};
-  bool m_unregisteredSeiTimecodeHasBeenSet = false;
 
   H265WriteMp4PackagingType m_writeMp4PackagingType{H265WriteMp4PackagingType::NOT_SET};
+  bool m_adaptiveQuantizationHasBeenSet = false;
+  bool m_alternateTransferFunctionSeiHasBeenSet = false;
+  bool m_bandwidthReductionFilterHasBeenSet = false;
+  bool m_bitrateHasBeenSet = false;
+  bool m_codecLevelHasBeenSet = false;
+  bool m_codecProfileHasBeenSet = false;
+  bool m_deblockingHasBeenSet = false;
+  bool m_dynamicSubGopHasBeenSet = false;
+  bool m_endOfStreamMarkersHasBeenSet = false;
+  bool m_flickerAdaptiveQuantizationHasBeenSet = false;
+  bool m_framerateControlHasBeenSet = false;
+  bool m_framerateConversionAlgorithmHasBeenSet = false;
+  bool m_framerateDenominatorHasBeenSet = false;
+  bool m_framerateNumeratorHasBeenSet = false;
+  bool m_gopBReferenceHasBeenSet = false;
+  bool m_gopClosedCadenceHasBeenSet = false;
+  bool m_gopSizeHasBeenSet = false;
+  bool m_gopSizeUnitsHasBeenSet = false;
+  bool m_hrdBufferFinalFillPercentageHasBeenSet = false;
+  bool m_hrdBufferInitialFillPercentageHasBeenSet = false;
+  bool m_hrdBufferSizeHasBeenSet = false;
+  bool m_interlaceModeHasBeenSet = false;
+  bool m_maxBitrateHasBeenSet = false;
+  bool m_minIIntervalHasBeenSet = false;
+  bool m_numberBFramesBetweenReferenceFramesHasBeenSet = false;
+  bool m_numberReferenceFramesHasBeenSet = false;
+  bool m_parControlHasBeenSet = false;
+  bool m_parDenominatorHasBeenSet = false;
+  bool m_parNumeratorHasBeenSet = false;
+  bool m_perFrameMetricsHasBeenSet = false;
+  bool m_qualityTuningLevelHasBeenSet = false;
+  bool m_qvbrSettingsHasBeenSet = false;
+  bool m_rateControlModeHasBeenSet = false;
+  bool m_sampleAdaptiveOffsetFilterModeHasBeenSet = false;
+  bool m_scanTypeConversionModeHasBeenSet = false;
+  bool m_sceneChangeDetectHasBeenSet = false;
+  bool m_slicesHasBeenSet = false;
+  bool m_slowPalHasBeenSet = false;
+  bool m_spatialAdaptiveQuantizationHasBeenSet = false;
+  bool m_telecineHasBeenSet = false;
+  bool m_temporalAdaptiveQuantizationHasBeenSet = false;
+  bool m_temporalIdsHasBeenSet = false;
+  bool m_tilesHasBeenSet = false;
+  bool m_unregisteredSeiTimecodeHasBeenSet = false;
   bool m_writeMp4PackagingTypeHasBeenSet = false;
 };
 

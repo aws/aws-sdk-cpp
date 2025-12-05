@@ -113,12 +113,12 @@ class OutputDataConfig {
   ///@}
  private:
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_s3OutputPath;
-  bool m_s3OutputPathHasBeenSet = false;
 
   OutputCompressionType m_compressionType{OutputCompressionType::NOT_SET};
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_s3OutputPathHasBeenSet = false;
   bool m_compressionTypeHasBeenSet = false;
 };
 

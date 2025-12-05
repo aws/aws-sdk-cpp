@@ -87,12 +87,12 @@ class CanaryStatus {
   ///@}
  private:
   CanaryState m_state{CanaryState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_stateReason;
-  bool m_stateReasonHasBeenSet = false;
 
   CanaryStateReasonCode m_stateReasonCode{CanaryStateReasonCode::NOT_SET};
+  bool m_stateHasBeenSet = false;
+  bool m_stateReasonHasBeenSet = false;
   bool m_stateReasonCodeHasBeenSet = false;
 };
 

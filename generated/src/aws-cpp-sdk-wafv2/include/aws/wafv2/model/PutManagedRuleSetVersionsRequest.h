@@ -165,21 +165,21 @@ class PutManagedRuleSetVersionsRequest : public WAFV2Request {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Scope m_scope{Scope::NOT_SET};
-  bool m_scopeHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_lockToken;
-  bool m_lockTokenHasBeenSet = false;
 
   Aws::String m_recommendedVersion;
-  bool m_recommendedVersionHasBeenSet = false;
 
   Aws::Map<Aws::String, VersionToPublish> m_versionsToPublish;
+  bool m_nameHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_lockTokenHasBeenSet = false;
+  bool m_recommendedVersionHasBeenSet = false;
   bool m_versionsToPublishHasBeenSet = false;
 };
 

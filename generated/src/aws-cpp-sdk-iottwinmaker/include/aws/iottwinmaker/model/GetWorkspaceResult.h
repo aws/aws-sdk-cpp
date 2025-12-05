@@ -187,30 +187,30 @@ class GetWorkspaceResult {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_linkedServices;
-  bool m_linkedServicesHasBeenSet = false;
 
   Aws::String m_s3Location;
-  bool m_s3LocationHasBeenSet = false;
 
   Aws::String m_role;
-  bool m_roleHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateDateTime{};
-  bool m_updateDateTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workspaceIdHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_linkedServicesHasBeenSet = false;
+  bool m_s3LocationHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_updateDateTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

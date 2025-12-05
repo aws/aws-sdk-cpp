@@ -74,9 +74,9 @@ class EncryptionConfig {
   ///@}
  private:
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_kMSKeyArn;
+  bool m_roleArnHasBeenSet = false;
   bool m_kMSKeyArnHasBeenSet = false;
 };
 

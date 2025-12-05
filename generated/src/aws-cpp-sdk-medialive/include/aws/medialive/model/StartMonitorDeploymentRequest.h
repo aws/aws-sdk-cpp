@@ -65,9 +65,9 @@ class StartMonitorDeploymentRequest : public MediaLiveRequest {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_identifier;
+  bool m_dryRunHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
 };
 

@@ -104,12 +104,12 @@ class UsageStatisticsFilter {
   ///@}
  private:
   UsageStatisticsFilterComparator m_comparator{UsageStatisticsFilterComparator::NOT_SET};
-  bool m_comparatorHasBeenSet = false;
 
   UsageStatisticsFilterKey m_key{UsageStatisticsFilterKey::NOT_SET};
-  bool m_keyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_comparatorHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

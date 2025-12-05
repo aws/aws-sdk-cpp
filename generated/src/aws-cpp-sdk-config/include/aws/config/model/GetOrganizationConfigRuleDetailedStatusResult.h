@@ -89,12 +89,12 @@ class GetOrganizationConfigRuleDetailedStatusResult {
   ///@}
  private:
   Aws::Vector<MemberAccountStatus> m_organizationConfigRuleDetailedStatus;
-  bool m_organizationConfigRuleDetailedStatusHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_organizationConfigRuleDetailedStatusHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

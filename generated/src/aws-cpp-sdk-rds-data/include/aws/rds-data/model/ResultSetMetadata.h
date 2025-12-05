@@ -74,9 +74,9 @@ class ResultSetMetadata {
   ///@}
  private:
   long long m_columnCount{0};
-  bool m_columnCountHasBeenSet = false;
 
   Aws::Vector<ColumnMetadata> m_columnMetadata;
+  bool m_columnCountHasBeenSet = false;
   bool m_columnMetadataHasBeenSet = false;
 };
 

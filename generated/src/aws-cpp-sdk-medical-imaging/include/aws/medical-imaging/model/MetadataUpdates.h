@@ -73,9 +73,9 @@ class MetadataUpdates {
   ///@}
  private:
   DICOMUpdates m_dICOMUpdates;
-  bool m_dICOMUpdatesHasBeenSet = false;
 
   Aws::String m_revertToVersionId;
+  bool m_dICOMUpdatesHasBeenSet = false;
   bool m_revertToVersionIdHasBeenSet = false;
 };
 

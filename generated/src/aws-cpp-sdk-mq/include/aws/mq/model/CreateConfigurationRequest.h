@@ -138,18 +138,18 @@ class CreateConfigurationRequest : public MQRequest {
   ///@}
  private:
   AuthenticationStrategy m_authenticationStrategy{AuthenticationStrategy::NOT_SET};
-  bool m_authenticationStrategyHasBeenSet = false;
 
   EngineType m_engineType{EngineType::NOT_SET};
-  bool m_engineTypeHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_authenticationStrategyHasBeenSet = false;
+  bool m_engineTypeHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

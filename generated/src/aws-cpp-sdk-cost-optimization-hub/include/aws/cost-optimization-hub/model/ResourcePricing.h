@@ -101,15 +101,15 @@ class ResourcePricing {
   ///@}
  private:
   double m_estimatedCostBeforeDiscounts{0.0};
-  bool m_estimatedCostBeforeDiscountsHasBeenSet = false;
 
   double m_estimatedNetUnusedAmortizedCommitments{0.0};
-  bool m_estimatedNetUnusedAmortizedCommitmentsHasBeenSet = false;
 
   EstimatedDiscounts m_estimatedDiscounts;
-  bool m_estimatedDiscountsHasBeenSet = false;
 
   double m_estimatedCostAfterDiscounts{0.0};
+  bool m_estimatedCostBeforeDiscountsHasBeenSet = false;
+  bool m_estimatedNetUnusedAmortizedCommitmentsHasBeenSet = false;
+  bool m_estimatedDiscountsHasBeenSet = false;
   bool m_estimatedCostAfterDiscountsHasBeenSet = false;
 };
 

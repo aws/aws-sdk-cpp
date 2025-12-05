@@ -108,15 +108,15 @@ class PointInTimeRecoveryDescription {
   ///@}
  private:
   PointInTimeRecoveryStatus m_pointInTimeRecoveryStatus{PointInTimeRecoveryStatus::NOT_SET};
-  bool m_pointInTimeRecoveryStatusHasBeenSet = false;
 
   int m_recoveryPeriodInDays{0};
-  bool m_recoveryPeriodInDaysHasBeenSet = false;
 
   Aws::Utils::DateTime m_earliestRestorableDateTime{};
-  bool m_earliestRestorableDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_latestRestorableDateTime{};
+  bool m_pointInTimeRecoveryStatusHasBeenSet = false;
+  bool m_recoveryPeriodInDaysHasBeenSet = false;
+  bool m_earliestRestorableDateTimeHasBeenSet = false;
   bool m_latestRestorableDateTimeHasBeenSet = false;
 };
 

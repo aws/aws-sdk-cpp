@@ -67,9 +67,9 @@ class UpdateHITTypeOfHITRequest : public MTurkRequest {
   ///@}
  private:
   Aws::String m_hITId;
-  bool m_hITIdHasBeenSet = false;
 
   Aws::String m_hITTypeId;
+  bool m_hITIdHasBeenSet = false;
   bool m_hITTypeIdHasBeenSet = false;
 };
 

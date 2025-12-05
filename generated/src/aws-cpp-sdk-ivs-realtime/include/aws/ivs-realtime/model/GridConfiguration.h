@@ -151,21 +151,21 @@ class GridConfiguration {
   ///@}
  private:
   Aws::String m_featuredParticipantAttribute;
-  bool m_featuredParticipantAttributeHasBeenSet = false;
 
   bool m_omitStoppedVideo{false};
-  bool m_omitStoppedVideoHasBeenSet = false;
 
   VideoAspectRatio m_videoAspectRatio{VideoAspectRatio::NOT_SET};
-  bool m_videoAspectRatioHasBeenSet = false;
 
   VideoFillMode m_videoFillMode{VideoFillMode::NOT_SET};
-  bool m_videoFillModeHasBeenSet = false;
 
   int m_gridGap{0};
-  bool m_gridGapHasBeenSet = false;
 
   Aws::String m_participantOrderAttribute;
+  bool m_featuredParticipantAttributeHasBeenSet = false;
+  bool m_omitStoppedVideoHasBeenSet = false;
+  bool m_videoAspectRatioHasBeenSet = false;
+  bool m_videoFillModeHasBeenSet = false;
+  bool m_gridGapHasBeenSet = false;
   bool m_participantOrderAttributeHasBeenSet = false;
 };
 

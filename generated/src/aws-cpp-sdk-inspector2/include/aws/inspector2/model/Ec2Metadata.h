@@ -92,12 +92,12 @@ class Ec2Metadata {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_amiId;
-  bool m_amiIdHasBeenSet = false;
 
   Ec2Platform m_platform{Ec2Platform::NOT_SET};
+  bool m_tagsHasBeenSet = false;
+  bool m_amiIdHasBeenSet = false;
   bool m_platformHasBeenSet = false;
 };
 

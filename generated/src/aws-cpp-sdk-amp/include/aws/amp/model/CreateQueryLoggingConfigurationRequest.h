@@ -95,12 +95,12 @@ class CreateQueryLoggingConfigurationRequest : public PrometheusServiceRequest {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Aws::Vector<LoggingDestination> m_destinations;
-  bool m_destinationsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_workspaceIdHasBeenSet = false;
+  bool m_destinationsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

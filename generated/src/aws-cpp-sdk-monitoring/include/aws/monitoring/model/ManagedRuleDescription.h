@@ -94,12 +94,12 @@ class ManagedRuleDescription {
   ///@}
  private:
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   Aws::String m_resourceARN;
-  bool m_resourceARNHasBeenSet = false;
 
   ManagedRuleState m_ruleState;
+  bool m_templateNameHasBeenSet = false;
+  bool m_resourceARNHasBeenSet = false;
   bool m_ruleStateHasBeenSet = false;
 };
 

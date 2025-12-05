@@ -93,12 +93,12 @@ class ListEmailTemplatesResult {
   ///@}
  private:
   Aws::Vector<EmailTemplateMetadata> m_templatesMetadata;
-  bool m_templatesMetadataHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_templatesMetadataHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

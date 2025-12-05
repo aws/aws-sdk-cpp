@@ -68,9 +68,9 @@ class AuroraDbClusterStorage {
   ///@}
  private:
   AuroraDbClusterStorageConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   ResourceCostCalculation m_costCalculation;
+  bool m_configurationHasBeenSet = false;
   bool m_costCalculationHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class ListComputationModelsRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   ComputationModelType m_computationModelType{ComputationModelType::NOT_SET};
-  bool m_computationModelTypeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_computationModelTypeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

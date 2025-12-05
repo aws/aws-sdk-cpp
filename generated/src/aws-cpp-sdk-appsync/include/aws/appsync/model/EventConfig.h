@@ -151,18 +151,18 @@ class EventConfig {
   ///@}
  private:
   Aws::Vector<AuthProvider> m_authProviders;
-  bool m_authProvidersHasBeenSet = false;
 
   Aws::Vector<AuthMode> m_connectionAuthModes;
-  bool m_connectionAuthModesHasBeenSet = false;
 
   Aws::Vector<AuthMode> m_defaultPublishAuthModes;
-  bool m_defaultPublishAuthModesHasBeenSet = false;
 
   Aws::Vector<AuthMode> m_defaultSubscribeAuthModes;
-  bool m_defaultSubscribeAuthModesHasBeenSet = false;
 
   EventLogConfig m_logConfig;
+  bool m_authProvidersHasBeenSet = false;
+  bool m_connectionAuthModesHasBeenSet = false;
+  bool m_defaultPublishAuthModesHasBeenSet = false;
+  bool m_defaultSubscribeAuthModesHasBeenSet = false;
   bool m_logConfigHasBeenSet = false;
 };
 

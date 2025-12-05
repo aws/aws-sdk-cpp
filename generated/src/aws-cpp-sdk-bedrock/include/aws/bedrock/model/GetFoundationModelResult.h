@@ -60,9 +60,9 @@ class GetFoundationModelResult {
   ///@}
  private:
   FoundationModelDetails m_modelDetails;
-  bool m_modelDetailsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_modelDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

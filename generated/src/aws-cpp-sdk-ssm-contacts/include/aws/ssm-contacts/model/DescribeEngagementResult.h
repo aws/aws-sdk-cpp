@@ -217,36 +217,36 @@ class DescribeEngagementResult {
   ///@}
  private:
   Aws::String m_contactArn;
-  bool m_contactArnHasBeenSet = false;
 
   Aws::String m_engagementArn;
-  bool m_engagementArnHasBeenSet = false;
 
   Aws::String m_sender;
-  bool m_senderHasBeenSet = false;
 
   Aws::String m_subject;
-  bool m_subjectHasBeenSet = false;
 
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::String m_publicSubject;
-  bool m_publicSubjectHasBeenSet = false;
 
   Aws::String m_publicContent;
-  bool m_publicContentHasBeenSet = false;
 
   Aws::String m_incidentId;
-  bool m_incidentIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_stopTime{};
-  bool m_stopTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_contactArnHasBeenSet = false;
+  bool m_engagementArnHasBeenSet = false;
+  bool m_senderHasBeenSet = false;
+  bool m_subjectHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_publicSubjectHasBeenSet = false;
+  bool m_publicContentHasBeenSet = false;
+  bool m_incidentIdHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_stopTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

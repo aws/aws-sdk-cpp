@@ -66,9 +66,9 @@ class CreateImageBuilderStreamingURLRequest : public AppStreamRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   long long m_validity{0};
+  bool m_nameHasBeenSet = false;
   bool m_validityHasBeenSet = false;
 };
 

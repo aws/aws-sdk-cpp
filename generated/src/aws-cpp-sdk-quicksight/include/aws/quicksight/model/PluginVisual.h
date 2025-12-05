@@ -166,24 +166,24 @@ class PluginVisual {
   ///@}
  private:
   Aws::String m_visualId;
-  bool m_visualIdHasBeenSet = false;
 
   Aws::String m_pluginArn;
-  bool m_pluginArnHasBeenSet = false;
 
   VisualTitleLabelOptions m_title;
-  bool m_titleHasBeenSet = false;
 
   VisualSubtitleLabelOptions m_subtitle;
-  bool m_subtitleHasBeenSet = false;
 
   PluginVisualConfiguration m_chartConfiguration;
-  bool m_chartConfigurationHasBeenSet = false;
 
   Aws::Vector<VisualCustomAction> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   Aws::String m_visualContentAltText;
+  bool m_visualIdHasBeenSet = false;
+  bool m_pluginArnHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_subtitleHasBeenSet = false;
+  bool m_chartConfigurationHasBeenSet = false;
+  bool m_actionsHasBeenSet = false;
   bool m_visualContentAltTextHasBeenSet = false;
 };
 

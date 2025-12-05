@@ -153,21 +153,21 @@ class SnapToRoadsRequest : public GeoRoutesRequest {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   GeometryFormat m_snappedGeometryFormat{GeometryFormat::NOT_SET};
-  bool m_snappedGeometryFormatHasBeenSet = false;
 
   long long m_snapRadius{0};
-  bool m_snapRadiusHasBeenSet = false;
 
   Aws::Vector<RoadSnapTracePoint> m_tracePoints;
-  bool m_tracePointsHasBeenSet = false;
 
   RoadSnapTravelMode m_travelMode{RoadSnapTravelMode::NOT_SET};
-  bool m_travelModeHasBeenSet = false;
 
   RoadSnapTravelModeOptions m_travelModeOptions;
+  bool m_keyHasBeenSet = false;
+  bool m_snappedGeometryFormatHasBeenSet = false;
+  bool m_snapRadiusHasBeenSet = false;
+  bool m_tracePointsHasBeenSet = false;
+  bool m_travelModeHasBeenSet = false;
   bool m_travelModeOptionsHasBeenSet = false;
 };
 

@@ -123,18 +123,18 @@ class Fragment {
   ///@}
  private:
   Aws::String m_fragmentNumber;
-  bool m_fragmentNumberHasBeenSet = false;
 
   long long m_fragmentSizeInBytes{0};
-  bool m_fragmentSizeInBytesHasBeenSet = false;
 
   Aws::Utils::DateTime m_producerTimestamp{};
-  bool m_producerTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_serverTimestamp{};
-  bool m_serverTimestampHasBeenSet = false;
 
   long long m_fragmentLengthInMilliseconds{0};
+  bool m_fragmentNumberHasBeenSet = false;
+  bool m_fragmentSizeInBytesHasBeenSet = false;
+  bool m_producerTimestampHasBeenSet = false;
+  bool m_serverTimestampHasBeenSet = false;
   bool m_fragmentLengthInMillisecondsHasBeenSet = false;
 };
 

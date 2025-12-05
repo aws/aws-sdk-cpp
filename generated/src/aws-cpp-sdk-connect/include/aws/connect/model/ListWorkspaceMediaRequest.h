@@ -67,9 +67,9 @@ class ListWorkspaceMediaRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_workspaceId;
+  bool m_instanceIdHasBeenSet = false;
   bool m_workspaceIdHasBeenSet = false;
 };
 

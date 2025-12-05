@@ -107,15 +107,15 @@ class DescribeEnvironmentManagedActionHistoryRequest : public ElasticBeanstalkRe
   ///@}
  private:
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::String m_environmentName;
-  bool m_environmentNameHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxItems{0};
+  bool m_environmentIdHasBeenSet = false;
+  bool m_environmentNameHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxItemsHasBeenSet = false;
 };
 

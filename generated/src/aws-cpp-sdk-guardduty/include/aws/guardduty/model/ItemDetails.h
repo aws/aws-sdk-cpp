@@ -106,15 +106,15 @@ class ItemDetails {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_itemPath;
-  bool m_itemPathHasBeenSet = false;
 
   Aws::String m_hash;
-  bool m_hashHasBeenSet = false;
 
   AdditionalInfo m_additionalInfo;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_itemPathHasBeenSet = false;
+  bool m_hashHasBeenSet = false;
   bool m_additionalInfoHasBeenSet = false;
 };
 

@@ -217,30 +217,30 @@ class SecurityGroup {
   ///@}
  private:
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   Aws::Vector<IpPermission> m_ipPermissionsEgress;
-  bool m_ipPermissionsEgressHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_securityGroupArn;
-  bool m_securityGroupArnHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<IpPermission> m_ipPermissions;
+  bool m_groupIdHasBeenSet = false;
+  bool m_ipPermissionsEgressHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_securityGroupArnHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_groupNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_ipPermissionsHasBeenSet = false;
 };
 

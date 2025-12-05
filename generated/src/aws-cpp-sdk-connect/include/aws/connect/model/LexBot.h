@@ -68,9 +68,9 @@ class LexBot {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_lexRegion;
+  bool m_nameHasBeenSet = false;
   bool m_lexRegionHasBeenSet = false;
 };
 

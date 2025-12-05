@@ -122,18 +122,18 @@ class DeleteAppRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_userProfileName;
-  bool m_userProfileNameHasBeenSet = false;
 
   Aws::String m_spaceName;
-  bool m_spaceNameHasBeenSet = false;
 
   AppType m_appType{AppType::NOT_SET};
-  bool m_appTypeHasBeenSet = false;
 
   Aws::String m_appName;
+  bool m_domainIdHasBeenSet = false;
+  bool m_userProfileNameHasBeenSet = false;
+  bool m_spaceNameHasBeenSet = false;
+  bool m_appTypeHasBeenSet = false;
   bool m_appNameHasBeenSet = false;
 };
 

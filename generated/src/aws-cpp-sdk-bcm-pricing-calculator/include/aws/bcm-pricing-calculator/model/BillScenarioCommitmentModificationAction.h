@@ -108,15 +108,15 @@ class BillScenarioCommitmentModificationAction {
   ///@}
  private:
   AddReservedInstanceAction m_addReservedInstanceAction;
-  bool m_addReservedInstanceActionHasBeenSet = false;
 
   AddSavingsPlanAction m_addSavingsPlanAction;
-  bool m_addSavingsPlanActionHasBeenSet = false;
 
   NegateReservedInstanceAction m_negateReservedInstanceAction;
-  bool m_negateReservedInstanceActionHasBeenSet = false;
 
   NegateSavingsPlanAction m_negateSavingsPlanAction;
+  bool m_addReservedInstanceActionHasBeenSet = false;
+  bool m_addSavingsPlanActionHasBeenSet = false;
+  bool m_negateReservedInstanceActionHasBeenSet = false;
   bool m_negateSavingsPlanActionHasBeenSet = false;
 };
 

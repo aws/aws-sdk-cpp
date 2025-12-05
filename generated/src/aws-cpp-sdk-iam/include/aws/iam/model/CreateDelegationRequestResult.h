@@ -82,12 +82,12 @@ class CreateDelegationRequestResult {
   ///@}
  private:
   Aws::String m_consoleDeepLink;
-  bool m_consoleDeepLinkHasBeenSet = false;
 
   Aws::String m_delegationRequestId;
-  bool m_delegationRequestIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_consoleDeepLinkHasBeenSet = false;
+  bool m_delegationRequestIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

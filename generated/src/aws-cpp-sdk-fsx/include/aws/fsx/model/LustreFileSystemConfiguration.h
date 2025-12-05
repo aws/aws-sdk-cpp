@@ -360,51 +360,51 @@ class LustreFileSystemConfiguration {
   ///@}
  private:
   Aws::String m_weeklyMaintenanceStartTime;
-  bool m_weeklyMaintenanceStartTimeHasBeenSet = false;
 
   DataRepositoryConfiguration m_dataRepositoryConfiguration;
-  bool m_dataRepositoryConfigurationHasBeenSet = false;
 
   LustreDeploymentType m_deploymentType{LustreDeploymentType::NOT_SET};
-  bool m_deploymentTypeHasBeenSet = false;
 
   int m_perUnitStorageThroughput{0};
-  bool m_perUnitStorageThroughputHasBeenSet = false;
 
   Aws::String m_mountName;
-  bool m_mountNameHasBeenSet = false;
 
   Aws::String m_dailyAutomaticBackupStartTime;
-  bool m_dailyAutomaticBackupStartTimeHasBeenSet = false;
 
   int m_automaticBackupRetentionDays{0};
-  bool m_automaticBackupRetentionDaysHasBeenSet = false;
 
   bool m_copyTagsToBackups{false};
-  bool m_copyTagsToBackupsHasBeenSet = false;
 
   DriveCacheType m_driveCacheType{DriveCacheType::NOT_SET};
-  bool m_driveCacheTypeHasBeenSet = false;
 
   DataCompressionType m_dataCompressionType{DataCompressionType::NOT_SET};
-  bool m_dataCompressionTypeHasBeenSet = false;
 
   LustreLogConfiguration m_logConfiguration;
-  bool m_logConfigurationHasBeenSet = false;
 
   LustreRootSquashConfiguration m_rootSquashConfiguration;
-  bool m_rootSquashConfigurationHasBeenSet = false;
 
   FileSystemLustreMetadataConfiguration m_metadataConfiguration;
-  bool m_metadataConfigurationHasBeenSet = false;
 
   bool m_efaEnabled{false};
-  bool m_efaEnabledHasBeenSet = false;
 
   int m_throughputCapacity{0};
-  bool m_throughputCapacityHasBeenSet = false;
 
   LustreReadCacheConfiguration m_dataReadCacheConfiguration;
+  bool m_weeklyMaintenanceStartTimeHasBeenSet = false;
+  bool m_dataRepositoryConfigurationHasBeenSet = false;
+  bool m_deploymentTypeHasBeenSet = false;
+  bool m_perUnitStorageThroughputHasBeenSet = false;
+  bool m_mountNameHasBeenSet = false;
+  bool m_dailyAutomaticBackupStartTimeHasBeenSet = false;
+  bool m_automaticBackupRetentionDaysHasBeenSet = false;
+  bool m_copyTagsToBackupsHasBeenSet = false;
+  bool m_driveCacheTypeHasBeenSet = false;
+  bool m_dataCompressionTypeHasBeenSet = false;
+  bool m_logConfigurationHasBeenSet = false;
+  bool m_rootSquashConfigurationHasBeenSet = false;
+  bool m_metadataConfigurationHasBeenSet = false;
+  bool m_efaEnabledHasBeenSet = false;
+  bool m_throughputCapacityHasBeenSet = false;
   bool m_dataReadCacheConfigurationHasBeenSet = false;
 };
 

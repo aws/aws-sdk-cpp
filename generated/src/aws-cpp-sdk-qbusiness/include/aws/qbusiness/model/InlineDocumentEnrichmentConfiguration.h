@@ -90,12 +90,12 @@ class InlineDocumentEnrichmentConfiguration {
   ///@}
  private:
   DocumentAttributeCondition m_condition;
-  bool m_conditionHasBeenSet = false;
 
   DocumentAttributeTarget m_target;
-  bool m_targetHasBeenSet = false;
 
   DocumentContentOperator m_documentContentOperator{DocumentContentOperator::NOT_SET};
+  bool m_conditionHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
   bool m_documentContentOperatorHasBeenSet = false;
 };
 

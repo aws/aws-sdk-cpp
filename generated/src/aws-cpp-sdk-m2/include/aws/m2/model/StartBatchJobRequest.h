@@ -113,15 +113,15 @@ class StartBatchJobRequest : public MainframeModernizationRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_authSecretsManagerArn;
-  bool m_authSecretsManagerArnHasBeenSet = false;
 
   BatchJobIdentifier m_batchJobIdentifier;
-  bool m_batchJobIdentifierHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_jobParams;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_authSecretsManagerArnHasBeenSet = false;
+  bool m_batchJobIdentifierHasBeenSet = false;
   bool m_jobParamsHasBeenSet = false;
 };
 

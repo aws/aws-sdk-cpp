@@ -65,9 +65,9 @@ class SearchSortResult {
   ///@}
  private:
   OrderByFieldType m_field{OrderByFieldType::NOT_SET};
-  bool m_fieldHasBeenSet = false;
 
   SortOrder m_order{SortOrder::NOT_SET};
+  bool m_fieldHasBeenSet = false;
   bool m_orderHasBeenSet = false;
 };
 

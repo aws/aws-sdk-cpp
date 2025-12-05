@@ -157,21 +157,21 @@ class AdBreak {
   ///@}
  private:
   MessageType m_messageType{MessageType::NOT_SET};
-  bool m_messageTypeHasBeenSet = false;
 
   long long m_offsetMillis{0};
-  bool m_offsetMillisHasBeenSet = false;
 
   SlateSource m_slate;
-  bool m_slateHasBeenSet = false;
 
   SpliceInsertMessage m_spliceInsertMessage;
-  bool m_spliceInsertMessageHasBeenSet = false;
 
   TimeSignalMessage m_timeSignalMessage;
-  bool m_timeSignalMessageHasBeenSet = false;
 
   Aws::Vector<KeyValuePair> m_adBreakMetadata;
+  bool m_messageTypeHasBeenSet = false;
+  bool m_offsetMillisHasBeenSet = false;
+  bool m_slateHasBeenSet = false;
+  bool m_spliceInsertMessageHasBeenSet = false;
+  bool m_timeSignalMessageHasBeenSet = false;
   bool m_adBreakMetadataHasBeenSet = false;
 };
 

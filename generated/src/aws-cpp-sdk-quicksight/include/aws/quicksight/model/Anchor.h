@@ -81,12 +81,12 @@ class Anchor {
   ///@}
  private:
   AnchorType m_anchorType{AnchorType::NOT_SET};
-  bool m_anchorTypeHasBeenSet = false;
 
   TimeGranularity m_timeGranularity{TimeGranularity::NOT_SET};
-  bool m_timeGranularityHasBeenSet = false;
 
   int m_offset{0};
+  bool m_anchorTypeHasBeenSet = false;
+  bool m_timeGranularityHasBeenSet = false;
   bool m_offsetHasBeenSet = false;
 };
 

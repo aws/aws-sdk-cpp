@@ -68,9 +68,9 @@ class FunctionVersionsByCapacityProviderListItem {
   ///@}
  private:
   Aws::String m_functionArn;
-  bool m_functionArnHasBeenSet = false;
 
   State m_state{State::NOT_SET};
+  bool m_functionArnHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

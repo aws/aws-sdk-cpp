@@ -1224,183 +1224,183 @@ class Instance {
   ///@}
  private:
   ArchitectureValues m_architecture{ArchitectureValues::NOT_SET};
-  bool m_architectureHasBeenSet = false;
 
   Aws::Vector<InstanceBlockDeviceMapping> m_blockDeviceMappings;
-  bool m_blockDeviceMappingsHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   bool m_ebsOptimized{false};
-  bool m_ebsOptimizedHasBeenSet = false;
 
   bool m_enaSupport{false};
-  bool m_enaSupportHasBeenSet = false;
 
   HypervisorType m_hypervisor{HypervisorType::NOT_SET};
-  bool m_hypervisorHasBeenSet = false;
 
   IamInstanceProfile m_iamInstanceProfile;
-  bool m_iamInstanceProfileHasBeenSet = false;
 
   InstanceLifecycleType m_instanceLifecycle{InstanceLifecycleType::NOT_SET};
-  bool m_instanceLifecycleHasBeenSet = false;
 
   Aws::Vector<ElasticGpuAssociation> m_elasticGpuAssociations;
-  bool m_elasticGpuAssociationsHasBeenSet = false;
 
   Aws::Vector<ElasticInferenceAcceleratorAssociation> m_elasticInferenceAcceleratorAssociations;
-  bool m_elasticInferenceAcceleratorAssociationsHasBeenSet = false;
 
   Aws::Vector<InstanceNetworkInterface> m_networkInterfaces;
-  bool m_networkInterfacesHasBeenSet = false;
 
   Aws::String m_outpostArn;
-  bool m_outpostArnHasBeenSet = false;
 
   Aws::String m_rootDeviceName;
-  bool m_rootDeviceNameHasBeenSet = false;
 
   DeviceType m_rootDeviceType{DeviceType::NOT_SET};
-  bool m_rootDeviceTypeHasBeenSet = false;
 
   Aws::Vector<GroupIdentifier> m_securityGroups;
-  bool m_securityGroupsHasBeenSet = false;
 
   bool m_sourceDestCheck{false};
-  bool m_sourceDestCheckHasBeenSet = false;
 
   Aws::String m_spotInstanceRequestId;
-  bool m_spotInstanceRequestIdHasBeenSet = false;
 
   Aws::String m_sriovNetSupport;
-  bool m_sriovNetSupportHasBeenSet = false;
 
   StateReason m_stateReason;
-  bool m_stateReasonHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   VirtualizationType m_virtualizationType{VirtualizationType::NOT_SET};
-  bool m_virtualizationTypeHasBeenSet = false;
 
   CpuOptions m_cpuOptions;
-  bool m_cpuOptionsHasBeenSet = false;
 
   Aws::String m_capacityBlockId;
-  bool m_capacityBlockIdHasBeenSet = false;
 
   Aws::String m_capacityReservationId;
-  bool m_capacityReservationIdHasBeenSet = false;
 
   CapacityReservationSpecificationResponse m_capacityReservationSpecification;
-  bool m_capacityReservationSpecificationHasBeenSet = false;
 
   HibernationOptions m_hibernationOptions;
-  bool m_hibernationOptionsHasBeenSet = false;
 
   Aws::Vector<LicenseConfiguration> m_licenses;
-  bool m_licensesHasBeenSet = false;
 
   InstanceMetadataOptionsResponse m_metadataOptions;
-  bool m_metadataOptionsHasBeenSet = false;
 
   EnclaveOptions m_enclaveOptions;
-  bool m_enclaveOptionsHasBeenSet = false;
 
   BootModeValues m_bootMode{BootModeValues::NOT_SET};
-  bool m_bootModeHasBeenSet = false;
 
   Aws::String m_platformDetails;
-  bool m_platformDetailsHasBeenSet = false;
 
   Aws::String m_usageOperation;
-  bool m_usageOperationHasBeenSet = false;
 
   Aws::Utils::DateTime m_usageOperationUpdateTime{};
-  bool m_usageOperationUpdateTimeHasBeenSet = false;
 
   PrivateDnsNameOptionsResponse m_privateDnsNameOptions;
-  bool m_privateDnsNameOptionsHasBeenSet = false;
 
   Aws::String m_ipv6Address;
-  bool m_ipv6AddressHasBeenSet = false;
 
   Aws::String m_tpmSupport;
-  bool m_tpmSupportHasBeenSet = false;
 
   InstanceMaintenanceOptions m_maintenanceOptions;
-  bool m_maintenanceOptionsHasBeenSet = false;
 
   InstanceBootModeValues m_currentInstanceBootMode{InstanceBootModeValues::NOT_SET};
-  bool m_currentInstanceBootModeHasBeenSet = false;
 
   InstanceNetworkPerformanceOptions m_networkPerformanceOptions;
-  bool m_networkPerformanceOptionsHasBeenSet = false;
 
   OperatorResponse m_operator;
-  bool m_operatorHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   InstanceState m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_privateDnsName;
-  bool m_privateDnsNameHasBeenSet = false;
 
   Aws::String m_publicDnsName;
-  bool m_publicDnsNameHasBeenSet = false;
 
   Aws::String m_stateTransitionReason;
-  bool m_stateTransitionReasonHasBeenSet = false;
 
   Aws::String m_keyName;
-  bool m_keyNameHasBeenSet = false;
 
   int m_amiLaunchIndex{0};
-  bool m_amiLaunchIndexHasBeenSet = false;
 
   Aws::Vector<ProductCode> m_productCodes;
-  bool m_productCodesHasBeenSet = false;
 
   InstanceType m_instanceType{InstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_launchTime{};
-  bool m_launchTimeHasBeenSet = false;
 
   Placement m_placement;
-  bool m_placementHasBeenSet = false;
 
   Aws::String m_kernelId;
-  bool m_kernelIdHasBeenSet = false;
 
   Aws::String m_ramdiskId;
-  bool m_ramdiskIdHasBeenSet = false;
 
   PlatformValues m_platform{PlatformValues::NOT_SET};
-  bool m_platformHasBeenSet = false;
 
   Monitoring m_monitoring;
-  bool m_monitoringHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_privateIpAddress;
-  bool m_privateIpAddressHasBeenSet = false;
 
   Aws::String m_publicIpAddress;
+  bool m_architectureHasBeenSet = false;
+  bool m_blockDeviceMappingsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_ebsOptimizedHasBeenSet = false;
+  bool m_enaSupportHasBeenSet = false;
+  bool m_hypervisorHasBeenSet = false;
+  bool m_iamInstanceProfileHasBeenSet = false;
+  bool m_instanceLifecycleHasBeenSet = false;
+  bool m_elasticGpuAssociationsHasBeenSet = false;
+  bool m_elasticInferenceAcceleratorAssociationsHasBeenSet = false;
+  bool m_networkInterfacesHasBeenSet = false;
+  bool m_outpostArnHasBeenSet = false;
+  bool m_rootDeviceNameHasBeenSet = false;
+  bool m_rootDeviceTypeHasBeenSet = false;
+  bool m_securityGroupsHasBeenSet = false;
+  bool m_sourceDestCheckHasBeenSet = false;
+  bool m_spotInstanceRequestIdHasBeenSet = false;
+  bool m_sriovNetSupportHasBeenSet = false;
+  bool m_stateReasonHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_virtualizationTypeHasBeenSet = false;
+  bool m_cpuOptionsHasBeenSet = false;
+  bool m_capacityBlockIdHasBeenSet = false;
+  bool m_capacityReservationIdHasBeenSet = false;
+  bool m_capacityReservationSpecificationHasBeenSet = false;
+  bool m_hibernationOptionsHasBeenSet = false;
+  bool m_licensesHasBeenSet = false;
+  bool m_metadataOptionsHasBeenSet = false;
+  bool m_enclaveOptionsHasBeenSet = false;
+  bool m_bootModeHasBeenSet = false;
+  bool m_platformDetailsHasBeenSet = false;
+  bool m_usageOperationHasBeenSet = false;
+  bool m_usageOperationUpdateTimeHasBeenSet = false;
+  bool m_privateDnsNameOptionsHasBeenSet = false;
+  bool m_ipv6AddressHasBeenSet = false;
+  bool m_tpmSupportHasBeenSet = false;
+  bool m_maintenanceOptionsHasBeenSet = false;
+  bool m_currentInstanceBootModeHasBeenSet = false;
+  bool m_networkPerformanceOptionsHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_imageIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_privateDnsNameHasBeenSet = false;
+  bool m_publicDnsNameHasBeenSet = false;
+  bool m_stateTransitionReasonHasBeenSet = false;
+  bool m_keyNameHasBeenSet = false;
+  bool m_amiLaunchIndexHasBeenSet = false;
+  bool m_productCodesHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_launchTimeHasBeenSet = false;
+  bool m_placementHasBeenSet = false;
+  bool m_kernelIdHasBeenSet = false;
+  bool m_ramdiskIdHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_monitoringHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_privateIpAddressHasBeenSet = false;
   bool m_publicIpAddressHasBeenSet = false;
 };
 

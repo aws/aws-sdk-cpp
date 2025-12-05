@@ -79,12 +79,12 @@ class WhatsAppChannelSubtypeConfig {
   ///@}
  private:
   double m_capacity{0.0};
-  bool m_capacityHasBeenSet = false;
 
   WhatsAppOutboundMode m_outboundMode;
-  bool m_outboundModeHasBeenSet = false;
 
   WhatsAppOutboundConfig m_defaultOutboundConfig;
+  bool m_capacityHasBeenSet = false;
+  bool m_outboundModeHasBeenSet = false;
   bool m_defaultOutboundConfigHasBeenSet = false;
 };
 

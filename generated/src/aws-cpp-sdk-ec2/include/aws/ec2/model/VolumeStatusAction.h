@@ -107,15 +107,15 @@ class VolumeStatusAction {
   ///@}
  private:
   Aws::String m_code;
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   Aws::String m_eventType;
+  bool m_codeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_eventIdHasBeenSet = false;
   bool m_eventTypeHasBeenSet = false;
 };
 

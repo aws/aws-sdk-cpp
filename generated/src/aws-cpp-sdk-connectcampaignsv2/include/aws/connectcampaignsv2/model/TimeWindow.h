@@ -65,9 +65,9 @@ class TimeWindow {
   ///@}
  private:
   OpenHours m_openHours;
-  bool m_openHoursHasBeenSet = false;
 
   RestrictedPeriods m_restrictedPeriods;
+  bool m_openHoursHasBeenSet = false;
   bool m_restrictedPeriodsHasBeenSet = false;
 };
 

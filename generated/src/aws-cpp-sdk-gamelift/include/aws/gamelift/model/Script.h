@@ -177,24 +177,24 @@ class Script {
   ///@}
  private:
   Aws::String m_scriptId;
-  bool m_scriptIdHasBeenSet = false;
 
   Aws::String m_scriptArn;
-  bool m_scriptArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   long long m_sizeOnDisk{0};
-  bool m_sizeOnDiskHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   S3Location m_storageLocation;
+  bool m_scriptIdHasBeenSet = false;
+  bool m_scriptArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_sizeOnDiskHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_storageLocationHasBeenSet = false;
 };
 

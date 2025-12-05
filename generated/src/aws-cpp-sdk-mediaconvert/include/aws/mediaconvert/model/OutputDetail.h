@@ -66,9 +66,9 @@ class OutputDetail {
   ///@}
  private:
   int m_durationInMs{0};
-  bool m_durationInMsHasBeenSet = false;
 
   VideoDetail m_videoDetails;
+  bool m_durationInMsHasBeenSet = false;
   bool m_videoDetailsHasBeenSet = false;
 };
 

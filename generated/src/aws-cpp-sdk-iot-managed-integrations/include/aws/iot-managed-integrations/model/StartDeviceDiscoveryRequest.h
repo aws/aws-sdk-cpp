@@ -168,24 +168,24 @@ class StartDeviceDiscoveryRequest : public IoTManagedIntegrationsRequest {
   ///@}
  private:
   DiscoveryType m_discoveryType{DiscoveryType::NOT_SET};
-  bool m_discoveryTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customProtocolDetail;
-  bool m_customProtocolDetailHasBeenSet = false;
 
   Aws::String m_controllerIdentifier;
-  bool m_controllerIdentifierHasBeenSet = false;
 
   Aws::String m_accountAssociationId;
-  bool m_accountAssociationIdHasBeenSet = false;
 
   Aws::String m_authenticationMaterial;
-  bool m_authenticationMaterialHasBeenSet = false;
 
   DiscoveryAuthMaterialType m_authenticationMaterialType{DiscoveryAuthMaterialType::NOT_SET};
-  bool m_authenticationMaterialTypeHasBeenSet = false;
 
   Aws::String m_clientToken;
+  bool m_discoveryTypeHasBeenSet = false;
+  bool m_customProtocolDetailHasBeenSet = false;
+  bool m_controllerIdentifierHasBeenSet = false;
+  bool m_accountAssociationIdHasBeenSet = false;
+  bool m_authenticationMaterialHasBeenSet = false;
+  bool m_authenticationMaterialTypeHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
 };
 

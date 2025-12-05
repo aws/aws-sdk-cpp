@@ -114,15 +114,15 @@ class EnvironmentConfigurationUserParameter {
   ///@}
  private:
   Aws::String m_environmentConfigurationName;
-  bool m_environmentConfigurationNameHasBeenSet = false;
 
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::Vector<EnvironmentParameter> m_environmentParameters;
-  bool m_environmentParametersHasBeenSet = false;
 
   EnvironmentResolvedAccount m_environmentResolvedAccount;
+  bool m_environmentConfigurationNameHasBeenSet = false;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_environmentParametersHasBeenSet = false;
   bool m_environmentResolvedAccountHasBeenSet = false;
 };
 

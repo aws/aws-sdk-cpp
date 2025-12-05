@@ -60,9 +60,9 @@ class CreateRouteServerResponse {
   ///@}
  private:
   RouteServer m_routeServer;
-  bool m_routeServerHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_routeServerHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

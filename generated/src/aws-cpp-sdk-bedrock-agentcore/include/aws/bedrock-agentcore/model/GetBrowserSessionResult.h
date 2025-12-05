@@ -212,36 +212,36 @@ class GetBrowserSessionResult {
   ///@}
  private:
   Aws::String m_browserIdentifier;
-  bool m_browserIdentifierHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   ViewPort m_viewPort;
-  bool m_viewPortHasBeenSet = false;
 
   int m_sessionTimeoutSeconds{0};
-  bool m_sessionTimeoutSecondsHasBeenSet = false;
 
   BrowserSessionStatus m_status{BrowserSessionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   BrowserSessionStream m_streams;
-  bool m_streamsHasBeenSet = false;
 
   Aws::String m_sessionReplayArtifact;
-  bool m_sessionReplayArtifactHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_browserIdentifierHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_viewPortHasBeenSet = false;
+  bool m_sessionTimeoutSecondsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_streamsHasBeenSet = false;
+  bool m_sessionReplayArtifactHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

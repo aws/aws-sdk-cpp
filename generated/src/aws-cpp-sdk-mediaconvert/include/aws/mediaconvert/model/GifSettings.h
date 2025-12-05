@@ -120,15 +120,15 @@ class GifSettings {
   ///@}
  private:
   GifFramerateControl m_framerateControl{GifFramerateControl::NOT_SET};
-  bool m_framerateControlHasBeenSet = false;
 
   GifFramerateConversionAlgorithm m_framerateConversionAlgorithm{GifFramerateConversionAlgorithm::NOT_SET};
-  bool m_framerateConversionAlgorithmHasBeenSet = false;
 
   int m_framerateDenominator{0};
-  bool m_framerateDenominatorHasBeenSet = false;
 
   int m_framerateNumerator{0};
+  bool m_framerateControlHasBeenSet = false;
+  bool m_framerateConversionAlgorithmHasBeenSet = false;
+  bool m_framerateDenominatorHasBeenSet = false;
   bool m_framerateNumeratorHasBeenSet = false;
 };
 

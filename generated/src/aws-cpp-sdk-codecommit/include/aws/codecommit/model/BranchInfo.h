@@ -68,9 +68,9 @@ class BranchInfo {
   ///@}
  private:
   Aws::String m_branchName;
-  bool m_branchNameHasBeenSet = false;
 
   Aws::String m_commitId;
+  bool m_branchNameHasBeenSet = false;
   bool m_commitIdHasBeenSet = false;
 };
 

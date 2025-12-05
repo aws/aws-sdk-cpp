@@ -149,21 +149,21 @@ class WorkspaceSummary {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_linkedServices;
-  bool m_linkedServicesHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateDateTime{};
+  bool m_workspaceIdHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_linkedServicesHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
   bool m_updateDateTimeHasBeenSet = false;
 };
 

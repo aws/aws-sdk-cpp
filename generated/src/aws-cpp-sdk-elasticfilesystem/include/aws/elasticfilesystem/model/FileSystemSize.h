@@ -127,18 +127,18 @@ class FileSystemSize {
   ///@}
  private:
   long long m_value{0};
-  bool m_valueHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   long long m_valueInIA{0};
-  bool m_valueInIAHasBeenSet = false;
 
   long long m_valueInStandard{0};
-  bool m_valueInStandardHasBeenSet = false;
 
   long long m_valueInArchive{0};
+  bool m_valueHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
+  bool m_valueInIAHasBeenSet = false;
+  bool m_valueInStandardHasBeenSet = false;
   bool m_valueInArchiveHasBeenSet = false;
 };
 

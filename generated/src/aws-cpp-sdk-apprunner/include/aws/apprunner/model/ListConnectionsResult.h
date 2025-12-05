@@ -87,12 +87,12 @@ class ListConnectionsResult {
   ///@}
  private:
   Aws::Vector<ConnectionSummary> m_connectionSummaryList;
-  bool m_connectionSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectionSummaryListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

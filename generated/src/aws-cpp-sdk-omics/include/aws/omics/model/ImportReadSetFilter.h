@@ -85,12 +85,12 @@ class ImportReadSetFilter {
   ///@}
  private:
   ReadSetImportJobStatus m_status{ReadSetImportJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAfter{};
-  bool m_createdAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdBefore{};
+  bool m_statusHasBeenSet = false;
+  bool m_createdAfterHasBeenSet = false;
   bool m_createdBeforeHasBeenSet = false;
 };
 

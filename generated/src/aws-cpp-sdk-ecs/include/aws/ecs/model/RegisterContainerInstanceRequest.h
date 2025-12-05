@@ -248,30 +248,30 @@ class RegisterContainerInstanceRequest : public ECSRequest {
   ///@}
  private:
   Aws::String m_cluster;
-  bool m_clusterHasBeenSet = false;
 
   Aws::String m_instanceIdentityDocument;
-  bool m_instanceIdentityDocumentHasBeenSet = false;
 
   Aws::String m_instanceIdentityDocumentSignature;
-  bool m_instanceIdentityDocumentSignatureHasBeenSet = false;
 
   Aws::Vector<Resource> m_totalResources;
-  bool m_totalResourcesHasBeenSet = false;
 
   VersionInfo m_versionInfo;
-  bool m_versionInfoHasBeenSet = false;
 
   Aws::String m_containerInstanceArn;
-  bool m_containerInstanceArnHasBeenSet = false;
 
   Aws::Vector<Attribute> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::Vector<PlatformDevice> m_platformDevices;
-  bool m_platformDevicesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_clusterHasBeenSet = false;
+  bool m_instanceIdentityDocumentHasBeenSet = false;
+  bool m_instanceIdentityDocumentSignatureHasBeenSet = false;
+  bool m_totalResourcesHasBeenSet = false;
+  bool m_versionInfoHasBeenSet = false;
+  bool m_containerInstanceArnHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_platformDevicesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

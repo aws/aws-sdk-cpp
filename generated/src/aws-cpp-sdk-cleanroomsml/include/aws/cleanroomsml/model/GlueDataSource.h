@@ -87,12 +87,12 @@ class GlueDataSource {
   ///@}
  private:
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_catalogId;
+  bool m_tableNameHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
   bool m_catalogIdHasBeenSet = false;
 };
 

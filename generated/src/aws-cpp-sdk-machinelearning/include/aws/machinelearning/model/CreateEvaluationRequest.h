@@ -107,15 +107,15 @@ class CreateEvaluationRequest : public MachineLearningRequest {
   ///@}
  private:
   Aws::String m_evaluationId;
-  bool m_evaluationIdHasBeenSet = false;
 
   Aws::String m_evaluationName;
-  bool m_evaluationNameHasBeenSet = false;
 
   Aws::String m_mLModelId;
-  bool m_mLModelIdHasBeenSet = false;
 
   Aws::String m_evaluationDataSourceId;
+  bool m_evaluationIdHasBeenSet = false;
+  bool m_evaluationNameHasBeenSet = false;
+  bool m_mLModelIdHasBeenSet = false;
   bool m_evaluationDataSourceIdHasBeenSet = false;
 };
 

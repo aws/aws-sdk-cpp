@@ -112,12 +112,12 @@ class UpdateViewRequest : public ResourceExplorer2Request {
   ///@}
  private:
   Aws::String m_viewArn;
-  bool m_viewArnHasBeenSet = false;
 
   Aws::Vector<IncludedProperty> m_includedProperties;
-  bool m_includedPropertiesHasBeenSet = false;
 
   SearchFilter m_filters;
+  bool m_viewArnHasBeenSet = false;
+  bool m_includedPropertiesHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

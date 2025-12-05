@@ -85,12 +85,12 @@ class ListCompositionsResult {
   ///@}
  private:
   Aws::Vector<CompositionSummary> m_compositions;
-  bool m_compositionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_compositionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

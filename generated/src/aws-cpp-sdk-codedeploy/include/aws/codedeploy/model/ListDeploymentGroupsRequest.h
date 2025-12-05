@@ -73,9 +73,9 @@ class ListDeploymentGroupsRequest : public CodeDeployRequest {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_applicationNameHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

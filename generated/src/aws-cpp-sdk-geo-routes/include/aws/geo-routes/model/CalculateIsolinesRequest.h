@@ -398,57 +398,57 @@ class CalculateIsolinesRequest : public GeoRoutesRequest {
   ///@}
  private:
   IsolineAllowOptions m_allow;
-  bool m_allowHasBeenSet = false;
 
   Aws::String m_arrivalTime;
-  bool m_arrivalTimeHasBeenSet = false;
 
   IsolineAvoidanceOptions m_avoid;
-  bool m_avoidHasBeenSet = false;
 
   bool m_departNow{false};
-  bool m_departNowHasBeenSet = false;
 
   Aws::String m_departureTime;
-  bool m_departureTimeHasBeenSet = false;
 
   Aws::Vector<double> m_destination;
-  bool m_destinationHasBeenSet = false;
 
   IsolineDestinationOptions m_destinationOptions;
-  bool m_destinationOptionsHasBeenSet = false;
 
   GeometryFormat m_isolineGeometryFormat{GeometryFormat::NOT_SET};
-  bool m_isolineGeometryFormatHasBeenSet = false;
 
   IsolineGranularityOptions m_isolineGranularity;
-  bool m_isolineGranularityHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   IsolineOptimizationObjective m_optimizeIsolineFor{IsolineOptimizationObjective::NOT_SET};
-  bool m_optimizeIsolineForHasBeenSet = false;
 
   RoutingObjective m_optimizeRoutingFor{RoutingObjective::NOT_SET};
-  bool m_optimizeRoutingForHasBeenSet = false;
 
   Aws::Vector<double> m_origin;
-  bool m_originHasBeenSet = false;
 
   IsolineOriginOptions m_originOptions;
-  bool m_originOptionsHasBeenSet = false;
 
   IsolineThresholds m_thresholds;
-  bool m_thresholdsHasBeenSet = false;
 
   IsolineTrafficOptions m_traffic;
-  bool m_trafficHasBeenSet = false;
 
   IsolineTravelMode m_travelMode{IsolineTravelMode::NOT_SET};
-  bool m_travelModeHasBeenSet = false;
 
   IsolineTravelModeOptions m_travelModeOptions;
+  bool m_allowHasBeenSet = false;
+  bool m_arrivalTimeHasBeenSet = false;
+  bool m_avoidHasBeenSet = false;
+  bool m_departNowHasBeenSet = false;
+  bool m_departureTimeHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_destinationOptionsHasBeenSet = false;
+  bool m_isolineGeometryFormatHasBeenSet = false;
+  bool m_isolineGranularityHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
+  bool m_optimizeIsolineForHasBeenSet = false;
+  bool m_optimizeRoutingForHasBeenSet = false;
+  bool m_originHasBeenSet = false;
+  bool m_originOptionsHasBeenSet = false;
+  bool m_thresholdsHasBeenSet = false;
+  bool m_trafficHasBeenSet = false;
+  bool m_travelModeHasBeenSet = false;
   bool m_travelModeOptionsHasBeenSet = false;
 };
 

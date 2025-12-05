@@ -61,9 +61,9 @@ class DescribeAddressResult {
   ///@}
  private:
   Address m_address;
-  bool m_addressHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_addressHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

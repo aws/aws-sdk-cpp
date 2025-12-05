@@ -70,9 +70,9 @@ class DriftCheckExplainability {
   ///@}
  private:
   MetricsSource m_constraints;
-  bool m_constraintsHasBeenSet = false;
 
   FileSource m_configFile;
+  bool m_constraintsHasBeenSet = false;
   bool m_configFileHasBeenSet = false;
 };
 

@@ -75,9 +75,9 @@ class FileGroupSettings {
   ///@}
  private:
   Aws::String m_destination;
-  bool m_destinationHasBeenSet = false;
 
   DestinationSettings m_destinationSettings;
+  bool m_destinationHasBeenSet = false;
   bool m_destinationSettingsHasBeenSet = false;
 };
 

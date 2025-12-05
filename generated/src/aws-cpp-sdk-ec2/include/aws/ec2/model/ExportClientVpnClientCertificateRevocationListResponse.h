@@ -80,12 +80,12 @@ class ExportClientVpnClientCertificateRevocationListResponse {
   ///@}
  private:
   Aws::String m_certificateRevocationList;
-  bool m_certificateRevocationListHasBeenSet = false;
 
   ClientCertificateRevocationListStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_certificateRevocationListHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

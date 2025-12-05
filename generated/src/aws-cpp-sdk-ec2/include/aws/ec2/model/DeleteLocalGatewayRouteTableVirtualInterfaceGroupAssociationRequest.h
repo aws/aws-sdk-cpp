@@ -80,9 +80,9 @@ class DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest : publ
   ///@}
  private:
   Aws::String m_localGatewayRouteTableVirtualInterfaceGroupAssociationId;
-  bool m_localGatewayRouteTableVirtualInterfaceGroupAssociationIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_localGatewayRouteTableVirtualInterfaceGroupAssociationIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

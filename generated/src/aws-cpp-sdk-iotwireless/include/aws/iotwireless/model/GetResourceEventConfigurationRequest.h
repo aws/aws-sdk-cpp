@@ -88,12 +88,12 @@ class GetResourceEventConfigurationRequest : public IoTWirelessRequest {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   IdentifierType m_identifierType{IdentifierType::NOT_SET};
-  bool m_identifierTypeHasBeenSet = false;
 
   EventNotificationPartnerType m_partnerType{EventNotificationPartnerType::NOT_SET};
+  bool m_identifierHasBeenSet = false;
+  bool m_identifierTypeHasBeenSet = false;
   bool m_partnerTypeHasBeenSet = false;
 };
 

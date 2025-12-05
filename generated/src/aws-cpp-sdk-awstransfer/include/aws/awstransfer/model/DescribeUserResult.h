@@ -79,12 +79,12 @@ class DescribeUserResult {
   ///@}
  private:
   Aws::String m_serverId;
-  bool m_serverIdHasBeenSet = false;
 
   DescribedUser m_user;
-  bool m_userHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_serverIdHasBeenSet = false;
+  bool m_userHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

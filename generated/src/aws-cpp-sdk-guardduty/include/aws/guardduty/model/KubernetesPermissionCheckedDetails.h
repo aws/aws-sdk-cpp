@@ -107,15 +107,15 @@ class KubernetesPermissionCheckedDetails {
   ///@}
  private:
   Aws::String m_verb;
-  bool m_verbHasBeenSet = false;
 
   Aws::String m_resource;
-  bool m_resourceHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   bool m_allowed{false};
+  bool m_verbHasBeenSet = false;
+  bool m_resourceHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
   bool m_allowedHasBeenSet = false;
 };
 

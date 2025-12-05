@@ -86,12 +86,12 @@ class DescribeServiceActionExecutionParametersRequest : public ServiceCatalogReq
   ///@}
  private:
   Aws::String m_provisionedProductId;
-  bool m_provisionedProductIdHasBeenSet = false;
 
   Aws::String m_serviceActionId;
-  bool m_serviceActionIdHasBeenSet = false;
 
   Aws::String m_acceptLanguage;
+  bool m_provisionedProductIdHasBeenSet = false;
+  bool m_serviceActionIdHasBeenSet = false;
   bool m_acceptLanguageHasBeenSet = false;
 };
 

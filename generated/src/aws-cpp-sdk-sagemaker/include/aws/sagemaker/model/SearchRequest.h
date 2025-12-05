@@ -198,27 +198,27 @@ class SearchRequest : public SageMakerRequest {
   ///@}
  private:
   ResourceType m_resource{ResourceType::NOT_SET};
-  bool m_resourceHasBeenSet = false;
 
   SearchExpression m_searchExpression;
-  bool m_searchExpressionHasBeenSet = false;
 
   Aws::String m_sortBy;
-  bool m_sortByHasBeenSet = false;
 
   SearchSortOrder m_sortOrder{SearchSortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   CrossAccountFilterOption m_crossAccountFilterOption{CrossAccountFilterOption::NOT_SET};
-  bool m_crossAccountFilterOptionHasBeenSet = false;
 
   Aws::Vector<VisibilityConditions> m_visibilityConditions;
+  bool m_resourceHasBeenSet = false;
+  bool m_searchExpressionHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_crossAccountFilterOptionHasBeenSet = false;
   bool m_visibilityConditionsHasBeenSet = false;
 };
 

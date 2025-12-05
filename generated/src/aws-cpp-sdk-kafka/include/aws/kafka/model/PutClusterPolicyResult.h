@@ -61,9 +61,9 @@ class PutClusterPolicyResult {
   ///@}
  private:
   Aws::String m_currentVersion;
-  bool m_currentVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_currentVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

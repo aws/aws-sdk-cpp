@@ -68,9 +68,9 @@ class RuleBooleanExpression {
   ///@}
  private:
   RuleBooleanToEvaluate m_evaluate;
-  bool m_evaluateHasBeenSet = false;
 
   RuleBooleanOperator m_operator{RuleBooleanOperator::NOT_SET};
+  bool m_evaluateHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class ResourceNotFoundException {
   ///@}
  private:
   Aws::String m_errorType;
-  bool m_errorTypeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_errorTypeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

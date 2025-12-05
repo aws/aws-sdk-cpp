@@ -290,42 +290,42 @@ class EngagementInvitationSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   EngagementInvitationPayloadType m_payloadType{EngagementInvitationPayloadType::NOT_SET};
-  bool m_payloadTypeHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_engagementId;
-  bool m_engagementIdHasBeenSet = false;
 
   Aws::String m_engagementTitle;
-  bool m_engagementTitleHasBeenSet = false;
 
   InvitationStatus m_status{InvitationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_invitationDate{};
-  bool m_invitationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_expirationDate{};
-  bool m_expirationDateHasBeenSet = false;
 
   Aws::String m_senderAwsAccountId;
-  bool m_senderAwsAccountIdHasBeenSet = false;
 
   Aws::String m_senderCompanyName;
-  bool m_senderCompanyNameHasBeenSet = false;
 
   Receiver m_receiver;
-  bool m_receiverHasBeenSet = false;
 
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   ParticipantType m_participantType{ParticipantType::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_payloadTypeHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_engagementIdHasBeenSet = false;
+  bool m_engagementTitleHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_invitationDateHasBeenSet = false;
+  bool m_expirationDateHasBeenSet = false;
+  bool m_senderAwsAccountIdHasBeenSet = false;
+  bool m_senderCompanyNameHasBeenSet = false;
+  bool m_receiverHasBeenSet = false;
+  bool m_catalogHasBeenSet = false;
   bool m_participantTypeHasBeenSet = false;
 };
 

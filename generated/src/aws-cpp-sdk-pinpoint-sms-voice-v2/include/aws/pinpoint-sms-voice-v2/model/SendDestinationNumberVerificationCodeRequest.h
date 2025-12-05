@@ -180,24 +180,24 @@ class SendDestinationNumberVerificationCodeRequest : public PinpointSMSVoiceV2Re
   ///@}
  private:
   Aws::String m_verifiedDestinationNumberId;
-  bool m_verifiedDestinationNumberIdHasBeenSet = false;
 
   VerificationChannel m_verificationChannel{VerificationChannel::NOT_SET};
-  bool m_verificationChannelHasBeenSet = false;
 
   LanguageCode m_languageCode{LanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   Aws::String m_originationIdentity;
-  bool m_originationIdentityHasBeenSet = false;
 
   Aws::String m_configurationSetName;
-  bool m_configurationSetNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_context;
-  bool m_contextHasBeenSet = false;
 
   Aws::Map<DestinationCountryParameterKey, Aws::String> m_destinationCountryParameters;
+  bool m_verifiedDestinationNumberIdHasBeenSet = false;
+  bool m_verificationChannelHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
+  bool m_originationIdentityHasBeenSet = false;
+  bool m_configurationSetNameHasBeenSet = false;
+  bool m_contextHasBeenSet = false;
   bool m_destinationCountryParametersHasBeenSet = false;
 };
 

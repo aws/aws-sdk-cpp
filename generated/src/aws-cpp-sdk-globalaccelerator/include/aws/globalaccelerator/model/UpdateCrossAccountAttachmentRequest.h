@@ -179,21 +179,21 @@ class UpdateCrossAccountAttachmentRequest : public GlobalAcceleratorRequest {
   ///@}
  private:
   Aws::String m_attachmentArn;
-  bool m_attachmentArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_addPrincipals;
-  bool m_addPrincipalsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_removePrincipals;
-  bool m_removePrincipalsHasBeenSet = false;
 
   Aws::Vector<Resource> m_addResources;
-  bool m_addResourcesHasBeenSet = false;
 
   Aws::Vector<Resource> m_removeResources;
+  bool m_attachmentArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_addPrincipalsHasBeenSet = false;
+  bool m_removePrincipalsHasBeenSet = false;
+  bool m_addResourcesHasBeenSet = false;
   bool m_removeResourcesHasBeenSet = false;
 };
 

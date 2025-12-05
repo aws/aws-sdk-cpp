@@ -345,51 +345,51 @@ class UpdateClusterRequest : public MemoryDBRequest {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::String m_maintenanceWindow;
-  bool m_maintenanceWindowHasBeenSet = false;
 
   Aws::String m_snsTopicArn;
-  bool m_snsTopicArnHasBeenSet = false;
 
   Aws::String m_snsTopicStatus;
-  bool m_snsTopicStatusHasBeenSet = false;
 
   Aws::String m_parameterGroupName;
-  bool m_parameterGroupNameHasBeenSet = false;
 
   Aws::String m_snapshotWindow;
-  bool m_snapshotWindowHasBeenSet = false;
 
   int m_snapshotRetentionLimit{0};
-  bool m_snapshotRetentionLimitHasBeenSet = false;
 
   Aws::String m_nodeType;
-  bool m_nodeTypeHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   ReplicaConfigurationRequest m_replicaConfiguration;
-  bool m_replicaConfigurationHasBeenSet = false;
 
   ShardConfigurationRequest m_shardConfiguration;
-  bool m_shardConfigurationHasBeenSet = false;
 
   Aws::String m_aCLName;
-  bool m_aCLNameHasBeenSet = false;
 
   IpDiscovery m_ipDiscovery{IpDiscovery::NOT_SET};
+  bool m_clusterNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_maintenanceWindowHasBeenSet = false;
+  bool m_snsTopicArnHasBeenSet = false;
+  bool m_snsTopicStatusHasBeenSet = false;
+  bool m_parameterGroupNameHasBeenSet = false;
+  bool m_snapshotWindowHasBeenSet = false;
+  bool m_snapshotRetentionLimitHasBeenSet = false;
+  bool m_nodeTypeHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_replicaConfigurationHasBeenSet = false;
+  bool m_shardConfigurationHasBeenSet = false;
+  bool m_aCLNameHasBeenSet = false;
   bool m_ipDiscoveryHasBeenSet = false;
 };
 

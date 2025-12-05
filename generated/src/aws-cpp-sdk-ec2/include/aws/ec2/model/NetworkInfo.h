@@ -306,48 +306,48 @@ class NetworkInfo {
   ///@}
  private:
   Aws::String m_networkPerformance;
-  bool m_networkPerformanceHasBeenSet = false;
 
   int m_maximumNetworkInterfaces{0};
-  bool m_maximumNetworkInterfacesHasBeenSet = false;
 
   int m_maximumNetworkCards{0};
-  bool m_maximumNetworkCardsHasBeenSet = false;
 
   int m_defaultNetworkCardIndex{0};
-  bool m_defaultNetworkCardIndexHasBeenSet = false;
 
   Aws::Vector<NetworkCardInfo> m_networkCards;
-  bool m_networkCardsHasBeenSet = false;
 
   int m_ipv4AddressesPerInterface{0};
-  bool m_ipv4AddressesPerInterfaceHasBeenSet = false;
 
   int m_ipv6AddressesPerInterface{0};
-  bool m_ipv6AddressesPerInterfaceHasBeenSet = false;
 
   bool m_ipv6Supported{false};
-  bool m_ipv6SupportedHasBeenSet = false;
 
   EnaSupport m_enaSupport{EnaSupport::NOT_SET};
-  bool m_enaSupportHasBeenSet = false;
 
   bool m_efaSupported{false};
-  bool m_efaSupportedHasBeenSet = false;
 
   EfaInfo m_efaInfo;
-  bool m_efaInfoHasBeenSet = false;
 
   bool m_encryptionInTransitSupported{false};
-  bool m_encryptionInTransitSupportedHasBeenSet = false;
 
   bool m_enaSrdSupported{false};
-  bool m_enaSrdSupportedHasBeenSet = false;
 
   Aws::Vector<BandwidthWeightingType> m_bandwidthWeightings;
-  bool m_bandwidthWeightingsHasBeenSet = false;
 
   FlexibleEnaQueuesSupport m_flexibleEnaQueuesSupport{FlexibleEnaQueuesSupport::NOT_SET};
+  bool m_networkPerformanceHasBeenSet = false;
+  bool m_maximumNetworkInterfacesHasBeenSet = false;
+  bool m_maximumNetworkCardsHasBeenSet = false;
+  bool m_defaultNetworkCardIndexHasBeenSet = false;
+  bool m_networkCardsHasBeenSet = false;
+  bool m_ipv4AddressesPerInterfaceHasBeenSet = false;
+  bool m_ipv6AddressesPerInterfaceHasBeenSet = false;
+  bool m_ipv6SupportedHasBeenSet = false;
+  bool m_enaSupportHasBeenSet = false;
+  bool m_efaSupportedHasBeenSet = false;
+  bool m_efaInfoHasBeenSet = false;
+  bool m_encryptionInTransitSupportedHasBeenSet = false;
+  bool m_enaSrdSupportedHasBeenSet = false;
+  bool m_bandwidthWeightingsHasBeenSet = false;
   bool m_flexibleEnaQueuesSupportHasBeenSet = false;
 };
 

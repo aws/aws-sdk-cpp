@@ -125,18 +125,18 @@ class LineageGroupSummary {
   ///@}
  private:
   Aws::String m_lineageGroupArn;
-  bool m_lineageGroupArnHasBeenSet = false;
 
   Aws::String m_lineageGroupName;
-  bool m_lineageGroupNameHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
+  bool m_lineageGroupArnHasBeenSet = false;
+  bool m_lineageGroupNameHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
 };
 

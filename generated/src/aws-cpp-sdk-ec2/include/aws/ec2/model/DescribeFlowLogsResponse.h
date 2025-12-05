@@ -86,12 +86,12 @@ class DescribeFlowLogsResponse {
   ///@}
  private:
   Aws::Vector<FlowLog> m_flowLogs;
-  bool m_flowLogsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_flowLogsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

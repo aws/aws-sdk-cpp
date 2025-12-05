@@ -136,21 +136,21 @@ class DescribeRegistrationFieldValuesResult {
   ///@}
  private:
   Aws::String m_registrationArn;
-  bool m_registrationArnHasBeenSet = false;
 
   Aws::String m_registrationId;
-  bool m_registrationIdHasBeenSet = false;
 
   long long m_versionNumber{0};
-  bool m_versionNumberHasBeenSet = false;
 
   Aws::Vector<RegistrationFieldValueInformation> m_registrationFieldValues;
-  bool m_registrationFieldValuesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_registrationArnHasBeenSet = false;
+  bool m_registrationIdHasBeenSet = false;
+  bool m_versionNumberHasBeenSet = false;
+  bool m_registrationFieldValuesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

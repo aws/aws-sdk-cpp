@@ -359,45 +359,45 @@ class LambdaFunctionRecommendation {
   ///@}
  private:
   Aws::String m_functionArn;
-  bool m_functionArnHasBeenSet = false;
 
   Aws::String m_functionVersion;
-  bool m_functionVersionHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   int m_currentMemorySize{0};
-  bool m_currentMemorySizeHasBeenSet = false;
 
   long long m_numberOfInvocations{0};
-  bool m_numberOfInvocationsHasBeenSet = false;
 
   Aws::Vector<LambdaFunctionUtilizationMetric> m_utilizationMetrics;
-  bool m_utilizationMetricsHasBeenSet = false;
 
   double m_lookbackPeriodInDays{0.0};
-  bool m_lookbackPeriodInDaysHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastRefreshTimestamp{};
-  bool m_lastRefreshTimestampHasBeenSet = false;
 
   LambdaFunctionRecommendationFinding m_finding{LambdaFunctionRecommendationFinding::NOT_SET};
-  bool m_findingHasBeenSet = false;
 
   Aws::Vector<LambdaFunctionRecommendationFindingReasonCode> m_findingReasonCodes;
-  bool m_findingReasonCodesHasBeenSet = false;
 
   Aws::Vector<LambdaFunctionMemoryRecommendationOption> m_memorySizeRecommendationOptions;
-  bool m_memorySizeRecommendationOptionsHasBeenSet = false;
 
   CurrentPerformanceRisk m_currentPerformanceRisk{CurrentPerformanceRisk::NOT_SET};
-  bool m_currentPerformanceRiskHasBeenSet = false;
 
   LambdaEffectiveRecommendationPreferences m_effectiveRecommendationPreferences;
-  bool m_effectiveRecommendationPreferencesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_functionArnHasBeenSet = false;
+  bool m_functionVersionHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_currentMemorySizeHasBeenSet = false;
+  bool m_numberOfInvocationsHasBeenSet = false;
+  bool m_utilizationMetricsHasBeenSet = false;
+  bool m_lookbackPeriodInDaysHasBeenSet = false;
+  bool m_lastRefreshTimestampHasBeenSet = false;
+  bool m_findingHasBeenSet = false;
+  bool m_findingReasonCodesHasBeenSet = false;
+  bool m_memorySizeRecommendationOptionsHasBeenSet = false;
+  bool m_currentPerformanceRiskHasBeenSet = false;
+  bool m_effectiveRecommendationPreferencesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

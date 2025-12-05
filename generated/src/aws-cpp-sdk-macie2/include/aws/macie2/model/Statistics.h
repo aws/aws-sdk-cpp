@@ -63,9 +63,9 @@ class Statistics {
   ///@}
  private:
   double m_approximateNumberOfObjectsToProcess{0.0};
-  bool m_approximateNumberOfObjectsToProcessHasBeenSet = false;
 
   double m_numberOfRuns{0.0};
+  bool m_approximateNumberOfObjectsToProcessHasBeenSet = false;
   bool m_numberOfRunsHasBeenSet = false;
 };
 

@@ -260,36 +260,36 @@ class UpdateComputeNodeGroupRequest : public PCSRequest {
   ///@}
  private:
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   Aws::String m_computeNodeGroupIdentifier;
-  bool m_computeNodeGroupIdentifierHasBeenSet = false;
 
   Aws::String m_amiId;
-  bool m_amiIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   CustomLaunchTemplate m_customLaunchTemplate;
-  bool m_customLaunchTemplateHasBeenSet = false;
 
   PurchaseOption m_purchaseOption{PurchaseOption::NOT_SET};
-  bool m_purchaseOptionHasBeenSet = false;
 
   SpotOptions m_spotOptions;
-  bool m_spotOptionsHasBeenSet = false;
 
   ScalingConfigurationRequest m_scalingConfiguration;
-  bool m_scalingConfigurationHasBeenSet = false;
 
   Aws::String m_iamInstanceProfileArn;
-  bool m_iamInstanceProfileArnHasBeenSet = false;
 
   UpdateComputeNodeGroupSlurmConfigurationRequest m_slurmConfiguration;
-  bool m_slurmConfigurationHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_clusterIdentifierHasBeenSet = false;
+  bool m_computeNodeGroupIdentifierHasBeenSet = false;
+  bool m_amiIdHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_customLaunchTemplateHasBeenSet = false;
+  bool m_purchaseOptionHasBeenSet = false;
+  bool m_spotOptionsHasBeenSet = false;
+  bool m_scalingConfigurationHasBeenSet = false;
+  bool m_iamInstanceProfileArnHasBeenSet = false;
+  bool m_slurmConfigurationHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

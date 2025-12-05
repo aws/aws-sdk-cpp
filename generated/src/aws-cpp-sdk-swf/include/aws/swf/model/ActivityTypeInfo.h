@@ -125,18 +125,18 @@ class ActivityTypeInfo {
   ///@}
  private:
   ActivityType m_activityType;
-  bool m_activityTypeHasBeenSet = false;
 
   RegistrationStatus m_status{RegistrationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_deprecationDate{};
+  bool m_activityTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
   bool m_deprecationDateHasBeenSet = false;
 };
 

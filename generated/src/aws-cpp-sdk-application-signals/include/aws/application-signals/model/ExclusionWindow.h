@@ -111,15 +111,15 @@ class ExclusionWindow {
   ///@}
  private:
   Window m_window;
-  bool m_windowHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   RecurrenceRule m_recurrenceRule;
-  bool m_recurrenceRuleHasBeenSet = false;
 
   Aws::String m_reason;
+  bool m_windowHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_recurrenceRuleHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

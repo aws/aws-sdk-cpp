@@ -123,18 +123,18 @@ class SrtCallerRouterInputConfiguration {
   ///@}
  private:
   Aws::String m_sourceAddress;
-  bool m_sourceAddressHasBeenSet = false;
 
   int m_sourcePort{0};
-  bool m_sourcePortHasBeenSet = false;
 
   long long m_minimumLatencyMilliseconds{0};
-  bool m_minimumLatencyMillisecondsHasBeenSet = false;
 
   Aws::String m_streamId;
-  bool m_streamIdHasBeenSet = false;
 
   SrtDecryptionConfiguration m_decryptionConfiguration;
+  bool m_sourceAddressHasBeenSet = false;
+  bool m_sourcePortHasBeenSet = false;
+  bool m_minimumLatencyMillisecondsHasBeenSet = false;
+  bool m_streamIdHasBeenSet = false;
   bool m_decryptionConfigurationHasBeenSet = false;
 };
 

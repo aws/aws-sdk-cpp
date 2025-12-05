@@ -97,15 +97,15 @@ class SynthesizeSpeechResult {
   ///@}
  private:
   Aws::Utils::Stream::ResponseStream m_audioStream{};
-  bool m_audioStreamHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   int m_requestCharacters{0};
-  bool m_requestCharactersHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_audioStreamHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_requestCharactersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

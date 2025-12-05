@@ -101,12 +101,12 @@ class MetricsSummary {
   ///@}
  private:
   long long m_meteredLinesOfCodeCount{0};
-  bool m_meteredLinesOfCodeCountHasBeenSet = false;
 
   long long m_suppressedLinesOfCodeCount{0};
-  bool m_suppressedLinesOfCodeCountHasBeenSet = false;
 
   long long m_findingsCount{0};
+  bool m_meteredLinesOfCodeCountHasBeenSet = false;
+  bool m_suppressedLinesOfCodeCountHasBeenSet = false;
   bool m_findingsCountHasBeenSet = false;
 };
 

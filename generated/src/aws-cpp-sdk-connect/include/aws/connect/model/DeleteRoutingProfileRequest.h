@@ -67,9 +67,9 @@ class DeleteRoutingProfileRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_routingProfileId;
+  bool m_instanceIdHasBeenSet = false;
   bool m_routingProfileIdHasBeenSet = false;
 };
 

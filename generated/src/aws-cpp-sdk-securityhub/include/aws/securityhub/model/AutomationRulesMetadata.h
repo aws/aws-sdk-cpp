@@ -210,30 +210,30 @@ class AutomationRulesMetadata {
   ///@}
  private:
   Aws::String m_ruleArn;
-  bool m_ruleArnHasBeenSet = false;
 
   RuleStatus m_ruleStatus{RuleStatus::NOT_SET};
-  bool m_ruleStatusHasBeenSet = false;
 
   int m_ruleOrder{0};
-  bool m_ruleOrderHasBeenSet = false;
 
   Aws::String m_ruleName;
-  bool m_ruleNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_isTerminal{false};
-  bool m_isTerminalHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_createdBy;
+  bool m_ruleArnHasBeenSet = false;
+  bool m_ruleStatusHasBeenSet = false;
+  bool m_ruleOrderHasBeenSet = false;
+  bool m_ruleNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_isTerminalHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_createdByHasBeenSet = false;
 };
 

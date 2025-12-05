@@ -111,15 +111,15 @@ class ObjectAttribute {
   ///@}
  private:
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_fieldName;
-  bool m_fieldNameHasBeenSet = false;
 
   ComparisonOperator m_comparisonOperator{ComparisonOperator::NOT_SET};
-  bool m_comparisonOperatorHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_sourceHasBeenSet = false;
+  bool m_fieldNameHasBeenSet = false;
+  bool m_comparisonOperatorHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

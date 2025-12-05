@@ -69,9 +69,9 @@ class GeoMatchParams {
   ///@}
  private:
   Aws::String m_country;
-  bool m_countryHasBeenSet = false;
 
   Aws::String m_areaCode;
+  bool m_countryHasBeenSet = false;
   bool m_areaCodeHasBeenSet = false;
 };
 

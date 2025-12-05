@@ -73,9 +73,9 @@ class DeleteAutoScalingConfigurationRequest : public AppRunnerRequest {
   ///@}
  private:
   Aws::String m_autoScalingConfigurationArn;
-  bool m_autoScalingConfigurationArnHasBeenSet = false;
 
   bool m_deleteAllRevisions{false};
+  bool m_autoScalingConfigurationArnHasBeenSet = false;
   bool m_deleteAllRevisionsHasBeenSet = false;
 };
 

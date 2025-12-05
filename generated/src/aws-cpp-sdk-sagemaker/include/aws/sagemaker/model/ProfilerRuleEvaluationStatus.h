@@ -123,18 +123,18 @@ class ProfilerRuleEvaluationStatus {
   ///@}
  private:
   Aws::String m_ruleConfigurationName;
-  bool m_ruleConfigurationNameHasBeenSet = false;
 
   Aws::String m_ruleEvaluationJobArn;
-  bool m_ruleEvaluationJobArnHasBeenSet = false;
 
   RuleEvaluationStatus m_ruleEvaluationStatus{RuleEvaluationStatus::NOT_SET};
-  bool m_ruleEvaluationStatusHasBeenSet = false;
 
   Aws::String m_statusDetails;
-  bool m_statusDetailsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
+  bool m_ruleConfigurationNameHasBeenSet = false;
+  bool m_ruleEvaluationJobArnHasBeenSet = false;
+  bool m_ruleEvaluationStatusHasBeenSet = false;
+  bool m_statusDetailsHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class HttpQueryParameter {
   ///@}
  private:
   QueryParameterMatch m_match;
-  bool m_matchHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_matchHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

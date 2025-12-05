@@ -333,45 +333,45 @@ class CreateCollaborationRequest : public CleanRoomsRequest {
   ///@}
  private:
   Aws::Vector<MemberSpecification> m_members;
-  bool m_membersHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<MemberAbility> m_creatorMemberAbilities;
-  bool m_creatorMemberAbilitiesHasBeenSet = false;
 
   MLMemberAbilities m_creatorMLMemberAbilities;
-  bool m_creatorMLMemberAbilitiesHasBeenSet = false;
 
   Aws::String m_creatorDisplayName;
-  bool m_creatorDisplayNameHasBeenSet = false;
 
   DataEncryptionMetadata m_dataEncryptionMetadata;
-  bool m_dataEncryptionMetadataHasBeenSet = false;
 
   CollaborationQueryLogStatus m_queryLogStatus{CollaborationQueryLogStatus::NOT_SET};
-  bool m_queryLogStatusHasBeenSet = false;
 
   CollaborationJobLogStatus m_jobLogStatus{CollaborationJobLogStatus::NOT_SET};
-  bool m_jobLogStatusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   PaymentConfiguration m_creatorPaymentConfiguration;
-  bool m_creatorPaymentConfigurationHasBeenSet = false;
 
   AnalyticsEngine m_analyticsEngine{AnalyticsEngine::NOT_SET};
-  bool m_analyticsEngineHasBeenSet = false;
 
   Aws::Vector<AutoApprovedChangeType> m_autoApprovedChangeRequestTypes;
-  bool m_autoApprovedChangeRequestTypesHasBeenSet = false;
 
   Aws::Vector<SupportedS3Region> m_allowedResultRegions;
+  bool m_membersHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_creatorMemberAbilitiesHasBeenSet = false;
+  bool m_creatorMLMemberAbilitiesHasBeenSet = false;
+  bool m_creatorDisplayNameHasBeenSet = false;
+  bool m_dataEncryptionMetadataHasBeenSet = false;
+  bool m_queryLogStatusHasBeenSet = false;
+  bool m_jobLogStatusHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_creatorPaymentConfigurationHasBeenSet = false;
+  bool m_analyticsEngineHasBeenSet = false;
+  bool m_autoApprovedChangeRequestTypesHasBeenSet = false;
   bool m_allowedResultRegionsHasBeenSet = false;
 };
 

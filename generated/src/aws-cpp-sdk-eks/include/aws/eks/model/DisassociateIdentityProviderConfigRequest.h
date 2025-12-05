@@ -86,12 +86,12 @@ class DisassociateIdentityProviderConfigRequest : public EKSRequest {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   IdentityProviderConfig m_identityProviderConfig;
-  bool m_identityProviderConfigHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_clusterNameHasBeenSet = false;
+  bool m_identityProviderConfigHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
 };
 

@@ -122,15 +122,15 @@ class DescribeDBMajorEngineVersionsRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_majorEngineVersion;
-  bool m_majorEngineVersionHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_maxRecords{0};
+  bool m_engineHasBeenSet = false;
+  bool m_majorEngineVersionHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_maxRecordsHasBeenSet = false;
 };
 

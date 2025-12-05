@@ -107,15 +107,15 @@ class NeuronDeviceInfo {
   ///@}
  private:
   int m_count{0};
-  bool m_countHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   NeuronDeviceCoreInfo m_coreInfo;
-  bool m_coreInfoHasBeenSet = false;
 
   NeuronDeviceMemoryInfo m_memoryInfo;
+  bool m_countHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_coreInfoHasBeenSet = false;
   bool m_memoryInfoHasBeenSet = false;
 };
 

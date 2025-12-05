@@ -60,9 +60,9 @@ class ModifyVerifiedAccessEndpointResponse {
   ///@}
  private:
   VerifiedAccessEndpoint m_verifiedAccessEndpoint;
-  bool m_verifiedAccessEndpointHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_verifiedAccessEndpointHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

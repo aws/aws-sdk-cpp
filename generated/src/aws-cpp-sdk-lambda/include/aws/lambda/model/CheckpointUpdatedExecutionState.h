@@ -79,9 +79,9 @@ class CheckpointUpdatedExecutionState {
   ///@}
  private:
   Aws::Vector<Operation> m_operations;
-  bool m_operationsHasBeenSet = false;
 
   Aws::String m_nextMarker;
+  bool m_operationsHasBeenSet = false;
   bool m_nextMarkerHasBeenSet = false;
 };
 

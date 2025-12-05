@@ -67,9 +67,9 @@ class StopInstancesResponse {
   ///@}
  private:
   Aws::Vector<InstanceStateChange> m_stoppingInstances;
-  bool m_stoppingInstancesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_stoppingInstancesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

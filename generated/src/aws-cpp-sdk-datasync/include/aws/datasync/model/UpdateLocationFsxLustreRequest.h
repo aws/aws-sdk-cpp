@@ -72,9 +72,9 @@ class UpdateLocationFsxLustreRequest : public DataSyncRequest {
   ///@}
  private:
   Aws::String m_locationArn;
-  bool m_locationArnHasBeenSet = false;
 
   Aws::String m_subdirectory;
+  bool m_locationArnHasBeenSet = false;
   bool m_subdirectoryHasBeenSet = false;
 };
 

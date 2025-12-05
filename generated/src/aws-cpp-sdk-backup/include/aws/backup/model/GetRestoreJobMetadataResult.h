@@ -83,12 +83,12 @@ class GetRestoreJobMetadataResult {
   ///@}
  private:
   Aws::String m_restoreJobId;
-  bool m_restoreJobIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_restoreJobIdHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

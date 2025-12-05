@@ -64,9 +64,9 @@ class QuotaPeriod {
   ///@}
  private:
   int m_periodValue{0};
-  bool m_periodValueHasBeenSet = false;
 
   PeriodUnit m_periodUnit{PeriodUnit::NOT_SET};
+  bool m_periodValueHasBeenSet = false;
   bool m_periodUnitHasBeenSet = false;
 };
 

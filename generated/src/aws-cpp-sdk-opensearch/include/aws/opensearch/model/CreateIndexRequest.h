@@ -86,12 +86,12 @@ class CreateIndexRequest : public OpenSearchServiceRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   Aws::Utils::Document m_indexSchema;
+  bool m_domainNameHasBeenSet = false;
+  bool m_indexNameHasBeenSet = false;
   bool m_indexSchemaHasBeenSet = false;
 };
 

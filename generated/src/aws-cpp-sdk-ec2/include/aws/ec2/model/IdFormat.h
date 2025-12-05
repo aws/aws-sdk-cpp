@@ -90,12 +90,12 @@ class IdFormat {
   ///@}
  private:
   Aws::Utils::DateTime m_deadline{};
-  bool m_deadlineHasBeenSet = false;
 
   Aws::String m_resource;
-  bool m_resourceHasBeenSet = false;
 
   bool m_useLongIds{false};
+  bool m_deadlineHasBeenSet = false;
+  bool m_resourceHasBeenSet = false;
   bool m_useLongIdsHasBeenSet = false;
 };
 

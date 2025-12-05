@@ -382,63 +382,63 @@ class DescribeServiceJobResult {
   ///@}
  private:
   Aws::Vector<ServiceJobAttemptDetail> m_attempts;
-  bool m_attemptsHasBeenSet = false;
 
   long long m_createdAt{0};
-  bool m_createdAtHasBeenSet = false;
 
   bool m_isTerminated{false};
-  bool m_isTerminatedHasBeenSet = false;
 
   Aws::String m_jobArn;
-  bool m_jobArnHasBeenSet = false;
 
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   Aws::String m_jobQueue;
-  bool m_jobQueueHasBeenSet = false;
 
   LatestServiceJobAttempt m_latestAttempt;
-  bool m_latestAttemptHasBeenSet = false;
 
   ServiceJobRetryStrategy m_retryStrategy;
-  bool m_retryStrategyHasBeenSet = false;
 
   int m_schedulingPriority{0};
-  bool m_schedulingPriorityHasBeenSet = false;
 
   Aws::String m_serviceRequestPayload;
-  bool m_serviceRequestPayloadHasBeenSet = false;
 
   ServiceJobType m_serviceJobType{ServiceJobType::NOT_SET};
-  bool m_serviceJobTypeHasBeenSet = false;
 
   Aws::String m_shareIdentifier;
-  bool m_shareIdentifierHasBeenSet = false;
 
   long long m_startedAt{0};
-  bool m_startedAtHasBeenSet = false;
 
   ServiceJobStatus m_status{ServiceJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   long long m_stoppedAt{0};
-  bool m_stoppedAtHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ServiceJobTimeout m_timeoutConfig;
-  bool m_timeoutConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_attemptsHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_isTerminatedHasBeenSet = false;
+  bool m_jobArnHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
+  bool m_jobNameHasBeenSet = false;
+  bool m_jobQueueHasBeenSet = false;
+  bool m_latestAttemptHasBeenSet = false;
+  bool m_retryStrategyHasBeenSet = false;
+  bool m_schedulingPriorityHasBeenSet = false;
+  bool m_serviceRequestPayloadHasBeenSet = false;
+  bool m_serviceJobTypeHasBeenSet = false;
+  bool m_shareIdentifierHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_stoppedAtHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_timeoutConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

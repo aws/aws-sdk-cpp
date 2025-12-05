@@ -175,27 +175,27 @@ class ServiceQuotaIncreaseRequestInTemplate {
   ///@}
  private:
   Aws::String m_serviceCode;
-  bool m_serviceCodeHasBeenSet = false;
 
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   Aws::String m_quotaCode;
-  bool m_quotaCodeHasBeenSet = false;
 
   Aws::String m_quotaName;
-  bool m_quotaNameHasBeenSet = false;
 
   double m_desiredValue{0.0};
-  bool m_desiredValueHasBeenSet = false;
 
   Aws::String m_awsRegion;
-  bool m_awsRegionHasBeenSet = false;
 
   Aws::String m_unit;
-  bool m_unitHasBeenSet = false;
 
   bool m_globalQuota{false};
+  bool m_serviceCodeHasBeenSet = false;
+  bool m_serviceNameHasBeenSet = false;
+  bool m_quotaCodeHasBeenSet = false;
+  bool m_quotaNameHasBeenSet = false;
+  bool m_desiredValueHasBeenSet = false;
+  bool m_awsRegionHasBeenSet = false;
+  bool m_unitHasBeenSet = false;
   bool m_globalQuotaHasBeenSet = false;
 };
 

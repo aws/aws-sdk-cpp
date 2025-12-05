@@ -85,12 +85,12 @@ class ListRelatedResourcesForAuditFindingResult {
   ///@}
  private:
   Aws::Vector<RelatedResource> m_relatedResources;
-  bool m_relatedResourcesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_relatedResourcesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

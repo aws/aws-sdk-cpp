@@ -187,24 +187,24 @@ class InvokeModelRequest : public StreamingBedrockRuntimeRequest {
   ///@}
  private:
   Aws::String m_accept;
-  bool m_acceptHasBeenSet = false;
 
   Aws::String m_modelId;
-  bool m_modelIdHasBeenSet = false;
 
   Trace m_trace{Trace::NOT_SET};
-  bool m_traceHasBeenSet = false;
 
   Aws::String m_guardrailIdentifier;
-  bool m_guardrailIdentifierHasBeenSet = false;
 
   Aws::String m_guardrailVersion;
-  bool m_guardrailVersionHasBeenSet = false;
 
   PerformanceConfigLatency m_performanceConfigLatency{PerformanceConfigLatency::NOT_SET};
-  bool m_performanceConfigLatencyHasBeenSet = false;
 
   ServiceTierType m_serviceTier{ServiceTierType::NOT_SET};
+  bool m_acceptHasBeenSet = false;
+  bool m_modelIdHasBeenSet = false;
+  bool m_traceHasBeenSet = false;
+  bool m_guardrailIdentifierHasBeenSet = false;
+  bool m_guardrailVersionHasBeenSet = false;
+  bool m_performanceConfigLatencyHasBeenSet = false;
   bool m_serviceTierHasBeenSet = false;
 };
 

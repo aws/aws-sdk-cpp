@@ -252,27 +252,27 @@ class ReservedCacheNodesOffering {
   ///@}
  private:
   Aws::String m_reservedCacheNodesOfferingId;
-  bool m_reservedCacheNodesOfferingIdHasBeenSet = false;
 
   Aws::String m_cacheNodeType;
-  bool m_cacheNodeTypeHasBeenSet = false;
 
   int m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   double m_fixedPrice{0.0};
-  bool m_fixedPriceHasBeenSet = false;
 
   double m_usagePrice{0.0};
-  bool m_usagePriceHasBeenSet = false;
 
   Aws::String m_productDescription;
-  bool m_productDescriptionHasBeenSet = false;
 
   Aws::String m_offeringType;
-  bool m_offeringTypeHasBeenSet = false;
 
   Aws::Vector<RecurringCharge> m_recurringCharges;
+  bool m_reservedCacheNodesOfferingIdHasBeenSet = false;
+  bool m_cacheNodeTypeHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
+  bool m_fixedPriceHasBeenSet = false;
+  bool m_usagePriceHasBeenSet = false;
+  bool m_productDescriptionHasBeenSet = false;
+  bool m_offeringTypeHasBeenSet = false;
   bool m_recurringChargesHasBeenSet = false;
 };
 

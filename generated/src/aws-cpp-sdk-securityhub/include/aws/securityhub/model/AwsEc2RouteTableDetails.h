@@ -164,21 +164,21 @@ class AwsEc2RouteTableDetails {
   ///@}
  private:
   Aws::Vector<AssociationSetDetails> m_associationSet;
-  bool m_associationSetHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::Vector<PropagatingVgwSetDetails> m_propagatingVgwSet;
-  bool m_propagatingVgwSetHasBeenSet = false;
 
   Aws::String m_routeTableId;
-  bool m_routeTableIdHasBeenSet = false;
 
   Aws::Vector<RouteSetDetails> m_routeSet;
-  bool m_routeSetHasBeenSet = false;
 
   Aws::String m_vpcId;
+  bool m_associationSetHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_propagatingVgwSetHasBeenSet = false;
+  bool m_routeTableIdHasBeenSet = false;
+  bool m_routeSetHasBeenSet = false;
   bool m_vpcIdHasBeenSet = false;
 };
 

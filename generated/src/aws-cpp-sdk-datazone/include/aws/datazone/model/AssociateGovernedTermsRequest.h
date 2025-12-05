@@ -108,15 +108,15 @@ class AssociateGovernedTermsRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Aws::String m_entityIdentifier;
-  bool m_entityIdentifierHasBeenSet = false;
 
   GovernedEntityType m_entityType{GovernedEntityType::NOT_SET};
-  bool m_entityTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_governedGlossaryTerms;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_entityIdentifierHasBeenSet = false;
+  bool m_entityTypeHasBeenSet = false;
   bool m_governedGlossaryTermsHasBeenSet = false;
 };
 

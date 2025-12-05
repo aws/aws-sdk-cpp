@@ -150,21 +150,21 @@ class ContactFlowSearchCriteria {
   ///@}
  private:
   Aws::Vector<ContactFlowSearchCriteria> m_orConditions;
-  bool m_orConditionsHasBeenSet = false;
 
   Aws::Vector<ContactFlowSearchCriteria> m_andConditions;
-  bool m_andConditionsHasBeenSet = false;
 
   StringCondition m_stringCondition;
-  bool m_stringConditionHasBeenSet = false;
 
   ContactFlowType m_typeCondition{ContactFlowType::NOT_SET};
-  bool m_typeConditionHasBeenSet = false;
 
   ContactFlowState m_stateCondition{ContactFlowState::NOT_SET};
-  bool m_stateConditionHasBeenSet = false;
 
   ContactFlowStatus m_statusCondition{ContactFlowStatus::NOT_SET};
+  bool m_orConditionsHasBeenSet = false;
+  bool m_andConditionsHasBeenSet = false;
+  bool m_stringConditionHasBeenSet = false;
+  bool m_typeConditionHasBeenSet = false;
+  bool m_stateConditionHasBeenSet = false;
   bool m_statusConditionHasBeenSet = false;
 };
 

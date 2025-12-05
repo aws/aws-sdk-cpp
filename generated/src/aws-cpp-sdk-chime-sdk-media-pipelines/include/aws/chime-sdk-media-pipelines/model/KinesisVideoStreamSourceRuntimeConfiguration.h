@@ -100,12 +100,12 @@ class KinesisVideoStreamSourceRuntimeConfiguration {
   ///@}
  private:
   Aws::Vector<StreamConfiguration> m_streams;
-  bool m_streamsHasBeenSet = false;
 
   MediaEncoding m_mediaEncoding{MediaEncoding::NOT_SET};
-  bool m_mediaEncodingHasBeenSet = false;
 
   int m_mediaSampleRate{0};
+  bool m_streamsHasBeenSet = false;
+  bool m_mediaEncodingHasBeenSet = false;
   bool m_mediaSampleRateHasBeenSet = false;
 };
 

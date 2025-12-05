@@ -86,12 +86,12 @@ class RecoveryInstanceDisk {
   ///@}
  private:
   long long m_bytes{0};
-  bool m_bytesHasBeenSet = false;
 
   Aws::String m_ebsVolumeID;
-  bool m_ebsVolumeIDHasBeenSet = false;
 
   Aws::String m_internalDeviceName;
+  bool m_bytesHasBeenSet = false;
+  bool m_ebsVolumeIDHasBeenSet = false;
   bool m_internalDeviceNameHasBeenSet = false;
 };
 

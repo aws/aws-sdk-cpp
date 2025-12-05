@@ -102,12 +102,12 @@ class OpenXJsonSerDe {
   ///@}
  private:
   bool m_convertDotsInJsonKeysToUnderscores{false};
-  bool m_convertDotsInJsonKeysToUnderscoresHasBeenSet = false;
 
   bool m_caseInsensitive{false};
-  bool m_caseInsensitiveHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_columnToJsonKeyMappings;
+  bool m_convertDotsInJsonKeysToUnderscoresHasBeenSet = false;
+  bool m_caseInsensitiveHasBeenSet = false;
   bool m_columnToJsonKeyMappingsHasBeenSet = false;
 };
 

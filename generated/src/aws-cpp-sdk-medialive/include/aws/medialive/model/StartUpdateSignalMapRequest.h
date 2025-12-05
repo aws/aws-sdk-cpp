@@ -172,24 +172,24 @@ class StartUpdateSignalMapRequest : public MediaLiveRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_cloudWatchAlarmTemplateGroupIdentifiers;
-  bool m_cloudWatchAlarmTemplateGroupIdentifiersHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_discoveryEntryPointArn;
-  bool m_discoveryEntryPointArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_eventBridgeRuleTemplateGroupIdentifiers;
-  bool m_eventBridgeRuleTemplateGroupIdentifiersHasBeenSet = false;
 
   bool m_forceRediscovery{false};
-  bool m_forceRediscoveryHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_cloudWatchAlarmTemplateGroupIdentifiersHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_discoveryEntryPointArnHasBeenSet = false;
+  bool m_eventBridgeRuleTemplateGroupIdentifiersHasBeenSet = false;
+  bool m_forceRediscoveryHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

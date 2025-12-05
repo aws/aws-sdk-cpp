@@ -162,24 +162,24 @@ class AgentContactReference {
   ///@}
  private:
   Aws::String m_contactId;
-  bool m_contactIdHasBeenSet = false;
 
   Channel m_channel{Channel::NOT_SET};
-  bool m_channelHasBeenSet = false;
 
   ContactInitiationMethod m_initiationMethod{ContactInitiationMethod::NOT_SET};
-  bool m_initiationMethodHasBeenSet = false;
 
   ContactState m_agentContactState{ContactState::NOT_SET};
-  bool m_agentContactStateHasBeenSet = false;
 
   Aws::Utils::DateTime m_stateStartTimestamp{};
-  bool m_stateStartTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_connectedToAgentTimestamp{};
-  bool m_connectedToAgentTimestampHasBeenSet = false;
 
   QueueReference m_queue;
+  bool m_contactIdHasBeenSet = false;
+  bool m_channelHasBeenSet = false;
+  bool m_initiationMethodHasBeenSet = false;
+  bool m_agentContactStateHasBeenSet = false;
+  bool m_stateStartTimestampHasBeenSet = false;
+  bool m_connectedToAgentTimestampHasBeenSet = false;
   bool m_queueHasBeenSet = false;
 };
 

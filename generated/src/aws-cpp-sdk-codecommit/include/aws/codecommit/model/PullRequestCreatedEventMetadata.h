@@ -108,15 +108,15 @@ class PullRequestCreatedEventMetadata {
   ///@}
  private:
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   Aws::String m_sourceCommitId;
-  bool m_sourceCommitIdHasBeenSet = false;
 
   Aws::String m_destinationCommitId;
-  bool m_destinationCommitIdHasBeenSet = false;
 
   Aws::String m_mergeBase;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_sourceCommitIdHasBeenSet = false;
+  bool m_destinationCommitIdHasBeenSet = false;
   bool m_mergeBaseHasBeenSet = false;
 };
 

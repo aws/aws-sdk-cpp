@@ -91,12 +91,12 @@ class DeliveryOptions {
   ///@}
  private:
   TlsPolicy m_tlsPolicy{TlsPolicy::NOT_SET};
-  bool m_tlsPolicyHasBeenSet = false;
 
   Aws::String m_sendingPoolName;
-  bool m_sendingPoolNameHasBeenSet = false;
 
   long long m_maxDeliverySeconds{0};
+  bool m_tlsPolicyHasBeenSet = false;
+  bool m_sendingPoolNameHasBeenSet = false;
   bool m_maxDeliverySecondsHasBeenSet = false;
 };
 

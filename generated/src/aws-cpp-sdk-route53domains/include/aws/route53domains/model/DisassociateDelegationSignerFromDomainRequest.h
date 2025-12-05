@@ -69,9 +69,9 @@ class DisassociateDelegationSignerFromDomainRequest : public Route53DomainsReque
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_id;
+  bool m_domainNameHasBeenSet = false;
   bool m_idHasBeenSet = false;
 };
 

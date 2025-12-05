@@ -133,18 +133,18 @@ class ServiceView {
   ///@}
  private:
   Aws::String m_serviceViewArn;
-  bool m_serviceViewArnHasBeenSet = false;
 
   SearchFilter m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::Vector<IncludedProperty> m_includedProperties;
-  bool m_includedPropertiesHasBeenSet = false;
 
   Aws::String m_streamingAccessForService;
-  bool m_streamingAccessForServiceHasBeenSet = false;
 
   Aws::String m_scopeType;
+  bool m_serviceViewArnHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_includedPropertiesHasBeenSet = false;
+  bool m_streamingAccessForServiceHasBeenSet = false;
   bool m_scopeTypeHasBeenSet = false;
 };
 

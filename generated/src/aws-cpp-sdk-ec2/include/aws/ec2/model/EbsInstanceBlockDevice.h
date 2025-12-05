@@ -163,24 +163,24 @@ class EbsInstanceBlockDevice {
   ///@}
  private:
   Aws::Utils::DateTime m_attachTime{};
-  bool m_attachTimeHasBeenSet = false;
 
   bool m_deleteOnTermination{false};
-  bool m_deleteOnTerminationHasBeenSet = false;
 
   AttachmentStatus m_status{AttachmentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_volumeId;
-  bool m_volumeIdHasBeenSet = false;
 
   Aws::String m_associatedResource;
-  bool m_associatedResourceHasBeenSet = false;
 
   Aws::String m_volumeOwnerId;
-  bool m_volumeOwnerIdHasBeenSet = false;
 
   OperatorResponse m_operator;
+  bool m_attachTimeHasBeenSet = false;
+  bool m_deleteOnTerminationHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_volumeIdHasBeenSet = false;
+  bool m_associatedResourceHasBeenSet = false;
+  bool m_volumeOwnerIdHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
 };
 

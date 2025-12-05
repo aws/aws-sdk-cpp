@@ -71,9 +71,9 @@ class AlgorithmSpecification {
   ///@}
  private:
   ScriptModeConfig m_scriptModeConfig;
-  bool m_scriptModeConfigHasBeenSet = false;
 
   ContainerImage m_containerImage;
+  bool m_scriptModeConfigHasBeenSet = false;
   bool m_containerImageHasBeenSet = false;
 };
 

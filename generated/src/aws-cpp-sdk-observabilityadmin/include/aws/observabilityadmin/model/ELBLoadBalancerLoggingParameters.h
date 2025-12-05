@@ -69,9 +69,9 @@ class ELBLoadBalancerLoggingParameters {
   ///@}
  private:
   OutputFormat m_outputFormat{OutputFormat::NOT_SET};
-  bool m_outputFormatHasBeenSet = false;
 
   Aws::String m_fieldDelimiter;
+  bool m_outputFormatHasBeenSet = false;
   bool m_fieldDelimiterHasBeenSet = false;
 };
 

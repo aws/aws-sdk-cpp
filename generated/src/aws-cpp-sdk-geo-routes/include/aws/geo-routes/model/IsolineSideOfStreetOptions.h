@@ -75,9 +75,9 @@ class IsolineSideOfStreetOptions {
   ///@}
  private:
   Aws::Vector<double> m_position;
-  bool m_positionHasBeenSet = false;
 
   SideOfStreetMatchingStrategy m_useWith{SideOfStreetMatchingStrategy::NOT_SET};
+  bool m_positionHasBeenSet = false;
   bool m_useWithHasBeenSet = false;
 };
 

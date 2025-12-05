@@ -83,12 +83,12 @@ class QueryResultsS3AccessGrantsConfiguration {
   ///@}
  private:
   bool m_enableS3AccessGrants{false};
-  bool m_enableS3AccessGrantsHasBeenSet = false;
 
   bool m_createUserLevelPrefix{false};
-  bool m_createUserLevelPrefixHasBeenSet = false;
 
   AuthenticationType m_authenticationType{AuthenticationType::NOT_SET};
+  bool m_enableS3AccessGrantsHasBeenSet = false;
+  bool m_createUserLevelPrefixHasBeenSet = false;
   bool m_authenticationTypeHasBeenSet = false;
 };
 

@@ -215,30 +215,30 @@ class WorkflowExecutionInfo {
   ///@}
  private:
   WorkflowExecution m_execution;
-  bool m_executionHasBeenSet = false;
 
   WorkflowType m_workflowType;
-  bool m_workflowTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTimestamp{};
-  bool m_startTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_closeTimestamp{};
-  bool m_closeTimestampHasBeenSet = false;
 
   ExecutionStatus m_executionStatus{ExecutionStatus::NOT_SET};
-  bool m_executionStatusHasBeenSet = false;
 
   CloseStatus m_closeStatus{CloseStatus::NOT_SET};
-  bool m_closeStatusHasBeenSet = false;
 
   WorkflowExecution m_parent;
-  bool m_parentHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagList;
-  bool m_tagListHasBeenSet = false;
 
   bool m_cancelRequested{false};
+  bool m_executionHasBeenSet = false;
+  bool m_workflowTypeHasBeenSet = false;
+  bool m_startTimestampHasBeenSet = false;
+  bool m_closeTimestampHasBeenSet = false;
+  bool m_executionStatusHasBeenSet = false;
+  bool m_closeStatusHasBeenSet = false;
+  bool m_parentHasBeenSet = false;
+  bool m_tagListHasBeenSet = false;
   bool m_cancelRequestedHasBeenSet = false;
 };
 

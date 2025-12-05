@@ -60,9 +60,9 @@ class GetDataCatalogEncryptionSettingsResult {
   ///@}
  private:
   DataCatalogEncryptionSettings m_dataCatalogEncryptionSettings;
-  bool m_dataCatalogEncryptionSettingsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dataCatalogEncryptionSettingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

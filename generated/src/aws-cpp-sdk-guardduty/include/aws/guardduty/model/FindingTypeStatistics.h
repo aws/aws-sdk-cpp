@@ -88,12 +88,12 @@ class FindingTypeStatistics {
   ///@}
  private:
   Aws::String m_findingType;
-  bool m_findingTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastGeneratedAt{};
-  bool m_lastGeneratedAtHasBeenSet = false;
 
   int m_totalFindings{0};
+  bool m_findingTypeHasBeenSet = false;
+  bool m_lastGeneratedAtHasBeenSet = false;
   bool m_totalFindingsHasBeenSet = false;
 };
 

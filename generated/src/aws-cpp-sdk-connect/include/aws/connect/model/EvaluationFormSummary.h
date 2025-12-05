@@ -230,36 +230,36 @@ class EvaluationFormSummary {
   ///@}
  private:
   Aws::String m_evaluationFormId;
-  bool m_evaluationFormIdHasBeenSet = false;
 
   Aws::String m_evaluationFormArn;
-  bool m_evaluationFormArnHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_lastModifiedBy;
-  bool m_lastModifiedByHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastActivatedTime{};
-  bool m_lastActivatedTimeHasBeenSet = false;
 
   Aws::String m_lastActivatedBy;
-  bool m_lastActivatedByHasBeenSet = false;
 
   int m_latestVersion{0};
-  bool m_latestVersionHasBeenSet = false;
 
   int m_activeVersion{0};
+  bool m_evaluationFormIdHasBeenSet = false;
+  bool m_evaluationFormArnHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_lastModifiedByHasBeenSet = false;
+  bool m_lastActivatedTimeHasBeenSet = false;
+  bool m_lastActivatedByHasBeenSet = false;
+  bool m_latestVersionHasBeenSet = false;
   bool m_activeVersionHasBeenSet = false;
 };
 

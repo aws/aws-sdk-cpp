@@ -91,12 +91,12 @@ class CreateProxyRulesRequest : public NetworkFirewallRequest {
   ///@}
  private:
   Aws::String m_proxyRuleGroupArn;
-  bool m_proxyRuleGroupArnHasBeenSet = false;
 
   Aws::String m_proxyRuleGroupName;
-  bool m_proxyRuleGroupNameHasBeenSet = false;
 
   CreateProxyRulesByRequestPhase m_rules;
+  bool m_proxyRuleGroupArnHasBeenSet = false;
+  bool m_proxyRuleGroupNameHasBeenSet = false;
   bool m_rulesHasBeenSet = false;
 };
 

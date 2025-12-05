@@ -69,9 +69,9 @@ class DeleteByteMatchSetRequest : public WAFRegionalRequest {
   ///@}
  private:
   Aws::String m_byteMatchSetId;
-  bool m_byteMatchSetIdHasBeenSet = false;
 
   Aws::String m_changeToken;
+  bool m_byteMatchSetIdHasBeenSet = false;
   bool m_changeTokenHasBeenSet = false;
 };
 

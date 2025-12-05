@@ -230,27 +230,27 @@ class EnvironmentResourceDescription {
   ///@}
  private:
   Aws::String m_environmentName;
-  bool m_environmentNameHasBeenSet = false;
 
   Aws::Vector<AutoScalingGroup> m_autoScalingGroups;
-  bool m_autoScalingGroupsHasBeenSet = false;
 
   Aws::Vector<Instance> m_instances;
-  bool m_instancesHasBeenSet = false;
 
   Aws::Vector<LaunchConfiguration> m_launchConfigurations;
-  bool m_launchConfigurationsHasBeenSet = false;
 
   Aws::Vector<LaunchTemplate> m_launchTemplates;
-  bool m_launchTemplatesHasBeenSet = false;
 
   Aws::Vector<LoadBalancer> m_loadBalancers;
-  bool m_loadBalancersHasBeenSet = false;
 
   Aws::Vector<Trigger> m_triggers;
-  bool m_triggersHasBeenSet = false;
 
   Aws::Vector<Queue> m_queues;
+  bool m_environmentNameHasBeenSet = false;
+  bool m_autoScalingGroupsHasBeenSet = false;
+  bool m_instancesHasBeenSet = false;
+  bool m_launchConfigurationsHasBeenSet = false;
+  bool m_launchTemplatesHasBeenSet = false;
+  bool m_loadBalancersHasBeenSet = false;
+  bool m_triggersHasBeenSet = false;
   bool m_queuesHasBeenSet = false;
 };
 

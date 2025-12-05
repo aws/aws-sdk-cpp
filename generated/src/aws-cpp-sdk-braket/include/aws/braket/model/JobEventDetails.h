@@ -89,12 +89,12 @@ class JobEventDetails {
   ///@}
  private:
   JobEventType m_eventType{JobEventType::NOT_SET};
-  bool m_eventTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_timeOfEvent{};
-  bool m_timeOfEventHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_eventTypeHasBeenSet = false;
+  bool m_timeOfEventHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

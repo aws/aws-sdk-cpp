@@ -62,9 +62,9 @@ class ProvisionedCapacityUpdate {
   ///@}
  private:
   int m_mcuCount{0};
-  bool m_mcuCountHasBeenSet = false;
 
   int m_workerCount{0};
+  bool m_mcuCountHasBeenSet = false;
   bool m_workerCountHasBeenSet = false;
 };
 

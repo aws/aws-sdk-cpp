@@ -67,9 +67,9 @@ class ListPipelineBlueprintsResult {
   ///@}
  private:
   Aws::Vector<PipelineBlueprintSummary> m_blueprints;
-  bool m_blueprintsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_blueprintsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class MetricAttributionOutput {
   ///@}
  private:
   S3DataConfig m_s3DataDestination;
-  bool m_s3DataDestinationHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_s3DataDestinationHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

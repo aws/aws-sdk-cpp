@@ -116,15 +116,15 @@ class PutAttributesRequest : public SimpleDBRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_itemName;
-  bool m_itemNameHasBeenSet = false;
 
   Aws::Vector<ReplaceableAttribute> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   UpdateCondition m_expected;
+  bool m_domainNameHasBeenSet = false;
+  bool m_itemNameHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
   bool m_expectedHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class DeleteApplicationAuthenticationMethodRequest : public SSOAdminRequest {
   ///@}
  private:
   Aws::String m_applicationArn;
-  bool m_applicationArnHasBeenSet = false;
 
   AuthenticationMethodType m_authenticationMethodType{AuthenticationMethodType::NOT_SET};
+  bool m_applicationArnHasBeenSet = false;
   bool m_authenticationMethodTypeHasBeenSet = false;
 };
 

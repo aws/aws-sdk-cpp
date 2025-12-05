@@ -87,12 +87,12 @@ class SensitiveDataDetections {
   ///@}
  private:
   long long m_count{0};
-  bool m_countHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Occurrences m_occurrences;
+  bool m_countHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_occurrencesHasBeenSet = false;
 };
 

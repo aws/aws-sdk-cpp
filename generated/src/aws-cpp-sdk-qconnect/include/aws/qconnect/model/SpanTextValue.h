@@ -95,12 +95,12 @@ class SpanTextValue {
   ///@}
  private:
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::Vector<SpanCitation> m_citations;
-  bool m_citationsHasBeenSet = false;
 
   AIGuardrailAssessment m_aiGuardrailAssessment;
+  bool m_valueHasBeenSet = false;
+  bool m_citationsHasBeenSet = false;
   bool m_aiGuardrailAssessmentHasBeenSet = false;
 };
 

@@ -120,18 +120,18 @@ class SpotMarketOptions {
   ///@}
  private:
   int m_blockDurationMinutes{0};
-  bool m_blockDurationMinutesHasBeenSet = false;
 
   InstanceInterruptionBehaviorEnum m_instanceInterruptionBehavior{InstanceInterruptionBehaviorEnum::NOT_SET};
-  bool m_instanceInterruptionBehaviorHasBeenSet = false;
 
   Aws::String m_maxPrice;
-  bool m_maxPriceHasBeenSet = false;
 
   SpotInstanceTypeEnum m_spotInstanceType{SpotInstanceTypeEnum::NOT_SET};
-  bool m_spotInstanceTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_validUntilUtc{};
+  bool m_blockDurationMinutesHasBeenSet = false;
+  bool m_instanceInterruptionBehaviorHasBeenSet = false;
+  bool m_maxPriceHasBeenSet = false;
+  bool m_spotInstanceTypeHasBeenSet = false;
   bool m_validUntilUtcHasBeenSet = false;
 };
 

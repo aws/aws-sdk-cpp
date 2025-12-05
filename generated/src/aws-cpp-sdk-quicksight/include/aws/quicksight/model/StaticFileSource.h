@@ -70,9 +70,9 @@ class StaticFileSource {
   ///@}
  private:
   StaticFileUrlSourceOptions m_urlOptions;
-  bool m_urlOptionsHasBeenSet = false;
 
   StaticFileS3SourceOptions m_s3Options;
+  bool m_urlOptionsHasBeenSet = false;
   bool m_s3OptionsHasBeenSet = false;
 };
 

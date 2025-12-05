@@ -73,9 +73,9 @@ class SegmentDeliveryConfiguration {
   ///@}
  private:
   Aws::String m_baseUrl;
-  bool m_baseUrlHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_baseUrlHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

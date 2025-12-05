@@ -114,15 +114,15 @@ class UpgradeStepItem {
   ///@}
  private:
   UpgradeStep m_upgradeStep{UpgradeStep::NOT_SET};
-  bool m_upgradeStepHasBeenSet = false;
 
   UpgradeStatus m_upgradeStepStatus{UpgradeStatus::NOT_SET};
-  bool m_upgradeStepStatusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_issues;
-  bool m_issuesHasBeenSet = false;
 
   double m_progressPercent{0.0};
+  bool m_upgradeStepHasBeenSet = false;
+  bool m_upgradeStepStatusHasBeenSet = false;
+  bool m_issuesHasBeenSet = false;
   bool m_progressPercentHasBeenSet = false;
 };
 

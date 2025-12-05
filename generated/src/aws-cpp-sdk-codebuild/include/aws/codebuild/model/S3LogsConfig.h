@@ -107,15 +107,15 @@ class S3LogsConfig {
   ///@}
  private:
   LogsConfigStatusType m_status{LogsConfigStatusType::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   bool m_encryptionDisabled{false};
-  bool m_encryptionDisabledHasBeenSet = false;
 
   BucketOwnerAccess m_bucketOwnerAccess{BucketOwnerAccess::NOT_SET};
+  bool m_statusHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_encryptionDisabledHasBeenSet = false;
   bool m_bucketOwnerAccessHasBeenSet = false;
 };
 

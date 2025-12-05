@@ -106,15 +106,15 @@ class IcebergPartitionField {
   ///@}
  private:
   int m_sourceId{0};
-  bool m_sourceIdHasBeenSet = false;
 
   Aws::String m_transform;
-  bool m_transformHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_fieldId{0};
+  bool m_sourceIdHasBeenSet = false;
+  bool m_transformHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_fieldIdHasBeenSet = false;
 };
 

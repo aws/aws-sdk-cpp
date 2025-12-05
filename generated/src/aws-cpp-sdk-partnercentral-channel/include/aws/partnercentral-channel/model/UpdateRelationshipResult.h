@@ -60,9 +60,9 @@ class UpdateRelationshipResult {
   ///@}
  private:
   UpdateRelationshipDetail m_relationshipDetail;
-  bool m_relationshipDetailHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_relationshipDetailHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

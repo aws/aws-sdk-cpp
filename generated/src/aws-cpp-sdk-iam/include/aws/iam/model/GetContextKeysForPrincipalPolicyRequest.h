@@ -95,9 +95,9 @@ class GetContextKeysForPrincipalPolicyRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_policySourceArn;
-  bool m_policySourceArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_policyInputList;
+  bool m_policySourceArnHasBeenSet = false;
   bool m_policyInputListHasBeenSet = false;
 };
 

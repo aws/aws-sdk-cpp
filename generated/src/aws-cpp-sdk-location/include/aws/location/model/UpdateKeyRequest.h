@@ -142,21 +142,21 @@ class UpdateKeyRequest : public LocationServiceRequest {
   ///@}
  private:
   Aws::String m_keyName;
-  bool m_keyNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_expireTime{};
-  bool m_expireTimeHasBeenSet = false;
 
   bool m_noExpiry{false};
-  bool m_noExpiryHasBeenSet = false;
 
   bool m_forceUpdate{false};
-  bool m_forceUpdateHasBeenSet = false;
 
   ApiKeyRestrictions m_restrictions;
+  bool m_keyNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_expireTimeHasBeenSet = false;
+  bool m_noExpiryHasBeenSet = false;
+  bool m_forceUpdateHasBeenSet = false;
   bool m_restrictionsHasBeenSet = false;
 };
 

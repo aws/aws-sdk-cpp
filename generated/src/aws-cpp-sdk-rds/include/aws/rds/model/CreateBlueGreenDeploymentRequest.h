@@ -283,39 +283,39 @@ class CreateBlueGreenDeploymentRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_blueGreenDeploymentName;
-  bool m_blueGreenDeploymentNameHasBeenSet = false;
 
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_targetEngineVersion;
-  bool m_targetEngineVersionHasBeenSet = false;
 
   Aws::String m_targetDBParameterGroupName;
-  bool m_targetDBParameterGroupNameHasBeenSet = false;
 
   Aws::String m_targetDBClusterParameterGroupName;
-  bool m_targetDBClusterParameterGroupNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_targetDBInstanceClass;
-  bool m_targetDBInstanceClassHasBeenSet = false;
 
   bool m_upgradeTargetStorageConfig{false};
-  bool m_upgradeTargetStorageConfigHasBeenSet = false;
 
   int m_targetIops{0};
-  bool m_targetIopsHasBeenSet = false;
 
   Aws::String m_targetStorageType;
-  bool m_targetStorageTypeHasBeenSet = false;
 
   int m_targetAllocatedStorage{0};
-  bool m_targetAllocatedStorageHasBeenSet = false;
 
   int m_targetStorageThroughput{0};
+  bool m_blueGreenDeploymentNameHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_targetEngineVersionHasBeenSet = false;
+  bool m_targetDBParameterGroupNameHasBeenSet = false;
+  bool m_targetDBClusterParameterGroupNameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_targetDBInstanceClassHasBeenSet = false;
+  bool m_upgradeTargetStorageConfigHasBeenSet = false;
+  bool m_targetIopsHasBeenSet = false;
+  bool m_targetStorageTypeHasBeenSet = false;
+  bool m_targetAllocatedStorageHasBeenSet = false;
   bool m_targetStorageThroughputHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class ListMLTransformsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_transformIds;
-  bool m_transformIdsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_transformIdsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

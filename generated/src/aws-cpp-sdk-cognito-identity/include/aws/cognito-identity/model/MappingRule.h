@@ -106,15 +106,15 @@ class MappingRule {
   ///@}
  private:
   Aws::String m_claim;
-  bool m_claimHasBeenSet = false;
 
   MappingRuleMatchType m_matchType{MappingRuleMatchType::NOT_SET};
-  bool m_matchTypeHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_roleARN;
+  bool m_claimHasBeenSet = false;
+  bool m_matchTypeHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_roleARNHasBeenSet = false;
 };
 

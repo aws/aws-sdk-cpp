@@ -97,12 +97,12 @@ class S3DataSourceConfiguration {
   ///@}
  private:
   Aws::String m_bucketArn;
-  bool m_bucketArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inclusionPrefixes;
-  bool m_inclusionPrefixesHasBeenSet = false;
 
   Aws::String m_bucketOwnerAccountId;
+  bool m_bucketArnHasBeenSet = false;
+  bool m_inclusionPrefixesHasBeenSet = false;
   bool m_bucketOwnerAccountIdHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class ContainerProductSummary {
   ///@}
  private:
   Aws::String m_productTitle;
-  bool m_productTitleHasBeenSet = false;
 
   ContainerProductVisibilityString m_visibility{ContainerProductVisibilityString::NOT_SET};
+  bool m_productTitleHasBeenSet = false;
   bool m_visibilityHasBeenSet = false;
 };
 

@@ -104,15 +104,15 @@ class MissionProfileListItem {
   ///@}
  private:
   Aws::String m_missionProfileId;
-  bool m_missionProfileIdHasBeenSet = false;
 
   Aws::String m_missionProfileArn;
-  bool m_missionProfileArnHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_missionProfileIdHasBeenSet = false;
+  bool m_missionProfileArnHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

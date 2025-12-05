@@ -262,39 +262,39 @@ class VpcEndpointAssociation {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_vpcEndpointId;
-  bool m_vpcEndpointIdHasBeenSet = false;
 
   Aws::String m_serviceNetworkArn;
-  bool m_serviceNetworkArnHasBeenSet = false;
 
   Aws::String m_serviceNetworkName;
-  bool m_serviceNetworkNameHasBeenSet = false;
 
   Aws::String m_associatedResourceAccessibility;
-  bool m_associatedResourceAccessibilityHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_failureCode;
-  bool m_failureCodeHasBeenSet = false;
 
   DnsEntry m_dnsEntry;
-  bool m_dnsEntryHasBeenSet = false;
 
   DnsEntry m_privateDnsEntry;
-  bool m_privateDnsEntryHasBeenSet = false;
 
   Aws::String m_associatedResourceArn;
-  bool m_associatedResourceArnHasBeenSet = false;
 
   Aws::String m_resourceConfigurationGroupArn;
-  bool m_resourceConfigurationGroupArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_idHasBeenSet = false;
+  bool m_vpcEndpointIdHasBeenSet = false;
+  bool m_serviceNetworkArnHasBeenSet = false;
+  bool m_serviceNetworkNameHasBeenSet = false;
+  bool m_associatedResourceAccessibilityHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_failureCodeHasBeenSet = false;
+  bool m_dnsEntryHasBeenSet = false;
+  bool m_privateDnsEntryHasBeenSet = false;
+  bool m_associatedResourceArnHasBeenSet = false;
+  bool m_resourceConfigurationGroupArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

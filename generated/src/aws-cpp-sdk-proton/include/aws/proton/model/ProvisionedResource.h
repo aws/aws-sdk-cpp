@@ -90,12 +90,12 @@ class ProvisionedResource {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ProvisionedResourceEngine m_provisioningEngine{ProvisionedResourceEngine::NOT_SET};
+  bool m_identifierHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_provisioningEngineHasBeenSet = false;
 };
 

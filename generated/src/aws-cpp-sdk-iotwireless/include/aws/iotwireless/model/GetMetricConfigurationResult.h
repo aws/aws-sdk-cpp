@@ -61,9 +61,9 @@ class GetMetricConfigurationResult {
   ///@}
  private:
   SummaryMetricConfiguration m_summaryMetric;
-  bool m_summaryMetricHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_summaryMetricHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

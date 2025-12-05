@@ -119,15 +119,15 @@ class AutoTuneOptions {
   ///@}
  private:
   AutoTuneDesiredState m_desiredState{AutoTuneDesiredState::NOT_SET};
-  bool m_desiredStateHasBeenSet = false;
 
   RollbackOnDisable m_rollbackOnDisable{RollbackOnDisable::NOT_SET};
-  bool m_rollbackOnDisableHasBeenSet = false;
 
   Aws::Vector<AutoTuneMaintenanceSchedule> m_maintenanceSchedules;
-  bool m_maintenanceSchedulesHasBeenSet = false;
 
   bool m_useOffPeakWindow{false};
+  bool m_desiredStateHasBeenSet = false;
+  bool m_rollbackOnDisableHasBeenSet = false;
+  bool m_maintenanceSchedulesHasBeenSet = false;
   bool m_useOffPeakWindowHasBeenSet = false;
 };
 

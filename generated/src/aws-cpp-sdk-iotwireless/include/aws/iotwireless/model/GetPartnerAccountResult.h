@@ -75,12 +75,12 @@ class GetPartnerAccountResult {
   ///@}
  private:
   SidewalkAccountInfoWithFingerprint m_sidewalk;
-  bool m_sidewalkHasBeenSet = false;
 
   bool m_accountLinked{false};
-  bool m_accountLinkedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sidewalkHasBeenSet = false;
+  bool m_accountLinkedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

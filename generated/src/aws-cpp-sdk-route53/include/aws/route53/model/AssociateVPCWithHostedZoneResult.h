@@ -66,9 +66,9 @@ class AssociateVPCWithHostedZoneResult {
   ///@}
  private:
   ChangeInfo m_changeInfo;
-  bool m_changeInfoHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_changeInfoHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

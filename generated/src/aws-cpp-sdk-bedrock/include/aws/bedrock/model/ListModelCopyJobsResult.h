@@ -86,12 +86,12 @@ class ListModelCopyJobsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ModelCopyJobSummary> m_modelCopyJobSummaries;
-  bool m_modelCopyJobSummariesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_modelCopyJobSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

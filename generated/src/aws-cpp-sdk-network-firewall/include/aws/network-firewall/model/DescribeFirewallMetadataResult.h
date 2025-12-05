@@ -162,24 +162,24 @@ class DescribeFirewallMetadataResult {
   ///@}
  private:
   Aws::String m_firewallArn;
-  bool m_firewallArnHasBeenSet = false;
 
   Aws::String m_firewallPolicyArn;
-  bool m_firewallPolicyArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   FirewallStatusValue m_status{FirewallStatusValue::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Aws::String, AvailabilityZoneMetadata> m_supportedAvailabilityZones;
-  bool m_supportedAvailabilityZonesHasBeenSet = false;
 
   Aws::String m_transitGatewayAttachmentId;
-  bool m_transitGatewayAttachmentIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_firewallArnHasBeenSet = false;
+  bool m_firewallPolicyArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_supportedAvailabilityZonesHasBeenSet = false;
+  bool m_transitGatewayAttachmentIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

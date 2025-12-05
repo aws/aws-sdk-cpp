@@ -80,12 +80,12 @@ class DescribeInsightResult {
   ///@}
  private:
   ProactiveInsight m_proactiveInsight;
-  bool m_proactiveInsightHasBeenSet = false;
 
   ReactiveInsight m_reactiveInsight;
-  bool m_reactiveInsightHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_proactiveInsightHasBeenSet = false;
+  bool m_reactiveInsightHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

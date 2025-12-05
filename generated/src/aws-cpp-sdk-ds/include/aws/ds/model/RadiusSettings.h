@@ -204,30 +204,30 @@ class RadiusSettings {
   ///@}
  private:
   Aws::Vector<Aws::String> m_radiusServers;
-  bool m_radiusServersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_radiusServersIpv6;
-  bool m_radiusServersIpv6HasBeenSet = false;
 
   int m_radiusPort{0};
-  bool m_radiusPortHasBeenSet = false;
 
   int m_radiusTimeout{0};
-  bool m_radiusTimeoutHasBeenSet = false;
 
   int m_radiusRetries{0};
-  bool m_radiusRetriesHasBeenSet = false;
 
   Aws::String m_sharedSecret;
-  bool m_sharedSecretHasBeenSet = false;
 
   RadiusAuthenticationProtocol m_authenticationProtocol{RadiusAuthenticationProtocol::NOT_SET};
-  bool m_authenticationProtocolHasBeenSet = false;
 
   Aws::String m_displayLabel;
-  bool m_displayLabelHasBeenSet = false;
 
   bool m_useSameUsername{false};
+  bool m_radiusServersHasBeenSet = false;
+  bool m_radiusServersIpv6HasBeenSet = false;
+  bool m_radiusPortHasBeenSet = false;
+  bool m_radiusTimeoutHasBeenSet = false;
+  bool m_radiusRetriesHasBeenSet = false;
+  bool m_sharedSecretHasBeenSet = false;
+  bool m_authenticationProtocolHasBeenSet = false;
+  bool m_displayLabelHasBeenSet = false;
   bool m_useSameUsernameHasBeenSet = false;
 };
 

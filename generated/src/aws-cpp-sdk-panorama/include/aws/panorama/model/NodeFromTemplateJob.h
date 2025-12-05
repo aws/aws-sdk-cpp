@@ -139,21 +139,21 @@ class NodeFromTemplateJob {
   ///@}
  private:
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_nodeName;
-  bool m_nodeNameHasBeenSet = false;
 
   NodeFromTemplateJobStatus m_status{NodeFromTemplateJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   TemplateType m_templateType{TemplateType::NOT_SET};
+  bool m_createdTimeHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
+  bool m_nodeNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
   bool m_templateTypeHasBeenSet = false;
 };
 

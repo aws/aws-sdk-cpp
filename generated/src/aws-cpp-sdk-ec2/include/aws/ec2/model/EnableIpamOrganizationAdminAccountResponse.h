@@ -58,9 +58,9 @@ class EnableIpamOrganizationAdminAccountResponse {
   ///@}
  private:
   bool m_success{false};
-  bool m_successHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_successHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

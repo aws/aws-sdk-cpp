@@ -60,9 +60,9 @@ class GetRelationalDatabaseResult {
   ///@}
  private:
   RelationalDatabase m_relationalDatabase;
-  bool m_relationalDatabaseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_relationalDatabaseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

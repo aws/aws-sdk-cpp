@@ -102,15 +102,15 @@ class TopicCategoryFilter {
   ///@}
  private:
   CategoryFilterFunction m_categoryFilterFunction{CategoryFilterFunction::NOT_SET};
-  bool m_categoryFilterFunctionHasBeenSet = false;
 
   CategoryFilterType m_categoryFilterType{CategoryFilterType::NOT_SET};
-  bool m_categoryFilterTypeHasBeenSet = false;
 
   TopicCategoryFilterConstant m_constant;
-  bool m_constantHasBeenSet = false;
 
   bool m_inverse{false};
+  bool m_categoryFilterFunctionHasBeenSet = false;
+  bool m_categoryFilterTypeHasBeenSet = false;
+  bool m_constantHasBeenSet = false;
   bool m_inverseHasBeenSet = false;
 };
 

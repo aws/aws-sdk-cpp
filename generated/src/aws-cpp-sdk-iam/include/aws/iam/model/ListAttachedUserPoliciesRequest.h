@@ -124,15 +124,15 @@ class ListAttachedUserPoliciesRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_pathPrefix;
-  bool m_pathPrefixHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_maxItems{0};
+  bool m_userNameHasBeenSet = false;
+  bool m_pathPrefixHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_maxItemsHasBeenSet = false;
 };
 

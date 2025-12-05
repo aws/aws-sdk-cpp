@@ -128,18 +128,18 @@ class CacheParameterGroup {
   ///@}
  private:
   Aws::String m_cacheParameterGroupName;
-  bool m_cacheParameterGroupNameHasBeenSet = false;
 
   Aws::String m_cacheParameterGroupFamily;
-  bool m_cacheParameterGroupFamilyHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_isGlobal{false};
-  bool m_isGlobalHasBeenSet = false;
 
   Aws::String m_aRN;
+  bool m_cacheParameterGroupNameHasBeenSet = false;
+  bool m_cacheParameterGroupFamilyHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_isGlobalHasBeenSet = false;
   bool m_aRNHasBeenSet = false;
 };
 

@@ -268,36 +268,36 @@ class DescribeMLModelsRequest : public MachineLearningRequest {
   ///@}
  private:
   MLModelFilterVariable m_filterVariable{MLModelFilterVariable::NOT_SET};
-  bool m_filterVariableHasBeenSet = false;
 
   Aws::String m_eQ;
-  bool m_eQHasBeenSet = false;
 
   Aws::String m_gT;
-  bool m_gTHasBeenSet = false;
 
   Aws::String m_lT;
-  bool m_lTHasBeenSet = false;
 
   Aws::String m_gE;
-  bool m_gEHasBeenSet = false;
 
   Aws::String m_lE;
-  bool m_lEHasBeenSet = false;
 
   Aws::String m_nE;
-  bool m_nEHasBeenSet = false;
 
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_limit{0};
+  bool m_filterVariableHasBeenSet = false;
+  bool m_eQHasBeenSet = false;
+  bool m_gTHasBeenSet = false;
+  bool m_lTHasBeenSet = false;
+  bool m_gEHasBeenSet = false;
+  bool m_lEHasBeenSet = false;
+  bool m_nEHasBeenSet = false;
+  bool m_prefixHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_limitHasBeenSet = false;
 };
 

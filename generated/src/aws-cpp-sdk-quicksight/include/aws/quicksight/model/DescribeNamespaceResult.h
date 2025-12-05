@@ -80,12 +80,12 @@ class DescribeNamespaceResult {
   ///@}
  private:
   NamespaceInfoV2 m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   int m_status{0};
+  bool m_namespaceHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

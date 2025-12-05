@@ -102,15 +102,15 @@ class Session {
   ///@}
  private:
   int m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_startTimestamp;
-  bool m_startTimestampHasBeenSet = false;
 
   Aws::String m_stopTimestamp;
+  bool m_durationHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_startTimestampHasBeenSet = false;
   bool m_stopTimestampHasBeenSet = false;
 };
 

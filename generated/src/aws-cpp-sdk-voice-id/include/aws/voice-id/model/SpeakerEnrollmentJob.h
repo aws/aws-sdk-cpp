@@ -264,39 +264,39 @@ class SpeakerEnrollmentJob {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_dataAccessRoleArn;
-  bool m_dataAccessRoleArnHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_endedAt{};
-  bool m_endedAtHasBeenSet = false;
 
   EnrollmentConfig m_enrollmentConfig;
-  bool m_enrollmentConfigHasBeenSet = false;
 
   FailureDetails m_failureDetails;
-  bool m_failureDetailsHasBeenSet = false;
 
   InputDataConfig m_inputDataConfig;
-  bool m_inputDataConfigHasBeenSet = false;
 
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   JobProgress m_jobProgress;
-  bool m_jobProgressHasBeenSet = false;
 
   SpeakerEnrollmentJobStatus m_jobStatus{SpeakerEnrollmentJobStatus::NOT_SET};
-  bool m_jobStatusHasBeenSet = false;
 
   OutputDataConfig m_outputDataConfig;
+  bool m_createdAtHasBeenSet = false;
+  bool m_dataAccessRoleArnHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_endedAtHasBeenSet = false;
+  bool m_enrollmentConfigHasBeenSet = false;
+  bool m_failureDetailsHasBeenSet = false;
+  bool m_inputDataConfigHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
+  bool m_jobNameHasBeenSet = false;
+  bool m_jobProgressHasBeenSet = false;
+  bool m_jobStatusHasBeenSet = false;
   bool m_outputDataConfigHasBeenSet = false;
 };
 

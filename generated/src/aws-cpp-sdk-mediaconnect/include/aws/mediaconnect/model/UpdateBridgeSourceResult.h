@@ -77,12 +77,12 @@ class UpdateBridgeSourceResult {
   ///@}
  private:
   Aws::String m_bridgeArn;
-  bool m_bridgeArnHasBeenSet = false;
 
   BridgeSource m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_bridgeArnHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

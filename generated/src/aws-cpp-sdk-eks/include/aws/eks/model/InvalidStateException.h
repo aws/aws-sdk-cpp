@@ -72,9 +72,9 @@ class InvalidStateException {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_clusterNameHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

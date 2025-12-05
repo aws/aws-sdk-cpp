@@ -66,9 +66,9 @@ class GetQuickResponseRequest : public QConnectRequest {
   ///@}
  private:
   Aws::String m_quickResponseId;
-  bool m_quickResponseIdHasBeenSet = false;
 
   Aws::String m_knowledgeBaseId;
+  bool m_quickResponseIdHasBeenSet = false;
   bool m_knowledgeBaseIdHasBeenSet = false;
 };
 

@@ -165,21 +165,21 @@ class AutoMLChannel {
   ///@}
  private:
   AutoMLDataSource m_dataSource;
-  bool m_dataSourceHasBeenSet = false;
 
   CompressionType m_compressionType{CompressionType::NOT_SET};
-  bool m_compressionTypeHasBeenSet = false;
 
   Aws::String m_targetAttributeName;
-  bool m_targetAttributeNameHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   AutoMLChannelType m_channelType{AutoMLChannelType::NOT_SET};
-  bool m_channelTypeHasBeenSet = false;
 
   Aws::String m_sampleWeightAttributeName;
+  bool m_dataSourceHasBeenSet = false;
+  bool m_compressionTypeHasBeenSet = false;
+  bool m_targetAttributeNameHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_channelTypeHasBeenSet = false;
   bool m_sampleWeightAttributeNameHasBeenSet = false;
 };
 

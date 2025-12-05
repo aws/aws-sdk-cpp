@@ -84,12 +84,12 @@ class DetectionFilter {
   ///@}
  private:
   double m_minConfidence{0.0};
-  bool m_minConfidenceHasBeenSet = false;
 
   double m_minBoundingBoxHeight{0.0};
-  bool m_minBoundingBoxHeightHasBeenSet = false;
 
   double m_minBoundingBoxWidth{0.0};
+  bool m_minConfidenceHasBeenSet = false;
+  bool m_minBoundingBoxHeightHasBeenSet = false;
   bool m_minBoundingBoxWidthHasBeenSet = false;
 };
 

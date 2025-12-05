@@ -68,9 +68,9 @@ class GetManagedThingStateResult {
   ///@}
  private:
   Aws::Vector<StateEndpoint> m_endpoints;
-  bool m_endpointsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_endpointsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class BotRecommendationResults {
   ///@}
  private:
   Aws::String m_botLocaleExportUrl;
-  bool m_botLocaleExportUrlHasBeenSet = false;
 
   Aws::String m_associatedTranscriptsUrl;
-  bool m_associatedTranscriptsUrlHasBeenSet = false;
 
   BotRecommendationResultStatistics m_statistics;
+  bool m_botLocaleExportUrlHasBeenSet = false;
+  bool m_associatedTranscriptsUrlHasBeenSet = false;
   bool m_statisticsHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class UpdateConnectionRequest : public DirectConnectRequest {
   ///@}
  private:
   Aws::String m_connectionId;
-  bool m_connectionIdHasBeenSet = false;
 
   Aws::String m_connectionName;
-  bool m_connectionNameHasBeenSet = false;
 
   Aws::String m_encryptionMode;
+  bool m_connectionIdHasBeenSet = false;
+  bool m_connectionNameHasBeenSet = false;
   bool m_encryptionModeHasBeenSet = false;
 };
 

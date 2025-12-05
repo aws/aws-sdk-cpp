@@ -144,15 +144,15 @@ class Rule {
   ///@}
  private:
   Aws::String m_ruleId;
-  bool m_ruleIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::Vector<Predicate> m_predicates;
+  bool m_ruleIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_metricNameHasBeenSet = false;
   bool m_predicatesHasBeenSet = false;
 };
 

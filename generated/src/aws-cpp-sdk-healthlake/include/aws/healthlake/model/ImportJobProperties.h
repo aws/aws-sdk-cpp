@@ -251,39 +251,39 @@ class ImportJobProperties {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   JobStatus m_jobStatus{JobStatus::NOT_SET};
-  bool m_jobStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_submitTime{};
-  bool m_submitTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_datastoreId;
-  bool m_datastoreIdHasBeenSet = false;
 
   InputDataConfig m_inputDataConfig;
-  bool m_inputDataConfigHasBeenSet = false;
 
   OutputDataConfig m_jobOutputDataConfig;
-  bool m_jobOutputDataConfigHasBeenSet = false;
 
   JobProgressReport m_jobProgressReport;
-  bool m_jobProgressReportHasBeenSet = false;
 
   Aws::String m_dataAccessRoleArn;
-  bool m_dataAccessRoleArnHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   ValidationLevel m_validationLevel{ValidationLevel::NOT_SET};
+  bool m_jobIdHasBeenSet = false;
+  bool m_jobNameHasBeenSet = false;
+  bool m_jobStatusHasBeenSet = false;
+  bool m_submitTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_datastoreIdHasBeenSet = false;
+  bool m_inputDataConfigHasBeenSet = false;
+  bool m_jobOutputDataConfigHasBeenSet = false;
+  bool m_jobProgressReportHasBeenSet = false;
+  bool m_dataAccessRoleArnHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_validationLevelHasBeenSet = false;
 };
 

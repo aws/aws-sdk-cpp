@@ -133,18 +133,18 @@ class UpdateIpAccessSettingsRequest : public WorkSpacesWebRequest {
   ///@}
  private:
   Aws::String m_ipAccessSettingsArn;
-  bool m_ipAccessSettingsArnHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<IpRule> m_ipRules;
-  bool m_ipRulesHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_ipAccessSettingsArnHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_ipRulesHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

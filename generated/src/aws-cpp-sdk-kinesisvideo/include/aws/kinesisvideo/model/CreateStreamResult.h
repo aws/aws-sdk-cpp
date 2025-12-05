@@ -59,9 +59,9 @@ class CreateStreamResult {
   ///@}
  private:
   Aws::String m_streamARN;
-  bool m_streamARNHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_streamARNHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

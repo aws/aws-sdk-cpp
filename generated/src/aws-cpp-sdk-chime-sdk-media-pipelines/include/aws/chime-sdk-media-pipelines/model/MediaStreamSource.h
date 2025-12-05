@@ -68,9 +68,9 @@ class MediaStreamSource {
   ///@}
  private:
   MediaPipelineSourceType m_sourceType{MediaPipelineSourceType::NOT_SET};
-  bool m_sourceTypeHasBeenSet = false;
 
   Aws::String m_sourceArn;
+  bool m_sourceTypeHasBeenSet = false;
   bool m_sourceArnHasBeenSet = false;
 };
 

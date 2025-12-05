@@ -146,21 +146,21 @@ class UpdateTrustedEntitySetRequest : public GuardDutyRequest {
   ///@}
  private:
   Aws::String m_detectorId;
-  bool m_detectorIdHasBeenSet = false;
 
   Aws::String m_trustedEntitySetId;
-  bool m_trustedEntitySetIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::String m_expectedBucketOwner;
-  bool m_expectedBucketOwnerHasBeenSet = false;
 
   bool m_activate{false};
+  bool m_detectorIdHasBeenSet = false;
+  bool m_trustedEntitySetIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_expectedBucketOwnerHasBeenSet = false;
   bool m_activateHasBeenSet = false;
 };
 

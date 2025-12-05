@@ -69,9 +69,9 @@ class HandlerConfigs {
   ///@}
  private:
   HandlerConfig m_onPublish;
-  bool m_onPublishHasBeenSet = false;
 
   HandlerConfig m_onSubscribe;
+  bool m_onPublishHasBeenSet = false;
   bool m_onSubscribeHasBeenSet = false;
 };
 

@@ -114,15 +114,15 @@ class FilterListConfiguration {
   ///@}
  private:
   CategoryFilterMatchOperator m_matchOperator{CategoryFilterMatchOperator::NOT_SET};
-  bool m_matchOperatorHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_categoryValues;
-  bool m_categoryValuesHasBeenSet = false;
 
   CategoryFilterSelectAllOptions m_selectAllOptions{CategoryFilterSelectAllOptions::NOT_SET};
-  bool m_selectAllOptionsHasBeenSet = false;
 
   FilterNullOption m_nullOption{FilterNullOption::NOT_SET};
+  bool m_matchOperatorHasBeenSet = false;
+  bool m_categoryValuesHasBeenSet = false;
+  bool m_selectAllOptionsHasBeenSet = false;
   bool m_nullOptionHasBeenSet = false;
 };
 

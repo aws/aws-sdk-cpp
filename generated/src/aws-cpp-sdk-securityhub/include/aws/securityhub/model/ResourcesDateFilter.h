@@ -66,9 +66,9 @@ class ResourcesDateFilter {
   ///@}
  private:
   ResourcesDateField m_fieldName{ResourcesDateField::NOT_SET};
-  bool m_fieldNameHasBeenSet = false;
 
   DateFilter m_filter;
+  bool m_fieldNameHasBeenSet = false;
   bool m_filterHasBeenSet = false;
 };
 

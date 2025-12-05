@@ -85,12 +85,12 @@ class ListPlaybackKeyPairsResult {
   ///@}
  private:
   Aws::Vector<PlaybackKeyPairSummary> m_keyPairs;
-  bool m_keyPairsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_keyPairsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

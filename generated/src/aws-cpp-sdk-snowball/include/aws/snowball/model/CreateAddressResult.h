@@ -61,9 +61,9 @@ class CreateAddressResult {
   ///@}
  private:
   Aws::String m_addressId;
-  bool m_addressIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_addressIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

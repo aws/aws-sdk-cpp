@@ -215,27 +215,27 @@ class LifecycleRule {
   ///@}
  private:
   LifecycleExpiration m_expiration;
-  bool m_expirationHasBeenSet = false;
 
   Aws::String m_iD;
-  bool m_iDHasBeenSet = false;
 
   LifecycleRuleFilter m_filter;
-  bool m_filterHasBeenSet = false;
 
   ExpirationStatus m_status{ExpirationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Transition> m_transitions;
-  bool m_transitionsHasBeenSet = false;
 
   Aws::Vector<NoncurrentVersionTransition> m_noncurrentVersionTransitions;
-  bool m_noncurrentVersionTransitionsHasBeenSet = false;
 
   NoncurrentVersionExpiration m_noncurrentVersionExpiration;
-  bool m_noncurrentVersionExpirationHasBeenSet = false;
 
   AbortIncompleteMultipartUpload m_abortIncompleteMultipartUpload;
+  bool m_expirationHasBeenSet = false;
+  bool m_iDHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_transitionsHasBeenSet = false;
+  bool m_noncurrentVersionTransitionsHasBeenSet = false;
+  bool m_noncurrentVersionExpirationHasBeenSet = false;
   bool m_abortIncompleteMultipartUploadHasBeenSet = false;
 };
 

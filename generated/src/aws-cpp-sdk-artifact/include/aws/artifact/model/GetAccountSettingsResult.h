@@ -58,9 +58,9 @@ class GetAccountSettingsResult {
   ///@}
  private:
   AccountSettings m_accountSettings;
-  bool m_accountSettingsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountSettingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

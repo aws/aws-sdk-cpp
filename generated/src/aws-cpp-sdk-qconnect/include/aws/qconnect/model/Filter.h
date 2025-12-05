@@ -85,12 +85,12 @@ class Filter {
   ///@}
  private:
   FilterField m_field{FilterField::NOT_SET};
-  bool m_fieldHasBeenSet = false;
 
   FilterOperator m_operator{FilterOperator::NOT_SET};
-  bool m_operatorHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_fieldHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

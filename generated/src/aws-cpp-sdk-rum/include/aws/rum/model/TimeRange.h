@@ -63,9 +63,9 @@ class TimeRange {
   ///@}
  private:
   long long m_after{0};
-  bool m_afterHasBeenSet = false;
 
   long long m_before{0};
+  bool m_afterHasBeenSet = false;
   bool m_beforeHasBeenSet = false;
 };
 

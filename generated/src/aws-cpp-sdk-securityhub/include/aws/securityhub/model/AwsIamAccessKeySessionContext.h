@@ -70,9 +70,9 @@ class AwsIamAccessKeySessionContext {
   ///@}
  private:
   AwsIamAccessKeySessionContextAttributes m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   AwsIamAccessKeySessionContextSessionIssuer m_sessionIssuer;
+  bool m_attributesHasBeenSet = false;
   bool m_sessionIssuerHasBeenSet = false;
 };
 

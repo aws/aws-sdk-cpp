@@ -128,18 +128,18 @@ class UpdateLimitRequest : public DeadlineRequest {
   ///@}
  private:
   Aws::String m_farmId;
-  bool m_farmIdHasBeenSet = false;
 
   Aws::String m_limitId;
-  bool m_limitIdHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   int m_maxCount{0};
+  bool m_farmIdHasBeenSet = false;
+  bool m_limitIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_maxCountHasBeenSet = false;
 };
 

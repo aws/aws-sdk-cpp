@@ -73,9 +73,9 @@ class NeptuneAnalyticsConfiguration {
   ///@}
  private:
   Aws::String m_graphArn;
-  bool m_graphArnHasBeenSet = false;
 
   NeptuneAnalyticsFieldMapping m_fieldMapping;
+  bool m_graphArnHasBeenSet = false;
   bool m_fieldMappingHasBeenSet = false;
 };
 

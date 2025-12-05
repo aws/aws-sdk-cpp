@@ -142,21 +142,21 @@ class DataIntegrationEvent {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   DataIntegrationEventType m_eventType{DataIntegrationEventType::NOT_SET};
-  bool m_eventTypeHasBeenSet = false;
 
   Aws::String m_eventGroupId;
-  bool m_eventGroupIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_eventTimestamp{};
-  bool m_eventTimestampHasBeenSet = false;
 
   DataIntegrationEventDatasetTargetDetails m_datasetTargetDetails;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_eventIdHasBeenSet = false;
+  bool m_eventTypeHasBeenSet = false;
+  bool m_eventGroupIdHasBeenSet = false;
+  bool m_eventTimestampHasBeenSet = false;
   bool m_datasetTargetDetailsHasBeenSet = false;
 };
 

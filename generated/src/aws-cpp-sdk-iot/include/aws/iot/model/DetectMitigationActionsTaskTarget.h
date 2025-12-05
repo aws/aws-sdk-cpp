@@ -93,12 +93,12 @@ class DetectMitigationActionsTaskTarget {
   ///@}
  private:
   Aws::Vector<Aws::String> m_violationIds;
-  bool m_violationIdsHasBeenSet = false;
 
   Aws::String m_securityProfileName;
-  bool m_securityProfileNameHasBeenSet = false;
 
   Aws::String m_behaviorName;
+  bool m_violationIdsHasBeenSet = false;
+  bool m_securityProfileNameHasBeenSet = false;
   bool m_behaviorNameHasBeenSet = false;
 };
 

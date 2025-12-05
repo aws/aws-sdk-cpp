@@ -91,9 +91,9 @@ class PredictiveScalingPredefinedMetricPair {
   ///@}
  private:
   PredefinedMetricPairType m_predefinedMetricType{PredefinedMetricPairType::NOT_SET};
-  bool m_predefinedMetricTypeHasBeenSet = false;
 
   Aws::String m_resourceLabel;
+  bool m_predefinedMetricTypeHasBeenSet = false;
   bool m_resourceLabelHasBeenSet = false;
 };
 

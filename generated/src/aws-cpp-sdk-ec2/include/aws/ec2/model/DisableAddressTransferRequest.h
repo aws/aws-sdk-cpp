@@ -70,9 +70,9 @@ class DisableAddressTransferRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_allocationId;
-  bool m_allocationIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_allocationIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

@@ -124,18 +124,18 @@ class RoomMembership {
   ///@}
  private:
   Aws::String m_roomId;
-  bool m_roomIdHasBeenSet = false;
 
   Member m_member;
-  bool m_memberHasBeenSet = false;
 
   RoomMembershipRole m_role{RoomMembershipRole::NOT_SET};
-  bool m_roleHasBeenSet = false;
 
   Aws::String m_invitedBy;
-  bool m_invitedByHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedTimestamp{};
+  bool m_roomIdHasBeenSet = false;
+  bool m_memberHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
+  bool m_invitedByHasBeenSet = false;
   bool m_updatedTimestampHasBeenSet = false;
 };
 

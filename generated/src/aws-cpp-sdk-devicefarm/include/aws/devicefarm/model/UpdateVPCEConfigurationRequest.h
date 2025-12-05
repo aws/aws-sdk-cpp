@@ -126,18 +126,18 @@ class UpdateVPCEConfigurationRequest : public DeviceFarmRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_vpceConfigurationName;
-  bool m_vpceConfigurationNameHasBeenSet = false;
 
   Aws::String m_vpceServiceName;
-  bool m_vpceServiceNameHasBeenSet = false;
 
   Aws::String m_serviceDnsName;
-  bool m_serviceDnsNameHasBeenSet = false;
 
   Aws::String m_vpceConfigurationDescription;
+  bool m_arnHasBeenSet = false;
+  bool m_vpceConfigurationNameHasBeenSet = false;
+  bool m_vpceServiceNameHasBeenSet = false;
+  bool m_serviceDnsNameHasBeenSet = false;
   bool m_vpceConfigurationDescriptionHasBeenSet = false;
 };
 

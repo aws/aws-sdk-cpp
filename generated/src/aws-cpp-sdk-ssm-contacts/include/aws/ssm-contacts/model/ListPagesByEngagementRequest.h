@@ -84,12 +84,12 @@ class ListPagesByEngagementRequest : public SSMContactsRequest {
   ///@}
  private:
   Aws::String m_engagementId;
-  bool m_engagementIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_engagementIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

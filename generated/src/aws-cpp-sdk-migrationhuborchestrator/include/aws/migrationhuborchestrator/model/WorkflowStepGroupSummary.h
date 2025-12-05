@@ -151,21 +151,21 @@ class WorkflowStepGroupSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Owner m_owner{Owner::NOT_SET};
-  bool m_ownerHasBeenSet = false;
 
   StepGroupStatus m_status{StepGroupStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_previous;
-  bool m_previousHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_next;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_previousHasBeenSet = false;
   bool m_nextHasBeenSet = false;
 };
 

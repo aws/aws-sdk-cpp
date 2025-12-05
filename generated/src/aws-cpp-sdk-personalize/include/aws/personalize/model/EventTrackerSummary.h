@@ -129,18 +129,18 @@ class EventTrackerSummary {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_eventTrackerArn;
-  bool m_eventTrackerArnHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
+  bool m_nameHasBeenSet = false;
+  bool m_eventTrackerArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
   bool m_lastUpdatedDateTimeHasBeenSet = false;
 };
 

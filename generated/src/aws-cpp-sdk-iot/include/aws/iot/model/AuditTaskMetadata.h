@@ -86,12 +86,12 @@ class AuditTaskMetadata {
   ///@}
  private:
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   AuditTaskStatus m_taskStatus{AuditTaskStatus::NOT_SET};
-  bool m_taskStatusHasBeenSet = false;
 
   AuditTaskType m_taskType{AuditTaskType::NOT_SET};
+  bool m_taskIdHasBeenSet = false;
+  bool m_taskStatusHasBeenSet = false;
   bool m_taskTypeHasBeenSet = false;
 };
 

@@ -142,21 +142,21 @@ class AssumeRoleForPodIdentityResult {
   ///@}
  private:
   Subject m_subject;
-  bool m_subjectHasBeenSet = false;
 
   Aws::String m_audience;
-  bool m_audienceHasBeenSet = false;
 
   PodIdentityAssociation m_podIdentityAssociation;
-  bool m_podIdentityAssociationHasBeenSet = false;
 
   AssumedRoleUser m_assumedRoleUser;
-  bool m_assumedRoleUserHasBeenSet = false;
 
   Credentials m_credentials;
-  bool m_credentialsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_subjectHasBeenSet = false;
+  bool m_audienceHasBeenSet = false;
+  bool m_podIdentityAssociationHasBeenSet = false;
+  bool m_assumedRoleUserHasBeenSet = false;
+  bool m_credentialsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

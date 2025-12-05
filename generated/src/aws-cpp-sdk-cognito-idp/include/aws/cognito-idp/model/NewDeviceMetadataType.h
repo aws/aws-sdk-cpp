@@ -76,9 +76,9 @@ class NewDeviceMetadataType {
   ///@}
  private:
   Aws::String m_deviceKey;
-  bool m_deviceKeyHasBeenSet = false;
 
   Aws::String m_deviceGroupKey;
+  bool m_deviceKeyHasBeenSet = false;
   bool m_deviceGroupKeyHasBeenSet = false;
 };
 

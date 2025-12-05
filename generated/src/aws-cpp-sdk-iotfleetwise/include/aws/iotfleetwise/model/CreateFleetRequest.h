@@ -111,15 +111,15 @@ class CreateFleetRequest : public IoTFleetWiseRequest {
   ///@}
  private:
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_signalCatalogArn;
-  bool m_signalCatalogArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_fleetIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_signalCatalogArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

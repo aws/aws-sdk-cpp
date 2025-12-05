@@ -409,60 +409,60 @@ class Component {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_changeDescription;
-  bool m_changeDescriptionHasBeenSet = false;
 
   ComponentType m_type{ComponentType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Platform m_platform{Platform::NOT_SET};
-  bool m_platformHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supportedOsVersions;
-  bool m_supportedOsVersionsHasBeenSet = false;
 
   ComponentState m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::Vector<ComponentParameterDetail> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::String m_data;
-  bool m_dataHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   bool m_encrypted{false};
-  bool m_encryptedHasBeenSet = false;
 
   Aws::String m_dateCreated;
-  bool m_dateCreatedHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_publisher;
-  bool m_publisherHasBeenSet = false;
 
   bool m_obfuscate{false};
-  bool m_obfuscateHasBeenSet = false;
 
   Aws::Vector<ProductCodeListItem> m_productCodes;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_changeDescriptionHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_supportedOsVersionsHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_dataHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_encryptedHasBeenSet = false;
+  bool m_dateCreatedHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_publisherHasBeenSet = false;
+  bool m_obfuscateHasBeenSet = false;
   bool m_productCodesHasBeenSet = false;
 };
 

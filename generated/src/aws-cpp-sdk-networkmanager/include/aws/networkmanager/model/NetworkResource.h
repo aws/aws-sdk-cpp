@@ -261,36 +261,36 @@ class NetworkResource {
   ///@}
  private:
   Aws::String m_registeredGatewayArn;
-  bool m_registeredGatewayArnHasBeenSet = false;
 
   Aws::String m_coreNetworkId;
-  bool m_coreNetworkIdHasBeenSet = false;
 
   Aws::String m_awsRegion;
-  bool m_awsRegionHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_definition;
-  bool m_definitionHasBeenSet = false;
 
   Aws::Utils::DateTime m_definitionTimestamp{};
-  bool m_definitionTimestampHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_metadata;
+  bool m_registeredGatewayArnHasBeenSet = false;
+  bool m_coreNetworkIdHasBeenSet = false;
+  bool m_awsRegionHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_definitionHasBeenSet = false;
+  bool m_definitionTimestampHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_metadataHasBeenSet = false;
 };
 

@@ -98,12 +98,12 @@ class KxDatabaseCacheConfiguration {
   ///@}
  private:
   Aws::String m_cacheType;
-  bool m_cacheTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dbPaths;
-  bool m_dbPathsHasBeenSet = false;
 
   Aws::String m_dataviewName;
+  bool m_cacheTypeHasBeenSet = false;
+  bool m_dbPathsHasBeenSet = false;
   bool m_dataviewNameHasBeenSet = false;
 };
 

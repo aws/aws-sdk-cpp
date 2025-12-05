@@ -108,15 +108,15 @@ class EndpointMetadata {
   ///@}
  private:
   Aws::String m_endpointName;
-  bool m_endpointNameHasBeenSet = false;
 
   Aws::String m_endpointConfigName;
-  bool m_endpointConfigNameHasBeenSet = false;
 
   EndpointStatus m_endpointStatus{EndpointStatus::NOT_SET};
-  bool m_endpointStatusHasBeenSet = false;
 
   Aws::String m_failureReason;
+  bool m_endpointNameHasBeenSet = false;
+  bool m_endpointConfigNameHasBeenSet = false;
+  bool m_endpointStatusHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
 };
 

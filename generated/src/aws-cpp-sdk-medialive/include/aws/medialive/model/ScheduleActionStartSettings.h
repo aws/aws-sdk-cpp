@@ -95,12 +95,12 @@ class ScheduleActionStartSettings {
   ///@}
  private:
   FixedModeScheduleActionStartSettings m_fixedModeScheduleActionStartSettings;
-  bool m_fixedModeScheduleActionStartSettingsHasBeenSet = false;
 
   FollowModeScheduleActionStartSettings m_followModeScheduleActionStartSettings;
-  bool m_followModeScheduleActionStartSettingsHasBeenSet = false;
 
   ImmediateModeScheduleActionStartSettings m_immediateModeScheduleActionStartSettings;
+  bool m_fixedModeScheduleActionStartSettingsHasBeenSet = false;
+  bool m_followModeScheduleActionStartSettingsHasBeenSet = false;
   bool m_immediateModeScheduleActionStartSettingsHasBeenSet = false;
 };
 

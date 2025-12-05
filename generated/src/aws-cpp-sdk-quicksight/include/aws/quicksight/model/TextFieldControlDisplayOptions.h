@@ -88,12 +88,12 @@ class TextFieldControlDisplayOptions {
   ///@}
  private:
   LabelOptions m_titleOptions;
-  bool m_titleOptionsHasBeenSet = false;
 
   TextControlPlaceholderOptions m_placeholderOptions;
-  bool m_placeholderOptionsHasBeenSet = false;
 
   SheetControlInfoIconLabelOptions m_infoIconLabelOptions;
+  bool m_titleOptionsHasBeenSet = false;
+  bool m_placeholderOptionsHasBeenSet = false;
   bool m_infoIconLabelOptionsHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class GetParticipantResult {
   ///@}
  private:
   Participant m_participant;
-  bool m_participantHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_participantHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

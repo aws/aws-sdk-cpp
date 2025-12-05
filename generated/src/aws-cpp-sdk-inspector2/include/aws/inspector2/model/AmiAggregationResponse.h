@@ -104,15 +104,15 @@ class AmiAggregationResponse {
   ///@}
  private:
   Aws::String m_ami;
-  bool m_amiHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   SeverityCounts m_severityCounts;
-  bool m_severityCountsHasBeenSet = false;
 
   long long m_affectedInstances{0};
+  bool m_amiHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_severityCountsHasBeenSet = false;
   bool m_affectedInstancesHasBeenSet = false;
 };
 

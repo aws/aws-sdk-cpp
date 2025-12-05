@@ -100,15 +100,15 @@ class EbsVolumeConfiguration {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   int m_sizeInGib{0};
-  bool m_sizeInGibHasBeenSet = false;
 
   int m_iops{0};
-  bool m_iopsHasBeenSet = false;
 
   int m_throughput{0};
+  bool m_typeHasBeenSet = false;
+  bool m_sizeInGibHasBeenSet = false;
+  bool m_iopsHasBeenSet = false;
   bool m_throughputHasBeenSet = false;
 };
 

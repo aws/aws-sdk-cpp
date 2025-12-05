@@ -76,12 +76,12 @@ class CreateOpsItemResult {
   ///@}
  private:
   Aws::String m_opsItemId;
-  bool m_opsItemIdHasBeenSet = false;
 
   Aws::String m_opsItemArn;
-  bool m_opsItemArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_opsItemIdHasBeenSet = false;
+  bool m_opsItemArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

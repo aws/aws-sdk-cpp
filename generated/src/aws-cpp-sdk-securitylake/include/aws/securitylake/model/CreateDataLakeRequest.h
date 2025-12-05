@@ -103,12 +103,12 @@ class CreateDataLakeRequest : public SecurityLakeRequest {
   ///@}
  private:
   Aws::Vector<DataLakeConfiguration> m_configurations;
-  bool m_configurationsHasBeenSet = false;
 
   Aws::String m_metaStoreManagerRoleArn;
-  bool m_metaStoreManagerRoleArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_configurationsHasBeenSet = false;
+  bool m_metaStoreManagerRoleArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

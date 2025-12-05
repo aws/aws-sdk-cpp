@@ -77,12 +77,12 @@ class GetPublicKey2020_05_31Result {
   ///@}
  private:
   PublicKey m_publicKey;
-  bool m_publicKeyHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_publicKeyHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

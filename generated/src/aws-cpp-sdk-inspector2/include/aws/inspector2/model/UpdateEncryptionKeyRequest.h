@@ -81,12 +81,12 @@ class UpdateEncryptionKeyRequest : public Inspector2Request {
   ///@}
  private:
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   ScanType m_scanType{ScanType::NOT_SET};
-  bool m_scanTypeHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_scanTypeHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
 };
 

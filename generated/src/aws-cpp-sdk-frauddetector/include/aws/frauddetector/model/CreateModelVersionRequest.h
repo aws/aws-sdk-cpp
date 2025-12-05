@@ -168,24 +168,24 @@ class CreateModelVersionRequest : public FraudDetectorRequest {
   ///@}
  private:
   Aws::String m_modelId;
-  bool m_modelIdHasBeenSet = false;
 
   ModelTypeEnum m_modelType{ModelTypeEnum::NOT_SET};
-  bool m_modelTypeHasBeenSet = false;
 
   TrainingDataSourceEnum m_trainingDataSource{TrainingDataSourceEnum::NOT_SET};
-  bool m_trainingDataSourceHasBeenSet = false;
 
   TrainingDataSchema m_trainingDataSchema;
-  bool m_trainingDataSchemaHasBeenSet = false;
 
   ExternalEventsDetail m_externalEventsDetail;
-  bool m_externalEventsDetailHasBeenSet = false;
 
   IngestedEventsDetail m_ingestedEventsDetail;
-  bool m_ingestedEventsDetailHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_modelIdHasBeenSet = false;
+  bool m_modelTypeHasBeenSet = false;
+  bool m_trainingDataSourceHasBeenSet = false;
+  bool m_trainingDataSchemaHasBeenSet = false;
+  bool m_externalEventsDetailHasBeenSet = false;
+  bool m_ingestedEventsDetailHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

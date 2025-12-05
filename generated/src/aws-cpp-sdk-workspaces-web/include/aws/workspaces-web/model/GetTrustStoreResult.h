@@ -60,9 +60,9 @@ class GetTrustStoreResult {
   ///@}
  private:
   TrustStore m_trustStore;
-  bool m_trustStoreHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trustStoreHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

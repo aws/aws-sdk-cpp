@@ -111,15 +111,15 @@ class ListProtectConfigurationRuleSetNumberOverridesRequest : public PinpointSMS
   ///@}
  private:
   Aws::String m_protectConfigurationId;
-  bool m_protectConfigurationIdHasBeenSet = false;
 
   Aws::Vector<ProtectConfigurationRuleSetNumberOverrideFilterItem> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_protectConfigurationIdHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

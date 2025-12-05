@@ -65,9 +65,9 @@ class RequestSpotFleetResponse {
   ///@}
  private:
   Aws::String m_spotFleetRequestId;
-  bool m_spotFleetRequestIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_spotFleetRequestIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

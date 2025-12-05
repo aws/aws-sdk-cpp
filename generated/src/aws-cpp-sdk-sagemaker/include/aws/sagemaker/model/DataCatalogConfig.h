@@ -87,12 +87,12 @@ class DataCatalogConfig {
   ///@}
  private:
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_database;
+  bool m_tableNameHasBeenSet = false;
+  bool m_catalogHasBeenSet = false;
   bool m_databaseHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class CreateSnapshotRequest : public SimSpaceWeaverRequest {
   ///@}
  private:
   S3Destination m_destination;
-  bool m_destinationHasBeenSet = false;
 
   Aws::String m_simulation;
+  bool m_destinationHasBeenSet = false;
   bool m_simulationHasBeenSet = false;
 };
 

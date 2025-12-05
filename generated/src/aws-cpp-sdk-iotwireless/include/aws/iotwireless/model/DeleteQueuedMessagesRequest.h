@@ -90,12 +90,12 @@ class DeleteQueuedMessagesRequest : public IoTWirelessRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_messageId;
-  bool m_messageIdHasBeenSet = false;
 
   WirelessDeviceType m_wirelessDeviceType{WirelessDeviceType::NOT_SET};
+  bool m_idHasBeenSet = false;
+  bool m_messageIdHasBeenSet = false;
   bool m_wirelessDeviceTypeHasBeenSet = false;
 };
 

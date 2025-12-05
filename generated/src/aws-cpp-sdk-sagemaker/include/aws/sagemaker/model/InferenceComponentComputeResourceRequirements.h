@@ -100,15 +100,15 @@ class InferenceComponentComputeResourceRequirements {
   ///@}
  private:
   double m_numberOfCpuCoresRequired{0.0};
-  bool m_numberOfCpuCoresRequiredHasBeenSet = false;
 
   double m_numberOfAcceleratorDevicesRequired{0.0};
-  bool m_numberOfAcceleratorDevicesRequiredHasBeenSet = false;
 
   int m_minMemoryRequiredInMb{0};
-  bool m_minMemoryRequiredInMbHasBeenSet = false;
 
   int m_maxMemoryRequiredInMb{0};
+  bool m_numberOfCpuCoresRequiredHasBeenSet = false;
+  bool m_numberOfAcceleratorDevicesRequiredHasBeenSet = false;
+  bool m_minMemoryRequiredInMbHasBeenSet = false;
   bool m_maxMemoryRequiredInMbHasBeenSet = false;
 };
 

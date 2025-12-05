@@ -189,30 +189,30 @@ class DescribeFeatureMetadataResult {
   ///@}
  private:
   Aws::String m_featureGroupArn;
-  bool m_featureGroupArnHasBeenSet = false;
 
   Aws::String m_featureGroupName;
-  bool m_featureGroupNameHasBeenSet = false;
 
   Aws::String m_featureName;
-  bool m_featureNameHasBeenSet = false;
 
   FeatureType m_featureType{FeatureType::NOT_SET};
-  bool m_featureTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<FeatureParameter> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_featureGroupArnHasBeenSet = false;
+  bool m_featureGroupNameHasBeenSet = false;
+  bool m_featureNameHasBeenSet = false;
+  bool m_featureTypeHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

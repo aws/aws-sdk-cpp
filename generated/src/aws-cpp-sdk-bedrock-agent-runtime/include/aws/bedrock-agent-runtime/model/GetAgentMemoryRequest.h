@@ -144,21 +144,21 @@ class GetAgentMemoryRequest : public BedrockAgentRuntimeRequest {
   ///@}
  private:
   Aws::String m_agentAliasId;
-  bool m_agentAliasIdHasBeenSet = false;
 
   Aws::String m_agentId;
-  bool m_agentIdHasBeenSet = false;
 
   int m_maxItems{0};
-  bool m_maxItemsHasBeenSet = false;
 
   Aws::String m_memoryId;
-  bool m_memoryIdHasBeenSet = false;
 
   MemoryType m_memoryType{MemoryType::NOT_SET};
-  bool m_memoryTypeHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_agentAliasIdHasBeenSet = false;
+  bool m_agentIdHasBeenSet = false;
+  bool m_maxItemsHasBeenSet = false;
+  bool m_memoryIdHasBeenSet = false;
+  bool m_memoryTypeHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

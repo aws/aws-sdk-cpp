@@ -162,21 +162,21 @@ class CreatePoolRequest : public PinpointSMSVoiceV2Request {
   ///@}
  private:
   Aws::String m_originationIdentity;
-  bool m_originationIdentityHasBeenSet = false;
 
   Aws::String m_isoCountryCode;
-  bool m_isoCountryCodeHasBeenSet = false;
 
   MessageType m_messageType{MessageType::NOT_SET};
-  bool m_messageTypeHasBeenSet = false;
 
   bool m_deletionProtectionEnabled{false};
-  bool m_deletionProtectionEnabledHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_originationIdentityHasBeenSet = false;
+  bool m_isoCountryCodeHasBeenSet = false;
+  bool m_messageTypeHasBeenSet = false;
+  bool m_deletionProtectionEnabledHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

@@ -88,12 +88,12 @@ class TLEData {
   ///@}
  private:
   Aws::String m_tleLine1;
-  bool m_tleLine1HasBeenSet = false;
 
   Aws::String m_tleLine2;
-  bool m_tleLine2HasBeenSet = false;
 
   TimeRange m_validTimeRange;
+  bool m_tleLine1HasBeenSet = false;
+  bool m_tleLine2HasBeenSet = false;
   bool m_validTimeRangeHasBeenSet = false;
 };
 

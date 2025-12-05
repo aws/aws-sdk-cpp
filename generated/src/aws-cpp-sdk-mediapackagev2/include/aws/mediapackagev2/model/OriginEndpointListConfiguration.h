@@ -307,42 +307,42 @@ class OriginEndpointListConfiguration {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_channelGroupName;
-  bool m_channelGroupNameHasBeenSet = false;
 
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   Aws::String m_originEndpointName;
-  bool m_originEndpointNameHasBeenSet = false;
 
   ContainerType m_containerType{ContainerType::NOT_SET};
-  bool m_containerTypeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
-  bool m_modifiedAtHasBeenSet = false;
 
   Aws::Vector<ListHlsManifestConfiguration> m_hlsManifests;
-  bool m_hlsManifestsHasBeenSet = false;
 
   Aws::Vector<ListLowLatencyHlsManifestConfiguration> m_lowLatencyHlsManifests;
-  bool m_lowLatencyHlsManifestsHasBeenSet = false;
 
   Aws::Vector<ListDashManifestConfiguration> m_dashManifests;
-  bool m_dashManifestsHasBeenSet = false;
 
   Aws::Vector<ListMssManifestConfiguration> m_mssManifests;
-  bool m_mssManifestsHasBeenSet = false;
 
   ForceEndpointErrorConfiguration m_forceEndpointErrorConfiguration;
+  bool m_arnHasBeenSet = false;
+  bool m_channelGroupNameHasBeenSet = false;
+  bool m_channelNameHasBeenSet = false;
+  bool m_originEndpointNameHasBeenSet = false;
+  bool m_containerTypeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
+  bool m_hlsManifestsHasBeenSet = false;
+  bool m_lowLatencyHlsManifestsHasBeenSet = false;
+  bool m_dashManifestsHasBeenSet = false;
+  bool m_mssManifestsHasBeenSet = false;
   bool m_forceEndpointErrorConfigurationHasBeenSet = false;
 };
 

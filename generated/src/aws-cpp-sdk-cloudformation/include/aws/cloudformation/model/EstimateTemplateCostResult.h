@@ -67,9 +67,9 @@ class EstimateTemplateCostResult {
   ///@}
  private:
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_urlHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

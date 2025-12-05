@@ -108,12 +108,12 @@ class TaskTemplateConstraints {
   ///@}
  private:
   Aws::Vector<RequiredFieldInfo> m_requiredFields;
-  bool m_requiredFieldsHasBeenSet = false;
 
   Aws::Vector<ReadOnlyFieldInfo> m_readOnlyFields;
-  bool m_readOnlyFieldsHasBeenSet = false;
 
   Aws::Vector<InvisibleFieldInfo> m_invisibleFields;
+  bool m_requiredFieldsHasBeenSet = false;
+  bool m_readOnlyFieldsHasBeenSet = false;
   bool m_invisibleFieldsHasBeenSet = false;
 };
 

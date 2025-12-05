@@ -291,42 +291,42 @@ class ServiceTemplateVersion {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Vector<CompatibleEnvironmentTemplate> m_compatibleEnvironmentTemplates;
-  bool m_compatibleEnvironmentTemplatesHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedAt{};
-  bool m_lastModifiedAtHasBeenSet = false;
 
   Aws::String m_majorVersion;
-  bool m_majorVersionHasBeenSet = false;
 
   Aws::String m_minorVersion;
-  bool m_minorVersionHasBeenSet = false;
 
   Aws::String m_recommendedMinorVersion;
-  bool m_recommendedMinorVersionHasBeenSet = false;
 
   Aws::String m_schema;
-  bool m_schemaHasBeenSet = false;
 
   TemplateVersionStatus m_status{TemplateVersionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::Vector<ServiceTemplateSupportedComponentSourceType> m_supportedComponentSources;
-  bool m_supportedComponentSourcesHasBeenSet = false;
 
   Aws::String m_templateName;
+  bool m_arnHasBeenSet = false;
+  bool m_compatibleEnvironmentTemplatesHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_lastModifiedAtHasBeenSet = false;
+  bool m_majorVersionHasBeenSet = false;
+  bool m_minorVersionHasBeenSet = false;
+  bool m_recommendedMinorVersionHasBeenSet = false;
+  bool m_schemaHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_supportedComponentSourcesHasBeenSet = false;
   bool m_templateNameHasBeenSet = false;
 };
 

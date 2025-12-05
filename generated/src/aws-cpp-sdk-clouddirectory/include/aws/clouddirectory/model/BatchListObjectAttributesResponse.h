@@ -78,9 +78,9 @@ class BatchListObjectAttributesResponse {
   ///@}
  private:
   Aws::Vector<AttributeKeyAndValue> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_attributesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

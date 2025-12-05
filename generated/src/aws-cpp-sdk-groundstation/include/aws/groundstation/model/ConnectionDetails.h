@@ -67,9 +67,9 @@ class ConnectionDetails {
   ///@}
  private:
   SocketAddress m_socketAddress;
-  bool m_socketAddressHasBeenSet = false;
 
   int m_mtu{0};
+  bool m_socketAddressHasBeenSet = false;
   bool m_mtuHasBeenSet = false;
 };
 

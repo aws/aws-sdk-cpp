@@ -165,18 +165,18 @@ class CorsRule {
   ///@}
  private:
   Aws::Vector<Aws::String> m_allowedOrigins;
-  bool m_allowedOriginsHasBeenSet = false;
 
   Aws::Vector<MethodName> m_allowedMethods;
-  bool m_allowedMethodsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowedHeaders;
-  bool m_allowedHeadersHasBeenSet = false;
 
   int m_maxAgeSeconds{0};
-  bool m_maxAgeSecondsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_exposeHeaders;
+  bool m_allowedOriginsHasBeenSet = false;
+  bool m_allowedMethodsHasBeenSet = false;
+  bool m_allowedHeadersHasBeenSet = false;
+  bool m_maxAgeSecondsHasBeenSet = false;
   bool m_exposeHeadersHasBeenSet = false;
 };
 

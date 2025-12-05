@@ -107,15 +107,15 @@ class EvaluateCodeRequest : public AppSyncRequest {
   ///@}
  private:
   AppSyncRuntime m_runtime;
-  bool m_runtimeHasBeenSet = false;
 
   Aws::String m_code;
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_context;
-  bool m_contextHasBeenSet = false;
 
   Aws::String m_function;
+  bool m_runtimeHasBeenSet = false;
+  bool m_codeHasBeenSet = false;
+  bool m_contextHasBeenSet = false;
   bool m_functionHasBeenSet = false;
 };
 

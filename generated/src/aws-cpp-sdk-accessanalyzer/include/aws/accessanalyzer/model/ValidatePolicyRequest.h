@@ -153,21 +153,21 @@ class ValidatePolicyRequest : public AccessAnalyzerRequest {
   ///@}
  private:
   Locale m_locale{Locale::NOT_SET};
-  bool m_localeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_policyDocument;
-  bool m_policyDocumentHasBeenSet = false;
 
   PolicyType m_policyType{PolicyType::NOT_SET};
-  bool m_policyTypeHasBeenSet = false;
 
   ValidatePolicyResourceType m_validatePolicyResourceType{ValidatePolicyResourceType::NOT_SET};
+  bool m_localeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_policyDocumentHasBeenSet = false;
+  bool m_policyTypeHasBeenSet = false;
   bool m_validatePolicyResourceTypeHasBeenSet = false;
 };
 

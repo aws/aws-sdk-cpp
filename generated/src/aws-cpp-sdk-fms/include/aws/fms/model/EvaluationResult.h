@@ -88,12 +88,12 @@ class EvaluationResult {
   ///@}
  private:
   PolicyComplianceStatusType m_complianceStatus{PolicyComplianceStatusType::NOT_SET};
-  bool m_complianceStatusHasBeenSet = false;
 
   long long m_violatorCount{0};
-  bool m_violatorCountHasBeenSet = false;
 
   bool m_evaluationLimitExceeded{false};
+  bool m_complianceStatusHasBeenSet = false;
+  bool m_violatorCountHasBeenSet = false;
   bool m_evaluationLimitExceededHasBeenSet = false;
 };
 

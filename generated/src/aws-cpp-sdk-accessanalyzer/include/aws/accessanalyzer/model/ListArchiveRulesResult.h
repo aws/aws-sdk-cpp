@@ -89,12 +89,12 @@ class ListArchiveRulesResult {
   ///@}
  private:
   Aws::Vector<ArchiveRuleSummary> m_archiveRules;
-  bool m_archiveRulesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_archiveRulesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

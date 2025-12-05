@@ -171,27 +171,27 @@ class RFTHyperParameters {
   ///@}
  private:
   int m_epochCount{0};
-  bool m_epochCountHasBeenSet = false;
 
   int m_batchSize{0};
-  bool m_batchSizeHasBeenSet = false;
 
   double m_learningRate{0.0};
-  bool m_learningRateHasBeenSet = false;
 
   int m_maxPromptLength{0};
-  bool m_maxPromptLengthHasBeenSet = false;
 
   int m_trainingSamplePerPrompt{0};
-  bool m_trainingSamplePerPromptHasBeenSet = false;
 
   int m_inferenceMaxTokens{0};
-  bool m_inferenceMaxTokensHasBeenSet = false;
 
   ReasoningEffort m_reasoningEffort{ReasoningEffort::NOT_SET};
-  bool m_reasoningEffortHasBeenSet = false;
 
   int m_evalInterval{0};
+  bool m_epochCountHasBeenSet = false;
+  bool m_batchSizeHasBeenSet = false;
+  bool m_learningRateHasBeenSet = false;
+  bool m_maxPromptLengthHasBeenSet = false;
+  bool m_trainingSamplePerPromptHasBeenSet = false;
+  bool m_inferenceMaxTokensHasBeenSet = false;
+  bool m_reasoningEffortHasBeenSet = false;
   bool m_evalIntervalHasBeenSet = false;
 };
 

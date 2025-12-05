@@ -68,9 +68,9 @@ class NaturalLanguageQueryGenerationOptionsOutput {
   ///@}
  private:
   NaturalLanguageQueryGenerationDesiredState m_desiredState{NaturalLanguageQueryGenerationDesiredState::NOT_SET};
-  bool m_desiredStateHasBeenSet = false;
 
   NaturalLanguageQueryGenerationCurrentState m_currentState{NaturalLanguageQueryGenerationCurrentState::NOT_SET};
+  bool m_desiredStateHasBeenSet = false;
   bool m_currentStateHasBeenSet = false;
 };
 

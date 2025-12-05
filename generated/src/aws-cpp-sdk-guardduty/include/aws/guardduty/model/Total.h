@@ -69,9 +69,9 @@ class Total {
   ///@}
  private:
   Aws::String m_amount;
-  bool m_amountHasBeenSet = false;
 
   Aws::String m_unit;
+  bool m_amountHasBeenSet = false;
   bool m_unitHasBeenSet = false;
 };
 

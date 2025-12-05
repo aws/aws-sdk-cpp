@@ -130,18 +130,18 @@ class GetBotChannelAssociationsRequest : public LexModelBuildingServiceRequest {
   ///@}
  private:
   Aws::String m_botName;
-  bool m_botNameHasBeenSet = false;
 
   Aws::String m_botAlias;
-  bool m_botAliasHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nameContains;
+  bool m_botNameHasBeenSet = false;
+  bool m_botAliasHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nameContainsHasBeenSet = false;
 };
 

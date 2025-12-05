@@ -89,12 +89,12 @@ class IssuanceDetail {
   ///@}
  private:
   Aws::String m_issuanceId;
-  bool m_issuanceIdHasBeenSet = false;
 
   MonetaryValue m_issuanceAmount;
-  bool m_issuanceAmountHasBeenSet = false;
 
   Aws::Utils::DateTime m_issuedAt{};
+  bool m_issuanceIdHasBeenSet = false;
+  bool m_issuanceAmountHasBeenSet = false;
   bool m_issuedAtHasBeenSet = false;
 };
 

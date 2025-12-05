@@ -64,9 +64,9 @@ class DescribeDocumentClassificationJobResult {
   ///@}
  private:
   DocumentClassificationJobProperties m_documentClassificationJobProperties;
-  bool m_documentClassificationJobPropertiesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_documentClassificationJobPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

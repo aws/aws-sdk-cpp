@@ -319,45 +319,45 @@ class BatchReadSuccessfulResponse {
   ///@}
  private:
   BatchListObjectAttributesResponse m_listObjectAttributes;
-  bool m_listObjectAttributesHasBeenSet = false;
 
   BatchListObjectChildrenResponse m_listObjectChildren;
-  bool m_listObjectChildrenHasBeenSet = false;
 
   BatchGetObjectInformationResponse m_getObjectInformation;
-  bool m_getObjectInformationHasBeenSet = false;
 
   BatchGetObjectAttributesResponse m_getObjectAttributes;
-  bool m_getObjectAttributesHasBeenSet = false;
 
   BatchListAttachedIndicesResponse m_listAttachedIndices;
-  bool m_listAttachedIndicesHasBeenSet = false;
 
   BatchListObjectParentPathsResponse m_listObjectParentPaths;
-  bool m_listObjectParentPathsHasBeenSet = false;
 
   BatchListObjectPoliciesResponse m_listObjectPolicies;
-  bool m_listObjectPoliciesHasBeenSet = false;
 
   BatchListPolicyAttachmentsResponse m_listPolicyAttachments;
-  bool m_listPolicyAttachmentsHasBeenSet = false;
 
   BatchLookupPolicyResponse m_lookupPolicy;
-  bool m_lookupPolicyHasBeenSet = false;
 
   BatchListIndexResponse m_listIndex;
-  bool m_listIndexHasBeenSet = false;
 
   BatchListOutgoingTypedLinksResponse m_listOutgoingTypedLinks;
-  bool m_listOutgoingTypedLinksHasBeenSet = false;
 
   BatchListIncomingTypedLinksResponse m_listIncomingTypedLinks;
-  bool m_listIncomingTypedLinksHasBeenSet = false;
 
   BatchGetLinkAttributesResponse m_getLinkAttributes;
-  bool m_getLinkAttributesHasBeenSet = false;
 
   BatchListObjectParentsResponse m_listObjectParents;
+  bool m_listObjectAttributesHasBeenSet = false;
+  bool m_listObjectChildrenHasBeenSet = false;
+  bool m_getObjectInformationHasBeenSet = false;
+  bool m_getObjectAttributesHasBeenSet = false;
+  bool m_listAttachedIndicesHasBeenSet = false;
+  bool m_listObjectParentPathsHasBeenSet = false;
+  bool m_listObjectPoliciesHasBeenSet = false;
+  bool m_listPolicyAttachmentsHasBeenSet = false;
+  bool m_lookupPolicyHasBeenSet = false;
+  bool m_listIndexHasBeenSet = false;
+  bool m_listOutgoingTypedLinksHasBeenSet = false;
+  bool m_listIncomingTypedLinksHasBeenSet = false;
+  bool m_getLinkAttributesHasBeenSet = false;
   bool m_listObjectParentsHasBeenSet = false;
 };
 

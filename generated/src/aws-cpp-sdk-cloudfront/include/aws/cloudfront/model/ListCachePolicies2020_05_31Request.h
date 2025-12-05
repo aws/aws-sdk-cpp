@@ -94,12 +94,12 @@ class ListCachePolicies2020_05_31Request : public CloudFrontRequest {
   ///@}
  private:
   CachePolicyType m_type{CachePolicyType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_maxItems;
+  bool m_typeHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_maxItemsHasBeenSet = false;
 };
 

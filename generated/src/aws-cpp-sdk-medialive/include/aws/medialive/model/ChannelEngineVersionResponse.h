@@ -70,9 +70,9 @@ class ChannelEngineVersionResponse {
   ///@}
  private:
   Aws::Utils::DateTime m_expirationDate{};
-  bool m_expirationDateHasBeenSet = false;
 
   Aws::String m_version;
+  bool m_expirationDateHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

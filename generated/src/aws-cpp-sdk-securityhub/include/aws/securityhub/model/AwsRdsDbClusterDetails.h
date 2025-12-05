@@ -789,117 +789,117 @@ class AwsRdsDbClusterDetails {
   ///@}
  private:
   int m_allocatedStorage{0};
-  bool m_allocatedStorageHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_availabilityZones;
-  bool m_availabilityZonesHasBeenSet = false;
 
   int m_backupRetentionPeriod{0};
-  bool m_backupRetentionPeriodHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   Aws::String m_readerEndpoint;
-  bool m_readerEndpointHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_customEndpoints;
-  bool m_customEndpointsHasBeenSet = false;
 
   bool m_multiAz{false};
-  bool m_multiAzHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_masterUsername;
-  bool m_masterUsernameHasBeenSet = false;
 
   Aws::String m_preferredBackupWindow;
-  bool m_preferredBackupWindowHasBeenSet = false;
 
   Aws::String m_preferredMaintenanceWindow;
-  bool m_preferredMaintenanceWindowHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_readReplicaIdentifiers;
-  bool m_readReplicaIdentifiersHasBeenSet = false;
 
   Aws::Vector<AwsRdsDbInstanceVpcSecurityGroup> m_vpcSecurityGroups;
-  bool m_vpcSecurityGroupsHasBeenSet = false;
 
   Aws::String m_hostedZoneId;
-  bool m_hostedZoneIdHasBeenSet = false;
 
   bool m_storageEncrypted{false};
-  bool m_storageEncryptedHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_dbClusterResourceId;
-  bool m_dbClusterResourceIdHasBeenSet = false;
 
   Aws::Vector<AwsRdsDbClusterAssociatedRole> m_associatedRoles;
-  bool m_associatedRolesHasBeenSet = false;
 
   Aws::String m_clusterCreateTime;
-  bool m_clusterCreateTimeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_enabledCloudWatchLogsExports;
-  bool m_enabledCloudWatchLogsExportsHasBeenSet = false;
 
   Aws::String m_engineMode;
-  bool m_engineModeHasBeenSet = false;
 
   bool m_deletionProtection{false};
-  bool m_deletionProtectionHasBeenSet = false;
 
   bool m_httpEndpointEnabled{false};
-  bool m_httpEndpointEnabledHasBeenSet = false;
 
   Aws::String m_activityStreamStatus;
-  bool m_activityStreamStatusHasBeenSet = false;
 
   bool m_copyTagsToSnapshot{false};
-  bool m_copyTagsToSnapshotHasBeenSet = false;
 
   bool m_crossAccountClone{false};
-  bool m_crossAccountCloneHasBeenSet = false;
 
   Aws::Vector<AwsRdsDbDomainMembership> m_domainMemberships;
-  bool m_domainMembershipsHasBeenSet = false;
 
   Aws::String m_dbClusterParameterGroup;
-  bool m_dbClusterParameterGroupHasBeenSet = false;
 
   Aws::String m_dbSubnetGroup;
-  bool m_dbSubnetGroupHasBeenSet = false;
 
   Aws::Vector<AwsRdsDbClusterOptionGroupMembership> m_dbClusterOptionGroupMemberships;
-  bool m_dbClusterOptionGroupMembershipsHasBeenSet = false;
 
   Aws::String m_dbClusterIdentifier;
-  bool m_dbClusterIdentifierHasBeenSet = false;
 
   Aws::Vector<AwsRdsDbClusterMember> m_dbClusterMembers;
-  bool m_dbClusterMembersHasBeenSet = false;
 
   bool m_iamDatabaseAuthenticationEnabled{false};
-  bool m_iamDatabaseAuthenticationEnabledHasBeenSet = false;
 
   bool m_autoMinorVersionUpgrade{false};
+  bool m_allocatedStorageHasBeenSet = false;
+  bool m_availabilityZonesHasBeenSet = false;
+  bool m_backupRetentionPeriodHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
+  bool m_readerEndpointHasBeenSet = false;
+  bool m_customEndpointsHasBeenSet = false;
+  bool m_multiAzHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_masterUsernameHasBeenSet = false;
+  bool m_preferredBackupWindowHasBeenSet = false;
+  bool m_preferredMaintenanceWindowHasBeenSet = false;
+  bool m_readReplicaIdentifiersHasBeenSet = false;
+  bool m_vpcSecurityGroupsHasBeenSet = false;
+  bool m_hostedZoneIdHasBeenSet = false;
+  bool m_storageEncryptedHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_dbClusterResourceIdHasBeenSet = false;
+  bool m_associatedRolesHasBeenSet = false;
+  bool m_clusterCreateTimeHasBeenSet = false;
+  bool m_enabledCloudWatchLogsExportsHasBeenSet = false;
+  bool m_engineModeHasBeenSet = false;
+  bool m_deletionProtectionHasBeenSet = false;
+  bool m_httpEndpointEnabledHasBeenSet = false;
+  bool m_activityStreamStatusHasBeenSet = false;
+  bool m_copyTagsToSnapshotHasBeenSet = false;
+  bool m_crossAccountCloneHasBeenSet = false;
+  bool m_domainMembershipsHasBeenSet = false;
+  bool m_dbClusterParameterGroupHasBeenSet = false;
+  bool m_dbSubnetGroupHasBeenSet = false;
+  bool m_dbClusterOptionGroupMembershipsHasBeenSet = false;
+  bool m_dbClusterIdentifierHasBeenSet = false;
+  bool m_dbClusterMembersHasBeenSet = false;
+  bool m_iamDatabaseAuthenticationEnabledHasBeenSet = false;
   bool m_autoMinorVersionUpgradeHasBeenSet = false;
 };
 

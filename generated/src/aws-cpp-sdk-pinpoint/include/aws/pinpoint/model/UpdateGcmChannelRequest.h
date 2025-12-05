@@ -65,9 +65,9 @@ class UpdateGcmChannelRequest : public PinpointRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   GCMChannelRequest m_gCMChannelRequest;
+  bool m_applicationIdHasBeenSet = false;
   bool m_gCMChannelRequestHasBeenSet = false;
 };
 

@@ -162,21 +162,21 @@ class DescribedProfile {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_profileId;
-  bool m_profileIdHasBeenSet = false;
 
   ProfileType m_profileType{ProfileType::NOT_SET};
-  bool m_profileTypeHasBeenSet = false;
 
   Aws::String m_as2Id;
-  bool m_as2IdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_certificateIds;
-  bool m_certificateIdsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_arnHasBeenSet = false;
+  bool m_profileIdHasBeenSet = false;
+  bool m_profileTypeHasBeenSet = false;
+  bool m_as2IdHasBeenSet = false;
+  bool m_certificateIdsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

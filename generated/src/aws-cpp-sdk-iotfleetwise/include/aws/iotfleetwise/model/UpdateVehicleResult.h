@@ -76,12 +76,12 @@ class UpdateVehicleResult {
   ///@}
  private:
   Aws::String m_vehicleName;
-  bool m_vehicleNameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_vehicleNameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

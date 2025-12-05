@@ -94,12 +94,12 @@ class FieldBasedTooltip {
   ///@}
  private:
   Visibility m_aggregationVisibility{Visibility::NOT_SET};
-  bool m_aggregationVisibilityHasBeenSet = false;
 
   TooltipTitleType m_tooltipTitleType{TooltipTitleType::NOT_SET};
-  bool m_tooltipTitleTypeHasBeenSet = false;
 
   Aws::Vector<TooltipItem> m_tooltipFields;
+  bool m_aggregationVisibilityHasBeenSet = false;
+  bool m_tooltipTitleTypeHasBeenSet = false;
   bool m_tooltipFieldsHasBeenSet = false;
 };
 

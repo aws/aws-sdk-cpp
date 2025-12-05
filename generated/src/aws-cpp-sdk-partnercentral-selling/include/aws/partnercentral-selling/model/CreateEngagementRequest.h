@@ -150,18 +150,18 @@ class CreateEngagementRequest : public PartnerCentralSellingRequest {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<EngagementContextDetails> m_contexts;
+  bool m_catalogHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_titleHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_contextsHasBeenSet = false;
 };
 

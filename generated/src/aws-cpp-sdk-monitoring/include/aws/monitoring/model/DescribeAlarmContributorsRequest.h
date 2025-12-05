@@ -70,9 +70,9 @@ class DescribeAlarmContributorsRequest : public CloudWatchRequest {
   ///@}
  private:
   Aws::String m_alarmName;
-  bool m_alarmNameHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_alarmNameHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -102,15 +102,15 @@ class AssociateQualificationWithWorkerRequest : public MTurkRequest {
   ///@}
  private:
   Aws::String m_qualificationTypeId;
-  bool m_qualificationTypeIdHasBeenSet = false;
 
   Aws::String m_workerId;
-  bool m_workerIdHasBeenSet = false;
 
   int m_integerValue{0};
-  bool m_integerValueHasBeenSet = false;
 
   bool m_sendNotification{false};
+  bool m_qualificationTypeIdHasBeenSet = false;
+  bool m_workerIdHasBeenSet = false;
+  bool m_integerValueHasBeenSet = false;
   bool m_sendNotificationHasBeenSet = false;
 };
 

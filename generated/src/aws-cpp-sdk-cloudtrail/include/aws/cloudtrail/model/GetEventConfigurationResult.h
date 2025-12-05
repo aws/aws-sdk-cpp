@@ -145,21 +145,21 @@ class GetEventConfigurationResult {
   ///@}
  private:
   Aws::String m_trailARN;
-  bool m_trailARNHasBeenSet = false;
 
   Aws::String m_eventDataStoreArn;
-  bool m_eventDataStoreArnHasBeenSet = false;
 
   MaxEventSize m_maxEventSize{MaxEventSize::NOT_SET};
-  bool m_maxEventSizeHasBeenSet = false;
 
   Aws::Vector<ContextKeySelector> m_contextKeySelectors;
-  bool m_contextKeySelectorsHasBeenSet = false;
 
   Aws::Vector<AggregationConfiguration> m_aggregationConfigurations;
-  bool m_aggregationConfigurationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trailARNHasBeenSet = false;
+  bool m_eventDataStoreArnHasBeenSet = false;
+  bool m_maxEventSizeHasBeenSet = false;
+  bool m_contextKeySelectorsHasBeenSet = false;
+  bool m_aggregationConfigurationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

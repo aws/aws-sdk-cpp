@@ -87,12 +87,12 @@ class RdsCustomClusterConfiguration {
   ///@}
  private:
   Aws::String m_interconnectSubnetId;
-  bool m_interconnectSubnetIdHasBeenSet = false;
 
   Aws::String m_transitGatewayMulticastDomainId;
-  bool m_transitGatewayMulticastDomainIdHasBeenSet = false;
 
   ReplicaMode m_replicaMode{ReplicaMode::NOT_SET};
+  bool m_interconnectSubnetIdHasBeenSet = false;
+  bool m_transitGatewayMulticastDomainIdHasBeenSet = false;
   bool m_replicaModeHasBeenSet = false;
 };
 

@@ -128,18 +128,18 @@ class JournalTableConfigurationResult {
   ///@}
  private:
   Aws::String m_tableStatus;
-  bool m_tableStatusHasBeenSet = false;
 
   ErrorDetails m_error;
-  bool m_errorHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::String m_tableArn;
-  bool m_tableArnHasBeenSet = false;
 
   RecordExpiration m_recordExpiration;
+  bool m_tableStatusHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
+  bool m_tableArnHasBeenSet = false;
   bool m_recordExpirationHasBeenSet = false;
 };
 

@@ -189,27 +189,27 @@ class ECSTaskSet {
   ///@}
  private:
   Aws::String m_identifer;
-  bool m_identiferHasBeenSet = false;
 
   long long m_desiredCount{0};
-  bool m_desiredCountHasBeenSet = false;
 
   long long m_pendingCount{0};
-  bool m_pendingCountHasBeenSet = false;
 
   long long m_runningCount{0};
-  bool m_runningCountHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   double m_trafficWeight{0.0};
-  bool m_trafficWeightHasBeenSet = false;
 
   TargetGroupInfo m_targetGroup;
-  bool m_targetGroupHasBeenSet = false;
 
   TargetLabel m_taskSetLabel{TargetLabel::NOT_SET};
+  bool m_identiferHasBeenSet = false;
+  bool m_desiredCountHasBeenSet = false;
+  bool m_pendingCountHasBeenSet = false;
+  bool m_runningCountHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_trafficWeightHasBeenSet = false;
+  bool m_targetGroupHasBeenSet = false;
   bool m_taskSetLabelHasBeenSet = false;
 };
 

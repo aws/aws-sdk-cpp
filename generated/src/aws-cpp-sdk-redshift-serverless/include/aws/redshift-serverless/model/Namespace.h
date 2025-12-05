@@ -328,48 +328,48 @@ class Namespace {
   ///@}
  private:
   Aws::String m_adminPasswordSecretArn;
-  bool m_adminPasswordSecretArnHasBeenSet = false;
 
   Aws::String m_adminPasswordSecretKmsKeyId;
-  bool m_adminPasswordSecretKmsKeyIdHasBeenSet = false;
 
   Aws::String m_adminUsername;
-  bool m_adminUsernameHasBeenSet = false;
 
   Aws::String m_catalogArn;
-  bool m_catalogArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_dbName;
-  bool m_dbNameHasBeenSet = false;
 
   Aws::String m_defaultIamRoleArn;
-  bool m_defaultIamRoleArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_iamRoles;
-  bool m_iamRolesHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_lakehouseRegistrationStatus;
-  bool m_lakehouseRegistrationStatusHasBeenSet = false;
 
   Aws::Vector<LogExport> m_logExports;
-  bool m_logExportsHasBeenSet = false;
 
   Aws::String m_namespaceArn;
-  bool m_namespaceArnHasBeenSet = false;
 
   Aws::String m_namespaceId;
-  bool m_namespaceIdHasBeenSet = false;
 
   Aws::String m_namespaceName;
-  bool m_namespaceNameHasBeenSet = false;
 
   NamespaceStatus m_status{NamespaceStatus::NOT_SET};
+  bool m_adminPasswordSecretArnHasBeenSet = false;
+  bool m_adminPasswordSecretKmsKeyIdHasBeenSet = false;
+  bool m_adminUsernameHasBeenSet = false;
+  bool m_catalogArnHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_dbNameHasBeenSet = false;
+  bool m_defaultIamRoleArnHasBeenSet = false;
+  bool m_iamRolesHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_lakehouseRegistrationStatusHasBeenSet = false;
+  bool m_logExportsHasBeenSet = false;
+  bool m_namespaceArnHasBeenSet = false;
+  bool m_namespaceIdHasBeenSet = false;
+  bool m_namespaceNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

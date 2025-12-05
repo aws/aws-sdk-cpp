@@ -162,18 +162,18 @@ class DeleteObjectTaggingRequest : public S3CrtRequest {
   ///@}
  private:
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_versionId;
-  bool m_versionIdHasBeenSet = false;
 
   Aws::String m_expectedBucketOwner;
-  bool m_expectedBucketOwnerHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
+  bool m_bucketHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
+  bool m_versionIdHasBeenSet = false;
+  bool m_expectedBucketOwnerHasBeenSet = false;
   bool m_customizedAccessLogTagHasBeenSet = false;
 };
 

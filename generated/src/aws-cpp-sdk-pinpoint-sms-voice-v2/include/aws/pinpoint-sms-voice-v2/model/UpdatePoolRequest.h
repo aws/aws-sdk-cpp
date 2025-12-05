@@ -180,27 +180,27 @@ class UpdatePoolRequest : public PinpointSMSVoiceV2Request {
   ///@}
  private:
   Aws::String m_poolId;
-  bool m_poolIdHasBeenSet = false;
 
   bool m_twoWayEnabled{false};
-  bool m_twoWayEnabledHasBeenSet = false;
 
   Aws::String m_twoWayChannelArn;
-  bool m_twoWayChannelArnHasBeenSet = false;
 
   Aws::String m_twoWayChannelRole;
-  bool m_twoWayChannelRoleHasBeenSet = false;
 
   bool m_selfManagedOptOutsEnabled{false};
-  bool m_selfManagedOptOutsEnabledHasBeenSet = false;
 
   Aws::String m_optOutListName;
-  bool m_optOutListNameHasBeenSet = false;
 
   bool m_sharedRoutesEnabled{false};
-  bool m_sharedRoutesEnabledHasBeenSet = false;
 
   bool m_deletionProtectionEnabled{false};
+  bool m_poolIdHasBeenSet = false;
+  bool m_twoWayEnabledHasBeenSet = false;
+  bool m_twoWayChannelArnHasBeenSet = false;
+  bool m_twoWayChannelRoleHasBeenSet = false;
+  bool m_selfManagedOptOutsEnabledHasBeenSet = false;
+  bool m_optOutListNameHasBeenSet = false;
+  bool m_sharedRoutesEnabledHasBeenSet = false;
   bool m_deletionProtectionEnabledHasBeenSet = false;
 };
 

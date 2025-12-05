@@ -90,12 +90,12 @@ class FilterExpression {
   ///@}
  private:
   FilterOperation m_operation{FilterOperation::NOT_SET};
-  bool m_operationHasBeenSet = false;
 
   bool m_negated{false};
-  bool m_negatedHasBeenSet = false;
 
   Aws::Vector<FilterValue> m_values;
+  bool m_operationHasBeenSet = false;
+  bool m_negatedHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

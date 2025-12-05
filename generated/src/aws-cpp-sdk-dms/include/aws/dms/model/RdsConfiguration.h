@@ -196,30 +196,30 @@ class RdsConfiguration {
   ///@}
  private:
   Aws::String m_engineEdition;
-  bool m_engineEditionHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   double m_instanceVcpu{0.0};
-  bool m_instanceVcpuHasBeenSet = false;
 
   double m_instanceMemory{0.0};
-  bool m_instanceMemoryHasBeenSet = false;
 
   Aws::String m_storageType;
-  bool m_storageTypeHasBeenSet = false;
 
   int m_storageSize{0};
-  bool m_storageSizeHasBeenSet = false;
 
   int m_storageIops{0};
-  bool m_storageIopsHasBeenSet = false;
 
   Aws::String m_deploymentOption;
-  bool m_deploymentOptionHasBeenSet = false;
 
   Aws::String m_engineVersion;
+  bool m_engineEditionHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_instanceVcpuHasBeenSet = false;
+  bool m_instanceMemoryHasBeenSet = false;
+  bool m_storageTypeHasBeenSet = false;
+  bool m_storageSizeHasBeenSet = false;
+  bool m_storageIopsHasBeenSet = false;
+  bool m_deploymentOptionHasBeenSet = false;
   bool m_engineVersionHasBeenSet = false;
 };
 

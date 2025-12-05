@@ -60,9 +60,9 @@ class DescribeAppInstanceBotResult {
   ///@}
  private:
   AppInstanceBot m_appInstanceBot;
-  bool m_appInstanceBotHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appInstanceBotHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

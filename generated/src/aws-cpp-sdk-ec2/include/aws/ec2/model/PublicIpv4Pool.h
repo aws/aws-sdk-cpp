@@ -173,24 +173,24 @@ class PublicIpv4Pool {
   ///@}
  private:
   Aws::String m_poolId;
-  bool m_poolIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<PublicIpv4PoolRange> m_poolAddressRanges;
-  bool m_poolAddressRangesHasBeenSet = false;
 
   int m_totalAddressCount{0};
-  bool m_totalAddressCountHasBeenSet = false;
 
   int m_totalAvailableAddressCount{0};
-  bool m_totalAvailableAddressCountHasBeenSet = false;
 
   Aws::String m_networkBorderGroup;
-  bool m_networkBorderGroupHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_poolIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_poolAddressRangesHasBeenSet = false;
+  bool m_totalAddressCountHasBeenSet = false;
+  bool m_totalAvailableAddressCountHasBeenSet = false;
+  bool m_networkBorderGroupHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

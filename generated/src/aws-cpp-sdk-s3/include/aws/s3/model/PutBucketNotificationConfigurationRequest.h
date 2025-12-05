@@ -138,18 +138,18 @@ class PutBucketNotificationConfigurationRequest : public S3Request {
   ///@}
  private:
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   NotificationConfiguration m_notificationConfiguration;
-  bool m_notificationConfigurationHasBeenSet = false;
 
   Aws::String m_expectedBucketOwner;
-  bool m_expectedBucketOwnerHasBeenSet = false;
 
   bool m_skipDestinationValidation{false};
-  bool m_skipDestinationValidationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
+  bool m_bucketHasBeenSet = false;
+  bool m_notificationConfigurationHasBeenSet = false;
+  bool m_expectedBucketOwnerHasBeenSet = false;
+  bool m_skipDestinationValidationHasBeenSet = false;
   bool m_customizedAccessLogTagHasBeenSet = false;
 };
 

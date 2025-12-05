@@ -65,9 +65,9 @@ class IcebergSnapshotManagementSettings {
   ///@}
  private:
   int m_minSnapshotsToKeep{0};
-  bool m_minSnapshotsToKeepHasBeenSet = false;
 
   int m_maxSnapshotAgeHours{0};
+  bool m_minSnapshotsToKeepHasBeenSet = false;
   bool m_maxSnapshotAgeHoursHasBeenSet = false;
 };
 

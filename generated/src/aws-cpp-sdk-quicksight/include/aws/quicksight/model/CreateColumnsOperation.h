@@ -97,12 +97,12 @@ class CreateColumnsOperation {
   ///@}
  private:
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   TransformOperationSource m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::Vector<CalculatedColumn> m_columns;
+  bool m_aliasHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
   bool m_columnsHasBeenSet = false;
 };
 

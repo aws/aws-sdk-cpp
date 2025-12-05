@@ -140,18 +140,18 @@ class ColumnConfiguration {
   ///@}
  private:
   Aws::String m_documentIdColumnName;
-  bool m_documentIdColumnNameHasBeenSet = false;
 
   Aws::String m_documentDataColumnName;
-  bool m_documentDataColumnNameHasBeenSet = false;
 
   Aws::String m_documentTitleColumnName;
-  bool m_documentTitleColumnNameHasBeenSet = false;
 
   Aws::Vector<DataSourceToIndexFieldMapping> m_fieldMappings;
-  bool m_fieldMappingsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_changeDetectingColumns;
+  bool m_documentIdColumnNameHasBeenSet = false;
+  bool m_documentDataColumnNameHasBeenSet = false;
+  bool m_documentTitleColumnNameHasBeenSet = false;
+  bool m_fieldMappingsHasBeenSet = false;
   bool m_changeDetectingColumnsHasBeenSet = false;
 };
 

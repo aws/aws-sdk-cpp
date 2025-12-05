@@ -111,12 +111,12 @@ class DkimAttributes {
   ///@}
  private:
   bool m_signingEnabled{false};
-  bool m_signingEnabledHasBeenSet = false;
 
   DkimStatus m_status{DkimStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tokens;
+  bool m_signingEnabledHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_tokensHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class ApplicationTheme {
   ///@}
  private:
   BrandColorPalette m_brandColorPalette;
-  bool m_brandColorPaletteHasBeenSet = false;
 
   ContextualAccentPalette m_contextualAccentPalette;
-  bool m_contextualAccentPaletteHasBeenSet = false;
 
   BrandElementStyle m_brandElementStyle;
+  bool m_brandColorPaletteHasBeenSet = false;
+  bool m_contextualAccentPaletteHasBeenSet = false;
   bool m_brandElementStyleHasBeenSet = false;
 };
 

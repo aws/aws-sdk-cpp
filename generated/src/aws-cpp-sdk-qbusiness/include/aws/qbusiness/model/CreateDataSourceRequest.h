@@ -292,39 +292,39 @@ class CreateDataSourceRequest : public QBusinessRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_indexId;
-  bool m_indexIdHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::Utils::Document m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   DataSourceVpcConfiguration m_vpcConfiguration;
-  bool m_vpcConfigurationHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_syncSchedule;
-  bool m_syncScheduleHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   DocumentEnrichmentConfiguration m_documentEnrichmentConfiguration;
-  bool m_documentEnrichmentConfigurationHasBeenSet = false;
 
   MediaExtractionConfiguration m_mediaExtractionConfiguration;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_indexIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_vpcConfigurationHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_syncScheduleHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_documentEnrichmentConfigurationHasBeenSet = false;
   bool m_mediaExtractionConfigurationHasBeenSet = false;
 };
 

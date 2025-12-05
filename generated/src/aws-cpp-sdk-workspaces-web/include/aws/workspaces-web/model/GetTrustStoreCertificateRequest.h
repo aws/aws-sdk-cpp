@@ -70,9 +70,9 @@ class GetTrustStoreCertificateRequest : public WorkSpacesWebRequest {
   ///@}
  private:
   Aws::String m_trustStoreArn;
-  bool m_trustStoreArnHasBeenSet = false;
 
   Aws::String m_thumbprint;
+  bool m_trustStoreArnHasBeenSet = false;
   bool m_thumbprintHasBeenSet = false;
 };
 

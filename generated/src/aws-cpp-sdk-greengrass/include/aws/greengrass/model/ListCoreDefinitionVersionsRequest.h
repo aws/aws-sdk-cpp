@@ -89,12 +89,12 @@ class ListCoreDefinitionVersionsRequest : public GreengrassRequest {
   ///@}
  private:
   Aws::String m_coreDefinitionId;
-  bool m_coreDefinitionIdHasBeenSet = false;
 
   Aws::String m_maxResults;
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_coreDefinitionIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

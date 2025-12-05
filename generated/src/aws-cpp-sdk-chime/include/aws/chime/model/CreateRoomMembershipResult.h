@@ -60,9 +60,9 @@ class CreateRoomMembershipResult {
   ///@}
  private:
   RoomMembership m_roomMembership;
-  bool m_roomMembershipHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_roomMembershipHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

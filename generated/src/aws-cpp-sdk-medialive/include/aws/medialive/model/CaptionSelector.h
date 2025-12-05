@@ -90,12 +90,12 @@ class CaptionSelector {
   ///@}
  private:
   Aws::String m_languageCode;
-  bool m_languageCodeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   CaptionSelectorSettings m_selectorSettings;
+  bool m_languageCodeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_selectorSettingsHasBeenSet = false;
 };
 

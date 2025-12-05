@@ -186,21 +186,21 @@ class CreateIdentityProviderRequest : public WorkSpacesWebRequest {
   ///@}
  private:
   Aws::String m_portalArn;
-  bool m_portalArnHasBeenSet = false;
 
   Aws::String m_identityProviderName;
-  bool m_identityProviderNameHasBeenSet = false;
 
   IdentityProviderType m_identityProviderType{IdentityProviderType::NOT_SET};
-  bool m_identityProviderTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_identityProviderDetails;
-  bool m_identityProviderDetailsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Vector<Tag> m_tags;
+  bool m_portalArnHasBeenSet = false;
+  bool m_identityProviderNameHasBeenSet = false;
+  bool m_identityProviderTypeHasBeenSet = false;
+  bool m_identityProviderDetailsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

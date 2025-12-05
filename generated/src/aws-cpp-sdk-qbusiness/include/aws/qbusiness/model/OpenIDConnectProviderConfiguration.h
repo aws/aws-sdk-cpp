@@ -72,9 +72,9 @@ class OpenIDConnectProviderConfiguration {
   ///@}
  private:
   Aws::String m_secretsArn;
-  bool m_secretsArnHasBeenSet = false;
 
   Aws::String m_secretsRole;
+  bool m_secretsArnHasBeenSet = false;
   bool m_secretsRoleHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class UpdateRuleMetadataRequest : public FraudDetectorRequest {
   ///@}
  private:
   Rule m_rule;
-  bool m_ruleHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_ruleHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

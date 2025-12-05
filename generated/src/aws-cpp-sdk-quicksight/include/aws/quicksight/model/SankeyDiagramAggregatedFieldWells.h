@@ -107,12 +107,12 @@ class SankeyDiagramAggregatedFieldWells {
   ///@}
  private:
   Aws::Vector<DimensionField> m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::Vector<DimensionField> m_destination;
-  bool m_destinationHasBeenSet = false;
 
   Aws::Vector<MeasureField> m_weight;
+  bool m_sourceHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
   bool m_weightHasBeenSet = false;
 };
 

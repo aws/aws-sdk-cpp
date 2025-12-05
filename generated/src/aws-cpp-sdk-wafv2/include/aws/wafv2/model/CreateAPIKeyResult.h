@@ -60,9 +60,9 @@ class CreateAPIKeyResult {
   ///@}
  private:
   Aws::String m_aPIKey;
-  bool m_aPIKeyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_aPIKeyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

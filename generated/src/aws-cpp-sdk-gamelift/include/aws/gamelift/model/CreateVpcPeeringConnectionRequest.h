@@ -94,12 +94,12 @@ class CreateVpcPeeringConnectionRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::String m_peerVpcAwsAccountId;
-  bool m_peerVpcAwsAccountIdHasBeenSet = false;
 
   Aws::String m_peerVpcId;
+  bool m_fleetIdHasBeenSet = false;
+  bool m_peerVpcAwsAccountIdHasBeenSet = false;
   bool m_peerVpcIdHasBeenSet = false;
 };
 

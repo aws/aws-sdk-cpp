@@ -130,15 +130,15 @@ class UpdateStreamGroupRequest : public GameLiftStreamsRequest {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::Vector<LocationConfiguration> m_locationConfigurations;
-  bool m_locationConfigurationsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_defaultApplicationIdentifier;
+  bool m_identifierHasBeenSet = false;
+  bool m_locationConfigurationsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_defaultApplicationIdentifierHasBeenSet = false;
 };
 

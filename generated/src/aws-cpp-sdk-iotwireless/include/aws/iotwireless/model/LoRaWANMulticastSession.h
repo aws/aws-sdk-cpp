@@ -107,18 +107,18 @@ class LoRaWANMulticastSession {
   ///@}
  private:
   int m_dlDr{0};
-  bool m_dlDrHasBeenSet = false;
 
   int m_dlFreq{0};
-  bool m_dlFreqHasBeenSet = false;
 
   Aws::Utils::DateTime m_sessionStartTime{};
-  bool m_sessionStartTimeHasBeenSet = false;
 
   int m_sessionTimeout{0};
-  bool m_sessionTimeoutHasBeenSet = false;
 
   int m_pingSlotPeriod{0};
+  bool m_dlDrHasBeenSet = false;
+  bool m_dlFreqHasBeenSet = false;
+  bool m_sessionStartTimeHasBeenSet = false;
+  bool m_sessionTimeoutHasBeenSet = false;
   bool m_pingSlotPeriodHasBeenSet = false;
 };
 

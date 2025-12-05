@@ -98,12 +98,12 @@ class PaymentScheduleTerm {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_currencyCode;
-  bool m_currencyCodeHasBeenSet = false;
 
   Aws::Vector<ScheduleItem> m_schedule;
+  bool m_typeHasBeenSet = false;
+  bool m_currencyCodeHasBeenSet = false;
   bool m_scheduleHasBeenSet = false;
 };
 

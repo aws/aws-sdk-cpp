@@ -127,18 +127,18 @@ class StartDashboardSnapshotJobRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_dashboardId;
-  bool m_dashboardIdHasBeenSet = false;
 
   Aws::String m_snapshotJobId;
-  bool m_snapshotJobIdHasBeenSet = false;
 
   SnapshotUserConfiguration m_userConfiguration;
-  bool m_userConfigurationHasBeenSet = false;
 
   SnapshotConfiguration m_snapshotConfiguration;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_dashboardIdHasBeenSet = false;
+  bool m_snapshotJobIdHasBeenSet = false;
+  bool m_userConfigurationHasBeenSet = false;
   bool m_snapshotConfigurationHasBeenSet = false;
 };
 

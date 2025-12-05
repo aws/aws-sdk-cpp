@@ -110,15 +110,15 @@ class DescribeRegistrationSectionDefinitionsRequest : public PinpointSMSVoiceV2R
   ///@}
  private:
   Aws::String m_registrationType;
-  bool m_registrationTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sectionPaths;
-  bool m_sectionPathsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_registrationTypeHasBeenSet = false;
+  bool m_sectionPathsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

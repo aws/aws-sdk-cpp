@@ -110,15 +110,15 @@ class CreateThingGroupRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_thingGroupName;
-  bool m_thingGroupNameHasBeenSet = false;
 
   Aws::String m_parentGroupName;
-  bool m_parentGroupNameHasBeenSet = false;
 
   ThingGroupProperties m_thingGroupProperties;
-  bool m_thingGroupPropertiesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_thingGroupNameHasBeenSet = false;
+  bool m_parentGroupNameHasBeenSet = false;
+  bool m_thingGroupPropertiesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

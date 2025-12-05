@@ -63,9 +63,9 @@ class InferenceMetrics {
   ///@}
  private:
   int m_maxInvocations{0};
-  bool m_maxInvocationsHasBeenSet = false;
 
   int m_modelLatency{0};
+  bool m_maxInvocationsHasBeenSet = false;
   bool m_modelLatencyHasBeenSet = false;
 };
 

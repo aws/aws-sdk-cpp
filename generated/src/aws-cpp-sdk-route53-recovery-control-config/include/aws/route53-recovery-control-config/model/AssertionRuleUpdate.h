@@ -89,12 +89,12 @@ class AssertionRuleUpdate {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_safetyRuleArn;
-  bool m_safetyRuleArnHasBeenSet = false;
 
   int m_waitPeriodMs{0};
+  bool m_nameHasBeenSet = false;
+  bool m_safetyRuleArnHasBeenSet = false;
   bool m_waitPeriodMsHasBeenSet = false;
 };
 

@@ -157,24 +157,24 @@ class PaletteNavigation {
   ///@}
  private:
   Aws::String m_background;
-  bool m_backgroundHasBeenSet = false;
 
   Aws::String m_textBackgroundHover;
-  bool m_textBackgroundHoverHasBeenSet = false;
 
   Aws::String m_textBackgroundActive;
-  bool m_textBackgroundActiveHasBeenSet = false;
 
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   Aws::String m_textHover;
-  bool m_textHoverHasBeenSet = false;
 
   Aws::String m_textActive;
-  bool m_textActiveHasBeenSet = false;
 
   bool m_invertActionsColors{false};
+  bool m_backgroundHasBeenSet = false;
+  bool m_textBackgroundHoverHasBeenSet = false;
+  bool m_textBackgroundActiveHasBeenSet = false;
+  bool m_textHasBeenSet = false;
+  bool m_textHoverHasBeenSet = false;
+  bool m_textActiveHasBeenSet = false;
   bool m_invertActionsColorsHasBeenSet = false;
 };
 

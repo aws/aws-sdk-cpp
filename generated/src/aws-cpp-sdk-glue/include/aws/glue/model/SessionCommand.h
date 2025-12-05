@@ -71,9 +71,9 @@ class SessionCommand {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_pythonVersion;
+  bool m_nameHasBeenSet = false;
   bool m_pythonVersionHasBeenSet = false;
 };
 

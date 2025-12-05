@@ -106,15 +106,15 @@ class DescribeCodeBindingRequest : public SchemasRequest {
   ///@}
  private:
   Aws::String m_language;
-  bool m_languageHasBeenSet = false;
 
   Aws::String m_registryName;
-  bool m_registryNameHasBeenSet = false;
 
   Aws::String m_schemaName;
-  bool m_schemaNameHasBeenSet = false;
 
   Aws::String m_schemaVersion;
+  bool m_languageHasBeenSet = false;
+  bool m_registryNameHasBeenSet = false;
+  bool m_schemaNameHasBeenSet = false;
   bool m_schemaVersionHasBeenSet = false;
 };
 

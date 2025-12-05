@@ -65,9 +65,9 @@ class ServerSummary {
   ///@}
  private:
   ServerOsType m_serverOsType{ServerOsType::NOT_SET};
-  bool m_serverOsTypeHasBeenSet = false;
 
   int m_count{0};
+  bool m_serverOsTypeHasBeenSet = false;
   bool m_countHasBeenSet = false;
 };
 

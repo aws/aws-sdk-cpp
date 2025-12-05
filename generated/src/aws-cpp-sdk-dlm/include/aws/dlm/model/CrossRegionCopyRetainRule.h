@@ -70,9 +70,9 @@ class CrossRegionCopyRetainRule {
   ///@}
  private:
   int m_interval{0};
-  bool m_intervalHasBeenSet = false;
 
   RetentionIntervalUnitValues m_intervalUnit{RetentionIntervalUnitValues::NOT_SET};
+  bool m_intervalHasBeenSet = false;
   bool m_intervalUnitHasBeenSet = false;
 };
 

@@ -144,21 +144,21 @@ class CalculatedAttributeValue {
   ///@}
  private:
   Aws::String m_calculatedAttributeName;
-  bool m_calculatedAttributeNameHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_isDataPartial;
-  bool m_isDataPartialHasBeenSet = false;
 
   Aws::String m_profileId;
-  bool m_profileIdHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastObjectTimestamp{};
+  bool m_calculatedAttributeNameHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_isDataPartialHasBeenSet = false;
+  bool m_profileIdHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_lastObjectTimestampHasBeenSet = false;
 };
 

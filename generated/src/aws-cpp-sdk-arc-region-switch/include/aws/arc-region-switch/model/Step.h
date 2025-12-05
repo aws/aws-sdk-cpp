@@ -106,15 +106,15 @@ class Step {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   std::shared_ptr<ExecutionBlockConfiguration> m_executionBlockConfiguration;
-  bool m_executionBlockConfigurationHasBeenSet = false;
 
   ExecutionBlockType m_executionBlockType{ExecutionBlockType::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_executionBlockConfigurationHasBeenSet = false;
   bool m_executionBlockTypeHasBeenSet = false;
 };
 

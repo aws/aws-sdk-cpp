@@ -74,9 +74,9 @@ class IngressPointAuthConfiguration {
   ///@}
  private:
   IngressPointPasswordConfiguration m_ingressPointPasswordConfiguration;
-  bool m_ingressPointPasswordConfigurationHasBeenSet = false;
 
   Aws::String m_secretArn;
+  bool m_ingressPointPasswordConfigurationHasBeenSet = false;
   bool m_secretArnHasBeenSet = false;
 };
 

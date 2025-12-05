@@ -91,12 +91,12 @@ class DescribeContinuousExportsRequest : public ApplicationDiscoveryServiceReque
   ///@}
  private:
   Aws::Vector<Aws::String> m_exportIds;
-  bool m_exportIdsHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_exportIdsHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

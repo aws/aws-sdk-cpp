@@ -69,9 +69,9 @@ provide the language to consider when translating
   ///@}
  private:
   DvbSubOcrLanguage m_ocrLanguage{DvbSubOcrLanguage::NOT_SET};
-  bool m_ocrLanguageHasBeenSet = false;
 
   int m_pid{0};
+  bool m_ocrLanguageHasBeenSet = false;
   bool m_pidHasBeenSet = false;
 };
 

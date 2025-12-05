@@ -60,9 +60,9 @@ class GetManagedViewResult {
   ///@}
  private:
   ManagedView m_managedView;
-  bool m_managedViewHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_managedViewHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

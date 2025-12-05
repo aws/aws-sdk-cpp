@@ -188,27 +188,27 @@ class GetSecretValueResult {
   ///@}
  private:
   Aws::String m_aRN;
-  bool m_aRNHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_versionId;
-  bool m_versionIdHasBeenSet = false;
 
   Aws::Utils::CryptoBuffer m_secretBinary{};
-  bool m_secretBinaryHasBeenSet = false;
 
   Aws::String m_secretString;
-  bool m_secretStringHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_versionStages;
-  bool m_versionStagesHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
-  bool m_createdDateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_aRNHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_versionIdHasBeenSet = false;
+  bool m_secretBinaryHasBeenSet = false;
+  bool m_secretStringHasBeenSet = false;
+  bool m_versionStagesHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

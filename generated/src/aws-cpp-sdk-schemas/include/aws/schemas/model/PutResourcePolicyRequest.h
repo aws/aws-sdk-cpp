@@ -91,12 +91,12 @@ class PutResourcePolicyRequest : public SchemasRequest {
   ///@}
  private:
   Aws::String m_policy;
-  bool m_policyHasBeenSet = false;
 
   Aws::String m_registryName;
-  bool m_registryNameHasBeenSet = false;
 
   Aws::String m_revisionId;
+  bool m_policyHasBeenSet = false;
+  bool m_registryNameHasBeenSet = false;
   bool m_revisionIdHasBeenSet = false;
 };
 

@@ -145,21 +145,21 @@ class ListQueriesRequest : public CloudTrailRequest {
   ///@}
  private:
   Aws::String m_eventDataStore;
-  bool m_eventDataStoreHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   QueryStatus m_queryStatus{QueryStatus::NOT_SET};
+  bool m_eventDataStoreHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
   bool m_queryStatusHasBeenSet = false;
 };
 

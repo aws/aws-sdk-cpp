@@ -124,18 +124,18 @@ class CoverageEksClusterDetails {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   long long m_coveredNodes{0};
-  bool m_coveredNodesHasBeenSet = false;
 
   long long m_compatibleNodes{0};
-  bool m_compatibleNodesHasBeenSet = false;
 
   AddonDetails m_addonDetails;
-  bool m_addonDetailsHasBeenSet = false;
 
   ManagementType m_managementType{ManagementType::NOT_SET};
+  bool m_clusterNameHasBeenSet = false;
+  bool m_coveredNodesHasBeenSet = false;
+  bool m_compatibleNodesHasBeenSet = false;
+  bool m_addonDetailsHasBeenSet = false;
   bool m_managementTypeHasBeenSet = false;
 };
 

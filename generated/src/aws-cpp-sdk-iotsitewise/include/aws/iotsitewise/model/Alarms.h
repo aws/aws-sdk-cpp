@@ -82,9 +82,9 @@ class Alarms {
   ///@}
  private:
   Aws::String m_alarmRoleArn;
-  bool m_alarmRoleArnHasBeenSet = false;
 
   Aws::String m_notificationLambdaArn;
+  bool m_alarmRoleArnHasBeenSet = false;
   bool m_notificationLambdaArnHasBeenSet = false;
 };
 

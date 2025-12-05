@@ -61,9 +61,9 @@ class GetSpeakerSearchTaskResult {
   ///@}
  private:
   SpeakerSearchTask m_speakerSearchTask;
-  bool m_speakerSearchTaskHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_speakerSearchTaskHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -97,15 +97,15 @@ class VolumeStatistics {
   ///@}
  private:
   long long m_inboxRawCount{0};
-  bool m_inboxRawCountHasBeenSet = false;
 
   long long m_spamRawCount{0};
-  bool m_spamRawCountHasBeenSet = false;
 
   long long m_projectedInbox{0};
-  bool m_projectedInboxHasBeenSet = false;
 
   long long m_projectedSpam{0};
+  bool m_inboxRawCountHasBeenSet = false;
+  bool m_spamRawCountHasBeenSet = false;
+  bool m_projectedInboxHasBeenSet = false;
   bool m_projectedSpamHasBeenSet = false;
 };
 

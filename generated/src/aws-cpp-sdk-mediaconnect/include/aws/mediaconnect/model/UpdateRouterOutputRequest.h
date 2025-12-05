@@ -158,24 +158,24 @@ class UpdateRouterOutputRequest : public MediaConnectRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   RouterOutputConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   long long m_maximumBitrate{0};
-  bool m_maximumBitrateHasBeenSet = false;
 
   RoutingScope m_routingScope{RoutingScope::NOT_SET};
-  bool m_routingScopeHasBeenSet = false;
 
   RouterOutputTier m_tier{RouterOutputTier::NOT_SET};
-  bool m_tierHasBeenSet = false;
 
   MaintenanceConfiguration m_maintenanceConfiguration;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_maximumBitrateHasBeenSet = false;
+  bool m_routingScopeHasBeenSet = false;
+  bool m_tierHasBeenSet = false;
   bool m_maintenanceConfigurationHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class OrchestratorConfigurationEntry {
   ///@}
  private:
   Aws::String m_aiAgentId;
-  bool m_aiAgentIdHasBeenSet = false;
 
   Aws::String m_orchestratorUseCase;
+  bool m_aiAgentIdHasBeenSet = false;
   bool m_orchestratorUseCaseHasBeenSet = false;
 };
 

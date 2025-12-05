@@ -70,9 +70,9 @@ class MetadataAttribute {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   MetadataAttributeValue m_value;
+  bool m_keyHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

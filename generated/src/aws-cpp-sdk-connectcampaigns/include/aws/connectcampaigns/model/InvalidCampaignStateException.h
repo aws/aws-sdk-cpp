@@ -80,12 +80,12 @@ class InvalidCampaignStateException {
   ///@}
  private:
   CampaignState m_state{CampaignState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_xAmzErrorType;
+  bool m_stateHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_xAmzErrorTypeHasBeenSet = false;
 };
 

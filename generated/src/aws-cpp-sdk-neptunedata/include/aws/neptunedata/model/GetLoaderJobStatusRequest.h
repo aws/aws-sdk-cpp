@@ -126,18 +126,18 @@ class GetLoaderJobStatusRequest : public NeptunedataRequest {
   ///@}
  private:
   Aws::String m_loadId;
-  bool m_loadIdHasBeenSet = false;
 
   bool m_details{false};
-  bool m_detailsHasBeenSet = false;
 
   bool m_errors{false};
-  bool m_errorsHasBeenSet = false;
 
   int m_page{0};
-  bool m_pageHasBeenSet = false;
 
   int m_errorsPerPage{0};
+  bool m_loadIdHasBeenSet = false;
+  bool m_detailsHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
+  bool m_pageHasBeenSet = false;
   bool m_errorsPerPageHasBeenSet = false;
 };
 

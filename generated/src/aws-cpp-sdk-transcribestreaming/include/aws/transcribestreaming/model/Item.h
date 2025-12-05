@@ -178,27 +178,27 @@ class Item {
   ///@}
  private:
   double m_startTime{0.0};
-  bool m_startTimeHasBeenSet = false;
 
   double m_endTime{0.0};
-  bool m_endTimeHasBeenSet = false;
 
   ItemType m_type{ItemType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   bool m_vocabularyFilterMatch{false};
-  bool m_vocabularyFilterMatchHasBeenSet = false;
 
   Aws::String m_speaker;
-  bool m_speakerHasBeenSet = false;
 
   double m_confidence{0.0};
-  bool m_confidenceHasBeenSet = false;
 
   bool m_stable{false};
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_vocabularyFilterMatchHasBeenSet = false;
+  bool m_speakerHasBeenSet = false;
+  bool m_confidenceHasBeenSet = false;
   bool m_stableHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class ListAgentCollaboratorsResult {
   ///@}
  private:
   Aws::Vector<AgentCollaboratorSummary> m_agentCollaboratorSummaries;
-  bool m_agentCollaboratorSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_agentCollaboratorSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

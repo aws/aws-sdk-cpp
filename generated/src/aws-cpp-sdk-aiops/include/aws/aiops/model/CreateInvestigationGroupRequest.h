@@ -261,30 +261,30 @@ class CreateInvestigationGroupRequest : public AIOpsRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
-  bool m_encryptionConfigurationHasBeenSet = false;
 
   long long m_retentionInDays{0};
-  bool m_retentionInDaysHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagKeyBoundaries;
-  bool m_tagKeyBoundariesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_chatbotNotificationChannel;
-  bool m_chatbotNotificationChannelHasBeenSet = false;
 
   bool m_isCloudTrailEventHistoryEnabled{false};
-  bool m_isCloudTrailEventHistoryEnabledHasBeenSet = false;
 
   Aws::Vector<CrossAccountConfiguration> m_crossAccountConfigurations;
+  bool m_nameHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
+  bool m_retentionInDaysHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_tagKeyBoundariesHasBeenSet = false;
+  bool m_chatbotNotificationChannelHasBeenSet = false;
+  bool m_isCloudTrailEventHistoryEnabledHasBeenSet = false;
   bool m_crossAccountConfigurationsHasBeenSet = false;
 };
 

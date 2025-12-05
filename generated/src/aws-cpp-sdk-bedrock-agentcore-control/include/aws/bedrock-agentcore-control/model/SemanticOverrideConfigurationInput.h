@@ -70,9 +70,9 @@ class SemanticOverrideConfigurationInput {
   ///@}
  private:
   SemanticOverrideExtractionConfigurationInput m_extraction;
-  bool m_extractionHasBeenSet = false;
 
   SemanticOverrideConsolidationConfigurationInput m_consolidation;
+  bool m_extractionHasBeenSet = false;
   bool m_consolidationHasBeenSet = false;
 };
 

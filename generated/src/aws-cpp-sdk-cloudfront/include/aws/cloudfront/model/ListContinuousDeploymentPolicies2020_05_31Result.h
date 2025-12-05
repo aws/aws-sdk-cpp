@@ -62,9 +62,9 @@ class ListContinuousDeploymentPolicies2020_05_31Result {
   ///@}
  private:
   ContinuousDeploymentPolicyList m_continuousDeploymentPolicyList;
-  bool m_continuousDeploymentPolicyListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_continuousDeploymentPolicyListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

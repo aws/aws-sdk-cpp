@@ -60,9 +60,9 @@ class CreateAgentAliasResult {
   ///@}
  private:
   AgentAlias m_agentAlias;
-  bool m_agentAliasHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_agentAliasHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

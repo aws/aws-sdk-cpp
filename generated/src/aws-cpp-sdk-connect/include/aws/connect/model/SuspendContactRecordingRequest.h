@@ -103,15 +103,15 @@ class SuspendContactRecordingRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_contactId;
-  bool m_contactIdHasBeenSet = false;
 
   Aws::String m_initialContactId;
-  bool m_initialContactIdHasBeenSet = false;
 
   ContactRecordingType m_contactRecordingType{ContactRecordingType::NOT_SET};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_contactIdHasBeenSet = false;
+  bool m_initialContactIdHasBeenSet = false;
   bool m_contactRecordingTypeHasBeenSet = false;
 };
 

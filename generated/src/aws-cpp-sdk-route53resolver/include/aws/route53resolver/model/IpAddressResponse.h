@@ -181,27 +181,27 @@ class IpAddressResponse {
   ///@}
  private:
   Aws::String m_ipId;
-  bool m_ipIdHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_ip;
-  bool m_ipHasBeenSet = false;
 
   Aws::String m_ipv6;
-  bool m_ipv6HasBeenSet = false;
 
   IpAddressStatus m_status{IpAddressStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_creationTime;
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_modificationTime;
+  bool m_ipIdHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_ipHasBeenSet = false;
+  bool m_ipv6HasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_modificationTimeHasBeenSet = false;
 };
 

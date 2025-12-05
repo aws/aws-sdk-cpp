@@ -123,18 +123,18 @@ class ModifyIntegrationRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_integrationIdentifier;
-  bool m_integrationIdentifierHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_dataFilter;
-  bool m_dataFilterHasBeenSet = false;
 
   IntegrationConfig m_integrationConfig;
-  bool m_integrationConfigHasBeenSet = false;
 
   Aws::String m_integrationName;
+  bool m_integrationIdentifierHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_dataFilterHasBeenSet = false;
+  bool m_integrationConfigHasBeenSet = false;
   bool m_integrationNameHasBeenSet = false;
 };
 

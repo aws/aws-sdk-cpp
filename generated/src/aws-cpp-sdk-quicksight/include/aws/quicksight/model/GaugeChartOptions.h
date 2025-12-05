@@ -125,18 +125,18 @@ class GaugeChartOptions {
   ///@}
  private:
   PrimaryValueDisplayType m_primaryValueDisplayType{PrimaryValueDisplayType::NOT_SET};
-  bool m_primaryValueDisplayTypeHasBeenSet = false;
 
   ComparisonConfiguration m_comparison;
-  bool m_comparisonHasBeenSet = false;
 
   ArcAxisConfiguration m_arcAxis;
-  bool m_arcAxisHasBeenSet = false;
 
   ArcConfiguration m_arc;
-  bool m_arcHasBeenSet = false;
 
   FontConfiguration m_primaryValueFontConfiguration;
+  bool m_primaryValueDisplayTypeHasBeenSet = false;
+  bool m_comparisonHasBeenSet = false;
+  bool m_arcAxisHasBeenSet = false;
+  bool m_arcHasBeenSet = false;
   bool m_primaryValueFontConfigurationHasBeenSet = false;
 };
 

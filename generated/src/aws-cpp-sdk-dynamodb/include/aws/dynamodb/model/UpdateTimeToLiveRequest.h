@@ -79,9 +79,9 @@ class UpdateTimeToLiveRequest : public DynamoDBRequest {
   ///@}
  private:
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   TimeToLiveSpecification m_timeToLiveSpecification;
+  bool m_tableNameHasBeenSet = false;
   bool m_timeToLiveSpecificationHasBeenSet = false;
 };
 

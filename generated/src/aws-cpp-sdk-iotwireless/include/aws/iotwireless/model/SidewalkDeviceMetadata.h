@@ -98,15 +98,15 @@ class SidewalkDeviceMetadata {
   ///@}
  private:
   int m_rssi{0};
-  bool m_rssiHasBeenSet = false;
 
   BatteryLevel m_batteryLevel{BatteryLevel::NOT_SET};
-  bool m_batteryLevelHasBeenSet = false;
 
   Event m_event{Event::NOT_SET};
-  bool m_eventHasBeenSet = false;
 
   DeviceState m_deviceState{DeviceState::NOT_SET};
+  bool m_rssiHasBeenSet = false;
+  bool m_batteryLevelHasBeenSet = false;
+  bool m_eventHasBeenSet = false;
   bool m_deviceStateHasBeenSet = false;
 };
 

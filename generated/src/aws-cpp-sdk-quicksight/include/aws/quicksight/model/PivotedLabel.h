@@ -87,12 +87,12 @@ class PivotedLabel {
   ///@}
  private:
   Aws::String m_labelName;
-  bool m_labelNameHasBeenSet = false;
 
   Aws::String m_newColumnName;
-  bool m_newColumnNameHasBeenSet = false;
 
   Aws::String m_newColumnId;
+  bool m_labelNameHasBeenSet = false;
+  bool m_newColumnNameHasBeenSet = false;
   bool m_newColumnIdHasBeenSet = false;
 };
 

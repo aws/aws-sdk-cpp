@@ -89,12 +89,12 @@ class InferenceExperimentDataStorageConfig {
   ///@}
  private:
   Aws::String m_destination;
-  bool m_destinationHasBeenSet = false;
 
   Aws::String m_kmsKey;
-  bool m_kmsKeyHasBeenSet = false;
 
   CaptureContentTypeHeader m_contentType;
+  bool m_destinationHasBeenSet = false;
+  bool m_kmsKeyHasBeenSet = false;
   bool m_contentTypeHasBeenSet = false;
 };
 

@@ -117,9 +117,9 @@ class AutoMLCandidateGenerationConfig {
   ///@}
  private:
   Aws::String m_featureSpecificationS3Uri;
-  bool m_featureSpecificationS3UriHasBeenSet = false;
 
   Aws::Vector<AutoMLAlgorithmConfig> m_algorithmsConfig;
+  bool m_featureSpecificationS3UriHasBeenSet = false;
   bool m_algorithmsConfigHasBeenSet = false;
 };
 

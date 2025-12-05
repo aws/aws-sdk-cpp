@@ -180,24 +180,24 @@ class TimestreamConfiguration {
   ///@}
  private:
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::String m_timeColumn;
-  bool m_timeColumnHasBeenSet = false;
 
   Aws::Vector<DimensionMapping> m_dimensionMappings;
-  bool m_dimensionMappingsHasBeenSet = false;
 
   MultiMeasureMappings m_multiMeasureMappings;
-  bool m_multiMeasureMappingsHasBeenSet = false;
 
   Aws::Vector<MixedMeasureMapping> m_mixedMeasureMappings;
-  bool m_mixedMeasureMappingsHasBeenSet = false;
 
   Aws::String m_measureNameColumn;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
+  bool m_timeColumnHasBeenSet = false;
+  bool m_dimensionMappingsHasBeenSet = false;
+  bool m_multiMeasureMappingsHasBeenSet = false;
+  bool m_mixedMeasureMappingsHasBeenSet = false;
   bool m_measureNameColumnHasBeenSet = false;
 };
 

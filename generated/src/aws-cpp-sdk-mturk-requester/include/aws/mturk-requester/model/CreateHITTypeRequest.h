@@ -179,24 +179,24 @@ class CreateHITTypeRequest : public MTurkRequest {
   ///@}
  private:
   long long m_autoApprovalDelayInSeconds{0};
-  bool m_autoApprovalDelayInSecondsHasBeenSet = false;
 
   long long m_assignmentDurationInSeconds{0};
-  bool m_assignmentDurationInSecondsHasBeenSet = false;
 
   Aws::String m_reward;
-  bool m_rewardHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_keywords;
-  bool m_keywordsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<QualificationRequirement> m_qualificationRequirements;
+  bool m_autoApprovalDelayInSecondsHasBeenSet = false;
+  bool m_assignmentDurationInSecondsHasBeenSet = false;
+  bool m_rewardHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_keywordsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_qualificationRequirementsHasBeenSet = false;
 };
 

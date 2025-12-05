@@ -90,12 +90,12 @@ class CreateUserImportJobRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   Aws::String m_userPoolId;
-  bool m_userPoolIdHasBeenSet = false;
 
   Aws::String m_cloudWatchLogsRoleArn;
+  bool m_jobNameHasBeenSet = false;
+  bool m_userPoolIdHasBeenSet = false;
   bool m_cloudWatchLogsRoleArnHasBeenSet = false;
 };
 

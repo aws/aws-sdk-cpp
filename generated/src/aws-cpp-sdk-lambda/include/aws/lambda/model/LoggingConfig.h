@@ -112,15 +112,15 @@ class LoggingConfig {
   ///@}
  private:
   LogFormat m_logFormat{LogFormat::NOT_SET};
-  bool m_logFormatHasBeenSet = false;
 
   ApplicationLogLevel m_applicationLogLevel{ApplicationLogLevel::NOT_SET};
-  bool m_applicationLogLevelHasBeenSet = false;
 
   SystemLogLevel m_systemLogLevel{SystemLogLevel::NOT_SET};
-  bool m_systemLogLevelHasBeenSet = false;
 
   Aws::String m_logGroup;
+  bool m_logFormatHasBeenSet = false;
+  bool m_applicationLogLevelHasBeenSet = false;
+  bool m_systemLogLevelHasBeenSet = false;
   bool m_logGroupHasBeenSet = false;
 };
 

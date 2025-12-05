@@ -70,9 +70,9 @@ class DistributionConfigWithTags {
   ///@}
  private:
   DistributionConfig m_distributionConfig;
-  bool m_distributionConfigHasBeenSet = false;
 
   Tags m_tags;
+  bool m_distributionConfigHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

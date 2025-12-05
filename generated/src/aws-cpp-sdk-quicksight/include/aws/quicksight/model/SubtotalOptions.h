@@ -190,27 +190,27 @@ class SubtotalOptions {
   ///@}
  private:
   Visibility m_totalsVisibility{Visibility::NOT_SET};
-  bool m_totalsVisibilityHasBeenSet = false;
 
   Aws::String m_customLabel;
-  bool m_customLabelHasBeenSet = false;
 
   PivotTableSubtotalLevel m_fieldLevel{PivotTableSubtotalLevel::NOT_SET};
-  bool m_fieldLevelHasBeenSet = false;
 
   Aws::Vector<PivotTableFieldSubtotalOptions> m_fieldLevelOptions;
-  bool m_fieldLevelOptionsHasBeenSet = false;
 
   TableCellStyle m_totalCellStyle;
-  bool m_totalCellStyleHasBeenSet = false;
 
   TableCellStyle m_valueCellStyle;
-  bool m_valueCellStyleHasBeenSet = false;
 
   TableCellStyle m_metricHeaderCellStyle;
-  bool m_metricHeaderCellStyleHasBeenSet = false;
 
   Aws::Vector<TableStyleTarget> m_styleTargets;
+  bool m_totalsVisibilityHasBeenSet = false;
+  bool m_customLabelHasBeenSet = false;
+  bool m_fieldLevelHasBeenSet = false;
+  bool m_fieldLevelOptionsHasBeenSet = false;
+  bool m_totalCellStyleHasBeenSet = false;
+  bool m_valueCellStyleHasBeenSet = false;
+  bool m_metricHeaderCellStyleHasBeenSet = false;
   bool m_styleTargetsHasBeenSet = false;
 };
 

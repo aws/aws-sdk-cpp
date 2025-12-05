@@ -58,9 +58,9 @@ class VerifyOTPMessageResult {
   ///@}
  private:
   VerificationResponse m_verificationResponse;
-  bool m_verificationResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_verificationResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

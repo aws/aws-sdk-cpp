@@ -231,39 +231,39 @@ class RevokeSubscriptionResult {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   bool m_retainPermissions{false};
-  bool m_retainPermissionsHasBeenSet = false;
 
   SubscriptionStatus m_status{SubscriptionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   SubscribedListing m_subscribedListing;
-  bool m_subscribedListingHasBeenSet = false;
 
   SubscribedPrincipal m_subscribedPrincipal;
-  bool m_subscribedPrincipalHasBeenSet = false;
 
   Aws::String m_subscriptionRequestId;
-  bool m_subscriptionRequestIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_updatedBy;
-  bool m_updatedByHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_retainPermissionsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_subscribedListingHasBeenSet = false;
+  bool m_subscribedPrincipalHasBeenSet = false;
+  bool m_subscriptionRequestIdHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_updatedByHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

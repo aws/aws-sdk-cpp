@@ -142,24 +142,24 @@ class WorkloadShare {
   ///@}
  private:
   Aws::String m_shareId;
-  bool m_shareIdHasBeenSet = false;
 
   Aws::String m_sharedBy;
-  bool m_sharedByHasBeenSet = false;
 
   Aws::String m_sharedWith;
-  bool m_sharedWithHasBeenSet = false;
 
   PermissionType m_permissionType{PermissionType::NOT_SET};
-  bool m_permissionTypeHasBeenSet = false;
 
   ShareStatus m_status{ShareStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_workloadName;
-  bool m_workloadNameHasBeenSet = false;
 
   Aws::String m_workloadId;
+  bool m_shareIdHasBeenSet = false;
+  bool m_sharedByHasBeenSet = false;
+  bool m_sharedWithHasBeenSet = false;
+  bool m_permissionTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_workloadNameHasBeenSet = false;
   bool m_workloadIdHasBeenSet = false;
 };
 

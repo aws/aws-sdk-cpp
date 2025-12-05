@@ -177,27 +177,27 @@ class CreateCommentRequest : public WorkDocsRequest {
   ///@}
  private:
   Aws::String m_authenticationToken;
-  bool m_authenticationTokenHasBeenSet = false;
 
   Aws::String m_documentId;
-  bool m_documentIdHasBeenSet = false;
 
   Aws::String m_versionId;
-  bool m_versionIdHasBeenSet = false;
 
   Aws::String m_parentId;
-  bool m_parentIdHasBeenSet = false;
 
   Aws::String m_threadId;
-  bool m_threadIdHasBeenSet = false;
 
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   CommentVisibilityType m_visibility{CommentVisibilityType::NOT_SET};
-  bool m_visibilityHasBeenSet = false;
 
   bool m_notifyCollaborators{false};
+  bool m_authenticationTokenHasBeenSet = false;
+  bool m_documentIdHasBeenSet = false;
+  bool m_versionIdHasBeenSet = false;
+  bool m_parentIdHasBeenSet = false;
+  bool m_threadIdHasBeenSet = false;
+  bool m_textHasBeenSet = false;
+  bool m_visibilityHasBeenSet = false;
   bool m_notifyCollaboratorsHasBeenSet = false;
 };
 

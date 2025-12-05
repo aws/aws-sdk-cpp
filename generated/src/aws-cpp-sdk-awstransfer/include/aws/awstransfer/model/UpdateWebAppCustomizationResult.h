@@ -59,9 +59,9 @@ class UpdateWebAppCustomizationResult {
   ///@}
  private:
   Aws::String m_webAppId;
-  bool m_webAppIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_webAppIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

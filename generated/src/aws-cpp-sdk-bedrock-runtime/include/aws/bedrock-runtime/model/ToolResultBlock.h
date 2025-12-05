@@ -116,15 +116,15 @@ class ToolResultBlock {
   ///@}
  private:
   Aws::String m_toolUseId;
-  bool m_toolUseIdHasBeenSet = false;
 
   Aws::Vector<ToolResultContentBlock> m_content;
-  bool m_contentHasBeenSet = false;
 
   ToolResultStatus m_status{ToolResultStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_toolUseIdHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

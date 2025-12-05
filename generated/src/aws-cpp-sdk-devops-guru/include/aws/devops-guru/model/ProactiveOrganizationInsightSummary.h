@@ -210,33 +210,33 @@ class ProactiveOrganizationInsightSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_organizationalUnitId;
-  bool m_organizationalUnitIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   InsightSeverity m_severity{InsightSeverity::NOT_SET};
-  bool m_severityHasBeenSet = false;
 
   InsightStatus m_status{InsightStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   InsightTimeRange m_insightTimeRange;
-  bool m_insightTimeRangeHasBeenSet = false;
 
   PredictionTimeRange m_predictionTimeRange;
-  bool m_predictionTimeRangeHasBeenSet = false;
 
   ResourceCollection m_resourceCollection;
-  bool m_resourceCollectionHasBeenSet = false;
 
   ServiceCollection m_serviceCollection;
+  bool m_idHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_organizationalUnitIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_insightTimeRangeHasBeenSet = false;
+  bool m_predictionTimeRangeHasBeenSet = false;
+  bool m_resourceCollectionHasBeenSet = false;
   bool m_serviceCollectionHasBeenSet = false;
 };
 

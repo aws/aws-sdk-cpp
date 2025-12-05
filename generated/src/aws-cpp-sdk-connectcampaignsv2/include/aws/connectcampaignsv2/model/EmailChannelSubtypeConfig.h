@@ -79,12 +79,12 @@ class EmailChannelSubtypeConfig {
   ///@}
  private:
   double m_capacity{0.0};
-  bool m_capacityHasBeenSet = false;
 
   EmailOutboundMode m_outboundMode;
-  bool m_outboundModeHasBeenSet = false;
 
   EmailOutboundConfig m_defaultOutboundConfig;
+  bool m_capacityHasBeenSet = false;
+  bool m_outboundModeHasBeenSet = false;
   bool m_defaultOutboundConfigHasBeenSet = false;
 };
 

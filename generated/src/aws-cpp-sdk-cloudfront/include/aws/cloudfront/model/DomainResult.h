@@ -67,9 +67,9 @@ class DomainResult {
   ///@}
  private:
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   DomainStatus m_status{DomainStatus::NOT_SET};
+  bool m_domainHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

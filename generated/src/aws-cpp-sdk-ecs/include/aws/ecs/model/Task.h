@@ -827,114 +827,114 @@ class Task {
   ///@}
  private:
   Aws::Vector<Attachment> m_attachments;
-  bool m_attachmentsHasBeenSet = false;
 
   Aws::Vector<Attribute> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_capacityProviderName;
-  bool m_capacityProviderNameHasBeenSet = false;
 
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Connectivity m_connectivity{Connectivity::NOT_SET};
-  bool m_connectivityHasBeenSet = false;
 
   Aws::Utils::DateTime m_connectivityAt{};
-  bool m_connectivityAtHasBeenSet = false;
 
   Aws::String m_containerInstanceArn;
-  bool m_containerInstanceArnHasBeenSet = false;
 
   Aws::Vector<Container> m_containers;
-  bool m_containersHasBeenSet = false;
 
   Aws::String m_cpu;
-  bool m_cpuHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_desiredStatus;
-  bool m_desiredStatusHasBeenSet = false;
 
   bool m_enableExecuteCommand{false};
-  bool m_enableExecuteCommandHasBeenSet = false;
 
   Aws::Utils::DateTime m_executionStoppedAt{};
-  bool m_executionStoppedAtHasBeenSet = false;
 
   Aws::String m_group;
-  bool m_groupHasBeenSet = false;
 
   HealthStatus m_healthStatus{HealthStatus::NOT_SET};
-  bool m_healthStatusHasBeenSet = false;
 
   Aws::Vector<InferenceAccelerator> m_inferenceAccelerators;
-  bool m_inferenceAcceleratorsHasBeenSet = false;
 
   Aws::String m_lastStatus;
-  bool m_lastStatusHasBeenSet = false;
 
   LaunchType m_launchType{LaunchType::NOT_SET};
-  bool m_launchTypeHasBeenSet = false;
 
   Aws::String m_memory;
-  bool m_memoryHasBeenSet = false;
 
   TaskOverride m_overrides;
-  bool m_overridesHasBeenSet = false;
 
   Aws::String m_platformVersion;
-  bool m_platformVersionHasBeenSet = false;
 
   Aws::String m_platformFamily;
-  bool m_platformFamilyHasBeenSet = false;
 
   Aws::Utils::DateTime m_pullStartedAt{};
-  bool m_pullStartedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_pullStoppedAt{};
-  bool m_pullStoppedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   Aws::String m_startedBy;
-  bool m_startedByHasBeenSet = false;
 
   TaskStopCode m_stopCode{TaskStopCode::NOT_SET};
-  bool m_stopCodeHasBeenSet = false;
 
   Aws::Utils::DateTime m_stoppedAt{};
-  bool m_stoppedAtHasBeenSet = false;
 
   Aws::String m_stoppedReason;
-  bool m_stoppedReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_stoppingAt{};
-  bool m_stoppingAtHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_taskArn;
-  bool m_taskArnHasBeenSet = false;
 
   Aws::String m_taskDefinitionArn;
-  bool m_taskDefinitionArnHasBeenSet = false;
 
   long long m_version{0};
-  bool m_versionHasBeenSet = false;
 
   EphemeralStorage m_ephemeralStorage;
-  bool m_ephemeralStorageHasBeenSet = false;
 
   TaskEphemeralStorage m_fargateEphemeralStorage;
+  bool m_attachmentsHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_capacityProviderNameHasBeenSet = false;
+  bool m_clusterArnHasBeenSet = false;
+  bool m_connectivityHasBeenSet = false;
+  bool m_connectivityAtHasBeenSet = false;
+  bool m_containerInstanceArnHasBeenSet = false;
+  bool m_containersHasBeenSet = false;
+  bool m_cpuHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_desiredStatusHasBeenSet = false;
+  bool m_enableExecuteCommandHasBeenSet = false;
+  bool m_executionStoppedAtHasBeenSet = false;
+  bool m_groupHasBeenSet = false;
+  bool m_healthStatusHasBeenSet = false;
+  bool m_inferenceAcceleratorsHasBeenSet = false;
+  bool m_lastStatusHasBeenSet = false;
+  bool m_launchTypeHasBeenSet = false;
+  bool m_memoryHasBeenSet = false;
+  bool m_overridesHasBeenSet = false;
+  bool m_platformVersionHasBeenSet = false;
+  bool m_platformFamilyHasBeenSet = false;
+  bool m_pullStartedAtHasBeenSet = false;
+  bool m_pullStoppedAtHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_startedByHasBeenSet = false;
+  bool m_stopCodeHasBeenSet = false;
+  bool m_stoppedAtHasBeenSet = false;
+  bool m_stoppedReasonHasBeenSet = false;
+  bool m_stoppingAtHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_taskArnHasBeenSet = false;
+  bool m_taskDefinitionArnHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_ephemeralStorageHasBeenSet = false;
   bool m_fargateEphemeralStorageHasBeenSet = false;
 };
 

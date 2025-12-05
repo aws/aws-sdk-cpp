@@ -506,69 +506,69 @@ class FileSystem {
   ///@}
  private:
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_fileSystemId;
-  bool m_fileSystemIdHasBeenSet = false;
 
   FileSystemType m_fileSystemType{FileSystemType::NOT_SET};
-  bool m_fileSystemTypeHasBeenSet = false;
 
   FileSystemLifecycle m_lifecycle{FileSystemLifecycle::NOT_SET};
-  bool m_lifecycleHasBeenSet = false;
 
   FileSystemFailureDetails m_failureDetails;
-  bool m_failureDetailsHasBeenSet = false;
 
   int m_storageCapacity{0};
-  bool m_storageCapacityHasBeenSet = false;
 
   StorageType m_storageType{StorageType::NOT_SET};
-  bool m_storageTypeHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_networkInterfaceIds;
-  bool m_networkInterfaceIdsHasBeenSet = false;
 
   Aws::String m_dNSName;
-  bool m_dNSNameHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_resourceARN;
-  bool m_resourceARNHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   WindowsFileSystemConfiguration m_windowsConfiguration;
-  bool m_windowsConfigurationHasBeenSet = false;
 
   LustreFileSystemConfiguration m_lustreConfiguration;
-  bool m_lustreConfigurationHasBeenSet = false;
 
   Aws::Vector<AdministrativeAction> m_administrativeActions;
-  bool m_administrativeActionsHasBeenSet = false;
 
   OntapFileSystemConfiguration m_ontapConfiguration;
-  bool m_ontapConfigurationHasBeenSet = false;
 
   Aws::String m_fileSystemTypeVersion;
-  bool m_fileSystemTypeVersionHasBeenSet = false;
 
   OpenZFSFileSystemConfiguration m_openZFSConfiguration;
-  bool m_openZFSConfigurationHasBeenSet = false;
 
   NetworkType m_networkType{NetworkType::NOT_SET};
+  bool m_ownerIdHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_fileSystemIdHasBeenSet = false;
+  bool m_fileSystemTypeHasBeenSet = false;
+  bool m_lifecycleHasBeenSet = false;
+  bool m_failureDetailsHasBeenSet = false;
+  bool m_storageCapacityHasBeenSet = false;
+  bool m_storageTypeHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_networkInterfaceIdsHasBeenSet = false;
+  bool m_dNSNameHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_resourceARNHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_windowsConfigurationHasBeenSet = false;
+  bool m_lustreConfigurationHasBeenSet = false;
+  bool m_administrativeActionsHasBeenSet = false;
+  bool m_ontapConfigurationHasBeenSet = false;
+  bool m_fileSystemTypeVersionHasBeenSet = false;
+  bool m_openZFSConfigurationHasBeenSet = false;
   bool m_networkTypeHasBeenSet = false;
 };
 

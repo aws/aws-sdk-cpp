@@ -109,15 +109,15 @@ class DescribeVpcEndpointServicesResponse {
   ///@}
  private:
   Aws::Vector<Aws::String> m_serviceNames;
-  bool m_serviceNamesHasBeenSet = false;
 
   Aws::Vector<ServiceDetail> m_serviceDetails;
-  bool m_serviceDetailsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_serviceNamesHasBeenSet = false;
+  bool m_serviceDetailsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

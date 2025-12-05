@@ -173,24 +173,24 @@ class CreateClusterRequest : public DSQLRequest {
   ///@}
  private:
   bool m_deletionProtectionEnabled{false};
-  bool m_deletionProtectionEnabledHasBeenSet = false;
 
   Aws::String m_kmsEncryptionKey;
-  bool m_kmsEncryptionKeyHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   MultiRegionProperties m_multiRegionProperties;
-  bool m_multiRegionPropertiesHasBeenSet = false;
 
   Aws::String m_policy;
-  bool m_policyHasBeenSet = false;
 
   bool m_bypassPolicyLockoutSafetyCheck{false};
+  bool m_deletionProtectionEnabledHasBeenSet = false;
+  bool m_kmsEncryptionKeyHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_multiRegionPropertiesHasBeenSet = false;
+  bool m_policyHasBeenSet = false;
   bool m_bypassPolicyLockoutSafetyCheckHasBeenSet = false;
 };
 

@@ -62,9 +62,9 @@ class IsolineGranularityOptions {
   ///@}
  private:
   int m_maxPoints{0};
-  bool m_maxPointsHasBeenSet = false;
 
   long long m_maxResolution{0};
+  bool m_maxPointsHasBeenSet = false;
   bool m_maxResolutionHasBeenSet = false;
 };
 

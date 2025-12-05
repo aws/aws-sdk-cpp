@@ -195,27 +195,27 @@ class UpdateDocumentRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::Vector<AttachmentsSource> m_attachments;
-  bool m_attachmentsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_versionName;
-  bool m_versionNameHasBeenSet = false;
 
   Aws::String m_documentVersion;
-  bool m_documentVersionHasBeenSet = false;
 
   DocumentFormat m_documentFormat{DocumentFormat::NOT_SET};
-  bool m_documentFormatHasBeenSet = false;
 
   Aws::String m_targetType;
+  bool m_contentHasBeenSet = false;
+  bool m_attachmentsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_versionNameHasBeenSet = false;
+  bool m_documentVersionHasBeenSet = false;
+  bool m_documentFormatHasBeenSet = false;
   bool m_targetTypeHasBeenSet = false;
 };
 

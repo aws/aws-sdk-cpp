@@ -68,9 +68,9 @@ class TerminateInstanceInAutoScalingGroupRequest : public AutoScalingRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   bool m_shouldDecrementDesiredCapacity{false};
+  bool m_instanceIdHasBeenSet = false;
   bool m_shouldDecrementDesiredCapacityHasBeenSet = false;
 };
 

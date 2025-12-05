@@ -133,18 +133,18 @@ class DescribeProductResult {
   ///@}
  private:
   ProductViewSummary m_productViewSummary;
-  bool m_productViewSummaryHasBeenSet = false;
 
   Aws::Vector<ProvisioningArtifact> m_provisioningArtifacts;
-  bool m_provisioningArtifactsHasBeenSet = false;
 
   Aws::Vector<BudgetDetail> m_budgets;
-  bool m_budgetsHasBeenSet = false;
 
   Aws::Vector<LaunchPath> m_launchPaths;
-  bool m_launchPathsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_productViewSummaryHasBeenSet = false;
+  bool m_provisioningArtifactsHasBeenSet = false;
+  bool m_budgetsHasBeenSet = false;
+  bool m_launchPathsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

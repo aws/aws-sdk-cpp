@@ -70,9 +70,9 @@ class VisualInteractionOptions {
   ///@}
  private:
   VisualMenuOption m_visualMenuOption;
-  bool m_visualMenuOptionHasBeenSet = false;
 
   ContextMenuOption m_contextMenuOption;
+  bool m_visualMenuOptionHasBeenSet = false;
   bool m_contextMenuOptionHasBeenSet = false;
 };
 

@@ -133,12 +133,12 @@ class MapFilter {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   MapFilterComparison m_comparison{MapFilterComparison::NOT_SET};
+  bool m_keyHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_comparisonHasBeenSet = false;
 };
 

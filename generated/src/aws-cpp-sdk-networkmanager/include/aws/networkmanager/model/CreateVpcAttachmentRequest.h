@@ -172,24 +172,24 @@ class CreateVpcAttachmentRequest : public NetworkManagerRequest {
   ///@}
  private:
   Aws::String m_coreNetworkId;
-  bool m_coreNetworkIdHasBeenSet = false;
 
   Aws::String m_vpcArn;
-  bool m_vpcArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetArns;
-  bool m_subnetArnsHasBeenSet = false;
 
   VpcOptions m_options;
-  bool m_optionsHasBeenSet = false;
 
   Aws::String m_routingPolicyLabel;
-  bool m_routingPolicyLabelHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_coreNetworkIdHasBeenSet = false;
+  bool m_vpcArnHasBeenSet = false;
+  bool m_subnetArnsHasBeenSet = false;
+  bool m_optionsHasBeenSet = false;
+  bool m_routingPolicyLabelHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

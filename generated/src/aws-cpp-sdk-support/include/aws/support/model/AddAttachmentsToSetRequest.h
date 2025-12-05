@@ -84,9 +84,9 @@ class AddAttachmentsToSetRequest : public SupportRequest {
   ///@}
  private:
   Aws::String m_attachmentSetId;
-  bool m_attachmentSetIdHasBeenSet = false;
 
   Aws::Vector<Attachment> m_attachments;
+  bool m_attachmentSetIdHasBeenSet = false;
   bool m_attachmentsHasBeenSet = false;
 };
 

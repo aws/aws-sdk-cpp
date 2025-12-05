@@ -307,42 +307,42 @@ class SendTextMessageRequest : public PinpointSMSVoiceV2Request {
   ///@}
  private:
   Aws::String m_destinationPhoneNumber;
-  bool m_destinationPhoneNumberHasBeenSet = false;
 
   Aws::String m_originationIdentity;
-  bool m_originationIdentityHasBeenSet = false;
 
   Aws::String m_messageBody;
-  bool m_messageBodyHasBeenSet = false;
 
   MessageType m_messageType{MessageType::NOT_SET};
-  bool m_messageTypeHasBeenSet = false;
 
   Aws::String m_keyword;
-  bool m_keywordHasBeenSet = false;
 
   Aws::String m_configurationSetName;
-  bool m_configurationSetNameHasBeenSet = false;
 
   Aws::String m_maxPrice;
-  bool m_maxPriceHasBeenSet = false;
 
   int m_timeToLive{0};
-  bool m_timeToLiveHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_context;
-  bool m_contextHasBeenSet = false;
 
   Aws::Map<DestinationCountryParameterKey, Aws::String> m_destinationCountryParameters;
-  bool m_destinationCountryParametersHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_protectConfigurationId;
-  bool m_protectConfigurationIdHasBeenSet = false;
 
   bool m_messageFeedbackEnabled{false};
+  bool m_destinationPhoneNumberHasBeenSet = false;
+  bool m_originationIdentityHasBeenSet = false;
+  bool m_messageBodyHasBeenSet = false;
+  bool m_messageTypeHasBeenSet = false;
+  bool m_keywordHasBeenSet = false;
+  bool m_configurationSetNameHasBeenSet = false;
+  bool m_maxPriceHasBeenSet = false;
+  bool m_timeToLiveHasBeenSet = false;
+  bool m_contextHasBeenSet = false;
+  bool m_destinationCountryParametersHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_protectConfigurationIdHasBeenSet = false;
   bool m_messageFeedbackEnabledHasBeenSet = false;
 };
 

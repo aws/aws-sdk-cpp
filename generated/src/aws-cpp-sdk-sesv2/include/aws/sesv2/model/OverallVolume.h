@@ -96,12 +96,12 @@ class OverallVolume {
   ///@}
  private:
   VolumeStatistics m_volumeStatistics;
-  bool m_volumeStatisticsHasBeenSet = false;
 
   double m_readRatePercent{0.0};
-  bool m_readRatePercentHasBeenSet = false;
 
   Aws::Vector<DomainIspPlacement> m_domainIspPlacements;
+  bool m_volumeStatisticsHasBeenSet = false;
+  bool m_readRatePercentHasBeenSet = false;
   bool m_domainIspPlacementsHasBeenSet = false;
 };
 

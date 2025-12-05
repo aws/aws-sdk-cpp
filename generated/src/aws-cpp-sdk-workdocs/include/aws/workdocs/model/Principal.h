@@ -93,12 +93,12 @@ class Principal {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   PrincipalType m_type{PrincipalType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<PermissionInfo> m_roles;
+  bool m_idHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_rolesHasBeenSet = false;
 };
 

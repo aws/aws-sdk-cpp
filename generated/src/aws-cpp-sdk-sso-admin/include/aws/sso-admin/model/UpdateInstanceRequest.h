@@ -92,12 +92,12 @@ class UpdateInstanceRequest : public SSOAdminRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_instanceArn;
-  bool m_instanceArnHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
+  bool m_nameHasBeenSet = false;
+  bool m_instanceArnHasBeenSet = false;
   bool m_encryptionConfigurationHasBeenSet = false;
 };
 

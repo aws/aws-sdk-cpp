@@ -105,15 +105,15 @@ class MotionGraphicsActivateScheduleActionSettings {
   ///@}
  private:
   long long m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   Aws::String m_passwordParam;
-  bool m_passwordParamHasBeenSet = false;
 
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::String m_username;
+  bool m_durationHasBeenSet = false;
+  bool m_passwordParamHasBeenSet = false;
+  bool m_urlHasBeenSet = false;
   bool m_usernameHasBeenSet = false;
 };
 

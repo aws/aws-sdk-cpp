@@ -119,18 +119,18 @@ class GetOutpostSupportedInstanceTypesRequest : public OutpostsRequest {
   ///@}
  private:
   Aws::String m_outpostIdentifier;
-  bool m_outpostIdentifierHasBeenSet = false;
 
   Aws::String m_orderId;
-  bool m_orderIdHasBeenSet = false;
 
   Aws::String m_assetId;
-  bool m_assetIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_outpostIdentifierHasBeenSet = false;
+  bool m_orderIdHasBeenSet = false;
+  bool m_assetIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

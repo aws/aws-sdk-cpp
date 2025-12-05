@@ -202,30 +202,30 @@ class DescribeEnvironmentHealthResult {
   ///@}
  private:
   Aws::String m_environmentName;
-  bool m_environmentNameHasBeenSet = false;
 
   Aws::String m_healthStatus;
-  bool m_healthStatusHasBeenSet = false;
 
   EnvironmentHealth m_status{EnvironmentHealth::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_color;
-  bool m_colorHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_causes;
-  bool m_causesHasBeenSet = false;
 
   ApplicationMetrics m_applicationMetrics;
-  bool m_applicationMetricsHasBeenSet = false;
 
   InstanceHealthSummary m_instancesHealth;
-  bool m_instancesHealthHasBeenSet = false;
 
   Aws::Utils::DateTime m_refreshedAt{};
-  bool m_refreshedAtHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_environmentNameHasBeenSet = false;
+  bool m_healthStatusHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_colorHasBeenSet = false;
+  bool m_causesHasBeenSet = false;
+  bool m_applicationMetricsHasBeenSet = false;
+  bool m_instancesHealthHasBeenSet = false;
+  bool m_refreshedAtHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

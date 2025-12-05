@@ -67,9 +67,9 @@ class DeleteConfiguredTableAssociationRequest : public CleanRoomsRequest {
   ///@}
  private:
   Aws::String m_configuredTableAssociationIdentifier;
-  bool m_configuredTableAssociationIdentifierHasBeenSet = false;
 
   Aws::String m_membershipIdentifier;
+  bool m_configuredTableAssociationIdentifierHasBeenSet = false;
   bool m_membershipIdentifierHasBeenSet = false;
 };
 

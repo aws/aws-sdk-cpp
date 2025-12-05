@@ -149,21 +149,21 @@ class ProtectedJobSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_membershipId;
-  bool m_membershipIdHasBeenSet = false;
 
   Aws::String m_membershipArn;
-  bool m_membershipArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   ProtectedJobStatus m_status{ProtectedJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<ProtectedJobReceiverConfiguration> m_receiverConfigurations;
+  bool m_idHasBeenSet = false;
+  bool m_membershipIdHasBeenSet = false;
+  bool m_membershipArnHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_receiverConfigurationsHasBeenSet = false;
 };
 

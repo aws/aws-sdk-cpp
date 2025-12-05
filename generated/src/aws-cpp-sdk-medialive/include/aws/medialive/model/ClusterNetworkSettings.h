@@ -83,9 +83,9 @@ class ClusterNetworkSettings {
   ///@}
  private:
   Aws::String m_defaultRoute;
-  bool m_defaultRouteHasBeenSet = false;
 
   Aws::Vector<InterfaceMapping> m_interfaceMappings;
+  bool m_defaultRouteHasBeenSet = false;
   bool m_interfaceMappingsHasBeenSet = false;
 };
 

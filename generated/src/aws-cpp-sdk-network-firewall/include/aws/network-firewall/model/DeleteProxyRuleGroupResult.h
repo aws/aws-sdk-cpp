@@ -77,12 +77,12 @@ class DeleteProxyRuleGroupResult {
   ///@}
  private:
   Aws::String m_proxyRuleGroupName;
-  bool m_proxyRuleGroupNameHasBeenSet = false;
 
   Aws::String m_proxyRuleGroupArn;
-  bool m_proxyRuleGroupArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_proxyRuleGroupNameHasBeenSet = false;
+  bool m_proxyRuleGroupArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

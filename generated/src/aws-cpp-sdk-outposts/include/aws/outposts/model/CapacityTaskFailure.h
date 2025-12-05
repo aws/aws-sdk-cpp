@@ -67,9 +67,9 @@ class CapacityTaskFailure {
   ///@}
  private:
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   CapacityTaskFailureType m_type{CapacityTaskFailureType::NOT_SET};
+  bool m_reasonHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

@@ -97,15 +97,15 @@ class GetBackupVaultAccessPolicyResult {
   ///@}
  private:
   Aws::String m_backupVaultName;
-  bool m_backupVaultNameHasBeenSet = false;
 
   Aws::String m_backupVaultArn;
-  bool m_backupVaultArnHasBeenSet = false;
 
   Aws::String m_policy;
-  bool m_policyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_backupVaultNameHasBeenSet = false;
+  bool m_backupVaultArnHasBeenSet = false;
+  bool m_policyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

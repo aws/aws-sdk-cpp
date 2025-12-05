@@ -140,21 +140,21 @@ class Deployment {
   ///@}
  private:
   bool m_autoDeployed{false};
-  bool m_autoDeployedHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
-  bool m_createdDateHasBeenSet = false;
 
   Aws::String m_deploymentId;
-  bool m_deploymentIdHasBeenSet = false;
 
   DeploymentStatus m_deploymentStatus{DeploymentStatus::NOT_SET};
-  bool m_deploymentStatusHasBeenSet = false;
 
   Aws::String m_deploymentStatusMessage;
-  bool m_deploymentStatusMessageHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_autoDeployedHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
+  bool m_deploymentIdHasBeenSet = false;
+  bool m_deploymentStatusHasBeenSet = false;
+  bool m_deploymentStatusMessageHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

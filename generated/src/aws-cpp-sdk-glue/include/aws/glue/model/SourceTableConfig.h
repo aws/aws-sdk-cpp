@@ -120,15 +120,15 @@ class SourceTableConfig {
   ///@}
  private:
   Aws::Vector<Aws::String> m_fields;
-  bool m_fieldsHasBeenSet = false;
 
   Aws::String m_filterPredicate;
-  bool m_filterPredicateHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_primaryKey;
-  bool m_primaryKeyHasBeenSet = false;
 
   Aws::String m_recordUpdateField;
+  bool m_fieldsHasBeenSet = false;
+  bool m_filterPredicateHasBeenSet = false;
+  bool m_primaryKeyHasBeenSet = false;
   bool m_recordUpdateFieldHasBeenSet = false;
 };
 

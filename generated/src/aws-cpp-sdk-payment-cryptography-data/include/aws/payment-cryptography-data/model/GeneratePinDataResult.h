@@ -158,24 +158,24 @@ class GeneratePinDataResult {
   ///@}
  private:
   Aws::String m_generationKeyArn;
-  bool m_generationKeyArnHasBeenSet = false;
 
   Aws::String m_generationKeyCheckValue;
-  bool m_generationKeyCheckValueHasBeenSet = false;
 
   Aws::String m_encryptionKeyArn;
-  bool m_encryptionKeyArnHasBeenSet = false;
 
   Aws::String m_encryptionKeyCheckValue;
-  bool m_encryptionKeyCheckValueHasBeenSet = false;
 
   Aws::String m_encryptedPinBlock;
-  bool m_encryptedPinBlockHasBeenSet = false;
 
   PinData m_pinData;
-  bool m_pinDataHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_generationKeyArnHasBeenSet = false;
+  bool m_generationKeyCheckValueHasBeenSet = false;
+  bool m_encryptionKeyArnHasBeenSet = false;
+  bool m_encryptionKeyCheckValueHasBeenSet = false;
+  bool m_encryptedPinBlockHasBeenSet = false;
+  bool m_pinDataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class DeleteUtterancesRequest : public LexModelBuildingServiceRequest {
   ///@}
  private:
   Aws::String m_botName;
-  bool m_botNameHasBeenSet = false;
 
   Aws::String m_userId;
+  bool m_botNameHasBeenSet = false;
   bool m_userIdHasBeenSet = false;
 };
 

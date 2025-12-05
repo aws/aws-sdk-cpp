@@ -65,9 +65,9 @@ class CisResultStatusFilter {
   ///@}
  private:
   CisResultStatusComparison m_comparison{CisResultStatusComparison::NOT_SET};
-  bool m_comparisonHasBeenSet = false;
 
   CisResultStatus m_value{CisResultStatus::NOT_SET};
+  bool m_comparisonHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

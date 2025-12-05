@@ -126,15 +126,15 @@ class DescribePullThroughCacheRulesRequest : public ECRRequest {
   ///@}
  private:
   Aws::String m_registryId;
-  bool m_registryIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ecrRepositoryPrefixes;
-  bool m_ecrRepositoryPrefixesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_registryIdHasBeenSet = false;
+  bool m_ecrRepositoryPrefixesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

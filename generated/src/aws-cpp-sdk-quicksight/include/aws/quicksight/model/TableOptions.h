@@ -105,15 +105,15 @@ class TableOptions {
   ///@}
  private:
   TableOrientation m_orientation{TableOrientation::NOT_SET};
-  bool m_orientationHasBeenSet = false;
 
   TableCellStyle m_headerStyle;
-  bool m_headerStyleHasBeenSet = false;
 
   TableCellStyle m_cellStyle;
-  bool m_cellStyleHasBeenSet = false;
 
   RowAlternateColorOptions m_rowAlternateColorOptions;
+  bool m_orientationHasBeenSet = false;
+  bool m_headerStyleHasBeenSet = false;
+  bool m_cellStyleHasBeenSet = false;
   bool m_rowAlternateColorOptionsHasBeenSet = false;
 };
 

@@ -159,21 +159,21 @@ class InstanceSummary {
   ///@}
  private:
   Aws::String m_deploymentId;
-  bool m_deploymentIdHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   InstanceStatus m_status{InstanceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::Vector<LifecycleEvent> m_lifecycleEvents;
-  bool m_lifecycleEventsHasBeenSet = false;
 
   InstanceType m_instanceType{InstanceType::NOT_SET};
+  bool m_deploymentIdHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_lifecycleEventsHasBeenSet = false;
   bool m_instanceTypeHasBeenSet = false;
 };
 

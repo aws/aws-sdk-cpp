@@ -65,9 +65,9 @@ class FreeTrialFeatureConfigurationResult {
   ///@}
  private:
   FreeTrialFeatureResult m_name{FreeTrialFeatureResult::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   int m_freeTrialDaysRemaining{0};
+  bool m_nameHasBeenSet = false;
   bool m_freeTrialDaysRemainingHasBeenSet = false;
 };
 

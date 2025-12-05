@@ -123,15 +123,15 @@ class RouteRoad {
   ///@}
  private:
   Aws::Vector<LocalizedString> m_roadName;
-  bool m_roadNameHasBeenSet = false;
 
   Aws::Vector<RouteNumber> m_routeNumber;
-  bool m_routeNumberHasBeenSet = false;
 
   Aws::Vector<LocalizedString> m_towards;
-  bool m_towardsHasBeenSet = false;
 
   RouteRoadType m_type{RouteRoadType::NOT_SET};
+  bool m_roadNameHasBeenSet = false;
+  bool m_routeNumberHasBeenSet = false;
+  bool m_towardsHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

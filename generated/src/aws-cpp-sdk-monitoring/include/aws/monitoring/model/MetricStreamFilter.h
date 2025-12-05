@@ -90,9 +90,9 @@ class MetricStreamFilter {
   ///@}
  private:
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_metricNames;
+  bool m_namespaceHasBeenSet = false;
   bool m_metricNamesHasBeenSet = false;
 };
 

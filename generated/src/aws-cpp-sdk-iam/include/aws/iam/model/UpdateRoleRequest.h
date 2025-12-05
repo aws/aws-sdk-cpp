@@ -101,12 +101,12 @@ class UpdateRoleRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_roleName;
-  bool m_roleNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   int m_maxSessionDuration{0};
+  bool m_roleNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_maxSessionDurationHasBeenSet = false;
 };
 

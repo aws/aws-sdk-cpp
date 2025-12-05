@@ -121,18 +121,18 @@ class FPorts {
   ///@}
  private:
   int m_fuota{0};
-  bool m_fuotaHasBeenSet = false;
 
   int m_multicast{0};
-  bool m_multicastHasBeenSet = false;
 
   int m_clockSync{0};
-  bool m_clockSyncHasBeenSet = false;
 
   Positioning m_positioning;
-  bool m_positioningHasBeenSet = false;
 
   Aws::Vector<ApplicationConfig> m_applications;
+  bool m_fuotaHasBeenSet = false;
+  bool m_multicastHasBeenSet = false;
+  bool m_clockSyncHasBeenSet = false;
+  bool m_positioningHasBeenSet = false;
   bool m_applicationsHasBeenSet = false;
 };
 

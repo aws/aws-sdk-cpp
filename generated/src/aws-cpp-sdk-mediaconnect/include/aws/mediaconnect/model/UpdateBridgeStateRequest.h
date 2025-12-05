@@ -65,9 +65,9 @@ class UpdateBridgeStateRequest : public MediaConnectRequest {
   ///@}
  private:
   Aws::String m_bridgeArn;
-  bool m_bridgeArnHasBeenSet = false;
 
   DesiredState m_desiredState{DesiredState::NOT_SET};
+  bool m_bridgeArnHasBeenSet = false;
   bool m_desiredStateHasBeenSet = false;
 };
 

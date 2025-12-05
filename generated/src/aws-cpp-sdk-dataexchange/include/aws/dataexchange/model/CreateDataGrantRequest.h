@@ -162,24 +162,24 @@ class CreateDataGrantRequest : public DataExchangeRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   GrantDistributionScope m_grantDistributionScope{GrantDistributionScope::NOT_SET};
-  bool m_grantDistributionScopeHasBeenSet = false;
 
   Aws::String m_receiverPrincipal;
-  bool m_receiverPrincipalHasBeenSet = false;
 
   Aws::String m_sourceDataSetId;
-  bool m_sourceDataSetIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_endsAt{};
-  bool m_endsAtHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_grantDistributionScopeHasBeenSet = false;
+  bool m_receiverPrincipalHasBeenSet = false;
+  bool m_sourceDataSetIdHasBeenSet = false;
+  bool m_endsAtHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

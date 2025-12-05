@@ -87,12 +87,12 @@ class ContextDetails {
   ///@}
  private:
   bool m_replayChildren{false};
-  bool m_replayChildrenHasBeenSet = false;
 
   Aws::String m_result;
-  bool m_resultHasBeenSet = false;
 
   ErrorObject m_error;
+  bool m_replayChildrenHasBeenSet = false;
+  bool m_resultHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

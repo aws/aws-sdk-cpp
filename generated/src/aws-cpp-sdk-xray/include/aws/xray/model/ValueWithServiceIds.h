@@ -76,9 +76,9 @@ class ValueWithServiceIds {
   ///@}
  private:
   AnnotationValue m_annotationValue;
-  bool m_annotationValueHasBeenSet = false;
 
   Aws::Vector<ServiceId> m_serviceIds;
+  bool m_annotationValueHasBeenSet = false;
   bool m_serviceIdsHasBeenSet = false;
 };
 

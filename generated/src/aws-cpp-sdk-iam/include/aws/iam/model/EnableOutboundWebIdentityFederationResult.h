@@ -64,9 +64,9 @@ class EnableOutboundWebIdentityFederationResult {
   ///@}
  private:
   Aws::String m_issuerIdentifier;
-  bool m_issuerIdentifierHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_issuerIdentifierHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

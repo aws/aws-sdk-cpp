@@ -59,9 +59,9 @@ class ImportWorkspaceImageResult {
   ///@}
  private:
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_imageIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

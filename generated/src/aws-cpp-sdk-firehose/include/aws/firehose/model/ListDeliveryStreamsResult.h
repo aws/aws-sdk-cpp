@@ -81,12 +81,12 @@ class ListDeliveryStreamsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_deliveryStreamNames;
-  bool m_deliveryStreamNamesHasBeenSet = false;
 
   bool m_hasMoreDeliveryStreams{false};
-  bool m_hasMoreDeliveryStreamsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deliveryStreamNamesHasBeenSet = false;
+  bool m_hasMoreDeliveryStreamsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

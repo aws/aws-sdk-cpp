@@ -88,12 +88,12 @@ class ImportTaskSummary {
   ///@}
  private:
   ImportTaskSummaryApplications m_applications;
-  bool m_applicationsHasBeenSet = false;
 
   ImportTaskSummaryServers m_servers;
-  bool m_serversHasBeenSet = false;
 
   ImportTaskSummaryWaves m_waves;
+  bool m_applicationsHasBeenSet = false;
+  bool m_serversHasBeenSet = false;
   bool m_wavesHasBeenSet = false;
 };
 

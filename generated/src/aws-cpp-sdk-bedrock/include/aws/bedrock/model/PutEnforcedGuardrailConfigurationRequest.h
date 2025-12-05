@@ -68,9 +68,9 @@ class PutEnforcedGuardrailConfigurationRequest : public BedrockRequest {
   ///@}
  private:
   Aws::String m_configId;
-  bool m_configIdHasBeenSet = false;
 
   AccountEnforcedGuardrailInferenceInputConfiguration m_guardrailInferenceConfig;
+  bool m_configIdHasBeenSet = false;
   bool m_guardrailInferenceConfigHasBeenSet = false;
 };
 

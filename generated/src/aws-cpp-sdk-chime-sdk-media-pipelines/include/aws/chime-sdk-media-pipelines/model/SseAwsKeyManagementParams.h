@@ -96,9 +96,9 @@ class SseAwsKeyManagementParams {
   ///@}
  private:
   Aws::String m_awsKmsKeyId;
-  bool m_awsKmsKeyIdHasBeenSet = false;
 
   Aws::String m_awsKmsEncryptionContext;
+  bool m_awsKmsKeyIdHasBeenSet = false;
   bool m_awsKmsEncryptionContextHasBeenSet = false;
 };
 

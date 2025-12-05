@@ -78,12 +78,12 @@ class GetOriginRequestPolicyConfig2020_05_31Result {
   ///@}
  private:
   OriginRequestPolicyConfig m_originRequestPolicyConfig;
-  bool m_originRequestPolicyConfigHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_originRequestPolicyConfigHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

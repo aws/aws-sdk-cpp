@@ -177,27 +177,27 @@ class DetectorModelVersionSummary {
   ///@}
  private:
   Aws::String m_detectorModelName;
-  bool m_detectorModelNameHasBeenSet = false;
 
   Aws::String m_detectorModelVersion;
-  bool m_detectorModelVersionHasBeenSet = false;
 
   Aws::String m_detectorModelArn;
-  bool m_detectorModelArnHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateTime{};
-  bool m_lastUpdateTimeHasBeenSet = false;
 
   DetectorModelVersionStatus m_status{DetectorModelVersionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   EvaluationMethod m_evaluationMethod{EvaluationMethod::NOT_SET};
+  bool m_detectorModelNameHasBeenSet = false;
+  bool m_detectorModelVersionHasBeenSet = false;
+  bool m_detectorModelArnHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastUpdateTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_evaluationMethodHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class DatasetContentDeliveryRule {
   ///@}
  private:
   Aws::String m_entryName;
-  bool m_entryNameHasBeenSet = false;
 
   DatasetContentDeliveryDestination m_destination;
+  bool m_entryNameHasBeenSet = false;
   bool m_destinationHasBeenSet = false;
 };
 

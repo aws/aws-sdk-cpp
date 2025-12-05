@@ -83,9 +83,9 @@ class GuardrailSensitiveInformationPolicyConfig {
   ///@}
  private:
   Aws::Vector<GuardrailPiiEntityConfig> m_piiEntitiesConfig;
-  bool m_piiEntitiesConfigHasBeenSet = false;
 
   Aws::Vector<GuardrailRegexConfig> m_regexesConfig;
+  bool m_piiEntitiesConfigHasBeenSet = false;
   bool m_regexesConfigHasBeenSet = false;
 };
 

@@ -109,12 +109,12 @@ class Configuration {
   ///@}
  private:
   Aws::String m_classification;
-  bool m_classificationHasBeenSet = false;
 
   Aws::Vector<Configuration> m_configurations;
-  bool m_configurationsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_properties;
+  bool m_classificationHasBeenSet = false;
+  bool m_configurationsHasBeenSet = false;
   bool m_propertiesHasBeenSet = false;
 };
 

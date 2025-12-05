@@ -313,45 +313,45 @@ class CreateGuardrailRequest : public BedrockRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   GuardrailTopicPolicyConfig m_topicPolicyConfig;
-  bool m_topicPolicyConfigHasBeenSet = false;
 
   GuardrailContentPolicyConfig m_contentPolicyConfig;
-  bool m_contentPolicyConfigHasBeenSet = false;
 
   GuardrailWordPolicyConfig m_wordPolicyConfig;
-  bool m_wordPolicyConfigHasBeenSet = false;
 
   GuardrailSensitiveInformationPolicyConfig m_sensitiveInformationPolicyConfig;
-  bool m_sensitiveInformationPolicyConfigHasBeenSet = false;
 
   GuardrailContextualGroundingPolicyConfig m_contextualGroundingPolicyConfig;
-  bool m_contextualGroundingPolicyConfigHasBeenSet = false;
 
   GuardrailAutomatedReasoningPolicyConfig m_automatedReasoningPolicyConfig;
-  bool m_automatedReasoningPolicyConfigHasBeenSet = false;
 
   GuardrailCrossRegionConfig m_crossRegionConfig;
-  bool m_crossRegionConfigHasBeenSet = false;
 
   Aws::String m_blockedInputMessaging;
-  bool m_blockedInputMessagingHasBeenSet = false;
 
   Aws::String m_blockedOutputsMessaging;
-  bool m_blockedOutputsMessagingHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_topicPolicyConfigHasBeenSet = false;
+  bool m_contentPolicyConfigHasBeenSet = false;
+  bool m_wordPolicyConfigHasBeenSet = false;
+  bool m_sensitiveInformationPolicyConfigHasBeenSet = false;
+  bool m_contextualGroundingPolicyConfigHasBeenSet = false;
+  bool m_automatedReasoningPolicyConfigHasBeenSet = false;
+  bool m_crossRegionConfigHasBeenSet = false;
+  bool m_blockedInputMessagingHasBeenSet = false;
+  bool m_blockedOutputsMessagingHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
 };
 

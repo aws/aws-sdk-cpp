@@ -113,15 +113,15 @@ class GetFindingsV2Request : public SecurityHubRequest {
   ///@}
  private:
   OcsfFindingFilters m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::Vector<SortCriterion> m_sortCriteria;
-  bool m_sortCriteriaHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_filtersHasBeenSet = false;
+  bool m_sortCriteriaHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

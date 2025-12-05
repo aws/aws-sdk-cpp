@@ -95,12 +95,12 @@ class ListUserPoolClientsResult {
   ///@}
  private:
   Aws::Vector<UserPoolClientDescription> m_userPoolClients;
-  bool m_userPoolClientsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_userPoolClientsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

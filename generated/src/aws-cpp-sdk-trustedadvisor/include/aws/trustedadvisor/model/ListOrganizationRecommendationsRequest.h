@@ -210,33 +210,33 @@ class ListOrganizationRecommendationsRequest : public TrustedAdvisorRequest {
   ///@}
  private:
   Aws::Utils::DateTime m_afterLastUpdatedAt{};
-  bool m_afterLastUpdatedAtHasBeenSet = false;
 
   Aws::String m_awsService;
-  bool m_awsServiceHasBeenSet = false;
 
   Aws::Utils::DateTime m_beforeLastUpdatedAt{};
-  bool m_beforeLastUpdatedAtHasBeenSet = false;
 
   Aws::String m_checkIdentifier;
-  bool m_checkIdentifierHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   RecommendationPillar m_pillar{RecommendationPillar::NOT_SET};
-  bool m_pillarHasBeenSet = false;
 
   RecommendationSource m_source{RecommendationSource::NOT_SET};
-  bool m_sourceHasBeenSet = false;
 
   RecommendationStatus m_status{RecommendationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   RecommendationType m_type{RecommendationType::NOT_SET};
+  bool m_afterLastUpdatedAtHasBeenSet = false;
+  bool m_awsServiceHasBeenSet = false;
+  bool m_beforeLastUpdatedAtHasBeenSet = false;
+  bool m_checkIdentifierHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_pillarHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

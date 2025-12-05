@@ -148,18 +148,18 @@ class SearchPlaceIndexForPositionRequest : public LocationServiceRequest {
   ///@}
  private:
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   Aws::Vector<double> m_position;
-  bool m_positionHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_language;
-  bool m_languageHasBeenSet = false;
 
   Aws::String m_key;
+  bool m_indexNameHasBeenSet = false;
+  bool m_positionHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_languageHasBeenSet = false;
   bool m_keyHasBeenSet = false;
 };
 

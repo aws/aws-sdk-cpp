@@ -86,12 +86,12 @@ class PluginTypeMetadataSummary {
   ///@}
  private:
   PluginType m_type{PluginType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   PluginTypeCategory m_category{PluginTypeCategory::NOT_SET};
-  bool m_categoryHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_typeHasBeenSet = false;
+  bool m_categoryHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

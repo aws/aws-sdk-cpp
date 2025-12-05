@@ -85,12 +85,12 @@ class ListViewVersionsResult {
   ///@}
  private:
   Aws::Vector<ViewVersionSummary> m_viewVersionSummaryList;
-  bool m_viewVersionSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_viewVersionSummaryListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

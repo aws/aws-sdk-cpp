@@ -77,9 +77,9 @@ class CreateExportRequest : public BCMDataExportsRequest {
   ///@}
  private:
   Export m_export;
-  bool m_exportHasBeenSet = false;
 
   Aws::Vector<ResourceTag> m_resourceTags;
+  bool m_exportHasBeenSet = false;
   bool m_resourceTagsHasBeenSet = false;
 };
 

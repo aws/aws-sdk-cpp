@@ -290,42 +290,42 @@ class KantarWatermarkSettings {
   ///@}
  private:
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   Aws::String m_contentReference;
-  bool m_contentReferenceHasBeenSet = false;
 
   Aws::String m_credentialsSecretName;
-  bool m_credentialsSecretNameHasBeenSet = false;
 
   double m_fileOffset{0.0};
-  bool m_fileOffsetHasBeenSet = false;
 
   int m_kantarLicenseId{0};
-  bool m_kantarLicenseIdHasBeenSet = false;
 
   Aws::String m_kantarServerUrl;
-  bool m_kantarServerUrlHasBeenSet = false;
 
   Aws::String m_logDestination;
-  bool m_logDestinationHasBeenSet = false;
 
   Aws::String m_metadata3;
-  bool m_metadata3HasBeenSet = false;
 
   Aws::String m_metadata4;
-  bool m_metadata4HasBeenSet = false;
 
   Aws::String m_metadata5;
-  bool m_metadata5HasBeenSet = false;
 
   Aws::String m_metadata6;
-  bool m_metadata6HasBeenSet = false;
 
   Aws::String m_metadata7;
-  bool m_metadata7HasBeenSet = false;
 
   Aws::String m_metadata8;
+  bool m_channelNameHasBeenSet = false;
+  bool m_contentReferenceHasBeenSet = false;
+  bool m_credentialsSecretNameHasBeenSet = false;
+  bool m_fileOffsetHasBeenSet = false;
+  bool m_kantarLicenseIdHasBeenSet = false;
+  bool m_kantarServerUrlHasBeenSet = false;
+  bool m_logDestinationHasBeenSet = false;
+  bool m_metadata3HasBeenSet = false;
+  bool m_metadata4HasBeenSet = false;
+  bool m_metadata5HasBeenSet = false;
+  bool m_metadata6HasBeenSet = false;
+  bool m_metadata7HasBeenSet = false;
   bool m_metadata8HasBeenSet = false;
 };
 

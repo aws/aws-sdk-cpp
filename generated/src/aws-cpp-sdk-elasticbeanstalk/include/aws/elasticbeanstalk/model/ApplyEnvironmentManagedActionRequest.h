@@ -91,12 +91,12 @@ class ApplyEnvironmentManagedActionRequest : public ElasticBeanstalkRequest {
   ///@}
  private:
   Aws::String m_environmentName;
-  bool m_environmentNameHasBeenSet = false;
 
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::String m_actionId;
+  bool m_environmentNameHasBeenSet = false;
+  bool m_environmentIdHasBeenSet = false;
   bool m_actionIdHasBeenSet = false;
 };
 

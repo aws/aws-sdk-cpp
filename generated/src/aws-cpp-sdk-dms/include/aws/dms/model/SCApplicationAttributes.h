@@ -70,9 +70,9 @@ class SCApplicationAttributes {
   ///@}
  private:
   Aws::String m_s3BucketPath;
-  bool m_s3BucketPathHasBeenSet = false;
 
   Aws::String m_s3BucketRoleArn;
+  bool m_s3BucketPathHasBeenSet = false;
   bool m_s3BucketRoleArnHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class SalesforceSourceProperties {
   ///@}
  private:
   Aws::String m_object;
-  bool m_objectHasBeenSet = false;
 
   bool m_enableDynamicFieldUpdate{false};
-  bool m_enableDynamicFieldUpdateHasBeenSet = false;
 
   bool m_includeDeletedRecords{false};
+  bool m_objectHasBeenSet = false;
+  bool m_enableDynamicFieldUpdateHasBeenSet = false;
   bool m_includeDeletedRecordsHasBeenSet = false;
 };
 

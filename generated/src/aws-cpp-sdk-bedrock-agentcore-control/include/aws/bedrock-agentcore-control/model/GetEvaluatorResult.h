@@ -213,36 +213,36 @@ class GetEvaluatorResult {
   ///@}
  private:
   Aws::String m_evaluatorArn;
-  bool m_evaluatorArnHasBeenSet = false;
 
   Aws::String m_evaluatorId;
-  bool m_evaluatorIdHasBeenSet = false;
 
   Aws::String m_evaluatorName;
-  bool m_evaluatorNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   EvaluatorConfig m_evaluatorConfig;
-  bool m_evaluatorConfigHasBeenSet = false;
 
   EvaluatorLevel m_level{EvaluatorLevel::NOT_SET};
-  bool m_levelHasBeenSet = false;
 
   EvaluatorStatus m_status{EvaluatorStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   bool m_lockedForModification{false};
-  bool m_lockedForModificationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_evaluatorArnHasBeenSet = false;
+  bool m_evaluatorIdHasBeenSet = false;
+  bool m_evaluatorNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_evaluatorConfigHasBeenSet = false;
+  bool m_levelHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_lockedForModificationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

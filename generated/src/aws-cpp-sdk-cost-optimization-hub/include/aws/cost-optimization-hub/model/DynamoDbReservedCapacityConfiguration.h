@@ -196,30 +196,30 @@ class DynamoDbReservedCapacityConfiguration {
   ///@}
  private:
   Aws::String m_accountScope;
-  bool m_accountScopeHasBeenSet = false;
 
   Aws::String m_service;
-  bool m_serviceHasBeenSet = false;
 
   Aws::String m_term;
-  bool m_termHasBeenSet = false;
 
   Aws::String m_paymentOption;
-  bool m_paymentOptionHasBeenSet = false;
 
   Aws::String m_reservedInstancesRegion;
-  bool m_reservedInstancesRegionHasBeenSet = false;
 
   Aws::String m_upfrontCost;
-  bool m_upfrontCostHasBeenSet = false;
 
   Aws::String m_monthlyRecurringCost;
-  bool m_monthlyRecurringCostHasBeenSet = false;
 
   Aws::String m_numberOfCapacityUnitsToPurchase;
-  bool m_numberOfCapacityUnitsToPurchaseHasBeenSet = false;
 
   Aws::String m_capacityUnits;
+  bool m_accountScopeHasBeenSet = false;
+  bool m_serviceHasBeenSet = false;
+  bool m_termHasBeenSet = false;
+  bool m_paymentOptionHasBeenSet = false;
+  bool m_reservedInstancesRegionHasBeenSet = false;
+  bool m_upfrontCostHasBeenSet = false;
+  bool m_monthlyRecurringCostHasBeenSet = false;
+  bool m_numberOfCapacityUnitsToPurchaseHasBeenSet = false;
   bool m_capacityUnitsHasBeenSet = false;
 };
 

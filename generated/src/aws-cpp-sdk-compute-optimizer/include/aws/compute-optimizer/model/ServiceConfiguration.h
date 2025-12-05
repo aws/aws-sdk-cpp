@@ -141,18 +141,18 @@ class ServiceConfiguration {
   ///@}
  private:
   int m_memory{0};
-  bool m_memoryHasBeenSet = false;
 
   int m_cpu{0};
-  bool m_cpuHasBeenSet = false;
 
   Aws::Vector<ContainerConfiguration> m_containerConfigurations;
-  bool m_containerConfigurationsHasBeenSet = false;
 
   AutoScalingConfiguration m_autoScalingConfiguration{AutoScalingConfiguration::NOT_SET};
-  bool m_autoScalingConfigurationHasBeenSet = false;
 
   Aws::String m_taskDefinitionArn;
+  bool m_memoryHasBeenSet = false;
+  bool m_cpuHasBeenSet = false;
+  bool m_containerConfigurationsHasBeenSet = false;
+  bool m_autoScalingConfigurationHasBeenSet = false;
   bool m_taskDefinitionArnHasBeenSet = false;
 };
 

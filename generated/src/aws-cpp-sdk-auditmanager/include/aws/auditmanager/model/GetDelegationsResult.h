@@ -85,12 +85,12 @@ class GetDelegationsResult {
   ///@}
  private:
   Aws::Vector<DelegationMetadata> m_delegations;
-  bool m_delegationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_delegationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -296,39 +296,39 @@ class CreateDomainConfigurationRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_domainConfigurationName;
-  bool m_domainConfigurationNameHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_serverCertificateArns;
-  bool m_serverCertificateArnsHasBeenSet = false;
 
   Aws::String m_validationCertificateArn;
-  bool m_validationCertificateArnHasBeenSet = false;
 
   AuthorizerConfig m_authorizerConfig;
-  bool m_authorizerConfigHasBeenSet = false;
 
   ServiceType m_serviceType{ServiceType::NOT_SET};
-  bool m_serviceTypeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   TlsConfig m_tlsConfig;
-  bool m_tlsConfigHasBeenSet = false;
 
   ServerCertificateConfig m_serverCertificateConfig;
-  bool m_serverCertificateConfigHasBeenSet = false;
 
   AuthenticationType m_authenticationType{AuthenticationType::NOT_SET};
-  bool m_authenticationTypeHasBeenSet = false;
 
   ApplicationProtocol m_applicationProtocol{ApplicationProtocol::NOT_SET};
-  bool m_applicationProtocolHasBeenSet = false;
 
   ClientCertificateConfig m_clientCertificateConfig;
+  bool m_domainConfigurationNameHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_serverCertificateArnsHasBeenSet = false;
+  bool m_validationCertificateArnHasBeenSet = false;
+  bool m_authorizerConfigHasBeenSet = false;
+  bool m_serviceTypeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_tlsConfigHasBeenSet = false;
+  bool m_serverCertificateConfigHasBeenSet = false;
+  bool m_authenticationTypeHasBeenSet = false;
+  bool m_applicationProtocolHasBeenSet = false;
   bool m_clientCertificateConfigHasBeenSet = false;
 };
 

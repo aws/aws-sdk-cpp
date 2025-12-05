@@ -65,9 +65,9 @@ class UpdateCoreNetworkRequest : public NetworkManagerRequest {
   ///@}
  private:
   Aws::String m_coreNetworkId;
-  bool m_coreNetworkIdHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_coreNetworkIdHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

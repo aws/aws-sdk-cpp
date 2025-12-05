@@ -199,27 +199,27 @@ class Record {
   ///@}
  private:
   Aws::String m_eventVersion;
-  bool m_eventVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   OriginType m_origin{OriginType::NOT_SET};
-  bool m_originHasBeenSet = false;
 
   Aws::Map<Aws::String, KeyspacesCellValue> m_partitionKeys;
-  bool m_partitionKeysHasBeenSet = false;
 
   Aws::Map<Aws::String, KeyspacesCellValue> m_clusteringKeys;
-  bool m_clusteringKeysHasBeenSet = false;
 
   KeyspacesRow m_newImage;
-  bool m_newImageHasBeenSet = false;
 
   KeyspacesRow m_oldImage;
-  bool m_oldImageHasBeenSet = false;
 
   Aws::String m_sequenceNumber;
+  bool m_eventVersionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_originHasBeenSet = false;
+  bool m_partitionKeysHasBeenSet = false;
+  bool m_clusteringKeysHasBeenSet = false;
+  bool m_newImageHasBeenSet = false;
+  bool m_oldImageHasBeenSet = false;
   bool m_sequenceNumberHasBeenSet = false;
 };
 

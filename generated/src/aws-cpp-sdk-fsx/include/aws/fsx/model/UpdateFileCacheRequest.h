@@ -85,12 +85,12 @@ class UpdateFileCacheRequest : public FSxRequest {
   ///@}
  private:
   Aws::String m_fileCacheId;
-  bool m_fileCacheIdHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   UpdateFileCacheLustreConfiguration m_lustreConfiguration;
+  bool m_fileCacheIdHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
   bool m_lustreConfigurationHasBeenSet = false;
 };
 

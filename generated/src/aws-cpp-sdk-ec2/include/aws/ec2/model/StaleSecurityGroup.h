@@ -157,21 +157,21 @@ class StaleSecurityGroup {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::Vector<StaleIpPermission> m_staleIpPermissions;
-  bool m_staleIpPermissionsHasBeenSet = false;
 
   Aws::Vector<StaleIpPermission> m_staleIpPermissionsEgress;
-  bool m_staleIpPermissionsEgressHasBeenSet = false;
 
   Aws::String m_vpcId;
+  bool m_descriptionHasBeenSet = false;
+  bool m_groupIdHasBeenSet = false;
+  bool m_groupNameHasBeenSet = false;
+  bool m_staleIpPermissionsHasBeenSet = false;
+  bool m_staleIpPermissionsEgressHasBeenSet = false;
   bool m_vpcIdHasBeenSet = false;
 };
 

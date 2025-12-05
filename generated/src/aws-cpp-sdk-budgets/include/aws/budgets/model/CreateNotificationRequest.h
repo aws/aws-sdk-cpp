@@ -118,15 +118,15 @@ class CreateNotificationRequest : public BudgetsRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_budgetName;
-  bool m_budgetNameHasBeenSet = false;
 
   Notification m_notification;
-  bool m_notificationHasBeenSet = false;
 
   Aws::Vector<Subscriber> m_subscribers;
+  bool m_accountIdHasBeenSet = false;
+  bool m_budgetNameHasBeenSet = false;
+  bool m_notificationHasBeenSet = false;
   bool m_subscribersHasBeenSet = false;
 };
 

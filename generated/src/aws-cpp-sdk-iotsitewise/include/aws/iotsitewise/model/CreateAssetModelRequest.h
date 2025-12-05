@@ -275,33 +275,33 @@ class CreateAssetModelRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   Aws::String m_assetModelName;
-  bool m_assetModelNameHasBeenSet = false;
 
   AssetModelType m_assetModelType{AssetModelType::NOT_SET};
-  bool m_assetModelTypeHasBeenSet = false;
 
   Aws::String m_assetModelId;
-  bool m_assetModelIdHasBeenSet = false;
 
   Aws::String m_assetModelExternalId;
-  bool m_assetModelExternalIdHasBeenSet = false;
 
   Aws::String m_assetModelDescription;
-  bool m_assetModelDescriptionHasBeenSet = false;
 
   Aws::Vector<AssetModelPropertyDefinition> m_assetModelProperties;
-  bool m_assetModelPropertiesHasBeenSet = false;
 
   Aws::Vector<AssetModelHierarchyDefinition> m_assetModelHierarchies;
-  bool m_assetModelHierarchiesHasBeenSet = false;
 
   Aws::Vector<AssetModelCompositeModelDefinition> m_assetModelCompositeModels;
-  bool m_assetModelCompositeModelsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_assetModelNameHasBeenSet = false;
+  bool m_assetModelTypeHasBeenSet = false;
+  bool m_assetModelIdHasBeenSet = false;
+  bool m_assetModelExternalIdHasBeenSet = false;
+  bool m_assetModelDescriptionHasBeenSet = false;
+  bool m_assetModelPropertiesHasBeenSet = false;
+  bool m_assetModelHierarchiesHasBeenSet = false;
+  bool m_assetModelCompositeModelsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

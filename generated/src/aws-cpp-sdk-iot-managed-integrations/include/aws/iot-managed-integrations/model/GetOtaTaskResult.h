@@ -345,57 +345,57 @@ class GetOtaTaskResult {
   ///@}
  private:
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   Aws::String m_taskArn;
-  bool m_taskArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_s3Url;
-  bool m_s3UrlHasBeenSet = false;
 
   OtaProtocol m_protocol{OtaProtocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   OtaType m_otaType{OtaType::NOT_SET};
-  bool m_otaTypeHasBeenSet = false;
 
   Aws::String m_otaTargetQueryString;
-  bool m_otaTargetQueryStringHasBeenSet = false;
 
   OtaMechanism m_otaMechanism{OtaMechanism::NOT_SET};
-  bool m_otaMechanismHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_target;
-  bool m_targetHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_taskConfigurationId;
-  bool m_taskConfigurationIdHasBeenSet = false;
 
   TaskProcessingDetails m_taskProcessingDetails;
-  bool m_taskProcessingDetailsHasBeenSet = false;
 
   OtaTaskSchedulingConfig m_otaSchedulingConfig;
-  bool m_otaSchedulingConfigHasBeenSet = false;
 
   OtaTaskExecutionRetryConfig m_otaTaskExecutionRetryConfig;
-  bool m_otaTaskExecutionRetryConfigHasBeenSet = false;
 
   OtaStatus m_status{OtaStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_taskIdHasBeenSet = false;
+  bool m_taskArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_s3UrlHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_otaTypeHasBeenSet = false;
+  bool m_otaTargetQueryStringHasBeenSet = false;
+  bool m_otaMechanismHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_taskConfigurationIdHasBeenSet = false;
+  bool m_taskProcessingDetailsHasBeenSet = false;
+  bool m_otaSchedulingConfigHasBeenSet = false;
+  bool m_otaTaskExecutionRetryConfigHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

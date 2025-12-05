@@ -67,9 +67,9 @@ class CreateVoiceTemplateRequest : public PinpointRequest {
   ///@}
  private:
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   VoiceTemplateRequest m_voiceTemplateRequest;
+  bool m_templateNameHasBeenSet = false;
   bool m_voiceTemplateRequestHasBeenSet = false;
 };
 

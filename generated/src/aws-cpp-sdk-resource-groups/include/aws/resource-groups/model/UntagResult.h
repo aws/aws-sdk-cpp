@@ -84,12 +84,12 @@ class UntagResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_keys;
-  bool m_keysHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_keysHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

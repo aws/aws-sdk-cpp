@@ -68,9 +68,9 @@ class CreateBGPPeerRequest : public DirectConnectRequest {
   ///@}
  private:
   Aws::String m_virtualInterfaceId;
-  bool m_virtualInterfaceIdHasBeenSet = false;
 
   NewBGPPeer m_newBGPPeer;
+  bool m_virtualInterfaceIdHasBeenSet = false;
   bool m_newBGPPeerHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class ListDimensionsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_dimensionNames;
-  bool m_dimensionNamesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dimensionNamesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

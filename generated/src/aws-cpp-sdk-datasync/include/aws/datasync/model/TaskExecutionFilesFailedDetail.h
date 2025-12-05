@@ -100,15 +100,15 @@ class TaskExecutionFilesFailedDetail {
   ///@}
  private:
   long long m_prepare{0};
-  bool m_prepareHasBeenSet = false;
 
   long long m_transfer{0};
-  bool m_transferHasBeenSet = false;
 
   long long m_verify{0};
-  bool m_verifyHasBeenSet = false;
 
   long long m_delete{0};
+  bool m_prepareHasBeenSet = false;
+  bool m_transferHasBeenSet = false;
+  bool m_verifyHasBeenSet = false;
   bool m_deleteHasBeenSet = false;
 };
 

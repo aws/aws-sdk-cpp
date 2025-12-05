@@ -94,12 +94,12 @@ class PoAttributes {
   ///@}
  private:
   Aws::String m_encoding;
-  bool m_encodingHasBeenSet = false;
 
   Aws::String m_format;
-  bool m_formatHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_memberFileExtensions;
+  bool m_encodingHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
   bool m_memberFileExtensionsHasBeenSet = false;
 };
 

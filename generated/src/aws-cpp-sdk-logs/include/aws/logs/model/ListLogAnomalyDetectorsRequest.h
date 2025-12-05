@@ -83,12 +83,12 @@ class ListLogAnomalyDetectorsRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::String m_filterLogGroupArn;
-  bool m_filterLogGroupArnHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_filterLogGroupArnHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

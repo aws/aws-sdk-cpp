@@ -90,12 +90,12 @@ class DNISEmergencyCallingConfiguration {
   ///@}
  private:
   Aws::String m_emergencyPhoneNumber;
-  bool m_emergencyPhoneNumberHasBeenSet = false;
 
   Aws::String m_testPhoneNumber;
-  bool m_testPhoneNumberHasBeenSet = false;
 
   Aws::String m_callingCountry;
+  bool m_emergencyPhoneNumberHasBeenSet = false;
+  bool m_testPhoneNumberHasBeenSet = false;
   bool m_callingCountryHasBeenSet = false;
 };
 

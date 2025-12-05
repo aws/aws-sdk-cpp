@@ -80,9 +80,9 @@ class StopAction {
   ///@}
  private:
   StopScope m_scope{StopScope::NOT_SET};
-  bool m_scopeHasBeenSet = false;
 
   Aws::String m_topicArn;
+  bool m_scopeHasBeenSet = false;
   bool m_topicArnHasBeenSet = false;
 };
 

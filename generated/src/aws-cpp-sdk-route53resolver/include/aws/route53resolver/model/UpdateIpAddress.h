@@ -71,9 +71,9 @@ class UpdateIpAddress {
   ///@}
  private:
   Aws::String m_ipId;
-  bool m_ipIdHasBeenSet = false;
 
   Aws::String m_ipv6;
+  bool m_ipIdHasBeenSet = false;
   bool m_ipv6HasBeenSet = false;
 };
 

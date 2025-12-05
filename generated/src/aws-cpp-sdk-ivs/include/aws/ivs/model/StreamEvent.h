@@ -139,15 +139,15 @@ class StreamEvent {
   ///@}
  private:
   Aws::String m_code;
-  bool m_codeHasBeenSet = false;
 
   Aws::Utils::DateTime m_eventTime{};
-  bool m_eventTimeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_codeHasBeenSet = false;
+  bool m_eventTimeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

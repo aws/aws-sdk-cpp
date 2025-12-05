@@ -91,12 +91,12 @@ class OpenSearchServerlessConfiguration {
   ///@}
  private:
   Aws::String m_collectionArn;
-  bool m_collectionArnHasBeenSet = false;
 
   Aws::String m_vectorIndexName;
-  bool m_vectorIndexNameHasBeenSet = false;
 
   OpenSearchServerlessFieldMapping m_fieldMapping;
+  bool m_collectionArnHasBeenSet = false;
+  bool m_vectorIndexNameHasBeenSet = false;
   bool m_fieldMappingHasBeenSet = false;
 };
 

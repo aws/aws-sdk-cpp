@@ -79,9 +79,9 @@ class TLEEphemeris {
   ///@}
  private:
   S3Object m_s3Object;
-  bool m_s3ObjectHasBeenSet = false;
 
   Aws::Vector<TLEData> m_tleData;
+  bool m_s3ObjectHasBeenSet = false;
   bool m_tleDataHasBeenSet = false;
 };
 

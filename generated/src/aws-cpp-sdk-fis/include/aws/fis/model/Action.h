@@ -164,21 +164,21 @@ class Action {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, ActionParameter> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::Map<Aws::String, ActionTarget> m_targets;
-  bool m_targetsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_targetsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

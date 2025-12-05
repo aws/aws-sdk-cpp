@@ -150,18 +150,18 @@ class RespondDecisionTaskCompletedRequest : public SWFRequest {
   ///@}
  private:
   Aws::String m_taskToken;
-  bool m_taskTokenHasBeenSet = false;
 
   Aws::Vector<Decision> m_decisions;
-  bool m_decisionsHasBeenSet = false;
 
   Aws::String m_executionContext;
-  bool m_executionContextHasBeenSet = false;
 
   TaskList m_taskList;
-  bool m_taskListHasBeenSet = false;
 
   Aws::String m_taskListScheduleToStartTimeout;
+  bool m_taskTokenHasBeenSet = false;
+  bool m_decisionsHasBeenSet = false;
+  bool m_executionContextHasBeenSet = false;
+  bool m_taskListHasBeenSet = false;
   bool m_taskListScheduleToStartTimeoutHasBeenSet = false;
 };
 

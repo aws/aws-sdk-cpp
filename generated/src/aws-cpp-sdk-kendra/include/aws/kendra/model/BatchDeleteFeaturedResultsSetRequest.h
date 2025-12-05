@@ -74,9 +74,9 @@ class BatchDeleteFeaturedResultsSetRequest : public KendraRequest {
   ///@}
  private:
   Aws::String m_indexId;
-  bool m_indexIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_featuredResultsSetIds;
+  bool m_indexIdHasBeenSet = false;
   bool m_featuredResultsSetIdsHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class CloneBackendRequest : public AmplifyBackendRequest {
   ///@}
  private:
   Aws::String m_appId;
-  bool m_appIdHasBeenSet = false;
 
   Aws::String m_backendEnvironmentName;
-  bool m_backendEnvironmentNameHasBeenSet = false;
 
   Aws::String m_targetEnvironmentName;
+  bool m_appIdHasBeenSet = false;
+  bool m_backendEnvironmentNameHasBeenSet = false;
   bool m_targetEnvironmentNameHasBeenSet = false;
 };
 
