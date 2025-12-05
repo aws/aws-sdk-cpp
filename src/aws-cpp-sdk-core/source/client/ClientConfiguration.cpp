@@ -220,6 +220,16 @@ void setLegacyClientConfigurationParameters(ClientConfiguration& clientConfig)
     clientConfig.writeRateLimiter = nullptr;
     clientConfig.readRateLimiter = nullptr;
     clientConfig.httpLibOverride = Aws::Http::TransferLibType::DEFAULT_CLIENT;
+    
+    // Set chunking mode based on HTTP client type
+    // AWS built-in clients should use SDK's ChunkingInterceptor (DEFAULT mode)
+    // Custom clients should handle chunking themselves (CLIENT_IMPLEMENTATION mode)
+    if (clientConfig.httpLibOverride == Aws::Http::TransferLibType::DEFAULT_CLIENT) {
+        clientConfig.httpClientChunkedMode = HttpClientChunkedMode::CLIENT_IMPLEMENTATION;
+    } else {
+        clientConfig.httpClientChunkedMode = HttpClientChunkedMode::DEFAULT;
+    }
+    
     clientConfig.followRedirects = FollowRedirectsPolicy::DEFAULT;
     clientConfig.disableExpectHeader = false;
     clientConfig.enableClockSkewAdjustment = true;

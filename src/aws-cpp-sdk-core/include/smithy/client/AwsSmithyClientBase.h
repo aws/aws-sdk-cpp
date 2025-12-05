@@ -9,6 +9,7 @@
 #include <smithy/tracing/TelemetryProvider.h>
 #include <smithy/interceptor/Interceptor.h>
 #include <smithy/client/features/ChecksumInterceptor.h>
+#include <smithy/client/features/ChunkingInterceptor.h>
 #include <smithy/client/features/UserAgentInterceptor.h>
 
 #include <aws/crt/Variant.h>
@@ -101,6 +102,9 @@ namespace client
           m_errorMarshaller(std::move(errorMarshaller)),
           m_interceptors{Aws::MakeShared<ChecksumInterceptor>("AwsSmithyClientBase", *m_clientConfig)}
         {
+            if (m_clientConfig->httpClientChunkedMode == Aws::Client::HttpClientChunkedMode::DEFAULT) {
+                m_interceptors.emplace_back(Aws::MakeShared<features::ChunkingInterceptor>("AwsSmithyClientBase", *m_clientConfig));
+            }
             baseInit();
         }
 
